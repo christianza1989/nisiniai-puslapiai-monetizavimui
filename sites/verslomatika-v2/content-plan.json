@@ -1,0 +1,2759 @@
+{
+  "format": "verslomatika-v2-editorial-plan",
+  "formatVersion": 1,
+  "updatedAt": "2026-10-23",
+  "canonicalHost": "verslomatika.lt",
+  "locale": "lt-LT",
+  "timezone": "Europe/Vilnius",
+  "artifactStatus": "editorial-plan-not-studio-import",
+  "nativeSiteId": null,
+  "counts": {
+    "inventoryEntries": 75,
+    "concreteUrls": 74,
+    "dynamicTemplates": 1,
+    "t0ConcreteUrls": 58,
+    "scheduledArticles": 16
+  },
+  "productScope": "Pilna Verslomatika V2 sistema su pasirenkamais agency-agents profiliais, įrankiais, įmonės kontekstu ir agentų darbo grandinėmis.",
+  "sourceVersions": {
+    "core": "26493054ae065dc92980bf9d0c1a4d7c4bdb4371",
+    "publicCore": "705688622563e75b1ab044f416b75cdf5cf4fbf7",
+    "agencyAgents": "4e3ac3ca6604c75113f52c695dbddcc7af928b46"
+  },
+  "calendar": {
+    "status": "proposal-not-imported",
+    "policy": {
+      "months": 3,
+      "cadence": "weekly",
+      "articlesPerWeek": 2,
+      "localTime": "09:00",
+      "timezone": "Europe/Vilnius"
+    },
+    "baseRelease": {
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "publishAt": "2026-10-27T07:00:00.000Z"
+    },
+    "datesRequireNativeWorkflowValidation": true
+  },
+  "research": {
+    "country": "LT",
+    "language": "lt",
+    "keywordVolumes": "not_measured",
+    "serpOverlap": "not_measured",
+    "gsc": "not_connected",
+    "geoCitations": "not_measured",
+    "treg": "not_signed_in_or_expired_token",
+    "paidCalls": 0
+  },
+  "inventory": [
+    {
+      "planKey": "P01",
+      "pageId": null,
+      "url": "/",
+      "kind": "Titulinis",
+      "template": "Titulinis",
+      "readerQuestion": "Kaip autonominiai DI agentai gali perimti įmonės darbus?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [],
+      "plannedContextTargets": [
+        "/kaip-veikia/",
+        "/agentai/",
+        "/kainodara/",
+        "/sprendimai/",
+        "/agentu-kurejas/"
+      ],
+      "discoverySources": [],
+      "state": "planned"
+    },
+    {
+      "planKey": "P02",
+      "pageId": null,
+      "url": "/kaip-veikia/",
+      "kind": "Produkto gidas",
+      "template": "Kaip veikia",
+      "readerQuestion": "Kaip techniškai veikia Verslomatika V2 grandinės?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/",
+        "/kokybes-kontrole/",
+        "/darbo-grandines/"
+      ],
+      "plannedContextTargets": [
+        "/agentai/",
+        "/darbo-grandines/",
+        "/kokybes-kontrole/",
+        "/agentu-kurejas/"
+      ],
+      "discoverySources": [
+        "/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P03",
+      "pageId": null,
+      "url": "/kainodara/",
+      "kind": "Komercinis",
+      "template": "Kainodara",
+      "readerQuestion": "Iš ko susideda paslaugos kaina ir kaip įvertinti savo proceso sąnaudas?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/istekliai/roi-skaiciuokle/",
+        "/kontaktai/"
+      ],
+      "plannedContextTargets": [
+        "/istekliai/roi-skaiciuokle/",
+        "/kontaktai/"
+      ],
+      "discoverySources": [
+        "/istekliai/roi-skaiciuokle/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P04",
+      "pageId": null,
+      "url": "/apie-mus/",
+      "kind": "Informacinis",
+      "template": "Apie mus",
+      "readerQuestion": "Kas kuria ir prižiūri Verslomatika V2 sistemą?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/kontaktai/",
+        "/kokybes-kontrole/"
+      ],
+      "plannedContextTargets": [
+        "/kontaktai/",
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [],
+      "state": "planned"
+    },
+    {
+      "planKey": "P05",
+      "pageId": null,
+      "url": "/kontaktai/",
+      "kind": "Komercinis",
+      "template": "Kontaktai",
+      "readerQuestion": "Kaip susisiekti dėl individualaus diegimo ar konsultacijos?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/privatumas/"
+      ],
+      "plannedContextTargets": [
+        "/kainodara/",
+        "/privatumas/"
+      ],
+      "discoverySources": [],
+      "state": "planned"
+    },
+    {
+      "planKey": "P06",
+      "pageId": null,
+      "url": "/kokybes-kontrole/",
+      "kind": "Sprendimas",
+      "template": "Saugumas",
+      "readerQuestion": "Kaip valdomos agentų teisės, rezultatų patikra ir perdavimas žmogui?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/privatumas/",
+        "/darbo-grandines/"
+      ],
+      "plannedContextTargets": [
+        "/darbo-grandines/",
+        "/ai-agentai/",
+        "/privatumas/"
+      ],
+      "discoverySources": [
+        "/kaip-veikia/",
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P07",
+      "pageId": null,
+      "url": "/agentai/",
+      "kind": "Indeksas",
+      "template": "Agentų katalogas",
+      "readerQuestion": "Kokie agentai egzistuoja ir kokius darbus atlieka?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/komandos/"
+      ],
+      "plannedContextTargets": [
+        "/komandos/",
+        "/agentu-kurejas/"
+      ],
+      "discoverySources": [
+        "/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "AGENT_TEMPLATE",
+      "pageId": null,
+      "url": "/agentai/{slug}/",
+      "kind": "template",
+      "template": "Agento profilis",
+      "readerQuestion": "Ką konkrečiai atlieka šis agentas ir kokių įrankių jam reikia?",
+      "publicationGroup": "template-implementation",
+      "publishAt": null,
+      "readyDeadline": null,
+      "requiredTargets": [
+        "/agentai/"
+      ],
+      "plannedContextTargets": [
+        "/agentai/",
+        "/komandos/",
+        "/sprendimai/"
+      ],
+      "discoverySources": [
+        "/agentai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P08",
+      "pageId": null,
+      "url": "/komandos/",
+      "kind": "Indeksas",
+      "template": "Komandų katalogas",
+      "readerQuestion": "Kokios paruoštos agentų komandos egzistuoja procesams?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/agentai/"
+      ],
+      "plannedContextTargets": [
+        "/darbo-grandines/"
+      ],
+      "discoverySources": [
+        "/agentai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P09",
+      "pageId": null,
+      "url": "/komandos/b2b-pardavimu-komanda/",
+      "kind": "Sprendimas",
+      "template": "Komandos šablonas",
+      "readerQuestion": "Kaip veikia suderinta pardavimų agentų komanda?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/pardavimai/",
+        "/sprendimai/crm/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/pardavimai/",
+        "/sprendimai/crm/"
+      ],
+      "discoverySources": [
+        "/komandos/",
+        "/sprendimai/pardavimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P10",
+      "pageId": null,
+      "url": "/komandos/turinio-ir-seo-komanda/",
+      "kind": "Sprendimas",
+      "template": "Komandos šablonas",
+      "readerQuestion": "Kaip veikia turinio fabrikas (Tyrimas → Tekstas → SEO)?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/rinkodara/",
+        "/sprendimai/seo-geo-automatizavimas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/rinkodara/",
+        "/sprendimai/seo-geo-automatizavimas/"
+      ],
+      "discoverySources": [
+        "/komandos/",
+        "/sprendimai/rinkodara/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P11",
+      "pageId": null,
+      "url": "/komandos/programavimo-ir-qa-komanda/",
+      "kind": "Sprendimas",
+      "template": "Komandos šablonas",
+      "readerQuestion": "Kaip inžineriniai agentai kuria, testuoja ir diegia kodą?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/programavimas/",
+        "/kokybes-kontrole/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/programavimas/",
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [
+        "/komandos/",
+        "/sprendimai/programavimas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P12",
+      "pageId": null,
+      "url": "/komandos/finansu-operaciju-komanda/",
+      "kind": "Sprendimas",
+      "template": "Komandos šablonas",
+      "readerQuestion": "Kaip agentai suderina sąskaitas, banką ir biudžeto prognozes?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/sprendimai/finansu-analitika/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/sprendimai/finansu-analitika/"
+      ],
+      "discoverySources": [
+        "/komandos/",
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P13",
+      "pageId": null,
+      "url": "/darbo-grandines/",
+      "kind": "Techninis gidas",
+      "template": "Grandinių gidas",
+      "readerQuestion": "Kaip sukonstruoti agentų darbo seką (DAG) su klaidų valdymu?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/kokybes-kontrole/",
+        "/agentai/"
+      ],
+      "plannedContextTargets": [
+        "/kokybes-kontrole/",
+        "/agentai/"
+      ],
+      "discoverySources": [
+        "/kaip-veikia/",
+        "/ai-agentai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P14",
+      "pageId": null,
+      "url": "/sprendimai/",
+      "kind": "Indeksas",
+      "template": "Sprendimų indeksas",
+      "readerQuestion": "Kokias verslo funkcijas galima automatizuoti (16 sprendimų)?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/"
+      ],
+      "plannedContextTargets": [],
+      "discoverySources": [
+        "/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P15",
+      "pageId": null,
+      "url": "/sprendimai/pardavimai/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti B2B klientų paiešką ir kvalifikavimą?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/crm/",
+        "/istekliai/roi-skaiciuokle/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/crm/",
+        "/straipsniai/b2b-kontaktu-atranka-duomenu-sodrinimas/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P16",
+      "pageId": null,
+      "url": "/sprendimai/crm/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip sinchronizuoti formų, pašto ir skambučių duomenis CRM?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/pardavimai/",
+        "/integracijos/crm-sistemos/"
+      ],
+      "plannedContextTargets": [
+        "/integracijos/crm-sistemos/",
+        "/sprendimai/pardavimai/"
+      ],
+      "discoverySources": [
+        "/sprendimai/",
+        "/sprendimai/pardavimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P17",
+      "pageId": null,
+      "url": "/sprendimai/klientu-aptarnavimas/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip suderinti klientų aptarnavimą paštu, pokalbiais ir balsu?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/ziniu-baze-rag/",
+        "/kokybes-kontrole/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/ai-balso-agentai-skambuciams/",
+        "/sprendimai/ziniu-baze-rag/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P18",
+      "pageId": null,
+      "url": "/sprendimai/rinkodara/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti rinkodaros planavimą, turinį ir sklaidą?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/seo-geo-automatizavimas/",
+        "/sprendimai/reklamos-valdymas/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/autonominis-turinio-fabrikas/",
+        "/sprendimai/reklamos-valdymas/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P19",
+      "pageId": null,
+      "url": "/sprendimai/seo-geo-automatizavimas/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip paruošti svetainę tradicinei ir generatyvinei (LLM) paieškai?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/rinkodara/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/geo-optimizavimas-struktura/"
+      ],
+      "discoverySources": [
+        "/sprendimai/",
+        "/sprendimai/rinkodara/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P20",
+      "pageId": null,
+      "url": "/sprendimai/reklamos-valdymas/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip valdyti Meta ir Google Ads biudžetus pagal realias pajamas?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/duomenu-analitika/",
+        "/sprendimai/rinkodara/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/reklamos-biudzeto-valdymas/",
+        "/sprendimai/duomenu-analitika/"
+      ],
+      "discoverySources": [
+        "/sprendimai/",
+        "/sprendimai/rinkodara/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P21",
+      "pageId": null,
+      "url": "/sprendimai/programavimas/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti programinės įrangos kūrimą iki testuoto kodo?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/kokybes-kontrole/",
+        "/darbo-grandines/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/automatinis-kodo-testavimas/",
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P22",
+      "pageId": null,
+      "url": "/sprendimai/dizainas/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti dizaino kintamuosius ir UX tyrimus?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/programavimas/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/dizaino-sistemos-automatizavimas/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P23",
+      "pageId": null,
+      "url": "/sprendimai/verslo-tyrimai/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti rinkos ir konkurentų pokyčių stebėjimą?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/duomenu-analitika/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/klientu-atsiliepimu-analize/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P24",
+      "pageId": null,
+      "url": "/sprendimai/saskaitu-valdymas/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti sąskaitų suvedimą į apskaitos programas?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/integracijos/b1/",
+        "/integracijos/rivile/"
+      ],
+      "plannedContextTargets": [
+        "/integracijos/b1/",
+        "/integracijos/rivile/",
+        "/straipsniai/saskaitu-atpazinimas-ocr-buhalterija/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P25",
+      "pageId": null,
+      "url": "/sprendimai/finansu-analitika/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti pinigų srautų prognozavimą ir biudžeto kontrolę?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/sprendimai/duomenu-analitika/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/straipsniai/skolu-priminimu-automatizavimas/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P26",
+      "pageId": null,
+      "url": "/sprendimai/dokumentu-valdymas/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti sutarčių rengimą ir pasirašymą e-parašu?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/integracijos/dokobit/"
+      ],
+      "plannedContextTargets": [
+        "/integracijos/dokobit/",
+        "/straipsniai/sutarciu-pasirasymas-dokobit/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P27",
+      "pageId": null,
+      "url": "/sprendimai/duomenu-analitika/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip sujungti duomenis iš skirtingų šaltinių į ataskaitas?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/finansu-analitika/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/finansu-analitika/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P28",
+      "pageId": null,
+      "url": "/sprendimai/operacijos/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti užduočių delegavimą ir terminų kontrolę?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/dokumentu-valdymas/",
+        "/sprendimai/hr-procesai/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/vidiniu-uzduociu-delegavimas/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P29",
+      "pageId": null,
+      "url": "/sprendimai/hr-procesai/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip automatizuoti naujo darbuotojo įvedimą (Onboarding)?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/darbuotojo-ivedimo-onboarding-automatizavimas/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P30",
+      "pageId": null,
+      "url": "/sprendimai/ziniu-baze-rag/",
+      "kind": "Sprendimas",
+      "template": "Sprendimo šablonas",
+      "readerQuestion": "Kaip prijungti įmonės dokumentus ir išlaikyti prieigos teises?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/kokybes-kontrole/",
+        "/ai-agentai/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/vidine-ziniu-baze-rag/",
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [
+        "/sprendimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P31",
+      "pageId": null,
+      "url": "/industrijos/",
+      "kind": "Indeksas",
+      "template": "Industrijų indeksas",
+      "readerQuestion": "Kaip automatizavimo scenarijus pritaikyti savo veiklos sričiai?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/"
+      ],
+      "plannedContextTargets": [],
+      "discoverySources": [
+        "/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P32",
+      "pageId": null,
+      "url": "/industrijos/e-komercija/",
+      "kind": "Industrija",
+      "template": "Industrijos šablonas",
+      "readerQuestion": "Kaip automatizuoti užsakymus, sąskaitas, likučius ir siuntas?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/integracijos/b1/",
+        "/integracijos/rivile/"
+      ],
+      "plannedContextTargets": [
+        "/integracijos/b1/",
+        "/integracijos/rivile/"
+      ],
+      "discoverySources": [
+        "/industrijos/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P33",
+      "pageId": null,
+      "url": "/industrijos/b2b-paslaugos/",
+      "kind": "Industrija",
+      "template": "Industrijos šablonas",
+      "readerQuestion": "Kaip paslaugų įmonėms automatizuoti projektus ir atskaitomybę?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/crm/",
+        "/sprendimai/pardavimai/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/crm/",
+        "/sprendimai/pardavimai/"
+      ],
+      "discoverySources": [
+        "/industrijos/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P34",
+      "pageId": null,
+      "url": "/industrijos/logistika/",
+      "kind": "Industrija",
+      "template": "Industrijos šablonas",
+      "readerQuestion": "Kaip transporto įmonėms automatizuoti CMR ir sąskaitų apdorojimą?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "discoverySources": [
+        "/industrijos/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P35",
+      "pageId": null,
+      "url": "/industrijos/nekilnojamasis-turtas/",
+      "kind": "Industrija",
+      "template": "Industrijos šablonas",
+      "readerQuestion": "Kaip NT brokeriams automatizuoti užklausas ir vizitų derinimą?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/crm/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/crm/",
+        "/straipsniai/ai-balso-agentai-skambuciams/"
+      ],
+      "discoverySources": [
+        "/industrijos/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P36",
+      "pageId": null,
+      "url": "/industrijos/gamyba/",
+      "kind": "Industrija",
+      "template": "Industrijos šablonas",
+      "readerQuestion": "Kaip automatizuoti žaliavų užsakymus ir tiekimo grandinę?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/verslo-tyrimai/",
+        "/integracijos/make-n8n/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/verslo-tyrimai/",
+        "/integracijos/make-n8n/"
+      ],
+      "discoverySources": [
+        "/industrijos/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P37",
+      "pageId": null,
+      "url": "/industrijos/paslaugu-verslas-medicina-grozis/",
+      "kind": "Industrija",
+      "template": "Industrijos šablonas",
+      "readerQuestion": "Kaip klinikoms ir salonams automatizuoti vizitų registraciją?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/klientu-aptarnavimas/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/ai-balso-agentai-skambuciams/"
+      ],
+      "discoverySources": [
+        "/industrijos/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P38",
+      "pageId": null,
+      "url": "/integracijos/",
+      "kind": "Indeksas",
+      "template": "Integracijų indeksas",
+      "readerQuestion": "Su kokiomis verslo sistemomis jungiasi Verslomatika V2 agentai?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/"
+      ],
+      "plannedContextTargets": [],
+      "discoverySources": [
+        "/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P39",
+      "pageId": null,
+      "url": "/integracijos/b1/",
+      "kind": "Integracija",
+      "template": "Integracijos šablonas",
+      "readerQuestion": "Kaip sujungti el. parduotuvę ar CRM su B1.lt per REST API?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/straipsniai/saskaitu-atpazinimas-ocr-buhalterija/"
+      ],
+      "discoverySources": [
+        "/integracijos/",
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P40",
+      "pageId": null,
+      "url": "/integracijos/rivile/",
+      "kind": "Integracija",
+      "template": "Integracijos šablonas",
+      "readerQuestion": "Kokie duomenys ir pasirinktos Rivilės sistemos sąsajos reikalingi integracijai?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "discoverySources": [
+        "/integracijos/",
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P41",
+      "pageId": null,
+      "url": "/integracijos/make-n8n/",
+      "kind": "Integracija",
+      "template": "Integracijos šablonas",
+      "readerQuestion": "Kaip iškviesti agentus iš Make.com arba n8n scenarijų?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/darbo-grandines/"
+      ],
+      "plannedContextTargets": [
+        "/palyginimai/make-vs-zapier-vs-n8n/",
+        "/darbo-grandines/"
+      ],
+      "discoverySources": [
+        "/integracijos/",
+        "/darbo-grandines/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P42",
+      "pageId": null,
+      "url": "/integracijos/crm-sistemos/",
+      "kind": "Integracija",
+      "template": "Integracijos šablonas",
+      "readerQuestion": "Kaip sujungti Pipedrive, HubSpot ir Zoho su Verslomatika agentais?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/crm/",
+        "/sprendimai/pardavimai/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/crm/",
+        "/sprendimai/pardavimai/"
+      ],
+      "discoverySources": [
+        "/integracijos/",
+        "/sprendimai/crm/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P43",
+      "pageId": null,
+      "url": "/integracijos/dokobit/",
+      "kind": "Integracija",
+      "template": "Integracijos šablonas",
+      "readerQuestion": "Kaip automatizuoti dokumentų pasirašymą per Dokobit API?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "plannedContextTargets": [
+        "/straipsniai/sutarciu-pasirasymas-dokobit/",
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "discoverySources": [
+        "/integracijos/",
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P44",
+      "pageId": null,
+      "url": "/ziniu-centras/",
+      "kind": "Indeksas",
+      "template": "Žinių centras",
+      "readerQuestion": "Kur rasti visus gidus, straipsnius ir įrankius vienoje vietoje?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/verslo-procesu-automatizavimas/",
+        "/ai-agentai/"
+      ],
+      "plannedContextTargets": [
+        "/verslo-procesu-automatizavimas/",
+        "/ai-agentai/",
+        "/straipsniai/",
+        "/palyginimai/"
+      ],
+      "discoverySources": [],
+      "state": "planned"
+    },
+    {
+      "planKey": "P45",
+      "pageId": null,
+      "url": "/verslo-procesu-automatizavimas/",
+      "kind": "Mega-gidas",
+      "template": "Gidas",
+      "readerQuestion": "Nuo ko pradėti procesų peržiūrą ir atranką?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/istekliai/roi-skaiciuokle/",
+        "/darbo-grandines/"
+      ],
+      "plannedContextTargets": [
+        "/istekliai/roi-skaiciuokle/",
+        "/darbo-grandines/",
+        "/sprendimai/"
+      ],
+      "discoverySources": [
+        "/ziniu-centras/",
+        "/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P46",
+      "pageId": null,
+      "url": "/ai-agentai/",
+      "kind": "Mega-gidas",
+      "template": "Gidas",
+      "readerQuestion": "Kas yra autonominiai DI agentai ir kuo jie skiriasi nuo botų?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/agentai/",
+        "/darbo-grandines/"
+      ],
+      "plannedContextTargets": [
+        "/agentai/",
+        "/komandos/",
+        "/darbo-grandines/"
+      ],
+      "discoverySources": [
+        "/ziniu-centras/",
+        "/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P47",
+      "pageId": null,
+      "url": "/straipsniai/",
+      "kind": "Indeksas",
+      "template": "Straipsnių sąrašas",
+      "readerQuestion": "Visi praktiniai automatizavimo, agentų ir integracijų gidai.",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/ziniu-centras/"
+      ],
+      "plannedContextTargets": [],
+      "discoverySources": [
+        "/ziniu-centras/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S1",
+      "pageId": null,
+      "url": "/straipsniai/b2b-kontaktu-atranka-duomenu-sodrinimas/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip atsirinkti tikslines įmones, papildyti jų duomenis ir įvertinti kontaktavimo sąlygas?",
+      "publicationGroup": "S1",
+      "publishAt": "2026-10-29T07:00:00.000Z",
+      "readyDeadline": "2026-10-27T10:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/pardavimai/",
+        "/kokybes-kontrole/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/pardavimai/",
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/pardavimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S2",
+      "pageId": null,
+      "url": "/straipsniai/komercinio-pasiulymo-automatizavimas/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip kliento užklausą paversti teisingu ir nuosekliu pasiūlymu?",
+      "publicationGroup": "S2",
+      "publishAt": "2026-11-03T07:00:00.000Z",
+      "readyDeadline": "2026-11-01T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/pardavimai/",
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/pardavimai/",
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/pardavimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S3",
+      "pageId": null,
+      "url": "/straipsniai/ai-balso-agentai-skambuciams/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip įvertinti lietuviškai kalbančio agento pokalbį ir jo veiksmus verslo sistemose?",
+      "publicationGroup": "S3",
+      "publishAt": "2026-11-05T07:00:00.000Z",
+      "readyDeadline": "2026-11-03T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/klientu-aptarnavimas/",
+        "/istekliai/demonstracijos/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/klientu-aptarnavimas/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/klientu-aptarnavimas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S4",
+      "pageId": null,
+      "url": "/straipsniai/klientu-aptarnavimo-eskalavimo-taisykles/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kokios sąlygos turi sustabdyti savarankišką atsakymą ar veiksmą?",
+      "publicationGroup": "S4",
+      "publishAt": "2026-11-10T07:00:00.000Z",
+      "readyDeadline": "2026-11-08T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/klientu-aptarnavimas/",
+        "/kokybes-kontrole/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/klientu-aptarnavimas/",
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/klientu-aptarnavimas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S5",
+      "pageId": null,
+      "url": "/straipsniai/autonominis-turinio-fabrikas/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip kelių agentų darbą paversti naudingu, patikrintu ir suplanuotu turiniu?",
+      "publicationGroup": "S5",
+      "publishAt": "2026-11-12T07:00:00.000Z",
+      "readyDeadline": "2026-11-10T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/rinkodara/",
+        "/sprendimai/seo-geo-automatizavimas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/rinkodara/",
+        "/sprendimai/seo-geo-automatizavimas/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/rinkodara/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S6",
+      "pageId": null,
+      "url": "/straipsniai/reklamos-biudzeto-valdymas/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kada biudžeto pakeitimas pagrįstas duomenimis ir kaip apriboti klaidingą veiksmą?",
+      "publicationGroup": "S6",
+      "publishAt": "2026-11-17T07:00:00.000Z",
+      "readyDeadline": "2026-11-15T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/reklamos-valdymas/",
+        "/sprendimai/duomenu-analitika/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/reklamos-valdymas/",
+        "/sprendimai/duomenu-analitika/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/reklamos-valdymas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S7",
+      "pageId": null,
+      "url": "/straipsniai/geo-optimizavimas-struktura/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip padaryti viešą turinį aiškų skaitytojui ir paieškos sistemoms?",
+      "publicationGroup": "S7",
+      "publishAt": "2026-11-19T07:00:00.000Z",
+      "readyDeadline": "2026-11-17T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/seo-geo-automatizavimas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/seo-geo-automatizavimas/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/seo-geo-automatizavimas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S8",
+      "pageId": null,
+      "url": "/straipsniai/dizaino-sistemos-automatizavimas/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip perkelti patvirtintus dizaino kintamuosius į kodą nesugadinant sąsajos?",
+      "publicationGroup": "S8",
+      "publishAt": "2026-11-24T07:00:00.000Z",
+      "readyDeadline": "2026-11-22T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/dizainas/",
+        "/sprendimai/programavimas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/dizainas/",
+        "/sprendimai/programavimas/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/dizainas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S9",
+      "pageId": null,
+      "url": "/straipsniai/automatinis-kodo-testavimas/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip agentų patikrą įtraukti į tikrą testavimo procesą ir išsaugoti įrodymus?",
+      "publicationGroup": "S9",
+      "publishAt": "2026-11-26T07:00:00.000Z",
+      "readyDeadline": "2026-11-24T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/programavimas/",
+        "/kokybes-kontrole/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/programavimas/",
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/programavimas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S10",
+      "pageId": null,
+      "url": "/straipsniai/klientu-atsiliepimu-analize/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip atsiliepimus sugrupuoti ir pagrįsti tobulinimo prioritetus?",
+      "publicationGroup": "S10",
+      "publishAt": "2026-12-01T07:00:00.000Z",
+      "readyDeadline": "2026-11-29T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/verslo-tyrimai/",
+        "/sprendimai/klientu-aptarnavimas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/verslo-tyrimai/",
+        "/sprendimai/klientu-aptarnavimas/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/verslo-tyrimai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S11",
+      "pageId": null,
+      "url": "/straipsniai/saskaitu-atpazinimas-ocr-buhalterija/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kokius sąskaitos laukus ištraukti, ką tikrinti ir kada perduoti žmogui?",
+      "publicationGroup": "S11",
+      "publishAt": "2026-12-03T07:00:00.000Z",
+      "readyDeadline": "2026-12-01T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/integracijos/b1/",
+        "/integracijos/rivile/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/integracijos/b1/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S12",
+      "pageId": null,
+      "url": "/straipsniai/skolu-priminimu-automatizavimas/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip priminti apie mokėjimą nesuklystant dėl jau apmokėtos ar ginčijamos sąskaitos?",
+      "publicationGroup": "S12",
+      "publishAt": "2026-12-08T07:00:00.000Z",
+      "readyDeadline": "2026-12-06T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/sprendimai/finansu-analitika/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/sprendimai/finansu-analitika/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/saskaitu-valdymas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S13",
+      "pageId": null,
+      "url": "/straipsniai/sutarciu-pasirasymas-dokobit/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip patikimai sekti sutarties parengimą, kvietimą ir galutinį pasirašymo rezultatą?",
+      "publicationGroup": "S13",
+      "publishAt": "2026-12-10T07:00:00.000Z",
+      "readyDeadline": "2026-12-08T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/dokumentu-valdymas/",
+        "/integracijos/dokobit/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/dokumentu-valdymas/",
+        "/integracijos/dokobit/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S14",
+      "pageId": null,
+      "url": "/straipsniai/vidine-ziniu-baze-rag/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip pateikti agentui tinkamus įmonės dokumentus ir tikrinti atsakymo pagrįstumą?",
+      "publicationGroup": "S14",
+      "publishAt": "2026-12-15T07:00:00.000Z",
+      "readyDeadline": "2026-12-13T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/ziniu-baze-rag/",
+        "/kokybes-kontrole/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/ziniu-baze-rag/",
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/ziniu-baze-rag/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S15",
+      "pageId": null,
+      "url": "/straipsniai/vidiniu-uzduociu-delegavimas/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip iš užklausos sukurti aiškią užduotį be dublikatų ir nepagrįstų terminų?",
+      "publicationGroup": "S15",
+      "publishAt": "2026-12-17T07:00:00.000Z",
+      "readyDeadline": "2026-12-15T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/operacijos/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/operacijos/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/operacijos/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "S16",
+      "pageId": null,
+      "url": "/straipsniai/darbuotojo-ivedimo-onboarding-automatizavimas/",
+      "kind": "article",
+      "template": "Straipsnio šablonas",
+      "readerQuestion": "Kaip suderinti dokumentus, prieigas ir darbuotojo pirmųjų dienų užduotis?",
+      "publicationGroup": "S16",
+      "publishAt": "2026-12-22T07:00:00.000Z",
+      "readyDeadline": "2026-12-20T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/hr-procesai/",
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/hr-procesai/",
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "discoverySources": [
+        "/straipsniai/",
+        "/sprendimai/hr-procesai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P48",
+      "pageId": null,
+      "url": "/palyginimai/",
+      "kind": "Indeksas",
+      "template": "Palyginimų sąrašas",
+      "readerQuestion": "Objektyvūs automatizavimo įrankių ir metodų palyginimai.",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/ziniu-centras/"
+      ],
+      "plannedContextTargets": [],
+      "discoverySources": [
+        "/ziniu-centras/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P49",
+      "pageId": null,
+      "url": "/palyginimai/make-vs-zapier-vs-n8n/",
+      "kind": "Palyginimas",
+      "template": "Palyginimo šablonas",
+      "readerQuestion": "Kurią orkestracijos platformą pasirinkti: Make, Zapier ar n8n?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/integracijos/make-n8n/",
+        "/darbo-grandines/"
+      ],
+      "plannedContextTargets": [
+        "/integracijos/make-n8n/",
+        "/darbo-grandines/"
+      ],
+      "discoverySources": [
+        "/palyginimai/",
+        "/integracijos/make-n8n/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P50",
+      "pageId": null,
+      "url": "/palyginimai/ai-agentai-vs-tradicinis-programavimas/",
+      "kind": "Palyginimas",
+      "template": "Palyginimo šablonas",
+      "readerQuestion": "Kada procesui reikia DI agento, o kada fiksuotos kodo funkcijos?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/ai-agentai/",
+        "/sprendimai/programavimas/"
+      ],
+      "plannedContextTargets": [
+        "/ai-agentai/",
+        "/sprendimai/programavimas/"
+      ],
+      "discoverySources": [
+        "/palyginimai/",
+        "/ai-agentai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P51",
+      "pageId": null,
+      "url": "/istekliai/",
+      "kind": "Indeksas",
+      "template": "Išteklių indeksas",
+      "readerQuestion": "Nemokami praktiniai įrankiai, šablonai, skaičiuoklės ir demonstracijos.",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/"
+      ],
+      "plannedContextTargets": [],
+      "discoverySources": [
+        "/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P52",
+      "pageId": null,
+      "url": "/istekliai/roi-skaiciuokle/",
+      "kind": "Įrankis",
+      "template": "Skaičiuoklė",
+      "readerQuestion": "Kiek lėšų ir darbo valandų sutaupytų komanda automatizavus procesus?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/kainodara/",
+        "/verslo-procesu-automatizavimas/"
+      ],
+      "plannedContextTargets": [
+        "/verslo-procesu-automatizavimas/",
+        "/kainodara/"
+      ],
+      "discoverySources": [
+        "/istekliai/",
+        "/kainodara/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P53",
+      "pageId": null,
+      "url": "/istekliai/procesu-audito-sablonas/",
+      "kind": "Šablonas",
+      "template": "Atsisiuntimas",
+      "readerQuestion": "Praktinis klausimynas įmonės procesų inventorizacijai ir atrankai.",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/verslo-procesu-automatizavimas/"
+      ],
+      "plannedContextTargets": [
+        "/verslo-procesu-automatizavimas/"
+      ],
+      "discoverySources": [
+        "/istekliai/",
+        "/verslo-procesu-automatizavimas/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P54",
+      "pageId": null,
+      "url": "/istekliai/demonstracijos/",
+      "kind": "Demonstracija",
+      "template": "Demonstracijų centras",
+      "readerQuestion": "Kaip atrodo konkretus agento procesas ir jo patikrinamas rezultatas?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/sprendimai/pardavimai/"
+      ],
+      "plannedContextTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/sprendimai/pardavimai/"
+      ],
+      "discoverySources": [
+        "/istekliai/",
+        "/kaip-veikia/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P55",
+      "pageId": null,
+      "url": "/pagalba/",
+      "kind": "Dokumentacija",
+      "template": "Žinynas",
+      "readerQuestion": "Kaip pasirinkti agentą, prijungti įrankį ir suprasti darbo grandinės būseną?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/kaip-veikia/",
+        "/darbo-grandines/"
+      ],
+      "plannedContextTargets": [
+        "/kaip-veikia/",
+        "/darbo-grandines/"
+      ],
+      "discoverySources": [],
+      "state": "planned"
+    },
+    {
+      "planKey": "P56",
+      "pageId": null,
+      "url": "/privatumas/",
+      "kind": "Teisinis",
+      "template": "Teisinis tekstas",
+      "readerQuestion": "Kas, kokiu tikslu ir pagal kokias sąlygas tvarko asmens duomenis?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [],
+      "plannedContextTargets": [
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [
+        "/kontaktai/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P57",
+      "pageId": null,
+      "url": "/salygos/",
+      "kind": "Teisinis",
+      "template": "Teisinis tekstas",
+      "readerQuestion": "Paslaugų teikimo ir sistemos naudojimo sąlygos.",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/kainodara/"
+      ],
+      "plannedContextTargets": [
+        "/kainodara/"
+      ],
+      "discoverySources": [
+        "/kainodara/"
+      ],
+      "state": "planned"
+    },
+    {
+      "planKey": "P58",
+      "pageId": null,
+      "url": "/agentu-kurejas/",
+      "kind": "Produkto funkcija",
+      "template": "Agentų kūrėjas",
+      "readerQuestion": "Kaip pagal aprašytą darbą sukurti agentą arba agentų komandą?",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "requiredTargets": [
+        "/kaip-veikia/",
+        "/agentai/",
+        "/darbo-grandines/",
+        "/kokybes-kontrole/"
+      ],
+      "plannedContextTargets": [
+        "/kaip-veikia/",
+        "/agentai/",
+        "/darbo-grandines/",
+        "/kokybes-kontrole/"
+      ],
+      "discoverySources": [
+        "/",
+        "/kaip-veikia/",
+        "/agentai/"
+      ],
+      "state": "planned"
+    }
+  ],
+  "articles": [
+    {
+      "key": "S1",
+      "h1": "B2B kontaktų atranka ir duomenų sodrinimas: procesas, kokybės patikra ir teisėta komunikacija",
+      "query": "B2B klientų paieška automatiškai",
+      "variants": [
+        "B2B kontaktų atranka",
+        "kontaktų duomenų sodrinimas",
+        "tiesioginė rinkodara juridiniams asmenims"
+      ],
+      "audience": "Pardavimų vadovas, kuris nori gauti tinkamų įmonių sąrašą ir patikimus kontaktus.",
+      "question": "Kaip atsirinkti tikslines įmones, papildyti jų duomenis ir įvertinti kontaktavimo sąlygas?",
+      "boundary": "Pardavimų sprendimo puslapis pristato visą procesą; šis gidas išsamiai nagrinėja atranką ir duomenų kokybę. Teisinė dalis yra proceso dalis, o ne viso gido pakaitalas.",
+      "sections": [
+        "Tikslinio kliento kriterijai: veikla, dydis, geografija, pirkimo signalas ir aiški atmetimo priežastis. Atskirti įmonės duomenis nuo konkretaus žmogaus duomenų.",
+        "Duomenų kilmė ir kokybė: išsaugoti šaltinį, surinkimo datą, faktą ir jo patikimumą; pašalinti dublikatus, nekurti numanomų adresų kaip patvirtintų kontaktų.",
+        "ERĮ 81 straipsnio 1 dalis: kai abonentas ar registruotasis paslaugų gavėjas yra juridinis asmuo, išankstinio sutikimo nereikia, tačiau būtina aiški, nemokama ir lengvai įgyvendinama galimybė atsisakyti tolesnės komunikacijos. Adreso rašyba pati savaime abonento statuso nenustato.",
+        "Vardiniams darbuotojų kontaktams nustatyti tinkamą BDAR teisinį pagrindą. Jeigu remiamasi 6 straipsnio 1 dalies f punktu, prieš tvarkymą įvertinti ir dokumentuoti teisėtą interesą, būtinumą bei interesų pusiausvyrą. Teisėtas interesas netaikomas automatiškai vien todėl, kad komunikacija yra B2B.",
+        "Numatyti taikytiną informavimą pagal BDAR 13 arba 14 straipsnį, teisę nesutikti pagal 21 straipsnį ir atsisakymo įrodymų saugojimą. Atsisakius tiesioginės rinkodaros nebetęsti. ERĮ 81 straipsnio 2 dalies esamo kliento, kuris yra fizinis asmuo, išimties nepateikti kaip bendros B2B taisyklės.",
+        "Perdavimas į CRM: kontaktavimo sprendimas, atsakingas asmuo ir draudimo kontaktuoti žyma. Siuntimo apimtį nustatyti pagal faktinį paslaugos teikėją ir kampaniją; universalaus saugaus laiškų kiekio nepateikti."
+      ],
+      "contribution": "Atrankos matrica ir kontaktavimo patikros lentelė su laukais šaltiniui, datai, abonento statusui, teisiniam pagrindui ir atsisakymui.",
+      "sources": [
+        "VDAI 2026-05-19 DUK",
+        "Aktuali ERĮ 81 straipsnio ir BDAR 6, 13, 14, 21 straipsnių redakcija"
+      ],
+      "agents": [
+        "sales/sales-outbound-strategist.md",
+        "testing/testing-reality-checker.md"
+      ],
+      "cta": "Peržiūrėti B2B kontaktų atrankos kontrolinį sąrašą",
+      "media": "Duomenų kelio schema: įmonės kriterijai → šaltinis → kokybės ir kontaktavimo patikra → CRM.",
+      "url": "/straipsniai/b2b-kontaktu-atranka-duomenu-sodrinimas/",
+      "readyDeadline": "2026-10-27T10:00:00.000Z",
+      "publishAt": "2026-10-29T07:00:00.000Z",
+      "localDate": "2026-10-29",
+      "requiredTargets": [
+        "/sprendimai/pardavimai/",
+        "/kokybes-kontrole/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S2",
+      "h1": "Komercinių pasiūlymų rengimo automatizavimas: nuo kliento užklausos iki PDF",
+      "query": "komercinio pasiūlymo rengimas automatiškai",
+      "variants": [
+        "komercinio pasiūlymo šablonas",
+        "pasiūlymų generavimas iš CRM"
+      ],
+      "audience": "Pardavimų vadybininkas ir vadovas, prižiūrintis kainodaros taisykles.",
+      "question": "Kaip kliento užklausą paversti teisingu ir nuosekliu pasiūlymu?",
+      "boundary": "Nagrinėja pasiūlymo rengimą, o ne kontaktų paiešką ar elektroninį pasirašymą.",
+      "sections": [
+        "Iš laiško ar susitikimo užrašų išskirti poreikį, apimtį, terminą ir aiškiai trūkstamą informaciją. Nepaversti kliento nutylėtų sąlygų faktais.",
+        "Kainas, nuolaidų ribas ir mokesčius imti iš patvirtintų struktūrizuotų taisyklių. Agentas rengia turinį, o skaičiavimai tikrinami atskirai.",
+        "Užpildyti dokumento šabloną, patikrinti sumas, versiją ir gavėją. Pasiūlymo parengimą ir jo išsiuntimą pateikti kaip atskirus veiksmus.",
+        "Parodyti iliustracinę užklausą, iš jos gautus laukus ir pasiūlymo struktūrą; tikro darbo greičio nežadėti be matavimo."
+      ],
+      "contribution": "Užklausos laukų žemėlapis ir pasiūlymo struktūra: poreikis, sprendimas, etapai, sąmata, sąlygos.",
+      "sources": [
+        "Faktinis V2 dokumentų kelias ir įmonės kainodaros taisyklės",
+        "Pasirinkto PDF generatoriaus dokumentacija"
+      ],
+      "agents": [
+        "sales/sales-deal-strategist.md",
+        "support/support-support-responder.md"
+      ],
+      "cta": "Peržiūrėti komercinio pasiūlymo struktūrą",
+      "media": "Vienos iliustracinės užklausos laukų susiejimas su pasiūlymo skyriais.",
+      "url": "/straipsniai/komercinio-pasiulymo-automatizavimas/",
+      "readyDeadline": "2026-11-01T16:00:00.000Z",
+      "publishAt": "2026-11-03T07:00:00.000Z",
+      "localDate": "2026-11-03",
+      "requiredTargets": [
+        "/sprendimai/pardavimai/",
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S3",
+      "h1": "DI balso agentai klientų skambučiams: lietuvių kalba, delsa ir CRM integracija",
+      "query": "AI balso asistentas skambučiams lietuviškai",
+      "variants": [
+        "DI balso agentas klientams",
+        "balso agento integracija su CRM"
+      ],
+      "audience": "Aptarnavimo vadovas ir techninis specialistas, vertinantys skambučių automatizavimą.",
+      "question": "Kaip įvertinti lietuviškai kalbančio agento pokalbį ir jo veiksmus verslo sistemose?",
+      "boundary": "Bendras aptarnavimo puslapis pristato kanalus; šis gidas nagrinėja garsą, delsą ir skambučio tęstinumą.",
+      "sections": [
+        "Aprašyti faktiškai pasirinktą balso architektūrą. STT → kalbos modelis → TTS grandinę pateikti kaip konkretaus varianto schemą; nevadinti jos vienintele visų balso agentų architektūra. WebRTC yra garso perdavimo dalis.",
+        "Atskirti vartotojo kalbos pabaigą, pirmą išgirstą atsakymo garsą, įrankio vykdymą ir viso veiksmo trukmę. Užrašyti testavimo kanalą, modelių versijas, tinklo sąlygas ir imties dydį.",
+        "Vertinti lietuviškus vardus, datas, sumas, pertraukimą, tylą ir triukšmą. Rodyti rezultatus tik turint išsaugotą matavimo protokolą.",
+        "CRM įrašymas, tapatybės patikra ir perdavimas darbuotojui turi išlaikyti pokalbio kontekstą. Demonstracinį skambutį aiškiai įvardyti ir naudoti sintetinius duomenis."
+      ],
+      "contribution": "Pakartojamas bandymo protokolas ir atskirai parengti lietuviško pokalbio pavyzdžiai.",
+      "sources": [
+        "Faktinio V2 balso modulio architektūra",
+        "Naudojamos telefonijos ir balso API dokumentacija",
+        "Išsaugoti bandymų įrašai ir protokolas"
+      ],
+      "agents": [
+        "support/support-support-responder.md",
+        "specialized/specialized-workflow-architect.md"
+      ],
+      "cta": "Peržiūrėti balso agento integracijos schemą",
+      "media": "Garso perdavimo, apdorojimo, įrankių ir CRM veiksmų schema su atskirais matavimo taškais.",
+      "url": "/straipsniai/ai-balso-agentai-skambuciams/",
+      "readyDeadline": "2026-11-03T16:00:00.000Z",
+      "publishAt": "2026-11-05T07:00:00.000Z",
+      "localDate": "2026-11-05",
+      "requiredTargets": [
+        "/sprendimai/klientu-aptarnavimas/",
+        "/istekliai/demonstracijos/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S4",
+      "h1": "Klientų aptarnavimo eskalavimo taisyklės: kada DI agentas perduoda pokalbį darbuotojui",
+      "query": "klientų aptarnavimo eskalavimo taisyklės",
+      "variants": [
+        "kada DI agentas perduoda pokalbį žmogui",
+        "pokalbių agento saugikliai"
+      ],
+      "audience": "Klientų aptarnavimo vadovas.",
+      "question": "Kokios sąlygos turi sustabdyti savarankišką atsakymą ar veiksmą?",
+      "boundary": "Pateikia perdavimo sprendimą ir kontekstą; nepakartoja viso aptarnavimo kanalų aprašo.",
+      "sections": [
+        "Nustatyti aiškias perdavimo priežastis: vartotojo prašymas, nepatikima tapatybė, nepakankami duomenys, incidentas ar veiksmui trūkstami įgaliojimai.",
+        "Nepatenkinto kliento toną naudoti kaip papildomą signalą. Finansines ir prieigos ribas tikrinti taisyklėmis, o ne vien nuotaikos klasifikatoriumi.",
+        "Darbuotojui perduoti klausimą, patikrintus faktus, jau atliktus veiksmus ir laukiamą sprendimą. Numatyti nepasiekiamo darbuotojo būseną.",
+        "Išbandyti aiškius, ribinius ir prieštaringus atvejus; fiksuoti, kas ir kada perėmė atsakomybę."
+      ],
+      "contribution": "Sąlygos, veiksmo ir atsakingo asmens matrica bei perdavimo santraukos šablonas.",
+      "sources": [
+        "V2 perdavimo ir įgaliojimų taisyklės",
+        "Naudojamos CRM arba aptarnavimo sistemos API"
+      ],
+      "agents": [
+        "support/support-support-responder.md",
+        "testing/testing-reality-checker.md"
+      ],
+      "cta": "Peržiūrėti pokalbio perdavimo taisyklių matricą",
+      "media": "Sprendimų medis, parodantis savarankišką atsakymą, stabdymą ir perdavimą žmogui.",
+      "url": "/straipsniai/klientu-aptarnavimo-eskalavimo-taisykles/",
+      "readyDeadline": "2026-11-08T16:00:00.000Z",
+      "publishAt": "2026-11-10T07:00:00.000Z",
+      "localDate": "2026-11-10",
+      "requiredTargets": [
+        "/sprendimai/klientu-aptarnavimas/",
+        "/kokybes-kontrole/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S5",
+      "h1": "Autonominis turinio fabrikas: tyrimas, straipsnio rengimas ir patikra su DI agentais",
+      "query": "turinio kūrimo automatizavimas su DI agentais",
+      "variants": [
+        "automatizuotas straipsnių rašymas",
+        "SEO turinio rengimo procesas"
+      ],
+      "audience": "Rinkodaros vadovas ir turinio redaktorius.",
+      "question": "Kaip kelių agentų darbą paversti naudingu, patikrintu ir suplanuotu turiniu?",
+      "boundary": "Aprašo straipsnio rengimo procesą; SEO ir GEO techninę struktūrą išsamiau nagrinėja S7.",
+      "sections": [
+        "Skaitytojo klausimas ir esamas URL nustatomi prieš rašymą. Tyrėjas surenka šaltinius, autorius parengia atsakymą, tikrintojas vertina faktus ir originalią naudą.",
+        "Peržiūra siejama su tikslia teksto, vaizdų ir nuorodų versija. Nei vertinimo trukmė minutėmis, nei agentų skaičius neįrodo kokybės.",
+        "Verslomatikoje naudoti bendrą core: planas → juodraštis → ryšiai → revizijos peržiūra → patvirtintas leidimas → įdiegimas → publikavimo data.",
+        "TVS integraciją pateikti kaip konkretų pasirinktą išvesties adapterį. Rašymas, patvirtinimas ir viešas paskelbimas išlieka skirtingi veiksmai."
+      ],
+      "contribution": "Redakcinės patikros lentelė ir agentų atsakomybių seka su taisymo grįžtamuoju ryšiu.",
+      "sources": [
+        "Google people-first turinio gairės",
+        "CONTENT_CORE ir faktinė studijos eiga"
+      ],
+      "agents": [
+        "marketing/marketing-content-creator.md",
+        "testing/testing-reality-checker.md",
+        "marketing/marketing-seo-specialist.md"
+      ],
+      "cta": "Peržiūrėti turinio rengimo ir patikros seką",
+      "media": "Bendra turinio kelio schema su revizijos peržiūra ir publikavimo datos vartais.",
+      "url": "/straipsniai/autonominis-turinio-fabrikas/",
+      "readyDeadline": "2026-11-10T16:00:00.000Z",
+      "publishAt": "2026-11-12T07:00:00.000Z",
+      "localDate": "2026-11-12",
+      "requiredTargets": [
+        "/sprendimai/rinkodara/",
+        "/sprendimai/seo-geo-automatizavimas/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S6",
+      "h1": "Reklamos biudžeto automatizavimas: ROAS, duomenų kokybė ir išlaidų ribos",
+      "query": "reklamos biudžeto valdymas automatiškai",
+      "variants": [
+        "Google Ads biudžeto taisyklės",
+        "Meta reklamos ROAS automatizavimas"
+      ],
+      "audience": "Mokamos reklamos specialistas ir finansų vadovas.",
+      "question": "Kada biudžeto pakeitimas pagrįstas duomenimis ir kaip apriboti klaidingą veiksmą?",
+      "boundary": "Konkrečios skaičiavimo ir vykdymo taisyklės; komercinio reklamos valdymo puslapio nedubliuoja.",
+      "sections": [
+        "Kai konversijos vertė yra pajamos, ROAS apskaičiuojamas reklamai priskirtas pajamas dalijant iš reklamos išlaidų. Tai nėra pelno rodiklis. Jeigu platformai perduodama marža ar kita vertė, aiškiai įvardyti šią matavimo prielaidą ir nesuplakti jos su pajamomis.",
+        "Suderinti konversijų laikotarpį, valiutą, priskyrimą ir duomenų vėlavimą. CRM įplaukų ir reklamos platformos rodiklių nelyginti kaip tapačių duomenų.",
+        "Pavyzdines ribas įvardyti kaip pasirinktos kampanijos prielaidas. Numatyti minimalų duomenų kiekį, dienos išlaidų ribą, vieno pakeitimo dydį ir grįžimo sąlygą.",
+        "Neigiamas užklausas ir biudžeto pakeitimus tikrinti prieš vykdymą; parodyti sprendimo žurnalą ir sustabdymo mechanizmą."
+      ],
+      "contribution": "Taisyklių pavyzdys su duomenų pakankamumo, išlaidų ir pakeitimo dydžio ribomis.",
+      "sources": [
+        "Aktuali Google Ads ir Meta Marketing API dokumentacija",
+        "Iliustracinio skaičiavimo prielaidos ir patikrintos formulės"
+      ],
+      "agents": [
+        "paid-media/paid-media-ppc-strategist.md",
+        "paid-media/paid-media-search-query-analyst.md"
+      ],
+      "cta": "Peržiūrėti reklamos biudžeto taisyklių pavyzdį",
+      "media": "Pajamų, reklamos išlaidų ir maržos atskyrimo lentelė bei sprendimo schema.",
+      "url": "/straipsniai/reklamos-biudzeto-valdymas/",
+      "readyDeadline": "2026-11-15T16:00:00.000Z",
+      "publishAt": "2026-11-17T07:00:00.000Z",
+      "localDate": "2026-11-17",
+      "requiredTargets": [
+        "/sprendimai/reklamos-valdymas/",
+        "/sprendimai/duomenu-analitika/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S7",
+      "h1": "SEO ir GEO turinio struktūra: aiškūs atsakymai, esybės ir tikslūs struktūriniai duomenys",
+      "query": "GEO optimizavimas svetainės struktūra",
+      "variants": [
+        "svetainės parengimas DI paieškai",
+        "SEO struktūriniai duomenys"
+      ],
+      "audience": "SEO specialistas ir svetainės programuotojas.",
+      "question": "Kaip padaryti viešą turinį aiškų skaitytojui ir paieškos sistemoms?",
+      "boundary": "Nagrinėja vieno puslapio ir svetainės techninę išraišką; turinio gamybos eigą palieka S5.",
+      "sections": [
+        "Aiški antraštė, tiesioginis atsakymas, patikrinami faktai ir prasmingos nuorodos normaliai matomame HTML. Skaitytojui ir robotui teikti tas pačias faktines žinias.",
+        "Article, Organization, BreadcrumbList ar kitą tipą rinktis pagal matomą tikrą turinį. FAQPage ar specialus DI ženklinimas nėra privalomas šablonas.",
+        "Google AI funkcijoms galioja įprasti SEO principai; nėra specialios privalomos Schema.org schemos ar garantuoto citavimo. Techninė atitiktis negarantuoja indeksavimo.",
+        "Naudoti bendrą viešumo sąlygas atitinkančio turinio projekciją HTML, sitemap, schemoms ir esamoms LLM išvestims. llms.txt palaikyti per core, ne rankinę kopiją."
+      ],
+      "contribution": "Matomo puslapio ir jo struktūrinių duomenų atitikties pavyzdys bei patikros sąrašas.",
+      "sources": [
+        "Google AI features and your website",
+        "Google people-first turinio gairės",
+        "Pasirinktų Schema.org tipų oficialūs aprašai"
+      ],
+      "agents": [
+        "marketing/marketing-seo-specialist.md",
+        "engineering/engineering-frontend-developer.md"
+      ],
+      "cta": "Peržiūrėti puslapio ir struktūrinių duomenų atitikties pavyzdį",
+      "media": "Vieno turinio šaltinio kelias į HTML, naršymo kelią, sitemap ir LLM išvestis.",
+      "url": "/straipsniai/geo-optimizavimas-struktura/",
+      "readyDeadline": "2026-11-17T16:00:00.000Z",
+      "publishAt": "2026-11-19T07:00:00.000Z",
+      "localDate": "2026-11-19",
+      "requiredTargets": [
+        "/sprendimai/seo-geo-automatizavimas/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S8",
+      "h1": "Dizaino sistemos automatizavimas: Figma kintamieji, kodas ir vizualinė patikra",
+      "query": "dizaino sistemos automatizavimas Figma",
+      "variants": [
+        "design tokens sinchronizavimas su kodu",
+        "Figma kintamieji CSS"
+      ],
+      "audience": "Dizaineris ir sąsajos programuotojas.",
+      "question": "Kaip perkelti patvirtintus dizaino kintamuosius į kodą nesugadinant sąsajos?",
+      "boundary": "Konkreti kintamųjų perdavimo grandinė; UX tyrimų ir visos dizaino paslaugos neperpasakoja.",
+      "sections": [
+        "Nustatyti vieną reikšmių šaltinį, semantinius kintamuosius, tipus ir temų variantus. Atskirti pirmines reikšmes nuo jų taikymo komponentuose.",
+        "Eksporto arba API būdą pasirinkti pagal realias Figma paskyros teises ir dokumentaciją. Nežadėti konkretaus webhook įvykio jo nepatikrinus.",
+        "Konvertuoti tik leidžiamus laukus į projekto CSS ar kitą esamą formatą ir pateikti peržiūrimą kodo pakeitimą.",
+        "Tikrinti lietuviškus tekstus, tikrus šriftų svorius, kontrastą, mobilų vaizdą ir 200 procentų teksto didinimą."
+      ],
+      "contribution": "Kintamųjų susiejimo lentelė ir mažas konvertavimo pavyzdys su prieš ir po patikra.",
+      "sources": [
+        "Figma Variables API dokumentacija ir faktinės prieigos sąlygos",
+        "Design Tokens Community Group specifikacija",
+        "Projekto dizaino ir tipografikos sistema"
+      ],
+      "agents": [
+        "design/design-ui-designer.md",
+        "engineering/engineering-frontend-developer.md"
+      ],
+      "cta": "Peržiūrėti dizaino kintamųjų susiejimo pavyzdį",
+      "media": "Figma semantinio kintamojo, JSON reikšmės ir CSS taikymo palyginimas.",
+      "url": "/straipsniai/dizaino-sistemos-automatizavimas/",
+      "readyDeadline": "2026-11-22T16:00:00.000Z",
+      "publishAt": "2026-11-24T07:00:00.000Z",
+      "localDate": "2026-11-24",
+      "requiredTargets": [
+        "/sprendimai/dizainas/",
+        "/sprendimai/programavimas/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S9",
+      "h1": "Automatinis kodo testavimas: DI agentai, saugumo patikra ir CI/CD",
+      "query": "automatinis kodo testavimas CI CD",
+      "variants": [
+        "DI sugeneruoto kodo saugumo auditas",
+        "automatizuota kodo peržiūra"
+      ],
+      "audience": "Programuotojas ir techninis vadovas.",
+      "question": "Kaip agentų patikrą įtraukti į tikrą testavimo procesą ir išsaugoti įrodymus?",
+      "boundary": "Aprašo testus ir saugumo peržiūrą; bendras kūrimo ciklas lieka programavimo sprendimo puslapyje.",
+      "sections": [
+        "API Tester pritaikyti API testams, Reality Checker – rezultato įrodymų kritinei peržiūrai, AI-Generated Code Security Auditor – DI sugeneruoto kodo saugumo peržiūrai. Vaidmenis sieti su prisegtu profilio failu.",
+        "agency-agents Markdown profilis aprašo vaidmenį ir instrukcijas. CI vykdymui reikia realaus V2 ar kito prižiūrimo vykdiklio, įrankių, ribotų prieigų ir sutarto išvesties formato.",
+        "Atskirti deterministinius testus, agento išvadą ir žmogaus sprendimą. Neleisti agentui uždengti nepraėjusio testo bendru kokybės įvertinimu.",
+        "Išsaugoti pirmą nesėkmę, pataisą ir pakartotinio bandymo rezultatą. Kodo pataisos pateikimą ir jos sujungimą laikyti atskirais veiksmais."
+      ],
+      "contribution": "Peržiūrimas CI darbo eigos pavyzdys ir ataskaitos forma su komanda, rezultatu bei įrodymu.",
+      "sources": [
+        "Prisegti agency-agents profiliai",
+        "GitHub Actions ir pasirinkto testavimo įrankio dokumentacija",
+        "Aktualūs OWASP dokumentai pagal tikrinamą problemą"
+      ],
+      "agents": [
+        "testing/testing-reality-checker.md",
+        "testing/testing-api-tester.md",
+        "security/security-ai-generated-code-auditor.md"
+      ],
+      "cta": "Peržiūrėti CI testų ir agento ataskaitos struktūrą",
+      "media": "Kodo pakeitimas → testai → agento peržiūra → pataisa → pakartotiniai testai.",
+      "url": "/straipsniai/automatinis-kodo-testavimas/",
+      "readyDeadline": "2026-11-24T16:00:00.000Z",
+      "publishAt": "2026-11-26T07:00:00.000Z",
+      "localDate": "2026-11-26",
+      "requiredTargets": [
+        "/sprendimai/programavimas/",
+        "/kokybes-kontrole/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S10",
+      "h1": "Klientų atsiliepimų analizė: nuo skirtingų kanalų iki produkto prioritetų",
+      "query": "klientų atsiliepimų analizė automatiškai",
+      "variants": [
+        "atsiliepimų grupavimas",
+        "klientų grįžtamojo ryšio analizė"
+      ],
+      "audience": "Produkto vadovas ir aptarnavimo analitikas.",
+      "question": "Kaip atsiliepimus sugrupuoti ir pagrįsti tobulinimo prioritetus?",
+      "boundary": "Analizuoja jau turimus atsiliepimus; rinkos ir konkurentų stebėjimas lieka verslo tyrimų sprendime.",
+      "sections": [
+        "Sujungti leistinus kanalus, pašalinti dublikatus ir išsaugoti atsiliepimo kilmę. Nevienodą kanalų imtį aptarti prieš darant išvadas.",
+        "Atskiriamos klaidos, naujų funkcijų prašymai ir naudojimo sunkumai. Vienam atsiliepimui prireikus priskirti kelias temas.",
+        "Dažnumą, poveikį ir įgyvendinimo sąnaudas vertinti atskirai. Kategorijos reikšmę patikrinti su žmogaus sužymėta imtimi.",
+        "Parodyti sintetinį pavyzdį su pirminiais tekstais ir patikrinti, ar suvestinės išvada remiasi būtent jais. Išgalvotos didelės imties nepristatyti kaip tyrimo."
+      ],
+      "contribution": "Kategorijų aprašai, prieštaringų atvejų taisyklės ir produkto sprendimo suvestinė.",
+      "sources": [
+        "Paties straipsnio aiškiai pažymėtas sintetinis pavyzdys",
+        "Faktinio atsiliepimų šaltinio prieigos ir naudojimo sąlygos"
+      ],
+      "agents": [
+        "product/product-feedback-synthesizer.md",
+        "support/support-analytics-reporter.md"
+      ],
+      "cta": "Peržiūrėti atsiliepimų klasifikavimo lentelę",
+      "media": "Keli atsiliepimai, jų kategorijos ir iš jų išvedamas prioritetas.",
+      "url": "/straipsniai/klientu-atsiliepimu-analize/",
+      "readyDeadline": "2026-11-29T16:00:00.000Z",
+      "publishAt": "2026-12-01T07:00:00.000Z",
+      "localDate": "2026-12-01",
+      "requiredTargets": [
+        "/sprendimai/verslo-tyrimai/",
+        "/sprendimai/klientu-aptarnavimas/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S11",
+      "h1": "Sąskaitų atpažinimas ir OCR: duomenų patikra prieš perkėlimą į apskaitą",
+      "query": "sąskaitų atpažinimas OCR buhalterija",
+      "variants": [
+        "sąskaitų suvedimas automatiškai",
+        "PDF sąskaitos nuskaitymas"
+      ],
+      "audience": "Buhalteris ir finansų procesų vadovas.",
+      "question": "Kokius sąskaitos laukus ištraukti, ką tikrinti ir kada perduoti žmogui?",
+      "boundary": "OCR, laukų patikra ir paruošimas eksportui; konkrečių B1 ir Rivilės API parametrų gidas jų nedubliuoja.",
+      "sections": [
+        "Paaiškinti teksto išgavimą ir struktūrizavimą, atskiriant skaitmeninį PDF nuo skenuoto vaizdo. Rezultatai priklauso nuo dokumento kokybės.",
+        "Patikrinti dokumento numerį, šalis, valiutą, eilutes ir sumas. Realius mokestinius atvejus pagrįsti galiojančiomis taisyklėmis; nekeisti jų į apibendrintą vienos formulės pažadą.",
+        "Aptikti dublikatą, neaiškią reikšmę ir neatitikimą užsakymui. Klaidos neturi automatiškai virsti apskaitos įrašu.",
+        "Parodyti sintetinį dokumentą, gautą JSON ir patikros rezultatą. Greičio ar tikslumo procentus skelbti tik su konkrečia bandymo imtimi."
+      ],
+      "contribution": "Ištrauktų laukų ir patikros klaidų pavyzdys su aiškiu stabdymo sprendimu.",
+      "sources": [
+        "Aktuali B1 ir Rivilės API dokumentacija pasirinktam produktui",
+        "Faktinės V2 nuskaitymo ir validavimo taisyklės",
+        "Mokestinio pavyzdžio pirminis šaltinis, jei toks pavyzdys naudojamas"
+      ],
+      "agents": [
+        "support/support-finance-tracker.md",
+        "testing/testing-reality-checker.md"
+      ],
+      "cta": "Peržiūrėti sąskaitos laukų patikros pavyzdį",
+      "media": "Sintetinė sąskaita → ištraukti laukai → patikra → apskaitos įrašo projektas.",
+      "url": "/straipsniai/saskaitu-atpazinimas-ocr-buhalterija/",
+      "readyDeadline": "2026-12-01T16:00:00.000Z",
+      "publishAt": "2026-12-03T07:00:00.000Z",
+      "localDate": "2026-12-03",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/integracijos/b1/",
+        "/integracijos/rivile/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S12",
+      "h1": "Mokėjimų priminimų automatizavimas: apmokėjimo patikra ir mandagi komunikacija",
+      "query": "skolų priminimų automatizavimas",
+      "variants": [
+        "vėluojančių mokėjimų priminimų šablonai",
+        "sąskaitų apmokėjimo sekimas"
+      ],
+      "audience": "Finansų specialistas ir paslaugų verslo vadovas.",
+      "question": "Kaip priminti apie mokėjimą nesuklystant dėl jau apmokėtos ar ginčijamos sąskaitos?",
+      "boundary": "Mokėjimo būsenos ir priminimų eiga; nepakeičia teisinio skolų išieškojimo ar visos finansų analitikos.",
+      "sections": [
+        "Prieš kiekvieną priminimą iš naujo sutikrinti apmokėjimą, sumą, kreditinį dokumentą, ginčą ir mokėjimo susitarimą.",
+        "Pateikti pasirenkamą keturių žingsnių seką. Dienos yra aiškiai įvardyti pavyzdžio nustatymai, ne teisės aktu nustatyti terminai.",
+        "Atskirti informacinį priminimą, žmogaus kontaktą ir pagal sutartį galimą kitą veiksmą. Nežadėti automatinio paslaugos sustabdymo kaip visuotinės teisės.",
+        "Parodyti dubliavimo prevenciją, gavėjo patikrą ir sustabdymą pasikeitus mokėjimo būsenai."
+      ],
+      "contribution": "Keturi pavyzdiniai tekstai ir jų siuntimo bei sustabdymo sąlygų lentelė.",
+      "sources": [
+        "Faktinės sutarties ir mokėjimų derinimo taisyklės",
+        "Galiojantys pirminiai teisės šaltiniai tik toms teisinėms išvadoms, kurios pateikiamos"
+      ],
+      "agents": [
+        "support/support-finance-tracker.md",
+        "support/support-support-responder.md"
+      ],
+      "cta": "Peržiūrėti mokėjimo priminimų tekstus ir sąlygas",
+      "media": "Būsenų schema: neapmokėta, suderinta, ginčijama, apmokėta ir priminimo sustabdymas.",
+      "url": "/straipsniai/skolu-priminimu-automatizavimas/",
+      "readyDeadline": "2026-12-06T16:00:00.000Z",
+      "publishAt": "2026-12-08T07:00:00.000Z",
+      "localDate": "2026-12-08",
+      "requiredTargets": [
+        "/sprendimai/saskaitu-valdymas/",
+        "/sprendimai/finansu-analitika/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S13",
+      "h1": "Sutarčių rengimas ir pasirašymas su Dokobit: procesas nuo CRM iki dokumento archyvo",
+      "query": "sutarčių pasirašymas Dokobit API integracija",
+      "variants": [
+        "automatizuotas sutarčių rengimas",
+        "elektroninis parašas B2B sutartyse"
+      ],
+      "audience": "Operacijų vadovas ir integracijos programuotojas.",
+      "question": "Kaip patikimai sekti sutarties parengimą, kvietimą ir galutinį pasirašymo rezultatą?",
+      "boundary": "Visas dokumento procesas; Dokobit integracijos puslapis aprašo jungties techninius reikalavimus.",
+      "sections": [
+        "Sutarties projektą rengti iš patvirtintų CRM laukų ir šablono. Prieš kvietimą patikrinti šalį, gavėją ir dokumento versiją.",
+        "Dokobit produkto ir API būdą parinkti pagal realią dokumentaciją bei turimą prieigą. Dokumento pateikimas pasirašyti pats savaime nėra kvalifikuoto parašo įrodymas.",
+        "Patikrinti pranešimo kilmę ir pasirašymo būseną, apdoroti pasikartojančius įvykius ir atsisiųsti tikrą galutinį dokumentą.",
+        "Atskirti elektroninio parašo teisinį lygį nuo API techninio pavyzdžio. API adresus, parametrus ir parašo rezultatą prieš publikavimą patikrinti pirminiame šaltinyje."
+      ],
+      "contribution": "Duomenų ir būsenų schema su nepasirašymo, pasikartojančio įvykio ir galutinio archyvavimo atvejais.",
+      "sources": [
+        "Oficiali pasirinkto Dokobit API produkto dokumentacija",
+        "Aktualus eIDAS tekstas ir taikytina parašo patikra"
+      ],
+      "agents": [
+        "specialized/specialized-workflow-architect.md",
+        "testing/testing-reality-checker.md"
+      ],
+      "cta": "Peržiūrėti sutarčių automatizavimo proceso schemą",
+      "media": "CRM → sutarties projektas → kvietimas → būsenos patikra → galutinis archyvas.",
+      "url": "/straipsniai/sutarciu-pasirasymas-dokobit/",
+      "readyDeadline": "2026-12-08T16:00:00.000Z",
+      "publishAt": "2026-12-10T07:00:00.000Z",
+      "localDate": "2026-12-10",
+      "requiredTargets": [
+        "/sprendimai/dokumentu-valdymas/",
+        "/integracijos/dokobit/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S14",
+      "h1": "Vidinė įmonės žinių bazė ir RAG: dokumentų parengimas, prieigos ir atsakymai su šaltiniais",
+      "query": "vidinė įmonės žinių bazė RAG diegimas",
+      "variants": [
+        "RAG veikimo principas versle",
+        "DI atsakymai iš įmonės dokumentų"
+      ],
+      "audience": "IT ir operacijų vadovas.",
+      "question": "Kaip pateikti agentui tinkamus įmonės dokumentus ir tikrinti atsakymo pagrįstumą?",
+      "boundary": "Dokumentų parengimo, paieškos ir patikros metodika; bendras komercinis diegimas lieka RAG sprendimo puslapyje.",
+      "sections": [
+        "Atskirti pokalbio būseną, struktūrizuotus duomenis ir paiešką dokumentuose. Ne kiekvienam agento veiksmui reikia RAG.",
+        "Segmentuoti dokumentus išsaugant antraštes, versiją, kilmę ir prieigos teises. Nedėti universalaus visiems dokumentams tinkamo segmento dydžio.",
+        "Prieigos filtrą taikyti prieš pateikiant dokumento turinį modeliui. Užklausos tekstu neleisti pakeisti dokumentų matomumo.",
+        "Tikrinti atsakymą ir jo šaltinio ištrauką. Neradus pagrindo agentas turi pranešti apie informacijos trūkumą arba perduoti klausimą. RAG nesuteikia garantijos, kad klaidų nebebus."
+      ],
+      "contribution": "Dokumentų parengimo matrica ir keli atsakymo su šaltiniu bei atsisakymo atsakyti atvejai.",
+      "sources": [
+        "Faktinė V2 paieškos ir prieigos architektūra",
+        "Pasirinktos paieškos sistemos pirminė dokumentacija",
+        "Išsaugoti atsakymo ir šaltinio atitikties bandymai"
+      ],
+      "agents": [
+        "specialized/zk-steward.md",
+        "testing/testing-reality-checker.md"
+      ],
+      "cta": "Peržiūrėti žinių bazės dokumentų parengimo matricą",
+      "media": "Prieigos filtras → dokumentų paieška → šaltinio ištrauka → pagrįstas atsakymas arba perdavimas.",
+      "url": "/straipsniai/vidine-ziniu-baze-rag/",
+      "readyDeadline": "2026-12-13T16:00:00.000Z",
+      "publishAt": "2026-12-15T07:00:00.000Z",
+      "localDate": "2026-12-15",
+      "requiredTargets": [
+        "/sprendimai/ziniu-baze-rag/",
+        "/kokybes-kontrole/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S15",
+      "h1": "Užduočių delegavimo automatizavimas: nuo kliento laiško iki atsakingo komandos nario",
+      "query": "užduočių delegavimo automatizavimas",
+      "variants": [
+        "kliento laiško pavertimas užduotimi",
+        "operacijų automatizavimas projektų sistemoje"
+      ],
+      "audience": "Operacijų ir projektų vadovas.",
+      "question": "Kaip iš užklausos sukurti aiškią užduotį be dublikatų ir nepagrįstų terminų?",
+      "boundary": "Vienos užklausos pavertimas valdoma užduotimi; dokumentų valdymo ir viso projektų portfelio nedubliuoja.",
+      "sections": [
+        "Išskirti norimą rezultatą, reikalingus duomenis ir atsakomybės ribą. Atskirti pasiūlytą terminą nuo jau sutarto įsipareigojimo.",
+        "Pagal patvirtintas taisykles pasirinkti komandą ir atsakingą asmenį. Neaiškią užklausą perduoti tikslinti.",
+        "Naudoti šaltinio identifikatorių dublikatams išvengti. Kurti tik realios projektų sistemos palaikomus laukus ir būsenas.",
+        "Kontroliuoti terminus, priklausomybes ir perdavimą kitam atsakingam asmeniui; suvestinėje rodyti sprendimo priežastį."
+      ],
+      "contribution": "Užklausos laukų ir atsakomybės matrica su pasikartojančio laiško pavyzdžiu.",
+      "sources": [
+        "Pasirinktos Jira, Asana arba ClickUp API dokumentacija",
+        "V2 užduoties identiteto ir vykdymo būsenos taisyklės"
+      ],
+      "agents": [
+        "project-management/project-management-project-shepherd.md",
+        "project-management/project-management-studio-producer.md"
+      ],
+      "cta": "Peržiūrėti užduočių delegavimo taisyklių pavyzdį",
+      "media": "Laiškas → užduoties laukai → atsakingas asmuo → vykdymas ir grįžtamasis ryšys.",
+      "url": "/straipsniai/vidiniu-uzduociu-delegavimas/",
+      "readyDeadline": "2026-12-15T16:00:00.000Z",
+      "publishAt": "2026-12-17T07:00:00.000Z",
+      "localDate": "2026-12-17",
+      "requiredTargets": [
+        "/sprendimai/operacijos/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    },
+    {
+      "key": "S16",
+      "h1": "Naujo darbuotojo įvedimo automatizavimas: prieigos, mokymosi medžiaga ir kontroliniai taškai",
+      "query": "darbuotojo įvedimo automatizavimas",
+      "variants": [
+        "naujo darbuotojo įvedimo planas",
+        "onboarding kontrolinis sąrašas"
+      ],
+      "audience": "Personalo ir operacijų vadovas.",
+      "question": "Kaip suderinti dokumentus, prieigas ir darbuotojo pirmųjų dienų užduotis?",
+      "boundary": "Konkreti įvedimo eiga; HR sprendimo puslapis pristato platesnę personalo procesų apimtį.",
+      "sections": [
+        "Parengti pasirenkamą keturiolikos dienų pavyzdį: pasiruošimas, pirma diena, pirma savaitė ir grįžtamasis ryšys. Tai nėra visiems privalomas laikotarpis.",
+        "Prieigas susieti su patvirtinta pareigybe ir leidimų rinkiniu. Tikrinti tapatybę, pradžios datą, sėkmingą sukūrimą ir atšaukimą pasikeitus planui.",
+        "Mokymosi medžiagą ir vidaus tvarkas pateikti pagal darbuotojo poreikį ir prieigos teisę. Peržiūros faktas savaime neįrodo išmokimo ar teisinio supažindinimo.",
+        "Numatyti vadovo patikrą, trūkstamų prieigų eskalavimą ir grįžtamąjį ryšį. Tikrus darbo teisės teiginius tikrinti atskirai."
+      ],
+      "contribution": "Keičiamas įvedimo kontrolinis sąrašas su atsakingu asmeniu, būsena ir prieigos atšaukimo veiksmu.",
+      "sources": [
+        "Įmonės patvirtintos personalo ir prieigų taisyklės",
+        "Pasirinktų tapatybės ir HR sistemų dokumentacija"
+      ],
+      "agents": [
+        "project-management/project-management-project-shepherd.md",
+        "support/support-support-responder.md"
+      ],
+      "cta": "Peržiūrėti naujo darbuotojo įvedimo kontrolinį sąrašą",
+      "media": "Laiko juosta su dokumentų, prieigų, mokymosi ir vadovo patikros žingsniais.",
+      "url": "/straipsniai/darbuotojo-ivedimo-onboarding-automatizavimas/",
+      "readyDeadline": "2026-12-20T16:00:00.000Z",
+      "publishAt": "2026-12-22T07:00:00.000Z",
+      "localDate": "2026-12-22",
+      "requiredTargets": [
+        "/sprendimai/hr-procesai/",
+        "/sprendimai/dokumentu-valdymas/"
+      ],
+      "pageId": null,
+      "sourceStatus": "editorial-brief; per-claim sources and actual assets required before approval"
+    }
+  ],
+  "clusters": [
+    [
+      "Pardavimai",
+      "/sprendimai/pardavimai/",
+      "S1, S2",
+      "Tikslinio kliento kriterijai, kontaktų kokybė, pasiūlymo sąlygos, sąnaudų vertinimas ir nepavykusio kontakto analizė."
+    ],
+    [
+      "CRM",
+      "/sprendimai/crm/",
+      "S1, S2, S15",
+      "Duomenų šaltiniai, laukų susiejimas, dublikatai, sinchronizavimo kryptis, prieigos ir klaidų atsekamumas."
+    ],
+    [
+      "Klientų aptarnavimas",
+      "/sprendimai/klientu-aptarnavimas/",
+      "S3, S4",
+      "Kanalų pasirinkimas, tapatybė, atsakymo pagrindimas, perdavimas darbuotojui ir paslaugos kokybės matavimas."
+    ],
+    [
+      "Rinkodara",
+      "/sprendimai/rinkodara/",
+      "S5",
+      "Turinio planas, rengimas, redagavimas, sklaidos kanalai ir rezultato priskyrimas verslo tikslui."
+    ],
+    [
+      "SEO ir GEO",
+      "/sprendimai/seo-geo-automatizavimas/",
+      "S5, S7",
+      "Užklausa ir URL, turinio spragos, indeksavimo kliūtys, faktinės citatos ir verslo užklausos."
+    ],
+    [
+      "Mokama reklama",
+      "/sprendimai/reklamos-valdymas/",
+      "S6",
+      "Priskyrimas, konversijų vėlavimas, marža, išlaidų ribos, stabdymas ir pakeitimo grąžinimas."
+    ],
+    [
+      "Programavimas",
+      "/sprendimai/programavimas/",
+      "S9",
+      "Specifikacija, kodo pakeitimas, duomenų migracijos, testai, saugumas, diegimo ir grąžinimo sprendimas."
+    ],
+    [
+      "Dizainas",
+      "/sprendimai/dizainas/",
+      "S8",
+      "Dizaino kintamieji, komponentai, UX tyrimas, tipografika, prieinamumas ir vizualinė regresija."
+    ],
+    [
+      "Verslo tyrimai",
+      "/sprendimai/verslo-tyrimai/",
+      "S10",
+      "Rinkos klausimas, šaltinių teisės, konkurentų stebėjimas, atsiliepimų interpretacija ir sprendimo pagrindimas."
+    ],
+    [
+      "Sąskaitos",
+      "/sprendimai/saskaitu-valdymas/",
+      "S11, S12",
+      "Gavimas, atpažinimas, validavimas, dublikatai, eksporto klaida ir apmokėjimo būsena."
+    ],
+    [
+      "Finansų analitika",
+      "/sprendimai/finansu-analitika/",
+      "S6, S12",
+      "Pinigų srautai, duomenų laikotarpiai, prognozės prielaidos, išlaidų analizė ir rodiklių sutikrinimas."
+    ],
+    [
+      "Dokumentai",
+      "/sprendimai/dokumentu-valdymas/",
+      "S2, S13",
+      "Šablono versija, duomenų tikslumas, gavėjai, parašo būsena, archyvavimas ir saugojimo terminas."
+    ],
+    [
+      "Duomenų analitika",
+      "/sprendimai/duomenu-analitika/",
+      "S6, S10",
+      "Duomenų sutartis, šaltinių suderinimas, vėlavimas, ataskaitos išimtis ir sprendimo patikrinimas."
+    ],
+    [
+      "Operacijos",
+      "/sprendimai/operacijos/",
+      "S15",
+      "Atsakomybė, įvykio pavertimas užduotimi, prioritetai, priklausomybės, vėlavimas ir audito žurnalas."
+    ],
+    [
+      "Personalo procesai",
+      "/sprendimai/hr-procesai/",
+      "S16",
+      "Dokumentai, rolės, prieigos, įvedimas, grįžtamasis ryšys ir prieigos atšaukimas."
+    ],
+    [
+      "Žinių bazė",
+      "/sprendimai/ziniu-baze-rag/",
+      "S14",
+      "Šaltinių versijos, dokumentų skaidymas, teisės, paieškos kokybė, atsakymo citata ir informacijos trūkumas."
+    ]
+  ],
+  "artifacts": [
+    {
+      "key": "A01",
+      "name": "B2B atrankos filtrų specifikacija",
+      "related": "S1 (B2B atranka)",
+      "purpose": "JSON/YAML atrankos parametrų šablonas prospektingo agentui",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A02",
+      "name": "Bandomosios užklausos analizės žurnalas",
+      "related": "S2 (Pasiūlymų ruošimas)",
+      "purpose": "Pavyzdinis B2B užklausos išskaidymo JSON failas",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A03",
+      "name": "Pavyzdinis sugeneruotas PDF pasiūlymas",
+      "related": "S2 (Pasiūlymų ruošimas)",
+      "purpose": "Demonstracinis sugeneruoto pasiūlymo dokumentas",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A04",
+      "name": "WebRTC delsos matavimo protokolas",
+      "related": "S3 (Balso agentai)",
+      "purpose": "Testavimo metodika ir kontrolinių matavimų rezultatai",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A05",
+      "name": "Demonstraciniai garso įrašai (3 vnt.)",
+      "related": "S3 (Balso agentai)",
+      "purpose": "Lietuvių kalbos garso failai (mp3/wav) su skambučių pavyzdžiais",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A06",
+      "name": "Eskalavimo taisyklių matrica",
+      "related": "S4 (Aptarnavimo taisyklės)",
+      "purpose": "Deterministinių taisyklių konfigūracijos failas",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A07",
+      "name": "Redaktoriaus patikros kontrolinis sąrašas",
+      "related": "S5 (Turinio fabrikas)",
+      "purpose": "Kokybės ir faktų audito forma prieš publikuojant",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A08",
+      "name": "ROAS optimizavimo taisyklių konfigūracija",
+      "related": "S6 (Reklamos biudžetas)",
+      "purpose": "Reklamos stabdymo/didinimo taisyklių failas (Meta/Google Ads)",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A09",
+      "name": "JSON-LD struktūrinių duomenų šablonai",
+      "related": "S7 (GEO optimizavimas)",
+      "purpose": "Schema.org kodo fragmentai B2B paslaugų puslapiams",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A10",
+      "name": "Figma kintamųjų sinchronizavimo skriptas",
+      "related": "S8 (Dizaino sistemos)",
+      "purpose": "GitHub Actions workflow kintamųjų eksportui",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A11",
+      "name": "CI/CD saugumo testavimo YAML konfigūracija",
+      "related": "S9 (Kodo testavimas)",
+      "purpose": "Darbo eigos failas su security-ai-generated-code-auditor žingsniu",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A12",
+      "name": "Atsiliepimų klasifikavimo taksonomija",
+      "related": "S10 (Atsiliepimų analizė)",
+      "purpose": "Kategorijų ir svorių matrica klientų grįžtamajam ryšiui",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A13",
+      "name": "Sąskaitos nuskaitymo ir validavimo pavyzdys",
+      "related": "S11 (Sąskaitų OCR)",
+      "purpose": "Ištrauktų duomenų JSON struktūra prieš eksportą į apskaitą",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A14",
+      "name": "Priminimų sekos tekstinių šablonų paketas",
+      "related": "S12 (Skolų priminimai)",
+      "purpose": "4 lygių pranešimų šablonai el. paštui ir SMS",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A15",
+      "name": "Dokobit API integracijos demonstracinis kodas",
+      "related": "S13 (Dokobit e-parašas)",
+      "purpose": "Dokumento įkėlimo ir pasirašymo kvietimo kodo pavyzdys",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A16",
+      "name": "RAG dokumentų skaidymo specifikacija",
+      "related": "S14 (Vidinė žinių bazė)",
+      "purpose": "Teksto segmentavimo (chunking) ir metažymių taisyklės",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A17",
+      "name": "Užduočių delegavimo taisyklių konfigūracija",
+      "related": "S15 (Vidinis delegavimas)",
+      "purpose": "Užklausų nukreipimo taisyklės projektų valdymo sistemoms",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A18",
+      "name": "14 dienų naujo darbuotojo įvedimo kontrolinis sąrašas",
+      "related": "S16 (Darbuotojų įvedimas)",
+      "purpose": "Naujo komandos nario adaptacijos proceso planas",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A19",
+      "name": "B1.lt API integracijos konfigūracija",
+      "related": "/integracijos/b1/",
+      "purpose": "Pavyzdinės REST užklausos sąskaitų ir pirkėjų kūrimui",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A20",
+      "name": "Rivilė Gama / EPI užklausų struktūra",
+      "related": "/integracijos/rivile/",
+      "purpose": "Duomenų mainų XML/JSON schemos pavyzdys",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A21",
+      "name": "Procesų audito klausimynas",
+      "related": "/istekliai/procesu-audito-sablonas/",
+      "purpose": "Atsisiunčiamas procesų inventorizacijos failas (Notion/PDF)",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    }
+  ],
+  "agentReferencePaths": [
+    "design/design-ui-designer.md",
+    "design/design-ux-researcher.md",
+    "engineering/engineering-backend-architect.md",
+    "engineering/engineering-devops-automator.md",
+    "engineering/engineering-frontend-developer.md",
+    "marketing/marketing-content-creator.md",
+    "marketing/marketing-seo-specialist.md",
+    "paid-media/paid-media-ppc-strategist.md",
+    "paid-media/paid-media-search-query-analyst.md",
+    "product/product-feedback-synthesizer.md",
+    "project-management/project-management-project-shepherd.md",
+    "project-management/project-management-studio-producer.md",
+    "sales/sales-deal-strategist.md",
+    "sales/sales-outbound-strategist.md",
+    "security/security-ai-generated-code-auditor.md",
+    "specialized/agents-orchestrator.md",
+    "specialized/specialized-workflow-architect.md",
+    "specialized/zk-steward.md",
+    "support/support-analytics-reporter.md",
+    "support/support-finance-tracker.md",
+    "support/support-support-responder.md",
+    "testing/testing-api-tester.md",
+    "testing/testing-reality-checker.md"
+  ],
+  "provenance": [
+    {
+      "attachmentId": "0a8d075f-cd33-4704-acd6-85b5608efba7",
+      "sha256": "8da12639f1c237230d86ea7cd1f18953e93df8f273cca414f6b3583e9781f9ba"
+    },
+    {
+      "attachmentId": "ea4973b7-48ae-409c-afa6-eac3e6f105a6",
+      "sha256": "49e1cdd36d860b1b9d9cf4f560e83c3da89bd14bbfa2d34448dd9147f016448c"
+    },
+    {
+      "attachmentId": "0a015f7a-c544-4cb9-ac0d-ffdb583a003b",
+      "sha256": "3677bc7b58d082c26660ec286009eb6747430a0fe11914aa663d443f08bb7793"
+    },
+    {
+      "attachmentId": "b87ad37c-39c1-4421-902a-21a22e2eab29",
+      "sha256": "8d7f57f67a86a738db28f7791ada37629cb1ec920aca1fdc0804636dec5a2ea8"
+    },
+    {
+      "attachmentId": "64111db4-7415-42fb-87bf-3e7cf8a7c156",
+      "sha256": "e02f63281263b4d079e552b909ba13d3ea4ad347f0000eff38b317e9ecac3faa"
+    },
+    {
+      "attachmentId": "8e83f6f8-4bb6-41b9-ad0d-716eac9d5c7a",
+      "sha256": "3b1f9df0e228e02140f3d88dc3047f6f18dc08229e22020be49fbf6f97191d75"
+    },
+    {
+      "attachmentId": "85fd2774-a86f-4c46-9486-cd87704f6c81",
+      "sha256": "17a81d877c50d34394339f793ac54a1182b5d105891928f5050ac304f9228f08"
+    },
+    {
+      "attachmentId": "4a2d6e69-6f62-464b-8fe4-deae29cc0594",
+      "sha256": "53b3d7596518de3296924c881a90e9a412864940c0db864ebf8d7fb5310230da"
+    },
+    {
+      "attachmentId": "fe064bd7-d15c-4e13-aa06-651691652a6f",
+      "sha256": "8c17b784c9768b042910b5c503e2bdc56327a8867bebe126ee325b5b7a17dd94"
+    },
+    {
+      "attachmentId": "1fbff266-7579-4d15-91ca-360ef5870074",
+      "sha256": "4f71574e202f26e9851e07bca215f96e2e128d1e2f1b06c9db4585eba11dae2c"
+    }
+  ],
+  "publication": {
+    "publicPackage": false,
+    "workflow": "existing CONTENT_CORE",
+    "approval": "exact revision; not granted by this file",
+    "deployment": "not performed"
+  },
+  "agentCreator": {
+    "name": "Agentų kūrėjas",
+    "url": "/agentu-kurejas/",
+    "planKey": "P58",
+    "editorialStatus": "proposed-full-product-feature",
+    "implementationStatus": "separate-builder-not-found-in-inspected-V2-source",
+    "primaryQuery": "DI agentų kūrimas pagal aprašymą",
+    "reference": "https://relevanceai.com/invent",
+    "distinction": "creates or adapts an agent definition, its tools, team and tests; coordinator assigns work to registered agents",
+    "steps": [
+      "understand the business goal and required result",
+      "reuse a suitable agency-agents profile or prepare a versioned custom role",
+      "bind business context, output contract, available tools and scoped permissions",
+      "prepare a missing connector candidate only through the existing governed adapter process",
+      "construct the team and workflow with error paths and limits",
+      "evaluate baseline and candidate using separate protected cases",
+      "register and activate the tested version through existing Engine/Store/adoption",
+      "observe results, propose a new version and retain rollback"
+    ],
+    "localEvidenceFiles": [
+      "PRODUCT.md",
+      "docs/ARCHITECTURE.md",
+      "docs/EVOLUTION_AND_MAINTENANCE.md",
+      "server/roles.mjs",
+      "server/engine.mjs"
+    ]
+  }
+}

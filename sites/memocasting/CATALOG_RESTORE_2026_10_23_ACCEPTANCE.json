@@ -1,0 +1,113 @@
+{
+  "verifiedAt": "2026-10-23T07:24:16.113Z",
+  "frontendVersion": "ba97951f-c187-496f-ac25-ef46990e64b3",
+  "previousFrontendVersion": "74bbe063-c0c0-4373-8ca7-b7d6a7e2dbab",
+  "backendVersionUnchanged": "380e46b2-9955-4feb-b604-8c1dce26fdd2",
+  "publicSource": "2ac24a0c35ea39776bcf79f04092a3989d32cc63",
+  "nativeRelease": "60d1bb3a-9c65-45d7-a895-01afc6937457",
+  "pass": true,
+  "at": "2026-10-23T07:24:16.113Z",
+  "products": [
+    {
+      "sku": "couple",
+      "url": "https://memocasting.lt/rinkinys-porai",
+      "status": 200,
+      "state": "active",
+      "price": "32.00",
+      "canonical": true,
+      "productSchema": true
+    },
+    {
+      "sku": "family",
+      "url": "https://memocasting.lt/seimos-rinkinys",
+      "status": 200,
+      "state": "active",
+      "price": "48.00",
+      "canonical": true,
+      "productSchema": true
+    },
+    {
+      "sku": "mother_child",
+      "url": "https://memocasting.lt/products/seimos-rinkinys",
+      "status": 200,
+      "state": "inquiry",
+      "canonical": true,
+      "productSchema": true
+    },
+    {
+      "sku": "baby_feet",
+      "url": "https://memocasting.lt/products/kudikio-pedutes",
+      "status": 200,
+      "state": "soldout",
+      "price": "25.99",
+      "canonical": true,
+      "productSchema": true
+    },
+    {
+      "sku": "wooden_base",
+      "url": "https://memocasting.lt/products/isdziovintas-uosinis-padeklas",
+      "status": 200,
+      "state": "soldout",
+      "price": "8.00",
+      "canonical": true,
+      "productSchema": true
+    },
+    {
+      "sku": "baby_frame",
+      "url": "https://memocasting.lt/products/kudiko-ispaudu-rinkinys-su-remeliu",
+      "status": 200,
+      "state": "soldout",
+      "price": "22.99",
+      "canonical": true,
+      "productSchema": true
+    },
+    {
+      "sku": "alginate_couple",
+      "url": "https://memocasting.lt/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "status": 200,
+      "state": "inquiry",
+      "canonical": true,
+      "productSchema": true
+    },
+    {
+      "sku": "alginate_family",
+      "url": "https://memocasting.lt/products/alginato-papildymas-1100g-keturiu-ranku-rinkiniui",
+      "status": 200,
+      "state": "inquiry",
+      "canonical": true,
+      "productSchema": true
+    }
+  ],
+  "publicCatalog": 5,
+  "live": 112,
+  "indexable": 108,
+  "future": 73,
+  "sitemapExact": true,
+  "discovery": true,
+  "futureHtmlAndMedia404": true,
+  "redirects": [
+    "password",
+    "products/liejimo-rinkinys-porai",
+    "products/seimos-rinkinys-1",
+    "collections/all"
+  ],
+  "livePaymentsRemainEnabled": true,
+  "packageSha256": "f5acefd5839bbe0d26a7d0ee4f065383edd78a804212171faae89b2bd608fde3",
+  "checks": {
+    "unitTests": 191,
+    "typecheck": "PASS",
+    "scopedLint": "PASS",
+    "build": "PASS",
+    "dryRun": "PASS",
+    "actualBindingsPreserved": true,
+    "desktopWidth": 1280,
+    "mobileWidth": 390,
+    "textSpacingWidth": 320,
+    "productsWithoutOverflow": 8,
+    "temporaryViewportAndCssRemoved": true,
+    "localWorkerdAcceptance": "not rerun; prior ECONNRESET evidence preserved"
+  },
+  "pending": [
+    "Current prices, packed weights/dimensions and temporary selling limits for mother_child, alginate_couple and alginate_family; public contact pages and private catalog drafts prepared."
+  ]
+}

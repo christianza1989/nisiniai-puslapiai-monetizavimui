@@ -17,6 +17,7 @@ import type {CatalogFamily,CatalogAnchor} from '../src/lib/catalog-configurator'
 import {fieldLabels} from '../src/lib/expanded-configurator';
 import {localizeAdditionalPalettes} from './additional-chair-labels.mjs';
 import {additionalChairStatus} from './additional-chair-status.mjs';
+import {RUNTIME_TRANSPORT_MAX_BYTES} from '../src/lib/runtime-transport-limits.mjs';
 import {publicProductText} from '../src/lib/public-product-copy';
 import materials from '../content/render-materials.json';
 import catalogMaterials from '../content/render-materials-catalog.json';
@@ -90,7 +91,7 @@ for(const [code,entry] of Object.entries(status.articles) as [string,{phase:stri
   const article=family.articles.find(a=>a.code===code);assert(article);
   compact.palettes._sourceValueAliases=sourceVariantAliases(path.join(root,'source-v3',code));
   const bytes=Buffer.from(JSON.stringify({article,anchors:family.anchors,palettes:compact.palettes}));
-  assert(bytes.byteLength<=8_000_000,'Per-model runtime exceeds immutable loader limit');
+  assert(bytes.byteLength<=RUNTIME_TRANSPORT_MAX_BYTES,'Per-model runtime exceeds immutable loader limit');
   const sha256=digest(bytes),asset='/models/configurator/runtime/'+code+'-'+sha256.slice(0,20)+'.json';
   await fs.writeFile(path.join(stage,'public',asset),bytes);
   index.articles[code]={asset,sha256};checks.push({code,anchors:family.anchors.length,bytes:bytes.byteLength,finishes,photoSamples:[]});

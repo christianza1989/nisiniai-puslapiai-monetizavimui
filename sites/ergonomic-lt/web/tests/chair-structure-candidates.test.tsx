@@ -33,6 +33,17 @@ test('only a complete exact active model manifest binds a construction-only runt
  const xilium=productModels(baseSeed().products).find(p=>p.id.includes('xilium'))!;
  assert.equal(await loader(xilium),undefined);assert.equal(reads,1);
 });
+
+test('chair runtime accepts the exact 15 MB boundary and rejects 15000001 bytes with an otherwise valid binding',async()=>{
+ const {product,entries,bytes,key}=fixture();
+ for(const size of [8_000_001,15_000_000,15_000_001]){
+  const padded=bytes+' '.repeat(size-Buffer.byteLength(bytes)),copy=structuredClone(entries),sha=hash(padded);
+  copy.models[key].runtime={asset:'/models/configurator/structure/'+copy.models[key].code+'-'+sha.slice(0,20)+'.json',sha256:sha};
+  const loader=createChairCandidateLoader(copy,async()=>Buffer.from(padded));
+  if(size<=15_000_000)assert(await loader(product));
+  else await assert.rejects(loader(product),/runtime changed/);
+ }
+});
 test('tampered bytes, finish selectors and cross-model saved tokens fail closed',async()=>{
  const {product,entries,bytes,key,runtime}=fixture();
  await assert.rejects(createChairCandidateLoader(entries,async()=>Buffer.from(bytes+' '))(product),/runtime changed/);

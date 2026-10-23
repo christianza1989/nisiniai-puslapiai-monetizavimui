@@ -3,6 +3,7 @@ import data from '../../content/chair-structure-candidates.json';
 import {catalogModelVisible} from './catalog-consolidation';
 import type {Product} from './types';
 import type {CatalogRuntime} from './catalog-configurator';
+import {RUNTIME_TRANSPORT_MAX_BYTES} from './runtime-transport-limits.mjs';
 
 type ChairProofs={sourceGeometryRuntime:string;optionsGemini?:string;generalGemini?:string;factualReview?:string;desktop?:string;mobile?:string};
 export type ChairCandidate={key:string;productId:string;sample:string;code:string;familyId:string;collectionMode:'structure-only';acceptance:'TECHNICAL_DRAFT'|'DRAFT_READY';optionsRequired:boolean;runtime:{asset:string;sha256:string};proofs:ChairProofs};
@@ -41,7 +42,7 @@ export function createChairCandidateLoader(entries:ChairCandidates,readAsset:(as
   // factorized anchors. Let the immutable legacy loader resolve that token.
   if(typeof anchor==='string'&&!new RegExp('^'+entry.code+':structure-[a-f0-9]{64}$').test(anchor))return;
   const bytes=await readAsset(entry.runtime.asset);
-  if(bytes.byteLength>8_000_000||digest(bytes)!==entry.runtime.sha256)throw Error('Chair candidate runtime changed');
+  if(bytes.byteLength>RUNTIME_TRANSPORT_MAX_BYTES||digest(bytes)!==entry.runtime.sha256)throw Error('Chair candidate runtime changed');
   const runtime=JSON.parse(Buffer.from(bytes).toString('utf8')) as CatalogRuntime;
   const f=runtime.family;
   if(f.id!==entry.familyId||f.productId!==entry.productId||f.baseArticle!==entry.code||f.sample!==entry.sample||f.collectionMode!=='structure-only'||f.articles.length!==1||f.articles[0].code!==entry.code||f.articles[0].sample!==entry.sample||!f.anchors.length)throw Error('Chair candidate runtime identity mismatch');

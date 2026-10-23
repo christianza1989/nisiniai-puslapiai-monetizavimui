@@ -1,0 +1,11 @@
+# Ergonomic preview runtime transport policy
+
+The owner directly approved the completed Claude018 decision on2026-10-23: raise the per-model serialized runtime publication/loader/checker maximum from8,000,000 to15,000,000 bytes and publish eligible sealed technical drafts to ergonomic-preview. Cadeira's original visual/material hold remains excluded. Full acceptance and Launch are separate.
+
+`runtime-transport-limits.mjs` is the shared publication policy for both actual loaders, staging paths and exhaustive transport checker. Accepted v1 lossless packing still starts above8,000,000 original bytes, preserving the existing codec and smaller transport. The25MiB GLB limit, all file hashes, source identity, defaults, choices, transitions, geometry/PBR/UV, original initial state and technical-draft restrictions remain unchanged. Tests exercise actual loaders and staging at15,000,000 and15,000,001 bytes with valid hashes and original bindings.
+
+This batch is prepared in a new paired worktree from preview0e1d7c2 plus fetched current core/public main. The owner required uninterrupted v9/v10 collection and verification; existing live checkout HEADs, frozen dependencies and425pins remain unchanged. No collector, watcher or proof contract is modified by the publication policy. The existing content-body dependency commit7d648b8 is merged into the new companion without rewriting the original checkout.
+
+Four explicit sealed models are eligible for full staging and QA: KSEG003WW001, KVID008WW001, KNAV002WW004 andKUTI002WW001. Two Utila R69 labels retain the original technical code and explicit source1D dimension. All earlier metadata and candidate entries are preserved. Every new model stays HUMAN_REVIEW_PENDING.
+
+Before active preview promotion, Nav requires an actual complete public Cloudflare version request CPU observation below the configured cap with adequate margin and a measured first mobile browser opening. Version upload is preparation, not active preview promotion. Local and public full product routes, original initial/variant/source codes/GLB hashes, both PDF pages, actual visual inspection and the full grouped review list remain required. Results and any withheld model are recorded in the owner-requested completed018response; code/test success alone is not publication or acceptance.

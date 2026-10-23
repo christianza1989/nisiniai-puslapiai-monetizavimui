@@ -88,6 +88,19 @@
           "sourceText": "R32R: 3D, arm: steel chromium plate, black polyamide, pad: black polyurethane"
         }
       }
+    },
+    "KUTI002WW001": {
+      "fieldLabel": "Porankiai",
+      "choices": {
+        "R69BBBPU": {
+          "label": "R69BBBPU · 1D",
+          "sourceText": "R69-B/B/BPU: 1D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R69BGBPU": {
+          "label": "R69BGBPU · 1D",
+          "sourceText": "R69-B/G/BPU: 1D, arm: light grey polyamide, pad: black polyurethane"
+        }
+      }
     }
   }
 }

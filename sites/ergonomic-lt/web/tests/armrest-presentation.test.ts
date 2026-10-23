@@ -26,7 +26,9 @@ test('source-fixed arms cannot be described as adjustable, and supplier 1D is re
   if(/fixed/i.test(choice.sourceText)){assert.match(label,/fiksuoti/i);assert.doesNotMatch(label,/reguliuojami|[1-4]D/);fixed++;}
   if(/: 1D,/.test(choice.sourceText)){assert.match(label,/1D/);assert.doesNotMatch(label,/fiksuoti/i);oneD++;}
  }
- assert.equal(fixed,7);assert.equal(oneD,5);
+ assert.equal(fixed,7);assert.equal(oneD,7);
+ assert.equal(armrestChoiceLabel('KUTI002WW001','CARMRESTS','R69BBBPU'),'R69BBBPU · 1D');
+ assert.equal(armrestChoiceLabel('KUTI002WW001','CARMRESTS','R69BGBPU'),'R69BGBPU · 1D');
  assert.match(armrestChoiceLabel('KINT006WW002','CARMRESTS','R20I')!,/1D/);
  assert.match(armrestChoiceLabel('KINT006WW002','CARMRESTS','R32R')!,/3D/);
  assert.equal(armrestChoiceLabel('KINT006WW002','CARMRESTS','NONE'),'Be porankių');

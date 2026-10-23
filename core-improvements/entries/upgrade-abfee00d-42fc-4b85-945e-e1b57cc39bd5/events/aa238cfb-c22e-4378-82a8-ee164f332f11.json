@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "PR232 refreshed against main960a7a2 at Rokas direct request; only WORKSTREAMS conflict, both histories preserved. Initial unrelated media fetch ECONNRESET retained; isolated and full unchanged reruns pass. Studio4317 untouched and separate QA closed; runtime adoption and publishing separate.",
+  "checks": [
+    {
+      "command": "npm test (content-studio current-main integration)",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_PREVIEW_HEADING_WRAP_VERIFICATION.md:2026-10-22;62/62 on full unchanged rerun,initial61/62 transport interruption retained."
+    },
+    {
+      "command": "Isolated HTTP Playwright current preview four titles at1280/390/320 plus two CSS200percent/textspacing checks; visual review and type detector",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_PREVIEW_HEADING_WRAP_VERIFICATION.md:2026-10-22;14 observations,no fixed H1 glyph clipping,paired copy/font sizes unchanged;synthetic CSS baseline and native zoom limits explicit."
+    }
+  ],
+  "eventId": "aa238cfb-c22e-4378-82a8-ee164f332f11",
+  "sequence": 4,
+  "at": "2026-10-22T03:43:29.101Z"
+}

@@ -28,3 +28,11 @@ export function cameraFrame(bounds:Box3,aspect:number,fov:number,direction=new V
 // Keep fine adjacent source surfaces distinguishable at the product distance,
 // while retaining sub-millimetre clipping when inspecting from 35 mm away.
 export function cameraNear(distance:number){return Math.max(.00005,distance*.02);}
+
+// A floating toolbar occupies real display space even though it does not
+// affect the canvas dimensions. Fit to the remaining width and shift the
+// optical centre so wide products remain visible beside those controls.
+export function unobstructedCameraViewport(width:number,height:number,rightInset:number){
+ const inset=Math.max(0,Math.min(rightInset,width*.5));
+ return {aspect:(width-inset)/height,offsetX:inset/2,inset};
+}

@@ -1,0 +1,748 @@
+{
+  "format": "verslomatika-editorial-calendar-and-assets",
+  "version": 1,
+  "status": "proposed-editorial-dates-not-active-scheduler",
+  "timezone": "Europe/Vilnius",
+  "calendar": {
+    "status": "proposal-not-imported",
+    "policy": {
+      "months": 3,
+      "cadence": "weekly",
+      "articlesPerWeek": 2,
+      "localTime": "09:00",
+      "timezone": "Europe/Vilnius"
+    },
+    "baseRelease": {
+      "readyDeadline": "2026-10-25T16:00:00.000Z",
+      "publishAt": "2026-10-27T07:00:00.000Z"
+    },
+    "datesNeedImplementationBinding": true,
+    "cadenceIsEditorialProposal": true
+  },
+  "items": [
+    {
+      "planKey": "P01",
+      "canonicalPath": "/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P02",
+      "canonicalPath": "/kaip-veikia/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P03",
+      "canonicalPath": "/kainodara/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P04",
+      "canonicalPath": "/apie-mus/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P05",
+      "canonicalPath": "/kontaktai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P06",
+      "canonicalPath": "/kokybes-kontrole/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P07",
+      "canonicalPath": "/agentai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "AGENT_TEMPLATE",
+      "canonicalPath": "/agentai/{slug}/",
+      "publicationGroup": "template-implementation",
+      "publishAt": null,
+      "readyDeadline": null
+    },
+    {
+      "planKey": "P08",
+      "canonicalPath": "/komandos/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P09",
+      "canonicalPath": "/komandos/b2b-pardavimu-komanda/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P10",
+      "canonicalPath": "/komandos/turinio-ir-seo-komanda/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P11",
+      "canonicalPath": "/komandos/programavimo-ir-qa-komanda/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P12",
+      "canonicalPath": "/komandos/finansu-operaciju-komanda/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P13",
+      "canonicalPath": "/darbo-grandines/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P14",
+      "canonicalPath": "/sprendimai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P15",
+      "canonicalPath": "/sprendimai/pardavimai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P16",
+      "canonicalPath": "/sprendimai/crm/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P17",
+      "canonicalPath": "/sprendimai/klientu-aptarnavimas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P18",
+      "canonicalPath": "/sprendimai/rinkodara/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P19",
+      "canonicalPath": "/sprendimai/seo-geo-automatizavimas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P20",
+      "canonicalPath": "/sprendimai/reklamos-valdymas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P21",
+      "canonicalPath": "/sprendimai/programavimas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P22",
+      "canonicalPath": "/sprendimai/dizainas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P23",
+      "canonicalPath": "/sprendimai/verslo-tyrimai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P24",
+      "canonicalPath": "/sprendimai/saskaitu-valdymas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P25",
+      "canonicalPath": "/sprendimai/finansu-analitika/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P26",
+      "canonicalPath": "/sprendimai/dokumentu-valdymas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P27",
+      "canonicalPath": "/sprendimai/duomenu-analitika/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P28",
+      "canonicalPath": "/sprendimai/operacijos/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P29",
+      "canonicalPath": "/sprendimai/hr-procesai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P30",
+      "canonicalPath": "/sprendimai/ziniu-baze-rag/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P31",
+      "canonicalPath": "/industrijos/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P32",
+      "canonicalPath": "/industrijos/e-komercija/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P33",
+      "canonicalPath": "/industrijos/b2b-paslaugos/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P34",
+      "canonicalPath": "/industrijos/logistika/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P35",
+      "canonicalPath": "/industrijos/nekilnojamasis-turtas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P36",
+      "canonicalPath": "/industrijos/gamyba/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P37",
+      "canonicalPath": "/industrijos/paslaugu-verslas-medicina-grozis/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P38",
+      "canonicalPath": "/integracijos/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P39",
+      "canonicalPath": "/integracijos/b1/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P40",
+      "canonicalPath": "/integracijos/rivile/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P41",
+      "canonicalPath": "/integracijos/make-n8n/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P42",
+      "canonicalPath": "/integracijos/crm-sistemos/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P43",
+      "canonicalPath": "/integracijos/dokobit/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P44",
+      "canonicalPath": "/ziniu-centras/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P45",
+      "canonicalPath": "/verslo-procesu-automatizavimas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P46",
+      "canonicalPath": "/ai-agentai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P47",
+      "canonicalPath": "/straipsniai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "S1",
+      "canonicalPath": "/straipsniai/b2b-kontaktu-atranka-duomenu-sodrinimas/",
+      "publicationGroup": "S1",
+      "publishAt": "2026-10-29T07:00:00.000Z",
+      "readyDeadline": "2026-10-27T10:00:00.000Z"
+    },
+    {
+      "planKey": "S2",
+      "canonicalPath": "/straipsniai/komercinio-pasiulymo-automatizavimas/",
+      "publicationGroup": "S2",
+      "publishAt": "2026-11-03T07:00:00.000Z",
+      "readyDeadline": "2026-11-01T16:00:00.000Z"
+    },
+    {
+      "planKey": "S3",
+      "canonicalPath": "/straipsniai/ai-balso-agentai-skambuciams/",
+      "publicationGroup": "S3",
+      "publishAt": "2026-11-05T07:00:00.000Z",
+      "readyDeadline": "2026-11-03T16:00:00.000Z"
+    },
+    {
+      "planKey": "S4",
+      "canonicalPath": "/straipsniai/klientu-aptarnavimo-eskalavimo-taisykles/",
+      "publicationGroup": "S4",
+      "publishAt": "2026-11-10T07:00:00.000Z",
+      "readyDeadline": "2026-11-08T16:00:00.000Z"
+    },
+    {
+      "planKey": "S5",
+      "canonicalPath": "/straipsniai/autonominis-turinio-fabrikas/",
+      "publicationGroup": "S5",
+      "publishAt": "2026-11-12T07:00:00.000Z",
+      "readyDeadline": "2026-11-10T16:00:00.000Z"
+    },
+    {
+      "planKey": "S6",
+      "canonicalPath": "/straipsniai/reklamos-biudzeto-valdymas/",
+      "publicationGroup": "S6",
+      "publishAt": "2026-11-17T07:00:00.000Z",
+      "readyDeadline": "2026-11-15T16:00:00.000Z"
+    },
+    {
+      "planKey": "S7",
+      "canonicalPath": "/straipsniai/geo-optimizavimas-struktura/",
+      "publicationGroup": "S7",
+      "publishAt": "2026-11-19T07:00:00.000Z",
+      "readyDeadline": "2026-11-17T16:00:00.000Z"
+    },
+    {
+      "planKey": "S8",
+      "canonicalPath": "/straipsniai/dizaino-sistemos-automatizavimas/",
+      "publicationGroup": "S8",
+      "publishAt": "2026-11-24T07:00:00.000Z",
+      "readyDeadline": "2026-11-22T16:00:00.000Z"
+    },
+    {
+      "planKey": "S9",
+      "canonicalPath": "/straipsniai/automatinis-kodo-testavimas/",
+      "publicationGroup": "S9",
+      "publishAt": "2026-11-26T07:00:00.000Z",
+      "readyDeadline": "2026-11-24T16:00:00.000Z"
+    },
+    {
+      "planKey": "S10",
+      "canonicalPath": "/straipsniai/klientu-atsiliepimu-analize/",
+      "publicationGroup": "S10",
+      "publishAt": "2026-12-01T07:00:00.000Z",
+      "readyDeadline": "2026-11-29T16:00:00.000Z"
+    },
+    {
+      "planKey": "S11",
+      "canonicalPath": "/straipsniai/saskaitu-atpazinimas-ocr-buhalterija/",
+      "publicationGroup": "S11",
+      "publishAt": "2026-12-03T07:00:00.000Z",
+      "readyDeadline": "2026-12-01T16:00:00.000Z"
+    },
+    {
+      "planKey": "S12",
+      "canonicalPath": "/straipsniai/skolu-priminimu-automatizavimas/",
+      "publicationGroup": "S12",
+      "publishAt": "2026-12-08T07:00:00.000Z",
+      "readyDeadline": "2026-12-06T16:00:00.000Z"
+    },
+    {
+      "planKey": "S13",
+      "canonicalPath": "/straipsniai/sutarciu-pasirasymas-dokobit/",
+      "publicationGroup": "S13",
+      "publishAt": "2026-12-10T07:00:00.000Z",
+      "readyDeadline": "2026-12-08T16:00:00.000Z"
+    },
+    {
+      "planKey": "S14",
+      "canonicalPath": "/straipsniai/vidine-ziniu-baze-rag/",
+      "publicationGroup": "S14",
+      "publishAt": "2026-12-15T07:00:00.000Z",
+      "readyDeadline": "2026-12-13T16:00:00.000Z"
+    },
+    {
+      "planKey": "S15",
+      "canonicalPath": "/straipsniai/vidiniu-uzduociu-delegavimas/",
+      "publicationGroup": "S15",
+      "publishAt": "2026-12-17T07:00:00.000Z",
+      "readyDeadline": "2026-12-15T16:00:00.000Z"
+    },
+    {
+      "planKey": "S16",
+      "canonicalPath": "/straipsniai/darbuotojo-ivedimo-onboarding-automatizavimas/",
+      "publicationGroup": "S16",
+      "publishAt": "2026-12-22T07:00:00.000Z",
+      "readyDeadline": "2026-12-20T16:00:00.000Z"
+    },
+    {
+      "planKey": "P48",
+      "canonicalPath": "/palyginimai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P49",
+      "canonicalPath": "/palyginimai/make-vs-zapier-vs-n8n/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P50",
+      "canonicalPath": "/palyginimai/ai-agentai-vs-tradicinis-programavimas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P51",
+      "canonicalPath": "/istekliai/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P52",
+      "canonicalPath": "/istekliai/roi-skaiciuokle/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P53",
+      "canonicalPath": "/istekliai/procesu-audito-sablonas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P54",
+      "canonicalPath": "/istekliai/demonstracijos/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P55",
+      "canonicalPath": "/pagalba/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P56",
+      "canonicalPath": "/privatumas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P57",
+      "canonicalPath": "/salygos/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    },
+    {
+      "planKey": "P58",
+      "canonicalPath": "/agentu-kurejas/",
+      "publicationGroup": "T0",
+      "publishAt": "2026-10-27T07:00:00.000Z",
+      "readyDeadline": "2026-10-25T16:00:00.000Z"
+    }
+  ],
+  "assetRequirements": [
+    {
+      "key": "A01",
+      "name": "B2B atrankos filtrų specifikacija",
+      "related": "S1 (B2B atranka)",
+      "purpose": "JSON/YAML atrankos parametrų šablonas prospektingo agentui",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A02",
+      "name": "Bandomosios užklausos analizės žurnalas",
+      "related": "S2 (Pasiūlymų ruošimas)",
+      "purpose": "Pavyzdinis B2B užklausos išskaidymo JSON failas",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A03",
+      "name": "Pavyzdinis sugeneruotas PDF pasiūlymas",
+      "related": "S2 (Pasiūlymų ruošimas)",
+      "purpose": "Demonstracinis sugeneruoto pasiūlymo dokumentas",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A04",
+      "name": "WebRTC delsos matavimo protokolas",
+      "related": "S3 (Balso agentai)",
+      "purpose": "Testavimo metodika ir kontrolinių matavimų rezultatai",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A05",
+      "name": "Demonstraciniai garso įrašai (3 vnt.)",
+      "related": "S3 (Balso agentai)",
+      "purpose": "Lietuvių kalbos garso failai (mp3/wav) su skambučių pavyzdžiais",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A06",
+      "name": "Eskalavimo taisyklių matrica",
+      "related": "S4 (Aptarnavimo taisyklės)",
+      "purpose": "Deterministinių taisyklių konfigūracijos failas",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A07",
+      "name": "Redaktoriaus patikros kontrolinis sąrašas",
+      "related": "S5 (Turinio fabrikas)",
+      "purpose": "Kokybės ir faktų audito forma prieš publikuojant",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A08",
+      "name": "ROAS optimizavimo taisyklių konfigūracija",
+      "related": "S6 (Reklamos biudžetas)",
+      "purpose": "Reklamos stabdymo/didinimo taisyklių failas (Meta/Google Ads)",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A09",
+      "name": "JSON-LD struktūrinių duomenų šablonai",
+      "related": "S7 (GEO optimizavimas)",
+      "purpose": "Schema.org kodo fragmentai B2B paslaugų puslapiams",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A10",
+      "name": "Figma kintamųjų sinchronizavimo skriptas",
+      "related": "S8 (Dizaino sistemos)",
+      "purpose": "GitHub Actions workflow kintamųjų eksportui",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A11",
+      "name": "CI/CD saugumo testavimo YAML konfigūracija",
+      "related": "S9 (Kodo testavimas)",
+      "purpose": "Darbo eigos failas su security-ai-generated-code-auditor žingsniu",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A12",
+      "name": "Atsiliepimų klasifikavimo taksonomija",
+      "related": "S10 (Atsiliepimų analizė)",
+      "purpose": "Kategorijų ir svorių matrica klientų grįžtamajam ryšiui",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A13",
+      "name": "Sąskaitos nuskaitymo ir validavimo pavyzdys",
+      "related": "S11 (Sąskaitų OCR)",
+      "purpose": "Ištrauktų duomenų JSON struktūra prieš eksportą į apskaitą",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A14",
+      "name": "Priminimų sekos tekstinių šablonų paketas",
+      "related": "S12 (Skolų priminimai)",
+      "purpose": "4 lygių pranešimų šablonai el. paštui ir SMS",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A15",
+      "name": "Dokobit API integracijos demonstracinis kodas",
+      "related": "S13 (Dokobit e-parašas)",
+      "purpose": "Dokumento įkėlimo ir pasirašymo kvietimo kodo pavyzdys",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A16",
+      "name": "RAG dokumentų skaidymo specifikacija",
+      "related": "S14 (Vidinė žinių bazė)",
+      "purpose": "Teksto segmentavimo (chunking) ir metažymių taisyklės",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A17",
+      "name": "Užduočių delegavimo taisyklių konfigūracija",
+      "related": "S15 (Vidinis delegavimas)",
+      "purpose": "Užklausų nukreipimo taisyklės projektų valdymo sistemoms",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A18",
+      "name": "14 dienų naujo darbuotojo įvedimo kontrolinis sąrašas",
+      "related": "S16 (Darbuotojų įvedimas)",
+      "purpose": "Naujo komandos nario adaptacijos proceso planas",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A19",
+      "name": "B1.lt API integracijos konfigūracija",
+      "related": "/integracijos/b1/",
+      "purpose": "Pavyzdinės REST užklausos sąskaitų ir pirkėjų kūrimui",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A20",
+      "name": "Rivilė Gama / EPI užklausų struktūra",
+      "related": "/integracijos/rivile/",
+      "purpose": "Duomenų mainų XML/JSON schemos pavyzdys",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    },
+    {
+      "key": "A21",
+      "name": "Procesų audito klausimynas",
+      "related": "/istekliai/procesu-audito-sablonas/",
+      "purpose": "Atsisiunčiamas procesų inventorizacijos failas (Notion/PDF)",
+      "status": "planned-not-verified",
+      "publicDownloadReady": false
+    }
+  ],
+  "agencyProfileReference": {
+    "commit": "4e3ac3ca6604c75113f52c695dbddcc7af928b46",
+    "paths": [
+      "design/design-ui-designer.md",
+      "design/design-ux-researcher.md",
+      "engineering/engineering-backend-architect.md",
+      "engineering/engineering-devops-automator.md",
+      "engineering/engineering-frontend-developer.md",
+      "marketing/marketing-content-creator.md",
+      "marketing/marketing-seo-specialist.md",
+      "paid-media/paid-media-ppc-strategist.md",
+      "paid-media/paid-media-search-query-analyst.md",
+      "product/product-feedback-synthesizer.md",
+      "project-management/project-management-project-shepherd.md",
+      "project-management/project-management-studio-producer.md",
+      "sales/sales-deal-strategist.md",
+      "sales/sales-outbound-strategist.md",
+      "security/security-ai-generated-code-auditor.md",
+      "specialized/agents-orchestrator.md",
+      "specialized/specialized-workflow-architect.md",
+      "specialized/zk-steward.md",
+      "support/support-analytics-reporter.md",
+      "support/support-finance-tracker.md",
+      "support/support-support-responder.md",
+      "testing/testing-api-tester.md",
+      "testing/testing-reality-checker.md"
+    ]
+  },
+  "projectRules": "PROJECT_RULES.md"
+}

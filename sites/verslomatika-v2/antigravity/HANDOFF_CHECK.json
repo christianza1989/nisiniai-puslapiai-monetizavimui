@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-23T12:40:19.784Z",
+  "scope": "Editorial architecture/research/writing handoff; no website code or visual design implementation",
+  "counts": {
+    "briefs": 75,
+    "concreteUrls": 74,
+    "dynamicTemplates": 1,
+    "articles": 16,
+    "plannedContextLinks": 160,
+    "plannedAssetRequirements": 21,
+    "keywordMarketRows": 311,
+    "serpAttempts": 31,
+    "successfulSerps": 26,
+    "aiAttempts": 13,
+    "successfulAiAnswers": 8
+  },
+  "spentUsd": 0.3536,
+  "checks": {
+    "urlIdDatePreservation": "PASS",
+    "allBriefFieldsAndReadableParity": "PASS",
+    "targetReferences": "PASS",
+    "researchSettlementAndRawHashes": "PASS",
+    "localDocumentLinks": "PASS",
+    "jsonAndEncoding": "PASS",
+    "secretPatternScreen": "PASS",
+    "ownerSpecificScope": "PASS"
+  },
+  "localDocumentLinks": 12,
+  "notPerformed": [
+    "final public text writing",
+    "visual design plan",
+    "website code changes",
+    "rendered browser acceptance",
+    "native content import or publication"
+  ],
+  "files": {
+    "DELIVERY_CHECKLIST.md": "70657c86626d50f1e04e04984c713bf1e4ccab4970d9e98c414c2449da94513d",
+    "FACTS_AND_SOURCES.md": "ac757f27fb34f798a4b0e2bf0513752b898247e851740f63d1d4f017af38ecea",
+    "MASTER_INSTRUCTION.md": "72812f1c3b8dd33ae5d1992136b638403747bc710dafe572971d047b50fb646c",
+    "PAGE_BRIEFS.md": "9f4f480d332f805873839ce9af3de6289f2d97ccef4011758ed4c77955193bb8",
+    "PROJECT_RULES.md": "d006ee13e689dd8ca78dfbc60947030f2bb7c25f4d1304917972125d2e894a5a",
+    "RESEARCH.md": "d9adeebd167c9cbe979b86e85b6ec8095493a9bcf9ac46c444299e9ff5dbf647",
+    "SITE_STRUCTURE.md": "909edf29e2d052bcb536191d01ecb82902321c0d447d2154af2eeee801b31cb8",
+    "START_HERE.md": "62b03885f4524094aca8515bb4d598927ad3681e4f36c5be6e74aa4e209568f0",
+    "keyword-map.csv": "85e4af778535292762ee3db6c6e9df9ffe4301401738d00689873dd3d34f409d",
+    "page-briefs.json": "367f05a885562820a24c88b4035da0cdf7be4ada217d3e36a9e6fc427f512bd0",
+    "publication-plan.json": "2a7a28ba4d503ecf0ece5e9ff3cd9e244cf89701c0a0dcea4050bac4cbc06efb",
+    "research-data.json": "bed75ee2a84d32524cd8f9276494daa475609239f20027838e4beed687455848"
+  }
+}

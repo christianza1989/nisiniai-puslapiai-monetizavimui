@@ -2,6 +2,10 @@
 
 2026-10-23. Apimtis – savininko pateiktų turinio planų redakcija ir papildymas po klausimo apie agentų kūrėją. Parengti [pagrindinis planas](CONTENT_PLAN.md) ir [struktūrizuotas priedas](content-plan.json). Tai planavimo, o ne veikiančios svetainės priėmimas.
 
+## Ankstesnės redakcijos patikra
+
+Toliau iki skilties „Naujas perdavimas“ išsaugotas ankstesnio pakeitimų paketo įrašas. Jis neaprašo vėliau atlikto mokamo tyrimo ar naujo darbo pasidalijimo.
+
 ## Pakeitimai
 
 Išsaugoti visi ankstesnio suderinto inventoriaus 73 konkretūs URL ir agento profilio šablonas. Papildomai įtrauktas /agentu-kurejas/, jo paskirtis ir kelias nuo darbo aprašymo iki patikrinto agento. Galutinė apimtis – 75 įrašai: 74 konkretūs URL ir vienas šablonas. T0 turi 58 konkrečius URL; 16 straipsnių datos išsaugotos.
@@ -45,3 +49,15 @@ TAR paieškoje rastas XV-815 identifikatorius, tačiau tiesioginis teksto atvėr
 Core bazė 26493054ae065dc92980bf9d0c1a4d7c4bdb4371, companion bazė 705688622563e75b1ab044f416b75cdf5cf4fbf7. Originalūs pasenę checkout išsaugoti; darbui sukurti atskiri aktualaus main worktrees ir atlikta porinė freshness patikra. Companion skaitytas, jo source nekeistas.
 
 Rezervacija: GitHub issue246. Keisti tik šie trys sites/verslomatika-v2 dokumentai ir savas WORKSTREAMS įrašas. Bendro core kodo, schemų ar skills spraga šioje redakcijoje netaisyta; core upgrade journal šiems konkrečios svetainės dokumentams netaikomas. Draft PR ir main merge nepakeičia veikiančio V2 ar viešos svetainės.
+
+## Naujas perdavimas
+
+2026-10-23 savininkas patikslino, kad Codex parengia pilną struktūrą ir rašymo užduotį, o visus galutinius tekstus rašo Antigravity / Gemini. Vėliau tiesiogiai nurodė šio projekto negrįsti bendromis core taisyklėmis. Todėl parengtas savarankiškas PROJECT_RULES.md: pilnas V2 produktas, bet kurio tinkamo agency-agents profilio pasirinkimas, komandos ir agentų kūrėjas; nėra paveldėtų F1/MVP, paklausos testo, publikacijų kvotų ar septynių dienų pasirengimo ribų. Paliekamas savininko pasirinkimas panaudoti esamą publikavimo pagal datą galimybę.
+
+Parengta 75 individualių užduočių: 74 konkretūs URL ir vienas agento puslapio šablonas. Pridėta navigacija, puslapių šeimos, skaitytojo keliai, visų sąsajos tekstų užduotis, rezultatų formatas, šaltinių taisyklės ir rašymo partijos. S1 papildytas MX ir neaiškaus adresato patikros ribomis; komercinis aktualumas atskirtas nuo tariamos papildomos universalios ERĮ sąlygos. P39 tyrimas atnaujintas pagal B1 nukreipimą į Site.pro; P49 reikalauja tikrinti dabartinius kreditų ir kitų naudojimo vienetų skirtumus.
+
+Atliktas savininko autorizuotas iki 10 USD Treg tyrimas: 47 užbaigti kvietimai, 0,3536 USD pagal charged_micro. 133 LT ir po 89 US/GB frazes; 31 SERP bandymas, 26 sėkmingi atsakymai; 13 AI bandymų, 8 sėkmingi atsakymai. Klaidos, null, nulis, užsienio rinka ir nepatvirtinta faktinė AI geografija atskirti. Ataskaita ir normalizuoti duomenys yra antigravity/RESEARCH.md bei research-data.json; originalūs kvitai privatūs .local.
+
+Prieš naujausią savininko patikslinimą atskirai išbandytas esamas tyrimų adapteris izoliuotame duomenų kataloge, 47 įrašai su originalių failų SHA-256. Tai techninės galimybės patikra, ne šio produkto organizacinės taisyklės ar privalomas writer darbo etapas. Aktyvios studijos duomenys ir V2 tenant nekeisti.
+
+Šio perdavimo tekstai ir individualios užduotys peržiūrėti dėl lietuvių kalbos, sąlygų ir prasminių ribų. Baigiamasis nuoseklumo patikros kvitas pateiktas antigravity/HANDOFF_CHECK.json. Tai dokumentų patikra; svetainės vaizdas, pilni vieši tekstai, demonstracijos, realūs atsisiuntimai ir techninis įdiegimas šiuo pavedimu nesukurti.

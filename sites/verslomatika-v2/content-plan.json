@@ -1,7 +1,7 @@
 {
   "format": "verslomatika-v2-editorial-plan",
   "formatVersion": 1,
-  "updatedAt": "2026-10-23",
+  "updatedAt": "2026-10-23T12:18:41.702Z",
   "canonicalHost": "verslomatika.lt",
   "locale": "lt-LT",
   "timezone": "Europe/Vilnius",
@@ -33,17 +33,26 @@
       "readyDeadline": "2026-10-25T16:00:00.000Z",
       "publishAt": "2026-10-27T07:00:00.000Z"
     },
-    "datesRequireNativeWorkflowValidation": true
+    "datesNeedImplementationBinding": true,
+    "cadenceIsEditorialProposal": true
   },
   "research": {
     "country": "LT",
     "language": "lt",
-    "keywordVolumes": "not_measured",
-    "serpOverlap": "not_measured",
+    "keywordVolumes": "observed-with-null-sparse-terms",
+    "serpOverlap": "observed-bounded-desktop-sample",
     "gsc": "not_connected",
-    "geoCitations": "not_measured",
-    "treg": "not_signed_in_or_expired_token",
-    "paidCalls": 0
+    "ga4": "account-connection-present-domain-property-unverified",
+    "geoCitations": "8-successful-sampled-answers-effective-country-unverified",
+    "treg": "authenticated-cli-refreshed-browser-session",
+    "paidCalls": 42,
+    "spentUsd": 0.3536,
+    "budgetUsd": 10,
+    "report": "antigravity/RESEARCH.md",
+    "data": "antigravity/research-data.json",
+    "nativeImport": "not-performed",
+    "isolatedResearchAdapter": "verified-canonical-import-47-observations",
+    "meteredEndpointCalls": 47
   },
   "inventory": [
     {
@@ -1767,8 +1776,8 @@
       "boundary": "Pardavimų sprendimo puslapis pristato visą procesą; šis gidas išsamiai nagrinėja atranką ir duomenų kokybę. Teisinė dalis yra proceso dalis, o ne viso gido pakaitalas.",
       "sections": [
         "Tikslinio kliento kriterijai: veikla, dydis, geografija, pirkimo signalas ir aiški atmetimo priežastis. Atskirti įmonės duomenis nuo konkretaus žmogaus duomenų.",
-        "Duomenų kilmė ir kokybė: išsaugoti šaltinį, surinkimo datą, faktą ir jo patikimumą; pašalinti dublikatus, nekurti numanomų adresų kaip patvirtintų kontaktų.",
-        "ERĮ 81 straipsnio 1 dalis: kai abonentas ar registruotasis paslaugų gavėjas yra juridinis asmuo, išankstinio sutikimo nereikia, tačiau būtina aiški, nemokama ir lengvai įgyvendinama galimybė atsisakyti tolesnės komunikacijos. Adreso rašyba pati savaime abonento statuso nenustato.",
+        "Duomenų kilmė ir kokybė: išsaugoti šaltinį, surinkimo datą, faktą ir jo patikimumą; pašalinti dublikatus, nekurti numanomų adresų kaip patvirtintų kontaktų. Kontaktų techninė patikra: sintaksė ir MX įrašai rodo adreso formato bei domeno pašto maršruto sąlygas, tačiau neįrodo konkrečios dėžutės egzistavimo. Neaiškų ir catch-all rezultatą palikti atskira būsena. SPF, DKIM ir DMARC negarantuoja pristatomumo ar atsakymų.",
+        "ERĮ 81 straipsnio 1 dalis: kai abonentas ar registruotasis paslaugų gavėjas yra juridinis asmuo, išankstinio sutikimo nereikia, tačiau būtina aiški, nemokama ir lengvai įgyvendinama galimybė atsisakyti tolesnės komunikacijos. Adreso rašyba pati savaime abonento statuso nenustato. Komercinis aktualumas gali būti mūsų atrankos kokybės taisyklė; jo nepriskirti kaip papildomos universalios ERĮ 81 straipsnio sąlygos be konkretaus normos pagrindo.",
         "Vardiniams darbuotojų kontaktams nustatyti tinkamą BDAR teisinį pagrindą. Jeigu remiamasi 6 straipsnio 1 dalies f punktu, prieš tvarkymą įvertinti ir dokumentuoti teisėtą interesą, būtinumą bei interesų pusiausvyrą. Teisėtas interesas netaikomas automatiškai vien todėl, kad komunikacija yra B2B.",
         "Numatyti taikytiną informavimą pagal BDAR 13 arba 14 straipsnį, teisę nesutikti pagal 21 straipsnį ir atsisakymo įrodymų saugojimą. Atsisakius tiesioginės rinkodaros nebetęsti. ERĮ 81 straipsnio 2 dalies esamo kliento, kuris yra fizinis asmuo, išimties nepateikti kaip bendros B2B taisyklės.",
         "Perdavimas į CRM: kontaktavimo sprendimas, atsakingas asmuo ir draudimo kontaktuoti žyma. Siuntimo apimtį nustatyti pagal faktinį paslaugos teikėją ir kampaniją; universalaus saugaus laiškų kiekio nepateikti."
@@ -1776,7 +1785,8 @@
       "contribution": "Atrankos matrica ir kontaktavimo patikros lentelė su laukais šaltiniui, datai, abonento statusui, teisiniam pagrindui ir atsisakymui.",
       "sources": [
         "VDAI 2026-05-19 DUK",
-        "Aktuali ERĮ 81 straipsnio ir BDAR 6, 13, 14, 21 straipsnių redakcija"
+        "Aktuali ERĮ 81 straipsnio ir BDAR 6, 13, 14, 21 straipsnių redakcija",
+        "RFC 5321: domeno pašto maršrutas ir neaiškūs adresato patikros rezultatai"
       ],
       "agents": [
         "sales/sales-outbound-strategist.md",
@@ -1927,7 +1937,7 @@
       "sections": [
         "Skaitytojo klausimas ir esamas URL nustatomi prieš rašymą. Tyrėjas surenka šaltinius, autorius parengia atsakymą, tikrintojas vertina faktus ir originalią naudą.",
         "Peržiūra siejama su tikslia teksto, vaizdų ir nuorodų versija. Nei vertinimo trukmė minutėmis, nei agentų skaičius neįrodo kokybės.",
-        "Verslomatikoje naudoti bendrą core: planas → juodraštis → ryšiai → revizijos peržiūra → patvirtintas leidimas → įdiegimas → publikavimo data.",
+        "Parodyti visą turinio kelią: skaitytojo klausimas → šaltinių tyrimas → tekstas ir originalus pavyzdys → faktų bei kalbos patikra → publikavimas pagal datą → rezultatų vertinimas.",
         "TVS integraciją pateikti kaip konkretų pasirinktą išvesties adapterį. Rašymas, patvirtinimas ir viešas paskelbimas išlieka skirtingi veiksmai."
       ],
       "contribution": "Redakcinės patikros lentelė ir agentų atsakomybių seka su taisymo grįžtamuoju ryšiu.",
@@ -1941,7 +1951,7 @@
         "marketing/marketing-seo-specialist.md"
       ],
       "cta": "Peržiūrėti turinio rengimo ir patikros seką",
-      "media": "Bendra turinio kelio schema su revizijos peržiūra ir publikavimo datos vartais.",
+      "media": "Turinio kelio schema nuo tyrimo iki patikrinto ir pagal datą paskelbto straipsnio.",
       "url": "/straipsniai/autonominis-turinio-fabrikas/",
       "readyDeadline": "2026-11-10T16:00:00.000Z",
       "publishAt": "2026-11-12T07:00:00.000Z",
@@ -2007,7 +2017,7 @@
         "Aiški antraštė, tiesioginis atsakymas, patikrinami faktai ir prasmingos nuorodos normaliai matomame HTML. Skaitytojui ir robotui teikti tas pačias faktines žinias.",
         "Article, Organization, BreadcrumbList ar kitą tipą rinktis pagal matomą tikrą turinį. FAQPage ar specialus DI ženklinimas nėra privalomas šablonas.",
         "Google AI funkcijoms galioja įprasti SEO principai; nėra specialios privalomos Schema.org schemos ar garantuoto citavimo. Techninė atitiktis negarantuoja indeksavimo.",
-        "Naudoti bendrą viešumo sąlygas atitinkančio turinio projekciją HTML, sitemap, schemoms ir esamoms LLM išvestims. llms.txt palaikyti per core, ne rankinę kopiją."
+        "Matomas tekstas, sitemap, struktūriniai duomenys ir skaitymo išvestys turi pateikti tuos pačius tikrus teiginius bei aktualius URL. llms.txt gali būti papildomas turinio indeksas; jis negarantuoja matomumo."
       ],
       "contribution": "Matomo puslapio ir jo struktūrinių duomenų atitikties pavyzdys bei patikros sąrašas.",
       "sources": [
@@ -2725,7 +2735,7 @@
   ],
   "publication": {
     "publicPackage": false,
-    "workflow": "existing CONTENT_CORE",
+    "workflow": "Reuse existing date-based publishing; integration design follows Verslomatika V2 needs",
     "approval": "exact revision; not granted by this file",
     "deployment": "not performed"
   },
@@ -2755,5 +2765,34 @@
       "server/roles.mjs",
       "server/engine.mjs"
     ]
+  },
+  "handoff": {
+    "entrypoint": "antigravity/START_HERE.md",
+    "briefs": "antigravity/page-briefs.json",
+    "writer": "Antigravity / Gemini",
+    "codexRole": "architecture-research-briefs-and-later-review",
+    "completeScope": {
+      "concreteUrls": 74,
+      "template": 1
+    },
+    "requiresPerPageInternetResearch": true,
+    "status": "prepared-editorial-handoff-not-content-written"
+  },
+  "primaryTopic": {
+    "keyword": "verslo procesų automatizavimas",
+    "ownerPath": "/verslo-procesu-automatizavimas/",
+    "variants": [
+      "verslo automatizavimas",
+      "procesų automatizavimas",
+      "verslo automatizacija"
+    ],
+    "homepageRole": "branded-full-product-overview",
+    "decisionEvidence": "antigravity/RESEARCH.md"
+  },
+  "projectAuthority": {
+    "source": "direct-owner-instruction-2026-10-23",
+    "rules": "antigravity/PROJECT_RULES.md",
+    "inheritedCoreProductRestrictions": false,
+    "reuse": "Existing scheduled publication as technical capability; no F1/MVP/demand/weekly-quota/seven-day constraints on content planning."
   }
 }

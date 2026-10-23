@@ -1,8 +1,8 @@
 # Verslomatika V2 svetainės struktūra ir turinio planas
 
-Atnaujinta 2026 m. spalio 23 d. Rinka – Lietuva, kalba – lietuvių, kalendoriaus laiko juosta – Europe/Vilnius.
+Atnaujinta 2026 m. spalio 23 d. Projektą valdo [tiesioginiai Verslomatikos susitarimai](antigravity/PROJECT_RULES.md); bendri kitų nišų core apimties ir etapų ribojimai netaikomi. Rinka – Lietuva, kalba – lietuvių, kalendoriaus laiko juosta – Europe/Vilnius.
 
-Tai vienas įgyvendinimui skirtas redakcinis pagrindas: svetainės paskirtis, 75 inventoriaus įrašai, puslapių struktūros, 16 straipsnių užduočių, ryšiai ir publikavimo datos. Jis pakeičia ankstesnius tarpusavyje prieštaraujančius Gemini planų variantus. Turinio rengimą ir likusias patikras toliau atlieka Codex; papildomo perdavimo Gemini nereikia.
+Tai vienas įgyvendinimui skirtas redakcinis pagrindas: svetainės paskirtis, 75 inventoriaus įrašai, puslapių struktūros, 16 straipsnių užduočių, ryšiai ir publikavimo datos. Jis pakeičia ankstesnius tarpusavyje prieštaraujančius Gemini planų variantus. Codex parengia architektūrą, tyrimo duomenis ir rašymo užduotis. Antigravity / Gemini atlieka kiekvieno puslapio interneto tyrimą ir parašo visą galutinį turinį. Pilnas perdavimas – [Antigravity pradžios dokumente](antigravity/START_HERE.md).
 
 Savininko patvirtinta apimtis – pilna „Verslomatika V2“ sistema. Turinys pristato agentų pasirinkimą, įmonės kontekstą, įrankius ir jų darbo grandines. Viešas tekstas rašomas veikiančio produkto kalba. Straipsnių programos data ir vidinis įrodymų registras nėra produkto raidos etapo aprašas.
 
@@ -115,7 +115,7 @@ Kiekvienam centrui numatytas pasirinkimo, pasirengimo, naudojimo, integravimo, s
 
 Šie 16 straipsnių yra konkreti pirmoji redakcinė programa. Jie neužbaigia visų galimų išplečiamos platformos temų. Naujas agency-agents vaidmuo pirmiausia susiejamas su agentų katalogu, esamu sprendimu ir klausimu; tik tada sprendžiama, ar reikia naujo turinio.
 
-Lietuvos paieškų apimtys, SERP persidengimas, konkurentų spragos ir faktinis AI citavimas šiuo paketu nepamatuoti. Temos remiasi savininko pasirinkta produkto apimtimi ir pateiktu inventoriu. Treg prisijungimo patikra grąžino negaliojančio arba pasibaigusio prisijungimo būseną; mokamų užklausų neatlikta. Tai netrukdo sutvarkyti turinio užduočių, bet nesuteikia pagrindo žadėti pirmos vietos ar rinkos lyderystės.
+2026-10-23 atliktas atskirai autorizuotas Treg tyrimas: 133 LT frazės, po 89 US ir GB frazes, 26 sėkmingi Google rezultatų atsakymai ir 8 sėkmingi AI paieškos atsakymai. Išlaidos pagal kvietimų kvitus – 0,3536 USD iš 10 USD limito. Null apimtys nėra nulis, užsienio duomenys nėra LT paklausa, o AI faktinė geografija nepatvirtinta. Pilni sprendimai ir ribos pateikti [tyrimo ataskaitoje](antigravity/RESEARCH.md). Pagrindinę frazę „verslo procesų automatizavimas“ valdo /verslo-procesu-automatizavimas/; titulinis pristato prekės ženklą ir visą produktą. Reitingų ar rinkos lyderystės garantija neteikiama.
 
 ## Visas puslapių inventorius
 
@@ -224,13 +224,13 @@ Du straipsniai per savaitę yra darbo ritmo pasirinkimas. Tai nėra SEO reikalav
 | S15 | 2026-12-15 18:00 | 2026-12-17 09:00 | 2026-12-17T07:00:00.000Z |
 | S16 | 2026-12-20 18:00 | 2026-12-22 09:00 | 2026-12-22T07:00:00.000Z |
 
-Tikras core weekly planuoklis turi pasiruošimo langą ir laisvų datų apribojimus. Vien contentPolicy nustatymas negarantuoja šių konkrečių antradienių ir ketvirtadienių datų; naujo plano generavimas gali jas perskirstyti. Importuojant būtina patikrinti faktines išsaugotas publishAt reikšmes ir esamų puslapių tapatybę, nekuriant antro planuoklio ir tyliai neperrašant patvirtintų datų.
+Galutines datas nustatysime pagal šio projekto parengtą turinį. Jau turimą publikavimo pagal datą galimybę pritaikysime Verslomatikai; jos ankstesnis darbo režimas nenustato šio turinio apimties ar privalomo rašymo tempo. Techninio prijungimo metu patikrinamos faktiškai išsaugotos datos.
 
 Jeigu reikalingas turinys ar privalomas failas iki termino neparengtas, paveikta publikacija lieka privati; tvarkoma jos užduotis ir reali data. Parengti nepriklausomi puslapiai tęsiami. Būsimo straipsnio nuoroda komerciniame puslapyje yra atidedamas kontekstinis ryšys, o ne priežastis klaidingai nukreipti skaitytoją į kitą temą.
 
 ## Straipsnių rašymo užduotys
 
-Žemiau yra galutinės redakcinės užduotys, pakeičiančios ankstesnes S1–S16 versijas. Paieškos frazės nusako ketinimą; jų apimtys neįvertintos. Jas tekste vartoti natūraliais linksniais. Numatyti pavyzdžiai rengiami su sintetiniais arba teisėtai nuasmenintais duomenimis. „Peržiūrėti“ ar „atsisiųsti“ veiksmas įgyvendinamas tik turint patikrintą skiltį arba failą.
+Žemiau yra galutinės redakcinės užduotys, pakeičiančios ankstesnes S1–S16 versijas. Paieškos frazės nusako ketinimą; sutampančių tyrimo frazių apimtys ir negrąžinti įverčiai pateikti atskirame tyrimo rinkinyje. Visų ilgesnių straipsnių formuluočių paklausa atskirai nematuota. Jas tekste vartoti natūraliais linksniais. Numatyti pavyzdžiai rengiami su sintetiniais arba teisėtai nuasmenintais duomenimis. „Peržiūrėti“ ar „atsisiųsti“ veiksmas įgyvendinamas tik turint patikrintą skiltį arba failą.
 
 ### S1 B2B kontaktų atranka ir duomenų sodrinimas: procesas, kokybės patikra ir teisėta komunikacija
 
@@ -247,15 +247,15 @@ Jeigu reikalingas turinys ar privalomas failas iki termino neparengtas, paveikta
 **Turinio eiga:**
 
 1. Tikslinio kliento kriterijai: veikla, dydis, geografija, pirkimo signalas ir aiški atmetimo priežastis. Atskirti įmonės duomenis nuo konkretaus žmogaus duomenų.
-2. Duomenų kilmė ir kokybė: išsaugoti šaltinį, surinkimo datą, faktą ir jo patikimumą; pašalinti dublikatus, nekurti numanomų adresų kaip patvirtintų kontaktų.
-3. ERĮ 81 straipsnio 1 dalis: kai abonentas ar registruotasis paslaugų gavėjas yra juridinis asmuo, išankstinio sutikimo nereikia, tačiau būtina aiški, nemokama ir lengvai įgyvendinama galimybė atsisakyti tolesnės komunikacijos. Adreso rašyba pati savaime abonento statuso nenustato.
+2. Duomenų kilmė ir kokybė: išsaugoti šaltinį, surinkimo datą, faktą ir jo patikimumą; pašalinti dublikatus, nekurti numanomų adresų kaip patvirtintų kontaktų. Kontaktų techninė patikra: sintaksė ir MX įrašai rodo adreso formato bei domeno pašto maršruto sąlygas, tačiau neįrodo konkrečios dėžutės egzistavimo. Neaiškų ir catch-all rezultatą palikti atskira būsena. SPF, DKIM ir DMARC negarantuoja pristatomumo ar atsakymų.
+3. ERĮ 81 straipsnio 1 dalis: kai abonentas ar registruotasis paslaugų gavėjas yra juridinis asmuo, išankstinio sutikimo nereikia, tačiau būtina aiški, nemokama ir lengvai įgyvendinama galimybė atsisakyti tolesnės komunikacijos. Adreso rašyba pati savaime abonento statuso nenustato. Komercinis aktualumas gali būti mūsų atrankos kokybės taisyklė; jo nepriskirti kaip papildomos universalios ERĮ 81 straipsnio sąlygos be konkretaus normos pagrindo.
 4. Vardiniams darbuotojų kontaktams nustatyti tinkamą BDAR teisinį pagrindą. Jeigu remiamasi 6 straipsnio 1 dalies f punktu, prieš tvarkymą įvertinti ir dokumentuoti teisėtą interesą, būtinumą bei interesų pusiausvyrą. Teisėtas interesas netaikomas automatiškai vien todėl, kad komunikacija yra B2B.
 5. Numatyti taikytiną informavimą pagal BDAR 13 arba 14 straipsnį, teisę nesutikti pagal 21 straipsnį ir atsisakymo įrodymų saugojimą. Atsisakius tiesioginės rinkodaros nebetęsti. ERĮ 81 straipsnio 2 dalies esamo kliento, kuris yra fizinis asmuo, išimties nepateikti kaip bendros B2B taisyklės.
 6. Perdavimas į CRM: kontaktavimo sprendimas, atsakingas asmuo ir draudimo kontaktuoti žyma. Siuntimo apimtį nustatyti pagal faktinį paslaugos teikėją ir kampaniją; universalaus saugaus laiškų kiekio nepateikti.
 
 **Originali nauda:** Atrankos matrica ir kontaktavimo patikros lentelė su laukais šaltiniui, datai, abonento statusui, teisiniam pagrindui ir atsisakymui.
 
-**Šaltiniai ir patikra:** VDAI 2026-05-19 DUK; Aktuali ERĮ 81 straipsnio ir BDAR 6, 13, 14, 21 straipsnių redakcija. Šaltinio paminėjimas užduotyje nėra jo turinio patikros įrodymas; konkrečios ištraukos ir versijos tikrinamos rengiant tekstą.
+**Šaltiniai ir patikra:** VDAI 2026-05-19 DUK; Aktuali ERĮ 81 straipsnio ir BDAR 6, 13, 14, 21 straipsnių redakcija; RFC 5321: domeno pašto maršrutas ir neaiškūs adresato patikros rezultatai. Šaltinio paminėjimas užduotyje nėra jo turinio patikros įrodymas; konkrečios ištraukos ir versijos tikrinamos rengiant tekstą.
 
 **Agentų profiliai:** `sales/sales-outbound-strategist.md`, `testing/testing-reality-checker.md`. Tai vaidmenų parinkimas; veiksmus vykdo V2 su konkrečiais įrankiais ir teisėmis.
 
@@ -382,7 +382,7 @@ Jeigu reikalingas turinys ar privalomas failas iki termino neparengtas, paveikta
 
 1. Skaitytojo klausimas ir esamas URL nustatomi prieš rašymą. Tyrėjas surenka šaltinius, autorius parengia atsakymą, tikrintojas vertina faktus ir originalią naudą.
 2. Peržiūra siejama su tikslia teksto, vaizdų ir nuorodų versija. Nei vertinimo trukmė minutėmis, nei agentų skaičius neįrodo kokybės.
-3. Verslomatikoje naudoti bendrą core: planas → juodraštis → ryšiai → revizijos peržiūra → patvirtintas leidimas → įdiegimas → publikavimo data.
+3. Parodyti visą turinio kelią: skaitytojo klausimas → šaltinių tyrimas → tekstas ir originalus pavyzdys → faktų bei kalbos patikra → publikavimas pagal datą → rezultatų vertinimas.
 4. TVS integraciją pateikti kaip konkretų pasirinktą išvesties adapterį. Rašymas, patvirtinimas ir viešas paskelbimas išlieka skirtingi veiksmai.
 
 **Originali nauda:** Redakcinės patikros lentelė ir agentų atsakomybių seka su taisymo grįžtamuoju ryšiu.
@@ -393,7 +393,7 @@ Jeigu reikalingas turinys ar privalomas failas iki termino neparengtas, paveikta
 
 **Būtini susiję puslapiai:** /sprendimai/rinkodara/, /sprendimai/seo-geo-automatizavimas/. Papildomi kontekstiniai ryšiai saugomi JSON inventoriuje ir tampa aktyvūs tik esant tinkamam tikslui.
 
-**Temos vizualas:** Bendra turinio kelio schema su revizijos peržiūra ir publikavimo datos vartais.
+**Temos vizualas:** Turinio kelio schema nuo tyrimo iki patikrinto ir pagal datą paskelbto straipsnio.
 
 **Kitas veiksmas:** „Peržiūrėti turinio rengimo ir patikros seką“. Turinys turi pateikti pažadėtą pavyzdį. Atsisiuntimo mygtuko nepridėti, kol failas neparengtas.
 
@@ -449,7 +449,7 @@ Jeigu reikalingas turinys ar privalomas failas iki termino neparengtas, paveikta
 1. Aiški antraštė, tiesioginis atsakymas, patikrinami faktai ir prasmingos nuorodos normaliai matomame HTML. Skaitytojui ir robotui teikti tas pačias faktines žinias.
 2. Article, Organization, BreadcrumbList ar kitą tipą rinktis pagal matomą tikrą turinį. FAQPage ar specialus DI ženklinimas nėra privalomas šablonas.
 3. Google AI funkcijoms galioja įprasti SEO principai; nėra specialios privalomos Schema.org schemos ar garantuoto citavimo. Techninė atitiktis negarantuoja indeksavimo.
-4. Naudoti bendrą viešumo sąlygas atitinkančio turinio projekciją HTML, sitemap, schemoms ir esamoms LLM išvestims. llms.txt palaikyti per core, ne rankinę kopiją.
+4. Matomas tekstas, sitemap, struktūriniai duomenys ir skaitymo išvestys turi pateikti tuos pačius tikrus teiginius bei aktualius URL. llms.txt gali būti papildomas turinio indeksas; jis negarantuoja matomumo.
 
 **Originali nauda:** Matomo puslapio ir jo struktūrinių duomenų atitikties pavyzdys bei patikros sąrašas.
 
@@ -826,47 +826,13 @@ Prie kiekvieno parengto failo fiksuojama tikra vieta ir versija, kilmė, patikro
 
 Failui neprivaloma išgalvota produkcinė patikra: statinį šabloną reikia realiai perskaityti ir išbandyti pagal paskirtį, o teiginį apie sistemos veikimą pagrįsti tikru sistemos bandymu. Parengus keičiamas tik atitinkamas įrašas ir paveikto turinio peržiūra.
 
-## Bendra core publikavimo sutartis
+## Svetainės techninis prijungimas
 
-Verslomatika V2 naudoja bendrą turinio eigą ir išlaiko savo produkto sąsają. Produkto pavadinimas V2 ir core turinio schema V2 yra skirtingos sąvokos; naudotinas turinio formatas pasirenkamas pagal tikrą adapterį. Struktūrizuotas V2 turinys nesuplokštinamas į seną formatą vien dėl pavadinimo.
+Šio projekto struktūrą ir turinio apimtį nustato Verslomatikos produkto poreikiai bei [projekto susitarimas](antigravity/PROJECT_RULES.md). Panaudojama jau sukurta publikavimo pagal datą galimybė. Kitų nišų etapų, pasirengimo terminų ir publikacijų kvotų šiai svetainei netaikome.
 
-Autoritetai: [CONTENT_CORE](../../CONTENT_CORE.md), [content-schedule.mjs](../../content-studio/src/content-schedule.mjs), [bendras workflow](../../SKILLS/niche-content-planner/references/content-workflow.md), [nepriklausomo projekto eksporto kodas](../../content-studio/src/external-content-export.mjs). Peržiūrėta core versija – 26493054ae065dc92980bf9d0c1a4d7c4bdb4371; companion – 705688622563e75b1ab044f416b75cdf5cf4fbf7.
+Parengus tekstus, techninio prijungimo metu susiejami puslapiai, nuorodos, metaduomenys, vaizdai ir datos. Tikrinamas realus svetainės vaizdas bei kontaktų ir produkto veiksmai. Publikavimo pagal datą patikra turi parodyti, kad straipsnis ir jo nuorodos atsiranda numatytu laiku. Rašytojas gali užbaigti visą turinį nepriklausomai nuo šių vėlesnių programavimo darbų.
 
-Eiga: tikrų tapatybių ir briefų susiejimas → juodraščiai bei medija → finalizeInternalLinks → galutinės revizijos recordEditorialReview → approveReviewedBatch → releaseContent → patikrintas bendras eksportas → V2 adapterio importas ir įdiegimas → datos vartai. Nerengiami atskiri SEO, medijos ar publikavimo varikliai.
-
-Pagrindinis jau parengtos revizijos datos predikatas viešame core reikalauja approval.status = approved, approval.revisionHash = revisionHash ir publishAt ne vėliau nei dabar. Host, siteId, atšaukimo ir tinklo apribojimai papildomai taikomi bendroje projekcijoje. Approval hash neskaičiuojamas ranka vietoj įprasto peržiūros ir leidimo veiksmo. Datos ir laikas viešame pakete pateikiami ISO UTC su Z.
-
-Inventoriaus URL per bendrą ryšių užbaigimą susiejami su realiais pageId. Struktūrizuotame V2 turinyje žinomas page target formatas turi kind: page ir pageId; tai nėra savavališka link:page Markdown nuoroda. Nepakanka vien privačiai užrašyti nuorodos pasiūlymą. Patvirtinta versija turi turėti išspręstą ryšį, o bendras rendereris patikrina tikslo viešumą.
-
-Tarpusavyje priklausantys žinomi puslapiai peržiūrimi kaip suderinta partija. Iki būsimo tikslo datos išsaugomas skaitomas tekstas; netinkamas href neviešinamas. Vėliau nuoroda gali atsirasti tik jeigu jos tikslas jau įtrauktas į įdiegtą patvirtintą turinį ir bendras resolveris leidžia jį rodyti.
-
-Parengtas ir įdiegtas būsimos datos turinys gali tapti viešas užklausos metu, nepriklausomai nuo studijos kompiuterio veikimo. Tai negeneruoja dar neparašytų straipsnių. Eksporto būsena exported-not-imported-not-deployed nėra aktyvus V2 ryšys.
-
-Talpyklos režimas nustatomas pagal tikrą priimančio projekto adapterį. Datos pasikeitimas pats savaime nesiunčia tariamo PURGE ar revalidateTag. Neleidžiama ilga 404 arba seno indekso talpykla, paslepianti publikaciją po datos. Privati peržiūra naudoja tikrą autentifikavimą; preview=true užklausos parametras nėra prieigos teisė. noindex nėra prieigos kontrolė.
-
-HTML, sąrašai, nuorodos, sitemap, canonical, schemos, esamos LLM išvestys ir vieša medija naudoja tą pačią tinkamumo logiką. datePublished ir dateModified aprašo tikrus įvykius; sitemap lastmod nėra automatiškai tapatinamas su publishAt.
-
-## Realizavimo patikra ir turinio priėmimas
-
-Prieš rašymo partiją tikrinamas visas jai skirtas kontekstas: klausimas, URL ir tikrieji ID, visa briefų apimtis, šaltiniai, medija bei tiksliniai ryšiai. Šis JSON nėra nukopijuojamas į studijos duomenų katalogą apeinant jos API ar schemai taikomus vartus.
-
-| Tikrinama vieta | Prieš publishAt | Nuo publishAt |
-| --- | --- | --- |
-| Viešas puslapio URL | Anoniminiam lankytojui turinys neprieinamas; tikrinamas faktinis HTTP atsakas. | Patvirtintas tinkamo domeno puslapis pasiekiamas 200 atsaku. |
-| Indeksai ir susiję puslapiai | Nėra būsimo straipsnio kortelės, turinio ar veikiančios būsimos nuorodos. | Puslapis randamas tinkamoje grupėje, ryšiai veda į tikrą URL. |
-| Sitemap ir skaitymo išvestys | Būsimas URL ir privatus tekstas neįtraukti. | Įtraukiamas tinkamas kanoninis URL ir tas pats viešas turinys. |
-| Schema ir datos | Neviešinama būsimo puslapio schema kaip jau paskelbto teksto. | Schema atitinka matomą tekstą, tikrą autorių ir datų prasmę. |
-| Medija ir atsisiuntimai | Iš būsimos publikacijos neištekėję nevieši failai. | Prieinami konkretūs patikrinti failai su teisingais tipais ir vaizdo variantais. |
-| Talpykla | Užfiksuojami faktiniai atsako ir cache duomenys. | Patikrinamas šiltos talpyklos atsakas, ne vien užklausa su cache apėjimu. |
-| Revizijos ir domenas | Svetima, atšaukta, nepatvirtinta arba pakeista revizija nerodoma. | Viešumas suteikiamas tik tą pačią sutartį atitinkančiam turiniui. |
-
-Prieš ir po datos bandymai atliekami izoliuotame tikrame HTTP adapteryje; atskirai tikrinamas įdiegtas host. Prieš viešą priėmimą straipsniai peržiūrimi desktop ir mobile vaizde, su ilgomis lietuviškomis antraštėmis, šaltiniais, lentelėmis ir taikytinu teksto didinimu. Planavimo dokumento perskaitymas tokios peržiūros nepakeičia.
-
-Tipografikos eiga realizuojant: inventorizuoti esamus teksto vaidmenis → patikrinti svetainės dizaino sistemą ir lietuviškus glifus → suplanuoti tik paveiktus taisymus → peržiūrėti tikrą atvaizdavimą → išsaugoti konkrečios versijos įrodymus. Turinio trumpinimas ar šrifto mažinimas nėra būdas paslėpti netinkantį tekstą.
-
-Pilnos kalbos saviredakcijos metu tikrinama visų puslapių prasmė, sintaksė, skaičiai, sąlygos, nuorodų linksniai, mygtukai ir vaizdų aprašai. Nuolatinė frazė „sistema garantuoja“ pakeičiama konkrečia paaiškinta kontrole ir jos riba.
-
-SEO priėmimas vertina tikrus atsakymus ir originalią naudą. [Google people-first gairės](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) nenumato pageidaujamo žodžių kiekio. [Google AI funkcijų dokumentacija](https://developers.google.com/search/docs/appearance/ai-features) nenumato specialios privalomos AI schemos ar garantuoto įtraukimo. [Spam policies](https://developers.google.com/search/docs/essentials/spam-policies) aprašo mažavertės masinės gamybos piktnaudžiavimą; publikacijų skaičius savaime nesuteikia nei baudos, nei autoriteto.
+Turinio kokybė vertinama pagal tikslų atsakymą, savitą praktinę naudą, šaltinių bei kalbos tikslumą ir aiškų skaitytojo veiksmą. Universalaus žodžių kiekio ar garantuotą AI citavimą suteikiančios schemos nenustatome.
 
 ## Teisinių šaltinių taikymas
 
@@ -878,11 +844,11 @@ XV-815 identifikatorius rastas oficialiame TAR registre; tiesioginis TAR teksto 
 
 ## Įgyvendinimo eilė ir atsakomybė
 
-1. Codex susieja planą su tikra V2 turinio tapatybe, esamais puslapiais ir adapteriu. Išsaugomi jau parašyti tekstai, URL, datos ir patvirtintų versijų istorija.
-2. Parengia T0 puslapių tekstus ir veikiančius viešus veiksmus. Turinys pristato pilną produktą; nepatvirtintos kainos, rodikliai ir tariami kliento rezultatai neįterpiami.
-3. Pagal S1–S16 užduotis rengia straipsnius ir jų originalius pavyzdžius. Nepakanka vien sugeneruoti antraštes ar pažymėti registrą kaip baigtą.
-4. Patikrina failus, vaizdus, šaltinius, lietuvių kalbą ir tikrą atvaizdavimą; tada naudoja esamą core revizijų peržiūrą ir susietos partijos leidimą.
-5. Patikrina realų V2 importą, laiko vartus ir talpyklą prieš tvirtindamas, kad kalendorius veikia. Viešas įdiegimas išlieka atskiras veiksmas.
-6. Po realaus paskelbimo matuoja indeksavimą, užklausas ir produkto naudojimą. AI citatas vertina pagal konkretų variklį, datą ir pavyzdžių imtį. Svetainės publikavimo laikas nėra Google indeksavimo laikas.
+1. Codex parengia visą struktūrą ir kiekvieno URL rašymo užduotį, tikrą tyrimo kontekstą, šaltinių taisykles bei rezultatų formatą.
+2. Antigravity / Gemini perskaito [pilną perdavimo paketą](antigravity/START_HERE.md), atlieka atskirą aktualų kiekvienos temos interneto tyrimą ir parašo visus 74 konkrečių URL tekstus bei vieną agento puslapio šabloną. Pateikia originalius pavyzdžius, metaduomenis, sąsajos tekstus ir kalbos saviredakciją.
+3. Rašytojas registruoja tikras šaltinių vietas ir konkrečias privačias priklausomybes; kainų, klientų rezultatų ar veikimo įrodymų neišgalvoja.
+4. Codex vėlesniame įgyvendinimo etape patikrina gautus tekstus, faktines tapatybes, esamas revizijas, priedus, vaizdus ir tikrą atvaizdavimą. Techninį prijungimą parenka pagal šios svetainės poreikius ir jau turimas tinkamas galimybes. Šis perdavimas vykdomo importo neapima.
+5. Tikri V2 importo, datos ir talpyklos bandymai atliekami prieš tvirtinant, kad kalendorius veikia. Viešas įdiegimas išlieka atskiras veiksmas.
+6. Po realaus paskelbimo matuojamas indeksavimas, tinkamos užklausos ir produkto naudojimas. AI citatos vertinamos pagal konkretų variklį, datą ir atsakymų imtį. Publikavimo laikas nėra Google indeksavimo laikas.
 
-Šiuo perdavimu užbaigta planų redakcija ir jų struktūrinė patikra. Straipsnių pilni tekstai, 21 parengimo registro rezultatas, importas per bendrą core ir įdiegimas pažymimi įvykusiais tik juos realiai atlikus. Šios užduotys priklauso Codex vykdymui; savininkui nereikia grąžinti jų į Gemini.
+Šiuo etapu parengta struktūra ir rašymo užduotis. Pilni tekstai, 21 priedų registro rezultatas, importas ir įdiegimas nėra pažymėti atliktais. Ankstesnį darbo pasidalijimą pakeitė tiesioginis savininko nurodymas: galutinius tekstus rašo Antigravity / Gemini.

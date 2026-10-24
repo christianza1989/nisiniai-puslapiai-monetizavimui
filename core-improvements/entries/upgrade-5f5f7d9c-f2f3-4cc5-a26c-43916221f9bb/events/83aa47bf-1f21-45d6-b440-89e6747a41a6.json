@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/59",
+  "note": "Scoped owner-authorized follow-up to Claude595. Promedical-only guide disclosure removal preserves author and dates and all other site disclosures. Obsolete saved-list section and product procurement aside copy removed; product data and public packages untouched. Build and browser checks still in progress at this event.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "95/95, zero failures, output/promedical-contact-only-20261024/595/core-tests.log; rendered six-family regression and other-site ArticleMeta preservation."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs <public-worktree> --staged",
+      "result": "PASS",
+      "evidence": "Exactly three source/test blobs, no findings;595/public-safety.json."
+    }
+  ],
+  "eventId": "83aa47bf-1f21-45d6-b440-89e6747a41a6",
+  "sequence": 2,
+  "at": "2026-10-24T14:03:14.824Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Public renderer commit 2a5b17f2955b00d7853982326b0c8ab0b53e1e8a has passed scoped SSR and all Core tests. This event attests those checks only; production build, browser QA and SEO smoke are still pending. No merge or deployment.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "95 tests passed, zero failures; final source with six-family Promedical contact-only test. Local evidence: output/promedical-contact-only-20261024/core-tests-final.log."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs <public-worktree> --staged",
+      "result": "PASS",
+      "evidence": "Exact two staged blobs, no findings; renderer and regression test only."
+    }
+  ],
+  "eventId": "1c076e86-8f01-4ac8-8d55-b98bdac501cc",
+  "sequence": 2,
+  "at": "2026-10-24T13:23:13.166Z"
+}

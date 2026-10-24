@@ -1,0 +1,19 @@
+{
+  "siteId": "promedical",
+  "summary": "Promedical contact-only renderer must remove the inquiry client entrypoints together, otherwise a removed form leaves saved-list controls with no destination.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/58",
+    "SSR regression tests all six Promedical page families and bundler dependency absence."
+  ],
+  "paths": [
+    "components/niche/promedical-site.tsx",
+    "tests/promedical-contact-only.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/58",
+  "rollback": "Revert the isolated public renderer PR. No content package, backend route, storage or deployment changes.",
+  "id": "upgrade-1d330a98-a144-43d3-b53e-9cfa744be4c5",
+  "branch": "codex/promedical-contact-journal-20261024",
+  "baseSha": "26493054ae065dc92980bf9d0c1a4d7c4bdb4371",
+  "createdAt": "2026-10-24T13:13:26.423Z"
+}

@@ -1,0 +1,20 @@
+{
+  "siteId": "promedical",
+  "summary": "Long accepted category headings overflow at 320px when 200% text enlargement and increased text spacing are combined. Apply emergency word wrapping only inside the newly accepted category article.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/64",
+    "Actual combined enlargement/spacing observation: scrollWidth371 before and320 after scoped overflow-wrap:anywhere; historical raw diagnostics retained.",
+    "98/98 tests and all1908 paired SSR outputs verified; only434 article style attributes differ."
+  ],
+  "paths": [
+    "components/niche/promedical-site.tsx",
+    "docs/PROMEDICAL_CATEGORY_CONTENT_609.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/64",
+  "rollback": "Revert only the exact wrap follow-up commit upon a proven regression; retain accepted prose, category sections and all protected content.",
+  "id": "upgrade-f016b6d8-f9fe-4c2b-88e3-fae0a7068540",
+  "branch": "codex/promedical-contact-journal-20261024",
+  "baseSha": "9285f175406255190e543089e003f807713b67e6",
+  "createdAt": "2026-10-24T18:14:30.693Z"
+}

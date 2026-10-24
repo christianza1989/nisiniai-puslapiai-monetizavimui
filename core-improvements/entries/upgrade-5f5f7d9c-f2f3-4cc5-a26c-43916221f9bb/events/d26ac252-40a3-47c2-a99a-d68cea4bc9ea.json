@@ -1,0 +1,35 @@
+{
+  "status": "local-verified",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/59",
+  "note": "Final verification of owner-authorized Claude595 follow-up at public commit 9698deae74cdbbd716d775fc739590b4e5589bfa. Four scoped renderer deletions; no content package, product drafts, merge or deployment. Package email remains a mandatory future publication prerequisite. Privacy443 correction delivered separately and is not imported.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "95/95 tests, zero failures; output/promedical-contact-only-20261024/595/core-tests.log"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "Exit0; output/promedical-contact-only-20261024/595/build.log"
+    },
+    {
+      "command": "SEO_SMOKE_BASE_URL=http://127.0.0.1:9431 SEO_SMOKE_SITE_ID=promedical npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "1853 public pages, robots, sitemap, llms, schemas, host isolation and404;595/seo-smoke.log"
+    },
+    {
+      "command": "Playwright local rendered UI and visual inspection",
+      "result": "PASS",
+      "evidence": "12 cases: home/contact/product/guide at1280/390/320; search, gallery, menu, preserved byline/dates, scoped removals.595/qa-results.json and screenshots. Initial default-site attempt excluded."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs <public-worktree> --staged",
+      "result": "PASS",
+      "evidence": "Exactly3 source/test blobs;595/public-safety.json"
+    }
+  ],
+  "eventId": "d26ac252-40a3-47c2-a99a-d68cea4bc9ea",
+  "sequence": 3,
+  "at": "2026-10-24T14:11:01.369Z"
+}

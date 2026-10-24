@@ -1,0 +1,9 @@
+{
+  "status": "merged",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/65",
+  "commit": "8e47c34e497b2210c8cfff7d0e36c7f8b329e213",
+  "note": "Owner609 scoped rendering authorization. Source merge only; local/candidate/live publication gates remain mandatory. Normal build completed, tests98/98 and all1908pairedSSR passed; no Cloudflare upload yet.",
+  "eventId": "578d1d7f-f323-45e3-bfc8-f61b95df14a6",
+  "sequence": 3,
+  "at": "2026-10-24T18:24:20.717Z"
+}

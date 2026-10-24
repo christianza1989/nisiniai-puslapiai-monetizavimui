@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "98/98 frozen publication plus wrap source tests; core-tests-final.log"
+    },
+    {
+      "command": "node compare-renderer.mjs and python check-ssr.py",
+      "result": "PASS",
+      "evidence": "1908 outputs: only434 category article style attributes differ;1474 byte-identical;434 exact bodies/sources;18 query states"
+    }
+  ],
+  "note": "PR65 add1d543c9cfdddb616ab8b6bdb96333d01b825b. Actual combined enlargement diagnosis preserved; normal build and final viewport acceptance pending.",
+  "eventId": "fdb8e084-7c25-45cf-8f9b-47f15195083d",
+  "sequence": 2,
+  "at": "2026-10-24T18:15:23.750Z"
+}

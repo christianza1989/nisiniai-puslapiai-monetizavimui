@@ -1,0 +1,30 @@
+{
+  "status": "local-verified",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/59",
+  "note": "Final validation for public commit2a5b17f2955b00d7853982326b0c8ab0b53e1e8a. Separate draft awaits Claude diff review; no merge/deploy. Build uses existing checked-in content packages, not unapproved studio drafts. Only compiler-generated cache was restored after testing and excluded from PR. Own local9431 preview and QA Pages closed; shared studio4317 and user Chrome untouched.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "95/95 tests,0 failures, core-tests-final.log; includes six-family SSR and inquiry client dependency absence."
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "build-isolated.log ends Build complete; five RSC/client/SSR stages completed with own installed lockfile dependencies. Earlier interrupted attempt is not counted."
+    },
+    {
+      "command": "SEO_SMOKE_BASE_URL=http://127.0.0.1:9431 SEO_SMOKE_SITE_ID=promedical npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "seo-smoke.log:1853 public pages,robots,sitemap,llms,schemas,host isolation and404 passed over built local Wrangler runtime."
+    },
+    {
+      "command": "Playwright built-runtime QA six page families x1280/390/320",
+      "result": "PASS",
+      "evidence": "qa-results.json:18 HTTP200 observations,no inquiry controls,no horizontal overflow,no broken loaded images,no page errors; contact page only catalogue search form; mobile menu,SKU search and gallery open/close passed. Screenshots visually inspected; historic package content is not studio text acceptance."
+    }
+  ],
+  "eventId": "9b7f8fbd-b49c-448b-b68a-88d40a285e2d",
+  "sequence": 4,
+  "at": "2026-10-24T13:29:59.426Z"
+}

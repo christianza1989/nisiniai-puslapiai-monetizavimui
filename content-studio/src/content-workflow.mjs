@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { bodyPlainText, inlineNodes } from './content-package-v2.mjs';
 import { contentPolicy, planningWindow } from './content-schedule.mjs';
+import { hasMinimumContent, shortIndexMinimum } from './minimum-content.mjs';
 
 export const REVIEW_AREAS = ['usefulness', 'facts', 'sources', 'media', 'links', 'presentation'];
 const stable = value => Array.isArray(value) ? `[${value.map(stable).join(',')}]` : value && typeof value === 'object' ? `{${Object.keys(value).sort().map(k => `${JSON.stringify(k)}:${stable(value[k])}`).join(',')}}` : JSON.stringify(value);
@@ -41,6 +42,8 @@ export function draftLinks(site, page) {
 export function pageReadiness(site, page, hash, selectedIds = new Set()) {
   const blockers = [];
   if (!page.body.length || !bodyPlainText(page.body).trim()) blockers.push('Turinys neparengtas.');
+  // Decision 606 leaves readiness behavior of all other pages unchanged.
+  if (shortIndexMinimum(site, page) !== undefined && !hasMinimumContent(site, page)) blockers.push('Turinyje per mažai naudingos informacijos.');
   if (page.factChecks?.length) blockers.push('Yra neišspręstų faktų / asetų pastabų.');
   if (!reviewCurrent(site, page, hash)) blockers.push('Trūksta aktualios agento redakcinės peržiūros.');
   if (['guide', 'article'].includes(page.type) && !page.media.length) blockers.push('Gidui / straipsniui reikia tikro peržiūrėto temos vaizdo.');

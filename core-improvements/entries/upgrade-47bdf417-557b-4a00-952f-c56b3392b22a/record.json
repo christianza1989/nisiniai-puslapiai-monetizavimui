@@ -1,0 +1,22 @@
+{
+  "siteId": "promedical",
+  "summary": "Accepted catalogue category prose and source citations were omitted by the public renderer. Render only the owner-approved 434 category identities after catalogue results; preserve protected categories and other page families.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/61",
+    "https://github.com/christianza1989/niche-public-core/pull/62",
+    "SSR comparison of all1908 release pages:434 append-only changes,1474 byte-identical outputs; ordered blocks and sources checked for434."
+  ],
+  "paths": [
+    "components/niche/promedical-site.tsx",
+    "lib/promedical-category-content.mjs",
+    "tests/promedical-category-content.test.mjs",
+    "docs/PROMEDICAL_CATEGORY_CONTENT_609.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/61",
+  "rollback": "Revert the exact renderer commit if a verified rendering regression occurs; preserve content, products and historical approvals.",
+  "id": "upgrade-47bdf417-557b-4a00-952f-c56b3392b22a",
+  "branch": "codex/promedical-contact-journal-20261024",
+  "baseSha": "f78061054ae5e2520f0dc69a909a549c2612d1aa",
+  "createdAt": "2026-10-24T17:47:56.038Z"
+}

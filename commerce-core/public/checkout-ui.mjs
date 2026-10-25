@@ -1193,13 +1193,6 @@ export async function mountCheckout(
   const m = buyerMessages[language] || buyerMessages.lt;
   const status = element('p', { role: 'status', 'aria-live': 'polite' });
   const content = element('div');
-  root.replaceChildren(
-    ...(Number.isInteger(headingLevel) && headingLevel >= 1 && headingLevel <= 6
-      ? [element('h' + headingLevel, {}, title || t[0])]
-      : []),
-    status,
-    content,
-  );
   const money = (amount, currency) =>
     new Intl.NumberFormat(language, { style: 'currency', currency }).format(amount / 100);
   const run = async (button, task) => {
@@ -1227,6 +1220,15 @@ export async function mountCheckout(
   };
   const { context, catalog, markets } = await client.initialize();
   if (signal?.aborted) return client;
+  // Keep the caller's loading/status shell until data is ready. An aborted
+  // initialization must not replace a newer view or collapse its geometry.
+  root.replaceChildren(
+    ...(Number.isInteger(headingLevel) && headingLevel >= 1 && headingLevel <= 6
+      ? [element('h' + headingLevel, {}, title || t[0])]
+      : []),
+    status,
+    content,
+  );
   let recovered;
   if (recoveryToken) recovered = await client.openRecovery(recoveryToken);
   else if (client.attempt?.recovery) recovered = await client.openRecovery(client.attempt.token);

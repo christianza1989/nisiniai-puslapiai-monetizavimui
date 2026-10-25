@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Preserve caller loading geometry and avoid stale checkout replacement during asynchronous initialization",
+  "category": "code",
+  "evidence": [
+    "Actual Memory Casting cold cart load removed its SSR loading paragraph before awaiting initialization: footer moved up46.3958px, then the final cart shell insertion moved it below the viewport (CLS.1312). Core mountCheckout replaced caller DOM before its first awaited initialization."
+  ],
+  "paths": [
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/test/checkout-cart.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/261",
+  "rollback": "Revert this public UI change and use its matching exact browser SDK; do not alter checkout prices, orders, provider bindings or recovery policy.",
+  "id": "upgrade-3dce6999-0d46-4d07-a52d-51f86501cc67",
+  "branch": "codex/memocasting-final-acceptance-20261025",
+  "baseSha": "7c9448b9fc31e0b613b170aa330a0379f3748bad",
+  "createdAt": "2026-10-25T21:02:18.843Z"
+}

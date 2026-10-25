@@ -26,3 +26,7 @@ PUBLIC: lib/memocasting-commerce-bridge.mjs, product-content/structure/identifie
 ## Priėmimo ribos
 
 Originalus auditas išlieka istoriniu diagnostikos pjūviu. Šiame dokumente kiekvienam radiniui bus užfiksuota, kas faktiškai įgyvendinta, kas gyvai patikrinta ir kokių savininko faktų ar išorinių duomenų dar nėra. Nepriklausomų rekomendacijų gavimas, Google indeksavimo greitis ir pilna CWV imtis nėra vieno deploy pažadas.
+
+## Aktualus užbaigimo įrašas
+
+Šis pradinis planas ir jo checkboxai yra istorinis įgyvendinimo pjūvis. Dabartinis priimtas frontend, redakcinis paketas,96%mažesnės katalogo miniatiūros, patikrintos schemos ir papildomos specialistų išvados įrašytos [COMPLETION_2026_10_25.md](COMPLETION_2026_10_25.md). Visos publikavimo datos išsaugotos; planuotas F03 perplanavimas nenaudotas galutiniame leidinyje. F10 atlikta atrankos/matavimo priemonė, o naujų išorinių paminėjimų ar išsiųstų užklausų neimituojama. F11/F12 ribos dėl nepriklausomų veiklos/paieškos rodiklių lieka aiškiai nurodytos. Tai nėra pažadas dėl Google reitingų ar AI rekomendacijų.

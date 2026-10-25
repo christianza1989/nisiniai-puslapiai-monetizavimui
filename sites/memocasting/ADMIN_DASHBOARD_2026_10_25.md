@@ -30,7 +30,7 @@ Spektro linijų navigacija atmesta: kasdieniam parduotuvės darbui reikalautų i
 - [x] Vienodai pateikti likučius, siuntas, dokumentus, automatinius darbus, finansus ir didmeną; išlaikyti palaikomas funkcijas ir teises.
 - [x] Patikrinti asinchroninių skyrių būsenas ir saugų perjungimą, paiešką, filtrus ir klaidas.
 - [x] Faktinis desktop/mobile,320px ir matomas klaviatūros fokusas. Pilnas assistive-technology,200% teksto ir spacing atitikties auditas šiame ribotame priėmime neatliktas; jo PASS neteikiamas.
-- [ ] Paveikti regresijos testai, tikras edge, source safety, Git/upgrade perdavimas, diegimas ir hosted skaitymo patikra.
+- [x] Paveikti regresijos testai, tikras edge, source safety, Git/upgrade perdavimas, diegimas ir hosted skaitymo patikra.
 
 Tipografika: vienas sistemos sans su LT ženklais,16px body/controls,14–15px pagalbiniai duomenys,28px H1 ir20px H2; tabulinės sumos,70ch proza, mažiausiai44px svarbūs valdikliai. Šviesus neutralus darbo paviršius, grafito tekstas ir vienas akcentas aktyviai navigacijai bei pirminiam veiksmui. Tikslius tokenus fiksuoti iš baigto bendro admin kodo commerce-core/DESIGN.md; viešos parduotuvės CSS nekeisti.
 
@@ -40,6 +40,10 @@ Priėmimas neapima tikro pinigų grąžinimo, siuntos užsakymo, kliento laiško
 
 237/237 commerce regresijos; tikras workerd/native D1 smoke; produkcijos profilio dry-run; pakeistų modulių sintaksė ir formatas. Izoliuotas penkių užsakymų bandymas parodė paiešką/filtrus, juodraščio saugojimą nekeičiant paskelbtos versijos, dialogo abi baigtis, prekės antraštės perjungimą,320 CSS px be horizontalaus perpildymo. Esami prekių vaizdai įkelti per tikrą CatalogMedia saugyklą, ne fiktyvius ID.
 
-Pridėtos tikslinės5sekjuodraščio ir1,8sek užsakymo atsakymų patikros: užvertas užsakymas negrąžina navigacijos; seno juodraščio atsakymas nenuima naujos prekės dirty perspėjimo; atšauktas paskelbimas nesukuria naujo publication POST ir nerodo sėkmės; įprastas At naujinti užbaigia busy būseną. Viena ankstesnė fixture publikacija, kur sprendimas priimtas jau po atsakymo, nevadinama atšaukimo įrodymu. Produkcijos katalogas bandymams nekeistas.
+Pridėtos tikslinės 5 sek. juodraščio ir 1,8 sek. užsakymo atsakymų patikros: užvertas užsakymas negrąžina navigacijos; seno juodraščio atsakymas nenuima naujos prekės dirty perspėjimo; atšauktas paskelbimas nesukuria naujo publication POST ir nerodo sėkmės; įprastas „Atnaujinti“ užbaigia busy būseną. Viena ankstesnė fixture publikacija, kur sprendimas priimtas jau po atsakymo, nevadinama atšaukimo įrodymu. Produkcijos katalogas bandymams nekeistas.
 
 Kanoninio Impeccable nepriklausomo reviewer paskutinis verdict: ship tik išvardytoms pataisoms. Detektorius pateikė53 advisory atvejus trijuose atnaujinamų dizaino tokenų tipuose; tai ne53 funkcijos klaidos ir ne visas WCAG auditas. Faktiniai privatūs ekranai: admin-final-desktop, admin-final-mobile, admin-editor-mobile (sąmoningai slinktas redaktorius), admin-finance-desktop (visas finansų puslapis). Viešų klientų duomenų šiose fixture nuotraukose nėra.
+
+## Paskelbta
+
+2026-10-25T20:18:50UTC aktyvuotas Worker1f0c04e1-3ffc-43a4-80fa-3a0c50f6a670 iš kodo07341ebf. Autentifikuotas https://login.memocasting.lt/admin desktop ir320px vaizdas, filtrai,8prekių sąrašas, paštas ir24/12politika priimti. Konfigūracija, cron ir esami verslo duomenys išsaugoti. Pilnas dabartinis įrašas: [COMPLETION_2026_10_25.md](COMPLETION_2026_10_25.md).

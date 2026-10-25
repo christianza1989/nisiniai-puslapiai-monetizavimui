@@ -35,3 +35,5 @@ Technical follow-up tests:17CORE analytics/recovery and30PUBLIC consent/attribut
 Prior commerce code versionbb6755eb-b908-401c-a1a1-d553e4625df5 is the scoped rollback point. Reverting code must retain the current primary mailbox metadata, secrets,24/12store policy, D1/R2/service bindings and cron; a code rollback does not restore database/configuration state. Do not use the older restart checkpoint to disable current recovery.
 
 Source delivery remains distinct from runtime: the final-fixes branches are the reviewed working lineage; PR/main status is recorded by their GitHub artifacts. Provider/private fixtures and credentials stay outside Git. Foreign outputs, image masters and another upgrade journal were preserved.
+
+Both branches are pushed and attached: [CORE PR263](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/263), [PUBLIC PR81](https://github.com/christianza1989/niche-public-core/pull/81). They are open source handoffs, not a claim of main merge or adoption by another PC. The accepted production deployment does not depend on keeping the local preview running; that owned fixture server was stopped after acceptance.

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs (frozen publication package + renderer609)",
+      "result": "PASS",
+      "evidence": "98/98 tests passed. Initial isolated fixture omissions preserved in earlier FAIL logs; no assertions weakened."
+    },
+    {
+      "command": "SSR baseline/candidate all1908 pages + category block/source comparison",
+      "result": "PASS",
+      "evidence": "434 append-only category sections;1474 other outputs byte-identical including1407 products;434 ordered body and source checks;18 query/pagination cases."
+    }
+  ],
+  "note": "PR62 branch source17dccfce722459def5668a2cb0e3281803de3c84. Normal build and production acceptance remain separate and pending.",
+  "eventId": "b5788578-f37a-4836-a508-aaed8885a406",
+  "sequence": 2,
+  "at": "2026-10-24T17:48:53.006Z"
+}

@@ -1,0 +1,26 @@
+{
+  "siteId": "promedical",
+  "summary": "Owner-approved draft automation needs a credential restricted to hosted guide/category drafts; editor cannot add empty paragraphs/headings and truncates unchanged dates.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/79",
+    "tests/content-admin-drafts.test.mjs",
+    "tests/browser/content-admin-editor.mjs"
+  ],
+  "paths": [
+    "lib/content-admin-api.mjs",
+    "lib/content-admin-draft-auth.mjs",
+    "public/brand/promedical/admin/admin.js",
+    "scripts/content-admin-draft.mjs",
+    "docs/PROMEDICAL_CONTENT_ADMIN.md",
+    "tests/content-admin-drafts.test.mjs",
+    "tests/content-admin-draft-client.test.mjs",
+    "tests/browser/content-admin-editor.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/79",
+  "rollback": "Revert scoped source commit; remove draft-token binding to disable machine access. Preserve hosted draft history and owner approvals.",
+  "id": "upgrade-4e4cebb3-9440-44a8-8ad4-fafd728fd752",
+  "branch": "codex/promedical-contact-journal-20261024",
+  "baseSha": "bec1bf130c9346295934681d5c813f9611ab9aec",
+  "createdAt": "2026-10-25T17:51:19.507Z"
+}

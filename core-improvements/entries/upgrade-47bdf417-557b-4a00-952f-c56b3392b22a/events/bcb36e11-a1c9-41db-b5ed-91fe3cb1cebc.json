@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Owner600/602/609 authorized Promedical deployment e3471774-28c2-41d7-9309-0992b1c3b73b of version ff81113f-8958-4eed-81f4-eb5993921998 at100%. Normal build and98tests; local/candidate/live1908HTTP,9170assets,3094linked targets and52viewport cases PASS. Representative112captures/stage accepted. Candidate single read timeout rechecked twice by exact SHA/size/MIME; live9170first-pass clean. 499 accepted nonproduct revisions;1407actual live product revisions/media,076/077/1913,other9tenant packages/runtime preserved. Evidence D:\\Core\\output\\promedical-publication-609-wrap-20261024/publication-receipt.json. Not a fresh all-content factual audit.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/62",
+  "commit": "223773c3f99d80b46eff15314332486151fce451",
+  "eventId": "bcb36e11-a1c9-41db-b5ed-91fe3cb1cebc",
+  "sequence": 4,
+  "at": "2026-10-24T18:45:45.658Z"
+}

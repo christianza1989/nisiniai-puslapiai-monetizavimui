@@ -1,0 +1,13 @@
+# Promedical 616 / 622 publication
+
+Rokas decision 616 and Claude 622 accepted only category 158 title and category 165 title/description. The previously generated single correction round was not repeated. Four guide prose revisions were cancelled by 619 and not imported.
+
+Live version 307bc520-53e8-4b34-af2c-f240a2f6fe49; deployment 5c01f487-8b2f-488a-b7b4-e9926f640055; traffic 100%; acceptance 2026-10-25T05:54:56.883Z. Package SHA256 e90f8b0b47999b3333c3f65aa626cbed4c0dc5f5ab9709c42473099f28ef84c5. Public source 0742ea7dc05beb281fe237b10a013dbf9eb96bd6; draft PR68 stacked over draft PR67. No draft PR was merged.
+
+The canonical reviewed overlay uses actual live version 9a3e26cb-003f-4bff-878d-5a2c84ab71d4. All 1,407 live product records, including the other publisher's 36 updates, and 1,906 unselected raw package records are identical. Other nine tenant packages, actual runtime configuration and aliases are preserved. The actual network fallback email is info@promedical.lt; visible package contacts remain sales@azprekyba.lt and +37068688369. This configuration synchronization avoids silently changing the deployed fallback. No Core or renderer code changed.
+
+The 55 withdrawn guides remain 404, excluded from sitemap and navigation. Public projection has 1,853 pages and the two older guides. Cutoff remains October 13; no global advance was used. Texts, media and guide history were not removed. Guide withdrawal 618/620/621 and its report 623 remain historical and were not repeated.
+
+Validation: six actual studio viewports directly inspected; 98 tests and normal full build; each local, zero-percent candidate and live stage validates 1,853 HTML pages, 9,170 media targets (9,014 public and 156 hidden), all additional linked targets, 21 browser cases and 42 accepted screenshots. Local ten-tenant smoke and 96 other-tenant URLs are also checked. Screenshot acceptance is direct inspection or exact SHA equality to an inspected previous stage. Original receipts remain under D:\Core\output\promedical-publication-622-20261025. Initial local browser navigation and 16 asset requests preceded Wrangler readiness; original failures are retained, browser checks were repeated after confirmed200 and each failed asset was independently verified twice. No rollback was required. This is technical and rendering acceptance of the narrow change, not a new factual audit of all content or indexing guarantee.
+
+Only two CSV notes changed. Final native preservation and any concurrent external changes are recorded in final-native-verification.json. Own QA processes are closed; primary studio4317 and foreign browsers were untouched. Canonical PR251 remains draft; source handoff does not imply source merge or adoption by other PCs.

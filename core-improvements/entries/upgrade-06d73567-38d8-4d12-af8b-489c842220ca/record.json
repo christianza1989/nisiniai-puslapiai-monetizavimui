@@ -1,0 +1,23 @@
+{
+  "siteId": "promedical",
+  "summary": "Withdraw approved category identities consistently from public projections and redirect their canonical and historical paths to the catalogue without rewriting immutable packages.",
+  "category": "code",
+  "evidence": [
+    "docs/PROMEDICAL_WITHDRAWAL_646.md",
+    "tests/niche-withdrawals.test.mjs"
+  ],
+  "paths": [
+    "lib/niche-withdrawals.mjs",
+    "lib/niche-links.mjs",
+    "proxy.ts",
+    "config/niche-network.json",
+    "scripts/compile-content-packages.mjs",
+    "tests/niche-withdrawals.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/73",
+  "rollback": "Revert the scoped source commit and restore the prior reviewed deployment only under explicit owner authorization; do not reset another publisher's content/runtime.",
+  "id": "upgrade-06d73567-38d8-4d12-af8b-489c842220ca",
+  "branch": "codex/promedical-contact-journal-20261024",
+  "baseSha": "d0a4a80b70693c4b135a1cda19ff2abb004203c7",
+  "createdAt": "2026-10-25T12:36:08.282Z"
+}

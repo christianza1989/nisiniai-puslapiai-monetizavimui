@@ -1,0 +1,20 @@
+{
+  "siteId": "promedical",
+  "summary": "After removing the inquiry UI, Promedical still displayed instructions for its former saved list and procurement sidebar. Complete the removal and omit the AI disclosure for this site's guide byline while retaining author and dates.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/pull/59",
+    "Explicit owner authorization and Claude595; six-family SSR regression retains catalogue, contacts, media and schemas, with other-site ArticleMeta unchanged."
+  ],
+  "paths": [
+    "components/niche/article-meta.tsx",
+    "components/niche/promedical-site.tsx",
+    "tests/promedical-contact-only.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/58",
+  "rollback": "Revert the scoped follow-up commit in PR59. No product draft, content package, backend, storage or deployment mutations.",
+  "id": "upgrade-5f5f7d9c-f2f3-4cc5-a26c-43916221f9bb",
+  "branch": "codex/promedical-contact-journal-20261024",
+  "baseSha": "39eb508c31fbcbb161fe9d44d694c38e747071d2",
+  "createdAt": "2026-10-24T14:00:12.373Z"
+}

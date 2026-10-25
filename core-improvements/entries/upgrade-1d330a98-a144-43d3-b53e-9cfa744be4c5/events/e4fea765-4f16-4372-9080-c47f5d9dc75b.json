@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Separate draft public PR requested by Rokas. Claude diff review is required before any merge. Content packages, inquiry backend and existing stored records are excluded. Build/browser/SEO checks remain pending at this event.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/59",
+  "eventId": "e4fea765-4f16-4372-9080-c47f5d9dc75b",
+  "sequence": 3,
+  "at": "2026-10-24T13:23:15.310Z"
+}

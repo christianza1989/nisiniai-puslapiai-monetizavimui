@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Public source tests passed before production. Integrated the actual deployed admin adapter at692eb281; all110 public tests passed. Added an explicit catalogue destination-publication guard and reran all3 withdrawal regressions successfully. Full normal build and HTTP/visual deployment acceptance remain separate. Initial ISO serialization/test prefix failures and superseded pre-admin build attempts are retained in private evidence.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "Public110/110; D:/Core/output/promedical-withdrawal-646-20261025/tests-admin-integrated.log"
+    },
+    {
+      "command": "node --test tests/niche-withdrawals.test.mjs",
+      "result": "PASS",
+      "evidence": "3/3 including destination-publication guard; D:/Core/output/promedical-withdrawal-646-20261025/tests-destination-guard.log"
+    }
+  ],
+  "eventId": "f1df1fca-3025-42d9-bb53-922a11547937",
+  "sequence": 2,
+  "at": "2026-10-25T12:47:19.315Z"
+}

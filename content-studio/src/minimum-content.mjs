@@ -1,4 +1,4 @@
-import { bodyPlainText } from './content-package-v2.mjs';
+import { bodyPlainText } from './content-body.mjs';
 
 // Owner decision 606, 2026-10-24: only these two reviewed category indices.
 // Keep their existing body lengths as floors; no general short-content switch.

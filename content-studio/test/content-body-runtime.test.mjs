@@ -11,5 +11,7 @@ test('package compatibility exports are the same pure accessors',()=>{
 test('runtime review dependency has no eager filesystem schema import',async()=>{
  const workflow=await readFile(new URL('../src/content-workflow.mjs',import.meta.url),'utf8');
  const body=await readFile(new URL('../src/content-body.mjs',import.meta.url),'utf8');
+ const minimum=await readFile(new URL('../src/minimum-content.mjs',import.meta.url),'utf8');
  assert.ok(workflow.includes("from './content-body.mjs'"));assert.ok(!workflow.includes('content-package-v2.mjs'));assert.ok(!body.includes('node:fs'));
+ assert.ok(minimum.includes("from './content-body.mjs'"));assert.ok(!minimum.includes('content-package-v2.mjs'));
 });

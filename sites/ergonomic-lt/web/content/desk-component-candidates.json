@@ -154,6 +154,91 @@
         "sourceGeometryRuntime": "88e0206a796857a0c055d5da04f79f96a0a3af5d246c3627ce3acec6491aac7b"
       }
     },
+    "product_eup-prime-desks_8c73dd7b:27645475": {
+      "key": "product_eup-prime-desks_8c73dd7b:27645475",
+      "productId": "product_eup-prime-desks_8c73dd7b",
+      "sample": "27645475",
+      "code": "KEPP001WW001",
+      "familyId": "cfg-fbd85d737ba0",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEPP001WW001-f6c4d805e13ef54cba9a.json",
+        "sha256": "f6c4d805e13ef54cba9a9c15f31dca446ba8644593ddc1aa11f25b5c507c804d"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "b531b85fb668620a9bfee5796c9661dcfc3abbe89f9cefde2c571a9dfb2f6084"
+      }
+    },
+    "product_eup-prime-desks_8c73dd7b:27645474": {
+      "key": "product_eup-prime-desks_8c73dd7b:27645474",
+      "productId": "product_eup-prime-desks_8c73dd7b",
+      "sample": "27645474",
+      "code": "KEPP002WW001",
+      "familyId": "cfg-b4333ecae295",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEPP002WW001-79747685ab3bd037d3d8.json",
+        "sha256": "79747685ab3bd037d3d886a3eee50cf63a5e0684552b310439f2be248eaa5fb4"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "fc260eac0423785ee5a66f6cf4116d09fa06174f53be2d516b0c9a9074cb34c0"
+      }
+    },
+    "product_eup-prime-desks_8c73dd7b:27645477": {
+      "key": "product_eup-prime-desks_8c73dd7b:27645477",
+      "productId": "product_eup-prime-desks_8c73dd7b",
+      "sample": "27645477",
+      "code": "KEPP004WW001",
+      "familyId": "cfg-5c66c93213ba",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEPP004WW001-7ef13673e5d4cfa410df.json",
+        "sha256": "7ef13673e5d4cfa410dfaee226c3176a188925e09fea8a3c7493adca28d36c99"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "72912d8fcead78b1ca05e08551ad8c1f3f2c25aef0447a21faa1ca89bd5d7cd1"
+      }
+    },
+    "product_eup-prime-desks_8c73dd7b:27645476": {
+      "key": "product_eup-prime-desks_8c73dd7b:27645476",
+      "productId": "product_eup-prime-desks_8c73dd7b",
+      "sample": "27645476",
+      "code": "KEPP005WW001",
+      "familyId": "cfg-3bb23ab4adb8",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEPP005WW001-fe5f53f1ec075cdc421a.json",
+        "sha256": "fe5f53f1ec075cdc421a492e8a03a96ef516ae788b21cd2d6fb6f1f631ad4342"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "9317c997d58d15306eb5638f5ddb2b0bf39a2f4918a5266de61750934c256105"
+      }
+    },
+    "product_eup-prime-desks_8c73dd7b:27645473": {
+      "key": "product_eup-prime-desks_8c73dd7b:27645473",
+      "productId": "product_eup-prime-desks_8c73dd7b",
+      "sample": "27645473",
+      "code": "KEPP006WW001",
+      "familyId": "cfg-48b1103b2a86",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEPP006WW001-69cd25ae1d761816285d.json",
+        "sha256": "69cd25ae1d761816285d5832c90782c814739f7db0046afe2e910dc958b1690b"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "9468b011cbf1c32b2d83bfdda41a085313c90986535cf6b48fe42a7b7eca1654"
+      }
+    },
     "product_erange-desks_e908d3d0:25302336": {
       "key": "product_erange-desks_e908d3d0:25302336",
       "productId": "product_erange-desks_e908d3d0",

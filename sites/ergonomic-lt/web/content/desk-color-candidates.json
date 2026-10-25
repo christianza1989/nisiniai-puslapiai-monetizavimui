@@ -45,6 +45,31 @@
       "componentRuntimeSha256": "981ba68738fcb49fb4e609d9c72c5d5d19fd91d8c0bafbf7b2bfe7b51b4e8af1",
       "sha256": "b023e6548339802e8a36529eeec878eaf335781400d2e52313a0595da532fcbd"
     },
+    "KEPP001WW001": {
+      "asset": "/models/configurator/components/KEPP001WW001-6e71f32caf85d3f46166.json",
+      "componentRuntimeSha256": "f6c4d805e13ef54cba9a9c15f31dca446ba8644593ddc1aa11f25b5c507c804d",
+      "sha256": "6e71f32caf85d3f46166e7c1cfc8759269fbc719cee498b78767fecb2b22d2bd"
+    },
+    "KEPP002WW001": {
+      "asset": "/models/configurator/components/KEPP002WW001-0b273b0c200dfab60af7.json",
+      "componentRuntimeSha256": "79747685ab3bd037d3d886a3eee50cf63a5e0684552b310439f2be248eaa5fb4",
+      "sha256": "0b273b0c200dfab60af7a818bd07de9c9580c9f1b7456384473a723629052378"
+    },
+    "KEPP004WW001": {
+      "asset": "/models/configurator/components/KEPP004WW001-f74284fdf33db91014bd.json",
+      "componentRuntimeSha256": "7ef13673e5d4cfa410dfaee226c3176a188925e09fea8a3c7493adca28d36c99",
+      "sha256": "f74284fdf33db91014bd7cb78fbc8e122ae6e49fb8b843be192c559fa5acdbad"
+    },
+    "KEPP005WW001": {
+      "asset": "/models/configurator/components/KEPP005WW001-3251abec73138b4be7b7.json",
+      "componentRuntimeSha256": "fe5f53f1ec075cdc421a492e8a03a96ef516ae788b21cd2d6fb6f1f631ad4342",
+      "sha256": "3251abec73138b4be7b7757e14a3e720cd212076be042b00b2d47477cc077904"
+    },
+    "KEPP006WW001": {
+      "asset": "/models/configurator/components/KEPP006WW001-9e29e8e4f3aa7ec074f7.json",
+      "componentRuntimeSha256": "69cd25ae1d761816285d5832c90782c814739f7db0046afe2e910dc958b1690b",
+      "sha256": "9e29e8e4f3aa7ec074f744cdbecab0c6f1be3f69b479203fd1c45c901d344291"
+    },
     "KERG021WW001": {
       "asset": "/models/configurator/components/KERG021WW001-939b171a7b803be613f6.json",
       "componentRuntimeSha256": "5c20a010f64fb14d508959162662744917ffa1e0706881db34a695e2e59593f6",

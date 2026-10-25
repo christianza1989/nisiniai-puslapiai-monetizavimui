@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "The sole stage batch exited0 with28 new packages, completed pilot reused without replay, legacy eRange retained.29 component packages/6222 source GLBs/36761718696B retain exact supplied bytes and full package hashes.29 candidate entries bind canonical visible product/sample/code; actual current loader/source state and32 minimal change plans validate all30 desks, including missing3D/no substitute and return to available size. Registry TypeScript actual0. Local/public browser opens/options and all30 deployment still pending. No PDF/28cases per desk under owner056, no chair/Native changes or full graph/adoption claim.",
+  "checks": [
+    {
+      "command": "stage_remaining_desks_once.py (28new stages+pilot reuse+legacy retention)",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-all-desks-preview-20261025/BATCH-STAGE-RESULT.json"
+    },
+    {
+      "command": "prove_minimal_plans_once.mts actual product loader and minimal source selections",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-all-desks-preview-20261025/MINIMAL-UI-PLAN.json"
+    },
+    {
+      "command": "tsc --noEmit after registry and distinct field labels",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-all-desks-preview-20261025/TYPECHECK-REGISTRY.log"
+    }
+  ],
+  "eventId": "ec49e55d-7455-41bc-9f21-c46b4d55ed27",
+  "sequence": 4,
+  "at": "2026-10-25T06:18:05.584Z"
+}

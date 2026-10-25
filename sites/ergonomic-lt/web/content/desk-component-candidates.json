@@ -255,6 +255,91 @@
       "proofs": {
         "sourceGeometryRuntime": "74cc82fa1423c880c43acc350304a42db173faad60783beffaa40ab70ccbcc7a"
       }
+    },
+    "product_eup-desks_c1554eb2:15842543": {
+      "key": "product_eup-desks_c1554eb2:15842543",
+      "productId": "product_eup-desks_c1554eb2",
+      "sample": "15842543",
+      "code": "KEUP008WW002",
+      "familyId": "cfg-1a196ddfe803",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEUP008WW002-e1fccf36f5d15f87a625.json",
+        "sha256": "e1fccf36f5d15f87a6254d4aece04f96c738c50ca71cfc56cfacd38ad1bdb025"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "bff164f8b19972768bd9b00e8cb57fa7104ea157da720d3b1e64b4d4c64655e5"
+      }
+    },
+    "product_eup-desks_c1554eb2:15842544": {
+      "key": "product_eup-desks_c1554eb2:15842544",
+      "productId": "product_eup-desks_c1554eb2",
+      "sample": "15842544",
+      "code": "KEUP008WW003",
+      "familyId": "cfg-288b72d4497f",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEUP008WW003-2ec25bc6086bf28e355b.json",
+        "sha256": "2ec25bc6086bf28e355b8d77ebb61d26406a6e44247af95fe34b06162b58545f"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "68b4ca3bca01548db94990988ea42c85af60ddb23b40a2e22f17544fb79bf3ce"
+      }
+    },
+    "product_eup-desks_c1554eb2:15842545": {
+      "key": "product_eup-desks_c1554eb2:15842545",
+      "productId": "product_eup-desks_c1554eb2",
+      "sample": "15842545",
+      "code": "KEUP008WW004",
+      "familyId": "cfg-f10ec52908b1",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEUP008WW004-9d70820738686b7bda35.json",
+        "sha256": "9d70820738686b7bda35d7cfae32490be5c33a389ed0cc2b42b204d29e00d86a"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "5a5d2da335497d65d7a9da5fc456ec145477cb0e8dbe3d074bb353e54ad4f4be"
+      }
+    },
+    "product_eup-desks_c1554eb2:15842539": {
+      "key": "product_eup-desks_c1554eb2:15842539",
+      "productId": "product_eup-desks_c1554eb2",
+      "sample": "15842539",
+      "code": "KEUP009WW002",
+      "familyId": "cfg-5d84bffcd389",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEUP009WW002-2d31cc8772bcaa635b06.json",
+        "sha256": "2d31cc8772bcaa635b06b0e382daa7c48f983d4019620a7d36a7293d615d3707"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "87b54f1df8bf6f67c4b761e252041a2d9fea8472964413d017089a885c3a33c2"
+      }
+    },
+    "product_eup-desks_c1554eb2:15842541": {
+      "key": "product_eup-desks_c1554eb2:15842541",
+      "productId": "product_eup-desks_c1554eb2",
+      "sample": "15842541",
+      "code": "KEUP010WW002",
+      "familyId": "cfg-3d7cd807994a",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEUP010WW002-adc1cea134b6e80dba35.json",
+        "sha256": "adc1cea134b6e80dba35f40334dc0caa56c35d614d0e1927212aeef65d26bc8b"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "f81c941f23e08de9930aa6b544456a01e877637318a0931e1ed5e4ceca7db2fc"
+      }
     }
   }
 }

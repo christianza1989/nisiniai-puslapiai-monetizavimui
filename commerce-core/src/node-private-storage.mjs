@@ -8,7 +8,7 @@ export class NodePrivateStorage {
   }
   async target(key) {
     requireValue(
-      /^[a-zA-Z0-9_-]+\/(?:private\/[a-zA-Z0-9_-]+\/[a-f0-9]{64}\.pdf|catalog\/img_[a-f0-9]{64}\.webp)$/.test(
+      /^[a-zA-Z0-9_-]+\/(?:private\/[a-zA-Z0-9_-]+\/[a-f0-9]{64}\.pdf|catalog\/img_[a-f0-9]{64}(?:_t192)?\.webp)$/.test(
         key,
       ),
       'private_key_invalid',

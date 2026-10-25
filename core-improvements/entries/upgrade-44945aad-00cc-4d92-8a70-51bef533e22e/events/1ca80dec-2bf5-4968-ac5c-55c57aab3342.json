@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "222/222 commerce tests, including publication/revocation/cross-store/auth/integrity thumbnail regression. Production config dry-run passes without schema/order or binding changes; hosted adoption is still pending.",
+  "checks": [
+    {
+      "command": "npm test (commerce-core)",
+      "result": "PASS",
+      "evidence": "222/222; private final-seo-20261025/commerce-tests.private.txt"
+    },
+    {
+      "command": "node --test test/catalog-thumbnail.test.mjs",
+      "result": "PASS",
+      "evidence": "1/1 after formatting; exact dimensions, store/auth/draft/public/revoke/fallback"
+    },
+    {
+      "command": "wrangler deploy --dry-run --config commerce.wrangler.private.json",
+      "result": "PASS",
+      "evidence": "Target memocasting-commerce; existing D1/R2/mail/assets/automation bindings retained; no migration"
+    }
+  ],
+  "eventId": "1ca80dec-2bf5-4968-ac5c-55c57aab3342",
+  "sequence": 2,
+  "at": "2026-10-25T16:56:36.332Z"
+}

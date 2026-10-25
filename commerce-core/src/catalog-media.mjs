@@ -61,7 +61,55 @@ export class CatalogMedia {
       .run();
     return { id, src: '/prekyba/catalog-media/' + id, ...size };
   }
-  async get(store, env, id, publishedOnly = true) {
+  // A small immutable derivative belongs to the original media record, not to
+  // the public catalogue. It inherits the original's publication/store checks.
+  async putThumbnail(store, env, id, bytes, actor) {
+    await this.s.store(store, env);
+    requireValue(identifier(actor), 'operator_identity_required', 403);
+    requireValue(/^img_[a-f0-9]{64}$/.test(id), 'catalog_image_missing', 404);
+    requireValue(this.storage, 'private_storage_missing', 503);
+    const parent = await this.s.one(
+      'SELECT * FROM catalog_media WHERE store_id=? AND id=?',
+      store,
+      id,
+    );
+    requireValue(parent, 'catalog_image_missing', 404);
+    const size = webpDimensions(bytes),
+      width = Math.min(192, parent.width);
+    requireValue(
+      bytes.length <= 128 * 1024 &&
+        size.width === width &&
+        size.height === Math.max(1, Math.round((parent.height * width) / parent.width)),
+      'invalid_catalog_thumbnail',
+    );
+    const thumbnailId = id + '_t192';
+    const previous = await this.s.one(
+      'SELECT * FROM catalog_media WHERE store_id=? AND id=?',
+      store,
+      thumbnailId,
+    );
+    // Keep already-published bytes stable across browser encoder updates.
+    if (previous) return { id: thumbnailId, ...size };
+    const hash = await hashBytes(bytes),
+      key = `${store}/catalog/${thumbnailId}.webp`;
+    await this.storage.put(key, bytes, hash, 'image/webp');
+    await this.s
+      .stmt(
+        'INSERT OR IGNORE INTO catalog_media VALUES(?,?,?,?,?,?,?,?,?)',
+        store,
+        thumbnailId,
+        key,
+        hash,
+        size.width,
+        size.height,
+        bytes.length,
+        actor,
+        this.s.now(),
+      )
+      .run();
+    return { id: thumbnailId, ...size };
+  }
+  async get(store, env, id, publishedOnly = true, { thumbnail = false } = {}) {
     await this.s.store(store, env);
     requireValue(identifier(id), 'catalog_image_missing', 404);
     const row = await this.s.one(
@@ -80,8 +128,16 @@ export class CatalogMedia {
         404,
       );
     }
-    const bytes = await this.storage.get(row.storage_key);
-    requireValue((await hashBytes(bytes)) === row.sha256, 'invalid_catalog_image', 502);
+    // Legacy uploads remain usable until their owner prepares the derivative.
+    const selected = thumbnail
+      ? ((await this.s.one(
+          'SELECT * FROM catalog_media WHERE store_id=? AND id=?',
+          store,
+          id + '_t192',
+        )) ?? row)
+      : row;
+    const bytes = await this.storage.get(selected.storage_key);
+    requireValue((await hashBytes(bytes)) === selected.sha256, 'invalid_catalog_image', 502);
     return bytes;
   }
 }

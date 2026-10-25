@@ -1,0 +1,22 @@
+{
+  "siteId": "memocasting",
+  "summary": "Small colour controls downloaded full catalogue images; add proportional immutable thumbnails inheriting original publication and revocation admission",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/DEEP_SEO_GEO_AUDIT_2026_10_25.md#f04",
+    "commerce-core/test/catalog-thumbnail.test.mjs"
+  ],
+  "paths": [
+    "commerce-core/src/catalog-media.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/src/node-private-storage.mjs",
+    "commerce-core/public/catalog-editor.mjs",
+    "commerce-core/docs/PRODUCT_EDITOR.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/261",
+  "rollback": "Revert scoped thumbnail changes; retain original and derivative media records/files. No DB or order rollback.",
+  "id": "upgrade-44945aad-00cc-4d92-8a70-51bef533e22e",
+  "branch": "codex/memocasting-final-seo-fixes-20261025",
+  "baseSha": "2ab12380ed6e6e7321aaeec2ee00159f0f1c1fef",
+  "createdAt": "2026-10-25T16:53:00.148Z"
+}

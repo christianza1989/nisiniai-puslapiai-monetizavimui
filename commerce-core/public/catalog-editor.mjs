@@ -103,6 +103,40 @@ export function catalogEditor(root, ctx, products, markets) {
         multiple: true,
       }),
       uploadBtn = n('button', { type: 'button', class: 'secondary' }, 'Įkelti nuotraukas');
+    const thumbsBtn = n(
+      'button',
+      { type: 'button', class: 'secondary' },
+      'Paruošti mažas peržiūras',
+    );
+    async function uploadThumbnail(media, blob) {
+      const bitmap = await createImageBitmap(blob);
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.min(192, bitmap.width);
+        canvas.height = Math.max(1, Math.round((bitmap.height * canvas.width) / bitmap.width));
+        canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+        const small = await new Promise((resolve) => canvas.toBlob(resolve, 'image/webp', 0.8));
+        if (!small || small.size > 128 * 1024) throw Error('invalid_catalog_thumbnail');
+        await binary('/api/operator/catalog-media/' + media.id + '/thumbnail', {
+          method: 'POST',
+          headers: { 'content-type': 'image/webp' },
+          body: small,
+        });
+      } finally {
+        bitmap.close();
+      }
+    }
+    thumbsBtn.onclick = () =>
+      action(
+        thumbsBtn,
+        async () => {
+          for (const media of p.content.images) {
+            if (!/^img_[a-f0-9]{64}$/.test(media.id)) continue;
+            await uploadThumbnail(media, await binary('/api/operator/catalog-media/' + media.id));
+          }
+        },
+        'Mažos peržiūros paruoštos. Prekės turinys ir pasirinkimai nepakeisti.',
+      );
     const add = n('button', { type: 'button', class: 'secondary' }, 'Pridėti grupę'),
       colors = n('button', { type: 'button', class: 'secondary' }, 'Dažų spalvos'),
       base = n('button', { type: 'button', class: 'secondary' }, 'Medinis padėklas');
@@ -126,6 +160,7 @@ export function catalogEditor(root, ctx, products, markets) {
         images,
         n('label', {}, 'PNG, JPEG arba WebP failai', upload),
         uploadBtn,
+        thumbsBtn,
       ),
       group('Pasirinkimai', options, n('div', { class: 'actions' }, add, colors, base)),
       group(
@@ -309,6 +344,7 @@ export function catalogEditor(root, ctx, products, markets) {
                 headers: { 'content-type': 'image/webp' },
                 body: blob,
               });
+              await uploadThumbnail(m, blob);
               if (!p.content.images.some((i) => i.id === m.id))
                 p.content.images.push({
                   ...m,

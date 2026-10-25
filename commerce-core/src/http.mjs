@@ -369,6 +369,25 @@ export function createHandler({
             ),
           );
         }
+        const thumbnailUpload = path.match(
+          /^\/api\/operator\/catalog-media\/(img_[a-f0-9]{64})\/thumbnail$/,
+        );
+        if (thumbnailUpload && request.method === 'POST') {
+          const actor = await authorize('catalog');
+          requireValue(
+            request.headers.get('content-type') === 'image/webp',
+            'invalid_catalog_thumbnail',
+          );
+          return json(
+            await catalogMedia.putThumbnail(
+              store.id,
+              environment,
+              thumbnailUpload[1],
+              await limitedBytes(request.body, 128 * 1024),
+              actor.id,
+            ),
+          );
+        }
         const privateImage = path.match(/^\/api\/operator\/catalog-media\/([a-zA-Z0-9_-]+)$/);
         if (privateImage && request.method === 'GET') {
           await authorize('catalog');
@@ -778,14 +797,22 @@ export function createHandler({
         }
       }
       const publicImage = path.match(/^\/api\/catalog-media\/([a-zA-Z0-9_-]+)$/);
-      if (publicImage && request.method === 'GET')
-        return new Response(await catalogMedia.get(store.id, environment, publicImage[1]), {
-          headers: {
-            'content-type': 'image/webp',
-            'cache-control': 'public, max-age=300',
-            'x-content-type-options': 'nosniff',
+      if (publicImage && request.method === 'GET') {
+        const size = url.searchParams.get('size');
+        requireValue(size === null || size === '192', 'invalid_catalog_thumbnail');
+        return new Response(
+          await catalogMedia.get(store.id, environment, publicImage[1], true, {
+            thumbnail: size === '192',
+          }),
+          {
+            headers: {
+              'content-type': 'image/webp',
+              'cache-control': 'public, max-age=300',
+              'x-content-type-options': 'nosniff',
+            },
           },
-        });
+        );
+      }
       if (request.method === 'GET' && path === '/api/catalog')
         return json(await service.catalog(store.id, environment));
       if (request.method === 'POST' && path === '/api/quote')

@@ -11,13 +11,13 @@ Savininko pavedimas: pagal abu pateiktus PDF sukurti tvarkingus poros ir šeimos
 
 ## Instrukcijos ir naudojimo informacija
 
-- [ ] Esamą `/pages/instrukcija` išlaikyti kaip tikrą dviejų instrukcijų pasirinkimo puslapį.
-- [ ] Paskelbti `/instrukcijos/poros-rinkiniui`: 2 l / 22–24 °C alginatui, 700 ml šalto vandens gipsui; atskirti rekomenduojamą temperatūrą nuo papildomo perspėjimo neviršyti 25 °C.
-- [ ] Paskelbti `/instrukcijos/seimos-rinkiniui`: 3,2 l / 23 °C alginatui, 1 400 ml šalto vandens gipsui; atskiras perspėjimas neviršyti 24 °C. Poros recepto automatiškai nedvigubinti.
-- [ ] Aiškiai pateikti reikmenis, pasiruošimą, 60–70 s maišymą, 3–4 min rankų laikymą su sąlyga dėl temperatūros, du gipso pylimo etapus, 45° pasukimą, 1 val. stingimą / ne daugiau 3 val., išėmimą, 5–7 parų džiovinimą ir 2–3 plonus dažų sluoksnius.
-- [ ] Išsaugoti papildomus patarimus apie padėtį, burbuliukus, gipso liekanų nepylimą į kanalizaciją ir skulptūros detalių valymą; nepublikuoti neaiškaus patarimo klijuoti žmogaus nagą / odą.
-- [ ] Pridėti tikrus originalių PDF atsisiuntimus, spausdinimui pritaikytą HTML ir patikrinti host / publikavimo / medijos prieigos ribas.
-- [ ] Susieti instrukcijas su tinkamu produktu, katalogu, pagalba ir susijusiais jau esančiais techniniais gidais. Kiekių nelaikyti antrame rankiniame frontend šaltinyje.
+- [x] Esamą `/pages/instrukcija` išlaikyti kaip tikrą dviejų instrukcijų pasirinkimo puslapį.
+- [x] Paskelbti `/instrukcijos/poros-rinkiniui`: 2 l / 22–24 °C alginatui, 700 ml šalto vandens gipsui; atskirti rekomenduojamą temperatūrą nuo papildomo perspėjimo neviršyti 25 °C.
+- [x] Paskelbti `/instrukcijos/seimos-rinkiniui`: 3,2 l / 23 °C alginatui, 1 400 ml šalto vandens gipsui; atskiras perspėjimas neviršyti 24 °C. Poros recepto automatiškai nedvigubinti.
+- [x] Aiškiai pateikti reikmenis, pasiruošimą, 60–70 s maišymą, 3–4 min rankų laikymą su sąlyga dėl temperatūros, du gipso pylimo etapus, 45° pasukimą, 1 val. stingimą / ne daugiau 3 val., išėmimą, 5–7 parų džiovinimą ir 2–3 plonus dažų sluoksnius.
+- [x] Išsaugoti papildomus patarimus apie padėtį, burbuliukus, gipso liekanų nepylimą į kanalizaciją ir skulptūros detalių valymą; nepublikuoti neaiškaus patarimo klijuoti žmogaus nagą / odą.
+- [x] Pridėti tikrus originalių PDF atsisiuntimus, spausdinimui pritaikytą HTML ir patikrinti host / publikavimo / medijos prieigos ribas.
+- [x] Susieti instrukcijas su tinkamu produktu, katalogu, pagalba ir susijusiais jau esančiais techniniais gidais. Kiekių nelaikyti antrame rankiniame frontend šaltinyje.
 
 ## Turinys ir pasitikėjimas
 
@@ -33,13 +33,13 @@ Savininko pavedimas: pagal abu pateiktus PDF sukurti tvarkingus poros ir šeimos
 - [x] Užbaigti bounded visų viešų URL / vidinių nuorodų / canonical / title / H1 / robots / sitemap / media auditą ir sutaisyti atkuriamas klaidas.
 - [x] Sutvarkyti tikrą Product / Offer semantiką: prekybos pasiūlymai tik realiai palaikomoms rinkoms ir prekėms, kontaktiniai puslapiai be fiktyvių kainų, reitingų ar Google rich-result pažadų.
 - [x] Sutikrinti Organization / grąžinimo / socialinių profilių / produktų variantų duomenis su matomu turiniu; įgyvendinti tik naudingus ir faktais paremtus papildymus.
-- [ ] Patikrinti esamą Merchant Center ir GSC priėmimą; užbaigti prieinamus nemokamus prekių duomenų / sitemap / patikrų veiksmus. Nauji account Terms ar trūkstamos faktinės teisės yra atskiras tikras savininko veiksmas.
+- [x] Patikrinti esamą Merchant Center ir GSC priėmimą; užbaigti prieinamus nemokamus prekių duomenų / sitemap / patikrų veiksmus. Nauji account Terms ar trūkstamos faktinės teisės yra atskiras tikras savininko veiksmas.
 - [ ] Patikrinti realų desktop / mobile įkėlimą ir prieinamumą; optimizuoti nustatytas problemas, nevaizduoti vien TTFB ar seno Lighthouse kaip dabartinio CWV.
 
 ## GEO ir matavimas
 
 - [ ] Patikrinti, kad normalus HTML, schema, sitemap ir abu LLM skaitymo eksportai rodytų tą pačią patvirtintą versiją, naujas instrukcijas ir tikrai viešus puslapius.
-- [ ] Patikrinti paieškos robotų prieigą ir turimus CDN / WAF duomenis, atskiriant paieškos robotus nuo mokymo. Vien pakeistas User-Agent nėra patvirtintas tikro roboto apsilankymas.
+- [x] Patikrinti paieškos robotų prieigą ir turimus CDN / WAF duomenis, atskiriant paieškos robotus nuo mokymo. Vien pakeistas User-Agent nėra patvirtintas tikro roboto apsilankymas.
 - [ ] Patikrinti GSC / analitikos prieigą ir faktinius parodymus, indeksavimą bei pirkimo matavimo būseną. Neprijungti ar neprieinami duomenys nėra nulis.
 - [ ] Užfiksuoti atkuriamą nemokamą SEO / GEO baseline ir konkrečius vėlesnio palyginimo klausimus; nematuotą citavimą palikti nematuotu, nepradėti naujų mokamų ar periodinių užduočių.
 
@@ -70,8 +70,22 @@ Savininko pavedimas: pagal abu pateiktus PDF sukurti tvarkingus poros ir šeimos
 - [x] Patikrinta tikra GSC paskyra: 56 indeksuoti / 133 neindeksuoti istorinėje ataskaitoje. Sitemap priimtas, paskutinis nuskaitymas 2026-10-22 / 103 URL. Produktų klaidos patvirtinimas „atrodo gerai“; senas šeimos puslapio crawl 2026-10-22. Šių duomenų nepateikiame kaip naujo leidinio nuskaitymo.
 - [x] Tikroje „Merchant Center“ paskyroje dabar 0 prekių ir 20 senų užsienio siuntimo taisyklių. Oficialiuose „Shopping“ / free-listing rinkų ir kalbų sąrašuose nėra Lietuvos / lietuvių kalbos. LT XML parengtas techniškai; neapsimetame kita rinka. Tai atskira riba nuo organinės paieškos Product duomenų ir vaizdų parengties.
 - [x] Naujų mokamų tyrimų išlaidos 0 USD. Septyni faktiniai privatūs šaltinių / crawl / GSC stebėjimai importuoti canonical helperiu; ankstesnis 63 stebėjimų tyrimas išsaugotas pilnas.
-- [x] C: atlaisvinta perkeliant tik savo seną generated dist į D: ir sukuriant valdomą naujo build junction. Originalai, DB, studija ir užsakymai neištrinti.
+- [x] C: atlaisvinta perkeliant tik savo seną generated dist į D:. Vite vėliau pašalino junction ir sukūrė įprastą C: dist; naujo build vieta nėra klaidingai vadinama D:. Originalai, DB, studija ir užsakymai neištrinti.
 - [x] PUBLIC 229 / 229 ir canonical 12 / 12 testų praėjo prieš galutinį trijų sakinių pakartotinį importą. Pirmo bandymo dvi home-admission nesėkmės išsaugotos; po suderinto native importo abi regresijos praėjo.
 - [ ] Galutinio leidinio build, naršyklės, spausdinimo ir PDF priėmimas bei publikavimas dar vykdomi.
 
-Pavienis Chrome lab baseline (ne field CWV ar Lighthouse): 390 px homepage LCP 1,30 s, poros produktas 2,15 s; turinys ir navigacija prieinami be JavaScript. Penkių spalvų miniatiūrų 1,56 MB apkrova užfiksuota atskiram tiksliniam optimizavimui. Global SKILLS auditas turi nepraėjusių istorinių / įrankių patikrų; jos atskiriamos nuo pakeisto canonical SEO šaltinio patikros. Istorinis FAIL neperrašytas.
+Ankstesnis pavienis Chrome lab baseline nėra naujo leidinio field CWV ar Lighthouse. Dėl Chrome zoom ne visi prašyti viewport dydžiai buvo tie patys kaip realus innerWidth; tų skaičių nenaudojame kaip naujo mobiliojo leidinio priėmimo. Tikros naujų instrukcijų 390 / 320 px būsenos užfiksuotos atskirais innerWidth/clientWidth, overflow ir nuotraukų bounds įrodymais. Penkių spalvų miniatiūrų 1,56 MB apkrova yra optimizavimo rezervas; bazinio produkto lab LCP nebuvo nustatyta kaip nepraėjusi vartų klaida.
+
+## Tikras pirmos partijos publikavimas ir GA4 tęsinys
+
+- [x] PUBLIC `39e4cace` / native `47fc0797` paskelbti: Worker `9fd8a2bc-44e9-4226-9a0f-7889904cc3b6`. Visos keturios actual bindings, observability, abu domenai ir commerce versija išsaugoti.
+- [x] Tikras HTTPS auditas: 113 sitemap HTML puslapių, viena H1 / title / canonical, validi JSON-LD; abiejų PDF SHA-256 / GET / HEAD / Range ir raw404; abu LLM eksportai su instrukcijomis; būsimo straipsnio ir jo unikalaus vaizdo404. Dvi senos index `page` užklausos rastos ir pataisytos source `535936a0`; jų hosted priėmimas – kitoje partijoje.
+- [x] Actual instrukcijos 1280 / 1024 darbalaukyje, 390 / 320 telefone: abi figūros pilnos, įkeltos, nėra horizontalaus perpildymo. Šeimos18žingsnių,1H1; print paslepia navigaciją / TOC / footer, išlaiko instrukcijos antraštę ir veiksmus.
+- [x] GSC sitemap pakartotinai pateiktas2026-10-25; UI sėkmė išsaugota. Paskutinis Google skaitymas dar2026-10-22 /103URL, tai nėra naujo113URL paketo indeksavimo patvirtinimas. Pagrindinio URL skubaus indeksavimo užklausa nepavyko dėl Google reCAPTCHA ryšio; sitemap pateikimas sėkmingas.
+- [x] Savininkas patvirtino naują atskirą nemokamą GA4 ir Google Terms / BDAR. Nauja nuosavybė560554153, vienas stream16198963010; papildomas sharing, Enhanced Measurement, Signals, ads ir detalūs geo/device išjungti, abu retention2m ir resetOFF. Senos GA4 istorijos išsaugotos.
+- [x] Savininkas atskirai patvirtino tik seno GSC susiejimo perkėlimą. Naujas sc-domain:memocasting.lt →560554153/16198963010 ryšys patvirtintas GA4 ir GSC, Merchant Center asociacija išsaugota.
+- [x] Parengta LT-only Basic consent jungtis: iki persistinto sutikimo jokio mūsų Google žymos įkėlimo; atsisakymas / saugyklos klaidos išjungia. Krepšelyje pradinis skydelis nesirodo; footer pasirinkimas veikia, atsiskaitymas nematuojamas. Native privatumo papildymas pakeitė tik vieną187puslapių paketo puslapį, kiti186 ir visos datos tiksliai išsaugoti.
+- [x] Naujos partijos250regresijų, TypeScript ir tikslinis ESLint PASS. Source `5cff95db` turi ir mažą checkout pasirinkimo pataisą, priimtą tikru UI. Pradėtas ankstesnis build sąmoningai sustabdytas prieš ją įtraukiant; nesėkmė neištrinta ir nevadinama programos regresija.
+- [ ] Galutinis Analytics build / dry-run / aktyvūs du env flagai ir realaus G-ID hosted sutikimo / užklausų / atšaukimo priėmimas.
+
+GA4 šiame etape matuoja tik turinio peržiūras. Purchase / pajamų atribucija, Google Ads ar papildomos rinkos neįjungiamos ir neveikimas neslepiamas. Faktiniai pardavimai tebėra prekybos sistemos užsakymuose; nauja GA4 nėra ankstesnių pardavimų matavimo pakaitalas.

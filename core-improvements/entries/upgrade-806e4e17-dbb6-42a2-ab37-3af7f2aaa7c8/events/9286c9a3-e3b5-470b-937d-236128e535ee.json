@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "0.5 source020f987 pushed to same draftPR96 and full description rewritten. Exact-head Codex backend preflight success.53localNode/nativeD1 and real isolated Stripe test Checkout/refund/replay receipts remain separate from CI. No merge/main adoption/live operation. Continue authorized carrier/packages/tracking work; website owner remains independent.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "commit": "020f987f36c3af7f94169d5cde8ab42b67cd04b2",
+  "eventId": "9286c9a3-e3b5-470b-937d-236128e535ee",
+  "sequence": 13,
+  "at": "2026-10-11T23:43:04.187Z"
+}

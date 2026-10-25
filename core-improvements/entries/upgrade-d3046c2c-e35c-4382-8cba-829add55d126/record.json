@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "A registered shipment can return no labels while its provider is processing; the current outbox consumer acknowledges that empty refresh permanently, losing automatic document collection",
+  "evidence": [
+    "Site-owner actual2026-10-17 staging order returned status0/documents empty before status2 and valid labels after asynchronous processing; one create only",
+    "Source ShipmentCommands.refresh accepts documents=[]; ShippingAutomation.collectRegistered returns it and CommerceJobs acknowledges ShipmentRegistered with no durable recollection",
+    "Fresh task base7a25095b0c2a5f91d1a2b1c41c1415cad882875e includes current main d0d08be67033e29457367ddcc2ca5eeccdf0230c; source window explicitly released by authorized deployment owner; no runtime/provider writes"
+  ],
+  "paths": [
+    "commerce-core/src/shipment-commands.mjs",
+    "commerce-core/src/shipping-automation.mjs",
+    "commerce-core/src/jobs.mjs",
+    "commerce-core/test/shipping-automation.test.mjs",
+    "commerce-core/test/jobs.test.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/docs/SENDPARCEL_V1_2026_10_14.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped source revert, preserving original failing test log and immutable original24 migrations/events. No production credentials, database, deployment, paid booking or additional provider create.",
+  "id": "upgrade-d3046c2c-e35c-4382-8cba-829add55d126",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "7a25095b0c2a5f91d1a2b1c41c1415cad882875e",
+  "createdAt": "2026-10-19T05:15:08.090Z"
+}

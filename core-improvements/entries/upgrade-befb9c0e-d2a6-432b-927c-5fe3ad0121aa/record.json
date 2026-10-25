@@ -1,0 +1,23 @@
+{
+  "rollback": "Revert only own paired detail-viewer commits. Preserve original selected photos,89 blocks,60c8 package and prior motion.",
+  "category": "code",
+  "evidence": [
+    "Direct owner request to finish section according to proposed plan2026-10-13",
+    "sites/memocasting/MOMENTS_IMAGES_2026_10_13.md"
+  ],
+  "summary": "Complete the approved meaning-section interaction plan: accessible image-detail viewer, zoom/pan/hotspot, responsive states and reduced motion. Current selected scenes change but detail action is absent.",
+  "siteId": "memocasting",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "lib/memocasting-homepage-motion.mjs",
+    "lib/memocasting-moment-viewer.mjs",
+    "components/niche/memocasting-homepage.css",
+    "tests/memocasting-moment-viewer.test.mjs"
+  ],
+  "id": "upgrade-befb9c0e-d2a6-432b-927c-5fe3ad0121aa",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "46dfff2440b8c89e38abe664ed18581a10ad2e6b",
+  "createdAt": "2026-10-13T13:49:35.637Z"
+}

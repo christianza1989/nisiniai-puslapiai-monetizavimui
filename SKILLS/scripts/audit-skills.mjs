@@ -3,15 +3,33 @@
 import {readFile,writeFile,stat,readdir,realpath,mkdir,access} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
+import os from 'node:os';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
-export async function auditSkills(root){
+const validatorPreflight='import runpy, sys; provider = runpy.run_path(sys.argv[1], run_name="pinet_skill_validator_preflight"); sys.exit(0 if callable(provider.get("validate_skill")) else "Validator must expose validate_skill")';
+const validatorProcessOptions={encoding:'utf8',stdio:['ignore','pipe','pipe'],windowsHide:true,timeout:30000,maxBuffer:1024*1024};
+function validatorError(error){
+ const details=[error.stdout,error.stderr].filter(Boolean).map(value=>String(value).trim()).filter(Boolean).join('\n');
+ return {exitCode:Number.isInteger(error.status)?error.status:null,output:(details||error.message||String(error)).slice(0,1800)};
+}
+export async function auditSkills(root,options={}){
+ const python=options.validatorPython??process.env.PINET_SKILL_VALIDATOR_PYTHON??'python';
+ const script=options.validatorScript??process.env.PINET_SKILL_VALIDATOR_SCRIPT??path.join(process.env.CODEX_HOME||path.join(os.homedir(),'.codex'),'skills','.system','skill-creator','scripts','quick_validate.py');
+ const execute=options.executeValidator??execFileSync;
+ let structuralValidator;
+ try{
+  // Import the real provider once, including its dependencies, without running
+  // its CLI against a skill. An unavailable provider is not an invalid skill.
+  execute(python,['-X','utf8','-c',validatorPreflight,script],validatorProcessOptions);
+  structuralValidator={status:'AVAILABLE',python,script};
+ }catch(error){structuralValidator={status:'UNAVAILABLE',reason:'validator_unavailable',python,script,...validatorError(error)};}
  const base=path.join(root,'SKILLS'),catalog=JSON.parse(await readFile(path.join(base,'catalog.json'),'utf8'));
  const entries=(await readdir(base,{withFileTypes:true})).filter(e=>e.isDirectory());
  const actual=[];
  for(const e of entries){try{await access(path.join(base,e.name,'SKILL.md'));actual.push(e.name);}catch(error){if(error.code!=='ENOENT')throw error;}}
  const issues=[],records=[],links=[],fingerprints={};
+ if(structuralValidator.status==='UNAVAILABLE')issues.push('validator_unavailable: Structural validation was not run. Configure PINET_SKILL_VALIDATOR_PYTHON / PINET_SKILL_VALIDATOR_SCRIPT to the actual quick_validate.py provider and make its dependencies (including PyYAML for the standard provider) available in that interpreter environment. '+structuralValidator.output);
  const allowedRoles=new Set(['core','phase1-support','business-operations','utility']);
  const ids=catalog.skills.map(s=>s.id);
  if(ids.length!==new Set(ids).size)issues.push('Duplicate catalog IDs');
@@ -32,8 +50,11 @@ export async function auditSkills(root){
   fingerprints[skill.entry]=sha(bytes);
   if(sha(bytes)!==skill.entrySha256)record.issues.push('Entry changed since catalog review; inspect and update its reviewed hash');
   if(text.match(/^name:\s*([^\r\n]+)$/m)?.[1]!==skill.id)record.issues.push('Frontmatter name/folder mismatch');
-  try{record.validator={exitCode:0,output:execFileSync('python',['-X','utf8','C:/Users/lenovo/.codex/skills/.system/skill-creator/scripts/quick_validate.py',path.dirname(file)],{encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim()};}
-  catch(error){record.validator={exitCode:error.status,output:String(error.stdout||error.message).slice(0,1800)};record.issues.push('Skill structural validation failed');}
+  if(structuralValidator.status==='UNAVAILABLE')record.validator={status:'NOT_RUN',reason:'validator_unavailable'};
+  else{
+   try{record.validator={status:'PASS',exitCode:0,output:execute(python,['-X','utf8',script,path.dirname(file)],validatorProcessOptions).trim()};}
+   catch(error){record.validator={status:'FAIL',...validatorError(error)};record.issues.push('Skill structural validation failed');}
+  }
   for(const archive of skill.archives){
    if(sha(await readFile(path.join(base,archive.file)))!==archive.sha256)record.issues.push(`Original source modified: ${archive.file}`);
    else record.sourceArchivesVerified++;
@@ -87,12 +108,12 @@ export async function auditSkills(root){
   status:allIssues.length?'FAIL':'PASS_STRUCTURE_AND_CONFIGURATION',totalSkills:records.length,roles,origins,
   archivesVerified:records.reduce((n,r)=>n+r.sourceArchivesVerified,0),markdownFilesChecked:markdown.size,
   localLinksVerified:links.filter(l=>l.status==='EXISTS').length,templateLinksNotAsserted:links.filter(l=>l.status==='TEMPLATE'),
-  records,issues:allIssues,links,instructionFingerprints:fingerprints,
+  structuralValidator,records,issues:allIssues,links,instructionFingerprints:fingerprints,
   limitations:['Structural/source/link checks do not prove a model follows every instruction.','No new website result, Lighthouse or real UI enlargement was tested in this skills task.','Business messaging/voice/commerce remain outside automatic phase-one activation.','Historical site/first-result evidence is preserved, not retroactively upgraded.']};
 }
 if(process.argv[1]&&pathToFileURL(path.resolve(process.argv[1])).href===import.meta.url){
  const root=process.cwd(),report=await auditSkills(root),out=path.join(root,'research/skills-audit-2026-10-01');
  await mkdir(out,{recursive:true});await writeFile(path.join(out,'verification.json'),JSON.stringify(report,null,2)+'\n');
- console.log(JSON.stringify({status:report.status,totalSkills:report.totalSkills,roles:report.roles,origins:report.origins,archivesVerified:report.archivesVerified,markdownFilesChecked:report.markdownFilesChecked,localLinksVerified:report.localLinksVerified,issues:report.issues},null,2));
+ console.log(JSON.stringify({status:report.status,totalSkills:report.totalSkills,roles:report.roles,origins:report.origins,archivesVerified:report.archivesVerified,markdownFilesChecked:report.markdownFilesChecked,localLinksVerified:report.localLinksVerified,structuralValidator:report.structuralValidator,issues:report.issues},null,2));
  if(report.issues.length)process.exitCode=1;
 }

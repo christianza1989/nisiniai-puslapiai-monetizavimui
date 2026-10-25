@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Original actual private stdout429 and masked stderr warning retained. Common failure selection now preserves structured error/turn.failed message with bounded legacy fallback; no automatic retries or provider/model/auth changes in shared core.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/generator-diagnostics.test.mjs content-studio/test/generator-policy.test.mjs content-studio/test/draft-brief.test.mjs content-studio/test/editorial-skill.test.mjs",
+      "result": "PASS",
+      "evidence": "13 focused regressions. Reproduced structured429 plus unrelated stderr warning reaches native failed job with body/approval unchanged; agent text is not mistaken for transport error, bounded legacy fallback and successful old/full-brief writer paths preserved."
+    }
+  ],
+  "eventId": "fb7a44fe-08dd-4bb5-a886-ad1a574cc993",
+  "sequence": 2,
+  "at": "2026-10-14T09:23:51.938Z"
+}

@@ -1,0 +1,19 @@
+{
+  "siteId": "memocasting",
+  "summary": "Clarify the canonical domain-history workflow: an eligible restored native page owns its route, and retired password landing aliases must not forward credentials or catch authentication writes.",
+  "category": "skills",
+  "paths": [
+    "SKILLS/niche-site-builder/references/domain-history.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "evidence": [
+    "qa/redirects-20261023/native-precedence-finding.private.json",
+    "sites/memocasting/REDIRECTS_2026_10_23.md",
+    "https://github.com/christianza1989/niche-public-core/commit/c6810dbed52621fe564e6363d51214921e710215"
+  ],
+  "rollback": "Revert only this rule paragraph if superseded; do not rewrite historical instructions, journal events or another checkout. Public implementation ownership remains upgrade-38b33f22-ac2d-4573-8a47-d0af61029e51.",
+  "id": "upgrade-70536725-8e6d-43b6-9206-b732d68dc70e",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "7cfb2c24963bbe5cb64c599893398dfad44a140f",
+  "createdAt": "2026-10-22T22:35:03.688Z"
+}

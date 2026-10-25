@@ -1,0 +1,18 @@
+{
+  "siteId": "memocasting",
+  "summary": "Canonical Git workflow documented unsupported --entry/--repo/--journal commands and claimed two-repository coverage. Reproduced invalid_arguments; correct documentation to the installed root/base/head CLI and separate PUBLIC review.",
+  "category": "rules",
+  "evidence": [
+    "docs/CODEX_GIT_WORKFLOW.md",
+    "scripts/core-upgrade-check.mjs"
+  ],
+  "paths": [
+    "docs/CODEX_GIT_WORKFLOW.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert only the documentation paragraph; executable checker and source journal remain unchanged.",
+  "id": "upgrade-0c18ee21-fae1-4dfb-b66e-ed51af29cd4f",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "861d0d472cb11909c257265616f65624943ebc51",
+  "createdAt": "2026-10-21T10:19:14.492Z"
+}

@@ -74,10 +74,13 @@ test('the whole batch rolls back when a later page, family, alt or media-only pa
   await assert.rejects(()=>model.editPageMediaBatch(site.id,entries));
   assert.deepEqual(await readFile(file(site.id)),baseline);
  }
- // Each family contains three genuine WebP variants: 21 families exceeds60.
- const assets=[asset];for(let i=0;i<20;i++)assets.push(await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:`Default ${i}`,rights:'Synthetic fixture only'},image));
+ // Fill the current cap with complete responsive families, then reject one
+ // additional family atomically rather than truncating variants silently.
+ const assets=[asset];for(let i=1;i<=model.MAX_PAGE_MEDIA/asset.variants.length;i++)assets.push(await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:`Default ${i}`,rights:'Synthetic fixture only'},image));
+ await model.editPageMediaBatch(site.id,[{pageId:second.id,media:assets.slice(0,-1).map(a=>({id:a.id}))}]);
+ assert.equal((await model.getSite(site.id)).pages.find(p=>p.id===second.id).media.length,model.MAX_PAGE_MEDIA);
  const beforeOverflow=await readFile(file(site.id));
- await assert.rejects(()=>model.editPageMediaBatch(site.id,[valid,{pageId:second.id,media:assets.map(a=>({id:a.id}))}]),/60/);
+ await assert.rejects(()=>model.editPageMediaBatch(site.id,[valid,{pageId:second.id,media:assets.map(a=>({id:a.id}))}]),new RegExp(String(model.MAX_PAGE_MEDIA)));
  assert.deepEqual(await readFile(file(site.id)),beforeOverflow);
 });
 

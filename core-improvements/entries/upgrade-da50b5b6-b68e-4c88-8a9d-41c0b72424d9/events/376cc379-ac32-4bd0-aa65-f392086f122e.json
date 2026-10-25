@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Standalone source export removes sibling-private-checkout runtime import. Canonical source remains upstream; generated SDK bytes bound to06f42886. Original .gitattributes LF/binary policy retained. No deploy/provider/DB mutation.",
+  "checks": [
+    {
+      "command": "node --test tests/commerce-sdk.test.mjs",
+      "result": "PASS",
+      "evidence": "Actual canonicalexport accepted; isolated modifiedbytes/pathinventory rejected."
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "Ownpairedsource andcleanGitarchive8ee52f9standalonepublicsourcebuild bothPASS; no adjacent privatecore checkout in archive directory."
+    },
+    {
+      "command": "npx tsc --noEmit",
+      "result": "PASS",
+      "evidence": "TypeScriptpasseswithlocalvendorSDKimport; runtime app/components/lib contain no private sibling import."
+    }
+  ],
+  "eventId": "376cc379-ac32-4bd0-aa65-f392086f122e",
+  "sequence": 2,
+  "at": "2026-10-12T04:54:48.314Z"
+}

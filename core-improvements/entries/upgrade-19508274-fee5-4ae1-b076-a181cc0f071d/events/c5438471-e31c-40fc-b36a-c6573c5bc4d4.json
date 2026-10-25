@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Canonical backend and SDK implementation verified locally: 206 Node tests and native workerd suite passed. Browser performed real local image upload, draft save and publication. PUBLIC integration and production adoption are still pending.",
+  "checks": [
+    {
+      "command": "npm test (commerce-core)",
+      "result": "PASS",
+      "evidence": "qa/product-editor-20261021/core-tests.txt: 206/206"
+    },
+    {
+      "command": "npm run test:worker (commerce-core)",
+      "result": "PASS",
+      "evidence": "qa/product-editor-20261021/worker-tests.txt: native D1/R2/restart suite"
+    }
+  ],
+  "eventId": "c5438471-e31c-40fc-b36a-c6573c5bc4d4",
+  "sequence": 2,
+  "at": "2026-10-21T09:55:06.622Z"
+}

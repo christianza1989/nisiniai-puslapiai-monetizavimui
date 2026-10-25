@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Add an owned read-only Instagram feed with durable refreshed tokens and bounded cached public media",
+  "evidence": [
+    "Existing homepage has3curated external links and no account feed, refresh or token lifecycle. Owner explicitly requested automatic new own photos/videos.",
+    "OfficialMeta Instagram Login supports owned professional account media and60daylongtokens refreshed server-side; no paid scraping or publishing scope."
+  ],
+  "paths": [
+    "social-core",
+    "sites/memocasting/instagram",
+    "sites/memocasting/INSTAGRAM_FEED.md",
+    "sites/memocasting/TOOLS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Remove only new frontend service binding and social feed component after reading actualconfig; keep existing commerce/mail/DNS/leads and22photo gallery. Revoke only this read-onlyInstagram token and delete owned feedKV if disconnecting.",
+  "id": "upgrade-7bc2ef04-4525-4f06-ae39-8a3b04784dc8",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "457ef0ac7690246c19de38101907c682de8b20ac",
+  "createdAt": "2026-10-20T05:18:04.052Z"
+}

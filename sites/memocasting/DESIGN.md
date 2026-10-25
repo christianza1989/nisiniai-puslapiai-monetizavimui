@@ -1,0 +1,107 @@
+Aktualus homepage tęsinys2026-10-14: [footer, payment status, logo, hero CTA ir process fade](HOMEPAGE_FOLLOWUP_2026_10_14.md). Lokaliai patikrinta5iš6; Instagram originalmedia laukia, saugos atmetimas išlaikytas.
+
+Aktuali hero iteracija2026-10-13: [atskiri daiktų ir švaraus fono sluoksniai](HERO_LAYERS_2026_10_13.md). Pilnai įgyvendinta ir lokaliai patikrinta; galerijos naujas konceptas tik pasiūlymas.
+
+# Memocasting vizualinė sistema
+
+Vėlesnis 2026-10-13 įgyvendinimas: [vidinių puslapių dizainas ir pardavimo kelias](STOREFRONT_2026_10_13.md). Bendras shell dabar baltas / Manrope / rožinis, su kompaktišku native meniu; katalogas ir abu produktai visose keturiose esamose kalbose turi naujus šablonus. Produktai naudoja patvirtintas nuotraukas, native kainas bei pirkimą, galerijos dialogą ir mobilų pirkimo veiksmą. Žemiau esantys planavimo bei laikino serif dizaino aprašai yra ankstesni etapai. Skaitomo turinio, galutinių produkcijos sąlygų ir realių 3D / klientų įrodymų darbai lieka pagal bendrą planą.
+
+
+Aktualus kitų puslapių tęsinys 2026-10-13: [87 likusių puslapių išdėstymo ir įgyvendinimo planas](OTHER_PAGES_PLAN_2026_10_13.md). Vidinius produktų, katalogo, gidų ir informacinių puslapių šablonus numatyta suvienodinti su savininko pasirinkta homepage tapatybe. Tai planas; dabartinio laikino vidinių puslapių serif/kreminio dizaino nelaikyti baigtu perdarymu. [Dabartinis auditas](SEO_AUDIT_2026_10_13.md) atskiria realizuotą homepage nuo būsimų šablonų ir produkcijos duomenų.
+
+
+2026-10-13 vėlesnis savininko Egeon pavedimas: [hero ir storytelling tęsinys](HERO_STORYTELLING_2026_10_13.md). Naujas atitolintas viso ekrano hero, žodžių scroll reveal, full-width filmas ir šešių etapų timeline; pašalintas desktop aukščio651px ribojimas. Leidinys75ebcfb3, SHA2567a3251b32d44501c888c566d5c8da4f664075968c7ba43ad766d39212aef7361;24 dizaino assetai. Toliau pateikti kvitai yra ankstesni etapai.
+
+
+Aktualus 2026-10-13 LT homepage turi 11 įgyvendintų sekcijų. Išlaikoma savininko pasirinkta Memory Casting tapatybė: Manrope 400/600, balta / šiltas neutralus fonas / rožinis akcentas. Vėlesnis savininko screenshot nustato hero mastelį: antraštė iki58px, visas produktas matomas iš toliau, ramūs tekstiniai CTA ir daugiau erdvės prieš dock. H2 iki48px, closing iki64px, body16px / hero15px desktop ir16px mobile, kontrolės14–15px. Finite scroll filmas dabar trečioje sekcijoje, tamsi skulptūrų scena ketvirtoje; [įgyvendinimas ir patikros](HOMEPAGE_IMPLEMENTATION_2026_10_13.md). [Pradinio prototipo integravimo istorija](HOMEPAGE_INTEGRATION.md). Žemiau esanti kontaktinio lapo sistema tebėra kitų puslapių laikinas dizainas.
+
+Naujas savininko pavedimas: pirmiausia pilnai suplanuoti homepage. [10 sekcijų išdėstymas, trūkstamos medžiagos, Awwwards tyrimas ir 3D pritaikymas](HOMEPAGE_PLAN.md), [vietinės studijos šaltinis](homepage-study/index.html). Planavimo kvitas išlaikomas kaip ankstesnio etapo istorija; jo 10 sekcijų studija nėra aktualus 11 sekcijų rendereris. Tamsi būsimos skulptūrų vitrinos sekcija papildo pasirinktą tapatybę.
+
+2026-10-12. Agentas renkasi autonomiškai pagal savininko perdavimą. Bendro tinklo maketai nėra šios parduotuvės tapatybė.
+
+## Krypties atranka
+Septynios pagrįstos kryptys: (1) poros prisiminimų albumas, (2) šiuolaikinė gipso dirbtuvė, (3) dovanų laiškas, (4) namų galerija, (5) bendro vakaro stalas, (6) fotografijos kontaktinis lapas, (7) rankų gestų teatro programa. Impeccable seed be5391af paskyrė šeštą. Pasirinkimas: fotografijos kontaktinis lapas — stambi viena akimirka, greta lakoniški rinkinio pasirinkimai, žemiau nuoseklus klausimų ir atsakymų ritmas. Vidiniai puslapiai išlaiko lapo kraštus, atvirus tekstų blokus ir aiškų skaitymo plotį; checkout ramus ir praktiškas.
+
+Rietveld challenger atmestas: spalvotos judančios plokštumos silpnina dovanos emociją ir stabilų pasirinkimą; perimama aiški kiekvieno valdiklio paskirtis. Emigre/teletext atmesti: bitmap tekstas prastina ilgo LT skaitymo ir produkto aiškumą; perimama tik stipri tipografinė hierarchija. Provenance ribbon artima tikrų faktų skaidrumui, tačiau archyvinė istorija ne mūsų parduotuvės pagrindinis darbas; perimama aiški patvirtinto ir nežinomo duomens skirtis. Likę challengers nėra kopijuojami. Tai agento pasirinkimas, ne savininko ar nepriklausomo dizainerio approval.
+
+## Tyrimo įtaka
+CreativeDeco PL instrukcija apžiūrėta desktop1265 ir mobile390: tema, turinio nuorodos ir nuoseklūs vaizdai padeda orientuotis; didelis universalus meniu ir mobilus reviews overlay uždengia skaitymą. Pritaikyti kompaktišką navigaciją, aiškų straipsnio turinį, atmesti review lipduką ir svetimas proporcijas. Loovuspood EE produkto desktop1440/mobile390: produkto kaina ir pirkimas šalia vaizdo aiškūs desktop; mobile kategorijų sidebar nukelia produktą žemyn. Pritaikyti du tikrus variantus ir kainą, atmesti sidebar. Memorycasting.lt savininko ankstesnis briefas naudotas kaip klausimų inventorius, ne įrodymas apie atsiliepimus/saugą. Visų šaltinių retrieval2026-10-12; konkurentų teiginiai nepaversti Memo faktais. LT video URL web retrieval502 — ne vadinti apžiūrėtu. Tinklo artimiausių Akmenas/Auksarankiams faktinė screenshot peržiūra ir naujų studijų palyginimas dar privalomi prieš galutinį craft priėmimą.
+
+## Tokenai ir tekstų vaidmenys
+Šviesus popierius #fbf8f3, pagrindinis rašalas #302923, prislopintas tekstas #67584d, šiltas akcentas #97452f, neutralus paviršius #eee5da. Vientisas tamsus akcentas mygtukams, be gradientų. Display: savarankiškai hostintas OFL Newsreader regular iki4.75rem (Georgia fallback). Body: savarankiškai hostintas OFL Source Sans3 realūs400/600 svoriai1–1.125rem/1.65; headings1.5–2.5rem/1.15. Proza68ch. Kainos tabular numerals. Navigacija/mygtukai1rem, metadata0.9375rem. Focus3px akcentas+3px offset. Body niekada neblunka žemiau kontrasto ribos. Mobile320/390, tablet768, desktop1440; checkout lentelė reflow į įrašus. Atvira kompozicija, plonos skiriamosios linijos, jokio card kiekvienai pastraipai.
+
+## Puslapių ir asetų planas
+Homepage: asmeninis pažadas ir generuotas redakcinis susikibusių rankų fragmentas (3:2, center crop); du tikri rinkinių pasirinkimai be fiktyvios rinkinio foto; palyginimas; pasiruošimo kelias; gido įėjimai ir tikra įmonė. Produktas: patvirtinta komplektacija, kaina, poros dažų variantas, krepšelio veiksmas, instrukcijos/pagalbos nuorodos; responsive tikro produkto foto vieta laukia savininko, generuotas rinkinys jos nepakeičia. Catalog: dvi prekės, €32/€48, atskiras poros dažų variantas tik detail. Cart/checkout: serverio katalogas→quote→durable order→checkout, serverinės klaidos/empty/replay/token taisyklės. Gidai: peržiūrėtas vaizdas, H1, linked organization byline/datos/breadcrumbs, TOC, body, šaltiniai/ryšiai. Privacy/legal/contact: tekstiniai, be dekoratyvios foto.
+
+Trys redakciniai bitmapai: gift (bendros veiklos dovana, negali vaizduoti Memo rinkinio), planning (datos ir susitarimas be išgalvoto delivery), comparison (nebranded rinkinys ar paruošta dovana, be netikros Memo prekės). Generavimo kilmė žurnale, ne „tikras klientas“; importas per bendrą saveResponsiveAsset. Tikri rinkinių masters atkeliauja vėliau ir bus atskirai peržiūrėti.
+
+## Patikros planas
+- [ ] Konceptų faktinis desktop/mobile palyginimas ir tinklo screenshots.
+- [ ] Visi teksto vaidmenys, LT glyphs, loaded font/weights, wraps/measure/contrast.
+- [ ] Homepage, catalog, product, guide/hub/profile, cart/checkout/status, contact/legal desktop/mobile.
+- [ ] Keyboard, 320 reflow, 200% teksto didinimas ir spacing override.
+- [ ] Faktinis HTTP/DOM/source/publication priėmimas; detector vienas final skenavimas, meaningful fixes ir confirmation.
+
+## Atliktas 2026-10-12 perėjimas
+Faktiškai peržiūrėti Akmenas c-desktop ir Auksarankiams studies-handyman c-desktop kaip saugotos konceptų studijos, ne dabartinės produkcijos įrodymas. Akmenas remiasi poreikio klausimais prieš užklausą; Auksarankiams plataus paveikslo ir darbų registravimo ritmu. Memo turi produkto pasirinkimą, native cart/order eigą, turinio lapo vaizdus ir mažą širdies mark. Pilnas mobile/final-network bei alternatyvių Memo konceptų palyginimas vis dar neatliktas; jo PASS nėra.
+
+17pradinių puslapių tikras desktop/mobile DOM, naujų3gidų+indekso320/390/768/1440px metrikos be overflow. Peržiūrėti apdailos/džiovinimo/pagalbos teminiai bitmapai ir konkretūs mobilūs vaizdai. Faktinio200%zoom ir text-spacing override įrodymo nėra. Native screenshot kelias naudotas po CDPfullPage delsos; screenshot grąžinamų failų apimtis ir tool preview skyrėsi, todėl nekuriamas fiktyvus visas-state screenshot PASS.
+
+Lighthouse13.5.0: home90 ir apdailos gidas94performance, kitose kategorijose100. GidoCLS0,1101 susijęs su heading/font pasikeitimu, likęs matavimo apribojimas. Detector failų scan confirmation JSON[]; jis neatstoja pastraipų skaitymo ar WCAG. Tikrų prekių foto vietos tebėra aiškūs placeholderiai pagal savininko išimtį.
+
+## Aktualus kalbinių versijų tekstų patikros planas · 2026-10-12
+Dizaino krypties pasirinkimas savininko atidėtas. Šis etapas tikrina 88 puslapių įskaitomumą ir veikimą esamoje sistemoje, nepatvirtina galutinės tapatybės.
+
+2026-10-14 rinkinių sudėties pataisa: išlaikyti dabartiniai Manrope tekstų vaidmenys; prie serverio kainos pridėta lokalizuota įtrauktų dažų eilutė, pašalintas dažų checkbox. Actual LT desktop1280, LT mobile320 ir PL desktop1280 patikrinti be clipping/overflow; native mobile juosta rodo 48 €. [Patikros apimtis ir likę apribojimai](INCLUDED_PAINT_2026_10_14.md). Ankstesnės typography užduotys ir 200%/spacing nežinomybė šia maža pataisa nepervadinamos PASS.
+- [x] FontTools faktiškai perskaitė penkių WOFF2 metaduomenis: Newsreader400 static; Source Sans3 tikra wght200–900 ašis. Abiejų Sans unicode šeimų junginys ir Newsreader turi visus LT/PL/LV/ET reikalingus tikrintus ženklus.
+- [ ] Deklaruoti tikrą Sans svorių diapazoną vienoje šeimoje; pašalinti dubliuotas svorių deklaracijas ir sintetinio logo kursyvo poreikį. Originalūs fontų baitai/licencijos nepakeičiami.
+- [ ] Dabartinis 320/390/768/1440 reflow, visos keturios kalbos, mygtukai/checkbox/formos, gids/autorius/datos/šaltiniai/footer. Atskirai tikra 200% zoom ir text-spacing patikra; bandymas nepaverčiamas PASS, jei mechanizmas neveikia.
+
+2026-10-13 aktuali homepage iteracija: [kompaktiško filmo ir vaizdų rinkinio priėmimas](ASSET_KIT_2026_10_13.md), [3D tyrimas](3D_MODEL_RESEARCH_2026_10_13.md). Official release60c80be9, exact63 design assets;98tests/TS/build/86HTTP/88pageSEO ir actual desktop/mobile PASS. Upgrade-6ea0a7d2-e1c7-4bee-8c3e-434858238d70. Ankstesni priėmimai lieka istorija; main/production adoption neteigiama.
+
+2026-10-13 right-film refinement plan: preserve Manrope/type sizes/copy and compact six-stage rail; move desktop film to right ~62% with full-frame contain, stronger edge feather and lighter grayscale. Text left30% on white, no overlap. Verify desktop1280x630 all stage captions, tablet and mobile manual view; retain verified wheel smoothing. PNG/video source and official content unchanged.
+
+2026-10-13 moment choices plan: replace kit preparation photo in meaning section with selected pair/family/gift scene. Preserve current smaller Manrope headings, three buttons, paragraphs/CTA and semantic source. Responsive4:3 photography, no image distortion/crop; photo swaps together with panel, mild250ms opacity transition disabled for reduced motion. Verify all three selections, return, mobile320, image load failure and no-JS text/image fallback. No additional detail/3D controls in this interim photo integration.
+
+2026-10-13 section completion plan: keep selected image scenes/small type/word reveal/choice CTA. Add44px detail hotspot and Apžiūrėti detales action, native modal with readable20px title/16px controls, viewport-contained2D zoom1–3 and bounded dragging/touch pinch. KeyboardEscape/focus restoration and zoom/reset shortcuts, loading/error/retry, motion-off/reduced behavior, responsive320px. Viewer UI is enhancement layer; no business claims or official89-block body change. Actual modal states and math bounds checked before acceptance; real3D remains dependent on future GLB.
+
+## Galerijos įgyvendinimas · 2026-10-15
+
+Savininkas pasirinko gallery-concept-20261015-v1 ir pavedė pilnai įgyvendinti. Paviršiaus režimas — fotografijų peržiūra esamoje baltos/Manrope/rožinės tapatybėje. Vienas didelis pasirinktas kadras kairėje, dvi mažesnės peržiūros dešinėje; tikri Visos/Porai/Šeimai filtrai, aiškus skaitiklis ir progresas. Desktop H2 iki38px, body16px, controls16px, captions14–16px ir kontrastinga muted spalva. Native peržiūros dialogas su Escape/rodyklėmis/focus return, mastelio valdymu ir touch swipe; telefonu pagrindinis kadras bei miniatiūrų juosta, be horizontalios puslapio slinkties. Nėra autoplay ar priverstinio slinkimo. Originalios3foto naudojamos iš masters, ne crop iš mockup; šeimosv2 turi aiškią fizinę atramą.
+
+Patikros planas: [ ] native responsive import ir exact media admission; [ ] main/preview/filter/one-item/no-JS; [ ] dialog keyboard/focus/zoom/swipe/error; [ ] desktop1440/mobile390/320 ir text enlargement; [ ] pilnas LT tekstas ir current title/caption semantics; [ ] actual route/build/current release checks. Koncepto šviesus caption nepaverčiamas gamybos spalva; originali bendro puslapio struktūra, SEO ir kitų puslapių turinys išsaugomi. Nauja galerija neįjungia mokėjimų ir nėra klientų darbų ar rinkinio talpos įrodymas.
+
+### Galerijos realizacijos patikra · 2026-10-15
+
+Įgyvendinta pasirinkto koncepto semantinė galerija: trys originalios iliustracijos, Visos / Porai / Šeimai filtrai, pasirinkimas ir peržiūra native dialog lange, 1–3× didinimas, rodyklės, Escape, grįžtantis fokusas ir braukimas telefonu. Penki bendro importo WebP dydžiai kiekvienam vaizdui, be didinimo virš 1254 px originalo. Aiški įkvėpimo iliustracijų žyma; ne klientų darbai ar komplektacijos pažadas.
+
+118/118 regresijų, TypeScript, scoped ESLint ir final production build PASS. CSS detektorius po width perėjimo pataisos grąžino tuščią sąrašą. Chrome realus desktop ir 390 px: filtrai 3/2/1, vieno vaizdo navigacija išjungta, dialog/zoom/reset/rodyklės/Escape/focus return patikrinti. 390 px native touch braukimas perjungė šeimos nuotrauką į Pažadas. 320 px dokumento ir galerijos plotis 320, horizontalios slinkties nėra. Native dialog vaizdo intrinsic overflow rastas ir pataisytas absolute contain išdėstymu; pataisytas dialog telpa mobiliajame ekrane. Laikinos per-tab emuliacijos išjungtos. 200% šrifto mastelio atskiras bandymas dar neatliktas; jo nevadiname PASS.
+
+Leidinys bc122dcb-f4f5-47aa-aec3-bfc2bd8bed98, SHA256 25b912d70c0a1696b0c2a39ffaeeb09226f7a2b559be85f616785ab24e8f4edf: 181 puslapis / 664 medijos. Keistas tik homepage; kitų180 puslapių tekstai ir92 straipsnių datos nepakito. Bendras importer priėmė15 naujų medijos variantų. Įkėlimas į tikrą domeną ir jo patikra dar atskiras žingsnis.
+
+### Returns policy text extension - 2026-10-19
+Scoped plan: retain established legal-page Manrope H1/H2/body/list/link roles and white background; review longer Lithuanian heading, new paragraphs, list and source links on desktop/mobile before deployment. No style or unrelated page changes. Actual Chrome localhost8819 final package6aed9952: desktop1265px heading fits, body reading column about635px;390px and320px heading wraps naturally, all policy paragraphs/9section headings remain in DOM. Document widths375/305 exclude scrollbar and do not overflow390/320. Full final Lithuanian self-edit and native desktop/mobile screenshots saved privately. Existing font/weight/spacing system retained; no new enlargement certification claimed. Hosted verification follows deployment.
+### Compact cart refinement — 2026-10-20
+
+Owner requested less scrolling in the existing checkout. Preserve the white/Manrope/rose system, required fields, canonical DOM/tab order, server totals and payment flow. Only site CSS changed: contact and address groups share a row at1100px+, compact product image/spacing, narrower sticky summary, smaller headings, reduced breadcrumb spacing. Redundant introductory/browse text is hidden; semantic fieldset legends remain accessible. Mobile stays a linear form with16px input values,44px field/quantity controls and no horizontal overflow. Other page breadcrumbs are unchanged through a checkout-scoped :has selector.
+
+Actual1280px old form1258.59px versus final529.45px (about58% shorter), final native/mobile390 form1158.32px with document375px. Final actual domain1280 matches529.45px and has no stopped-sales notice. Production frontend62032b09-1605-4bb3-9f56-b60512758027, PUBLICda24ab706ac29d844d6c229b93543d0ccf7aa8c7. Production build and exact staged safety passed; detector[] and one desktop/mobile batch plus one confirmation completed. No new functional tests for this CSS-only refinement; no new order, provider configuration or payment test. First Windows dist-lock build failure was resolved by stopping only the owned preview and rerunning. Previous broader typography/zoom limitations are not recertified here.
+
+### Products moved into order summary — 2026-10-20
+
+Owner screenshot requested the selected kit above totals on the right. Memo now opts into canonical productsPlacement=summary: actual single product section moves into aside before its totals heading, with original handlers and accessible DOM order. Desktop contact/address starts immediately on the left; mobile form precedes the combined products/totals/payment summary. One native desktop/mobile batch checked two kits and persisted quantity2, no390px horizontal overflow. Canonical15 checkout tests, PUBLIC133 tests, production build, detector[] and scoped staged safety PASS. Source CORE48ba3fc6/PUBLIC26867ed; frontend eec41153-3b79-41fd-bae9-40d8960c1390. Backend, providers, content and admissions unchanged.
+
+### Delivery calculation feedback — 2026-10-21
+Scoped plan and confirmation: retain existing Manrope status/alert text roles and all current layout; show calculation status while awaiting the provider and distinguish a service failure from invalid buyer data. Four localized service messages self-edited. Actual hosted1280/390 checked after source65964f9b adoption: successful quote clears status, final5.24EUR/37.24EUR fits, document1265/375 and no clipping or horizontal overflow. No style/token changes or new enlargement certification; screenshots and exact release in DELIVERY_QUOTE_503_2026_10_21.md.
+
+### Same-view payment — 2026-10-21
+Scoped plan: retain existing Manrope form/sidebar roles and compact contact/address columns; stop replacing them with a receipt before payment. Canonical same form and original totals remain; payment is a full-width row below delivery with the existing19px heading, white surface/separator and44px secondary controls. Read-only values remain legible. Actual hosted1280 layout and same-Session isolated1280/390 payment rendering checked; no horizontal overflow at390, no font/style redesign or new enlargement certification. Exact evidence and interrupted hosted iframe-paint boundary: INLINE_PAYMENT_2026_10_21.md.
+
+### Right-column payment correction — plan2026-10-21
+Owner corrected the layout: details stay left and Stripe belongs in the right summary immediately below goods/totals/consent. Keep current typography/controls and payment API, use one actual DOM payment node, widen desktop summary to460px and use a single column below900px. Tall open payment must scroll normally rather than stick above the viewport. Verify default versus explicit placement and desktop/mobile using the same existing Session; no new order or charge.
+
+Right-summary verification completed:36canonical/134PUBLICtests, production build,100page SEO smoke, empty CSS detector. Private original-Session real Stripe desktop1280/mobile390 Card and Pay inspected; correct item/total/consent/payment order,460px desktop summary, mobile document375 at390. First mobile resize-paint capture superseded by confirmation. Public actual1280 cart has summary payment DOM,460px sidebar and no horizontal overflow; source44d24ef and deployed1a027950 at100percent. No new orders, charges or changes to backend/data. Preview fallback font and absent site chrome are explicitly separate from production rendering; no zoom or full WCAG certification claimed. Scope verified and complete.
+
+
+### Shared homepage footer —2026-10-22/23
+One maintained homepage footer across the public Memo renderer; incumbent final gutter clamp(24px,2vw,40px), max1360px,14px Manrope and existing logo/navigation/contact/service/bottom rows retained. Three navigation groups use only eligible same-locale routes; LT gallery/sculpture links resolve on the homepage. Mobile brand full row, two nav columns and final full row. Component-scoped resets avoid old .site paragraph/heading drift. Twenty representative local route/viewport measurements, desktop/mobile visuals,320px Estonian font200% plus text-spacing reflow and actual /#galerija navigation passed. Not a physical-device/full-WCAG or browser-zoom certification. Native package/dates unchanged. Hosted 3d1b197f-002a-4f76-9b77-6b276bd00665; exact acceptance and limitations in FOOTER_2026_10_22.md.

@@ -1,0 +1,38 @@
+{
+  "siteId": "memocasting",
+  "category": "workflow",
+  "summary": "Revalidate exact immutable historical PUBLIC launch and route provenance against current paired source and real regression results; no private-core coverage.",
+  "evidence": [
+    "Original full-branch failure retained: sites/memocasting/qa/antigravity-review-20261025/full-branch-coverage.private.json",
+    "Current actual checks and source adoption: sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+    "Historical entries are immutable and still retain their original invalid issue/checks statements."
+  ],
+  "paths": [
+    "vite.config.ts",
+    "config/memocasting-worker.json",
+    "content-packages/memocasting/content-package.json",
+    "lib/generated/content-packages.json",
+    "lib/memocasting-routes.mjs",
+    "tests/memocasting-routes.test.mjs",
+    "lib/memocasting-locales.mjs",
+    "sites/memocasting/DEPLOYMENT_2026_10_14.md",
+    "sites/memocasting/LATEST-RELEASE.json",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "rollback": "Revert the new checker capability and complementary verification declarations only; do not rewrite original records, runtime data, deployed secrets or past failures.",
+  "supersedes": [
+    {
+      "id": "upgrade-bd809574-da43-4f53-ad8a-9ec9efee5031",
+      "treeSha": "1c936ceb943ac89293d6c854153892d16ca451e9"
+    },
+    {
+      "id": "upgrade-c6dcccc4-0788-4fc4-9098-84b244fa3c58",
+      "treeSha": "79b24e018b2bad850355345dfcaa2f8b225d0e0b"
+    }
+  ],
+  "id": "upgrade-08f0813e-c2c5-4371-8142-2a6f548154de",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "65f127b86bb3edd85846c9bd9950d0fefe41a80e",
+  "createdAt": "2026-10-25T14:21:04.061Z"
+}

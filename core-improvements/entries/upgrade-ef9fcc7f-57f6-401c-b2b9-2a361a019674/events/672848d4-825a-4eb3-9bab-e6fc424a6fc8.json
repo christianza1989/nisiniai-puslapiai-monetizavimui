@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Original regression on04449b5d fails because quotes bypass shared pacing; preserved in session. Source repaired; actual staging reads/create are distinct from final async docs/tracking and from production deployment.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/provider-pacing.test.mjs",
+      "result": "PASS",
+      "evidence": "3tests; all3REST starts includingquotes separated by>=1sec, cross-adapter/clockskew and hashedlease retained."
+    },
+    {
+      "command": "npm test (commerce-core)",
+      "result": "PASS",
+      "evidence": "157tests0fail on2026-10-17"
+    },
+    {
+      "command": "npm run test:worker (commerce-core)",
+      "result": "PASS",
+      "evidence": "Actual local workerd/nativeD1 ordered migrations, races, restart, signedStripefixture and immutable operations passed; no remote APIs."
+    },
+    {
+      "command": "npm run check:format and npm run build:worker (commerce-core)",
+      "result": "PASS",
+      "evidence": "PrettierPASS; dry-run3226.20KiB/gzip779.58KiB, local sandbox bindings only."
+    }
+  ],
+  "eventId": "672848d4-825a-4eb3-9bab-e6fc424a6fc8",
+  "sequence": 2,
+  "at": "2026-10-17T08:28:36.346Z"
+}

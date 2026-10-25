@@ -35,7 +35,49 @@ dingęs katalogas ar vien working tree esantis kelias nesuteikia coverage.
 `*` ir `?` scope neleidžiami. Journal helper išsaugo literal kelią; pats įrašymas
 dar neįrodo committed scope ar patikros. Senų record ir event taisyti negalima.
 
+Originalūs `SOURCE_` archyvai lieka nekintami. Vienintelė tiksliai tikrinama
+atkūrimo išimtis: `SKILLS/<skill>/SOURCE_SKILL.md` arba `SOURCE_PROMPT.md` LF Git
+blobas atkuriamas į originalius CRLF baitus, kurių SHA-256 jau yra nepakitusiame
+abiejų versijų `SKILLS/catalog.json`. Privalomi įprasti 100644 failai, paskutinė
+committed root `.gitattributes` taisyklių pora `-text -filter -working-tree-encoding`
+šiems vardams ir jokių nested attributes archyvo kelyje. Kiekvienas toks failas
+turi patekti į naujo verified upgrade scope. Semantiniai pakeitimai, katalogo
+hash keitimas, trynimas, symlink ir vien working ar `.git/info` attributes šios
+išimties nesuteikia. Checker skaito tikslius Git baitus; jis jų „nenormalizuoja“
+į tariamą PASS. `.gitattributes` pakeitimai taip pat yra bendro core įvestys.
+
+Companion PUBLIC įrašo literal kelias CORE Git medyje neegzistuoja. Checker
+tokiems įrašams tikrina žurnalo bei kelio sintaksę (be `*` ir `?`), pateikia
+juos atskirai `foreign_scope_ids` ir nesuteikia jokio private source coverage.
+Tikslius PUBLIC blob/tree ir source SHA tikrinti pačiame companion checkout;
+CORE PASS nėra foreign Git scope patikra. Private įrašams ankstesnė committed
+literal blob/tree ir tikslaus ištrinto failo taisyklė lieka visa apimtimi.
+
 `node scripts/core-upgrade.mjs event --id <ID> --input <event.json>` prideda įvykį. Statusai finding / fixing / local-verified / pr / merged / adopted. local-verified reikalauja `checks: [{command, result:"PASS", evidence}]`; ankstesnį FAIL palikti fixing įvykio note / atskirame kvite. PR ir vėlesniems įvykiams reikalingas tikras GitHub PR URL; merged/adopted ir tikslus40hex commit. Helperis nepatvirtina GitHub būsenos: prieš įrašant patikrinti faktinį merge, o adoption turi įvardyti konkretų checkout / adapterį ir bandymą. Nebūtinas „adopted“ visiems PC.
+
+## Nauja patikra vietoje netinkamos istorinės deklaracijos
+
+Senas record ir event lieka nekintami. Jei senas įrašas stabdo patikrą tik dėl
+`canonical_issue_url_required` arba `verified_checks_required`, galima sukurti
+naują įrašą su tikrais dabartiniais patikros rezultatais ir pasirenkamu lauku:
+
+```json
+"supersedes": [{"id": "upgrade-<tikras-UUID>", "treeSha": "<40-hex-committed-tree-SHA>"}]
+```
+
+Tree SHA paimamas iš `git rev-parse <commit>:core-improvements/entries/<ID>` ir
+apima seną record bei visus jo įvykius. Naujas įrašas turi priklausyti tam pačiam
+repo, turėti canonical issue/PR URL, visus senus scope ir naują galiojantį
+local-verified įvykį. Jis gauna tik savo deklaruotų failų coverage; senas
+netinkamas įrašas coverage nesuteikia. Checker grąžina tikslų seną radinį ir
+pakaitinio įrašo ID `superseded_legacy_validation` lauke. Neteisingas snapshot,
+svetimas repo, prarastas scope ar nepatikrintas pakaitalas blokavimo nepanaikina.
+
+Tai papildanti kilmės deklaracija po naujos faktinės patikros, ne senų bandymų
+rezultatų pataisymas. Istorijos redagavimo, SOURCE archyvų, source scope ar kitų
+patikrų išimčių ji nesuteikia. Keičiantis dabartiniam kodui vis dar reikia
+įprastų naujų patikros įrodymų. Test-only Python `test_*.py` / `*_test.py` failai,
+kaip ir esami `.test.*`, patys savaime nereikalauja dirbtinio shared upgrade.
 
 ## Tikslus karantinas
 

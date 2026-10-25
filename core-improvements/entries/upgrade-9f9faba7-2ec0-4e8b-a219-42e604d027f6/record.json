@@ -1,0 +1,25 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Root metadata mixed live product SEO fields with original OpenGraph content and lacked consistent brand identity/image-preview hints; scoped adapter now shares admitted runtime facts across channels.",
+  "evidence": [
+    "Prior root layout at6ef893e3 used page.seoTitle/seoDescription for title/description but raw page.title/description for OpenGraph. Owner requested Memory Casting display name, correct prices/images and primary hand-casting query mapping.",
+    "39 focused tests with actual React SSR of app/layout verify one title/description/robots, equal OG/Twitter fields, dynamic LIVE prices, selected images, future/private/functional guards and unchanged other-tenant behavior. Full TypeScript PASS on delegated sourcefc712c24."
+  ],
+  "paths": [
+    "app/layout.tsx",
+    "lib/memocasting-seo-metadata.mjs",
+    "lib/memocasting-structure.mjs",
+    "lib/memocasting-merchant-products.json",
+    "tests/memocasting-seo-metadata.test.mjs",
+    "tests/memocasting-live-offers.test.mjs",
+    "tests/memocasting-merchant-feed.test.mjs",
+    "docs/MEMOCASTING_SEO_METADATA.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "rollback": "Scoped revert Memo metadata adapter/layout branch and brand schema fields; preserve native publication schedule, product prices/orders and other tenant behavior. Dynamic catalog source remains authoritative. No manual rich-result or indexing guarantee.",
+  "id": "upgrade-9f9faba7-2ec0-4e8b-a219-42e604d027f6",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "1460227a0b3d1742c75ff14a3d173dd3aefc4cb4",
+  "createdAt": "2026-10-25T07:55:31.934Z"
+}

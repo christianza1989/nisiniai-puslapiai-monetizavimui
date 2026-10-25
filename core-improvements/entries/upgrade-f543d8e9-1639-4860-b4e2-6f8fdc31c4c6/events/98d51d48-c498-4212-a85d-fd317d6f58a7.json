@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "CORE220regressions passed from the documented commerce cwd. Initial root-cwd invocation had one resolution failure and is retained. A new native transport regression exposed unbound Worker fetch and redirect-mode incompatibility; default fetch wrapper/manual no-follow fixed and actual native D1/Worker replay/redirect tests now pass. Google debug validation accepted exact purchase shape with0messages; only a nonfinancial connectivity event reached production collector, never a fake LIVE purchase. Remote schema25to26 verified; hosted deployment is a separate next gate.",
+  "checks": [
+    {
+      "command": "cd commerce-core && node --test test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "Private core-tests-correct-cwd.private.log:220/220; isolated databases only"
+    },
+    {
+      "command": "cd commerce-core && node --test test/analytics.test.mjs test/analytics-worker.test.mjs",
+      "result": "PASS",
+      "evidence": "Private native-final.private.log:10/10; signed Stripe TEST async paid/unpaid/replay, actual D1 migration/lease and no credential-bearing redirect"
+    },
+    {
+      "command": "node sites/memocasting/qa/ga4-ecommerce-20261025/google-validation.private.mjs",
+      "result": "PASS",
+      "evidence": "Google validation0messages, nonfinancial collector204, livePurchaseSentfalse; private receipt has no API secret"
+    }
+  ],
+  "eventId": "98d51d48-c498-4212-a85d-fd317d6f58a7",
+  "sequence": 2,
+  "at": "2026-10-25T11:05:56.373Z"
+}

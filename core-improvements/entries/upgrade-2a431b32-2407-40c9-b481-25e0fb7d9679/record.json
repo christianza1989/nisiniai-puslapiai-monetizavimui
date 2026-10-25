@@ -1,0 +1,29 @@
+{
+  "siteId": "memocasting",
+  "summary": "Native V1 draft enqueue drops the caller's complete researched editorial brief; a 1000-character reason cannot carry long-tail scope, original contribution, evidence, media and link decisions.",
+  "category": "code",
+  "evidence": [
+    "content-studio/src/generator.mjs draftPage constructs pageData only from compact saved V1 fields and ignores enqueue input; source d9093437b94515e12609775a930f8663ecee83eb",
+    "sites/memocasting/CHRISTMAS_BRIEFS_2026_10_14.json contains a complete researched brief that exceeds compact reason"
+  ],
+  "paths": [
+    "content-studio/src/generator.mjs",
+    "content-studio/src/draft-brief.mjs",
+    "content-studio/test/generator-policy.test.mjs",
+    "content-studio/test/draft-brief.test.mjs",
+    "CONTENT_CORE.md",
+    "WORKSTREAMS.md",
+    "sites/memocasting/BULK_CONTENT_COMPLETION.md",
+    "sites/memocasting/LONG_TAIL_PLAN_2026_10_14.md",
+    "sites/memocasting/DAILY_CONTENT.md",
+    "sites/memocasting/CONTENT_PLAN_STATUS.md",
+    "sites/memocasting/CORE_FEEDBACK.md",
+    "sites/memocasting/TOPICAL_MAP_2026_10_14.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Scoped revert of optional private brief forwarding; keep existing content, job fingerprints and published revisions unchanged.",
+  "id": "upgrade-2a431b32-2407-40c9-b481-25e0fb7d9679",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "d9093437b94515e12609775a930f8663ecee83eb",
+  "createdAt": "2026-10-14T06:24:04.365Z"
+}

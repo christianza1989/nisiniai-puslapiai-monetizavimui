@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Verified same-site document references were incorrectly rejected as cross-site network campaigns during actual reviewed Studio approval.",
+  "evidence": [
+    "Regression at parent51249b01: actual approveReviewedBatch with reviewed verified same-site HTTPS PDF failed in model.mjs network-link gate.",
+    "Focused actual-model tests preserve HTTPS/no-auth/label/reason/verification and other-owned-domain network-suggestion gates;12 canonical workflow/minimum/reference tests PASS."
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/test/same-site-reference-approval.test.mjs",
+    "SKILLS/niche-seo-geo-core/references/studio-integration.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "rollback": "Scoped revert model same-site predicate and rule; preserve approved snapshots and source/media bytes. Unknown/raw/private/future documents remain denied by frontend projection.",
+  "id": "upgrade-d2118a6c-a52c-4958-ae8f-c1fdfd015d35",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "1460227a0b3d1742c75ff14a3d173dd3aefc4cb4",
+  "createdAt": "2026-10-25T07:47:19.110Z"
+}

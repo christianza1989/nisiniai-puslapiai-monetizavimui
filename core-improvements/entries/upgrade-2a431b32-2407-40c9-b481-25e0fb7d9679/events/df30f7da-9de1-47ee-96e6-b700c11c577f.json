@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Optional native fullBrief forwarding passes focused regressions and actual read-only draft jobs. Original transient failures retained privately; JSON diagnostic identifies provider HTTP429, not an editorial approval or source test failure. Complete archive preparation continues; no public approval or deployment claimed.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/draft-brief.test.mjs content-studio/test/generator-policy.test.mjs content-studio/test/editorial-skill.test.mjs",
+      "result": "PASS",
+      "evidence": "10 focused tests: lossless long brief, exact destination validation, caller mutation isolation, actual CLI envelope fixture, unchanged legacy calls and instruction snapshot gates."
+    },
+    {
+      "command": "Native enqueue draft with fullBrief for Memocasting C00/H00/C01/C03 and subsequent Christmas batch",
+      "result": "PASS",
+      "evidence": "Real read-only Codex CLI produced original private bodies with d071e8f6ccb477f59b0a8272e21851ed4a39e51fc1119c8c9e0732003eabe766 instruction fingerprint. Actual statuses/blocks saved in private native jobs and writing receipts; no fixture promoted to public content."
+    },
+    {
+      "command": "Native complete-brief reconciliation via mergePlan/editPage",
+      "result": "PASS",
+      "evidence": "82 missing plans added;93 exact selected destinations materialized. All88 prior published page records preserved byte-for-byte during reconciliation. Full brief input stored in private orchestration and passed into existing writer; public schema unchanged."
+    }
+  ],
+  "eventId": "df30f7da-9de1-47ee-96e6-b700c11c577f",
+  "sequence": 2,
+  "at": "2026-10-14T08:47:15.808Z"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "commit": "22cfe5d707553f0b60f4b26b73b8cf4d38a4c742",
+  "note": "Frontend ee022a72 active2026-10-20T08:35:34Z on existing two customdomains. Scoped owner arrangement accepted in realdesktop/mobile; native package/assets/services unchanged. Previous316f4de3 is code rollback. Source pushedPR31, no mainmerge.",
+  "eventId": "a56d4906-39f1-48bd-b26f-9e23d6e60d2a",
+  "sequence": 5,
+  "at": "2026-10-20T08:46:40.806Z"
+}

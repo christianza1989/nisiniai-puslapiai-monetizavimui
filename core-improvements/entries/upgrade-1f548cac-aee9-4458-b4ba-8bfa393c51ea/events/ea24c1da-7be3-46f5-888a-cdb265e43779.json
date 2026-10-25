@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Original8regressionFAIL retained in sendparcel-status-original-failure-20261020.log, along with all intermediate logs. Both provider parser layers now use the exact documented whitelist; unknown7 still rejects. Existing SQL states encode pending/held with explicit review reasons, original provider ID and immutable observation, without a second create. Refresh reads verified current info before documents and uses lease fencing. Registered-to-held projection becomes unknown and physically packed order ready, preserving historical rows/files; original registration event emits only once on recovery. No runtime/http/service/UI/config/migration/credentials/actualDB/provider/financial/mail/deploy changes. Wallet0 is not a new checkout gate; manual physical packing with3shippingauto=false remains supported. Initial pending commands are operator-refreshed, not a new automatic scheduler. Source publication, main acceptance and actual deployment remain separate.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/shipment-commands.test.mjs commerce-core/test/shipping-automation.test.mjs",
+      "result": "PASS",
+      "evidence": "sendparcel-status-focused-20261020.log:28focused tests, including six unregistered status dispositions, original-ID refusal, no document/tracking reads while held, pending/processing recovery, state regression/recovery without duplicate event or POST, manual packing documents with shipping automation off, durable existing-event pending wait and explicit held review."
+    },
+    {
+      "command": "node --run check:format; node --test --test-concurrency=1 test/*.test.mjs; node --run test:worker; node --run build:worker (commerce-core cwd, sequential exit checks)",
+      "result": "PASS",
+      "evidence": "sendparcel-status-acceptance-20261020.log finalexit0: formatting,185Node, nativeworkerd/D1/R2/Queue24 originalmigrations including actual dispose/recreate after provider5 and original-ID6/8/1 recovery with exactly onePOST per fixture order; build3241.67KiB/gzip782.77KiB/21assets. No provider/network transactions; process-local512MiB heap cap."
+    },
+    {
+      "command": "git diff --exit-code 0f0e4ff864d8016702f42f66e6936a262ebff4fa -- commerce-core/src/runtime.mjs commerce-core/src/http.mjs commerce-core/src/service.mjs commerce-core/migrations commerce-core/config commerce-core/public commerce-core/test/checkout-cart.test.mjs",
+      "result": "PASS",
+      "evidence": "Parent-owned runtime/http/service, every UI/PUBLIC/config file and all original24 SQL migrations unchanged. No admission/deployment or dependency manifest change."
+    }
+  ],
+  "eventId": "ea24c1da-7be3-46f5-888a-cdb265e43779",
+  "sequence": 2,
+  "at": "2026-10-20T15:49:01.246Z"
+}

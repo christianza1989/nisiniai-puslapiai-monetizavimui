@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Real local Wrangler relay now sees loopback and can read isolated sandbox; production artifact unchanged.",
+  "checks": [
+    {
+      "command": "node --test sites/memocasting/preview-launcher.test.mjs",
+      "result": "PASS",
+      "evidence": "2cases retain bindings/production artifact and reject production/shipping/unverified-test contexts."
+    },
+    {
+      "command": "GET http://127.0.0.1:8817/prekyba/storefront-context",
+      "result": "PASS",
+      "evidence": "Actual native preview200 sandbox after former503 commerce_external_host; UI server quote3200+450=3650, no order/payment."
+    }
+  ],
+  "eventId": "4b27334c-2db8-4f4f-9834-8e8231f9229b",
+  "sequence": 2,
+  "at": "2026-10-20T13:28:57.061Z"
+}

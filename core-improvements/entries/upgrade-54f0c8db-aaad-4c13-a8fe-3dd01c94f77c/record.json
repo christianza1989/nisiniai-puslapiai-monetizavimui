@@ -1,0 +1,23 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Approved owner PDF references disappeared from public native projection; complete download path now binds exact document bytes to host and eligible instruction page.",
+  "evidence": [
+    "At PUBLICa3c57769 the supplied verified same-site document externalLink projected to an empty array.",
+    "Public regression passes exact approved PDF aliases and refuses unknown/raw/query/fragment, cross-site, future or revoked paths; GET/HEAD/ranges verify unchanged owner bytes."
+  ],
+  "paths": [
+    "lib/niche-links.mjs",
+    "proxy.ts",
+    "lib/memocasting-instruction-documents.mjs",
+    "lib/memocasting-instruction-documents.json",
+    "app/niche/memocasting/instruction-documents/[document]/route.ts",
+    "tests/memocasting-instruction-documents.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "rollback": "Revert scoped alias/projection adapter and remove only its route registration; original PDFs preserved. Do not weaken existing host/publication/media guards or rewrite native approvals.",
+  "id": "upgrade-54f0c8db-aaad-4c13-a8fe-3dd01c94f77c",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "1460227a0b3d1742c75ff14a3d173dd3aefc4cb4",
+  "createdAt": "2026-10-25T07:47:20.725Z"
+}

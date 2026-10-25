@@ -1,0 +1,22 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Give only carrier delivery quote bridge its pacing/provider budget, retain ten-second deadline for other endpoints and adopt exact reviewed canonical pending-quote/client fix.",
+  "evidence": [
+    "Original production200 in9623ms versus503commerce_connection_failed in10313ms with overlapping quote reads; no order mutation used.",
+    "Actual delayed11second binding regression failed before with503, now200. PUBLIC134tests pass; production build succeeds. SDK exactsource65964f9b78b000f3078178ca619870e901bb1947;33canonicaltests pass."
+  ],
+  "paths": [
+    "lib/memocasting-commerce-bridge.mjs",
+    "tests/memocasting-commerce-bridge.test.mjs",
+    "vendor/commerce-core/commerce-client.mjs",
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Deploy prior frontendeec41153 only after rereading actualsettings; preserve every binding, order, admission, secret, cron, mail, carrier pacing and content date. No backend or DB rollback.",
+  "id": "upgrade-2993766c-8fdb-473f-8bdd-d50c897748d0",
+  "branch": "codex/memocasting-public-20261012",
+  "baseSha": "26867eda4f70a2cc1a65d5a047188ebb7e94bc83",
+  "createdAt": "2026-10-21T05:15:06.106Z"
+}

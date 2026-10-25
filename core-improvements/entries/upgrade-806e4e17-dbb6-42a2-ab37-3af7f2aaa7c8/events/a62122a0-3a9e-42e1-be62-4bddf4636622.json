@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "0.12.1 narrowly fixes the site actual expired-reservation buyer headline: pending/released is unpaid in LT/PL/LV/ET rather than waiting for payment. The expiry explanation and absent pay button remain; active reservations and original stored/backend facts stay unchanged. Site exact SDK import/actual acceptance continues. Canonical0.12 source334c416 has exact GitHub preflight and clean archive npm-ci/full verify; no live actions.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "tmp/verify-0121.log:117Node tests, native workerd/D1/R2/Queue22migrations, dry-run766.20KiBgzip21assets. Added unit test exercises eight language/state combinations, waiting label absence and original facts; native browser is site-owned separate proof."
+    },
+    {
+      "command": "git archive334c416 commerce-core; clean npm ci --ignore-scripts; npm run verify",
+      "result": "PASS",
+      "evidence": "tmp/source-restore-012-334c4161/source.zip SHA7dc1dbbe74b84f3389e08f60b6306cf487fedeeee56f4982474f96662ddf681e; clean0.12 all116/native22/build PASS, no runtime directory,0npm vulnerabilities."
+    }
+  ],
+  "eventId": "a62122a0-3a9e-42e1-be62-4bddf4636622",
+  "sequence": 28,
+  "at": "2026-10-12T18:29:36.421Z"
+}

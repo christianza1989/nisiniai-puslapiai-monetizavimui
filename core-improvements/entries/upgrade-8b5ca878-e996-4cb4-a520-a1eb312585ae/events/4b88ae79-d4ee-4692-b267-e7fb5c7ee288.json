@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Scoped source and actual deployment qualification; not main merge, universal adoption or paid-order acceptance.",
+  "checks": [
+    {
+      "command": "Review MAIL_CORE and actual mail acceptance records",
+      "result": "PASS",
+      "evidence": "Existing historical SMTP proof retained; no global SMTP ban, no automatic fallback or unknown replay. Actual204/inbox and native ledger tests separately recorded."
+    }
+  ],
+  "eventId": "4b88ae79-d4ee-4692-b267-e7fb5c7ee288",
+  "sequence": 2,
+  "at": "2026-10-20T17:27:36.340Z"
+}

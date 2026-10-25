@@ -1,0 +1,35 @@
+{
+  "name": "pinet-commerce-local",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-10-11",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+  },
+  "r2_buckets": [
+    {
+      "binding": "COMMERCE_FILES",
+      "bucket_name": "commerce-private-files-local",
+      "preview_bucket_name": "commerce-private-files-local",
+    },
+  ],
+  "vars": {
+    "COMMERCE_ENV": "sandbox",
+  },
+  "d1_databases": [
+    {
+      "binding": "COMMERCE_DB",
+      "database_name": "commerce-local-only",
+      "database_id": "00000000-0000-0000-0000-000000000001",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true,
+    },
+  },
+  "triggers": { "crons": ["*/5 * * * *"] },
+}

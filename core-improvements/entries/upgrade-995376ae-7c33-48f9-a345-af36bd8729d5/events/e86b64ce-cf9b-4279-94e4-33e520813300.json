@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Scoped archive transport and validator availability repairs passed. Full SKILLS audit remains FAIL for separate foreign/sparse state; original FAIL161 retained. Default Python remains unavailable honestly; real isolated original provider validates58skills and96originals. No catalog hash or foreign semantic edits, global installation, main merge, frontend build or production change.",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade-check.test.mjs SKILLS/scripts/audit-skills.test.mjs",
+      "result": "PASS",
+      "evidence": "25 passing cases including original-byte fresh checkout, immutable semantics, catalog laundering, committed attribute hierarchy, .git/info override, mode and symlink rejection."
+    },
+    {
+      "command": "node --test SKILLS/scripts/audit-skills.test.mjs",
+      "result": "PASS",
+      "evidence": "5 passing audit cases after adding the maintained actual96-source-byte contract."
+    },
+    {
+      "command": "git cat-file --batch against all96 staged catalog archive paths",
+      "result": "PASS",
+      "evidence": "All96 staged Git blobs exactly match unchanged maintained SHA256; catalog fingerprint f737c6582de07e9e7124bee04fff91af7b9001fed79eaa1d3df45d3c70f295e4."
+    },
+    {
+      "command": "auditSkills with isolated original quick_validate.py provider and default unavailable provider",
+      "result": "PASS",
+      "evidence": "Actual isolated PyYAML6.0.3/original quick validator58PASS; source archives96PASS. Default reports1validator_unavailable,58NOT_RUN,0false malformed skills; fullauditFAIL preserved."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "Exact staged safety scan found no findings; CRLF-aware standard whitespace check passed."
+    }
+  ],
+  "eventId": "e86b64ce-cf9b-4279-94e4-33e520813300",
+  "sequence": 3,
+  "at": "2026-10-25T08:07:47.382Z"
+}

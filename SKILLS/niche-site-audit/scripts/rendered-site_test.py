@@ -28,6 +28,19 @@ def fixture(host='beauty.example', name='Beauty editorial', kind='Organization',
 
 
 class RenderedSiteTests(unittest.TestCase):
+    def test_locale_home_endpoint_is_explicit_and_wrong_market_still_fails(self):
+        o, graph, html = fixture('memocasting.lt', hub='pl/guides', profile='pl/editorial', locale='pl-PL')
+        expected = o['expected']
+        expected['homeUrl'] = expected['origin'] + '/pl'
+        expected['url'] = expected['origin'] + '/pl/guide'
+        expected['publicUrls'] += [expected['homeUrl'], expected['url']]
+        graph[1]['itemListElement'][0]['item'] = expected['homeUrl']
+        graph[1]['itemListElement'][-1]['item'] = expected['url']
+        o['html'] = html(graph).replace('<a href="/">Home</a>', '<a href="/pl">Home</a>')
+        self.assertEqual(inspect_page(o), [])
+        expected['homeUrl'] = expected['origin'] + '/lv'
+        self.assertIn('BREADCRUMB_ENDPOINTS', inspect_page(o))
+
     def test_training_block_does_not_block_search_agents(self):
         text = 'User-agent: GPTBot\nDisallow: /\n\nUser-agent: *\nAllow: /\nDisallow: /api/\n'
         urls = ['https://beauty.example/guide']

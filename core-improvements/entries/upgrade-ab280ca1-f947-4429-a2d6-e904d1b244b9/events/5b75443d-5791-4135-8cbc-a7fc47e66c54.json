@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "PUBLIC source 559a18a4aece89947f9d96637b2bbdc79c9fa92c deployed as frontend b46c7cd0. Actual hosted searchable Omniva selector, quote totals, courier restoration, mobile390/desktop1280 and updated delivery policy accepted. Source on own PR; no merged-main claim. Exact SDK CORE8dae SHA verified; all existing service/database/observability bindings retained.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "commit": "559a18a4aece89947f9d96637b2bbdc79c9fa92c",
+  "eventId": "5b75443d-5791-4135-8cbc-a7fc47e66c54",
+  "sequence": 3,
+  "at": "2026-10-22T09:58:27.294Z"
+}

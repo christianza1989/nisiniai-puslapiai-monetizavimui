@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Reviewed peer0.15/0.16 adopted with current owner business facts preserved; normalized stale fixture defaults after reproducing one failure. No originalSQL or auth/admission weakening.",
+  "checks": [
+    {
+      "command": "npm run verify",
+      "result": "PASS",
+      "evidence": "Own147Node/native23/format/dry-run768.15KiB PASS. Original focused10/11 failure retained; fixture correction preserves confirmed production facts."
+    }
+  ],
+  "eventId": "aef02bf4-880d-4a8f-b6ce-f2746654480c",
+  "sequence": 2,
+  "at": "2026-10-15T12:11:37.422Z"
+}

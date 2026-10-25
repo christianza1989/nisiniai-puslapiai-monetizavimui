@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "summary": "Adopt reviewed canonical commerce0.14.0 production D1 migrator and its0.13.1 provider prerequisite into the isolated Memocasting deployment source after actual remote SQLite7500 failures; preserve historical SQL and checkout admission",
+  "category": "workflow",
+  "evidence": [
+    "commerce source2b755fde6ed1a1edc30d740aa2c52ad0a7505bfc reviewed with owner coordination on PR96",
+    "15 scoped migration/pacing/shipment tests PASS in deployment checkout",
+    "sites/memocasting/DEPLOYMENT_2026_10_14.md retains original remote failures; actual native-binding acceptance remains pending"
+  ],
+  "paths": [
+    "commerce-core",
+    "WORKSTREAMS.md",
+    "core-improvements/entries/upgrade-c6e6cd31-7d24-472d-a38b-8681b751456b"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "rollback": "Scoped source revert only; preserve actual D1 data and remote receipts, no reset or historical migration rewrite.",
+  "id": "upgrade-65596cf1-39b5-4fd4-bf6c-fd61a52d683d",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "7a50c964d640c6dcceb251068b10980512368d1b",
+  "createdAt": "2026-10-14T21:53:37.400Z"
+}

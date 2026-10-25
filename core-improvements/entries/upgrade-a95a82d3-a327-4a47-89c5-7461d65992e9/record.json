@@ -1,0 +1,34 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "One-page cart needs optional embedded Checkout Sessions; current service requires redirect URL and returns raw provider response, with no embedded secret/public-key validation or existing-session mode recovery",
+  "evidence": [
+    "Authorized site owner reserved backend stripe-adapter/service/http and canonical CommerceClient with related tests; frontend checkout-ui and PUBLIC remain site-owned",
+    "Actual canonical context read2026-10-20: StripeLIVE verified and carrier quotes connected; shipping/document/production/offers remain false, no go-live bypass",
+    "Actual installed SDK23.0.0 API2026-09-30.endive and Sessions.d.ts use embedded_page/hosted_page; logical uiMode embedded maps to provider embedded_page; no SDK upgrade",
+    "https://docs.stripe.com/api/checkout/sessions/create",
+    "https://docs.stripe.com/js/embedded_checkout/create",
+    "Current checkout_id storage plus verified provider retrieval can preserve created mode; stable original idempotency key prevents cross-mode duplicate creation, no fake redirect URL or migration needed"
+  ],
+  "paths": [
+    "commerce-core/src/stripe-adapter.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/public/commerce-client.mjs",
+    "commerce-core/test",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/docs/API.md",
+    "commerce-core/docs/PRODUCTION_CONNECTION.md",
+    "commerce-core/README.md",
+    "commerce-core/package.json",
+    "commerce-core/package-lock.json",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped source revert only; original24 migrations and hosted stable idempotency retained. No provider/key/browser/LIVE session/payment/booking/productionDB/admission/deployment writes. Parent checkout-ui/PUBLIC files excluded from source ownership; historical broader PR provenance blocker stays separate and immutable.",
+  "id": "upgrade-a95a82d3-a327-4a47-89c5-7461d65992e9",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "fa574aeba44ff80817b77d615890f68996e832ea",
+  "createdAt": "2026-10-20T12:41:52.990Z"
+}

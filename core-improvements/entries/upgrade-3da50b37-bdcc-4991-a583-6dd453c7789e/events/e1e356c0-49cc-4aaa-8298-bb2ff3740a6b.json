@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Owner follow-up: reduce hero ensemble by about8%, preserve separate backdrop and centered arrangement, align responsive sizes.",
+  "checks": [
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "PUBLIC/output/hero-smaller-build.private.txt"
+    },
+    {
+      "command": "CUA1280x720 and320x720",
+      "result": "PASS",
+      "evidence": "Desktop780.79px vs prior844.79px;mobile280.29px vs304.67px;decoded contain/no overflow. PUBLIC/output/hero-smaller-desktop-final.png"
+    }
+  ],
+  "eventId": "e1e356c0-49cc-4aaa-8298-bb2ff3740a6b",
+  "sequence": 3,
+  "at": "2026-10-13T20:51:42.447Z"
+}

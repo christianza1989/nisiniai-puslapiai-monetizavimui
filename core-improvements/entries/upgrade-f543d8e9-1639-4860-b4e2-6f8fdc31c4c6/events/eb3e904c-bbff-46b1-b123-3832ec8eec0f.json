@@ -1,0 +1,9 @@
+{
+  "commit": "2aaece4a98036aff38650b707b115053d590b96b",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "note": "Hosted adoption: memocasting-commerce c3607521-ae24-4efe-9df4-ce3c3050341b, additive schema 26, original bindings and business counts preserved. Native signed TEST and Google validation passed without a production purchase. Separate optional analytics secret installed; existing cron retained. Main merge is not claimed. Receipt: sites/memocasting/GA4_ECOMMERCE_2026_10_25.md.",
+  "status": "adopted",
+  "eventId": "eb3e904c-bbff-46b1-b123-3832ec8eec0f",
+  "sequence": 3,
+  "at": "2026-10-25T11:48:31.434Z"
+}

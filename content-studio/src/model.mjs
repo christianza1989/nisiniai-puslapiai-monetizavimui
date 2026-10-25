@@ -26,7 +26,7 @@ export const PAGE_TYPES = new Set(['home', 'service', 'product', 'guide', 'faq',
 const V2_PAGE_TYPES = new Set([...PAGE_TYPES,'article','index','author','policy','about','contact']);
 const publicSite = site => ({id:site.id,name:site.name,canonicalHost:site.canonicalHost,locale:site.locale,timezone:site.timezone,brand:site.brand,offer:site.offer,contact:site.contact,...(site.schemaVersion===2?{renderer:site.renderer,operatorName:site.operatorName}: {})});
 const emptyEditorial = () => ({category:'',readingMinutes:0,authors:[],sources:[],datePublished:null,dateModified:null,productRecommendation:false,featuredImageId:null,relatedPageIds:[],commerceTargets:[]});
-export const MAX_PAGE_MEDIA = 60;
+export const MAX_PAGE_MEDIA = 120;
 export const MAX_MEDIA_BATCH_PAGES = 100;
 let mutation = Promise.resolve();
 
@@ -460,7 +460,9 @@ async function approveDraft(site, page, actorId, batchIds = new Set()) {
     for (const block of page.body) if (block.type === 'image' && !page.media.some(item => item.id === block.assetId)) throw new Error('Turinio vaizdas nėra priskirtas puslapio medijai.');
     for (const link of page.links) if (!link.label || !site.pages.some(item => item.id === link.targetPageId && (page.contentVersion===2||item.publishedRevision||batchIds.has(item.id)))) throw new Error('Vidinė nuoroda nurodo nepatvirtintą arba nežinomą puslapį.');
     const networkIndex = await networkCatalog();
-    const networkDomains = new Set((await listSites()).map(item => item.canonicalHost));
+    // Same-site references retain source checks below, but are not cross-site
+    // campaigns. Public document/page eligibility remains the renderer's gate.
+    const networkDomains = new Set((await listSites()).filter(item => item.id !== siteId).map(item => item.canonicalHost));
     for (const source of page.externalLinks || []) {
       let url;
       try { url = new URL(source.url); } catch { throw new Error('Išorinio šaltinio URL neteisingas.'); }

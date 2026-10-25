@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "PUBLIC/output/right-film-build.private.txt"
+    },
+    {
+      "command": "CUA actual1280x630/768x740/320x740",
+      "result": "PASS",
+      "evidence": "PUBLIC/output/right-film-browser.private.json, right-film-final.png and sites/memocasting/RIGHT_FILM_2026_10_13.md"
+    }
+  ],
+  "note": "Owner-requested right film, whiter background and stronger feather confirmed. Tablet hard-edge defect repaired by masking actual16:9 frame. Source/motion/content unchanged.",
+  "eventId": "3282ef1a-d418-4b15-bb9b-fe9db10b20c7",
+  "sequence": 2,
+  "at": "2026-10-13T12:36:13.735Z"
+}

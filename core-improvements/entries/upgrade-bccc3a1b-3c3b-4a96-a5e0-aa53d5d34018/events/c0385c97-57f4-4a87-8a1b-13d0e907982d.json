@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "commit": "7d98088b1c6c7da53233d154535040d485424aee",
+  "note": "Reviewed local source pushed to existing CORE PR101 and companion PR31 at PUBLIC5695020. Both committed diffs pass canonical upgrade coverage, exact staged safety passes.82 PUBLIC /8 workflow tests, TS/build,103 SEOHTTP,10site smoke and actual browser receipts verified; new package bff retains85 unrelated pages. GitHub discovery returned checks/statuses empty at these exact heads, so no CI PASS claim. Local301 redirects only, no production/DB/provider changes or new whole-site audit acceptance. Main merge/other-PC adoption separate.",
+  "eventId": "c0385c97-57f4-4a87-8a1b-13d0e907982d",
+  "sequence": 3,
+  "at": "2026-10-13T06:24:48.794Z"
+}

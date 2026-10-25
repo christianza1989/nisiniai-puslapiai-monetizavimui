@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Original failure retained in regression evidence. Local verification only; branch source is not main adoption or Google indexing.",
+  "checks": [
+    {
+      "command": "node --test tests/memocasting-instructions.test.mjs tests/memocasting-instruction-documents.test.mjs tests/memocasting-live-offers.test.mjs",
+      "result": "PASS",
+      "evidence": "16/16 including original source-link projection failure and real route/proxy/range checks."
+    }
+  ],
+  "eventId": "3a4d8f40-4848-4ad2-be6d-54e96255e069",
+  "sequence": 2,
+  "at": "2026-10-25T07:47:28.947Z"
+}

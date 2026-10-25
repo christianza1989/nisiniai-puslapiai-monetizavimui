@@ -1,0 +1,1634 @@
+{
+  "version": 1,
+  "siteId": "memocasting",
+  "preparedOn": "2026-10-22",
+  "locale": "lt-LT",
+  "timezone": "Europe/Vilnius",
+  "scope": "21 esamo sezoninio URL stiprinimo briefas; 87 long tail užklausų priskyrimas; naujų URL šiuo planu nekuriama",
+  "newPaidResearchUsd": 0,
+  "existingResearch": "2026-10-14 Treg keyword estimates retained with original dates; October 14 SERP snapshots expired; current free web samples are not a Google LT ranking measurement",
+  "baselinePackageSha256": "dd5f50b1ae41043323ebc510eb820d0240de64bb0c1a92dd24ab99ddb227a34e",
+  "briefs": [
+    {
+      "slug": "gidai/kaledines-dovanos",
+      "priority": "P0",
+      "title": "Kalėdinės dovanos 2026: idėjos pagal žmogų ir biudžetą",
+      "job": "Greitai pasirinkti gavėją, sumą ir dovanos formatą, tada patekti į tinkamą išsamų gidą.",
+      "contribution": "Trumpa atrankos lentelė: gavėjas × biudžetas × daiktas / patirtis / prisiminimas; konkretūs skirtingų formatų pavyzdžiai. Tai navigacijos pagrindas, ne visų siauresnių straipsnių kopija.",
+      "queries": [
+        "ką dovanoti Kalėdoms 2026",
+        "kalėdinių dovanų idėjos pagal biudžetą",
+        "kalėdinės dovanos internetu",
+        "populiariausios kalėdinės dovanos"
+      ],
+      "sections": [
+        "Greitas pasirinkimas pagal gavėją",
+        "Dovanos iki 20, 50 ir 100 eurų: ką realiai gaunate",
+        "Daiktas, patirtis ar bendras prisiminimas",
+        "Kurį išsamų gidą skaityti toliau"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-mamai",
+        "gidai/kaledines-dovanos-moterims",
+        "gidai/kaledines-dovanos-vyrams",
+        "gidai/nebrangios-kaledines-dovanos"
+      ],
+      "evidence": "Tikri pasiūlymai ir aiški kainos patikros data; šio sezono gavimo sąlygos atskirai nuo istorinių paieškos apimčių.",
+      "media": "Originali skirtingų dovanos formatų kompozicija; po ja tikros, licencijuotos pasirinktų prekių nuotraukos.",
+      "pageId": "7db71eba-3193-4e80-b481-24f0751f84e1",
+      "auditedRevisionHash": "0db521d4af0ff786662272fa5ba57d39242dfb202a8770e520119af2d7708eb4",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-15T13:00:00.000Z",
+      "currentWords": 815,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 1000,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos",
+        "keywordDifficulty": 3,
+        "nov2025": 5400,
+        "dec2025": 6600,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-3.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Trumpa atrankos lentelė: gavėjas × biudžetas × daiktas / patirtis / prisiminimas; konkretūs skirtingų formatų pavyzdžiai. Tai navigacijos pagrindas, ne visų siauresnių straipsnių kopija.",
+      "format": "Atrankos ir navigacijos pagrindas",
+      "sourcesNeeded": "Tikri pasiūlymai ir aiški kainos patikros data; šio sezono gavimo sąlygos atskirai nuo istorinių paieškos apimčių.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-mamai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-moterims",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-vyrams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/nebrangios-kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-mamai",
+      "priority": "P0",
+      "title": "Kalėdinės dovanos mamai 2026: 10 idėjų pagal biudžetą",
+      "job": "Išsirinkti vieną konkrečią dovaną mamai pagal pomėgį, bendrą kainą ir norą dalyvauti veikloje.",
+      "contribution": "10 skirtingų, argumentuotai atrinktų idėjų su palyginimu; prie kiekvienos kam tinka, kam netinka, kas įskaičiuota, pardavėjas ir patikrinta kaina. Vienas Memocasting pasirinkimas, be dirbtinio savo prekių dominavimo.",
+      "queries": [
+        "top 10 dovanos mamai Kalėdų proga 2026",
+        "kalėdinės dovanos mamai iki 20 eurų",
+        "kalėdinė dovana mamai kuri viską turi",
+        "kalėdinė dovana mamai nuo dukros",
+        "kalėdinė dovana mamai nuo sūnaus",
+        "kalėdinės dovanos mamai iki 50 eurų"
+      ],
+      "sections": [
+        "10 idėjų vienoje palyginimo lentelėje",
+        "Iki 20 eurų: maža dovana su konkrečia paskirtimi",
+        "Iki 50 eurų: prisiminimas ar pomėgio dovana",
+        "Laikas sau ar kartu: kaip pasirinkti patirtį",
+        "Ką rinktis mamai, kuri nenori daugiau daiktų"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos",
+        "gidai/kaledines-dovanos-tevams",
+        "gidai/nebrangios-kaledines-dovanos",
+        "rinkinys-porai"
+      ],
+      "evidence": "Mamos straipsnio pilotas aprašytas atskirai plane; kiekvienam produktui pirminis puslapis, kainos sąlygos, vaizdo teisės. Sąrašas nėra asmeninio išbandymo ar populiariausių pardavimų reitingas.",
+      "media": "Tikros prekių nuotraukos su leidimu ir vienas nuosavo liejinio / proceso kadras; skirtingos spalvos, be dešimties panašių dėžučių.",
+      "pageId": "2d587e3e-09a3-4fb5-b1fc-0fac3b3bab63",
+      "auditedRevisionHash": "b91cba7c19a70d60b880fa9b2a865f2a85a64b0af1ab105737a24abce2f807e3",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-16T13:00:00.000Z",
+      "currentWords": 556,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 110,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos mamai",
+        "keywordDifficulty": 0,
+        "nov2025": 390,
+        "dec2025": 880,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-3.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti 10 skirtingų, argumentuotai atrinktų idėjų su palyginimu; prie kiekvienos kam tinka, kam netinka, kas įskaičiuota, pardavėjas ir patikrinta kaina. Vienas Memocasting pasirinkimas, be dirbtinio savo prekių dominavimo.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Mamos straipsnio pilotas aprašytas atskirai plane; kiekvienam produktui pirminis puslapis, kainos sąlygos, vaizdo teisės. Sąrašas nėra asmeninio išbandymo ar populiariausių pardavimų reitingas.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-tevams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/nebrangios-kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "rinkinys-porai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-moterims",
+      "priority": "P0",
+      "title": "Kalėdinės dovanos moterims 2026: konkretūs pasirinkimai pagal pomėgį",
+      "job": "Pasirinkti dovaną moteriai, kai žinomas santykis ir pomėgis, nenuklystant į bendrą stereotipinį katalogą.",
+      "contribution": "Atranka pagal skaitymą, kūrybą, jaukumą, patirtį ir prisiminimus; santykio (mama / partnerė / kolegė) navigacija. Paaiškinti, kodėl vienas variantas geriau tinka konkrečiam norui už kitą.",
+      "queries": [
+        "originalios kalėdinės dovanos moterims",
+        "praktiškos kalėdinės dovanos moterims",
+        "kalėdinės dovanos jai iki 50 eurų",
+        "prabangios kalėdinės dovanos moterims"
+      ],
+      "sections": [
+        "Greita atranka pagal pomėgį",
+        "Konkrečios dovanos ir palyginimo kriterijai",
+        "Kada rinktis mamai, merginai ar kolegei skirtą gidą",
+        "Ko nepirkti vien pagal lytį"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos",
+        "gidai/kaledines-dovanos-mamai",
+        "gidai/kaledines-dovanos-merginai",
+        "gidai/kaledines-dovanos-kolegoms"
+      ],
+      "evidence": "Dėl istorinių GSC parodymų sutikrinti abu senus moterų straipsnių adresus ir atskirti evergreen intenciją nuo Kalėdų.",
+      "media": "Suaugusi moteris konkrečioje pomėgio aplinkoje; produktų kortelės pagal realų asortimentą.",
+      "pageId": "2343efcf-55bf-4aca-9b6a-d55eb4a20ef8",
+      "auditedRevisionHash": "99cdbaa378b5013b80656a8915146fc57078cfaa92598ea0d9fee54235eedfee",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-16T07:00:00.000Z",
+      "currentWords": 711,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 390,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos moterims",
+        "keywordDifficulty": 0,
+        "nov2025": 1300,
+        "dec2025": 2400,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-dovanos.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Atranka pagal skaitymą, kūrybą, jaukumą, patirtį ir prisiminimus; santykio (mama / partnerė / kolegė) navigacija. Paaiškinti, kodėl vienas variantas geriau tinka konkrečiam norui už kitą.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Dėl istorinių GSC parodymų sutikrinti abu senus moterų straipsnių adresus ir atskirti evergreen intenciją nuo Kalėdų.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-mamai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-merginai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-kolegoms",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-vyrams",
+      "priority": "P0",
+      "title": "Kalėdinės dovanos vyrams 2026: idėjos pagal pomėgį ir biudžetą",
+      "job": "Pasirinkti konkrečią dovaną vyrui iš tikrų variantų, patikrinus svarbų suderinamumą.",
+      "contribution": "Pomėgio × kainos × suderinamumo palyginimas; po konkretų pasiūlymą skaitymui, kūrybai, kelionėms, skoniui ir laikui kartu. Atmesti netinkamas technines dovanas dėl aiškios savybės, ne bendro patarimo paklausti.",
+      "queries": [
+        "kalėdinės dovanos vyrui iki 30 eurų",
+        "kalėdinė dovana vyrui turinčiam viską",
+        "originalios kalėdinės dovanos vyrams",
+        "kalėdinės dovanos vyrams iki 50 eurų"
+      ],
+      "sections": [
+        "Pasiūlymai pagal pomėgį ir bendrą kainą",
+        "Kokių duomenų reikia techninei dovanai",
+        "Dovana jam ar bendras vakaras",
+        "Tėčiui ir vaikinui skirti pasirinkimai"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos",
+        "gidai/kaledines-dovanos-teciui",
+        "gidai/kaledines-dovanos-vaikinui"
+      ],
+      "evidence": "Modelio, komplektacijos ir priedų duomenys iš gamintojo / pardavėjo; jokio išgalvoto naudojimo bandymo.",
+      "media": "Skirtingos pomėgių vietos, realus vyras / produktas; ne visiems vienas namų stalas.",
+      "pageId": "9bd829a9-fd02-4762-bf8b-3a6e0559c4e9",
+      "auditedRevisionHash": "2f929b7d9348a149e0f55a651cfb79bb2c9b1a53677d2c516ac32af29a430f70",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-17T07:00:00.000Z",
+      "currentWords": 591,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 480,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos vyrams",
+        "keywordDifficulty": 0,
+        "nov2025": 1900,
+        "dec2025": 2900,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Pomėgio × kainos × suderinamumo palyginimas; po konkretų pasiūlymą skaitymui, kūrybai, kelionėms, skoniui ir laikui kartu. Atmesti netinkamas technines dovanas dėl aiškios savybės, ne bendro patarimo paklausti.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Modelio, komplektacijos ir priedų duomenys iš gamintojo / pardavėjo; jokio išgalvoto naudojimo bandymo.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-teciui",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-vaikinui",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-seimai",
+      "priority": "P0",
+      "title": "Kalėdinės dovanos šeimai 2026: viena dovana bendram laikui",
+      "job": "Palyginti bendros dovanos visai šeimai kainą ir dalyvavimo sąlygas.",
+      "contribution": "Vienos šeimos scenarijai su skirtingu vaikų ir suaugusiųjų dalyvavimu; bendros sumos, ne vien kainos žmogui, palyginimas. Stalo žaidimas, kūrybinė veikla, išvyka ir prisiminimas turi skirtingas sąlygas.",
+      "queries": [
+        "bendra kalėdinė dovana šeimai",
+        "kalėdinės dovanos šeimai su vaikais",
+        "kalėdinė dovana šeimai iki 50 eurų",
+        "kalėdinė dovana visai šeimai"
+      ],
+      "sections": [
+        "Vienos dovanos bendra kaina",
+        "Pasiūlymai namuose ir už namų ribų",
+        "Kiek žmonių realiai dalyvauja",
+        "Kada šeimos rinkinio geriau nesirinkti"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos",
+        "gidai/kaledines-dovanos-tevams",
+        "gidai/kaledines-dovanos-vaikams",
+        "seimos-rinkinys"
+      ],
+      "evidence": "Konkrečių žaidimų ir veiklų dalyvių skaičius / amžius iš dokumentų. Memocasting amžiaus ir talpos neperimti iš iliustracijos.",
+      "media": "Realistiška šeimos veikla; originalios nuosavo produkto detalės atskirai nuo AI iliustracijų.",
+      "pageId": "94c34ccb-1514-4dc4-9137-f0eb3b6b0589",
+      "auditedRevisionHash": "290a9b8ea4d35aaca910619fb092997ca29c428e7c6e68d4637bbccdd9f754e6",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-17T13:00:00.000Z",
+      "currentWords": 556,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 110,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos šeimai",
+        "keywordDifficulty": 0,
+        "nov2025": 480,
+        "dec2025": 720,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Vienos šeimos scenarijai su skirtingu vaikų ir suaugusiųjų dalyvavimu; bendros sumos, ne vien kainos žmogui, palyginimas. Stalo žaidimas, kūrybinė veikla, išvyka ir prisiminimas turi skirtingas sąlygas.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Konkrečių žaidimų ir veiklų dalyvių skaičius / amžius iš dokumentų. Memocasting amžiaus ir talpos neperimti iš iliustracijos.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-tevams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-vaikams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "seimos-rinkinys",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-porai",
+      "priority": "P0",
+      "title": "Kalėdinės dovanos porai 2026: ką veikti ir ką įteikti dviem",
+      "job": "Išsirinkti bendrą dovaną dviem ir suprasti visą jos naudojimo kainą.",
+      "contribution": "Namų kūrybos rinkinio, keramikos, vakarienės ir personalizuoto daikto palyginimas: kaina dviem, lokacija, rezervacija, pasiruošimas, liekantis rezultatas. Aiškiai atskirti rinkinio įteikimą nuo gatavos skulptūros.",
+      "queries": [
+        "originalios kalėdinės dovanos porai",
+        "kalėdinė dovana dviem iki 50 eurų",
+        "kalėdinė dovana porai namuose",
+        "kalėdinė dovana jaunai porai"
+      ],
+      "sections": [
+        "Palyginimas dviem žmonėms",
+        "Veikla namuose ar rezervuojama patirtis",
+        "Rinkinys ar gatavas prisiminimas",
+        "Ką dovanojate, jei datos dar nėra"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos",
+        "gidai/kaledines-dovanos-merginai",
+        "gidai/kaledines-dovanos-vaikinui",
+        "rinkinys-porai"
+      ],
+      "evidence": "Patirties kainoje patikrinti asmenų skaičių. Nuosavo produkto tikri vaizdai, dabartinė 32 eurų bazė ir pasirenkami priedai atskirai.",
+      "media": "Nuosavo liejinio keli rakursai ir trumpo tikro proceso video; ne generuotas bandymo įrodymas.",
+      "pageId": "ed9ba99d-2f1c-4e33-97d7-43f651b2dbe9",
+      "auditedRevisionHash": "981b99517e13ed40f4e582f7bcad95b44651a200648f91e5ee618c936b2bcab5",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-18T07:00:00.000Z",
+      "currentWords": 538,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": null,
+        "volumeState": "provider_null",
+        "measuredQuery": "kalėdinės dovanos porai",
+        "keywordDifficulty": null,
+        "nov2025": null,
+        "dec2025": null,
+        "underlyingThrough": null,
+        "evidenceIds": [
+          "volume-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Namų kūrybos rinkinio, keramikos, vakarienės ir personalizuoto daikto palyginimas: kaina dviem, lokacija, rezervacija, pasiruošimas, liekantis rezultatas. Aiškiai atskirti rinkinio įteikimą nuo gatavos skulptūros.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Patirties kainoje patikrinti asmenų skaičių. Nuosavo produkto tikri vaizdai, dabartinė 32 eurų bazė ir pasirenkami priedai atskirai.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-merginai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-vaikinui",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "rinkinys-porai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-tevams",
+      "priority": "P0",
+      "title": "Kalėdinės dovanos tėvams 2026: bendra ar dvi atskiros dovanos?",
+      "job": "Nuspręsti, ar dovanoti tėvams kartu, ir pasirinkti konkretų variantą pagal bendrą biudžetą.",
+      "contribution": "Palyginti vieną dovaną abiem su dviem atskiromis tame pačiame biudžete; pavyzdžiai, kai pomėgiai sutampa ir nesutampa. Parodyti, kas papildomai kainuoja.",
+      "queries": [
+        "bendra kalėdinė dovana tėvams",
+        "kalėdinė dovana tėvams nuo vaikų",
+        "kalėdinė dovana tėvams iki 100 eurų",
+        "ką dovanoti tėvams Kalėdoms"
+      ],
+      "sections": [
+        "Viena dovana ar du pasirinkimai",
+        "Kainos palyginimas tame pačiame biudžete",
+        "Bendras šeimos prisiminimas",
+        "Kai tėvų pomėgiai skirtingi"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos",
+        "gidai/kaledines-dovanos-mamai",
+        "gidai/kaledines-dovanos-teciui",
+        "gidai/kaledines-dovanos-seimai"
+      ],
+      "evidence": "Pasiūlymo kaina abiem ir papildomi mokesčiai; jokios tariamos šeimos istorijos.",
+      "media": "Tėvai jų pasirinktoje veikloje ir skirtingų formatų tikros dovanos.",
+      "pageId": "9540b7b3-3c05-429f-89b8-55db019f8577",
+      "auditedRevisionHash": "9bc697ba87a2442c541f9691c127bdde2337665c78d9874fdf90e993e22475ec",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-19T07:00:00.000Z",
+      "currentWords": 628,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 40,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos tėvams",
+        "keywordDifficulty": null,
+        "nov2025": 90,
+        "dec2025": 320,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Palyginti vieną dovaną abiem su dviem atskiromis tame pačiame biudžete; pavyzdžiai, kai pomėgiai sutampa ir nesutampa. Parodyti, kas papildomai kainuoja.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Pasiūlymo kaina abiem ir papildomi mokesčiai; jokios tariamos šeimos istorijos.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-mamai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-teciui",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-seimai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-teciui",
+      "priority": "P1",
+      "title": "Kalėdinės dovanos tėčiui 2026: praktiškos ir asmeniškos idėjos",
+      "job": "Pasirinkti tėčiui konkretų daiktą ar patirtį, kuri atitinka dabartinį pomėgį.",
+      "contribution": "Tikri skirtingų biudžetų variantai ir vieno pomėgio dviejų alternatyvų palyginimas; priedų bei suderinamumo patikra, dovana nuo vieno ar kelių vaikų.",
+      "queries": [
+        "kalėdinės dovanos tėčiui iki 20 eurų",
+        "kalėdinė dovana tėčiui nuo dukros",
+        "kalėdinė dovana tėčiui nuo sūnaus",
+        "praktiškos kalėdinės dovanos tėčiui"
+      ],
+      "sections": [
+        "Variantai pagal pomėgį",
+        "Dviejų panašių dovanų skirtumai",
+        "Kai susideda keli vaikai",
+        "Laiko kartu pasiūlymas su konkrečia veikla"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-vyrams",
+        "gidai/kaledines-dovanos-tevams",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Specializuotų prekių techniniai duomenys ir kainos iš konkretaus produkto šaltinio.",
+      "media": "Tėtis realioje pomėgio aplinkoje, skirtingos kompozicijos.",
+      "pageId": "ef8aa99f-1df4-4495-86bc-ce2984a206aa",
+      "auditedRevisionHash": "efb9c80a7d63f11b526784521b0431493d4060cc9e17cf71ab9647a7a06b1088",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-19T13:00:00.000Z",
+      "currentWords": 683,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 40,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos tėčiui",
+        "keywordDifficulty": null,
+        "nov2025": 140,
+        "dec2025": 390,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Tikri skirtingų biudžetų variantai ir vieno pomėgio dviejų alternatyvų palyginimas; priedų bei suderinamumo patikra, dovana nuo vieno ar kelių vaikų.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Specializuotų prekių techniniai duomenys ir kainos iš konkretaus produkto šaltinio.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-vyrams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-tevams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-seneliams",
+      "priority": "P1",
+      "title": "Kalėdinės dovanos seneliams: prisiminimai, pomėgiai ir laikas kartu",
+      "job": "Pasirinkti dovaną vienam ar abiem seneliams pagal jų norus ir patogų naudojimą.",
+      "contribution": "Palyginti fizinį albumą, nuotraukų kalendorių, susitikimą ir pomėgio dovaną; kas paruošia / pristato / rezervuoja. Praktinis albumo turinio pavyzdys vietoje bendrų pagarbos patarimų.",
+      "queries": [
+        "kalėdinė dovana seneliams nuo anūkų",
+        "kalėdinė dovana močiutei",
+        "kalėdinė dovana seneliui",
+        "asmeniškos kalėdinės dovanos seneliams"
+      ],
+      "sections": [
+        "Vienam žmogui ar abiem",
+        "Nuotraukų dovanos: kiek darbo lieka gavėjui",
+        "Pomėgio dovana ir konkretūs pasiūlymai",
+        "Bendras laikas su suplanuotu nuvykimu"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-tevams",
+        "gidai/kaledines-dovanos-seimai",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Nesieti amžiaus su diagnoze ar techniniu negebėjimu. Produkto formatas, įskaičiuotas spausdinimas ir asmenų skaičius tikrinami atskirai.",
+      "media": "Senelis ir močiutė / atskiros situacijos; tikri produkto vaizdai, ne anoniminis jaunų rankų kadras.",
+      "pageId": "3c7cb521-1100-4b96-9d21-6beb78135f89",
+      "auditedRevisionHash": "55d2349c2dc7c7e110f515abfb165d17a2a3f2f1aecca7194d58808563581b12",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-20T07:00:00.000Z",
+      "currentWords": 681,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": null,
+        "volumeState": "provider_null",
+        "measuredQuery": "kalėdinės dovanos seneliams",
+        "keywordDifficulty": null,
+        "nov2025": null,
+        "dec2025": null,
+        "underlyingThrough": null,
+        "evidenceIds": [
+          "volume-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Palyginti fizinį albumą, nuotraukų kalendorių, susitikimą ir pomėgio dovaną; kas paruošia / pristato / rezervuoja. Praktinis albumo turinio pavyzdys vietoje bendrų pagarbos patarimų.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Nesieti amžiaus su diagnoze ar techniniu negebėjimu. Produkto formatas, įskaičiuotas spausdinimas ir asmenų skaičius tikrinami atskirai.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-tevams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-seimai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-merginai",
+      "priority": "P1",
+      "title": "Kalėdinės dovanos merginai 2026: idėjos skirtingam santykiui",
+      "job": "Pasirinkti konkrečią dovaną merginai atsižvelgiant į jos pomėgį ir santykių etapą.",
+      "contribution": "Pirmų bendrų Kalėdų ir ilgalaikės poros variantai; kaina vienai / dviem, personalizavimo rizika ir rezervacijos sąlygos. Neperrašyti bendro moterų sąrašo.",
+      "queries": [
+        "pirmos Kalėdos su mergina dovana",
+        "romantiška kalėdinė dovana merginai",
+        "kalėdinė dovana merginai iki 50 eurų",
+        "asmeniška kalėdinė dovana merginai"
+      ],
+      "sections": [
+        "Pirmos Kalėdos kartu",
+        "Konkretūs pomėgio ir prisiminimo variantai",
+        "Kaina vienai ar dviem",
+        "Kaip pasirinkti personalizavimą"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-moterims",
+        "gidai/kaledines-dovanos-porai",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Personalizavimo užsakymo terminai ir galutinio maketo sąlygos; jokių fiktyvių klientų reakcijų.",
+      "media": "Suaugusi moteris ir skirtingos santykio / pomėgio aplinkos.",
+      "pageId": "d1fb6182-6fe1-4823-825a-9db049ff0997",
+      "auditedRevisionHash": "dd7484289fea2c2fe9b24d428de04633bf2ac5f424f49f017e74d4b8f5a26d6a",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-20T13:00:00.000Z",
+      "currentWords": 629,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 50,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos merginai",
+        "keywordDifficulty": 0,
+        "nov2025": 170,
+        "dec2025": 390,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-dovanos.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Pirmų bendrų Kalėdų ir ilgalaikės poros variantai; kaina vienai / dviem, personalizavimo rizika ir rezervacijos sąlygos. Neperrašyti bendro moterų sąrašo.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Personalizavimo užsakymo terminai ir galutinio maketo sąlygos; jokių fiktyvių klientų reakcijų.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-moterims",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-porai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-vaikinui",
+      "priority": "P1",
+      "title": "Kalėdinės dovanos vaikinui 2026: pomėgis ar bendras prisiminimas?",
+      "job": "Palyginti asmeninę ir bendrą dovaną vaikinui konkrečiame biudžete.",
+      "contribution": "Pomėgio prekės ir poros veiklos palyginimas; aiškiai įvardyti papildomą įrangą, dalyvius ir vietą. Viena tikra kūrybinio vakaro eiga be išgalvotų trukmių.",
+      "queries": [
+        "kalėdinė dovana vaikinui iki 30 eurų",
+        "originali kalėdinė dovana vaikinui",
+        "kalėdinė dovana vaikinui nuo merginos",
+        "bendra veikla Kalėdoms vaikinui"
+      ],
+      "sections": [
+        "Dovana jo pomėgiui",
+        "Dovana abiem: visos išlaidos",
+        "Palyginimo lentelė",
+        "Rinkinio įteikimas ir būsimas rezultatas"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-vyrams",
+        "gidai/kaledines-dovanos-porai",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Modelio suderinamumas, tikra kaina ir veiklos sąlygos.",
+      "media": "Suaugęs vyras pomėgio aplinkoje ir tikros pasiūlymų nuotraukos.",
+      "pageId": "6c78ff90-2f9c-48c6-9b64-f97276e471a2",
+      "auditedRevisionHash": "190c433fca133a33aa8aed10c165a853b7f16ac1e244fa56bae88446addd4eec",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-21T07:00:00.000Z",
+      "currentWords": 637,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 30,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos vaikinui",
+        "keywordDifficulty": 0,
+        "nov2025": 90,
+        "dec2025": 140,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Pomėgio prekės ir poros veiklos palyginimas; aiškiai įvardyti papildomą įrangą, dalyvius ir vietą. Viena tikra kūrybinio vakaro eiga be išgalvotų trukmių.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Modelio suderinamumas, tikra kaina ir veiklos sąlygos.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-vyrams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-porai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-draugams",
+      "priority": "P1",
+      "title": "Kalėdinės dovanos draugams: vienam žmogui ar visai kompanijai",
+      "job": "Pasirinkti dovaną draugui arba bendrą dovanų keitimosi / veiklos formatą grupei.",
+      "contribution": "Vienam, porai draugų ir grupei skirti atskiri skaičiavimai; tikri nebrangūs variantai ir įgyvendinamas žaidimų vakaro planas.",
+      "queries": [
+        "kalėdinės dovanos draugams iki 10 eurų",
+        "bendra kalėdinė dovana draugų grupei",
+        "kalėdinė dovana geriausiai draugei",
+        "kalėdinė dovana geriausiam draugui"
+      ],
+      "sections": [
+        "Idėjos vienam draugui",
+        "Bendra dovana kompanijai",
+        "Dovanų keitimosi taisyklės",
+        "Kaina žmogui ir visai grupei"
+      ],
+      "related": [
+        "gidai/nebrangios-kaledines-dovanos",
+        "gidai/kaledines-dovanos-kolegoms",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Žaidimų dalyviai / trukmė iš gamintojo, patirties grupės kaina iš teikėjo.",
+      "media": "Skirtingi draugų susitikimo kontekstai ir realios žaidimų / prekių nuotraukos.",
+      "pageId": "a74780e9-7b58-4526-bc4a-32bc606e07d2",
+      "auditedRevisionHash": "1399d07a79e53f64ae623b531596c0a8a45dc30f6ea69c3b4889fd4e6ab1d302",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-21T13:00:00.000Z",
+      "currentWords": 640,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 20,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos draugams",
+        "keywordDifficulty": null,
+        "nov2025": 90,
+        "dec2025": 140,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Vienam, porai draugų ir grupei skirti atskiri skaičiavimai; tikri nebrangūs variantai ir įgyvendinamas žaidimų vakaro planas.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Žaidimų dalyviai / trukmė iš gamintojo, patirties grupės kaina iš teikėjo.",
+      "linkPlan": [
+        {
+          "target": "gidai/nebrangios-kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-kolegoms",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-kolegoms",
+      "priority": "P1",
+      "title": "Kalėdinės dovanos kolegoms: idėjos iki 10 ir 20 eurų",
+      "job": "Išrinkti darbo aplinkai tinkamą dovaną, telpančią į sutartą sumą su gavimo išlaidomis.",
+      "contribution": "Konkretūs 10 ir 20 eurų pasirinkimai, atskirai kai kolega pažįstamas ir kai traukiamas atsitiktinai; Secret Santa sprendimo lentelė. Teisinių ar mokestinių pažadų nedėti.",
+      "queries": [
+        "kalėdinės dovanos kolegoms iki 10 eurų",
+        "kalėdinės dovanos kolegoms iki 20 eurų",
+        "slapto Kalėdų senelio dovanos",
+        "simbolinės kalėdinės dovanos kolegoms"
+      ],
+      "sections": [
+        "Kas telpa į galutinę sumą",
+        "Kai kolegą pažįstate",
+        "Kai gavėją ištraukėte atsitiktinai",
+        "Bendra pirkimo ir įteikimo patikra"
+      ],
+      "related": [
+        "gidai/nebrangios-kaledines-dovanos",
+        "gidai/kaledines-dovanos-darbuotojams",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Tikri produktai ir siuntimo įtaka biudžetui; darbovietės ribos pateikiamos kaip vietinės taisyklės, ne universali teisės norma.",
+      "media": "Biuro / knygyno / parduotuvės aplinka, ne vien namų stalo dėžutės.",
+      "pageId": "da706eda-df2b-4294-b7cd-7b9efbe424cc",
+      "auditedRevisionHash": "1081b249e27729561a66568a44eed48734018e3df9089243bb3947671e3854e1",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-22T07:00:00.000Z",
+      "currentWords": 516,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 70,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos kolegoms",
+        "keywordDifficulty": 0,
+        "nov2025": 320,
+        "dec2025": 480,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Konkretūs 10 ir 20 eurų pasirinkimai, atskirai kai kolega pažįstamas ir kai traukiamas atsitiktinai; Secret Santa sprendimo lentelė. Teisinių ar mokestinių pažadų nedėti.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Tikri produktai ir siuntimo įtaka biudžetui; darbovietės ribos pateikiamos kaip vietinės taisyklės, ne universali teisės norma.",
+      "linkPlan": [
+        {
+          "target": "gidai/nebrangios-kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-darbuotojams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-darbuotojams",
+      "priority": "P1",
+      "title": "Kalėdinės dovanos darbuotojams: pasirinkimai ir bendro biudžeto planas",
+      "job": "Įmonei pasirinkti realiai užsakomą dovanos formatą ir apskaičiuoti visos komandos kainą.",
+      "contribution": "Konkrečių formatų palyginimas ir užpildomas gavėjų / pasirinkimų / kiekių / biudžeto CSV. Iki šiol tekste yra skaičiavimo pavyzdys; sukurti tikrą parsisiunčiamą priemonę prieš ją žadant.",
+      "queries": [
+        "kalėdinės dovanos darbuotojams iki 30 eurų",
+        "kalėdinės dovanos darbuotojams iki 50 eurų",
+        "įmonės kalėdinių dovanų biudžetas",
+        "dovanos darbuotojams pasirinkimo kuponas"
+      ],
+      "sections": [
+        "Vienodas rinkinys ar keli pasirinkimai",
+        "Visos komandos biudžetas",
+        "Užpildomas pasirinkimų ir kiekių sąrašas",
+        "Kokius faktus gauti iš tiekėjo"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-kolegoms",
+        "gidai/nebrangios-kaledines-dovanos",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Kiekinės kainos, minimalus užsakymas, sąskaitos ir terminai tik iš konkretaus tiekėjo. Nemokamo juridinio / mokestinio vertinimo neimituoti.",
+      "media": "Skirtingi darbuotojų dovanos formatai ir tikras paruošto sąrašo fragmentas be asmens duomenų.",
+      "pageId": "42839ff5-ecde-4f42-bb75-8b17a9a44a82",
+      "auditedRevisionHash": "41cb0eeba95d0fd358f0a3a8735d9c8f98e33c803bbef2a603fb616253e07753",
+      "currentlyPublic": true,
+      "currentPublishAt": "2026-10-22T13:00:00.000Z",
+      "currentWords": 841,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 110,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos darbuotojams",
+        "keywordDifficulty": 0,
+        "nov2025": 480,
+        "dec2025": 390,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Konkrečių formatų palyginimas ir užpildomas gavėjų / pasirinkimų / kiekių / biudžeto CSV. Iki šiol tekste yra skaičiavimo pavyzdys; sukurti tikrą parsisiunčiamą priemonę prieš ją žadant.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Kiekinės kainos, minimalus užsakymas, sąskaitos ir terminai tik iš konkretaus tiekėjo. Nemokamo juridinio / mokestinio vertinimo neimituoti.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-kolegoms",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/nebrangios-kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-vaikams",
+      "priority": "P2",
+      "title": "Kalėdinės dovanos vaikams: idėjos pagal pomėgį ir gamintojo amžių",
+      "job": "Tėvams pasirinkti konkretų vaikui skirtą gaminį pagal jo pomėgį ir tikrą ženklinimą.",
+      "contribution": "Gamintojų dokumentais pagrįsti knygų, konstruktorių ir žaidimų pavyzdžiai; patikrintas amžius, priemonės ir suaugusiojo pagalba. Žaidimo ir kūrybos poreikio palyginimas.",
+      "queries": [
+        "kalėdinės dovanos vaikams 5 metų",
+        "kalėdinės dovanos vaikams 8 metų",
+        "kalėdinės dovanos vaikams iki 20 eurų",
+        "kūrybinės kalėdinės dovanos vaikams"
+      ],
+      "sections": [
+        "Pasiūlymai pagal pomėgį",
+        "Gamintojo amžius ir ženklinimas",
+        "Kas įeina į rinkinį",
+        "Dovana grupei ar vienam vaikui"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-seimai",
+        "gidai/kaledines-dovanos-paaugliams",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Kiekvieno konkretaus gaminio amžius, instrukcija ir įspėjimai. Memocasting nesiūlyti nepilnamečiams be tinkamumo dokumentų. Plati paklausa nėra produkto tinkamumo įrodymas.",
+      "media": "Atitinkamo amžiaus iliustracinė veikla be realių vaikų atsiliepimų imitavimo; tikros siūlomų prekių nuotraukos.",
+      "pageId": "127fe08d-856c-4488-ba89-8196b17572fe",
+      "auditedRevisionHash": "1f030edafa8e05235debe9a178bc61efbc29c5e797cf0b760c1283e8d588f9db",
+      "currentlyPublic": false,
+      "currentPublishAt": "2026-10-23T07:00:00.000Z",
+      "currentWords": 713,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 480,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos vaikams",
+        "keywordDifficulty": 0,
+        "nov2025": 2400,
+        "dec2025": 1600,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Gamintojų dokumentais pagrįsti knygų, konstruktorių ir žaidimų pavyzdžiai; patikrintas amžius, priemonės ir suaugusiojo pagalba. Žaidimo ir kūrybos poreikio palyginimas.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Kiekvieno konkretaus gaminio amžius, instrukcija ir įspėjimai. Memocasting nesiūlyti nepilnamečiams be tinkamumo dokumentų. Plati paklausa nėra produkto tinkamumo įrodymas.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-seimai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-paaugliams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-paaugliams",
+      "priority": "P2",
+      "title": "Kalėdinės dovanos paaugliams: konkretūs pasirinkimai pagal jų pomėgius",
+      "job": "Padėti rinktis kartu su paaugliu ir išvengti nesuderinamų ar nepageidaujamų pirkinių.",
+      "contribution": "Kūrybos, skaitymo, žaidimo ir pasirenkamo kupono palyginimas; faktiniai modelio / platformos / amžiaus duomenys. Nekartoti vaikų gido klausimų sąrašo.",
+      "queries": [
+        "kalėdinės dovanos paaugliams iki 30 eurų",
+        "kalėdinė dovana 13 metų paaugliui",
+        "kalėdinė dovana paauglei",
+        "praktiškos kalėdinės dovanos paaugliams"
+      ],
+      "sections": [
+        "Pomėgį paverčiame konkrečiu pasirinkimu",
+        "Svarbūs modelio ir platformos skirtumai",
+        "Kai tinkamesnis kuponas",
+        "Kaina ir būtini priedai"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-vaikams",
+        "gidai/nebrangios-kaledines-dovanos",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Gamintojo amžius, suderinamumas, kupono sąlygos. Žmogaus lytis nėra viso pomėgio pakaitalas.",
+      "media": "Paauglių pomėgių aplinkos, skirtingos kompozicijos ir tikri produktai.",
+      "pageId": "fc1745b3-f2a4-4dc3-b865-fa694a4d44b4",
+      "auditedRevisionHash": "0a5023f47e6fdf62653873fbff0409d61122bd25908726a94809ab594a2a2cbf",
+      "currentlyPublic": false,
+      "currentPublishAt": "2026-10-23T13:00:00.000Z",
+      "currentWords": 629,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 170,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos paaugliams",
+        "keywordDifficulty": 0,
+        "nov2025": 590,
+        "dec2025": 880,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Kūrybos, skaitymo, žaidimo ir pasirenkamo kupono palyginimas; faktiniai modelio / platformos / amžiaus duomenys. Nekartoti vaikų gido klausimų sąrašo.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Gamintojo amžius, suderinamumas, kupono sąlygos. Žmogaus lytis nėra viso pomėgio pakaitalas.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-vaikams",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/nebrangios-kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/originalios-kaledines-dovanos",
+      "priority": "P1",
+      "title": "Originalios kalėdinės dovanos: asmeniški pasirinkimai su konkrečia istorija",
+      "job": "Pasirinkti prasmingą prisiminimo formatą ir žinoti, ką reikia paruošti prieš užsakant.",
+      "contribution": "Rankų liejinio, nuotraukų knygos, šeimos receptų leidinio ir kūrėjo darbo palyginimas; kiek asmeninės medžiagos reikia ir ar gavėjui reikės dalyvauti.",
+      "queries": [
+        "personalizuotos kalėdinės dovanos",
+        "rankų darbo kalėdinės dovanos",
+        "prasmingos kalėdinės dovanos",
+        "kalėdinė dovana su nuotrauka"
+      ],
+      "sections": [
+        "Ką dovana primins",
+        "Keturi skirtingi prisiminimo formatai",
+        "Ką pateikti kūrėjui ar spaustuvei",
+        "Dalyvavimas ar užbaigta dovana"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-porai",
+        "gidai/kaledines-dovanos-mamai",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Konkrečių tiekėjų gamybos duomenys ir maketo patvirtinimas. Neišgalvoti pristatymo datos ar personalizavimo, kurio Memocasting dar neturi.",
+      "media": "Savi tikri liejiniai skirtinguose interjeruose; kitų kūrėjų vaizdai tik su teise naudoti.",
+      "pageId": "38f3e27e-0b2c-498e-9cdf-c8adc6014f06",
+      "auditedRevisionHash": "c71ba7533540db7b9f03c1ea7d9abdbbafb762785f5faa4dd9737de5885ffbc4",
+      "currentlyPublic": false,
+      "currentPublishAt": "2026-10-24T07:00:00.000Z",
+      "currentWords": 539,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 30,
+        "volumeState": "estimate",
+        "measuredQuery": "originalios kalėdinės dovanos",
+        "keywordDifficulty": 0,
+        "nov2025": 90,
+        "dec2025": 70,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-6.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Rankų liejinio, nuotraukų knygos, šeimos receptų leidinio ir kūrėjo darbo palyginimas; kiek asmeninės medžiagos reikia ir ar gavėjui reikės dalyvauti.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Konkrečių tiekėjų gamybos duomenys ir maketo patvirtinimas. Neišgalvoti pristatymo datos ar personalizavimo, kurio Memocasting dar neturi.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-porai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-mamai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/nebrangios-kaledines-dovanos",
+      "priority": "P0",
+      "title": "Nebrangios kalėdinės dovanos: idėjos iki 5, 10 ir 20 eurų",
+      "job": "Rasti konkrečią dovaną, kuri telpa į visą numatytą biudžetą.",
+      "contribution": "Tikros prekės ir pasidaryk pats alternatyvos atskiruose 5 / 10 / 20 eurų skyriuose; bendra suma su žinomomis išlaidomis, o nežinomas siuntimas aiškiai atskirai. Nevadinti 32 eurų rinkinio dovana iki 20 eurų.",
+      "queries": [
+        "kalėdinės dovanos iki 5 eurų",
+        "kalėdinės dovanos iki 10 eurų",
+        "kalėdinės dovanos iki 20 eurų",
+        "nebrangios kalėdinės dovanos mamai",
+        "nebrangios kalėdinės dovanos kolegoms"
+      ],
+      "sections": [
+        "Iki 5 eurų",
+        "Iki 10 eurų",
+        "Iki 20 eurų",
+        "Kelios dovanos viename užsakyme: ką keičia siuntimas",
+        "Kada geriau dovana be naujo daikto"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos-mamai",
+        "gidai/kaledines-dovanos-kolegoms",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Tikra vieša kaina, nario kaina ir akcijos sąlygos atskirai; nesumuoti hipotetinių siuntimo sumų į patikrintą galutinę kainą.",
+      "media": "Parduotuvės lentyna, knygynas ir kelios skirtingos realios nedidelės dovanos.",
+      "pageId": "1d7bd5bf-7857-403a-8b97-e1e25ba26b9e",
+      "auditedRevisionHash": "f09095104c4006efef365c9dd2e5f0698db665a857bc6c77552d28cd6ec2a103",
+      "currentlyPublic": false,
+      "currentPublishAt": "2026-10-24T13:00:00.000Z",
+      "currentWords": 793,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": null,
+        "volumeState": "provider_null",
+        "measuredQuery": "nebrangios kalėdinės dovanos",
+        "keywordDifficulty": null,
+        "nov2025": null,
+        "dec2025": null,
+        "underlyingThrough": null,
+        "evidenceIds": [
+          "volume-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Tikros prekės ir pasidaryk pats alternatyvos atskiruose 5 / 10 / 20 eurų skyriuose; bendra suma su žinomomis išlaidomis, o nežinomas siuntimas aiškiai atskirai. Nevadinti 32 eurų rinkinio dovana iki 20 eurų.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Tikra vieša kaina, nario kaina ir akcijos sąlygos atskirai; nesumuoti hipotetinių siuntimo sumų į patikrintą galutinę kainą.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos-mamai",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos-kolegoms",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kaledines-dovanos-paskutine-minute",
+      "priority": "P1",
+      "title": "Kalėdinės dovanos paskutinę minutę: ką galima paruošti ar gauti laiku",
+      "job": "Pasirinkti įgyvendinamą dovaną pagal realiai likusį laiką, atsiėmimą ir gavimo būdą.",
+      "contribution": "Sprendimo lentelė šiandien / 1–2 dienos / daugiau laiko; elektroninio kupono, patvirtinto atsiėmimo ir namuose paruoštos dovanos skirtumai. Tai laiko, ne gavėjo gidų dubliavimas.",
+      "queries": [
+        "kalėdinė dovana šiandien",
+        "paskutinės minutės kalėdinės dovanos internetu",
+        "elektroninės kalėdinės dovanos",
+        "kalėdinė dovana atsiimti vietoje"
+      ],
+      "sections": [
+        "Kiek laiko realiai liko",
+        "Elektroninis kuponas: gavimo ir naudojimo skirtumas",
+        "Patvirtintas atsiėmimas vietoje",
+        "Trys baigtos dovanos iš turimų priemonių"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos",
+        "gidai/nebrangios-kaledines-dovanos",
+        "gidai/kalediniu-dovanu-pakavimas"
+      ],
+      "evidence": "Tiekėjo aktualus kupono gavimo būdas ir realios atsiėmimo sąlygos; neperkelti šiandienos likučio į visą gruodį. Siūloma publikavimo datą paankstinti iš gruodžio 21 d. į lapkričio pirmą pusę, tik perskaičiavus kalendoriaus vietas.",
+      "media": "Realūs trijų skirtingų gavimo formatų vaizdai; ne suklastotas parduotuvės rezervacijos ekranas.",
+      "pageId": "aa5dd1fe-62a3-4cd8-ac98-084ee2fedae0",
+      "auditedRevisionHash": "1504cee429c283034bb2e2475dc7a045448ae06bc0658d6aa5d543c52098bb7c",
+      "currentlyPublic": false,
+      "currentPublishAt": "2026-12-21T08:00:00.000Z",
+      "currentWords": 707,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": null,
+        "volumeState": "provider_null",
+        "measuredQuery": "kalėdinės dovanos paskutinę minutę",
+        "keywordDifficulty": null,
+        "nov2025": null,
+        "dec2025": null,
+        "underlyingThrough": null,
+        "evidenceIds": [
+          "volume-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Sprendimo lentelė šiandien / 1–2 dienos / daugiau laiko; elektroninio kupono, patvirtinto atsiėmimo ir namuose paruoštos dovanos skirtumai. Tai laiko, ne gavėjo gidų dubliavimas.",
+      "format": "Redakcinis pasirinkimų palyginimas",
+      "sourcesNeeded": "Tiekėjo aktualus kupono gavimo būdas ir realios atsiėmimo sąlygos; neperkelti šiandienos likučio į visą gruodį. Siūloma publikavimo datą paankstinti iš gruodžio 21 d. į lapkričio pirmą pusę, tik perskaičiavus kalendoriaus vietas.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/nebrangios-kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kalediniu-dovanu-pakavimas",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/kalediniu-dovanu-pakavimas",
+      "priority": "P2",
+      "title": "Kalėdinių dovanų pakavimas: trys formos ir aiškūs žingsniai",
+      "job": "Pirmą kartą tvarkingai supakuoti dėžutę, cilindrą ar netaisyklingos formos dovaną.",
+      "contribution": "Nuoseklios pačių parodyto pakavimo nuotraukos / SVG ir konkretus vienos dėžutės pavyzdys; išsaugoti dabar naudingus veiksmų aprašus. Skirtumas nuo evergreen gido – kelių kalėdinių dovanų komplektavimas, žymėjimas ir medžiagų planas.",
+      "queries": [
+        "kaip supakuoti kalėdines dovanas",
+        "kaip supakuoti apvalią dovaną",
+        "kalėdinių dovanų pakavimas be dėžutės",
+        "kaip supakuoti rankų liejimo rinkinį"
+      ],
+      "sections": [
+        "Priemonės ir išmatavimas",
+        "Dėžutės žingsniai su vaizdais",
+        "Cilindro žingsniai su vaizdais",
+        "Kelių gavėjų ir trapių dovanų planas"
+      ],
+      "related": [
+        "gidai/kaledines-dovanos",
+        "gidai/originalios-kaledines-dovanos"
+      ],
+      "evidence": "Tikras nufotografuotas procesas; dekoratyvus pakavimas nėra vežėjo patvirtinta siuntimo apsauga. Jei nėra kalėdinio savito indėlio, konsolidavimo sprendimą priimti prieš atskirą URL stiprinimą.",
+      "media": "Kiekvienas realus lankstymo etapas; native SVG rodyklės ir matavimo schema.",
+      "pageId": "b0a4ace4-9a33-41c4-b8ae-278eb0e6d901",
+      "auditedRevisionHash": "85d1a6aef912270aeba14a75548c0bee05add4f699a9808714dfa1826152e69a",
+      "currentlyPublic": false,
+      "currentPublishAt": "2026-10-25T08:00:00.000Z",
+      "currentWords": 665,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": 10,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinių dovanų pakavimas",
+        "keywordDifficulty": null,
+        "nov2025": 40,
+        "dec2025": 70,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json"
+        ]
+      },
+      "leadAnswer": "Pirmiausia pateikti Nuoseklios pačių parodyto pakavimo nuotraukos / SVG ir konkretus vienos dėžutės pavyzdys; išsaugoti dabar naudingus veiksmų aprašus. Skirtumas nuo evergreen gido – kelių kalėdinių dovanų komplektavimas, žymėjimas ir medžiagų planas.",
+      "format": "Žingsnių vadovas su tikrais etapų vaizdais",
+      "sourcesNeeded": "Tikras nufotografuotas procesas; dekoratyvus pakavimas nėra vežėjo patvirtinta siuntimo apsauga. Jei nėra kalėdinio savito indėlio, konsolidavimo sprendimą priimti prieš atskirą URL stiprinimą.",
+      "linkPlan": [
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/originalios-kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    },
+    {
+      "slug": "gidai/advento-kalendoriaus-dovanos",
+      "priority": "P2",
+      "title": "Advento kalendoriaus dovanos: 24 dienų planas be atsitiktinių smulkmenų",
+      "job": "Sukomplektuoti 24 dienų kalendorių pagal gavėją ir bendrą sumą.",
+      "contribution": "Išsaugoti esamą konkretų 24 dienų planą, pridėti tikrą spausdinamą kortelių rinkinį ir savarankiškai užpildomą biudžetą. Tai viena stipresnių dabartinio paketo praktinių struktūrų.",
+      "queries": [
+        "ką dėti į advento kalendorių",
+        "advento kalendoriaus dovanos suaugusiems",
+        "advento kalendoriaus dovanos porai",
+        "advento kalendorius iki 30 eurų"
+      ],
+      "sections": [
+        "24 dienų paruoštas planas",
+        "Kaip pakeisti pagal gavėją",
+        "Bendras medžiagų ir veiklų biudžetas",
+        "Spausdinamos kortelės"
+      ],
+      "related": [
+        "gidai/nebrangios-kaledines-dovanos",
+        "gidai/kalediniu-dovanu-pakavimas",
+        "gidai/kaledines-dovanos"
+      ],
+      "evidence": "Prieš žadant atsisiuntimą sukurti ir patikrinti realų failą; vaiko prekių / maisto atveju remtis ženklinimu. Kainos intervalas nesuteikia viso pavyzdžio tikros kainos.",
+      "media": "Originalus visas 24 kortelių / vokų komplektas ir tikras spausdinamo failo pavyzdys.",
+      "pageId": "8c33054b-4d4c-4e2c-8b48-2b2c923e9a14",
+      "auditedRevisionHash": "a204a48f69134532f2bf044962d5f9e61ebca683fa4cbc5673dd280293849a62",
+      "currentlyPublic": false,
+      "currentPublishAt": "2026-10-25T14:00:00.000Z",
+      "currentWords": 721,
+      "reviewDepth": "Visas dabartinis LT tekstas perskaitytas; faktiniai išoriniai produktai dar nėra leidinio patvirtinimas",
+      "headDemand": {
+        "searchVolume": null,
+        "volumeState": "not_measured",
+        "measuredQuery": null,
+        "keywordDifficulty": null,
+        "nov2025": null,
+        "dec2025": null,
+        "underlyingThrough": null,
+        "evidenceIds": []
+      },
+      "leadAnswer": "Pirmiausia pateikti Išsaugoti esamą konkretų 24 dienų planą, pridėti tikrą spausdinamą kortelių rinkinį ir savarankiškai užpildomą biudžetą. Tai viena stipresnių dabartinio paketo praktinių struktūrų.",
+      "format": "24 dienų praktinis planas su realiu failu",
+      "sourcesNeeded": "Prieš žadant atsisiuntimą sukurti ir patikrinti realų failą; vaiko prekių / maisto atveju remtis ženklinimu. Kainos intervalas nesuteikia viso pavyzdžio tikros kainos.",
+      "linkPlan": [
+        {
+          "target": "gidai/nebrangios-kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kalediniu-dovanu-pakavimas",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        },
+        {
+          "target": "gidai/kaledines-dovanos",
+          "existsInPackage": true,
+          "rule": "Pridėti natūralų tikslų anchor tekste ir tikrą targetPageId; viešinti tik eligible tikslui"
+        }
+      ],
+      "qualityGate": [
+        "Naujas originalus indėlis realiai yra tekste / vaizde / faile",
+        "Kiekviena kaina ir pasiūlymo sąlyga turi patikrintą pirminį šaltinį",
+        "Jokių fiktyvių bandymų, atsiliepimų ar pardavimų TOP teiginių",
+        "Patikrintos vaizdų teisės, alts, atskiros srcset šeimos",
+        "Natūralūs contextual href matomi tikrame HTML; nėra nuorodų į ateities turinį",
+        "Visas LT tekstas savarankiškai suredaguotas",
+        "Revision-bound peržiūra ir šaltiniai, faktai, medija, nuorodos, presentation įrodymai",
+        "Tik tada export / hosted priėmimas su canonical, sitemap, schema ir laiko filtru"
+      ],
+      "publicationState": "Planas; jokio automatinio approval / datų pakeitimo"
+    }
+  ]
+}

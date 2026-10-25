@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade-check.test.mjs",
+      "evidence": "13tests pass including new foreign literal route and wildcard rejection; original12pass1fail preserved in private beforelog.",
+      "result": "PASS"
+    }
+  ],
+  "note": "Original actual BLOCKED and isolated failing regression preserved. Foreign companion scopes now syntax-only and separately reported, never covering private changes. Private literal/deletion/wildcard checks unchanged; public exact blobs require separate companion review.",
+  "eventId": "8563fc78-2e39-4c18-aba3-ec5ea21a51a9",
+  "sequence": 2,
+  "at": "2026-10-20T08:09:52.851Z"
+}

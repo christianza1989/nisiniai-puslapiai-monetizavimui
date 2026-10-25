@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Place existing embedded payment in right order summary below items, totals and consent, with wider sidebar and normal scrolling for tall payment; single-column responsive flow.",
+  "evidence": [
+    "Owner requested right-side Stripe placement. Real original existing LIVE Session card fields and Pay rendered in private read-only preview at desktop1280 and mobile390. No order/Session created and no payment made.",
+    "36canonical and134PUBLICtests pass; production build complete. Exact CORE6c42878ec3ef807d57ac51a62ac22ff1c76e390b SDK export."
+  ],
+  "paths": [
+    "components/niche/memocasting-native-checkout.tsx",
+    "components/niche/memocasting-checkout.css",
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Restore frontend190ee50b-90e7-4b19-bda4-ac5f0b964ef9 after comparing actual settings; preserve orders, Sessions, bindings, provider deadlines, mail, content and credentials.",
+  "id": "upgrade-e3307a2c-7c24-4203-bff0-9a0efd40f4fa",
+  "branch": "codex/memocasting-public-20261012",
+  "baseSha": "fe26549d3ae8fa8bfbad8a3a5d6b260d389ea37e",
+  "createdAt": "2026-10-21T06:35:01.979Z"
+}

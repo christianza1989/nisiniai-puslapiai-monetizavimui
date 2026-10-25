@@ -8,7 +8,7 @@ This record supersedes the18:34UTC PC restart checkpoint. The owner authorized c
 | --- | --- |
 | Public site | https://memocasting.lt/ — Worker155bfebf-2641-479a-a658-3623eacc016e, deployment4ca742bc-0366-41cf-a1e2-896a0ce2ba50 at19:02:23UTC |
 | Frontend source | PUBLICdb13446f0696f1049b82e0863b39e6ff4fd68403 |
-| Content | Native5be826b7-33ee-40c6-8f05-f7ed24b48f8c, SHA256b02879f7df3fdc9207248e3f45775a0f3e3f90ce88f1f525ae4c10e94c89a4dc,187pages/800assets; all scheduled dates preserved |
+| Content | Native5be826b7-33ee-40c6-8f05-f7ed24b48f8c, SHA256b02879f7df3fdc9207248e3f45775a0f3e3f90ce88f1f525ae4c10e94c89a4dc,187pages/800assets; already-public dates and daily cadence preserved; six future topic slots exchanged in the reviewed editorial release |
 | Admin/commerce | https://login.memocasting.lt/admin — Worker1f0c04e1-3ffc-43a4-80fa-3a0c50f6a670, deployment24267210-b328-42f4-bda7-e58a51b152d6 at20:18:50UTC,100% |
 | Admin code source | CORE07341ebf25537c2946ef6f6d2065af16e30a5cdf |
 | Private mail | Worker4b165ec7-466e-4b29-8c0b-29bfaecf32e7, authenticated senderinfo@memorycasting.lt / Memory Casting |

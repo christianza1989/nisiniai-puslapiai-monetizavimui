@@ -72,3 +72,16 @@ by existing Wrangler authentication without broader permissions.
 Rollback remains pinned to307bc520-53e8-4b34-af2c-f240a2f6fe49; no resource
 migrations. Google indexing and field Core Web Vitals are not claimed as PASS.
 Main merge remains a separate reviewed Git operation.
+
+## Owner-requested alignment/sidebar follow-up
+
+2026-10-25: source1d2b6cd0 removes the desktop hero text inset and replaces the
+catalogue sidebar disclosure with directly visible links to all32 existing groups.
+Current version bd3fef07-121f-4ccc-aed2-9e29c60c2c05 at100%, deployment
+e7a7958d-f1f0-4702-8143-230038ac37ce. Normal build,6 focused regressions,
+candidate/live browser alignment/reflow and8 routes/94 resources/33 group targets
+PASS. The exact10-package registry and actual settings remain unchanged.
+Private evidence: output/promedical-hero-align-20261025/DEPLOYED_VERIFIED.json.
+Initial build was superseded when the owner added the sidebar request; both
+changes were included in the completed build. The upload was reconciled after
+Wrangler refreshed its OAuth token; no duplicate upload or additional permission.

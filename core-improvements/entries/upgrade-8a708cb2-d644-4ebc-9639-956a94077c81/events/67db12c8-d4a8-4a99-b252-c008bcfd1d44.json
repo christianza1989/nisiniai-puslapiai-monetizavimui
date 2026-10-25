@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Public e89bdb97 source;263/263 tests, TypeScript, scoped zero-warning ESLint and production build pass. Native17-page overlay verified with170 unchanged pages and800 assets. Local118-page SEO smoke passes with an isolated no-domain dev config. Original wrong-host favicon assertion with production custom-domain dev rewrite is preserved; production routes/settings not relaxed.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "263/263; public-tests-final.private.txt"
+    },
+    {
+      "command": "npx tsc --noEmit; scoped ESLint --max-warnings0; npm run build",
+      "result": "PASS",
+      "evidence": "TypeScript exit0; lint-final.private.txt; frontend-build.private.txt"
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=memocasting node tests/seo-core-smoke.mjs",
+      "result": "PASS",
+      "evidence": "118 public pages, robots/sitemap/LLMs/schema/host isolation/404; local-seo-smoke-isolated.private.txt"
+    },
+    {
+      "command": "verify-content-release b3c37f72; repository-safety PUBLIC",
+      "result": "PASS",
+      "evidence": "187 pages/800assets verified;170 unchanged; no leaked secrets across candidate files"
+    }
+  ],
+  "eventId": "67db12c8-d4a8-4a99-b252-c008bcfd1d44",
+  "sequence": 2,
+  "at": "2026-10-25T17:09:56.522Z"
+}

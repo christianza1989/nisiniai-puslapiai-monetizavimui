@@ -18,3 +18,13 @@ Owner requests: 24-hour checkout, one neutral reminder after 12 hours, a working
 Typography retains current checkout/admin tokens. Mail uses readable system fonts, 16px body / 1.6 leading, a bounded 560px reading column, dark text on white and a dark 48px-high action. Verify 320px reflow and long labels. Review complete LT copy after rendering. No newsletter/marketing consent is inferred from purchase terms.
 
 Source reservation: CORE issue261 and PUBLIC issue78, own existing final-fixes branches. Mail and recovery are separate from the already deployed SEO fixes. Paid services, DPD and article dates remain outside this change.
+
+## Accepted activation superseding the initial checklist
+
+2026-10-25T19:03:26.417Z: the production store policy was activated with24-hour reservation and one reminder after12hours for future informed orders only. No old customer was enrolled or emailed retrospectively. The signed recovery secret is a private provider binding. Public storefront-context and cart confirm LIVE payment connectivity and the24/12 notice; invalid recovery capability is rejected403.
+
+The approved replacement Hostinger key was privately installed for authenticated info@memorycasting.lt, displayname Memory Casting. One clearly labeled owner self-test was accepted by the private mail Worker and independently found in the exact owner INBOX. This proves transport/inbox receipt, not a real customer's12-hour reminder. Old accepted/unknown notification records were preserved; an unknown outcome is not resent. The unused first key remains as explicitly requested.
+
+Frontend accepted version155bfebf-2641-479a-a658-3623eacc016e, source PUBLICdb13446f0696f1049b82e0863b39e6ff4fd68403, native release5be826b7-33ee-40c6-8f05-f7ed24b48f8c, package SHA256b02879f7df3fdc9207248e3f45775a0f3e3f90ce88f1f525ae4c10e94c89a4dc. The separate mail Worker accepted version4b165ec7-466e-4b29-8c0b-29bfaecf32e7. Backend UI publication is recorded separately in ADMIN_DASHBOARD_2026_10_25.md.
+
+The restart checkpoint at18:34Z is historical and must not be used as the current disabled-policy configuration. No real purchase, refund, shipment or customer reminder was generated for acceptance. A future eligible order and elapsed12hours are still required to observe a real customer reminder.

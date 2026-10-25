@@ -10,6 +10,7 @@ import { AccessOperatorSessions, composeOperatorAuthorize } from './access-ident
 import { R2PrivateStorage, limitedBytes } from './private-storage.mjs';
 import { requireValue } from './validation.mjs';
 import { ProviderPacing } from './provider-pacing.mjs';
+import { analyticsConnections } from './analytics.mjs';
 const parse = (raw, fallback) => {
   if (raw === undefined) return fallback;
   requireValue(
@@ -97,6 +98,7 @@ export function runtimeOptions(env) {
     shippingAdapters,
     shippingReadAdapters,
     notificationAdapters,
+    analyticsAdapters: analyticsConnections(env.COMMERCE_ANALYTICS, environment),
     publicAbuseGuard:
       env.COMMERCE_ABUSE_SALT && env.COMMERCE_DB
         ? (request, store, kind) =>

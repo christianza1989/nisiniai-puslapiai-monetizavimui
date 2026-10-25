@@ -1,6 +1,7 @@
 import { workerRuntime, runtimeOptions } from './runtime.mjs';
 import { CommerceService } from './service.mjs';
 import { CommerceJobs } from './jobs.mjs';
+import { CommerceAnalytics } from './analytics.mjs';
 async function scheduledJobs(env, storeId) {
   const options = runtimeOptions(env),
     service = new CommerceService(env.COMMERCE_DB),
@@ -16,6 +17,11 @@ async function scheduledJobs(env, storeId) {
       const config = await service.store(store.id, options.environment);
       if (options.environment === 'production' && config.automationPolicy?.approved !== true)
         continue;
+      // Independent of invoices, mail and carrier execution; no analytics error
+      // may block the already admitted functional shop automation.
+      await new CommerceAnalytics(service, options.analyticsAdapters)
+        .dispatch(store.id, options.environment)
+        .catch(() => console.error(JSON.stringify({ kind: 'analytics_dispatch_failed' })));
       await jobs.scheduled(store.id, options.environment);
     } catch (error) {
       if (!['store_disabled', 'automation_not_admitted'].includes(error.code)) throw error;

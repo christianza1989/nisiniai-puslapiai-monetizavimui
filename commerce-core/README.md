@@ -1,5 +1,7 @@
 # Bendras prekybos modulis
 
+2026-10-25: [pasirinktinė pirkimų analitika](ANALYTICS.md) yra atskira, numatytai išjungta galimybė. Tik galiojantis lankytojo sutikimas ir serverio patvirtintas apmokėjimas leidžia siųsti pirkimą; jokio duomenų išgalvojimo, klientų kontaktų, naujo mokėjimo ar automatinio kitų parduotuvių aktyvavimo. Pakartojimus valdo patvari eilė ir stabilus sandorio identifikatorius. Tikras konkrečios svetainės diegimas bei Google priėmimas fiksuojami atskirai nuo šaltinio.
+
 0.18.0: [įterptas Checkout](docs/PRODUCTION_CONNECTION.md#embedded-checkout--source-0180) leidžia naują mokėjimo formą rodyti tame pačiame pirkimo puslapyje. Išsaugotas hosted režimas, prarastų atsakymų atkūrimas ir vienas stabilus Session idempotency raktas. Esamo mokėjimo režimas atkuriamas iš tiekėjo; raw Session objektas naršyklei neperduodamas. Reikalingas tos pačios Stripe paskyros publishable raktas; jo sukūrimas, realūs mokėjimai ir produkcinis diegimas į šaltinio darbus neįeina. Svetainės sesija atskirai valdo vieno puslapio išvaizdą ir tikrus paleidimo vartus.
 
 2026-10-17: priimtos [tikrais Sendparcel bandymais pagrįstos pataisos](docs/SENDPARCEL_V1_2026_10_14.md): visų REST užklausų ribojimas, tikslus lietuviškų gatvių diakritinių raidžių palyginimas ir sekimo atsakymas iki pirmo skenavimo. Svetainės sesija testinėje aplinkoje patikrino vieną dviejų pakuočių siuntą, du lipdukus ir manifestą. Tikrų siuntų API raktas dar negautas; bendro modulio šaka nepakeičia veikiančios parduotuvės konfigūracijos ar siuntimo leidimų.

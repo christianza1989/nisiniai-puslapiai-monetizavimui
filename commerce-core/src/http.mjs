@@ -17,6 +17,7 @@ import { ReturnOperations } from './returns.mjs';
 import { CustomerNotifications } from './notifications.mjs';
 import { PaymentDisputes } from './disputes.mjs';
 import { FinishedStock } from './finished-stock.mjs';
+import { CommerceAnalytics } from './analytics.mjs';
 const json = (value, status = 200) =>
   Response.json(value, {
     status,
@@ -57,6 +58,7 @@ export function createHandler({
   shippingAdapters = {},
   shippingReadAdapters = {},
   notificationAdapters = {},
+  analyticsAdapters = {},
   publicAbuseGuard,
   privateStorage,
   loadDocumentFont,
@@ -64,6 +66,7 @@ export function createHandler({
   operatorSessions,
 }) {
   const operations = new CommerceOperations(service);
+  const analytics = new CommerceAnalytics(service, analyticsAdapters);
   const backoffice = new Backoffice(service);
   const finishedStock = new FinishedStock(service);
   const wholesale = new Wholesale(service, { shippingReadAdapters });
@@ -873,11 +876,13 @@ export function createHandler({
         return pdfResponse(await files.get(store.id, environment, file.id));
       }
       const match = path.match(
-        /^\/api\/orders\/([a-zA-Z0-9_-]+)(?:\/(checkout|withdrawal|receipt))?$/,
+        /^\/api\/orders\/([a-zA-Z0-9_-]+)(?:\/(checkout|withdrawal|receipt|analytics))?$/,
       );
       if (match) {
         const token = request.headers.get('authorization')?.replace(/^Bearer /, '');
         const order = await service.authorizeOrder(store.id, environment, match[1], token);
+        if (request.method === 'POST' && match[2] === 'analytics')
+          return json(await analytics.capture(store.id, environment, order, await read()));
         if (request.method === 'GET' && !match[2]) return json(order);
         if (request.method === 'GET' && match[2] === 'receipt') {
           const shipment = await service.one(

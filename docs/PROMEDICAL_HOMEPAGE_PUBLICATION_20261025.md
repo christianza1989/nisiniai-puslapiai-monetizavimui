@@ -53,13 +53,22 @@ preserved. Actual Studio root remains existing Promedical text-v2 data.
 - Browser: desktop catalogue; mobile product/contact; gallery frame switching;
   responsive homepage, keyboard and text-spacing checks.
 - Private server heap failure recovered and communicated; unrelated to production.
-- Earlier normal full build PASS. Final approved-package ordinary build/Worker
-  acceptance follows; private SSR is not substituted for it.
+- Final approved-package ordinary build and real local Worker acceptance PASS.
+- Actual Cloudflare candidate at0%:1853 pages,1407 products,3096 extra links,
+  all9227 media files,11 alias/static/visibility controls and desktop/mobile
+  browser acceptance PASS before activation.
 - Real native200% browser zoom unverified;320px reflow is a separate check.
   Loopback performance is not field Web Vitals.
 
-Preserve actual settings/bindings. Dry-run/upload0% → exact HTTP/media/browser
-acceptance →100% → HTTPS/browser verification. Refresh paired Git/deployment
-before transition. Roll back only on verified failure to pinned old version;
-no resource migrations. Final version and receipts go in issue257/private evidence.
+Published2026-10-25: Worker version393144b7-77d5-458e-8348-05ba2cccd81e at100%,
+deployment a51bf9a2-e30b-402c-a0ea-0525370662a4. Read-only deployed-source snapshot
+matches the exact release, other nine packages and production settings.
+Actual HTTPS desktop/mobile search and five-frame gallery switching PASS;
+post-activation full HTTP/media receipts are stored under live-release/after/.
+The candidate0 receipt was reconciled from a fresh API read after the owner’s
+PC restart; the upload was not repeated. The transient expired OAuth was refreshed
+by existing Wrangler authentication without broader permissions.
+
+Rollback remains pinned to307bc520-53e8-4b34-af2c-f240a2f6fe49; no resource
+migrations. Google indexing and field Core Web Vitals are not claimed as PASS.
 Main merge remains a separate reviewed Git operation.

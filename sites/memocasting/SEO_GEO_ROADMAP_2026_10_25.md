@@ -72,7 +72,7 @@ Savininko pavedimas: pagal abu pateiktus PDF sukurti tvarkingus poros ir šeimos
 - [x] Naujų mokamų tyrimų išlaidos 0 USD. Septyni faktiniai privatūs šaltinių / crawl / GSC stebėjimai importuoti canonical helperiu; ankstesnis 63 stebėjimų tyrimas išsaugotas pilnas.
 - [x] C: atlaisvinta perkeliant tik savo seną generated dist į D:. Vite vėliau pašalino junction ir sukūrė įprastą C: dist; naujo build vieta nėra klaidingai vadinama D:. Originalai, DB, studija ir užsakymai neištrinti.
 - [x] PUBLIC 229 / 229 ir canonical 12 / 12 testų praėjo prieš galutinį trijų sakinių pakartotinį importą. Pirmo bandymo dvi home-admission nesėkmės išsaugotos; po suderinto native importo abi regresijos praėjo.
-- [x] Galutinio leidinio build, naršyklės, spausdinimo ir PDF priėmimas bei publikavimas dar vykdomi.
+- [x] Šios tarpinės būsenos metu galutinio leidinio build, naršyklės, spausdinimo ir PDF priėmimas bei publikavimas dar vyko; dabar užbaigta pagal toliau pateiktą galutinį priėmimą.
 
 Ankstesnis pavienis Chrome lab baseline nėra naujo leidinio field CWV ar Lighthouse. Dėl Chrome zoom ne visi prašyti viewport dydžiai buvo tie patys kaip realus innerWidth; tų skaičių nenaudojame kaip naujo mobiliojo leidinio priėmimo. Tikros naujų instrukcijų 390 / 320 px būsenos užfiksuotos atskirais innerWidth/clientWidth, overflow ir nuotraukų bounds įrodymais. Penkių spalvų miniatiūrų 1,56 MB apkrova yra optimizavimo rezervas; bazinio produkto lab LCP nebuvo nustatyta kaip nepraėjusi vartų klaida.
 
@@ -91,5 +91,7 @@ Ankstesnis pavienis Chrome lab baseline nėra naujo leidinio field CWV ar Lighth
 GA4 šiame etape matuoja tik turinio peržiūras. Purchase / pajamų atribucija, Google Ads ar papildomos rinkos neįjungiamos ir neveikimas neslepiamas. Faktiniai pardavimai tebėra prekybos sistemos užsakymuose; nauja GA4 nėra ankstesnių pardavimų matavimo pakaitalas.
 
 ## Galutinis priėmimas
+
+GSC atskaitos taškas: 2026-09-26–2026-10-23, žiniatinklio paieška be papildomų filtrų — 54 paspaudimai, 1 451 parodymas, 3,7 % CTR, vidutinė pozicija 38,5 visoms užklausoms. Ši istorinė ataskaita šiandienos pataisų poveikio dar neapima; įrodymai išsaugoti privačiai, naujas periodinis stebėjimas neįjungtas.
 
 Actual `f5212538-6ecb-4fad-aaad-143ed08ce6ce` / source `5cff95db` / native `2844fc35` aktyvus100%. Galutinis113HTML/2PDF/17redirects/futureguard auditas PASS; tikras opt-in204 ir GA4RealtimeQA patvirtintas, withdrawal/cart/foreign0Google. Visi šios vietinės darbų apimties taikomi etapai priimti; pažymėti veiksmai nereiškia Google reitingų ar neįgyvendinto purchase matavimo garantijos. Išsamus faktų ir ribų kvitas: [SEO_GEO_ACCEPTANCE_2026_10_25.md](SEO_GEO_ACCEPTANCE_2026_10_25.md).

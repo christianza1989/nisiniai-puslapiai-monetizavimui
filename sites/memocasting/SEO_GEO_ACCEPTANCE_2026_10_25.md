@@ -31,6 +31,8 @@ Vieša svetainė: https://memocasting.lt/
 
 ## Turinys ir ribos
 
+Tikras GSC pradinis palyginimas: žiniatinklio paieška, 2026-09-26–2026-10-23 imtinai, be papildomų filtrų — 54 paspaudimai, 1 451 parodymas, 3,7 % CTR ir 38,5 vidutinė pozicija. Vidutinė pozicija apima visas užklausas, o ne vien pagrindinį raktažodį. Ataskaita patikros metu atnaujinta prieš 2,5 valandos; ji neapima šiandienos leidinio poveikio ar GA4 QA. Tai istorinis atskaitos taškas, ne šių pataisų rezultato įrodymas. Tikslūs duomenys ir ekranas: privatūs `gsc-baseline-last28days-2026-10-25.*` įrodymai.
+
 97LTgidai suplanuoti, parašyti, peržiūrėti, eksportuoti ir įkelti. Šio kvito metu 27vieši,70su ateities datomis; serveryje atsiranda sutartais10:00/16:00EuropeVilnius laikais bePC/scheduler.
 
 Google pats sprendžia indeksavimą, site name, snippet, kainos ir nuotraukos parodymą; AIcitavimas ir naujas organinių pozicijų pakilimas nematuoti. Merchant Center0products: oficialiame Shopping/free-listing šalių / kalbų sąraše nėraLT/lt; techniškai veikiantis2MPN XML nepateiktas apsimetant kita rinka. GTINnėra ir neišgalvoti.

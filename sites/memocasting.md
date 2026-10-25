@@ -24,3 +24,5 @@ Paleidimo data nenustatyta. GSC, realios užklausos ir užsakymai nematuoti. Spr
 ## SEO / instrukcijos / matavimas · 2026-10-25
 
 Latest verified frontend f5212538/source5cff95db/native2844fc35 (187pages/800assets); actual113publicHTML,2PDF,17newredirectforms PASS. BrandMemoryCasting metadata,32/48EURliveoffers, dualinstructions and same originalPDFbytes. GA4account413338025/property560554153/stream16198963010/G-LHHK61WT8T is the current isolated property; owner-approved GSC domain association moved to it, old analytics data and Merchant Center association retained. Strict opt-in LTcontentpageviews accepted in realCollector+RealtimeQA; no purchase/revenue attribution claim, no ads/signals. Scheduler remains off;97LTguide server-time calendar preserved. [Current acceptance and rollback](memocasting/SEO_GEO_ACCEPTANCE_2026_10_25.md). Mainmerge is separate from actual hosted adoption.
+
+GSC baseline (Web search, 2026-09-26–2026-10-23, no additional filters): 54 clicks, 1,451 impressions, 3.7% CTR, average position 38.5 across all queries. This historical period excludes the October 25 release and synthetic GA4 QA; it is not a measurement of today's SEO improvement.

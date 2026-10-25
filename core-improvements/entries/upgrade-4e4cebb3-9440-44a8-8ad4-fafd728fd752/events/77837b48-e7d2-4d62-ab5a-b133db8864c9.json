@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Draft boundary and editor verified; all source remains undeployed. Framework build is still running and SEO smoke has not passed (initial server absent). Initial workerd attempt used an unsupported date; retry uses installed runtime's supported 2026-05-22 fixture date. Public schema/config date unchanged.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "274/274; tests/content-admin-drafts.test.mjs includes auth, field, product, CAS, approval and policy isolation."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "No diagnostics."
+    },
+    {
+      "command": "node tests/content-admin-drafts-workerd.mjs",
+      "result": "PASS",
+      "evidence": "Isolated workerd/ephemeral local D1: one draft write, zero approved or policy writes."
+    },
+    {
+      "command": "verifyEditor in tests/browser/content-admin-editor.mjs through Playwright",
+      "result": "PASS",
+      "evidence": "Five blocks including H3 saved/reloaded; date precision preserved, no page errors or mobile overflow; desktop/mobile images directly inspected."
+    },
+    {
+      "command": "Scoped ESLint and exact staged repository-safety",
+      "result": "PASS",
+      "evidence": "Nine source/test/doc files; no findings."
+    }
+  ],
+  "eventId": "77837b48-e7d2-4d62-ab5a-b133db8864c9",
+  "sequence": 2,
+  "at": "2026-10-25T17:55:14.838Z"
+}

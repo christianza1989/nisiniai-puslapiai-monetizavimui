@@ -672,3 +672,5 @@ Owner scope: two supplied kit PDFs, native recipe pages, stale support/localized
 
 2026-10-25 Native acceptance COMPLETE: frontend fca0b35d-46bb-45e9-b9bd-7db8be42f4fe / PUBLICecbcd502 / native2d2463df; 59 actual HTTPS checks, 28 public/69 future LT guides at14:30UTC, originalPDF hashes, legacy redirects and320/390 desktop/mobile accepted. Backendc3607521/settings/domains preserved. Additional observed Studio compatibility reservation on PR101: standalone external-content SDK dependency closure, isolated V2 importer fixture, existing120-variant boundary regressions and README; original69/73FAIL retained, repaired73/73PASS. No new content/DB/payment operations. Main merge remains separate until committed gate and PR acceptance.
 
+
+2026-10-25 Promedical664 RESERVED: public issue79, own codex/promedical-draft-ingest-664-20261025 stacked on PR75. Scope draft-only authenticated nonproduct ingestion, admin editor empty-block/H3/date precision fixes, CLI, focused tests and runbook. No live deployment or secret provisioning; owner approval/publishing remains separate. Companion scope this row and upgrade journal only.

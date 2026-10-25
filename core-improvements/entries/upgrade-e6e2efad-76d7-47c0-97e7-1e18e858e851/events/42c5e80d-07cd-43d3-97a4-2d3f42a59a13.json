@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/71",
+  "note": "Paired code is available for review: Core PR260 extracts the canonical pure kernel; public PR71 implements authenticated D1 editing and request-time adapters for HTML/SEO/forms/measurement. Public107/107 and typecheck PASS; actual normal framework build4 PASS, deployed registry matches all10 original packages. Isolated full-framework acceptance is running; no CMS Worker version is uploaded or activated yet. No real owner password has been entered or generated.",
+  "eventId": "42c5e80d-07cd-43d3-97a4-2d3f42a59a13",
+  "sequence": 3,
+  "at": "2026-10-25T11:58:35.420Z"
+}

@@ -14,9 +14,11 @@ fetched mains d3fe34b1 /8e47c34e.
 - [x] Įgyvendinti serverinį prisijungimą, sesijas ir patvarų D1 redagavimą.
 - [x] Anksti patikrinti login → tekstas → juodraštis → reload kelią.
 - [x] Įgyvendinti tekstų sąrašą, skaitymą, blokų redaktorių ir kalendorių.
-- [ ] Sujungti patvirtintą publikavimą su bendromis HTML/SEO/media projekcijomis.
+- [x] Sujungti patvirtintą publikavimą su bendromis HTML/SEO/media projekcijomis.
 - [x] Patikrinti konfliktus, draft izoliaciją, datas/DST ir auth neigiamus atvejus.
-- [ ] Peržiūrėti desktop/mobile ir įdiegti tik patikrintą versiją.
+- [x] Peržiūrėti desktop/mobile ir įdiegti tik patikrintą versiją.
+- [x] Rodyti teksto viršelį, miniatiūras ir priskirtas iliustracijas.
+- [x] Virš skaitymo peržiūros pridėti datą, „Išsaugoti datą“ ir „Publikuoti“.
 - [ ] Savininkas privačiai nustato pirmą slaptažodį per vienkartinį setup.
 
 Išsaugoti esamus1908 įrašus/1407 produktus, galerijas, URL, kontaktus ir kitus9
@@ -29,14 +31,37 @@ home ir pagalbiniai puslapiai atskirti į „Kiti tekstai“ skirtuką; serverio
 sąrašas taiko tą pačią sritį prieš filtravimą ir puslapiavimą. Kalendorius
 numatytai skirtas gidams. Tai nepakeičia pause / approve taisyklių.
 
-Vietinis Node HTTP +tikras SQLite išsaugojimas, pakartotinis puslapio atidarymas
-ir actual local workerd+D1 enrollment/login/save/publish/future/history/logout
-patikrinti. Scrypt veikia tikrame workerd. Core Studio66/66 ir public105/105
-testai praėjo prieš paskutinį skirtukų patikslinimą; jo tikslinė4 testų regresija
-taip pat PASS. Bendras SEO smoke pirmą kartą neturėjo8787 serverio; tai ne PASS,
-tikro framework bandymo laukiama. Tikri owner duomenys nebandyti, prod D1
-migracija ir įjungimas dar neatlikti.
+2026-10-25 įgyvendinimas ir diegimas patikrinti. Core Studio 66/66 ir public
+107/107 testai, typecheck ir lint PASS. Normalus framework build5 PASS;
+visų10 svetainių paketai ir tinklo konfigūracija išliko nepakitę. Tikro framework
+1853 viešų puslapių SEO smoke PASS (build4; vėliau keista tik privati API ir UI).
+Build5 su izoliuotu D1 ir tikru1908 įrašų paketu praėjo27 užklausų priėmimą:
+prisijungimas, juodraštis/reload, exact-revision patvirtinimas, SSR/LLM išvestys,
+ateities datos, ankstesnės publikacijos istorija, pauzės idempotentiškumas,
+privati medija, CSRF/Origin atmetimas ir normalus logout po atmestos užklausos.
+Sintetiniai patvirtinimai atlikti tik izoliuotoje vietinėje DB.
 
-Aktualus kitas rezultatas: normalus framework build ir actual host privati
-peržiūra su autentiškų1908 įrašų registru. Mokami tyrimai, naujas paslaugų planas, užsienio duomenų keitimas,
-generavimas, masinis approve/resume ar main merge neužsakyti.
+Desktop1440 ir mobile390/320 peržiūrėti; viršelis ir publikavimo valdikliai
+patikrinti tikroje sąsajoje. Datos išsaugojimas ir šešių nepažymėtų peržiūros
+kriterijų atidarymas išbandyti vietiniame fixture; pradinė data atkurta.
+Native200% zoom / vartotojo text-spacing override atskirai nepatikrinti.
+
+Production D1 pridėtos tik CMS lentelės, esamos užklausos ir analitika nekeistos.
+Po 0% kandidato priėmimo versija3b3892ab-6920-4544-935c-532617d13495 įjungta100%,
+deployment43e57957-6fcb-4844-8ec7-c41060d41e2e. Tikro domeno HTTP priėmimas PASS:
+8 vieši maršrutai,98 ištekliai,33 sidebar nuorodos, sitemap/robots/LLM, privati
+API401, neteisingas login401, cross-origin403, tikslūs admin JS/CSS hash.
+Bindings ir veikimo nustatymai išsaugoti; pridėtas CONTENT_ADMIN_ENABLED=1.
+
+Viešas prisijungimo URL https://promedical.lt/admin; nuorodos svetainės meniu
+nėra. Pirmas administratorius sukurtas, vienkartinis24h setup paruoštas privačiai.
+12:40Z savininko slaptažodis dar nenustatytas; agentas jo nesukūrė ir neįvedė.
+Savininkui pateiktas privatus vietinis setup langas; prisijungimas su tikru
+savininko slaptažodžiu dar nėra patvirtintas. Setup token į Git ar ataskaitą nepatenka.
+
+Pradinė55 gidų publikavimo pauzė ir patvirtinto paketo SHA
+626bb42b68a583b14793393b6abb7a43de08c266417d5cc964b3cd632c0e74b5 išsaugoti.
+Tikri tekstai nepatvirtinti/paskelbti, paštas/DNS nekeičiami. Mokami tyrimai,
+naujas planas, generavimas, masinis approve/resume ir main merge neatlikti.
+Core PR260 ir public PR71 pateikia scoped pakeitimus virš ankstesnės homepage
+šakos; private įrodymai D:/Core/output/promedical-admin-20261025/.

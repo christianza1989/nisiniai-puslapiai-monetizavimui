@@ -56,6 +56,11 @@ nesutampanti su edit.base_revision, sukelia matomą konfliktą; adapteris neturi
 tyliai perrašyti išorinio redaktoriaus patvirtintų pakeitimų. Konflikto peržiūra
 ir jo suderinimas reikalingi prieš tolesnį to įrašo saugojimą.
 
+Hosted POST ribotą kūną perskaityti ir atmetant Origin/auth/CSRF užklausą;
+ankstyvas atsakymas su neperskaitytu kūnu vietiniame Workers proxy gali sugadinti
+kitą HTTP keep-alive užklausą. Priėmimas apima actual neteisingas CSRF/Origin →
+kita normali užklausa, ne vien atskirą handlerio Response.status patikrą.
+
 Kiekvienos svetainės **Turinio eiga** rodo parametrus, datas, ryšius, aktualią peržiūrą ir konkrečias kliūtis. Kalendorius / privatus draft preview bendri. Savininkui nereikia pildyti kalendoriaus ar review pastabų.
 
 Privati loopback API su esamais Host/origin/X-Studio-Request vartais:

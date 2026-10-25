@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Canonical hosted adapter accepted on real local framework and deployed Promedical Worker at100%. Exact approved ten-site package registry and original guide pause remain unchanged. No real content approval or owner password entry performed. Public PR71 and Core PR260 remain separate reviewed-delivery candidates; no main merge.",
+  "checks": [
+    {
+      "command": "Core Studio tests + public node --test tests/*.test.mjs + typecheck/lint",
+      "result": "PASS",
+      "evidence": "Core66/66 and public107/107; scoped hosted-authoring regression and rejected POST body drain validated."
+    },
+    {
+      "command": "Normal framework build5 + local-runtime + actual deployed HTTP acceptance",
+      "result": "PASS",
+      "evidence": "Private D:/Core/output/promedical-admin-20261025/DEPLOYED_VERIFIED.json references build5,27-request real local D1/framework acceptance,1853-route SEO smoke and8 live public routes/98 resources. Version3b3892ab-6920-4544-935c-532617d13495 at100%; no production dev origin. Owner credential handoff remains pending."
+    }
+  ],
+  "eventId": "2d1b33e3-8889-49f8-9493-39a2290d49f3",
+  "sequence": 4,
+  "at": "2026-10-25T12:40:24.512Z"
+}

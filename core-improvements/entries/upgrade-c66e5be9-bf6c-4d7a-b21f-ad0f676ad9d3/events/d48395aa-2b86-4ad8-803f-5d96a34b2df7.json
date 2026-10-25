@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Scoped PUBLIC2f6e9881242698940c440eb4a9952e8276a65ae0 repair, merged PR84 as038b1f0f1ab207f1be1012f2714d03f0572beed7 with identical application tree. Source self-review only. No payment-readiness cache or checkout admission change. Hosted deployment and PSI acceptance remain separate from this local verification.",
+  "checks": [
+    {
+      "command": "PUBLIC serial269tests, TypeScript and scoped ESLint, exact staged safety and diff check",
+      "result": "PASS",
+      "evidence": "269/269 tests;0type/lint errors, one existing unrelated manual stylesheet warning. Actual page/layout module tests verify zero home commerce reads and continuing catalogue/product enrichment; live prices, unavailable/future/noindex and other-tenant behavior remain tested. All6scoped staged files pass safety."
+    },
+    {
+      "command": "Production build and actual compiled desktop/320px review, keyboard motion toggle, console",
+      "result": "PASS",
+      "evidence": "second-build and preview logs in ignored qa/pagespeed-20261026. Actual320/scroll320, heading opacity1, hero animationnone; Enter toggles off/on, no console errors. Desktop screenshot captured before emulation was independently opened visually by the same agent; immediate transitional post-reset screenshot excluded. Owned read-only fixture has no providers and rejects writes; servers stopped and local-only bindings removed."
+    },
+    {
+      "command": "Production-profile dry-run with current actual settings",
+      "result": "PASS",
+      "evidence": "second-dry-run exit0; exact SDK0a3919d1 and unchanged187page package. Actual Cloudflare settings/domain snapshot revalidated unchanged at22:55:03UTC. Preserve production service/D1 bindings, compatibility settings, GA4 public vars and custom domains with keep_vars. No new dependency or paid service."
+    }
+  ],
+  "eventId": "d48395aa-2b86-4ad8-803f-5d96a34b2df7",
+  "sequence": 2,
+  "at": "2026-10-25T22:56:56.032Z"
+}

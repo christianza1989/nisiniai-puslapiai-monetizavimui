@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "summary": "Render editorial homepage without synchronous payment readiness and avoid replaying hero arrival after SSR",
+  "category": "code",
+  "evidence": [
+    "First actual hosted PageSpeed91/100/100/100 mobile and96/100/100/100 desktop after responsive repair. Homepage root layout and page await memoPublishedProductPages -> storefront-context -> Stripe account-readiness on every initial request. Actual document waiting1.7–3.8s; hero request now starts81ms after response, showing discovery repair works. Product/checkout admission must remain strict."
+  ],
+  "paths": [
+    "app/layout.tsx",
+    "app/niche/[siteId]/[[...slug]]/page.tsx",
+    "lib/memocasting-seo-metadata.mjs",
+    "lib/memocasting-homepage-motion.mjs",
+    "components/niche/memocasting-homepage.css"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/78",
+  "rollback": "Revert this scoped source or restore frontend c05ca9d6-a4c3-4b28-8025-b3eea9f84e45 preserving actual provider/data bindings. No backend/schema change.",
+  "id": "upgrade-c66e5be9-bf6c-4d7a-b21f-ad0f676ad9d3",
+  "branch": "codex/memocasting-pagespeed-20261026",
+  "baseSha": "45856bd886a58a1b82dfb149a22fef6bca0157f5",
+  "createdAt": "2026-10-25T22:43:36.815Z"
+}

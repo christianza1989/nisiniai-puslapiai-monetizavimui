@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Three owner-requested LT redirects verified locally with official Studio release bff9afcd. No production or DB/provider changes. The mandatory missing committed-coverage helper was implemented as a read-only canonical workflow repair; committed paired coverage is checked after source commit, not claimed from uncommitted journal edits.",
+  "checks": [
+    {
+      "command": "PUBLIC node tests / TypeScript / full build",
+      "result": "PASS",
+      "evidence": "82 tests and compile PASS; stale breadcrumb fixture updated to the newly approved canonical, no assertion removed. Other85 serialized pages unchanged."
+    },
+    {
+      "command": "Actual redirect and SEO HTTP checks",
+      "result": "PASS",
+      "evidence": "GET/HEAD301 preservequery for all3; final destinations200.103 SEOHTTP/88pages84indexable24guides/all88reachable; all10site smoke PASS. Misconfigured initial smoke8787 and relativeLocation parsing failures preserved in turn and documented; corrected tests pass."
+    },
+    {
+      "command": "Actual browser canonical/product/cart route check",
+      "result": "PASS",
+      "evidence": "qa/url-migration-browser.json: catalogue follows301, pair/family canonical updated and Addenabled; empty-cart catalogue href new. Actual PNG viewed, no new layout/design claims."
+    },
+    {
+      "command": "Canonical upgrade helper regression",
+      "result": "PASS",
+      "evidence": "8 core-upgrade/check regressions PASS. New checker reads committed Git blobs, rejects uncovered changes and uncommitted scope claims, selected bookkeeping only. Scope check is not freshness or semantic acceptance."
+    },
+    {
+      "command": "Common new-package HTTP verifier",
+      "result": "PASS",
+      "evidence": "267 HTTP observations,0 renderissues. Fullsite NOT_COMPLETE retains historicA-Z package mismatch and LOCAL_AUDIT_INCOMPLETE; old audit hashes/scores were not rewritten."
+    }
+  ],
+  "eventId": "dbbf0d63-12f1-42ef-845d-92120251840c",
+  "sequence": 2,
+  "at": "2026-10-13T06:17:55.931Z"
+}

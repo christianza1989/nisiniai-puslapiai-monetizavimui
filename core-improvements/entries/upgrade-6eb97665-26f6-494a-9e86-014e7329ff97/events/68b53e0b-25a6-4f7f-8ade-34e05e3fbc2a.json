@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "LT homepage locally integrated with retained87otherpages and nativecart/locales; production and historicalA-Zaudit gates remain separate.",
+  "checks": [
+    {
+      "command": "PUBLIC node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "88 meaningful tests; exact publication/host asset guard, CTA availability, bytes/Range/pipeline lifetime regressions."
+    },
+    {
+      "command": "PUBLIC tsc --noEmit and npm run build",
+      "result": "PASS",
+      "evidence": "Current10sitepackages and exact0.12.1SDK; new route compiles on installed target."
+    },
+    {
+      "command": "PUBLIC output/homepage-http.private.mjs + QA_SEO.mjs + all10SEOsmoke",
+      "result": "PASS",
+      "evidence": "42range/assetrequests+103SEOHTTP, all10sites, new301canonicals retained."
+    },
+    {
+      "command": "CUA desktop1440/mobile390/320 and native controls",
+      "result": "PASS",
+      "evidence": "Differentdecodedframes forwardreverse; fixed320cart,2CTA/nativecart/4languages/FAQ/carousel/motion-off6chapters.200%/user spacing/OSpref UNVERIFIED."
+    }
+  ],
+  "eventId": "68b53e0b-25a6-4f7f-8ade-34e05e3fbc2a",
+  "sequence": 2,
+  "at": "2026-10-13T07:44:45.695Z"
+}

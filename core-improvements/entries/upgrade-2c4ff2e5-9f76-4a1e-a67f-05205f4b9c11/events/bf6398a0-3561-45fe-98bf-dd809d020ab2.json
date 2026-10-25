@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Owner-reported Play scroll reproduced on559613fb; fixed within original carousel scope. Owner also removed visible card captions; aria labels/durations retained. Exact source/publication coverage is separate from hosted acceptance.",
+  "checks": [
+    {
+      "command": "node --test tests/memocasting-video-carousel.test.mjs tests/memocasting-homepage.test.mjs; scoped eslint; tsc --noEmit",
+      "result": "PASS",
+      "evidence": "7media/admission/homepage tests pass, scoped lint and full TypeScript exit0."
+    },
+    {
+      "command": "MEMO_DEPLOYMENT=production npm run build; pinned Wrangler deploy --dry-run",
+      "result": "PASS",
+      "evidence": "Final production build after caption removal and dry-run exit0; existing fourbindings retained."
+    },
+    {
+      "command": "Actual IAB desktop1280/mobile390 hover/play/controls/Escape/drag/arrows",
+      "result": "PASS",
+      "evidence": "before.private.json preserves original displacement. local-desktop.private.json/local-mobile.private.json record unchangedx/count onplay,18pxpressedicon movement withoutcarousel drag,realplayback,focusreturnand deliberate navigation.0visiblecardheadings/24arialabels;nooverflow. IAB touch-event API unsupported; mobile gestures use pointer, not claimed physical touch."
+    }
+  ],
+  "eventId": "bf6398a0-3561-45fe-98bf-dd809d020ab2",
+  "sequence": 6,
+  "at": "2026-10-20T10:57:52.139Z"
+}

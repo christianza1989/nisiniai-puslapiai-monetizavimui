@@ -1,0 +1,23 @@
+{
+  "siteId": "memocasting",
+  "summary": "Native generator reports an incidental stderr PowerShell shell-snapshot warning while dropping the actual structured stdout provider HTTP429 failure; retry decisions cannot use the real cause.",
+  "category": "code",
+  "evidence": [
+    "Actual private native draft failure showed only WARN shell_snapshot in jobs.error; same real CLI JSON event stream contained error/turn.failed: exceeded retry limit, last status429 Too Many Requests.",
+    "content-studio/src/generator.mjs run chooses stderr||stdout and truncates its tail, masking the real provider error at source37f5a553f09805591b5303142c775cb60489847a"
+  ],
+  "paths": [
+    "content-studio/src/generator.mjs",
+    "content-studio/src/generator-diagnostics.mjs",
+    "content-studio/test/generator-diagnostics.test.mjs",
+    "content-studio/test/generator-policy.test.mjs",
+    "WORKSTREAMS.md",
+    "sites/memocasting/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Scoped revert of failure selection and JSON-event CLI output; retained native jobs and original failures remain private and unchanged.",
+  "id": "upgrade-e9c7a59a-8775-4e22-a100-641e87c7a743",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "37f5a553f09805591b5303142c775cb60489847a",
+  "createdAt": "2026-10-14T09:14:50.377Z"
+}

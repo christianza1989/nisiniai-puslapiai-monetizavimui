@@ -1,0 +1,24 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Import exact canonical searchable parcel-locker UI and approved delivery policy. Reconcile SMTP default sender and safe error contract after current main merge without changing authenticated mailbox or MIME encoding.",
+  "evidence": [
+    "sites/memocasting/LOCKERS_2026_10_22.md",
+    "qa/lockers-20261022/public-final-tests-2.txt",
+    "qa/lockers-20261022/public-build.txt"
+  ],
+  "paths": [
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json",
+    "lib/smtp-protocol.mjs",
+    "tests/commerce-mail-gateway.test.mjs",
+    "content-packages/memocasting/content-package.json",
+    "lib/generated/content-packages.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Revert only this public SDK/policy change; disable new locker entry separately by config CAS; never restore orders or mailbox state.",
+  "id": "upgrade-ab280ca1-f947-4429-a2d6-e904d1b244b9",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "8dae1e5e4d77f2e47c6ec80e60bef019ab2e1473",
+  "createdAt": "2026-10-22T09:41:28.232Z"
+}

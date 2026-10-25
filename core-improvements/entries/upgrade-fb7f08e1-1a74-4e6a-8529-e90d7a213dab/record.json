@@ -1,0 +1,27 @@
+{
+  "siteId": "memocasting",
+  "category": "workflow",
+  "summary": "Prepare owner-authorized Memocasting deployment and domain cutover after Stripe acceptance; import tested canonical commerce0.13 and preserve owned order history while enabling explicit verified Stripe TEST preview.",
+  "evidence": [
+    "Direct human2026-10-14 authorizes publication after Stripe and connection of IV domain943285",
+    "IV current zone has Shopify apex/www and9records; mail must survive. CF account verified, new Free pending zone prepared without delegation",
+    "Canonical shop peer tested bd67c8d197bf955d066ed8ab7042c631bfe6a90f with126Node/23native/build; exact current preview guard only supports all-OFF",
+    "Observed stale PRODUCT.md still offered35EUR and old URLs after approved paint release"
+  ],
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "commerce-core",
+    "vendor/commerce-core",
+    "components/niche/memocasting-native-checkout.tsx",
+    "components/niche/memocasting-payment-status.tsx",
+    "lib/memocasting-payment-status.mjs",
+    "tests/memocasting-payment-status.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert scoped source/import/config only; preserve private backups and existing orders. Pending CF zone does not yet serve live DNS. Before cutover reread IV records and preserve MX/SPF/DKIM/verification; restore scoped prior routes/delegation only if no intervening owner change. Never import synthetic DB into production or print secrets.",
+  "id": "upgrade-fb7f08e1-1a74-4e6a-8529-e90d7a213dab",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "bf1c5201046eb0b9ab4e1ce8af021ad974acece4",
+  "createdAt": "2026-10-13T22:01:55.650Z"
+}

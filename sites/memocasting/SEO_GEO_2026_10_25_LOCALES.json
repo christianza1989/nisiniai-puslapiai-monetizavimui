@@ -1,0 +1,1968 @@
+{
+  "basePackageSha256": "f5acefd5839bbe0d26a7d0ee4f065383edd78a804212171faae89b2bd608fde3",
+  "blocks": [
+    {
+      "id": "8125d493-11eb-4d09-840b-999de78a5a9d",
+      "slug": "pl/products/liejimo-rinkinys-porai",
+      "index": 6,
+      "beforeSha256": "3ff285bf5f3d032846cb76fab1ebed85423d5585639e18603381cd8c24f0c978",
+      "block": {
+        "type": "paragraph",
+        "text": "Zapakowany zestaw dla pary z białą farbą waży 2,2 kg i ma wymiary 20 × 20 × 17 cm. Są to dane przesyłki, a nie pojemność wiadra. Dostawa na Litwie jest obliczana w koszyku. Sprzedaż i dostawa do Polski nie są uruchomione; przed planowanym zakupem skontaktuj się z Memocasting."
+      },
+      "reason": "Owner-confirmed2.2kg/current LT shipping; preserve foreign market closed."
+    },
+    {
+      "id": "8125d493-11eb-4d09-840b-999de78a5a9d",
+      "slug": "pl/products/liejimo-rinkinys-porai",
+      "index": 7,
+      "beforeSha256": "47b7508f7dd8106e5d2e9274e98fd769edf746becd082681b3ae4179e1c97a47",
+      "block": {
+        "type": "paragraph",
+        "text": "Biała farba jest wliczona w cenę zestawu. Przygotowanie powierzchni i malowanie wykonaj zgodnie z instrukcją dołączoną do zestawu oraz wskazówkami na opakowaniu farby."
+      },
+      "reason": "White paint included; use supplied instructions without a stale global unapproved-doc claim."
+    },
+    {
+      "id": "8125d493-11eb-4d09-840b-999de78a5a9d",
+      "slug": "pl/products/liejimo-rinkinys-porai",
+      "index": 8,
+      "beforeSha256": "ac42b72234e3b53e81142761bcce9c9d4ca56840eb6264f39b4b177ba30a739d",
+      "block": {
+        "type": "heading",
+        "level": 2,
+        "text": "Dostępność drewnianej podstawy"
+      },
+      "reason": "Do not advertise unavailable base as selectable."
+    },
+    {
+      "id": "8125d493-11eb-4d09-840b-999de78a5a9d",
+      "slug": "pl/products/liejimo-rinkinys-porai",
+      "index": 9,
+      "beforeSha256": "1eb23613f040b9a721d656e5788fe30c79e1a5308ad5d0e65ed554c7e0bb2787",
+      "block": {
+        "type": "paragraph",
+        "text": "Drewniana podstawa jest obecnie wyprzedana i nie można jej dodać do zestawu. Odlew widoczny na zdjęciu jest przykładem rezultatu, a nie dodatkowym elementem zestawu."
+      },
+      "reason": "Owner marked wood base sold out; remove obsolete+10EUR."
+    },
+    {
+      "id": "8125d493-11eb-4d09-840b-999de78a5a9d",
+      "slug": "pl/products/liejimo-rinkinys-porai",
+      "index": 11,
+      "beforeSha256": "a40d658059695bb035baf707f4a3ec433736ac84fd2b7c00ab5f7083a977f55d",
+      "block": {
+        "type": "paragraph",
+        "text": "Podane parametry dotyczą zestawu z białą farbą. Nie potwierdzają ceny ani terminu dostawy do Polski; przed zakupem ustal warunki bezpośrednio z Memocasting."
+      },
+      "reason": "Scope shipping facts to base pack; no foreign guarantee."
+    },
+    {
+      "id": "8db60556-be40-4416-8001-fd57d52844fe",
+      "slug": "pl/products/seimos-rinkinys-1",
+      "index": 2,
+      "beforeSha256": "f188693c036e1c751bbb5db34a0e9f3a7c61b8d175edad3190b4a41cf92d9aa1",
+      "block": {
+        "type": "list",
+        "items": [
+          "Dwa opakowania alginatu.",
+          "Dwa opakowania gipsu.",
+          "Wiadro.",
+          "Patyczki do mieszania.",
+          "Biała farba."
+        ]
+      },
+      "reason": "Current owner-confirmed family contents include bucket and white paint."
+    },
+    {
+      "id": "8db60556-be40-4416-8001-fd57d52844fe",
+      "slug": "pl/products/seimos-rinkinys-1",
+      "index": 3,
+      "beforeSha256": "668bd0aa1bdc88dc664060cefcebc4fe7f07bf724e8dc0a34526a3629e55cd80",
+      "block": {
+        "type": "paragraph",
+        "text": "Przed mieszaniem materiałów przeczytaj instrukcję zestawu rodzinnego i wypróbuj wybrane ułożenie dłoni w pustym pojemniku. Rozmiary dłoni i pozycja wpływają na to, czy kompozycja zmieści się w środku. Zdjęcie nie określa dopuszczalnej liczby uczestników."
+      },
+      "reason": "Current instructions supplied; do not infer hand count or grams."
+    },
+    {
+      "id": "8db60556-be40-4416-8001-fd57d52844fe",
+      "slug": "pl/products/seimos-rinkinys-1",
+      "index": 7,
+      "beforeSha256": "29ea8ba3898e82ab35c97471a216222911120d419ab113017c9a790e2d8e0e03",
+      "block": {
+        "type": "paragraph",
+        "text": "Zapakowany zestaw rodzinny z białą farbą waży 4,5 kg i ma wymiary 25 × 25 × 20 cm. Dostawa na Litwie jest obliczana osobno w koszyku. Sprzedaż i dostawa do Polski nie są uruchomione; w sprawie planowanego zakupu skontaktuj się z Memocasting."
+      },
+      "reason": "Owner-confirmed4.5kg/current LT shipping; preserve foreign market closed."
+    },
+    {
+      "id": "8db60556-be40-4416-8001-fd57d52844fe",
+      "slug": "pl/products/seimos-rinkinys-1",
+      "index": 9,
+      "beforeSha256": "2b37576fce8c233ccecc6a8a7c7fcc39cfb895909dd1de23171d93145abfcd7c",
+      "block": {
+        "type": "paragraph",
+        "text": "Drewniana podstawa jest obecnie wyprzedana i nie można jej dodać do zestawu. Odlew widoczny na zdjęciu jest przykładem rezultatu, a nie dodatkowym elementem zestawu."
+      },
+      "reason": "Wood base sold out; remove obsolete+10EUR."
+    },
+    {
+      "id": "8db60556-be40-4416-8001-fd57d52844fe",
+      "slug": "pl/products/seimos-rinkinys-1",
+      "index": 11,
+      "beforeSha256": "0c8306895cbcd28aaecd320ca49a688d8542ab09b972b54f82351a1ee7436197",
+      "block": {
+        "type": "paragraph",
+        "text": "Podane parametry dotyczą rodzinnego zestawu z białą farbą. Nie są potwierdzeniem ceny ani terminu dostawy do Polski. Drewniana podstawa pozostaje wyprzedana."
+      },
+      "reason": "No unconfirmed addon shipping claims."
+    },
+    {
+      "id": "245cd2e3-98b7-49c0-b9ec-24aa4d743587",
+      "slug": "pl/collections/all",
+      "index": 0,
+      "beforeSha256": "ca7bce41a017dd3f18bdc75413d0d1ebae3d0d69c6e2873d9ef160417f12e093",
+      "block": {
+        "type": "paragraph",
+        "text": "Zestaw dla pary zawiera jedno opakowanie alginatu, 1 200 g gipsu, wiadro i patyczki do mieszania. Zestaw rodzinny zawiera po dwa opakowania alginatu i gipsu, wiadro oraz patyczki. W obu zestawach jest biała farba. Wybierz zestaw według wielkości dłoni i kompozycji, którą chcesz wykonać."
+      },
+      "reason": "Align visible comparison contents with current products."
+    },
+    {
+      "id": "245cd2e3-98b7-49c0-b9ec-24aa4d743587",
+      "slug": "pl/collections/all",
+      "index": 2,
+      "beforeSha256": "f92a47acc8bc9039c6fe457ff111aedaa6e0d528c3c976ebce555c6eba60c0f2",
+      "block": {
+        "type": "paragraph",
+        "text": "Ceny bazowe na Litwie wynoszą 32 € za zestaw dla pary i 48 € za zestaw rodzinny. Biała farba jest wliczona w cenę obu zestawów; dostawa jest płatna osobno. Drewniana podstawa jest obecnie wyprzedana. Sprzedaż i dostawa do Polski nie są uruchomione; w sprawie zakupu skontaktuj się z Memocasting."
+      },
+      "reason": "Current LT32/48EUR and included whitepaint; base out of stock, foreign closed."
+    },
+    {
+      "id": "245cd2e3-98b7-49c0-b9ec-24aa4d743587",
+      "slug": "pl/collections/all",
+      "index": 4,
+      "beforeSha256": "d1feced78d5aac437626a65c55169be2285a86eeb8cf9738b326a0d2487a3965",
+      "block": {
+        "type": "paragraph",
+        "text": "Zapakowany zestaw dla pary z białą farbą: 2,2 kg, 20 × 20 × 17 cm. Zapakowany zestaw rodzinny z białą farbą: 4,5 kg, 25 × 25 × 20 cm. Wymiary transportowe nie określają pojemności formy ani liczby dłoni."
+      },
+      "reason": "Correct2.2kg/4.5kg while preserving package dimensions."
+    },
+    {
+      "id": "245cd2e3-98b7-49c0-b9ec-24aa4d743587",
+      "slug": "pl/collections/all",
+      "index": 7,
+      "beforeSha256": "f72d745f211cc22df2cde6028571b4bff263a04ae40b79852c5d856eb3f59296",
+      "block": {
+        "type": "paragraph",
+        "text": "Zestaw do odlewu stóp niemowlęcia jest obecnie wyprzedany. W sprawie uzupełnienia alginatu skontaktuj się z Memocasting i podaj nazwę posiadanego zestawu. Obie strony mają charakter informacyjny; nie przyjmują zamówień do Polski."
+      },
+      "reason": "Baby feet now confirmed sold out; alginate contact only."
+    },
+    {
+      "id": "a7b973e5-0590-4527-8d15-75668fbeb251",
+      "slug": "pl/pages/instrukcija",
+      "index": 0,
+      "beforeSha256": "bcfdbede2bfa93c2162c4445ebf5d4b4a6ad68a62261f47868bbd130078742dd",
+      "block": {
+        "type": "paragraph",
+        "text": "Korzystaj z instrukcji dołączonej do konkretnego zestawu. Instrukcje Memocasting dla pary i rodziny opisują osobne receptury; nie zamieniaj między nimi ilości wody ani nie stosuj proporcji innego producenta. Materiały źródłowe są w języku litewskim. Jeśli któryś punkt jest niejasny, przed rozpoczęciem napisz na info@memorycasting.lt."
+      },
+      "reason": "Two owner recipes now supplied in Lithuanian; do not invent translated recipes."
+    },
+    {
+      "id": "a7b973e5-0590-4527-8d15-75668fbeb251",
+      "slug": "pl/pages/instrukcija",
+      "index": 7,
+      "beforeSha256": "50e7ee7a185ed88c155995063f088f37511b5ec3a4decafc64a5bd0a71a32efc",
+      "block": {
+        "type": "paragraph",
+        "text": "Przygotuj wszystkie potrzebne przybory przed otwarciem materiałów. Jeśli brakuje instrukcji lub nie możesz ustalić, do którego zestawu się odnosi, skontaktuj się z Memocasting. Ogólny poradnik nie zastępuje receptury właściwej dla opakowań, które masz."
+      },
+      "reason": "Remove stale local mail/prelaunch status without claiming delivery acceptance."
+    },
+    {
+      "id": "be969e7a-1e59-422d-8989-48f3b39cb0c9",
+      "slug": "pl/gidai/dovana-porai",
+      "index": 9,
+      "beforeSha256": "1801551c2cea27178fd8e2fdae939ba4af7571efd98e647f96ae84bb56ae5584",
+      "block": {
+        "type": "paragraph",
+        "text": "Porównaj zawartość zestawów i przeczytaj właściwą instrukcję. Sklep obsługuje rzeczywiste zamówienia na Litwie. Zakupy z dostawą do Polski nie są uruchomione; przed wyborem prezentu na konkretny termin zapytaj Memocasting o możliwości."
+      },
+      "reason": "Distinguish live LT commerce from closed foreign checkout."
+    },
+    {
+      "id": "21415d90-2019-4e55-89ee-73dce7aa6082",
+      "slug": "pl/gidai/dovana-vestuviu-metinems",
+      "index": 9,
+      "beforeSha256": "f92868a540b2e7295e1fa511c8528c73f83f5372314e8c2206b79cddac0d6092",
+      "block": {
+        "type": "paragraph",
+        "text": "Sama cena dostawy nie potwierdza terminu, a zapis zamówienia nie oznacza jego opłacenia ani wysłania. Dostawę do Polski trzeba ustalić z Memocasting przed zakupem. W razie niepewności wybierz sposób wręczenia, który nie wymaga ukończonego odlewu w określonym dniu."
+      },
+      "reason": "Remove test rate claim; keep real milestone distinction."
+    },
+    {
+      "id": "943b4371-4957-4e49-8a69-bcf6e1acd737",
+      "slug": "pl/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "index": 9,
+      "beforeSha256": "48f284141055e2503dcba20f084d99876c28b397b5e5257da099d9b3d498cb83",
+      "block": {
+        "type": "paragraph",
+        "text": "Przed zakupem sprawdź warunki dostawy dla swojego kraju. Sprzedaż na Litwie działa, lecz polska wersja językowa nie uruchamia dostawy do Polski. W tej sprawie skontaktuj się z Memocasting. Do wykonania odlewu stosuj instrukcję swojego zestawu."
+      },
+      "reason": "Remove global no real sales claim; preserve foreign closed."
+    },
+    {
+      "id": "35c8cc82-b4ef-4f45-a771-9eab9d3a0ba2",
+      "slug": "pl/apie-projekta",
+      "index": 0,
+      "beforeSha256": "93718f6fe393e82e267165cbc39727c973513e60af29b575cfe514b51af40c4d",
+      "block": {
+        "type": "paragraph",
+        "text": "Memocasting oferuje zestawy do odlewu dłoni dla pary i rodziny. Sprzedawcą jest MB Memocasting; według informacji właściciela firma nie jest podatnikiem VAT. Sklep obsługuje zamówienia na Litwie. Sprzedaż i dostawa do Polski nie są uruchomione; w sprawie planowanego zakupu napisz na info@memorycasting.lt."
+      },
+      "reason": "Live Lithuanian merchant, not a local test; no foreign sales promise."
+    },
+    {
+      "id": "35c8cc82-b4ef-4f45-a771-9eab9d3a0ba2",
+      "slug": "pl/apie-projekta",
+      "index": 3,
+      "beforeSha256": "e3c88b23a5b0cd32f3b89274b248995d275cd26da2b6d98ae33fd99b216ee746",
+      "block": {
+        "type": "paragraph",
+        "text": "Adres rejestrowy MB Memocasting podany przez właściciela: Pupinės g. 10-55, Vilnius, LT-02206, Litwa. Adres kontaktowy i zwrotów to Molynės g. 2C, Vilnius, LT-02211. Przed wysłaniem zwrotu skontaktuj się z Memocasting."
+      },
+      "reason": "Direct owner-confirmed legal versus contact/return address. Removed disputed registry bulletin-date attribution."
+    },
+    {
+      "id": "51077b66-af8a-41c3-8265-7dda90b33859",
+      "slug": "pl/redakcija",
+      "index": 6,
+      "beforeSha256": "055bea9bec80e3de9b37492fef8a15ea39cc271f0ebb6c081d68f854f3c7fe6d",
+      "block": {
+        "type": "paragraph",
+        "text": "Napisz na info@memorycasting.lt i wskaż adres strony, zdanie oraz właściwy dokument lub wyjaśnienie. Nie przesyłaj danych karty płatniczej, haseł ani tokenu dostępu do zamówienia."
+      },
+      "reason": "Real public email contact; no unverified mail service statement."
+    },
+    {
+      "id": "25521593-9209-4bcb-9afa-03af9f0548e6",
+      "slug": "pl/kontaktai",
+      "index": 0,
+      "beforeSha256": "fe6dd11151ec4277847dbfcef6df49aea048ada1d0656c81e252ca9ab66f51f9",
+      "block": {
+        "type": "paragraph",
+        "text": "Kontakt: info@memorycasting.lt, +37069108251. Adres kontaktowy i zwrotów: Molynės g. 2C, Vilnius, LT-02211. Napisz w sprawie zestawu, instrukcji lub istniejącego zamówienia. W pytaniu o zakup z dostawą do Polski podaj kraj odbioru; taka sprzedaż nie jest obecnie uruchomiona."
+      },
+      "reason": "Remove instruction to submit only fictitious customer data on live site."
+    },
+    {
+      "id": "0fca5538-d1eb-45bb-a716-1af57a44f88c",
+      "slug": "pl/pristatymas",
+      "index": 0,
+      "beforeSha256": "b5ff3ea8bf5bd47013804cd606dadcb5821307d54b2de980eba7cc06f056cdb7",
+      "block": {
+        "type": "paragraph",
+        "text": "Dostawa jest osobną pozycją zamówienia. Na Litwie jej koszt jest obliczany w koszyku na podstawie danych odbiorcy, wybranych produktów i sposobu dostawy. Sprzedaż do Polski nie jest uruchomiona; cenę i możliwość dostawy trzeba ustalić z Memocasting przed zakupem."
+      },
+      "reason": "LT live shipping calculated at checkout; foreign contact only."
+    },
+    {
+      "id": "0fca5538-d1eb-45bb-a716-1af57a44f88c",
+      "slug": "pl/pristatymas",
+      "index": 2,
+      "beforeSha256": "a118d35644d9e2352c53ed768c82a16dfe501218d64bbc512c5ff4f02efb6fd7",
+      "block": {
+        "type": "list",
+        "items": [
+          "Zestaw dla pary z białą farbą: 2,2 kg, 20 × 20 × 17 cm.",
+          "Zestaw rodzinny z białą farbą: 4,5 kg, 25 × 25 × 20 cm.",
+          "Są to dane zapakowanych zestawów, nie pojemność formy ani gwarancja dostawy do danego kraju."
+        ]
+      },
+      "reason": "Correct packaged weights; no capacity or country guarantee."
+    },
+    {
+      "id": "0fca5538-d1eb-45bb-a716-1af57a44f88c",
+      "slug": "pl/pristatymas",
+      "index": 3,
+      "beforeSha256": "b97e912a0516646551820174058e95596c0014062005a039f75b9b425c427600",
+      "block": {
+        "type": "paragraph",
+        "text": "Adres nadawcy: Molynės g. 2C, Vilnius, LT-02211. Aktywne sposoby dostawy na Litwie są widoczne w koszyku. Polska, łotewska i estońska wersja językowa nie oznaczają uruchomienia sprzedaży do tych krajów. W sprawie wysyłki poza Litwę skontaktuj się z Memocasting."
+      },
+      "reason": "Do not imply LT fulfilment itself is still unapproved."
+    },
+    {
+      "id": "0fca5538-d1eb-45bb-a716-1af57a44f88c",
+      "slug": "pl/pristatymas",
+      "index": 5,
+      "beforeSha256": "8f6ec1f6151f7eb4031842a7b51ca84e43bf4e1dda29e5858d113f9874ce5e38",
+      "block": {
+        "type": "paragraph",
+        "text": "Sprawdź pełną kwotę, uzgodniony sposób dostawy i rzeczywistą informację o wysłaniu. Zapis zamówienia, płatność i nadanie przesyłki są odrębnymi zdarzeniami. Dopiero informacja o nadaniu lub śledzeniu pozwala sprawdzić etap dostawy."
+      },
+      "reason": "Keep actual order/payment/shipment distinction, remove test artefact."
+    },
+    {
+      "id": "5db22749-6b24-4d86-99b4-abdc4fd523bd",
+      "slug": "pl/grazinimas",
+      "index": 0,
+      "beforeSha256": "dc61197096638f5615f627844369e00452bbfb5fafc41be32baf477433b8fc98",
+      "block": {
+        "type": "paragraph",
+        "text": "W sprawie odstąpienia od umowy lub zwrotu skontaktuj się z Memocasting i podaj numer zamówienia. Samo zapisanie zgłoszenia nie oznacza zatwierdzenia ani wykonania zwrotu pieniędzy. Sprzedaż z dostawą do Polski nie jest obecnie uruchomiona."
+      },
+      "reason": "Remove global no real payment claim; no invented foreign return law."
+    },
+    {
+      "id": "5db22749-6b24-4d86-99b4-abdc4fd523bd",
+      "slug": "pl/grazinimas",
+      "index": 1,
+      "beforeSha256": "f86905279300dcfb890a7e80d5c849c3c125110e387bc1e6f1e8d4b617287e32",
+      "block": {
+        "type": "paragraph",
+        "text": "Kontakt w sprawie zwrotu lub możliwej wady produktu: info@memorycasting.lt, +37069108251. Adres zwrotów: Molynės g. 2C, Vilnius, LT-02211. Opisz, czy pytanie dotyczy odstąpienia, uszkodzenia, niezgodności produktu czy płatności, aby sprawa mogła zostać rozpatrzona według warunków danego zamówienia."
+      },
+      "reason": "Real return contact and address; no claim that LT terms are unlaunched."
+    },
+    {
+      "id": "25f9e4f2-37ba-4f9d-84c6-3f25ce0658b8",
+      "slug": "pl/privatumas",
+      "index": 0,
+      "beforeSha256": "5247ae1ea625e5694cd8f4d9b701ce8130c63ce68207712dcee91f874da2f7a6",
+      "block": {
+        "type": "paragraph",
+        "text": "Administratorem danych jest MB Memocasting, numer firmy 306026827. Kontakt w sprawie danych: info@memorycasting.lt. Dane podane w pytaniu służą jego obsłudze. Sklep obsługuje rzeczywiste zamówienia na Litwie; polska wersja językowa nie uruchamia sprzedaży do Polski."
+      },
+      "reason": "Real controller and data use; remove localtest/fake-data instruction."
+    },
+    {
+      "id": "25f9e4f2-37ba-4f9d-84c6-3f25ce0658b8",
+      "slug": "pl/privatumas",
+      "index": 4,
+      "beforeSha256": "0707c108893fc1a63bd0be0170a5184dcb18ae03075b4f27ef4704488bc3d9a6",
+      "block": {
+        "type": "paragraph",
+        "text": "W ramach obsługi zamówienia serwer zapisuje dane odbiorcy i kontaktu, adres dostawy, pozycje zamówienia oraz wybrany sposób dostawy. Serwer przechowuje skrót tokenu dostępu, a nie jego wartość. Nie ujawniaj tokenu w wiadomości ani publicznym opisie problemu."
+      },
+      "reason": "Remove isolated testDB claim; preserve minimal actual orderdata purpose."
+    },
+    {
+      "id": "25f9e4f2-37ba-4f9d-84c6-3f25ce0658b8",
+      "slug": "pl/privatumas",
+      "index": 6,
+      "beforeSha256": "01869d564d3e66a34853bc47d900ceaff1d526f7ed502f7e3ae6a94a19433924",
+      "block": {
+        "type": "paragraph",
+        "text": "Imię, adres e-mail i treść pytania służą zapisaniu oraz obsłudze zapytania. Wysłanie pytania nie jest zgodą na otrzymywanie marketingu. Przekazuj wyłącznie informacje potrzebne do rozpatrzenia sprawy."
+      },
+      "reason": "Real query purpose, not local no-mail claim; marketing consent unchanged."
+    },
+    {
+      "id": "25f9e4f2-37ba-4f9d-84c6-3f25ce0658b8",
+      "slug": "pl/privatumas",
+      "index": 7,
+      "beforeSha256": "c1504c3140cf9ddfabc0eed2e134d17290ff588b8db6e7648eda9d1dd8e3320f",
+      "block": {
+        "type": "heading",
+        "level": 2,
+        "text": "Pytania dotyczące danych"
+      },
+      "reason": "Remove prelaunch heading."
+    },
+    {
+      "id": "25f9e4f2-37ba-4f9d-84c6-3f25ce0658b8",
+      "slug": "pl/privatumas",
+      "index": 8,
+      "beforeSha256": "0ce1daa1a8328d174cae3328bb162608870883a67581463221e9969e7f33d19b",
+      "block": {
+        "type": "paragraph",
+        "text": "W sprawie danych osobowych lub informacji o ich przetwarzaniu napisz na info@memorycasting.lt. Wskaż, czy pytanie dotyczy formularza, koszyka czy konkretnego zamówienia. Nie przesyłaj danych karty płatniczej, haseł ani tokenu dostępu."
+      },
+      "reason": "Remove instruction not to enter productiondata; no invented retention/analytics/legal basis."
+    },
+    {
+      "id": "13ce0752-adf0-427e-a7c7-6042bd0b0bc9",
+      "slug": "pl/naudojimo-salygos",
+      "index": 0,
+      "beforeSha256": "a4f9231c94b5e92d5eb35d09b8c9a09986ccf2198df646517aece439e045d22f",
+      "block": {
+        "type": "paragraph",
+        "text": "Sprzedawcą jest MB Memocasting. Bazowe ceny na Litwie wynoszą 32 € za zestaw dla pary i 48 € za zestaw rodzinny; biała farba jest wliczona w cenę obu zestawów. Dostawa jest rozliczana osobno. Drewniana podstawa jest obecnie wyprzedana. Sprzedaż i dostawa do Polski nie są uruchomione."
+      },
+      "reason": "Current LT prices/paint/base status; foreign sales remain closed."
+    },
+    {
+      "id": "13ce0752-adf0-427e-a7c7-6042bd0b0bc9",
+      "slug": "pl/naudojimo-salygos",
+      "index": 1,
+      "beforeSha256": "a9beb3efa02611db87eb3d26239bfc7742779eec79263b7ce68460b3aab4e2e4",
+      "block": {
+        "type": "paragraph",
+        "text": "Sklep przyjmuje rzeczywiste zamówienia na Litwie. Zapis zamówienia nie jest jeszcze potwierdzeniem płatności ani wysłania towaru. Polska wersja językowa nie udostępnia zakupu z dostawą do Polski; pytania o taką możliwość kieruj do Memocasting."
+      },
+      "reason": "Replace fake-order/global disabled-payment claim with actual market boundary."
+    },
+    {
+      "id": "13ce0752-adf0-427e-a7c7-6042bd0b0bc9",
+      "slug": "pl/naudojimo-salygos",
+      "index": 2,
+      "beforeSha256": "3117c001a3301ce8cf4ab386007a8ad4bcdfe10620cfa26a6dc2201f275c1224",
+      "block": {
+        "type": "paragraph",
+        "text": "Przed zakupem sprawdź konkretny produkt, pełną kwotę, uzgodniony kraj i sposób dostawy oraz warunki danego zamówienia. Do wykonania odlewu używaj instrukcji swojego zestawu. Pytania o produkt, dostawę lub zwrot kieruj na info@memorycasting.lt."
+      },
+      "reason": "Remove global pending launch statement, preserve actual terms-by-order."
+    },
+    {
+      "id": "fa5b1b64-99c6-41d3-b1f4-f76b7cae7fdf",
+      "slug": "pl/cart",
+      "index": 0,
+      "beforeSha256": "470fdbbc89364670eead8954437af205b14449b9120e4ff4c319fc4ce2ac3ff9",
+      "block": {
+        "type": "paragraph",
+        "text": "Zakupy z dostawą do Polski nie są obecnie uruchomione. W sprawie planowanego zamówienia skontaktuj się z Memocasting przez info@memorycasting.lt. Sklep obsługuje rzeczywiste zamówienia na Litwie; samo wyświetlenie polskiej wersji nie potwierdza możliwości dostawy do Polski."
+      },
+      "reason": "Foreign cart remains closed/contact only; do not call live LT system a sandbox."
+    },
+    {
+      "id": "dc3dfba6-efef-451c-827b-248d9db267ed",
+      "slug": "pl/gidai/liejinio-dazymas-ir-prieziura",
+      "index": 8,
+      "beforeSha256": "27074875b836df92591ffd43ccf556e128ae6456e949fd848a1cee4be699d92f",
+      "block": {
+        "type": "paragraph",
+        "text": "Biała farba jest dołączona do zestawu dla pary i zestawu rodzinnego. Maluj po wyschnięciu odlewu zgodnie z instrukcją zestawu i wskazówkami na opakowaniu farby. Nie zakładaj, że zestaw zawiera również grunt, lakier lub materiały wymagane w instrukcji innego producenta."
+      },
+      "reason": "Owner instructions now available; no invented paint volume or accessories."
+    },
+    {
+      "id": "a2163e99-0e3c-43a9-ab2e-fa845a54ea47",
+      "slug": "pl/gidai/dziovinimas-ir-isemimas",
+      "index": 0,
+      "beforeSha256": "6ccfc08316e82d29493f9f1c1b39c9c8448a261d3aa7070b8250bfe9771862b4",
+      "block": {
+        "type": "paragraph",
+        "text": "Wyjęcie odlewu, dalsze schnięcie i przygotowanie do malowania są odrębnymi etapami. Czas właściwy dla jednego nie określa automatycznie pozostałych. Zestawy Memocasting dla pary i rodziny mają własne instrukcje; stosuj dokument dołączony do swojego zestawu i nie przenoś proporcji z innego produktu."
+      },
+      "reason": "Remove assertion no own timings/instructions exist; no new translated recipe."
+    },
+    {
+      "id": "4281209a-11b8-4dbb-a36b-c3d4b34a5c00",
+      "slug": "pl/pagalba",
+      "index": 11,
+      "beforeSha256": "3ead1097858df3747c1e7011635ff9101ece560b9f6d4b06fe403b3459c6eba7",
+      "block": {
+        "type": "paragraph",
+        "text": "Ten opis nie rozstrzyga, czy odlew można naprawić, powtórzyć lub dalej używać. Przed zastosowaniem innej metody czyszczenia albo naprawy zachowaj opis stanu początkowego i ustal właściwy sposób postępowania. W sprawie wykonania, możliwej wady produktu lub odstąpienia napisz na info@memorycasting.lt i podaj numer zamówienia, jeśli go masz."
+      },
+      "reason": "Use actual contact; no local no-mail assertion."
+    },
+    {
+      "id": "0593bf48-5cd7-49c1-8ccc-747aaf7e9927",
+      "slug": "pl/products/kudikio-pedutes",
+      "index": 0,
+      "beforeSha256": "97972e003c33fcde38a55931bc3a4964ba8279e24c49ffb70c5cdbe81e47256b",
+      "block": {
+        "type": "paragraph",
+        "text": "Zestaw do odlewu stóp niemowlęcia jest obecnie wyprzedany. Strona zachowuje informacje o tym produkcie, lecz nie udostępnia zakupu z dostawą do Polski. Zdjęcie pokazuje przykłady odlewów; nie potwierdza przydatności materiałów dla określonego wieku ani nie zastępuje instrukcji."
+      },
+      "reason": "Owner explicitly marks baby feet sold out; no suitability claims."
+    },
+    {
+      "id": "0593bf48-5cd7-49c1-8ccc-747aaf7e9927",
+      "slug": "pl/products/kudikio-pedutes",
+      "index": 8,
+      "beforeSha256": "2e4c9966bd82ea6232dafc0e741d5b82b9321257548fc356cbd58b1fa5c92192",
+      "block": {
+        "type": "paragraph",
+        "text": "Jeśli pytasz o ten produkt, napisz na info@memorycasting.lt i podaj posiadane oznaczenia lub instrukcję. Zapytaj o możliwość ponownej dostępności i dokumenty konkretnego zestawu. Obecnie produkt jest wyprzedany, a na tej stronie nie ma aktywnej oferty zakupu do Polski."
+      },
+      "reason": "Real contact and sold-out state; closed foreign buying preserved."
+    },
+    {
+      "id": "64467f7d-5053-449f-9872-32c4d694e21c",
+      "slug": "lv/products/liejimo-rinkinys-porai",
+      "index": 6,
+      "beforeSha256": "77c4018d176296bb8002251f941ba5aea368b45016bc59dc7ba8b870b7376dc2",
+      "block": {
+        "type": "paragraph",
+        "text": "Iepakots pāra komplekts ar balto krāsu sver 2,2 kg; iepakojuma izmēri ir 20 × 20 × 17 cm. Tie ir sūtījuma dati, nevis spaiņa tilpums. Piegādes maksu Lietuvā aprēķina grozā. Pārdošana un piegāde uz Latviju nav aktivizēta; pirms plānotā pirkuma sazinieties ar Memocasting."
+      },
+      "reason": "Owner-confirmed2.2kg/current LT shipping; preserve foreign market closed."
+    },
+    {
+      "id": "64467f7d-5053-449f-9872-32c4d694e21c",
+      "slug": "lv/products/liejimo-rinkinys-porai",
+      "index": 7,
+      "beforeSha256": "cb9708faa1d5b48a4342205aa93f5703d3e3289f79ef6525e7ce7463c3f89c36",
+      "block": {
+        "type": "paragraph",
+        "text": "Balta krāsa ir iekļauta komplekta cenā. Virsmas sagatavošanā un krāsošanā ievērojiet komplektam pievienoto instrukciju un norādes uz krāsas iepakojuma."
+      },
+      "reason": "White paint included; use supplied instructions without a stale global unapproved-doc claim."
+    },
+    {
+      "id": "64467f7d-5053-449f-9872-32c4d694e21c",
+      "slug": "lv/products/liejimo-rinkinys-porai",
+      "index": 8,
+      "beforeSha256": "39aa370515f50b2277959f36b41dacb8990d5c6efa6050b00d279a0c792583fe",
+      "block": {
+        "type": "heading",
+        "level": 2,
+        "text": "Koka pamatnes pieejamība"
+      },
+      "reason": "Do not advertise unavailable base as selectable."
+    },
+    {
+      "id": "64467f7d-5053-449f-9872-32c4d694e21c",
+      "slug": "lv/products/liejimo-rinkinys-porai",
+      "index": 9,
+      "beforeSha256": "0a487e92a1a66b6b6d5fe6643a271bb1c1153d48848fc15006d75ec755d9657c",
+      "block": {
+        "type": "paragraph",
+        "text": "Koka pamatne pašlaik ir izpārdota, un to nevar pievienot komplektam. Attēlā redzamais atlējums ir rezultāta piemērs, nevis komplekta papildu sastāvdaļa."
+      },
+      "reason": "Owner marked wood base sold out; remove obsolete+10EUR."
+    },
+    {
+      "id": "64467f7d-5053-449f-9872-32c4d694e21c",
+      "slug": "lv/products/liejimo-rinkinys-porai",
+      "index": 11,
+      "beforeSha256": "bdcc6653d5ae19a896ba9eea0ffa5cacaa5d9a91aef33842bc42249755cf2075",
+      "block": {
+        "type": "paragraph",
+        "text": "Norādītie parametri attiecas uz komplektu ar balto krāsu. Tie neapstiprina piegādes cenu vai termiņu uz Latviju; pirms pirkuma noskaidrojiet nosacījumus pie Memocasting."
+      },
+      "reason": "Scope shipping facts to base pack; no foreign guarantee."
+    },
+    {
+      "id": "a48e2656-fbc2-4929-98d2-7a984c64936c",
+      "slug": "lv/products/seimos-rinkinys-1",
+      "index": 2,
+      "beforeSha256": "6d407c1962681f2811abc103c4ad0239d15744f77995a6424f1e4372737c2522",
+      "block": {
+        "type": "list",
+        "items": [
+          "Divi algināta iepakojumi.",
+          "Divi ģipša iepakojumi.",
+          "Spainis.",
+          "Maisīšanas kociņi.",
+          "Balta krāsa."
+        ]
+      },
+      "reason": "Current owner-confirmed family contents include bucket and white paint."
+    },
+    {
+      "id": "a48e2656-fbc2-4929-98d2-7a984c64936c",
+      "slug": "lv/products/seimos-rinkinys-1",
+      "index": 3,
+      "beforeSha256": "63b5c44a8fa03e364fdc4cb47d7426729b4f6344430df98f1b28413a4d9b12da",
+      "block": {
+        "type": "paragraph",
+        "text": "Pirms materiālu sajaukšanas izlasiet ģimenes komplekta instrukciju un izmēģiniet izvēlēto roku novietojumu tukšā traukā. Roku izmērs un poza ietekmē to, vai kompozīcija ietilps traukā. Foto nenosaka pieļaujamo dalībnieku skaitu."
+      },
+      "reason": "Current instructions supplied; do not infer hand count or grams."
+    },
+    {
+      "id": "a48e2656-fbc2-4929-98d2-7a984c64936c",
+      "slug": "lv/products/seimos-rinkinys-1",
+      "index": 7,
+      "beforeSha256": "a0212ebaf3b85fa497bca7b3663bb24b0091caf249d85e28c3f2241de784f40f",
+      "block": {
+        "type": "paragraph",
+        "text": "Iepakots ģimenes komplekts ar balto krāsu sver 4,5 kg; iepakojuma izmēri ir 25 × 25 × 20 cm. Piegādes maksu Lietuvā aprēķina atsevišķi grozā. Pārdošana un piegāde uz Latviju nav aktivizēta; par plānoto pirkumu sazinieties ar Memocasting."
+      },
+      "reason": "Owner-confirmed4.5kg/current LT shipping; preserve foreign market closed."
+    },
+    {
+      "id": "a48e2656-fbc2-4929-98d2-7a984c64936c",
+      "slug": "lv/products/seimos-rinkinys-1",
+      "index": 9,
+      "beforeSha256": "0344ebf3dd0b98b348b05bc50a98b48e816d29b9c27fc22182eb40dc34a190b3",
+      "block": {
+        "type": "paragraph",
+        "text": "Koka pamatne pašlaik ir izpārdota, un to nevar pievienot komplektam. Attēlā redzamais atlējums ir rezultāta piemērs, nevis komplekta papildu sastāvdaļa."
+      },
+      "reason": "Wood base sold out; remove obsolete+10EUR."
+    },
+    {
+      "id": "a48e2656-fbc2-4929-98d2-7a984c64936c",
+      "slug": "lv/products/seimos-rinkinys-1",
+      "index": 11,
+      "beforeSha256": "4169b6a8df55a87c4123ab237f4e0ed3088303108efe6c42993b11065b52e11c",
+      "block": {
+        "type": "paragraph",
+        "text": "Norādītie parametri attiecas uz ģimenes komplektu ar balto krāsu. Tie neapstiprina piegādes cenu vai termiņu uz Latviju. Koka pamatne joprojām ir izpārdota."
+      },
+      "reason": "No unconfirmed addon shipping claims."
+    },
+    {
+      "id": "aed7937c-4412-4508-93c1-d9d9866a5ade",
+      "slug": "lv/collections/all",
+      "index": 0,
+      "beforeSha256": "422a02fd92cfc27cf1d8d98e634c944e85749f8f473320318e55221679d987cd",
+      "block": {
+        "type": "paragraph",
+        "text": "Pāra komplektā ir viens algināta iepakojums, 1 200 g ģipša, spainis un maisīšanas kociņi. Ģimenes komplektā ir pa diviem algināta un ģipša iepakojumiem, spainis un kociņi. Abos komplektos ir balta krāsa. Izvēlieties komplektu atbilstoši roku izmēram un iecerētajai kompozīcijai."
+      },
+      "reason": "Align visible comparison contents with current products."
+    },
+    {
+      "id": "aed7937c-4412-4508-93c1-d9d9866a5ade",
+      "slug": "lv/collections/all",
+      "index": 2,
+      "beforeSha256": "59c146f7e7cf6566339cc68078b9328917f76ea2f45338a394bb8269c3b25d94",
+      "block": {
+        "type": "paragraph",
+        "text": "Bāzes cenas Lietuvā ir 32 € pāra komplektam un 48 € ģimenes komplektam. Balta krāsa ir iekļauta abu komplektu cenā; piegādes maksu aprēķina atsevišķi. Koka pamatne pašlaik ir izpārdota. Pārdošana un piegāde uz Latviju nav aktivizēta; par pirkumu sazinieties ar Memocasting."
+      },
+      "reason": "Current LT32/48EUR and included whitepaint; base out of stock, foreign closed."
+    },
+    {
+      "id": "aed7937c-4412-4508-93c1-d9d9866a5ade",
+      "slug": "lv/collections/all",
+      "index": 4,
+      "beforeSha256": "7e5b9081a7f7d9a4529d7a25682aff542f72f142afd1bdca2d6206eefaa2138c",
+      "block": {
+        "type": "paragraph",
+        "text": "Iepakots pāra komplekts ar balto krāsu: 2,2 kg, 20 × 20 × 17 cm. Iepakots ģimenes komplekts ar balto krāsu: 4,5 kg, 25 × 25 × 20 cm. Transporta iepakojuma izmēri nenosaka formas tilpumu vai roku skaitu."
+      },
+      "reason": "Correct2.2kg/4.5kg while preserving package dimensions."
+    },
+    {
+      "id": "aed7937c-4412-4508-93c1-d9d9866a5ade",
+      "slug": "lv/collections/all",
+      "index": 7,
+      "beforeSha256": "b3ed3208d4fab65fd2ab75a0f779f43a96d7551f5d5d541fe7fb83c8bcd96319",
+      "block": {
+        "type": "paragraph",
+        "text": "Zīdaiņa pēdu atlējuma komplekts pašlaik ir izpārdots. Par algināta papildinājumu sazinieties ar Memocasting un norādiet sava komplekta nosaukumu. Abas lapas ir informatīvas; tajās netiek pieņemti pasūtījumi piegādei uz Latviju."
+      },
+      "reason": "Baby feet now confirmed sold out; alginate contact only."
+    },
+    {
+      "id": "f2069d99-2460-42e8-be76-402afb391958",
+      "slug": "lv/pages/instrukcija",
+      "index": 0,
+      "beforeSha256": "6f1a626183013f7a31b926726e49a2cfb9803a70525fcf025e01ecf7eccaedb1",
+      "block": {
+        "type": "paragraph",
+        "text": "Izmantojiet konkrētajam komplektam pievienoto instrukciju. Memocasting pāra un ģimenes komplektu instrukcijās ir atšķirīgas receptes; nemainiet starp tām ūdens daudzumus un neizmantojiet cita ražotāja proporcijas. Avota instrukcijas ir lietuviešu valodā. Ja kāds punkts nav skaidrs, pirms darba rakstiet uz info@memorycasting.lt."
+      },
+      "reason": "Two owner recipes now supplied in Lithuanian; do not invent translated recipes."
+    },
+    {
+      "id": "f2069d99-2460-42e8-be76-402afb391958",
+      "slug": "lv/pages/instrukcija",
+      "index": 7,
+      "beforeSha256": "aa8f9824aea83b37a083e94f31d875acc974f20a7c49e6ad01a62415c80dbbb0",
+      "block": {
+        "type": "paragraph",
+        "text": "Pirms materiālu atvēršanas sagatavojiet visus vajadzīgos piederumus. Ja instrukcijas trūkst vai nav skaidrs, kuram komplektam tā paredzēta, sazinieties ar Memocasting. Vispārīgs ceļvedis neaizstāj jūsu iepakojumiem paredzēto recepti."
+      },
+      "reason": "Remove stale local mail/prelaunch status without claiming delivery acceptance."
+    },
+    {
+      "id": "ad6b9612-826a-40f2-b454-1c29f297f013",
+      "slug": "lv/gidai/dovana-porai",
+      "index": 9,
+      "beforeSha256": "10b5edf51b2da62ac7ee1907e4c78c4ce57449e97f548e10513fd8ceeb232e91",
+      "block": {
+        "type": "paragraph",
+        "text": "Salīdziniet komplektāciju un izlasiet atbilstošo instrukciju. Veikals apkalpo īstus pasūtījumus Lietuvā. Pirkumi ar piegādi uz Latviju nav aktivizēti; pirms dāvanas plānošanas konkrētam datumam jautājiet Memocasting par iespējām."
+      },
+      "reason": "Distinguish live LT commerce from closed foreign checkout."
+    },
+    {
+      "id": "039ab9ec-abdc-40d5-96e0-27ece70c29a7",
+      "slug": "lv/gidai/dovana-vestuviu-metinems",
+      "index": 9,
+      "beforeSha256": "6f81c9ad4b2a4a433a8eaef78e104338e64de696b8e49aaa34c760088bebf900",
+      "block": {
+        "type": "paragraph",
+        "text": "Piegādes cena pati par sevi neapstiprina termiņu, bet pasūtījuma saglabāšana nenozīmē tā apmaksu vai nosūtīšanu. Piegāde uz Latviju jānoskaidro pie Memocasting pirms pirkuma. Ja laiks nav droši zināms, izvēlieties pasniegšanas veidu, kam nav vajadzīgs pabeigts atlējums noteiktā dienā."
+      },
+      "reason": "Remove test rate claim; keep real milestone distinction."
+    },
+    {
+      "id": "45836ba4-868c-4986-bb0a-9e9e91db922a",
+      "slug": "lv/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "index": 9,
+      "beforeSha256": "59b634ebad271bfa3836074ecffe2d72aa956aca756e54eb8dcf82ee2ce855be",
+      "block": {
+        "type": "paragraph",
+        "text": "Pirms pirkuma noskaidrojiet piegādes nosacījumus savai valstij. Pārdošana Lietuvā darbojas, taču latviešu valodas versija neaktivizē piegādi uz Latviju. Par to sazinieties ar Memocasting. Atlējuma veidošanā izmantojiet sava komplekta instrukciju."
+      },
+      "reason": "Remove global no real sales claim; preserve foreign closed."
+    },
+    {
+      "id": "1a94e75f-20af-4fb5-82c2-0fca60327e64",
+      "slug": "lv/apie-projekta",
+      "index": 0,
+      "beforeSha256": "2813d1c2eada9a56a5f6314d6422ab5447e22d187f8d941a523fff07b5ee5d0f",
+      "block": {
+        "type": "paragraph",
+        "text": "Memocasting piedāvā roku atlējuma komplektus pārim un ģimenei. Pārdevējs ir MB Memocasting; saskaņā ar īpašnieka sniegto informāciju uzņēmums nav PVN maksātājs. Veikals apkalpo pasūtījumus Lietuvā. Pārdošana un piegāde uz Latviju nav aktivizēta; par plānoto pirkumu rakstiet uz info@memorycasting.lt."
+      },
+      "reason": "Live Lithuanian merchant, not a local test; no foreign sales promise."
+    },
+    {
+      "id": "1a94e75f-20af-4fb5-82c2-0fca60327e64",
+      "slug": "lv/apie-projekta",
+      "index": 3,
+      "beforeSha256": "6c6fa4c423ba765f7e00fb023c21b9f441b12d807ff77beeb186a378175da962",
+      "block": {
+        "type": "paragraph",
+        "text": "Īpašnieka norādītā MB Memocasting juridiskā adrese: Pupinės g. 10-55, Vilnius, LT-02206, Lietuva. Kontaktu un preču atgriešanas adrese: Molynės g. 2C, Vilnius, LT-02211. Pirms preces nosūtīšanas atpakaļ sazinieties ar Memocasting."
+      },
+      "reason": "Direct owner-confirmed legal versus contact/return address. Removed disputed registry bulletin-date attribution."
+    },
+    {
+      "id": "9d71114f-b222-4355-81df-25d7a054d0f9",
+      "slug": "lv/redakcija",
+      "index": 6,
+      "beforeSha256": "307236e2d9372b1ac44227ca9ac626b1ef639e71cfa6e7eb3c1b1d270b4c07ec",
+      "block": {
+        "type": "paragraph",
+        "text": "Rakstiet uz info@memorycasting.lt un norādiet lapas adresi, teikumu un pareizo dokumentu vai skaidrojumu. Nesūtiet maksājumu kartes datus, paroles vai pasūtījuma piekļuves žetonu."
+      },
+      "reason": "Real public email contact; no unverified mail service statement."
+    },
+    {
+      "id": "227726d9-6d01-473f-9278-fbb153403d51",
+      "slug": "lv/kontaktai",
+      "index": 0,
+      "beforeSha256": "9a2d4e4a7220afa5f3c5a8e61925b653251fadddeb8637020e13f56385a8c499",
+      "block": {
+        "type": "paragraph",
+        "text": "Kontakti: info@memorycasting.lt, +37069108251. Kontaktadrese un atgriešanas adrese: Molynės g. 2C, Vilnius, LT-02211. Rakstiet par komplektu, instrukciju vai esošu pasūtījumu. Jautājumā par pirkumu ar piegādi uz Latviju norādiet saņēmēja valsti; šāda pārdošana pašlaik nav aktivizēta."
+      },
+      "reason": "Remove instruction to submit only fictitious customer data on live site."
+    },
+    {
+      "id": "b5030b0f-7a96-4ed7-98fa-5c763a827d0b",
+      "slug": "lv/pristatymas",
+      "index": 0,
+      "beforeSha256": "9abe49cb0e2b935006726f1c8957e9c3ec80d01e5d082d34868e9d24d2c13a46",
+      "block": {
+        "type": "paragraph",
+        "text": "Piegāde ir atsevišķa pasūtījuma pozīcija. Lietuvā tās maksu grozā aprēķina pēc saņēmēja datiem, izvēlētajām precēm un piegādes veida. Pārdošana uz Latviju nav aktivizēta; piegādes iespēja un cena jānoskaidro pie Memocasting pirms pirkuma."
+      },
+      "reason": "LT live shipping calculated at checkout; foreign contact only."
+    },
+    {
+      "id": "b5030b0f-7a96-4ed7-98fa-5c763a827d0b",
+      "slug": "lv/pristatymas",
+      "index": 2,
+      "beforeSha256": "a20b776e6f7c355cd2beb117c4aa374087556859e5cc2b9125f19dbdbbc8744b",
+      "block": {
+        "type": "list",
+        "items": [
+          "Pāra komplekts ar balto krāsu: 2,2 kg, 20 × 20 × 17 cm.",
+          "Ģimenes komplekts ar balto krāsu: 4,5 kg, 25 × 25 × 20 cm.",
+          "Tie ir iepakotu komplektu dati, nevis formas tilpums vai piegādes garantija konkrētai valstij."
+        ]
+      },
+      "reason": "Correct packaged weights; no capacity or country guarantee."
+    },
+    {
+      "id": "b5030b0f-7a96-4ed7-98fa-5c763a827d0b",
+      "slug": "lv/pristatymas",
+      "index": 3,
+      "beforeSha256": "6eec5d8270a231f2d697bf188dc4c7684861cc3aee1679bf82aec6eb2946770e",
+      "block": {
+        "type": "paragraph",
+        "text": "Nosūtītāja adrese: Molynės g. 2C, Vilnius, LT-02211. Lietuvā pieejamie piegādes veidi ir redzami grozā. Latviešu, poļu un igauņu valodas versija nenozīmē, ka pārdošana uz šīm valstīm ir aktivizēta. Par sūtījumu ārpus Lietuvas sazinieties ar Memocasting."
+      },
+      "reason": "Do not imply LT fulfilment itself is still unapproved."
+    },
+    {
+      "id": "b5030b0f-7a96-4ed7-98fa-5c763a827d0b",
+      "slug": "lv/pristatymas",
+      "index": 5,
+      "beforeSha256": "6c132634f14775406e00aeb08ba48bab5989bedeeb15e00cb363e96e74bde971",
+      "block": {
+        "type": "paragraph",
+        "text": "Pārbaudiet kopējo summu, saskaņoto piegādes veidu un faktisko nosūtīšanas informāciju. Pasūtījuma saglabāšana, apmaksa un nodošana pārvadātājam ir atsevišķi notikumi. Piegādes posmu var pārbaudīt pēc nosūtīšanas vai izsekošanas informācijas."
+      },
+      "reason": "Keep actual order/payment/shipment distinction, remove test artefact."
+    },
+    {
+      "id": "542dc3ed-0bc5-43b9-86fc-8eb1085ca196",
+      "slug": "lv/grazinimas",
+      "index": 0,
+      "beforeSha256": "5e352e4ea37af9962b7dcab6c40f50a77620436b09b6a79db5616708ace226a7",
+      "block": {
+        "type": "paragraph",
+        "text": "Par atteikšanos no līguma vai preces atgriešanu sazinieties ar Memocasting un norādiet pasūtījuma numuru. Pieprasījuma saglabāšana pati par sevi nenozīmē naudas atmaksas apstiprināšanu vai izpildi. Pārdošana ar piegādi uz Latviju pašlaik nav aktivizēta."
+      },
+      "reason": "Remove global no real payment claim; no invented foreign return law."
+    },
+    {
+      "id": "542dc3ed-0bc5-43b9-86fc-8eb1085ca196",
+      "slug": "lv/grazinimas",
+      "index": 1,
+      "beforeSha256": "d5b768636d88a71898159f16fc6d476b3830e9bfbf6f8ff4fa8ff1ea5a1d0b24",
+      "block": {
+        "type": "paragraph",
+        "text": "Par atgriešanu vai iespējamu preces trūkumu sazinieties: info@memorycasting.lt, +37069108251. Atgriešanas adrese: Molynės g. 2C, Vilnius, LT-02211. Norādiet, vai jautājums ir par atteikumu, bojājumu, preces neatbilstību vai maksājumu, lai to varētu izskatīt atbilstoši konkrētā pasūtījuma nosacījumiem."
+      },
+      "reason": "Real return contact and address; no claim that LT terms are unlaunched."
+    },
+    {
+      "id": "fe610ab5-f573-4216-8c7a-25c40d315cf6",
+      "slug": "lv/privatumas",
+      "index": 0,
+      "beforeSha256": "65c1e9f7ed8d1915d4ccb6737989df343aad9d872143a57a1353437f86ac1b86",
+      "block": {
+        "type": "paragraph",
+        "text": "Datu pārzinis ir MB Memocasting, uzņēmuma numurs 306026827. Par datiem var sazināties: info@memorycasting.lt. Jautājumā norādītos datus izmanto tā izskatīšanai. Veikals apkalpo īstus pasūtījumus Lietuvā; latviešu valodas versija neaktivizē pārdošanu uz Latviju."
+      },
+      "reason": "Real controller and data use; remove localtest/fake-data instruction."
+    },
+    {
+      "id": "fe610ab5-f573-4216-8c7a-25c40d315cf6",
+      "slug": "lv/privatumas",
+      "index": 4,
+      "beforeSha256": "b03ef0d11db3eb7fe9be9d9737c7ea22517f1c2e6dd9b78a87fe1cf3c6450eec",
+      "block": {
+        "type": "paragraph",
+        "text": "Pasūtījuma apstrādei serveris saglabā saņēmēja un kontaktinformāciju, piegādes adresi, pasūtījuma preces un izvēlēto piegādes veidu. Serverī glabājas piekļuves žetona jaucējvērtība, nevis pats žetons. Neatklājiet žetonu ziņojumā vai publiskā problēmas aprakstā."
+      },
+      "reason": "Remove isolated testDB claim; preserve minimal actual orderdata purpose."
+    },
+    {
+      "id": "fe610ab5-f573-4216-8c7a-25c40d315cf6",
+      "slug": "lv/privatumas",
+      "index": 6,
+      "beforeSha256": "026ab6a0a33ca7b617ac49d6bf31e1df11fd1fcbd6e667b6d99a54c52e0cffda",
+      "block": {
+        "type": "paragraph",
+        "text": "Vārdu, e-pasta adresi un jautājuma saturu izmanto pieprasījuma saglabāšanai un apstrādei. Jautājuma nosūtīšana nav piekrišana mārketingam. Sniedziet tikai informāciju, kas vajadzīga jautājuma izskatīšanai."
+      },
+      "reason": "Real query purpose, not local no-mail claim; marketing consent unchanged."
+    },
+    {
+      "id": "fe610ab5-f573-4216-8c7a-25c40d315cf6",
+      "slug": "lv/privatumas",
+      "index": 7,
+      "beforeSha256": "b86ccd5b6bc14eb88b4587a70d5d0a365cff7fc61ee6f8dff4ce51e8d36ca066",
+      "block": {
+        "type": "heading",
+        "level": 2,
+        "text": "Jautājumi par datiem"
+      },
+      "reason": "Remove prelaunch heading."
+    },
+    {
+      "id": "fe610ab5-f573-4216-8c7a-25c40d315cf6",
+      "slug": "lv/privatumas",
+      "index": 8,
+      "beforeSha256": "bba4bf25b002a2ca8cc3e588ee4db8c565f8a0dd581a3701fa4626c403b7cd7d",
+      "block": {
+        "type": "paragraph",
+        "text": "Par personas datiem vai informāciju par to apstrādi rakstiet uz info@memorycasting.lt. Norādiet, vai jautājums ir par formu, grozu vai konkrētu pasūtījumu. Nesūtiet maksājumu kartes datus, paroles vai piekļuves žetonu."
+      },
+      "reason": "Remove instruction not to enter productiondata; no invented retention/analytics/legal basis."
+    },
+    {
+      "id": "a559b9ec-bf4b-4b1c-bf5a-c8a1661f545a",
+      "slug": "lv/naudojimo-salygos",
+      "index": 0,
+      "beforeSha256": "4e011dad58cb0a216de6d16208ec838da5c660e08d59fcb506d95cb400821dce",
+      "block": {
+        "type": "paragraph",
+        "text": "Pārdevējs ir MB Memocasting. Bāzes cenas Lietuvā ir 32 € pāra komplektam un 48 € ģimenes komplektam; balta krāsa ir iekļauta abu komplektu cenā. Piegādes maksu aprēķina atsevišķi. Koka pamatne pašlaik ir izpārdota. Pārdošana un piegāde uz Latviju nav aktivizēta."
+      },
+      "reason": "Current LT prices/paint/base status; foreign sales remain closed."
+    },
+    {
+      "id": "a559b9ec-bf4b-4b1c-bf5a-c8a1661f545a",
+      "slug": "lv/naudojimo-salygos",
+      "index": 1,
+      "beforeSha256": "15d9656a97ab82c9322769eeaeee6c5d2cfcd8450c8b8823554f1cbb13a3d2dd",
+      "block": {
+        "type": "paragraph",
+        "text": "Veikals pieņem īstus pasūtījumus Lietuvā. Pasūtījuma saglabāšana vēl nav maksājuma vai preces nosūtīšanas apstiprinājums. Latviešu valodas versijā nav pieejams pirkums ar piegādi uz Latviju; jautājumus par šādu iespēju uzdodiet Memocasting."
+      },
+      "reason": "Replace fake-order/global disabled-payment claim with actual market boundary."
+    },
+    {
+      "id": "a559b9ec-bf4b-4b1c-bf5a-c8a1661f545a",
+      "slug": "lv/naudojimo-salygos",
+      "index": 2,
+      "beforeSha256": "a9a4546f0322b2fdce8b1274d2c4f8a5a6fadd295bb24f946ffd1b257eb8abaf",
+      "block": {
+        "type": "paragraph",
+        "text": "Pirms pirkuma pārbaudiet konkrēto preci, kopējo summu, saskaņoto piegādes valsti un veidu, kā arī attiecīgā pasūtījuma nosacījumus. Atlējuma veidošanā izmantojiet sava komplekta instrukciju. Par preci, piegādi vai atgriešanu rakstiet uz info@memorycasting.lt."
+      },
+      "reason": "Remove global pending launch statement, preserve actual terms-by-order."
+    },
+    {
+      "id": "65bca36b-7db5-4c22-a9f0-0367e2de6d1e",
+      "slug": "lv/cart",
+      "index": 0,
+      "beforeSha256": "ea4ccbd193e8b35a9f4dc19cdf5a92bcc76b1eece0f5f4f0c2c609962f702eaf",
+      "block": {
+        "type": "paragraph",
+        "text": "Pirkumi ar piegādi uz Latviju pašlaik nav aktivizēti. Par plānoto pasūtījumu sazinieties ar Memocasting: info@memorycasting.lt. Veikals apkalpo īstus pasūtījumus Lietuvā; latviešu valodas versijas attēlošana neapstiprina piegādes iespēju uz Latviju."
+      },
+      "reason": "Foreign cart remains closed/contact only; do not call live LT system a sandbox."
+    },
+    {
+      "id": "e0e0af35-78f4-4a44-9805-ae1e71824d61",
+      "slug": "lv/gidai/liejinio-dazymas-ir-prieziura",
+      "index": 8,
+      "beforeSha256": "9378d318a6344c91e2eaac616350ef01133f06e654d49ac1c39e346f695b097b",
+      "block": {
+        "type": "paragraph",
+        "text": "Balta krāsa ir pievienota pāra un ģimenes komplektam. Krāsojiet pēc atlējuma izžūšanas atbilstoši komplekta instrukcijai un norādēm uz krāsas iepakojuma. Nepieņemiet, ka komplektā ir arī grunts, laka vai cita ražotāja instrukcijā prasītie materiāli."
+      },
+      "reason": "Owner instructions now available; no invented paint volume or accessories."
+    },
+    {
+      "id": "4fe03569-d012-48f0-96cb-e95de888eae2",
+      "slug": "lv/gidai/dziovinimas-ir-isemimas",
+      "index": 0,
+      "beforeSha256": "c8b0f628b7f292e9061e8df3e22d7f09e017b6e31c5540ac0cb9c13b4d9b52e3",
+      "block": {
+        "type": "paragraph",
+        "text": "Atlējuma izņemšana, turpmākā žūšana un sagatavošana krāsošanai ir dažādi posmi. Viena posma laiks automātiski nenosaka pārējos. Memocasting pāra un ģimenes komplektiem ir savas instrukcijas; ievērojiet savam komplektam pievienoto dokumentu un nepārņemiet cita produkta proporcijas."
+      },
+      "reason": "Remove assertion no own timings/instructions exist; no new translated recipe."
+    },
+    {
+      "id": "34439766-d600-42b1-8332-ed1a0b866f9b",
+      "slug": "lv/pagalba",
+      "index": 11,
+      "beforeSha256": "8a41b0f5c16dbdf31c11f4dd2cea14c2826f44f199c50598d78433fb852ca7da",
+      "block": {
+        "type": "paragraph",
+        "text": "Šis apraksts nenosaka, vai atlējumu var labot, atkārtot vai lietot tālāk. Pirms citas tīrīšanas vai labošanas metodes saglabājiet sākotnējā stāvokļa aprakstu un noskaidrojiet pareizo rīcību. Par izgatavošanu, iespējamu preces trūkumu vai atteikumu rakstiet uz info@memorycasting.lt un norādiet pasūtījuma numuru, ja tas ir pieejams."
+      },
+      "reason": "Use actual contact; no local no-mail assertion."
+    },
+    {
+      "id": "908d99d7-46d6-44ee-a350-c7821c1eddc7",
+      "slug": "lv/products/kudikio-pedutes",
+      "index": 0,
+      "beforeSha256": "936d494cc65833023fa0c2e0e5fb6f3edfc15e60e693ab04b6a1a4398548e95b",
+      "block": {
+        "type": "paragraph",
+        "text": "Zīdaiņa pēdu atlējuma komplekts pašlaik ir izpārdots. Lapa saglabā informāciju par šo produktu, taču tajā nav pieejams pirkums ar piegādi uz Latviju. Attēlā ir atlējumu piemēri; tas neapstiprina materiālu piemērotību konkrētam vecumam un neaizstāj instrukciju."
+      },
+      "reason": "Owner explicitly marks baby feet sold out; no suitability claims."
+    },
+    {
+      "id": "908d99d7-46d6-44ee-a350-c7821c1eddc7",
+      "slug": "lv/products/kudikio-pedutes",
+      "index": 8,
+      "beforeSha256": "1b349426e41d2d1e5bf6929b598f4769b0464804ca1b0396c906908df913c7d3",
+      "block": {
+        "type": "paragraph",
+        "text": "Ja jautājat par šo produktu, rakstiet uz info@memorycasting.lt un norādiet pieejamo marķējumu vai instrukciju. Jautājiet par iespējamu pieejamības atjaunošanu un konkrētā komplekta dokumentiem. Produkts pašlaik ir izpārdots, un šajā lapā nav aktīva pirkšanas piedāvājuma piegādei uz Latviju."
+      },
+      "reason": "Real contact and sold-out state; closed foreign buying preserved."
+    },
+    {
+      "id": "7c5f2df9-74f8-400d-8b96-23385f513118",
+      "slug": "et/products/liejimo-rinkinys-porai",
+      "index": 6,
+      "beforeSha256": "7dc50f724da74050b4337ac38db966be3a9f0cf791cf12a7b9173816cdd628da",
+      "block": {
+        "type": "paragraph",
+        "text": "Pakendatud paarikomplekt koos valge värviga kaalub 2,2 kg ja pakendi mõõdud on 20 × 20 × 17 cm. Need on saadetise andmed, mitte ämbri maht. Leedu tarnehind arvutatakse ostukorvis. Müük ja tarne Eestisse pole avatud; enne kavandatud ostu võtke Memocastinguga ühendust."
+      },
+      "reason": "Owner-confirmed2.2kg/current LT shipping; preserve foreign market closed."
+    },
+    {
+      "id": "7c5f2df9-74f8-400d-8b96-23385f513118",
+      "slug": "et/products/liejimo-rinkinys-porai",
+      "index": 7,
+      "beforeSha256": "a6d68a657dfe3cc1faf7017cb8d54a7203e5c1ecb49de18e54979e21f5059771",
+      "block": {
+        "type": "paragraph",
+        "text": "Valge värv kuulub komplekti hinna sisse. Pinna ettevalmistamisel ja värvimisel järgige komplektiga kaasas olevat juhendit ning värvipakendi juhiseid."
+      },
+      "reason": "White paint included; use supplied instructions without a stale global unapproved-doc claim."
+    },
+    {
+      "id": "7c5f2df9-74f8-400d-8b96-23385f513118",
+      "slug": "et/products/liejimo-rinkinys-porai",
+      "index": 8,
+      "beforeSha256": "5ee543547a4fa4d3a18021d2636135fe52df3f983688b48e2da61d284091d3e7",
+      "block": {
+        "type": "heading",
+        "level": 2,
+        "text": "Puidust aluse saadavus"
+      },
+      "reason": "Do not advertise unavailable base as selectable."
+    },
+    {
+      "id": "7c5f2df9-74f8-400d-8b96-23385f513118",
+      "slug": "et/products/liejimo-rinkinys-porai",
+      "index": 9,
+      "beforeSha256": "04393bb5bf6bf734cf0c83467410eb5b120a105c41cc442cc13241223b94b812",
+      "block": {
+        "type": "paragraph",
+        "text": "Puidust alus on praegu välja müüdud ja seda ei saa komplektile lisada. Fotol olev valand on tulemuse näide, mitte komplekti lisasisu."
+      },
+      "reason": "Owner marked wood base sold out; remove obsolete+10EUR."
+    },
+    {
+      "id": "7c5f2df9-74f8-400d-8b96-23385f513118",
+      "slug": "et/products/liejimo-rinkinys-porai",
+      "index": 11,
+      "beforeSha256": "ecdbc73bbc3c8e212bd02c5c427d78834adca4bb6013fe263aa19775e12c027f",
+      "block": {
+        "type": "paragraph",
+        "text": "Need andmed kehtivad valge värviga komplekti kohta. Need ei kinnita Eesti tarnehinda ega tarneaega; enne ostu täpsustage tingimused Memocastinguga."
+      },
+      "reason": "Scope shipping facts to base pack; no foreign guarantee."
+    },
+    {
+      "id": "6f87921e-a801-4099-a11e-4ce8252b9f48",
+      "slug": "et/products/seimos-rinkinys-1",
+      "index": 2,
+      "beforeSha256": "f6b341091595d93c97bf3f3c8da7358d95fb39f8d9902c42015356ba93c1ad1d",
+      "block": {
+        "type": "list",
+        "items": [
+          "Kaks alginaadipakki.",
+          "Kaks kipsipakki.",
+          "Ämber.",
+          "Segamispulgad.",
+          "Valge värv."
+        ]
+      },
+      "reason": "Current owner-confirmed family contents include bucket and white paint."
+    },
+    {
+      "id": "6f87921e-a801-4099-a11e-4ce8252b9f48",
+      "slug": "et/products/seimos-rinkinys-1",
+      "index": 3,
+      "beforeSha256": "f6770b23c6e879edcb334457d5d939ea643e2ef8b3e0af5ab2c651d9d7ddc5e3",
+      "block": {
+        "type": "paragraph",
+        "text": "Enne materjalide segamist lugege perekomplekti juhendit ja proovige valitud käteasendit tühjas anumas. Käte suurusest ja asendist sõltub, kas kompositsioon mahub anumasse. Foto ei määra lubatud osalejate arvu."
+      },
+      "reason": "Current instructions supplied; do not infer hand count or grams."
+    },
+    {
+      "id": "6f87921e-a801-4099-a11e-4ce8252b9f48",
+      "slug": "et/products/seimos-rinkinys-1",
+      "index": 7,
+      "beforeSha256": "04994ed8a649f54d6b490df43ab44966f3199f0638704abb25af2769986c9245",
+      "block": {
+        "type": "paragraph",
+        "text": "Pakendatud perekomplekt koos valge värviga kaalub 4,5 kg ja pakendi mõõdud on 25 × 25 × 20 cm. Leedu tarnehind arvutatakse ostukorvis eraldi. Müük ja tarne Eestisse pole avatud; kavandatud ostu asjus võtke Memocastinguga ühendust."
+      },
+      "reason": "Owner-confirmed4.5kg/current LT shipping; preserve foreign market closed."
+    },
+    {
+      "id": "6f87921e-a801-4099-a11e-4ce8252b9f48",
+      "slug": "et/products/seimos-rinkinys-1",
+      "index": 9,
+      "beforeSha256": "3c80cd2d6da23b783b882053c618971e3541ae900f27169cc289686b730ba096",
+      "block": {
+        "type": "paragraph",
+        "text": "Puidust alus on praegu välja müüdud ja seda ei saa komplektile lisada. Fotol olev valand on tulemuse näide, mitte komplekti lisasisu."
+      },
+      "reason": "Wood base sold out; remove obsolete+10EUR."
+    },
+    {
+      "id": "6f87921e-a801-4099-a11e-4ce8252b9f48",
+      "slug": "et/products/seimos-rinkinys-1",
+      "index": 11,
+      "beforeSha256": "cdb2c6be31f90193b22233a1a027cacc846607b8fd0bb811d52188baa5f1bfb6",
+      "block": {
+        "type": "paragraph",
+        "text": "Need andmed kehtivad valge värviga perekomplekti kohta. Need ei kinnita Eesti tarnehinda ega tarneaega. Puidust alus on endiselt välja müüdud."
+      },
+      "reason": "No unconfirmed addon shipping claims."
+    },
+    {
+      "id": "8a7f39e9-2d4f-4ad9-a186-b1028cb2ea79",
+      "slug": "et/collections/all",
+      "index": 0,
+      "beforeSha256": "8bd801f6523b70c061ae1285d2a971c88943a1861185f94b4640b8667631d5a3",
+      "block": {
+        "type": "paragraph",
+        "text": "Paarikomplektis on üks alginaadipakk, 1 200 g kipsi, ämber ja segamispulgad. Perekomplektis on kaks alginaadipakki, kaks kipsipakki, ämber ning segamispulgad. Mõlemas komplektis on valge värv. Valige komplekt käte suuruse ja kavandatud kompositsiooni järgi."
+      },
+      "reason": "Align visible comparison contents with current products."
+    },
+    {
+      "id": "8a7f39e9-2d4f-4ad9-a186-b1028cb2ea79",
+      "slug": "et/collections/all",
+      "index": 2,
+      "beforeSha256": "e9a1cbdb2f0c1a1be83206d1a68cb731d04b710c6fea62737441ad25e8be6602",
+      "block": {
+        "type": "paragraph",
+        "text": "Leedu baashinnad on 32 € paarikomplekti ja 48 € perekomplekti eest. Valge värv sisaldub mõlema komplekti hinnas; tarnehind lisandub eraldi. Puidust alus on praegu välja müüdud. Müük ja tarne Eestisse pole avatud; ostu asjus võtke Memocastinguga ühendust."
+      },
+      "reason": "Current LT32/48EUR and included whitepaint; base out of stock, foreign closed."
+    },
+    {
+      "id": "8a7f39e9-2d4f-4ad9-a186-b1028cb2ea79",
+      "slug": "et/collections/all",
+      "index": 4,
+      "beforeSha256": "7b25bb5ef44e9e04685b8dfe223342a1b88b0aad105214e41503073707480cf1",
+      "block": {
+        "type": "paragraph",
+        "text": "Pakendatud paarikomplekt koos valge värviga: 2,2 kg, 20 × 20 × 17 cm. Pakendatud perekomplekt koos valge värviga: 4,5 kg, 25 × 25 × 20 cm. Transpordipakendi mõõdud ei määra vormi mahtu ega käte arvu."
+      },
+      "reason": "Correct2.2kg/4.5kg while preserving package dimensions."
+    },
+    {
+      "id": "8a7f39e9-2d4f-4ad9-a186-b1028cb2ea79",
+      "slug": "et/collections/all",
+      "index": 7,
+      "beforeSha256": "87a3f666add31cfb69d1d091a3a9c44bc2f9ef611fadf312a88f35790af5056c",
+      "block": {
+        "type": "paragraph",
+        "text": "Imiku jalalabade valamise komplekt on praegu välja müüdud. Alginaadi lisapaki asjus võtke Memocastinguga ühendust ja nimetage olemasolev komplekt. Mõlemad lehed on informatiivsed; neil ei võeta vastu tellimusi Eestisse."
+      },
+      "reason": "Baby feet now confirmed sold out; alginate contact only."
+    },
+    {
+      "id": "7cc56697-16ea-42b1-8a87-d6808da76873",
+      "slug": "et/pages/instrukcija",
+      "index": 0,
+      "beforeSha256": "12e2a1c393200d004ac501ff4fd0bacec80d749921e76cae5f4eea7e5be246c3",
+      "block": {
+        "type": "paragraph",
+        "text": "Kasutage konkreetse komplektiga kaasas olevat juhendit. Memocastingu paari- ja perekomplekti juhendid kirjeldavad erinevaid retsepte; ärge vahetage nende veekoguseid ega kasutage teise tootja vahekordi. Algsed juhendid on leedu keeles. Kui mõni punkt on ebaselge, kirjutage enne alustamist aadressile info@memorycasting.lt."
+      },
+      "reason": "Two owner recipes now supplied in Lithuanian; do not invent translated recipes."
+    },
+    {
+      "id": "7cc56697-16ea-42b1-8a87-d6808da76873",
+      "slug": "et/pages/instrukcija",
+      "index": 7,
+      "beforeSha256": "884ed4caa0524b34cc7056fd57e631402b1063a4fdf1f481700f7707fb95e2a8",
+      "block": {
+        "type": "paragraph",
+        "text": "Valmistage vajalikud vahendid ette enne materjalide avamist. Kui juhend puudub või selle sobivus komplektile pole selge, võtke Memocastinguga ühendust. Üldine juhend ei asenda teie pakenditele mõeldud retsepti."
+      },
+      "reason": "Remove stale local mail/prelaunch status without claiming delivery acceptance."
+    },
+    {
+      "id": "7f65a778-5f09-4429-8285-16c7ce76aa86",
+      "slug": "et/gidai/dovana-porai",
+      "index": 9,
+      "beforeSha256": "b89512313ae5063783df1cab4dc5f0e7831d5794fbe02b752003f3cd9f0809dd",
+      "block": {
+        "type": "paragraph",
+        "text": "Võrrelge komplektide sisu ja lugege õiget juhendit. Pood teenindab tegelikke tellimusi Leedus. Eestisse tarnitavaid oste pole avatud; enne kindlaks kuupäevaks kingi kavandamist küsige Memocastingult võimaluste kohta."
+      },
+      "reason": "Distinguish live LT commerce from closed foreign checkout."
+    },
+    {
+      "id": "f6184a4f-3aa0-42e4-a3da-52fa9f50120b",
+      "slug": "et/gidai/dovana-vestuviu-metinems",
+      "index": 9,
+      "beforeSha256": "9caf5dc48928fe537311f8672531669ed92eb713a58c4df8c3951fe2bc42dc6b",
+      "block": {
+        "type": "paragraph",
+        "text": "Tarnehind üksi ei kinnita tähtaega ning tellimuse salvestamine ei tähenda maksmist ega saatmist. Tarne Eestisse tuleb enne ostu Memocastinguga täpsustada. Ebakindla ajakava korral valige kingi üleandmise viis, mis ei eelda valmis valandit kindlal päeval."
+      },
+      "reason": "Remove test rate claim; keep real milestone distinction."
+    },
+    {
+      "id": "8aaec0db-a019-4f88-9c1b-92200911a42c",
+      "slug": "et/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "index": 9,
+      "beforeSha256": "998fa78edc0c093add36771d60dd36372072a1c9b72851751a1fed47b60db9b9",
+      "block": {
+        "type": "paragraph",
+        "text": "Enne ostu kontrollige oma riigi tarnetingimusi. Leedus müük toimib, kuid eestikeelne versioon ei ava tarnet Eestisse. Võtke selleks Memocastinguga ühendust. Valandi tegemisel kasutage oma komplekti juhendit."
+      },
+      "reason": "Remove global no real sales claim; preserve foreign closed."
+    },
+    {
+      "id": "9ae3b742-b399-4753-bd9b-702cfbfc29f8",
+      "slug": "et/apie-projekta",
+      "index": 0,
+      "beforeSha256": "3167348fe48008d6f2c1778f23dbddc64b8ed3c05b577efd5eae4a1b9912e691",
+      "block": {
+        "type": "paragraph",
+        "text": "Memocasting pakub kätevalukomplekte paarile ja perele. Müüja on MB Memocasting; omaniku andmetel ei ole ettevõte käibemaksukohustuslane. Pood teenindab tellimusi Leedus. Müük ja tarne Eestisse pole avatud; kavandatud ostu asjus kirjutage aadressile info@memorycasting.lt."
+      },
+      "reason": "Live Lithuanian merchant, not a local test; no foreign sales promise."
+    },
+    {
+      "id": "9ae3b742-b399-4753-bd9b-702cfbfc29f8",
+      "slug": "et/apie-projekta",
+      "index": 3,
+      "beforeSha256": "a0a95a200d888fdec93fdab392aed85f5b35c57bade7f3f28066b9c29f010d73",
+      "block": {
+        "type": "paragraph",
+        "text": "Omaniku esitatud MB Memocastingu registriaadress: Pupinės g. 10-55, Vilnius, LT-02206, Leedu. Kontakti- ja tagastusaadress: Molynės g. 2C, Vilnius, LT-02211. Enne tagastuse saatmist võtke Memocastinguga ühendust."
+      },
+      "reason": "Direct owner-confirmed legal versus contact/return address. Removed disputed registry bulletin-date attribution."
+    },
+    {
+      "id": "95ec3561-7d0d-438b-9792-f89b83aa2922",
+      "slug": "et/redakcija",
+      "index": 6,
+      "beforeSha256": "4d2f1886a377ddfebfe1e74f7cc9fba2daaff6828adf57864e747042b5eb6fd2",
+      "block": {
+        "type": "paragraph",
+        "text": "Kirjutage aadressile info@memorycasting.lt ning nimetage leht, lause ja õige dokument või selgitus. Ärge saatke maksekaardi andmeid, paroole ega tellimuse juurdepääsutunnust."
+      },
+      "reason": "Real public email contact; no unverified mail service statement."
+    },
+    {
+      "id": "8aa80657-7be5-4045-b8b9-1675231ebaa3",
+      "slug": "et/kontaktai",
+      "index": 0,
+      "beforeSha256": "41e315cd075ac3fa02dfb0fbd3cc5ab7b3c235179cf605abd6221274fe873f52",
+      "block": {
+        "type": "paragraph",
+        "text": "Kontakt: info@memorycasting.lt, +37069108251. Kontakti- ja tagastusaadress: Molynės g. 2C, Vilnius, LT-02211. Kirjutage komplekti, juhendi või olemasoleva tellimuse asjus. Eestisse tarnitava ostu kohta küsides nimetage saajariik; selline müük pole praegu avatud."
+      },
+      "reason": "Remove instruction to submit only fictitious customer data on live site."
+    },
+    {
+      "id": "2124e4ca-ca32-4290-aa13-78c86515a481",
+      "slug": "et/pristatymas",
+      "index": 0,
+      "beforeSha256": "a13f180167c0eb94f02972c5a7da4d6081396018aa58f8a017c0ed2e1419d862",
+      "block": {
+        "type": "paragraph",
+        "text": "Tarne on tellimuses eraldi kirje. Leedus arvutatakse hind ostukorvis saajaandmete, valitud toodete ja tarneviisi alusel. Müük Eestisse pole avatud; tarnevõimalus ja hind tuleb enne ostu Memocastinguga täpsustada."
+      },
+      "reason": "LT live shipping calculated at checkout; foreign contact only."
+    },
+    {
+      "id": "2124e4ca-ca32-4290-aa13-78c86515a481",
+      "slug": "et/pristatymas",
+      "index": 2,
+      "beforeSha256": "9c6796df55829cd8bef8cd2984565aa9665eb505c906f0a78ec97f103aa5a0d8",
+      "block": {
+        "type": "list",
+        "items": [
+          "Paarikomplekt valge värviga: 2,2 kg, 20 × 20 × 17 cm.",
+          "Perekomplekt valge värviga: 4,5 kg, 25 × 25 × 20 cm.",
+          "Need on pakendatud komplektide andmed, mitte vormi maht ega tarnegarantii konkreetsesse riiki."
+        ]
+      },
+      "reason": "Correct packaged weights; no capacity or country guarantee."
+    },
+    {
+      "id": "2124e4ca-ca32-4290-aa13-78c86515a481",
+      "slug": "et/pristatymas",
+      "index": 3,
+      "beforeSha256": "be3b318f782b9568cc45353ba6426018a8b6daaf18a6653f51154d679b7481b0",
+      "block": {
+        "type": "paragraph",
+        "text": "Saatja aadress: Molynės g. 2C, Vilnius, LT-02211. Leedus saadaolevad tarneviisid kuvatakse ostukorvis. Eesti-, poola- ja lätikeelne versioon ei tähenda müügi avamist nendesse riikidesse. Väljapoole Leedut saatmise asjus võtke Memocastinguga ühendust."
+      },
+      "reason": "Do not imply LT fulfilment itself is still unapproved."
+    },
+    {
+      "id": "2124e4ca-ca32-4290-aa13-78c86515a481",
+      "slug": "et/pristatymas",
+      "index": 5,
+      "beforeSha256": "eaeed2cad1569f01556294f84ae518701fa35efb4a702eea6583441aab7cfc02",
+      "block": {
+        "type": "paragraph",
+        "text": "Kontrollige kogusummat, kokkulepitud tarneviisi ja tegelikku saatmisinfot. Tellimuse salvestamine, maksmine ja paki üleandmine vedajale on eri sündmused. Tarneetappi saab kontrollida saatmis- või jälgimisinfo alusel."
+      },
+      "reason": "Keep actual order/payment/shipment distinction, remove test artefact."
+    },
+    {
+      "id": "3ce6ecca-a17f-43ea-88ae-cb3bed8cecfc",
+      "slug": "et/grazinimas",
+      "index": 0,
+      "beforeSha256": "ee4449d3bdc332a0433666be059c504b43c2d2b8d981733a79ed84d363ed9a0a",
+      "block": {
+        "type": "paragraph",
+        "text": "Lepingust taganemise või tagastamise asjus võtke Memocastinguga ühendust ja nimetage tellimuse number. Teate salvestamine üksi ei tähenda tagasimakse heakskiitmist ega tegemist. Müük koos tarnega Eestisse pole praegu avatud."
+      },
+      "reason": "Remove global no real payment claim; no invented foreign return law."
+    },
+    {
+      "id": "3ce6ecca-a17f-43ea-88ae-cb3bed8cecfc",
+      "slug": "et/grazinimas",
+      "index": 1,
+      "beforeSha256": "56857258a46aaab93bd7b154b76c9b831627bf88302bc1498026d2bfb2980f04",
+      "block": {
+        "type": "paragraph",
+        "text": "Tagastuse või võimaliku tootepuuduse küsimuses pöörduge aadressile info@memorycasting.lt või telefonile +37069108251. Tagastusaadress: Molynės g. 2C, Vilnius, LT-02211. Kirjeldage, kas küsimus puudutab taganemist, kahjustust, toote mittevastavust või makset, et asja saaks käsitleda konkreetse tellimuse tingimuste alusel."
+      },
+      "reason": "Real return contact and address; no claim that LT terms are unlaunched."
+    },
+    {
+      "id": "f7c627f7-f51e-4037-b6d1-30886a5a1e6e",
+      "slug": "et/privatumas",
+      "index": 0,
+      "beforeSha256": "249a1f01fa635f287cf0ee14c2f77b052f3fc24b66e5d96a9e5e24408e530780",
+      "block": {
+        "type": "paragraph",
+        "text": "Vastutav töötleja on MB Memocasting, registrikood 306026827. Andmeküsimuste kontakt: info@memorycasting.lt. Päringus antud andmeid kasutatakse päringu käsitlemiseks. Pood teenindab tegelikke tellimusi Leedus; eestikeelne versioon ei ava müüki Eestisse."
+      },
+      "reason": "Real controller and data use; remove localtest/fake-data instruction."
+    },
+    {
+      "id": "f7c627f7-f51e-4037-b6d1-30886a5a1e6e",
+      "slug": "et/privatumas",
+      "index": 4,
+      "beforeSha256": "61ef1846ba179755d38c61552ec4d9d4afa3b27c597b7e0dbd479ce2b45441bb",
+      "block": {
+        "type": "paragraph",
+        "text": "Tellimuse töötlemiseks salvestab server saaja- ja kontaktandmed, tarneaadressi, tellitud kaubad ning valitud tarneviisi. Server säilitab juurdepääsutunnuse räsi, mitte tunnust ennast. Ärge avaldage tunnust sõnumis ega probleemi avalikus kirjelduses."
+      },
+      "reason": "Remove isolated testDB claim; preserve minimal actual orderdata purpose."
+    },
+    {
+      "id": "f7c627f7-f51e-4037-b6d1-30886a5a1e6e",
+      "slug": "et/privatumas",
+      "index": 6,
+      "beforeSha256": "4a8bfe29df0ff276c9d9cf28aa8c166ec972d7e633790cde0e3e2c95d069cf43",
+      "block": {
+        "type": "paragraph",
+        "text": "Nime, e-posti aadressi ja küsimuse sisu kasutatakse päringu salvestamiseks ning käsitlemiseks. Küsimuse saatmine ei ole turundusnõusolek. Andke ainult asja lahendamiseks vajalikku teavet."
+      },
+      "reason": "Real query purpose, not local no-mail claim; marketing consent unchanged."
+    },
+    {
+      "id": "f7c627f7-f51e-4037-b6d1-30886a5a1e6e",
+      "slug": "et/privatumas",
+      "index": 7,
+      "beforeSha256": "5c9c8821962c8a94758d8bde00d71184f1bfa415d764e2b6275bad8b88912246",
+      "block": {
+        "type": "heading",
+        "level": 2,
+        "text": "Andmetega seotud küsimused"
+      },
+      "reason": "Remove prelaunch heading."
+    },
+    {
+      "id": "f7c627f7-f51e-4037-b6d1-30886a5a1e6e",
+      "slug": "et/privatumas",
+      "index": 8,
+      "beforeSha256": "f0ba03cafb45a70b950dc274d686145d1b4d3b4b7f318806c5397e3b454c17bf",
+      "block": {
+        "type": "paragraph",
+        "text": "Isikuandmete või nende töötlemise teabe asjus kirjutage aadressile info@memorycasting.lt. Märkige, kas küsimus puudutab vormi, ostukorvi või konkreetset tellimust. Ärge saatke maksekaardi andmeid, paroole ega juurdepääsutunnust."
+      },
+      "reason": "Remove instruction not to enter productiondata; no invented retention/analytics/legal basis."
+    },
+    {
+      "id": "06608f8a-8bd8-4df1-82ae-1f0ae0526aaa",
+      "slug": "et/naudojimo-salygos",
+      "index": 0,
+      "beforeSha256": "f0f326b34714f5fada03441f622a353092e6c500dd5baa614095a30469cc0457",
+      "block": {
+        "type": "paragraph",
+        "text": "Müüja on MB Memocasting. Leedu baashinnad on 32 € paarikomplekti ja 48 € perekomplekti eest; valge värv sisaldub mõlema komplekti hinnas. Tarnehind lisandub eraldi. Puidust alus on praegu välja müüdud. Müük ja tarne Eestisse pole avatud."
+      },
+      "reason": "Current LT prices/paint/base status; foreign sales remain closed."
+    },
+    {
+      "id": "06608f8a-8bd8-4df1-82ae-1f0ae0526aaa",
+      "slug": "et/naudojimo-salygos",
+      "index": 1,
+      "beforeSha256": "be7ada796b48f9853151edb8cac19559cb096c0c79f82aa2b83d56e9e42bbebd",
+      "block": {
+        "type": "paragraph",
+        "text": "Pood võtab vastu tegelikke tellimusi Leedus. Tellimuse salvestamine ei ole veel makse ega kauba saatmise kinnitus. Eestikeelses versioonis pole Eestisse tarnitav ost saadaval; sellise võimaluse kohta küsige Memocastingult."
+      },
+      "reason": "Replace fake-order/global disabled-payment claim with actual market boundary."
+    },
+    {
+      "id": "06608f8a-8bd8-4df1-82ae-1f0ae0526aaa",
+      "slug": "et/naudojimo-salygos",
+      "index": 2,
+      "beforeSha256": "2f67f324a3832c37f28282fbb166e91851e849b36155a105fc74d65df1e697f9",
+      "block": {
+        "type": "paragraph",
+        "text": "Enne ostu kontrollige konkreetset toodet, kogusummat, kokkulepitud saajariiki ja tarneviisi ning tellimuse tingimusi. Valandi tegemisel kasutage oma komplekti juhendit. Toote-, tarne- või tagastusküsimused saatke aadressile info@memorycasting.lt."
+      },
+      "reason": "Remove global pending launch statement, preserve actual terms-by-order."
+    },
+    {
+      "id": "54a331d4-4458-4ffa-805b-3de3e53c990c",
+      "slug": "et/cart",
+      "index": 0,
+      "beforeSha256": "b567e1a8c7bdd6a7273ebe7bf75071958ba1712fa1eb08d0ff643743df565568",
+      "block": {
+        "type": "paragraph",
+        "text": "Eestisse tarnitavad ostud pole praegu avatud. Kavandatud tellimuse asjus võtke Memocastinguga ühendust aadressil info@memorycasting.lt. Pood teenindab tegelikke tellimusi Leedus; eestikeelse versiooni kuvamine ei kinnita tarnevõimalust Eestisse."
+      },
+      "reason": "Foreign cart remains closed/contact only; do not call live LT system a sandbox."
+    },
+    {
+      "id": "42d32782-0cda-405d-90c3-dbcbfc52f927",
+      "slug": "et/gidai/liejinio-dazymas-ir-prieziura",
+      "index": 8,
+      "beforeSha256": "7c8af305fa665e08f415408a285e83abdc2bf17b1775acab3986d4a0821aa12f",
+      "block": {
+        "type": "paragraph",
+        "text": "Valge värv on paari- ja perekomplektiga kaasas. Värvige kuivanud valandit komplekti juhendi ning värvipakendi juhiste järgi. Ärge eeldage, et komplektis on ka krunt, lakk või teise tootja juhendis nõutud vahendid."
+      },
+      "reason": "Owner instructions now available; no invented paint volume or accessories."
+    },
+    {
+      "id": "171a0115-be3c-4fbe-bcd5-b1916f22d8e3",
+      "slug": "et/gidai/dziovinimas-ir-isemimas",
+      "index": 0,
+      "beforeSha256": "461b3704a859129fdcb3624d570bdb3eb899f63b0cef8da01701f6d95a07d996",
+      "block": {
+        "type": "paragraph",
+        "text": "Valandi eemaldamine, edasine kuivamine ja värvimiseks ettevalmistus on eri etapid. Ühe etapi aeg ei määra automaatselt ülejäänuid. Memocastingu paari- ja perekomplektil on oma juhendid; kasutage oma komplektiga kaasas olevat dokumenti ega võtke vahekordi üle teiselt tootelt."
+      },
+      "reason": "Remove assertion no own timings/instructions exist; no new translated recipe."
+    },
+    {
+      "id": "611cd27a-9758-4ce7-a148-bebd73b30a4f",
+      "slug": "et/pagalba",
+      "index": 11,
+      "beforeSha256": "2a3615a44153f5f199d1d80a18d5b9ae43b987baa3d8dc6b303f40b242c61bfe",
+      "block": {
+        "type": "paragraph",
+        "text": "See kirjeldus ei otsusta, kas valandit saab parandada, uuesti teha või edasi kasutada. Enne muu puhastamis- või parandamisvõtte kasutamist säilitage algse seisundi kirjeldus ja selgitage õige tegevus. Valmistamise, võimaliku tootepuuduse või taganemise asjus kirjutage aadressile info@memorycasting.lt ja nimetage võimaluse korral tellimuse number."
+      },
+      "reason": "Use actual contact; no local no-mail assertion."
+    },
+    {
+      "id": "9dbe3a49-88ea-45c2-b2d3-8c140f53dc19",
+      "slug": "et/products/kudikio-pedutes",
+      "index": 0,
+      "beforeSha256": "f702eed28c6e49e4cd290b5846da3350bec9fe9ea99118c3fd1ffcde6a65deab",
+      "block": {
+        "type": "paragraph",
+        "text": "Imiku jalalabade valamise komplekt on praegu välja müüdud. Lehel säilib toote teave, kuid Eestisse tarnitavat ostu siin ei pakuta. Foto näitab valandite näiteid; see ei kinnita materjalide sobivust kindlale vanusele ega asenda juhendit."
+      },
+      "reason": "Owner explicitly marks baby feet sold out; no suitability claims."
+    },
+    {
+      "id": "9dbe3a49-88ea-45c2-b2d3-8c140f53dc19",
+      "slug": "et/products/kudikio-pedutes",
+      "index": 8,
+      "beforeSha256": "99cd82f5bd8157c97e96e0f32b60d6fab989ad651d419ff9043b3e8d4f2dd218",
+      "block": {
+        "type": "paragraph",
+        "text": "Selle toote kohta küsides kirjutage aadressile info@memorycasting.lt ning nimetage olemasolev märgistus või juhend. Küsige võimaliku uuesti saadavuse ja konkreetse komplekti dokumentide kohta. Toode on praegu välja müüdud ning sellel lehel pole aktiivset ostupakkumist Eestisse."
+      },
+      "reason": "Real contact and sold-out state; closed foreign buying preserved."
+    }
+  ],
+  "metadata": [
+    {
+      "id": "8125d493-11eb-4d09-840b-999de78a5a9d",
+      "slug": "pl/products/liejimo-rinkinys-porai",
+      "field": "description",
+      "beforeSha256": "5cd372f7cf355e785672ac9bd2e0f5c55a67df10bf29962ff18e8af66e72a77b",
+      "value": "Zawartość zestawu dla pary z białą farbą. Cena na Litwie: 32 €. W sprawie zakupu i dostawy do Polski skontaktuj się z Memocasting.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "35c8cc82-b4ef-4f45-a771-9eab9d3a0ba2",
+      "slug": "pl/apie-projekta",
+      "field": "description",
+      "beforeSha256": "65146740e00a99aad5446c2213a74842c9932d4c35d240204eee5218abfb39a8",
+      "value": "Zestawy do odlewu dłoni i odpowiedzialna za ofertę firma MB Memocasting. Dane firmy, kontakt i zakres sprzedaży.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "25521593-9209-4bcb-9afa-03af9f0548e6",
+      "slug": "pl/kontaktai",
+      "field": "description",
+      "beforeSha256": "1cf67303db7e5a79fdb659f1925a86ea49d2193ecb6afe0152b7bbe0b0807f98",
+      "value": "Kontakt z MB Memocasting w sprawie zestawu, instrukcji lub istniejącego zamówienia. Pytania o zakup z dostawą do Polski.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "0fca5538-d1eb-45bb-a716-1af57a44f88c",
+      "slug": "pl/pristatymas",
+      "field": "title",
+      "beforeSha256": "c6661e6de080fe037c40ab001393756ecfaf4eb266a0827ff8459c276660f899",
+      "value": "Dostawa: dane paczek i dostępność wysyłki",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "5db22749-6b24-4d86-99b4-abdc4fd523bd",
+      "slug": "pl/grazinimas",
+      "field": "description",
+      "beforeSha256": "22066ba620e49345d541e789324a65262b23cfaa43ce16909373974d31dc7761",
+      "value": "Jak skontaktować się z Memocasting w sprawie odstąpienia, zwrotu lub możliwej wady produktu. Dane potrzebne do rozpatrzenia sprawy.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "25f9e4f2-37ba-4f9d-84c6-3f25ce0658b8",
+      "slug": "pl/privatumas",
+      "field": "title",
+      "beforeSha256": "86118080276869da4dea94a064f09f444fdf39fbe65355951d754f5c1719f6e4",
+      "value": "Prywatność i dane osobowe",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "25f9e4f2-37ba-4f9d-84c6-3f25ce0658b8",
+      "slug": "pl/privatumas",
+      "field": "description",
+      "beforeSha256": "11e2048e07b7b11326942f600fbf97728a2dfcc142edf417bd2aaf9bd1d8793a",
+      "value": "Dane kontaktowe administratora oraz informacje o danych używanych w koszyku, zamówieniu i zapytaniu. Kontakt w sprawach prywatności.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "13ce0752-adf0-427e-a7c7-6042bd0b0bc9",
+      "slug": "pl/naudojimo-salygos",
+      "field": "title",
+      "beforeSha256": "20fe33adb6eb8cdbefe685b8992e59a86976c37ed815fe4d11512e8e792d87b6",
+      "value": "Warunki zakupu i zakres sprzedaży",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "13ce0752-adf0-427e-a7c7-6042bd0b0bc9",
+      "slug": "pl/naudojimo-salygos",
+      "field": "description",
+      "beforeSha256": "48de428d0308ee2b257816d32bf28d67f8c2386645f17e491f1f446cfb26b6f3",
+      "value": "Sprzedawca, ceny bazowe na Litwie, dostawa i znaczenie potwierdzeń zamówienia. Sprzedaż do Polski nie jest obecnie uruchomiona.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "fa5b1b64-99c6-41d3-b1f4-f76b7cae7fdf",
+      "slug": "pl/cart",
+      "field": "description",
+      "beforeSha256": "61a469e85964bab5d74234dd2ab06b634d958106bd4acf9c4b29cb75408e741c",
+      "value": "Sprzedaż z dostawą do Polski nie jest obecnie uruchomiona. W sprawie planowanego zamówienia skontaktuj się z Memocasting.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "a7b973e5-0590-4527-8d15-75668fbeb251",
+      "slug": "pl/pages/instrukcija",
+      "field": "description",
+      "beforeSha256": "537a8b0b9c9cb56d6e28542def4589c071647be8b0c22ae846987dac06326064",
+      "value": "Wybierz instrukcję swojego zestawu i przygotuj potrzebne przybory. Źródłowe instrukcje Memocasting dla pary i rodziny są w języku litewskim.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "64467f7d-5053-449f-9872-32c4d694e21c",
+      "slug": "lv/products/liejimo-rinkinys-porai",
+      "field": "description",
+      "beforeSha256": "0eec8d939dd82ff2408931cdf56df5365e85b67364a80ebfb6dc40217981e069",
+      "value": "Pāra komplektācija ar balto krāsu. Cena Lietuvā: 32 €. Par pirkumu un piegādi uz Latviju sazinieties ar Memocasting.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "1a94e75f-20af-4fb5-82c2-0fca60327e64",
+      "slug": "lv/apie-projekta",
+      "field": "description",
+      "beforeSha256": "40af0fe38c5001708715a68d47b1ad1181848260dadc0f0579f9b5178bc79a54",
+      "value": "Roku atlējuma komplekti un par piedāvājumu atbildīgais uzņēmums MB Memocasting. Uzņēmuma dati, kontakti un pārdošanas nosacījumi.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "227726d9-6d01-473f-9278-fbb153403d51",
+      "slug": "lv/kontaktai",
+      "field": "description",
+      "beforeSha256": "1809e259379ad3f6b049ff9284a67afd33d15e7340b87a643e934250bd044a49",
+      "value": "Saziņa ar MB Memocasting par komplektu, instrukciju vai esošu pasūtījumu. Jautājumi par pirkumu ar piegādi uz Latviju.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "b5030b0f-7a96-4ed7-98fa-5c763a827d0b",
+      "slug": "lv/pristatymas",
+      "field": "title",
+      "beforeSha256": "df1f99164e3e521fa9b78b8cf10e325d49dbad94e4b5469e070931de5dcb9d85",
+      "value": "Piegāde: pakas dati un sūtīšanas iespējas",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "542dc3ed-0bc5-43b9-86fc-8eb1085ca196",
+      "slug": "lv/grazinimas",
+      "field": "description",
+      "beforeSha256": "511a4d1697d67b010b5c5d0875fdc0d19e7cf9ca936c9369ab77d1e2549cbd1b",
+      "value": "Kā sazināties ar Memocasting par atteikumu, atgriešanu vai iespējamu preces trūkumu. Informācija jautājuma izskatīšanai.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "fe610ab5-f573-4216-8c7a-25c40d315cf6",
+      "slug": "lv/privatumas",
+      "field": "title",
+      "beforeSha256": "01d5e6cff270038878d3002123ec7576efa3ff5e1bc228d2086a86ccfadf12d6",
+      "value": "Privātums un personas dati",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "fe610ab5-f573-4216-8c7a-25c40d315cf6",
+      "slug": "lv/privatumas",
+      "field": "description",
+      "beforeSha256": "cdb59274a287acd26587075383ea2a35eca61d676e7b4facbd7b0387e225c35a",
+      "value": "Datu pārziņa kontakti un informācija par grozā, pasūtījumā un jautājumā izmantotajiem datiem. Saziņa par privātumu.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "a559b9ec-bf4b-4b1c-bf5a-c8a1661f545a",
+      "slug": "lv/naudojimo-salygos",
+      "field": "title",
+      "beforeSha256": "42949ea69e753d01f69de5e33b80dd82b3de526af602a486e85fb7b951d5d16a",
+      "value": "Pirkuma nosacījumi un pārdošanas pieejamība",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "a559b9ec-bf4b-4b1c-bf5a-c8a1661f545a",
+      "slug": "lv/naudojimo-salygos",
+      "field": "description",
+      "beforeSha256": "4c71745bb9af4e6c5e2145cce46f99a868c1cb2efcee1250cdd278ab8caa1006",
+      "value": "Pārdevējs, bāzes cenas Lietuvā, piegāde un pasūtījuma apstiprinājumu nozīme. Pārdošana uz Latviju pašlaik nav aktivizēta.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "65bca36b-7db5-4c22-a9f0-0367e2de6d1e",
+      "slug": "lv/cart",
+      "field": "description",
+      "beforeSha256": "935c4517515b28c7379411e95446b7c2b79a2cd814a369dedb6328fb15f113e8",
+      "value": "Pārdošana ar piegādi uz Latviju pašlaik nav aktivizēta. Par plānoto pasūtījumu sazinieties ar Memocasting.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "f2069d99-2460-42e8-be76-402afb391958",
+      "slug": "lv/pages/instrukcija",
+      "field": "description",
+      "beforeSha256": "fbdd1154735aaf1427c04c0589582032911c9a784aef3cb0435767967750677a",
+      "value": "Izvēlieties sava komplekta instrukciju un sagatavojiet piederumus. Memocasting pāra un ģimenes komplektu avota instrukcijas ir lietuviešu valodā.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "7c5f2df9-74f8-400d-8b96-23385f513118",
+      "slug": "et/products/liejimo-rinkinys-porai",
+      "field": "description",
+      "beforeSha256": "dacc8a62d5759f32b8226a1c8bf5129370ece7267e6503b3ba3ffcfe682160db",
+      "value": "Paarikomplekti sisu koos valge värviga. Hind Leedus: 32 €. Eestisse ostmise ja tarne asjus võtke Memocastinguga ühendust.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "9ae3b742-b399-4753-bd9b-702cfbfc29f8",
+      "slug": "et/apie-projekta",
+      "field": "description",
+      "beforeSha256": "f4f300f1d1109cfc98a4e02fe180e0f01591108afe2094d2d9bc8d22860506bc",
+      "value": "Kätevalukomplektid ja pakkumise eest vastutav MB Memocasting. Ettevõtte andmed, kontakt ning müügi ulatus.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "8aa80657-7be5-4045-b8b9-1675231ebaa3",
+      "slug": "et/kontaktai",
+      "field": "description",
+      "beforeSha256": "310bd7f6783d11fe7a547309bbbf87e614c4bad0d0b728b7604433ce7b520a38",
+      "value": "MB Memocastingu kontakt komplekti, juhendi või olemasoleva tellimuse asjus. Küsimused Eestisse tarnitava ostu kohta.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "2124e4ca-ca32-4290-aa13-78c86515a481",
+      "slug": "et/pristatymas",
+      "field": "title",
+      "beforeSha256": "4b1291421d2a3401fd1a170a25f46cf69bd4ffa429f67db8127d9ffc864ace03",
+      "value": "Tarne: pakiandmed ja saatmisvõimalused",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "3ce6ecca-a17f-43ea-88ae-cb3bed8cecfc",
+      "slug": "et/grazinimas",
+      "field": "description",
+      "beforeSha256": "103969399e20c01f2a83bef3de622d27544bdfac341487fbdf28bafbf1f146ee",
+      "value": "Kuidas võtta Memocastinguga ühendust taganemise, tagastuse või võimaliku tootepuuduse asjus. Asja käsitlemiseks vajalikud andmed.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "f7c627f7-f51e-4037-b6d1-30886a5a1e6e",
+      "slug": "et/privatumas",
+      "field": "title",
+      "beforeSha256": "6f554124d3321530749222d944b5eae23fbf7b719436251cb78b71a88cdb80b0",
+      "value": "Privaatsus ja isikuandmed",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "f7c627f7-f51e-4037-b6d1-30886a5a1e6e",
+      "slug": "et/privatumas",
+      "field": "description",
+      "beforeSha256": "29165fc2cc41efbbb89c848258e16d0f09e48b9c1501e2311b8682f0895fd083",
+      "value": "Vastutava töötleja kontakt ja teave ostukorvis, tellimuses ning päringus kasutatavate andmete kohta. Privaatsusküsimuste kontakt.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "06608f8a-8bd8-4df1-82ae-1f0ae0526aaa",
+      "slug": "et/naudojimo-salygos",
+      "field": "title",
+      "beforeSha256": "99e6778ba855f5f96b6366cef205923d1838ec374339e845802b465b47dde753",
+      "value": "Ostutingimused ja müügi ulatus",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "06608f8a-8bd8-4df1-82ae-1f0ae0526aaa",
+      "slug": "et/naudojimo-salygos",
+      "field": "description",
+      "beforeSha256": "712194039f02e0341b36cff3a9e0887d99c5ea7a7ba8b377b49a7cf60518c0ee",
+      "value": "Müüja, Leedu baashinnad, tarne ja tellimuskinnituste tähendus. Müük Eestisse pole praegu avatud.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "54a331d4-4458-4ffa-805b-3de3e53c990c",
+      "slug": "et/cart",
+      "field": "description",
+      "beforeSha256": "fc70b6b87ae1bf752f9fcbc8e9169588e140154547c2329206bb779582708e3c",
+      "value": "Müük koos tarnega Eestisse pole praegu avatud. Kavandatud tellimuse asjus võtke Memocastinguga ühendust.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "7cc56697-16ea-42b1-8a87-d6808da76873",
+      "slug": "et/pages/instrukcija",
+      "field": "description",
+      "beforeSha256": "5fc7afff085821a9966d9a841641ccf00df12f03364d9fca8e04358324c6265f",
+      "value": "Valige oma komplekti juhend ja valmistage vahendid ette. Memocastingu paari- ja perekomplekti algsed juhendid on leedu keeles.",
+      "reason": "Metadata must agree with current visible text; no localtest/optional unavailable base claim."
+    },
+    {
+      "id": "8125d493-11eb-4d09-840b-999de78a5a9d",
+      "slug": "pl/products/liejimo-rinkinys-porai",
+      "field": "intent",
+      "beforeSha256": "5cd372f7cf355e785672ac9bd2e0f5c55a67df10bf29962ff18e8af66e72a77b",
+      "value": "Zawartość zestawu dla pary z białą farbą. Cena na Litwie: 32 €. W sprawie zakupu i dostawy do Polski skontaktuj się z Memocasting.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "35c8cc82-b4ef-4f45-a771-9eab9d3a0ba2",
+      "slug": "pl/apie-projekta",
+      "field": "intent",
+      "beforeSha256": "65146740e00a99aad5446c2213a74842c9932d4c35d240204eee5218abfb39a8",
+      "value": "Zestawy do odlewu dłoni i odpowiedzialna za ofertę firma MB Memocasting. Dane firmy, kontakt i zakres sprzedaży.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "25521593-9209-4bcb-9afa-03af9f0548e6",
+      "slug": "pl/kontaktai",
+      "field": "intent",
+      "beforeSha256": "1cf67303db7e5a79fdb659f1925a86ea49d2193ecb6afe0152b7bbe0b0807f98",
+      "value": "Kontakt z MB Memocasting w sprawie zestawu, instrukcji lub istniejącego zamówienia. Pytania o zakup z dostawą do Polski.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "0fca5538-d1eb-45bb-a716-1af57a44f88c",
+      "slug": "pl/pristatymas",
+      "field": "intent",
+      "beforeSha256": "f99cb66ec6c59acb6aef4f8cdb4c715127881b3176631cc703c00e7bb18b311c",
+      "value": "Bazowe wagi i wymiary przesyłek. Rzeczywiste stawki, terminy i sprzedaż w Polsce pozostają do zatwierdzenia.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "5db22749-6b24-4d86-99b4-abdc4fd523bd",
+      "slug": "pl/grazinimas",
+      "field": "intent",
+      "beforeSha256": "22066ba620e49345d541e789324a65262b23cfaa43ce16909373974d31dc7761",
+      "value": "Jak skontaktować się z Memocasting w sprawie odstąpienia, zwrotu lub możliwej wady produktu. Dane potrzebne do rozpatrzenia sprawy.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "25f9e4f2-37ba-4f9d-84c6-3f25ce0658b8",
+      "slug": "pl/privatumas",
+      "field": "intent",
+      "beforeSha256": "11e2048e07b7b11326942f600fbf97728a2dfcc142edf417bd2aaf9bd1d8793a",
+      "value": "Dane kontaktowe administratora oraz informacje o danych używanych w koszyku, zamówieniu i zapytaniu. Kontakt w sprawach prywatności.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "13ce0752-adf0-427e-a7c7-6042bd0b0bc9",
+      "slug": "pl/naudojimo-salygos",
+      "field": "intent",
+      "beforeSha256": "48de428d0308ee2b257816d32bf28d67f8c2386645f17e491f1f446cfb26b6f3",
+      "value": "Sprzedawca, ceny bazowe na Litwie, dostawa i znaczenie potwierdzeń zamówienia. Sprzedaż do Polski nie jest obecnie uruchomiona.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "fa5b1b64-99c6-41d3-b1f4-f76b7cae7fdf",
+      "slug": "pl/cart",
+      "field": "intent",
+      "beforeSha256": "61a469e85964bab5d74234dd2ab06b634d958106bd4acf9c4b29cb75408e741c",
+      "value": "Sprzedaż z dostawą do Polski nie jest obecnie uruchomiona. W sprawie planowanego zamówienia skontaktuj się z Memocasting.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "a7b973e5-0590-4527-8d15-75668fbeb251",
+      "slug": "pl/pages/instrukcija",
+      "field": "intent",
+      "beforeSha256": "537a8b0b9c9cb56d6e28542def4589c071647be8b0c22ae846987dac06326064",
+      "value": "Wybierz instrukcję swojego zestawu i przygotuj potrzebne przybory. Źródłowe instrukcje Memocasting dla pary i rodziny są w języku litewskim.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "64467f7d-5053-449f-9872-32c4d694e21c",
+      "slug": "lv/products/liejimo-rinkinys-porai",
+      "field": "intent",
+      "beforeSha256": "0eec8d939dd82ff2408931cdf56df5365e85b67364a80ebfb6dc40217981e069",
+      "value": "Pāra komplektācija ar balto krāsu. Cena Lietuvā: 32 €. Par pirkumu un piegādi uz Latviju sazinieties ar Memocasting.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "1a94e75f-20af-4fb5-82c2-0fca60327e64",
+      "slug": "lv/apie-projekta",
+      "field": "intent",
+      "beforeSha256": "40af0fe38c5001708715a68d47b1ad1181848260dadc0f0579f9b5178bc79a54",
+      "value": "Roku atlējuma komplekti un par piedāvājumu atbildīgais uzņēmums MB Memocasting. Uzņēmuma dati, kontakti un pārdošanas nosacījumi.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "227726d9-6d01-473f-9278-fbb153403d51",
+      "slug": "lv/kontaktai",
+      "field": "intent",
+      "beforeSha256": "1809e259379ad3f6b049ff9284a67afd33d15e7340b87a643e934250bd044a49",
+      "value": "Saziņa ar MB Memocasting par komplektu, instrukciju vai esošu pasūtījumu. Jautājumi par pirkumu ar piegādi uz Latviju.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "b5030b0f-7a96-4ed7-98fa-5c763a827d0b",
+      "slug": "lv/pristatymas",
+      "field": "intent",
+      "beforeSha256": "362952c9d3a283bd57607bc09ca985aeedcfc526391c11fe3acd978f45c0dca7",
+      "value": "Bāzes svars un iepakojuma izmēri. Faktiskās Latvijas cenas, termiņi un piegāde vēl jāapstiprina.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "542dc3ed-0bc5-43b9-86fc-8eb1085ca196",
+      "slug": "lv/grazinimas",
+      "field": "intent",
+      "beforeSha256": "511a4d1697d67b010b5c5d0875fdc0d19e7cf9ca936c9369ab77d1e2549cbd1b",
+      "value": "Kā sazināties ar Memocasting par atteikumu, atgriešanu vai iespējamu preces trūkumu. Informācija jautājuma izskatīšanai.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "fe610ab5-f573-4216-8c7a-25c40d315cf6",
+      "slug": "lv/privatumas",
+      "field": "intent",
+      "beforeSha256": "cdb59274a287acd26587075383ea2a35eca61d676e7b4facbd7b0387e225c35a",
+      "value": "Datu pārziņa kontakti un informācija par grozā, pasūtījumā un jautājumā izmantotajiem datiem. Saziņa par privātumu.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "a559b9ec-bf4b-4b1c-bf5a-c8a1661f545a",
+      "slug": "lv/naudojimo-salygos",
+      "field": "intent",
+      "beforeSha256": "4c71745bb9af4e6c5e2145cce46f99a868c1cb2efcee1250cdd278ab8caa1006",
+      "value": "Pārdevējs, bāzes cenas Lietuvā, piegāde un pasūtījuma apstiprinājumu nozīme. Pārdošana uz Latviju pašlaik nav aktivizēta.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "65bca36b-7db5-4c22-a9f0-0367e2de6d1e",
+      "slug": "lv/cart",
+      "field": "intent",
+      "beforeSha256": "935c4517515b28c7379411e95446b7c2b79a2cd814a369dedb6328fb15f113e8",
+      "value": "Pārdošana ar piegādi uz Latviju pašlaik nav aktivizēta. Par plānoto pasūtījumu sazinieties ar Memocasting.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "f2069d99-2460-42e8-be76-402afb391958",
+      "slug": "lv/pages/instrukcija",
+      "field": "intent",
+      "beforeSha256": "fbdd1154735aaf1427c04c0589582032911c9a784aef3cb0435767967750677a",
+      "value": "Izvēlieties sava komplekta instrukciju un sagatavojiet piederumus. Memocasting pāra un ģimenes komplektu avota instrukcijas ir lietuviešu valodā.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "7c5f2df9-74f8-400d-8b96-23385f513118",
+      "slug": "et/products/liejimo-rinkinys-porai",
+      "field": "intent",
+      "beforeSha256": "dacc8a62d5759f32b8226a1c8bf5129370ece7267e6503b3ba3ffcfe682160db",
+      "value": "Paarikomplekti sisu koos valge värviga. Hind Leedus: 32 €. Eestisse ostmise ja tarne asjus võtke Memocastinguga ühendust.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "9ae3b742-b399-4753-bd9b-702cfbfc29f8",
+      "slug": "et/apie-projekta",
+      "field": "intent",
+      "beforeSha256": "f4f300f1d1109cfc98a4e02fe180e0f01591108afe2094d2d9bc8d22860506bc",
+      "value": "Kätevalukomplektid ja pakkumise eest vastutav MB Memocasting. Ettevõtte andmed, kontakt ning müügi ulatus.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "8aa80657-7be5-4045-b8b9-1675231ebaa3",
+      "slug": "et/kontaktai",
+      "field": "intent",
+      "beforeSha256": "310bd7f6783d11fe7a547309bbbf87e614c4bad0d0b728b7604433ce7b520a38",
+      "value": "MB Memocastingu kontakt komplekti, juhendi või olemasoleva tellimuse asjus. Küsimused Eestisse tarnitava ostu kohta.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "2124e4ca-ca32-4290-aa13-78c86515a481",
+      "slug": "et/pristatymas",
+      "field": "intent",
+      "beforeSha256": "e2c67f9431a5345c1fc648318e6c0999b0fd0a183a2219f4f73deb2709b491d4",
+      "value": "Põhipakkide kaal ja mõõdud. Tegelikud Eesti hinnad, tähtajad ning tarne vajavad veel kinnitamist.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "3ce6ecca-a17f-43ea-88ae-cb3bed8cecfc",
+      "slug": "et/grazinimas",
+      "field": "intent",
+      "beforeSha256": "103969399e20c01f2a83bef3de622d27544bdfac341487fbdf28bafbf1f146ee",
+      "value": "Kuidas võtta Memocastinguga ühendust taganemise, tagastuse või võimaliku tootepuuduse asjus. Asja käsitlemiseks vajalikud andmed.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "f7c627f7-f51e-4037-b6d1-30886a5a1e6e",
+      "slug": "et/privatumas",
+      "field": "intent",
+      "beforeSha256": "29165fc2cc41efbbb89c848258e16d0f09e48b9c1501e2311b8682f0895fd083",
+      "value": "Vastutava töötleja kontakt ja teave ostukorvis, tellimuses ning päringus kasutatavate andmete kohta. Privaatsusküsimuste kontakt.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "06608f8a-8bd8-4df1-82ae-1f0ae0526aaa",
+      "slug": "et/naudojimo-salygos",
+      "field": "intent",
+      "beforeSha256": "712194039f02e0341b36cff3a9e0887d99c5ea7a7ba8b377b49a7cf60518c0ee",
+      "value": "Müüja, Leedu baashinnad, tarne ja tellimuskinnituste tähendus. Müük Eestisse pole praegu avatud.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "54a331d4-4458-4ffa-805b-3de3e53c990c",
+      "slug": "et/cart",
+      "field": "intent",
+      "beforeSha256": "fc70b6b87ae1bf752f9fcbc8e9169588e140154547c2329206bb779582708e3c",
+      "value": "Müük koos tarnega Eestisse pole praegu avatud. Kavandatud tellimuse asjus võtke Memocastinguga ühendust.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    },
+    {
+      "id": "7cc56697-16ea-42b1-8a87-d6808da76873",
+      "slug": "et/pages/instrukcija",
+      "field": "intent",
+      "beforeSha256": "5fc7afff085821a9966d9a841641ccf00df12f03364d9fca8e04358324c6265f",
+      "value": "Valige oma komplekti juhend ja valmistage vahendid ette. Memocastingu paari- ja perekomplekti algsed juhendid on leedu keeles.",
+      "reason": "Keep future writing context from reintroducing localtest/prelaunch fiction."
+    }
+  ],
+  "externalLinksRemoved": [
+    {
+      "slug": "pl/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "externalLinks": []
+    },
+    {
+      "slug": "pl/apie-projekta",
+      "externalLinks": []
+    },
+    {
+      "slug": "lv/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "externalLinks": []
+    },
+    {
+      "slug": "lv/apie-projekta",
+      "externalLinks": []
+    },
+    {
+      "slug": "et/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "externalLinks": []
+    },
+    {
+      "slug": "et/apie-projekta",
+      "externalLinks": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "0.10.2 resolves a real storefront integration defect: termsUrl follows selected country and admitted policyVersion, same-origin failures close acceptance, and a country change clears old consent. Browser SDK changed; native site revision/URL mapping and full content acceptance remain separate. Owner-supplied Siusk pigiau commercial reply read; IT access/safety questions still pending.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "tmp/verify-102.log: 97 Node tests, native workerd/D1/R2/Queue, 20 migrations, dry-run 762.86 KiB gzip / 20 assets; no remote operations."
+    },
+    {
+      "command": "Actual IAB fixture country change",
+      "result": "PASS",
+      "evidence": "tmp/ui-review/terms-country-reset-320-102.png: PL selected, prior terms consent cleared and submit disabled at 320 px. Fixture fixed terms URL does not prove actual native site legal revision mapping."
+    },
+    {
+      "command": "Exact e6ced727 source archive / npm ci / full verify",
+      "result": "PASS",
+      "evidence": "tmp/source-restore-101/commerce-core/restore-verify.log: 96 Node/native/build PASS without ignored private runtime; GitHub exact e6ced727 preflight SUCCESS."
+    }
+  ],
+  "eventId": "56221a9b-36cc-44cf-bc32-4de0139701f8",
+  "sequence": 23,
+  "at": "2026-10-12T09:27:13.239Z"
+}

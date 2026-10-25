@@ -1,0 +1,23 @@
+{
+  "siteId": "memocasting",
+  "summary": "Prepare isolated production build profile instead of deploying the generic preview Worker without commerce and contact bindings; include reviewed forward-only content reschedule for the actual launch",
+  "category": "code",
+  "evidence": [
+    "Previous generated config used site-creator-vinext-starter with ASSETS only, no production commerce service or contact database",
+    "Actual production build profile emits memocasting-site with exact dedicated DB and MEMO_COMMERCE; rejects local preview overrides",
+    "114 public core tests PASS; actual build and pinned Wrangler4.92 dry-run PASS,1116assets/gzip1008.46KiB",
+    "Date-only native reschedule renewed36 exact revision approvals, preserved88 original pages and all content/media/links; release332c8186-8412-4cf1-b3c6-68dbbdde554a"
+  ],
+  "paths": [
+    "vite.config.ts",
+    "config/memocasting-worker.json",
+    "content-packages/memocasting/content-package.json",
+    "lib/generated/content-packages.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "rollback": "Restore prior source/profile and prior immutable content package through the common importer. DNS and database changes have their own exact snapshots; never reset customer data.",
+  "id": "upgrade-bd809574-da43-4f53-ad8a-9ec9efee5031",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "8daca284f38f0ffa31dbe72be2bbf7ac4821f6b5",
+  "createdAt": "2026-10-15T08:49:55.514Z"
+}

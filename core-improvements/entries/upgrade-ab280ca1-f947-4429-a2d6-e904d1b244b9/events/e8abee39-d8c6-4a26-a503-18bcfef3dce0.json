@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "PUBLIC559a18a4 compiled from exact CORE8dae SDK; main SMTP sender default preserved and both injection tests reconciled. Core211 and public177 tests pass; native workerd smoke and both deployment dry runs pass. Production activation not yet accepted.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "qa/lockers-20261022/public-final-tests-2.txt"
+    },
+    {
+      "command": "MEMO_DEPLOYMENT=production npm run build",
+      "result": "PASS",
+      "evidence": "qa/lockers-20261022/public-build.txt"
+    },
+    {
+      "command": "wrangler deploy --dry-run",
+      "result": "PASS",
+      "evidence": "qa/lockers-20261022/frontend-dry.txt"
+    }
+  ],
+  "eventId": "e8abee39-d8c6-4a26-a503-18bcfef3dce0",
+  "sequence": 2,
+  "at": "2026-10-22T09:45:06.004Z"
+}

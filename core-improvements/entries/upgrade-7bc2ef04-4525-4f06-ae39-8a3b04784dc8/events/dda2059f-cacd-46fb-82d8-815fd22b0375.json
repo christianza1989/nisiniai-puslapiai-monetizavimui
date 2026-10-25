@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Official read-only feed implementation;7semantic tests and actual native KV projection test pass. Pinned local workerd supports2026-10-13; actual production2026-10-20 remains hosted gate. Generated Env from config, dryrun3360gzip; no fake media/liveclaim.",
+  "checks": [
+    {
+      "command": "node --test social-core/test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "7tests/0fail for ownership/token refresh/revocation/bounds/proxy/media/Range."
+    },
+    {
+      "command": "node social-core/scripts/worker-smoke.mjs",
+      "result": "PASS",
+      "evidence": "qa/instagram-native-worker-baseline-20261020.private.log; exact pinned baseline explicitly2026-10-13."
+    },
+    {
+      "command": "wrangler deploy --dry-run --config sites/memocasting/instagram/wrangler.jsonc",
+      "result": "PASS",
+      "evidence": "qa/instagram-worker-dryrun-final-20261020.private.log;10.31KiB/3.36gzip;EU namespace actual842d4dbb."
+    }
+  ],
+  "eventId": "dda2059f-cacd-46fb-82d8-815fd22b0375",
+  "sequence": 2,
+  "at": "2026-10-20T05:45:03.166Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "observedOn": "2026-10-12",
+  "source": "https://memorycasting.lt/",
+  "ownership": "confirmed-by-owner-in-conversation",
+  "runtimeStatus": "planned-not-deployed",
+  "gscCounts": null,
+  "shopPaths": [
+    {"path":"/collections/all","action":"map-to-catalog"},
+    {"path":"/cart","action":"restore-functional-cart"},
+    {"path":"/products/liejimo-rinkinys-porai","action":"preserve-canonical"},
+    {"path":"/products/seimos-rinkinys-1","action":"preserve-canonical-pending-export"},
+    {"path":"/products/kudikio-pedutes","action":"pending-business-truth"},
+    {"path":"/products/kudiko-ispaudu-rinkinys-su-remeliu","action":"pending-business-truth"},
+    {"path":"/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui","action":"pending-business-truth"},
+    {"path":"/products/alginato-papildymas-1100g-keturiu-ranku-rinkiniui","action":"pending-business-truth"},
+    {"path":"/products/isdziovintas-uosinis-padeklas","action":"pending-business-truth"},
+    {"path":"/collections/papildymai","action":"pending-business-truth"},
+    {"path":"/products/seimos-rinkinys","action":"pending-business-truth-distinct-old-product"},
+    {"path":"/pages/instrukcija","action":"preserve-canonical"},
+    {"path":"/pages/d-u-k","action":"map-to-equivalent-help"},
+    {"path":"/pages/prekiu-pristatymo-salygos-ir-grazinimo-taisykles","action":"map-to-equivalent-policy"},
+    {"path":"/pages/privatumo-politika","action":"map-to-equivalent-policy"},
+    {"path":"/pages/paslaugu-teikimo-salygos","action":"map-to-equivalent-policy"}
+  ],
+  "shopFragments": ["/#reviews"]
+}

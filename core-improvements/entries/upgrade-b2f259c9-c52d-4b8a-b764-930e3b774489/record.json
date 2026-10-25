@@ -1,0 +1,26 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Implement approved inner-page brand system, native catalogue comparison and both product pages. Repair observed mobile273px header, serif/cream brand mismatch and price duplication while preserving exact public content, schema and commerce eligibility.",
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "components/niche/memocasting-site.tsx",
+    "components/niche/memocasting-site.module.css",
+    "components/niche/memocasting-commerce.tsx",
+    "components/niche/memocasting-product-gallery.tsx",
+    "components/niche/memocasting-catalogue.tsx",
+    "lib/memocasting-storefront.mjs",
+    "tests/memocasting-storefront.test.mjs"
+  ],
+  "evidence": [
+    "Owner2026-10-13 implementation request; OTHER_PAGES_PLAN_2026_10_13.md",
+    "qa/other-pages-browser.private.json:320px contact header273px, old Memo Newsreader, product gated/retry state"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert own scoped UI commits; preserve official package/commerce backend/provider configuration/private data.",
+  "id": "upgrade-b2f259c9-c52d-4b8a-b764-930e3b774489",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "59bd8758701ce1eb78fe8d24095fe28d6e3da459",
+  "createdAt": "2026-10-13T18:43:36.666Z"
+}

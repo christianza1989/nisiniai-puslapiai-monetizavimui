@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "title": "Prekybos administravimo dizainas",
+  "extensions": {
+    "shadows": [],
+    "motion": [
+      {
+        "name": "control-state",
+        "value": "background-color 160ms ease",
+        "purpose": "Valdiklių būsenų pakeitimas; reduced-motion išjungiamas."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "760px"
+      }
+    ]
+  },
+  "components": [],
+  "narrative": {
+    "northStar": "Darbo registras",
+    "overview": "Serverio įrašai, aiškios būsenos, patvarūs veiksmai. Bendras operatoriaus ekranas; viešos parduotuvės dizainas atskiras.",
+    "keyCharacteristics": [
+      "Pastovi navigacija",
+      "Lentelės ir įrašo detalė",
+      "Lietuviški valdikliai"
+    ],
+    "rules": [
+      {
+        "name": "Faktinė būsena",
+        "body": "Ekranas rodo API rezultatą; neišgalvoja integracijos ar apskaitos veikimo.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Išlaikyti matomą fokusą ir telefono išdėstymą."
+    ],
+    "donts": [
+      "Testinių įrašų nepristatyti kaip tikrų pardavimų."
+    ]
+  },
+  "generatedAt": "2026-10-11T21:46:21.837Z"
+}

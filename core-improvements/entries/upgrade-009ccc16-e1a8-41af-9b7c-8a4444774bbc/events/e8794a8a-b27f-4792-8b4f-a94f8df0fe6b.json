@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Owner-selected native gallery implemented; production build and scoped browser review completed. Hosted activation remains separate.",
+  "checks": [
+    {
+      "command": "npm run test:core; npx tsc --noEmit; scoped eslint; MEMO_DEPLOYMENT=production npm run build",
+      "result": "PASS",
+      "evidence": "118 tests, TS/eslint and final build completed successfully; gallery image containment bug repaired before acceptance."
+    },
+    {
+      "command": "Chrome local gallery 1280/390/320px category/dialog/zoom/keyboard/touch review",
+      "result": "PASS",
+      "evidence": "Three-category 3/2/1 selection, focus return, swipe and no horizontal overflow. See DESIGN.md for exact limitations; no 200% font claim."
+    }
+  ],
+  "eventId": "e8794a8a-b27f-4792-8b4f-a94f8df0fe6b",
+  "sequence": 2,
+  "at": "2026-10-15T11:50:17.571Z"
+}

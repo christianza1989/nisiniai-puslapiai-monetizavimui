@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "0.12 resolves the reproduced assembled-kit expiry and provenance defect through finished batches, FEFO allocation, inherited component quarantine/expiry, payment/packing/last-booking SQL guards, traced returns and conservative legacy adoption/reconciliation. Buyer UI adds empty-cart/same-origin catalogue and original delivery/expiry/payment/withdrawal states. Canonical source is locally verified; exact site SDK import/browser acceptance and actual provider/owner/production admission remain separate. No live financial, shipping, mail, grants or deployment actions.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "tmp/verify-012.log: 115 Node tests; native workerd/D1/R2/Queue with 21 migrations, actual finished-assembly expiry allocation and paid-stock-exception; dry-run 766.06 KiB gzip / 21 assets."
+    },
+    {
+      "command": "node --test test/finished-stock.test.mjs test/shipment-commands.test.mjs test/checkout-cart.test.mjs test/operations.test.mjs",
+      "result": "PASS",
+      "evidence": "32 affected scenarios: expiry/quarantine, FEFO, multi-SKU rollback, last-unit race, late payment generation, no double restock, original return lot, immutable CAS, conservative legacy adoption, private route grants and last booking mark race causing zero POST; buyer unit DOM is explicitly not native browser acceptance."
+    },
+    {
+      "command": "Actual Cua localhost 8799 operator forms and responsive observation",
+      "result": "PASS",
+      "evidence": "Preserved owned test-only DB. UI adopted inspected batch e8f57780-314c-4690-80b4-c44299ce08d4, quarantine free1/sellable0, checked release free1/sellable1 and immutable history; 320px scrollWidth305/no clipped controls. tmp/finished-stock-012.png and tmp/finished-stock-mobile-012.png. No real provider or customer data."
+    }
+  ],
+  "eventId": "027449a8-a931-4173-a57e-642273a7452c",
+  "sequence": 26,
+  "at": "2026-10-12T18:14:19.444Z"
+}

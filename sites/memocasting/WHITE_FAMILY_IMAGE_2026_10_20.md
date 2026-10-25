@@ -1,0 +1,23 @@
+# Balta šeimos rankų kompozicija
+
+Savininkas pateikė bronzinės rankų skulptūros referenciją ir paprašė baltos PNG versijos vietoje homepage šeimos iliustracijos. Parengta built-in ImageGen redagavimu; CLI ar mokamas išorinis API fallback nenaudotas. Tai generuota įkvėpimo iliustracija, ne klientų darbas ir ne rinkinio talpos įrodymas. Esama vieša iliustracijų žyma lieka.
+
+Galutinis master: `asset-kit-masters/family-hands-white-20261020-v2.png`,1122×1402, tikras RGBA PNG. Pirmas rezultatas ir vienas tikslinis kraštų valymo variantas išsaugoti generavimo saugykloje; projektas naudoja antrą. Originali savininko pateikta nuotrauka nepakeista. Galutinis master nukopijuotas į projektą, nepaliktas vien generavimo cache.
+
+Bendras `saveResponsiveAsset` importer priėmė PNG ir parengė1122/800/640/360px WebP variantus su alpha, be didinimo. Nauji `family-reference-white-v1-*` failai lieka atskiri nuo ankstesnių `family-alpha-v2-*`. Rendererio media prefix pakeitimas apima abu homepage šeimos iliustracijos panaudojimus; tekstai, alt vaidmenys, kainos ir native body admission nekeičiami. Kitų nuotraukų neperrašyti.
+
+Patikros planas: esama homepage manifest/hash/admission/encoded-alpha regresija; productionbuild; actual šeimos kortelė desktop/mobile; senoji meaning sekcija išjungta, karuselė tebėra po proceso. Retain actualbindings, native3367ef65,22galleryphotos/92dates ir visas commerce būsenas.
+
+## Pradinis built-in ImageGen promptas
+
+Use case: precise-object-edit + background-extraction. Edit target: the supplied bronze family hand-casting sculpture photograph. Create a premium photorealistic product cutout PNG for the Memocasting family-kit website card. Change the sculpture material/color to pure matte WHITE CAST PLASTER, with natural subtle warm-gray self-shadowing, crisp lifelike skin creases, fingernails, fine wrinkles and faithfully retained cast jewelry. Preserve the reference sculpture's exact distinctive hand arrangement, number of hands, relative sizes, upright silhouette and overlapping contacts; do not substitute the generic two adults holding a child's hand design. Preserve the complete wrist bases and all fingertips, all cut wrist bottoms physically resting on the same plane. Remove the entire blue/gray background and floor: actual transparent alpha around and between the sculpture, no baked white rectangle, checkerboard, drop shadow or scenery. Remove all lettering, signature and watermark. Neutral high-end diffuse studio light; accurate white plaster, no bronze, gold, skin color, glossy plastic or blown-out missing details. One sculpture only, front view matching the reference. Centered full object, modest even transparent margins, portrait 4:5 canvas compatible with a catalog cutout. Highest native quality/resolution available, PNG with real alpha. No text, no props, no extra fingers.
+
+## Galutinio tikslinio redagavimo promptas
+
+Precise final production cleanup of this white plaster hand-sculpture PNG cutout. Keep the sculpture, exact hand arrangement, rings, surface folds, lighting, full wrist bases, framing, proportions and resolution UNCHANGED. Fix only tiny colored red/yellow fringes and speckles along the transparent edges and in small gaps near the lower wrists. Every visible sculpture and edge pixel must be neutral white/gray plaster, no red/yellow/green or colored contamination at all. Smooth clean antialiased alpha contour preserving tiny finger and wrist detail. Genuine transparent background, including small holes between wrist bases. Do not add floor, shadow, white backdrop, checkerboard, text, watermark, extra fingers, or crop any part. This is an edge-cleanup edit, no new composition. Return final high-quality RGBA PNG.
+
+Galutinis baltas rezultatas vizualiai peržiūrėtas; pilnų pirštų, riešų, žiedų, spalvos, alpha ir kompozicijos invariants išsaugoti. Smulkus ne-neutralus antialiasing kai kuriose tarpinėse alpha ribose lieka; nėra teiginio apie kiekvieno pikselio absoliučiai pilką RGB. Tinkamumas vertinamas actual šviesiame svetainės paviršiuje.
+
+## Gyvas priėmimas
+
+Frontend559613fb-746f-4f9f-a815-fe6dc9ff582a įjungtas2026-10-20T08:51:03Z. PUBLIC77ec18c/PR31 šaka įkelta, main merge neatliktas. Visi4WebP GET200 ir tikslūsSHA256, encodedalpha išsaugotas. Esamos5homepage regresijos ir productionbuild PASS. Actual1280desktop ir390mobile: nauja skulptūra abiejųkortelių masteliu dera, aiškus alpha ant šviesaus paviršiaus, overflow nėra. Karuselė tebėra po procesu,24video, #akimirkos nerodoma. Native3367ef65 SHA5a0183d6,22galerijosnuotraukos/92datos, actualbindings ir observability nepakeisti. Rollback įee022a72 arba grąžinti senąmedia prefix; senieji failai liko. Privačios šeimos HTTP/screenshot patikros qa/memocasting-video-carousel-20261020/.

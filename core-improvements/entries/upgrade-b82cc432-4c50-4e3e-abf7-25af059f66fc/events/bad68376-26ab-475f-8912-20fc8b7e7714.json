@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Daily rejection reproduced before repair. Common daily scheduler/GUI/generator support implemented and native Memo daily2 policy applied;92conditional article rows,6private dates staggered10/16,88published records/release unchanged. Isolated actual browser reads daily2 correctly. Daily heartbeat active; failed create attempt missing destination corrected, no duplicate automation. Original Treg cap not recurring. No public articles claimed.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/content-workflow.test.mjs content-studio/test/generator-policy.test.mjs content-studio/test/editorial-skill.test.mjs",
+      "result": "PASS",
+      "evidence": "15tests, including day capacity across batches, forward-only fallback, missed wall time, DST and untouched monthly/weekly behavior."
+    },
+    {
+      "command": "calendar-daily.private.mjs and verify-map.private.mjs plus isolated CUA form read",
+      "result": "PASS",
+      "evidence": "Native policy daily2;92unique planned articles, max2/day;6dates15–17October10/16;88published records unchanged. UI shows Per dieną and2; temporary server stopped."
+    }
+  ],
+  "eventId": "bad68376-26ab-475f-8912-20fc8b7e7714",
+  "sequence": 2,
+  "at": "2026-10-14T05:45:01.565Z"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Maintained behavior documented; no provider or runtime mutation in this follow-up.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/checkout-cart.test.mjs",
+      "result": "PASS",
+      "evidence": "qa/memocasting-delivery-20261021/inline-cart-final.txt:20pass, original form and locked control regressions included."
+    }
+  ],
+  "eventId": "3a00493b-a82a-4f6e-b817-69247465fa1c",
+  "sequence": 2,
+  "at": "2026-10-21T06:08:51.194Z"
+}

@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Deployment preparation and guarded TEST opt-in verified;9CFpending DNS-only records mirror IV. No delegation/upload/provider activation. Canonical0.13 subtree exactbd67; actualStripe webhook waiting human2FA, production readiness not claimed. Active thread heartbeat continues after real progress.",
+  "checks": [
+    {
+      "command": "npm test --prefix commerce-core",
+      "result": "PASS",
+      "evidence": "qa/deploy-commerce-tests.private.txt:126Node"
+    },
+    {
+      "command": "node sites/memocasting/QA_STRIPE_TEST_GUARD.mjs; node sites/memocasting/QA_STRIPE_TEST_PRESERVATION.mjs",
+      "result": "PASS",
+      "evidence": "qa/deploy-preservation-final.private.txt; strictnegativecontext,preserveorder/policy/foreignfields,realisolatedSQLitebackup; injectionnotprovideracceptance"
+    },
+    {
+      "command": "npm run test:core; npx tsc --noEmit; scopedESLint; npm run build",
+      "result": "PASS",
+      "evidence": "qa/deploy-public-tests.private.txt:111; PUBLIC/output/deploy-{types,lint,build}.private.txt"
+    },
+    {
+      "command": "wrangler deploy --config dist/server/wrangler.json --name memocasting-site --dry-run",
+      "result": "PASS",
+      "evidence": "PUBLIC/output/deploy-dry-run.private.txt:639assets,2974.28KiB/794.70gzip,ASSETSonly; no upload"
+    },
+    {
+      "command": "ActualCloudflareAPIcompare IV9recordmirror and Chrome read-onlyzone; IABfooter",
+      "result": "PASS",
+      "evidence": "sessionAPI9/9type/name/content/priority DNS-only match,pending/noNSchange; qa/deploy-dns-before.private.json; PUBLIC/output/deploy-default-footer.png showsOFF"
+    }
+  ],
+  "eventId": "29447c81-3ebe-49b2-b2b5-38e09fa340bc",
+  "sequence": 2,
+  "at": "2026-10-13T22:13:07.473Z"
+}

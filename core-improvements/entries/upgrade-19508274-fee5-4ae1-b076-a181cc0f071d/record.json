@@ -1,0 +1,39 @@
+{
+  "siteId": "memocasting",
+  "summary": "Catalog lacks editable product content/media and configured option pricing; SKU-only cart normalization merges distinct choices and cannot preserve a mixed-color order. Add shared revisioned editor/configuration through server snapshots without duplicating base inventory.",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/PRODUCT_EDITOR_2026_10_21.md",
+    "commerce-core/src/catalog.mjs",
+    "commerce-core/src/validation.mjs"
+  ],
+  "paths": [
+    "commerce-core/src/catalog.mjs",
+    "commerce-core/src/product-config.mjs",
+    "commerce-core/src/catalog-media.mjs",
+    "commerce-core/src/validation.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/src/private-storage.mjs",
+    "commerce-core/migrations",
+    "commerce-core/public/catalog-ui.mjs",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/public/admin.css",
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/public/commerce-client.mjs",
+    "commerce-core/test",
+    "commerce-core/scripts",
+    "commerce-core/docs",
+    "commerce-core/PRODUCT.md",
+    "commerce-core/DESIGN.md",
+    "commerce-core/README.md",
+    "SKILLS/niche-business-tools/SKILL.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Scoped source revert; keep catalog history/media/draft data and original order snapshots, never restore an old production DB.",
+  "id": "upgrade-19508274-fee5-4ae1-b076-a181cc0f071d",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "131e95e768098402626d10741913006ce77fd07a",
+  "createdAt": "2026-10-21T09:25:04.458Z"
+}

@@ -1,0 +1,26 @@
+{
+  "siteId": "memocasting",
+  "summary": "Content-only consent erased all source attribution and checkout could not attach consented GA identity; add fresh v2 purpose, sanitized campaign/origin continuity and a bounded optional order hand-off that cannot block payment",
+  "category": "code",
+  "evidence": [
+    "docs/MEMO_ANALYTICS_CONSENT.md",
+    "tests/memocasting-analytics.test.mjs",
+    "tests/memocasting-attribution.test.mjs"
+  ],
+  "paths": [
+    "lib/memocasting-attribution.mjs",
+    "lib/memocasting-analytics.mjs",
+    "lib/memocasting-embedded-checkout.mjs",
+    "lib/memocasting-commerce-bridge.mjs",
+    "components/niche/memocasting-analytics-consent.tsx",
+    "docs/MEMO_ANALYTICS_CONSENT.md",
+    "tests/memocasting-analytics.test.mjs",
+    "tests/memocasting-attribution.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "rollback": "Scoped client source revert and disable optional analytics, preserve functional checkout, original orders, article dates and native media",
+  "id": "upgrade-0cf0233d-499e-4eda-83e8-ea02ff788036",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "a78b56ea1ecbfee8d053a0db914c416e18ea5d9a",
+  "createdAt": "2026-10-25T11:05:08.824Z"
+}

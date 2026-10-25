@@ -1,0 +1,25 @@
+{
+  "siteId": "memocasting",
+  "summary": "Install owner-rotated verified LIVE Stripe restricted key in existing private commerce connections while preserving closed shipping and document gates",
+  "category": "workflow",
+  "evidence": [
+    "Owner generated replacement in dedicated LIVE key dialog and confirmed completion. Exact existing key name retained; new key privately captured and distinct from exposed predecessor.",
+    "Actual canonical Stripe adapter verifyAccount passed for new production RAK; same account charges enabled. Previous exposed RAK independently rejected401. No payment/order/refund created.",
+    "Actual production Worker settings before write have no COMMERCE_CONNECTIONS; existing dedicated D1, EU R2, Access/runtime/grants/abuse secrets and automation0 retained.",
+    "Official Lietuvos pastas UI at https://www.post.lt/pasto-kodu-ir-adresu-paieska returned exactly one Pupines g10 Vilnius result, postalCode02206. Owner supplied apartment55; normalize known registered address for document contract, preserving separate dispatch02211 and all closed operational/document admissions.",
+    "Actual secret activation version4430a3ce-7a4d-4897-a068-0fa7ec596046 at2026-10-15T14:28:47.323665Z. Backend and canonical buyer bridge200 paymentConnectedtrue/paymentEnvironmentlive/paymentAccountVerifiedtrue; shipping/document/publicoffer gates remainclosed. Forged webhook400 stripe_signature_invalid, anonymousadmin403.",
+    "Actual D1 legal-address CAS uses primary verified postcode02206, preserves dispatch02211, markets/operational/document policy, all24hashes, zeroorders/documents and2products/2adjustments. Existing business/doc regressions3PASS and cloned policy-only preflightPASS; no production document issued."
+  ],
+  "paths": [
+    "sites/memocasting/DEPLOYMENT_2026_10_14.md",
+    "WORKSTREAMS.md",
+    "commerce-core/config/memocasting-business.json",
+    "sites/memocasting/BUSINESS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Read actual settings and DB first; remove only newly installed Stripe connection if required, never restore the exposed revoked key. Preserve all other secrets, owner Access, D1 data, R2 files and independent buyer gates.",
+  "id": "upgrade-6c7e4c5d-02f9-49da-9515-eea4d3db7858",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "5de0afef4d4c7ecf9a05a8063d2927178f24eebd",
+  "createdAt": "2026-10-15T14:28:04.667Z"
+}

@@ -1,0 +1,23 @@
+{
+  "summary": "Treat Stripe Checkout client_secret as opaque SDK data while validating the enclosing Session and preserving original idempotent recovery.",
+  "category": "code",
+  "evidence": [
+    "Actual LIVE unpaid owner Session returned428character secret including percent encoding; old backend returned502checkout_client_secret_invalid. No secret value recorded in Git.",
+    "Stripe23.0/API2026-09-30.endive declares client_secret string|null, not a documented prefix. New opaque-encoded regression originallyfailed;27focusedtestsPASS."
+  ],
+  "rollback": "Scoped revert reintroduces observed rejection; preserve original Session/idempotency key and never mint replacement payments, store credentials or alter paid truth.",
+  "paths": [
+    "commerce-core/src/stripe-adapter.mjs",
+    "commerce-core/public/commerce-client.mjs",
+    "commerce-core/test/embedded-checkout.test.mjs",
+    "commerce-core/test/worker-harness.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/docs/PRODUCTION_CONNECTION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "siteId": "memocasting",
+  "id": "upgrade-97d3ad64-e68c-4955-bece-1c93536ebe25",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "52fec3452935580420788f73f70161a518c59a35",
+  "createdAt": "2026-10-20T16:56:19.964Z"
+}

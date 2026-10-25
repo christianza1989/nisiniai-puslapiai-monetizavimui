@@ -1,0 +1,20 @@
+{
+  "evidence": [
+    "Original tsc failure preserved in operator run: unknown response.json and JS destructuring inference rejected current route.",
+    "Add context JSDoc, guarded service signature and validated updatedAt while retaining request/path/read-only behavior."
+  ],
+  "category": "code",
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Scoped revert of type annotations and updatedAt guard; existing API and private KV retained.",
+  "paths": [
+    "lib/memocasting-instagram-bridge.mjs",
+    "app/niche/memocasting/instagram/[...path]/route.ts",
+    "components/niche/memocasting-instagram-feed.tsx"
+  ],
+  "siteId": "memocasting",
+  "summary": "Repair retained Instagram bridge and feed TypeScript contracts exposed by a full current compiler check",
+  "id": "upgrade-e90986c0-f65b-4589-8222-db9408215564",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "378ac294deecec642b5633fe92380c3e70d15689",
+  "createdAt": "2026-10-20T07:54:00.216Z"
+}

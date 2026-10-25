@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "evidence": "qa/lockers-20261022/ui-tests-final.txt; locker-e2e-final.txt; omniva-after.txt; focused.txt",
+      "command": "node --test test/checkout-cart.test.mjs test/locker-delivery.test.mjs test/shipment-commands.test.mjs test/shipping.test.mjs",
+      "result": "PASS"
+    },
+    {
+      "evidence": "qa/lockers-20261022/worker.txt",
+      "command": "node commerce-core/scripts/worker-smoke.mjs",
+      "result": "PASS"
+    }
+  ],
+  "status": "local-verified",
+  "note": "Actual production Omniva563LTpoints and configured Salininku→Gabijos read quotes448/472ct. Staging2027056status2/preserved exact PDF visually checked; original missingterminal infos FAIL repaired with exact zip+full-address assertion. Node focused UI23 and paid-fixture locker order/packing/command3 pass; native workerd D1/R2/restart baseline pass. No production paid booking/order/label created.",
+  "eventId": "fbfb6cce-aaff-4b7d-ab00-3c098e0a3760",
+  "sequence": 2,
+  "at": "2026-10-22T09:32:15.226Z"
+}

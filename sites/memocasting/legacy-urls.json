@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "canonicalOrigin": "https://memocasting.lt",
+  "observedOn": "2026-10-12",
+  "source": "owner-provided Google Search Console external-links screenshot",
+  "runtimeStatus": "planned-not-deployed",
+  "routes": [
+    {"source": "https://memocasting.lt/", "targetPath": "/", "action": "preserve", "content": "homepage", "observedLinks": 79, "observedSites": 31},
+    {"source": "https://www.memocasting.lt/", "targetPath": "/", "action": "permanent-redirect", "observedLinks": 79, "observedSites": 31},
+    {"source": "https://memocasting.lt/pages/instrukcija", "targetPath": "/pages/instrukcija", "action": "preserve", "content": "verified-kit-instructions", "observedLinks": 1, "observedSites": 1},
+    {"source": "https://memocasting.lt/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui", "targetPath": "/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui", "action": "preserve-pending-business-truth", "observedLinks": 1, "observedSites": 1},
+    {"source": "https://memocasting.lt/products/kudikio-pedutes", "targetPath": "/products/kudikio-pedutes", "action": "preserve-pending-business-truth", "observedLinks": 1, "observedSites": 1},
+    {"source": "https://memocasting.lt/products/liejimo-rinkinys-porai", "targetPath": "/rinkinys-porai", "action": "permanent-redirect", "content": "couple-kit", "observedLinks": 1, "observedSites": 1, "decisionOn":"2026-10-13", "decisionSource":"explicit owner URL change"}
+  ]
+}

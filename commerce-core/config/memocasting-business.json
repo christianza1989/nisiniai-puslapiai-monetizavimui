@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "amountUnit": "EUR_cents",
+  "source": "Owner messages, 2026-10-14/15: white paint included in both kits; registered address, packed measurements and temporary simple kit balances confirmed; registered postcode 02206 verified by official Lietuvos paštas search 2026-10-15. Owner2026-10-19 explicitly confirms non-VAT status and unused dedicated document series MCWEB/MCWEBK/MCWEBP.",
+  "documentSeries": { "sale": "MCWEB", "credit": "MCWEBK", "packing": "MCWEBP" },
+  "legal": {
+    "name": "MB Memocasting",
+    "companyCode": "306026827",
+    "vatRegistered": false,
+    "address": { "country": "LT", "line1": "Pupinės g. 10-55", "city": "Vilnius", "postalCode": "02206" },
+    "registeredAddressConfirmationPending": false,
+    "phone": "+37069108251",
+    "email": "info@memorycasting.lt"
+  },
+  "dispatch": { "name": "MB Memocasting", "country": "LT", "city": "Vilnius", "line1": "Molynės g. 2C", "postalCode": "02211", "phone": "+37069108251", "email": "info@memorycasting.lt", "isCompany": true },
+  "returns": { "country": "LT", "city": "Vilnius", "line1": "Molynės g. 2C", "postalCode": "02211" },
+  "products": [
+    { "sku": "couple", "title": "Rankų liejimo rinkinys porai", "baseAmountEur": 3200, "lotTrackingRequired": false, "package": { "weightGrams": 2200, "dimensionsMm": [200, 200, 170] }, "previousPackage": { "weightGrams": 2000, "dimensionsMm": [200, 200, 170] }, "included": ["1 pakelis alginato", "1200 g gipso", "Kibiras", "Maišymo pagaliukai", "Balti dažai"], "knownMaterialCostsEur": { "alginate": 600, "gypsum": 100, "bucket": 100 } },
+    { "sku": "family", "title": "Rankų liejimo rinkinys šeimai", "baseAmountEur": 4800, "lotTrackingRequired": false, "package": { "weightGrams": 4500, "dimensionsMm": [250, 250, 200] }, "previousPackage": { "weightGrams": 4000, "dimensionsMm": [250, 250, 200] }, "included": ["2 pakeliai alginato", "2 pakeliai gipso", "Maišymo pagaliukai", "Balti dažai"] }
+  ],
+  "optionalExtras": [
+    { "id": "wooden_base", "title": "Medinis pagrindas", "amountEur": 1000, "package": null }
+  ],
+  "markets": ["LT"],
+  "plannedMarkets": ["PL", "LV", "EE"],
+  "inventoryPolicy": { "mode": "simple", "unit": "kit_bucket", "configuredBalances": { "couple": 999, "family": 999 }, "basis": "Owner-configured temporary balances; not a physical stocktake", "lotAndExpiryRequired": false },
+  "unconfirmed": ["Wooden base packed weight and dimensions", "White paint amount, safety documents and procurement cost", "PL, LV, EE sale prices and shipping tariffs", "Alginate supplier safety documents and exact mixing instructions"],
+  "connections": { "stripeEnabled": true, "sendparcelEnabled": false },
+  "productionAdmission": false
+}

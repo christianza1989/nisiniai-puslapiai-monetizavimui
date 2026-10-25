@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "summary": "Owner asks for continued long-tail planning beyond the initial gift queue; current daily automation stops when that queue ends. Add a rolling expansion and refresh handover without new paid research or public changes.",
+  "category": "workflow",
+  "evidence": [
+    "Owner follow-up2026-10-14; current daily prompt ends with stop-at-queue-exhaustion; existing1667query map already merges many long-tail facets.",
+    "Google Search Console Performance report retrieved2026-10-14 supports query/page/country/device observations; no connected own GSC feed is currently established."
+  ],
+  "paths": [
+    "sites/memocasting/LONG_TAIL_PLAN_2026_10_14.md",
+    "sites/memocasting/DAILY_CONTENT.md",
+    "sites/memocasting/CONTENT_PLAN_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Scoped revert of planning documents; restore prior daily automation prompt from its private snapshot. No source scheduler, public package, page revisions or dates changed.",
+  "id": "upgrade-becb80fb-3835-495f-a05a-98336900d102",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "57b6dfbae7d2c82561c51166986a26f3d10305f2",
+  "createdAt": "2026-10-14T06:05:55.898Z"
+}

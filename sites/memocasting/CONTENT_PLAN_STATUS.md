@@ -1,0 +1,15 @@
+# Memocasting turinio būklė · 2026-10-15
+
+**Nauja svetainė publikuota: https://memocasting.lt.** Visi 92 nauji straipsniai ir dovanų indeksas parašyti, su skirtingais temų vaizdais, peržiūrėti, patvirtinti ir įkelti į hostingą. Ankstesni 88 patvirtinti puslapiai išsaugoti. Tai visas savininko pasirinktas tyrimo korpusas: 1 667 frazės, 107 turinio sprendimai, 106 tiksliniai adresai ir 21 Kalėdų tema; sinonimai bei susiję konkretesni klausimai sprendžiami tekstų skyriais, nekuriant vienodų URL.
+
+Aktualus nekintamas leidinys **332c8186-8412-4cf1-b3c6-68dbbdde554a**, SHA256 **aae501ef8a821f207bcb6391f5f160ac25e60088c3e65b3da3a67ce4a71c6120**: 181 puslapis, 649 responsive medijos failai. Native datos pakeistos tik 36 revizijoms, atskirai patikrinus nepakitusius tekstus, faktus, šaltinius, vaizdus ir nuorodas bei atnaujinus tikrą revision-bound patvirtinimą. Senas eksportas neperrašytas.
+
+Pirmas naujas gidas „Kalėdinės dovanos“ pasirodys **spalio 15 d. 16:00 Lietuvos laiku**, kitas – spalio 16 d. 10:00. Toliau ne daugiau kaip du nauji straipsniai per Lietuvos dieną, 10:00 ir 16:00. Vėlesni sezoniniai laikai išsaugoti; [kalendorius](DAILY_EDITORIAL_CALENDAR_2026_10_14.csv) atnaujintas iš tikrų native datų. Visi tekstai jau hostinge: kasdienio generatoriaus ar įjungto savininko PC nereikia. Tikrinimo momentu 2026-10-15T09:07:36.266Z viešų naujų gidų buvo 0; dovanų indeksas jau pasiekiamas.
+
+Production build ir 114 bendrų testų praėjo. Patikrinta visų 93 naujų puslapių bendros laiko projekcijos riba prieš ir po datos, visi 649 failai, actual HTTPS pagrindinis puslapis, katalogas, abu produktai, krepšelis, kontaktai, dovanų indeksas, robots ir sitemap. Trys senų Shopify adresų 301 ir www308 išsaugo URL parametrus. Pirmų dviejų būsimų gidų HTML ir vaizdai tikrame domene grąžina404. Faktinė patikra po pirmos publikavimo datos dar laukia; esama rengimo automatika pakeista tik į vieną galutinę patikrą po16:00 ir tada pati išsijungs. Jokio naujo kasdienio ar mėnesinio turinio rengimo.
+
+Desktop ir390px telefono rodinys patikrinti jau viešame domene; hero vaizdai užsikrauna, horizontalios puslapio slinkties nėra. Visų straipsnių vaizdo patikra nekartota pagal savininko nurodymą. Tyrimas kainavo0,44136USD iš vienkartinio1USD limito; papildomų mokamų tyrimų nebuvo.
+
+**Internetiniai pirkimai dar neįjungti.** Atskirai likę Stripe rakto pakeitimas bei tikri likučiai, galutinių siuntų matmenys/svoris, registracijos adresas ir pristatymo sąlygos. LIVE paskyra patikrinta, jos webhook gavėjas jau sukurtas; naujos paslaptys laikomos privačiai. Kontaktų forma patvariai išsaugo žinutę naujoje D1; SMTP siuntimas dar nesukonfigūruotas ir gavimas dėžutėje neteigiamas. Telefonas ir el. pašto nuoroda veikia kaip tiesioginiai kontaktai. Plačiau – [paleidimo žurnale](DEPLOYMENT_2026_10_14.md).
+
+Poros rinkinys32€, šeimos48€, abiejuose balti dažai. Nepatvirtintas vaikų amžius, talpa, likučiai, pristatymo terminai ir atsiliepimai nekurti. Generuotos fotografijos yra redakcinės iliustracijos, ne klientų darbų įrodymai. Vėlesnė bendra rezultatų ir turinio atnaujinimo peržiūra – maždaug po metų savininko pavedimu.

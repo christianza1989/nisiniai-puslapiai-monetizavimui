@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Private SMTP once-claim gateway locally verified with existing protocol; no live auth/send. Production configuration2026-10-12 native runtime is outstanding; fixturedate2026-05-22 explicit. First failures (unsupported runtime date, D1 exec multiline, Miniflare Request identity) repaired in test seam without hiding runtime limitation.",
+  "checks": [
+    {
+      "command": "node --test tests/commerce-mail-gateway.test.mjs",
+      "result": "PASS",
+      "evidence": "5actualNode/SQLite tests; source in companionPR31."
+    },
+    {
+      "command": "node workers/commerce-mail/verify-local.mjs",
+      "result": "PASS",
+      "evidence": "Actualworkerd2026-05-22+D1+privateWorkerbinding;1synthetictransportattempt/0realSMTP; reportoutput/audits/commerce-mail-native.json."
+    },
+    {
+      "command": "npx wrangler deploy --config workers/commerce-mail/wrangler.jsonc --dry-run --outdir output/commerce-mail-dry-run",
+      "result": "PASS",
+      "evidence": "Bundled10.42KiB/3.65KiBgzip; disabled/no credentials/no deployment."
+    }
+  ],
+  "eventId": "d0c51833-0d8c-448d-aaf7-3c732737a741",
+  "sequence": 2,
+  "at": "2026-10-12T04:40:12.352Z"
+}

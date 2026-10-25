@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Deployment owner independently integrated/reviewed the two scoped patches into own fresh branch with confirmed business series and Access configuration retained. Combined local/native regression and hosted read-only integration pass; no main-merge or whole legacy PR provenance claim.",
+  "checks": [
+    {
+      "command": "npm run check:format; node --test --test-concurrency=1 test/*.test.mjs (commerce-core)",
+      "result": "PASS",
+      "evidence": "Own integrated source0eff0c86:165tests,0failed/0skipped; ignored commerce-adoption-format/tests-20261019.private.log. Own business config and Access safeguards retained."
+    },
+    {
+      "command": "npm run test:worker; npm run build:worker (commerce-core)",
+      "result": "PASS",
+      "evidence": "Own native24D1/R2/Queue/process disposal-restart test and dryrun3229.12KiB/gzip780.48KiB PASS; commerce-adoption-native/build-20261019.private.log. No remote fixture payment/shipment."
+    },
+    {
+      "command": "node sites/memocasting/qa/sendparcel-read-hosted-20261019.private.mjs",
+      "result": "PASS",
+      "evidence": "ActualcanonicalHTTPScontext200/StripeLIVEverified/read-onlycarriertrue, booking/documentReady/productionReadyfalse; directanonymousadmin403/unsignedwebhook400. Private receipt binds active67d8fdd8 and source0eff0c86. No paid checkout/shipment proof claimed."
+    }
+  ],
+  "eventId": "7ad163f8-a892-4d58-a8a4-3a43a863abab",
+  "sequence": 3,
+  "at": "2026-10-19T06:03:48.435Z"
+}

@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { createRecord, appendEvent } from './core-upgrade.mjs';
 import { checkUpgradeCoverage, requiresUpgrade } from './core-upgrade-check.mjs';
 
@@ -111,12 +112,107 @@ test('deletion still needs provenance; immutable SOURCE archives and events cann
 });
 
 test('classification includes agent/core/skill/CI paths and excludes private site plans and test-only work', () => {
-  for (const file of ['AGENTS.md', 'CORE_IMPROVEMENT.md', 'SKILLS/PROJECT_CONTRACT.md',
+  for (const file of ['.gitattributes', 'SKILLS/.gitattributes', 'AGENTS.md', 'CORE_IMPROVEMENT.md', 'SKILLS/PROJECT_CONTRACT.md',
     'agent-business-core/runtime/src/pinet_core/control/router.py', '.github/workflows/agent-workflow.yml'])
     assert.equal(requiresUpgrade(file), true, file);
   for (const file of ['sites/fixture/BUSINESS.md', 'WORKSTREAMS.md', 'docs/PLAN.md',
-    'scripts/core-upgrade-check.test.mjs', 'agent-business-core/runtime/offline_tests/test_fixture.py'])
+    'scripts/core-upgrade-check.test.mjs', 'agent-business-core/runtime/offline_tests/test_fixture.py',
+    'SKILLS/niche-site-audit/scripts/rendered-site_test.py', 'scripts/test_fixture.py'])
     assert.equal(requiresUpgrade(file), false, file);
+});
+
+async function replacementFixture(t,{fragment=false,wrongTree=false,wrongScope=false,foreign=false,verify=true}={}) {
+ const f=await fixture(t);
+ const old=await f.record(['scripts/tool.mjs'],
+  'https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/1'+(fragment?'#historical-proof':''));
+ if(fragment) await f.verify(old);
+ await f.write('scripts/tool.mjs','export const v = 2;\n');
+ const original=f.commit(),treeSha=f.git('rev-parse',`${original}:core-improvements/entries/${old.id}`);
+ const replacement=await createRecord(f.root,{
+  siteId:'core',summary:'Fresh scoped verification replacing defective historical provenance',category:'workflow',
+  evidence:['Historical tree is immutable; source is rechecked now.'],
+  paths:[wrongScope?'scripts/elsewhere.mjs':'scripts/tool.mjs'],
+  issue:foreign?'https://github.com/christianza1989/niche-public-core/pull/1':'https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/1',
+  rollback:'Remove only the new replacement statement',
+  supersedes:[{id:old.id,treeSha:wrongTree?'0'.repeat(40):treeSha}],
+ });
+ if(verify)await f.verify(replacement);
+ return {...f,old,replacement,original};
+}
+
+test('fresh exact-tree verification replaces malformed historical checks without rewriting their bytes',async t=>{
+ const f=await replacementFixture(t),result=checkUpgradeCoverage(f.root,f.base,f.commit());
+ assert.equal(result.status,'PASS');assert.equal(result.superseded_legacy_validation.length,1);
+ assert.equal(result.superseded_legacy_validation[0].original_error,'verified_checks_required');
+ assert(!result.verified_upgrade_ids.includes(f.old.id));
+ assert.equal(f.git('rev-parse',`${f.original}:core-improvements/entries/${f.old.id}`),
+  f.git('rev-parse',`HEAD:core-improvements/entries/${f.old.id}`));
+});
+
+test('a canonical fresh replacement preserves the original fragment issue error as diagnostics',async t=>{
+ const f=await replacementFixture(t,{fragment:true}),result=checkUpgradeCoverage(f.root,f.base,f.commit());
+ assert.equal(result.status,'PASS');assert.equal(result.superseded_legacy_validation[0].original_error,'canonical_issue_url_required');
+});
+
+for(const option of ['wrongTree','wrongScope','foreign','verify'])test(`replacement cannot bypass ${option}`,async t=>{
+ const f=await replacementFixture(t,{[option]:option==='verify'?false:true});
+ assert.equal(checkUpgradeCoverage(f.root,f.base,f.commit()).status,'BLOCKED');
+});
+
+test('replacement cannot waive a historical record edit or an immutable SOURCE change',async t=>{
+ const f=await replacementFixture(t);
+ const oldBase=f.original;
+ const oldFile=`core-improvements/entries/${f.old.id}/record.json`;
+ const original=JSON.parse(await fs.readFile(path.join(f.root,oldFile),'utf8'));
+ await f.write(oldFile,JSON.stringify({...original,summary:'Rewritten history'}));
+ const result=checkUpgradeCoverage(f.root,oldBase,f.commit());
+ assert.equal(result.status,'BLOCKED');assert(result.errors.some(e=>e.reason==='journal_history_is_append_only'));
+});
+
+const archiveProtection='**/SOURCE_SKILL.md -text -filter -working-tree-encoding\n**/SOURCE_PROMPT.md -text -filter -working-tree-encoding\n';
+async function archiveFixture(t){
+ const f=await fixture(t),file='SKILLS/fixture/SOURCE_SKILL.md',original=Buffer.from('Original imported UTF-8: žodis.\r\nExact preserved bytes.\r\n');
+ const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+ await f.write('.gitattributes','*.md text eol=lf\n');
+ const catalog={skills:[{id:'fixture',archives:[{file:'fixture/SOURCE_SKILL.md',sha256:sha(original)}]}]};
+ await f.write('SKILLS/catalog.json',JSON.stringify(catalog)+'\n');
+ await f.write(file,Buffer.from(original.toString().replaceAll('\r\n','\n')));
+ f.git('config','core.autocrlf','true');
+ const base=f.commit();
+ const raw=(...args)=>{const result=spawnSync('git',args,{cwd:f.root,encoding:null});assert.equal(result.status,0,result.stderr?.toString());return result.stdout;};
+ return {...f,file,original,sha,catalog,base,raw};
+}
+
+test('a journalled exact original archive restoration survives index and fresh Git checkout byte-for-byte',async t=>{
+ const f=await archiveFixture(t);
+ await f.write('.gitattributes','*.md text eol=lf\n'+archiveProtection);await f.write(f.file,f.original);
+ const unverified=f.commit(),blocked=checkUpgradeCoverage(f.root,f.base,unverified);
+ assert.equal(blocked.status,'BLOCKED');assert.ok(blocked.uncovered_paths.includes(f.file),'restored bytes still require a verified scoped journal');
+ const r=await f.record(['.gitattributes',f.file]);await f.verify(r);const head=f.commit();
+ assert.deepEqual(f.raw('show',head+':'+f.file),f.original);
+ assert.equal(checkUpgradeCoverage(f.root,f.base,head).status,'PASS');
+ const clone=path.join(f.root,'fresh-checkout'),result=spawnSync('git',['-c','core.autocrlf=true','clone','--no-hardlinks',f.root,clone],{encoding:'utf8'});
+ assert.equal(result.status,0,result.stderr);assert.deepEqual(await fs.readFile(path.join(clone,f.file)),f.original);
+});
+
+test('archive restoration never accepts semantic/catalog changes, working-only attributes or nested/mode overrides',async t=>{
+ for(const kind of ['semantic','catalog','working-attributes','nested-attributes','mode','symlink'])await t.test(kind,async child=>{
+  const f=await archiveFixture(child);await f.write('.gitattributes','*.md text eol=lf\n'+archiveProtection);
+  let restored=f.original;
+  if(kind==='semantic')restored=Buffer.concat([f.original,Buffer.from('Changed source.\r\n')]);
+  if(kind==='catalog'){restored=Buffer.concat([f.original,Buffer.from('Changed source.\r\n')]);f.catalog.skills[0].archives[0].sha256=f.sha(restored);await f.write('SKILLS/catalog.json',JSON.stringify(f.catalog)+'\n');}
+  if(kind==='working-attributes'){await f.write('.gitattributes','*.md text eol=lf\n');await f.write('.git/info/attributes','SKILLS/fixture/SOURCE_SKILL.md -text\n');}
+  if(kind==='nested-attributes')await f.write('SKILLS/fixture/.gitattributes','SOURCE_SKILL.md text\n');
+  await f.write(f.file,restored);
+  const r=await f.record(['.gitattributes','SKILLS']);await f.verify(r);f.git('add','.');
+  // Deliberately bypass working-tree clean filters to test committed protection,
+  // not merely a failed hash caused by the hostile nested attribute override.
+  const object=spawnSync('git',['hash-object','-w','--stdin'],{cwd:f.root,input:restored,encoding:'utf8'});assert.equal(object.status,0);
+  f.git('update-index','--cacheinfo',kind==='mode'?'100755':kind==='symlink'?'120000':'100644',object.stdout.trim(),f.file);
+  f.git('commit','-m','synthetic hostile restoration');
+  const result=checkUpgradeCoverage(f.root,f.base,f.git('rev-parse','HEAD'));
+  assert.ok(result.errors.some(error=>error.path===f.file&&error.reason==='source_archive_is_immutable'),kind);
+ });
 });
 
 test('a companion record with identical filenames cannot attest a private core change', async t => {
@@ -127,6 +223,21 @@ test('a companion record with identical filenames cannot attest a private core c
   const result = checkUpgradeCoverage(f.root, f.base, f.commit());
   assert.equal(result.status, 'BLOCKED');
   assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
+});
+
+test('companion literal routes are reported separately instead of being looked up in the private tree', async t => {
+  const f = await fixture(t);
+  const r = await f.record(['app/niche/memocasting/instagram/[...path]/route.ts'],
+    'https://github.com/christianza1989/niche-public-core/issues/30');
+  await f.verify(r);
+  const result = checkUpgradeCoverage(f.root, f.base, f.commit());
+  assert.equal(result.status, 'PASS');
+  assert.deepEqual(result.verified_upgrade_ids, []);
+  assert.deepEqual(result.foreign_scope_ids, [r.id]);
+  const bad = await f.record(['app/niche/*/route.ts'],
+    'https://github.com/christianza1989/niche-public-core/issues/30');
+  await f.verify(bad);
+  assert.equal(checkUpgradeCoverage(f.root, f.base, f.commit()).status, 'BLOCKED');
 });
 
 test('shared dependency manifests need verified provenance in the actual committed diff', async t => {

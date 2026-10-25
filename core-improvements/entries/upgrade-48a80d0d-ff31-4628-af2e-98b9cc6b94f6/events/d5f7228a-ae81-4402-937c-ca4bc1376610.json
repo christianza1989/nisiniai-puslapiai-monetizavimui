@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Owner facts source updated and actual dedicated productionD1 received supported catalogue revisions and optimistic/idempotent temporary999counts; no lots created and checkout remainsclosed.",
+  "checks": [
+    {
+      "command": "configure-simple-inventory-20261015.private.mjs --inspect-remote; then authorized --apply-remote --confirm-database",
+      "result": "PASS",
+      "evidence": "DedicatedD1 actual23migrations, originalmetadatahash, allbusiness tables0 before.2definitions/2adjustments/999availableeach after; noorders/lots/allocations. Sanitized business-facts-20261015.json."
+    }
+  ],
+  "eventId": "d5f7228a-ae81-4402-937c-ca4bc1376610",
+  "sequence": 2,
+  "at": "2026-10-15T12:05:51.066Z"
+}

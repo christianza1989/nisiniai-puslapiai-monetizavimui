@@ -1,0 +1,23 @@
+{
+  "siteId": "memocasting",
+  "summary": "Apply provider clarification that every Sendparcel REST request including quotes shares the durable one-request-per-second gate",
+  "category": "code",
+  "evidence": [
+    "Provider IT reply dated2026-10-16 states one request per second for all /rest-api/*; private source retained, no credentials in journal.",
+    "Reproduction on04449b5d: updated provider-pacing test fails every REST path shares the pacing gate; quotes bypass the shared lease while two service requests respect it."
+  ],
+  "paths": [
+    "commerce-core/src/sendparcel-adapter.mjs",
+    "commerce-core/test/provider-pacing.test.mjs",
+    "commerce-core/docs/SENDPARCEL_V1_2026_10_14.md",
+    "sites/memocasting/DEPLOYMENT_2026_10_14.md",
+    "sites/memocasting/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Scoped source revert only after checking current provider policy; never restore quotes exception on production knowingly. Preserve all credentials, D1 and R2; actual sandbox receipts stay private.",
+  "id": "upgrade-ef9fcc7f-57f6-401c-b2b9-2a361a019674",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "04449b5df7f91a7a09b56f96e140b5d00b36d475",
+  "createdAt": "2026-10-17T08:24:29.441Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "0.10.3 applies the existing productTitle callback to the saved buyer order screen, using UI language and a shallow line copy. Real native LV integration found the display defect. Immutable snapshots/documents and money remain unchanged. Actual site create/reload verification follows canonical SDK synchronization.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "tmp/verify-103.log: 97 Node tests, native workerd/D1/R2/Queue, 20 migrations, dry-run 762.86 KiB gzip and 20 assets. No remote provider operations."
+    },
+    {
+      "command": "Root read-only check of the 0.10.2 native integration",
+      "result": "PASS",
+      "evidence": "Public package SHA e69b16f2c764ad51d075f6700af9ad97ad9f1a7fb2248c30552f68efb9afa9c6; 88 pages and four actual legal revision/URL mappings match. Both SDK files match exact60aa5001 manifest. Native SEO receipt103HTTP/88public/84indexable/24articles/88reachable. Full site audit remains ongoing; this is not 0.10.3 browser receipt acceptance."
+    }
+  ],
+  "eventId": "f77cff83-c80a-4930-af2e-e5703d2ca0d2",
+  "sequence": 24,
+  "at": "2026-10-12T10:15:46.339Z"
+}

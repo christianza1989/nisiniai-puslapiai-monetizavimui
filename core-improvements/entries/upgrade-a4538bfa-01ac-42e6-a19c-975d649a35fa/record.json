@@ -1,0 +1,21 @@
+{
+  "paths": [
+    "commerce-core/src/sendparcel-adapter.mjs",
+    "commerce-core/test/sendparcel-worker-transport.test.mjs",
+    "commerce-core/docs/SENDPARCEL_V1_2026_10_14.md",
+    "commerce-core/test/shipping.test.mjs"
+  ],
+  "rollback": "Scoped code revert retains fail-closed behavior but reintroduces native carrier transport failure; never follow credential-bearing redirects.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "category": "code",
+  "summary": "Use native workerd-supported manual redirects for Sendparcel and reject 3xx before reading responses, preserving credential confinement.",
+  "siteId": "memocasting",
+  "evidence": [
+    "Actual public delivery-quotes failed503carrier_transport_failed while Node quote succeeded; pinned native fetch rejects redirect:error before outbound request.",
+    "New actual workerd outbound regression originally503 instead200; after fix200onecall and302rejected503withoutsecondcall.29focusedtestsPASS; actual production public quote200returns524EURcents."
+  ],
+  "id": "upgrade-a4538bfa-01ac-42e6-a19c-975d649a35fa",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "52fec3452935580420788f73f70161a518c59a35",
+  "createdAt": "2026-10-20T16:39:12.132Z"
+}

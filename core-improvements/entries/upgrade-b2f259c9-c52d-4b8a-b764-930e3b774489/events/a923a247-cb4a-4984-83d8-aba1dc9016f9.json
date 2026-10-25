@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "CORE76443e6c and PUBLIC9406e88 pushed to existing draft PR101/31; descriptions rewritten for homepage plus implemented inner storefront. Scoped safety, paired fresh-main handoff and committed coverage PASS. Preview remains local sandbox; main merge/deployment/adoption not claimed.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "eventId": "a923a247-cb4a-4984-83d8-aba1dc9016f9",
+  "sequence": 3,
+  "at": "2026-10-13T20:12:40.738Z"
+}

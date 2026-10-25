@@ -126,4 +126,6 @@ Assets Workers `run_worker_first` apima content-assets ir legacy images. Origina
 
 ## Bendras turinio release — 2026-10-05
 
+Pasirinktinį pardavimų matavimą įjungti tik pagal savininko pavedimą ir galiojantį lankytojo sutikimą. Canonical [commerce analytics](commerce-core/ANALYTICS.md) atskiria iš kur atėjo lankytojas, serverio patvirtintą apmokėjimą ir tikrą apskaitą. Mokėjimo mygtukas ar naršyklės callback nėra pirkimo įrodymas; nematuojami ar nesutikę lankytojai nėra nulis pardavimų. Plėsdami matavimo tikslą neperimkite seno sutikimo, nesiųskite kontaktų, laisvo teksto ar privačių URL, nedubliuokite pirkimų ir neišgalvokite istorinio šaltinio. Vietinis testas / Google validation / HTTP priėmimas / reali ataskaita fiksuojami atskirai; fiktyvus LIVE purchase nėra priėmimo būdas.
+
 Visų nišų planavimo/review/paketo sutartis [CONTENT_CORE.md](CONTENT_CORE.md). Planuotų ryšių įtraukimas vyksta į juodraštį prieš agento review ir atomic batch; patvirtintas source snapshot savavališkai nekinta. Naujas release turi paketo/media SHA ir lieka exported-not-deployed. Viešo clock/domain/hash/target projekcijos vartai nekinta. V2 admission receipt ir konkrečių adapterių actual SEO smoke nėra pakeičiami studijos manifestu.

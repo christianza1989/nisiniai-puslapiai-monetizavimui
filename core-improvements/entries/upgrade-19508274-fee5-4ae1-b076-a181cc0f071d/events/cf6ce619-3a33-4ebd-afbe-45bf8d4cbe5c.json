@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Final mixed-choice edge case: quantities that exceed the shared SKU limit must not persist an empty cart. Original regression failed; UI now sums all configurations, bounds quantity controls and retains the last valid cart.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/checkout-cart.test.mjs",
+      "result": "PASS",
+      "evidence": "qa/product-editor-20261021/aggregate-ui-before.txt original FAIL; aggregate-ui-after.txt22/22 PASS"
+    }
+  ],
+  "eventId": "cf6ce619-3a33-4ebd-afbe-45bf8d4cbe5c",
+  "sequence": 3,
+  "at": "2026-10-21T10:38:04.921Z"
+}

@@ -1,0 +1,25 @@
+{
+  "siteId": "memocasting",
+  "category": "workflow",
+  "summary": "Reconcile active content-plan facts with owner-included paint and provide explicit complete-plan versus implementation status; preserve historical approved revision/metadata snapshots.",
+  "evidence": [
+    "Human asks whether complete content plan exists2026-10-14",
+    "Active plan factGates still offered paint+3EUR and topical source asked to add paint variant after approved4ea58release",
+    "Existing88-ID briefs and39questionmap are present; planned future6URLs remain conditional"
+  ],
+  "paths": [
+    "sites/memocasting/PLAN.mjs",
+    "sites/memocasting/CONTENT-PLAN.json",
+    "sites/memocasting/PAGE_BRIEFS_2026_10_13.json",
+    "sites/memocasting/OTHER_PAGES_PLAN_2026_10_13.md",
+    "sites/memocasting/CONTENT_PLAN_STATUS.md",
+    "sites/memocasting/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert scoped planning/doc commit only; approved package/revision snapshots, CMS data, frontend, providers and DNS are unchanged.",
+  "id": "upgrade-cb64e20e-2c57-4fbc-9e92-044233703eef",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "8b706b7fec432e2d536c35005ad179ac0d023c04",
+  "createdAt": "2026-10-14T04:44:05.044Z"
+}

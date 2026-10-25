@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "commit": "fe26549d3ae8fa8bfbad8a3a5d6b260d389ea37e",
+  "note": "Frontend190ee50b active100percent; bindings and backend unchanged. Actual hosted same form/original customer/totals and iframe presence confirmed; final hosted paint interrupted by owner closing tab. Same original open Stripe Session card form rendered in private read-only native desktop/mobile preview. No new order, Session, charge or confirmation; full boundary in INLINE_PAYMENT_2026_10_21.md. Main merge separate.",
+  "eventId": "f9ce6280-01b1-4767-8c74-33dfa7f70ce5",
+  "sequence": 3,
+  "at": "2026-10-21T06:08:51.209Z"
+}

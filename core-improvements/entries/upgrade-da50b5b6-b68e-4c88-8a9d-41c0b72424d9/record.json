@@ -1,0 +1,18 @@
+{
+  "siteId": "memocasting",
+  "summary": "Direct sibling private checkout import breaks standalone public build; canonical two-file browser SDK export with source SHA and build integrity guard removes filesystem coupling without forking business logic.",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/SDK_DISTRIBUTION.md",
+    "CompanionPR31 scripts/sync-commerce-sdk.mjs, verify-commerce-sdk.mjs and vendor/commerce-core/source-manifest.json; actual isolatedGitarchivebuildPASS; drift/pathinjection countertestPASS."
+  ],
+  "paths": [
+    "sites/memocasting/SDK_DISTRIBUTION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert exact companion SDK packaging/source commit or re-export a prior reviewed source SHA; do not alter order/credential storage or backend data.",
+  "id": "upgrade-da50b5b6-b68e-4c88-8a9d-41c0b72424d9",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "1bb3fcb3f41682ebcd28b00be95e769e52c17bc0",
+  "createdAt": "2026-10-12T04:53:44.661Z"
+}

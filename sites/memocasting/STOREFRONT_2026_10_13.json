@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "siteId": "memocasting",
+  "checkedAt": "2026-10-13T19:59:07.125Z",
+  "state": "LOCAL_STOREFRONT_IMPLEMENTED_AND_VERIFIED_NOT_DEPLOYED",
+  "packageSha256": "983ec0c06cb3dd59d28002aeffc3a73f5d7f0bea6520eea74a27ff6ae9da07cf",
+  "coreBase": "59bd8758701ce1eb78fe8d24095fe28d6e3da459",
+  "publicBase": "af6dd17a54022f943f26ccc1ae22e0d886d830f8",
+  "upgrade": "upgrade-b2f259c9-c52d-4b8a-b764-930e3b774489",
+  "scope": {
+    "commonInnerShell": true,
+    "storefrontUrls": 12,
+    "languages": [
+      "lt",
+      "pl",
+      "lv",
+      "et"
+    ],
+    "publishedContentChanged": false,
+    "sdkBackendCodeChanged": false
+  },
+  "checks": {
+    "tests": 105,
+    "failures": 0,
+    "typeScript": "PASS",
+    "scopedEslint": "PASS",
+    "productionBuild": "PASS",
+    "seoHttp": 103,
+    "seoPages": 88,
+    "indexableProjection": 84,
+    "seoSmoke": "PASS",
+    "detectorFindings": 0,
+    "previewPolicy": "PASS explicit OFF flags and missing/true flags rejection"
+  },
+  "contexts": [
+    {
+      "base": "http://127.0.0.1:8827/api",
+      "environment": "sandbox",
+      "testOnly": true,
+      "paymentConnected": false,
+      "shippingConnected": false,
+      "documentReady": true,
+      "shippingQuotesConnected": false,
+      "productionReady": false,
+      "publishOffers": false,
+      "canCreateTestOrder": true,
+      "fixtureCheckout": false
+    },
+    {
+      "base": "http://127.0.0.1:8817/prekyba",
+      "environment": "sandbox",
+      "testOnly": true,
+      "paymentConnected": false,
+      "shippingConnected": false,
+      "documentReady": true,
+      "shippingQuotesConnected": false,
+      "productionReady": false,
+      "publishOffers": false,
+      "canCreateTestOrder": true,
+      "fixtureCheckout": false
+    }
+  ],
+  "browserEvidence": "qa/storefront-browser.private.json",
+  "uiObservations": [
+    "Desktop product and catalogue;768px product;320px products/comparison/contact and PL family",
+    "Header273px baseline→72.7px at320;no horizontal overflow in observed scopes",
+    "Native32EUR/48EUR;quantity2→64EUR;bothSKUs passed tocart;quantity reload persists",
+    "Server test quote84.50EUR;one synthetic order saved;paymentdisabled;restore reload;new order emptycart",
+    "Backendstop→disabled purchase/error/no stale total→retry restored",
+    "Media serverstop→dialog error/disabled zoom→retry loaded533px image",
+    "Gallery1–3 zoom;bounded pointer pan130px/90px;reset/Escape/focus restoration",
+    "Stock quantity100 rejected;changing to1 clears stale error",
+    "Mobile purchase bar uses the original form submit;family1 passed tocart"
+  ],
+  "repairs": [
+    "Header and typography brand mismatch",
+    "CatalogueH1→H2 hierarchy; redundant list comparison replaced by semantic table",
+    "Narrow comparison label/word fragmentation repaired with caption and two readable columns",
+    "Repeated error messages and stale quantity error removed",
+    "Effects no longer synchronously cascade state; cross-market response gated",
+    "Standard built-config .dev.vars lookup repaired; preflight sandbox/provider guard includes shippingQuotesConnected"
+  ],
+  "limits": [
+    "Existing owner photographs533/400px;no new original SKU photos/customer reviews/GLB",
+    "Real browser200% zoom not established: IAB shortcuts changed no viewport/DPR;UNVERIFIED",
+    "User text-spacing override and physical pinch not measured;no WCAG certification",
+    "Production payment/shipping/email/policies/supplier documents remain separate",
+    "No current Lighthouse/field CWV/rank/AI-citation claim"
+  ],
+  "coordination": {
+    "thread": "Įvertinti Shopify alternatyvą",
+    "sdk": "0.12.1",
+    "manifest": "be32c223",
+    "review": "Read-only integration review confirmed;shippingQuotes guard recommendation applied;no peer renderer edits"
+  },
+  "testData": "Seven existing sandbox orders preserved;one new synthetic order created;no DB reset/delete/provider action."
+}

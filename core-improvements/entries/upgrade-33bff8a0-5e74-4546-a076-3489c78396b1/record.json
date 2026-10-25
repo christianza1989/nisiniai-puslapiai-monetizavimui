@@ -1,0 +1,28 @@
+{
+  "rollback": "Revert own paired commits; previous hero and official content release remain recoverable.",
+  "siteId": "memocasting",
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "components/niche/memocasting-homepage.css",
+    "lib/memocasting-homepage-motion.mjs",
+    "lib/memocasting-homepage-markup.mjs",
+    "lib/memocasting-homepage-assets.json",
+    "public/memocasting-homepage",
+    "tests/memocasting-homepage-motion.test.mjs",
+    "tests/memocasting-homepage.test.mjs",
+    "content-packages/memocasting",
+    "lib/generated/content-packages.json"
+  ],
+  "category": "code",
+  "summary": "Reproduced desktop storytelling disabled at 1280x630 by the height gate; owner requests full-width story with stage timeline, regenerated full-screen zoomed-out hero matching Egeon composition, and reversible scroll-controlled word reveals.",
+  "evidence": [
+    "sites/memocasting/HOMEPAGE_IMPLEMENTATION_2026_10_13.md",
+    "Owner supplied Egeon URL and text-reveal screenshot; actual CUA reproduction motion-on film-static at height630"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "id": "upgrade-33bff8a0-5e74-4546-a076-3489c78396b1",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "675e550a11c7528866d8f5282a43bf20032121cd",
+  "createdAt": "2026-10-13T10:23:02.656Z"
+}

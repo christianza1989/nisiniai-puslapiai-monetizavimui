@@ -1,0 +1,23 @@
+{
+  "siteId": "memocasting",
+  "summary": "Connect Product Offer schema to the current admitted LIVE catalog instead of leaving actual purchasable products without price offers. Keep sandbox, closed admissions and unrelated pages fail-closed.",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/SEO_CONTENT_AUDIT_2026_10_22.md",
+    "qa/seo-refresh-20261022/offers-original-failure.txt",
+    "qa/seo-content-20261022/product-schema.private.json",
+    "qa/seo-content-20261022/gsc-product-detail.private.txt"
+  ],
+  "paths": [
+    "lib/memocasting-product-content.mjs",
+    "lib/memocasting-product-server.ts",
+    "lib/memocasting-structure.mjs",
+    "tests/memocasting-live-offers.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "rollback": "Revert only the public schema enrichment/source patch, preserving real catalog, orders, all bindings and source content. No database or catalog price change is included.",
+  "id": "upgrade-9c4f69e0-4213-4910-945c-f2289524e57e",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "81631741e075cef9a316b464e5abc02236091527",
+  "createdAt": "2026-10-22T19:02:33.288Z"
+}

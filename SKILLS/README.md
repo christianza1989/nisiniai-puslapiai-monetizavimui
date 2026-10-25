@@ -22,7 +22,11 @@ Vieno sakinio domeno užduoties rezultatas aprašytas [CORE_BUILD_CONTRACT.md](.
 
 2026-10-01 suderinti **visi 52 projekto skills**: 4 pagrindiniai, 20 pirmos fazės pagalbiniai, 11 verslo operacijų ir 17 failų/artefaktų įrankių. Viena [projekto sutartis](PROJECT_CONTRACT.md) apibrėžia kontaktus, autonomiją, fazes, faktų šaltinius, mediją ir publikavimą. [catalog.json](catalog.json) saugo paskirtį, šaltinį, originalo hash ir aktyvaus įrašo hash. Keturi pagrindiniai skills lieka įdiegti per esamus junction; 48 pagalbiniai neįdiegti masiškai ir nekraunami į kiekvieną Codex CLI užduotį.
 
-Patikros komanda iš projekto root: `node SKILLS/scripts/audit-skills.mjs`. Ji tikrina visą registrą, tikrus SKILL/PROMPT/priedų ryšius, originalų nekintamumą, Windows UTF-8 struktūros validatorius ir discovery kopijas. Tai instrukcijų/config patikra, ne naujos svetainės ar modelio elgesio 10/10 testas. Išvados ir vykdymo įrodymai: [skills auditas](../research/skills-audit-2026-10-01/README.md).
+Patikros komanda iš projekto root: `node SKILLS/scripts/audit-skills.mjs`. Ji tikrina visą registrą, tikrus SKILL/PROMPT/priedų ryšius, originalų nekintamumą, UTF-8 Python struktūros patikrą ir discovery kopijas. Tai instrukcijų/config patikra, ne naujos svetainės ar modelio elgesio 10/10 testas. Išvados ir vykdymo įrodymai: [skills auditas](../research/skills-audit-2026-10-01/README.md).
+
+Struktūrai tikrinti naudojamas tikras `skill-creator/scripts/quick_validate.py`, paleidžiamas su `python -X utf8`. Numatytasis kelias yra `$CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py`, o nenustačius `CODEX_HOME` naudojamas vartotojo `.codex` katalogas. Kitą Python vykdomąjį failą ar validatoriaus kelią galima aiškiai nurodyti aplinkos kintamaisiais `PINET_SKILL_VALIDATOR_PYTHON` ir `PINET_SKILL_VALIDATOR_SCRIPT`. Standartiniam validatoriui tame Python aplinkos kontekste reikia `PyYAML`; auditas pats paketų nediegia ir Python validatoriaus nepakeičia kitu parseriu.
+
+Prieš įgūdžių struktūros patikrą auditas vieną kartą įkelia tikrą validatoriaus modulį su jo priklausomybėmis. Jei trūksta Python, failo ar priklausomybės, visa patikra lieka `FAIL`: ataskaitoje pateikiama viena `validator_unavailable` priežastis, o kiekvieno įgūdžio struktūros būsena yra `NOT_RUN`. Registro, originalų hash, nuorodų ir discovery patikros tęsiamos; jų klaidos lieka atskiros. Kai validatorius prieinamas, konkretaus netaisyklingo įgūdžio klaida ir toliau žymima `Skill structural validation failed`. Regresijos: `node --test SKILLS/scripts/audit-skills.test.mjs`.
 
 Bendras vaizdų kelias: [MEDIA_CORE.md](../MEDIA_CORE.md). [Media workflow ir promptas](niche-content-planner/references/media-workflow.md) įtraukiamas į kiekvieną studijos planavimo ir rašymo Codex CLI užduotį bei jos SHA-256. Builderis ir auditas remiasi tuo pačiu importu/rendereriu; naujai nišai atskiro resize skripto nereikia. GUI/HTTP/agentų importas patikrintas izoliuotais testais ir realiu GUI bandymu.
 
@@ -34,5 +38,14 @@ Surinkimo data: 2026-09-26
 - `SKILL.md` — konkrečiam mūsų projekto darbui pritaikyta vykdoma instrukcija.
 - `PROMPT.md` — tas pats projekto workflow, ne prieštaraujantis senas interviu promptas.
 - `SOURCE_SKILL.md` / `SOURCE_PROMPT.md` — tikslūs 96 originalių failų baitai, išsaugoti kilmei ir palyginimui. 43 originalūs skills buvo viešo SKILL.md kopijos, 5 — vietiniai paketai iš viešo prompto. Archyvų nurodymai savaime netampa vykdymo instrukcijomis.
+
+Šiems dviem archyvų vardams `.gitattributes` išjungia teksto, filter ir encoding
+konvertavimą. Originalūs CRLF baitai yra archyvo dalis; jų negalima pakeisti vien
+tam, kad failas atitiktų bendrą Markdown LF taisyklę. Katalogo SHA-256 nekeisti
+pagal pasikeitusį checkout. Ankstesnio LF transporto sugadintų baitų atkūrimas
+leidžiamas tik pagal tikslų [žurnalo ir committed Git patikros protokolą](../core-improvements/README.md).
+CRLF archyvų whitespace patikrai galima aiškiai naudoti
+`git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --cached --check`;
+tai išlaiko įprastas whitespace patikras ir atpažįsta originalų CR prieš eilutės pabaigą.
 
 `index.csv` apima visus 52, įskaitant anksčiau neįrašytą niche-site-audit. Jame atskirti dabartinis project-adapted įrašas, pradinė kilmė, projekto paskirtis ir šaltinio archyvas. Trys originalūs projekto skills yra local-project, Impeccable — pinned-upstream-adapted; licencija ir upstream commit išlaikyti. Pašto/CRM/proposal/presentation helpers nereikalauja tokių sistemų kuriant naują nišą ir neįgalina siuntimo ar mokamų paslaugų.

@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "summary": "Correct unsupported Wrangler deploy logging flag in canonical mail runbook",
+  "category": "workflow",
+  "evidence": [
+    "MAIL_CORE.md previously directed --log-level error; actual Wrangler4.149 deploy rejected that flag. Successful deploy/dry-run and private bulk secret installation used WRANGLER_LOG=error without printing bindings; original failed logs preserved privately."
+  ],
+  "paths": [
+    "MAIL_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/261",
+  "rollback": "Revert the scoped runbook sentence; no runtime change.",
+  "id": "upgrade-9a6a5727-ef96-4bc2-bee3-43d36a83c92b",
+  "branch": "codex/memocasting-final-seo-fixes-20261025",
+  "baseSha": "1f19f2b0febb9bc007284ce8b1f8ac0699b9d263",
+  "createdAt": "2026-10-25T18:56:55.261Z"
+}

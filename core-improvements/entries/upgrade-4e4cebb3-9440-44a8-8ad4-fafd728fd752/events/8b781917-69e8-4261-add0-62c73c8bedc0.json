@@ -1,0 +1,25 @@
+{
+  "status": "local-verified",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/80",
+  "note": "Final local verification for public009594535bd996c955616384c141bf2b725a3192. Normal framework build completed; default-site SEO smoke passed on the built isolated localhost9431 runtime. Earlier no-server smoke and unsupported-date fixture attempts remain historical. No deployment, production credential provisioning or approval/publication. Real hosted UI saved four drafts; remaining16 await deployment/activation of the separately authorized draft path.",
+  "checks": [
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "664/build.log; all five framework phases, exit0."
+    },
+    {
+      "command": "SEO_SMOKE_BASE_URL=http://127.0.0.1:9431 npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "664/test-seo-local.log: greitossvetaines7pages,robots,sitemap,llms,schemas,host isolation,404. Not a full Promedical content/media audit."
+    },
+    {
+      "command": "npm run test:core; TypeScript; scoped lint; isolated workerd; intercepted browser editor",
+      "result": "PASS",
+      "evidence": "274tests and prior immutable event77837b48-e7d2-4d62-ab5a-b133db8864c9. Final desktop/mobile images directly inspected. Own server10348 and descendants closed per664/cleanup.json; shared services untouched."
+    }
+  ],
+  "eventId": "8b781917-69e8-4261-add0-62c73c8bedc0",
+  "sequence": 4,
+  "at": "2026-10-25T18:01:30.239Z"
+}

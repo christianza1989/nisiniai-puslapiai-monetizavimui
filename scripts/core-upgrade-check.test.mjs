@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { createRecord, appendEvent } from './core-upgrade.mjs';
 import { checkUpgradeCoverage, requiresUpgrade } from './core-upgrade-check.mjs';
 
@@ -111,12 +112,58 @@ test('deletion still needs provenance; immutable SOURCE archives and events cann
 });
 
 test('classification includes agent/core/skill/CI paths and excludes private site plans and test-only work', () => {
-  for (const file of ['AGENTS.md', 'CORE_IMPROVEMENT.md', 'SKILLS/PROJECT_CONTRACT.md',
+  for (const file of ['.gitattributes', 'SKILLS/.gitattributes', 'AGENTS.md', 'CORE_IMPROVEMENT.md', 'SKILLS/PROJECT_CONTRACT.md',
     'agent-business-core/runtime/src/pinet_core/control/router.py', '.github/workflows/agent-workflow.yml'])
     assert.equal(requiresUpgrade(file), true, file);
   for (const file of ['sites/fixture/BUSINESS.md', 'WORKSTREAMS.md', 'docs/PLAN.md',
     'scripts/core-upgrade-check.test.mjs', 'agent-business-core/runtime/offline_tests/test_fixture.py'])
     assert.equal(requiresUpgrade(file), false, file);
+});
+
+const archiveProtection='**/SOURCE_SKILL.md -text -filter -working-tree-encoding\n**/SOURCE_PROMPT.md -text -filter -working-tree-encoding\n';
+async function archiveFixture(t){
+ const f=await fixture(t),file='SKILLS/fixture/SOURCE_SKILL.md',original=Buffer.from('Original imported UTF-8: žodis.\r\nExact preserved bytes.\r\n');
+ const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+ await f.write('.gitattributes','*.md text eol=lf\n');
+ const catalog={skills:[{id:'fixture',archives:[{file:'fixture/SOURCE_SKILL.md',sha256:sha(original)}]}]};
+ await f.write('SKILLS/catalog.json',JSON.stringify(catalog)+'\n');
+ await f.write(file,Buffer.from(original.toString().replaceAll('\r\n','\n')));
+ f.git('config','core.autocrlf','true');
+ const base=f.commit();
+ const raw=(...args)=>{const result=spawnSync('git',args,{cwd:f.root,encoding:null});assert.equal(result.status,0,result.stderr?.toString());return result.stdout;};
+ return {...f,file,original,sha,catalog,base,raw};
+}
+
+test('a journalled exact original archive restoration survives index and fresh Git checkout byte-for-byte',async t=>{
+ const f=await archiveFixture(t);
+ await f.write('.gitattributes','*.md text eol=lf\n'+archiveProtection);await f.write(f.file,f.original);
+ const unverified=f.commit(),blocked=checkUpgradeCoverage(f.root,f.base,unverified);
+ assert.equal(blocked.status,'BLOCKED');assert.ok(blocked.uncovered_paths.includes(f.file),'restored bytes still require a verified scoped journal');
+ const r=await f.record(['.gitattributes',f.file]);await f.verify(r);const head=f.commit();
+ assert.deepEqual(f.raw('show',head+':'+f.file),f.original);
+ assert.equal(checkUpgradeCoverage(f.root,f.base,head).status,'PASS');
+ const clone=path.join(f.root,'fresh-checkout'),result=spawnSync('git',['-c','core.autocrlf=true','clone','--no-hardlinks',f.root,clone],{encoding:'utf8'});
+ assert.equal(result.status,0,result.stderr);assert.deepEqual(await fs.readFile(path.join(clone,f.file)),f.original);
+});
+
+test('archive restoration never accepts semantic/catalog changes, working-only attributes or nested/mode overrides',async t=>{
+ for(const kind of ['semantic','catalog','working-attributes','nested-attributes','mode','symlink'])await t.test(kind,async child=>{
+  const f=await archiveFixture(child);await f.write('.gitattributes','*.md text eol=lf\n'+archiveProtection);
+  let restored=f.original;
+  if(kind==='semantic')restored=Buffer.concat([f.original,Buffer.from('Changed source.\r\n')]);
+  if(kind==='catalog'){restored=Buffer.concat([f.original,Buffer.from('Changed source.\r\n')]);f.catalog.skills[0].archives[0].sha256=f.sha(restored);await f.write('SKILLS/catalog.json',JSON.stringify(f.catalog)+'\n');}
+  if(kind==='working-attributes'){await f.write('.gitattributes','*.md text eol=lf\n');await f.write('.git/info/attributes','SKILLS/fixture/SOURCE_SKILL.md -text\n');}
+  if(kind==='nested-attributes')await f.write('SKILLS/fixture/.gitattributes','SOURCE_SKILL.md text\n');
+  await f.write(f.file,restored);
+  const r=await f.record(['.gitattributes','SKILLS']);await f.verify(r);f.git('add','.');
+  // Deliberately bypass working-tree clean filters to test committed protection,
+  // not merely a failed hash caused by the hostile nested attribute override.
+  const object=spawnSync('git',['hash-object','-w','--stdin'],{cwd:f.root,input:restored,encoding:'utf8'});assert.equal(object.status,0);
+  f.git('update-index','--cacheinfo',kind==='mode'?'100755':kind==='symlink'?'120000':'100644',object.stdout.trim(),f.file);
+  f.git('commit','-m','synthetic hostile restoration');
+  const result=checkUpgradeCoverage(f.root,f.base,f.git('rev-parse','HEAD'));
+  assert.ok(result.errors.some(error=>error.path===f.file&&error.reason==='source_archive_is_immutable'),kind);
+ });
 });
 
 test('a companion record with identical filenames cannot attest a private core change', async t => {

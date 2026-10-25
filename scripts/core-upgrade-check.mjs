@@ -1,6 +1,7 @@
 // Read committed Git blobs only. A provenance check, not a semantic reviewer or auto-merger.
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { validateRecord } from './core-upgrade.mjs';
 
@@ -23,6 +24,7 @@ function git(root, args, allowMissing = false) {
 }
 
 export function requiresUpgrade(file) {
+  if (file === '.gitattributes' || file.endsWith('/.gitattributes')) return true;
   if (file === 'WORKSTREAMS.md' || /(?:^|\/)SOURCE_[^/]+$/.test(file)
       || /(?:^|\/)(?:tests?|offline_tests|evals|fixtures)(?:\/|$)/.test(file)
       || /\.(?:test|spec)\.[^.]+$/.test(file)) return false;
@@ -46,6 +48,50 @@ function jsonBlob(root, ref, file) {
   const value = git(root, ['show', `${ref}:${file}`]);
   if (Buffer.byteLength(value) > 1024 * 1024) throw new Error('journal_blob_too_large');
   return JSON.parse(value);
+}
+
+// A one-way recovery of original catalogued bytes lost to Git EOL transport.
+// Do not consult working attributes, .git/info or user/global Git config: those
+// can override `git check-attr --source` without protecting a fresh checkout.
+function archiveRestorationGate(root, base, head) {
+  const raw = (ref, file) => {
+    const result = spawnSync('git', ['show', `${ref}:${file}`], { cwd: root, encoding: null,
+      windowsHide: true, maxBuffer: 8 * 1024 * 1024, timeout: 30000 });
+    if (result.status !== 0) throw new Error('missing_restoration_blob');
+    return result.stdout;
+  };
+  try {
+    const oldCatalog = raw(base, 'SKILLS/catalog.json'), newCatalog = raw(head, 'SKILLS/catalog.json');
+    if (!oldCatalog.equals(newCatalog)) return () => false;
+    const expected = new Map();
+    for (const skill of JSON.parse(oldCatalog).skills) for (const archive of skill.archives ?? []) {
+      const file = 'SKILLS/' + archive.file;
+      if (expected.has(file)) return () => false;
+      expected.set(file, archive.sha256);
+    }
+    const tree = ref => new Map(git(root, ['ls-tree', '-r', ref, '--', 'SKILLS', '.gitattributes']).trim().split('\n').map(line => {
+      const match = /^(\d{6}) (?:blob|commit) [a-f0-9]+\t(.+)$/.exec(line);
+      return match ? [match[2], match[1]] : ['', ''];
+    }));
+    const oldTree = tree(base), newTree = tree(head);
+    if (newTree.get('.gitattributes') !== '100644' || oldTree.get('SKILLS/catalog.json') !== '100644'
+        || newTree.get('SKILLS/catalog.json') !== '100644') return () => false;
+    const rules = raw(head, '.gitattributes').toString('utf8').split(/\r?\n/).map(line => line.trim()).filter(line => line && !line.startsWith('#'));
+    // Deliberately support only this audited terminal rule pair. Unknown or
+    // nested committed attribute programs fail closed, not a home-made glob parser.
+    if (rules.slice(-2).join('\n') !== '**/SOURCE_SKILL.md -text -filter -working-tree-encoding\n**/SOURCE_PROMPT.md -text -filter -working-tree-encoding') return () => false;
+    return item => {
+      if (item.status !== 'M' || !/^SKILLS\/[^/]+\/SOURCE_(?:SKILL|PROMPT)\.md$/.test(item.file)
+          || oldTree.get(item.file) !== '100644' || newTree.get(item.file) !== '100644') return false;
+      if (['SKILLS/.gitattributes', path.posix.dirname(item.file) + '/.gitattributes'].some(file => newTree.has(file))) return false;
+      const hash = expected.get(item.file);
+      if (!/^[a-f0-9]{64}$/.test(hash ?? '')) return false;
+      const before = raw(base, item.file), after = raw(head, item.file);
+      if (!before.includes(10) || before.includes(13)) return false;
+      const recovered = Buffer.from(before.toString('latin1').replaceAll('\n', '\r\n'), 'latin1');
+      return after.equals(recovered) && createHash('sha256').update(after).digest('hex') === hash;
+    };
+  } catch { return () => false; }
 }
 
 function covers(root, head, scope, file) {
@@ -76,6 +122,9 @@ export function checkUpgradeCoverage(root, base, head) {
   for (let i = 0; i + 1 < changed.length; i += 2) modifications.push({ status: changed[i], file: changed[i + 1] });
   const required = modifications.map(x => x.file).filter(requiresUpgrade);
   const errors = [];
+  const restoredArchives = [];
+  const canRestore = modifications.some(item => /(?:^|\/)SOURCE_[^/]+$/.test(item.file))
+    ? archiveRestorationGate(root, ancestor, head) : () => false;
   const touched = new Set();
   for (const item of modifications) {
     const match = entryPattern.exec(item.file);
@@ -83,8 +132,10 @@ export function checkUpgradeCoverage(root, base, head) {
       touched.add(match[1]);
       if (item.status !== 'A') errors.push({ path: item.file, reason: 'journal_history_is_append_only' });
     }
-    if (/(?:^|\/)SOURCE_[^/]+$/.test(item.file) && item.status !== 'A')
-      errors.push({ path: item.file, reason: 'source_archive_is_immutable' });
+    if (/(?:^|\/)SOURCE_[^/]+$/.test(item.file) && item.status !== 'A') {
+      if (canRestore(item)) { restoredArchives.push(item.file); required.push(item.file); }
+      else errors.push({ path: item.file, reason: 'source_archive_is_immutable' });
+    }
   }
   const records = [], foreignScopes = [];
   for (const id of [...touched].sort()) {
@@ -130,7 +181,7 @@ export function checkUpgradeCoverage(root, base, head) {
   const uncovered = required.filter(file => !records.some(r => r.paths.some(scope => covers(root, head, scope, file))));
   return { status: errors.length || uncovered.length ? 'BLOCKED' : 'PASS',
     base_sha: base, merge_base_sha: ancestor, head_sha: head, shared_changes: required.length,
-    verified_upgrade_ids: records.map(r => r.id), foreign_scope_ids: foreignScopes, uncovered_paths: uncovered, errors,
+    verified_upgrade_ids: records.map(r => r.id), foreign_scope_ids: foreignScopes, restored_source_archives: restoredArchives, uncovered_paths: uncovered, errors,
     limitations: 'Checks private-repository provenance and declared PASS evidence in committed journal blobs. Foreign scopes require separate companion Git review and never cover private changes. Does not execute checks, judge repair quality, merge code, or prove runtime adoption.' };
 }
 

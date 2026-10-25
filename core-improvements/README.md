@@ -35,6 +35,17 @@ dingęs katalogas ar vien working tree esantis kelias nesuteikia coverage.
 `*` ir `?` scope neleidžiami. Journal helper išsaugo literal kelią; pats įrašymas
 dar neįrodo committed scope ar patikros. Senų record ir event taisyti negalima.
 
+Originalūs `SOURCE_` archyvai lieka nekintami. Vienintelė tiksliai tikrinama
+atkūrimo išimtis: `SKILLS/<skill>/SOURCE_SKILL.md` arba `SOURCE_PROMPT.md` LF Git
+blobas atkuriamas į originalius CRLF baitus, kurių SHA-256 jau yra nepakitusiame
+abiejų versijų `SKILLS/catalog.json`. Privalomi įprasti 100644 failai, paskutinė
+committed root `.gitattributes` taisyklių pora `-text -filter -working-tree-encoding`
+šiems vardams ir jokių nested attributes archyvo kelyje. Kiekvienas toks failas
+turi patekti į naujo verified upgrade scope. Semantiniai pakeitimai, katalogo
+hash keitimas, trynimas, symlink ir vien working ar `.git/info` attributes šios
+išimties nesuteikia. Checker skaito tikslius Git baitus; jis jų „nenormalizuoja“
+į tariamą PASS. `.gitattributes` pakeitimai taip pat yra bendro core įvestys.
+
 Companion PUBLIC įrašo literal kelias CORE Git medyje neegzistuoja. Checker
 tokiems įrašams tikrina žurnalo bei kelio sintaksę (be `*` ir `?`), pateikia
 juos atskirai `foreign_scope_ids` ir nesuteikia jokio private source coverage.

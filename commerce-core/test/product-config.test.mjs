@@ -30,6 +30,46 @@ const setup = async () => {
   };
   return { db, s, editor, product, definition };
 };
+test('multi-option order titles retain readable separators and the immutable first snapshot', async () => {
+  const x = await setup();
+  x.definition.optionGroups.push({
+    id: 'presentation',
+    label: 'Pateikimas',
+    defaultValue: 'standard',
+    values: [{ id: 'standard', label: 'Įprastas', enabled: true, prices: { LT: 0 } }],
+  });
+  const draft = await x.editor.saveDraft(
+    'store_a',
+    'sandbox',
+    { definition: x.definition, basisHash: x.product.basisHash },
+    'owner',
+  );
+  await x.editor.revise(
+    'store_a',
+    'sandbox',
+    {
+      id: 'publish_readable_title',
+      basisHash: x.product.basisHash,
+      draftHash: draft.draftHash,
+      definition: x.definition,
+    },
+    'owner',
+  );
+  const input = {
+    ...cart(),
+    lines: [{ sku: 'couple', quantity: 1, choices: { finish: 'gold', presentation: 'standard' } }],
+  };
+  const order = (await x.s.createOrder('store_a', 'sandbox', input, key(992))).order;
+  assert.equal(
+    order.snapshot.lines[0].title,
+    'Test couple kit — Spalva: Auksinė · Pateikimas: Įprastas',
+  );
+  assert.equal(
+    (await x.s.getOrder('store_a', 'sandbox', order.id)).snapshot.lines[0].title,
+    order.snapshot.lines[0].title,
+  );
+  x.db.close();
+});
 test('draft is private, revisioned and survives a new editor; mixed finishes reserve shared kit stock once', async () => {
   const x = await setup();
   const saved = await x.editor.saveDraft(

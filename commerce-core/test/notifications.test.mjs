@@ -5,6 +5,61 @@ import { CommerceService } from '../src/service.mjs';
 import { CommerceJobs } from '../src/jobs.mjs';
 import { CustomerNotifications, notificationMessage } from '../src/notifications.mjs';
 import { fixtureStore, fixtureProducts, cart, key } from './fixtures.mjs';
+test('mailbox migration preserves an unknown old command and only reconciles its existing receipt', async () => {
+  const db = new NodeDatabase();
+  db.migrate();
+  const s = new CommerceService(db);
+  const config = {
+    ...fixtureStore(),
+    notificationPolicy: { approved: true, from: 'old@example.test', transportRef: 'core_mail' },
+  };
+  await s.provisionStore(config, fixtureProducts());
+  await s.createOrder(
+    'store_a',
+    'sandbox',
+    {
+      ...cart(),
+      customer: {
+        name: 'Fixture',
+        email: 'buyer@example.test',
+        phone: '+37060000000',
+        address: { country: 'LT', line1: 'Test g. 1', city: 'Vilnius', postalCode: '02211' },
+      },
+    },
+    key(1),
+  );
+  const event = await s.one("SELECT * FROM outbox WHERE kind='OrderPlaced'");
+  await new CommerceJobs(s).notification('store_a', 'sandbox', event);
+  let sends = 0;
+  const adapter = {
+    accountRef: 'core_mail',
+    environment: 'sandbox',
+    sender: 'old@example.test',
+    send: async () => {
+      sends++;
+      throw Error('unknown');
+    },
+    find: async (message) => {
+      assert.equal(message.from, 'old@example.test');
+      return { status: 'accepted', reference: 'positive-old-receipt' };
+    },
+  };
+  const n = new CustomerNotifications(s, { store_a: adapter });
+  assert.equal((await n.execute('store_a', 'sandbox', event.id, 'fixture_actor')).state, 'unknown');
+  const before = await s.one('SELECT message_json FROM notification_commands');
+  config.notificationPolicy.from = 'new@example.test';
+  await s
+    .stmt('UPDATE stores SET config_json=? WHERE id=?', JSON.stringify(config), 'store_a')
+    .run();
+  adapter.sender = 'new@example.test';
+  assert.equal(
+    (await n.execute('store_a', 'sandbox', event.id, 'fixture_actor')).state,
+    'accepted',
+  );
+  assert.deepEqual(await s.one('SELECT message_json FROM notification_commands'), before);
+  assert.equal(sends, 1);
+  db.close();
+});
 test('transactional message sends once on timeout/concurrency/restart and recovers by transport evidence only', async () => {
   const db = new NodeDatabase();
   db.migrate();

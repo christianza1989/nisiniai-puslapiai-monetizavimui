@@ -5,6 +5,7 @@ import { DocumentFiles } from './document-pdf.mjs';
 import { ShipmentCommands } from './shipment-commands.mjs';
 import { CustomerNotifications } from './notifications.mjs';
 import { ShippingAutomation } from './shipping-automation.mjs';
+import { PaymentRecovery } from './payment-recovery.mjs';
 const notifyKinds = [
   'OrderPlaced',
   'PaymentConfirmed',
@@ -39,6 +40,7 @@ export class CommerceJobs {
       paymentState: order.payment_state,
       fulfillmentState: order.fulfillment_state,
       replyTo: order.snapshot.legal.email || null,
+      ...(event.resumeUrl ? { resumeUrl: event.resumeUrl } : {}),
     };
     const hash = await digest(canonical(payload));
     const old = await this.s.one(
@@ -215,8 +217,19 @@ export class CommerceJobs {
     ]);
   }
   async overview(store, env) {
-    await this.s.store(store, env);
+    const config = await this.s.store(store, env);
     return {
+      notificationSettings: {
+        sender: config.notificationPolicy?.from || null,
+        sending: config.automationPolicy?.sendNotifications === true,
+        recovery:
+          config.paymentRecovery?.enabled === true
+            ? {
+                reservationHours: config.paymentRecovery.reservationHours,
+                reminderAfterHours: config.paymentRecovery.reminderAfterHours,
+              }
+            : null,
+      },
       outbox: await this.s.rows(
         'SELECT o.id,o.kind,o.state,o.attempts,d.state deliveryState,d.next_attempt_at,d.last_error FROM outbox o LEFT JOIN outbox_delivery d ON d.store_id=o.store_id AND d.event_id=o.id WHERE o.store_id=? ORDER BY o.created_at DESC,o.id LIMIT 100',
         store,
@@ -252,7 +265,35 @@ export class CommerceJobs {
       config.automationPolicy?.sendNotifications === true &&
       config.notificationPolicy?.approved === true
     ) {
-      const notifications = new CustomerNotifications(this.s, this.options.notificationAdapters);
+      const recovery = new PaymentRecovery(this.s, this.options);
+      if (config.paymentRecovery?.enabled === true) {
+        for (const order of await this.s.rows(
+          "SELECT id FROM orders WHERE store_id=? AND payment_state='pending' AND stock_state='reserved' AND created_at>=? AND created_at<=? AND expires_at>? AND NOT EXISTS(SELECT 1 FROM customer_notifications n WHERE n.store_id=orders.store_id AND n.order_id=orders.id AND n.kind='PaymentReminder') ORDER BY created_at LIMIT 20",
+          store,
+          Math.max(config.paymentRecovery.enabledAt, this.s.now() - 86400000 + 1),
+          this.s.now() - config.paymentRecovery.reminderAfterHours * 3600000,
+          this.s.now(),
+        )) {
+          try {
+            if (!(await recovery.canRemind(store, env, order.id))) continue;
+            const current = await this.s.getOrder(store, env, order.id);
+            await this.notification(store, env, {
+              id: 'PaymentReminder_' + order.id,
+              aggregate_id: order.id,
+              kind: 'PaymentReminder',
+              resumeUrl:
+                config.paymentRecovery.origin +
+                '/cart#resume=' +
+                (await recovery.token(store, env, current)),
+            });
+          } catch {
+            /* Unknown provider state defers; it never authorizes sending. */
+          }
+        }
+      }
+      const notifications = new CustomerNotifications(this.s, this.options.notificationAdapters, {
+        reminderCheck: (...args) => recovery.canRemind(...args),
+      });
       for (const n of await this.s.rows(
         "SELECT event_id FROM customer_notifications WHERE store_id=? AND state IN ('prepared','unknown','sending') ORDER BY created_at LIMIT 20",
         store,

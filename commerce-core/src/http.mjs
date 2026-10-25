@@ -18,6 +18,7 @@ import { CustomerNotifications } from './notifications.mjs';
 import { PaymentDisputes } from './disputes.mjs';
 import { FinishedStock } from './finished-stock.mjs';
 import { CommerceAnalytics } from './analytics.mjs';
+import { PaymentRecovery } from './payment-recovery.mjs';
 const json = (value, status = 200) =>
   Response.json(value, {
     status,
@@ -59,6 +60,7 @@ export function createHandler({
   shippingReadAdapters = {},
   notificationAdapters = {},
   analyticsAdapters = {},
+  recoveryKeys = {},
   publicAbuseGuard,
   privateStorage,
   loadDocumentFont,
@@ -81,8 +83,13 @@ export function createHandler({
     shippingAdapters,
     shippingReadAdapters,
     notificationAdapters,
+    paymentAdapters,
+    recoveryKeys,
   });
-  const notifications = new CustomerNotifications(service, notificationAdapters);
+  const recovery = new PaymentRecovery(service, { recoveryKeys, paymentAdapters });
+  const notifications = new CustomerNotifications(service, notificationAdapters, {
+    reminderCheck: (...args) => recovery.canRemind(...args),
+  });
   const financeIO = new FinanceIO(service);
   const catalogOperations = new CatalogOperations(service);
   const catalogMedia = new CatalogMedia(service, privateStorage);
@@ -183,6 +190,15 @@ export function createHandler({
       publishOffers: productionReady && eligibleCountries.length > 0,
       eligibleCountries,
       canCreateTestOrder: environment === 'sandbox' && store.testOnly === true,
+      ...(store.paymentRecovery?.enabled === true
+        ? {
+            paymentRecovery: {
+              noticeVersion: store.paymentRecovery.noticeVersion,
+              reminderAfterHours: store.paymentRecovery.reminderAfterHours,
+              reservationHours: store.paymentRecovery.reservationHours,
+            },
+          }
+        : {}),
       fixtureCheckout:
         environment === 'sandbox' && store.testOnly === true && payment?.fixture === true,
     };
@@ -198,7 +214,9 @@ export function createHandler({
       const path = url.pathname;
       if (
         request.method === 'POST' &&
-        ['/api/quote', '/api/delivery-quotes', '/api/orders'].includes(path)
+        ['/api/quote', '/api/delivery-quotes', '/api/orders', '/api/payment-recovery'].includes(
+          path,
+        )
       ) {
         requireValue(
           environment !== 'production' || publicAbuseGuard,
@@ -209,9 +227,12 @@ export function createHandler({
           await publicAbuseGuard(
             request,
             store,
-            { '/api/quote': 'quote', '/api/delivery-quotes': 'delivery', '/api/orders': 'order' }[
-              path
-            ],
+            {
+              '/api/quote': 'quote',
+              '/api/delivery-quotes': 'delivery',
+              '/api/orders': 'order',
+              '/api/payment-recovery': 'order',
+            }[path],
           );
       }
       if (request.method === 'GET' && path === '/api/storefront-context')
@@ -365,6 +386,25 @@ export function createHandler({
               store.id,
               environment,
               await limitedBytes(request.body),
+              actor.id,
+            ),
+          );
+        }
+        const thumbnailUpload = path.match(
+          /^\/api\/operator\/catalog-media\/(img_[a-f0-9]{64})\/thumbnail$/,
+        );
+        if (thumbnailUpload && request.method === 'POST') {
+          const actor = await authorize('catalog');
+          requireValue(
+            request.headers.get('content-type') === 'image/webp',
+            'invalid_catalog_thumbnail',
+          );
+          return json(
+            await catalogMedia.putThumbnail(
+              store.id,
+              environment,
+              thumbnailUpload[1],
+              await limitedBytes(request.body, 128 * 1024),
               actor.id,
             ),
           );
@@ -778,18 +818,34 @@ export function createHandler({
         }
       }
       const publicImage = path.match(/^\/api\/catalog-media\/([a-zA-Z0-9_-]+)$/);
-      if (publicImage && request.method === 'GET')
-        return new Response(await catalogMedia.get(store.id, environment, publicImage[1]), {
-          headers: {
-            'content-type': 'image/webp',
-            'cache-control': 'public, max-age=300',
-            'x-content-type-options': 'nosniff',
+      if (publicImage && request.method === 'GET') {
+        const size = url.searchParams.get('size');
+        requireValue(size === null || size === '192', 'invalid_catalog_thumbnail');
+        return new Response(
+          await catalogMedia.get(store.id, environment, publicImage[1], true, {
+            thumbnail: size === '192',
+          }),
+          {
+            headers: {
+              'content-type': 'image/webp',
+              'cache-control': 'public, max-age=300',
+              'x-content-type-options': 'nosniff',
+            },
           },
-        });
+        );
+      }
       if (request.method === 'GET' && path === '/api/catalog')
         return json(await service.catalog(store.id, environment));
       if (request.method === 'POST' && path === '/api/quote')
         return json(await service.quote(store.id, environment, await read()));
+      if (request.method === 'POST' && path === '/api/payment-recovery') {
+        const input = await read();
+        requireValue(
+          input && Object.keys(input).length === 1 && typeof input.token === 'string',
+          'invalid_payment_recovery',
+        );
+        return json(await recovery.resolve(store.id, environment, input.token));
+      }
       if (request.method === 'POST' && path === '/api/orders') {
         if (environment === 'production')
           requireValue((await context(store)).productionReady, 'checkout_not_admitted', 503);
@@ -880,7 +936,17 @@ export function createHandler({
       );
       if (match) {
         const token = request.headers.get('authorization')?.replace(/^Bearer /, '');
-        const order = await service.authorizeOrder(store.id, environment, match[1], token);
+        const recovering = token?.startsWith('r1_') === true;
+        if (recovering)
+          requireValue(
+            (request.method === 'GET' && [undefined, 'receipt'].includes(match[2])) ||
+              (request.method === 'POST' && match[2] === 'checkout'),
+            'payment_recovery_forbidden',
+            403,
+          );
+        const order = recovering
+          ? await recovery.authorize(store.id, environment, token, match[1])
+          : await service.authorizeOrder(store.id, environment, match[1], token);
         if (request.method === 'POST' && match[2] === 'analytics')
           return json(await analytics.capture(store.id, environment, order, await read()));
         if (request.method === 'GET' && !match[2]) return json(order);
@@ -924,6 +990,12 @@ export function createHandler({
           });
         }
         if (request.method === 'POST' && match[2] === 'checkout') {
+          if (recovering)
+            requireValue(
+              (await recovery.resolve(store.id, environment, token)).state === 'open',
+              'checkout_unavailable',
+              409,
+            );
           if (environment === 'production')
             requireValue((await context(store)).productionReady, 'checkout_not_admitted', 503);
           requireValue(paymentAdapters[store.id], 'stripe_not_connected', 503);

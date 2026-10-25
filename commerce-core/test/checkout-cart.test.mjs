@@ -540,6 +540,72 @@ function fillOnePage(root) {
     field(root, name).value = value;
   field(root, 'terms').checked = true;
 }
+test('informed recovery restores expired basket for fresh quote and unchecked terms, without auto payment or create', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      initialize = client.initialize;
+    let quotes = 0,
+      payments = 0,
+      creates = 0;
+    client.initialize = async () => {
+      const value = await initialize();
+      value.context.paymentRecovery = {
+        noticeVersion: 'recovery_v1',
+        reminderAfterHours: 12,
+        reservationHours: 24,
+      };
+      return value;
+    };
+    client.openRecovery = async () => ({
+      state: 'restore',
+      order: {
+        ...client.order,
+        snapshot: {
+          country: 'LT',
+          lines: [{ sku: 'couple', quantity: 2, unitAmount: 1 }],
+          customer: {
+            name: 'Original Buyer',
+            email: 'original@example.test',
+            phone: '+37060000001',
+            address: { line1: 'Original Street 2', city: 'Vilnius', postalCode: '02211' },
+          },
+          delivery: { id: 'courier', amount: 1 },
+        },
+      },
+    });
+    const quote = client.quote;
+    client.quote = async (input) => {
+      quotes++;
+      return quote(input);
+    };
+    client.create = async () => {
+      creates++;
+      throw Error('no automatic create');
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      recoveryToken: 'fixture',
+      renderPayment: async () => {
+        payments++;
+      },
+    });
+    assert.equal(field(root, 'name').value, 'Original Buyer');
+    assert.equal(field(root, 'couple').value, '2');
+    assert.notEqual(field(root, 'email').disabled, true);
+    assert.equal(field(root, 'terms').checked, false);
+    assert.equal(payments, 0);
+    assert.equal(creates, 0);
+    assert(textContent(root).includes('po 12 val.'));
+    assert(textContent(root).includes('per 24 val.'));
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('submit');
+    assert.equal(creates, 0);
+    await pause(700);
+    assert(quotes > 0);
+  }));
 function carrierClient() {
   const client = onePageClient(),
     initialize = client.initialize;

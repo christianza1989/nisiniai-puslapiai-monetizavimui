@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Expose protected operator mail policy, register workspace helper and preserve readable option snapshots",
+  "category": "code",
+  "evidence": [
+    "Admin uses the shared authenticated asset allowlist; a newly imported workspace module needs registration in the Worker and local server. Operators lacked the effective sender/recovery policy and new selected-option snapshots used a reproducible replacement character separator."
+  ],
+  "paths": [
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/src/jobs.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/test/product-config.test.mjs",
+    "commerce-core/test/operator-workspace.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/261",
+  "rollback": "Revert the scoped source alongside its matching admin client. No migrations or rewriting historical orders; preserve actual provider bindings and private mailbox settings.",
+  "id": "upgrade-e1172676-f479-4b39-b088-b203d7091a3a",
+  "branch": "codex/memocasting-final-seo-fixes-20261025",
+  "baseSha": "55a4a470ef6f90c86248336b2328552f8697bb61",
+  "createdAt": "2026-10-25T20:02:44.335Z"
+}

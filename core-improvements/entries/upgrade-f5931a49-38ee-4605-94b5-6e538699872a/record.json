@@ -1,0 +1,29 @@
+{
+  "siteId": "core",
+  "summary": "Make commerce administration a coherent task-first workspace and prevent stale async view contamination",
+  "category": "code",
+  "evidence": [
+    "Actual production admin orders/catalog/stock observed2026-10-25; no search/filter, long automatic first-product editor, blank async states. render passes the persistent content element to async renderCatalog, so a response after changing tabs can append the previous view into the new view."
+  ],
+  "paths": [
+    "commerce-core/public/admin.html",
+    "commerce-core/public/admin.css",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/public/operator-workspace.mjs",
+    "commerce-core/public/catalog-ui.mjs",
+    "commerce-core/public/catalog-editor.mjs",
+    "commerce-core/public/jobs-ui.mjs",
+    "commerce-core/public/backoffice-ui.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/scripts/dev.mjs",
+    "commerce-core/DESIGN.md",
+    "commerce-core/.impeccable/design.json",
+    "commerce-core/docs/ADMIN_WORKSPACE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/261",
+  "rollback": "Revert scoped admin source only; preserve private APIs, grants, orders and provider commands. Deploy prior backend code together with matching mail identity config.",
+  "id": "upgrade-f5931a49-38ee-4605-94b5-6e538699872a",
+  "branch": "codex/memocasting-final-seo-fixes-20261025",
+  "baseSha": "55a4a470ef6f90c86248336b2328552f8697bb61",
+  "createdAt": "2026-10-25T19:05:23.559Z"
+}

@@ -189,7 +189,7 @@ export class CommerceService {
         ...line,
         title:
           (p.titles?.[market.country] || p.title) +
-          (configured.labels.length ? ' — ' + configured.labels.join(' � ') : ''),
+          (configured.labels.length ? ' — ' + configured.labels.join(' · ') : ''),
         ...(configured.image ? { image: configured.image } : {}),
         unitAmount,
         lineAmount: unitAmount * line.quantity,
@@ -333,6 +333,9 @@ export class CommerceService {
         ...(input.acceptedPolicyVersion !== undefined
           ? { acceptedPolicyVersion: input.acceptedPolicyVersion }
           : {}),
+        ...(input.paymentRecoveryNotice !== undefined
+          ? { paymentRecoveryNotice: input.paymentRecoveryNotice }
+          : {}),
         ...(customer
           ? {
               customer: customer.locker
@@ -350,6 +353,16 @@ export class CommerceService {
       return { order: this.view(existing), replayed: true };
     }
     const snapshot = await this.quote(id, environment, input);
+    if (config.paymentRecovery?.enabled === true) {
+      requireValue(
+        input.paymentRecoveryNotice === config.paymentRecovery.noticeVersion,
+        'payment_recovery_notice_required',
+      );
+      snapshot.paymentRecoveryNotice = {
+        version: config.paymentRecovery.noticeVersion,
+        shownAt: this.now(),
+      };
+    }
     if (config.requireQuote === true || input.quoteHash !== undefined)
       requireValue(input.quoteHash === snapshot.quoteHash, 'quote_price_changed', 409);
     if (customer) {
@@ -376,7 +389,9 @@ export class CommerceService {
         snapshot.amount,
         JSON.stringify(snapshot),
         accessHash,
-        at + 3600000,
+        at +
+          (config.paymentRecovery?.enabled === true ? config.paymentRecovery.reservationHours : 1) *
+            3600000,
         at,
         at,
       ),

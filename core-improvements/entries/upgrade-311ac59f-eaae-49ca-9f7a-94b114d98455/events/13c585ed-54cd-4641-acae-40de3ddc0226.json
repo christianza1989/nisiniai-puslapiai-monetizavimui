@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Correction to prior verification note: it was appended before the in-flight final TypeScript command finished; that npx process later exhausted Windows memory. That failure is preserved in recovery-types-final.private.txt and is not a PASS. After stopping own unused dev/preview servers, direct node --max-old-space-size=768 TypeScript completed exit0 on the current abort-aware async wrapper; direct scoped ESLint also exit0. No assertions, protection or source behavior were relaxed for resource failures. Public266, focused14, mail320/desktop previews and separate Worker packaging evidence remain. Actual deployment/INBOX still pending.",
+  "checks": [
+    {
+      "command": "cd companion && node --max-old-space-size=768 node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "Actual exit0 from session22727; recovery-types-direct.private.txt"
+    },
+    {
+      "command": "cd companion && node node_modules/eslint/bin/eslint.js [owned five paths] --max-warnings0",
+      "result": "PASS",
+      "evidence": "Actual exit0 from session53871; recovery-lint-direct.private.txt"
+    },
+    {
+      "command": "cd companion && node --test --test-concurrency=1 tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "266/266; recovery-public-tests.private.txt"
+    },
+    {
+      "command": "Exact staged repository safety",
+      "result": "PASS",
+      "evidence": "13 owned files,115892 bytes, zero findings; user skills-lock file preserved"
+    }
+  ],
+  "eventId": "13c585ed-54cd-4641-acae-40de3ddc0226",
+  "sequence": 3,
+  "at": "2026-10-25T18:31:01.160Z"
+}

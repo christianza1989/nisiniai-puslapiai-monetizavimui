@@ -1,0 +1,26 @@
+{
+  "siteId": "memocasting",
+  "summary": "Adopt publication-bound catalogue previews and canonical manufacturer/organization identity; surface eligible gift paths and authentic existing process evidence",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/DEEP_SEO_GEO_AUDIT_2026_10_25.md",
+    "263/263 public regressions; thumbnail transport/authored identifier/publication boundary tests"
+  ],
+  "paths": [
+    "components/niche/memocasting-product-gallery.tsx",
+    "components/niche/memocasting-site.tsx",
+    "components/niche/memocasting-site.module.css",
+    "lib/catalog-media-thumbnail.mjs",
+    "lib/memocasting-product-identifiers.mjs",
+    "lib/memocasting-commerce-bridge.mjs",
+    "lib/memocasting-merchant-feed.mjs",
+    "lib/memocasting-product-content.mjs",
+    "lib/memocasting-structure.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/78",
+  "rollback": "Revert scoped frontend patch using preserved previous Worker version. Do not roll back orders or catalogue state; backend derivative path is additive and compatible.",
+  "id": "upgrade-8a708cb2-d644-4ebc-9639-956a94077c81",
+  "branch": "codex/memocasting-final-seo-fixes-20261025",
+  "baseSha": "9746a6fadadf545701085fb0af9f93d8568f66e8",
+  "createdAt": "2026-10-25T17:02:19.355Z"
+}

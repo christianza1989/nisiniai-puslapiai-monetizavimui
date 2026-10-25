@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Task-first admin verified in isolated actual browser, including delayed order/navigation and product-save boundaries, dirty discard, current status ownership and silent canceled publication. Native workerd and237 Node regressions passed. Fresh reviewer scored listed corrections resolved (ship); production acceptance recorded separately.",
+  "checks": [
+    {
+      "command": "node --test --test-concurrency=1 test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "237/237, admin-final-regression.private.txt; final source unchanged after run except design documentation."
+    },
+    {
+      "command": "npm run test:worker",
+      "result": "PASS",
+      "evidence": "Actual workerd/native D1 boundaries, operator auth, signed payment/replay/concurrency and persistence; admin-final-workerd.private.txt."
+    },
+    {
+      "command": "CUA isolated browser delayed-request acceptance; syntax/format; production-profile wrangler deploy --dry-run",
+      "result": "PASS",
+      "evidence": "admin-async-browser.private.json and admin-delayed-publish.private.json; desktop/320 screenshots; dirty guard survives former save; canceled publication count1->1; normal refresh busy clears. Reviewer final scored-fix disposition ship. No real customer/provider transaction."
+    }
+  ],
+  "eventId": "79b154c4-69e4-4aca-bc2d-d871a97c0de2",
+  "sequence": 2,
+  "at": "2026-10-25T20:16:30.309Z"
+}

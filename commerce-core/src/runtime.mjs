@@ -33,6 +33,25 @@ export function runtimeOptions(env) {
     503,
   );
   const connections = parse(env.COMMERCE_CONNECTIONS, {});
+  // Mail identity can migrate without rewriting unrelated Stripe/carrier keys.
+  // The private gateway independently enforces the authenticated From address.
+  const mailConnections = parse(env.COMMERCE_MAIL_CONNECTIONS, {});
+  requireValue(
+    mailConnections &&
+      typeof mailConnections === 'object' &&
+      !Array.isArray(mailConnections) &&
+      Object.keys(mailConnections).length <= 100 &&
+      Object.entries(mailConnections).every(
+        ([id, value]) =>
+          Object.hasOwn(connections, id) &&
+          value &&
+          Object.keys(value).sort().join(',') === 'sender,transportRef' &&
+          /^[a-zA-Z0-9_-]{1,100}$/.test(value.transportRef) &&
+          /^[^\s<>\r\n@]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(value.sender),
+      ),
+    'runtime_mail_configuration_invalid',
+    503,
+  );
   const operatorSessions = new AccessOperatorSessions({
     configuration: env.COMMERCE_ACCESS,
     db: env.COMMERCE_DB,
@@ -63,12 +82,13 @@ export function runtimeOptions(env) {
         publishableKey: connection.stripe.publishableKey,
         environment,
       });
-    if (connection.mail && env.COMMERCE_MAIL)
+    const mail = mailConnections[storeId] || connection.mail;
+    if (mail && env.COMMERCE_MAIL)
       notificationAdapters[storeId] = new CoreMailBindingAdapter({
         binding: env.COMMERCE_MAIL,
         environment,
-        accountRef: connection.mail.transportRef,
-        sender: connection.mail.sender,
+        accountRef: mail.transportRef,
+        sender: mail.sender,
       });
     if (connection.sendparcel) {
       const carrierOptions = {
@@ -98,6 +118,7 @@ export function runtimeOptions(env) {
     shippingAdapters,
     shippingReadAdapters,
     notificationAdapters,
+    recoveryKeys: parse(env.COMMERCE_RECOVERY_KEYS, {}),
     analyticsAdapters: analyticsConnections(env.COMMERCE_ANALYTICS, environment),
     publicAbuseGuard:
       env.COMMERCE_ABUSE_SALT && env.COMMERCE_DB
@@ -128,6 +149,8 @@ export const adminAssets = {
   '/admin': '/admin.html',
   '/admin.css': '/admin.css',
   '/admin.mjs': '/admin.mjs',
+  '/operator-order-status.mjs': '/operator-order-status.mjs',
+  '/operator-workspace.mjs': '/operator-workspace.mjs',
   '/backoffice-ui.mjs': '/backoffice-ui.mjs',
   '/finished-stock-ui.mjs': '/finished-stock-ui.mjs',
   '/shipping-ui.mjs': '/shipping-ui.mjs',

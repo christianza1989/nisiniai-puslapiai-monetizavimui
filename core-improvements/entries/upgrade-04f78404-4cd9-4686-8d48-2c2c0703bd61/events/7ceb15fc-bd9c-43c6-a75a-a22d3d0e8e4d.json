@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "234 Node checks and native workerd/D1 suite pass. Purpose-bound link, provider inspection,12/24h boundaries, conditional paid-race guard, unknown/no-resend, sender migration and operator labels covered. Complete Lithuanian mail copy self-edited and actual320px/desktop HTML preview inspected with no overflow. Production feature remains disabled pending deployment, privacy notice and exact hosted acceptance.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm test",
+      "result": "PASS",
+      "evidence": "234/234; private recovery-all-tests-final.private.txt"
+    },
+    {
+      "command": "cd commerce-core && npm run test:worker",
+      "result": "PASS",
+      "evidence": "Actual workerd/native D1 ordered migrations, isolation, stock, signed payment and durable job smoke; recovery-worker-tests.private.txt"
+    },
+    {
+      "command": "node --test test/checkout-cart.test.mjs test/embedded-checkout.test.mjs",
+      "result": "PASS",
+      "evidence": "37/37 after real notice/restore/migration additions; recovery-ui-tests-final.private.txt"
+    },
+    {
+      "command": "Actual Chromium mail preview320px/desktop",
+      "result": "PASS",
+      "evidence": "reminder-320.private.png / reminder-1280.private.png;320px content width320 and action53.6px high; no charge or live customer mail"
+    }
+  ],
+  "eventId": "7ceb15fc-bd9c-43c6-a75a-a22d3d0e8e4d",
+  "sequence": 2,
+  "at": "2026-10-25T18:13:31.178Z"
+}

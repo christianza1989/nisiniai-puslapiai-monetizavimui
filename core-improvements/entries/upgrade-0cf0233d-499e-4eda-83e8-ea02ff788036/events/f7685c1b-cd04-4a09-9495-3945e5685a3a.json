@@ -1,0 +1,9 @@
+{
+  "commit": "12f76461cd16e8796b59a3fdfe93e609e791937b",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "note": "Hosted adoption: memocasting-site 838f886a-8ff4-416f-8825-0acef7b35a93, native b5f745b0-9115-46cf-b035-d1d0e96969c1. Actual Chrome unknown consent -> zero Google, granted -> clean campaign collect 204, withdrawal -> zero Google/cookies; 320/390 display verified. Privacy-only native change, all article dates and foreign packages retained. Main merge is not claimed. Receipt: sites/memocasting/GA4_ECOMMERCE_2026_10_25.md.",
+  "status": "adopted",
+  "eventId": "f7685c1b-cd04-4a09-9495-3945e5685a3a",
+  "sequence": 3,
+  "at": "2026-10-25T11:48:31.448Z"
+}

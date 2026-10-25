@@ -5,7 +5,10 @@ import type {CatalogRuntime,CatalogAnchor} from './catalog-configurator';
 import type {Product} from './types';
 import {shareCatalogRuntimeData} from './catalog-runtime-sharing';
 import {RUNTIME_TRANSPORT_MAX_BYTES} from './runtime-transport-limits.mjs';
-import {chairCandidates,createChairCandidateLoader} from './chair-structure-candidates';
+import {chairCandidates} from './chair-structure-candidates';
+import {createLegacyDeskColorLoader} from './legacy-desk-color-loader';
+import {deskComponentCandidates,createDeskComponentLoader} from './desk-component-candidates';
+import deskColorCandidates from '../../content/desk-color-candidates.json';
 
 export type CatalogRuntimeIndex={schemaVersion:number;articles:Record<string,{asset:string;sha256:string}>;products:Record<string,{id:string;articles:{code:string;sample:string;name:string;id?:string}[]}>};
 type Shard={article:{code:string;sample:string;name:string};anchors:CatalogAnchor[];palettes:CatalogRuntime['palettes']};
@@ -38,7 +41,8 @@ return async function loadCatalogRuntime(product:Product,input?:unknown):Promise
 };
 }
 const loadLegacyRuntime=createCatalogRuntimeLoader(indexData as CatalogRuntimeIndex,configuratorRuntimeAsset);
-const loadChairRuntime=createChairCandidateLoader(chairCandidates,configuratorRuntimeAsset);
+const loadChairRuntime=createLegacyDeskColorLoader(chairCandidates,configuratorRuntimeAsset,deskColorCandidates);
+const loadDeskRuntime=createDeskComponentLoader(deskComponentCandidates,configuratorRuntimeAsset,deskColorCandidates);
 export async function loadCatalogRuntime(product:Product,input?:unknown){
- return await loadChairRuntime(product,input)||await loadLegacyRuntime(product,input);
+ return await loadDeskRuntime(product,input)||await loadChairRuntime(product,input)||await loadLegacyRuntime(product,input);
 }

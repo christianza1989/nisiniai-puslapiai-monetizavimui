@@ -6,10 +6,10 @@ import type {ExpandedState} from '@/lib/expanded-configurator';
 import type {ResolvedConfigurationArticle} from '@/lib/configuration-article';
 import {productBuilderSteps,duoControlExplanation} from '@/lib/duo-builder';
 import {studioBuilderSteps,studioStepIntro} from '@/lib/product-studio';
-export function DuoBackBuilder({product,state,choices,article,control,actions,details,heading='Susirinkite savo kėdę',studio=false,preview,extraControls}:{preview?:ReactNode;extraControls?:ReactNode;studio?:boolean;heading?:string;product:Product;state:ExpandedState;choices:Record<string,string[]>;article?:ResolvedConfigurationArticle;control:(field:string)=>ReactNode;actions:ReactNode;details:{label:string;value:string}[]}){
+export function DuoBackBuilder({product,state,choices,article,control,actions,details,heading='Susirinkite savo kėdę',studio=false,preview,extraControls,finishFields=[]}:{preview?:ReactNode;extraControls?:ReactNode;studio?:boolean;heading?:string;finishFields?:string[];product:Product;state:ExpandedState;choices:Record<string,string[]>;article?:ResolvedConfigurationArticle;control:(field:string)=>ReactNode;actions:ReactNode;details:{label:string;value:string}[]}){
  const [step,setStep]=useState(0),title=useRef<HTMLHeadingElement>(null);
  const desk=product.categorySlug==='rasomieji-stalai-ir-darbo-vietos';
- const steps=(studio?studioBuilderSteps(product,choices,!!article):productBuilderSteps(product,choices)),current=Math.min(step,steps.length-1),spec=steps[current],fields=spec.fields;
+ const steps=(studio?studioBuilderSteps(product,choices,!!article,finishFields):productBuilderSteps(product,choices)),current=Math.min(step,steps.length-1),spec=steps[current],fields=spec.fields;
  function go(index:number){setStep(index);requestAnimationFrame(()=>{title.current?.focus({preventScroll:true});title.current?.scrollIntoView({block:'nearest'});if(studio)document.getElementById('duo-tab-'+steps[index].id)?.scrollIntoView({block:'nearest',inline:'nearest'});});}
  const final=current===steps.length-1;
  const finishCopy=article?.sections.find(s=>s.id==='finishes');

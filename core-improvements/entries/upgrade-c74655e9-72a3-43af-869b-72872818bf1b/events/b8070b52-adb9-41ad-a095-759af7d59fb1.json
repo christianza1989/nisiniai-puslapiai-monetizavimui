@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Explicit unavailable desk dimension uses null base and no substitute patches; source literal dimension codes/tokens survive, returning to an available dimension restores actual geometry. Empty source domains omit controls; constant parts remain assembled. Existing chair-only validators retain actual-base requirement. All29 source tables validated (first constant-group failure retained, other28 not replayed),13 desk/chair tests and TypeScript actual0. All30 staging/browser/public acceptance still pending; no production/Native adoption claim.",
+  "checks": [
+    {
+      "command": "node --import tsx --test desk-components.test.ts chair-structure-candidates.test.tsx",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-all-desks-preview-20261025/ADAPTER-TESTS.log"
+    },
+    {
+      "command": "tsc --noEmit",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-all-desks-preview-20261025/TYPECHECK-V2.log"
+    },
+    {
+      "command": "validate_tables_once.mts plus only previously failing constant-group model in validate_constant_groups_v2_once.mts",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-all-desks-preview-20261025/TABLE-VALIDATION-V2.json"
+    }
+  ],
+  "eventId": "b8070b52-adb9-41ad-a095-759af7d59fb1",
+  "sequence": 2,
+  "at": "2026-10-25T05:07:26.457Z"
+}

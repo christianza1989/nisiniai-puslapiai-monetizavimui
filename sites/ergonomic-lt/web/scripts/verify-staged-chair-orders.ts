@@ -55,7 +55,7 @@ try{
     assert.deepEqual(item.supplierOptions,selection.configuration.supplierOptions);
     assert.deepEqual(item.configurationDetails,selection.configuration.details);
     assert.equal(item.brand,parent.brand);assert.equal(item.sourceUrl,parent.sourceUrl);assert.equal(item.supplierProductId,parent.id);
-    assert.equal(item.configurationEvidence.base.assetSha256,selection.assets.base.assetSha256);
+    assert(selection.assets.base);assert.equal(item.configurationEvidence.base.assetSha256,selection.assets.base.assetSha256);
     assert.notEqual(row.delivery_status,'sent');
     // One actual server PDF for each product group plus the wooden-arm model.
     if((!pdfGroups.has(parent.id)&&stateIndex===0)||article.code==='KBEW001WW008'&&stateIndex===1){

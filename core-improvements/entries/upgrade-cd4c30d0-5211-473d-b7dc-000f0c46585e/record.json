@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "minimum-content reintroduced eager filesystem schema loading into the runtime review dependency graph and prevented the built Ergonomic Worker from starting; use the identical existing pure accessor.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/256",
+    "D:/Core/output/ergonomic-desk-parts-preview-20261025/LOCAL-WORKER.stderr.log",
+    "D:/Core/output/ergonomic-desk-parts-preview-20261025/CORE-RUNTIME-REGRESSION-V2.log"
+  ],
+  "paths": [
+    "WORKSTREAMS.md",
+    "content-studio/src/minimum-content.mjs",
+    "content-studio/test/content-body-runtime.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/256",
+  "rollback": "Scoped revert of the pure body import and dependency regression assertion. Thresholds, exceptions and readiness logic are unchanged.",
+  "id": "upgrade-cd4c30d0-5211-473d-b7dc-000f0c46585e",
+  "branch": "codex/ergonomic-desk-parts-preview-20261025",
+  "baseSha": "64b82a799ed8d8c7665adb09892acabb9fb7c7a2",
+  "createdAt": "2026-10-25T04:15:03.011Z"
+}

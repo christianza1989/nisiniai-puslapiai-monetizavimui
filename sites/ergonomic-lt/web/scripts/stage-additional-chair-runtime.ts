@@ -52,6 +52,7 @@ async function verifyAsset(asset:string,sha?:string){
 }
 type PreparedAnchor=CatalogAnchor&{roles:Record<string,string>};
 async function verifyAnchor(anchor:PreparedAnchor){
+ assert(anchor.geometry,'Prepared chair requires actual base geometry');
  const assetList=[anchor.geometry,...anchor.components.flatMap(c=>c.variants.flatMap(v=>[...(v.patch.geometry?[v.patch.geometry]:[]),...(v.patch.geometries||[])]))];
  for(const asset of assetList){assert(asset.bytes<=25*1024*1024&&Number((asset as typeof asset&{sourceTriangles:number}).sourceTriangles)>0,asset.asset+' exceeds Cloudflare asset limit');await verifyAsset(asset.asset,asset.assetSha256);}
  let finishes=0;

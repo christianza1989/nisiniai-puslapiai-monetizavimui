@@ -1,0 +1,21 @@
+{
+  "siteId": "promedical",
+  "category": "code",
+  "summary": "Owner-authorized minimal-body floors for two accepted category index IDs, without changing global120 threshold or prose",
+  "evidence": [
+    "content-studio/test/minimum-content.test.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/src/content-workflow.mjs",
+    "content-studio/src/minimum-content.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/252",
+  "rollback": "Revert this scoped PR; existing approved snapshots remain immutable and no content bodies are modified.",
+  "id": "upgrade-a91fc40e-b39a-4095-be0e-fc42377f9981",
+  "branch": "codex/promedical-short-index-606-20261024",
+  "baseSha": "26493054ae065dc92980bf9d0c1a4d7c4bdb4371",
+  "createdAt": "2026-10-24T16:22:08.712Z"
+}

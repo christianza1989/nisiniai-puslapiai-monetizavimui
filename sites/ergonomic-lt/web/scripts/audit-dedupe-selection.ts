@@ -29,7 +29,7 @@ for(const group of groups){
   const row:any={id,path:`/produktai/${p.categorySlug}/${m.slug}/`,headrest:!!head&&head!=='NONE',headrestCode:head||null,has3D:false,mode:'photo',state:null};
   try{
    const runtime=await loadCatalogRuntime(m),engine=createExpandedEngine(runtime),family=engine.expandedForProduct(m);
-   if(family){const state=engine.initialStateForProduct(m);engine.validateState(m,state);const assembled=engine.assembledAssets(state);asset(assembled.base);for(const patch of assembled.patches){if(patch.geometry)asset(patch.geometry);for(const geometry of patch.geometries||[])asset(geometry);}row.has3D=true;row.mode='expanded';row.state=state;row.token=engine.stateToken(state);row.runtime=runtime?.family.id||family.id;row.options=engine.expandedSelection(m,state).configuration.supplierOptions;}
+   if(family){const state=engine.initialStateForProduct(m);engine.validateState(m,state);const assembled=engine.assembledAssets(state);if(!assembled.base)throw Error('Selected source dimension has no 3D');asset(assembled.base);for(const patch of assembled.patches){if(patch.geometry)asset(patch.geometry);for(const geometry of patch.geometries||[])asset(geometry);}row.has3D=true;row.mode='expanded';row.state=state;row.token=engine.stateToken(state);row.runtime=runtime?.family.id||family.id;row.options=engine.expandedSelection(m,state).configuration.supplierOptions;}
    else {const pilot=pilotForProduct(m);if(pilot?.variants.length){for(const v of pilot.variants)asset({asset:v.asset,assetSha256:v.assetSha256});row.has3D=true;row.mode='pilot';}}
   }catch(error){row.error=String(error);}
   members.push(row);

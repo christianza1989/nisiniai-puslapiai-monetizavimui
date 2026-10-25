@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Strict desk table/loader and all763 original GLBs decoded; current engine table17/833/51 PASS. Existing18 desk/chair/catalog tests plus typecheck PASS. Local quote retains original component evidence and literal field codes. Browser/PDF/deployment remain pending. Earlier missing ignored asset and retired count fixtures remain in local logs; no test or source weakening.",
+  "checks": [
+    {
+      "command": "tsc --noEmit",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-desk-parts-preview-20261025/TYPECHECK.log"
+    },
+    {
+      "command": "tsx --test tests/desk-components.test.ts tests/chair-structure-candidates.test.tsx; catalog-configurator.test.ts",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-desk-parts-preview-20261025/FINAL-UNIT-TESTS.log + CATALOG-REGRESSION-WITH-ASSETS.log"
+    },
+    {
+      "command": "check-desk-component-table.ts and actual loader/all763 NodeIO decode",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-desk-parts-preview-20261025/CURRENT-LOADER-AND-GLB-PROOF.json"
+    },
+    {
+      "command": "prove_quote_once.mts",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-desk-parts-preview-20261025/QUOTE-PROOF.json"
+    }
+  ],
+  "eventId": "9b5d6d90-6ad2-4f5b-b3ec-31738cd84cc3",
+  "sequence": 2,
+  "at": "2026-10-25T04:08:01.905Z"
+}

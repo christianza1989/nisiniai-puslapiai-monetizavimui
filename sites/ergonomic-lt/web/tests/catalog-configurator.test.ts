@@ -56,7 +56,7 @@ test('Bjarg susieti apmušalai seka tikrą galvos atramos spalvą, o nepriklauso
 });
 test('Kiekvienos detalės SHA256, koordinatės, indeksai ir visos originalo trikampių geometrijos galioja',async()=>{
  await MeshoptDecoder.ready;const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder}),assets=new Map();
- for(const f of catalogFamilies)for(const a of f.anchors){assets.set(a.geometry.asset,a.geometry);for(const c of a.components)for(const v of c.variants)for(const asset of [...(v.patch.geometry?[v.patch.geometry]:[]),...(v.patch.geometries||[])])assets.set(asset.asset,asset);}
+ for(const f of catalogFamilies)for(const a of f.anchors){assert(a.geometry);assets.set(a.geometry.asset,a.geometry);for(const c of a.components)for(const v of c.variants)for(const asset of [...(v.patch.geometry?[v.patch.geometry]:[]),...(v.patch.geometries||[])])assets.set(asset.asset,asset);}
  assert(assets.size>=50);
  for(const a of assets.values()){const bytes=fs.readFileSync(path.join('public',a.asset));assert.equal(createHash('sha256').update(bytes).digest('hex'),a.assetSha256);assert(bytes.length<=32_000_000);const doc=await io.readBinary(bytes);let triangles=0;
   for(const m of doc.getRoot().listMeshes())for(const p of m.listPrimitives()){const pos=p.getAttribute('POSITION')!;assert([...pos.getArray()!].every(Number.isFinite));assert([...p.getIndices()!.getArray()!].every(i=>i<pos.getCount()));triangles+=p.getIndices()!.getCount()/3;}

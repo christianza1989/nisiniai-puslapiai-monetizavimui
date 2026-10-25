@@ -15,6 +15,8 @@ colors:
   field: "#fafbf8"
   header-search: "#edf0e9"
   product-image: "#f4f4f4"
+  inner-page-ground: "#f4f4f4"
+  inner-configurator-ground: "#e5e5e5"
   action-hover: "#285748"
   error: "#992e25"
   approved-forest: "#193f35"
@@ -882,3 +884,10 @@ Evidence: [FINISH_REVIEW.md](D:/Core/output/ergonomic-seo-articles-20261013/FINI
 The implementation task subsequently supplied [release.json](D:/Core/output/ergonomic-seo-articles-20261013/release.json): preview version `76091935-cacf-4db4-9cbc-c92e176f8af0`, public SEO 9/68 and article 8/28/23 checks PASS, with no UI changes after review. This documenter read that receipt without repeating deployment or public checks; it resolves this phase's earlier local-only status. The production domain is unchanged.
 
 The Antigravity preparation stage keeps this visual identity. `editorial-layout.css` allows homepage headline spans, subtitle and action labels to wrap when a new edition is longer. The five-field pilot was inspected at 1440/390px and in a two-page product PDF; originals were restored afterward. Future copy editing follows `ANTIGRAVITY.md`; it does not authorize replacing imagery, component geometry, model controls or supplier codes.
+
+
+## Owner scoped inner palette and product spacing, 2026-10-25
+
+The actual owner requests recorded in D:/Core/output/ergonomic-five-desk-batches-20261025/PARALLEL-CSS-HUMAN-AUTHORITY-READ-RECEIPT.json supersede earlier inner-page sage grounds only. Inner pages use paper/soft/sage #f4f4f4 under :root:not(:has(.approved-home)); product configurator containers use #e5e5e5, with the white #fff 3D scene preserved. The entire homepage retains the original paper, sage, section, header, banner and footer palette and its unchanged homepage-approved.css bytes. Forest accents, Manrope roles, text, photos, controls and layout remain their established authority. The collection link after product technical content gains clamp(32px,4vw,56px) top spacing.
+
+Scoped verification: original actual public ten-region/root palette baseline at1440/390 retained; compare the built local/public homepage to it, inspect inner catalog/product/SEO grounds and contrast, product panel/white canvas, 56/32px collection gap and phone overflow. No new font/enlargement or whole-site accessibility claim. Plan and actual receipts live under D:/Core/output/ergonomic-five-desk-batches-20261025/batch-05/CSS-*.json. The five-desk publication gate also remains required.

@@ -6,12 +6,13 @@ import type {Product,Configuration} from './types';
 import type {ExpandedState,Asset,Patch} from './expanded-configurator';
 import type {PilotVariant} from './configurator';
 import type {SourceFinishMaterial} from './render-materials';
+import type {DeskColors} from './desk-colors';
 type Values=Record<string,string>;
 type Choices=Record<string,string[]>;
 type Variant={key:string;values:Values;defaults:Values;choices:Choices;dependentChoices?:Record<string,string[]|null>;destinationAnchor?:string;transitions:Values;patch:Patch};
 type Rule={when:Values;defaults:Values;choices:Choices;hidden:string[];mirrors?:Values;choiceLinks?:Record<string,{source:string;fixed:string[];hideSingle?:boolean}>};
 export type CatalogAnchor={id:string;article:string;sample:string;name:string;axes:string[];axisTransitions?:Values;axisValueChanges?:Record<string,Values>;defaults:Values;choices:Choices;classes:Values;geometry:Asset|null;unavailable3D?:string;components:{fields:string[];nativeMeasuredAxes?:string[];variants:Variant[]}[];profiles:Rule[];materials?:Record<string,Record<string,SourceFinishMaterial>>};
-export type CatalogFamily={id:string;kind:'catalog';productId:string;baseArticle:string;sample:string;articles:{code:string;sample:string;name:string}[];anchors:CatalogAnchor[];collectionMode?:'structure-only'|'desk-components'};
+export type CatalogFamily={id:string;kind:'catalog';productId:string;baseArticle:string;sample:string;articles:{code:string;sample:string;name:string}[];anchors:CatalogAnchor[];collectionMode?:'structure-only'|'desk-components';deskColors?:DeskColors};
 export const catalogFamilies=data.families as unknown as CatalogFamily[];
 export const catalogPalettes=data.palettes as Record<string,Record<string,{text:string;image?:string;color?:string}>>;
 export type CatalogRuntime={family:CatalogFamily;palettes:typeof catalogPalettes};
@@ -58,6 +59,8 @@ function catalogChoices(s:ExpandedState):Choices{
    if(link.hideSingle&&domain.length<=1)delete lists[target];else lists[target]=domain;
   }
  }
+ const deskColors=catalogFamily(s)?.deskColors;
+ if(deskColors)for(const [key,f]of Object.entries(deskColors.fields))if(f.owners.some(owner=>effective[owner]==='NONE'))delete lists[key];
  return lists;
 }
 function normalize(s:ExpandedState,hops=0):ExpandedState{
@@ -158,6 +161,15 @@ function catalogValues(state:ExpandedState){
  for(const r of rules(a,values))Object.assign(values,r.defaults,state.values);
  const lists=catalogChoices(state);
  for(const r of rules(a,values))for(const [target,control] of Object.entries(r.mirrors||{}))if(!lists[target])values[target]=values[control];
+ const colors=catalogFamily(state)?.deskColors;
+ if(colors)for(const [field,finish]of Object.entries(colors.fields)){
+  if(finish.owners.some(owner=>values[owner]==='NONE')){delete values[field];continue;}
+  if(values[field]!==finish.default){
+  // Preserve measured dependent finish codes without inventing controls or
+  // changing any construction tuple. Explicit finish selections take priority.
+  for(const [key,value]of Object.entries(finish.values[values[field]]?.automatic||{}))if(!colors.fields[key])values[key]=value;
+  }
+ }
  return values;
 }
 function catalogSelection(product:Product,input:unknown,details:(s:ExpandedState)=>{label:string;value:string}[]){

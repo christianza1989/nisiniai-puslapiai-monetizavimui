@@ -5,6 +5,7 @@ import {adaptDeskComponents,validateDeskComponents} from './desk-components';
 import type {Product} from './types';
 import type {CatalogRuntime} from './catalog-configurator';
 import {RUNTIME_TRANSPORT_MAX_BYTES} from './runtime-transport-limits.mjs';
+import {validateDeskColors,withDeskColors} from './desk-colors';
 
 export type DeskCandidate={key:string;productId:string;sample:string;code:string;familyId:string;collectionMode:'desk-components';acceptance:'TECHNICAL_DRAFT';optionsRequired:true;runtime:{asset:string;sha256:string};proofs:{sourceGeometryRuntime:string}};
 export type DeskCandidates={schemaVersion:1;models:Record<string,DeskCandidate>};
@@ -18,7 +19,8 @@ export function deskCandidateForModel(product:Product,data=deskComponentCandidat
  return entry;
 }
 export function deskCandidateRevision(product:Product){const entry=deskCandidateForModel(product);return entry?hash(JSON.stringify(entry)):undefined;}
-export function createDeskComponentLoader(data:DeskCandidates,readAsset:(asset:string)=>Promise<Uint8Array>){
+export type DeskColorCandidates={schemaVersion:number;models:Record<string,{asset:string;sha256:string;componentRuntimeSha256:string}>};
+export function createDeskComponentLoader(data:DeskCandidates,readAsset:(asset:string)=>Promise<Uint8Array>,colorEntries:DeskColorCandidates={schemaVersion:1,models:{}}){
  return async(product:Product,input?:unknown):Promise<CatalogRuntime|undefined>=>{
   let token=input;if(typeof token==='string'){if(token.length>5000)return;try{token=JSON.parse(token);}catch{return;}}
   const family=Array.isArray(token)?token[0]:token&&typeof token==='object'&&'family' in token?token.family:undefined;
@@ -26,6 +28,12 @@ export function createDeskComponentLoader(data:DeskCandidates,readAsset:(asset:s
   const entry=deskCandidateForModel({...product,modelConfigurationId:sample},data);if(!entry||family&&family!==entry.familyId)return;
   const bytes=await readAsset(entry.runtime.asset);if(bytes.byteLength>RUNTIME_TRANSPORT_MAX_BYTES||hash(bytes)!==entry.runtime.sha256)throw Error('Desk component source changed');
   const source:unknown=JSON.parse(Buffer.from(bytes).toString('utf-8'));validateDeskComponents(source,entry.code);
-  return adaptDeskComponents(source,entry);
+  const runtime=adaptDeskComponents(source,entry);
+  const colors=colorEntries.models[entry.code];
+  if(!colors)return runtime;
+  if(colorEntries.schemaVersion!==1||colors.componentRuntimeSha256!==entry.runtime.sha256||!/^[a-f0-9]{64}$/.test(colors.sha256)||colors.asset!=='/models/configurator/components/'+entry.code+'-'+colors.sha256.slice(0,20)+'.json')throw Error('Invalid desk color candidate binding');
+  const colorBytes=await readAsset(colors.asset);if(colorBytes.byteLength>RUNTIME_TRANSPORT_MAX_BYTES||hash(colorBytes)!==colors.sha256)throw Error('Desk color overlay changed');
+  const overlay:unknown=JSON.parse(Buffer.from(colorBytes).toString('utf-8'));validateDeskColors(overlay,entry.code,entry.runtime.sha256);
+  return withDeskColors(runtime,overlay);
  };
 }

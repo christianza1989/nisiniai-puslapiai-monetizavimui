@@ -25,7 +25,8 @@ h3,h4 { line-height: 1.3; }
 p { text-wrap: pretty; }
 input::placeholder,textarea::placeholder { color: var(--muted); opacity: 1; }
 input,textarea { caret-color: var(--accent); }
-.field input,.field select,.field textarea,.search-field input,.catalog-filters select {
+.field input,.field select,.field textarea,.search-field input,.catalog-filters select,
+.product-detail[data-desk-colors] .finish-select-trigger {
   font-size: var(--type-body);
   line-height: 1.5;
 }

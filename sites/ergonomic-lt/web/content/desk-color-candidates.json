@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "models": {
+    "KECM001WW002": {
+      "asset": "/models/configurator/components/KECM001WW002-95113273d250313b6ec2.json",
+      "componentRuntimeSha256": "5b9c922148df69ba3f0e9fd703a4fe37f5429d040dd499f629641caa35e0524f",
+      "sha256": "95113273d250313b6ec2dab408b1f5757b0411310fcb32f7154c257308115c31"
+    },
+    "KEM2013WW004": {
+      "asset": "/models/configurator/components/KEM2013WW004-46a3f04a3c1cfa3ec9b3.json",
+      "componentRuntimeSha256": "9f5d5380ad93edf275f1cd00718922839bfcfc05481cb75854e5c84038fcb05b",
+      "sha256": "46a3f04a3c1cfa3ec9b377af387b6d42a1f57c1d3b064bd1144e6277c21cdaac"
+    },
+    "KEM3003WW002": {
+      "asset": "/models/configurator/components/KEM3003WW002-f8f267140c48bea74993.json",
+      "componentRuntimeSha256": "04c208f5e7719200b3ca47cf6148abba04166cb312c3c96cd02da2846e138073",
+      "sha256": "f8f267140c48bea749933e7ca15d9e53eef1f8165365b7b9bff74af77230d679"
+    },
+    "KEM3006WW001": {
+      "asset": "/models/configurator/components/KEM3006WW001-b023e6548339802e8a36.json",
+      "componentRuntimeSha256": "981ba68738fcb49fb4e609d9c72c5d5d19fd91d8c0bafbf7b2bfe7b51b4e8af1",
+      "sha256": "b023e6548339802e8a36529eeec878eaf335781400d2e52313a0595da532fcbd"
+    },
+    "KERG021WW001": {
+      "asset": "/models/configurator/components/KERG021WW001-939b171a7b803be613f6.json",
+      "componentRuntimeSha256": "5c20a010f64fb14d508959162662744917ffa1e0706881db34a695e2e59593f6",
+      "sha256": "939b171a7b803be613f6f9f19d090a05fb7eef76fc15225103702ae69145b3c6"
+    }
+  }
+}

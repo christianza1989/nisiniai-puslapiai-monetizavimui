@@ -1,0 +1,19 @@
+{
+  "summary": "Large chair checkpoints are pretty-printed and durably replaced after each measured edge. Preserve every value and per-edge fsync while removing whitespace encoding overhead; add actual persistence timing.",
+  "evidence": [
+    "tools/ergonomic-chairs/test_checkpoint_persistence.py",
+    "docs/ERGONOMIC_CHECKPOINT_ENCODING_2026-10-19.md"
+  ],
+  "siteId": "ergonomic-lt",
+  "paths": [
+    "tools/ergonomic-chairs/capture_structure.py",
+    "tools/ergonomic-chairs/test_checkpoint_persistence.py"
+  ],
+  "rollback": "Scoped source revert; accepted immutable runtime-v6 remains untouched. Candidate requires finite full-SHA and identity proof before live adoption.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/187",
+  "category": "code",
+  "id": "upgrade-908fc6a1-7c5d-4faa-9835-faed64222855",
+  "branch": "codex/ergonomic-chairs-structure-20261017",
+  "baseSha": "d469b38a894fd2c6eaef65191d8b2b7f66f26664",
+  "createdAt": "2026-10-19T18:28:26.554Z"
+}

@@ -1,0 +1,405 @@
+{
+  "assemblies": {
+    "2D|with": {
+      "base": {
+        "asset": "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF.glb",
+        "assetSha256": "7b715c7c3533f5677fe42303f10a89c083caf9ae7c37c3f8e3b2e47b173b6322",
+        "bytes": 3981888,
+        "sourceExportSha256": "5cda08f03b6e2a87d17f443cd4fd50c8bb8de2a1e4cb78d8cc21f3665e4eea4d"
+      },
+      "patches": [
+        {
+          "remove": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "addIds": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "changes": {
+            "CBASE": "TS30W"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CBASE=TS30W.glb",
+            "assetSha256": "4640c9e12d42d9ef2c44f0a97a04d3f54f3c528ce1d9c54462c135adb1ed2e85",
+            "bytes": 75340,
+            "sourceExportSha256": "ad74fc9ebe8cb9d010c7ded2441c0dd3bf6ed3fcd7507051a45a1fae8cea7b21"
+          }
+        },
+        {
+          "remove": [],
+          "addIds": [
+            "c998ed64733b86538e6b8890-0",
+            "1cbb04eedc18238cf8e58049-0",
+            "52691f1f5e6560ad7c337877-0"
+          ],
+          "changes": {
+            "CARMRESTS": "R53WBPU"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CARMRESTS=R53WBPU.glb",
+            "assetSha256": "600167cabb39f679709709ee95de1a68046b21719443d9146813f9e7c352082b",
+            "bytes": 172560,
+            "sourceExportSha256": "7d9c6b16baad8f5f31900c4d280e9082423eb55fd39a447a79b2cfa192d02339"
+          }
+        }
+      ]
+    },
+    "3D|with": {
+      "base": {
+        "asset": "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF.glb",
+        "assetSha256": "7b715c7c3533f5677fe42303f10a89c083caf9ae7c37c3f8e3b2e47b173b6322",
+        "bytes": 3981888,
+        "sourceExportSha256": "5cda08f03b6e2a87d17f443cd4fd50c8bb8de2a1e4cb78d8cc21f3665e4eea4d"
+      },
+      "patches": [
+        {
+          "remove": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "addIds": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "changes": {
+            "CBASE": "TS30W"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CBASE=TS30W.glb",
+            "assetSha256": "4640c9e12d42d9ef2c44f0a97a04d3f54f3c528ce1d9c54462c135adb1ed2e85",
+            "bytes": 75340,
+            "sourceExportSha256": "ad74fc9ebe8cb9d010c7ded2441c0dd3bf6ed3fcd7507051a45a1fae8cea7b21"
+          }
+        },
+        {
+          "remove": [],
+          "addIds": [
+            "6a2d7c99a50b236547fc68a3-0",
+            "66ca798b52c63c3264c4e33a-0",
+            "412075856591dbbea935118c-0",
+            "2046bb051367a4d1894bc802-0",
+            "ee6fe17c355cef218b518d3c-0",
+            "9124d3c9d187b9dd68939b75-0",
+            "47e960db3526099ede4d7b3c-0",
+            "b228c127eebea8c00c5ef285-0",
+            "d6b5c2d046d2383431b0753a-0",
+            "93ff008e70afb65f5d8cad38-0",
+            "b5c19e43e1d602af9e1f4d12-0",
+            "a7f0312546bf9402a34a05b0-0",
+            "430aba6cffbfb5070962f071-0",
+            "b1a38602d0548df598b4d2db-0",
+            "f90a1fca1e532b20f6e4e260-0",
+            "753fe8244818f64ca753291c-0",
+            "0f4b9260ed365c4b9a41a027-0"
+          ],
+          "changes": {
+            "CARMRESTS": "R54WWBPU"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CARMRESTS=R54WWBPU.glb",
+            "assetSha256": "45111a0afe7d9d7355262a9b25826fab0a038c6e950dd41dbc460b4841f25fac",
+            "bytes": 1094316,
+            "sourceExportSha256": "67bbb422cf4f06dcab0b6f9d9122535518cedb6b04f7ae608d122a839a3046d6"
+          }
+        }
+      ]
+    },
+    "4D|with": {
+      "base": {
+        "asset": "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF.glb",
+        "assetSha256": "7b715c7c3533f5677fe42303f10a89c083caf9ae7c37c3f8e3b2e47b173b6322",
+        "bytes": 3981888,
+        "sourceExportSha256": "5cda08f03b6e2a87d17f443cd4fd50c8bb8de2a1e4cb78d8cc21f3665e4eea4d"
+      },
+      "patches": [
+        {
+          "remove": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "addIds": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "changes": {
+            "CBASE": "TS30W"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CBASE=TS30W.glb",
+            "assetSha256": "4640c9e12d42d9ef2c44f0a97a04d3f54f3c528ce1d9c54462c135adb1ed2e85",
+            "bytes": 75340,
+            "sourceExportSha256": "ad74fc9ebe8cb9d010c7ded2441c0dd3bf6ed3fcd7507051a45a1fae8cea7b21"
+          }
+        },
+        {
+          "remove": [],
+          "addIds": [
+            "30f7fe06eb0ae282bcae698d-0",
+            "e5b7553ade9dc433cf6b3e6e-0",
+            "ae4b68f505256a9ce4358cd9-0",
+            "b0d9d1f360681c92232c713c-0",
+            "02cb0f4c03fb188e567ad660-0",
+            "4f4b0844863161a1a4dbf819-0",
+            "16507188a5865bd9c2384622-0",
+            "0d06b737780502de2af86e06-0",
+            "8ec093e8e48ee481d1f4b427-0",
+            "f19d4ebff8309621af1eef82-0",
+            "8a3d6357a150fd81e94648b2-0",
+            "3e0c9a54f872ab305a66a775-0",
+            "ed1a3a6da27a3b8b48cb2416-0",
+            "92cc01d0dd8910a168201495-0",
+            "e772b9e4a6296ba662b6bffd-0",
+            "964b08bba35e32f7e7e36fb3-0",
+            "1c1e13f1c354a267d8b60c76-0",
+            "96719691093dff8db20bf6d6-0",
+            "1d75250b2d15db0657efd8c9-0",
+            "827c439ed8ab205f345b10c4-0"
+          ],
+          "changes": {
+            "CARMRESTS": "R55POLWBPU"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CARMRESTS=R55POLWBPU.glb",
+            "assetSha256": "3b276fca3dc994c100dd1f7f5bbcdba223681774f421554e85268e4e32c5be65",
+            "bytes": 1524744,
+            "sourceExportSha256": "74f756492a2a7fb83495a17032b98c970fb6378f845059101a6e0cf8c355358c"
+          }
+        }
+      ]
+    },
+    "2D|without": {
+      "base": {
+        "asset": "/models/configurator/expanded/xilium-WHITEEDITION-NONE.glb",
+        "assetSha256": "df15fe4cc9d97c31724d0e2c3d16def91ad8b78678a6dc6a6715b138735ba19a",
+        "bytes": 3392364,
+        "sourceExportSha256": "5af187542fe340e08f515536ab17953428a6a0463b84d852aff291885caecde3"
+      },
+      "patches": [
+        {
+          "remove": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "addIds": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "changes": {
+            "CBASE": "TS30W"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CBASE=TS30W.glb",
+            "assetSha256": "4640c9e12d42d9ef2c44f0a97a04d3f54f3c528ce1d9c54462c135adb1ed2e85",
+            "bytes": 75340,
+            "sourceExportSha256": "cd8aefa509005fad30f84d74eed0ad6b073fb1a8435b63e1f1b83e257e42c4e8"
+          }
+        },
+        {
+          "remove": [],
+          "addIds": [
+            "c998ed64733b86538e6b8890-0",
+            "1cbb04eedc18238cf8e58049-0",
+            "52691f1f5e6560ad7c337877-0"
+          ],
+          "changes": {
+            "CARMRESTS": "R53WBPU"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CARMRESTS=R53WBPU.glb",
+            "assetSha256": "600167cabb39f679709709ee95de1a68046b21719443d9146813f9e7c352082b",
+            "bytes": 172560,
+            "sourceExportSha256": "a082894c5935804c696c0bca1351dd70b2a5c4106fee586488a4b4c8a100d149"
+          }
+        }
+      ]
+    },
+    "3D|without": {
+      "base": {
+        "asset": "/models/configurator/expanded/xilium-WHITEEDITION-NONE.glb",
+        "assetSha256": "df15fe4cc9d97c31724d0e2c3d16def91ad8b78678a6dc6a6715b138735ba19a",
+        "bytes": 3392364,
+        "sourceExportSha256": "5af187542fe340e08f515536ab17953428a6a0463b84d852aff291885caecde3"
+      },
+      "patches": [
+        {
+          "remove": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "addIds": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "changes": {
+            "CBASE": "TS30W"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CBASE=TS30W.glb",
+            "assetSha256": "4640c9e12d42d9ef2c44f0a97a04d3f54f3c528ce1d9c54462c135adb1ed2e85",
+            "bytes": 75340,
+            "sourceExportSha256": "cd8aefa509005fad30f84d74eed0ad6b073fb1a8435b63e1f1b83e257e42c4e8"
+          }
+        },
+        {
+          "remove": [],
+          "addIds": [
+            "6a2d7c99a50b236547fc68a3-0",
+            "66ca798b52c63c3264c4e33a-0",
+            "412075856591dbbea935118c-0",
+            "2046bb051367a4d1894bc802-0",
+            "ee6fe17c355cef218b518d3c-0",
+            "9124d3c9d187b9dd68939b75-0",
+            "47e960db3526099ede4d7b3c-0",
+            "b228c127eebea8c00c5ef285-0",
+            "d6b5c2d046d2383431b0753a-0",
+            "93ff008e70afb65f5d8cad38-0",
+            "b5c19e43e1d602af9e1f4d12-0",
+            "a7f0312546bf9402a34a05b0-0",
+            "430aba6cffbfb5070962f071-0",
+            "b1a38602d0548df598b4d2db-0",
+            "f90a1fca1e532b20f6e4e260-0",
+            "753fe8244818f64ca753291c-0",
+            "0f4b9260ed365c4b9a41a027-0"
+          ],
+          "changes": {
+            "CARMRESTS": "R54WWBPU"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CARMRESTS=R54WWBPU.glb",
+            "assetSha256": "45111a0afe7d9d7355262a9b25826fab0a038c6e950dd41dbc460b4841f25fac",
+            "bytes": 1094316,
+            "sourceExportSha256": "e181983fc78d7baafab75b5f9454ad4b6020cbfe901aeaf4da7e2d0ff3777842"
+          }
+        }
+      ]
+    },
+    "4D|without": {
+      "base": {
+        "asset": "/models/configurator/expanded/xilium-WHITEEDITION-NONE.glb",
+        "assetSha256": "df15fe4cc9d97c31724d0e2c3d16def91ad8b78678a6dc6a6715b138735ba19a",
+        "bytes": 3392364,
+        "sourceExportSha256": "5af187542fe340e08f515536ab17953428a6a0463b84d852aff291885caecde3"
+      },
+      "patches": [
+        {
+          "remove": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "addIds": [
+            "6f37319fba122ef1bcfeda18-0"
+          ],
+          "changes": {
+            "CBASE": "TS30W"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CBASE=TS30W.glb",
+            "assetSha256": "4640c9e12d42d9ef2c44f0a97a04d3f54f3c528ce1d9c54462c135adb1ed2e85",
+            "bytes": 75340,
+            "sourceExportSha256": "cd8aefa509005fad30f84d74eed0ad6b073fb1a8435b63e1f1b83e257e42c4e8"
+          }
+        },
+        {
+          "remove": [],
+          "addIds": [
+            "30f7fe06eb0ae282bcae698d-0",
+            "e5b7553ade9dc433cf6b3e6e-0",
+            "ae4b68f505256a9ce4358cd9-0",
+            "b0d9d1f360681c92232c713c-0",
+            "02cb0f4c03fb188e567ad660-0",
+            "4f4b0844863161a1a4dbf819-0",
+            "16507188a5865bd9c2384622-0",
+            "0d06b737780502de2af86e06-0",
+            "8ec093e8e48ee481d1f4b427-0",
+            "f19d4ebff8309621af1eef82-0",
+            "8a3d6357a150fd81e94648b2-0",
+            "3e0c9a54f872ab305a66a775-0",
+            "ed1a3a6da27a3b8b48cb2416-0",
+            "92cc01d0dd8910a168201495-0",
+            "e772b9e4a6296ba662b6bffd-0",
+            "964b08bba35e32f7e7e36fb3-0",
+            "1c1e13f1c354a267d8b60c76-0",
+            "96719691093dff8db20bf6d6-0",
+            "1d75250b2d15db0657efd8c9-0",
+            "827c439ed8ab205f345b10c4-0"
+          ],
+          "changes": {
+            "CARMRESTS": "R55POLWBPU"
+          },
+          "choices": {},
+          "geometry": {
+            "asset": "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CARMRESTS=R55POLWBPU.glb",
+            "assetSha256": "3b276fca3dc994c100dd1f7f5bbcdba223681774f421554e85268e4e32c5be65",
+            "bytes": 1524744,
+            "sourceExportSha256": "a7f863f9bffa2a43f87aa0914060a300930fca73aae9b9c9a355ed6c65f62f0b"
+          }
+        }
+      ]
+    }
+  },
+  "materials": {
+    "VL0034": {
+      "image": "/media/configurator/materials/vl0034-e83c40901b06.jpg",
+      "width": 1024,
+      "height": 1024,
+      "sourceSha256": "e83c40901b060a834e19f1a44b3e11ce5ee8d2eb5e3c3c5fa881ad1b934d97d1",
+      "group": "VL",
+      "color": "#ffffff",
+      "approximate": false
+    },
+    "VL1048": {
+      "image": "/media/configurator/catalog-materials/de607ecf0da7ccd6c21178ed.jpg",
+      "factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.6990000009536743,
+      "metalness": 0,
+      "group": "VL",
+      "width": 1024,
+      "height": 1024,
+      "sourceSha256": "de607ecf0da7ccd6c21178edfdc06a93dc517ac08ea219d134cc3fe7f5798c09",
+      "color": "#ffffff",
+      "approximate": false
+    },
+    "VL5001": {
+      "image": "/media/configurator/catalog-materials/395f3afd761bfad1eceec361.jpg",
+      "factor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "roughness": 0.6990000009536743,
+      "metalness": 0,
+      "group": "VL",
+      "width": 1024,
+      "height": 1024,
+      "sourceSha256": "395f3afd761bfad1eceec36109ddcab1472911ea1606754fb73b30a04ad90521",
+      "color": "#ffffff",
+      "approximate": false
+    },
+    "VL3067": {
+      "image": "/media/configurator/materials/vl3067-0003fd265429.jpg",
+      "width": 1024,
+      "height": 1024,
+      "sourceSha256": "0003fd2654290045d96b9c1fbc2645ae736fb1f67476734d0e653a98795b1b46",
+      "group": "VL",
+      "color": "#ffffff",
+      "approximate": false
+    },
+    "VL4041": {
+      "image": "/media/configurator/materials/vl4041-81abf02c17bc.jpg",
+      "width": 1024,
+      "height": 1024,
+      "sourceSha256": "81abf02c17bcfee147de92aa47ce38605a8656e9ff24bf5366341da6fd731109",
+      "group": "VL",
+      "color": "#ffffff",
+      "approximate": false
+    }
+  }
+}

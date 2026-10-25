@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "All 90 chair Python tests passed. Full Tigu finite model proof and production adoption remain pending; accepted frozen workers untouched.",
+  "checks": [
+    {
+      "command": "python -B -m unittest discover -s tools/ergonomic-chairs -p test_*.py",
+      "result": "PASS",
+      "evidence": "docs/ERGONOMIC_OFFLINE_TIMEOUT_REPAIR_2026-10-20.md"
+    }
+  ],
+  "eventId": "6b540013-4ecb-48df-894d-26393a07fe87",
+  "sequence": 2,
+  "at": "2026-10-20T14:44:22.816Z"
+}

@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { bodyPlainText, inlineNodes } from './content-package-v2.mjs';
+import { bodyPlainText, inlineNodes } from './content-body.mjs';
 import { contentPolicy, planningWindow } from './content-schedule.mjs';
 import { hasMinimumContent, shortIndexMinimum } from './minimum-content.mjs';
 

@@ -1,0 +1,50 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ergonomic-launch",
+  "account_id": "1c0a7407abfb959d5ff46540f5f7009d",
+  "main": "vinext/server/app-router-entry",
+  "compatibility_date": "2026-10-10",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "none"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ergonomic-preview",
+      "database_id": "750c569b-fc20-461c-801e-a854e542c7b8",
+      "migrations_dir": "migrations"
+    },
+    {
+      "binding": "PUBLICATION_DB",
+      "database_name": "ergonomic-publication",
+      "database_id": "589cc849-9f5f-4ef9-85f8-709a7f0dff68",
+      "migrations_dir": "publication-migrations"
+    }
+  ],
+  "vars": {
+    "PUBLIC_ORIGIN": "https://ergonomic-launch.pinet-azprekyba.workers.dev",
+    "CANONICAL_ORIGIN": "https://ergonomic-launch.pinet-azprekyba.workers.dev",
+    "SITE_INDEXABLE": "false",
+    "PREVIEW_CATALOG": "true",
+    "COOKIE_SECURE": "true",
+    "QUOTE_TO": "info@ergonomic.lt",
+    "TRUST_PROXY": "true",
+    "LAUNCH_SITE": "true"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.01
+    }
+  }
+}

@@ -1,0 +1,18 @@
+/* Owner-supplied transparent artwork. Preserve both lines and its native ratio. */
+:root { --brand-logo-width: 18.75rem; }
+.wordmark.brand-logo { display: inline-flex; align-items: center; width: var(--brand-logo-width); max-width: 100%; min-height: 44px; flex-shrink: 0; }
+.brand-logo-image { display: block; width: 100%; height: auto; object-fit: contain; }
+@media(max-width:1100px) {
+  .site-header .brand-logo { width: 15rem; }
+}
+@media(max-width:1000px) {
+  .site-header .desktop-nav { display: none; }
+  .site-header .mobile-toggle { display: flex; }
+  .site-header .mobile-nav { display: flex; flex-direction: column; padding: 10px var(--gutter) 25px; border-top: 1px solid var(--line); max-height: 70vh; overflow: auto; }
+  .site-header .mobile-nav a { display: flex; justify-content: space-between; padding: 12px 0; font-size: var(--type-action); }
+}
+@media(max-width:800px) {
+  .site-header .brand-logo { width: clamp(12.5rem,60vw,16.25rem); }
+  .site-header .quote-link { display: none; }
+  .site-header .header-inner { flex-wrap: nowrap; }
+}

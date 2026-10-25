@@ -1,0 +1,4 @@
+/* Text revision support. Original short copy keeps its approved geometry. */
+.approved-home h1 span{white-space:normal;overflow-wrap:break-word}
+.approved-home .hp-hero-subtitle{white-space:normal;max-inline-size:100%;overflow-wrap:break-word}
+.approved-home .hp-hero-actions .hp-action{white-space:normal;max-inline-size:100%;text-align:center;overflow-wrap:break-word}

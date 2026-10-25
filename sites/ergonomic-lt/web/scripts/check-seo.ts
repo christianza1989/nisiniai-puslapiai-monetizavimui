@@ -1,0 +1,20 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import {parseHTML} from 'linkedom';
+import {legacyPages} from '../src/lib/catalog';
+import {retiredLegacyBlock,legacyArticle} from '../src/lib/legacy-article';
+import {hasEditorialPage} from '../src/lib/editorial-server';
+async function main(){
+const pages=legacyPages();
+const base=process.env.CHECK_ORIGIN||'http://127.0.0.1:3001',canonical=process.env.CANONICAL_ORIGIN||'https://ergonomic.lt';
+const norm=(s:string)=>s.replace(/\u200b/g,'').replace(/\s+/g,' ').trim();
+// Match the baseline's BeautifulSoup get_text(' ') convention: inline text
+// nodes and block boundaries are separated, without changing any words.
+function textNodes(node:Node):string{if(node.nodeType===3)return node.nodeValue||'';const parts:string[]=[];let buffer='';for(const child of Array.from(node.childNodes)){if(child.nodeType===3){buffer+=child.nodeValue||'';continue;}if(child.nodeType===8)continue;if(buffer){parts.push(buffer.trim());buffer='';}parts.push(textNodes(child));}if(buffer)parts.push(buffer.trim());return parts.join(' ');}
+const result=[];for(const page of pages){const start=performance.now(),r=await fetch(base+page.path),html=await r.text(),{document}=parseHTML(html);assert.equal(r.status,200,page.path);assert.equal(r.url,base+page.path,'Netikėtas nukreipimas');assert.equal(document.querySelectorAll('h1').length,1,page.path+' H1');assert.equal(norm(document.querySelector('h1')!.textContent!),norm(page.h1));assert.equal(document.querySelector('title')?.textContent,page.title,page.path+' title');assert.equal(document.querySelector('link[rel="canonical"]')?.getAttribute('href'),canonical+page.path);if(page.description)assert.equal(document.querySelector('meta[name="description"]')?.getAttribute('content'),page.description);const footer=document.querySelector('footer');/* Original article copy is protected; only explicitly retired category/filter chrome is exempt. */const text=norm(textNodes(document.querySelector('main')!)+(page.path==='/'&&footer?' '+textNodes(footer):''));const blocks=page.expectedBlocks.filter(block=>page.path==='/'||!retiredLegacyBlock(block));if(hasEditorialPage(page.path)&&page.path!=='/'){const approved=parseHTML('<html><body>'+legacyArticle(page).html+'</body></html>').document;assert(text.includes(norm(textNodes(approved.body))),page.path+' active editorial text');}else if(!hasEditorialPage(page.path)){for(const block of blocks)assert(text.includes(norm(block)),page.path+' trūksta teksto: '+norm(block).slice(0,180));}if(page.path!=='/')assert.equal(document.querySelectorAll('main .legacy-home-categories').length,0,page.path+' senas kategorijų blokas');result.push({path:page.path,status:r.status,blocks:blocks.length,retiredUiBlocks:page.expectedBlocks.length-blocks.length,h1:1,title:true,canonical:true,description:page.description!==null,textParity:true,responseMs:Math.round(performance.now()-start)});}
+const missing=await fetch(base+'/tikrai-nera-tokio-puslapio/');assert.equal(missing.status,404);const old=JSON.parse(readFileSync('content/legacy-product-paths.json','utf8')) as string[];const gone=await fetch(base+old[0]);assert.equal(gone.status,410);
+const filtered=await fetch(base+'/produktai/?paieska=xilium'),{document}=parseHTML(await filtered.text());assert(document.querySelector('meta[name="robots"]')?.getAttribute('content')?.includes('noindex'));
+const unknown=await fetch(base+'/produktai/?puslapis=9999');assert.equal(unknown.status,404);
+const reportDir=process.env.CHECK_REPORT_DIR||'.impeccable/review';mkdirSync(reportDir,{recursive:true});writeFileSync(reportDir+'/seo-check.json',JSON.stringify({checkedAt:new Date().toISOString(),protectedPages:result,unknownPage:404,removedProduct:410,filterNoindex:true,invalidPagination:404},null,2));console.log(JSON.stringify({protectedPages:result.length,originalTextBlocks:result.reduce((n,p)=>n+p.blocks,0),textParity:'PASS',statuses:'200 / 404 / 410',filterNoindex:true},null,2));
+}
+main().catch(error=>{console.error(error);process.exitCode=1;});

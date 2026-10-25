@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "status": "pilot",
+  "models": [
+    {
+      "productId": "product_xilium-swivel-chairs_0fe4091b",
+      "name": "Xilium",
+      "path": "/produktai/kedes/xilium-darbo-kedes/",
+      "variants": [
+        {
+          "id": "23636148",
+          "label": "Duo-Back · balta · su galvos atrama",
+          "backrest": "duo",
+          "sourceCad": "xilium-swivel-chair-duo-back-uphp-gsb-er-st-hrua-r55-pol-ts30-26385.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/9f13ef4b-8f32-4deb-9cd6-4e35f18e6df4/xilium-swivel-chair-duo-back-uphp-gsb-er-st-hrua-r55-pol-ts30-26385.3ds",
+          "sourceCadSha256": "b5d0b80293c0aed63d517d7557e364e7b90f1a21043ea0f84df7663f27f48aaf",
+          "asset": "/models/configurator/23636148.glb",
+          "image": "/media/configurator/23636148.jpg",
+          "materialCodes": {
+            "seat": "VL0034",
+            "backrest": "VL0034",
+            "side": "VL4041",
+            "headrest": "VL0034"
+          },
+          "samples": {
+            "seat": {
+              "code": "VL0034",
+              "name": "Valencia",
+              "image": "/media/configurator/vl0034.jpg"
+            },
+            "backrest": {
+              "code": "VL0034",
+              "name": "Valencia",
+              "image": "/media/configurator/vl0034.jpg"
+            },
+            "side": {
+              "code": "VL4041",
+              "name": "Valencia",
+              "image": "/media/configurator/vl4041.jpg"
+            },
+            "headrest": {
+              "code": "VL0034",
+              "name": "Valencia",
+              "image": "/media/configurator/vl0034.jpg"
+            }
+          },
+          "plastic": "white",
+          "metalBase": false,
+          "supplierCode": "KXIL044WW001",
+          "supplierOptions": [
+            "KXIL044WW001_OPTIONS.CMECHANISM=ERST",
+            "KXIL044WW001_OPTIONS.CBACKRESTMOVEMECH=XV",
+            "KXIL044WW001_OPTIONS.CPLASTICCOLORVERSION2=WHITEEDITION",
+            "KXIL044WW001_OPTIONS.CHEADREST=HRUA2DPLASTICSIDPROF",
+            "KXIL044WW001_OPTIONS.CBACKRESTCONNECTOR=WHITEPLASTIC",
+            "KXIL044WW001_OPTIONS.CARMRESTS=R55POLWBPU",
+            "KXIL044WW001_OPTIONS.CBASE=TS30W",
+            "KXIL044WW001_OPTIONS.CCASTORS=ESH60",
+            "KXIL044WW001_OPTIONS.CASSEMBLY=PACKL",
+            "KXIL044WW001_FINISHES.CPRICEGROUP=2",
+            "KXIL044WW001_FINISHES.CBACKRESTUPHGROUP=VL",
+            "KXIL044WW001_FINISHES.CSEATUPHGROUP=VL",
+            "KXIL044WW001_FINISHES.CSEBASIDEPROFILUPHGROUP=VL",
+            "KXIL044WW001_FINISHES.CHEADRESTUPHCHGROUP=VL",
+            "KXIL044WW001_FINISHES.CHEADSIDEPROFUPHCHGROUP=VL",
+            "KXIL044WW001_FINISHES.CUPHBACKRESTCOLOR=VL0034",
+            "KXIL044WW001_FINISHES.CUPHSEATCOLOR=VL0034",
+            "KXIL044WW001_FINISHES.CSEBASIDEPROFILUPHCOLOR=VL4041",
+            "KXIL044WW001_FINISHES.CHEADRESTUPHCHCOLOR=VL0034",
+            "KXIL044WW001_FINISHES.CHEADSIDEPROFUPHCHCOL=VL4041"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "4fbfd1b04a54526203a4d258a79045f10ba525be9ba4dea57b7b21f8fdd8da86",
+          "bytes": 518656
+        },
+        {
+          "id": "23636149",
+          "label": "Tinklinis · balta · be galvos atramos",
+          "backrest": "mesh",
+          "sourceCad": "xilium-swivel-chair-mesh-gsb-er-st-r54-st56-26391.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/2510cae5-d2c3-4142-b048-84682bcc3877/xilium-swivel-chair-mesh-gsb-er-st-r54-st56-26391.3ds",
+          "sourceCadSha256": "fcd5414096838bc19f30e7154fb6dbff0aa6658cb2ac34216ff52490d416bf6a",
+          "asset": "/models/configurator/23636149.glb",
+          "image": "/media/configurator/23636149.jpg",
+          "materialCodes": {
+            "seat": "YB086",
+            "backrest": "AX02",
+            "side": "YB086",
+            "headrest": null
+          },
+          "samples": {
+            "seat": {
+              "code": "YB086",
+              "name": "Lucia T2T",
+              "image": "/media/configurator/yb086.jpg"
+            },
+            "side": {
+              "code": "YB086",
+              "name": "Lucia T2T",
+              "image": "/media/configurator/yb086.jpg"
+            }
+          },
+          "plastic": "white",
+          "metalBase": true,
+          "supplierCode": "KXIL045WW001",
+          "supplierOptions": [
+            "KXIL045WW001_OPTIONS.CMECHANISM=ERST",
+            "KXIL045WW001_OPTIONS.CBACKRESTMOVEMECH=XV",
+            "KXIL045WW001_OPTIONS.CPLASTICCOLORVERSION2=WHITEEDITION",
+            "KXIL045WW001_OPTIONS.CHEADREST=NONE",
+            "KXIL045WW001_OPTIONS.CBACKRESTCONNECTOR=ALUPOLISHED",
+            "KXIL045WW001_OPTIONS.CLUMBARSUPPORT=NONE",
+            "KXIL045WW001_OPTIONS.CARMRESTS=R54POLWBPU",
+            "KXIL045WW001_OPTIONS.CBASE=ST56POL",
+            "KXIL045WW001_OPTIONS.CCASTORS=ESH60",
+            "KXIL045WW001_OPTIONS.CASSEMBLY=PACKL",
+            "KXIL045WW001_FINISHES.CPRICEGROUP=1",
+            "KXIL045WW001_FINISHES.CSEATUPHGROUP=YB",
+            "KXIL045WW001_FINISHES.CSIDEPROFILSEATUPHGROUP=YB",
+            "KXIL045WW001_FINISHES.CMESHCOLOR=AX02",
+            "KXIL045WW001_FINISHES.CUPHSEATCOLOR=YB086",
+            "KXIL045WW001_FINISHES.CUPHSIDECOLORSEAT=YB086"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "9b3279587cf06485b76ea2764bfe57537f02823f1a0653aea8e7367b8a09de48",
+          "bytes": 409260
+        },
+        {
+          "id": "23636150",
+          "label": "Apmuštas · balta · be galvos atramos",
+          "backrest": "uph",
+          "sourceCad": "xilium-swivel-chair-uphp-gsb-sa3-st-r54-ts30-26397.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/ecf26408-0bb4-42cf-abdd-8d09d478a8f0/xilium-swivel-chair-uphp-gsb-sa3-st-r54-ts30-26397.3ds",
+          "sourceCadSha256": "850e8aea57046ba7c72b416c927f4aaaf08dea130ca22d4149c14d182a2df003",
+          "asset": "/models/configurator/23636150.glb",
+          "image": "/media/configurator/23636150.jpg",
+          "materialCodes": {
+            "seat": "LDS74",
+            "backrest": "LDS08",
+            "side": "LDS17",
+            "headrest": null
+          },
+          "samples": {
+            "seat": {
+              "code": "LDS74",
+              "name": "Synergy",
+              "image": "/media/configurator/lds74.jpg"
+            },
+            "backrest": {
+              "code": "LDS08",
+              "name": "Synergy",
+              "image": "/media/configurator/lds08.jpg"
+            },
+            "side": {
+              "code": "LDS17",
+              "name": "Synergy",
+              "image": "/media/configurator/lds17.jpg"
+            }
+          },
+          "plastic": "white",
+          "metalBase": false,
+          "supplierCode": "KXIL046WW001",
+          "supplierOptions": [
+            "KXIL046WW001_OPTIONS.CMECHANISM=SA3ST",
+            "KXIL046WW001_OPTIONS.CBACKRESTMOVEMECH=XV",
+            "KXIL046WW001_OPTIONS.CPLASTICCOLORVERSION2=WHITEEDITION",
+            "KXIL046WW001_OPTIONS.CHEADREST=NONE",
+            "KXIL046WW001_OPTIONS.CBACKRESTCONNECTOR=WHITEPLASTIC",
+            "KXIL046WW001_OPTIONS.CLUMBARSUPPORT=LSD2",
+            "KXIL046WW001_OPTIONS.CARMRESTS=R54POLWBPU",
+            "KXIL046WW001_OPTIONS.CBASE=TS30W",
+            "KXIL046WW001_OPTIONS.CCASTORS=ESH60",
+            "KXIL046WW001_OPTIONS.CASSEMBLY=PACKL",
+            "KXIL046WW001_FINISHES.CPRICEGROUP=4",
+            "KXIL046WW001_FINISHES.CBACKRESTUPHGROUP=SY",
+            "KXIL046WW001_FINISHES.CSEATUPHGROUP=SY",
+            "KXIL046WW001_FINISHES.CSEBASIDEPROFILUPHGROUP=SY",
+            "KXIL046WW001_FINISHES.CUPHBACKRESTCOLOR=LDS08",
+            "KXIL046WW001_FINISHES.CUPHSEATCOLOR=LDS74",
+            "KXIL046WW001_FINISHES.CSEBASIDEPROFILUPHCOLOR=LDS17"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "c47ec25b16c2c81f53a4545a5918198031806af2efcce35856b98b19cfc266c0",
+          "bytes": 435752
+        },
+        {
+          "id": "23636151",
+          "label": "Apmuštas · juoda · su galvos atrama",
+          "backrest": "uph",
+          "sourceCad": "xilium-swivel-chair-uphp-gsb-sa3-st-hrua3-lsd2-r54-ts30-26395.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/feefbcf8-0c48-4c08-adbc-7e7591f2cef3/xilium-swivel-chair-uphp-gsb-sa3-st-hrua3-lsd2-r54-ts30-26395.3ds",
+          "sourceCadSha256": "b3f71c6b6f58597199b043565dee768986129614abf3b60f26d412206a8b42e9",
+          "asset": "/models/configurator/23636151.glb",
+          "image": "/media/configurator/23636151.jpg",
+          "materialCodes": {
+            "seat": "STG67004",
+            "backrest": "STG67004",
+            "side": "STG67004",
+            "headrest": "STG67004"
+          },
+          "samples": {
+            "seat": {
+              "code": "STG67004",
+              "name": "Step/Step Melange",
+              "image": "/media/configurator/stg67004.jpg"
+            },
+            "backrest": {
+              "code": "STG67004",
+              "name": "Step/Step Melange",
+              "image": "/media/configurator/stg67004.jpg"
+            },
+            "side": {
+              "code": "STG67004",
+              "name": "Step/Step Melange",
+              "image": "/media/configurator/stg67004.jpg"
+            },
+            "headrest": {
+              "code": "STG67004",
+              "name": "Step/Step Melange",
+              "image": "/media/configurator/stg67004.jpg"
+            }
+          },
+          "plastic": "black",
+          "metalBase": false,
+          "supplierCode": "KXIL046WW001",
+          "supplierOptions": [
+            "KXIL046WW001_OPTIONS.CMECHANISM=SA3ST",
+            "KXIL046WW001_OPTIONS.CBACKRESTMOVEMECH=XV",
+            "KXIL046WW001_OPTIONS.CPLASTICCOLORVERSION2=BLACKEDITION",
+            "KXIL046WW001_OPTIONS.CHEADREST=HRUA3DPLASTICSIDPROF",
+            "KXIL046WW001_OPTIONS.CBACKRESTCONNECTOR=BLACKPLASTIC",
+            "KXIL046WW001_OPTIONS.CLUMBARSUPPORT=LSD2",
+            "KXIL046WW001_OPTIONS.CARMRESTS=R54BBBPU",
+            "KXIL046WW001_OPTIONS.CBASE=TS30BL",
+            "KXIL046WW001_OPTIONS.CCASTORS=ESH60",
+            "KXIL046WW001_OPTIONS.CASSEMBLY=PACKL",
+            "KXIL046WW001_FINISHES.CPRICEGROUP=3",
+            "KXIL046WW001_FINISHES.CBACKRESTUPHGROUP=ST",
+            "KXIL046WW001_FINISHES.CSEATUPHGROUP=ST",
+            "KXIL046WW001_FINISHES.CSEBASIDEPROFILUPHGROUP=ST",
+            "KXIL046WW001_FINISHES.CHEADRESTUPHCHGROUP=ST",
+            "KXIL046WW001_FINISHES.CHEADSIDEPROFUPHCHGROUP=ST",
+            "KXIL046WW001_FINISHES.CUPHBACKRESTCOLOR=STG67004",
+            "KXIL046WW001_FINISHES.CUPHSEATCOLOR=STG67004",
+            "KXIL046WW001_FINISHES.CSEBASIDEPROFILUPHCOLOR=STG67004",
+            "KXIL046WW001_FINISHES.CHEADRESTUPHCHCOLOR=STG67004",
+            "KXIL046WW001_FINISHES.CHEADSIDEPROFUPHCHCOL=STG67004"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "115e183ed6445b78042b032d516f8495bd38fae4915fc74825b8f210936a9514",
+          "bytes": 455256
+        },
+        {
+          "id": "23636152",
+          "label": "Duo-Back · juoda · be porankių",
+          "backrest": "duo",
+          "sourceCad": "xilium-swivel-chair-duo-back-uphp-gsb-er-st-ts30-26383.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/9aecbcc6-c18e-4f8a-a077-3a79db96d27f/xilium-swivel-chair-duo-back-uphp-gsb-er-st-ts30-26383.3ds",
+          "sourceCadSha256": "b0d74b7f34f700898ef6318b30c6c8e30985e3fd87d7761ee81044a78286cc73",
+          "asset": "/models/configurator/23636152.glb",
+          "image": "/media/configurator/23636152.jpg",
+          "materialCodes": {
+            "seat": "YB094",
+            "backrest": "YB094",
+            "side": "YB009",
+            "headrest": null
+          },
+          "samples": {
+            "seat": {
+              "code": "YB094",
+              "name": "Lucia T2T",
+              "image": "/media/configurator/yb094.jpg"
+            },
+            "backrest": {
+              "code": "YB094",
+              "name": "Lucia T2T",
+              "image": "/media/configurator/yb094.jpg"
+            },
+            "side": {
+              "code": "YB009",
+              "name": "Lucia T2T",
+              "image": "/media/configurator/yb009.jpg"
+            }
+          },
+          "plastic": "black",
+          "metalBase": false,
+          "supplierCode": "KXIL044WW001",
+          "supplierOptions": [
+            "KXIL044WW001_OPTIONS.CMECHANISM=ERST",
+            "KXIL044WW001_OPTIONS.CBACKRESTMOVEMECH=NONE",
+            "KXIL044WW001_OPTIONS.CPLASTICCOLORVERSION2=BLACKEDITION",
+            "KXIL044WW001_OPTIONS.CHEADREST=NONE",
+            "KXIL044WW001_OPTIONS.CBACKRESTCONNECTOR=BLACKPLASTIC",
+            "KXIL044WW001_OPTIONS.CARMRESTS=NONE",
+            "KXIL044WW001_OPTIONS.CBASE=TS30BL",
+            "KXIL044WW001_OPTIONS.CCASTORS=ESH60",
+            "KXIL044WW001_OPTIONS.CASSEMBLY=PACKL",
+            "KXIL044WW001_FINISHES.CPRICEGROUP=1",
+            "KXIL044WW001_FINISHES.CBACKRESTUPHGROUP=YB",
+            "KXIL044WW001_FINISHES.CSEATUPHGROUP=YB",
+            "KXIL044WW001_FINISHES.CSEBASIDEPROFILUPHGROUP=YB",
+            "KXIL044WW001_FINISHES.CUPHBACKRESTCOLOR=YB094",
+            "KXIL044WW001_FINISHES.CUPHSEATCOLOR=YB094",
+            "KXIL044WW001_FINISHES.CSEBASIDEPROFILUPHCOLOR=YB009"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "4712fc287e228ecf7ceb9c84e852996e3158664f999d4dc1c29bc17efd2b7b14",
+          "bytes": 384572
+        }
+      ]
+    },
+    {
+      "productId": "product_souly-swivel-chairs_e1805fc7",
+      "name": "Souly",
+      "path": "/produktai/kedes/souly-darbo-kedes/",
+      "variants": [
+        {
+          "id": "16088654",
+          "label": "Tinklinis · juoda · be galvos atramos",
+          "backrest": "mesh",
+          "sourceCad": "souly-swivel-chair-mesh-sa2-st-cc-b-r70-bbbpu-gl-std-ts36-eshh60-pack-l-3067.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/4ba140ed-1a04-406e-b9d3-51e3eafd9b41/souly-swivel-chair-mesh-sa2-st-cc-b-r70-bbbpu-gl-std-ts36-eshh60-pack-l-3067.3ds",
+          "sourceCadSha256": "55155b54439014fac9fbbeb15c16936fc34bbfbd6ed4144e0e96e86d025cba23",
+          "asset": "/models/configurator/16088654.glb",
+          "image": "/media/configurator/16088654.jpg",
+          "materialCodes": {
+            "seat": "XR009",
+            "backrest": "MV1201",
+            "side": null,
+            "headrest": "XR009"
+          },
+          "samples": {
+            "seat": {
+              "code": "XR009",
+              "name": "Xtreme",
+              "image": "/media/configurator/xr009.jpg"
+            },
+            "headrest": {
+              "code": "XR009",
+              "name": "Xtreme",
+              "image": "/media/configurator/xr009.jpg"
+            }
+          },
+          "plastic": "black",
+          "metalBase": false,
+          "supplierCode": "KSOU001WW003",
+          "supplierOptions": [
+            "KSOU001WW003_OPTIONS.CMECHANISM=SA2ST",
+            "KSOU001WW003_OPTIONS.CPLASTICCOLORVERSION=BLACKEDITION",
+            "KSOU001WW003_OPTIONS.CHEADREST=NONE",
+            "KSOU001WW003_OPTIONS.CLUMBARSUPPORT=NONE",
+            "KSOU001WW003_OPTIONS.CBACKREST=MESH",
+            "KSOU001WW003_OPTIONS.CSEAT=UPHSP",
+            "KSOU001WW003_OPTIONS.CARMRESTS=R70BBBPU",
+            "KSOU001WW003_OPTIONS.CGASLIFT=GLSTDB",
+            "KSOU001WW003_OPTIONS.CBASE=TS36",
+            "KSOU001WW003_OPTIONS.CCASTORS=ESHHB",
+            "KSOU001WW003_OPTIONS.CPACKAGING=LSHAPEBOX1",
+            "KSOU001WW003_FINISHES.CPRICEGROUP=2",
+            "KSOU001WW003_FINISHES.CUPHGROUP=XR",
+            "KSOU001WW003_FINISHES.CMESHGROUP=MV",
+            "KSOU001WW003_FINISHES.CMESHCOLOR=MV1201",
+            "KSOU001WW003_FINISHES.CUPHCOLOR=XR009"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "07707a8d0534075f1f59355759bcb685248813fee56e3af644ca9c378dfee59f",
+          "bytes": 171388
+        },
+        {
+          "id": "16088657",
+          "label": "Apmuštas · pilka · be galvos atramos",
+          "backrest": "uph",
+          "sourceCad": "souly-swivel-chair-uph-sa2-st-cc-g-r70-bgbpu-gl-g-ts36-g-esh60-g-pack-l-3063.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/1074a026-2a78-4df1-9091-2c5da71fc762/souly-swivel-chair-uph-sa2-st-cc-g-r70-bgbpu-gl-g-ts36-g-esh60-g-pack-l-3063.3ds",
+          "sourceCadSha256": "acec232764029e5b5c5489592646670901954f2916356b9cbc579440a4bd1662",
+          "asset": "/models/configurator/16088657.glb",
+          "image": "/media/configurator/16088657.jpg",
+          "materialCodes": {
+            "seat": "LDS44",
+            "backrest": "LDS44",
+            "side": null,
+            "headrest": "LDS44"
+          },
+          "samples": {},
+          "plastic": "grey",
+          "metalBase": false,
+          "supplierCode": "KSOU001WW004",
+          "supplierOptions": [
+            "KSOU001WW004_OPTIONS.CMECHANISM=SA2ST",
+            "KSOU001WW004_OPTIONS.CPLASTICCOLORVERSION=LIGHTGREY",
+            "KSOU001WW004_OPTIONS.CHEADREST=NONE",
+            "KSOU001WW004_OPTIONS.CLUMBARSUPPORT=NONE",
+            "KSOU001WW004_OPTIONS.CSEAT=UPHCOVERPLASTIC",
+            "KSOU001WW004_OPTIONS.CARMRESTS=R70BGBPU",
+            "KSOU001WW004_OPTIONS.CGASLIFT=GLG",
+            "KSOU001WW004_OPTIONS.CBASE=TS36G",
+            "KSOU001WW004_OPTIONS.CCASTORS=ESSHG",
+            "KSOU001WW004_OPTIONS.CPACKAGING=LSHAPEBOX1",
+            "KSOU001WW004_FINISHES.CPRICEGROUP=4",
+            "KSOU001WW004_FINISHES.CUPHGROUP=SY",
+            "KSOU001WW004_FINISHES.CUPHCOLOR=LDS44"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "766960b193bdd1e28e641ba26884c5b80351cac97de796da951578c30775f93f",
+          "bytes": 175964
+        },
+        {
+          "id": "16088659",
+          "label": "Apmuštas · juoda · su galvos atrama",
+          "backrest": "uph",
+          "sourceCad": "souly-swivel-chair-uph-ern-st-cc-b-r71-bbbpu-gl-std-ts36-eshh60-pack-l-3072.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/9a8bf84c-859f-405d-ade1-9d1c953d7895/souly-swivel-chair-uph-ern-st-cc-b-r71-bbbpu-gl-std-ts36-eshh60-pack-l-3072.3ds",
+          "sourceCadSha256": "609fcfe9d2fb0c9fcc1831a3648cef5207dffbe5510016bacb3d7258e6956dc3",
+          "asset": "/models/configurator/16088659.glb",
+          "image": "/media/configurator/16088659.jpg",
+          "materialCodes": {
+            "seat": "RX982",
+            "backrest": "RX982",
+            "side": "RX982",
+            "headrest": "RX982"
+          },
+          "samples": {
+            "seat": {
+              "code": "RX982",
+              "name": "Remix 3",
+              "image": "/media/configurator/rx982.jpg"
+            },
+            "backrest": {
+              "code": "RX982",
+              "name": "Remix 3",
+              "image": "/media/configurator/rx982.jpg"
+            },
+            "side": {
+              "code": "RX982",
+              "name": "Remix 3",
+              "image": "/media/configurator/rx982.jpg"
+            },
+            "headrest": {
+              "code": "RX982",
+              "name": "Remix 3",
+              "image": "/media/configurator/rx982.jpg"
+            }
+          },
+          "plastic": "black",
+          "metalBase": false,
+          "supplierCode": "KSOU001WW004",
+          "supplierOptions": [
+            "KSOU001WW004_OPTIONS.CMECHANISM=ERNST",
+            "KSOU001WW004_OPTIONS.CPLASTICCOLORVERSION=BLACKEDITION",
+            "KSOU001WW004_OPTIONS.CHEADREST=HRUA3",
+            "KSOU001WW004_OPTIONS.CLUMBARSUPPORT=LUH2MANUAL",
+            "KSOU001WW004_OPTIONS.CSEAT=UPHCPLASTICSPROFILES",
+            "KSOU001WW004_OPTIONS.CARMRESTS=R71BBBPU",
+            "KSOU001WW004_OPTIONS.CGASLIFT=GLSTDB",
+            "KSOU001WW004_OPTIONS.CBASE=TS36",
+            "KSOU001WW004_OPTIONS.CCASTORS=ESHHB",
+            "KSOU001WW004_OPTIONS.CPACKAGING=LSHAPEBOX1",
+            "KSOU001WW004_FINISHES.CPRICEGROUP=5",
+            "KSOU001WW004_FINISHES.CUPHGROUP=RX",
+            "KSOU001WW004_FINISHES.CUPHCOLOR=RX982",
+            "KSOU001WW004_FINISHES.CUPHSIDECOLORSEAT=RX982"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "544d30dd188bc799c17b19d93d537bd1b4b1f437c27c2f963dff7c3f04a50a2b",
+          "bytes": 315032
+        },
+        {
+          "id": "23664986",
+          "label": "Tinklinis · pilka · be galvos atramos",
+          "backrest": "mesh",
+          "sourceCad": "souly-swivel-chair-mesh-er-st-cc-g-r70-bgbpu-gl-std-ts36-g-eshh60-pack-l-3064.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/55272052-6ffb-472f-9291-5d07e6c58a3c/souly-swivel-chair-mesh-er-st-cc-g-r70-bgbpu-gl-std-ts36-g-eshh60-pack-l-3064.3ds",
+          "sourceCadSha256": "0bd263764d2e9045fcaed796d2f3a51c4a56479e1a4bd9cbd6cc76957837bc41",
+          "asset": "/models/configurator/23664986.glb",
+          "image": "/media/configurator/23664986.jpg",
+          "materialCodes": {
+            "seat": "EGL13",
+            "backrest": "MV1501",
+            "side": null,
+            "headrest": "EGL13"
+          },
+          "samples": {
+            "seat": {
+              "code": "EGL13",
+              "name": "Rivet",
+              "image": "/media/configurator/egl13.jpg"
+            },
+            "headrest": {
+              "code": "EGL13",
+              "name": "Rivet",
+              "image": "/media/configurator/egl13.jpg"
+            }
+          },
+          "plastic": "grey",
+          "metalBase": false,
+          "supplierCode": "KSOU001WW003",
+          "supplierOptions": [
+            "KSOU001WW003_OPTIONS.CMECHANISM=ERST",
+            "KSOU001WW003_OPTIONS.CPLASTICCOLORVERSION=LIGHTGREY",
+            "KSOU001WW003_OPTIONS.CHEADREST=NONE",
+            "KSOU001WW003_OPTIONS.CLUMBARSUPPORT=LUH2MANUAL",
+            "KSOU001WW003_OPTIONS.CBACKREST=MESH",
+            "KSOU001WW003_OPTIONS.CSEAT=UPHSP",
+            "KSOU001WW003_OPTIONS.CARMRESTS=R70BGBPU",
+            "KSOU001WW003_OPTIONS.CGASLIFT=GLSTDB",
+            "KSOU001WW003_OPTIONS.CBASE=TS36G",
+            "KSOU001WW003_OPTIONS.CCASTORS=ESHHB",
+            "KSOU001WW003_OPTIONS.CPACKAGING=LSHAPEBOX1",
+            "KSOU001WW003_FINISHES.CPRICEGROUP=2",
+            "KSOU001WW003_FINISHES.CUPHGROUP=EGL",
+            "KSOU001WW003_FINISHES.CMESHGROUP=MV",
+            "KSOU001WW003_FINISHES.CMESHCOLOR=MV1501",
+            "KSOU001WW003_FINISHES.CUPHCOLOR=EGL13"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "860a1825828a8ede9501275d061559d5e5d395f1f5bff5dc3809d2c17b218cc0",
+          "bytes": 245688
+        },
+        {
+          "id": "23664987",
+          "label": "Tinklinis · pilka · su galvos atrama",
+          "backrest": "mesh",
+          "sourceCad": "souly-swivel-chair-mesh-ern-st-cc-g-r71-bgbpu-gl-g-ts36-g-esh60-g-pack-l-3069.3ds",
+          "sourceCadUrl": "https://www.nowystyl.com/getmedia/16e3987a-ab28-4a31-9103-9fe1412d3588/souly-swivel-chair-mesh-ern-st-cc-g-r71-bgbpu-gl-g-ts36-g-esh60-g-pack-l-3069.3ds",
+          "sourceCadSha256": "867df94ef9c8261d596a3bfd574d44714b92bf059f19ca0db12a095867892fc3",
+          "asset": "/models/configurator/23664987.glb",
+          "image": "/media/configurator/23664987.jpg",
+          "materialCodes": {
+            "seat": "EGL21",
+            "backrest": "MV1001",
+            "side": null,
+            "headrest": "EGL21"
+          },
+          "samples": {
+            "seat": {
+              "code": "EGL21",
+              "name": "Rivet",
+              "image": "/media/configurator/egl21.jpg"
+            },
+            "headrest": {
+              "code": "EGL21",
+              "name": "Rivet",
+              "image": "/media/configurator/egl21.jpg"
+            }
+          },
+          "plastic": "grey",
+          "metalBase": false,
+          "supplierCode": "KSOU001WW003",
+          "supplierOptions": [
+            "KSOU001WW003_OPTIONS.CMECHANISM=ERNST",
+            "KSOU001WW003_OPTIONS.CPLASTICCOLORVERSION=LIGHTGREY",
+            "KSOU001WW003_OPTIONS.CHEADREST=HRUA3",
+            "KSOU001WW003_OPTIONS.CLUMBARSUPPORT=LUH2MANUAL",
+            "KSOU001WW003_OPTIONS.CBACKREST=MESH",
+            "KSOU001WW003_OPTIONS.CSEAT=UPHSP",
+            "KSOU001WW003_OPTIONS.CARMRESTS=R71BGBPU",
+            "KSOU001WW003_OPTIONS.CGASLIFT=GLG",
+            "KSOU001WW003_OPTIONS.CBASE=TS36G",
+            "KSOU001WW003_OPTIONS.CCASTORS=ESSHG",
+            "KSOU001WW003_OPTIONS.CPACKAGING=LSHAPEBOX1",
+            "KSOU001WW003_FINISHES.CPRICEGROUP=2",
+            "KSOU001WW003_FINISHES.CUPHGROUP=EGL",
+            "KSOU001WW003_FINISHES.CMESHGROUP=MV",
+            "KSOU001WW003_FINISHES.CMESHCOLOR=MV1001",
+            "KSOU001WW003_FINISHES.CUPHCOLOR=EGL21"
+          ],
+          "visualizationNote": "CAD dalys ir apdailų spalvos pritaikytos 3D peržiūrai. Tiksli komplektacija nustatoma pagal gamintojo kodus ir pavyzdžio nuotrauką.",
+          "assetSha256": "260424a5dc04d5be0c8ba90e9e9205cf914682fef2c1d5ad07ef60ef797fc6ff",
+          "bytes": 290100
+        }
+      ]
+    }
+  ]
+}

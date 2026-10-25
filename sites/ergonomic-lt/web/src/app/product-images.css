@@ -1,0 +1,26 @@
+/* Keep the original supplier studio backdrop and shadows.
+   ProductImage matches contain gutters to each photograph's own backdrop. */
+.product-card-image,
+.gallery-main,
+.gallery-thumbs button,
+.category-tile-image,
+.collection-card > div,
+.quote-item-image {
+  background: #f4f4f4;
+}
+
+.product-card-image img,
+.gallery-main img,
+.gallery-thumbs img,
+.category-tile-image img,
+.collection-card > div img,
+.quote-item-image img,
+.rail-product-image img,
+.showcase-object img,
+.selected-category-image img {
+  mix-blend-mode: normal;
+  object-fit: contain;
+  padding: 0;
+}
+
+.family-gallery{max-width:800px;margin-inline:auto}

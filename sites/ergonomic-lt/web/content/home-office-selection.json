@@ -1,0 +1,160 @@
+{
+  "ownerChoice": [
+    "K01",
+    "B01",
+    "P01",
+    "S03"
+  ],
+  "method": "image_gen",
+  "kind": "AI office visualization",
+  "assets": [
+    {
+      "id": "K01",
+      "title": "Šviesi darbo vieta prie lango",
+      "original": "content/home-office-originals/K01.png",
+      "originalSha256": "50374bb66317bdca929ef5aa8f829c77fad01e92ca7a4b3f7a1cabfe1e8bfcb9",
+      "width": 1586,
+      "height": 992,
+      "widths": [
+        400,
+        800,
+        1586
+      ],
+      "versions": [
+        {
+          "width": 400,
+          "height": 250,
+          "path": "/media/home-office/k01-50374bb66317/400.webp",
+          "bytes": 32256,
+          "sha256": "463ef568cb289afdfb7c7d565f3e11ce6de43e3610451d798287c135cc48d890"
+        },
+        {
+          "width": 800,
+          "height": 500,
+          "path": "/media/home-office/k01-50374bb66317/800.webp",
+          "bytes": 98240,
+          "sha256": "67d4f7f54f280615b86c4590a61f3feffbf5216b7710b1518eb32de5556328ce"
+        },
+        {
+          "width": 1586,
+          "height": 992,
+          "path": "/media/home-office/k01-50374bb66317/1586.webp",
+          "bytes": 278814,
+          "sha256": "d5e7045cf6540a83ea4823a738198564a15b3c6f89ad21a3f922293ee75cb6d9"
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Generate ONE premium editorial office-interior photograph for Lithuanian ergonomic.lt homepage. Wide horizontal landscape 16:10, sharp high-resolution detail. Style matches existing warm bright Scandinavian office photography: pale natural oak, chalk-white and warm cream plaster, soft sage accents, charcoal metal, forest-green plants, daylight through large windows, realistic soft shadows, understated European office styling. FULL photographic office environment fills the entire frame edge to edge. No text, lettering, labels, logos, watermark, borders, collage or people. Realistic useful furniture proportions, clean but lived-in workspace, coherent perspective, refined material textures. Main category subject unmistakable, wholly visible with comfortable margins so website thumbnail crops work. Photographic architectural lens, no fisheye, no surreal decoration, no black dramatic room. A beautiful coherent image, not a website mockup. Scene and composition: A charcoal mesh ergonomic swivel task chair in the foreground, sophisticated adjustable lumbar backrest, seat and armrests, realistic five-spoke base with five paired casters, entire chair visible. Beside it an oak desk with laptop. Warm oak-paneled wall behind, tall leafy plant beside a broad left-side window, pale stone floor, dappled soft late-morning sunlight. Three-quarter view focused on chair, environment occupies all remaining frame."
+    },
+    {
+      "id": "B01",
+      "title": "Aktyvus sėdėjimas prie šviesaus stalo",
+      "original": "content/home-office-originals/B01.png",
+      "originalSha256": "59a6759ae8377be6a2a8f6c443735c74e018fdded0814c29a6b07fba6e965fc7",
+      "width": 1586,
+      "height": 992,
+      "widths": [
+        400,
+        800,
+        1586
+      ],
+      "versions": [
+        {
+          "width": 400,
+          "height": 250,
+          "path": "/media/home-office/b01-59a6759ae837/400.webp",
+          "bytes": 27508,
+          "sha256": "9ff3a311ad0e98420afceac15456ee377aa69d6cb376f253b06dec5d18431e8f"
+        },
+        {
+          "width": 800,
+          "height": 500,
+          "path": "/media/home-office/b01-59a6759ae837/800.webp",
+          "bytes": 87084,
+          "sha256": "d8e0f158388c9c376f78c8725c91dc428fc129343109bb3de94bb4265a869fd6"
+        },
+        {
+          "width": 1586,
+          "height": 992,
+          "path": "/media/home-office/b01-59a6759ae837/1586.webp",
+          "bytes": 244488,
+          "sha256": "e468d80d5021cc91be227879921e8cc9ec075cdd8950c2fd2da004abe21415a5"
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Generate ONE premium editorial office-interior photograph for Lithuanian ergonomic.lt homepage. Wide horizontal landscape 16:10, sharp high-resolution detail. Style matches existing warm bright Scandinavian office photography: pale natural oak, chalk-white and warm cream plaster, soft sage accents, charcoal metal, forest-green plants, daylight through large windows, realistic soft shadows, understated European office styling. FULL photographic office environment fills the entire frame edge to edge. No text, lettering, labels, logos, watermark, borders, collage or people. Realistic useful furniture proportions, clean but lived-in workspace, coherent perspective, refined material textures. Main category subject unmistakable, wholly visible with comfortable margins so website thumbnail crops work. Photographic architectural lens, no fisheye, no surreal decoration, no black dramatic room. A beautiful coherent image, not a website mockup. Scene and composition: An active sitting perch stool beside an oak height-adjustable work desk in a bright office. Hero stool has a compact upholstered sage-green gently rounded saddle seat, one adjustable central stem and a low rounded weighted rocking base touching the floor; believable stable commercial active-sitting design, not a conventional four-leg stool. Show entire stool and desk corner, soft oak wall, daylight window, green plant, beige stone floor, harmonious clean composition."
+    },
+    {
+      "id": "P01",
+      "title": "Monitoriaus laikiklis ir akustinė panelė",
+      "original": "content/home-office-originals/P01.png",
+      "originalSha256": "954de2012efdcde6f171172cba11bc682a06a29386d7d9a065ea7896309cdfd1",
+      "width": 1586,
+      "height": 992,
+      "widths": [
+        400,
+        800,
+        1586
+      ],
+      "versions": [
+        {
+          "width": 400,
+          "height": 250,
+          "path": "/media/home-office/p01-954de2012efd/400.webp",
+          "bytes": 28794,
+          "sha256": "07c0760262e8e57e83d6fa7cb8c97f00ebd5bd7bf12b5bd6ac4f5118678d100d"
+        },
+        {
+          "width": 800,
+          "height": 500,
+          "path": "/media/home-office/p01-954de2012efd/800.webp",
+          "bytes": 82528,
+          "sha256": "aae0203da6573bbe6967e037104ccb7f7e6cf1f2d29075b7b1cff04e8e6d6fad"
+        },
+        {
+          "width": 1586,
+          "height": 992,
+          "path": "/media/home-office/p01-954de2012efd/1586.webp",
+          "bytes": 235292,
+          "sha256": "7a6386e5ac3a5f0f195d260b2f2eb50bb6928044f81718763ad8b053b660b2cc"
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Generate ONE premium editorial office-interior photograph for Lithuanian ergonomic.lt homepage. Wide horizontal landscape 16:10, sharp high-resolution detail. Style matches existing warm bright Scandinavian office photography: pale natural oak, chalk-white and warm cream plaster, soft sage accents, charcoal metal, forest-green plants, daylight through large windows, realistic soft shadows, understated European office styling. FULL photographic office environment fills the entire frame edge to edge. No text, lettering, labels, logos, watermark, borders, collage or people. Realistic useful furniture proportions, clean but lived-in workspace, coherent perspective, refined material textures. Main category subject unmistakable, wholly visible with comfortable margins so website thumbnail crops work. Photographic architectural lens, no fisheye, no surreal decoration, no black dramatic room. A beautiful coherent image, not a website mockup. Scene and composition: A beautiful complete office work desk setup viewed at an eye-level three-quarter angle. Emphasize a slim matte-black articulating monitor arm visibly clamped to an oak desktop, a real monitor, sage fabric acoustic desk screen behind, a discreet cable tray below with neatly routed cables, small desk lamp and ceramic plant. All accessories have sensible joints and supports, not floating. Bright oak-paneled office, generous window daylight, elegant calm environment. Main subject desk accessories, not an isolated product."
+    },
+    {
+      "id": "S03",
+      "title": "Elektrinių stalų darbo zona",
+      "original": "content/home-office-originals/S03.png",
+      "originalSha256": "42386639740a93647e0e0572f01faccb50f51eff47d9ccd2df2e3366db38e4c8",
+      "width": 1586,
+      "height": 992,
+      "widths": [
+        400,
+        800,
+        1586
+      ],
+      "versions": [
+        {
+          "width": 400,
+          "height": 250,
+          "path": "/media/home-office/s03-42386639740a/400.webp",
+          "bytes": 30492,
+          "sha256": "94fcb8424b5ede6c3ad4f3c93e1bff9ce977d83b11904ee3b2b9910f6e4d41bf"
+        },
+        {
+          "width": 800,
+          "height": 500,
+          "path": "/media/home-office/s03-42386639740a/800.webp",
+          "bytes": 95820,
+          "sha256": "e18164953b6a39f6c87a4450a98bdcc77d0b339b15a34f1207e57b894e1a2f6a"
+        },
+        {
+          "width": 1586,
+          "height": 992,
+          "path": "/media/home-office/s03-42386639740a/1586.webp",
+          "bytes": 263436,
+          "sha256": "42d7ab481fdaffa95ef845304ffdde63e7324f93684cb84b579db39e9d7e060d"
+        }
+      ],
+      "prompt": "Use case: photorealistic-natural. Generate ONE premium editorial office-interior photograph for Lithuanian ergonomic.lt homepage. Wide horizontal landscape 16:10, sharp high-resolution detail. Style matches existing warm bright Scandinavian office photography: pale natural oak, chalk-white and warm cream plaster, soft sage accents, charcoal metal, forest-green plants, daylight through large windows, realistic soft shadows, understated European office styling. FULL photographic office environment fills the entire frame edge to edge. No text, lettering, labels, logos, watermark, borders, collage or people. Realistic useful furniture proportions, clean but lived-in workspace, coherent perspective, refined material textures. Main category subject unmistakable, wholly visible with comfortable margins so website thumbnail crops work. Photographic architectural lens, no fisheye, no surreal decoration, no black dramatic room. A beautiful coherent image, not a website mockup. Scene and composition: Two elegant electric sit-stand desks in a bright collaborative office, one raised and one set at seated height to communicate adjustment clearly. Both pale oak rectangular tops, black telescoping lifting columns, correct horizontal T-feet, small front controllers, tidy cable trays; each desk has TWO lifting legs. Clear primary raised desk fully visible in foreground, second office desk behind, sage acoustic screen, tall plants, broad windows and neutral grey carpet. Professional cohesive architecture photograph with pleasing depth."
+    }
+  ]
+}

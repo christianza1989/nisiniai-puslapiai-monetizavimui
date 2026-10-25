@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "worker-configuration.d.ts",
+    "src/cloudflare/**/*.ts",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "core-dependency"
+  ],
+  "compilerOptions": {
+    "incremental": false
+  }
+}

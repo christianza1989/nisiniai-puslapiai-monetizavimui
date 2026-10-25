@@ -1,0 +1,24 @@
+import fs from 'node:fs';
+import {parseHTML} from 'linkedom';
+import {createHash} from 'node:crypto';
+const data=JSON.parse(fs.readFileSync('content/home-seo-sections.json','utf8'));
+const names=JSON.parse(fs.readFileSync('content/seed.json','utf8')).categories;
+const labels={www_chairs:'Biuro kėdės',www_desks:'Biuro stalai ir darbo vietos',www_tables:'Susitikimų ir poilsio zonų stalai',www_softseating:'Minkšti biuro ir poilsio baldai',www_storage:'Biuro spintos ir laikymo baldai',www_panels:'Akustiniai biuro sprendimai',www_beamseating:'Laukiamojo kėdės ir sėdėjimo blokai',www_officechairs:'Biuro darbo kėdės',www_workbenches:'Bendri biuro darbo stalai'};
+const file='src/lib/approved-home-markup.ts',source=fs.readFileSync(file,'utf8');
+const match=source.match(/export const approvedSectionsMarkup = (.+);/);if(!match)throw Error('Homepage markup missing');
+const {document}=parseHTML('<main>'+JSON.parse(match[1])+'</main>'),root=document.querySelector('main');
+function photo(img,d){img.setAttribute('src',d.image);img.setAttribute('alt',d.alt);img.setAttribute('width',d.width);img.setAttribute('height',d.height);img.setAttribute('sizes',d.assetId==='S03'?'(max-width:650px) 100vw, 62vw':'(max-width:650px) 94vw, (max-width:800px) 31vw, 33vw');img.setAttribute('srcset',(d.widths||[400,800,1600]).map(w=>d.image.replace(/\/\d+\.webp$/,'/'+w+'.webp')+' '+w+'w').join(', '));}
+root.querySelectorAll('.hp-workspace-card').forEach((card,index)=>{const d=data.cards[index];card.setAttribute('href',d.href);card.querySelector('figcaption').textContent=d.label;photo(card.querySelector('img'),d);});
+root.querySelector('.hp-workspace-heading-left h2').textContent='BALDAI JŪSŲ DARBO VIETAI';
+root.querySelector('.hp-workspace-disclosure').textContent=data.disclosure||'Gamintojo modelių pavyzdžiai';
+root.querySelector('.hp-workspace-tagline').textContent='Kėdės, stalai ir priedai pagal jūsų poreikį.';
+root.querySelector('.hp-collection-label')?.remove();
+const old=root.querySelector('#collection-title'),heading=document.createElement('h2');heading.id=old.id;heading.textContent=data.large.label;old.replaceWith(heading);
+root.querySelector('.hp-collection-description').textContent=data.large.description;
+const link=root.querySelector('.hp-collection-action');link.setAttribute('href',data.large.href);const svg=link.querySelector('svg')?.outerHTML||'';link.innerHTML=data.large.cta+svg;
+photo(root.querySelector('.hp-collection-image img'),data.large);
+root.querySelectorAll('[data-category-id]').forEach(slide=>{const id=slide.getAttribute('data-category-id'),category=names.find(c=>c.id===id);if(!category)return;const h=slide.querySelector('h3'),icon=h.querySelector('svg')?.outerHTML||'';h.innerHTML=(labels[id]||category.name)+icon;});
+fs.writeFileSync(file,source.replace(match[0],'export const approvedSectionsMarkup = '+JSON.stringify(root.innerHTML)+';'));
+const assets=[...data.cards,data.large].map(d=>({path:d.image,alt:d.alt,sha256:createHash('sha256').update(fs.readFileSync('public'+d.image)).digest('hex')}));
+fs.writeFileSync('content/home-seo-provenance.json',JSON.stringify({ownerInstruction:data.ownerInstruction||'2026-10-13 SEO homepage V2',kind:data.kind||'supplier-photograph',preservedSupplierPixels:data.kind!=='ai-office-visualization',assets},null,2));
+console.log('Homepage SEO sections applied; original H1 and other sections retained.');

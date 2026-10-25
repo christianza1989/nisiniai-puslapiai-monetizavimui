@@ -1,0 +1,106 @@
+{
+  "kind": "HISTORICAL_COMPLETED_FINITE_VALIDATION",
+  "codeSourceHead": "a665154f82f51f53db449e32a3c76d597ced183f",
+  "checkpointCodeSourceHead": "373f3144b1bd13b415a24b4a13d3fc8227d12ed7",
+  "unitTests": 37,
+  "wholePipelineSpeedupProven": false,
+  "fullModelAcceptance": false,
+  "runtimeAdoption": "Separate operational proof requires actual poststart identities, lease and moving checkpoint; not asserted by this source record.",
+  "matchedCheckpointBenchmark": {
+    "v6": {
+      "medianSeconds": 0.3322371499998553,
+      "bytes": 12536086
+    },
+    "compact": {
+      "medianSeconds": 0.13066404999881343,
+      "bytes": 10209351
+    }
+  },
+  "crossPortionWorkComparison": {
+    "method": "Same article, different frontier regions and I/O conditions. Complete real grant-to-result intervals; not matched causal A/B.",
+    "rows": [
+      {
+        "label": "v6-prior-SERA-portion",
+        "newEdges": 386,
+        "seconds": 901.68747,
+        "geometryBytes": 6147669084,
+        "rawResponses": 3067,
+        "edgesPerHour": 1541.1104692405231,
+        "geometryBytesPerEdge": 15926603.844559586,
+        "rawResponsesPerEdge": 7.94559585492228
+      },
+      {
+        "label": "v7-SERA-finite-pilot",
+        "newEdges": 312,
+        "seconds": 902.8342957496643,
+        "geometryBytes": 6352201640,
+        "rawResponses": 2984,
+        "edgesPerHour": 1244.0821148329949,
+        "geometryBytesPerEdge": 20359620.64102564,
+        "rawResponsesPerEdge": 9.564102564102564
+      }
+    ],
+    "geometryBytesPerEdgeChangePercent": 27.834036934247862,
+    "rawResponsesPerEdgeChangePercent": 20.369859463436256,
+    "checkpointWriteGain": "Matched durable JSON writes establish local benefit only.",
+    "wholePipelineSpeedupProven": false
+  },
+  "pilots": [
+    {
+      "result": "PASS_FINITE_NEW_DATA_ONLY",
+      "code": "KSEG002WW001",
+      "newStates": 0,
+      "newEdges": 312,
+      "rawResponses": 2984,
+      "observations": 313,
+      "completeFilesFullSha": 17576,
+      "completeLogicalBytesFullSha": 17247910033,
+      "geometryPhysicalIdentityPairs": 313,
+      "originalKnownStateGeometryParity": 313,
+      "originalCheckpointPrefixPreserved": true,
+      "finishesSetters": 0,
+      "newSessions": 0,
+      "sourceClosed": false,
+      "fullModelAcceptance": false,
+      "checkpointPersistence": {
+        "atomicReplace": true,
+        "bytes": 3248385824,
+        "format": "compact-json-v1",
+        "fsyncEveryWrite": true,
+        "seconds": 94.20257810002659,
+        "writes": 314
+      },
+      "independentProofSha256": "e4cad16f365fb90480156bcfabd74fd62897a2d75f27c7542edc3120b83f39df",
+      "verifierSha256": "bc05463647e22922d3a8b76363683eb85f1f1d5e07de5608ee036a02110ba28e"
+    },
+    {
+      "result": "PASS_FINITE_NEW_DATA_ONLY",
+      "code": "KTGU004WW002",
+      "newStates": 37,
+      "newEdges": 516,
+      "rawResponses": 3434,
+      "observations": 517,
+      "completeFilesFullSha": 19003,
+      "completeLogicalBytesFullSha": 22118548060,
+      "geometryPhysicalIdentityPairs": 517,
+      "originalKnownStateGeometryParity": 444,
+      "originalCheckpointPrefixPreserved": true,
+      "finishesSetters": 0,
+      "newSessions": 0,
+      "sourceClosed": false,
+      "fullModelAcceptance": false,
+      "persistentVisitCounterBefore": 8,
+      "persistentVisitCounterAfter": 9,
+      "checkpointPersistence": {
+        "atomicReplace": true,
+        "bytes": 2036256576,
+        "format": "compact-json-v1",
+        "fsyncEveryWrite": true,
+        "seconds": 62.524914699952205,
+        "writes": 518
+      },
+      "independentProofSha256": "c0473c0d8a3b5bd95911382ed57cad6f99702232ad40c5f793cd3ed9b9c4be9d",
+      "verifierSha256": "e408a32753d291dfca74df78555011c132f6aeb7f18d2a3f42e0182fbd7838dc"
+    }
+  ]
+}

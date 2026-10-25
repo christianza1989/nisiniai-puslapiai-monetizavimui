@@ -1,0 +1,27 @@
+export type Category = {id:string; parentId:string|null; name:string; nameEn:string; slug:string; icon:string|null};
+export type Configuration = {id:string; name:string; description:string; image:string|null; code:string|null; configurator:string|null;gallery?:string[];
+  sourceDescription?:string;supplierOptions?:string[];details?:{label:string;value:string}[];galleryOwner?:string};
+export type TechnicalRow={label:string;value:string};
+export type ArticleBlock={when:Record<string,string>;paragraphs:string[];rows:TechnicalRow[]};
+export type ConfigurableArticle={schemaVersion:1;productId:string;configurationId:string;baseArticle:string;displayName?:string;fieldLabels?:Record<string,string>;intro:string[];scopeNote:string;photoNote:string;choiceLabels:Record<string,Record<string,string>>;sections:{id:string;heading:string;fields:string[];blocks:ArticleBlock[]}[]};
+export type ProductArticle = {summary:string;paragraphs:string[];scopeNote:string;technicalSections:{heading:string;rows:TechnicalRow[]}[];seo:{title:string;description:string};configurable?:ConfigurableArticle};
+export type Product = {
+  id:string; name:string; brand:string; categoryId:string; subcategoryId:string;
+  categorySlug:string; slug:string; lineId:string|null; image:string|null;
+  gallery:string[]; description:string; sourceDescription:string;
+  sourceUrl:string; documents:{title:string;url:string}[]; configurations:Configuration[];
+  features:string[]; isNew:boolean; published:boolean; translationReviewed:boolean;
+  updatedAt?:string;
+  publicHeading?:string;
+  modelConfigurationId?:string; familySlug?:string; familyName?:string;
+  modelGalleryCount?:number;
+  galleryBackdrops?:Record<string,string>;
+  modelArticle?:ProductArticle;
+};
+export type Line = {id:string; name:string; brand:string; slug:string; image:string|null; productIds:string[]};
+export type LegacyPage = {path:string; title:string; description:string|null; h1:string;
+  html:string; text:string; headings:{id:string;text:string}[]; image:string|null;
+  sourceHash:string; expectedBlocks:string[]; oldImages:{url:string;alt:string}[]};
+export type Seed = {categories:Category[];products:Product[];lines:Line[];legacy:LegacyPage[];hero:string;provenance:unknown[]};
+export type QuoteItem = {productId:string;configurationId:string|null;configurationState?:import('./expanded-configurator').ExpandedState;quantity:number;note:string};
+export type QuotePayload = {name:string;email:string;phone:string;company:string;message:string;items:QuoteItem[];consent:true;submissionKey:string;website:string;startedAt:number};

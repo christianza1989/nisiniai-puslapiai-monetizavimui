@@ -1,0 +1,22 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Preserve full verification while permitting a diagnosed finite compiler timeout repair and recording exact command stages",
+  "category": "code",
+  "evidence": [
+    "docs/ERGONOMIC_OFFLINE_TIMEOUT_REPAIR_2026-10-20.md"
+  ],
+  "paths": [
+    "tools/ergonomic-chairs/prepare_closed.py",
+    "tools/ergonomic-chairs/offline_command_budget.py",
+    "tools/ergonomic-chairs/test_offline_command_budget.py",
+    "tools/ergonomic-chairs/test_preserved_proofs.py",
+    "tools/ergonomic-chairs/README.md",
+    "docs/ERGONOMIC_OFFLINE_TIMEOUT_REPAIR_2026-10-20.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/235",
+  "rollback": "Revert only this source diff; immutable accepted offline-v5 and watcher-v6 remain unchanged until a separate full affected-model adoption proof.",
+  "id": "upgrade-13817909-fd3a-47f1-969f-d8daffbf889d",
+  "branch": "codex/ergonomic-armrest-semantics-20261020",
+  "baseSha": "eb5c1dc3376c3feadfaae397db0dd3ab2f55f4f6",
+  "createdAt": "2026-10-20T14:43:56.932Z"
+}

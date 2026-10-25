@@ -1,0 +1,18 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "New provenance handoff gate exposed a pre-existing site instruction file on this ongoing chair branch. Record its exact original blob and current precedence review without rewriting historical instructions or claiming site/runtime acceptance.",
+  "category": "workflow",
+  "evidence": [
+    "docs/ERGONOMIC_CHAIR_INSTRUCTION_PROVENANCE_2026-10-19.json"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web/AGENTS.md",
+    "docs/ERGONOMIC_CHAIR_INSTRUCTION_PROVENANCE_2026-10-19.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/187",
+  "rollback": "Metadata-only journal/review revert; original site instruction file remains unchanged. No runtime/site/text acceptance or production launch implied.",
+  "id": "upgrade-3dc45534-5e6b-45bd-8de3-fa91c9d6065d",
+  "branch": "codex/ergonomic-chairs-structure-20261017",
+  "baseSha": "fea7f9bb51134d90e8f74311098012d6ce36389b",
+  "createdAt": "2026-10-19T12:18:31.205Z"
+}

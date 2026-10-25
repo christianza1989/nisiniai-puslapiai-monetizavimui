@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "84 actual chair tests PASS; immutable Native pilot and continuous adoption still pending. Legacy ten-portion mode retained.",
+  "checks": [
+    {
+      "command": "Python -B -m unittest discover -s tools/ergonomic-chairs -p test_*.py",
+      "result": "PASS",
+      "evidence": "84 tests ran, including8 finish-started regressions; docs/ERGONOMIC_FINISH_STARTED_2026-10-20.md"
+    }
+  ],
+  "eventId": "6a9f0ad4-62be-486c-b16e-a9e9f4c4c737",
+  "sequence": 2,
+  "at": "2026-10-20T04:01:51.790Z"
+}

@@ -1,0 +1,3236 @@
+{
+  "schemaVersion": 2,
+  "articles": {
+    "K2ME001WW002": {
+      "asset": "/models/configurator/runtime/K2ME001WW002-dd574a46b357b0c5162f.json",
+      "sha256": "dd574a46b357b0c5162f249bf9ecd30df1581464097e7fe04eecbce7c42b91c9"
+    },
+    "K2ME003WW001": {
+      "asset": "/models/configurator/runtime/K2ME003WW001-807e4b6131ad3589c82e.json",
+      "sha256": "807e4b6131ad3589c82ef61833374e0b1c0ca4493cf97d28da8abaf5cb449c28"
+    },
+    "K2ME003WW002": {
+      "asset": "/models/configurator/runtime/K2ME003WW002-1dc57eb0d7f71c343de8.json",
+      "sha256": "1dc57eb0d7f71c343de80d373d463d8b9fd09d3b679f3298427a2c19db27e4b1"
+    },
+    "K2ME004WW001": {
+      "asset": "/models/configurator/runtime/K2ME004WW001-9f3913a78b01d692475b.json",
+      "sha256": "9f3913a78b01d692475bf67da30fcbd6073cc63d64c7d070b488575c4dd013bf"
+    },
+    "K2ME004WW004": {
+      "asset": "/models/configurator/runtime/K2ME004WW004-39dde6d7f9639a77262e.json",
+      "sha256": "39dde6d7f9639a77262ef97a12b02f78e4d3a3cb9cd8eee458a896032dd7c4d7"
+    },
+    "KAII001WW001": {
+      "asset": "/models/configurator/runtime/KAII001WW001-f566f984c2b72fc8cbfc.json",
+      "sha256": "f566f984c2b72fc8cbfc75e358afdab7795dcb0b9e89d9283a6a0b9ca121d726"
+    },
+    "KAII001WW002": {
+      "asset": "/models/configurator/runtime/KAII001WW002-10136190078fd947ad64.json",
+      "sha256": "10136190078fd947ad64964f81cb3bb9daaaee6929c5c810e024c958f3b053ba"
+    },
+    "KAII001WW003": {
+      "asset": "/models/configurator/runtime/KAII001WW003-bddfb65e021e042ea12d.json",
+      "sha256": "bddfb65e021e042ea12d545b21135e9a98ceb913c89011969f2cc29dfb888160"
+    },
+    "KAII001WW004": {
+      "asset": "/models/configurator/runtime/KAII001WW004-17167789d14012c17bca.json",
+      "sha256": "17167789d14012c17bcab7206c6750b54072d7f9a6b31cf200146d86ccea9a5c"
+    },
+    "KARN003WW004": {
+      "asset": "/models/configurator/runtime/KARN003WW004-755d677bd05ca5142cbf.json",
+      "sha256": "755d677bd05ca5142cbf52cfa0ba8333bf353f6c52b7a17e45254d171709b2fe"
+    },
+    "KARN008WW004": {
+      "asset": "/models/configurator/runtime/KARN008WW004-8e2d352c003b9b8c3576.json",
+      "sha256": "8e2d352c003b9b8c357689e85e7a3a7d3b05d5c4d472ca1971f661d089dc2951"
+    },
+    "KARN008WW003": {
+      "asset": "/models/configurator/runtime/KARN008WW003-78da7c756892f4274a31.json",
+      "sha256": "78da7c756892f4274a31bef9833a1ba0d727fa774cd00eab81a519b04316be06"
+    },
+    "KARN003WW003": {
+      "asset": "/models/configurator/runtime/KARN003WW003-40494ca57cd11215cfb7.json",
+      "sha256": "40494ca57cd11215cfb7d5dc3d25f82ff1924b97ea43029f420da41dc8bb46fa"
+    },
+    "KARN007WW003": {
+      "asset": "/models/configurator/runtime/KARN007WW003-7fc5efd94e9546991d1e.json",
+      "sha256": "7fc5efd94e9546991d1ec2565b7aaf1e6ae2b28eb5fe772e6c0acf254d0c5387"
+    },
+    "KARN007WW004": {
+      "asset": "/models/configurator/runtime/KARN007WW004-0a34f267abf1343620a5.json",
+      "sha256": "0a34f267abf1343620a531a3bca9d17e9cab367c463b8402d974e736b1c56942"
+    },
+    "KAXO001WW004": {
+      "asset": "/models/configurator/runtime/KAXO001WW004-becbfb68a5dcf0aafa78.json",
+      "sha256": "becbfb68a5dcf0aafa78c5fea7662957fda9fca5fc8776cef6ae93de57b977ca"
+    },
+    "KAXO001WW002": {
+      "asset": "/models/configurator/runtime/KAXO001WW002-3e0d9db6cad66e03fe63.json",
+      "sha256": "3e0d9db6cad66e03fe636e9acdf72a162d2397dad3116bd0c7a7d76753dd88b3"
+    },
+    "KBLS001WW002": {
+      "asset": "/models/configurator/runtime/KBLS001WW002-f087bc2c5a8f7be47d25.json",
+      "sha256": "f087bc2c5a8f7be47d253d3e16124dba8fb17c7a4f1b5bd4fc6e4b24e30a2c6a"
+    },
+    "KBLS001WW001": {
+      "asset": "/models/configurator/runtime/KBLS001WW001-50ed48b8f2018f2ff00d.json",
+      "sha256": "50ed48b8f2018f2ff00dc7fd8e88ce1c90bf451e4a121adec7ed589d9793dd54"
+    },
+    "KBET001WW005": {
+      "asset": "/models/configurator/runtime/KBET001WW005-389669b0e01713529648.json",
+      "sha256": "389669b0e0171352964800bcdb8e3a1869b7ed48c779cfe4ff360f4103122ecd"
+    },
+    "KBET001WW008": {
+      "asset": "/models/configurator/runtime/KBET001WW008-a07553f7b54c4ae27450.json",
+      "sha256": "a07553f7b54c4ae27450202c8dc061c2fd8f95fc196c7e0c670da758cff46c49"
+    },
+    "KBET001WW006": {
+      "asset": "/models/configurator/runtime/KBET001WW006-6171c1a1a2b7e16dad30.json",
+      "sha256": "6171c1a1a2b7e16dad30451a0d339cebcac4d20d353782452cdc48468cecd728"
+    },
+    "KBET002WW002": {
+      "asset": "/models/configurator/runtime/KBET002WW002-3f14ae109eb4895fc956.json",
+      "sha256": "3f14ae109eb4895fc956505966fc3969d42ae913208de32074a1d7781426bfbb"
+    },
+    "KBEW001WW006": {
+      "asset": "/models/configurator/runtime/KBEW001WW006-fe05366449601f7b66df.json",
+      "sha256": "fe05366449601f7b66dfa51c58b52e9383cbe9a4e586b782163ed40e7a7cdc01"
+    },
+    "KBEW001WW007": {
+      "asset": "/models/configurator/runtime/KBEW001WW007-f800d98db6536ac667ca.json",
+      "sha256": "f800d98db6536ac667ca70c80dc041771550948be5c1459cd724aeaf1dc0a02d"
+    },
+    "KBEW001WW005": {
+      "asset": "/models/configurator/runtime/KBEW001WW005-1439c29028eb5aa5c159.json",
+      "sha256": "1439c29028eb5aa5c1598ea2b1cc2528c183a7bbe471e95eb174cc12e478569f"
+    },
+    "KBEW001WW008": {
+      "asset": "/models/configurator/runtime/KBEW001WW008-c7c02f6fffe6e8d55053.json",
+      "sha256": "c7c02f6fffe6e8d550530e7fab7e6000703118ae69ee9d30fe70f9675bae2f57"
+    },
+    "KBZM001WW001": {
+      "asset": "/models/configurator/runtime/KBZM001WW001-177987407c0ceb590f03.json",
+      "sha256": "177987407c0ceb590f03a8d24a15a869f43e0667368b7c030b9d9b4215b20176"
+    },
+    "KCAD001WW005": {
+      "asset": "/models/configurator/runtime/KCAD001WW005-dd908facae2dfccf2e34.json",
+      "sha256": "dd908facae2dfccf2e34c024a09f357c711fcd2aa192709c7c1699bed6ba7136"
+    },
+    "KCAD001WW001": {
+      "asset": "/models/configurator/runtime/KCAD001WW001-8a7e0b0e394c64cd6417.json",
+      "sha256": "8a7e0b0e394c64cd6417ca3128cdb460682931dd1be29e56e0ed3c2e2297e848"
+    },
+    "KCAD001WW002": {
+      "asset": "/models/configurator/runtime/KCAD001WW002-c347f542f3e75e8adeef.json",
+      "sha256": "c347f542f3e75e8adeefb33e158ce8f55459d5523ec7b23c4ced1632731734bc"
+    },
+    "KCAF003WW001": {
+      "asset": "/models/configurator/runtime/KCAF003WW001-e596c7cfe1d8186e7c60.json",
+      "sha256": "e596c7cfe1d8186e7c6093409a1755fd388d2037d169f45a54c2b64456616160"
+    },
+    "KCAF005WW001": {
+      "asset": "/models/configurator/runtime/KCAF005WW001-d88e644914e5cbd1c103.json",
+      "sha256": "d88e644914e5cbd1c10383f4d7e0f1314a1d533bce3ff1d9cb873a1ddbb3b9e5"
+    },
+    "KCAF005WW002": {
+      "asset": "/models/configurator/runtime/KCAF005WW002-bd441068d73c60f41c74.json",
+      "sha256": "bd441068d73c60f41c74e29be358ce1c4224287951fb8dc74252382994738036"
+    },
+    "KCAF007WW001": {
+      "asset": "/models/configurator/runtime/KCAF007WW001-683a173cc4d9dc6ecd92.json",
+      "sha256": "683a173cc4d9dc6ecd92a9128c7d26df119815c16d7298e1551f661c068b1677"
+    },
+    "KCAF008WW001": {
+      "asset": "/models/configurator/runtime/KCAF008WW001-aa2e8f7b43b60e0c785f.json",
+      "sha256": "aa2e8f7b43b60e0c785f3a19b48eb99db9d8d9e27fba974baf248222f4df2464"
+    },
+    "KCAF010WW001": {
+      "asset": "/models/configurator/runtime/KCAF010WW001-bd46c6fab5090222d8ec.json",
+      "sha256": "bd46c6fab5090222d8ecfffa62b8d4107af070067763b828e3b9c1beab1aab4f"
+    },
+    "KCAF011WW001": {
+      "asset": "/models/configurator/runtime/KCAF011WW001-2fdab8e6fe8e27292549.json",
+      "sha256": "2fdab8e6fe8e27292549b330e5155a7b6d5ebf800b069bbda066cf5ea216dfd4"
+    },
+    "KCAF014WW001": {
+      "asset": "/models/configurator/runtime/KCAF014WW001-efa64fe42a1ff22ba970.json",
+      "sha256": "efa64fe42a1ff22ba9705d3443fede230f6fa65d9fd4fd9932c2f29215c527aa"
+    },
+    "KCAF016WW001": {
+      "asset": "/models/configurator/runtime/KCAF016WW001-226df7f0cb438b15a051.json",
+      "sha256": "226df7f0cb438b15a0519631e96ce218233c2a17148b0fec7f2337a22866367b"
+    },
+    "KCAL001WW005": {
+      "asset": "/models/configurator/runtime/KCAL001WW005-95988aacac62d20eee01.json",
+      "sha256": "95988aacac62d20eee01384d493f6c87f7b3284af5a38ed99854254193fd9bc0"
+    },
+    "KCAL001WW008": {
+      "asset": "/models/configurator/runtime/KCAL001WW008-2354acab1a0e59f01825.json",
+      "sha256": "2354acab1a0e59f01825e6b30840df99bcf0ee875389b9d8bb63f5ab4d1867a9"
+    },
+    "KCAL002WW002": {
+      "asset": "/models/configurator/runtime/KCAL002WW002-958400abba7b057de558.json",
+      "sha256": "958400abba7b057de5582d22eb4f47638e219e58b306ae77c0143b85409b20f3"
+    },
+    "KCAL004WW002": {
+      "asset": "/models/configurator/runtime/KCAL004WW002-32560802fc5376f89a11.json",
+      "sha256": "32560802fc5376f89a11a9f08ab13f00b2508b21bc37a916b5947d0ef61d9ef7"
+    },
+    "KCHI001WW002": {
+      "asset": "/models/configurator/runtime/KCHI001WW002-a4791c4d89649428080c.json",
+      "sha256": "a4791c4d89649428080c20e891712abb0a6771553fb10b917e36a2dedb1cf300"
+    },
+    "KCHI001WW004": {
+      "asset": "/models/configurator/runtime/KCHI001WW004-243d2ad12ba1c623a875.json",
+      "sha256": "243d2ad12ba1c623a875aca96c1c620984d185edaa1a0133060ff5ae7c01d152"
+    },
+    "KCIS001WW001": {
+      "asset": "/models/configurator/runtime/KCIS001WW001-ed27eb1b561df414c03d.json",
+      "sha256": "ed27eb1b561df414c03d3436e00464a2e948ca2841e6ee8c4471bf315594308a"
+    },
+    "KCRE032WW001": {
+      "asset": "/models/configurator/runtime/KCRE032WW001-631f7cc549ecadc45b98.json",
+      "sha256": "631f7cc549ecadc45b9824dce3dd3e7c797cc3d9dc7b415a65d9ac380c2f5611"
+    },
+    "KCRE033WW001": {
+      "asset": "/models/configurator/runtime/KCRE033WW001-bed6520df84f403fdd2d.json",
+      "sha256": "bed6520df84f403fdd2d9365b2ae1803fdab87e9db56c65874d7fb576c9a3878"
+    },
+    "KCRE034WW001": {
+      "asset": "/models/configurator/runtime/KCRE034WW001-2efb48c686fa0e447d62.json",
+      "sha256": "2efb48c686fa0e447d6283a8a823e18e373b972307864c035a93a310e9498305"
+    },
+    "KCRE035WW001": {
+      "asset": "/models/configurator/runtime/KCRE035WW001-8abed81d8497469faaba.json",
+      "sha256": "8abed81d8497469faaba86af025c1d4e96e4a40bafa8ea34f8d5623645358f78"
+    },
+    "KCRE036WW001": {
+      "asset": "/models/configurator/runtime/KCRE036WW001-b92895ddff81c746b889.json",
+      "sha256": "b92895ddff81c746b8895809f8d6b12b9f91ae7f787c93a2e1fa6f08ad9b61ed"
+    },
+    "KEGO001WW001": {
+      "asset": "/models/configurator/runtime/KEGO001WW001-9df17dc1317eb88b32e6.json",
+      "sha256": "9df17dc1317eb88b32e683c545ac4cb104ceaf91c32e5da2afab8edc7a025951"
+    },
+    "KELO001WW001": {
+      "asset": "/models/configurator/runtime/KELO001WW001-fe9abf9836f4cddbb8f8.json",
+      "sha256": "fe9abf9836f4cddbb8f8ce51ec4f4a2cd6075927345cd9a29fdb530e512e2c5d"
+    },
+    "KELO001WW002": {
+      "asset": "/models/configurator/runtime/KELO001WW002-d108a18d1c485f199981.json",
+      "sha256": "d108a18d1c485f19998145fcba74700495c2ef42e1d92e7d54dc89b0eb3cd848"
+    },
+    "KFLS002WW001": {
+      "asset": "/models/configurator/runtime/KFLS002WW001-ee00398072a2e6c3ad59.json",
+      "sha256": "ee00398072a2e6c3ad59d4b57a212c78b0b7b5f5587f3d93eb76d40035ef8d64"
+    },
+    "KFON001WW001": {
+      "asset": "/models/configurator/runtime/KFON001WW001-e98446e2bc752fb60ae8.json",
+      "sha256": "e98446e2bc752fb60ae880e74dafde67c3a4a4f7901f3054f04ebbcdcb43b8ca"
+    },
+    "KFON003WW001": {
+      "asset": "/models/configurator/runtime/KFON003WW001-f0e1e53e2e80f30f0b67.json",
+      "sha256": "f0e1e53e2e80f30f0b676b8e762c2f4d282bb8b26cacd87481a94e7d8a0043a5"
+    },
+    "KNAV001WW005": {
+      "asset": "/models/configurator/runtime/KNAV001WW005-24c6909ef152a9755a00.json",
+      "sha256": "24c6909ef152a9755a009bf5041ef4a6aa4f05afcf4cc32c9ed4023179527f7d"
+    },
+    "KNAV001WW006": {
+      "asset": "/models/configurator/runtime/KNAV001WW006-18ccd8a1e869529d2b30.json",
+      "sha256": "18ccd8a1e869529d2b301686857551d84a1ca4e5890261ff303efbfb4aefb27c"
+    },
+    "KNAV002WW003": {
+      "asset": "/models/configurator/runtime/KNAV002WW003-577a4182cf6c87b1f47a.json",
+      "sha256": "577a4182cf6c87b1f47a030d2b492539098f7df143709e2e61e50b6877ad3eb2"
+    },
+    "KNAV002WW004": {
+      "asset": "/models/configurator/runtime/KNAV002WW004-39d254bc2c19abf20347.json",
+      "sha256": "39d254bc2c19abf203474a480bf2b34d208c30b59dc07fa2a18bdfa78047c282"
+    },
+    "KXIL045WW001": {
+      "asset": "/models/configurator/runtime/KXIL045WW001-8b511b029da41fec71da.json",
+      "sha256": "8b511b029da41fec71dadd63d4842dcc60759d123f79eda4d28fffa88e10a547"
+    },
+    "KXIL046WW001": {
+      "asset": "/models/configurator/runtime/KXIL046WW001-e904ce2687ef5a10756f.json",
+      "sha256": "e904ce2687ef5a10756fb6ec00ef8d8169c5c24996a1278a015eef250d205a4b"
+    },
+    "KXIL047WW002": {
+      "asset": "/models/configurator/runtime/KXIL047WW002-4e03bfad1ae682e82545.json",
+      "sha256": "4e03bfad1ae682e82545d62c8fe34e620a690026550fe4a3fcbfa24ec4c78c55"
+    },
+    "KFLS001WW001": {
+      "asset": "/models/configurator/runtime/KFLS001WW001-dcc8e832f66436fec2d8.json",
+      "sha256": "dcc8e832f66436fec2d84e1015dcf086aa4aa37a1d67f277497609bf3d1f88c3"
+    },
+    "KXIL004WW002": {
+      "asset": "/models/configurator/runtime/KXIL004WW002-3eb16838c9187628cc2e.json",
+      "sha256": "3eb16838c9187628cc2e0bd9cec8ca5e64060ac180f8e4720a219ca9f43c31b5"
+    },
+    "KXIL005WW002": {
+      "asset": "/models/configurator/runtime/KXIL005WW002-ef3102dc4937e7d18d61.json",
+      "sha256": "ef3102dc4937e7d18d61b08401bade92f132ba3badecc465393ef3b559c0bab2"
+    },
+    "KXIL006WW002": {
+      "asset": "/models/configurator/runtime/KXIL006WW002-3c49023e88caf43ebb68.json",
+      "sha256": "3c49023e88caf43ebb685cddc3366f8b0195de54602a7de0b7a029cee13e9c68"
+    },
+    "KXIL007WW002": {
+      "asset": "/models/configurator/runtime/KXIL007WW002-30e295f2b0a3951261ed.json",
+      "sha256": "30e295f2b0a3951261edd13f1b50bb3c2e78f72e0df17af987f9004a4b0db323"
+    },
+    "KXIL051WW002": {
+      "asset": "/models/configurator/runtime/KXIL051WW002-31606f5b38be1de31dc4.json",
+      "sha256": "31606f5b38be1de31dc42d0e9055ae2e40f29e4f3a57276920834c87c4b00aa8"
+    },
+    "KXIL053WW002": {
+      "asset": "/models/configurator/runtime/KXIL053WW002-00a865403226732b84ab.json",
+      "sha256": "00a865403226732b84abe75359e3412447af7959867728919de33f57e5eb4a8a"
+    },
+    "KXIL054WW002": {
+      "asset": "/models/configurator/runtime/KXIL054WW002-f8f71c01abae165dc8e0.json",
+      "sha256": "f8f71c01abae165dc8e074392b1f03dc0db433ddfdaf648cfdf4363dbde052f4"
+    },
+    "KFON001WW002": {
+      "asset": "/models/configurator/runtime/KFON001WW002-47f326d222e5a30e51b2.json",
+      "sha256": "47f326d222e5a30e51b2153f601003fea03353544fc7c31a64bdc8342b8f372a"
+    },
+    "KFON004WW001": {
+      "asset": "/models/configurator/runtime/KFON004WW001-12413ebfda1e43d3bf0f.json",
+      "sha256": "12413ebfda1e43d3bf0f79f8828509e0425b811359096af9108b90a97638437a"
+    },
+    "KHOL004WW002": {
+      "asset": "/models/configurator/runtime/KHOL004WW002-14d5690813ce94687ef5.json",
+      "sha256": "14d5690813ce94687ef5e6b68fd28527ff2f4a347807c9421bb68c5809289828"
+    },
+    "KINT002WW001": {
+      "asset": "/models/configurator/runtime/KINT002WW001-f11084f64596e3b98e19.json",
+      "sha256": "f11084f64596e3b98e1988e46628f3e8b6fa69f1a4230122c2920eedfce3d666"
+    },
+    "KINT004WW001": {
+      "asset": "/models/configurator/runtime/KINT004WW001-6e2d2a0f7653ecc4891f.json",
+      "sha256": "6e2d2a0f7653ecc4891ffd435893bfa2cd3ede69c235b17db3d65bcb3ff39654"
+    },
+    "KINT010WW001": {
+      "asset": "/models/configurator/runtime/KINT010WW001-6688a2bf50e4dfc28216.json",
+      "sha256": "6688a2bf50e4dfc28216e4a3184521a4b696719c6ee658214d8d762f66880dd6"
+    },
+    "KINT012WW001": {
+      "asset": "/models/configurator/runtime/KINT012WW001-eb8e7c34bfe9f352f501.json",
+      "sha256": "eb8e7c34bfe9f352f5014794659463159add263fed648f98c30ebf603efa03da"
+    },
+    "KISO001WW002": {
+      "asset": "/models/configurator/runtime/KISO001WW002-6d2192c5d44b83ab1c8c.json",
+      "sha256": "6d2192c5d44b83ab1c8ccb119f80074aafd25dd1d0f27ffdb33439a7380668d5"
+    },
+    "KISO005WW002": {
+      "asset": "/models/configurator/runtime/KISO005WW002-38d473523273c4ec17ce.json",
+      "sha256": "38d473523273c4ec17cedf51e7b76e0ba5f3ca33c81eb6c977c8bbe521d41a83"
+    },
+    "KISO016WW002": {
+      "asset": "/models/configurator/runtime/KISO016WW002-33c959f0c65f06e7a5a2.json",
+      "sha256": "33c959f0c65f06e7a5a216273fa460c19cf9e87f60553c443844ba8b170a0d60"
+    },
+    "KITA001WW002": {
+      "asset": "/models/configurator/runtime/KITA001WW002-22901c4215ffb7c1e9b2.json",
+      "sha256": "22901c4215ffb7c1e9b223797853c1ad60a8631f6901857278039c8646bf2583"
+    },
+    "KATM006WW001": {
+      "asset": "/models/configurator/runtime/KATM006WW001-5a9db50f447d27c70a98.json",
+      "sha256": "5a9db50f447d27c70a98ae5dc87dfffff65214fe95d07ef549cf3a1e0d5f270e"
+    },
+    "KISO006WW002": {
+      "asset": "/models/configurator/runtime/KISO006WW002-33cf23ddec765a271d40.json",
+      "sha256": "33cf23ddec765a271d40f69e94e7411cefa21376095fe3c9e43dd88f3e72c600"
+    },
+    "KITA001WW001": {
+      "asset": "/models/configurator/runtime/KITA001WW001-6dc01025200dd5297e08.json",
+      "sha256": "6dc01025200dd5297e083d6f91a7068eea0124bdcae2ede476a3dfea8fec8132"
+    },
+    "KLEV008WW002": {
+      "asset": "/models/configurator/runtime/KLEV008WW002-0bbcb8fdbfaf6630ffa3.json",
+      "sha256": "0bbcb8fdbfaf6630ffa37996f3728f8e3171dcc5a787b46dd824c86dc3cc4310"
+    },
+    "KLEV009WW002": {
+      "asset": "/models/configurator/runtime/KLEV009WW002-54a2099d5c69bcfd16a0.json",
+      "sha256": "54a2099d5c69bcfd16a025f727bad1a8a9414f8c89ab37429cf40b7024976605"
+    },
+    "KLPN020WW002": {
+      "asset": "/models/configurator/runtime/KLPN020WW002-527d592cd4e09adbd9af.json",
+      "sha256": "527d592cd4e09adbd9af7be4257c813aa6a8ac0a7fc92873986026956690da4d"
+    },
+    "KLYN003WW002": {
+      "asset": "/models/configurator/runtime/KLYN003WW002-f4ad175237da1e231146.json",
+      "sha256": "f4ad175237da1e23114638f058b64823ee99ec6689b629dc908fcf93f9a7ac94"
+    },
+    "KMNS001WW007": {
+      "asset": "/models/configurator/runtime/KMNS001WW007-d008ea2ef8bb236233f3.json",
+      "sha256": "d008ea2ef8bb236233f31049cdf4d5709ad7c88bb9d1b0d4eb411e80be4296ac"
+    },
+    "KMNS001WW010": {
+      "asset": "/models/configurator/runtime/KMNS001WW010-0716b4457027a00df1f1.json",
+      "sha256": "0716b4457027a00df1f12b813a19668ae866d750e6d9d9f9c9899fd196666ded"
+    },
+    "KINT009WW001": {
+      "asset": "/models/configurator/runtime/KINT009WW001-a59336fb30603bcd81c8.json",
+      "sha256": "a59336fb30603bcd81c804adbea74421e568640f44fd5b8851b760b33075bf12"
+    },
+    "KINT011WW001": {
+      "asset": "/models/configurator/runtime/KINT011WW001-070c3b0984c3d5d2cd84.json",
+      "sha256": "070c3b0984c3d5d2cd84ff4e915ecd8e9f4992a903138bd29a651a6287baf958"
+    },
+    "KNAD003WW002": {
+      "asset": "/models/configurator/runtime/KNAD003WW002-9070eabacfbcad88e6aa.json",
+      "sha256": "9070eabacfbcad88e6aa60cfbb7a4f58c7450fa2030363163bf486c66a54d3f1"
+    },
+    "KINT001WW001": {
+      "asset": "/models/configurator/runtime/KINT001WW001-96d8d58e87d81a5546d7.json",
+      "sha256": "96d8d58e87d81a5546d7fa5d82d754c9c944a0bc61a02729d3113017803054db"
+    },
+    "KINT005WW001": {
+      "asset": "/models/configurator/runtime/KINT005WW001-866b73d4cbb991f413ae.json",
+      "sha256": "866b73d4cbb991f413aeeafaedbdae99fd8c192b2fb90f5141a5b936d155fff7"
+    },
+    "KISO004WW002": {
+      "asset": "/models/configurator/runtime/KISO004WW002-c16943aee9f6634dd9b9.json",
+      "sha256": "c16943aee9f6634dd9b97e76a10b7ccbe0d6e395170b3bba36e00a1b895b63c8"
+    },
+    "KISO006WW003": {
+      "asset": "/models/configurator/runtime/KISO006WW003-1d8d0d646d672952f14d.json",
+      "sha256": "1d8d0d646d672952f14d252242dff48ee6f12c58fde3485fa2dba53eb7b49137"
+    },
+    "KISO028WW001": {
+      "asset": "/models/configurator/runtime/KISO028WW001-dabd9b335f0a610bb3b1.json",
+      "sha256": "dabd9b335f0a610bb3b1ebedb6b6190383924751b7dd8c5f4583cc8a7c2dff00"
+    },
+    "KLEV013WW002": {
+      "asset": "/models/configurator/runtime/KLEV013WW002-1cb94df974a0ebe61dd6.json",
+      "sha256": "1cb94df974a0ebe61dd6934d0e50d609da9c08d048a9abe7c728727f54fad9e9"
+    },
+    "KOVI001WW002": {
+      "asset": "/models/configurator/runtime/KOVI001WW002-13b9b8b7ae1daeb8e8c4.json",
+      "sha256": "13b9b8b7ae1daeb8e8c4778d26effe9446599fbdcdd43b10c845b7eee72455b1"
+    },
+    "KPER001WW003": {
+      "asset": "/models/configurator/runtime/KPER001WW003-6767f6a61afa46c773c7.json",
+      "sha256": "6767f6a61afa46c773c70a7ff1e0f2486193d43d732603314b666152b52fa73e"
+    },
+    "KATM004WW005": {
+      "asset": "/models/configurator/runtime/KATM004WW005-cfd286a1e2b0d08d7d49.json",
+      "sha256": "cfd286a1e2b0d08d7d4978200b6d78bbad754004419fe755104956356b5382bb"
+    },
+    "KATM004WW006": {
+      "asset": "/models/configurator/runtime/KATM004WW006-98da6a671f93e61fa856.json",
+      "sha256": "98da6a671f93e61fa856102f05ddd34ffa65ac5cf486b615fdd4823f78f80c9a"
+    },
+    "KLEV007WW002": {
+      "asset": "/models/configurator/runtime/KLEV007WW002-fe983ce0e4e177259a68.json",
+      "sha256": "fe983ce0e4e177259a683c34dcfc5a32116580e7c2f5eb795dc2dd12d4e4accd"
+    },
+    "KMNS001WW006": {
+      "asset": "/models/configurator/runtime/KMNS001WW006-5654191465a5fa3196ba.json",
+      "sha256": "5654191465a5fa3196baa18813efeae53b602e3af5f7d3d910eea81b6c7fc614"
+    },
+    "KMNS001WW008": {
+      "asset": "/models/configurator/runtime/KMNS001WW008-ed97b3345ea1e5bc3fc6.json",
+      "sha256": "ed97b3345ea1e5bc3fc6e96b64d519056bcdf4fd5cb9e62d3bd9a13e60430465"
+    },
+    "KMNS001WW009": {
+      "asset": "/models/configurator/runtime/KMNS001WW009-c613f9c12ced65a5d5b0.json",
+      "sha256": "c613f9c12ced65a5d5b0efcf18d4f20b0c5ef3c0bf2cae0440d8a180235afbdd"
+    },
+    "KNAD001WW002": {
+      "asset": "/models/configurator/runtime/KNAD001WW002-fcf6ec891f960c97a274.json",
+      "sha256": "fcf6ec891f960c97a2748f32473da256ef4391f8b40d0eefc158288b7df89692"
+    },
+    "KSAI004WW002": {
+      "asset": "/models/configurator/runtime/KSAI004WW002-8d9c8d6b532ef7175a27.json",
+      "sha256": "8d9c8d6b532ef7175a27e7eff47d9ddcb5d90ab2c8f2296e34a6ce7a60b45ff2"
+    },
+    "KSAI007WW002": {
+      "asset": "/models/configurator/runtime/KSAI007WW002-f545894eefc8c9c6c64d.json",
+      "sha256": "f545894eefc8c9c6c64d4fd4c0aa1fb5927a3b79ca27458daa17e49315e29946"
+    },
+    "KLPN019WW002": {
+      "asset": "/models/configurator/runtime/KLPN019WW002-7195496879cef9142cce.json",
+      "sha256": "7195496879cef9142cced541c243be04723d4d48676fe878ac4b6f2848772117"
+    },
+    "KLPN021WW002": {
+      "asset": "/models/configurator/runtime/KLPN021WW002-6266a7e83c00204db046.json",
+      "sha256": "6266a7e83c00204db046c6421dc0ef2720715ad069e7477ab5973d9976f658ff"
+    },
+    "KSEG001WW001": {
+      "asset": "/models/configurator/runtime/KSEG001WW001-da511bff1a0dc20657e8.json",
+      "sha256": "da511bff1a0dc20657e8a004879bc65cc94079d55b39105114f534900b74748b"
+    },
+    "KSRI003WW001": {
+      "asset": "/models/configurator/runtime/KSRI003WW001-1c339015c1fed9857a43.json",
+      "sha256": "1c339015c1fed9857a438365bf91cb4e702ad90bcc16bf114c50e94285744fe4"
+    },
+    "KSRI004WW002": {
+      "asset": "/models/configurator/runtime/KSRI004WW002-c938ecce39871c578709.json",
+      "sha256": "c938ecce39871c5787090fb54e8d57b5015717106eaa58f304008f3cc4145144"
+    },
+    "KOVI001WW001": {
+      "asset": "/models/configurator/runtime/KOVI001WW001-2ebb71894439d96ab64b.json",
+      "sha256": "2ebb71894439d96ab64bb11a72360a591b936bb00a5e2e90425048d3c1adfe98"
+    },
+    "KPER001WW001": {
+      "asset": "/models/configurator/runtime/KPER001WW001-c235cf1b2964faf04f9d.json",
+      "sha256": "c235cf1b2964faf04f9ded9a158b43eb83167ea069b68c42ee93159ddc320fea"
+    },
+    "KSAI006WW002": {
+      "asset": "/models/configurator/runtime/KSAI006WW002-9ab80d2d9fb06cd5768d.json",
+      "sha256": "9ab80d2d9fb06cd5768dc6252f0af740d02b4f8a0476924d6a576871521c449c"
+    },
+    "KSML001WW002": {
+      "asset": "/models/configurator/runtime/KSML001WW002-97732812da4bde0e33a6.json",
+      "sha256": "97732812da4bde0e33a6cb1b7e3393e405b6dca62019f9a54dbf31701412158e"
+    },
+    "KSEG002WW001": {
+      "asset": "/models/configurator/runtime/KSEG002WW001-c7bc5a8540600c8aa4e2.json",
+      "sha256": "c7bc5a8540600c8aa4e2a07fc57be99a018bdd9ca2b5781882b4b2b0543934cc"
+    },
+    "KSEG003WW001": {
+      "asset": "/models/configurator/runtime/KSEG003WW001-5c272074ff86f6e0b7fd.json",
+      "sha256": "5c272074ff86f6e0b7fd77e9401fcd0b783055dcf0ad9ba4280ee412c44bfaa6"
+    },
+    "KSML002WW002": {
+      "asset": "/models/configurator/runtime/KSML002WW002-248be374ee9d5ad561b0.json",
+      "sha256": "248be374ee9d5ad561b020593f357099cb25c95663edbbda9a78dfc75adcf358"
+    },
+    "KSRI001WW002": {
+      "asset": "/models/configurator/runtime/KSRI001WW002-8f482ad444485a8c9808.json",
+      "sha256": "8f482ad444485a8c9808482372f5b87d10202ee6e59537dc7936b9b5fd1020c1"
+    },
+    "KSTY001WW003": {
+      "asset": "/models/configurator/runtime/KSTY001WW003-3959c5821a71285b7d1c.json",
+      "sha256": "3959c5821a71285b7d1cc22d75a1b3f0561670f01b16ace6cf9cdd404bfbe793"
+    },
+    "KSYL001WW004": {
+      "asset": "/models/configurator/runtime/KSYL001WW004-3b3b451d2e04fe88ea13.json",
+      "sha256": "3b3b451d2e04fe88ea132ccbec193790181cbb4f8447a276470ee535ba642432"
+    },
+    "KTAK002WW004": {
+      "asset": "/models/configurator/runtime/KTAK002WW004-e4189801e269468acef8.json",
+      "sha256": "e4189801e269468acef88e884427d33091c3507f29f8a1b262eeeccda2c9e1da"
+    },
+    "KTAU003WW002": {
+      "asset": "/models/configurator/runtime/KTAU003WW002-d7d28bff4f9b1d30f651.json",
+      "sha256": "d7d28bff4f9b1d30f651753a7038a4ebae9eade35875c4d6275c33b5ed8111e4"
+    },
+    "KSML005WW002": {
+      "asset": "/models/configurator/runtime/KSML005WW002-a1402aeb854cf3acd9fd.json",
+      "sha256": "a1402aeb854cf3acd9fddc83337ee2e0b0e21930a04549f7ab2c35ef59c22b08"
+    },
+    "KSML006WW002": {
+      "asset": "/models/configurator/runtime/KSML006WW002-a88d7479ec2da2766e2a.json",
+      "sha256": "a88d7479ec2da2766e2ab321d4fb0d6b1e824184473d0941c7528b976a42aeb2"
+    },
+    "KSRI002WW001": {
+      "asset": "/models/configurator/runtime/KSRI002WW001-0076041af8eb96a00891.json",
+      "sha256": "0076041af8eb96a00891e3a46509016115a371aaeee336421339c36b970ed8e7"
+    },
+    "KSTY001WW004": {
+      "asset": "/models/configurator/runtime/KSTY001WW004-f4ee31cb812e152c95a9.json",
+      "sha256": "f4ee31cb812e152c95a9ffa8a0e22846c9ba28db142d49e3b3912ac3ed6bdd06"
+    },
+    "KSYL001WW003": {
+      "asset": "/models/configurator/runtime/KSYL001WW003-bc57a32d849b2e80b6be.json",
+      "sha256": "bc57a32d849b2e80b6be65bbec8e292cf78c842f4a532f06000efcac5c9e93d6"
+    },
+    "KTAK001WW002": {
+      "asset": "/models/configurator/runtime/KTAK001WW002-00428bd138e2b179381f.json",
+      "sha256": "00428bd138e2b179381fb964eff5012d86b5b681a915292caea6d892f77fef77"
+    },
+    "KTAK002WW006": {
+      "asset": "/models/configurator/runtime/KTAK002WW006-a1f58605de46a17349d5.json",
+      "sha256": "a1f58605de46a17349d5bf67b9d48629b6ad0a90de2bd1cd24fd198ff710a51f"
+    },
+    "KTAU001WW002": {
+      "asset": "/models/configurator/runtime/KTAU001WW002-617a716072c68e09575a.json",
+      "sha256": "617a716072c68e09575a2b119a5e63fdfe11a1f7bc0ac29b29efd30ac6ad82de"
+    },
+    "KTAU003WW001": {
+      "asset": "/models/configurator/runtime/KTAU003WW001-06349943a952bd7d9798.json",
+      "sha256": "06349943a952bd7d97985ba73590204bae994ce4fcd04911dc0f53cee435eb9e"
+    },
+    "KTAU004WW002": {
+      "asset": "/models/configurator/runtime/KTAU004WW002-ed26f257045b3674db63.json",
+      "sha256": "ed26f257045b3674db63f2804e4ee1c2d27efe97b1c5e30b82eed68610a9933a"
+    },
+    "KTAU008WW002": {
+      "asset": "/models/configurator/runtime/KTAU008WW002-9912fdcb4190ca558f24.json",
+      "sha256": "9912fdcb4190ca558f24ca70f1c4b4ec76b5a5467e3ec13cee610c44470c21a4"
+    },
+    "KTAU004WW001": {
+      "asset": "/models/configurator/runtime/KTAU004WW001-f32c6bf00124d19d1de7.json",
+      "sha256": "f32c6bf00124d19d1de7bf905d3fc19c30df805dac79744172f209c569a5ff8d"
+    },
+    "KTGU001WW002": {
+      "asset": "/models/configurator/runtime/KTGU001WW002-6d552ccb37d01aa5255c.json",
+      "sha256": "6d552ccb37d01aa5255c719478050d6237d3f44d39b09e151eee5bc146c5946b"
+    },
+    "KTGU007WW002": {
+      "asset": "/models/configurator/runtime/KTGU007WW002-33c6166489f89d782d56.json",
+      "sha256": "33c6166489f89d782d5697fdd226025695899ce0901bee55830417695f7dd4c7"
+    },
+    "KTGU008WW002": {
+      "asset": "/models/configurator/runtime/KTGU008WW002-0802221e7b9ea184c583.json",
+      "sha256": "0802221e7b9ea184c5830689be9563802df77edd25eabfc2a7046a8b8646f506"
+    },
+    "KTUL001WW002": {
+      "asset": "/models/configurator/runtime/KTUL001WW002-9eeff5c55d1af285049d.json",
+      "sha256": "9eeff5c55d1af285049dd9caa9c1e5fe88e0334c03afb9e71488e1570e27b75a"
+    },
+    "KTUL001WW003": {
+      "asset": "/models/configurator/runtime/KTUL001WW003-237a86b7ffefbe6ec477.json",
+      "sha256": "237a86b7ffefbe6ec47784e40e55b19b5b65c0cbaab2f4f0432d1f38c7e4dced"
+    },
+    "KTIM001WW001": {
+      "asset": "/models/configurator/runtime/KTIM001WW001-5d9779115935abb7a52f.json",
+      "sha256": "5d9779115935abb7a52ffa4dc96c2497505726c695b3e1a9e89badf78141edcc"
+    },
+    "KTUL001WW004": {
+      "asset": "/models/configurator/runtime/KTUL001WW004-41796828ea593aa0b7d0.json",
+      "sha256": "41796828ea593aa0b7d09033123b862b939400d1924d1935a146a696fc5b878c"
+    },
+    "KTUL002WW002": {
+      "asset": "/models/configurator/runtime/KTUL002WW002-76d37eb6bf9dfaa3ec60.json",
+      "sha256": "76d37eb6bf9dfaa3ec603d136ca0218fc9f26d8d6d80551d74533c506209ec76"
+    },
+    "KTUL003WW003": {
+      "asset": "/models/configurator/runtime/KTUL003WW003-70e0026edd88f3a7c9eb.json",
+      "sha256": "70e0026edd88f3a7c9ebf75a8dc7143741e06cca29955b20ae892a43b715fa4d"
+    },
+    "KTUL003WW004": {
+      "asset": "/models/configurator/runtime/KTUL003WW004-fc9e110707c868923c61.json",
+      "sha256": "fc9e110707c868923c61a9206c75e9e637ad886ff4b694e14e4cd155047e937d"
+    },
+    "KTUL003WW007": {
+      "asset": "/models/configurator/runtime/KTUL003WW007-4f00a5e35ac56cf3b150.json",
+      "sha256": "4f00a5e35ac56cf3b150afb94b4c72899ba252211521c6cbb6d48da84263182e"
+    },
+    "KTUL003WW008": {
+      "asset": "/models/configurator/runtime/KTUL003WW008-9cfef24cdfa686b70cd6.json",
+      "sha256": "9cfef24cdfa686b70cd65c8539a22fd298cf7d1d8d463ca499299edc962115f3"
+    },
+    "KTUL003WW009": {
+      "asset": "/models/configurator/runtime/KTUL003WW009-37ecd972e86d61f7bcb9.json",
+      "sha256": "37ecd972e86d61f7bcb96744564d66490ada7fc16172372d2bebd6e6a0975615"
+    },
+    "KUTI001WW002": {
+      "asset": "/models/configurator/runtime/KUTI001WW002-c4f804f25bad404186ad.json",
+      "sha256": "c4f804f25bad404186ad6b578ec416aed8bd35a2acb429d500d18e5ebe501863"
+    },
+    "KUTI003WW001": {
+      "asset": "/models/configurator/runtime/KUTI003WW001-72a2d610753d4cb202cf.json",
+      "sha256": "72a2d610753d4cb202cf2f8dcfbacf94655f4b1a960f23e4cf0f77258a74a00a"
+    },
+    "KUTI004WW001": {
+      "asset": "/models/configurator/runtime/KUTI004WW001-25d8838dc9bc2a7eb62b.json",
+      "sha256": "25d8838dc9bc2a7eb62bde13358d15782b29620ffa9c39c448b6cb89209fe89f"
+    },
+    "KUTI004WW002": {
+      "asset": "/models/configurator/runtime/KUTI004WW002-cd1aca5e84e8dd8c39eb.json",
+      "sha256": "cd1aca5e84e8dd8c39eb7f12ee5378c615f8f471e6998b7065fe552cdd31de14"
+    },
+    "KUTI002WW001": {
+      "asset": "/models/configurator/runtime/KUTI002WW001-298824defef0b1f9d0d8.json",
+      "sha256": "298824defef0b1f9d0d896de2daec9b2d806e15935233bf62fefbefa9786138a"
+    },
+    "KVAP002WW002": {
+      "asset": "/models/configurator/runtime/KVAP002WW002-a11f574a116967d9f39d.json",
+      "sha256": "a11f574a116967d9f39dcc15fd576714f87f8b77369aef7430752603f5c3c7bd"
+    },
+    "KVCR002WW003": {
+      "asset": "/models/configurator/runtime/KVCR002WW003-1b27799e41e320d294fa.json",
+      "sha256": "1b27799e41e320d294fa24a7f53cc39c16da91d4e3b95ed8ae17d402d4c279b1"
+    },
+    "KVAP002WW001": {
+      "asset": "/models/configurator/runtime/KVAP002WW001-b486069022c1c4131c98.json",
+      "sha256": "b486069022c1c4131c98bbd945ccb62d1e04635dad27f473442d54e0473b7da2"
+    },
+    "KVAP018WW001": {
+      "asset": "/models/configurator/runtime/KVAP018WW001-5e29df51eb30f62b2baa.json",
+      "sha256": "5e29df51eb30f62b2baa73d53e4ac79717984bba407837f9f0cd361e95b7f05b"
+    },
+    "KSOO003WW001": {
+      "asset": "/models/configurator/runtime/KSOO003WW001-6f5062b576b16d2df606.json",
+      "sha256": "6f5062b576b16d2df606c8b1329f90f203261514e5f5965fcc7ad22d8d306778"
+    },
+    "KSOO004WW002": {
+      "asset": "/models/configurator/runtime/KSOO004WW002-80ac7e89cda945b1ee5c.json",
+      "sha256": "80ac7e89cda945b1ee5c911b3bc6ea74a527804dea70225ff5d457230e103a23"
+    },
+    "KSOO005WW002": {
+      "asset": "/models/configurator/runtime/KSOO005WW002-003c9ed47c720cb5a7c5.json",
+      "sha256": "003c9ed47c720cb5a7c5ca575d16cfc1c95b827a7c1a2c1dd3f8da3abfae9900"
+    },
+    "KSQA176WW001": {
+      "asset": "/models/configurator/runtime/KSQA176WW001-cb7ebc74603285fa5d33.json",
+      "sha256": "cb7ebc74603285fa5d33da46ccda4b62824cd1361444e3cb37f2ff0e05f42ae0"
+    },
+    "KVAP003WW002": {
+      "asset": "/models/configurator/runtime/KVAP003WW002-f1162bca1d42c1948905.json",
+      "sha256": "f1162bca1d42c19489057f286af959a5f301042c2c41bb2870a22d301fd55088"
+    },
+    "KVAP004WW001": {
+      "asset": "/models/configurator/runtime/KVAP004WW001-16ce8fd00ef74fe7f986.json",
+      "sha256": "16ce8fd00ef74fe7f98694573671c60933c4d44b989982fc83584829c94bd722"
+    },
+    "KVAP011WW001": {
+      "asset": "/models/configurator/runtime/KVAP011WW001-7bb9180f57bffbf6f23d.json",
+      "sha256": "7bb9180f57bffbf6f23dffd9efc548b6b07ac3bc629c7c04432cfe32661339e3"
+    },
+    "KVAP020WW001": {
+      "asset": "/models/configurator/runtime/KVAP020WW001-74535b31e042cf832790.json",
+      "sha256": "74535b31e042cf832790dbdfa2615bbadefab42a1b8882a5f6d212d1bcd78d38"
+    },
+    "KVAP003WW001": {
+      "asset": "/models/configurator/runtime/KVAP003WW001-f778df2da79da65ea959.json",
+      "sha256": "f778df2da79da65ea959e998931b09a65ad4b93d721744c6e60d10db05c67c68"
+    },
+    "KVAP004WW002": {
+      "asset": "/models/configurator/runtime/KVAP004WW002-10c8f4207c13b99a3775.json",
+      "sha256": "10c8f4207c13b99a37756e62d13f73efaf6b847eb2970dd10ce113e6ed6f54d6"
+    },
+    "KVAP012WW001": {
+      "asset": "/models/configurator/runtime/KVAP012WW001-c95aa1f8da8a82f57c29.json",
+      "sha256": "c95aa1f8da8a82f57c29c72f18c75c3259867779abd01b7c6d048fab09dd8264"
+    },
+    "KVSN001WW001": {
+      "asset": "/models/configurator/runtime/KVSN001WW001-2e7ca9bed665e14c4cec.json",
+      "sha256": "2e7ca9bed665e14c4cecfadf4a73e40a38ab86595ff62131c2e6a28113014864"
+    },
+    "KVSN001WW002": {
+      "asset": "/models/configurator/runtime/KVSN001WW002-21109f8ed54fa6b50e25.json",
+      "sha256": "21109f8ed54fa6b50e25ee4b2c07d3bf2b18f1134562c646905833336bb827d7"
+    },
+    "KVSN002WW001": {
+      "asset": "/models/configurator/runtime/KVSN002WW001-46b028eab52ece692610.json",
+      "sha256": "46b028eab52ece69261040a57e1fa892d383df271de08b2d33e627defa74b254"
+    },
+    "KVSN002WW002": {
+      "asset": "/models/configurator/runtime/KVSN002WW002-9204c186785c1bf172e2.json",
+      "sha256": "9204c186785c1bf172e2cf944e6ed9c628433e24a7bb20a466633eedd3c7080a"
+    },
+    "KVID006WW001": {
+      "asset": "/models/configurator/runtime/KVID006WW001-70590e7d1f10ede301c9.json",
+      "sha256": "70590e7d1f10ede301c9ac4bd78bc004e28a145bd79d398a323a9bb2da22412d"
+    },
+    "KVID009WW001": {
+      "asset": "/models/configurator/runtime/KVID009WW001-00ec166e8789ac059ac6.json",
+      "sha256": "00ec166e8789ac059ac666998422d3bb542810c53ecc814d32ab8b3c87a06cc9"
+    },
+    "KWIT001WW005": {
+      "asset": "/models/configurator/runtime/KWIT001WW005-a566fa573060b5c0c420.json",
+      "sha256": "a566fa573060b5c0c420f018f964ba441b2005585a36b262ab585d3c09236643"
+    },
+    "KWIT003WW003": {
+      "asset": "/models/configurator/runtime/KWIT003WW003-4ebd781c2fddc9c7af14.json",
+      "sha256": "4ebd781c2fddc9c7af146f9d862cf9ecc39044916c1e3b4988c345dbec60d21e"
+    },
+    "KWIT003WW004": {
+      "asset": "/models/configurator/runtime/KWIT003WW004-b9aa9cfe7dc8902e4a80.json",
+      "sha256": "b9aa9cfe7dc8902e4a800432e33626a26de68fd445b946047e0c40b5d1d80318"
+    },
+    "KWIT006WW001": {
+      "asset": "/models/configurator/runtime/KWIT006WW001-f4aa5c823e40ff3a0151.json",
+      "sha256": "f4aa5c823e40ff3a01513531583b7580cd04b1c6dde21ec3162e8b6e0c87faac"
+    },
+    "KINT003WW001": {
+      "asset": "/models/configurator/runtime/KINT003WW001-a3f472703a8e90a9e550.json",
+      "sha256": "a3f472703a8e90a9e550ba8a48a5b1ff742fd9cd81ae9bf8addb2f0142722cd5"
+    },
+    "KINT006WW001": {
+      "asset": "/models/configurator/runtime/KINT006WW001-df20254b2c2abea8e5d6.json",
+      "sha256": "df20254b2c2abea8e5d60acacc12d7f656f18827b96ff45f88b683fc8597fcce"
+    },
+    "KINT006WW002": {
+      "asset": "/models/configurator/runtime/KINT006WW002-ba7f13de6dd236f5f2e9.json",
+      "sha256": "ba7f13de6dd236f5f2e9d72020260094e595d5cddc784524e7ee767948b5972d"
+    },
+    "KWIT001WW006": {
+      "asset": "/models/configurator/runtime/KWIT001WW006-cc54de40619b6db8c198.json",
+      "sha256": "cc54de40619b6db8c1984b859b686d70bd1aec88580490671d3b775a1454bd83"
+    },
+    "KWIT006WW002": {
+      "asset": "/models/configurator/runtime/KWIT006WW002-e01471abc404280252d7.json",
+      "sha256": "e01471abc404280252d72715cc641b25b1c86433e77f4387c673d573dd4d3e5c"
+    },
+    "KXEN046WW001": {
+      "asset": "/models/configurator/runtime/KXEN046WW001-5bc162b7693590aca52b.json",
+      "sha256": "5bc162b7693590aca52b0074af07b708b06e8c5f2c537642e073fbbb32206b1b"
+    },
+    "KXEN047WW001": {
+      "asset": "/models/configurator/runtime/KXEN047WW001-5dd65a0ae4023a31b795.json",
+      "sha256": "5dd65a0ae4023a31b795f96ec2f7de0775d7b1587acbd6018c479ce3f3ee9cda"
+    },
+    "KVAP005WW002": {
+      "asset": "/models/configurator/runtime/KVAP005WW002-2d5c644e39ca2a0db8b4.json",
+      "sha256": "2d5c644e39ca2a0db8b425a03f51b1b470ad5ca7dc47acaecc0c910ce366c0cb"
+    },
+    "KXEN048WW001": {
+      "asset": "/models/configurator/runtime/KXEN048WW001-354284d278b07fb3a6de.json",
+      "sha256": "354284d278b07fb3a6deb18aaf7ec99f50df0bad51353c15a267951f9fdeb8fc"
+    },
+    "KYOU003WW001": {
+      "asset": "/models/configurator/runtime/KYOU003WW001-bc9b8fba3aa66828d5f8.json",
+      "sha256": "bc9b8fba3aa66828d5f806f0a03acad290d73137cf54dcc5adbbd91f5e0e786f"
+    },
+    "KYOU003WW002": {
+      "asset": "/models/configurator/runtime/KYOU003WW002-2023469ef351e8bc0bea.json",
+      "sha256": "2023469ef351e8bc0beab488ad5de8e0d3832c873257bfa2c13d18a25acfed9d"
+    },
+    "KYOU004WW001": {
+      "asset": "/models/configurator/runtime/KYOU004WW001-1abf5cc535c1acf45926.json",
+      "sha256": "1abf5cc535c1acf459260468bc74e20ec8dd5c29aa82aebb8ca16a3d0500e466"
+    },
+    "KYOU004WW002": {
+      "asset": "/models/configurator/runtime/KYOU004WW002-9a47b04180ee3baa8f0c.json",
+      "sha256": "9a47b04180ee3baa8f0c9e6663a0e2e9a2d64fe613f1b7a475fdaf202d70fa29"
+    },
+    "KYOU005WW002": {
+      "asset": "/models/configurator/runtime/KYOU005WW002-4add384daf606c0572a3.json",
+      "sha256": "4add384daf606c0572a37cb2303f92694d7820db838ad7cb5df6ac36fb4d81fd"
+    },
+    "KYUN001WW001": {
+      "asset": "/models/configurator/runtime/KYUN001WW001-bd003b592e87596f0956.json",
+      "sha256": "bd003b592e87596f09567f27cb22e221b0e318ee7fb09a8b7a1a983014e30734"
+    },
+    "KYUN001WW002": {
+      "asset": "/models/configurator/runtime/KYUN001WW002-c70adb1ab57d7b7aacc1.json",
+      "sha256": "c70adb1ab57d7b7aacc15b6a3aba3ed7d891fa064f77895ccc74399141f289df"
+    },
+    "KZBO002WW001": {
+      "asset": "/models/configurator/runtime/KZBO002WW001-acc77f0d9c14625fefa0.json",
+      "sha256": "acc77f0d9c14625fefa0f12ac7ad137e0723656404e2e9bd56c6e6a8b982cdbc"
+    },
+    "KZET001WW002": {
+      "asset": "/models/configurator/runtime/KZET001WW002-07f9bd9c4ab44aa4f6e0.json",
+      "sha256": "07f9bd9c4ab44aa4f6e0dd6cd43560171c23e0fb895a157b3d305fb2e94268a7"
+    },
+    "KZET002WW002": {
+      "asset": "/models/configurator/runtime/KZET002WW002-886ba68b3ca03edc9deb.json",
+      "sha256": "886ba68b3ca03edc9deb0338a74d6da77e9c515ee7d99fb34063ceb78eb4793c"
+    },
+    "KVNN001WW001": {
+      "asset": "/models/configurator/runtime/KVNN001WW001-caaaa7ef172646e7ade6.json",
+      "sha256": "caaaa7ef172646e7ade6b5c2d4601a875ca7e63bb56af12bd68e4ecfccfa9a1e"
+    },
+    "KATM004WW004": {
+      "asset": "/models/configurator/runtime/KATM004WW004-bfa12526ec68ee1f658f.json",
+      "sha256": "bfa12526ec68ee1f658f664d55977153a00c7ca3110137190370bb748987ae85"
+    },
+    "KPRA001WW001": {
+      "asset": "/models/configurator/runtime/KPRA001WW001-eafc165a5cf6ed072bff.json",
+      "sha256": "eafc165a5cf6ed072bffce717427d1ebf4782e49409e3f4133b43d6ef85531d8"
+    },
+    "KPRA001WW002": {
+      "asset": "/models/configurator/runtime/KPRA001WW002-65fffd4145e8ca583d1d.json",
+      "sha256": "65fffd4145e8ca583d1d08776bb145bad810a892ab427977f133eb1dabc28dcb"
+    },
+    "KVID010WW001": {
+      "asset": "/models/configurator/runtime/KVID010WW001-617bedf2c20d960dd78a.json",
+      "sha256": "617bedf2c20d960dd78af06819b7a6b93f02102ca68fe9fb863a7cf87c202c67"
+    },
+    "KXEN036WW001": {
+      "asset": "/models/configurator/runtime/KXEN036WW001-d05b9b640d2a33d8b0ac.json",
+      "sha256": "d05b9b640d2a33d8b0acd2c6c16ca3a699051a89066164f4dbe53e3182d749d3"
+    },
+    "KSAI008WW002": {
+      "asset": "/models/configurator/runtime/KSAI008WW002-9ab8d04ea16384b1145f.json",
+      "sha256": "9ab8d04ea16384b1145fc251b7cc26e6287cd368425a4f87ca2d72933f5d7eb6"
+    },
+    "KVID008WW001": {
+      "asset": "/models/configurator/runtime/KVID008WW001-c128637a3577f020d327.json",
+      "sha256": "c128637a3577f020d327e24bd540f74ffe73e86a5bebf7ff45331c5630b92922"
+    },
+    "KTGU004WW002": {
+      "asset": "/models/configurator/runtime/KTGU004WW002-27d9d23404f309d5c3d8.json",
+      "sha256": "27d9d23404f309d5c3d8a66a17fc956586da161a70a3b34111bb4263cafcabd6"
+    },
+    "KNAU015WW001": {
+      "asset": "/models/configurator/runtime/KNAU015WW001-bbfed5c7b6fcb2d42816.json",
+      "sha256": "bbfed5c7b6fcb2d42816f06ae84d6816ddfdf669769f8f5344dc0bbeb32aafa9"
+    },
+    "KNAU016WW001": {
+      "asset": "/models/configurator/runtime/KNAU016WW001-bda9b77c6cac7910cacc.json",
+      "sha256": "bda9b77c6cac7910cacc2bc2377fbea7503ba074fcabb2122107155cc2b327f5"
+    },
+    "KVCR001WW003": {
+      "asset": "/models/configurator/runtime/KVCR001WW003-c1c465b1d5ca2b192152.json",
+      "sha256": "c1c465b1d5ca2b1921523002f5e7880bf1762a4d9fad90123de16d8916ec02af"
+    },
+    "KSOU001WW004": {
+      "asset": "/models/configurator/runtime/KSOU001WW004-6f49add6a90972689d0c.json",
+      "sha256": "6f49add6a90972689d0c765a6f2e7d1512fed1e3110f34b589c0f1adbf9903d3"
+    },
+    "KTAU002WW003": {
+      "asset": "/models/configurator/runtime/KTAU002WW003-e56646a2f8dcee5a6901.json",
+      "sha256": "e56646a2f8dcee5a69014e2428fb8a2396671504bc671be985dcaf83eeb33034"
+    },
+    "KVAP001WW002": {
+      "asset": "/models/configurator/runtime/KVAP001WW002-ed9fc3d406b8c2c94181.json",
+      "sha256": "ed9fc3d406b8c2c9418199a25210ad28ca6d8dec2d1473c1696a7bd1d76d8319"
+    },
+    "KSAI001WW002": {
+      "asset": "/models/configurator/runtime/KSAI001WW002-4f097ad11dd55191d730.json",
+      "sha256": "4f097ad11dd55191d730dad3bc50298dedce07c48bcadc8c2c0fd99adea71461"
+    },
+    "KTAU002WW002": {
+      "asset": "/models/configurator/runtime/KTAU002WW002-c7c8ecff0f65fabaeb03.json",
+      "sha256": "c7c8ecff0f65fabaeb03ea2fcb85cc1be58dfce24a75c6b7575de2c39511a231"
+    },
+    "KUTI005WW001": {
+      "asset": "/models/configurator/runtime/KUTI005WW001-20666bc7855c94b098a5.json",
+      "sha256": "20666bc7855c94b098a5483fa4525a0ffb146c8369d8e84ffdf1f5d6fd4b8c23"
+    },
+    "KVAP008WW002": {
+      "asset": "/models/configurator/runtime/KVAP008WW002-9c7ddb65f1442055462d.json",
+      "sha256": "9c7ddb65f1442055462d6f6801efb4ff4508c8f2b7d19400e12128f4e1a4fcb5"
+    },
+    "KVCR001WW004": {
+      "asset": "/models/configurator/runtime/KVCR001WW004-ca8a6c8f69ad8e33c639.json",
+      "sha256": "ca8a6c8f69ad8e33c639f7a7d48496573cc2a58bed28c76b971622c538a0e2c6"
+    },
+    "KXEN037WW001": {
+      "asset": "/models/configurator/runtime/KXEN037WW001-14c349d6a1f64d8af717.json",
+      "sha256": "14c349d6a1f64d8af717d9529ded12b25fdf5807c1ea89b05af6c6f1d9781dba"
+    },
+    "KXEN035WW001": {
+      "asset": "/models/configurator/runtime/KXEN035WW001-4b3823f9452d17500f1d.json",
+      "sha256": "4b3823f9452d17500f1d73ae4f87e09ffbe9be366a7cdc50c03d1e091d9d2582"
+    },
+    "KXLI001WW002": {
+      "asset": "/models/configurator/runtime/KXLI001WW002-7cf0b03348228b14b5f7.json",
+      "sha256": "7cf0b03348228b14b5f77c8adb63aaad18e65ae34b3d0a9b91fe1802722b3689"
+    },
+    "KWI2002WW001": {
+      "asset": "/models/configurator/runtime/KWI2002WW001-6145d4dc4bce7a9b467e.json",
+      "sha256": "6145d4dc4bce7a9b467efbe4a1fec6398f84e7c51dc7996252769cddaf3fdbaf"
+    },
+    "KVCR002WW004": {
+      "asset": "/models/configurator/runtime/KVCR002WW004-81a6328745adda05ad23.json",
+      "sha256": "81a6328745adda05ad23f778f4dbf1a41745d497d37224801c6863ba86c17b46"
+    },
+    "KXEN034WW001": {
+      "asset": "/models/configurator/runtime/KXEN034WW001-f7b864e0bfb03c6f90be.json",
+      "sha256": "f7b864e0bfb03c6f90be8ae186e175dfcbddcbbe5b372f722b4b0a43da3a5d64"
+    },
+    "KVAP001WW001": {
+      "asset": "/models/configurator/runtime/KVAP001WW001-7a9231cf9b3006bf479a.json",
+      "sha256": "7a9231cf9b3006bf479ac3eaeb3879db8479e5d0ef42c7ad67779e4b0f9fb2cd"
+    }
+  },
+  "products": {
+    "product_2me-meeting-chairs_adb396de": {
+      "id": "cfg-0b2c5e0d7b54",
+      "articles": [
+        {
+          "code": "K2ME001WW002",
+          "sample": "16088543",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-7e455c92ee9c"
+        },
+        {
+          "code": "K2ME003WW001",
+          "sample": "16088546",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-2e74411c61b3"
+        },
+        {
+          "code": "K2ME003WW002",
+          "sample": "16088547",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-022b954edafd"
+        },
+        {
+          "code": "K2ME004WW001",
+          "sample": "16088548",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-dbb8d34c8ea2"
+        },
+        {
+          "code": "K2ME004WW004",
+          "sample": "16088551",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-351fe59800e7"
+        }
+      ]
+    },
+    "product_airi-swivel-chairs_4a6182da": {
+      "id": "cfg-2cbf989a1c6a",
+      "articles": [
+        {
+          "code": "KAII001WW001",
+          "sample": "29969203",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-08f3f96540c5"
+        },
+        {
+          "code": "KAII001WW002",
+          "sample": "29969204",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-34ab29e02f49"
+        },
+        {
+          "code": "KAII001WW003",
+          "sample": "29969205",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-b36821126ca0"
+        },
+        {
+          "code": "KAII001WW004",
+          "sample": "29969206",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-d8d9e1985a21"
+        }
+      ]
+    },
+    "product_arn-meeting-chairs_0bcdd58a": {
+      "id": "cfg-6a9c639cc76e",
+      "articles": [
+        {
+          "code": "KARN003WW004",
+          "sample": "29497493",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-ce40f6a5b2e9"
+        },
+        {
+          "code": "KARN008WW004",
+          "sample": "29497494",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-13bc13e804bd"
+        },
+        {
+          "code": "KARN008WW003",
+          "sample": "29497495",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-7dfb85fe355a"
+        },
+        {
+          "code": "KARN003WW004",
+          "sample": "29497496",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-db43e827059f"
+        },
+        {
+          "code": "KARN003WW003",
+          "sample": "29497497",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-637882fc64af"
+        }
+      ]
+    },
+    "product_arn-stools-bar-stools_436f06c0": {
+      "id": "cfg-b1d78d22ed49",
+      "articles": [
+        {
+          "code": "KARN007WW003",
+          "sample": "29507406",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-4f5e2c358a2e"
+        },
+        {
+          "code": "KARN007WW004",
+          "sample": "29507407",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-9c3f7d447dcd"
+        },
+        {
+          "code": "KARN007WW004",
+          "sample": "29507408",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-2c7790844236"
+        },
+        {
+          "code": "KARN007WW004",
+          "sample": "29507409",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-aafd5933a913"
+        }
+      ]
+    },
+    "product_axo-meeting-chairs_b971c8e1": {
+      "id": "cfg-c365b93dac92",
+      "articles": [
+        {
+          "code": "KAXO001WW004",
+          "sample": "19837278",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-6ab60f02097e"
+        },
+        {
+          "code": "KAXO001WW002",
+          "sample": "19837276",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-ed7e8e803b66"
+        },
+        {
+          "code": "KAXO001WW002",
+          "sample": "19837275",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-82abf71c803d"
+        }
+      ]
+    },
+    "product_belise-stools-bar-stools_8dea8493": {
+      "id": "cfg-77be9b4ccbde",
+      "articles": [
+        {
+          "code": "KBLS001WW002",
+          "sample": "19783112",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-6d2609eaad9a"
+        },
+        {
+          "code": "KBLS001WW001",
+          "sample": "19783109",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-0775cb66e7b0"
+        },
+        {
+          "code": "KBLS001WW001",
+          "sample": "19783111",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-88cde83fd8e8"
+        },
+        {
+          "code": "KBLS001WW002",
+          "sample": "19783110",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-8ae6dae3bb54"
+        }
+      ]
+    },
+    "product_beta-meeting-chairs_b9acfd8e": {
+      "id": "cfg-4073cfece076",
+      "articles": [
+        {
+          "code": "KBET001WW005",
+          "sample": "28565137",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-f9b239552450"
+        },
+        {
+          "code": "KBET001WW008",
+          "sample": "28565138",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-d2e24ef66e5b"
+        },
+        {
+          "code": "KBET001WW006",
+          "sample": "28565139",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-1ae30d11884a"
+        },
+        {
+          "code": "KBET002WW002",
+          "sample": "28565140",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-979dd7371813"
+        }
+      ]
+    },
+    "product_bewise-meeting-chairs_b0450844": {
+      "id": "cfg-bb6665c19283",
+      "articles": [
+        {
+          "code": "KBEW001WW006",
+          "sample": "26143408",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-058e9726b1e9"
+        },
+        {
+          "code": "KBEW001WW007",
+          "sample": "26143409",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-1a1877c54083"
+        },
+        {
+          "code": "KBEW001WW005",
+          "sample": "26143410",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-e67e02c89c9d"
+        },
+        {
+          "code": "KBEW001WW008",
+          "sample": "26143411",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-d38f06ebcd5c"
+        },
+        {
+          "code": "KBEW001WW006",
+          "sample": "26143412",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-0598d520275d"
+        }
+      ]
+    },
+    "product_bzoom-meeting-chairs_aa445386": {
+      "id": "cfg-eb80fd3128b1",
+      "articles": [
+        {
+          "code": "KBZM001WW001",
+          "sample": "31132658",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-8b358a3ae332"
+        },
+        {
+          "code": "KBZM001WW001",
+          "sample": "31132659",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-cf72b9344501"
+        },
+        {
+          "code": "KBZM001WW001",
+          "sample": "31132660",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-b466375a4cbc"
+        }
+      ]
+    },
+    "product_cadeira-meeting-chairs_4071871a": {
+      "id": "cfg-c4408a461749",
+      "articles": [
+        {
+          "code": "KCAD001WW005",
+          "sample": "16088247",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-093a4f0c8d72"
+        },
+        {
+          "code": "KCAD001WW002",
+          "sample": "16088246",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-ed7b571ce9be"
+        },
+        {
+          "code": "KCAD001WW001",
+          "sample": "16088241",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-2cf69d746687"
+        },
+        {
+          "code": "KCAD001WW001",
+          "sample": "16088242",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-50cda3c4b981"
+        }
+      ]
+    },
+    "product_cafe-meeting-chairs_62165973": {
+      "id": "cfg-3fb7c73d0caa",
+      "articles": [
+        {
+          "code": "KCAF005WW001",
+          "sample": "19840262",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-de67efb9e153"
+        },
+        {
+          "code": "KCAF016WW001",
+          "sample": "23530295",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-54492b7db754"
+        },
+        {
+          "code": "KCAF005WW002",
+          "sample": "19840263",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-a0959f5b10b5"
+        },
+        {
+          "code": "KCAF003WW001",
+          "sample": "19840265",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-2f7c0066158d"
+        },
+        {
+          "code": "KCAF003WW001",
+          "sample": "19840266",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-a83ca83e3eb0"
+        },
+        {
+          "code": "KCAF014WW001",
+          "sample": "23530297",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-e3124a48259a"
+        }
+      ]
+    },
+    "product_cafe-stools-bar-stools_16b90484": {
+      "id": "cfg-39266f7cc7b3",
+      "articles": [
+        {
+          "code": "KCAF007WW001",
+          "sample": "19868169",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-29fba71879dd"
+        },
+        {
+          "code": "KCAF008WW001",
+          "sample": "19868167",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-4db88fd98f25"
+        },
+        {
+          "code": "KCAF011WW001",
+          "sample": "23515638",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-cc6b697df144"
+        },
+        {
+          "code": "KCAF010WW001",
+          "sample": "19868693",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-66e7f74686fb"
+        }
+      ]
+    },
+    "product_calado-meeting-chairs_a5916e5a": {
+      "id": "cfg-bc07e536ad82",
+      "articles": [
+        {
+          "code": "KCAL001WW008",
+          "sample": "28425984",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-3b28c9e84bb2"
+        },
+        {
+          "code": "KCAL001WW005",
+          "sample": "28425985",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-517c95363223"
+        },
+        {
+          "code": "KCAL002WW002",
+          "sample": "28425986",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-f87f52a5a3d8"
+        },
+        {
+          "code": "KCAL001WW005",
+          "sample": "28425987",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-1cb5634213f9"
+        }
+      ]
+    },
+    "product_calado-stools-bar-stools_e1a988ca": {
+      "id": "cfg-25f968718512",
+      "articles": [
+        {
+          "code": "KCAL004WW002",
+          "sample": "28427625",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-6f12eacc1d1c"
+        },
+        {
+          "code": "KCAL004WW002",
+          "sample": "28427626",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-09557e80a88c"
+        },
+        {
+          "code": "KCAL004WW002",
+          "sample": "28427627",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-cc291f4fd667"
+        },
+        {
+          "code": "KCAL004WW002",
+          "sample": "28427628",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-1a357d5c5d27"
+        }
+      ]
+    },
+    "product_calis-swivel-chairs_8f841475": {
+      "id": "cfg-e9b75f801571",
+      "articles": [
+        {
+          "code": "KCIS001WW001",
+          "sample": "32239495",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-8d6f951a6f95"
+        }
+      ]
+    },
+    "product_chico-stools-bar-stools_ffaa8b98": {
+      "id": "cfg-a69fa34a0a9e",
+      "articles": [
+        {
+          "code": "KCHI001WW002",
+          "sample": "24800027",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-338d69950e02"
+        },
+        {
+          "code": "KCHI001WW002",
+          "sample": "24800028",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-d5aaafc68d7e"
+        },
+        {
+          "code": "KCHI001WW002",
+          "sample": "24800029",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-d85ca51fed5c"
+        },
+        {
+          "code": "KCHI001WW002",
+          "sample": "24800030",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-630eaa904eed"
+        },
+        {
+          "code": "KCHI001WW004",
+          "sample": "25416173",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-b8204ef262fd"
+        }
+      ]
+    },
+    "product_creva-stools-bar-stools_6b500914": {
+      "id": "cfg-d087abbfbead",
+      "articles": [
+        {
+          "code": "KCRE034WW001",
+          "sample": "24809570",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-93088c8e9635"
+        },
+        {
+          "code": "KCRE036WW001",
+          "sample": "24809572",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-59dae459b165"
+        },
+        {
+          "code": "KCRE033WW001",
+          "sample": "24809571",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-a7e8fbb3d029"
+        },
+        {
+          "code": "KCRE032WW001",
+          "sample": "24809573",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-b959fe6b272b"
+        },
+        {
+          "code": "KCRE035WW001",
+          "sample": "24809574",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-3e1a8f0bcf47"
+        }
+      ]
+    },
+    "product_elovie-swivel-chairs_77c77abd": {
+      "id": "cfg-4ba1c3fb106a",
+      "articles": [
+        {
+          "code": "KELO001WW001",
+          "sample": "30470553",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-4a28446ccfba"
+        },
+        {
+          "code": "KELO001WW002",
+          "sample": "30470552",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-e6ca44f4cce7"
+        },
+        {
+          "code": "KELO001WW002",
+          "sample": "30470554",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-0f1c73271add"
+        },
+        {
+          "code": "KELO001WW001",
+          "sample": "30470555",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-258fc06f9553"
+        }
+      ]
+    },
+    "product_ergo1-swivel-chairs_43b6eb7c": {
+      "id": "cfg-9cd990065bec",
+      "articles": [
+        {
+          "code": "KEGO001WW001",
+          "sample": "29767371",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-98b090dab9a0"
+        }
+      ]
+    },
+    "product_flesco-meeting-chairs_de313ca1": {
+      "id": "cfg-0ed05dfd8ad1",
+      "articles": [
+        {
+          "code": "KFLS002WW001",
+          "sample": "27214922",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-5ecd059f39ac"
+        },
+        {
+          "code": "KFLS001WW001",
+          "sample": "27215084",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-872a61d1d679"
+        },
+        {
+          "code": "KFLS001WW001",
+          "sample": "27339064",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-fc3b157d1d61"
+        }
+      ]
+    },
+    "product_fondo-meeting-chairs_fe13d4ac": {
+      "id": "cfg-c8ec98c3b586",
+      "articles": [
+        {
+          "code": "KFON001WW001",
+          "sample": "23530747",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-6866027cd3ca"
+        },
+        {
+          "code": "KFON001WW002",
+          "sample": "19852156",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-efe515f78061"
+        },
+        {
+          "code": "KFON004WW001",
+          "sample": "19852157",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-efc58e450995"
+        }
+      ]
+    },
+    "product_fondo-stools-bar-stools_455226e5": {
+      "id": "cfg-b317f7510f28",
+      "articles": [
+        {
+          "code": "KFON003WW001",
+          "sample": "19857766",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-bbc794096646"
+        },
+        {
+          "code": "KFON003WW001",
+          "sample": "19857765",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-3bc2461ac101"
+        }
+      ]
+    },
+    "product_navigo-swivel-chairs_12404ba0": {
+      "id": "cfg-06bbe78b0b24",
+      "articles": [
+        {
+          "code": "KNAV001WW005",
+          "sample": "22495141",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-d51beffc12cc"
+        },
+        {
+          "code": "KNAV001WW006",
+          "sample": "22495142",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-af5ff5cdd889"
+        },
+        {
+          "code": "KNAV002WW003",
+          "sample": "22495143",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-17a860696288"
+        },
+        {
+          "code": "KNAV002WW004",
+          "sample": "22495144",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-68bc72a247be"
+        }
+      ]
+    },
+    "product_xilium-swivel-chairs_0fe4091b": {
+      "id": "cfg-c21c0c5ffb4a",
+      "articles": [
+        {
+          "code": "KXIL045WW001",
+          "sample": "23636149",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-8e91a0c8d158"
+        },
+        {
+          "code": "KXIL046WW001",
+          "sample": "23636150",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-421260c62aac"
+        },
+        {
+          "code": "KXIL046WW001",
+          "sample": "23636151",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-055acff2b63b"
+        },
+        {
+          "code": "KXIL045WW001",
+          "sample": "23636153",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-c0beb7e7c507"
+        },
+        {
+          "code": "KXIL047WW002",
+          "sample": "23637796",
+          "name": "Konfig\u016bracija 7",
+          "id": "cfg-3c3092fa780a"
+        }
+      ]
+    },
+    "product_xilium-meeting-chairs_0d207af2": {
+      "id": "cfg-722fb6d63af9",
+      "articles": [
+        {
+          "code": "KXIL004WW002",
+          "sample": "23631553",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-6bf8481d601e"
+        },
+        {
+          "code": "KXIL005WW002",
+          "sample": "23631557",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-d6a5ea0e32bd"
+        },
+        {
+          "code": "KXIL006WW002",
+          "sample": "23631555",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-5ac8724f1544"
+        },
+        {
+          "code": "KXIL007WW002",
+          "sample": "23631559",
+          "name": "Konfig\u016bracija 7",
+          "id": "cfg-225cf5849df7"
+        },
+        {
+          "code": "KXIL051WW002",
+          "sample": "23631554",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-997a25b4f71f"
+        },
+        {
+          "code": "KXIL051WW002",
+          "sample": "23631560",
+          "name": "Konfig\u016bracija 8",
+          "id": "cfg-640969270745"
+        },
+        {
+          "code": "KXIL053WW002",
+          "sample": "23631558",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-58a10254ffcf"
+        },
+        {
+          "code": "KXIL054WW002",
+          "sample": "23631556",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-b305736ea9fb"
+        }
+      ]
+    },
+    "product_hola-stools-benches_4d342dcb": {
+      "id": "cfg-0f5a928f97a0",
+      "articles": [
+        {
+          "code": "KHOL004WW002",
+          "sample": "26630713",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-e2a76a0cb46e"
+        },
+        {
+          "code": "KHOL004WW002",
+          "sample": "26630714",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-d682b5445bc2"
+        },
+        {
+          "code": "KHOL004WW002",
+          "sample": "26630715",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-7c8075a7d4cb"
+        },
+        {
+          "code": "KHOL004WW002",
+          "sample": "26630716",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-704f8b304871"
+        }
+      ]
+    },
+    "product_intrata-swivel-chairs_152ee39c": {
+      "id": "cfg-7a595c32befd",
+      "articles": [
+        {
+          "code": "KINT002WW001",
+          "sample": "19964483",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-db666f092d63"
+        },
+        {
+          "code": "KINT004WW001",
+          "sample": "19964479",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-cfa12cc67ddc"
+        },
+        {
+          "code": "KINT001WW001",
+          "sample": "19964482",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-48df6de38f8a"
+        },
+        {
+          "code": "KINT005WW001",
+          "sample": "19964480",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-874f1178ef15"
+        },
+        {
+          "code": "KINT003WW001",
+          "sample": "19964484",
+          "name": "Konfig\u016bracija 7",
+          "id": "cfg-4b8cb6dab127"
+        },
+        {
+          "code": "KINT006WW001",
+          "sample": "19964478",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-dd055080cb86"
+        },
+        {
+          "code": "KINT006WW002",
+          "sample": "19964481",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-d3216dc51886"
+        }
+      ]
+    },
+    "product_intrata-meeting-chairs_5dfff5ae": {
+      "id": "cfg-7640c2fb62f0",
+      "articles": [
+        {
+          "code": "KINT010WW001",
+          "sample": "25324229",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-8e5175bb0b76"
+        },
+        {
+          "code": "KINT012WW001",
+          "sample": "25324227",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-d9c42ce07bdc"
+        },
+        {
+          "code": "KINT009WW001",
+          "sample": "25324226",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-8e04373438cf"
+        },
+        {
+          "code": "KINT011WW001",
+          "sample": "25324228",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-cc2387e23206"
+        },
+        {
+          "code": "KINT011WW001",
+          "sample": "25324230",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-fb53a3f6d001"
+        }
+      ]
+    },
+    "product_iso-meeting-chairs_4bd07abb": {
+      "id": "cfg-da3537a3f3a5",
+      "articles": [
+        {
+          "code": "KISO001WW002",
+          "sample": "21307282",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-e606cb8b86b1"
+        },
+        {
+          "code": "KISO005WW002",
+          "sample": "21307286",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-63cda49228ba"
+        },
+        {
+          "code": "KISO016WW002",
+          "sample": "21307289",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-7e8d0b4e709e"
+        },
+        {
+          "code": "KISO006WW002",
+          "sample": "21307285",
+          "name": "Konfig\u016bracija 7",
+          "id": "cfg-f74b014d042f"
+        },
+        {
+          "code": "KISO004WW002",
+          "sample": "21307284",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-24290d202b83"
+        },
+        {
+          "code": "KISO006WW003",
+          "sample": "21307288",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-1382fd74676a"
+        },
+        {
+          "code": "KISO028WW001",
+          "sample": "21307287",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-3d2910eba9d9"
+        }
+      ]
+    },
+    "product_inta-meeting-chairs_7adfdd79": {
+      "id": "cfg-b9c24fa836c3",
+      "articles": [
+        {
+          "code": "KITA001WW002",
+          "sample": "22663650",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-0b77086d068b"
+        },
+        {
+          "code": "KITA001WW002",
+          "sample": "20624632",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-fb2dc96c48cb"
+        },
+        {
+          "code": "KITA001WW002",
+          "sample": "20624633",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-f29ca5b34396"
+        },
+        {
+          "code": "KITA001WW001",
+          "sample": "22663651",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-5eb286f0fa17"
+        },
+        {
+          "code": "KITA001WW001",
+          "sample": "20624634",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-cad58c7e8239"
+        },
+        {
+          "code": "KITA001WW001",
+          "sample": "20624635",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-d07341e9c87a"
+        }
+      ]
+    },
+    "product_motion-meeting-chairs_a2ec7ac6": {
+      "id": "cfg-2357757008d2",
+      "articles": [
+        {
+          "code": "KATM006WW001",
+          "sample": "15693705",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-5522ceffb522"
+        },
+        {
+          "code": "KATM006WW001",
+          "sample": "23529011",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-de613b022a86"
+        },
+        {
+          "code": "KATM006WW001",
+          "sample": "23529012",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-d5d54d420fe5"
+        }
+      ]
+    },
+    "product_levitate-stools-bar-stools_6ff28653": {
+      "id": "cfg-3227e94a0867",
+      "articles": [
+        {
+          "code": "KLEV008WW002",
+          "sample": "14770758",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-603bf1879c5f"
+        },
+        {
+          "code": "KLEV009WW002",
+          "sample": "14770760",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-d802c756e2d6"
+        },
+        {
+          "code": "KLEV013WW002",
+          "sample": "14770761",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-3dc5a3451a84"
+        },
+        {
+          "code": "KLEV007WW002",
+          "sample": "14770759",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-e8a5eba30f14"
+        }
+      ]
+    },
+    "product_lupino-stools-bar-stools_80f304cd": {
+      "id": "cfg-f60d360ef17c",
+      "articles": [
+        {
+          "code": "KLPN020WW002",
+          "sample": "29764555",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-3ccfa8d41900"
+        },
+        {
+          "code": "KLPN019WW002",
+          "sample": "29764557",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-c3aa77a2ece7"
+        },
+        {
+          "code": "KLPN019WW002",
+          "sample": "29764556",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-9352604e3f06"
+        },
+        {
+          "code": "KLPN021WW002",
+          "sample": "29764554",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-b5cb78132839"
+        }
+      ]
+    },
+    "product_lynx-meeting-chairs_4798c9c2": {
+      "id": "cfg-ed3c14f30520",
+      "articles": [
+        {
+          "code": "KLYN003WW002",
+          "sample": "28758854",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-9b365b44b207"
+        },
+        {
+          "code": "KLYN003WW002",
+          "sample": "28758855",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-dfad89f438ff"
+        },
+        {
+          "code": "KLYN003WW002",
+          "sample": "28758856",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-cea2bcb18736"
+        },
+        {
+          "code": "KLYN003WW002",
+          "sample": "28758857",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-df680deb5c85"
+        }
+      ]
+    },
+    "product_ministyle-swivel-chairs_ca9f8ef1": {
+      "id": "cfg-6ade0f4cf83f",
+      "articles": [
+        {
+          "code": "KMNS001WW007",
+          "sample": "24876528",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-510f0b62ccab"
+        },
+        {
+          "code": "KMNS001WW010",
+          "sample": "24876526",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-b66e77d8ee0d"
+        },
+        {
+          "code": "KMNS001WW006",
+          "sample": "24876527",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-1a5de6efe4ab"
+        },
+        {
+          "code": "KMNS001WW008",
+          "sample": "24876525",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-f36d9234c82a"
+        },
+        {
+          "code": "KMNS001WW009",
+          "sample": "24876529",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-9341072aa400"
+        }
+      ]
+    },
+    "product_nadir-meeting-chairs_4efad3a3": {
+      "id": "cfg-e59ea03397cc",
+      "articles": [
+        {
+          "code": "KNAD003WW002",
+          "sample": "28433477",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-7dfa7bd93f8a"
+        },
+        {
+          "code": "KNAD003WW002",
+          "sample": "28433478",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-c023d2fc5507"
+        }
+      ]
+    },
+    "product_ovia-meeting-chairs_1061b61e": {
+      "id": "cfg-1a40e7bcda38",
+      "articles": [
+        {
+          "code": "KOVI001WW002",
+          "sample": "31075252",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-667281dbad1e"
+        },
+        {
+          "code": "KOVI001WW001",
+          "sample": "31075253",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-6cce5653d576"
+        }
+      ]
+    },
+    "product_perfect-swivel-chairs_e1093def": {
+      "id": "cfg-67c3f57288e6",
+      "articles": [
+        {
+          "code": "KPER001WW003",
+          "sample": "27061805",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-d56a9ab29330"
+        },
+        {
+          "code": "KPER001WW003",
+          "sample": "27061807",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-f8e8e0d2fd0d"
+        },
+        {
+          "code": "KPER001WW001",
+          "sample": "27061806",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-d072925b2756"
+        }
+      ]
+    },
+    "product_motion-swivel-chairs_028d8ff8": {
+      "id": "cfg-a2b1b37bd060",
+      "articles": [
+        {
+          "code": "KATM004WW005",
+          "sample": "23549349",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-b163899eeca1"
+        },
+        {
+          "code": "KATM004WW005",
+          "sample": "21288728",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-dd5f6a4daed3"
+        },
+        {
+          "code": "KATM004WW006",
+          "sample": "23549350",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-fedfb218f3dc"
+        },
+        {
+          "code": "KATM004WW006",
+          "sample": "23549351",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-3432055fddb2"
+        },
+        {
+          "code": "KATM004WW004",
+          "sample": "21288726",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-654a0d5ba028"
+        },
+        {
+          "code": "KATM004WW004",
+          "sample": "21288729",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-5408228bc343"
+        }
+      ]
+    },
+    "product_nadir-office-chairs_3eff0da5": {
+      "id": "cfg-1b2dbe804fab",
+      "articles": [
+        {
+          "code": "KNAD001WW002",
+          "sample": "28434501",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-c052a1571ac3"
+        },
+        {
+          "code": "KNAD001WW002",
+          "sample": "28434503",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-092c50a12be6"
+        },
+        {
+          "code": "KNAD001WW002",
+          "sample": "28434502",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-1b4b9c2632f6"
+        }
+      ]
+    },
+    "product_sail-meeting-chairs_8baf56a0": {
+      "id": "cfg-ef44b58fe76e",
+      "articles": [
+        {
+          "code": "KSAI004WW002",
+          "sample": "19640461",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-4d72c5d1dd6f"
+        },
+        {
+          "code": "KSAI004WW002",
+          "sample": "19640463",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-8ab43e08ef71"
+        },
+        {
+          "code": "KSAI007WW002",
+          "sample": "19640464",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-b83b958b1d8e"
+        },
+        {
+          "code": "KSAI006WW002",
+          "sample": "19640462",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-52450f9f112a"
+        }
+      ]
+    },
+    "product_segla-swivel-chairs_4e624163": {
+      "id": "cfg-26df020750ae",
+      "articles": [
+        {
+          "code": "KSEG001WW001",
+          "sample": "24228582",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-0f6cda74ddf3"
+        },
+        {
+          "code": "KSEG002WW001",
+          "sample": "24228584",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-a8150389c818"
+        },
+        {
+          "code": "KSEG003WW001",
+          "sample": "24228580",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-36b1c39090a8"
+        }
+      ]
+    },
+    "product_sitari-meeting-chairs_9cc5440d": {
+      "id": "cfg-cd3c2d88fd8a",
+      "articles": [
+        {
+          "code": "KSRI003WW001",
+          "sample": "29965435",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-f29e884e2504"
+        },
+        {
+          "code": "KSRI004WW002",
+          "sample": "29965437",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-e7cedc849a13"
+        },
+        {
+          "code": "KSRI001WW002",
+          "sample": "29965436",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-5469cb035205"
+        },
+        {
+          "code": "KSRI002WW001",
+          "sample": "29965438",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-267649d7437c"
+        }
+      ]
+    },
+    "product_smile-meeting-chairs_80d1ed69": {
+      "id": "cfg-a7113df5bae7",
+      "articles": [
+        {
+          "code": "KSML001WW002",
+          "sample": "25628159",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-688d321865a3"
+        },
+        {
+          "code": "KSML002WW002",
+          "sample": "25628157",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-dd80893a35bc"
+        },
+        {
+          "code": "KSML002WW002",
+          "sample": "25628160",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-fb96dfd2fdab"
+        },
+        {
+          "code": "KSML005WW002",
+          "sample": "25628162",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-897e09b0e5de"
+        },
+        {
+          "code": "KSML006WW002",
+          "sample": "25628158",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-1fa3191d0764"
+        },
+        {
+          "code": "KSML006WW002",
+          "sample": "25628161",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-997e220866d1"
+        }
+      ]
+    },
+    "product_styl-meeting-chairs_60fdacb4": {
+      "id": "cfg-1d18f45f883c",
+      "articles": [
+        {
+          "code": "KSTY001WW003",
+          "sample": "20929371",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-f0eab045d6ff"
+        },
+        {
+          "code": "KSTY001WW003",
+          "sample": "20929372",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-2db9a5f12b06"
+        },
+        {
+          "code": "KSTY001WW004",
+          "sample": "20929369",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-7d12a14beb06"
+        },
+        {
+          "code": "KSTY001WW004",
+          "sample": "20929370",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-77f91ee44797"
+        }
+      ]
+    },
+    "product_sylwia-s-meeting-chairs_12123440": {
+      "id": "cfg-a2eb77a09aec",
+      "articles": [
+        {
+          "code": "KSYL001WW004",
+          "sample": "27819537",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-dd891232ec02"
+        },
+        {
+          "code": "KSYL001WW004",
+          "sample": "27819541",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-93a5caf843bc"
+        },
+        {
+          "code": "KSYL001WW004",
+          "sample": "27819539",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-0a47f0702f6b"
+        },
+        {
+          "code": "KSYL001WW003",
+          "sample": "27819538",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-910c9291c710"
+        },
+        {
+          "code": "KSYL001WW003",
+          "sample": "27819540",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-6f6d994db1a9"
+        }
+      ]
+    },
+    "product_taktik-swivel-chairs_79a1651b": {
+      "id": "cfg-7b6b73446cf7",
+      "articles": [
+        {
+          "code": "KTAK002WW004",
+          "sample": "20402646",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-2f409f310f93"
+        },
+        {
+          "code": "KTAK001WW002",
+          "sample": "20402645",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-29a2081c1dd2"
+        },
+        {
+          "code": "KTAK002WW006",
+          "sample": "20402648",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-f4330c32f0d1"
+        }
+      ]
+    },
+    "product_tauko-meeting-chairs_92ce2bfd": {
+      "id": "cfg-7737a30d53ad",
+      "articles": [
+        {
+          "code": "KTAU003WW002",
+          "sample": "16088381",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-e4b19d114f9d"
+        },
+        {
+          "code": "KTAU003WW002",
+          "sample": "16088380",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-48b8e22a105f"
+        },
+        {
+          "code": "KTAU001WW002",
+          "sample": "16088375",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-dcf9d09063eb"
+        },
+        {
+          "code": "KTAU001WW002",
+          "sample": "16088374",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-c3a6365b01dd"
+        },
+        {
+          "code": "KTAU003WW001",
+          "sample": "16088378",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-9b71f53d26da"
+        },
+        {
+          "code": "KTAU008WW002",
+          "sample": "16088382",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-1a28b10941e2"
+        }
+      ]
+    },
+    "product_tauko-stools-bar-stools_ccb2870c": {
+      "id": "cfg-aca6fcbe2405",
+      "articles": [
+        {
+          "code": "KTAU004WW002",
+          "sample": "16088361",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-2bafe5f42ba3"
+        },
+        {
+          "code": "KTAU004WW001",
+          "sample": "16088358",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-6347d668292f"
+        },
+        {
+          "code": "KTAU002WW003",
+          "sample": "16088352",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-f19a4fc81578"
+        },
+        {
+          "code": "KTAU002WW002",
+          "sample": "16088356",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-fbd3cb3a94fc"
+        }
+      ]
+    },
+    "product_tiger-up-swivel-chairs_af889fe3": {
+      "id": "cfg-e6030d84628c",
+      "articles": [
+        {
+          "code": "KTGU001WW002",
+          "sample": "26117039",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-96eb15463efc"
+        },
+        {
+          "code": "KTGU001WW002",
+          "sample": "26117041",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-837d64221cf1"
+        },
+        {
+          "code": "KTGU004WW002",
+          "sample": "26117038",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-3b95d9fd1784"
+        },
+        {
+          "code": "KTGU004WW002",
+          "sample": "26117040",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-70447f4afa2e"
+        }
+      ]
+    },
+    "product_tiger-up-meeting-chairs_2418d1bc": {
+      "id": "cfg-8863e78a98a6",
+      "articles": [
+        {
+          "code": "KTGU007WW002",
+          "sample": "26117951",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-79983bcc9b3b"
+        },
+        {
+          "code": "KTGU007WW002",
+          "sample": "26117952",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-d2e59551fe70"
+        },
+        {
+          "code": "KTGU008WW002",
+          "sample": "26117950",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-66fb0f2aaf4a"
+        },
+        {
+          "code": "KTGU008WW002",
+          "sample": "26117953",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-d16ffe43b76b"
+        }
+      ]
+    },
+    "product_tulipan-meeting-chairs_230e271e": {
+      "id": "cfg-9adadba441c1",
+      "articles": [
+        {
+          "code": "KTUL001WW002",
+          "sample": "26075291",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-e8d2d0b2a2a4"
+        },
+        {
+          "code": "KTUL001WW002",
+          "sample": "26075292",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-5f638f433094"
+        },
+        {
+          "code": "KTUL001WW003",
+          "sample": "26075295",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-a73c6d388cc6"
+        },
+        {
+          "code": "KTUL001WW004",
+          "sample": "26075296",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-9f34cd58d51b"
+        },
+        {
+          "code": "KTUL002WW002",
+          "sample": "26075293",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-c2986536ae78"
+        },
+        {
+          "code": "KTUL002WW002",
+          "sample": "26075294",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-4dbea4acfbc4"
+        }
+      ]
+    },
+    "product_timmi-stools-bar-stools_5d9910dd": {
+      "id": "cfg-503048935e5c",
+      "articles": [
+        {
+          "code": "KTIM001WW001",
+          "sample": "20501895",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-b274eed03742"
+        },
+        {
+          "code": "KTIM001WW001",
+          "sample": "20501897",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-f3b0a6a15405"
+        },
+        {
+          "code": "KTIM001WW001",
+          "sample": "20501900",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-69d7accfadcc"
+        }
+      ]
+    },
+    "product_tulipan-stools-bar-stools_eb60d8ff": {
+      "id": "cfg-b714f14bbe28",
+      "articles": [
+        {
+          "code": "KTUL003WW003",
+          "sample": "26084477",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-fd14022e22a1"
+        },
+        {
+          "code": "KTUL003WW004",
+          "sample": "26084480",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-b40e0b4deb9e"
+        },
+        {
+          "code": "KTUL003WW007",
+          "sample": "26084481",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-ab9d805c1e9a"
+        },
+        {
+          "code": "KTUL003WW008",
+          "sample": "26084483",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-364e76148d4c"
+        },
+        {
+          "code": "KTUL003WW009",
+          "sample": "26084484",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-d35f7a5a5518"
+        }
+      ]
+    },
+    "product_utila-swivel-chairs_658da310": {
+      "id": "cfg-cc1a7b8e98e3",
+      "articles": [
+        {
+          "code": "KUTI001WW002",
+          "sample": "20119620",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-c2566583dc1b"
+        },
+        {
+          "code": "KUTI003WW001",
+          "sample": "20119625",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-3ca2982a10eb"
+        },
+        {
+          "code": "KUTI004WW001",
+          "sample": "20119624",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-cff168086062"
+        },
+        {
+          "code": "KUTI004WW002",
+          "sample": "20119622",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-e1399996c4ef"
+        },
+        {
+          "code": "KUTI002WW001",
+          "sample": "20119623",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-7acf761dda4f"
+        },
+        {
+          "code": "KUTI005WW001",
+          "sample": "27772502",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-366914190fd2"
+        }
+      ]
+    },
+    "product_vapaa-meeting-chairs_0f18b0a8": {
+      "id": "cfg-9ea7f0e3df4f",
+      "articles": [
+        {
+          "code": "KVAP002WW002",
+          "sample": "27611822",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-300d4b0048ba"
+        },
+        {
+          "code": "KVAP002WW001",
+          "sample": "26880326",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-0dc83f70efdf"
+        },
+        {
+          "code": "KVAP018WW001",
+          "sample": "26980439",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-97d342fb3671"
+        },
+        {
+          "code": "KVAP020WW001",
+          "sample": "26880456",
+          "name": "Konfig\u016bracija 7",
+          "id": "cfg-a73aee6c297a"
+        },
+        {
+          "code": "KVAP005WW002",
+          "sample": "27611824",
+          "name": "Konfig\u016bracija 9",
+          "id": "cfg-3233ac13c1ae"
+        },
+        {
+          "code": "KVAP001WW002",
+          "sample": "27611825",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-3801ddafbfe1"
+        },
+        {
+          "code": "KVAP008WW002",
+          "sample": "27611823",
+          "name": "Konfig\u016bracija 8",
+          "id": "cfg-f6024cf1156f"
+        },
+        {
+          "code": "KVAP001WW001",
+          "sample": "26876445",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-31f0533b8408"
+        }
+      ]
+    },
+    "product_v-care-meeting-chairs_45980132": {
+      "id": "cfg-155311a0c352",
+      "articles": [
+        {
+          "code": "KVCR002WW003",
+          "sample": "24865525",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-26f326963972"
+        },
+        {
+          "code": "KVCR001WW003",
+          "sample": "24865526",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-23a16b02dd50"
+        },
+        {
+          "code": "KVCR001WW003",
+          "sample": "24865528",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-8698aeed3dec"
+        },
+        {
+          "code": "KVCR001WW004",
+          "sample": "24865524",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-8dcd114cd8ec"
+        },
+        {
+          "code": "KVCR002WW004",
+          "sample": "24865527",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-4ac0ce1fc06e"
+        }
+      ]
+    },
+    "product_so-one-meeting-chairs_c95e8fdb": {
+      "id": "cfg-3e20005b21a8",
+      "articles": [
+        {
+          "code": "KSOO003WW001",
+          "sample": "23374286",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-5e68c36ace9b"
+        },
+        {
+          "code": "KSOO003WW001",
+          "sample": "23374287",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-30cbbff6d7ad"
+        },
+        {
+          "code": "KSOO003WW001",
+          "sample": "23374288",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-43e438097dab"
+        }
+      ]
+    },
+    "product_so-one-swivel-chairs_1004dc49": {
+      "id": "cfg-19a182e90f1e",
+      "articles": [
+        {
+          "code": "KSOO004WW002",
+          "sample": "23374292",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-e4aaf2d5064e"
+        },
+        {
+          "code": "KSOO004WW002",
+          "sample": "23374294",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-42ed208f1129"
+        },
+        {
+          "code": "KSOO004WW002",
+          "sample": "23374296",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-eafe1c013d3a"
+        },
+        {
+          "code": "KSOO005WW002",
+          "sample": "23374293",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-9bd967c5c822"
+        },
+        {
+          "code": "KSOO005WW002",
+          "sample": "23374295",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-d262ab11f6c8"
+        }
+      ]
+    },
+    "product_sqart-stools-bar-stools_a49af8c6": {
+      "id": "cfg-6aa01126c6e6",
+      "articles": [
+        {
+          "code": "KSQA176WW001",
+          "sample": "24758701",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-af2a5ae88d54"
+        },
+        {
+          "code": "KSQA176WW001",
+          "sample": "24758702",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-b1b1fbc8a5ac"
+        },
+        {
+          "code": "KSQA176WW001",
+          "sample": "24758703",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-a829d1bb747e"
+        },
+        {
+          "code": "KSQA176WW001",
+          "sample": "24758704",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-46859891f065"
+        }
+      ]
+    },
+    "product_vapaa-stools-bar-stools_23af9e28": {
+      "id": "cfg-af260e26e60a",
+      "articles": [
+        {
+          "code": "KVAP003WW002",
+          "sample": "26875070",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-ee8d0af0ad13"
+        },
+        {
+          "code": "KVAP004WW001",
+          "sample": "26873332",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-1b723eea02c0"
+        },
+        {
+          "code": "KVAP011WW001",
+          "sample": "26875628",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-68126a67eece"
+        },
+        {
+          "code": "KVAP003WW001",
+          "sample": "26875228",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-586cbe1d004b"
+        },
+        {
+          "code": "KVAP004WW002",
+          "sample": "26875026",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-4663c68d4f7f"
+        },
+        {
+          "code": "KVAP004WW002",
+          "sample": "27405118",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-fcecdab80d62"
+        },
+        {
+          "code": "KVAP012WW001",
+          "sample": "26876030",
+          "name": "Konfig\u016bracija 7",
+          "id": "cfg-140d148f15c0"
+        }
+      ]
+    },
+    "product_vesta-new-meeting-chairs_f5db36d2": {
+      "id": "cfg-7bf5a6d171cb",
+      "articles": [
+        {
+          "code": "KVSN001WW001",
+          "sample": "23531795",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-ce3684456d86"
+        },
+        {
+          "code": "KVSN001WW002",
+          "sample": "20835921",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-9afae5c64b2d"
+        },
+        {
+          "code": "KVSN002WW001",
+          "sample": "23531796",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-6fdb2b5254b2"
+        },
+        {
+          "code": "KVSN002WW002",
+          "sample": "20835923",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-d55deb2f9147"
+        }
+      ]
+    },
+    "product_viden-swivel-chairs_90d56840": {
+      "id": "cfg-84a14120a89c",
+      "articles": [
+        {
+          "code": "KVID006WW001",
+          "sample": "22841934",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-f2eef1246714"
+        },
+        {
+          "code": "KVID009WW001",
+          "sample": "22841935",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-d8944db9ae81"
+        },
+        {
+          "code": "KVID010WW001",
+          "sample": "22841938",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-09fca2aa310c"
+        },
+        {
+          "code": "KVID008WW001",
+          "sample": "22841933",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-ea732c4df2f9"
+        },
+        {
+          "code": "KVID008WW001",
+          "sample": "22841937",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-cf4ccaf28d70"
+        }
+      ]
+    },
+    "product_withme-meeting-chairs_cabe3f49": {
+      "id": "cfg-d89d96db1ea4",
+      "articles": [
+        {
+          "code": "KWIT001WW005",
+          "sample": "29244269",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-65e4d64e9fd1"
+        },
+        {
+          "code": "KWIT003WW003",
+          "sample": "29244319",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-4e159e9015e2"
+        },
+        {
+          "code": "KWIT003WW004",
+          "sample": "29244234",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-e701a7b03730"
+        },
+        {
+          "code": "KWIT006WW001",
+          "sample": "29244231",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-720d1140838c"
+        },
+        {
+          "code": "KWIT001WW006",
+          "sample": "29244405",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-579bf1f189fd"
+        },
+        {
+          "code": "KWIT006WW002",
+          "sample": "29244285",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-05abc3219cc3"
+        }
+      ]
+    },
+    "product_xenium-meeting-chairs_88dcd93e": {
+      "id": "cfg-d28135dec53a",
+      "articles": [
+        {
+          "code": "KXEN046WW001",
+          "sample": "23568001",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-9707baa61995"
+        },
+        {
+          "code": "KXEN047WW001",
+          "sample": "23567999",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-75848c8d5c63"
+        },
+        {
+          "code": "KXEN048WW001",
+          "sample": "23568000",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-dd0e119ede84"
+        },
+        {
+          "code": "KXEN036WW001",
+          "sample": "23567997",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-67436ebf3393"
+        },
+        {
+          "code": "KXEN037WW001",
+          "sample": "23567998",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-124ee22b0e21"
+        }
+      ]
+    },
+    "product_youteam-meeting-chairs_7f824a16": {
+      "id": "cfg-1dd00317d2af",
+      "articles": [
+        {
+          "code": "KYOU003WW001",
+          "sample": "16088577",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-22529b20feea"
+        },
+        {
+          "code": "KYOU003WW002",
+          "sample": "16088578",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-5ca1402a1a5e"
+        },
+        {
+          "code": "KYOU004WW001",
+          "sample": "16088580",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-f5cd593b5027"
+        },
+        {
+          "code": "KYOU004WW002",
+          "sample": "16088579",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-dd5766179303"
+        },
+        {
+          "code": "KYOU005WW002",
+          "sample": "16088582",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-941e63556c0e"
+        }
+      ]
+    },
+    "product_yuni-meeting-chairs_f1ee6ae3": {
+      "id": "cfg-d604639a61c5",
+      "articles": [
+        {
+          "code": "KYUN001WW001",
+          "sample": "28958404",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-a62538d929de"
+        },
+        {
+          "code": "KYUN001WW001",
+          "sample": "28958405",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-70ec4c1aade0"
+        },
+        {
+          "code": "KYUN001WW002",
+          "sample": "28958406",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-c7a7b7046718"
+        },
+        {
+          "code": "KYUN001WW002",
+          "sample": "28958407",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-024f63c36a06"
+        }
+      ]
+    },
+    "product_z-body-meeting-chairs_285fd747": {
+      "id": "cfg-0efa920b7271",
+      "articles": [
+        {
+          "code": "KZBO002WW001",
+          "sample": "24893026",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-b52792174a2a"
+        },
+        {
+          "code": "KZBO002WW001",
+          "sample": "24893027",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-991ecc8095d0"
+        },
+        {
+          "code": "KZBO002WW001",
+          "sample": "24893028",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-0d65ced23320"
+        }
+      ]
+    },
+    "product_zeta-stools-bar-stools_c6c42cbd": {
+      "id": "cfg-27485c5258d2",
+      "articles": [
+        {
+          "code": "KZET001WW002",
+          "sample": "25038984",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-801e8585f14b"
+        },
+        {
+          "code": "KZET001WW002",
+          "sample": "25038985",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-e4caa0a10c2d"
+        },
+        {
+          "code": "KZET002WW002",
+          "sample": "25038986",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-b6d87b030495"
+        },
+        {
+          "code": "KZET002WW002",
+          "sample": "25038987",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-384130b9c7ac"
+        }
+      ]
+    },
+    "product_vienna-office-chairs_a2a3173d": {
+      "id": "cfg-accc654d9429",
+      "articles": [
+        {
+          "code": "KVNN001WW001",
+          "sample": "27425703",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-cb6d98fdfdf9"
+        }
+      ]
+    },
+    "product_prado-swivel-chairs_09889ecc": {
+      "id": "cfg-c8c5cfdd5b1c",
+      "articles": [
+        {
+          "code": "KPRA001WW001",
+          "sample": "24888549",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-7f37f70bf1df"
+        },
+        {
+          "code": "KPRA001WW002",
+          "sample": "24888548",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-68ffe19f85a6"
+        },
+        {
+          "code": "KPRA001WW002",
+          "sample": "24888550",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-9921b4f7a94f"
+        }
+      ]
+    },
+    "product_sail-swivel-chairs_5c919239": {
+      "id": "cfg-fcdbc00b5eeb",
+      "articles": [
+        {
+          "code": "KSAI008WW002",
+          "sample": "19629919",
+          "name": "Konfig\u016bracija 5",
+          "id": "cfg-ff1e1d108152"
+        },
+        {
+          "code": "KSAI008WW002",
+          "sample": "19629920",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-f71573174aae"
+        },
+        {
+          "code": "KSAI001WW002",
+          "sample": "19629915",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-e37aefad7d1b"
+        },
+        {
+          "code": "KSAI001WW002",
+          "sample": "19629916",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-33bb7974de38"
+        },
+        {
+          "code": "KSAI001WW002",
+          "sample": "19629917",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-41805d1c4525"
+        },
+        {
+          "code": "KSAI001WW002",
+          "sample": "19629918",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-2e4d346c7f38"
+        }
+      ]
+    },
+    "product_naudu-stools-bar-stools_806bdc31": {
+      "id": "cfg-34879c4abc21",
+      "articles": [
+        {
+          "code": "KNAU015WW001",
+          "sample": "29782032",
+          "name": "Konfig\u016bracija 1",
+          "id": "cfg-0a6c5cbb2e63"
+        },
+        {
+          "code": "KNAU016WW001",
+          "sample": "29782034",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-72bc3b82a4ee"
+        }
+      ]
+    },
+    "product_souly-swivel-chairs_e1805fc7": {
+      "id": "cfg-42ebc4b497d3",
+      "articles": [
+        {
+          "code": "KSOU001WW004",
+          "sample": "16088657",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-79fc064c8ddf"
+        },
+        {
+          "code": "KSOU001WW004",
+          "sample": "16088659",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-3369eb943559"
+        }
+      ]
+    },
+    "product_xenium-swivel-chairs_5c29c487": {
+      "id": "cfg-cc68e58a8832",
+      "articles": [
+        {
+          "code": "KXEN035WW001",
+          "sample": "23567098",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-0c6f84aa7f15"
+        },
+        {
+          "code": "KXEN034WW001",
+          "sample": "23567099",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-b57d77c339eb"
+        },
+        {
+          "code": "KXEN034WW001",
+          "sample": "23567102",
+          "name": "Konfig\u016bracija 6",
+          "id": "cfg-d64c7c8e0d46"
+        }
+      ]
+    },
+    "product_x-line-swivel-chairs_19b207ad": {
+      "id": "cfg-08265c78ba5c",
+      "articles": [
+        {
+          "code": "KXLI001WW002",
+          "sample": "15680148",
+          "name": "Konfig\u016bracija 2",
+          "id": "cfg-705ec837e290"
+        },
+        {
+          "code": "KXLI001WW002",
+          "sample": "15680147",
+          "name": "Konfig\u016bracija 4",
+          "id": "cfg-3acebb79aac2"
+        }
+      ]
+    },
+    "product_wing-meeting-chairs_e9d12427": {
+      "id": "cfg-25e26064a342",
+      "articles": [
+        {
+          "code": "KWI2002WW001",
+          "sample": "28702865",
+          "name": "Konfig\u016bracija 3",
+          "id": "cfg-c49b5d43f75d"
+        }
+      ]
+    }
+  }
+}

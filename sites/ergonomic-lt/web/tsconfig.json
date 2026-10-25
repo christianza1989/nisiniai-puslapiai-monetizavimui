@@ -1,0 +1,77 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    ".next-dev/types/**/*.ts",
+    ".next-dev/dev/types/**/*.ts",
+    ".next-cloudflare-check/types/**/*.ts",
+    ".next-cloudflare-check/dev/types/**/*.ts",
+    ".next-private-brand-final/types/**/*.ts",
+    ".next-private-brand-final/dev/types/**/*.ts",
+    ".next-seo-article-dev/types/**/*.ts",
+    ".next-seo-article-dev/dev/types/**/*.ts",
+    ".next-seo-articles-final/types/**/*.ts",
+    ".next-seo-articles-final/dev/types/**/*.ts",
+    ".next-fixed-scene-dev/types/**/*.ts",
+    ".next-fixed-scene-dev/dev/types/**/*.ts",
+    ".next-fixed-product-scene/types/**/*.ts",
+    ".next-fixed-product-scene/dev/types/**/*.ts",
+    ".next-antigravity-dev/types/**/*.ts",
+    ".next-antigravity-dev/dev/types/**/*.ts",
+    ".next-antigravity-final/types/**/*.ts",
+    ".next-antigravity-final/dev/types/**/*.ts",
+    ".next-gallery-dev/types/**/*.ts",
+    ".next-gallery-dev/dev/types/**/*.ts",
+    ".next-gallery-final/types/**/*.ts",
+    ".next-gallery-final/dev/types/**/*.ts",
+    ".next-gallery-release/types/**/*.ts",
+    ".next-gallery-release/dev/types/**/*.ts",
+    ".next-gallery-complete/types/**/*.ts",
+    ".next-gallery-complete/dev/types/**/*.ts",
+    ".next-editorial-import-20261013/types/**/*.ts",
+    ".next-editorial-import-20261013/dev/types/**/*.ts",
+    ".next-editorial-import-final/types/**/*.ts",
+    ".next-editorial-import-final/dev/types/**/*.ts",
+    ".next-gemini-public-check/types/**/*.ts",
+    ".next-gemini-public-check/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "worker-configuration.d.ts",
+    "src/cloudflare",
+    "vite.config.ts",
+    "core-dependency"
+  ]
+}

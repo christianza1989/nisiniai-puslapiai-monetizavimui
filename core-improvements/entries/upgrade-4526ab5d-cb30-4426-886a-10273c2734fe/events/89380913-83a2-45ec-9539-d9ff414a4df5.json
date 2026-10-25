@@ -1,0 +1,7 @@
+{
+  "status": "finding",
+  "note": "181 existing candidates are TECHNICAL_DRAFT, so DRAFT_READY skip does not avoid their prepared reads.",
+  "eventId": "89380913-83a2-45ec-9539-d9ff414a4df5",
+  "sequence": 1,
+  "at": "2026-10-20T04:42:40.857716+00:00"
+}

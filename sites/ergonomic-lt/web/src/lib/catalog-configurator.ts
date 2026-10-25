@@ -11,7 +11,7 @@ type Choices=Record<string,string[]>;
 type Variant={key:string;values:Values;defaults:Values;choices:Choices;dependentChoices?:Record<string,string[]|null>;destinationAnchor?:string;transitions:Values;patch:Patch};
 type Rule={when:Values;defaults:Values;choices:Choices;hidden:string[];mirrors?:Values;choiceLinks?:Record<string,{source:string;fixed:string[];hideSingle?:boolean}>};
 export type CatalogAnchor={id:string;article:string;sample:string;name:string;axes:string[];axisTransitions?:Values;axisValueChanges?:Record<string,Values>;defaults:Values;choices:Choices;classes:Values;geometry:Asset;components:{fields:string[];nativeMeasuredAxes?:string[];variants:Variant[]}[];profiles:Rule[];materials?:Record<string,Record<string,SourceFinishMaterial>>};
-export type CatalogFamily={id:string;kind:'catalog';productId:string;baseArticle:string;sample:string;articles:{code:string;sample:string;name:string}[];anchors:CatalogAnchor[];collectionMode?:'structure-only'};
+export type CatalogFamily={id:string;kind:'catalog';productId:string;baseArticle:string;sample:string;articles:{code:string;sample:string;name:string}[];anchors:CatalogAnchor[];collectionMode?:'structure-only'|'desk-components'};
 export const catalogFamilies=data.families as unknown as CatalogFamily[];
 export const catalogPalettes=data.palettes as Record<string,Record<string,{text:string;image?:string;color?:string}>>;
 export type CatalogRuntime={family:CatalogFamily;palettes:typeof catalogPalettes};
@@ -112,6 +112,11 @@ function catalogChange(s:ExpandedState,field:string,value:string){
   const measured=a.axisValueChanges?.[field+'='+value];
   const previousValues={...catalogValues(s),...measured};
   for(const c of target.components){const exact=c.variants.find(v=>equal(v.values,previousValues));if(exact)Object.assign(next.values,exact.values);}
+  // Text-only desk selections (such as the socket standard) remain valid
+  // across captured dimension contexts without changing their geometry.
+  if(f.collectionMode==='desk-components')for(const [key,domain] of Object.entries(target.choices)){
+   if(!target.axes.includes(key)&&!target.components.some(c=>c.fields.includes(key))&&domain.includes(previousValues[key]))next.values[key]=previousValues[key];
+  }
   for(const k of Object.keys(s.values).filter(k=>finish(k)&&!target.axes.includes(k)))next.values[k]=s.values[k];
   // Apply only changes measured by the native setter in this source context.
   if(measured)Object.assign(next.values,measured);
@@ -157,7 +162,11 @@ function catalogValues(state:ExpandedState){
 }
 function catalogSelection(product:Product,input:unknown,details:(s:ExpandedState)=>{label:string;value:string}[]){
  const state=catalogValidate(product,input),a=catalogAnchor(state)!,values=catalogValues(state);
- const options=Object.entries(a.classes).sort(([a],[b])=>a.localeCompare(b)).map(([k,cls])=>cls+'.'+k+'='+(k==='CPRICEGROUP'?values[k]?.replace(/^_/,''):values[k])).filter(v=>!v.endsWith('=undefined'));
+ // The prepared desk table supplies literal field/value pairs, not SOAP
+ // class ownership. Preserve those codes without inventing a class prefix.
+ const options=catalogFamily(state)!.collectionMode==='desk-components'
+  ?Object.entries(values).sort(([a],[b])=>a.localeCompare(b)).map(([k,v])=>k+'='+v)
+  :Object.entries(a.classes).sort(([a],[b])=>a.localeCompare(b)).map(([k,cls])=>cls+'.'+k+'='+(k==='CPRICEGROUP'?values[k]?.replace(/^_/,''):values[k])).filter(v=>!v.endsWith('=undefined'));
  const image='/media/configurator/'+a.sample+'.jpg',configuration:Configuration={id:a.sample,name:copyText("ui.20ce263b92f0b663a1ae","Individuali komplektacija"),description:a.name,image,code:a.article,configurator:null,supplierOptions:options,details:details(state)};
  let checksum=2166136261;for(const ch of JSON.stringify([state.family,state.anchor,Object.entries(state.values)]))checksum=Math.imul(checksum^ch.charCodeAt(0),16777619)>>>0;
  const variant={id:'EG-'+checksum.toString(16).padStart(8,'0').toUpperCase(),label:a.name,image,supplierCode:a.article,supplierOptions:options,visualizationNote:copyText("ui.1fc6412c0c4af8ac1518","Individuali komplektacija. Apdailų spalvos ekrane orientacinės.")} as PilotVariant;

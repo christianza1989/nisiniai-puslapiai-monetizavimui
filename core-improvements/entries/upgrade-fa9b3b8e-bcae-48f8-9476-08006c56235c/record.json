@@ -1,0 +1,32 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Admit an exact prepared desk component table through the existing preview configurator without fabricating joint tuples or a closed Native graph.",
+  "category": "code",
+  "evidence": [
+    "sites/ergonomic-lt/research/desk-components-20261025/REVIEW.md",
+    "D:/Core/output/ergonomic-desk-parts-preview-20261025/ENGINE-TABLE-PROOF-V2.json",
+    "D:/Core/output/ergonomic-desk-parts-preview-20261025/stage/PACKAGE-PROOF.json"
+  ],
+  "paths": [
+    "WORKSTREAMS.md",
+    "sites/ergonomic-lt/research/desk-components-20261025/REVIEW.md",
+    "sites/ergonomic-lt/web/src/lib/desk-components.ts",
+    "sites/ergonomic-lt/web/src/lib/desk-component-candidates.ts",
+    "sites/ergonomic-lt/web/content/desk-component-candidates.json",
+    "sites/ergonomic-lt/web/scripts/check-desk-component-table.ts",
+    "sites/ergonomic-lt/web/scripts/stage-desk-components.mjs",
+    "sites/ergonomic-lt/web/tests/desk-components.test.ts",
+    "sites/ergonomic-lt/web/src/lib/catalog-configurator.ts",
+    "sites/ergonomic-lt/web/src/lib/catalog-runtime-loader.ts",
+    "sites/ergonomic-lt/web/src/lib/configurator-runtime-assets.ts",
+    "sites/ergonomic-lt/web/src/cloudflare/configurator-runtime-assets.ts",
+    "sites/ergonomic-lt/web/src/lib/publication-workflow.ts",
+    "sites/ergonomic-lt/web/src/components/expanded-product-detail.tsx"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/254",
+  "rollback": "Scoped revert of the desk adapter/candidate/loader changes; restore prior preview Worker version 1da6de77-341b-4185-be1e-4abf69ba4fcf. Original supplier package and chair collector stay untouched.",
+  "id": "upgrade-fa9b3b8e-bcae-48f8-9476-08006c56235c",
+  "branch": "codex/ergonomic-desk-parts-preview-20261025",
+  "baseSha": "aff3c02c7b914333ca30de09dc8d58c2e9cc5199",
+  "createdAt": "2026-10-25T04:07:34.662Z"
+}

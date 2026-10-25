@@ -10,6 +10,7 @@ import {applyDrafts} from './publication-copy';
 import type {Drafts} from './publication-copy';
 import {currentTechnicalSourceHash} from './publication-geometry';
 import {candidateForModel,candidateRevision} from './chair-structure-candidates';
+import {deskCandidateForModel,deskCandidateRevision} from './desk-component-candidates';
 export const stages=['Trūksta šaltinio info','Reikia 3D priėmimo','Reikia opcijų aprašymų','Reikia Gemini teksto','Laukia peržiūros','Patvirtinta','Paleidimo svetainėje'];
 export type ModelSource=Omit<typeof sourceData.models[number],'image'|'gemini'>&{image:string|null;gemini:{conversation:string;responseSha256:string;valueSha256:string}|null;withoutColors?:boolean;technicalDraft?:boolean};
 export const sourceModels=sourceData.models as ModelSource[];
@@ -20,7 +21,7 @@ export function bindSourceModels(products:Product[],drafts?:Drafts,technicalHash
  return sourceModels.map(m=>{
   const p=current.get(m.key);if(!p)return {...m,sourceReady:false,revisionHash:createHash('sha256').update(m.revisionHash+':missing').digest('hex')};
   const c=p.configurations.find(c=>c.id===p.modelConfigurationId),article=p.modelArticle;
-  const draft=drafts?.models[m.key],chair=candidateForModel(p),chairRevision=candidateRevision(p);
+  const draft=drafts?.models[m.key],chair=candidateForModel(p)||deskCandidateForModel(p),chairRevision=candidateRevision(p)||deskCandidateRevision(p);
   const revisionHash=createHash('sha256').update(JSON.stringify({source:m.revisionHash,technicalHash,...(chairRevision?{chairRevision}:{}),product:{name:p.name,description:p.description,sourceDescription:p.sourceDescription,image:p.image,gallery:p.gallery,documents:p.documents},configuration:c,article,draftProof:draft?{responseSha256:draft.responseSha256,factualReview:draft.factualReview}:null})).digest('hex');
   return {...m,...(chair?{withoutColors:true,technicalDraft:chair.acceptance==='TECHNICAL_DRAFT',optionsReady:!chair.optionsRequired||chair.acceptance==='DRAFT_READY'&&!!article?.configurable,geometryProof:{worker:'Konstrukcijos 3D patikra',release:chair.runtime.asset,sha256:chair.proofs.sourceGeometryRuntime}}:{}),geometryAccepted:!!chair||m.geometryAccepted&&sameGeometryRelease,name:p.name,image:p.image,summary:article?.summary||p.description,paragraphs:article?.paragraphs?.length?article.paragraphs:[p.description,c?.description||''].filter(Boolean),geminiReady:chair?chair.acceptance==='DRAFT_READY'&&!!draft?.responseSha256&&draft.responseSha256===chair.proofs.generalGemini:!!draft||m.geminiReady,gemini:draft?{conversation:draft.gemini.conversation,responseSha256:draft.responseSha256,valueSha256:createHash('sha256').update(JSON.stringify(draft.copy)).digest('hex')}:m.gemini,revisionHash};
  });

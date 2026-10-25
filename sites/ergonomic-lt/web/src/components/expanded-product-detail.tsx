@@ -36,7 +36,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
 
  const family=expandedForProduct(product)!;
  const catalog=catalogForProduct(product);
- const structureOnly=catalog?.collectionMode==='structure-only'&&!product.id.toLowerCase().includes('xilium');
+ const structureOnly=['structure-only','desk-components'].includes(catalog?.collectionMode||'')&&!product.id.toLowerCase().includes('xilium');
  const model=selectedModelConfiguration(product);
  const builderFirstPreview=true;
  const [customized,setCustomized]=useState(initialCustomized);

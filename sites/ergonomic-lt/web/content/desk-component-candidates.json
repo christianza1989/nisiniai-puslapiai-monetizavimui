@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "models": {
+    "product_emodel-2-0-desks_f22f1a81:23846535": {
+      "key": "product_emodel-2-0-desks_f22f1a81:23846535",
+      "productId": "product_emodel-2-0-desks_f22f1a81",
+      "sample": "23846535",
+      "code": "KEM2013WW004",
+      "familyId": "cfg-6deec6e44bed",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEM2013WW004-9f5d5380ad93edf275f1.json",
+        "sha256": "9f5d5380ad93edf275f1cd00718922839bfcfc05481cb75854e5c84038fcb05b"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "6eef492b86f06dc04dfb007da918c658f33155d3ac90a52ca59556e59945bafe"
+      }
+    }
+  }
+}

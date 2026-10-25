@@ -28,7 +28,7 @@ for(const a of runtime.family.anchors){
  assert.deepEqual(engine.stateChoices(selected.state),expected,'Only exact Native construction domains');
  assert(!Object.keys(engine.stateChoices(selected.state)).some(f=>a.classes[f]?.endsWith('_FINISHES')));
  assert.equal(selected.configuration.id,sample.id);assert.equal(selected.configuration.code,sample.code);
- assert.equal(selected.assets.base.assetSha256,snapshot.geometry.sha256);assert.deepEqual(selected.assets.patches,[]);
+ assert.equal(selected.assets.base?.assetSha256,snapshot.geometry.sha256);assert.deepEqual(selected.assets.patches,[]);
  for(const [field,cls] of Object.entries(a.classes))assert(selected.configuration.supplierOptions!.includes(cls+'.'+field+'='+(field==='CPRICEGROUP'?a.defaults[field].replace(/^_/,''):a.defaults[field])),'Exact Native supplier code '+field);
  states.set(key(a.id),selected.state);
  assert.deepEqual(engine.parseStateToken(product,engine.stateToken(selected.state)),selected.state);

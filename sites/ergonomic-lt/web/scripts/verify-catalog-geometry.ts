@@ -27,7 +27,7 @@ const cache=new Map<string,Map<string,ReturnType<typeof measured>>>();
 async function output(asset:string){if(!cache.has(asset)){const doc=await io.read(path.join('public',asset));cache.set(asset,new Map(doc.getRoot().listNodes().filter(n=>n.getMesh()).map(n=>[n.getName(),measured(n)])));}return cache.get(asset)!;}
 const report=[];
 for(const proof of fixtures as any[]){
- const state={family:proof.family,anchor:proof.anchor,values:proof.values},assembly=catalogAssets(state),actual=new Map(await output(assembly.base.asset));
+ const state={family:proof.family,anchor:proof.anchor,values:proof.values},assembly=catalogAssets(state);assert(assembly.base);const actual=new Map(await output(assembly.base.asset));
  for(const patch of assembly.patches){for(const id of patch.remove)actual.delete(id);for(const asset of [...(patch.geometry?[patch.geometry]:[]),...(patch.geometries||[])])for(const [id,stats] of await output(asset.asset))actual.set(id,stats);}
  const [article,anchor]=proof.anchor.split(':'),folder=path.resolve('../research/configurator/batch-10-source',article,anchor),capture=JSON.parse(await fs.readFile(path.join(folder,'combined.json'),'utf8'));
  const sourceFile=capture.geometry.file.includes('/')?path.resolve('../research/configurator/batch-10-source',capture.geometry.file):path.join(folder,capture.geometry.file);

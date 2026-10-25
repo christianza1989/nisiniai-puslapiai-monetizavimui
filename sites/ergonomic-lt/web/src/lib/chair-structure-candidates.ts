@@ -49,7 +49,7 @@ export function createChairCandidateLoader(entries:ChairCandidates,readAsset:(as
   if(entry.optionsRequired!==f.anchors.some(a=>Object.keys(a.choices).length>0))throw Error('Chair candidate options copy scope mismatch');
   for(const a of f.anchors){
    if(a.article!==entry.code||a.sample!==entry.sample||a.components.length||a.profiles.length||a.axes.some(k=>!a.classes[k]?.endsWith('_OPTIONS')&&!a.classes[k]?.endsWith('_DIMENSIONS'))||Object.keys(a.choices).some(k=>!a.axes.includes(k)))throw Error('Chair candidate contains unmeasured or finish controls');
-   if(a.geometry.asset!=='/models/configurator/structure/'+entry.code+'-'+a.geometry.assetSha256.slice(0,20)+'.glb'||!/^[a-f0-9]{64}$/.test(a.geometry.assetSha256))throw Error('Chair candidate geometry binding mismatch');
+   if(!a.geometry||a.geometry.asset!=='/models/configurator/structure/'+entry.code+'-'+a.geometry.assetSha256.slice(0,20)+'.glb'||!/^[a-f0-9]{64}$/.test(a.geometry.assetSha256))throw Error('Chair candidate geometry binding mismatch');
   }
   return runtime;
  };

@@ -1,6 +1,6 @@
 # KEM2013WW004 component preview
 
-Direct owner authorization, 2026-10-25: extend the configurator for prepared desk parts, preview only, starting with KEM2013WW004. Scope coordination: issue254. Current main d3fe34b / companion8e47c34; preview53af integrated into an isolated worktree. Original collectors, frozen tools, queues and other PCs remain unchanged.
+Direct owner authorization, 2026-10-25: extend the configurator for prepared desk parts, preview only, starting with KEM2013WW004. Completed owner message056, explicitly requested in this chat, expands the batch to all30 supplied prepared desks. Scope coordination: issue254 / draft PR255. Current fetched main d3fe34b / companion8e47c34; preview53af integrated into an isolated worktree. Original collectors, frozen tools, queues and other PCs remain unchanged.
 
 The supplied `desk-components-065-v1` table contains 17 dimension contexts, invariant geometry, conditional component tuples and text-only socket-standard choices. `fullGraphClosed` is explicitly false. Component-runtime acceptance does not certify a closed Native transition graph or final product acceptance. Keep original world matrices, UV, materials and source GLB bytes. A null part is a valid NONE selection. Do not infer unlisted dimension pairs or multiply independent field domains into legal component tuples.
 
@@ -9,14 +9,20 @@ Use the existing CatalogRuntime engine, additive Viewer3D assembly, product rout
 Affected-role checklist:
 - [x] Exact package runtime/GLB hashes and embedded local resources: all763 original files, 1236051316 bytes, current NodeIO decode, 6171488 triangles; world-space source bytes retained.
 - [x] Conditional tuples, absent dimension pairs, NONE and text-only specification: actual current engine selected all 833 tuples and 51 socket choices in 17 contexts. Compatible socket selections survive dimension changes. This is table coverage, not a full Native graph.
-- [ ] Current actual loader, initial/edit/token/quote/PDF identity and source codes.
-- [ ] Existing chair and eRange candidate regression and Launch exclusion.
-- [ ] Desktop/mobile/fullscreen controls, summary, original component placement and PDF.
-- [ ] Proportionate 200% text/reflow check and one bounded confirmation.
-- [ ] Preview deployment and actual HTTP/browser/PDF proof, preserved prior entries.
+- [x] Pilot current actual loader, initial/edit/token/local quote/PDF identity and source codes.
+- [x] Existing chair candidate and static catalog regression, Launch exclusion.
+- [x] Pilot desktop/mobile/fullscreen controls, summary, original component placement and local PDF.
+- [x] Pilot proportionate 200% role-text/reflow check.
+- [x] Pilot preview deployment actual0, CF100 and actual public open/dimension-change proof.
+- [ ] All30 exact supplied package staging, manifest binding and one list.
+- [ ] All30 local/public minimal opens and choice changes, including explicit unavailable size.
 
-Implementation and validation are in progress; no PASS, deployment or full-graph claim is made by this plan.
+The pilot was deployed from be7d8bb to preview Worker93b61370-6f3e-41e7-b994-af73889084dc, deployment1013eace-ac56-486e-993b-1f466e46b55a, actual CLI/wrapper exit0. Local74 browser cases and37 PDFs/74 pages were completed before owner056; their visual/fullscreen/role-text evidence is retained. Public initial and dimension-change cases passed against actual renderer URLs. Owner056 explicitly replaces the remaining planned public74 cases/37 PDFs with minimal opens/options checks for the all30 batch. Do not replay the completed pilot helpers. This is a preview technical draft, not full product acceptance or launch.
 
 Source checks so far: TypeScript actual exit0; five desk adapter/loader tests, six existing chair candidate tests and seven existing catalog tests PASS. Catalog regression includes 2000 transitions, original geometry checks, and quote/PDF source codes. An initial catalog run lacked ignored assets in the new checkout; after linking the retained baseline assets, all seven tests passed. Retired `studio-rollout` fixed-count fixtures are not presented as current catalog acceptance. No tests or source criteria were weakened.
 
-Actual product loader verifies the content-addressed source runtime and binds only product_emodel-2-0-desks_f22f1a81 / sample23846535 / KEM2013WW004. The generated browser plan has37 cases covering17 dimension contexts and all39 individual field/value pairs; this does not certify a Cartesian product or a full Native graph. A local quote storage check retained the exact state, literal supplier field/value codes and original base/component hashes, without sending mail or writing a remote database. Preview browser/PDF acceptance is still pending.
+Actual pilot product loader verifies the content-addressed source runtime and binds product_emodel-2-0-desks_f22f1a81 / sample23846535 / KEM2013WW004. Its completed local plan covered17 dimension contexts and39 individual field/value pairs; this does not certify a Cartesian product or a full Native graph. A local quote storage check retained the exact state, literal supplier field/value codes and original base/component hashes, without sending mail or writing a remote database.
+
+Owner056 extension preserves29 exact component packages plus the already published legacy KERG020WW001. Source dimensions include GDWIDTH/GDDEPTH, GDTOPWIDTH/GDTOPDEPTH and DWIDTH/DDEPTH, including literal composite codes such as _900X800. Empty source domains create no invented control. A one-variant group with no fields is a constant original part and remains assembled. The first KEM2013WW006 validation failure is retained; its constant groups were then supported explicitly, while the other28 table validations were retained without replay. All29 finite source-table validations PASS. Seven desk tests plus six chair candidate tests PASS; TypeScript actual exit0. Existing chair-only tools now explicitly require a non-null base; collectors and frozen executables are unchanged.
+
+KEM2013WW009 explicitly supplies missing1800×900X800 as a text specification. That anchor has geometry:null, no component patches, and the exact “3D peržiūra šiam dydžiui neprieinama” status; no other dimension's model is substituted. Its sourceCollectionComplete remains false. Selection/token/source-code and return-to-available-size tests PASS. Actual all30 browser acceptance remains pending while one below-normal stage batch copies/verifies supplied original files. Evidence cursor: D:/Core/output/ergonomic-all-desks-preview-20261025/CONTINUE.json. No all30 completion or full-graph claim yet.

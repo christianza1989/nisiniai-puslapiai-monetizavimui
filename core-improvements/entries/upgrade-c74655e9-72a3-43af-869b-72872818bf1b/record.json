@@ -1,0 +1,35 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Represent a supplier-declared unavailable desk dimension without substitute geometry while existing chair-only validators still require actual geometry.",
+  "category": "code",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/254",
+  "evidence": [
+    "D:/Core/output/ergonomic-all-desks-preview-20261025/OWNER-056-READ-RECEIPT.json",
+    "sites/ergonomic-lt/research/desk-components-20261025/REVIEW.md"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web/src/lib/catalog-configurator.ts",
+    "sites/ergonomic-lt/web/src/lib/desk-components.ts",
+    "sites/ergonomic-lt/web/src/components/expanded-product-detail.tsx",
+    "sites/ergonomic-lt/web/src/lib/chair-structure-candidates.ts",
+    "sites/ergonomic-lt/web/src/app/models/configurator/structure/[file]/route.ts",
+    "sites/ergonomic-lt/web/scripts/audit-dedupe-selection.ts",
+    "sites/ergonomic-lt/web/scripts/check-catalog-http.ts",
+    "sites/ergonomic-lt/web/scripts/check-chair-structure-runtime.ts",
+    "sites/ergonomic-lt/web/scripts/check-expanded-http.ts",
+    "sites/ergonomic-lt/web/scripts/stage-additional-chair-runtime.ts",
+    "sites/ergonomic-lt/web/scripts/verify-catalog-colours.ts",
+    "sites/ergonomic-lt/web/scripts/verify-catalog-geometry.ts",
+    "sites/ergonomic-lt/web/scripts/verify-staged-chair-orders.ts",
+    "sites/ergonomic-lt/web/tests/catalog-configurator.test.ts",
+    "sites/ergonomic-lt/web/tests/chair-structure-candidates.test.tsx",
+    "sites/ergonomic-lt/web/tests/naudu-height-finish-roles.test.ts",
+    "sites/ergonomic-lt/web/tests/publication-workflow.test.ts",
+    "sites/ergonomic-lt/web/tests/desk-components.test.ts"
+  ],
+  "rollback": "Scoped revert of explicit nullable geometry support and accompanying guards. No collector/frozen/runtime queue changes; unavailable desk size must stay unadmitted if its message cannot be rendered honestly.",
+  "id": "upgrade-c74655e9-72a3-43af-869b-72872818bf1b",
+  "branch": "codex/ergonomic-desk-parts-preview-20261025",
+  "baseSha": "be7d8bb8a4d30d3f891bd36bf7e5f0e30e8874d6",
+  "createdAt": "2026-10-25T05:02:14.538Z"
+}

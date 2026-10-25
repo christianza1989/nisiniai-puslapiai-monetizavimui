@@ -52,7 +52,7 @@ test('desk construction drafts retain exact model identity and the launch exclus
  runtime.family.articles=[{code:sample.code!,sample:sample.id,name:sample.code!}];
  const a=runtime.family.anchors[0];a.id=sample.code+':structure-'+'c'.repeat(64);a.article=sample.code!;a.sample=sample.id;
  a.axes=['GDWIDTH'];a.defaults={GDWIDTH:'_2000'};a.choices={GDWIDTH:['_1800','_2000']};a.classes={GDWIDTH:'DESK_DIMENSIONS'};
- a.geometry.asset='/models/configurator/structure/'+sample.code+'-'+'a'.repeat(20)+'.glb';
+ assert(a.geometry);a.geometry.asset='/models/configurator/structure/'+sample.code+'-'+'a'.repeat(20)+'.glb';
  const bytes=JSON.stringify(runtime),sha=hash(bytes),key=desk.id+':'+sample.id;
  const entries:ChairCandidates={schemaVersion:1,models:{[key]:{key,productId:desk.id,sample:sample.id,code:sample.code!,familyId:runtime.family.id,collectionMode:'structure-only',acceptance:'TECHNICAL_DRAFT',optionsRequired:true,runtime:{asset:'/models/configurator/structure/'+sample.code+'-'+sha.slice(0,20)+'.json',sha256:sha},proofs:{sourceGeometryRuntime:hash('TEST DESK SOURCE')}}}};
  const loader=createChairCandidateLoader(entries,async()=>Buffer.from(bytes));

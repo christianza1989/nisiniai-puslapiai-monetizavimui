@@ -76,7 +76,7 @@ test('a single released member retains its real embedded engine without releasin
   const projected={...parent,publicationOriginalCount:parent.configurations.length,configurations:parent.configurations.filter(c=>c.id===id)};
   const p=allProductModels([projected] as any)[0];
   assert.ok(engine.expandedForProduct(p));const state=engine.initialStateForProduct(p);
-  assert.deepEqual(engine.validateState(p,state),state);assert.ok(engine.assembledAssets(state).base.asset);
+  assert.deepEqual(engine.validateState(p,state),state);assert.ok(engine.assembledAssets(state).base?.asset);
   assert.equal(engine.expandedSelection(p,state).configuration.id,id);
   assert.equal(p.configurations.length,1);
  }

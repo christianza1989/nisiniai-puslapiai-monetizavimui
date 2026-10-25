@@ -64,3 +64,24 @@ test('actual candidate loader verifies bytes/model and excludes Launch',async()=
  await assert.rejects(createDeskComponentLoader(data,async()=>Buffer.from('{}'))(product),/source changed/);
  const prior=process.env.LAUNCH_SITE;try{process.env.LAUNCH_SITE='true';assert.equal(await load(product),undefined);}finally{if(prior===undefined)delete process.env.LAUNCH_SITE;else process.env.LAUNCH_SITE=prior;}
 });
+
+test('constant source parts remain assembled without invented controls or empty domains',()=>{
+ const s=source();s.contexts[0].groups.push({fields:[],variants:[{values:{},asset:part('f')}]});s.contexts[0].textOnly.FPANEL=[];
+ const e=createExpandedEngine(adaptDeskComponents(s,id)),state=e.initialStateForProduct(product);
+ assert(!Object.hasOwn(e.stateChoices(state),'FPANEL'));
+ assert.equal(e.assembledAssets(state).patches.at(-1)?.geometry?.assetSha256,'f'.repeat(64));
+ const invalid=structuredClone(s);invalid.contexts[0].groups.at(-1)!.variants.push({values:{},asset:null});assert.throws(()=>validateDeskComponents(invalid,code));
+});
+
+test('explicit unavailable source dimension retains text specification and never substitutes geometry',()=>{
+ const missingCode='KEM2013WW009',s=source();s.code=missingCode;
+ s.contexts=s.contexts.slice(0,2).map((c,i)=>({...c,dimensions:{DDEPTH:'_900X800',DWIDTH:i?'_2000':'_1600'}}));
+ s.dimensionChoices=[{DDEPTH:'_900X800',DWIDTH:'_1600'},{DDEPTH:'_900X800',DWIDTH:'_1800'},{DDEPTH:'_900X800',DWIDTH:'_2000'}];s.textOnlyDimensionChoices=[{DDEPTH:'_900X800',DWIDTH:'_1800'}];s.missing3D=['1800×900X800'];s.unavailable3DMessage='3D peržiūra šiam dydžiui neprieinama';
+ const p={...product,configurations:[{id:sample,code:missingCode}]} as Product;
+ const e=createExpandedEngine(adaptDeskComponents(s,{...id,code:missingCode}));let state=e.initialStateForProduct(p);
+ state=e.changeField(state,'DWIDTH','_1800');assert.equal(e.catalog.catalogAnchor(state)?.unavailable3D,s.unavailable3DMessage);
+ const selected=e.expandedSelection(p,state);assert.equal(selected.assets.base,null);assert.deepEqual(selected.assets.patches,[]);assert(selected.configuration.supplierOptions?.includes('DWIDTH=_1800'));
+ assert.deepEqual(e.parseStateToken(p,e.stateToken(state)),state);
+ state=e.changeField(state,'DWIDTH','_2000');assert(e.assembledAssets(state).base);
+ const invented=structuredClone(s);invented.textOnlyDimensionChoices=[{DDEPTH:'_900X800',DWIDTH:'_1900'}];assert.throws(()=>validateDeskComponents(invented,missingCode));
+});

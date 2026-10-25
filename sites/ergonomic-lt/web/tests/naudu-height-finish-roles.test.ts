@@ -33,7 +33,7 @@ for(const code of ['KNAU015WW001','KNAU016WW001'] as const)test(code+' retains r
  for(const height of ['_660','_810']){
   state=engine.catalogChange(state,'DSEATHEIGHT',height);
   const values=engine.catalogValues(state);assert.equal(values.CUPHBACKRESTFRONTCOLOR,'CUZ4S');assert.equal(values.CUPHBACKRESTBACKCOLOR,'CUZ1R');
-  const assets=engine.catalogAssets(state),visible=new Map((await nodes(assets.base)).map(node=>[node.id,node]));
+  const assets=engine.catalogAssets(state);assert(assets.base);const visible=new Map((await nodes(assets.base)).map(node=>[node.id,node]));
   for(const patch of assets.patches){for(const id of patch.remove)visible.delete(id);for(const asset of patch.geometries||(patch.geometry?[patch.geometry]:[]))for(const node of await nodes(asset))visible.set(node.id,node);}
   const roles=[...visible.values()].map(node=>node.field).filter(field=>field?.startsWith('CUPH')).sort();
   assert.deepEqual(roles,['CUPHBACKRESTBACKCOLOR','CUPHBACKRESTFRONTCOLOR','CUPHBACKRESTFRONTCOLOR'],height+' visible source upholstery surfaces must retain independent chosen finishes');

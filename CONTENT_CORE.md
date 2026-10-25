@@ -2,6 +2,20 @@
 
 Pilnas privatus ištirtos temos aprašas perduodamas esamam V1 `enqueue('draft', siteId, pageId, {fullBrief})`: tikslus `slug`, `question`, `contribution`, `outline` ir papildomi JSON duomenys iki 128 KiB. Jis perduodamas kaip nepatikima `pageData.editorialBrief` duomenų dalis, be trumpinimo, tačiau negauna instrukcijų ar patvirtinimo galios. Netinkamas adresas atmetamas prieš sukuriant darbą; caller objekto pakeitimai nekeičia eilėje esančio aprašo. Senas kvietimas be aprašo lieka suderinamas. Viešų schemų, patvirtinimų ir istorinių instrukcijų fingerprint šis laukas nekeičia. V2 generatoriaus vartas lieka uždaras.
 
+## Dviejų trumpų indeksų išimtis (2026-10-24)
+
+Roko sprendimas 606 leidžia tik `promedical` kategorijų (`faq`) ID
+`10af45c9-03a7-4e29-8145-661dde7f44e4` (017) ir
+`4a80eebf-f530-44b2-b734-caba73aab699` (069) esamus trumpus tekstus.
+`minimum-content.mjs` jiems taiko atitinkamai 117 ir 97 body simbolių ribas,
+taip pat netuščio teksto patikrą; žemiau šių ribų stabdo ir readiness, ir approve.
+Tai nėra bendras konfigūruojamas vartų išjungimas: likusiems puslapiams approve
+120 simbolių kriterijus ir readiness elgsena nesikeičia. H1/title nepridedamas.
+Faktų, šaltinių, versijos peržiūros, medijos ir nuorodų vartai galioja ir šiems
+dviem ID. Teksto keitimas vis tiek panaikina aktualią peržiūrą / approval.
+Esamas contentPolicy nepalaiko tokios išimties, todėl duomenų pakeitimu jos
+neįjungiame ir patvirtinimo įrašų ranka nekuriame.
+
 **Privaloma teksto saviredakcija — 2026-10-10:** visoms nišoms nuo pirmo juodraščio taikomos [kalbos kokybės taisyklės](SKILLS/niche-content-planner/references/language-quality.md). Autorius pats perskaito visą galutinį tekstą, pataiso sintaksę, vertinius ir neaiškias formuluotes, patikrina nuorodas bei išsaugotą faktinę prasmę; atskiro agento ar sesijos nereikia. Žinomos neištaisytos kalbos klaidos laikomos privačiomis redakcinėmis kliūtimis iki patvirtinimo. Esamo `recordEditorialReview.evidence.presentation` paaiškinime fiksuojama faktinė kalbos ir sąsajos peržiūros apimtis, ne automatiškai įrašytas PASS. Schema ir senų patvirtinimų istorija nekeičiama.
 
 2026-10-05. Vienas workflow visoms nišoms pagal siteId, įskaitant Madbeauty. Viešos V1/V2 schemos, publikavimo filtrai ir medijos importas nekopijuojami kiekvienai svetainei.

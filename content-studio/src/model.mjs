@@ -8,6 +8,7 @@ import { optimizeRaster } from './image-pipeline.mjs';
 import {v2RevisionPayload,v2RevisionHash,normalizeV2Blocks,validateV2Draft,validateV2Package,bodyPlainText} from './content-package-v2.mjs';
 import { withStudioWriteLock } from './write-lock.mjs';
 import { contentPolicy, scheduledPlan } from './content-schedule.mjs';
+import { hasMinimumContent } from './minimum-content.mjs';
 import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent } from './content-workflow.mjs';
 
 export const ROOT = path.resolve(import.meta.dirname, '..');
@@ -449,8 +450,7 @@ async function approveDraft(site, page, actorId, batchIds = new Set()) {
       validateV2Draft(page,publicSite(site));
       if(['article','guide'].includes(page.type)&&!page.editorial.authors.length)throw new Error('Straipsniui reikia tikro redakcinio autoriaus snapshot.');
     }
-    const text = page.contentVersion===2?bodyPlainText(page.body):page.body.map(block => block.text || block.items?.join(' ') || '').join(' ');
-    if (text.length < 120) throw new Error('Turinyje per mažai naudingos informacijos.');
+    if (!hasMinimumContent(site, page)) throw new Error('Turinyje per mažai naudingos informacijos.');
     for (const block of page.body) {
       if ((block.type === 'paragraph' || block.type === 'heading') && !block.text) throw new Error('Puslapyje yra tuščias teksto blokas.');
       if (block.type === 'list' && (!block.items.length || block.items.some(item => !item))) throw new Error('Puslapyje yra tuščias sąrašas.');

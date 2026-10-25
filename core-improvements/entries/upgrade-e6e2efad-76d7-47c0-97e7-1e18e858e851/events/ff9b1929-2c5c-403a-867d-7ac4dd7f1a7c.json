@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Pure canonical extraction, unchanged local Studio behavior and hosted edit/approval adapter verified. Initial companion-path discovery failure, restored isPublic import and absent default8787 smoke server are retained in private test notes; no production activation claimed.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/*.test.mjs (process-local companion URL remap, actual paired SDK)",
+      "result": "PASS",
+      "evidence": "66/66 tests; existing V1/V2 workflow, approval, media, scoped release and concurrency; hosted strict edit, DST, actor/review/media verifier tests on2026-10-25."
+    },
+    {
+      "command": "node --test tests/*.test.mjs (paired public)",
+      "result": "PASS",
+      "evidence": "105/105 tests; auth, one-use enrollment, CSRF/Origin/rate limits, real SQLite CAS, history and future/pause projection; guide/other scoped API follow-up4/4."
+    },
+    {
+      "command": "isolated local Wrangler workerd +D1 HTTP enrollment/login/save/publish/future/history/logout",
+      "result": "PASS",
+      "evidence": "Synthetic-only workerd fixture successfully used node:scrypt, D1 batch and history JSON queries; production account was not exercised."
+    }
+  ],
+  "eventId": "ff9b1929-2c5c-403a-867d-7ac4dd7f1a7c",
+  "sequence": 2,
+  "at": "2026-10-25T11:22:14.991Z"
+}

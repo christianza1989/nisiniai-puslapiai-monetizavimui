@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original full test run:264/271 PASS,7 failures preserved. Two failures exposed one absent-rule bug, five used synchronous fixtures against existing async loaders. Scoped correction and affected regressions pass; no full-suite rerun claim and no production deployment.",
+  "checks": [
+    {
+      "command": "node --test tests/niche-withdrawals.test.mjs tests/memocasting-homepage.test.mjs tests/memocasting-inspiration-gallery.test.mjs tests/memocasting-instruction-documents.test.mjs tests/memocasting-merchant-feed.test.mjs tests/memocasting-seo-metadata.test.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/promedical-637-20261025/freshness-651-regression.log:40/40"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "D:/Core/output/promedical-637-20261025/freshness-651-types.log exit0"
+    }
+  ],
+  "eventId": "5ca717c0-a880-46b9-adba-1f281857ddfd",
+  "sequence": 2,
+  "at": "2026-10-25T15:14:53.442Z"
+}

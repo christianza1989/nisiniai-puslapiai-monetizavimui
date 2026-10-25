@@ -1,0 +1,23 @@
+{
+  "siteId": "promedical",
+  "category": "code",
+  "summary": "Guard absent withdrawal rules for hostless package fixtures and align incoming Memo proxy tests with the existing asynchronous hosted-admin loaders after current-main integration.",
+  "evidence": [
+    "D:/Core/output/promedical-637-20261025/freshness-651-public-tests.log",
+    "D:/Core/output/promedical-637-20261025/freshness-651-regression.log",
+    "D:/Core/output/promedical-637-20261025/freshness-651-types.log"
+  ],
+  "paths": [
+    "lib/niche-withdrawals.mjs",
+    "tests/niche-withdrawals.test.mjs",
+    "tests/memocasting-instruction-documents.test.mjs",
+    "tests/memocasting-merchant-feed.test.mjs",
+    "tests/memocasting-seo-metadata.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/73",
+  "rollback": "Revert this scoped PUBLIC follow-up commit in the owner branch; no runtime was deployed and no native content was changed.",
+  "id": "upgrade-500de0ce-0bfa-43ec-931a-6fae17021de9",
+  "branch": "codex/promedical-contact-journal-20261024",
+  "baseSha": "7c6e16890b6deb0d4840b5d75a97abeb97d84a61",
+  "createdAt": "2026-10-25T15:14:53.420Z"
+}

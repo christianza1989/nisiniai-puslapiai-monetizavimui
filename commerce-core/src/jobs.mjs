@@ -217,8 +217,19 @@ export class CommerceJobs {
     ]);
   }
   async overview(store, env) {
-    await this.s.store(store, env);
+    const config = await this.s.store(store, env);
     return {
+      notificationSettings: {
+        sender: config.notificationPolicy?.from || null,
+        sending: config.automationPolicy?.sendNotifications === true,
+        recovery:
+          config.paymentRecovery?.enabled === true
+            ? {
+                reservationHours: config.paymentRecovery.reservationHours,
+                reminderAfterHours: config.paymentRecovery.reminderAfterHours,
+              }
+            : null,
+      },
       outbox: await this.s.rows(
         'SELECT o.id,o.kind,o.state,o.attempts,d.state deliveryState,d.next_attempt_at,d.last_error FROM outbox o LEFT JOIN outbox_delivery d ON d.store_id=o.store_id AND d.event_id=o.id WHERE o.store_id=? ORDER BY o.created_at DESC,o.id LIMIT 100',
         store,

@@ -1,3 +1,4 @@
+import { confirmDiscard } from './operator-workspace.mjs';
 export function catalogEditor(root, ctx, products, markets) {
   const { node: n, api, binary, action, money } = ctx;
   const select = n(
@@ -8,28 +9,42 @@ export function catalogEditor(root, ctx, products, markets) {
   );
   const area = n('div', {}),
     status = n('p', { role: 'status', class: 'hint' });
-  root.append(n('label', {}, 'Redaguojama prekė', select), status, area);
+  root.append(
+    n('div', { class: 'catalog-picker' }, n('label', {}, 'Redaguojama prekė', select)),
+    status,
+    area,
+  );
   let dirty = false,
     current = '',
     ticket = 0;
-  select.onchange = async () => {
-    if (dirty && !confirm('Yra neišsaugotų pakeitimų. Atverti kitą prekę?')) {
+  async function openProduct(value) {
+    if (
+      dirty &&
+      !(await confirmDiscard('Atvėrus kitą prekę, neišsaugoti pakeitimai bus prarasti.'))
+    ) {
       select.value = current;
-      return;
+      return false;
     }
-    current = select.value;
+    current = value;
+    select.value = value;
     dirty = false;
+    ctx.setDirty?.(false);
     const version = ++ticket;
     status.textContent = 'Įkeliama…';
     area.replaceChildren();
     try {
       const published = products.find((p) => p.sku === current),
         draft = published ? await api('/api/operator/catalog-drafts/' + current) : null;
-      if (version === ticket) draw(published, draft);
+      if (version === ticket && root.isConnected) {
+        draw(published, draft);
+        return true;
+      }
     } catch {
       status.textContent = 'Nepavyko įkelti. Pasirinkite prekę iš naujo.';
     }
-  };
+    return false;
+  }
+  select.onchange = () => openProduct(select.value);
   const field = (label, value = '', attrs = {}) => {
     const input = n(attrs.rows ? 'textarea' : 'input', attrs);
     input.value = value;
@@ -37,10 +52,13 @@ export function catalogEditor(root, ctx, products, markets) {
   };
   const group = (label, ...children) => n('fieldset', {}, n('legend', {}, label), ...children);
   function draw(published, draft) {
+    const openedAt = ticket,
+      isCurrent = () => openedAt === ticket && root.isConnected;
     const p = structuredClone(
       draft?.definition ??
         published ?? { sku: '', title: '', enabled: false, prices: {}, package: null },
     );
+    ctx.onProductOpen?.(p.title || 'Nauja prekė');
     p.content ??= {
       summary: '',
       description: '',
@@ -140,7 +158,7 @@ export function catalogEditor(root, ctx, products, markets) {
     const add = n('button', { type: 'button', class: 'secondary' }, 'Pridėti grupę'),
       colors = n('button', { type: 'button', class: 'secondary' }, 'Dažų spalvos'),
       base = n('button', { type: 'button', class: 'secondary' }, 'Medinis padėklas');
-    const save = n('button', { type: 'submit' }, 'Išsaugoti juodraštį'),
+    const save = n('button', { type: 'submit', class: 'primary' }, 'Išsaugoti juodraštį'),
       preview = n('button', { type: 'button', class: 'secondary' }, 'Peržiūrėti'),
       publish = n('button', { type: 'button' }, 'Paskelbti');
     form.append(
@@ -171,7 +189,25 @@ export function catalogEditor(root, ctx, products, markets) {
       group('Paieškos sistemos', ...copy.slice(3).map((f) => f.element)),
       n('div', { class: 'actions catalog-save' }, save, preview, publish),
     );
-    area.append(form);
+    const sectionNames = [
+      'Prekė',
+      'Aprašymai',
+      'Nuotraukos',
+      'Pasirinkimai',
+      'Pristatymas',
+      'Paieškos sistemos',
+    ];
+    const sectionLinks = n('nav', {
+      'aria-label': 'Prekės redaktoriaus skyriai',
+      class: 'editor-sections',
+    });
+    [...form.children]
+      .filter((el) => el.tagName === 'FIELDSET')
+      .forEach((el, index) => {
+        el.id = 'product-section-' + index;
+        sectionLinks.append(n('a', { href: '#' + el.id }, sectionNames[index]));
+      });
+    area.append(sectionLinks, form);
     if (draft && draft.basisHash !== (published?.basisHash ?? null)) {
       const reset = n(
         'button',
@@ -182,6 +218,7 @@ export function catalogEditor(root, ctx, products, markets) {
         area.replaceChildren();
         draw(published, { ...draft, definition: published, basisHash: published.basisHash });
         dirty = true;
+        ctx.setDirty?.(true);
       };
       area.prepend(
         n(
@@ -194,6 +231,7 @@ export function catalogEditor(root, ctx, products, markets) {
     }
     const mark = () => {
       dirty = true;
+      ctx.setDirty?.(true);
       id = crypto.randomUUID();
       status.textContent = 'Yra neišsaugotų pakeitimų.';
     };
@@ -627,7 +665,7 @@ export function catalogEditor(root, ctx, products, markets) {
       drawOptions();
     };
     async function saveDraft() {
-      if (!form.reportValidity()) return null;
+      if (!form.reportValidity()) return false;
       form.inert = true;
       try {
         const definition = collect(),
@@ -636,8 +674,10 @@ export function catalogEditor(root, ctx, products, markets) {
             basisHash: basis,
             draftHash: hash,
           });
+        if (!isCurrent()) return false;
         hash = saved.draftHash;
         dirty = false;
+        ctx.setDirty?.(false);
         status.textContent = 'Juodraštis išsaugotas. Dar nepaskelbtas.';
         return definition;
       } finally {
@@ -653,7 +693,7 @@ export function catalogEditor(root, ctx, products, markets) {
         publish,
         async () => {
           const definition = await saveDraft();
-          if (!definition) throw Error('invalid_product');
+          if (!definition || !isCurrent()) return false;
           form.inert = true;
           try {
             await api('/api/operator/catalog-revisions', {
@@ -662,7 +702,9 @@ export function catalogEditor(root, ctx, products, markets) {
               draftHash: hash,
               definition,
             });
+            if (!isCurrent()) return false;
             dirty = false;
+            ctx.setDirty?.(false);
             root.replaceChildren();
             await ctx.reload();
           } finally {
@@ -733,6 +775,21 @@ export function catalogEditor(root, ctx, products, markets) {
     drawImages();
     drawOptions();
   }
-  select.value = products[0]?.sku ?? '';
-  select.dispatchEvent(new Event('change'));
+  status.textContent =
+    'Pasirinkite prekę iš sąrašo arba pridėkite naują. Pakeitimai pirmiausia saugomi kaip juodraštis.';
+  return {
+    open: openProduct,
+    async close() {
+      if (
+        dirty &&
+        !(await confirmDiscard('Grįžus į prekių sąrašą, neišsaugoti pakeitimai bus prarasti.'))
+      )
+        return false;
+      dirty = false;
+      ctx.setDirty?.(false);
+      ++ticket;
+      area.replaceChildren();
+      return true;
+    },
+  };
 }

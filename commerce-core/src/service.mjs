@@ -189,7 +189,7 @@ export class CommerceService {
         ...line,
         title:
           (p.titles?.[market.country] || p.title) +
-          (configured.labels.length ? ' — ' + configured.labels.join(' � ') : ''),
+          (configured.labels.length ? ' — ' + configured.labels.join(' · ') : ''),
         ...(configured.image ? { image: configured.image } : {}),
         unitAmount,
         lineAmount: unitAmount * line.quantity,

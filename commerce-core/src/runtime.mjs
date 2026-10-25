@@ -150,6 +150,7 @@ export const adminAssets = {
   '/admin.css': '/admin.css',
   '/admin.mjs': '/admin.mjs',
   '/operator-order-status.mjs': '/operator-order-status.mjs',
+  '/operator-workspace.mjs': '/operator-workspace.mjs',
   '/backoffice-ui.mjs': '/backoffice-ui.mjs',
   '/finished-stock-ui.mjs': '/finished-stock-ui.mjs',
   '/shipping-ui.mjs': '/shipping-ui.mjs',

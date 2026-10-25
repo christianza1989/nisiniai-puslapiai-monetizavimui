@@ -7,6 +7,12 @@ import { renderCatalog } from './catalog-ui.mjs';
 import { renderReturns } from './returns-ui.mjs';
 import { usesOnlySimpleStock } from './finished-stock-ui.mjs';
 import { paymentLabel, fulfillmentLabel, refundableAmount } from './operator-order-status.mjs';
+import {
+  orderFilters,
+  orderMatches,
+  viewDescriptions,
+  confirmDiscard,
+} from './operator-workspace.mjs';
 const $ = (selector) => document.querySelector(selector);
 const state = {
   token: '',
@@ -17,6 +23,9 @@ const state = {
   document: null,
   stock: null,
   refundDraft: null,
+  orderFilter: 'all',
+  orderQuery: '',
+  unsavedChanges: false,
 };
 const titles = {
   orders: 'Užsakymai',
@@ -209,10 +218,18 @@ const date = (value) =>
     new Date(value),
   );
 const has = (grant) => state.data?.permissions.includes(grant);
+let statusTimer,
+  statusRevision = 0;
 function status(message = '', kind = '') {
+  const revision = ++statusRevision;
+  clearTimeout(statusTimer);
   $('#status').textContent = message;
+  if (message && kind !== 'busy')
+    $('#status').append(node('button', { type: 'button', onclick: () => status() }, 'Uždaryti'));
+  if (message && !kind) statusTimer = setTimeout(() => status(), 8000);
   $('#status').className = 'status ' + kind;
   $('#status').setAttribute('role', kind === 'error' ? 'alert' : 'status');
+  return revision;
 }
 async function api(path, body) {
   let response;
@@ -254,13 +271,15 @@ async function binary(path, options = {}) {
   return options.method === 'POST' ? response.json() : response.blob();
 }
 async function action(button, task, message) {
+  const panel = $('.view-panel');
   button.disabled = true;
-  $('#content').setAttribute('aria-busy', 'true');
-  status('Išsaugoma…', 'busy');
+  panel?.setAttribute('aria-busy', 'true');
+  const notice = status('Išsaugoma…', 'busy');
   try {
-    await task();
-    status(message);
+    const result = await task();
+    if (statusRevision === notice) status(result === false ? '' : message);
   } catch (error) {
+    if (statusRevision !== notice) return;
     status(
       errorNames[error.message] ||
         'Veiksmas nepavyko. Patikrinkite duomenis ir bandykite dar kartą.',
@@ -268,7 +287,7 @@ async function action(button, task, message) {
     );
   } finally {
     button.disabled = false;
-    $('#content').setAttribute('aria-busy', 'false');
+    panel?.setAttribute('aria-busy', 'false');
   }
 }
 async function reload() {
@@ -283,9 +302,20 @@ async function reload() {
   $('.notice').textContent = state.data.testOnly
     ? 'Tai testiniai duomenys. Tikros finansinės ir siuntimo operacijos nevykdomos.'
     : 'Rodomos serverio patvirtintos užsakymų ir integracijų būsenos.';
+  $('.notice').hidden = !state.data.testOnly;
   const c = state.data.counts;
-  $('#summary').textContent =
-    `Iš viso: ${c.total} · Neužbaigti mokėjimai: ${c.pending} · Vykdomi: ${c.to_pack} · Trūksta prekių: ${c.exceptions}`;
+  $('#summary').replaceChildren(
+    node(
+      'dl',
+      { class: 'summary-list' },
+      [
+        ['Užsakymų iš viso', c.total],
+        ['Neapmokėti', c.pending],
+        ['Reikia paruošti', c.to_pack],
+        ['Trūksta prekių', c.exceptions],
+      ].map(([label, value]) => node('div', {}, node('dt', {}, label), node('dd', {}, value))),
+    ),
+  );
   await render();
 }
 function badge(order) {
@@ -327,44 +357,81 @@ function orderLabel(order) {
 }
 function render() {
   $('#view-title').textContent = titles[state.view];
+  $('#view-description').textContent = viewDescriptions[state.view];
+  $('#summary').hidden = state.view !== 'orders' || Boolean(state.order);
   document
     .querySelectorAll('[data-view]')
     .forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === state.view)));
-  const content = $('#content');
-  content.replaceChildren();
+  // Each navigation gets a new container. A delayed former view can only
+  // finish in its detached panel, never contaminate the current screen.
+  const content = node('div', { class: 'view-panel' });
+  $('#content').replaceChildren(content);
+  const load = (task, message) => {
+    const pending = node('p', { class: 'loading', role: 'status' }, 'Įkeliami duomenys…');
+    content.append(pending);
+    content.setAttribute('aria-busy', 'true');
+    return Promise.resolve()
+      .then(task)
+      .catch(() => {
+        if (!content.isConnected) return;
+        content.replaceChildren(
+          node('p', { class: 'empty' }, message),
+          node('button', { type: 'button', onclick: () => render() }, 'Bandyti dar kartą'),
+        );
+      })
+      .finally(() => {
+        pending.remove();
+        content.setAttribute('aria-busy', 'false');
+      });
+  };
   if (state.view === 'orders') renderOrders(content);
   if (state.view === 'stock') renderStock(content);
   if (state.view === 'documents') renderDocuments(content);
   if (state.view === 'catalog')
-    renderCatalog(content, { node, table, cell, api, binary, action, has, money }).catch(() =>
-      status('Nepavyko įkelti prekių.', 'error'),
+    return load(
+      () =>
+        renderCatalog(content, {
+          node,
+          table,
+          cell,
+          api,
+          binary,
+          action,
+          has,
+          money,
+          setDirty: (value) => {
+            if (content.isConnected) state.unsavedChanges = value;
+          },
+        }),
+      'Nepavyko įkelti prekių. Patikrinkite ryšį ir bandykite dar kartą.',
     );
   if (state.view === 'automation') {
-    renderJobs(content, { node, table, cell, api, action, has, date }).catch(() =>
-      status('Nepavyko įkelti automatinių darbų.', 'error'),
+    return load(
+      () => renderJobs(content, { node, table, cell, api, action, has, date }),
+      'Nepavyko įkelti automatinių darbų.',
     );
   }
   if (['components', 'financials', 'wholesale'].includes(state.view)) {
     const panel = node('div');
     content.append(panel);
-    return renderBackoffice(panel, state.view, {
-      node,
-      table,
-      cell,
-      api,
-      binary,
-      action,
-      has,
-      money,
-      date,
-      reload,
-      focusView: () => $('#view-title').focus(),
-      catalog: state.data.catalog,
-    }).catch((error) => {
-      if (!panel.isConnected) return;
-      panel.replaceChildren(node('p', { class: 'empty' }, 'Duomenų įkelti nepavyko.'));
-      status(errorNames[error.message] || 'Nepavyko gauti duomenų. Atnaujinkite puslapį.', 'error');
-    });
+    return load(
+      () =>
+        renderBackoffice(panel, state.view, {
+          node,
+          table,
+          cell,
+          api,
+          binary,
+          action,
+          has,
+          money,
+          date,
+          reload,
+          focusView: () => $('#view-title').focus(),
+          catalog: state.data.catalog,
+        }),
+      'Nepavyko įkelti duomenų. Patikrinkite ryšį ir bandykite dar kartą.',
+    );
   }
 }
 function renderOrders(content) {
@@ -372,49 +439,98 @@ function renderOrders(content) {
     renderOrder(content, state.order);
     return;
   }
-  const orders = state.data.orders;
-  content.append(
-    node('p', { class: 'hint' }, `Užsakymai: ${orders.length} iš ${state.data.counts.total}.`),
-  );
-  if (!orders.length) {
-    content.append(
-      node(
-        'p',
-        { class: 'empty' },
-        'Užsakymų dar nėra. Kai pirkėjas sukurs užsakymą, čia matysite jo mokėjimą ir vykdymo būseną.',
-      ),
+  const workbench = node('section', { class: 'order-workbench', 'aria-label': 'Užsakymų sąrašas' }),
+    results = node('div', { class: 'order-results' }),
+    count = node('p', { 'aria-live': 'polite' });
+  const search = node('input', {
+    type: 'search',
+    id: 'order-search',
+    placeholder: 'Numeris, pirkėjas, el. paštas ar prekė',
+    value: state.orderQuery,
+  });
+  const filters = node('div', { class: 'order-filters', 'aria-label': 'Užsakymų būsenos' });
+  for (const [value, label] of orderFilters) {
+    const b = node(
+      'button',
+      {
+        type: 'button',
+        'aria-pressed': String(state.orderFilter === value),
+        onclick: () => {
+          state.orderFilter = value;
+          filters
+            .querySelectorAll('button')
+            .forEach((button) => button.setAttribute('aria-pressed', String(button === b)));
+          draw();
+        },
+      },
+      label,
     );
-    return;
+    filters.append(b);
   }
-  content.append(
-    table(
-      ['Užsakymas', 'Pirkėjas', 'Mokėjimas', 'Vykdymas', 'Suma'],
-      orders.map((o) =>
+  search.addEventListener('input', () => {
+    state.orderQuery = search.value;
+    draw();
+  });
+  workbench.append(
+    node(
+      'div',
+      { class: 'order-toolbar' },
+      node('label', { for: 'order-search' }, 'Ieškoti užsakymo', search),
+      count,
+    ),
+    filters,
+    results,
+  );
+  content.append(workbench);
+  function draw() {
+    const orders = state.data.orders.filter((o) =>
+      orderMatches(o, state.orderFilter, state.orderQuery),
+    );
+    count.textContent = `Rasta ${orders.length} · Įkelta ${state.data.orders.length} iš ${state.data.counts.total}`;
+    results.replaceChildren();
+    if (!orders.length) {
+      results.append(
         node(
-          'tr',
-          {},
-          cell(
-            node(
-              'div',
-              {},
+          'p',
+          { class: 'empty' },
+          state.data.orders.length
+            ? 'Pagal šią paiešką ir pasirinktą būseną užsakymų nerasta. Pakeiskite filtrą arba išvalykite paiešką.'
+            : 'Užsakymų dar nėra. Kai pirkėjas pateiks užsakymą, čia matysite jo apmokėjimą ir vykdymo būseną.',
+        ),
+      );
+      return;
+    }
+    results.append(
+      table(
+        ['Užsakymas', 'Pirkėjas', 'Mokėjimas', 'Vykdymas', 'Suma'],
+        orders.map((o) =>
+          node(
+            'tr',
+            {},
+            cell(
               node(
-                'button',
-                { type: 'button', class: 'link', onclick: () => openOrder(o.id) },
-                orderLabel(o),
+                'div',
+                {},
+                node(
+                  'button',
+                  { type: 'button', class: 'link', onclick: () => openOrder(o.id) },
+                  orderLabel(o),
+                ),
+                node('span', { class: 'secondary' }, date(o.created_at)),
               ),
-              node('span', { class: 'secondary' }, date(o.created_at)),
+              null,
             ),
-            null,
+            cell(o.snapshot.customer?.name || 'Kontaktai nepateikti', 'Pirkėjas'),
+            cell(badge(o), 'Mokėjimas'),
+            cell(fulfillmentLabel(o, fulfillmentNames), 'Vykdymas'),
+            cell(money(o.amount, o.currency), 'Suma', 'money'),
           ),
-          cell(o.snapshot.customer?.name || 'Kontaktai nepateikti', 'Pirkėjas'),
-          cell(badge(o), 'Mokėjimas'),
-          cell(fulfillmentLabel(o, fulfillmentNames), 'Vykdymas'),
-          cell(money(o.amount, o.currency), 'Suma', 'money'),
         ),
       ),
-    ),
-  );
-  renderOlderOrders(content);
+    );
+  }
+  draw();
+  renderOlderOrders(workbench);
 }
 function renderOlderOrders(content) {
   if (!state.data.nextOrderCursor) return;
@@ -479,16 +595,22 @@ async function loadOlder(button) {
     'Senesni užsakymai įkelti.',
   );
 }
+let orderRequest = 0;
 async function openOrder(id) {
+  const request = ++orderRequest,
+    panel = $('.view-panel');
   status('Įkeliamas užsakymas…', 'busy');
   try {
-    state.order = await api('/api/operator/orders/' + id);
+    const detail = await api('/api/operator/orders/' + id);
+    if (request !== orderRequest || !panel?.isConnected) return;
+    state.order = detail;
     if (state.refundDraft?.orderId !== id) state.refundDraft = null;
     state.view = 'orders';
     render();
     status();
     $('#order-heading')?.focus();
   } catch (error) {
+    if (request !== orderRequest || !panel?.isConnected) return;
     status(errorNames[error.message] || 'Užsakymo nepavyko įkelti. Atnaujinkite sąrašą.', 'error');
   }
 }
@@ -561,27 +683,38 @@ function renderOrder(content, detail) {
       ),
     );
   }
-  content.append(
+  const detailGrid = node('div', { class: 'detail-overview' });
+  content.append(detailGrid);
+  detailGrid.append(
     node(
-      'dl',
-      {},
-      pairs.flatMap(([k, v]) => [node('dt', {}, k), node('dd', {}, v)]),
+      'section',
+      { class: 'detail-surface' },
+      node('h3', {}, 'Pirkėjas ir pristatymas'),
+      node(
+        'dl',
+        {},
+        pairs.flatMap(([k, v]) => [node('dt', {}, k), node('dd', {}, v)]),
+      ),
     ),
   );
-  content.append(
-    node('h3', {}, 'Prekės'),
-    table(
-      ['Prekė', 'Kiekis', 'Suma'],
-      o.snapshot.lines.map((l) =>
-        node(
-          'tr',
-          {},
-          cell(l.title),
-          cell(l.quantity),
-          cell(money(l.lineAmount, o.currency), null, 'money'),
+  detailGrid.append(
+    node(
+      'section',
+      { class: 'detail-surface' },
+      node('h3', {}, 'Prekės ir suma'),
+      table(
+        ['Prekė', 'Kiekis', 'Suma'],
+        o.snapshot.lines.map((l) =>
+          node(
+            'tr',
+            {},
+            cell(l.title),
+            cell(l.quantity),
+            cell(money(l.lineAmount, o.currency), null, 'money'),
+          ),
         ),
+        'line-items',
       ),
-      'line-items',
     ),
   );
   const actions = node('div', { class: 'actions' });
@@ -666,9 +799,10 @@ function renderOrder(content, detail) {
       'Siunta užregistruota.',
     ),
   );
-  actions.append(ship);
+  if (state.data.integrations.shipping || !state.data.integrations.shippingBooking)
+    actions.append(ship);
   content.append(actions);
-  if (!state.data.integrations.shipping)
+  if (!state.data.integrations.shipping && !state.data.integrations.shippingBooking)
     content.append(
       node('p', { class: 'hint' }, 'Siuntų registravimas bus aktyvus prijungus vežėjo API.'),
     );
@@ -693,7 +827,7 @@ function renderOrder(content, detail) {
           await reload();
           await openOrder(o.id);
         },
-        'Testinis dokumentas išsaugotas.',
+        'Dokumentas išsaugotas.',
       ),
     );
     docActions.append(b);
@@ -715,7 +849,7 @@ function renderOrder(content, detail) {
           await reload();
           await openOrder(o.id);
         },
-        'Testinis grąžinimo įrašas išsaugotas.',
+        'Grąžinimo įrašas išsaugotas.',
       ),
     );
     docActions.append(b);
@@ -1280,25 +1414,43 @@ $('#login-form').addEventListener('submit', async (event) => {
   }
 });
 document.querySelectorAll('[data-view]').forEach((b) =>
-  b.addEventListener('click', () => {
+  b.addEventListener('click', async () => {
+    if (
+      state.unsavedChanges &&
+      !(await confirmDiscard('Atvėrus kitą skyrių, neišsaugoti prekės pakeitimai bus prarasti.'))
+    )
+      return;
+    state.unsavedChanges = false;
     state.view = b.dataset.view;
     state.order = null;
     state.document = null;
     state.stock = null;
+    $('.navigation').classList.remove('open');
+    $('#navigation-toggle').setAttribute('aria-expanded', 'false');
     render();
     status();
   }),
 );
-$('#refresh').addEventListener('click', () =>
-  action(
+$('#navigation-toggle').addEventListener('click', () => {
+  const open = $('.navigation').classList.toggle('open');
+  $('#navigation-toggle').setAttribute('aria-expanded', String(open));
+});
+$('#refresh').addEventListener('click', async () => {
+  if (
+    state.unsavedChanges &&
+    !(await confirmDiscard('Atnaujinus duomenis, neišsaugoti prekės pakeitimai bus prarasti.'))
+  )
+    return;
+  state.unsavedChanges = false;
+  return action(
     $('#refresh'),
     async () => {
       await reload();
       if (state.order) await openOrder(state.order.order.id);
     },
     'Duomenys atnaujinti.',
-  ),
-);
+  );
+});
 function clearSession() {
   $('#access-logout-hint')?.remove();
   state.token = '';
@@ -1308,6 +1460,7 @@ function clearSession() {
   state.document = null;
   state.stock = null;
   state.refundDraft = null;
+  state.unsavedChanges = false;
   $('#content').replaceChildren();
   $('#workspace').hidden = true;
   $('#login').hidden = false;
@@ -1315,6 +1468,11 @@ function clearSession() {
   status();
 }
 $('#logout').addEventListener('click', async () => {
+  if (
+    state.unsavedChanges &&
+    !(await confirmDiscard('Atsijungus neišsaugoti prekės pakeitimai bus prarasti.'))
+  )
+    return;
   if (state.authentication === 'access') {
     const button = $('#logout');
     button.disabled = true;
@@ -1339,6 +1497,12 @@ $('#logout').addEventListener('click', async () => {
     return;
   }
   clearSession();
+});
+window.addEventListener('beforeunload', (event) => {
+  if (state.unsavedChanges) {
+    event.preventDefault();
+    event.returnValue = '';
+  }
 });
 async function resumeAccessSession() {
   try {

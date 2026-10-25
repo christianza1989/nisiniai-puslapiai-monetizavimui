@@ -19,3 +19,8 @@ Kontaktų routing naudoja savininko leistą tinklo info@pinet.lt; tai nėra nauj
 Patikros ir jų ribos: [DELIVERY](memocasting/DELIVERY.md), [visa kriterijų matrica](memocasting/PHASE-1-AUDIT.json). 54 public-core,47 studio ir39 commerce testai, build ir TypeScript, visų10nišų SEO regresija, 20puslapių HTML bei release patikros. Lighthouse13.5.0 realus vietinis production build: home90/100/100/100; apdailos gidas94/100/100/100. Tai laboratoriniai rezultatai, ne produkcijos field CWV. 200% zoom, tekstų spacing override ir tikras operatoriaus SMTP/INBOX priėmimas neįrodyti; vietinis 10/10 ar domain-ready neskelbiamas.
 
 Paleidimo data nenustatyta. GSC, realios užklausos ir užsakymai nematuoti. Sprendimas: parengtas vietinis draft PR peržiūrai; plėtros ir paleidimo vartai atskiri. PR101 remiasi commerce PR96, viešo rendererio porinis PR31; nesujungti ir nepaleisti automatiškai.
+
+
+## SEO / instrukcijos / matavimas · 2026-10-25
+
+Latest verified frontend f5212538/source5cff95db/native2844fc35 (187pages/800assets); actual113publicHTML,2PDF,17newredirectforms PASS. BrandMemoryCasting metadata,32/48EURliveoffers, dualinstructions and same originalPDFbytes. GA4account413338025/property560554153/stream16198963010/G-LHHK61WT8T is the current isolated property; owner-approved GSC domain association moved to it, old analytics data and Merchant Center association retained. Strict opt-in LTcontentpageviews accepted in realCollector+RealtimeQA; no purchase/revenue attribution claim, no ads/signals. Scheduler remains off;97LTguide server-time calendar preserved. [Current acceptance and rollback](memocasting/SEO_GEO_ACCEPTANCE_2026_10_25.md). Mainmerge is separate from actual hosted adoption.

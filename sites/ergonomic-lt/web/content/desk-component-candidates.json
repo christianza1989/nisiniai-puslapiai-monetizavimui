@@ -425,6 +425,74 @@
       "proofs": {
         "sourceGeometryRuntime": "ecb4c80898c449303da58119861afd35c7475f31e256ee72238920a184bbc1bb"
       }
+    },
+    "product_play-work-workbenches_6051de1e:24039452": {
+      "key": "product_play-work-workbenches_6051de1e:24039452",
+      "productId": "product_play-work-workbenches_6051de1e",
+      "sample": "24039452",
+      "code": "KPW2025WW001",
+      "familyId": "cfg-abcc0bcf7263",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KPW2025WW001-c6b108b5d4b1bc597031.json",
+        "sha256": "c6b108b5d4b1bc597031358972cd8a18c613b27ac27cf057f08a8303e3cee40d"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "63d36284417c8d9371272759c35925be04202dd86a0f05f53f1d88dfa326b401"
+      }
+    },
+    "product_xio20-desks_c7ca56f6:28627494": {
+      "key": "product_xio20-desks_c7ca56f6:28627494",
+      "productId": "product_xio20-desks_c7ca56f6",
+      "sample": "28627494",
+      "code": "KXI2001WW003",
+      "familyId": "cfg-d275dcf048f8",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KXI2001WW003-8988ceb383241d0322b4.json",
+        "sha256": "8988ceb383241d0322b42b3f6274f7fa8658c8997a532b29d2693e09ba7139b2"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "008714514c0c408370f838d689b330b062b677c966b139406c2336834157d854"
+      }
+    },
+    "product_xio20-workbenches_a07036de:16088671": {
+      "key": "product_xio20-workbenches_a07036de:16088671",
+      "productId": "product_xio20-workbenches_a07036de",
+      "sample": "16088671",
+      "code": "KXI2002WW002",
+      "familyId": "cfg-247b342c8117",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KXI2002WW002-11dee3399052e86c55d8.json",
+        "sha256": "11dee3399052e86c55d82dd03d961562a5e9e3baf7299350db7e105c0f5c69c3"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "ab09cdbb100a69da4a619a214d3cea5f42c49b1a7257672968fb76d02084d582"
+      }
+    },
+    "product_xio20-desks_c7ca56f6:28627497": {
+      "key": "product_xio20-desks_c7ca56f6:28627497",
+      "productId": "product_xio20-desks_c7ca56f6",
+      "sample": "28627497",
+      "code": "KXI2021WW003",
+      "familyId": "cfg-200877e895bf",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KXI2021WW003-5aa626026108f1de9b56.json",
+        "sha256": "5aa626026108f1de9b561254a669282bf96bbac35b9d047c8ea113d6f38a491a"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "4a81fe7773af1b6b9b1c3a8baf3e81640900aaa835ca88bc1324fbcf524af6f0"
+      }
     }
   }
 }

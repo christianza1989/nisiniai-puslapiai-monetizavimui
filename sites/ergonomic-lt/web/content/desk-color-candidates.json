@@ -124,6 +124,31 @@
       "asset": "/models/configurator/components/KPW2024WW001-c914da891c9bc2c433bc.json",
       "componentRuntimeSha256": "c61f41cdf2245bb0424e54616cdeb1b3d02f52de0bdcd9b95190c9eb47598ea7",
       "sha256": "c914da891c9bc2c433bc9462ef196f915421c7fff036a48dd7f688a3de2ca11b"
+    },
+    "KPW2025WW001": {
+      "asset": "/models/configurator/components/KPW2025WW001-5b52bc0e403a5d6dccef.json",
+      "componentRuntimeSha256": "c6b108b5d4b1bc597031358972cd8a18c613b27ac27cf057f08a8303e3cee40d",
+      "sha256": "5b52bc0e403a5d6dccef73c9cb1122d069966109ddafaee5b065991b51ab8476"
+    },
+    "KXI2001WW003": {
+      "asset": "/models/configurator/components/KXI2001WW003-9cce15fd2747c60992c8.json",
+      "componentRuntimeSha256": "8988ceb383241d0322b42b3f6274f7fa8658c8997a532b29d2693e09ba7139b2",
+      "sha256": "9cce15fd2747c60992c87ac7180b813e9de44bdfa942585f8fa0c47835f4a565"
+    },
+    "KXI2002WW002": {
+      "asset": "/models/configurator/components/KXI2002WW002-b483388c65d51d82b902.json",
+      "componentRuntimeSha256": "11dee3399052e86c55d82dd03d961562a5e9e3baf7299350db7e105c0f5c69c3",
+      "sha256": "b483388c65d51d82b90208f3e0376ef4f2a02c48e406f145bb9961bcd6733456"
+    },
+    "KXI2021WW003": {
+      "asset": "/models/configurator/components/KXI2021WW003-4c5b9aa3bdbe141a62be.json",
+      "componentRuntimeSha256": "5aa626026108f1de9b561254a669282bf96bbac35b9d047c8ea113d6f38a491a",
+      "sha256": "4c5b9aa3bdbe141a62be9016eab2be91a75eb0e467bb9e087f5dcbd6d6299556"
+    },
+    "KERG020WW001": {
+      "asset": "/models/configurator/components/KERG020WW001-a31b946e9b035a7296f8.json",
+      "componentRuntimeSha256": "9d672f0bf162fe4b4e012af6ab031512b427e39b31c470800aa2e2c753290718",
+      "sha256": "a31b946e9b035a7296f82ab4d7bac08d8fefb2d8a56e43881364f54ba5b0998a"
     }
   },
   "schemaVersion": 1

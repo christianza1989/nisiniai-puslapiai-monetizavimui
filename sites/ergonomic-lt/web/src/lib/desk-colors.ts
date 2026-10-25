@@ -33,6 +33,18 @@ export function validateDeskColors(input:unknown,code:string,runtimeSha:string):
 
 export function withDeskColors(runtime:CatalogRuntime,colors:DeskColors):CatalogRuntime{
  if(runtime.family.collectionMode!=='desk-components'||runtime.family.baseArticle!==colors.code)throw Error('Desk colors require their original component runtime');
+ return attachDeskColors(runtime,colors);
+}
+
+export const legacyDeskColorIdentity={code:'KERG020WW001',productId:'product_erange-desks_e908d3d0',sample:'25302337',familyId:'cfg-63314676e693',runtimeSha256:'9d672f0bf162fe4b4e012af6ab031512b427e39b31c470800aa2e2c753290718'}as const;
+/** This measured legacy desk keeps its original structure graph and SOAP classes. */
+export function withLegacyDeskColors(runtime:CatalogRuntime,colors:DeskColors):CatalogRuntime{
+ const f=runtime.family,id=legacyDeskColorIdentity;
+ if(f.collectionMode!=='structure-only'||f.baseArticle!==id.code||f.id!==id.familyId||f.productId!==id.productId||f.sample!==id.sample||colors.code!==id.code||colors.componentRuntimeSha256!==id.runtimeSha256||Object.keys(colors.fields).sort().join(',')!=='FINSIDEDESKTOPBOARDCOL,FOUTSIDEDESKTOPBOARDCOL'||f.anchors.some(a=>(a.defaults.GDWIDTH==='_2000'&&a.defaults.GDDEPTH!=='_1000')||Object.entries(colors.fields).some(([key,value])=>a.defaults[key]!==value.default)))throw Error('Legacy desk colors require the exact original eRange runtime');
+ return attachDeskColors(runtime,colors);
+}
+
+function attachDeskColors(runtime:CatalogRuntime,colors:DeskColors):CatalogRuntime{
  // The supplier finish witness can include a fixed dimension that is absent
  // from every construction context. It must not become an invented control
  // or prevent an exact primitive/material/matrix match at the captured axes.

@@ -1,0 +1,31 @@
+{
+  "siteId": "memocasting",
+  "summary": "Remove checkout loading dependencies from public browsing, discover the hero early, retain readable motion and right-size faithful media",
+  "category": "code",
+  "evidence": [
+    "Owner-provided actual PSI mobile93/96/100/100: LCP3.0s with1370ms image discovery delay,117KiB estimated image savings,280ms blocking CSS, low-opacity pending text and19 blur animations. Desktop90/96/96/100 includes an unused checkout stylesheet timeout. Source imports show homepage/catalogue/footer loading checkout for the lightweight same-origin client. All original source/package/media remains preserved."
+  ],
+  "paths": [
+    "app/layout.tsx",
+    "components/niche/memocasting-catalogue.tsx",
+    "components/niche/memocasting-commerce.tsx",
+    "components/niche/memocasting-homepage-footer.tsx",
+    "components/niche/memocasting-homepage-motion.tsx",
+    "components/niche/memocasting-homepage.css",
+    "components/niche/memocasting-native-checkout.tsx",
+    "components/niche/memocasting-payment-status.tsx",
+    "components/niche/memocasting-site.tsx",
+    "lib/memocasting-homepage-assets.json",
+    "lib/memocasting-homepage-markup.mjs",
+    "lib/memocasting-homepage-motion.mjs",
+    "lib/memocasting-browser-commerce.mjs",
+    "lib/memocasting-homepage-images.mjs",
+    "public/memocasting-homepage/v1/media/performance-v1"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/78",
+  "rollback": "Revert the narrow PUBLIC8054134b source change or restore frontend8e9f1a79. Preserve original media, content/package/dates, other tenants, actual provider bindings, live orders/mail/payment/shipping/analytics/recovery state. No backend migration exists.",
+  "id": "upgrade-fb452df4-327c-45f4-ad80-c2a08565d221",
+  "branch": "codex/memocasting-pagespeed-20261026",
+  "baseSha": "45856bd886a58a1b82dfb149a22fef6bca0157f5",
+  "createdAt": "2026-10-25T22:18:44.333Z"
+}

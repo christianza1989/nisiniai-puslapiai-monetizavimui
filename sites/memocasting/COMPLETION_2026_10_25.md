@@ -6,8 +6,8 @@ This record supersedes the18:34UTC PC restart checkpoint. The owner authorized c
 
 | Surface | Accepted edition |
 | --- | --- |
-| Public site | https://memocasting.lt/ — Worker8e9f1a79-877a-45f6-a919-f30154fcc7b7, deploymentf000da73-08a5-4d05-8912-0500a70826e2 at21:21:11UTC |
-| Frontend source | PUBLIC18d5ce11c59fa0edd54fb4bb7186f7082fadccdf |
+| Public site | https://memocasting.lt/ — Worker88184164-9401-4ddc-b8ef-c6b391f3328a, deployment9cac52e7-e260-41d9-963e-e19e79dd10d7 at22:57:51UTC,100% |
+| Frontend source | PUBLIC2f6e9881242698940c440eb4a9952e8276a65ae0, merged PR84 as038b1f0f1ab207f1be1012f2714d03f0572beed7; same application tree |
 | Content | Native5be826b7-33ee-40c6-8f05-f7ed24b48f8c, SHA256b02879f7df3fdc9207248e3f45775a0f3e3f90ce88f1f525ae4c10e94c89a4dc,187pages/800assets; already-public dates and daily cadence preserved; six future topic slots exchanged in the reviewed editorial release |
 | Admin/commerce | https://login.memocasting.lt/admin — Worker5bc23acb-8ec5-4694-94fd-1f4bf5fc535a, deployment9c40bf4a-dcce-4148-a92a-3ea27b09c057 at21:18:41UTC,100% |
 | Admin code source | CORE0a3919d147986bdba135f9f1004fe99934844941; previous07341ebf admin redesign retained |
@@ -53,3 +53,9 @@ The original source handoffs are merged: [CORE PR263](https://github.com/christi
 Private evidence: acceptance-final-http.private.json, acceptance-provider-before/after.private.json, acceptance-core/public-tests.private.txt, acceptance-workerd.private.txt, acceptance-frontend-build.private.txt, cart/home-before/after browser samples, and zoom/mobile screenshots in qa/final-seo-20261025. Credentials, private account data and raw fixtures remain ignored.
 
 Scoped rollback for this follow-up: frontend155bfebf-2641-479a-a658-3623eacc016e and backend1f0c04e1-3ffc-43a4-80fa-3a0c50f6a670, retaining the actual current bindings, primary sender, recovery policy, data and cron. Reverting this code does not reverse data/configuration or the original accepted admin/content work.
+
+## Owner PageSpeed follow-up, 26 October
+
+The active frontend table now reflects the accepted PageSpeed repair. Detailed source, checks, intermediate results and rollback are in [PAGESPEED_2026_10_26.md](PAGESPEED_2026_10_26.md). Homepage loading no longer imports checkout UI or waits for payment readiness just for editorial metadata. Product prices and checkout retain actual LIVE admission. Responsive hero discovery, faithful smaller logo/process assets, readable motion and stable dock controls are active.
+
+Actual final PSI zzh6keplwd: mobile **95/100/100/100**, desktop **99/100/100/100** versus original93/96/100/100 and90/96/96/100. Mobile LCP3.0→2.7s, TBT20→0ms, CLS0.026→0.001, SI3.3→2.4s.269public tests, types, scoped lint, build/dry-run, compiled desktop/320px/keyboard and bounded hosted routes/assets pass. This request was self-reviewed; earlier specialist reviews are not represented as a new independent review. Provider bindings, custom-domain certificates, cron and backend/mail versions match actual before/after reads. Content package/dates are unchanged. No new paid service, real financial/shipment test or customer message; previous owner-deferred evidence remains deferred. Lab scores are not field p75 or a ranking guarantee.

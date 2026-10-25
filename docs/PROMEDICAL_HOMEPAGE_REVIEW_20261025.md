@@ -1,4 +1,8 @@
-# Promedical homepage private implementation
+# Historical Promedical homepage private implementation
+
+Superseded by the owner's direct publication/sitewide design instruction.
+Current status: [publication record](PROMEDICAL_HOMEPAGE_PUBLICATION_20261025.md).
+The private-stage approval/deploy counts below are historical, not current.
 
 Scope: owner-selected 1440px draft, stable home ID
 `36d50e14-bc72-4305-b8fe-9d55981abde3`. User requests private review before live

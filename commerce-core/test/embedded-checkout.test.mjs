@@ -449,3 +449,51 @@ test('SDK client secret is opaque, including encoded delimiters, and remains bou
     x.db.close();
   }
 });
+test('read-only recovery inspection accepts actual expiry but rejects foreign facts and flags processing intents', async () => {
+  const x = await setup();
+  await x.buyer.checkoutDetails({ uiMode: 'embedded' });
+  const order = await x.s.getOrder('store_a', 'sandbox', x.order.id),
+    config = await x.s.store('store_a', 'sandbox');
+  const row = x.p.sessions.get(order.checkout_id);
+  row.status = 'expired';
+  row.payment_status = 'unpaid';
+  row.payment_intent = null;
+  assert.deepEqual(await x.adapter.inspectSession(row.id, order, config), {
+    status: 'expired',
+    paymentStatus: 'unpaid',
+    paymentProcessing: false,
+  });
+  row.status = 'open';
+  row.payment_intent = { status: 'processing' };
+  assert.equal((await x.adapter.inspectSession(row.id, order, config)).paymentProcessing, true);
+  row.amount_total++;
+  await assert.rejects(
+    x.adapter.inspectSession(row.id, order, config),
+    /stripe_checkout_session_invalid/,
+  );
+  x.db.close();
+});
+test('a mailbox identity override cannot alter Stripe keys or target an unconfigured store', () => {
+  const env = {
+    COMMERCE_ENV: 'sandbox',
+    COMMERCE_MAIL: { fetch() {} },
+    COMMERCE_CONNECTIONS: JSON.stringify({
+      store_a: { mail: { sender: 'old@example.test', transportRef: 'mail_fixture' } },
+    }),
+    COMMERCE_MAIL_CONNECTIONS: JSON.stringify({
+      store_a: { sender: 'new@example.test', transportRef: 'mail_fixture' },
+    }),
+  };
+  assert.equal(runtimeOptions(env).notificationAdapters.store_a.sender, 'new@example.test');
+  assert.deepEqual(runtimeOptions(env).paymentAdapters, {});
+  assert.throws(
+    () =>
+      runtimeOptions({
+        ...env,
+        COMMERCE_MAIL_CONNECTIONS: JSON.stringify({
+          foreign: { sender: 'new@example.test', transportRef: 'mail_fixture' },
+        }),
+      }),
+    /runtime_mail_configuration_invalid/,
+  );
+});

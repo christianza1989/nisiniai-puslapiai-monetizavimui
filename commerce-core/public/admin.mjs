@@ -6,6 +6,7 @@ import { renderJobs } from './jobs-ui.mjs';
 import { renderCatalog } from './catalog-ui.mjs';
 import { renderReturns } from './returns-ui.mjs';
 import { usesOnlySimpleStock } from './finished-stock-ui.mjs';
+import { paymentLabel, fulfillmentLabel, refundableAmount } from './operator-order-status.mjs';
 const $ = (selector) => document.querySelector(selector);
 const state = {
   token: '',
@@ -284,7 +285,7 @@ async function reload() {
     : 'Rodomos serverio patvirtintos užsakymų ir integracijų būsenos.';
   const c = state.data.counts;
   $('#summary').textContent =
-    `Iš viso: ${c.total} · Laukia mokėjimo: ${c.pending} · Vykdomi: ${c.to_pack} · Trūksta prekių: ${c.exceptions}`;
+    `Iš viso: ${c.total} · Neužbaigti mokėjimai: ${c.pending} · Vykdomi: ${c.to_pack} · Trūksta prekių: ${c.exceptions}`;
   await render();
 }
 function badge(order) {
@@ -299,7 +300,7 @@ function badge(order) {
             ? 'warning'
             : ''),
     },
-    paymentNames[order.payment_state] || order.payment_state,
+    paymentLabel(order, paymentNames),
   );
 }
 function cell(value, label, extra = '') {
@@ -407,7 +408,7 @@ function renderOrders(content) {
           ),
           cell(o.snapshot.customer?.name || 'Kontaktai nepateikti', 'Pirkėjas'),
           cell(badge(o), 'Mokėjimas'),
-          cell(fulfillmentNames[o.fulfillment_state] || o.fulfillment_state, 'Vykdymas'),
+          cell(fulfillmentLabel(o, fulfillmentNames), 'Vykdymas'),
           cell(money(o.amount, o.currency), 'Suma', 'money'),
         ),
       ),
@@ -518,7 +519,7 @@ function renderOrder(content, detail) {
   );
   const pairs = [
     ['Sukurta', date(o.created_at)],
-    ['Vykdymas', fulfillmentNames[o.fulfillment_state] || o.fulfillment_state],
+    ['Vykdymas', fulfillmentLabel(o, fulfillmentNames)],
     ['Pristatymas', o.snapshot.delivery.label],
     ['Suma', money(o.amount, o.currency)],
     ['Pirkėjas', c?.name || 'Kontaktai nepateikti'],
@@ -755,7 +756,7 @@ function renderRefunds(content, detail) {
   const held = commands
     .filter((c) => !c.accounted && c.state !== 'failed')
     .reduce((sum, c) => sum + c.amount, 0);
-  const remaining = Math.max(0, o.amount - o.refunded_amount - held);
+  const remaining = refundableAmount(o, held);
   const names = {
     planned: 'Paruošta',
     submitting: 'Vykdoma',

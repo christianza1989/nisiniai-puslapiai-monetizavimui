@@ -415,6 +415,7 @@ function onePageForm({
   setPaymentCleanup,
   isCurrent,
   initialOrder,
+  restoredOrder,
   signal,
 }) {
   const u = onePageMessages[language] || onePageMessages.lt;
@@ -550,6 +551,15 @@ function onePageForm({
   if (catalogueHref)
     empty.append(element('a', { class: 'checkout-catalogue', href: catalogueHref }, m.catalogue));
   const intro = element('p', { class: 'checkout-intro' }, u.intro);
+  if (context.paymentRecovery && language === 'lt') {
+    details.append(
+      element(
+        'p',
+        { class: 'checkout-hint' },
+        `Neužbaigus apmokėjimo, po ${context.paymentRecovery.reminderAfterHours} val. atsiųsime vieną priminimą el. paštu. Užsakymą galima apmokėti per ${context.paymentRecovery.reservationHours} val. Daugiau priminimų nesiųsime.`,
+      ),
+    );
+  }
   const closed = element('p', { class: 'checkout-notice', role: 'status' }, u.closed);
   const heading = element('h2', {}, u.items);
   const products = element('section', { class: 'checkout-products' }, heading, items);
@@ -1031,10 +1041,11 @@ function onePageForm({
     }
     if (!active()) return;
     action(t[16], complete);
-    action(t[17], async () => {
-      await client.withdrawal();
-      if (active()) status.textContent = t[28];
-    });
+    if (!client.attempt?.recovery)
+      action(t[17], async () => {
+        await client.withdrawal();
+        if (active()) status.textContent = t[28];
+      });
     action(t[18], restart);
     paymentPane.append(controls);
   };
@@ -1064,6 +1075,9 @@ function onePageForm({
         quoteHash: quote.quoteHash,
         ...(quote.deliveryQuoteId ? { deliveryQuoteId: quote.deliveryQuoteId } : {}),
         acceptedPolicyVersion: policyVersion,
+        ...(context.paymentRecovery
+          ? { paymentRecoveryNotice: context.paymentRecovery.noticeVersion }
+          : {}),
       });
       if (signal?.aborted) return;
       emitCart([]);
@@ -1113,8 +1127,9 @@ function onePageForm({
   });
   signal?.addEventListener('abort', () => clearTimeout(timer), { once: true });
   refresh();
-  if (initialOrder) {
-    const saved = initialOrder.snapshot.customer,
+  const prefill = initialOrder || restoredOrder;
+  if (prefill) {
+    const saved = prefill.snapshot.customer,
       address = saved.address;
     for (const [key, value] of Object.entries({
       name: saved.contactName || saved.name,
@@ -1125,12 +1140,19 @@ function onePageForm({
       postalCode: address.postalCode,
     }))
       fields[key].value = value || '';
-    delivery.value = initialOrder.snapshot.delivery.id;
+    delivery.value = prefill.snapshot.delivery.id;
+    refreshLocker();
     if (saved.lockerId) {
       locker.value = saved.lockerId;
       updateLockerAddress();
     }
-    terms.checked = true;
+    terms.checked = Boolean(initialOrder);
+    if (!initialOrder) {
+      changed();
+      status.textContent =
+        'Pasirinktos prekės ir pristatymo duomenys atkurti. Patikrinkite naują sumą ir pristatymą, tada tęskite apmokėjimą.';
+      return;
+    }
     quoted = {
       amount: initialOrder.amount,
       currency: initialOrder.currency,
@@ -1164,6 +1186,7 @@ export async function mountCheckout(
     productImage,
     renderPayment,
     signal,
+    recoveryToken,
   } = {},
 ) {
   const t = translations[language] || translations.lt;
@@ -1204,6 +1227,9 @@ export async function mountCheckout(
   };
   const { context, catalog, markets } = await client.initialize();
   if (signal?.aborted) return client;
+  let recovered;
+  if (recoveryToken) recovered = await client.openRecovery(recoveryToken);
+  else if (client.attempt?.recovery) recovered = await client.openRecovery(client.attempt.token);
   let cartLines = normalizeCheckoutCart(initialLines, catalog);
   const emitCart = (next = cartLines) => {
     cartLines = normalizeCheckoutCart(next, catalog);
@@ -1215,6 +1241,12 @@ export async function mountCheckout(
       console.warn('Commerce cart callback failed');
     }
   };
+  if (recovered?.state === 'restore') emitCart(recovered.order.snapshot.lines);
+  if (recovered?.state === 'unavailable') {
+    status.textContent =
+      'Šio užsakymo apmokėjimo tęsti nebegalima. Jei jau pateikėte kitą užsakymą, tikrinkite jo būseną. Jei reikia pagalbos, susisiekite su parduotuve.';
+    return client;
+  }
   const clearCart = () => {
     cartLines = [];
     emitCart();
@@ -1301,7 +1333,11 @@ export async function mountCheckout(
       return b;
     };
     let startPayment;
-    if (order.payment_state === 'pending' && order.stock_state === 'reserved') {
+    if (
+      order.payment_state === 'pending' &&
+      order.stock_state === 'reserved' &&
+      client.recoveryState !== 'processing'
+    ) {
       const pane = element('div', { class: 'checkout-payment' });
       let mounting = false,
         mounted = false;
@@ -1352,10 +1388,19 @@ export async function mountCheckout(
       await orderView(await resumeOrder());
       status.textContent = '';
     });
-    add(t[17], async () => {
-      await client.withdrawal();
-      status.textContent = t[28];
-    });
+    if (!client.attempt?.recovery)
+      add(t[17], async () => {
+        await client.withdrawal();
+        status.textContent = t[28];
+      });
+    if (client.recoveryState === 'processing')
+      content.append(
+        element(
+          'p',
+          { role: 'status' },
+          'Mokėjimo būsena tikrinama. Naujo mokėjimo nepradėkite. Atnaujinkite būseną po kelių minučių.',
+        ),
+      );
     add(t[18], async () => {
       client.newOrder();
       formView();
@@ -1370,7 +1415,7 @@ export async function mountCheckout(
       content.append(element('p', { role: 'status' }, m.canceled));
     if (order.fulfillment_state === 'return_received')
       content.append(element('p', { role: 'status' }, m.returned));
-    if (receipt.documents?.length) {
+    if (receipt.documents?.length && !client.attempt?.recovery) {
       content.append(element('h2', {}, t[33]));
       for (const doc of receipt.documents.filter((d) => ['sale', 'credit'].includes(d.kind))) {
         const download = element('button', { type: 'button' }, doc.number + '.pdf');
@@ -1406,7 +1451,7 @@ export async function mountCheckout(
     )
       await startPayment();
   };
-  const formView = (initialOrder) => {
+  const formView = (initialOrder, restoredOrder) => {
     const currentView = ++viewVersion;
     disposePayment();
     disposePayment = () => {};
@@ -1422,7 +1467,7 @@ export async function mountCheckout(
         catalog,
         markets: markets.filter((market) => market.checkoutEnabled !== false),
         cartLines: initialOrder ? initialOrder.snapshot.lines : cartLines,
-        country: initialOrder ? initialOrder.snapshot.country : country,
+        country: (initialOrder || restoredOrder)?.snapshot.country || country,
         language,
         t,
         m,
@@ -1449,12 +1494,21 @@ export async function mountCheckout(
         },
         isCurrent: () => currentView === viewVersion,
         initialOrder,
+        restoredOrder,
         signal,
       });
       return;
     }
     const form = element('form', { class: 'checkout-form' }),
       fields = {};
+    if (context.paymentRecovery && language === 'lt')
+      form.append(
+        element(
+          'p',
+          { class: 'checkout-hint' },
+          `Neužbaigus apmokėjimo, po ${context.paymentRecovery.reminderAfterHours} val. atsiųsime vieną priminimą el. paštu. Užsakymą galima apmokėti per ${context.paymentRecovery.reservationHours} val. Daugiau priminimų nesiųsime.`,
+        ),
+      );
     const field = (name, label, attrs = {}, tag = 'input') => {
       const input = element(tag, { name, id: 'checkout-' + name, ...attrs });
       fields[name] = input;
@@ -1685,6 +1739,9 @@ export async function mountCheckout(
             quoteHash: quoted.quoteHash,
             ...(deliveryQuoteId ? { deliveryQuoteId } : {}),
             acceptedPolicyVersion: selected().policyVersion,
+            ...(context.paymentRecovery
+              ? { paymentRecoveryNotice: context.paymentRecovery.noticeVersion }
+              : {}),
           });
         } catch (error) {
           if (client.attempt) {
@@ -1724,6 +1781,7 @@ export async function mountCheckout(
         layout === 'one-page' &&
         renderPayment &&
         order.payment_state === 'pending' &&
+        client.recoveryState !== 'processing' &&
         order.stock_state === 'reserved' &&
         order.snapshot.customer?.address &&
         context.paymentConnected &&
@@ -1756,6 +1814,6 @@ export async function mountCheckout(
       );
       content.append(retry);
     }
-  } else formView();
+  } else formView(undefined, recovered?.state === 'restore' ? recovered.order : undefined);
   return client;
 }

@@ -1,5 +1,9 @@
 # Bendras nišinių svetainių paštas
 
+## Per-store primary sender and payment recovery — 2026-10-25
+
+Use the exact authenticated mailbox, not only a cosmetic Reply-To/name. Canonical [payment recovery and sender migration](commerce-core/docs/PAYMENT_RECOVERY.md) preserves old immutable/unknown commands, provides a separate mail-only identity configuration without rewriting payment/carrier keys, and requires actual Worker acceptance plus exact owner inbox receipt. Hostinger HTML is optional, bounded, fingerprinted and accompanied by text. One informed neutral cart reminder is distinct from marketing; never enroll older orders, blindly retry unknown mail or infer a bank decline from an expired Checkout Session.
+
 ## Actual edge transport qualification — 2026-10-20
 
 Node TLS/SMTP authentication does not qualify a Cloudflare Worker transport. Memocasting's actual Worker could not connect to smtp.hostinger.com because its resolved IP was in Cloudflare's blocked TCP destination ranges; this is an observed endpoint/runtime incompatibility, not a claim that all SMTP fails. Do not bypass TLS, force an IP, replay an unknown send or introduce an automatic paid fallback. Qualify the actual deployed runtime, authenticated sender, durable one-shot ledger, provider acceptance and exact inbox receipt separately.

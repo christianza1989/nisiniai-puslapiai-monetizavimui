@@ -305,6 +305,45 @@ export class StripeCheckoutAdapter {
     requireValue(session?.id === id, 'stripe_checkout_session_invalid', 502);
     return this.validateSession(session, order);
   }
+  async inspectSession(id, order, config) {
+    requireValue(
+      order.snapshot.environment === this.environment &&
+        config.paymentAccountRef === this.accountRef &&
+        identifier(id) &&
+        id === order.checkout_id,
+      'stripe_context_mismatch',
+      403,
+    );
+    await this.verifyAccount();
+    const session = await this.client.checkout.sessions.retrieve(id, {
+      expand: ['payment_intent'],
+    });
+    requireValue(
+      session?.id === id &&
+        session.metadata?.store_id === order.store_id &&
+        session.metadata?.order_id === order.id &&
+        session.metadata?.environment === this.environment &&
+        session.client_reference_id === order.id &&
+        session.amount_total === order.amount &&
+        session.currency === order.currency.toLowerCase() &&
+        session.livemode === (this.environment === 'production') &&
+        session.expires_at === Math.floor(order.expires_at / 1000) &&
+        ['open', 'expired', 'complete'].includes(session.status) &&
+        ['unpaid', 'paid', 'no_payment_required'].includes(session.payment_status),
+      'stripe_checkout_session_invalid',
+      502,
+    );
+    const intent = session.payment_intent;
+    return {
+      status: session.status,
+      paymentStatus: session.payment_status,
+      paymentProcessing: Boolean(
+        intent &&
+        (typeof intent !== 'object' ||
+          !['requires_payment_method', 'canceled'].includes(intent.status)),
+      ),
+    };
+  }
   async createSession(order, config, { uiMode = 'hosted' } = {}) {
     requireValue(['hosted', 'embedded'].includes(uiMode), 'checkout_mode_invalid');
     if (uiMode === 'embedded') this.embeddedPublicKey();

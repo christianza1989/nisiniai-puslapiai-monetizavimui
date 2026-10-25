@@ -44,7 +44,45 @@ const copy = {
 };
 const email = (x) =>
   typeof x === 'string' && /^[^\s<>\r\n@]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(x);
+const escapeHtml = (value) =>
+  String(value).replace(
+    /[&<>"']/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c],
+  );
+export function paymentReminderMessage(payload, policy) {
+  requireValue(
+    payload.language === 'lt' &&
+      email(payload.recipient) &&
+      email(policy.from) &&
+      /^https:\/\/[a-z0-9.-]+\/cart#resume=r1_[a-f0-9-]{36}_[a-z0-9]{8,11}_[a-f0-9]{64}$/.test(
+        payload.resumeUrl || '',
+      ),
+    'notification_message_invalid',
+  );
+  const id = 'commerce-' + payload.eventId.replaceAll('_', '-');
+  requireValue(/^[a-zA-Z0-9-]{1,220}$/.test(id), 'notification_message_invalid');
+  const heading = 'Jūsų krepšelyje liko neapmokėtų prekių';
+  const body =
+    'Pradėjote užsakymą „Memory Casting“ parduotuvėje, tačiau apmokėjimas dar nebaigtas. Jei norite tęsti, grįžkite prie savo užsakymo paspaudę mygtuką.';
+  const footer =
+    'Jeigu pirkimo nebeplanuojate, nieko daryti nereikia. Daugiau priminimų dėl šio krepšelio nesiųsime.';
+  const help = 'Jei reikia pagalbos, atsakykite į šį laišką.';
+  return {
+    schemaVersion: 1,
+    environment: payload.environment,
+    storeId: payload.storeId,
+    id,
+    messageId: `<${id}@${policy.from.split('@')[1]}>`,
+    from: policy.from,
+    to: payload.recipient,
+    replyTo: policy.from,
+    subject: 'Jūsų nebaigtas „Memory Casting“ užsakymas',
+    text: [heading, body, 'Tęsti apmokėjimą: ' + payload.resumeUrl, footer, help].join('\n\n'),
+    html: `<!doctype html><html lang="lt"><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"></head><body style="margin:0;background:#f8f6f3;color:#292625;font-family:Arial,sans-serif"><table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr><td style="padding:24px 12px"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px;margin:auto;background:#fff"><tr><td style="padding:32px 24px;font-size:16px;line-height:1.6"><p style="margin:0 0 28px;font-size:20px">Memory Casting</p><h1 style="font-size:25px;line-height:1.3;margin:0 0 20px">${heading}</h1><p>${body}</p><p style="margin:28px 0"><a href="${escapeHtml(payload.resumeUrl)}" style="display:inline-block;padding:14px 22px;background:#292625;color:#fff;border-radius:6px;text-decoration:none;font-weight:bold">Tęsti apmokėjimą</a></p><p>${footer}</p><p>${help}</p><p style="border-top:1px solid #e5ddd8;padding-top:20px;margin-bottom:0"><a style="color:#292625" href="mailto:${escapeHtml(policy.from)}">${escapeHtml(policy.from)}</a></p></td></tr></table></td></tr></table></body></html>`,
+  };
+}
 export function notificationMessage(payload, policy) {
+  if (payload.kind === 'PaymentReminder') return paymentReminderMessage(payload, policy);
   const t = copy[payload.language] || copy.lt;
   requireValue(
     t[payload.kind] &&
@@ -116,9 +154,10 @@ export class CoreMailBindingAdapter {
   }
 }
 export class CustomerNotifications {
-  constructor(service, adapters = {}) {
+  constructor(service, adapters = {}, { reminderCheck } = {}) {
     this.s = service;
     this.adapters = adapters;
+    this.reminderCheck = reminderCheck;
   }
   async preview(store, env, eventId) {
     const config = await this.s.store(store, env);
@@ -168,6 +207,23 @@ export class CustomerNotifications {
     );
     requireValue(row, 'notification_not_found', 404);
     if (row.state === 'accepted') return { state: 'accepted', replayed: true };
+    if (row.kind === 'PaymentReminder' && row.first_attempt_at === null) {
+      requireValue(
+        typeof this.reminderCheck === 'function',
+        'notification_reminder_guard_missing',
+        503,
+      );
+      if (!(await this.reminderCheck(store, env, row.order_id))) {
+        await this.s
+          .stmt(
+            "UPDATE customer_notifications SET state='review' WHERE store_id=? AND event_id=? AND state='prepared' AND first_attempt_at IS NULL",
+            store,
+            eventId,
+          )
+          .run();
+        return { state: 'review', suppressed: true };
+      }
+    }
     let command = await this.s.one(
       'SELECT * FROM notification_commands WHERE store_id=? AND event_id=?',
       store,
@@ -194,7 +250,7 @@ export class CustomerNotifications {
     }
     const message = JSON.parse(command.message_json);
     requireValue(
-      command.transport_ref === adapter.accountRef && message.from === adapter.sender,
+      command.transport_ref === adapter.accountRef,
       'notification_transport_changed',
       409,
     );
@@ -212,12 +268,17 @@ export class CustomerNotifications {
       }
       return { state: row.state, requiresReview: true }; // Never repeat a non-idempotent SMTP send.
     }
+    requireValue(message.from === adapter.sender, 'notification_transport_changed', 409);
     const claimed = await this.s
       .stmt(
-        "UPDATE customer_notifications SET state='sending',first_attempt_at=? WHERE store_id=? AND event_id=? AND first_attempt_at IS NULL AND state='prepared'",
+        "UPDATE customer_notifications SET state='sending',first_attempt_at=? WHERE store_id=? AND event_id=? AND first_attempt_at IS NULL AND state='prepared'" +
+          (row.kind === 'PaymentReminder'
+            ? " AND EXISTS(SELECT 1 FROM orders o WHERE o.store_id=customer_notifications.store_id AND o.id=customer_notifications.order_id AND o.payment_state='pending' AND o.stock_state='reserved' AND o.expires_at>?) AND NOT EXISTS(SELECT 1 FROM withdrawals w WHERE w.store_id=customer_notifications.store_id AND w.order_id=customer_notifications.order_id)"
+            : ''),
         this.s.now(),
         store,
         eventId,
+        ...(row.kind === 'PaymentReminder' ? [this.s.now()] : []),
       )
       .run();
     if (!claimed.meta?.changes) return { state: 'sending', replayed: true };

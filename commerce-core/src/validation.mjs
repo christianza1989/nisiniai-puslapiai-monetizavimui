@@ -164,6 +164,32 @@ export function validateStore(store) {
   requireValue(identifier(store?.id) && identifier(store.legalEntityId), 'invalid_store');
   requireValue(['sandbox', 'production'].includes(store.environment), 'invalid_environment');
   requireValue(store.enabled === false || store.enabled === true, 'invalid_admission');
+  if (store.paymentRecovery !== undefined) {
+    const p = store.paymentRecovery;
+    requireValue(
+      p &&
+        typeof p.enabled === 'boolean' &&
+        integer(p.reservationHours, 1, 24) &&
+        integer(p.reminderAfterHours, 1, 23) &&
+        p.reminderAfterHours < p.reservationHours &&
+        integer(p.enabledAt, 1, Number.MAX_SAFE_INTEGER) &&
+        identifier(p.noticeVersion),
+      'invalid_payment_recovery',
+    );
+    let origin;
+    try {
+      origin = new URL(p.origin);
+    } catch {
+      /* rejected below */
+    }
+    requireValue(
+      origin &&
+        origin.protocol === 'https:' &&
+        origin.origin === p.origin &&
+        store.hosts.includes(origin.host),
+      'invalid_payment_recovery',
+    );
+  }
   requireValue(
     Array.isArray(store.hosts) &&
       store.hosts.length > 0 &&

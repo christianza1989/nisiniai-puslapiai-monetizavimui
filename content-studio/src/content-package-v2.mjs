@@ -1,7 +1,6 @@
 // Identical source in both repositories. V1 hash/reader remains untouched.
 import {createHash} from 'node:crypto';
-import {readFileSync} from 'node:fs';
-const schema=JSON.parse(readFileSync(new URL('../schemas/content-package.v2.schema.json',import.meta.url),'utf8'));
+import schema from '../schemas/content-package.v2.schema.json' with { type: 'json' };
 const fail=message=>{throw new Error('Invalid content v2: '+message);};
 export const stableV2=value=>Array.isArray(value)?`[${value.map(stableV2).join(',')}]`:value&&typeof value==='object'?`{${Object.keys(value).sort().map(k=>`${JSON.stringify(k)}:${stableV2(value[k])}`).join(',')}}`:JSON.stringify(value);
 function assertSchema(value,rule,label='package') {

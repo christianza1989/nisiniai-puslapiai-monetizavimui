@@ -32,6 +32,30 @@ neįjungiame ir patvirtinimo įrašų ranka nekuriame.
 
 ## GUI ir agento sąsaja
 
+### Hosted žmogaus redaktorius (opt-in, 2026-10-25)
+
+Savininko užsakytas Promedical administravimas yra autentifikuotas D1 adapteris,
+ne loopback Studio serverio paskelbimas internete. Kanoninis grynas domenas
+`content-studio/src/authoring-core.mjs` ir `hosted-authoring.mjs` dalijasi
+normalizavimu, revisionHash, DST, readiness ir approve taisyklėmis su vietine
+Studio. `scripts/export-hosted-authoring.mjs` eksportuoja tik šį SDK į nurodytą
+companion (`STUDIO_PUBLIC_CORE_DIR`), su kiekvieno input bei artefakto hash;
+model/data/jobs/server ir privatūs site faktai į public SDK nepatenka.
+
+Hosted juodraštis nėra approval. Tik prisijungęs žmogus po faktinės šešių sričių
+peržiūros gali aiškiai patvirtinti konkrečią reviziją; auditas įrašo tikrą jo
+adresą ir veiksmą, ne išgalvotą agento review. Adapteris papildomai patikrina
+actual mediją ir paketą. Atėjus datai be cron naudojama ta pati public projekcija
+HTML/SEO/LLM/media paviršiams; būsima nauja revizija iki datos išlaiko ankstesnę
+viešą hosted reviziją. Guide pause lieka atskiras serverio nustatymas.
+
+Additive D1 schema, scrypt slaptažodžiai, vienkartinis pirmos paskyros setup,
+HttpOnly sesijos, CSRF/Origin, CAS ir versijų istorija yra hosted adapterio
+pareiga. Nėra viešo register ar nuorodos iš svetainės. Nauja compiled bazė,
+nesutampanti su edit.base_revision, sukelia matomą konfliktą; adapteris neturi
+tyliai perrašyti išorinio redaktoriaus patvirtintų pakeitimų. Konflikto peržiūra
+ir jo suderinimas reikalingi prieš tolesnį to įrašo saugojimą.
+
 Kiekvienos svetainės **Turinio eiga** rodo parametrus, datas, ryšius, aktualią peržiūrą ir konkrečias kliūtis. Kalendorius / privatus draft preview bendri. Savininkui nereikia pildyti kalendoriaus ar review pastabų.
 
 Privati loopback API su esamais Host/origin/X-Studio-Request vartais:

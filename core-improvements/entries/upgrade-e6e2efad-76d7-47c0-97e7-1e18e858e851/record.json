@@ -1,0 +1,22 @@
+{
+  "siteId": "promedical",
+  "summary": "A hosted editor needs the exact canonical Studio edit/review/approval rules without exposing its filesystem server; extract the pure domain and preserve the existing local API.",
+  "category": "code",
+  "evidence": [
+    "Issue259 owner-requested authenticated CMS; content-studio/test/hosted-authoring.test.mjs; full Studio66/66 PASS; paired public105/105 and real local workerd+D1 auth/draft/approval/history PASS on2026-10-25. Private runtime evidence is retained under the owner workspace and is not copied into source."
+  ],
+  "paths": [
+    "content-studio/src/authoring-core.mjs",
+    "content-studio/src/model.mjs",
+    "content-studio/src/hosted-authoring.mjs",
+    "content-studio/src/content-package-v2.mjs",
+    "content-studio/scripts/export-hosted-authoring.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/259",
+  "rollback": "Revert this scoped extraction and SDK consumer together; retain hosted D1 data and export changed revisions before disabling the adapter.",
+  "id": "upgrade-e6e2efad-76d7-47c0-97e7-1e18e858e851",
+  "branch": "codex/promedical-admin-20261025",
+  "baseSha": "a37c8fe7f153f80934baea879747add19e40fbb2",
+  "createdAt": "2026-10-25T11:18:42.646Z"
+}

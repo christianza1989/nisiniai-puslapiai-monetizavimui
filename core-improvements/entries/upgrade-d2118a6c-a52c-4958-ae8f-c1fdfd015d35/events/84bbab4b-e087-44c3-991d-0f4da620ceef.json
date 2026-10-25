@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Original failure retained in regression evidence. Local verification only; branch source is not main adoption or Google indexing.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/same-site-reference-approval.test.mjs content-studio/test/content-workflow.test.mjs content-studio/test/minimum-content.test.mjs",
+      "result": "PASS",
+      "evidence": "12/12 including exact same-site approval and retained cross-domain protections."
+    }
+  ],
+  "eventId": "84bbab4b-e087-44c3-991d-0f4da620ceef",
+  "sequence": 2,
+  "at": "2026-10-25T07:47:27.273Z"
+}

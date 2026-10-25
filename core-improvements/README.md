@@ -55,6 +55,30 @@ literal blob/tree ir tikslaus ištrinto failo taisyklė lieka visa apimtimi.
 
 `node scripts/core-upgrade.mjs event --id <ID> --input <event.json>` prideda įvykį. Statusai finding / fixing / local-verified / pr / merged / adopted. local-verified reikalauja `checks: [{command, result:"PASS", evidence}]`; ankstesnį FAIL palikti fixing įvykio note / atskirame kvite. PR ir vėlesniems įvykiams reikalingas tikras GitHub PR URL; merged/adopted ir tikslus40hex commit. Helperis nepatvirtina GitHub būsenos: prieš įrašant patikrinti faktinį merge, o adoption turi įvardyti konkretų checkout / adapterį ir bandymą. Nebūtinas „adopted“ visiems PC.
 
+## Nauja patikra vietoje netinkamos istorinės deklaracijos
+
+Senas record ir event lieka nekintami. Jei senas įrašas stabdo patikrą tik dėl
+`canonical_issue_url_required` arba `verified_checks_required`, galima sukurti
+naują įrašą su tikrais dabartiniais patikros rezultatais ir pasirenkamu lauku:
+
+```json
+"supersedes": [{"id": "upgrade-<tikras-UUID>", "treeSha": "<40-hex-committed-tree-SHA>"}]
+```
+
+Tree SHA paimamas iš `git rev-parse <commit>:core-improvements/entries/<ID>` ir
+apima seną record bei visus jo įvykius. Naujas įrašas turi priklausyti tam pačiam
+repo, turėti canonical issue/PR URL, visus senus scope ir naują galiojantį
+local-verified įvykį. Jis gauna tik savo deklaruotų failų coverage; senas
+netinkamas įrašas coverage nesuteikia. Checker grąžina tikslų seną radinį ir
+pakaitinio įrašo ID `superseded_legacy_validation` lauke. Neteisingas snapshot,
+svetimas repo, prarastas scope ar nepatikrintas pakaitalas blokavimo nepanaikina.
+
+Tai papildanti kilmės deklaracija po naujos faktinės patikros, ne senų bandymų
+rezultatų pataisymas. Istorijos redagavimo, SOURCE archyvų, source scope ar kitų
+patikrų išimčių ji nesuteikia. Keičiantis dabartiniam kodui vis dar reikia
+įprastų naujų patikros įrodymų. Test-only Python `test_*.py` / `*_test.py` failai,
+kaip ir esami `.test.*`, patys savaime nereikalauja dirbtinio shared upgrade.
+
 ## Tikslus karantinas
 
 1. Record paths įtraukti konkretų kandidato failą. Evidence turi paaiškinti static/dynamic callers, registrus ir palaikomo kelio patikrą; agentas peržiūri, ne pats helperis.

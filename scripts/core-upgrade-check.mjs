@@ -27,7 +27,8 @@ export function requiresUpgrade(file) {
   if (file === '.gitattributes' || file.endsWith('/.gitattributes')) return true;
   if (file === 'WORKSTREAMS.md' || /(?:^|\/)SOURCE_[^/]+$/.test(file)
       || /(?:^|\/)(?:tests?|offline_tests|evals|fixtures)(?:\/|$)/.test(file)
-      || /\.(?:test|spec)\.[^.]+$/.test(file)) return false;
+      || /\.(?:test|spec)\.[^.]+$/.test(file)
+      || /(?:^|\/)(?:test_[^/]+|[^/]+_test)\.py$/.test(file)) return false;
   const name = file.slice(file.lastIndexOf('/') + 1);
   const sharedManifest = (!file.includes('/') || /^(?:content-studio|agent-business-core\/runtime)\//.test(file))
     && (dependencyManifests.has(name) || /^requirements(?:[-.][a-z0-9_-]+)?\.txt$/.test(name));
@@ -137,7 +138,7 @@ export function checkUpgradeCoverage(root, base, head) {
       else errors.push({ path: item.file, reason: 'source_archive_is_immutable' });
     }
   }
-  const records = [], foreignScopes = [];
+  const records = [], foreignScopes = [], validatedRecords = [];
   for (const id of [...touched].sort()) {
     const directory = `core-improvements/entries/${id}`;
     try {
@@ -174,14 +175,44 @@ export function checkUpgradeCoverage(root, base, head) {
         throw new Error('fresh_verification_event_required');
       if (['finding', 'fixing'].includes(events.at(-1).status)) throw new Error('upgrade_still_unverified');
       // A public renderer record with the same relative filenames cannot attest a private-core patch.
+      validatedRecords.push({record, repository});
       if (privateRecord) records.push(record);
       else foreignScopes.push(record.id);
     } catch (e) { errors.push({ path: directory, reason: e.message }); }
   }
+  // A defective historical statement stays immutable and grants no coverage.
+  // A newly verified replacement may explicitly revalidate its exact committed
+  // tree, in the same repository and retaining every declared scope. This never
+  // waives history edits, archive protection, failed replacement checks or scope.
+  const supersededLegacy = [];
+  const unresolvedErrors = errors.filter(error => {
+    if (!['verified_checks_required','canonical_issue_url_required'].includes(error.reason)
+      || !/^core-improvements\/entries\/upgrade-[a-f0-9-]{36}$/.test(error.path)) return true;
+    const id = error.path.slice(error.path.lastIndexOf('/')+1);
+    try {
+      const old = jsonBlob(root,head,`${error.path}/record.json`);
+      const {id: oldId, branch, baseSha, createdAt, ...oldInput} = old;
+      validateRecord(oldInput);
+      if(oldId !== id || !branch || branch === 'main' || !shaPattern.test(baseSha ?? '')
+        || !Number.isFinite(Date.parse(createdAt))) return true;
+      const identity = new URL(old.issue);
+      if(identity.protocol !== 'https:' || identity.hostname !== 'github.com'
+        || identity.username || identity.password) return true;
+      const repository = /^\/(christianza1989\/(?:nisiniai-puslapiai-monetizavimui|niche-public-core))\/(?:issues|pull)\/[1-9]\d*\/?$/.exec(identity.pathname)?.[1];
+      if(!repository) return true;
+      const treeSha=git(root,['rev-parse',`${head}:${error.path}`]).trim();
+      const replacement=validatedRecords.find(v=>v.repository===repository && v.record.id!==id
+        && v.record.supersedes?.some(s=>s.id===id && s.treeSha===treeSha)
+        && old.paths.every(scope=>v.record.paths.includes(scope)));
+      if(!replacement) return true;
+      supersededLegacy.push({id,original_error:error.reason,treeSha,replacement_id:replacement.record.id});
+      return false;
+    } catch { return true; }
+  });
   const uncovered = required.filter(file => !records.some(r => r.paths.some(scope => covers(root, head, scope, file))));
-  return { status: errors.length || uncovered.length ? 'BLOCKED' : 'PASS',
+  return { status: unresolvedErrors.length || uncovered.length ? 'BLOCKED' : 'PASS',
     base_sha: base, merge_base_sha: ancestor, head_sha: head, shared_changes: required.length,
-    verified_upgrade_ids: records.map(r => r.id), foreign_scope_ids: foreignScopes, restored_source_archives: restoredArchives, uncovered_paths: uncovered, errors,
+    verified_upgrade_ids: records.map(r => r.id), foreign_scope_ids: foreignScopes, restored_source_archives: restoredArchives, superseded_legacy_validation: supersededLegacy, uncovered_paths: uncovered, errors:unresolvedErrors,
     limitations: 'Checks private-repository provenance and declared PASS evidence in committed journal blobs. Foreign scopes require separate companion Git review and never cover private changes. Does not execute checks, judge repair quality, merge code, or prove runtime adoption.' };
 }
 

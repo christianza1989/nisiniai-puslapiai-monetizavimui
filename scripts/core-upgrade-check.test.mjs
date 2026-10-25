@@ -116,8 +116,57 @@ test('classification includes agent/core/skill/CI paths and excludes private sit
     'agent-business-core/runtime/src/pinet_core/control/router.py', '.github/workflows/agent-workflow.yml'])
     assert.equal(requiresUpgrade(file), true, file);
   for (const file of ['sites/fixture/BUSINESS.md', 'WORKSTREAMS.md', 'docs/PLAN.md',
-    'scripts/core-upgrade-check.test.mjs', 'agent-business-core/runtime/offline_tests/test_fixture.py'])
+    'scripts/core-upgrade-check.test.mjs', 'agent-business-core/runtime/offline_tests/test_fixture.py',
+    'SKILLS/niche-site-audit/scripts/rendered-site_test.py', 'scripts/test_fixture.py'])
     assert.equal(requiresUpgrade(file), false, file);
+});
+
+async function replacementFixture(t,{fragment=false,wrongTree=false,wrongScope=false,foreign=false,verify=true}={}) {
+ const f=await fixture(t);
+ const old=await f.record(['scripts/tool.mjs'],
+  'https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/1'+(fragment?'#historical-proof':''));
+ if(fragment) await f.verify(old);
+ await f.write('scripts/tool.mjs','export const v = 2;\n');
+ const original=f.commit(),treeSha=f.git('rev-parse',`${original}:core-improvements/entries/${old.id}`);
+ const replacement=await createRecord(f.root,{
+  siteId:'core',summary:'Fresh scoped verification replacing defective historical provenance',category:'workflow',
+  evidence:['Historical tree is immutable; source is rechecked now.'],
+  paths:[wrongScope?'scripts/elsewhere.mjs':'scripts/tool.mjs'],
+  issue:foreign?'https://github.com/christianza1989/niche-public-core/pull/1':'https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/1',
+  rollback:'Remove only the new replacement statement',
+  supersedes:[{id:old.id,treeSha:wrongTree?'0'.repeat(40):treeSha}],
+ });
+ if(verify)await f.verify(replacement);
+ return {...f,old,replacement,original};
+}
+
+test('fresh exact-tree verification replaces malformed historical checks without rewriting their bytes',async t=>{
+ const f=await replacementFixture(t),result=checkUpgradeCoverage(f.root,f.base,f.commit());
+ assert.equal(result.status,'PASS');assert.equal(result.superseded_legacy_validation.length,1);
+ assert.equal(result.superseded_legacy_validation[0].original_error,'verified_checks_required');
+ assert(!result.verified_upgrade_ids.includes(f.old.id));
+ assert.equal(f.git('rev-parse',`${f.original}:core-improvements/entries/${f.old.id}`),
+  f.git('rev-parse',`HEAD:core-improvements/entries/${f.old.id}`));
+});
+
+test('a canonical fresh replacement preserves the original fragment issue error as diagnostics',async t=>{
+ const f=await replacementFixture(t,{fragment:true}),result=checkUpgradeCoverage(f.root,f.base,f.commit());
+ assert.equal(result.status,'PASS');assert.equal(result.superseded_legacy_validation[0].original_error,'canonical_issue_url_required');
+});
+
+for(const option of ['wrongTree','wrongScope','foreign','verify'])test(`replacement cannot bypass ${option}`,async t=>{
+ const f=await replacementFixture(t,{[option]:option==='verify'?false:true});
+ assert.equal(checkUpgradeCoverage(f.root,f.base,f.commit()).status,'BLOCKED');
+});
+
+test('replacement cannot waive a historical record edit or an immutable SOURCE change',async t=>{
+ const f=await replacementFixture(t);
+ const oldBase=f.original;
+ const oldFile=`core-improvements/entries/${f.old.id}/record.json`;
+ const original=JSON.parse(await fs.readFile(path.join(f.root,oldFile),'utf8'));
+ await f.write(oldFile,JSON.stringify({...original,summary:'Rewritten history'}));
+ const result=checkUpgradeCoverage(f.root,oldBase,f.commit());
+ assert.equal(result.status,'BLOCKED');assert(result.errors.some(e=>e.reason==='journal_history_is_append_only'));
 });
 
 const archiveProtection='**/SOURCE_SKILL.md -text -filter -working-tree-encoding\n**/SOURCE_PROMPT.md -text -filter -working-tree-encoding\n';

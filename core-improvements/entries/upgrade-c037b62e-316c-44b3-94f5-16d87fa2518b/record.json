@@ -1,0 +1,63 @@
+{
+  "siteId": "memocasting",
+  "category": "workflow",
+  "summary": "Revalidate exact immutable historical commerce provenance; preserve original failures and fix Python test classification and explicit snapshot-bound journal replacement.",
+  "evidence": [
+    "Original full-branch failure retained: sites/memocasting/qa/antigravity-review-20261025/full-branch-coverage.private.json",
+    "Current actual checks and source adoption: sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+    "Historical entries are immutable and still retain their original invalid issue/checks statements."
+  ],
+  "paths": [
+    "scripts/core-upgrade.mjs",
+    "scripts/core-upgrade-check.mjs",
+    "scripts/core-upgrade-check.test.mjs",
+    "CORE_IMPROVEMENT.md",
+    "core-improvements/README.md",
+    "SKILLS/niche-site-audit/scripts/rendered-site_test.py",
+    "commerce-core",
+    "WORKSTREAMS.md",
+    "core-improvements/entries/upgrade-c6e6cd31-7d24-472d-a38b-8681b751456b",
+    "commerce-core/README.md",
+    "commerce-core/docs/API.md",
+    "commerce-core/docs/PRODUCTION_CONNECTION.md",
+    "commerce-core/migrations/0024_operator_access.sql",
+    "commerce-core/package-lock.json",
+    "commerce-core/package.json",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/src/access-identity.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/src/identity.mjs",
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/test/access-identity.test.mjs",
+    "commerce-core/test/access-worker-harness.mjs",
+    "sites/memocasting/DEPLOYMENT_2026_10_14.md",
+    "commerce-core/src/stripe-adapter.mjs",
+    "commerce-core/test/shared-stripe-webhook.test.mjs",
+    "sites/memocasting/commerce-production.wrangler.jsonc"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "rollback": "Revert the new checker capability and complementary verification declarations only; do not rewrite original records, runtime data, deployed secrets or past failures.",
+  "supersedes": [
+    {
+      "id": "upgrade-65596cf1-39b5-4fd4-bf6c-fd61a52d683d",
+      "treeSha": "0854a708b1b4e1a4718815a3947c029962aa9638"
+    },
+    {
+      "id": "upgrade-7670f609-7537-4225-9a83-4cc84cd02c18",
+      "treeSha": "2e231311ede7b17e6c364d9960cea588aa60fedd"
+    },
+    {
+      "id": "upgrade-7afd5a24-52dd-4e04-be77-9fcf4a430824",
+      "treeSha": "7267d40c596aba8d9930c730336238451564a60a"
+    },
+    {
+      "id": "upgrade-ea944eba-da11-40e0-9986-c6337675eeb9",
+      "treeSha": "516a1d3fecee6e890b4171799af80d310ba120e7"
+    }
+  ],
+  "id": "upgrade-c037b62e-316c-44b3-94f5-16d87fa2518b",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "65f127b86bb3edd85846c9bd9950d0fefe41a80e",
+  "createdAt": "2026-10-25T14:21:03.830Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual present-source revalidation. Original historical statements and their first failures remain unchanged. No historical PASS is invented; no backend/payment/order writes were performed.",
+  "checks": [
+    {
+      "command": "PUBLIC npm run test:core",
+      "result": "PASS",
+      "evidence": "258/258 tests against current ecbcd502 source; public-final-tests.private.log."
+    },
+    {
+      "command": "PUBLIC TypeScript / scoped ESLint / build / Wrangler deploy dry-run",
+      "result": "PASS",
+      "evidence": "Actual source ecbcd502/native cfec71cb; final-build.private.log and final-dry-run.private.log. Exact ASSETS/D1/MEMO_COMMERCE/MEMO_INSTAGRAM and GA4 configuration reconciled with current provider snapshot."
+    }
+  ],
+  "eventId": "8c4a1d12-fddd-4e3e-a227-83c6ceafb9d1",
+  "sequence": 2,
+  "at": "2026-10-25T14:21:04.076Z"
+}

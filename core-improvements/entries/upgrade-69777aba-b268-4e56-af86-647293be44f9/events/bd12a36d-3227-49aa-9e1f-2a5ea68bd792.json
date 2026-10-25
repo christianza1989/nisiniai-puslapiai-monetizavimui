@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original focused assertions failed before the source fix (explicit series discarded; invalid values accepted), retained in private original-fail receipt. Optional owner-confirmed series now validate, clone into prepared store and preserve all closed operation gates. This event certifies source and cloned policy preflight only, not real invoice issuance, provider wallet activation, production deployment or main merge.",
+  "checks": [
+    {
+      "command": "node --test test/business-config.test.mjs test/document-pdf.test.mjs test/documents.test.mjs",
+      "result": "PASS",
+      "evidence": "5 actual focused business/document tests passed on2026-10-19; private document-series-checks receipt preserves output. Tests cover explicit different series, reference isolation, invalid/colliding/incomplete values, legacy fallback, document-policy admission and Unicode PDF source/replay."
+    },
+    {
+      "command": "node sites/memocasting/qa/document-series-confirmed-20261019.private.mjs",
+      "result": "PASS",
+      "evidence": "PREPARED_NOT_APPLIED; cloned actual production configuration accepts owner-confirmed MCWEB/MCWEBK/MCWEBP with documentPolicy preflight, while actual operation/document approvals remain false."
+    }
+  ],
+  "eventId": "bd12a36d-3227-49aa-9e1f-2a5ea68bd792",
+  "sequence": 2,
+  "at": "2026-10-19T05:17:29.423Z"
+}

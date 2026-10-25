@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Canonical UI option verified; actual Memo adoption/browser/deploy follows separately.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/checkout-cart.test.mjs",
+      "result": "PASS",
+      "evidence": "15 tests PASS in ignored sidebar-cart-tests-initial.log; both product placements, removal/empty state, locked submit/idempotency/payment covered."
+    },
+    {
+      "command": "Pinned Prettier on checkout-ui.mjs and checkout-cart.test.mjs",
+      "result": "PASS",
+      "evidence": "Canonical formatting applied only to these two files."
+    }
+  ],
+  "eventId": "487e678d-7042-42da-ad73-f56e516e98c2",
+  "sequence": 2,
+  "at": "2026-10-20T18:36:18.573Z"
+}

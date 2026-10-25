@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Scoped source and actual deployment qualification; not main merge, universal adoption or paid-order acceptance.",
+  "checks": [
+    {
+      "command": "PUBLIC npm run test:core",
+      "result": "PASS",
+      "evidence": "133 tests PASS; ignored qa/memocasting-launch-20261020/public-final-tests.log"
+    },
+    {
+      "command": "PUBLIC node --test tests/commerce-mail-gateway.test.mjs tests/hostinger-commerce-mail.test.mjs",
+      "result": "PASS",
+      "evidence": "11 tests PASS, one-shot claim/unknown/no retry/header rejection/sender binding/204 acceptance; mail-api-tests-final.log"
+    },
+    {
+      "command": "Native private commerce-mail D1/service binding test + actual owner API/inbox acceptance",
+      "result": "PASS",
+      "evidence": "Native mail-api-native.log PASS. Actual approved sender authenticated, actual204 and exact owner Gmail INBOX marker. Real cron OrderPlaced accepted separately; private receipts not in Git."
+    }
+  ],
+  "eventId": "268bf6e8-6dc2-4a10-a953-2fa6eaafcc1a",
+  "sequence": 2,
+  "at": "2026-10-20T17:27:35.969Z"
+}

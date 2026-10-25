@@ -1,0 +1,33 @@
+{
+  "siteId": "memocasting",
+  "summary": "Homepage narrative lacked early native catalogue prices, visible kit contents and guides; motion assumed sample testimonials and a single reveal paragraph, preventing the approved complete interactive layout.",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/HOMEPAGE_PLAN.md",
+    "sites/memocasting/HOMEPAGE_INTEGRATION.md"
+  ],
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "components/niche/memocasting-site.tsx",
+    "components/niche/memocasting-homepage-motion.tsx",
+    "components/niche/memocasting-homepage.css",
+    "lib/memocasting-homepage-markup.mjs",
+    "lib/memocasting-homepage-assets.mjs",
+    "lib/memocasting-homepage-motion.mjs",
+    "lib/memocasting-homepage-catalogue.mjs",
+    "lib/memocasting-instagram.mjs",
+    "tests/memocasting-homepage.test.mjs",
+    "tests/memocasting-homepage-motion.test.mjs",
+    "tests/memocasting-homepage-catalogue.test.mjs",
+    "tests/memocasting-instagram.test.mjs",
+    "content-packages/memocasting",
+    "lib/generated/content-packages.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Scoped revert own paired code/content commits; preserve previous official Studio release and asset manifests.",
+  "id": "upgrade-70071bf8-a382-4cee-a2c3-3d6328d5fa8c",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "c7a880f6fd46355f83c75f35535f57b0f2b3ec6d",
+  "createdAt": "2026-10-13T09:06:42.280Z"
+}

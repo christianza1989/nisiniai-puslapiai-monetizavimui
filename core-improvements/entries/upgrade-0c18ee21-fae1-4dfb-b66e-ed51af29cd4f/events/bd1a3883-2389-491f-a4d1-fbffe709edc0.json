@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Corrected stale documentation to actual committed checker flags and single-private-repo coverage. No executable policy change.",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade-check.test.mjs",
+      "result": "PASS",
+      "evidence": "qa/product-editor-20261021/coverage-regression.txt: 13/13"
+    },
+    {
+      "command": "node scripts/core-upgrade-check.mjs --base 131e95e768098402626d10741913006ce77fd07a",
+      "result": "PASS",
+      "evidence": "Executable accepted documented root/base/head command; unsupported legacy arguments independently reproduced."
+    }
+  ],
+  "eventId": "bd1a3883-2389-491f-a4d1-fbffe709edc0",
+  "sequence": 2,
+  "at": "2026-10-21T10:21:47.756Z"
+}

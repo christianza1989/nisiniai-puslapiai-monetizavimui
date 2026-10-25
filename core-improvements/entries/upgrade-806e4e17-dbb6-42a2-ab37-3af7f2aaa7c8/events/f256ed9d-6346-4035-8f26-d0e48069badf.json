@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Continue authorized full module with package planning and shipping protocol based on actual current official Sendparcel OpenAPI2.0.1 sha cff27042ca7b87f51b98bc54480c431b97fa6ba0fd2ac7d2c5f5c54e6645930d. Directory latestCLI/plugin query failed invalid user-agent; Treg has no shipping endpoint/own key, so use primary official docs. Old PDF auth/base/locker format differs and is not authoritative current adapter. No real account signup/carrier charge/support mail/deploy or delegated site mutation.",
+  "eventId": "f256ed9d-6346-4035-8f26-d0e48069badf",
+  "sequence": 14,
+  "at": "2026-10-11T23:49:28.299Z"
+}

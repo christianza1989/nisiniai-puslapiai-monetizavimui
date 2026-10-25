@@ -1,0 +1,22 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Business preparation discards owner-confirmed document series in favour of hardcoded defaults",
+  "evidence": [
+    "Owner2026-10-19 confirms non-VAT and unused dedicated sale/credit/packing series; no record copied into the public journal",
+    "Original focused regression failed: explicit series became MC/MCK/MCP and invalid/colliding series did not throw; private original-fail receipt preserved",
+    "Native business preparer is used by production preparation CLI; future reprovision from facts must retain owner-confirmed numbering without activating financial operations"
+  ],
+  "paths": [
+    "commerce-core/src/business-config.mjs",
+    "commerce-core/test/business-config.test.mjs",
+    "commerce-core/config/memocasting-business.json",
+    "commerce-core/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert this optional preparation input/source only. Preserve existing issued documents and counters. Any actual store metadata rollback must compare against current config and is allowed only if it does not reuse an issued sequence. No main merge or global runtime adoption implied.",
+  "id": "upgrade-69777aba-b268-4e56-af86-647293be44f9",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "faf58165542e1bf68a77884e67c0003015f7a48c",
+  "createdAt": "2026-10-19T05:16:21.228Z"
+}

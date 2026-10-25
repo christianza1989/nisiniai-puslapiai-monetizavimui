@@ -1,0 +1,19 @@
+{
+  "status": "fixing",
+  "note": "0.11 adds normalized SKU/quantity-only cart hook, safe callback error boundary, create and lost-response clear, preservation of new selections after an older order, stale quote response rejection and temporary input lock. Site integration continues after exact committed source synchronization. A separate real assembled-kit expiry/traceability code defect was reproduced and remains active work; this checkpoint does not complete the full shop.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "tmp/verify-011.log:104 Node tests, native workerd-D1-R2-Queue/20 migrations and dry-run Worker build. Seven new mounted unit-DOM scenarios are not actual browser proof; that remains site acceptance."
+    },
+    {
+      "command": "node tmp/review-kit-expiry.mjs",
+      "result": "FAIL",
+      "evidence": "Functional requirement violated in independent testOnly in-memory fixture: assemble while material valid, advance beyond expiry, catalog still1 and order can reserve. OPEN_CODE in SHOP_FUNCTIONAL_REVIEW; real owner data and production unchanged."
+    }
+  ],
+  "eventId": "cf8b5c31-885b-4a3f-8989-84e779c95967",
+  "sequence": 25,
+  "at": "2026-10-12T12:45:25.757Z"
+}

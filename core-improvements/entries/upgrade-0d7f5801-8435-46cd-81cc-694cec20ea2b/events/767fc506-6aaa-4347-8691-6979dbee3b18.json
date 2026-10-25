@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "33 focused buyer/cart/embedded-checkout tests pass, including actual pending auto/submit, retry, stale revision, original order recovery and opaque Stripe credential. No payment charged.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/buyer.test.mjs commerce-core/test/checkout-cart.test.mjs commerce-core/test/embedded-checkout.test.mjs",
+      "result": "PASS",
+      "evidence": "qa/memocasting-delivery-20261021/core-after-final.txt:33pass0fail. Original before logs retained."
+    }
+  ],
+  "eventId": "767fc506-6aaa-4347-8691-6979dbee3b18",
+  "sequence": 2,
+  "at": "2026-10-21T05:12:23.560Z"
+}

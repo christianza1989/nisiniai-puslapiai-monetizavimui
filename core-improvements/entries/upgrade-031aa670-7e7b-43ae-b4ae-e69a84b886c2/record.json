@@ -1,0 +1,19 @@
+{
+  "siteId": "memocasting",
+  "summary": "Commerce notification adapter had no private durable SMTP gateway; repeated uncertain sends require one permanent claim and existing transport reuse.",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/COMMERCE_MAIL_INTEGRATION.md",
+    "CompanionPR31 lib/commerce-mail-gateway.mjs and workers/commerce-mail/;5 Node/SQLite plusactualD1/servicebinding fixturePASS. NoSMTPauth/mail; installedruntime2026-05-22 vsnewconfig2026-10-12 gateexplicit."
+  ],
+  "paths": [
+    "MAIL_CORE.md",
+    "sites/memocasting/COMMERCE_MAIL_INTEGRATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Scoped companion source revert; disable private service binding. Preserve all durable unknown claims; never resend or reset DB to perform rollback.",
+  "id": "upgrade-031aa670-7e7b-43ae-b4ae-e69a84b886c2",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "9c9c7b5470bb3c6acbf6e7c96587e3a4809c39a4",
+  "createdAt": "2026-10-12T04:39:20.137Z"
+}

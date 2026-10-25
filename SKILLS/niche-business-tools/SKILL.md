@@ -16,3 +16,6 @@ Each candidate includes purpose, exact identity/source/date, inputs/outputs, cur
 Reuse SEO research, mail and agent policy adapters. Tools must be site-scoped and admitted by the real runtime before use. Runtime prompts may include relevant approved capabilities; a TOOLS plan neither provisions them nor hot-reloads an ongoing conversation.
 
 Before handoff inspect the plan for BUSINESS consistency and all contract fields, link it from the niche documentation. Report actual discovery, actual executed tests and unverified future work separately. Return practical shared defects through [CORE_IMPROVEMENT](../../CORE_IMPROVEMENT.md); maintain the journal when implementing a repair.
+
+
+For owner-managed commerce catalogs, reuse commerce-core/docs/PRODUCT_EDITOR.md and its granted draft/media/revision APIs. Preserve SKU-plus-choices identity through the public adapter; never model each finish as independent kit stock or accept browser price deltas. Physical additions require measured complete packages. Export exact committed browser SDK and verify server-rendered published content; private editor success alone is not storefront adoption.

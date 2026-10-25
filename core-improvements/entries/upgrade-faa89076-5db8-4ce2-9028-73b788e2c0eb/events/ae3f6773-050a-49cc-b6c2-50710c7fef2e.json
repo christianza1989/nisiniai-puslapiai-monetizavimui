@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Scoped capability source reviewed; default remains disabled until the selected property and native privacy package are deployed together. Initial hosted SEO acceptance at9fd8 is retained; two obsolete pagination parameters found there were repaired in535936a0 with regression. No purchase event or real transaction claimed.",
+  "checks": [
+    {
+      "command": "node --run test:core",
+      "result": "PASS",
+      "evidence": "PUBLIC suite250/250 at analytics source2ce265db with native privacy import; original full log analytics-full-tests.private.log."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "Exit0; analytics-typecheck.private.log. Targeted new component/controller ESLint also passed in delegated reviewed branch."
+    },
+    {
+      "command": "Native Studio privacy edit/review/approve/release",
+      "result": "PASS",
+      "evidence": "49a05952 /2844fc35 package187pages800assets; onlyprivatumas changed, other186pages and all publication dates exact."
+    }
+  ],
+  "eventId": "ae3f6773-050a-49cc-b6c2-50710c7fef2e",
+  "sequence": 2,
+  "at": "2026-10-25T08:53:41.758Z"
+}

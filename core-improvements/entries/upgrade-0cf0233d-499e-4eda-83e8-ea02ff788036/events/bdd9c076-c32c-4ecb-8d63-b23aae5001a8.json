@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "PUBLIC257regressions and TypeScript/scopedESLint passed. Existing tests now explicitly use v2, old content-only v1 is rejected. Focused27controller/attribution/payment cases include a final optional-context failure regression. Native privacy release changes only1/187pages;186pages and all dates exact. Hosted real-ID attribution and activation remain separate, not pre-certified.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "Private public-tests.private.log257/257 before the final optional-context guard; focused affected tests rerun after guard"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit; scoped ESLint",
+      "result": "PASS",
+      "evidence": "Both returned0 for actual client integration"
+    },
+    {
+      "command": "node --test tests/memocasting-analytics.test.mjs tests/memocasting-attribution.test.mjs tests/memocasting-embedded-checkout.test.mjs",
+      "result": "PASS",
+      "evidence": "Focused final consent/source/order binding/optional failure/embedded payment tests; no external Google or Stripe call"
+    }
+  ],
+  "eventId": "bdd9c076-c32c-4ecb-8d63-b23aae5001a8",
+  "sequence": 2,
+  "at": "2026-10-25T11:05:58.263Z"
+}

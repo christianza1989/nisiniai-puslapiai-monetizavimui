@@ -1,0 +1,20 @@
+{
+  "rollback": "Revert own scoped planning/audit-helper commits; no public content,commerce,private dataset or live deployment reset.",
+  "siteId": "memocasting",
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "tests/memocasting-homepage.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "summary": "Plan every remaining page and audit current SEO. Historical QA_SEO wrongly requires hash IDs for every homepage body heading after admitted custom template integration; distinguish authoritative custom landmarks from classic body anchors while retaining all links/schema gates. Reconcile obsolete canonical planning contract and produce evidence-backed per-URL brief/audit.",
+  "evidence": [
+    "Direct owner2026-10-13 full remaining-page plan/SEO audit request",
+    "PUBLIC/output/site-plan-seo-baseline.private.txt: / section assertion atQA_SEO:24"
+  ],
+  "category": "code",
+  "id": "upgrade-581fc13d-34de-46dd-95a0-537df96c1996",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "b19bdd3e0eccabdb00c80496f80c53f7853588fb",
+  "createdAt": "2026-10-13T17:48:20.862Z"
+}

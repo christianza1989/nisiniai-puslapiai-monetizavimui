@@ -1,0 +1,20 @@
+{
+  "siteId": "memocasting",
+  "summary": "Native storefront acceptance requires exact per-country policy revisions, same-language form/LLM responses, authoritative inactive extras and correct locale-home breadcrumbs in the common rendered inspector.",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/FOUNDATION_STATUS.md",
+    "Companion PR31 canonical terms callback, public native form/country policy tests; exact88-page release e69b16f2; actual103SEOHTTP and267render checks."
+  ],
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/verify-site-completion.mjs",
+    "SKILLS/niche-site-audit/scripts/rendered_site.py",
+    "sites/memocasting/FOUNDATION_STATUS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Scoped revert of renderer/audit integration and official re-import of the prior immutable package; preserve sandbox order history and all canonical commerce source.",
+  "id": "upgrade-3417695d-8813-45d8-b8ed-8548da72064b",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "b9b5f84b9d0ddb240ad4ebf5c1a6b57602fce409",
+  "createdAt": "2026-10-12T10:15:30.764Z"
+}

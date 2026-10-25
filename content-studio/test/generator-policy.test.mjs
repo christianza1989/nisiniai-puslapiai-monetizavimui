@@ -9,7 +9,9 @@ process.env.CODEX_JS=path.join(root,'codex-fixture.mjs');
 await writeFile(process.env.CODEX_JS, `
 import { writeFile } from 'node:fs/promises';
 let prompt='';for await(const chunk of process.stdin)prompt+=chunk;
-const data=JSON.parse(prompt.slice(prompt.lastIndexOf('\\n{\\n  "siteData"')+1)).siteData;
+const envelope=JSON.parse(prompt.slice(prompt.lastIndexOf('\\n{\\n  "siteData"')+1)),data=envelope.siteData;
+if(data.domain==='provider-failure.example'){process.stderr.write('WARN shell_snapshot: unsupported shell');process.stdout.write(JSON.stringify({type:'turn.failed',error:{message:'429 Too Many Requests: synthetic test failure'}}));process.exit(1);}
+if(data.domain==='brief-forwarding.example'&&!envelope.pageData?.editorialBrief?.notes?.endsWith('END-OF-FULL-BRIEF'))throw new Error('Complete editorial brief missing or truncated');
 const args=process.argv.slice(2),plan=args[args.indexOf('--output-schema')+1].endsWith('plan-result.schema.json');
 if(plan&&data.contentPolicy.cadence==='weekly'&&!prompt.includes(data.contentPolicy.articlesPerWeek+' articles/week'))throw new Error('Weekly prompt missing');
 const count=Number(prompt.match(/choose up to (\\d+)/)?.[1]||1);
@@ -42,4 +44,24 @@ test('weekly policy reaches the actual CLI prompt and generates its calculated h
   assert.equal(JSON.parse(result.detail).plan.remainingArticles,0);
   assert.equal(after.contentPolicy.articlesPerWeek,3);assert.equal(after.contentPolicy.articlesPerMonth,undefined);
   assert.equal(after.pages.some(p=>p.publishedRevision),false);
+});
+
+test('native draft forwards a complete private brief through the CLI envelope without publishing it',async()=>{
+  const site=await model.createSite({canonicalHost:'brief-forwarding.example',name:'Brief test',offer:'Only a fixture'});
+  const page=await model.addPage(site.id,{type:'guide',slug:'specific-question',title:'Only a test',description:'Fixture',intent:'Fixture'});
+  const fullBrief={slug:page.slug,question:'Which choice?',contribution:'Worked choice',outline:['Compare'],notes:'Original long-tail scope. '.repeat(200)+'END-OF-FULL-BRIEF'};
+  const result=await finish(await enqueue('draft',site.id,page.id,{fullBrief}));
+  assert.equal(result.status,'complete',result.error);
+  const after=(await model.getSite(site.id)).pages.find(p=>p.id===page.id);
+  assert.ok(after.body.length);assert.equal(Boolean(after.publishedRevision),false);
+  assert.equal('editorialBrief' in after,false,'private task input does not migrate the page or public schema');
+  await assert.rejects(()=>enqueue('draft',site.id,page.id,{fullBrief:{...fullBrief,slug:'other'}}),/nesutampa/);
+});
+
+test('native job records the provider failure instead of an incidental shell warning',async()=>{
+ const site=await model.createSite({canonicalHost:'provider-failure.example',name:'Only a failure fixture',offer:'Fixture'});
+ const page=await model.addPage(site.id,{type:'guide',slug:'failure',title:'Fixture',description:'Fixture',intent:'Fixture'});
+ const result=await finish(await enqueue('draft',site.id,page.id));
+ assert.equal(result.status,'failed');assert.match(result.error,/429 Too Many Requests/);assert.doesNotMatch(result.error,/shell_snapshot/);
+ const after=(await model.getSite(site.id)).pages.find(p=>p.id===page.id);assert.equal(after.body.length,0);assert.equal(Boolean(after.approval),false);
 });

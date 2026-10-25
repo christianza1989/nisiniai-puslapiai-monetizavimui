@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "35focused tests pass; classic/default flow retained. No provider API mode, backend or secret changes.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/checkout-cart.test.mjs commerce-core/test/buyer.test.mjs commerce-core/test/embedded-checkout.test.mjs",
+      "result": "PASS",
+      "evidence": "qa/memocasting-delivery-20261021/same-view-after-final-2.txt:35pass0fail. Earlier same-view-before FAIL and failed cart-resurrection regression retained."
+    }
+  ],
+  "eventId": "481a23cd-e57e-4c35-a35b-bbf90ec39230",
+  "sequence": 2,
+  "at": "2026-10-21T05:50:11.763Z"
+}

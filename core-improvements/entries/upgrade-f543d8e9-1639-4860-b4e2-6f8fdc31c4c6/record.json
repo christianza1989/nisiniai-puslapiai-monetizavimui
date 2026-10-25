@@ -1,0 +1,29 @@
+{
+  "siteId": "memocasting",
+  "summary": "Consent-bound server-side ecommerce measurement was absent; add an isolated GA4 consumer using existing verified paid/refund facts, durable idempotency and privacy gates without changing the money ledger",
+  "category": "code",
+  "evidence": [
+    "commerce-core/ANALYTICS.md",
+    "commerce-core/test/analytics.test.mjs",
+    "commerce-core/test/analytics-worker.test.mjs",
+    "sites/memocasting/GA4_ECOMMERCE_2026_10_25.md"
+  ],
+  "paths": [
+    "commerce-core/src/analytics.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/src/worker.mjs",
+    "commerce-core/migrations/0026_optional_analytics.sql",
+    "commerce-core/test/analytics.test.mjs",
+    "commerce-core/test/analytics-worker.test.mjs",
+    "commerce-core/ANALYTICS.md",
+    "commerce-core/README.md",
+    "SEO_GEO_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "rollback": "Disable only optional COMMERCE_ANALYTICS, scoped source revert; retain additive tables and all later orders, payments, mail and carrier data",
+  "id": "upgrade-f543d8e9-1639-4860-b4e2-6f8fdc31c4c6",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "a78b56ea1ecbfee8d053a0db914c416e18ea5d9a",
+  "createdAt": "2026-10-25T11:05:07.473Z"
+}

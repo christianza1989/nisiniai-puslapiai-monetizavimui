@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Continuing full-foundation checkpoint0.8: non-idempotent SP one-POST booking intent, cost ceiling and provider-fact reconciliation; private PDFs/tracking; immutable documents/notification drafts; retry/backoff/dead/operator recovery; native Queue seam; encrypted exact SQLite+PDF backup/new disabled candidate restore. Initial0010 inline trigger END syntax was rejected before durable adoption, repaired, all testsPASS. Actual browser order7EEF5125 completed hosted local fixture payment, invoice/download, pack/fullsender/quote/one bookingID1001/PDF/track/jobs. PL/LV/EE forms inspected. Configuration/source operations/site integration continue; not complete. No live money/shipment/mail/grants/DNS/deploy.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "76Node tests; native workerd/D1/R2 command/concurrency/immutability and actual source Queue dispatch; dryrun751.58KiBgzip17assets. commerce-core/docs/CONTINUATION_0_8.md"
+    },
+    {
+      "command": "Actual foundation fixture browser8799",
+      "result": "PASS",
+      "evidence": "Order7EEF5125, fixturebooking1001, buyer invoice download/private provider PDFs/tracking/jobs/packingPDF.320pxoperatorjobs width320 scrollWidth305. PL/LV/EE languages/countries correct at1280nooverflow. Ignored tmp/ui-review. No real label/rate/money/mail claim."
+    },
+    {
+      "command": "Exact32bae238ca34e4783fc2f954967f69b4f5db4901 clean archive npmci/verify",
+      "result": "PASS",
+      "evidence": "Ignored commerce-core/tmp/source-restore-07/commerce-core/restore-verify.log;68tests/nativeR2/dryrunPASS."
+    }
+  ],
+  "eventId": "1db79bdc-b8b3-43e0-8c90-54bc04b6a134",
+  "sequence": 19,
+  "at": "2026-10-12T02:49:39.539Z"
+}

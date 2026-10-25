@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "evidence": "114 tests, including archive categories, unknown-guide fallback, actual ranku-pozos care classification, locale isolation, before/after boundary and cart paint included.",
+      "command": "npm run test:core",
+      "result": "PASS"
+    },
+    {
+      "evidence": "Built local Workers8883:88 current pages, canonical/schema/robots/sitemap/LLMs/host isolation, future HTML and media404.",
+      "command": "npm run test:seo-smoke",
+      "result": "PASS"
+    },
+    {
+      "evidence": "Imported exact181-page649-asset immutable release7b6bfd6c, common SDK verified8eb789 source; local build completed.",
+      "command": "npm run build",
+      "result": "PASS"
+    },
+    {
+      "evidence": "Exact package SHA b967a3664651c59f7b13ae39f679e2fa7ab43e1e656877546853a28582922826;93 before/after boundaries and matched visible index/schema,649 actual asset files.",
+      "command": "private complete-archive boundary check",
+      "result": "PASS"
+    }
+  ],
+  "note": "Actual eligible-only archive index and CollectionPage share categories, retain locales and future time gates. Representative desktop/mobile and 200 percent root-font reflow reviewed; footer min-content overflow and skip-link height defect fixed. Full93 prose review already completed, no repeated per-page UI round after owner instruction. Export/import181 pages with93 future selected pages; hosted gate remains.",
+  "status": "local-verified",
+  "eventId": "207f5520-1555-45df-bdf4-dd85b038557e",
+  "sequence": 2,
+  "at": "2026-10-14T20:52:20.149Z"
+}

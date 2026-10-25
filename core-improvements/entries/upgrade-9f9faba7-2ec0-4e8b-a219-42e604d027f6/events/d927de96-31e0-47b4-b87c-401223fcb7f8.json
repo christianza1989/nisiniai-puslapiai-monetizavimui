@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Actual consumer is only the authorized memocasting-site Worker f5212538-6ecb-4fad-aaad-143ed08ce6ce, source5cff95db, native2844fc35. HTTPS113pages,2exactPDFs,17redirects and future HTML/media guard PASS. Real Chrome has0Google before/reject, one sanitized opt-in page_view accepted204 and visible in owned GA4 Realtime; withdrawal clears GA cookies and stops requests. Cart/foreign locale never load GA. No purchase event, order/charge, backend/DNS/secret change or main-merge claim. PR31 is OPEN draft; actual hosted adoption is separate from main delivery.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "commit": "5cff95dbd416f1541f30339daebbb5d218c0ba89",
+  "eventId": "d927de96-31e0-47b4-b87c-401223fcb7f8",
+  "sequence": 3,
+  "at": "2026-10-25T09:25:11.656Z"
+}

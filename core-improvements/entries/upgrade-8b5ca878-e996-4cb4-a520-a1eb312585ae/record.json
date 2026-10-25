@@ -1,0 +1,18 @@
+{
+  "siteId": "memocasting",
+  "category": "workflow",
+  "summary": "Require actual edge transport and exact inbox qualification for shared mail; document explicit approved mailbox API alternative without retry, fake headers or generalized SMTP claims.",
+  "paths": [
+    "MAIL_CORE.md"
+  ],
+  "evidence": [
+    "Observed native transport failure differs from Node SMTP success; existing Hostinger HTTPS API worked with owner-approved dedicated mailbox key.",
+    "MAIL_CORE now separates actual runtime, sender binding, ledger, provider acceptance and inbox evidence; no new spending or cross-mailbox permission inferred. See SALES_ACTIVATION_2026_10_20.md."
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert only scoped compatible source changes after fresh actual settings/DB read. Preserve live orders, secrets, cron, claims and other sites. Never replay unknown sends or restore pre-launch database. Explicit alternative requires actual sender and owner-approved access.",
+  "id": "upgrade-8b5ca878-e996-4cb4-a520-a1eb312585ae",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "30e86bb106b21a7f6621bde09494da741b29246f",
+  "createdAt": "2026-10-20T17:27:36.322Z"
+}

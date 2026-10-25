@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "summary": "Complete catalog editor adapter coverage: persisted local media storage, parcel aggregation and browser editor module; same configured line identity in public renderer. Companion source remains independently committed.",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/PRODUCT_EDITOR_2026_10_21.md",
+    "commerce-core/test/catalog-editor.test.mjs",
+    "commerce-core/test/checkout-cart.test.mjs"
+  ],
+  "paths": [
+    "commerce-core/src/node-private-storage.mjs",
+    "commerce-core/src/parcels.mjs",
+    "commerce-core/public/catalog-editor.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Keep catalog draft/media tables and order snapshots; revert scoped code only after validating pending configured orders.",
+  "id": "upgrade-ab60ab5b-e391-43cf-be15-bde306b4780e",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "131e95e768098402626d10741913006ce77fd07a",
+  "createdAt": "2026-10-21T09:51:14.637Z"
+}

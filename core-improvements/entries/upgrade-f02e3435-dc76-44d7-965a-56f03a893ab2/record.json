@@ -1,0 +1,20 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Compact existing one-page cart through site-scoped CSS: grouped contact/address columns on desktop and reduced gaps with44px controls/16px input values retained.",
+  "evidence": [
+    "Owner requested less scrolling. Actual1280px old form height1258.59px; matching final preview529.45px with unchanged canonical DOM/payment rules. Mobile390 form1158.32px and document375px, no overflow.",
+    "PUBLICda24ab706ac29d844d6c229b93543d0ccf7aa8c7 changes only two CSS files. Backend/admission/Stripe source/content package unchanged. Actual frontend62032b09-1605-4bb3-9f56-b60512758027 deployed.",
+    "Initial build failed because running Windows preview locked dist; stopped only own preview and repeated build successfully. No source reset/deletion or framework workaround."
+  ],
+  "paths": [
+    "components/niche/memocasting-checkout.css",
+    "components/niche/memocasting-site.module.css"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Redeploy previous frontend0409e620-3e07-46f1-9a23-9fcffbcfa5e1 after fresh actual binding check, or revert these two CSS files. Preserve all live orders, provider secrets, admissions, article dates, and backend/mail versions.",
+  "id": "upgrade-f02e3435-dc76-44d7-965a-56f03a893ab2",
+  "branch": "codex/memocasting-public-20261012",
+  "baseSha": "55477b624f88e228926ad796bf38494193cf246e",
+  "createdAt": "2026-10-20T18:01:29.662Z"
+}

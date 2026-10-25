@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "95 PUBLIC tests and TypeScript; final headline-specific motion test and actual320px browser",
+      "command": "node --test tests/*.test.mjs and npx tsc --noEmit"
+    },
+    {
+      "result": "PASS",
+      "evidence": "output/egeon-build-headline-confirm.private.txt after stopping own locked preview",
+      "command": "npm run build"
+    },
+    {
+      "result": "PASS",
+      "evidence": "47 exact-byte/Range/isolation requests,88 Memo pages withSEO metadata/schema",
+      "command": "node output/egeon-http.private.mjs and Memo SEO smoke"
+    },
+    {
+      "result": "PASS",
+      "evidence": "sites/memocasting/HERO_STORYTELLING_2026_10_13.md; companion output/egeon-browser.private.json and screenshots",
+      "command": "Actual CUA1280x630,1280x720,390x844,320x740"
+    }
+  ],
+  "note": "Reproduced630px height gate repaired. Owner-requested Egeon hero/word behavior, full-width film test and six-stage timeline verified; additional mobile comma-wrap defect repaired and confirmed. Old failures retained, no production/main adoption claim.",
+  "eventId": "883c8aae-6380-43a5-9efc-d6053e52fb3f",
+  "sequence": 2,
+  "at": "2026-10-13T10:43:47.204Z"
+}

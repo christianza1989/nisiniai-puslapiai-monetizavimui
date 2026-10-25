@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "siteId": "memocasting",
+  "date": "2026-10-13",
+  "checkedAt": "2026-10-13T18:32:58.355Z",
+  "state": "LOCAL_TECHNICAL_SEO_VERIFIED_REMAINING_WORK_PLANNED_NOT_LAUNCHED",
+  "scope": "Current official content, local source/HTTP and representative browser review; not a full renewed business/order/performance/security audit",
+  "packageSha256": "983ec0c06cb3dd59d28002aeffc3a73f5d7f0bea6520eea74a27ff6ae9da07cf",
+  "releaseId": "60c80be9-e039-4482-9099-a7d8567a1c1d",
+  "git": {
+    "coreBase": "b19bdd3e0eccabdb00c80496f80c53f7853588fb",
+    "publicBase": "dbdbd06782af2a265fca8a7d9c4df427ff0211ba",
+    "coreFetchedMain": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+    "publicFetchedMain": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937"
+  },
+  "checks": {
+    "publicPages": 88,
+    "indexableProjection": 84,
+    "guidePages": 24,
+    "reachablePages": 88,
+    "seoHttpRequests": 103,
+    "seoHttpCheckedAt": "2026-10-13T18:25:39.719Z",
+    "imageResources": 227,
+    "imageResourcesAll200": true,
+    "uniqueTitleDescriptionCanonicalH1": true,
+    "unitTests": {
+      "total": 102,
+      "pass": 102,
+      "fail": 0,
+      "command": "npm run test:core"
+    },
+    "plan": {
+      "pages": 88,
+      "remaining": 87,
+      "sameLanguageLinks": 352
+    },
+    "redirects": [
+      {
+        "path": "/products/seimos-rinkinys-1",
+        "status": 301,
+        "location": "/seimos-rinkinys"
+      },
+      {
+        "path": "/products/liejimo-rinkinys-porai",
+        "status": 301,
+        "location": "/rinkinys-porai"
+      },
+      {
+        "path": "/collections/all",
+        "status": 301,
+        "location": "/ranku-liejimo-rinkiniai"
+      }
+    ]
+  },
+  "browser": [
+    {
+      "formLabels": [
+        "Vardas",
+        "El. paštas",
+        "Klausimas",
+        "Sutinku, kad duomenys būtų naudojami atsakyti į užklausą. Privatumo informacija.",
+        "Palikite tuščią"
+      ],
+      "h1": "Pagalba prieš ir po pasirinkimo",
+      "headerHeight": 273.1875,
+      "headingFont": "\"Memo Newsreader\", Georgia, serif",
+      "path": "/kontaktai",
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "emptyAlt": [
+        {
+          "linkText": "Dviese.Rankų liejimo rinkinys poraiRinkinys porai — 32 €. Su pasirinktiniais baltais dažais — 35 €. Bendrai veiklai ir asmeniškam prisiminimui.Išsirinkti rinkinį",
+          "src": "/content-assets/memocasting/665e2e7c-aaad-439c-bb4d-fa798a0d26ef.webp"
+        },
+        {
+          "linkText": "Visi kartu.Rankų liejimo rinkinys šeimaiŠeimos rinkinys — 48 €. Du alginato ir du gipso pakeliai bendram šeimos prisiminimui.Išsirinkti rinkinį",
+          "src": "/content-assets/memocasting/c6bb0722-4dcd-49ef-a1ba-0290ae2a597d.webp"
+        }
+      ],
+      "path": "/ranku-liejimo-rinkiniai",
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "buttons": [
+        {
+          "disabled": true,
+          "text": "Įdėti į krepšelį"
+        },
+        {
+          "disabled": false,
+          "text": "Pakartoti patikrą"
+        }
+      ],
+      "h1": "Rankų liejimo rinkinys porai",
+      "headingFont": "\"Memo Newsreader\", Georgia, serif",
+      "path": "/rinkinys-porai",
+      "scrollWidth": 1265,
+      "status": [
+        "Nepavyko patikrinti prekės prieinamumo."
+      ],
+      "width": 1280
+    }
+  ],
+  "evidence": {
+    "crawl": "qa/all-pages-crawl.private.json",
+    "rawHtml": "qa/all-pages-raw.private/",
+    "http": "PUBLIC/output/audits/memocasting-seo-readiness.json",
+    "browser": "qa/other-pages-browser.private.json"
+  },
+  "findings": [
+    {
+      "id": "QA-HOME-ID",
+      "severity": "P1",
+      "status": "repaired",
+      "evidence": "PUBLIC/sites/memocasting/QA_SEO.mjs original / section assertion; admitted custom homepage does not use all body-heading hash IDs.",
+      "action": "Use authoritative custom landmarks for bespoke homepage; retain classic heading and all cross-page fragment checks.",
+      "verification": "103 HTTP checks PASS."
+    },
+    {
+      "id": "CONTRACT-DRIFT",
+      "severity": "P1",
+      "status": "repaired-documentation",
+      "evidence": "SEO_STRUCTURE_CONTRACT.md previously asserted 20/19 URLs, old LT canonicals and legacy 404; current 88/84 projection differs.",
+      "action": "Update contract to current projected routes, language counts and shop boundaries.",
+      "verification": "88 exact IDs mapped, 352 planned links validated."
+    },
+    {
+      "id": "PRODUCT-DOCUMENTS",
+      "severity": "P0",
+      "status": "owner/supplier-input-required",
+      "evidence": "Instruction, drying, finishing and support texts explicitly withhold exact ratios/times; family masses/capacity/age suitability undocumented.",
+      "action": "Acquire SKU/version IFU/SDS and actual materials/addon details; edit through official Studio review.",
+      "verification": "Future acceptance requires document-backed body and native-language review."
+    },
+    {
+      "id": "PRODUCTION-COMMERCE",
+      "severity": "P0",
+      "status": "shop-workstream",
+      "evidence": "Peer confirms Stripe/SP/email OFF; actual stock/expiry, add-on package dimensions and country commercial prices not accepted.",
+      "action": "Accept operational markets, provider callbacks, shipment and inbox delivery before live sales.",
+      "verification": "Local HTML/schema PASS is not an order/payment/inbox acceptance."
+    },
+    {
+      "id": "PRODUCTION-POLICIES",
+      "severity": "P0",
+      "status": "planned",
+      "evidence": "Current privacy/terms/returns/shipping metadata and bodies describe local testing; test shipping tariff not real carrier offer.",
+      "action": "Rewrite from actual production processing, destinations, fees and contract/returns process; territory-specific review.",
+      "verification": "P0 launch gate, not merely a meta description change."
+    },
+    {
+      "id": "DESIGN-FAMILIES",
+      "severity": "P1",
+      "status": "planned",
+      "evidence": "Current product/guide use Memo Newsreader, cream and brown; homepage white/Manrope/rose. Actual contact header 273px at 320px width.",
+      "action": "Implement common inner-page shell and role-specific product/category/guide layouts from plan.",
+      "verification": "320/768/1280, keyboard/focus, no overflow, reduced motion/JS fallback."
+    },
+    {
+      "id": "COMMERCE-COPY",
+      "severity": "P1",
+      "status": "planned-with-shop",
+      "evidence": "Product metadata and catalogue descriptions contain approved static LT prices; current purchase availability is native and gated.",
+      "action": "Avoid stale commercial duplication; use stable editorial metadata and authoritative visible/native prices. Offer only when true production data rendered server-side.",
+      "verification": "Visible selection, total and schema agree; do not turn off purchase gates."
+    },
+    {
+      "id": "LOCAL-RESTART",
+      "severity": "P2",
+      "status": "environment-limitation",
+      "evidence": "After restart preview restored with NICHE_DEV_SITE_ID; product displays retry/error because commerce backend not configured in restored frontend session.",
+      "action": "Coordinate restoring owned shop preview separately; no fake availability or provider activation.",
+      "verification": "Product fails safely with disabled buy and explicit retry; not tested end-to-end this SEO scope."
+    },
+    {
+      "id": "EMPTY-ALT",
+      "severity": "P2",
+      "status": "reviewed-context-appropriate",
+      "evidence": "12 crawl warning rows; Products/Guides templates place empty-alt thumbnail inside descriptive text link; film poster decorative. Browser confirms catalogue link names.",
+      "action": "Keep decorative/redundant alt empty; content/standalone action images require meaningful alternatives.",
+      "verification": "Template source + browser context; not a complete WCAG audit."
+    },
+    {
+      "id": "GSC",
+      "severity": "measurement",
+      "status": "not-connected",
+      "evidence": "Treg google-search-console.performance call 7bc8311cd53e430cb965e6085b98e999: provider credential missing; no performance rows returned.",
+      "action": "Connect authorized actual property, then inspect indexing/canonical and queries after real deployment.",
+      "verification": "No interpretation as zero clicks or zero indexed pages."
+    },
+    {
+      "id": "METRICS",
+      "severity": "measurement",
+      "status": "not-measured",
+      "evidence": "No current scoped paid keyword/backlink quota; no current field CWV or controlled AI citation sample.",
+      "action": "Use separately authorized research cap and region/query/date methodology; establish production baseline.",
+      "verification": "No ranking, backlink, GEO score or Lighthouse score invented."
+    },
+    {
+      "id": "STUDIO-BRIEF-ADAPTER",
+      "severity": "handover",
+      "status": "explicit-limitation",
+      "evidence": "Canonical makePage has intent/cluster/reason/sourceQueries but no maintained planningBrief reconciliation adapter.",
+      "action": "Keep exact-ID brief handover; do not mutate approved body/revision or build a per-site publishing bypass.",
+      "verification": "Official package SHA unchanged."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "job": "Google AI Search: ordinary SEO, indexed text, visible schema consistency; no special mandatory AI file/schema; no indexing guarantee."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/specialty/ecommerce/help-google-understand-your-ecommerce-site-structure",
+      "job": "Crawlable category-to-product internal links; clear hierarchy."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "job": "Distinct localized URLs and reciprocal same-job hreflang."
+    },
+    {
+      "url": "https://developers.google.com/search/blog/2023/08/howto-faq-changes",
+      "job": "FAQ rich results limited primarily to authoritative government/health; HowTo rich results deprecated."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/product-variants",
+      "job": "Actual variant grouping and visible, verifiable commerce facts; not fictional Offers."
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/images/functional/",
+      "job": "Functional image alternative depends on the complete link label; redundant thumbnail can have empty alt."
+    },
+    {
+      "url": "https://europa.eu/youreurope/citizens/consumers/shopping/contract-information/index_en.htm",
+      "job": "Real seller and contract information, territorial review before launch."
+    },
+    {
+      "url": "https://edinburghcasting.com/professional-finishing-touches/",
+      "job": "Finishing inspiration; its commercial services do not establish our offer."
+    },
+    {
+      "url": "https://www.luminaryco.lt/prekiu-kategorijos/ranku-liejimo-rinkiniai/",
+      "job": "Qualitative competitor commercial category intent; facts not transferred."
+    },
+    {
+      "url": "https://www.breto.lt/produktas/ranku-liejimo-rinkinys-aukso-spalvos-dazai/",
+      "job": "Qualitative product intent example; no measured SERP rank or comparable SKU proof."
+    }
+  ],
+  "unverified": [
+    "Production DNS/WAF/crawling/indexing and Google-selected canonical",
+    "Current query volumes, rankings, backlinks and AI citation rate",
+    "Current field CWV / Lighthouse",
+    "End-to-end production payment, shipping, email and current market stock"
+  ],
+  "businessReadiness": "not accepted",
+  "implementation": "Remaining-page plan delivered; inner-page design/content build not represented as completed"
+}

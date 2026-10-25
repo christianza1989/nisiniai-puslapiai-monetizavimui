@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "98 tests; PUBLIC/output/asset-kit-tests-final.private.txt and asset-kit-build-final.private.txt",
+      "command": "npm run test:core; npx tsc --noEmit; npm run build"
+    },
+    {
+      "result": "PASS",
+      "evidence": "86 HTTP requests and 88 pages; PUBLIC/output/asset-kit-http.private.json and asset-kit-seo.private.txt",
+      "command": "node output/asset-kit-http.private.mjs; Memo SEO smoke"
+    },
+    {
+      "result": "PASS",
+      "evidence": "PUBLIC/output/asset-kit-browser.private.json and asset-kit-timeline-final.png; sites/memocasting/ASSET_KIT_2026_10_13.md",
+      "command": "CUA actual desktop/mobile wheel/reverse/direct buttons and alpha asset inspection"
+    }
+  ],
+  "note": "Full-frame compact timeline and complete owner-requested asset kit verified. Mounted regression repairs decoder stalls; actual forward/reverse converges within one frame. Private failed generations and seek failures preserved. No main adoption/deployment claim.",
+  "status": "local-verified",
+  "eventId": "0ab0850a-97b1-4b5e-977d-147ce10d68be",
+  "sequence": 2,
+  "at": "2026-10-13T12:10:01.587Z"
+}

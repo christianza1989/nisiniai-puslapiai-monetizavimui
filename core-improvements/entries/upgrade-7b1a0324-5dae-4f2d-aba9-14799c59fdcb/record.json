@@ -1,0 +1,27 @@
+{
+  "siteId": "memocasting",
+  "summary": "Memocasting inner pages used an obsolete footer; consolidate the homepage footer with eligible locale-aware links and independent typography.",
+  "category": "code",
+  "paths": [
+    "components/niche/memocasting-homepage-footer.tsx",
+    "components/niche/memocasting-footer.css",
+    "components/niche/memocasting-homepage.css",
+    "components/niche/memocasting-payment-status.tsx",
+    "components/niche/memocasting-site.tsx",
+    "components/niche/memocasting-site.module.css",
+    "lib/memocasting-footer.mjs",
+    "lib/memocasting-homepage-assets.mjs",
+    "tests/memocasting-footer.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "evidence": [
+    "sites/memocasting/FOOTER_2026_10_22.md",
+    "qa/footer-20261022/baseline.private.json",
+    "qa/footer-20261022/media-check.private.mjs"
+  ],
+  "rollback": "Revert the scoped frontend source only after checking for intervening changes; preserve native package dates, backend, bindings and customer records.",
+  "id": "upgrade-7b1a0324-5dae-4f2d-aba9-14799c59fdcb",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "992e1f70f41003a5631789bab447aa884470a6fc",
+  "createdAt": "2026-10-22T20:55:24.107Z"
+}

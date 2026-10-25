@@ -1,5 +1,11 @@
 # Bendras nišinių svetainių paštas
 
+## Actual edge transport qualification — 2026-10-20
+
+Node TLS/SMTP authentication does not qualify a Cloudflare Worker transport. Memocasting's actual Worker could not connect to smtp.hostinger.com because its resolved IP was in Cloudflare's blocked TCP destination ranges; this is an observed endpoint/runtime incompatibility, not a claim that all SMTP fails. Do not bypass TLS, force an IP, replay an unknown send or introduce an automatic paid fallback. Qualify the actual deployed runtime, authenticated sender, durable one-shot ledger, provider acceptance and exact inbox receipt separately.
+
+For the owner-approved existing mailbox, companion `lib/hostinger-commerce-mail.mjs` provides explicit HTTPS API transport through a private commerce-mail service binding. Verify `/api/v1/me` resource ID and sender; keep key/resource bindings private. Send once to the official mailbox send endpoint, reject redirects and accept only204. Preserve unknown claims without retry or SMTP fallback. The API contract used here has no custom Message-ID/Reply-To fields: disclose a help address in text and retain internal acceptance references without inventing provider IDs or inbox delivery. Branding may use a validated per-site sender name while keeping the authenticated From address. New mailbox access requires the owner's actual approval; this capability grants no general access or sending authority. Actual Memocasting receipt and remaining limits: [sales activation](sites/memocasting/SALES_ACTIVATION_2026_10_20.md). Historical SMTP evidence below remains unchanged.
+
 2026-09-30 savininko patvirtintas bendras kontaktas **info@pinet.lt**, operatoriaus pavadinimas **MB Pinet**. Naudojama jau egzistuojanti Hostinger dėžutė; nauja pašto paskyra nesukurta ir papildoma mokama siuntimo paslauga neprijungta. Viešos užklausos nepaverčiamos pardavimo ar tiekimo pažadu.
 
 ## Įgyvendinta
@@ -37,3 +43,7 @@ Hostinger sąranka patikrinta pagal [oficialias instrukcijas](https://www.hostin
 Shared `publicSiteByHost/publicSitePage` resolveris tą pačią POST formą ir agreguotus įvykius aptarnauja V1 arba priimtam V2. V2 užklausai papildomai reikia public contact ir policy `/privatumas`; private/missing/revoked policy išjungia formą ir interest endpointą. D1 įrašas lieka nepriklausomas nuo voice runtime; name/email/message/UUID/ms/consent/source-path/status sutartis nepakitusi.
 
 Istorinis vietinis M5 HTTP-QA kvitas (`research/dovanos123-integration-2026-10-04/M5/HTTP-QA.json`, į Git neperkeltas; kontekstas – [M5 QA](research/dovanos123-integration-2026-10-04/M5/QA.md)) įrodo tik sintetinę užklausą izoliuotoje vietinėje fixture D1: valid1, wrongorigin403, noconsent400, honeypot0, statusnew, sourcepath tinkamas, consentAt=createdAt. SMTP/voice0. Tai nėra actual INBOX receipt ar Dovanos123 production D1/legacy CaseSource backfill priėmimas.
+
+## Privati prekybos pranešimų jungtis (2026-10-12, source PRs)
+
+Companion PR31 prideda išjungtą service-binding Worker, naudojantį tą patį SMTP protokolą ir autentifikuotą Hostinger siuntėją. Vienas parduotuvės/aplinkos kontekstas, patvarus vienkartinis D1 claim prieš SMTP, nekintantis payload hash, GET receipt; timeout ar prarastas patvirtinimas lieka unknown be antro siuntimo. SMTP DATA250 accepted skiriasi nuo INBOX. Tik Node socket ir actual native D1/servicebinding fixtures, jokių gyvų laiškų ar auth. Visa sutartis ir runtime datos apribojimas: [COMMERCE_MAIL_INTEGRATION](sites/memocasting/COMMERCE_MAIL_INTEGRATION.md); upgrade031aa670-7e7b-43ae-b4ae-e69a84b886c2. Source dar draft PR101/31, ne main adoption ar aktyvacija.

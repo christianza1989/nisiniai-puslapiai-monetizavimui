@@ -1,0 +1,25 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Add optional Lithuanian page-view measurement with explicit persisted consent, fail-closed storage, URL privacy and one owned GA4 destination.",
+  "evidence": [
+    "Previous reviewed Memo frontend had no GA4 loader or consent state. Owner confirmed no current separate property and explicitly accepted Google Analytics and processor terms; actual account inventory/settings remain private.",
+    "16 controller/React SSR regressions and actual 320/390 consent fixture pass; final combined public suite250/250, TypeScript and targeted ESLint pass. Native privacy release changes only one page; other186pages and all publication dates exact. Real hosted collection is a separate acceptance stage."
+  ],
+  "paths": [
+    "components/niche/memocasting-homepage-footer.tsx",
+    "components/niche/memocasting-site.tsx",
+    "components/niche/memocasting-analytics.tsx",
+    "components/niche/memocasting-analytics-consent.tsx",
+    "components/niche/memocasting-analytics-consent.module.css",
+    "lib/memocasting-analytics.mjs",
+    "tests/memocasting-analytics.test.mjs",
+    "docs/MEMO_ANALYTICS_CONSENT.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "rollback": "Set MEMO_GA4_ENABLED off or revert the scoped Memo capability. Preserve native privacy/source history, GA4 properties and all commerce/provider data. Do not remove another site's tags or silently claim purchase tracking.",
+  "id": "upgrade-faa89076-5db8-4ce2-9028-73b788e2c0eb",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "356038f5028831744ba6e6301dfd7ae37e5a5ebf",
+  "createdAt": "2026-10-25T08:50:33.400Z"
+}

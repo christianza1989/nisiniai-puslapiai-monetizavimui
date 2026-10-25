@@ -1,0 +1,24 @@
+{
+  "siteId": "memocasting",
+  "summary": "Owner expands the former 39-query plan to the complete Lithuanian gift topical map and Christmas 2026 launch queue, using scoped Treg evidence.",
+  "category": "workflow",
+  "evidence": [
+    "Owner-confirmed one-off Treg cap 1 USD on 2026-10-14; current release 4ea58f2e with 88 pages; previous CONTENT-PLAN contains 39 bounded questions."
+  ],
+  "paths": [
+    "sites/memocasting/TOPICAL_MAP_2026_10_14.json",
+    "sites/memocasting/TOPICAL_MAP_2026_10_14.md",
+    "sites/memocasting/GIFT_KEYWORDS_2026_10_14.csv",
+    "sites/memocasting/GIFT_URLS_2026_10_14.csv",
+    "sites/memocasting/CHRISTMAS_BRIEFS_2026_10_14.json",
+    "sites/memocasting/CONTENT_PLAN_STATUS.md",
+    "sites/memocasting/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Scoped revert of this planning change; prior private SEO snapshot retained by the common importer; no published revisions or release bytes changed.",
+  "id": "upgrade-8709451f-124a-4056-8b7b-8cdc16616f78",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "98b13a2d827e1f1ef6bca58124ca7d15c24535a1",
+  "createdAt": "2026-10-14T05:11:46.326Z"
+}

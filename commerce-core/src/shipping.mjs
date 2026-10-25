@@ -182,7 +182,7 @@ export class ShippingOperations {
             isCompany: input.recipientIsCompany,
             ...(order.snapshot.customer.locker ? { locker: order.snapshot.customer.locker } : {}),
           },
-          value: order.snapshot.lines.reduce((sum, l) => sum + l.unitAmount * l.quantity, 0),
+          value: order.amount - order.snapshot.delivery.amount,
           currency: order.currency,
         },
       },

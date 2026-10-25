@@ -43,6 +43,7 @@ export const viewDescriptions = {
   orders: 'Stebėkite apmokėjimą ir ruoškite užsakymus išsiųsti.',
   stock: 'Paruoštų prekių kiekiai, rezervacijos ir korekcijų istorija.',
   catalog: 'Valdykite aprašymus, kainas, nuotraukas ir pirkėjo pasirinkimus.',
+  discounts: 'Kurkite nuolaidų kodus, nustatykite galiojimą ir stebėkite panaudojimus.',
   documents: 'Sąskaitos, grąžinimo ir komplektavimo dokumentai vienoje vietoje.',
   components: 'Medžiagų apskaita ir rinkinių surinkimas.',
   financials: 'Sutikrinkite mokėjimų, komisinių ir banko duomenis.',

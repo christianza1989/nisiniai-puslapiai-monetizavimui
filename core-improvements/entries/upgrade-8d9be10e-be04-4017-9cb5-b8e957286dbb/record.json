@@ -1,0 +1,37 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Add missing server-owned percentage and EUR discount codes across operator editing, cart, exact payment totals and financial projections",
+  "evidence": [
+    "Owner explicitly requests editable10/20percent and5/10EUR coupons. Current canonical service, schema, operator navigation and one-page buyer SDK have no coupon support. Existing immutable quotes, orders, permissions, shipping fingerprint, Stripe amount verification and analytics require a single integrated implementation; a browser-only subtraction would break those contracts."
+  ],
+  "paths": [
+    "commerce-core/migrations/0027_discount_codes.sql",
+    "commerce-core/src/discounts.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/src/buyer-delivery.mjs",
+    "commerce-core/src/stripe-adapter.mjs",
+    "commerce-core/src/analytics.mjs",
+    "commerce-core/src/shipping.mjs",
+    "commerce-core/src/document-pdf.mjs",
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/scripts/dev.mjs",
+    "commerce-core/public/discounts-ui.mjs",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/public/admin.html",
+    "commerce-core/public/admin.css",
+    "commerce-core/public/operator-workspace.mjs",
+    "commerce-core/public/commerce-client.mjs",
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/README.md",
+    "commerce-core/docs/DISCOUNTS.md",
+    "commerce-core/docs/ADMIN_WORKSPACE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/266",
+  "rollback": "Disable owner codes through versioned admin before reverting buyer UI; retain additive0027tables and immutable discounted order snapshots, redemptions and use counts. A pre-discount payment adapter cannot process those new discounted pending orders; retain the small settledLines payment/projection support or stop new checkout until an explicit compatible recovery. Preserve actual production bindings, orders, stock, mail, cron and all historical migrations. No schema/data reset or active production test coupon.",
+  "id": "upgrade-8d9be10e-be04-4017-9cb5-b8e957286dbb",
+  "branch": "codex/memocasting-discounts-20261026",
+  "baseSha": "babf1e3d1e92eaf015e68630e17cd7efdba78363",
+  "createdAt": "2026-10-25T23:25:54.775Z"
+}

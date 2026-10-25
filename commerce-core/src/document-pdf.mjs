@@ -148,6 +148,8 @@ export async function documentPdf(document, fontBytes) {
       );
     }
     if (document.kind === 'sale') {
+      if (p.snapshot.discount)
+        text('Nuolaida (' + p.snapshot.discount.code + '): -' + money(p.snapshot.discount.amount));
       text('Pristatymas: ' + p.snapshot.delivery.label + ' - ' + money(p.snapshot.delivery.amount));
       text('Iš viso: ' + money(p.amount), 15, 20);
     }

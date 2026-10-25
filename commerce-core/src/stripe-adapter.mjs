@@ -1,5 +1,6 @@
 import Stripe from 'stripe';
 import { requireValue, CommerceError, integer, identifier } from './validation.mjs';
+import { settledLines } from './discounts.mjs';
 export class StripeCheckoutAdapter {
   constructor({ apiKey, webhookSecret, accountRef, environment, client, publishableKey }) {
     requireValue(
@@ -379,7 +380,7 @@ export class StripeCheckoutAdapter {
         'checkout_origin_invalid',
       );
     }
-    const items = order.snapshot.lines.map((l) => ({
+    const items = settledLines(order.snapshot).map((l) => ({
       price_data: {
         currency: order.currency.toLowerCase(),
         unit_amount: l.unitAmount,

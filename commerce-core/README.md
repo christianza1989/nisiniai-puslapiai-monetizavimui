@@ -1,5 +1,7 @@
 # Bendras prekybos modulis
 
+2026-10-26: [nuolaidų kodai](docs/DISCOUNTS.md) prideda administruojamas procentines ir EUR sumos nuolaidas, vieno puslapio krepšelio įvedimą, versijuotus pakeitimus ir atominę naudojimų apsaugą. Vienas serverio apskaičiuotas rezultatas naudojamas užsakyme, Stripe sumoje, sąskaitoje ir sutikimu grindžiamoje analitikoje.0027migracija tik prideda lenteles; aktyvių komercinių kodų automatiškai nekuria. Tikras konkrečios parduotuvės diegimas fiksuojamas jos priėmimo įraše.
+
 2026-10-25: [pasirinktinė pirkimų analitika](ANALYTICS.md) yra atskira, numatytai išjungta galimybė. Tik galiojantis lankytojo sutikimas ir serverio patvirtintas apmokėjimas leidžia siųsti pirkimą; jokio duomenų išgalvojimo, klientų kontaktų, naujo mokėjimo ar automatinio kitų parduotuvių aktyvavimo. Pakartojimus valdo patvari eilė ir stabilus sandorio identifikatorius. Tikras konkrečios svetainės diegimas bei Google priėmimas fiksuojami atskirai nuo šaltinio.
 
 0.18.0: [įterptas Checkout](docs/PRODUCTION_CONNECTION.md#embedded-checkout--source-0180) leidžia naują mokėjimo formą rodyti tame pačiame pirkimo puslapyje. Išsaugotas hosted režimas, prarastų atsakymų atkūrimas ir vienas stabilus Session idempotency raktas. Esamo mokėjimo režimas atkuriamas iš tiekėjo; raw Session objektas naršyklei neperduodamas. Reikalingas tos pačios Stripe paskyros publishable raktas; jo sukūrimas, realūs mokėjimai ir produkcinis diegimas į šaltinio darbus neįeina. Svetainės sesija atskirai valdo vieno puslapio išvaizdą ir tikrus paleidimo vartus.

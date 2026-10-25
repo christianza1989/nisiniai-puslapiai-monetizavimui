@@ -575,6 +575,26 @@ dd {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
+.discount-editor {
+  max-width: 860px;
+  margin: 0 auto;
+  scroll-margin-top: 84px;
+}
+.discount-form .fields {
+  margin: 24px 0;
+}
+.discount-form .hint {
+  max-width: 75ch;
+}
+.discount-form .actions {
+  margin-top: 24px;
+}
+.discount-list .empty h2 {
+  margin-top: 0;
+}
+.discount-form input[name='code'] {
+  text-transform: uppercase;
+}
 .check-field {
   display: flex;
   align-items: center;

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Canonical percentage/EUR coupon implementation verified locally. Current active production remains unchanged and hosted acceptance/remote0027migration are pending. Initial verify wrapper used the repository root instead of npm --prefix commerce-core (no tests ran); original log preserved. First full run250/251 exposed the expected analytics migration-count fixture26→27; corrected test only. Later source review caught definite coupon rejection trapping an uncommitted browser attempt; added specific409cleanup while retaining ambiguous500/network attempts, invalidated stale preview, and added regressions. Final253/253 and native workerd pass. Self-review; no new independent reviewer or real provider transaction.",
+  "checks": [
+    {
+      "command": "commerce-core npm run verify with canonical freshness wrapper and correct package prefix",
+      "result": "PASS",
+      "evidence": "253/253 Node/domain/HTTP/client/SDK/analytics/PDF tests; full native workerd/D1/R2/restart/admission suite and Wrangler dry-run. New native D1 coupon race verifies27migrations, one usage/order, losing-stock rollback and restart persistence. Fractional-cent distribution preserves actual unit counts and exact Stripe params/GA4 net value. Zero new remote calls."
+    },
+    {
+      "command": "Actual local admin and one-page SDK browser acceptance",
+      "result": "PASS",
+      "evidence": "Own isolated SQLite/loopback fixture with no external provider/job runner. Created10percent and5EUR codes through actual admin POSTs, disabled/re-enabled, verified claims. Buyer applied both before address (32→28.80 and27), removed/replaced code, submitted one explicit fixture order at2700cents and reloaded into the same locked discount/amount. No real Stripe payment or mail. Desktop pointer and mobile keyboard actions checked; viewport-emulated pointer mapping was unreliable and not treated as a site failure."
+    },
+    {
+      "command": "Bounded visual/keyboard/console/detector review",
+      "result": "PASS",
+      "evidence": "Actual320CSS px admin/form and checkout have320document width, valid date fields and readable reduction/total. First visual pass found an editor heading beneath sticky masthead; added84px scroll margin and confirmed heading at84px. Other source/client edge repair validated by targeted regressions. Captured private desktop/mobile screenshots; no console errors. Impeccable detector[]; no claim of full WCAG or production payment acceptance."
+    }
+  ],
+  "eventId": "35543d32-5a29-415f-9413-3fecaf4be909",
+  "sequence": 2,
+  "at": "2026-10-25T23:51:16.506Z"
+}

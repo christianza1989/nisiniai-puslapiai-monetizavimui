@@ -4,6 +4,7 @@ import { renderPrivateFiles } from './private-files-ui.mjs';
 import { renderShipmentCommands } from './shipment-commands-ui.mjs';
 import { renderJobs } from './jobs-ui.mjs';
 import { renderCatalog } from './catalog-ui.mjs';
+import { renderDiscounts } from './discounts-ui.mjs';
 import { renderReturns } from './returns-ui.mjs';
 import { usesOnlySimpleStock } from './finished-stock-ui.mjs';
 import { paymentLabel, fulfillmentLabel, refundableAmount } from './operator-order-status.mjs';
@@ -36,6 +37,7 @@ const titles = {
   wholesale: 'Didmena',
   automation: 'Automatiniai darbai',
   catalog: 'Prekės ir kainos',
+  discounts: 'Nuolaidų kodai',
 };
 const paymentNames = {
   pending: 'Laukia mokėjimo',
@@ -58,6 +60,14 @@ const kinds = {
   packing: 'Komplektavimo lapas',
 };
 const errorNames = {
+  invalid_discount: 'Patikrinkite nuolaidos dydį, galiojimo datas ir naudojimų limitą.',
+  invalid_discount_code: 'Kodui naudokite 3–40 raidžių A–Z, skaitmenis, brūkšnelį arba pabraukimą.',
+  discount_code_exists: 'Toks nuolaidos kodas jau yra. Pasirinkite kitą kodą.',
+  discount_version_conflict:
+    'Kodas jau pakeistas. Atnaujinkite skyrių ir patikrinkite naujausią versiją.',
+  discount_save_conflict:
+    'Šis išsaugojimo bandymas jau panaudotas kitiems duomenims. Atnaujinkite skyrių.',
+  discount_limit_below_uses: 'Limitas negali būti mažesnis už jau sukurtų užsakymų skaičių.',
   finished_legacy_order_unresolved:
     'Dar yra neišsiųstų senų užsakymų su nežinoma prekių kilme. Išspręskite juos prieš sutikrindami šios prekės likutį.',
   stock_quality_hold:
@@ -387,6 +397,24 @@ function render() {
   if (state.view === 'orders') renderOrders(content);
   if (state.view === 'stock') renderStock(content);
   if (state.view === 'documents') renderDocuments(content);
+  if (state.view === 'discounts')
+    return load(
+      () =>
+        renderDiscounts(content, {
+          node,
+          table,
+          cell,
+          api,
+          action,
+          has,
+          money,
+          date,
+          setDirty: (value) => {
+            if (content.isConnected) state.unsavedChanges = value;
+          },
+        }),
+      'Nepavyko įkelti nuolaidų. Patikrinkite ryšį ir bandykite dar kartą.',
+    );
   if (state.view === 'catalog')
     return load(
       () =>
@@ -646,6 +674,11 @@ function renderOrder(content, detail) {
     ['Suma', money(o.amount, o.currency)],
     ['Pirkėjas', c?.name || 'Kontaktai nepateikti'],
   ];
+  if (o.snapshot.discount)
+    pairs.splice(4, 0, [
+      'Nuolaida (' + o.snapshot.discount.code + ')',
+      '−' + money(o.snapshot.discount.amount, o.currency),
+    ]);
   if (c)
     pairs.push(
       ['El. paštas', c.email],

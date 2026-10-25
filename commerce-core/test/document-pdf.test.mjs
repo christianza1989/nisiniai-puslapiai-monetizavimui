@@ -8,9 +8,55 @@ import { DocumentFiles, documentPdf } from '../src/document-pdf.mjs';
 import { documentPolicy } from '../src/admission.mjs';
 import { fixtureStore, fixtureProducts, cart, key, fakeCheckout, payment } from './fixtures.mjs';
 import { PDFDocument } from 'pdf-lib';
+import { Discounts } from '../src/discounts.mjs';
 const font = new Uint8Array(
   readFileSync(new URL('../public/fonts/NotoSans-Regular.ttf', import.meta.url)),
 );
+
+test('discounted sale invoice retains gross lines, coupon facts and the actual paid net amount', async (t) => {
+  const db = new NodeDatabase();
+  db.migrate();
+  t.after(() => db.close());
+  const s = new CommerceService(db),
+    ops = new CommerceOperations(s);
+  await s.provisionStore(fixtureStore(), fixtureProducts());
+  await new Discounts(s).save(
+    'store_a',
+    'sandbox',
+    {
+      id: crypto.randomUUID(),
+      commandId: crypto.randomUUID(),
+      expectedVersion: 0,
+      code: 'PDF10',
+      kind: 'percent',
+      value: 10,
+      enabled: true,
+    },
+    'owner',
+  );
+  const created = await s.createOrder(
+    'store_a',
+    'sandbox',
+    { ...cart(), discountCode: 'PDF10' },
+    key(100),
+  );
+  await s.checkout('store_a', 'sandbox', created.order.id, fakeCheckout);
+  const o = await s.getOrder('store_a', 'sandbox', created.order.id);
+  await s.acceptPayment('store_a', 'sandbox', payment(o));
+  const { document } = await ops.issueDocument(
+    'store_a',
+    'sandbox',
+    o.id,
+    { kind: 'sale' },
+    'owner',
+  );
+  assert.equal(document.payload.amount, 2880);
+  assert.equal(document.payload.snapshot.discount.code, 'PDF10');
+  assert.equal(document.payload.snapshot.discount.amount, 320);
+  assert.equal(document.payload.snapshot.lines[0].lineAmount, 3200);
+  const bytes = await documentPdf(document, font);
+  assert.equal((await PDFDocument.load(bytes)).getPageCount(), 1);
+});
 test('Unicode documents render from immutable paid sources and PDF persistence replays concurrent exports', async () => {
   const db = new NodeDatabase();
   db.migrate();

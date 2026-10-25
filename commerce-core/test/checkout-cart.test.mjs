@@ -185,6 +185,31 @@ async function withDom(run) {
   }
 }
 
+test('pending initialization preserves the caller shell and aborted initialization cannot replace it', () =>
+  withDom(async () => {
+    for (const abort of [false, true]) {
+      const root = new Element('div'),
+        loading = new Element('p'),
+        client = clientFixture(),
+        data = await client.initialize(),
+        controller = new AbortController();
+      loading.append('Serverio krepšelio įkėlimo būsena');
+      root.append(loading);
+      let ready;
+      client.initialize = () =>
+        new Promise((resolve) => {
+          ready = resolve;
+        });
+      const mounted = mountCheckout(root, { client, signal: controller.signal });
+      assert.deepEqual(root.children, [loading]);
+      if (abort) controller.abort();
+      ready(data);
+      await mounted;
+      assert.equal(root.children.includes(loading), abort);
+      if (!abort) assert.ok(textContent(root).includes('Krepšelis tuščias.'));
+    }
+  }));
+
 test('empty cart updates on 0 → 1 → 0 and only permits a same-origin catalogue link', () =>
   withDom(async () => {
     for (const catalogueUrl of ['/collections/all', 'https://foreign.example/shop']) {

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Exact PUBLIC18d5ce11 repair was built, independently reviewed and deployed as frontend8e9f1a79 with canonical SDK0a3919d1. Private harness initially expected an untrailed homepage canonical; corrected the harness to the established trailing-slash canonical without changing production. Hosted config comparison normalizes domain ordering and confirms exact unchanged bindings/domains/cron. Real purchase declined by owner.",
+  "checks": [
+    {
+      "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "266/266; acceptance-public-tests.private.txt. Canonical238/238 and native workerd/D1 smoke also passed."
+    },
+    {
+      "command": "npm run build; TypeScript; scoped ESLint; exact SDK verification",
+      "result": "PASS",
+      "evidence": "acceptance-frontend-build.private.txt exit0; TypeScript0errors; scoped ESLint0errors/one pre-existing unrelated Promedical stylesheet warning; SDK SHA36622b4fbbdf4647e0acb8ec971b053f260361be74677c95f13788a8c6fdb422."
+    },
+    {
+      "command": "read-only hosted HTTP and actual Chrome acceptance",
+      "result": "PASS",
+      "evidence": "acceptance-final-http.private.json21:25UTC: six200routes, canonical/activefonts,114indexable/118public/69future, future HTML/media404, old301, LIVE context, Access302, exact unchanged bindings/domains/cron. Empty/full cart, Omniva terminal list,320px and true200% zoom/text spacing checked; own local cart restored empty. Browser cart CLS.1312to0 and transfer487421to330986bytes; no field or global performance guarantee."
+    }
+  ],
+  "eventId": "1023fc21-e3fa-4c88-8866-39a16693cf74",
+  "sequence": 2,
+  "at": "2026-10-25T21:28:00.361Z"
+}

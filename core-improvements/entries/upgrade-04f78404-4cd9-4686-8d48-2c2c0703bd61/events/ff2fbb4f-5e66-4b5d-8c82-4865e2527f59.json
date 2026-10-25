@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Full repeat with default parallel Node workers exhausted Windows commit/disk capacity (six processes died with Zone Allocation failed at small heaps); original failure retained in recovery-all-tests-current.private.txt. No source assertions relaxed. Exact234 tests PASS with --test-concurrency=1 on committed5526d8c8. Native workerd smoke also PASS; no production changes yet. Source JSDoc now explicitly exposes the existing recoveryToken option for exact companion TypeScript adoption.",
+  "checks": [
+    {
+      "command": "cd commerce-core && node --test --test-concurrency=1 test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "234/234,34602ms; recovery-tests-serial.private.txt; failed parallel repeat preserved"
+    },
+    {
+      "command": "cd commerce-core && npm run test:worker",
+      "result": "PASS",
+      "evidence": "recovery-worker-tests.private.txt, actual workerd/D1 baseline and durable jobs"
+    }
+  ],
+  "eventId": "ff2fbb4f-5e66-4b5d-8c82-4865e2527f59",
+  "sequence": 3,
+  "at": "2026-10-25T18:18:34.208Z"
+}

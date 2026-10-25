@@ -6,11 +6,11 @@ This record supersedes the18:34UTC PC restart checkpoint. The owner authorized c
 
 | Surface | Accepted edition |
 | --- | --- |
-| Public site | https://memocasting.lt/ — Worker155bfebf-2641-479a-a658-3623eacc016e, deployment4ca742bc-0366-41cf-a1e2-896a0ce2ba50 at19:02:23UTC |
-| Frontend source | PUBLICdb13446f0696f1049b82e0863b39e6ff4fd68403 |
+| Public site | https://memocasting.lt/ — Worker8e9f1a79-877a-45f6-a919-f30154fcc7b7, deploymentf000da73-08a5-4d05-8912-0500a70826e2 at21:21:11UTC |
+| Frontend source | PUBLIC18d5ce11c59fa0edd54fb4bb7186f7082fadccdf |
 | Content | Native5be826b7-33ee-40c6-8f05-f7ed24b48f8c, SHA256b02879f7df3fdc9207248e3f45775a0f3e3f90ce88f1f525ae4c10e94c89a4dc,187pages/800assets; already-public dates and daily cadence preserved; six future topic slots exchanged in the reviewed editorial release |
-| Admin/commerce | https://login.memocasting.lt/admin — Worker1f0c04e1-3ffc-43a4-80fa-3a0c50f6a670, deployment24267210-b328-42f4-bda7-e58a51b152d6 at20:18:50UTC,100% |
-| Admin code source | CORE07341ebf25537c2946ef6f6d2065af16e30a5cdf |
+| Admin/commerce | https://login.memocasting.lt/admin — Worker5bc23acb-8ec5-4694-94fd-1f4bf5fc535a, deployment9c40bf4a-dcce-4148-a92a-3ea27b09c057 at21:18:41UTC,100% |
+| Admin code source | CORE0a3919d147986bdba135f9f1004fe99934844941; previous07341ebf admin redesign retained |
 | Private mail | Worker4b165ec7-466e-4b29-8c0b-29bfaecf32e7, authenticated senderinfo@memorycasting.lt / Memory Casting |
 
 ## Completed and checked
@@ -28,7 +28,7 @@ This record supersedes the18:34UTC PC restart checkpoint. The owner authorized c
 
 The user's agency-agents request was handled by separate specialist contexts for UI/UX, SEO/GEO, technical/payment/measurement, plus the canonical finish reviewer and documenter. Eight role reference files were retrieved read-only from the supplied GitHub repository with private source URLs/hashes. No third-party installer or new application was run. Project instructions, business facts and provider authority remain primary. The agents did not independently publish competing changes.
 
-Technical follow-up tests:17CORE analytics/recovery and30PUBLIC consent/attribution/recovery/bridge checks passed. Real paid GA4 purchase receipt, field Core Web Vitals, search rankings/AI citations, complete assistive-technology and200%text/spacing conformance remain outside these bounded checks. No such guarantees are made.
+Technical follow-up tests:17CORE analytics/recovery and30PUBLIC consent/attribution/recovery/bridge checks passed. Real paid GA4 purchase receipt, field Core Web Vitals, search rankings/AI citations and complete assistive-technology conformance remain outside these bounded checks. Actual browser zoom/text-spacing follow-up is recorded below; no full WCAG certification is claimed.
 
 ## Reversal and source delivery
 
@@ -36,4 +36,20 @@ Prior commerce code versionbb6755eb-b908-401c-a1a1-d553e4625df5 is the scoped ro
 
 Source delivery remains distinct from runtime: the final-fixes branches are the reviewed working lineage; PR/main status is recorded by their GitHub artifacts. Provider/private fixtures and credentials stay outside Git. Foreign outputs, image masters and another upgrade journal were preserved.
 
-Both branches are pushed and attached: [CORE PR263](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/263), [PUBLIC PR81](https://github.com/christianza1989/niche-public-core/pull/81). They are open source handoffs, not a claim of main merge or adoption by another PC. The accepted production deployment does not depend on keeping the local preview running; that owned fixture server was stopped after acceptance.
+The original source handoffs are merged: [CORE PR263](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/263) at20:48:33UTC (main7c9448b9fc31e0b613b170aa330a0379f3748bad), [PUBLIC PR81](https://github.com/christianza1989/niche-public-core/pull/81) at20:48:39UTC (main75d7b91d4af0dcc064442e9ca14379de9a871336). Subsequent narrow acceptance repairs use [CORE PR264](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/264) and [PUBLIC PR82](https://github.com/christianza1989/niche-public-core/pull/82); their GitHub merge state is separate from the deployed editions above. Another PC must fetch before adoption. Production does not depend on a local preview or the owner's PC.
+
+## Final acceptance follow-up, 21:25UTC
+
+- [x] Removed three unused font preloads from Memory Casting only; preload the two actual Manrope weights. Other tenants and font binaries are unchanged.
+- [x] Canonical checkout retains the caller's loading DOM during awaited initialization and after an aborted initialization. A meaningful pending/complete/abort regression passes. The exact companion SDK checksum is36622b4fbbdf4647e0acb8ec971b053f260361be74677c95f13788a8c6fdb422.
+- [x] Checkout has a viewport-relative minimum working region through hydration; long forms expand naturally. Actual empty cart browser sample CLS0.1312 →0, transferred resources487421 →330986bytes, and LCP964 →428ms at1036×548CSSpx with cache disabled. This is a browser sample, not field p75. Homepage transfer861884 →715548bytes, but its LCP varied2280 →5392ms with navigation TTFB1595 →3826ms; no overall homepage speed guarantee follows from removing unused fonts. Live payment verification/caching rules were not weakened for a score.
+- [x] Actual native Chrome200% zoom (DPR1.5 →3, width1036 →518) and user text-spacing overrides reviewed on admin menu/editor and public home/product/long guide/cart. Checkout keyboard focus advances from name to email. Product/menu and contact controls remain reachable without horizontal document overflow. This is bounded rendered evidence, not a complete assistive-technology audit.
+- [x] Actual published empty/full cart, courier and Omniva selector/terminal list, and320CSSpx full-cart reflow accepted (305px document width). Own local cart was initially empty, one kit was added, and removed afterward. No customer fields, order, payment, refund, shipment or customer message was submitted. Temporary zoom, viewport, spacing and cache overrides were restored.
+- [x]238/238 canonical commerce tests, native workerd/D1 smoke,266/266 public tests, exact SDK verification, TypeScript, production build, scoped syntax/format and both production-profile dry-runs passed. Scoped ESLint has0errors and one pre-existing unrelated Promedical stylesheet warning. Independent technical review accepted the narrow repair for build/hosted verification. Original incorrect test-harness assertions were corrected without changing production behavior.
+- [x] Read-only hosted check confirms six key200routes, active-font preloads, canonical, exact package SHA,114indexable sitemap URLs,118currently public pages including4functional noindex routes,69future pages, future HTML/media404, old password/product301, verified LIVE context and Cloudflare Access302 on protected paths. This is the final bounded check, not another full187URL crawl.
+- [x] Exact before/after bindings, domain mappings/certificates and minute cron match. Existing5orders/20168minor units and4accepted+1unknown notifications remain; these totals are not paid revenue. Primary sender and24/12policy remain active. No unknown mail was replayed.
+- [x] Owner explicitly deferred a real purchase. Real paid Stripe→notification→GA4 receipt and naturally elapsed12-hour customer reminder observation are deferred by that decision, not claimed as completed and not implemented through a synthetic production transaction. Do not ask again or create one on the owner's behalf.
+
+Private evidence: acceptance-final-http.private.json, acceptance-provider-before/after.private.json, acceptance-core/public-tests.private.txt, acceptance-workerd.private.txt, acceptance-frontend-build.private.txt, cart/home-before/after browser samples, and zoom/mobile screenshots in qa/final-seo-20261025. Credentials, private account data and raw fixtures remain ignored.
+
+Scoped rollback for this follow-up: frontend155bfebf-2641-479a-a658-3623eacc016e and backend1f0c04e1-3ffc-43a4-80fa-3a0c50f6a670, retaining the actual current bindings, primary sender, recovery policy, data and cron. Reverting this code does not reverse data/configuration or the original accepted admin/content work.

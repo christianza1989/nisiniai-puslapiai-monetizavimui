@@ -29,7 +29,7 @@ Spektro linijų navigacija atmesta: kasdieniam parduotuvės darbui reikalautų i
 - [x] Katalogo, aprašymų, kainų, nuotraukų ir pasirinkimų redaktorių padaryti patogiai pasiekiamą iš prekės eilutės.
 - [x] Vienodai pateikti likučius, siuntas, dokumentus, automatinius darbus, finansus ir didmeną; išlaikyti palaikomas funkcijas ir teises.
 - [x] Patikrinti asinchroninių skyrių būsenas ir saugų perjungimą, paiešką, filtrus ir klaidas.
-- [x] Faktinis desktop/mobile,320px ir matomas klaviatūros fokusas. Pilnas assistive-technology,200% teksto ir spacing atitikties auditas šiame ribotame priėmime neatliktas; jo PASS neteikiamas.
+- [x] Faktinis desktop/mobile,320px ir matomas klaviatūros fokusas; vėlesnė tikro Chrome200% mastelio ir padidintų teksto tarpų patikra meniu bei prekės redaktoriuje. Pilnas assistive-technology atitikties auditas neatliktas; jo PASS neteikiamas.
 - [x] Paveikti regresijos testai, tikras edge, source safety, Git/upgrade perdavimas, diegimas ir hosted skaitymo patikra.
 
 Tipografika: vienas sistemos sans su LT ženklais,16px body/controls,14–15px pagalbiniai duomenys,28px H1 ir20px H2; tabulinės sumos,70ch proza, mažiausiai44px svarbūs valdikliai. Šviesus neutralus darbo paviršius, grafito tekstas ir vienas akcentas aktyviai navigacijai bei pirminiam veiksmui. Tikslius tokenus fiksuoti iš baigto bendro admin kodo commerce-core/DESIGN.md; viešos parduotuvės CSS nekeisti.
@@ -47,3 +47,5 @@ Kanoninio Impeccable nepriklausomo reviewer paskutinis verdict: ship tik išvard
 ## Paskelbta
 
 2026-10-25T20:18:50UTC aktyvuotas Worker1f0c04e1-3ffc-43a4-80fa-3a0c50f6a670 iš kodo07341ebf. Autentifikuotas https://login.memocasting.lt/admin desktop ir320px vaizdas, filtrai,8prekių sąrašas, paštas ir24/12politika priimti. Konfigūracija, cron ir esami verslo duomenys išsaugoti. Pilnas dabartinis įrašas: [COMPLETION_2026_10_25.md](COMPLETION_2026_10_25.md).
+
+21:18:41UTC bendras checkout modulio loading/abort pataisymas paskelbtas Worker5bc23acb-8ec5-4694-94fd-1f4bf5fc535a iš0a3919d1; priimtas admin dizainas ir duomenys išliko. Tikras naršyklės200% mastelis patvirtintas Chrome valdikliu ir DPR3, palyginti su pradiniu1.5. Patikrintas meniu atvėrimas, užsakymų filtrai ir prekės redaktorius, taip pat padidinti eilučių, raidžių, žodžių ir pastraipų tarpai. Po patikros grąžintas100% mastelis ir pašalinti laikini stiliai. Bendra nauja regresija238/238, faktinė galutinė publikacija ir ribos nurodytos COMPLETION įraše.

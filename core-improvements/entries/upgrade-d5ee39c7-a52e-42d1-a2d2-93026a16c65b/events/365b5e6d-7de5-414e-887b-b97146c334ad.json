@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/91",
+  "commit": "60436a4e7c09147a85f62d3c8197be00160b76e8",
+  "note": "Source60436a4e and native scoped overlay874aa0b0 adopted by memocasting-site version984e9453-b7f5-4305-82bf-790a55861d76 / deployment243cbb71-8325-4da2-bce1-8ba5046cb69a at2026-10-26T16:43:03Z,100%. Exact hosted checks and real browser acceptance complete; commerce/mail/DNS/data unchanged.",
+  "eventId": "365b5e6d-7de5-414e-887b-b97146c334ad",
+  "sequence": 5,
+  "at": "2026-10-26T16:47:07.871Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Build, isolated actual compiled UI and production checks complete. This is a twelve-guide refresh, not a whole-site or search-ranking certification.",
+  "checks": [
+    {
+      "command": "PUBLIC npm run build and pinned Wrangler4.92 deploy --dry-run",
+      "result": "PASS",
+      "evidence": "Build exit0 and actual production six-binding profile dry-run; no new dependencies. See EDITORIAL_DEPTH_ACCEPTANCE_2026_10_26.md."
+    },
+    {
+      "command": "Chrome CUA actual compiled renderer desktop1280/narrow320 for all12 guides",
+      "result": "PASS",
+      "evidence": "Exactly one native video figure per guide, no horizontal overflow, MemoryManrope captions, preload none, no autoplay; actual clip playback17sec. Public video playback49sec/readyState4/noerror."
+    },
+    {
+      "command": "node sites/memocasting/qa/editorial-depth-20261026/hosted-check.private.mjs",
+      "result": "PASS",
+      "evidence": "Exact frontend984e9453:12HTTP200, H1/canonical/Article dates/TOC/video; sitemap+LLM200; next future guide/image404 and excluded. Provider readback: same bindings/domains/backend/mail."
+    }
+  ],
+  "eventId": "5f24e023-8ba0-4abf-89ce-fc909487aea6",
+  "sequence": 3,
+  "at": "2026-10-26T16:47:07.858Z"
+}

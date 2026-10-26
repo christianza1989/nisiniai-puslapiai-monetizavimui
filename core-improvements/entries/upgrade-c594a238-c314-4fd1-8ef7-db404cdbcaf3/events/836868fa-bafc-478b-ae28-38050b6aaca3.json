@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Final free-delivery edge case: prepare a manual carrier-cost plan before requiring an automatic budget. Zero customer shipping with zero approved subsidy is a manual seller review, not a failed job or automatic booking. Legacy positive-budget courier automation remains covered.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/shipping-automation.test.mjs commerce-core/test/multiparcel.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/free-budget-regression.private.txt:16/16 including one and three free-delivery parcels"
+    }
+  ],
+  "eventId": "836868fa-bafc-478b-ae28-38050b6aaca3",
+  "sequence": 5,
+  "at": "2026-10-26T09:12:54.146Z"
+}

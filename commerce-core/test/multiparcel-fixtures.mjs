@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { PDFDocument } from 'pdf-lib';
 import { ShippingAutomation } from '../src/shipping-automation.mjs';
+import { Discounts } from '../src/discounts.mjs';
 import { CommerceService } from '../src/service.mjs';
 import { BuyerDeliveryQuotes } from '../src/buyer-delivery.mjs';
 import { ShippingOperations } from '../src/shipping.mjs';
@@ -16,7 +17,10 @@ export const terminal = {
   city: 'Vilnius',
   postalCode: '01111',
 };
-export async function multiparcelFixture(db, { quantity = 3, paid = true, planned = true } = {}) {
+export async function multiparcelFixture(
+  db,
+  { quantity = 3, paid = true, planned = true, freeShipping = false } = {},
+) {
   const config = {
     ...fixtureStore(),
     requireCustomer: true,
@@ -140,8 +144,29 @@ export async function multiparcelFixture(db, { quantity = 3, paid = true, planne
     { ...input, id: 'buyer_fixture' },
     adapter,
   );
+  if (freeShipping)
+    await new Discounts(s).save(
+      'store_a',
+      'sandbox',
+      {
+        id: 'fixture_free',
+        commandId: 'fixture_free_save',
+        expectedVersion: 0,
+        code: 'FREE10',
+        kind: 'percent',
+        value: 10,
+        enabled: true,
+        freeShipping: true,
+      },
+      'operator',
+    );
   const order = (
-    await s.createOrder('store_a', 'sandbox', { ...input, deliveryQuoteId: q.id }, key(91))
+    await s.createOrder(
+      'store_a',
+      'sandbox',
+      { ...input, deliveryQuoteId: q.id, ...(freeShipping ? { discountCode: 'FREE10' } : {}) },
+      key(91),
+    )
   ).order;
   if (paid) {
     await s.checkout('store_a', 'sandbox', order.id, fakeCheckout);

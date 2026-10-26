@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/95",
+  "commit": "82ae4607922e16ce28a734ef5ae8c715cb776d21",
+  "note": "PUBLIC PR95 merged and fetched locally; intended Cloudflare memocasting-site runtime f45cbb3c-3f39-4041-82b9-f376a3e70f83 adopts implementation192ba64a, with final6f9ded7b test-only assertion. Actual HTTPS home and both product pages200;38physical CSS/JS200; prices32/48 and native166/48review counts agree with Product schemas. Chrome1280desktop/390phone inspected, no document overflow; home8cards, real lazy-loaded photo, native swipe2to190px with unchanged documentY9422.667; coordinate arrow403.333to805.333 with unchangedY3007.333; disclosure and20to40pagination accepted. Six frontend bindings, compatibility, three domains and unchanged commerce/mail versions checked against immediately predeploy snapshot. No backend or calendar/data change. Rollback frontend2a991e90-4ba5-45b1-874d-d5ec95c58640. This is adoption by this intended site runtime and local public checkout, not other PCs.",
+  "eventId": "feed1f48-a57d-4fd4-beaf-c99c1cfa9247",
+  "sequence": 3,
+  "at": "2026-10-26T22:22:29.787Z"
+}

@@ -3,7 +3,7 @@ import type {Asset,Patch} from './expanded-configurator';
 
 type Values=Record<string,string>;
 export type DeskAsset={file:string;sha256:string;componentSha256:string;bytes:number;needsCompression:boolean};
-export type DeskContext={dimensions:Values;choiceRules:'conditional selectable tuples only';invariant:DeskAsset;groups:{fields:string[];variants:{values:Values;asset:DeskAsset|null}[]}[];textOnly:Record<string,string[]>};
+export type DeskContext={dimensions:Values;choiceRules:'conditional selectable tuples only';invariant:DeskAsset;groups:{fields:string[];variants:{values:Values;asset:DeskAsset|null}[]}[];textOnly:Record<string,string[]>;default3DValues?:Record<string,string|null>;hybrid141?:boolean};
 export type DeskComponents={schema:'desk-components-065-v1';code:string;coordinates:'original-world-matrices';finishPolicy:'original manufacturer finishes; no FINISH setters';fullGraphClosed:false;contexts:DeskContext[];dimensionChoices?:Values[];textOnlyDimensionChoices?:Values[];missing3D?:string[];unavailable3DMessage?:string};
 export type DeskIdentity={productId:string;sample:string;familyId:string;code:string};
 const matches=(a:Values,b:Values,except?:string)=>Object.entries(a).every(([k,v])=>k===except||b[k]===v);
@@ -24,7 +24,10 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
   if(!plain(c)||c.choiceRules!=='conditional selectable tuples only')fail();values(c.dimensions);
   if(!Object.keys(c.dimensions as Values).every(f=>['GDDEPTH','GDWIDTH','GDTOPDEPTH','GDTOPWIDTH','DDEPTH','DWIDTH'].includes(f))||!Object.values(c.dimensions as Values).every(v=>/^_\d+(?:X\d+)*$/.test(v)))fail();
   const key=JSON.stringify(Object.entries(c.dimensions as Values).sort());if(contexts.has(key))fail();contexts.add(key);checkAsset(c.invariant);
-  if(!Array.isArray(c.groups)||!c.groups.length||c.groups.length>30||!plain(c.textOnly))fail();
+  if(!Array.isArray(c.groups)||c.groups.length>30||!plain(c.textOnly))fail();
+  // A supplied hybrid may contain one intact original scene and only textual
+  // options. An empty component list must not invent geometry alternatives.
+  if(!c.groups.length&&(c.hybrid141!==true||!plain(c.default3DValues)||!Object.keys(c.textOnly).length))fail();
   const fields=new Set(Object.keys(c.dimensions as Values));
   for(const g of c.groups as DeskContext['groups']){
    if(!plain(g)||!Array.isArray(g.fields)||!g.fields.every(field)||new Set(g.fields).size!==g.fields.length||!Array.isArray(g.variants)||!g.variants.length||g.variants.length>5000||!g.fields.length&&g.variants.length!==1)fail();
@@ -37,6 +40,13 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
   }
   for(const [f,domain] of Object.entries(c.textOnly as Record<string,unknown>)){
    if(!field(f)||fields.has(f)||/COLOR|FINISH|GROUP/.test(f)||!Array.isArray(domain)||!domain.every(value)||new Set(domain).size!==domain.length)fail();fields.add(f);
+  }
+  if(c.default3DValues!==undefined){
+   if(!plain(c.default3DValues))fail();
+   for(const [f,v] of Object.entries(c.default3DValues)){
+    const domain=(c.textOnly as Record<string,string[]>)[f];
+    if(!domain||(v===null?domain.length!==0:!value(v)||!domain.includes(v)))fail();
+   }
   }
  }
  if(input.dimensionChoices!==undefined||input.textOnlyDimensionChoices!==undefined||input.missing3D!==undefined||input.unavailable3DMessage!==undefined){
@@ -58,7 +68,7 @@ export function adaptDeskComponents(source:DeskComponents,id:DeskIdentity):Catal
  const dimensionChoices=(d:Values)=>Object.fromEntries(Object.keys(d).map(f=>[f,[...new Set(dimensions.filter(other=>matches(d,other,f)).map(other=>other[f]))]]));
  const anchors:CatalogAnchor[]=source.contexts.map((c,index)=>{
   const defaults:Values={...c.dimensions},choices:Record<string,string[]>=Object.fromEntries(Object.entries(c.textOnly).filter(([,domain])=>domain.length));
-  for(const [f,domain] of Object.entries(choices))defaults[f]=domain[0];
+  for(const [f,domain] of Object.entries(choices))defaults[f]=c.default3DValues?.[f]??domain[0];
   // Only dimension pairs explicitly present in the table are selectable.
   Object.assign(choices,dimensionChoices(c.dimensions));
   const components=c.groups.map(g=>{
@@ -69,11 +79,12 @@ export function adaptDeskComponents(source:DeskComponents,id:DeskIdentity):Catal
     return {key:String(n),values:v.values,defaults:{},choices:available,transitions:{},patch};
    })};
   });
-  return {id:id.code+':components-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(c.dimensions),defaults,choices,classes:{},geometry:deskAssetReference(id.code,c.invariant),components,profiles:[]};
+  return {id:id.code+':components-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(c.dimensions),defaults,choices,classes:{},geometry:deskAssetReference(id.code,c.invariant),components,profiles:[],textOnlyFields:Object.keys(c.textOnly).filter(f=>c.textOnly[f].length)};
  });
  for(const [index,d] of (source.textOnlyDimensionChoices||[]).entries())anchors.push({id:id.code+':unavailable-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(d),defaults:{...d},choices:dimensionChoices(d),classes:{},geometry:null,unavailable3D:source.unavailable3DMessage,components:[],profiles:[]});
  const labels:Record<string,string>={GDWIDTH:'Plotis',GDDEPTH:'Gylis',FBASEFEET:'Pagrindas',FCASTORS:'Ratukai',FCABLECOVER:'Laidų uždanga',FHADJUSTMENTWAY:'Aukščio valdymas',FHORWIRETRUNKING:'Horizontalus laidų kanalas',FVERWIRETRUNKING:'Vertikalus laidų kanalas',FMEDIAPORTLEFT:'Kairysis įvadas',FMEDIAPORTMIDDLE:'Vidurinis įvadas',FMEDIAPORTRIGHT:'Dešinysis įvadas',FSOCKETSTANDARD:'Lizdo standartas'};
  Object.assign(labels,{GDTOPWIDTH:'Stalviršio plotis',GDTOPDEPTH:'Stalviršio gylis',DWIDTH:'Plotis',DDEPTH:'Gylis',DTOPTHICKNESS:'Stalviršio storis',FDESKTOPTYPE:'Stalviršio tipas',FPANEL:'Uždanga',FUPPERPANEL:'Viršutinė pertvara',FCOLUMNSHAPE:'Kolonos forma',FCOLUMN:'Kolona',FBASE:'Pagrindo tipas',FTOPSHAPE:'Stalviršio forma',FWIRETRUNKING:'Laidų kanalas',FMODESTYPANEL:'Priekinė uždanga',FSOCKETMEDIAPORTLEFT:'Kairiojo įvado lizdas'});
+ Object.assign(labels,{FCONFIGURATIONMEDIARIGHT:'Dešiniojo įvado komplektacija',FSOCKETMEDIAPORTRIGHT:'Dešiniojo įvado lizdas',FSOCKETMEDIAPORT:'Elektros lizdo standartas',FPANELACCESSORIES:'Pertvaros priedai',FTOPACCESSORIES:'Stalviršio priedai',FPEDESTAL:'Stalčių blokas'});
  const dimensionLabels=Object.fromEntries(dimensions.flatMap(d=>Object.entries(d).map(([f,v])=>[f+'='+v,{text:v.slice(1)}])));
  return {family:{id:id.familyId,kind:'catalog',productId:id.productId,baseArticle:id.code,sample:id.sample,articles:[{code:id.code,sample:id.sample,name:id.code}],anchors,collectionMode:'desk-components'},palettes:{_fieldLabels:Object.fromEntries(Object.entries(labels).map(([k,text])=>[k,{text}])),_valueLabels:dimensionLabels}};
 }

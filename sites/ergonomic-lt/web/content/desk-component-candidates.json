@@ -493,6 +493,91 @@
       "proofs": {
         "sourceGeometryRuntime": "4a81fe7773af1b6b9b1c3a8baf3e81640900aaa835ca88bc1324fbcf524af6f0"
       }
+    },
+    "product_brainy-desks_5111be46:22039141": {
+      "key": "product_brainy-desks_5111be46:22039141",
+      "productId": "product_brainy-desks_5111be46",
+      "sample": "22039141",
+      "code": "KBRY005WW002",
+      "familyId": "cfg-40391780ab26",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBRY005WW002-2ec2bccf05568f4c7091.json",
+        "sha256": "2ec2bccf05568f4c70913a1e9ffc88b7140520b261bca4090ccac4b1412ea665"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "9a2e4bc38cdf0adb0f70d600d181923f6a89c912bec8f8235f10d9eb433d3290"
+      }
+    },
+    "product_levitate-desks_fec35c9d:16240022": {
+      "key": "product_levitate-desks_fec35c9d:16240022",
+      "productId": "product_levitate-desks_fec35c9d",
+      "sample": "16240022",
+      "code": "KLEV021WW002",
+      "familyId": "cfg-c6440e5e4fe5",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KLEV021WW002-a74872cdfb6c64291d0c.json",
+        "sha256": "a74872cdfb6c64291d0cbdcc5a0f29a8052d00ad1281f3e47a7677db90fe99f7"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "779afa3fdb4ab3f0bb891df6a57f3824dce2996fa7d0c827d8b66903a2365ee6"
+      }
+    },
+    "product_levitate-desks_fec35c9d:16599852": {
+      "key": "product_levitate-desks_fec35c9d:16599852",
+      "productId": "product_levitate-desks_fec35c9d",
+      "sample": "16599852",
+      "code": "KLEV022WW002",
+      "familyId": "cfg-317ace5da0d5",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KLEV022WW002-d78af6d94c2674ad6f11.json",
+        "sha256": "d78af6d94c2674ad6f1198208cd098baf2de0b54a187453be91b9840cae46656"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "209dd3778c02d2ac212f19bed8b6ed722dc22c6aa05c508ce1e14525ab0df9c8"
+      }
+    },
+    "product_levitate-desks_fec35c9d:16240023": {
+      "key": "product_levitate-desks_fec35c9d:16240023",
+      "productId": "product_levitate-desks_fec35c9d",
+      "sample": "16240023",
+      "code": "KLEV024WW002",
+      "familyId": "cfg-6033921f9853",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KLEV024WW002-732ed389e1d4222cd1db.json",
+        "sha256": "732ed389e1d4222cd1dbbc1f2c1d6da906b14da77ac23411cd5a5af31499ceea"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "6829189da90d6ee0a3b98a0628c4305e4c0a26462718d8351ef5797ccd465334"
+      }
+    },
+    "product_sqart-desks_345c2715:24972417": {
+      "key": "product_sqart-desks_345c2715:24972417",
+      "productId": "product_sqart-desks_345c2715",
+      "sample": "24972417",
+      "code": "KSQA128WW001",
+      "familyId": "cfg-49a35752a5b1",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KSQA128WW001-e4b3610ac6ed74691ce6.json",
+        "sha256": "e4b3610ac6ed74691ce6959f4f885fbbbd77e5d806b0a10384a2bc98c812c953"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "0a17f159a91f2766f050c5e967e95871d857eda8188cd98c1b3c7055e52f02fb"
+      }
     }
   }
 }

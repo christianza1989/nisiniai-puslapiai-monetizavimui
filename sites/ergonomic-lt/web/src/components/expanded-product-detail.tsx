@@ -82,9 +82,11 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  function change(field:string,value:string){try{setSelection(changeField(selection,field,value));setCustomized(true);setAdded(false);setMessage('');setPhoto(false);}catch{setMessage(copyText("ui.9382165cbfa58b82bfc9","Šis pasirinkimas negalimas su dabartine konstrukcija. Rinkitės kitą variantą."));}}
  function field(k:string){const value=selection.values[k],color=!!deskColors?.fields[k]||/COLOR|CHCOL/.test(k);
   const label=fieldLabels[k]||k;
+  const textOnly=catalogAnchor(selection)?.textOnlyFields?.includes(k),noteId=textOnly?'desk-text-only-'+k:undefined;
   if(color&&!k.startsWith('CPLASTIC'))return <FinishSelect key={k} label={label} value={value} onChange={v=>change(k,v)} options={choices[k].map(v=>({value:v,label:choiceLabel(k,v),image:activeMaterials?.[k]?.[v]?.image||palettes[k]?.[v]?.image||(deskColors?undefined:renderMaterial({code:v}).image),color:palettes[k]?.[v]?.color}))}/>;
   return <div key={k} className="configuration-field"><label className="field">{label}
-   <select value={value} onChange={e=>change(k,e.target.value)}>{choices[k].map(v=><option key={v} value={v} title={k==='CARMRESTS'?armrestSourceText(selected.configuration.code,v):undefined}>{choiceLabel(k,v)}</option>)}</select></label>
+   <select value={value} aria-describedby={noteId} onChange={e=>change(k,e.target.value)}>{choices[k].map(v=><option key={v} value={v} title={k==='CARMRESTS'?armrestSourceText(selected.configuration.code,v):undefined}>{choiceLabel(k,v)}</option>)}</select></label>
+   {textOnly&&<p id={noteId} className="form-note">Pasirinkimas įrašomas į specifikaciją. 3D vaizde lieka gamintojo pradinis variantas.</p>}
   </div>;
  }
  const actions=<>

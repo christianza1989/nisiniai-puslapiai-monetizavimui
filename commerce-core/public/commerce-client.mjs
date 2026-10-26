@@ -73,6 +73,9 @@ export class CommerceClient {
   quote(input) {
     return this.request('/api/quote', { body: input });
   }
+  discountPreview(input) {
+    return this.request('/api/discount-preview', { body: input });
+  }
   deliveryQuote(input) {
     return this.request('/api/delivery-quotes', { body: { ...input, id: crypto.randomUUID() } });
   }
@@ -134,6 +137,11 @@ export class CommerceClient {
               'product_unavailable',
               'quote_price_changed',
               'delivery_quote_conflict',
+              'discount_changed',
+              'discount_limit_reached',
+              'discount_unavailable',
+              'discount_minimum_not_met',
+              'discount_basket_too_small',
             ].includes(error.message)))
       ) {
         this.storage.removeItem(this.key);

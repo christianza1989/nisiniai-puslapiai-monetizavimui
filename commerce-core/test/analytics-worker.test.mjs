@@ -102,7 +102,7 @@ test('native D1 additive migration, lease and Worker MP transport preserve busin
     assert.equal(requests.length, 1);
     assert.deepEqual(await s.getOrder('store_a', 'sandbox', order.id), before);
     assert.deepEqual(await s.rows('SELECT * FROM inventory'), inventory);
-    assert.equal((await s.one('SELECT COUNT(*) n FROM commerce_migrations')).n, 26);
+    assert.equal((await s.one('SELECT COUNT(*) n FROM commerce_migrations')).n, 27);
     assert.equal((await s.one('SELECT state FROM analytics_delivery')).state, 'sent');
     redirect = true;
     const second = (await s.createOrder('store_a', 'sandbox', cart(), key(27))).order;

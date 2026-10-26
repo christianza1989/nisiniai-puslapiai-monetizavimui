@@ -1,4 +1,5 @@
 import { CatalogMedia } from './catalog-media.mjs';
+import { Discounts } from './discounts.mjs';
 import { CommerceError, requireValue, identifier } from './validation.mjs';
 import { CommerceOperations } from './operations.mjs';
 import { Backoffice } from './backoffice.mjs';
@@ -214,9 +215,13 @@ export function createHandler({
       const path = url.pathname;
       if (
         request.method === 'POST' &&
-        ['/api/quote', '/api/delivery-quotes', '/api/orders', '/api/payment-recovery'].includes(
-          path,
-        )
+        [
+          '/api/quote',
+          '/api/discount-preview',
+          '/api/delivery-quotes',
+          '/api/orders',
+          '/api/payment-recovery',
+        ].includes(path)
       ) {
         requireValue(
           environment !== 'production' || publicAbuseGuard,
@@ -229,6 +234,7 @@ export function createHandler({
             store,
             {
               '/api/quote': 'quote',
+              '/api/discount-preview': 'quote',
               '/api/delivery-quotes': 'delivery',
               '/api/orders': 'order',
               '/api/payment-recovery': 'order',
@@ -271,6 +277,10 @@ export function createHandler({
           ),
         );
       if (path.startsWith('/api/operator/')) {
+        if (request.method === 'GET' && path === '/api/operator/discounts') {
+          await authorize('catalog');
+          return json(await new Discounts(service).list(store.id, environment));
+        }
         if (request.method === 'GET' && path === '/api/operator/session') {
           const principal = await authorize('read');
           return json({
@@ -497,6 +507,10 @@ export function createHandler({
                 paymentAdapters[store.id],
                 actor,
               ),
+          ],
+          '/api/operator/discounts': [
+            'catalog',
+            (input, actor) => new Discounts(service).save(store.id, environment, input, actor),
           ],
           '/api/operator/catalog-revisions': [
             'catalog',
@@ -838,6 +852,8 @@ export function createHandler({
         return json(await service.catalog(store.id, environment));
       if (request.method === 'POST' && path === '/api/quote')
         return json(await service.quote(store.id, environment, await read()));
+      if (request.method === 'POST' && path === '/api/discount-preview')
+        return json(await new Discounts(service).preview(store.id, environment, await read()));
       if (request.method === 'POST' && path === '/api/payment-recovery') {
         const input = await read();
         requireValue(

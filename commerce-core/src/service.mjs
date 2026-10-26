@@ -13,6 +13,7 @@ import {
 } from './validation.mjs';
 import { deliveryFingerprint } from './buyer-delivery.mjs';
 import { FinishedStock } from './finished-stock.mjs';
+import { Discounts, normalizeDiscountCode } from './discounts.mjs';
 export class CommerceService {
   constructor(db, { now = () => Date.now() } = {}) {
     this.db = db;
@@ -170,7 +171,7 @@ export class CommerceService {
       };
     });
   }
-  async quote(id, environment, input, options = {}) {
+  async cartPricing(id, environment, input, options = {}) {
     requireValue(input && typeof input === 'object' && !Array.isArray(input), 'invalid_payload');
     const store = await this.store(id, environment),
       lines = normalizeCart(input.lines);
@@ -211,6 +212,11 @@ export class CommerceService {
           'addon_requires_kit',
         );
     }
+    return { store, market, priced };
+  }
+  async quote(id, environment, input, options = {}) {
+    const { store, market, priced } = await this.cartPricing(id, environment, input, options);
+    requireValue(!input.discountCode || !options.privatePrices, 'discount_unavailable', 409);
     // Delivery selectors are authoritative configured methods; no arbitrary browser tariff.
     const delivery = market.delivery.find((d) => d.id === input.deliveryId);
     requireValue(
@@ -252,8 +258,14 @@ export class CommerceService {
         providerServiceId = q.providerServiceId;
       }
     }
-    const amount = priced.reduce((a, l) => a + l.lineAmount, deliveryAmount);
+    const discounted = await new Discounts(this).price(id, environment, input, priced, market);
+    const amount =
+      priced.reduce((a, l) => a + l.lineAmount, deliveryAmount) -
+      (discounted.discount?.amount ?? 0);
     requireValue(integer(amount, 1), 'invalid_total');
+    // EUR coupon orders retain a conservative 50-cent payment floor. Check it
+    // after delivery is known, before reserving stock or creating a Session.
+    requireValue(!discounted.discount || amount >= 50, 'discount_basket_too_small', 409);
     const quotedSnapshot = {
       schemaVersion: 1,
       storeId: id,
@@ -263,7 +275,8 @@ export class CommerceService {
       country: market.country,
       currency: market.currency,
       policyVersion: market.policyVersion,
-      lines: priced,
+      lines: discounted.lines,
+      ...(discounted.discount ? { discount: discounted.discount } : {}),
       delivery: {
         id: delivery.id,
         amount: deliveryAmount,
@@ -326,6 +339,9 @@ export class CommerceService {
         lines: normalizeCart(input.lines),
         country: input.country,
         currency: input.currency,
+        ...(normalizeDiscountCode(input.discountCode)
+          ? { discountCode: normalizeDiscountCode(input.discountCode) }
+          : {}),
         deliveryId: input.deliveryId,
         ...(input.deliveryQuoteId !== undefined ? { deliveryQuoteId: input.deliveryQuoteId } : {}),
         accessHash: clientHash,
@@ -404,6 +420,7 @@ export class CommerceService {
           l.quantity,
         ),
       ),
+      ...new Discounts(this).reservation(id, snapshot, orderId, at),
       ...this.event(id, 'OrderPlaced', orderId),
     ];
     try {
@@ -411,6 +428,8 @@ export class CommerceService {
     } catch (error) {
       if (String(error.message).includes('stock_unavailable'))
         throw new CommerceError('stock_unavailable', 409);
+      for (const code of ['discount_limit_reached', 'discount_changed'])
+        if (String(error.message).includes(code)) throw new CommerceError(code, 409);
       const concurrent = await this.one(
         'SELECT * FROM orders WHERE store_id=? AND request_key=?',
         id,

@@ -1,0 +1,25 @@
+# Nuolaidų kodų įgyvendinimas
+
+Savininko užduotis: administracijoje pačiam kurti procentinius (pvz.,10/20%) ir fiksuotos EUR sumos (pvz.,5/10€) kuponus ir pritaikyti juos veikiančiame vieno puslapio krepšelyje. Greičio darbai baigti; jų nebetęsiame.
+
+- [x] Bendras serverio modulis ir nauja pridedama0027migracija; viena parduotuvė/aplinka, procentai1–99 arba fiksuota EUR suma, aktyvumas, pradžia/pabaiga, minimali prekių suma ir neprivalomas naudojimų limitas.
+- [x] Audituojami versijuoti įrašymai, idempotency, atominė naudojimų apsauga ir nekeičiamos užsakymo kainos. Limitas skaičiuoja sukurtus užsakymus, įskaitant neapmokėtus; tai aiškiai paaiškinta operatoriui. Jis numatytai neribotas. Grąžinimas automatiškai nesukuria papildomo kupono naudojimo.
+- [x] Viešas ribojamas peržiūros API: kodo įvedimas veikia dar prieš adreso/pirkėjo duomenis, be Stripe/vežėjo užklausos. Vienas kodas užsakymui, tik prekėms, pristatymas atskirai. Fiksuota suma turi būti mažesnė už prekių sumą; nulinio mokėjimo naujos eigos nekuriame.
+- [x] Tikslus centų paskirstymas prekėms; esamas Stripe Checkout Session gauna tas pačias sumažintas kainas be naujų Coupons API teisių. Apvalinimo likutis paskirstomas stabiliai; vienetų kiekiai išsaugomi. Sąskaita, užsakymas, administravimas ir sutikimu grindžiama GA4 analitika sutampa.
+- [x] Administravimo skyrius „Nuolaidos“: sąrašas, kūrimas, redagavimas, išjungimas, datos, ribos, panaudojimai, aiški forma ir klaidos; esamos catalog teisės ir neišsaugotų pakeitimų apsauga. Esamo valdymo dizaino tęsinys, ne naujas dashboard perrašymas.
+- [x] Krepšelyje kodas, pritaikymo/pašalinimo mygtukai, serverio patvirtinta nuolaidos eilutė, klaidos, stale atsakymų apsauga ir užrakinta išsaugoto užsakymo kaina. Išsaugotas Stripe išdėstymas.
+- [x] Domeno/API/concurrency/Stripe parametrų/analitikos/PDF ir naršyklės regresijos; native D1 migracija ir desktop/mobile/klaviatūra. Galutinė PUBLIC surinkto vaizdo patikra lieka diegimo etape.
+- [ ] Tikslus PUBLIC SDK perdavimas, proxy endpointo allowlist, frontend ir backend surinkimai/dry-run; suderintos pridedamos produkcijos migracijos, aktualūs bindings, esamų duomenų išsaugojimas ir rollback.
+- [ ] Publikuoti, patikrinti actual runtime ir apsaugotą administravimą, užbaigti abu Git perdavimus. Produkcijoje testinio aktyvaus kupono, užsakymo, tikro mokėjimo, siuntos ar kliento laiško nekurti.
+
+Pradinė bazė: CORE babf1e3d1e92eaf015e68630e17cd7efdba78363 / PUBLIC038b1f0f1ab207f1be1012f2714d03f0572beed7. Aktyvus frontend88184164, commerce5bc23acb, mail4b165ec7. Pakeitimai bendrame commerce-core, Memocasting SDK/transport ir šiame priėmimo įraše. Kitų svetainių turinys, grafikas, atsargos, kainų katalogas, mail/Stripe/vežėjo kredencialai ir leidimai nekeičiami.
+
+## Vietinis priėmimas
+
+253/253 testai, visas native workerd/D1/R2/restart ir Wrangler dry-run priimti. Naujas native0027bandymas įrodo vieno panaudojimo limitą konkuruojant, pralaimėjusio užsakymo/atsargų rollback ir tęstinumą perkūrus service. Tikslūs Stripe parametrai, net GA4 pajamos ir sąskaitos PDF tikrinti su izoliuotais faktais. Pirminės klaidos išsaugotos: neteisingas npm wrapper cwd (testai nepaleisti), paskui250/251 dėl numatomo migracijų skaitiklio26→27. Jokio produkcinio elgesio dėl to nekeista. Po source peržiūroje pastebėto paskutinio kupono panaudojimo konflikto pridėtos dvi tikros regresijos: apibrėžtas409 atlaisvina tik dar nesukurtą bandymą, o neaiškus500/network išsaugo tą patį raktą; stale nuolaidos peržiūra atmetama.
+
+Actual local browser: sukurti10% ir5EUR kuponai, išjungta/įjungta per UI, abu pritaikyti prieš kontaktus (32→28.80/27). Sukurtas vienas aiškiai TEST užsakymas vietinėje SQLite, mokėjimo vietoje tik testinis tekstas; po reload tas pats kodas ir2700centų užrakinta suma. Admin panaudojimų skaičius1 atitinka tą vieną sukurtą, dar neapmokėtą bandomą užsakymą. Tai nėra tikras Stripe mokėjimas.253testų faktai ir šio scenarijaus screenshotai yra ignored qa/discounts-20261026; duomenys į Git nepatenka.
+
+320px admin forma ir krepšelis neturi horizontalios slinkties. Pirmoje peržiūroje antraštę dengė sticky masthead;84px scroll margin patvirtintas realiame vaizde. Viewport emuliavimo pointer mapping buvo nepatikimas, todėl mobilus veikimas tikrintas klaviatūra ir nevadinamas patvirtintu touch testu. Prekei neturint nuotraukos pastebėtas siauras product body; PUBLIC CSS fallback turi būti patvirtintas prieš diegimą. Console errors[] ir mechaninis Impeccable detector[]. Šio pavedimo peržiūra savarankiška, nepriklausomo review nevaidiname. Produkcijos migracija, paketas ir hosted priėmimas dar pending.
+
+Galutinė vietinė source patikra:254/254 ir native workerd/dry-run PASS. Pridėta konservatyvi50ct EUR užsakymo su kuponu riba, vertinama jau žinant pristatymą; pagrindas oficialus Stripe EUR minimumas, source nuoroda bendro modulio apraše.32ct prekių peržiūra dar iki adreso nėra mokėjimo pažadas; su450ct pristatymu482ct užsakymas tinka. Produkcijos prieš-diegimo snapshot23:55–23:56UTC: frontend88184164, backend5bc23acb, mail4b165ec7;26migracijų,5užsakymai/20168minor bendra užsakymų suma, kuponų lentelių dar nėra. Tai nėra apmokėtų pajamų suma.

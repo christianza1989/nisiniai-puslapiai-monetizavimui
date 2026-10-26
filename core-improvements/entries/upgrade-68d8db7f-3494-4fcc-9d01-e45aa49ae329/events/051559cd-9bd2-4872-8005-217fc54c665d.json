@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Final exact-source compiled/hosted acceptance on the acceptance branch. No new source change since261canonical and273public tests. Owner cart untouched, own emptytestcart restored and closed. Both runtime releases active; no production transaction/customer-message or newmigration.",
+  "checks": [
+    {
+      "command": "PUBLIC273tests/types/scopedlint/build/exactSDK and actual compiled browser desktop/320px",
+      "result": "PASS",
+      "evidence": "public-tests/types/lint/build.private.txt; compiled-desktop-options.private.png and compiled320-options-final.private.png. Actual row selection commits trusted location/address; viewport320 has scrollWidth320. Mobilephysicaltap notclaimed."
+    },
+    {
+      "command": "Actual HTTPS cart keyword selection, terms admission and read-only release preflight",
+      "result": "PASS",
+      "evidence": "live-desktop-options.private.png/live320-options.private.png; typing salinink yields one immediate row and actualclickselects Salininku address; terms enabledunchecked with /naudojimo-salygos; console[]. verify-memocasting-checkout-policies.mjs CHECKOUT_POLICIES_VERIFIED forLT7893ecb3."
+    },
+    {
+      "command": "Before/after active provider and native configuration/data preservation",
+      "result": "PASS",
+      "evidence": "provider-before/after.private.json: bindings/vars/secret names/date/flags/observability/domains/certificates/cron/mail match;5orders/20168minor,1owner coupon,27migrations and market admission unchanged across deploy. Earlier validated nativeCAS changed only oldLTpolicy to exactapprovedcurrent hash, preserving all other store fields and orders."
+    }
+  ],
+  "eventId": "051559cd-9bd2-4872-8005-217fc54c665d",
+  "sequence": 3,
+  "at": "2026-10-26T06:41:54.075Z"
+}

@@ -6,11 +6,11 @@ This record supersedes the18:34UTC PC restart checkpoint. The owner authorized c
 
 | Surface | Accepted edition |
 | --- | --- |
-| Public site | https://memocasting.lt/ — Worker 42faf05d-d251-4a19-9ccf-2765bd103ca4, deployment cf8c5d5a-054f-4e77-9388-f29233163a7f at 2026-10-26 00:11:46 UTC, 100% |
-| Frontend source | PUBLIC 43dc0552a845f00d7365abe9d5eb367b506c5484, merged PR86 as ed35c6ad4788e810ec3dbf13688e342b67177625; same application tree |
+| Public site | https://memocasting.lt/ — Worker 51b08875-a113-427a-b61a-92f06bfdc3e0, deployment 4105b3b9-053a-488a-aa51-085338ce479d at 2026-10-26 06:37:39 UTC, 100% |
+| Frontend source | PUBLIC 6c0c6a1a2cc6ef7cc1de91bd2d8bd1f77b0816ef, merged PR87 as 9f6058533d4d61fad4acdc72ca88a7625dc63e51; same application tree |
 | Content | Native5be826b7-33ee-40c6-8f05-f7ed24b48f8c, SHA256b02879f7df3fdc9207248e3f45775a0f3e3f90ce88f1f525ae4c10e94c89a4dc,187pages/800assets; already-public dates and daily cadence preserved; six future topic slots exchanged in the reviewed editorial release |
-| Admin/commerce | https://login.memocasting.lt/admin — Worker 52b3b0a7-0989-46e1-8a7f-dd9661c088b8, deployment 268ff090-5d2c-43b0-a276-822f486b7d1c at 2026-10-26 00:07:10 UTC, 100% |
-| Admin code source | CORE 94f3f27a6532404805bbf82213d19789ec2eec4a, merged PR267 as ec49fcb68a5addaaa021ea219170d332aee2b625; earlier operator workspace retained |
+| Admin/commerce | https://login.memocasting.lt/admin — Worker b9a93bd4-2c38-4f6d-9dc2-830b35fe1ca2, deployment aa69ebf9-87ef-4a02-9bca-69c92d02f3af at 2026-10-26 06:26:48 UTC, 100% |
+| Admin code source | CORE 6db4eb58638e124fdfbcc7d16173b0259561bbf3, merged PR272 as 1197ecabd08243173b82d0539085ee2e4370a851; earlier operator workspace retained |
 | Private mail | Worker4b165ec7-466e-4b29-8c0b-29bfaecf32e7, authenticated senderinfo@memorycasting.lt / Memory Casting |
 
 ## Completed and checked
@@ -69,3 +69,9 @@ Final validation: 254 canonical tests and native workerd/D1/R2/restart; 270 publ
 The canonical remote operator applied only additive migration 0027: 26 to 27, no pending migrations, every earlier migration checksum retained. Five existing orders and their aggregate 20168 minor units are preserved; this aggregate is not paid revenue. Zero production coupon definitions or discounted orders were created for acceptance. Actual provider bindings/variables/secret names, D1/R2/services, compatibility/observability, domains/certificates, cron, mail, package and dates match before/after. No real charge, shipment or customer message was performed. Prior owner-deferred real purchase evidence remains deferred.
 
 Source PR267 and PUBLIC PR86 are merged; both active editions are listed above. Full evidence, limitations and safe compatible rollback are in [DISCOUNTS_2026_10_26.md](DISCOUNTS_2026_10_26.md) and the canonical commerce discounts contract. This request received bounded self-review, not a new independent specialist review.
+
+## Locker search and consent admission accepted
+
+The active editions above include immediate keyword suggestions beneath the locker field, trusted one-click selection, keyboard handling, query/quote invalidation, restored-order locks and responsive presentation. The separate consent blocker was a stale LT market hash after approved terms metadata changed. A validated nativeD1 full-configCAS reconciled only the active LT policy revision; strict matching and existing order snapshots remain. Missing-policy feedback and an explicit submit guard are now covered by regression. A read-only PUBLIC release preflight uses the common eligible projection and checks exact active policy hashes plus live terms HTTP.
+
+261 canonical and273 public tests, native/types/lint/build/dry-run, compiled and hosted desktop/320px acceptance passed within documented boundaries. Current live terms link is /naudojimo-salygos and consent is enabled, unchecked. Actual before/after provider configuration and5orders/20168minor/1owner coupon/27migrations match across deploy; no financial action or customer mail. Physical mobile tap was not claimed because of the observed input-coordinate mapping limitation. Details and mandatory future policy-release preflight are in [LOCKER_SEARCH_2026_10_26.md](LOCKER_SEARCH_2026_10_26.md).

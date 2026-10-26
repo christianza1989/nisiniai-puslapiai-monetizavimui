@@ -578,6 +578,176 @@
       "proofs": {
         "sourceGeometryRuntime": "0a17f159a91f2766f050c5e967e95871d857eda8188cd98c1b3c7055e52f02fb"
       }
+    },
+    "product_aero-desks_03e9c72f:29001605": {
+      "key": "product_aero-desks_03e9c72f:29001605",
+      "productId": "product_aero-desks_03e9c72f",
+      "sample": "29001605",
+      "code": "KAER001WW001",
+      "familyId": "cfg-75a4f7fd02a7",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KAER001WW001-4481e2ceeaf583d0fec4.json",
+        "sha256": "4481e2ceeaf583d0fec4afdb5636a933f512789e62e5c2f81de35e0274191de2"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "80a419f36a50f504b0c99e1dea12fe82200c71cf709329ff1013e5edd2856ab5"
+      }
+    },
+    "product_brainy-desks_5111be46:21015545": {
+      "key": "product_brainy-desks_5111be46:21015545",
+      "productId": "product_brainy-desks_5111be46",
+      "sample": "21015545",
+      "code": "KBRY001WW002",
+      "familyId": "cfg-e7483bb4ba5f",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBRY001WW002-05992193ceeade395476.json",
+        "sha256": "05992193ceeade395476ca402d467077f783b4c3aa0ce7dfa54819867154cdba"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "994c1f4b0e3533b7b4b6864efcd9f164b57cff14f84c8a7839803a24827120b0"
+      }
+    },
+    "product_brainy-desks_5111be46:21015548": {
+      "key": "product_brainy-desks_5111be46:21015548",
+      "productId": "product_brainy-desks_5111be46",
+      "sample": "21015548",
+      "code": "KBRY001WW003",
+      "familyId": "cfg-66139fed3d5f",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBRY001WW003-4ca5fceeb2d1303c6b11.json",
+        "sha256": "4ca5fceeb2d1303c6b119b2fea0ba0d626978eb59253c16a880076129bd8ce7a"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "40941af5faa6fbac1d00ee51be590e7aa46dde9e7a6978efe6cf3afada4f767e"
+      }
+    },
+    "product_brainy-desks_5111be46:22039139": {
+      "key": "product_brainy-desks_5111be46:22039139",
+      "productId": "product_brainy-desks_5111be46",
+      "sample": "22039139",
+      "code": "KBRY002WW001",
+      "familyId": "cfg-a99ccd80dc1d",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBRY002WW001-a69c6898956cdd83c666.json",
+        "sha256": "a69c6898956cdd83c666a4f1a8c1c25a6f52d64372dd9fa50d66debcfdf86f89"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "d2c82d1192d4d271ac439d97bfbe992e1760bb901fdc32d56ad48a01e2f18445"
+      }
+    },
+    "product_brainy-desks_5111be46:22039142": {
+      "key": "product_brainy-desks_5111be46:22039142",
+      "productId": "product_brainy-desks_5111be46",
+      "sample": "22039142",
+      "code": "KBRY005WW003",
+      "familyId": "cfg-7cea4eea7293",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBRY005WW003-2dbc30253b7b8ce9fc58.json",
+        "sha256": "2dbc30253b7b8ce9fc58bd806230b4a92c2a3da2bbfae77bb680d547a2192131"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "2ced3cf7a3ea53f25fe15cf1d469d2449a80742c7284119fc78fec82acfa19c9"
+      }
+    },
+    "product_brainy-desks_5111be46:22039143": {
+      "key": "product_brainy-desks_5111be46:22039143",
+      "productId": "product_brainy-desks_5111be46",
+      "sample": "22039143",
+      "code": "KBRY006WW001",
+      "familyId": "cfg-55cbfce27c5a",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBRY006WW001-987eb00e3d9d65400f82.json",
+        "sha256": "987eb00e3d9d65400f82851ebb75a973e24e6aa6a3a65782802054aa5576a24f"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "59b21f10f8ee1b6cb15f403a347d94f8c7a23cb465fe414ab56ca68c18686c1c"
+      }
+    },
+    "product_bspace-desks_3cf8f926:16087946": {
+      "key": "product_bspace-desks_3cf8f926:16087946",
+      "productId": "product_bspace-desks_3cf8f926",
+      "sample": "16087946",
+      "code": "KBSP001WW001",
+      "familyId": "cfg-cca5c57cde19",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBSP001WW001-3a878537477332a6aa38.json",
+        "sha256": "3a878537477332a6aa38d756cdebc7731f7ecd40ad986ba215a9d4b3b925d799"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "26b85d8b82639b3c92bdb6d0ca717d13967eca49ed7d2e24a7a7ed4558429062"
+      }
+    },
+    "product_bspace-workbenches_59f6a184:16087917": {
+      "key": "product_bspace-workbenches_59f6a184:16087917",
+      "productId": "product_bspace-workbenches_59f6a184",
+      "sample": "16087917",
+      "code": "KBSP002WW001",
+      "familyId": "cfg-45ebfed5e288",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBSP002WW001-596872f1bcffcc89fa09.json",
+        "sha256": "596872f1bcffcc89fa0967c7e7e983269fe18c3432df4d57cdf2dd3f5043897a"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "8d1782e4527bb264fb1b7581495ff6ba14ffb2d406fac668133b64a51cfda85f"
+      }
+    },
+    "product_bspace-workbenches_59f6a184:16087918": {
+      "key": "product_bspace-workbenches_59f6a184:16087918",
+      "productId": "product_bspace-workbenches_59f6a184",
+      "sample": "16087918",
+      "code": "KBSP003WW001",
+      "familyId": "cfg-646c7bf2fa84",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBSP003WW001-28afacd7d22a98b58b43.json",
+        "sha256": "28afacd7d22a98b58b4316d1a8df829f0591ba2840c8c56dcb6562fef504e42a"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "98a0ad8578f135717c12d084420993c054799a0e1273eeb09f7641084f7ef557"
+      }
+    },
+    "product_bspace-workbenches_59f6a184:16087921": {
+      "key": "product_bspace-workbenches_59f6a184:16087921",
+      "productId": "product_bspace-workbenches_59f6a184",
+      "sample": "16087921",
+      "code": "KBSP004WW002",
+      "familyId": "cfg-16e340963035",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBSP004WW002-c3037bbd2217c0213013.json",
+        "sha256": "c3037bbd2217c0213013067dc97561c2c7af4479481301828c614f587d750dfc"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "61e1d45ed328bbf5d1463987edc5bb0d00e5498060a7812a3c1e3d40d7092e7a"
+      }
     }
   }
 }

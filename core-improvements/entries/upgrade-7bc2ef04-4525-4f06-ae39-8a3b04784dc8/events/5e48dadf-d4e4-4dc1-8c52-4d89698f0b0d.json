@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Feed HEAD now explicitly bodyless;7focused tests and pinned-native KV projection pass after narrow adjustment. Runtime initial454737d4 pending refreshed source, noaccount data imported.",
+  "checks": [
+    {
+      "command": "node --test social-core/test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "7pass/0fail with explicit bodylessHEAD assertion."
+    },
+    {
+      "command": "node social-core/scripts/worker-smoke.mjs",
+      "result": "PASS",
+      "evidence": "native-workerd baseline2026-10-13, no provider calls; production2026-10-20 separate hosted check."
+    }
+  ],
+  "eventId": "5e48dadf-d4e4-4dc1-8c52-4d89698f0b0d",
+  "sequence": 3,
+  "at": "2026-10-20T05:52:10.978Z"
+}

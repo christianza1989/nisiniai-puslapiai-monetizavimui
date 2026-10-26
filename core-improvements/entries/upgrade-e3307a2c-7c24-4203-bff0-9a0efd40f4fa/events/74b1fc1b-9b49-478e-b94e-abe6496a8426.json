@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Actual DOM payment node in summary; desktop460px summary, mobile375document/390viewport, one form and iframe; original Session only. No paid confirmation.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "qa/memocasting-delivery-20261021/right-public-tests.txt134pass; right-build.txt production build complete; right-desktop.png and right-mobile-confirm.png native preview."
+    }
+  ],
+  "eventId": "74b1fc1b-9b49-478e-b94e-abe6496a8426",
+  "sequence": 2,
+  "at": "2026-10-21T06:35:02.000Z"
+}

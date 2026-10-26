@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual present-source revalidation. Original historical statements and their first failures remain unchanged. No historical PASS is invented; no backend/payment/order writes were performed.",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade.test.mjs scripts/core-upgrade-check.test.mjs",
+      "result": "PASS",
+      "evidence": "36 cases, including exact-tree replacement and wrong-tree/scope/repo/unverified/history boundaries; journal-regression.private.log."
+    },
+    {
+      "command": "cd commerce-core; node --test test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "221/221 current canonical commerce regressions; commerce-premerge.private.log. This is a current test result, not a reconstruction of old tests."
+    }
+  ],
+  "eventId": "d9532b39-40fd-480d-b5b3-69779ab99fec",
+  "sequence": 2,
+  "at": "2026-10-25T14:21:03.847Z"
+}

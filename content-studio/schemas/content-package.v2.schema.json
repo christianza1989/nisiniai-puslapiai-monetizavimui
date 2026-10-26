@@ -287,6 +287,10 @@
         "rights"
       ],
       "properties": {
+        "familyId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$"
+        },
         "id": {
           "type": "string"
         },
@@ -425,7 +429,7 @@
         },
         "media": {
           "type": "array",
-          "maxItems": 60,
+          "maxItems": 120,
           "items": {
             "$ref": "#/$defs/media"
           }

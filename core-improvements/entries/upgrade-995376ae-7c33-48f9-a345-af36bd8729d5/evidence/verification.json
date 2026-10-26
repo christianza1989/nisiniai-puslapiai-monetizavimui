@@ -1,0 +1,62 @@
+{
+  "status": "PASS_SCOPED_REPAIR_NOT_FULL_SKILLS_AUDIT",
+  "sourceBase": "13c8153f2dd1f39be5639e3cb2fcb9c1e004dc72",
+  "fetchedMain": "d3fe34b1ca94f3a551e1f787ae344ad9cc682fd7",
+  "originalFailure": {
+    "fullAuditStatus": "FAIL",
+    "issueCount": 161,
+    "archiveMismatches": 96,
+    "unavailableValidatorMisclassifiedAsStructuralFailures": 58,
+    "otherIssues": 7,
+    "positiveRestorationRegression": "BLOCKED before repair"
+  },
+  "archiveRestoration": {
+    "stagedGitBlobsVerified": 96,
+    "catalogChanged": false,
+    "catalogSha256": "f737c6582de07e9e7124bee04fff91af7b9001fed79eaa1d3df45d3c70f295e4",
+    "transport": "Exact original CRLF bytes; terminal -text/-filter/-working-tree-encoding attributes; fresh-clone regression with core.autocrlf=true passes"
+  },
+  "validator": {
+    "defaultInterpreter": {
+      "status": "UNAVAILABLE",
+      "actionableDependencyIssues": 1,
+      "skillsNotRun": 58,
+      "falseStructuralFailures": 0
+    },
+    "isolatedTaskInterpreter": {
+      "provider": "Original quick_validate.py with official PyPI PyYAML6.0.3 installed only in ignored task venv",
+      "skillPasses": 58,
+      "archivePasses": 96,
+      "globalEnvironmentChanged": false
+    }
+  },
+  "regressions": {
+    "combinedCoreAndAuditTests": 25,
+    "subsequentAuditTestsIncludingRealCatalogBytes": 5,
+    "uniqueCases": 26,
+    "negativeCases": [
+      "semantic source modification",
+      "catalog hash laundering",
+      "working .git/info attribute-only protection",
+      "nested committed attribute override",
+      "executable mode",
+      "symlink mode",
+      "missing verified source-path scope"
+    ]
+  },
+  "remainingFullAudit": {
+    "status": "FAIL",
+    "issues": 33,
+    "unmaterializedSparseLocalLinks": 27,
+    "foreignInstalledCopies": 5,
+    "foreignReviewedEntryDrift": 1,
+    "note": "Do not claim a full skills audit PASS. Parent canonical SEO mirror synchronization and foreign ownership are separate; sparse-target presence is not a source repair."
+  },
+  "delivery": {
+    "state": "local-only before source commit",
+    "productionWrites": false,
+    "globalPackageInstall": false,
+    "mainMerge": false,
+    "adoption": false
+  }
+}

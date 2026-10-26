@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Final release acceptance on this docs/adoption branch. Initial PR268 preflight correctly required a fresh verification event in its ec49fcb6-based diff; the earlier wider baseline check was insufficient for that PR gate. Original failure retained privately. No implementation change or weakened gate.",
+  "checks": [
+    {
+      "command": "Canonical remote migration27; compare actual D1 ledger before/after",
+      "result": "PASS",
+      "evidence": "migration27.private.txt SCHEMA_VERIFIED26to27/pending0; all26prior checksums retained,5orders/20168minor and zero coupon/redemption records preserved."
+    },
+    {
+      "command": "Actual before/after Cloudflare provider settings/domains/schedules comparison and hosted.private.mjs",
+      "result": "PASS",
+      "evidence": "provider-before/after.private.json exact bindings/vars/secret names/date/flags/observability/domains/certificates/cron/mail match; hosted-acceptance.private.json LIVEcontext,4public routes200, preview409,GET405,Origin403,private404,Access302."
+    },
+    {
+      "command": "Authenticated HTTPS admin and real-product cart browser acceptance",
+      "result": "PASS",
+      "evidence": "live-admin-create.private.png, live-cart-invalid-code.private.png, live-cart320-code.private.png; no console errors; width/scroll320; no production test coupon or transaction. Own cart restored empty."
+    }
+  ],
+  "eventId": "a732def3-1891-485f-997b-555db7af221f",
+  "sequence": 5,
+  "at": "2026-10-26T00:17:01.416Z"
+}

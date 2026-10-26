@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "commit": "759c0cd84218628ab1c5a106d66b957fc754d926",
+  "note": "Frontend190ee50b active100percent; bindings and backend unchanged. Actual hosted same form/original customer/totals and iframe presence confirmed; final hosted paint interrupted by owner closing tab. Same original open Stripe Session card form rendered in private read-only native desktop/mobile preview. No new order, Session, charge or confirmation; full boundary in INLINE_PAYMENT_2026_10_21.md. Main merge separate.",
+  "eventId": "40f05034-0ca5-47ab-a124-4cdfe6807a60",
+  "sequence": 3,
+  "at": "2026-10-21T06:08:51.201Z"
+}

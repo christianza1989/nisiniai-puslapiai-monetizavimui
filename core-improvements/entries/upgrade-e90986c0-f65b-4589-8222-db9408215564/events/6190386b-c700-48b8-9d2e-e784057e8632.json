@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "Original6errorsplusnarrowing2errors resolved; current fullcompiler noerrors.",
+      "command": "node node_modules/typescript/bin/tsc --noEmit"
+    },
+    {
+      "result": "PASS",
+      "evidence": "3functionalbridge regressions pass, no credential/cookie/caller upstream forwarding; site/home/method/path negatives retained.",
+      "command": "node --test tests/memocasting-instagram.test.mjs"
+    }
+  ],
+  "note": "Original current tsc errors retained in task output. Unknown JSON narrowed with PartialFeed/null and updatedAt check; typed JS bridge context and service after runtime typeof guard. No widened grants or route scope.",
+  "status": "local-verified",
+  "eventId": "6190386b-c700-48b8-9d2e-e784057e8632",
+  "sequence": 2,
+  "at": "2026-10-20T07:59:19.316Z"
+}

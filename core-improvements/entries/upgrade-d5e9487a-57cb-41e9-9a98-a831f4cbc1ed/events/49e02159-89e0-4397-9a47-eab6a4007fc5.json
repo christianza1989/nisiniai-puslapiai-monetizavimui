@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Same paired PR updated with owner cabinet adjudication and direct merge/deploy authorization. Main adoption and actual live verification are separate recorded steps.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/49",
+  "eventId": "49e02159-89e0-4397-9a47-eab6a4007fc5",
+  "sequence": 5,
+  "at": "2026-10-21T13:16:30.927Z"
+}

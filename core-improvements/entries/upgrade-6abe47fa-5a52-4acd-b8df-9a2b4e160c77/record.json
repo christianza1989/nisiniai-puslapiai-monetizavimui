@@ -1,0 +1,23 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Repair standalone content SDK transitive dependencies and stale media-limit regressions after the paired public instruction integration.",
+  "evidence": [
+    "Original current-source 69/73 result retained in qa/antigravity-review-20261025/studio-premerge.private.log: two missing-document-module errors and two stale 60-media assumptions.",
+    "Paired current contracts support 120 media; actual complete-family overflow and isolated SDK/import paths now pass all73 Studio regressions.",
+    "No production content, backend, historical journal entries or publication times changed by this repair."
+  ],
+  "paths": [
+    "content-studio/src/external-content-export.mjs",
+    "content-studio/test/content-v2.test.mjs",
+    "content-studio/test/media-batch.test.mjs",
+    "content-studio/test/media-family-contract.test.mjs",
+    "content-studio/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "rollback": "Revert the exact SDK dependency-list and fixture alignment patch; retain original failure and subsequent regression evidence.",
+  "id": "upgrade-6abe47fa-5a52-4acd-b8df-9a2b4e160c77",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "65f127b86bb3edd85846c9bd9950d0fefe41a80e",
+  "createdAt": "2026-10-25T14:32:29.328Z"
+}

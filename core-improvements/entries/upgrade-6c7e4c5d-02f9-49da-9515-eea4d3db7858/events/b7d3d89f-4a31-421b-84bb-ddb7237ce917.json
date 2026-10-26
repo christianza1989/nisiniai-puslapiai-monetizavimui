@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Actual rotated LIVE credential verified then privately installed; backend and canonical buyer bridge verify real LIVE account while independent buyer gates remain closed. No real payment, synthetic paid event or shipment created. Address normalized from owner facts and primary postcode evidence without approving operations/documents.",
+  "checks": [
+    {
+      "command": "node sites/memocasting/qa/verify-rotated-stripe-20261015.private.mjs",
+      "result": "PASS",
+      "evidence": "Actual canonical adapter accepts new LIVE RAK for exact MB account; old exposed RAK401. Private receipt retained; no secrets in journal."
+    },
+    {
+      "command": "node sites/memocasting/qa/install-stripe-connection-20261015.private.mjs --install-confirmed-rotated-stripe",
+      "result": "PASS",
+      "evidence": "Actual COMMERCE_CONNECTIONS secret added through private stdin. Activeversion4430a3ce; settings retain prior D1/R2/Access/abuse/runtime/grants and automation0."
+    },
+    {
+      "command": "node --test commerce-core/test/business-config.test.mjs commerce-core/test/document-pdf.test.mjs",
+      "result": "PASS",
+      "evidence": "3 existing tests passed. Native D1 legal-address CAS preserves24hashes/0orders/0documents/2products/2adjustments and closed policies; cloned policy-only preflight passes."
+    },
+    {
+      "command": "Actual HTTPS backend and canonical /prekyba/storefront-context checks",
+      "result": "PASS",
+      "evidence": "Both200 paymentConnectedtrue/paymentEnvironmentlive/paymentAccountVerifiedtrue; invalid webhook400, anonymousprivateadmin403. Private stripe-live-hosted receipt retained. No signed paid receipt claimed."
+    }
+  ],
+  "eventId": "b7d3d89f-4a31-421b-84bb-ddb7237ce917",
+  "sequence": 2,
+  "at": "2026-10-15T14:41:56.881Z"
+}

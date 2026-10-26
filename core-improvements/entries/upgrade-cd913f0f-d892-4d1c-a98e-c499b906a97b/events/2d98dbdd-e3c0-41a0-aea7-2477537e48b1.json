@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Bounded1..100page media-only batch shares exact single-page normalizer and one site-local index/lockedread/write. Tests validateallbeforemutation, preserve nonmedia+publishedRevision and sourceassets, return only affectedpages. Firstfixture unresolvedfactCheckapprovalcorrectlyfailed; fixedfixture, no gateweakening. No realprivateDATA/importjob/liveactions.",
+  "checks": [
+    {
+      "command": "STUDIO_PUBLIC_CORE_DIR=<paired> STUDIO_NETWORK_SETTINGS=<paired> node --test content-studio/test/media-batch.test.mjs content-studio/test/page-media-alt.test.mjs content-studio/test/media-family-contract.test.mjs content-studio/test/draft-media-metadata.test.mjs content-studio/test/media-import.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md:Bounded catalogue media assignment;9/9PASS in15.0s"
+    },
+    {
+      "command": "node --check content-studio/src/model.mjs; git diff --check",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md:syntaxandscopeddiffchecked"
+    }
+  ],
+  "eventId": "2d98dbdd-e3c0-41a0-aea7-2477537e48b1",
+  "sequence": 2,
+  "at": "2026-10-21T11:58:08.614Z"
+}

@@ -26,6 +26,8 @@ Bundle fields: version=1, siteId, domain, language, country, observations[]. Obs
 
 Artifacts must be original fetched bytes or a clearly labelled local/owner source with actual provenance. The importer verifies identity, paths and hashes, but cannot prove a provider query or factual claim actually occurred. Do not label a hand-written metric as vendor evidence. A source URL or imported status is not enough to certify factual claims.
 
+Verified HTTPS references on the site's own canonical host are not cross-site network campaigns. They still need a useful label, a reviewed reason and actual source verification. For owner documents, preserve the original bytes and checksum, bind the public download to its eligible native instruction page, and verify the ordinary HTML link survives the common public projection. An editorial source approval does not grant arbitrary file access: unknown/raw/private/future document paths must remain unavailable, and other owned domains retain network-link readiness gates. Check the complete Studio approval → package → projection → download path; a rendered toolbar alone is not acceptance.
+
 ## Continued measurement
 
 On each planning/refresh/review task check relevant data freshness and current released/deployed/indexed states. Keep fixed GEO prompts for follow-up with fresh samples and denominators by engine/market. Use first-party page/query cohorts and qualified inquiries where available, with seasonal and attribution limits. The autonomous scheduler can trigger these same checks; there is no silent paid crawler or new background monitor here. A requested recurring run needs its own schedule and spend policy. New instructions do not retrospectively upgrade old sites.

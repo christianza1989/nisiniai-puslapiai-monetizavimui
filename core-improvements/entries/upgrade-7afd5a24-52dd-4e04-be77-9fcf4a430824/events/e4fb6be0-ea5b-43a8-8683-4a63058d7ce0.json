@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Signed foreign Checkout ignored only after signature/livemode/type verification and read-only store-scoped reference lookup. Known own, ambiguous own markers, malformed own IDs, money and replay remain strict; refund/dispute contracts unchanged. Initial focused test exposed incorrect assumption of orders.environment, repaired with actual stores join; failing log preserved privately. All final verification passed. No remote provider operation by this task.",
+  "checks": [
+    {
+      "command": "npm run verify (commerce-core0.14.1 final)",
+      "result": "PASS",
+      "evidence": "Formatting;136Node tests including4focused signed shared-account tests; native workerd/D1/R2/Queue23migrations; dry-run3181.63KiB/gzip768.08KiB,21assets."
+    },
+    {
+      "command": "node --test test/shared-stripe-webhook.test.mjs (within final full verification)",
+      "result": "PASS",
+      "evidence": "Signature/mode checks precede scope; all business table snapshots unchanged for foreign and rejected events; known checkout/order/client/payment refs retain errors; own async paid+replay allocates once; closed production LIVE-shaped foreign event does not activate checkout."
+    }
+  ],
+  "eventId": "e4fb6be0-ea5b-43a8-8683-4a63058d7ce0",
+  "sequence": 2,
+  "at": "2026-10-14T21:57:39.257Z"
+}

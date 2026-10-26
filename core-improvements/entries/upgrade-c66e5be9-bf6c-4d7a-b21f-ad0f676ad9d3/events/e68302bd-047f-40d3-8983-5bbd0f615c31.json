@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/84",
+  "commit": "038b1f0f1ab207f1be1012f2714d03f0572beed7",
+  "note": "Actual merged source adopted by Memory Casting frontend88184164-9401-4ddc-b8ef-c6b391f3328a, deployment9cac52e7 at22:57:51UTC. Final actual PSI zzh6keplwd mobile95/100/100/100, desktop99/100/100/100; mobile FCP1.7s,LCP2.7s,TBT0,CLS0.001,SI2.4s. Single lab result, no field dataset or100guarantee. Hosted5routes/14exact assets/packageSHA/live context and product32/48metadata pass, actual home prices ready and320px view accepted, no console errors. Warm browser response139.5ms; first coldHTTP1608ms retained. Exact actual bindings/domains/certificates/cron and backend/mail versions unchanged. No financial/shipment/customer-message test or data mutation. This is this site's runtime adoption only.",
+  "eventId": "e68302bd-047f-40d3-8983-5bbd0f615c31",
+  "sequence": 3,
+  "at": "2026-10-25T23:01:26.385Z"
+}

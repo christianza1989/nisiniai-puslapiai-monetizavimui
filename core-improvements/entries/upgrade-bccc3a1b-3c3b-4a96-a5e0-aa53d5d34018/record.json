@@ -1,0 +1,40 @@
+{
+  "siteId": "memocasting",
+  "summary": "Owner-requested three LT canonical URL moves and executable committed upgrade coverage check",
+  "category": "code",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "evidence": [
+    "Owner2026-10-13 explicitly requests three301 redirects; source release had old canonical paths.",
+    "Required scripts/core-upgrade-check.mjs absent at fresh CORE2c90a8f; new readonly checker tests committed scopes and rejects uncommitted claims.",
+    "Official Studio release2ebf04c8 retains85 other pages and all text/media/date fields for the three moved pages; actual301/200/query/native buyer blocks and103SEOHTTP checks PASS."
+  ],
+  "rollback": "Revert this scoped paired change; retain original e69 release and Studio export/history. Do not reset DB, historic approvals or other sessions.",
+  "paths": [
+    "scripts/core-upgrade-check.mjs",
+    "scripts/core-upgrade-check.test.mjs",
+    "docs/CODEX_GIT_WORKFLOW.md",
+    "WORKSTREAMS.md",
+    "sites/memocasting/CONTENT.mjs",
+    "sites/memocasting/NATIVE-HELPERS.mjs",
+    "sites/memocasting/LATEST-RELEASE.json",
+    "sites/memocasting/MIGRACIJA.md",
+    "sites/memocasting/legacy-urls.json",
+    "sites/memocasting/URL_MIGRATION_2026_10_13.md",
+    "sites/memocasting/CORE_FEEDBACK.md",
+    "sites/memocasting/IMPLEMENTATION_STATUS.md",
+    "sites/memocasting/SITE_COMPLETION.json",
+    "proxy.ts",
+    "lib/memocasting-routes.mjs",
+    "lib/memocasting-locales.mjs",
+    "lib/generated/content-packages.json",
+    "content-packages/memocasting/content-package.json",
+    "tests/memocasting-routes.test.mjs",
+    "tests/memocasting-structure.test.mjs",
+    "tests/memocasting-locales.test.mjs",
+    "sites/memocasting/QA_SEO.mjs"
+  ],
+  "id": "upgrade-bccc3a1b-3c3b-4a96-a5e0-aa53d5d34018",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "2c90a8f697e78aff9de401e5f20da3b8f7c7df47",
+  "createdAt": "2026-10-13T06:13:13.017Z"
+}

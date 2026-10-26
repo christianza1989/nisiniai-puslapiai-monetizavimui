@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import sharp from 'sharp';
-import {optimizeRaster} from '../src/image-pipeline.mjs';
+import {optimizeRaster,IMAGE_POLICY} from '../src/image-pipeline.mjs';
+import {pngAtBytes} from './fixtures/png-bytes.mjs';
 
 test('responsive WebP preserves alpha and never upscales a small source',async()=>{
  const source=await sharp({create:{width:1000,height:500,channels:4,background:{r:20,g:80,b:40,alpha:0}}}).png().toBuffer();
@@ -23,5 +24,17 @@ test('invalid bytes, mismatched MIME and excessive dimensions do not produce pub
  await assert.rejects(()=>optimizeRaster(png,'image/jpeg'),/MIME/);
  const wide=await sharp({create:{width:8193,height:1,channels:3,background:'#ffffff'}}).png().toBuffer();
  await assert.rejects(()=>optimizeRaster(wide,'image/png'),/8192/);
- await assert.rejects(()=>optimizeRaster(Buffer.alloc(12*1024*1024+1),'image/png'),/12 MB/);
+ await assert.rejects(()=>optimizeRaster(Buffer.alloc(IMAGE_POLICY.maxInputBytes+1),'image/png'),/16 MiB/);
+});
+test('encoded byte allowance is inclusive at 16 MiB while pixel and dimension guards remain unchanged',async()=>{
+ assert.equal(IMAGE_POLICY.maxInputBytes,16*1024*1024);
+ assert.equal(IMAGE_POLICY.maxInputPixels,40_000_000);assert.equal(IMAGE_POLICY.maxInputEdge,8192);assert.equal(IMAGE_POLICY.maxOutputEdge,1600);
+ const small=await sharp({create:{width:40,height:20,channels:3,background:'#668877'}}).png().toBuffer();
+ for(const size of [IMAGE_POLICY.maxInputBytes-1,IMAGE_POLICY.maxInputBytes]) {
+  const png=pngAtBytes(small,size);assert.equal(png.length,size);
+  const result=await optimizeRaster(png,'image/png');assert.deepEqual(result.variants.map(v=>[v.width,v.height]),[[40,20]]);
+ }
+ await assert.rejects(()=>optimizeRaster(pngAtBytes(small,IMAGE_POLICY.maxInputBytes+1),'image/png'),/16 MiB/);
+ const pixels=await sharp({create:{width:6400,height:6400,channels:3,background:'#ffffff'}}).png().toBuffer();
+ await assert.rejects(()=>optimizeRaster(pixels,'image/png'),/pixel limit/i);
 });

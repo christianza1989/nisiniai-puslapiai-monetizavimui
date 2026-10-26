@@ -91,6 +91,17 @@ test('journal entries are unique; events append in order and require actual chec
   await assert.rejects(appendEvent(f.root, id, { status: 'fixing', note: 'parallel' }), { code: 'EEXIST' });
   assert.equal(await fs.readFile(path.join(dir, 'operation.lock'), 'utf8'), 'foreign operation');
 });
+
+test('journal helper preserves literal bracketed scope bytes without resolving patterns', async t => {
+  const f = await fixture(t);
+  const paths = ['app/niche/[siteId]/[[...slug]]/page.tsx', 'app/niche/[siteId]'];
+  const r = await createRecord(f.root, { ...f.input, paths });
+  const stored = JSON.parse(await fs.readFile(path.join(f.root,
+    'core-improvements/entries', r.id, 'record.json'), 'utf8'));
+  assert.deepEqual(r.paths, paths);
+  assert.deepEqual(stored.paths, paths);
+  await assert.rejects(createRecord(f.root, { ...f.input, paths: [':(glob)app/**'] }), /unsafe_relative_path/);
+});
 test('prepared-state recovery preserves bytes after interruption before payload or after unlink', async t => {
   const f = await fixture(t), bytes = await fs.readFile(f.source);
   const r = await createRecord(f.root, f.input);

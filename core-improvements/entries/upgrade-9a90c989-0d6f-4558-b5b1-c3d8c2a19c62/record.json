@@ -1,0 +1,20 @@
+{
+  "siteId": "memocasting",
+  "summary": "Preload the active MemoryManrope family and reserve a stable viewport working region for checkout hydration",
+  "category": "code",
+  "evidence": [
+    "Chrome measured156208 transferredbytes in three unused Newsreader/SourceSans preloads; all53visible settled cart text leaves useMemoryManrope. Actual footer-only layout shifts reachedCLS.1312 while replacing the short SSR checkout shell with client content."
+  ],
+  "paths": [
+    "app/layout.tsx",
+    "components/niche/memocasting-checkout.css",
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/78",
+  "rollback": "Revert scoped fontpreload/checkoutminimum changes and matching SDK. Preserve all content revisions, other tenants, provider bindings and payment truth.",
+  "id": "upgrade-9a90c989-0d6f-4558-b5b1-c3d8c2a19c62",
+  "branch": "codex/memocasting-final-acceptance-20261025",
+  "baseSha": "7c9448b9fc31e0b613b170aa330a0379f3748bad",
+  "createdAt": "2026-10-25T21:02:21.171Z"
+}

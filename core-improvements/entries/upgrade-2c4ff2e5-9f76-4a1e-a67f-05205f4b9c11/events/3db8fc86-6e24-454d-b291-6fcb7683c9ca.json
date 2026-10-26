@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Owner arrangement only: video follows#procesas and #akimirkos is omitted from render, original markup retained. No style/media/package edits. Native hosted desktop1280/mobile390 and original596pane show new order with24clips and no horizontal overflow. No new whole-site SEO or repeated media audit claim.",
+  "checks": [
+    {
+      "command": "scoped ESLint memocasting-site.tsx; production run-framework build",
+      "result": "PASS",
+      "evidence": "One component7insertions/1replacement; exact staged safety passed."
+    },
+    {
+      "command": "Hosted DOM and rendered desktop1280/mobile390",
+      "result": "PASS",
+      "evidence": "Sections pradzia,rinkiniai,procesas,instagram,skulpturos,sudetis,galerija,gidai,klausimai. No#akimirkos; original source retained;24clips. Actual bindings/observability unchanged."
+    }
+  ],
+  "eventId": "3db8fc86-6e24-454d-b291-6fcb7683c9ca",
+  "sequence": 4,
+  "at": "2026-10-20T08:46:39.228Z"
+}

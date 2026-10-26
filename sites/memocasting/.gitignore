@@ -1,0 +1,9 @@
+runtime/
+media-originals/
+qa/
+studio-data/
+studio-output/
+EDITORIAL-REVIEW.private.json
+REVIEW-TEXTS.private.md
+research-private/
+history/audit.json

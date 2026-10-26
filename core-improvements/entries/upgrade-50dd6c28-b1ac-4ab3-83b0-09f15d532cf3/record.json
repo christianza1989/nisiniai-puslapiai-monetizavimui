@@ -1,0 +1,25 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Explicit existing Hostinger mailbox HTTPS transport when actual Workers SMTP destination is blocked; preserve durable one-shot unknown recovery and authenticated site branding.",
+  "paths": [
+    "lib/smtp-protocol.mjs",
+    "lib/commerce-mail-gateway.mjs",
+    "lib/hostinger-commerce-mail.mjs",
+    "workers/commerce-mail/index.mjs",
+    "workers/commerce-mail/memocasting-production.wrangler.jsonc",
+    "tests/commerce-mail-gateway.test.mjs",
+    "tests/hostinger-commerce-mail.test.mjs"
+  ],
+  "evidence": [
+    "Actual Node SMTP authenticated but deployed native Worker failed before greeting against Cloudflare-addressed endpoint. First unknown claim retained, not replayed.",
+    "Owner approved dedicated existing info@pinet.lt key. Official Mail API /me exact sender and send204 accepted; exact internal marker found owner Gmail INBOX. No paid plan, provider queue ID or custom Reply-To invented.",
+    "Source PUBLIC055197e, retained by55477b624f88e228926ad796bf38494193cf246e. Actual private mail versiond06410b6-9250-4e77-9494-e58d41db125f."
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Revert only scoped compatible source changes after fresh actual settings/DB read. Preserve live orders, secrets, cron, claims and other sites. Never replay unknown sends or restore pre-launch database. Explicit alternative requires actual sender and owner-approved access.",
+  "id": "upgrade-50dd6c28-b1ac-4ab3-83b0-09f15d532cf3",
+  "branch": "codex/memocasting-public-20261012",
+  "baseSha": "8387b9838cb93f08f870bca6d021d145e4bdbc4f",
+  "createdAt": "2026-10-20T17:27:35.946Z"
+}

@@ -1,0 +1,19 @@
+{
+  "siteId": "memocasting",
+  "category": "workflow",
+  "summary": "Make same-view payment a maintained UI contract and explicitly verify locked quantity/removal behavior after order creation.",
+  "evidence": [
+    "Owner observed a receipt replacing contact/address form despite one-page URL; source fix now maintains exact original form and immutable pending order.",
+    "Final20cart tests PASS, including blocked +/-/remove and repeat submit. README distinguishes same form, original Session recovery and server-paid receipt from a merely unchanged URL."
+  ],
+  "paths": [
+    "commerce-core/README.md",
+    "commerce-core/test/checkout-cart.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert only documentation/test additions if needed; never remove original-order or signed-payment safeguards to satisfy a layout test.",
+  "id": "upgrade-38e9bd27-ddaf-4d31-b68d-4ff1698bad73",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "759c0cd84218628ab1c5a106d66b957fc754d926",
+  "createdAt": "2026-10-21T06:08:51.177Z"
+}

@@ -3,11 +3,13 @@ import assert from 'node:assert/strict';
 import { mkdtemp, readFile, writeFile, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import {pathToFileURL} from 'node:url';
 import sharp from 'sharp';
 import { contentPolicy, localPublishAt, planningWindow, scheduledPlan } from '../src/content-schedule.mjs';
 import { v2Fixture } from './fixtures/v2.mjs';
-import { projectPublicPages } from '../../../dovanos-memorycasting/lib/niche-links.mjs';
-import { validateContentPackage } from '../../../dovanos-memorycasting/scripts/content-package-core.mjs';
+const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname,'../../../dovanos-memorycasting');
+const { projectPublicPages } = await import(pathToFileURL(path.join(publicRoot,'lib/niche-links.mjs')));
+const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot,'scripts/content-package-core.mjs')));
 import { verifyContentRelease } from '../src/content-release.mjs';
 
 const root = await mkdtemp(path.join(os.tmpdir(), 'content-workflow-'));
@@ -41,7 +43,7 @@ test('weekly cadence fills spaced dates across batches without exceeding three a
   const window = planningWindow(policy,now); assert.equal(window.target,76);
   assert.equal(contentPolicy().articlesPerMonth,2,'legacy monthly default stays compatible');
   assert.throws(()=>contentPolicy({cadence:'weekly',articlesPerWeek:8}));
-  assert.throws(()=>contentPolicy({cadence:'daily'}));
+  assert.throws(()=>contentPolicy({cadence:'hourly'}));
   let pages=[];
   while(pages.length<window.target) {
     const count=Math.min(24,window.target-pages.length);
@@ -56,6 +58,29 @@ test('weekly cadence fills spaced dates across batches without exceeding three a
   const preexisting=[{type:'guide',publishAt:'2026-10-12T07:00Z'},{type:'guide',publishAt:'2026-10-14T07:00Z'},{type:'guide',publishAt:'2026-10-16T07:00Z'}];
   const after=scheduledPlan([{type:'guide',publishDate:'2026-10-17'}],preexisting,policy,Date.parse('2026-10-06T08:00Z'));
   assert.ok(after[0].publishAt.slice(0,10)>='2026-10-19','new run respects existing calendar-week capacity');
+});
+
+test('daily cadence respects one or two slots across batches, existing dates and DST', async () => {
+  const now=Date.parse('2026-10-24T06:00Z'), policy=contentPolicy({months:1,cadence:'daily',articlesPerDay:2});
+  assert.equal(planningWindow(policy,now).target,64);
+  assert.equal(contentPolicy({cadence:'daily'}).articlesPerDay,1);
+  for(const count of [0,3,1.5])assert.throws(()=>contentPolicy({cadence:'daily',articlesPerDay:count}));
+  const existing=[{type:'guide',publishAt:'2026-10-24T07:00Z'},{type:'article',publishAt:'2026-10-25T08:00Z'},{type:'product',publishAt:'2026-10-24T07:00Z'},{type:'guide',status:'revoked',publishAt:'2026-10-24T07:00Z'}];
+  const original=structuredClone(existing);
+  const next=scheduledPlan(Array.from({length:4},()=>({type:'guide',publishDate:'2026-10-24'})),existing,policy,now);
+  assert.deepEqual(next.map(p=>p.publishAt),['2026-10-24T07:00:00.000Z','2026-10-25T08:00:00.000Z','2026-10-26T08:00:00.000Z','2026-10-26T08:00:00.000Z']);
+  assert.deepEqual(existing,original,'calendar does not rewrite existing approved or private dates');
+  const later=scheduledPlan([{type:'article',publishDate:'2026-10-24'}],[...existing,...next],policy,now);
+  assert.equal(later[0].publishAt,'2026-10-27T08:00:00.000Z','subsequent batch counts occupied slots');
+  const single=scheduledPlan([{type:'guide',publishDate:'2026-10-24'}],existing,contentPolicy({cadence:'daily',articlesPerDay:1}),now);
+  assert.equal(single[0].publishAt,'2026-10-26T08:00:00.000Z');
+  const afterTime=scheduledPlan([{type:'guide',publishDate:'2026-10-24'}],[],policy,Date.parse('2026-10-24T08:00Z'));
+  assert.equal(afterTime[0].publishAt,'2026-10-25T08:00:00.000Z','missed wall time is never backdated');
+  const futureFull=[{type:'guide',publishAt:'2026-11-02T08:00Z'},{type:'guide',publishAt:'2026-11-02T08:00Z'}];
+  assert.equal(scheduledPlan([{type:'guide',publishDate:'2026-11-02'}],futureFull,policy,now)[0].publishAt,'2026-11-03T08:00:00.000Z','capacity fallback never brings a dependent page before its requested date');
+  const s=await site('daily-policy.example');
+  await model.editSite(s.id,{contentPolicy:policy});
+  assert.equal((await model.getContentWorkflow(s.id)).policy.articlesPerDay,2);
 });
 
 test('two sites keep distinct schedules; reciprocal drafts approve atomically and links open only when due', async () => {

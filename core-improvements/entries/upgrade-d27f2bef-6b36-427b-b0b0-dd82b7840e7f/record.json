@@ -1,0 +1,19 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "siteId": "memocasting",
+  "paths": [
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/test/checkout-cart.test.mjs"
+  ],
+  "summary": "Hide closed delivery markets in the optional one-page country selector; retain classic checkout and backend admission.",
+  "evidence": [
+    "New country regression originally displayed PL/LT/EE although only LT was admitted; original failure preserved privately.",
+    "15 checkout-cart tests pass including fallback from PL to LT."
+  ],
+  "category": "code",
+  "rollback": "Revert the scoped one-page selector/test change; no stored markets or customer orders are rewritten.",
+  "id": "upgrade-d27f2bef-6b36-427b-b0b0-dd82b7840e7f",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "e2cf47eb1bcf1c3274245c8fc5cf8c74620b1bab",
+  "createdAt": "2026-10-20T16:13:12.266Z"
+}

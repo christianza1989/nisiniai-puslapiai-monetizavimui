@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Final canonical commerce suite211/211 PASS from commerce-core cwd; preserves the separate root-cwd fixture failure log. Native worker D1/R2/restart smoke PASS, actual official staging confirmed shipment and label inspected, production provider read quotes PASS. No paid production shipment or payment created.",
+  "checks": [
+    {
+      "command": "cd commerce-core && node --test test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "qa/lockers-20261022/final-node-cwd-correct.txt"
+    },
+    {
+      "command": "node commerce-core/scripts/worker-smoke.mjs",
+      "result": "PASS",
+      "evidence": "qa/lockers-20261022/worker.txt"
+    }
+  ],
+  "eventId": "8a0a30e1-99c5-436c-adce-d7148db91645",
+  "sequence": 3,
+  "at": "2026-10-22T09:48:18.453Z"
+}

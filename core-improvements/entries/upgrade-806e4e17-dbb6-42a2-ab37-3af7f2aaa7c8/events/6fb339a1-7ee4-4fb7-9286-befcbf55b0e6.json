@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "0.4 locally verified material lot quarantine/release/inventory count; same commerce/API/operator system. Website thread01a12d22-fe44-7282-baba-ea042396a030 active with own isolated branches, issue100/PR101 and companion30/PR31; parent does not edit delegated site files. Local success is not full module/production or completed website. No provider activation, live financial/DNS/mail/outreach or agent operation.",
+  "checks": [
+    {
+      "command": "npm run verify in commerce-core",
+      "result": "PASS",
+      "evidence": "42/42Node24.19 tests; native workerd/D1 all6migrations, stock/paid/refund/doc/source/B2B retained plus versioned control/replay/stale/quarantine/resume/receipt fields. Dry-run84.08KiB/gzip17.00. Earlier native fixture SyntaxError fixed without weakening guards."
+    },
+    {
+      "command": "staged Git archive treeef48aedbfe0a5f12c9645b86a1034560b406cb35; npm ci --ignore-scripts; npm run verify in clean restore",
+      "result": "PASS",
+      "evidence": "Scoped source restore without private runtime/identity,36packages/audited37; format42tests/nativeD1/build PASS. Not a fresh clone of the entire platform."
+    },
+    {
+      "command": "Actual IAB lot-control actions, desktop1440/mobile390/text32px/spacing and process restart",
+      "result": "PASS",
+      "evidence": "Quarantine blocked assembly; release/count19to18, assembly18to17 withSKU+1, invalid unchanged count400 thenretry17to18 success.6controls and2assemblies persisted after restart and seed replay. Mobile/32px forms andtables335width=scroll,global375at390. Final console warn/error[], four screenshots visually reviewed. FullWCAG/realzoom unverified."
+    },
+    {
+      "command": "format, audit, impeccable detector, docs and exact-staged safety",
+      "result": "PASS",
+      "evidence": "FormatPASS,audit0,detector[],19owned docs46local links.19exact-staged source paths no secret findings; runtime/screenshots/temp source restores ignored; staged diff reviewed."
+    },
+    {
+      "command": "core-only freshness handoff",
+      "result": "PASS",
+      "evidence": "Current core main7af6b964 ancestor,0missing; parent own checkout. Companion code untouched in this package; website owner has separate current-main companion branch."
+    }
+  ],
+  "eventId": "6fb339a1-7ee4-4fb7-9286-befcbf55b0e6",
+  "sequence": 9,
+  "at": "2026-10-11T22:58:37.441Z"
+}

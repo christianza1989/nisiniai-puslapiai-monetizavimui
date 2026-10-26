@@ -1,5 +1,21 @@
 # Bendra visų svetainių turinio sistema
 
+Pilnas privatus ištirtos temos aprašas perduodamas esamam V1 `enqueue('draft', siteId, pageId, {fullBrief})`: tikslus `slug`, `question`, `contribution`, `outline` ir papildomi JSON duomenys iki 128 KiB. Jis perduodamas kaip nepatikima `pageData.editorialBrief` duomenų dalis, be trumpinimo, tačiau negauna instrukcijų ar patvirtinimo galios. Netinkamas adresas atmetamas prieš sukuriant darbą; caller objekto pakeitimai nekeičia eilėje esančio aprašo. Senas kvietimas be aprašo lieka suderinamas. Viešų schemų, patvirtinimų ir istorinių instrukcijų fingerprint šis laukas nekeičia. V2 generatoriaus vartas lieka uždaras.
+
+## Dviejų trumpų indeksų išimtis (2026-10-24)
+
+Roko sprendimas 606 leidžia tik `promedical` kategorijų (`faq`) ID
+`10af45c9-03a7-4e29-8145-661dde7f44e4` (017) ir
+`4a80eebf-f530-44b2-b734-caba73aab699` (069) esamus trumpus tekstus.
+`minimum-content.mjs` jiems taiko atitinkamai 117 ir 97 body simbolių ribas,
+taip pat netuščio teksto patikrą; žemiau šių ribų stabdo ir readiness, ir approve.
+Tai nėra bendras konfigūruojamas vartų išjungimas: likusiems puslapiams approve
+120 simbolių kriterijus ir readiness elgsena nesikeičia. H1/title nepridedamas.
+Faktų, šaltinių, versijos peržiūros, medijos ir nuorodų vartai galioja ir šiems
+dviem ID. Teksto keitimas vis tiek panaikina aktualią peržiūrą / approval.
+Esamas contentPolicy nepalaiko tokios išimties, todėl duomenų pakeitimu jos
+neįjungiame ir patvirtinimo įrašų ranka nekuriame.
+
 **Privaloma teksto saviredakcija — 2026-10-10:** visoms nišoms nuo pirmo juodraščio taikomos [kalbos kokybės taisyklės](SKILLS/niche-content-planner/references/language-quality.md). Autorius pats perskaito visą galutinį tekstą, pataiso sintaksę, vertinius ir neaiškias formuluotes, patikrina nuorodas bei išsaugotą faktinę prasmę; atskiro agento ar sesijos nereikia. Žinomos neištaisytos kalbos klaidos laikomos privačiomis redakcinėmis kliūtimis iki patvirtinimo. Esamo `recordEditorialReview.evidence.presentation` paaiškinime fiksuojama faktinė kalbos ir sąsajos peržiūros apimtis, ne automatiškai įrašytas PASS. Schema ir senų patvirtinimų istorija nekeičiama.
 
 2026-10-05. Vienas workflow visoms nišoms pagal siteId, įskaitant Madbeauty. Viešos V1/V2 schemos, publikavimo filtrai ir medijos importas nekopijuojami kiekvienai svetainei.
@@ -7,7 +23,7 @@
 ## Veikiantis kelias
 
 1. Nišos BUSINESS, faktai, URL inventorius ir tikros funkcijos → niche-content-planner tyrimas ir sezoniniai briefai.
-2. `contentPolicy`: months (1–12), cadence (monthly arba weekly), articlesPerMonth (1–12) arba articlesPerWeek (1–7), localTime (HH:mm), timezone (IANA). Senam mėnesiniam policy suderinamumas: 6 mėn. × 2 straipsniai/mėn. 10:00; tai nėra visų nišų SEO rekomendacija. Savininko nurodytas dažnis turi pirmenybę prieš default. Madbeauty tikslas: 3 straipsniai/sav., leidžiant pagrįstai palikti tik 2, kai nėra trečios naudingos temos. Savaitiniame režime tikslas skaičiuojamas pagal realias intervalo datas, paliekant 7 kalendorines pasiruošimo dienas; datos išdėstomos per savaites, jau suplanuoti gidai įskaičiuojami į tos kalendorinės savaitės ribą. Agentas pagrindžia dažnį pagal naudingų klausimų kiekį. Esamų datų policy pakeitimas neperrašo. Laikrodis perskaičiuoja DST; neegzistuojančio/dviprasmio laiko nesirenka tyliai.
+2. `contentPolicy`: months (1–12), cadence (monthly, weekly arba daily), articlesPerMonth (1–12), articlesPerWeek (1–7) arba articlesPerDay (1–2), localTime (HH:mm), timezone (IANA). Senam mėnesiniam policy suderinamumas: 6 mėn. × 2 straipsniai/mėn. 10:00; tai nėra visų nišų SEO rekomendacija. Savininko nurodytas dažnis turi pirmenybę prieš default. Madbeauty tikslas: 3 straipsniai/sav., leidžiant pagrįstai palikti tik 2, kai nėra trečios naudingos temos. Savaitiniame režime tikslas skaičiuojamas pagal realias intervalo datas, paliekant 7 kalendorines pasiruošimo dienas; datos išdėstomos per savaites, jau suplanuoti gidai įskaičiuojami į tos kalendorinės savaitės ribą. Dienos režimas skaičiuoja realias vietines dienas ir esamus neatšauktus guide/article įrašus; leidžia antrą dienos straipsnį, bet ne daugiau už policy ribą. Jei pasiūlyta diena pilna, perkeliama tik pirmyn. Praėjęs tos dienos publikavimo laikas nepasirenkamas; galima pradėti šiandien tik dar nepraėjus laikui ir atlikus atskirus priėmimo vartus. Dienos tikslas yra talpa, ne privaloma menkaverčių tekstų kvota. Agentas pagrindžia dažnį pagal naudingų klausimų kiekį. Esamų datų policy pakeitimas neperrašo. Laikrodis perskaičiuoja DST; neegzistuojančio/dviprasmio laiko nesirenka tyliai.
 3. V1 CLI planuoja partijomis iki 24 URL ir rengia juodraščius. Autopilot apdoroja kelias partijas, sustoja nesant pažangos ar esant draft klaidai ir rodo likutį. V2 tekstinis generatorius dar išjungtas; rich turinys įkeliamas / redaguojamas lossless. V1/V2 peržiūra, partijos patvirtinimas ir release bendri.
 4. Agentas sugeneruoja ir peržiūri actual vaizdus su built-in ImageGen, importuoja MEDIA_CORE ir priskiria variantų šeimą. Tekstinis CLI savaime nevykdo built-in ImageGen. GUI ImageGen API yra atskiras API-key režimas.
 5. `finalizeInternalLinks` perkelia pagrįstus žinomų tos pačios nišos puslapių ryšių pasiūlymus į juodraščio `links`. Neprideda all-to-all ir nekeičia patvirtinto snapshot. Ryšiai su nerengiamu/atšauktu puslapiu atidedami arba pataisomi. Vėlesnis tikslo approval savaime neperrašo jau paskelbto straipsnio.
@@ -66,3 +82,9 @@ Paleisti studijos `npm test` ir public core `npm run test:core`. Viešo adapteri
 ## Savaitinės kadencijos patikslinimas — 2026-10-05
 
 Savininkas Madbeauty numatė 2–3/sav.; anksčiau jo įrašas paveldėjo bendrą2/mėn. Tai nebuvo individuali SEO strategija. Weekly API/GUI/generatorius naudoja tikrą articlesPerWeek, ne apytikslį mėnesinį daugiklį. 2026-10-05 šešių mėnesių3/sav. politika turi76 suplanuojamus slotus iki2027-04-05 po7dienų pasiruošimo. Tai tikslas, ne jau parašyti/peržiūrėti tekstai. Esamos datos ir kitų nišų policy nekeičiamas. Kiekvienam URL reikia atskiro naudingo atsakymo ir atitinkamo tikro CTA; metrika sprendžia plėtrą. [Google people-first gairės](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) nerekomenduoja didinti kiekio vien dėl numanomo „šviežumo“.
+
+## Pasirinktų V1 pakeitimų leidimas
+
+Kai likę juodraščiai skiriasi nuo gyvos svetainės, `releaseReviewedOverlay(siteId, input)` leidžia tik pasirinktų esamų V1 puslapių dabartines review / approval revizijas uždėti ant tiksliais baitais ir medijos SHA inventoriu prisegto viešo bazinio paketo. Įvestis: pageIds, basePackagePath, expectedBasePackageSha256, baseAssetsDirectory, expectedBaseAssets, expectedBaseAssetsSha256, baselineEvidence (sourceVersion, deploymentId, observedAt). Kai nesusijusių istorinių vietinių snapshot ryšiai nebesudaro pilno grafo, `approveReviewedOverlay(siteId, input, actorId)` atominiam pasirinktų puslapių patvirtinimui papildomai reikalauja tikslaus expectedRevisionHashes žemėlapio ir validuoja pilną prisegtą viešą grafą. Išlieka visos pasirinktos revizijos readiness / review / turinio / šaltinių / medijos patikros. Tai agento modelio API, ne approval apėjimas.
+
+Nepasirinkti puslapiai, visas svetainės apvalkalas, ID / URL / tipai / datos ir bazinė medija nekinta. Jų patvirtinimų kilmė žymima inheritedApproval iš prisegto paketo, nesukuriant fiktyvių naujų review. Manifestas privačiai saugo bazinius baitus ir kilmę; `verifyContentRelease` tikrina abi dalis. Pilnas releaseContent lieka toks pat griežtas. V2, nauji / trinami URL, konteksto ar datų migracijos šiuo keliu nepalaikomi. Prieš gyvą keitimą atskirai patikrinti tikrą deployment, publikavimo pauzes, viešą rendererį, nuorodas ir rollback; exported-not-deployed nėra publikavimas.

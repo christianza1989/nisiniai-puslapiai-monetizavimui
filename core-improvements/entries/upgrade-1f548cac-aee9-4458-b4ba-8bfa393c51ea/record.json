@@ -1,0 +1,28 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Sendparcel v1 booking parser rejects documented unpaid/pending/payment-canceled statuses5/6/8 and command finish wrongly projects every accepted status as a registered labelled shipment",
+  "evidence": [
+    "Website owner actual Gmail original-thread read on2026-10-20: Goda2026-10-19 08:22 confirms automatic wallet payment; insufficient funds leave original order unpaid, status5;0new auto attempt,1ongoing,2confirmed,3rejected,4canceled,6pending,8paymentcanceled",
+    "Current src/sendparcel-booking.mjs fact requires integer(status,0,4) excluding4; src/shipment-commands.mjs finish unconditionally registers/labels returned facts, refresh reads documents before latest provider status",
+    "Human-authorized website activation owner reserved adapter, direct shipment commands/automation, their tests and docs here; no runtime/http/service/actual DB/provider/deploy ownership",
+    "Manual physical packing with all3automaticshippingflagsfalse remains supported; wallet0 is an operational funding warning, not a new buyer checkout admission gate"
+  ],
+  "paths": [
+    "commerce-core/src/sendparcel-booking.mjs",
+    "commerce-core/src/shipment-commands.mjs",
+    "commerce-core/src/shipping-automation.mjs",
+    "commerce-core/test/shipment-commands.test.mjs",
+    "commerce-core/test/shipping-automation.test.mjs",
+    "commerce-core/test/worker-harness.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/docs/SENDPARCEL_V1_2026_10_14.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped source revert only. Preserve all24 canonical migrations, first-attempt fences, original provider IDs and immutable observations. No provider requests, credentials, production DB, admission, mail, wallet funding or deployment writes. Existing one-POST boundary must survive held/pending status and restart. Historical whole-PR issue-URL provenance blocker remains unchanged.",
+  "id": "upgrade-1f548cac-aee9-4458-b4ba-8bfa393c51ea",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "0f0e4ff864d8016702f42f66e6936a262ebff4fa",
+  "createdAt": "2026-10-20T15:39:36.533Z"
+}

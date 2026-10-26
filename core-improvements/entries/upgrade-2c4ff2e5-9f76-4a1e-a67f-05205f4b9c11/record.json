@@ -1,0 +1,24 @@
+{
+  "category": "code",
+  "summary": "Replace Instagram-dependent homepage feed with owner-supplied lazy single-player video carousel",
+  "siteId": "memocasting",
+  "paths": [
+    "components/niche/memocasting-video-carousel.tsx",
+    "components/niche/memocasting-video-carousel.css",
+    "components/niche/memocasting-site.tsx",
+    "lib/memocasting-video-assets.json",
+    "lib/memocasting-homepage-assets.json",
+    "public/memocasting-homepage/v1/media/video-carousel-20261020",
+    "tests/memocasting-video-carousel.test.mjs"
+  ],
+  "rollback": "Revert scoped frontend source or restore previous97678db4 version; retain content3367ef65, commerce and all customer data.",
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "evidence": [
+    "Owner explicitly supplied24videos and superseded Facebook collab integration.",
+    "VIDEO_CAROUSEL_2026_10_20 plan; exact namespaced media admission and responsive poster import retained."
+  ],
+  "id": "upgrade-2c4ff2e5-9f76-4a1e-a67f-05205f4b9c11",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "378ac294deecec642b5633fe92380c3e70d15689",
+  "createdAt": "2026-10-20T07:53:57.635Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Observed main staged scanner skips R100 quarantine payload with ACM: original13-file PASS is retained as incomplete coverage, not full safety acceptance. Exact later canonical8413cfb source already repairs the same issue using ACMR; Root owns that pending-main change, so no duplicate scanner patch or frozen-window edit here. Root authorized read-only pinned scanner/checker targeting this cleanup. Inventory records both pending tool-adoption dependencies. No change to earlier events.",
+  "checks": [
+    {
+      "command": "Pinned8413cfb scripts/repository-safety.mjs . --staged --report content-studio/tmp/docs-cleanup/staged-safety-pinned8413.json",
+      "result": "PASS",
+      "evidence": "Preceding14-file exact stage including quarantine/source.txt inspected,0findings,251212bytes; main scanner inspected only13files/243236bytes. Delta7976equals actual payload bytes. Tool Gitblob2644b57413b113d6a3203ae1e645b3d6bed063cf. Final stage is rechecked after journal append."
+    },
+    {
+      "command": "Compare git diff --cached --name-only --no-renames against record.paths; recheck payload, affected Markdown links, baseline missing targets and git diff --cached --check",
+      "result": "PASS",
+      "evidence": "Exact9declared source paths; five reference edits one line each;36local links resolve; payload bytes match original Gitblob; introduced missing targets0; staged diff whitespace clean."
+    },
+    {
+      "command": "node scripts/git-freshness.mjs --phase handoff",
+      "result": "PASS",
+      "evidence": "Successful fetch2026-10-17T12:04:54.082Z; HEAD/base and currentmain808581d919d06cb4a2d151cc7f9ec1be1782aba2,0main commits missing; only own worktree staged changes. Companion unused."
+    }
+  ],
+  "eventId": "5621d07c-bde0-4818-8b1f-9352d241488e",
+  "sequence": 3,
+  "at": "2026-10-17T12:05:38.982Z"
+}

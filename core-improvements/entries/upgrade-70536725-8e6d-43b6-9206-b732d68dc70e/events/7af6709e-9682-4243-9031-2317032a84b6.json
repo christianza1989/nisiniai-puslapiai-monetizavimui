@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "PUBLIC c6810dbe and canonical domain-history rule repair the reproduced native-route shadowing; reviewed legacy aliases retain the publication gate, password query safety and gallery fragment. Hosted activation remains a separate acceptance step.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "qa/redirects-20261023/tests.private.log — 187 tests, including original/native restoration, target publication, credentials, methods and fragments"
+    },
+    {
+      "command": "npx tsc --noEmit and scoped eslint",
+      "result": "PASS",
+      "evidence": "qa/redirects-20261023/types.private.log; qa/redirects-20261023/lint.private.log"
+    },
+    {
+      "command": "freshness wrapper -- node --run build",
+      "result": "PASS",
+      "evidence": "qa/redirects-20261023/build.private.log — exact SDK, 11 packages, completed production build"
+    }
+  ],
+  "eventId": "7af6709e-9682-4243-9031-2317032a84b6",
+  "sequence": 2,
+  "at": "2026-10-22T22:35:04.991Z"
+}

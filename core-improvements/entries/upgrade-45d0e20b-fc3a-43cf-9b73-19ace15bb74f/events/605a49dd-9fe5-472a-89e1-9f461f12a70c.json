@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original missing-id regression failed with503; split caller validation passes400 while wrong adapter remains503. Real properly identified configured carrier quote returned4700+524 with2500g/200x200x220mm, no order/charge/booking.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/buyer-delivery.test.mjs commerce-core/test/product-config.test.mjs commerce-core/test/catalog-editor.test.mjs",
+      "result": "PASS",
+      "evidence": "qa/product-editor-20261021/quote-id-before.txt (original FAIL) and quote-id-after.txt (4/4 PASS)"
+    },
+    {
+      "command": "node qa/product-editor-20261021/actual-quote.mjs",
+      "result": "PASS",
+      "evidence": "qa/product-editor-20261021/actual-configured-quote.private.json; real quote5224c, no order created"
+    }
+  ],
+  "eventId": "605a49dd-9fe5-472a-89e1-9f461f12a70c",
+  "sequence": 2,
+  "at": "2026-10-21T10:31:19.820Z"
+}

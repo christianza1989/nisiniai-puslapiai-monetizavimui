@@ -1,0 +1,34 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Owner includes white paint in both32EURcouple and48EURfamily kits and authorizes working payments. Remove separate paint surcharge/UI, migrate old unsent cart choices, review and release coherent multilingual facts and coordinate canonicalStripe provider integration with shop owner.",
+  "evidence": [
+    "Direct human2026-10-14 confirms white paint belongs to both kits and existing Stripe account",
+    "Current approved pages still offer optional paint+3EUR/35EUR in four languages; unsent cart accepts white_paint/couple_white",
+    "Stripe MCP after confirmed reauthentication still reports reauthentication required; shop session verifies actual account/CLI independently"
+  ],
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "components/niche/memocasting-commerce.tsx",
+    "components/niche/memocasting-site.tsx",
+    "components/niche/memocasting-native-checkout.tsx",
+    "lib/memocasting-cart.mjs",
+    "lib/memocasting-homepage-markup.mjs",
+    "content-packages/memocasting",
+    "lib/generated/content-packages.json",
+    "public/content-assets/memocasting",
+    "tests/memocasting-cart.test.mjs",
+    "tests/memocasting-homepage.test.mjs",
+    "tests/memocasting-storefront.test.mjs",
+    "tests/memocasting-included-paint.test.mjs",
+    "lib/memocasting-storefront.mjs",
+    "lib/memocasting-included-paint.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert only scoped paint/frontend/source commits and restore prior immutable60c8release; never rewrite existing order/payment snapshots or remove private runtime/keys. Payment backend owned by shop peer.",
+  "id": "upgrade-c050e9e5-b8d3-4c58-9abc-b21d87cee20e",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "e69738e69afb6e76159e33140d9a279ac964e416",
+  "createdAt": "2026-10-13T21:21:47.814Z"
+}

@@ -13,7 +13,7 @@ Repo apimtis yra kodas, skills, planai, temos assets, schema ir paketai; tai nė
 
 Root .gitignore išskiria `.env`, login/passwordTXT, duomenų bazes, data/output/tmp/artifacts, dependencies, browser profilius, frozen/FIRST-RUN ir factory archyvą. Research perkeliami atrinkti MD dokumentai, žali JSON/HTML/pixels ir trečiųjų šalių source klonai paliekami vietiniai. MD nuoroda į vietinį įrodymą nėra pažadas, kad tas įrodymas įkeltas.
 
-`scripts/repository-safety.mjs` tikrina kandidatinius failus arba TIKRUS staged blob: žinomus tokenų formatus, privačius raktus, užblokuotus failų pavadinimus,90MB ribą ir tikslius vietinių secret reikšmių sutapimus. Reikšmių neišspausdina. Tai nėra visuotinė klientų PII ar visų galimų sekretų detekcija; atskira failų atranka būtina.
+`scripts/repository-safety.mjs` tikrina kandidatinius failus arba TIKRUS staged blob: žinomus tokenų formatus, privačius raktus, užblokuotus failų pavadinimus,90MB ribą ir tikslius vietinių secret reikšmių sutapimus. Draudžiami ir SQLite / DB `-wal`, `-shm`, `-journal` failai bei vietiniai `.secret` raktai: juose gali likti duomenų net neperkeliant pagrindinės DB. Reikšmių neišspausdina. Tai nėra visuotinė klientų PII ar visų galimų sekretų detekcija; atskira failų atranka būtina.
 
 Prieš pirmą push ir commit tikrinti, kad rawcredentials/.env/DB/runtime artifacts nėra staging, nė vienas failas neviršija ribos ir saugos gate PASS. Git apsauga neatšaukia jau nutekėjusio rakto — toks raktas rotuojamas atskirai. Šio perkėlimo metu sekretai neviešinami, jų nekeliame net į private repo.
 

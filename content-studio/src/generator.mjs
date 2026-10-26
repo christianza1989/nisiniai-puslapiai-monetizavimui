@@ -6,6 +6,8 @@ import { randomUUID } from 'node:crypto';
 import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
 import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
+import { draftBrief } from './draft-brief.mjs';
+import { generatorFailure } from './generator-diagnostics.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -23,7 +25,7 @@ function run(command, args, input, timeoutMs) {
     child.stdout.on('data', data => { stdout = (stdout + data.toString()).slice(-12000); });
     child.stderr.on('data', data => { stderr = (stderr + data.toString()).slice(-12000); });
     child.on('error', error => finish(error));
-    child.on('close', code => code === 0 ? finish(null, { stdout, stderr }) : finish(new Error(`${command} grąžino kodą ${code}. ${(stderr || stdout).slice(-1400)}`)));
+    child.on('close', code => code === 0 ? finish(null, { stdout, stderr }) : finish(new Error(`${command} grąžino kodą ${code}. ${generatorFailure(stdout, stderr)}`)));
     child.stdin.on('error', () => {});
     child.stdin.end(input || '');
   });
@@ -33,7 +35,7 @@ async function codexJson(prompt, schemaFile) {
   const temp = path.join(DATA, 'tmp'); await mkdir(temp, { recursive: true });
   const resultFile = path.join(temp, `${randomUUID()}.json`);
   const args = [
-    '--ask-for-approval', 'never', 'exec', '--ephemeral', '--ignore-user-config', '--skip-git-repo-check',
+    '--ask-for-approval', 'never', 'exec', '--json', '--ephemeral', '--ignore-user-config', '--skip-git-repo-check',
     '--sandbox', 'read-only',
     '--output-schema', path.join(SCHEMAS, schemaFile), '--output-last-message', resultFile, '-'
   ];
@@ -61,14 +63,14 @@ async function planSite(siteId, months = 0, skill, requestedCount = null) {
   const policy = contentPolicy({ ...site.contentPolicy, ...(months ? { months } : {}) }, site.timezone);
   const count = requestedCount || (months ? Math.min(24, planningWindow(policy).target) : '5-10');
   const localDate = scheduleDate(Date.now(), policy.timezone);
-  const instruction = `Autonomously choose up to ${count} distinct useful new URLs for ${months ? `a ${policy.months}-month calendar with target ${policy.cadence === 'weekly' ? `${policy.articlesPerWeek} articles/week` : `${policy.articlesPerMonth} articles/month`}` : 'an initial demand-test site'}. Fewer substantive topics are better than filler. Use the site's locale. Include home only if absent. Today in ${policy.timezone} is ${localDate}. ${months ? `Every new publishDate must be at least seven days after today and no later than ${planningWindow(policy).end}; spread substantive pages across this horizon, respect existing dates and seasonal dependencies. Publication local time is ${policy.localTime} in ${policy.timezone}.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.'} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
+  const instruction = `Autonomously choose up to ${count} distinct useful new URLs for ${months ? `a ${policy.months}-month calendar with target ${policy.cadence === 'daily' ? `${policy.articlesPerDay} articles/day maximum; one useful article is enough when a second is not ready` : policy.cadence === 'weekly' ? `${policy.articlesPerWeek} articles/week` : `${policy.articlesPerMonth} articles/month`}` : 'an initial demand-test site'}. Fewer substantive topics are better than filler. Use the site's locale. Include home only if absent. Today in ${policy.timezone} is ${localDate}. ${months ? `Every new publishDate must be ${policy.cadence === 'daily' ? 'today or later; never schedule in the past or exceed the per-day capacity' : 'at least seven days after today'} and no later than ${planningWindow(policy).end}; spread substantive pages across this horizon, respect existing dates and seasonal dependencies. Publication local time is ${policy.localTime} in ${policy.timezone}.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.'} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
   const prompt = buildEditorialPrompt(skill, { mode: 'plan', instruction, siteData: { ...contextForSite(site), networkCatalog: await networkCatalog() } });
   const result = await codexJson(prompt, 'plan-result.schema.json');
   if (!Array.isArray(result.pages)) throw new Error('Codex negrąžino puslapių plano.');
   return mergePlan(siteId, result.pages, months);
 }
 
-async function draftPage(siteId, pageId, skill) {
+async function draftPage(siteId, pageId, skill, fullBrief = null) {
   const site = await getSite(siteId);
   const page = site.pages.find(item => item.id === pageId);
   if (!page) throw new Error('Puslapis nerastas.');
@@ -79,7 +81,8 @@ async function draftPage(siteId, pageId, skill) {
       intent: page.intent, reason: page.editorialReason || '', cluster: page.cluster || '', pillarPageId: page.pillarPageId || '',
       sourceQueries: page.sourceQueries || [], plannedInternalLinks: page.linkSuggestions || [], sourceCandidates: page.externalLinks || [],
       plannedNetworkLinks: page.networkLinkSuggestions || [],
-      availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })) }
+      availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })),
+      ...(fullBrief ? { editorialBrief: draftBrief(fullBrief, page) } : {}) }
   });
   const result = await codexJson(prompt, 'draft-result.schema.json');
   if (!Array.isArray(result.blocks)) throw new Error('Codex negrąžino teksto blokų.');
@@ -159,6 +162,9 @@ async function generateImage(siteId, input) {
 }
 
 export async function enqueue(type, siteId, pageId, input = {}) {
+  // Capture before queuing: later mutation of the caller's object cannot change a job.
+  const fullBrief = type === 'draft' && input.fullBrief != null
+    ? draftBrief(input.fullBrief, (await getSite(siteId)).pages.find(page => page.id === pageId) || {}) : null;
   if(['autopilot','plan','draft','draft-batch'].includes(type)&&(await getSite(siteId)).schemaVersion===2)throw new Error('V2 generavimo kontraktas dar nepriimtas. Importuokite arba redaguokite struktūrizuotą v2 juodraštį; legacy generatorius jo neperrašo.');
   if (['autopilot','plan','draft','draft-batch'].includes(type)) {
     const site = await getSite(siteId);
@@ -173,7 +179,7 @@ export async function enqueue(type, siteId, pageId, input = {}) {
         if (skill) await updateJob(job.id, { editorialSkill: skill.metadata });
         const detail = type === 'autopilot' ? await autopilot(siteId, job.id, skill)
           : type === 'plan' ? await planSite(siteId, input.months ? contentPolicy({ ...((await getSite(siteId)).contentPolicy), months: Number(input.months) }).months : 0, skill)
-          : type === 'draft' ? await draftPage(siteId, pageId, skill)
+          : type === 'draft' ? await draftPage(siteId, pageId, skill, fullBrief)
           : type === 'draft-batch' ? await draftBatch(siteId, job.id, skill)
           : type === 'network-check' ? await verifyNetworkLinks(siteId, pageId)
           : type === 'image' ? await generateImage(siteId, input)

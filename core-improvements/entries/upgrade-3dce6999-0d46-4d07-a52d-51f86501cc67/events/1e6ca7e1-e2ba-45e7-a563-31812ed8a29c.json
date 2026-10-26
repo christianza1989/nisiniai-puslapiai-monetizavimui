@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Canonical checkout retains caller loading DOM while initialization is pending; aborted initialization leaves it intact. Original unit case first used an incorrect default heading assertion, then was corrected to the existing default empty-cart copy; no production behavior was changed for that assertion.",
+  "checks": [
+    {
+      "command": "node --test --test-concurrency=1 test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "238/238; acceptance-core-tests.private.txt. New delayed initialize case verifies original shell retention, normal completed cart and abort-before-resolution. No provider APIs or real orders."
+    }
+  ],
+  "eventId": "1e6ca7e1-e2ba-45e7-a563-31812ed8a29c",
+  "sequence": 2,
+  "at": "2026-10-25T21:05:25.214Z"
+}

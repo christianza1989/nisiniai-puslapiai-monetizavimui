@@ -1,0 +1,2321 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-13T07:48:41.797Z",
+  "projectionAt": "2026-10-13T07:48:37.662Z",
+  "siteId": "memocasting",
+  "canonicalHost": "memocasting.lt",
+  "transportOrigin": "http://127.0.0.1:8820",
+  "packageSha256": "3b350683681814d4a1fb130f6f9bdb5761de89eb7fb97b2663de75ca92a7ef14",
+  "inspector": {
+    "scriptSha256": "161a36da296ab18826d9e8238cf72e015d6bdd4beaec056772819d273c05f4b5",
+    "htmlParserSha256": "a15e24c085aab5bb79becabe91b2da57d3dd7a055ddab0abc1fb3bf5d94cb90e"
+  },
+  "source": {
+    "coreCommit": "0bd024ac38ef6332e91d37201b21b29eaa2203ca",
+    "files": [
+      {
+        "file": "scripts/content-package-core.mjs",
+        "sha256": "bbe9a40d5fd36efeef5153f6f2e2ef41aea3f2e61d211156fe5765c82452592d"
+      },
+      {
+        "file": "lib/niche-links.mjs",
+        "sha256": "29d8ae699f7ee715718d31791fa1f0189dd47fa50f0fd270d9477b364c927b35"
+      },
+      {
+        "file": "lib/memocasting-content.mjs",
+        "sha256": "81c239edb2a99f6f4741b1c04585a15b12d20d768e16e0f00a51f254728f7571"
+      },
+      {
+        "file": "lib/memocasting-locales.mjs",
+        "sha256": "a6c30e63cbc1801e8c7d139a2c14382bb880792f35c4cf75d8a07541c9b50067"
+      },
+      {
+        "file": "lib/memocasting-structure.mjs",
+        "sha256": "be836e9620f3f052b0af384120690cacb8c7acea3ffe52c8cd7f0c37cd1dff77"
+      },
+      {
+        "file": "components/niche/memocasting-site.tsx",
+        "sha256": "0e114d786ce47079c4bf7fbacda5e7bc68a11fe124c1d385801f3b6b84a1585b"
+      },
+      {
+        "file": "app/layout.tsx",
+        "sha256": "ac790dc4b4e816b18f7bca31e0bae0dc478f98bf8a52482facc661ff8ec0ca58"
+      },
+      {
+        "file": "lib/niche-seo.ts",
+        "sha256": "dca155a9f5553f9b1dbb531b3a5b1d8c3a45144560fc8055841b717341d68c18"
+      },
+      {
+        "file": "lib/niche-schema-core.mjs",
+        "sha256": "cdd0886e4dcb188caba5c9c8beb9f3f5914541d7286da4962ff16dd714a3c00f"
+      }
+    ]
+  },
+  "state": "NOT_COMPLETE",
+  "publicPages": 88,
+  "hiddenPages": 0,
+  "articles": 24,
+  "rendered": [
+    {
+      "url": "https://memocasting.lt/rinkinys-porai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/seimos-rinkinys",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/ranku-liejimo-rinkiniai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pages/instrukcija",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/gidai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/gidai/dovana-porai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/gidai/dovana-vestuviu-metinems",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/apie-projekta",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/redakcija",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/kontaktai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pristatymas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/grazinimas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/privatumas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/naudojimo-salygos",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/cart",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/products/kudikio-pedutes",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/gidai/dziovinimas-ir-isemimas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/gidai/liejinio-dazymas-ir-prieziura",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pagalba",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/products/liejimo-rinkinys-porai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/products/seimos-rinkinys-1",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/collections/all",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/pages/instrukcija",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/gidai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/gidai/dovana-porai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/gidai/dovana-vestuviu-metinems",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/apie-projekta",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/redakcija",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/kontaktai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/pristatymas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/grazinimas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/privatumas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/cart",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/naudojimo-salygos",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/gidai/liejinio-dazymas-ir-prieziura",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/gidai/dziovinimas-ir-isemimas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/pagalba",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/pl/products/kudikio-pedutes",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/products/liejimo-rinkinys-porai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/products/seimos-rinkinys-1",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/collections/all",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/pages/instrukcija",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/gidai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/gidai/dovana-porai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/gidai/dovana-vestuviu-metinems",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/apie-projekta",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/redakcija",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/kontaktai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/pristatymas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/grazinimas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/privatumas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/naudojimo-salygos",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/cart",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/gidai/liejinio-dazymas-ir-prieziura",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/gidai/dziovinimas-ir-isemimas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/pagalba",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/lv/products/kudikio-pedutes",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/products/liejimo-rinkinys-porai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/products/seimos-rinkinys-1",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/collections/all",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/pages/instrukcija",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/gidai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/gidai/dovana-porai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/gidai/dovana-vestuviu-metinems",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/apie-projekta",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/redakcija",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/pristatymas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/kontaktai",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/grazinimas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/privatumas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/naudojimo-salygos",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/cart",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/gidai/liejinio-dazymas-ir-prieziura",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/gidai/dziovinimas-ir-isemimas",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/pagalba",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "errors": []
+    },
+    {
+      "url": "https://memocasting.lt/et/products/kudikio-pedutes",
+      "errors": []
+    }
+  ],
+  "crawlerPolicy": {
+    "Googlebot": [],
+    "bingbot": [],
+    "OAI-SearchBot": [],
+    "Claude-SearchBot": [],
+    "PerplexityBot": []
+  },
+  "http": [
+    {
+      "path": "/rinkinys-porai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2cc38b1fa975f95f03fe2f99b5cacb314907fddfaaccf849323d650f55cc8b74"
+    },
+    {
+      "path": "/seimos-rinkinys",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6ed9edb15bd3b5026c845e1f7ff7475da5b78e992a1fe3172d1e5753393bc4c6"
+    },
+    {
+      "path": "/ranku-liejimo-rinkiniai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0e5a34c5cb032a07411f2be21ce5f833298ea00140f744b966fe2b9f8759c104"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b09cb2efcf87123080c7c1ebfceffd8421eb60528d4f59da3a576cfd37ab1818"
+    },
+    {
+      "path": "/pages/instrukcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "4890fdb9ee875da077fa4dd22841455823172df4c1730465c017908da895e215"
+    },
+    {
+      "path": "/gidai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "430a4ac9809c880e0c4eb2fbaf7acb573bef91cf2dc51c50f1cbde8ded5ca339"
+    },
+    {
+      "path": "/gidai/dovana-porai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d34c26b78855d242f45fe7659c55505ef716b69d4a85941c50b3a8e2646b4edd"
+    },
+    {
+      "path": "/gidai/dovana-vestuviu-metinems",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "60d2351cf790591a6c61dd62879247fedb6020f6d42e5dc93d84feec31e58a54"
+    },
+    {
+      "path": "/apie-projekta",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "24f248cf18c23408d71f425d188b01851e3d72a5fe65189f03571e29c9bc3560"
+    },
+    {
+      "path": "/redakcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "606fe9b679f53ea8706c85a9374ae7fe9c500c6b0c7bf2306c5915aa2cd45344"
+    },
+    {
+      "path": "/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "fd84427e5da91e82d4cd53a3b7b840ab12f230d29efb1e32b46252ae607aa7c8"
+    },
+    {
+      "path": "/kontaktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5f14369300948276f209a4f4f36b77d9509f0fa4dbc3512720e317a292d0db66"
+    },
+    {
+      "path": "/pristatymas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "91307e3961c1efae125992dc483195543521b3683daafac7c692f5c4587726bd"
+    },
+    {
+      "path": "/grazinimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "62198db3715dc640172a6364dc84b15577269304e90428ef36581fa1fe3a78c5"
+    },
+    {
+      "path": "/privatumas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "20a816e1268ee77637dd0dd552a620769420bc60d59c5bf09a344e5962466703"
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "cdaedb10b97590b2043725149e1d66b5011ba5fb0e5fe5732a0867ade43d647f"
+    },
+    {
+      "path": "/cart",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "58e1a603018806b1e3fe3c7509cd609166af21f8cafbf91daf6bca757459af40"
+    },
+    {
+      "path": "/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "70d3b70fa06ffbb1ed3484f4eb15a4b6e9876cab7388b81c207667f836218a18"
+    },
+    {
+      "path": "/products/kudikio-pedutes",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1e5c0323c3e7e1571f8dc9292a418a06e8670218291dc6ae92c2ca05aaac4240"
+    },
+    {
+      "path": "/gidai/dziovinimas-ir-isemimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "4f72d95896c6e542cf233870d4adb5ed5b47209a994bec322d7c4ea7fa4c5c7c"
+    },
+    {
+      "path": "/gidai/liejinio-dazymas-ir-prieziura",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2b3ad5631786f40cef22d3d90c2ff09ab47ef5f80de8f9bd9b711c958e294e20"
+    },
+    {
+      "path": "/pagalba",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d17fd72762e494c76e870e779f5254f07fd9172059f104e4cfa54aa034da3059"
+    },
+    {
+      "path": "/pl/products/liejimo-rinkinys-porai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b8be608d91fdf072a79811949e24086064d869ab1ab53a2b600e3e7c7f15b14b"
+    },
+    {
+      "path": "/pl",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0f6add65192dd846115afbc87a0487b182a5d79132aaa7d8268c8c945010920c"
+    },
+    {
+      "path": "/pl/products/seimos-rinkinys-1",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "83a718fefdf510be092dcdd79d79b97d0972195d4a0940c8bd61787b9913d3b0"
+    },
+    {
+      "path": "/pl/collections/all",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "4244d7c95f4218ae9b7fe2f3f3acfed0630a0265a17d61445bd6660cc0574f53"
+    },
+    {
+      "path": "/pl/pages/instrukcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f0cf1c17f9ec0b2858db074a9f890b6e1028e8460b679ce3d48c2247a7403505"
+    },
+    {
+      "path": "/pl/gidai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "7a503c41f1dca41e95ff84ab3770c2c8c4b2c771edcaf459d762c99c57a4127f"
+    },
+    {
+      "path": "/pl/gidai/dovana-porai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0721f1426d1c13d23338f771bf079948458cbd1801875aaff0c807cd6c8e4210"
+    },
+    {
+      "path": "/pl/gidai/dovana-vestuviu-metinems",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "79ae39e645cd5f777affaae18d7d6697e659495d3305f97aa17532da076924c2"
+    },
+    {
+      "path": "/pl/apie-projekta",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f1b4b331d6554e910f20b4f82e8e1d65f5566cdac2dbc7d42f6b171bae998cdb"
+    },
+    {
+      "path": "/pl/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ff7af454aef2b79dc1c216343dea9eed4e17e4f804c3f9276ecc89fea453af86"
+    },
+    {
+      "path": "/pl/redakcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a20b3bc9c9ed2ce17bef7de022f7ceb8344643c068a74d4c71e0a67662db96bf"
+    },
+    {
+      "path": "/pl/kontaktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ecddd4369153e8893308f2b5cb9b6075d74d89869f7e35c17cb2ababadd3e4a5"
+    },
+    {
+      "path": "/pl/pristatymas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ac156e54ca38d0c0f3d19177becd3b5f6592392d7169f4e70e2cd1ade64dd1ae"
+    },
+    {
+      "path": "/pl/grazinimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6fe5601c4038079809de4157d1f0e14efa8f722eecd4e9aacf30ce8924758bc0"
+    },
+    {
+      "path": "/pl/privatumas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f32d32940220309f6612781fb440c19e8ef98b95d6800dc944ea1e9d53394364"
+    },
+    {
+      "path": "/pl/cart",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "34624f98cfd56ebd65a761f41219a937fc2ee9b51678f3f4dc3c6905bbc1707c"
+    },
+    {
+      "path": "/pl/naudojimo-salygos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5b3bd25b4aa310952c53c0e43b16ffc0287b50cd06a8496c19a115d4853111d4"
+    },
+    {
+      "path": "/pl/gidai/liejinio-dazymas-ir-prieziura",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "cd5ede0649270c103ee69280059d4d26d41409a7f937ec1968780e1d30f7159f"
+    },
+    {
+      "path": "/pl/gidai/dziovinimas-ir-isemimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a2bd818c9bc105e6a3cfb5e1e71f375d27a35b3265516de2885475e60bbb4add"
+    },
+    {
+      "path": "/pl/pagalba",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5e1bf1da1c6d76fd1112b53587f04b1765aed0b1f47221f7ccafbcb7103ba051"
+    },
+    {
+      "path": "/pl/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "4333fff661a0a8d50c6140421da1bb10b0cb23a0d22dfead52df2e7265d67d9a"
+    },
+    {
+      "path": "/pl/products/kudikio-pedutes",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1e1cd9d975adccc5e989f00d205180c2e6e7090bf34ae21004f858f66b78284d"
+    },
+    {
+      "path": "/lv",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "991856b0346140b746858897c2097d27181fb39ef042e7dbccb809acce664404"
+    },
+    {
+      "path": "/lv/products/liejimo-rinkinys-porai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a6f1068eda584ad5165b7ec2806fa88610b8e2869f103d67106c7c65b40d22f5"
+    },
+    {
+      "path": "/lv/products/seimos-rinkinys-1",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b56f9659aa1602c1f936379fd0480d850c75953b25bd34e0d570d3037d0f2463"
+    },
+    {
+      "path": "/lv/collections/all",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2018a6b60fee5bb691d5d3d3624f8b6d489a2ff7f73d6cd1dcfc41509f831373"
+    },
+    {
+      "path": "/lv/pages/instrukcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "df4bb4260c8d9e29fd3c43b31ff7add8aa16163e87bae2896ed2ea0c8addc704"
+    },
+    {
+      "path": "/lv/gidai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6ecb4131f87d4df4b5a80ab2d16cfbe53d792a5c3a7fe10d8307862165fe56d4"
+    },
+    {
+      "path": "/lv/gidai/dovana-porai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "12b522a84b18c3e79dc266f5bdec3f713c34c2e94bbbd607399f5f376f43324d"
+    },
+    {
+      "path": "/lv/gidai/dovana-vestuviu-metinems",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c5f2a2ad3399b614badd5d5a73c8e93d4bda4c82f894b492629da5ebec714989"
+    },
+    {
+      "path": "/lv/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b05168ec1b30fa58345e45d857b86c38b1d93357d42e9bda1b47c158620332f6"
+    },
+    {
+      "path": "/lv/apie-projekta",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e68d8a24d7e316562e92cbd00dd06a3060a634b77cc1a5361850898abe5d876b"
+    },
+    {
+      "path": "/lv/redakcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "7dc2b8599736982a72b908dbb320b14360abc097490b7897aa9296d31159a251"
+    },
+    {
+      "path": "/lv/kontaktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "eae8eb29cd9a7c4241ee9d2cbd0cdbbf7f36d31b2c9bb2b33aff7ce157863cb4"
+    },
+    {
+      "path": "/lv/pristatymas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c441670a6e028ed86e395eda90ada95ac97f037c690a4dbe14bf94524593038e"
+    },
+    {
+      "path": "/lv/grazinimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d6bad588dba1d38524b2c32ee346cdf86c2daad464df1153f71ab2eccc0bb10f"
+    },
+    {
+      "path": "/lv/privatumas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "026675bd3accef077f71ac980ecea8ab629bc0352e15aed14ccf685743f7eb6f"
+    },
+    {
+      "path": "/lv/naudojimo-salygos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5dfeddd1409d682ba6d04cfdab566004c2f87577f1f8d287c213b67c6dda5f0e"
+    },
+    {
+      "path": "/lv/cart",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b728d51b0ef78f7b7179858450fc63f5932602c53f91893e7bdea1130973d504"
+    },
+    {
+      "path": "/lv/gidai/liejinio-dazymas-ir-prieziura",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "62e5cc938a0fb4aa6a8098665ac075ee33d81a7e96aafca495202b16f522d432"
+    },
+    {
+      "path": "/lv/gidai/dziovinimas-ir-isemimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "48f1faf2f5d10499f3ac43b5e992700b57d88d4940251aeafc4ab0369d1e45aa"
+    },
+    {
+      "path": "/lv/pagalba",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "73c1c00f0dc7fd132995103b383ddba45bfeebadeffddedf006290b1a5273aca"
+    },
+    {
+      "path": "/lv/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2401bac9f7a053c108d515bbdedaca71f9ae753f59c3961e252aead1ce54a172"
+    },
+    {
+      "path": "/lv/products/kudikio-pedutes",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "282b733355958af0808e47bb75c8fdba2e8ff8842eac63b1239608dd907e327d"
+    },
+    {
+      "path": "/et",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "de50744be7b94635f4f5d02ea3a493cd844ccbab9fd56b7b05464f06a16549cf"
+    },
+    {
+      "path": "/et/products/liejimo-rinkinys-porai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "9516c87f822be4c4e4cf2e607b1a4d2e05847a71aed41dab530692e2019ae1d7"
+    },
+    {
+      "path": "/et/products/seimos-rinkinys-1",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "db64e1098b11b2c17f4b088cd0f67dff3390e62eafaec2ff757b34f78ce4f5f7"
+    },
+    {
+      "path": "/et/collections/all",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6ead0e1b4d771e6cf63ce5efed50a1850777017a6a737e1f23d7aee4ce1355a5"
+    },
+    {
+      "path": "/et/pages/instrukcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f10baaf96400807ede8579a5222e2f908acb928c81ccb69b5949c34612a8046b"
+    },
+    {
+      "path": "/et/gidai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6acfb522e8a5fe205be7c20841c95b98b0cda3265fc1d31cdffdc2382b7121fc"
+    },
+    {
+      "path": "/et/gidai/dovana-porai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e5d3c72d8c9561675047663d6eb7b8d5654a9c160f093fa1aaa4d3578d565625"
+    },
+    {
+      "path": "/et/gidai/dovana-vestuviu-metinems",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e02bab46adee57aa0d6c2e87c5a2f8d044369658d315d619de16973c460f908e"
+    },
+    {
+      "path": "/et/apie-projekta",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ec416005cad9347cb1f9ae49e726c36581821f423583f322c0f41b5e51bf3c09"
+    },
+    {
+      "path": "/et/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "025fa98d1b09c252d9d6227045e73ce8796d0454111418ec412ff67e60e84271"
+    },
+    {
+      "path": "/et/redakcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d7496042fe7dd2d849f0f997d93522f24458a09cab7e22d6c7014ddf48b94cc5"
+    },
+    {
+      "path": "/et/pristatymas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c79aa57fda9be22a0425a84a729a98bd03a8e01a98a114adec916c022a65cdc6"
+    },
+    {
+      "path": "/et/kontaktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "02c4e7bdf6ef2aa6ebfdc5e1c3d40966b70b649a1c05afef06400ba1e2479a7e"
+    },
+    {
+      "path": "/et/grazinimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c763bcd68b51d7e1a4b40b86a41ded4ab65989243d511910358a66c40cbedb09"
+    },
+    {
+      "path": "/et/privatumas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "402378fa1107ec3e558ef9fe6a9ace11ab5fc0484a355706dda4f02d053b6d37"
+    },
+    {
+      "path": "/et/naudojimo-salygos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "588f7ff74b024f2d56bd4daf69602096bd59abf447a1365130b8c210f6d436ed"
+    },
+    {
+      "path": "/et/cart",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "77b7b6308ced1c315387f84c14acf8b3b8a323849ae6389e43b1a0fdef6386ab"
+    },
+    {
+      "path": "/et/gidai/liejinio-dazymas-ir-prieziura",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "198242adec0872dd4893c6e86bb902f1b5e6c7459018ddc6bdf39dde7ca95f45"
+    },
+    {
+      "path": "/et/gidai/dziovinimas-ir-isemimas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a355349dc3a6562f025f00b2a81c870dc99b7edde5f6e58ffa81cc8d5db3e036"
+    },
+    {
+      "path": "/et/pagalba",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "61105d546586dea42f554680deacb8a7402087ac8d7e17c552100f517a458017"
+    },
+    {
+      "path": "/et/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "bc05ce0bcf858e42a26f579ab92080b6283b84f67c9970f8de644c25661cc1e7"
+    },
+    {
+      "path": "/et/products/kudikio-pedutes",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c5d99244c1eefbe1652b685dcec638d9f3d0fb47137e94cbeec5827a9a99c9b8"
+    },
+    {
+      "path": "/content-assets/memocasting/9bf3253c-bb64-4a64-9d64-c61191bcf0bf.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "298e64fa14f9033cf1ab56159000f5af1a3bd437989f011ab552bde3d6893ec3"
+    },
+    {
+      "path": "/content-assets/memocasting/3cbccf4c-a1d7-4c51-9ad9-41fc1045dd3d.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "be9404962017bc228888f91bebfdd09c01307ef4800d7639ad82b7ad05fa4f72"
+    },
+    {
+      "path": "/content-assets/memocasting/a7293a72-7638-4d0c-8540-1c9704e974ee.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a0861182f01a9d36debbbad0ccc0972243cfcc356a58d4460f5894ba0eda5027"
+    },
+    {
+      "path": "/content-assets/memocasting/c5b26ed7-8ea4-4e87-b26a-839035005586.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "61c22a5c53374f450a958da8ee44051c6591bbc59753b6d31ea24ba4f0e3a539"
+    },
+    {
+      "path": "/content-assets/memocasting/665e2e7c-aaad-439c-bb4d-fa798a0d26ef.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "98882c5d87fb4ca4b48e8aefc8dd3ea27a4e9a7c37bd6d94b059587ae75d4f62"
+    },
+    {
+      "path": "/content-assets/memocasting/754f510b-06a4-4750-b9be-c1f7a04a745e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cc32e66467aafc1db2e96ab02369644e4e7f73eceee47786f90477580de210cd"
+    },
+    {
+      "path": "/content-assets/memocasting/1aae0e50-d485-4f03-b647-e6699d271afe.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "bc2ba70313d8a7633dfa0c78f1db39b9f9d6b4b88ea9b8735629bf7be7a5d41f"
+    },
+    {
+      "path": "/content-assets/memocasting/e772a569-61f8-4162-87ab-e40d8414f178.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "f069845a5e1c388bab5372f6bd51f576d2d0011758d4b24a9abd3db1119c11f5"
+    },
+    {
+      "path": "/content-assets/memocasting/8a31fd3c-c9a2-493d-99f8-ca4f673b1dd7.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "11386ee9abafe7e456040d82abebe19e47897b5e4851e4780095bbe627431beb"
+    },
+    {
+      "path": "/content-assets/memocasting/46879fea-b147-40cb-9e4c-42a455f94c0a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "0d13d26c6326094391b54a4044906263a1bd8cc4eedecd6dab1d3db5223cc0a3"
+    },
+    {
+      "path": "/content-assets/memocasting/c6bb0722-4dcd-49ef-a1ba-0290ae2a597d.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ce760e56f684c0d199a2eb69a0f5e406f97a0957e282dee869d5c3f99bcf38fb"
+    },
+    {
+      "path": "/content-assets/memocasting/c7e6a042-7cd9-4930-b79f-b113ce53f502.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "52a532b742b44da8e1bf0f3a2294c093698aed4e3fa8c184f622cc3f12711920"
+    },
+    {
+      "path": "/content-assets/memocasting/34c54424-af5b-4930-b592-db17df45a7ae.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ff227fc8a0cf9fa017604d89365f93f518a9344828c69f4b0cfc5c1f4b2e3a1b"
+    },
+    {
+      "path": "/content-assets/memocasting/e5177d7e-111f-4da2-acff-bcbed7cc6f40.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "96a5f8ef6c2380177b6688b37b4af0aa8db4656c4ea298573494e3e7967dd446"
+    },
+    {
+      "path": "/content-assets/memocasting/e369148e-a851-4b66-8abb-886b134a64b6.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c0269c41feccda1a3b439facfd7aa02a9f394c6e795b5424542b5a88a835d7f7"
+    },
+    {
+      "path": "/content-assets/memocasting/5804afdf-4cb7-4000-ac96-320917b2de6d.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1729503f3a0b526692aec3dcfe9dc841d17af10918a7550ae3e141a8966a2e0a"
+    },
+    {
+      "path": "/content-assets/memocasting/6646185f-f59e-4afc-8f3b-e70eb9c5863c.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5323f49be606c44f579a9e5a8b3734d12049a99b0f80b0fcf2fd1e422089ad83"
+    },
+    {
+      "path": "/content-assets/memocasting/42618e09-ad07-4d09-b845-b2f5421b3524.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "b13fe7c1802b21080202a1457d214da1e2573ff4e42c4dad070d3b4898d40f5e"
+    },
+    {
+      "path": "/content-assets/memocasting/e779b7c9-61ae-48b0-89e5-7cc0911b3bf6.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cb4c610e81463e87916791f006756208a00060c929e0860e737fe4fe22dd14f6"
+    },
+    {
+      "path": "/content-assets/memocasting/8ca094b8-5ba0-41a4-b917-fc18f6f581fd.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "07f453ae19b89da6d53b3f4a110c66e74336cf751d2850eff3f61ae60b68b715"
+    },
+    {
+      "path": "/content-assets/memocasting/b67f8138-3412-4b08-aedc-9fe97a43985b.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1aa016685d9cca71f8a00f89a7e67e153b60c05eaf32e6384428eb8d99267d4c"
+    },
+    {
+      "path": "/content-assets/memocasting/dabac9e6-9e15-4b91-a89a-cf4fe835f8f4.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "d21dd15722abb3a662cbfdfe0d1bb47acb0a0652d09b4c182d2ea06a07bbd6d0"
+    },
+    {
+      "path": "/content-assets/memocasting/21e9b609-adb9-48fa-b2de-9ca1e60997a0.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "75e48456489ee006a15edc36b9f2363c72531c4f77d001035e22e12ea9b9cb3a"
+    },
+    {
+      "path": "/content-assets/memocasting/bf054f02-25ab-4019-8846-f8f2516eff2e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "22a93cc56212d3a4d9c05503760dbd53fe5fee0cda557215dc57f3c476c8262b"
+    },
+    {
+      "path": "/content-assets/memocasting/eb1d5ffe-d4a5-43d8-a819-610caf75d2ee.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "164513b1f8d3c7751b0b6b8ab580757eaefe49500aa8a0979cf0fa856729c694"
+    },
+    {
+      "path": "/content-assets/memocasting/7797b71c-6d90-42d2-8249-111f25f50859.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "20abec65c5064604de5cf08e3da231a3cc7cb5c7966d43544253791f943d5886"
+    },
+    {
+      "path": "/content-assets/memocasting/80ee3c1a-88a2-445b-9aef-e01f7870f223.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "55384b4efd091bdb170e9f497c2dc7f1bde900317dc7bfa3c04e98b836c307c0"
+    },
+    {
+      "path": "/content-assets/memocasting/7a7f154b-a4ee-43b1-a0bf-a236766e384a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "00ad7714c61fa6681c5853e852d298f84137d7258feddc32e00a571668557111"
+    },
+    {
+      "path": "/content-assets/memocasting/d0617ab7-91c4-4a73-9264-3b0f8a277039.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c804be58df066eec1582765c757854d1b254b11babf357e877a8dc0d4f388912"
+    },
+    {
+      "path": "/content-assets/memocasting/5382bedb-6f32-4e91-8c7f-ab5dd2f64df2.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "dbe15ea4990e7e4108f8dbe5f55b50751407f76fe5ff3ed238255d9d8cebe07f"
+    },
+    {
+      "path": "/content-assets/memocasting/a7a257d9-232a-42f7-a805-db1bb78a0028.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "463a66fe7203df3cfafa97d5c5af88e5eeb5baf992eaf13e99c87639d460bc95"
+    },
+    {
+      "path": "/content-assets/memocasting/9ef7fc4b-f6c6-4fbc-9b17-5da4710f30c4.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "7388f8342682c4747efc61bd9807d5e84fc2710f89d3c8f46cfe03660b33f5d5"
+    },
+    {
+      "path": "/content-assets/memocasting/013a4bcf-dcfc-40c2-98a7-a1865b85eca1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "0872287b5703bd1649594d93fa3d1834285a8fdf51031fe244774b44eea09de6"
+    },
+    {
+      "path": "/content-assets/memocasting/aa379d43-986d-4d88-8fc9-a1a1548e8394.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "18227cf6f404f3386152baf7fdc65ef6904efa66f1d7087e7cc1ba5e971aefbc"
+    },
+    {
+      "path": "/content-assets/memocasting/9605aa23-9ed9-462a-9564-fe3febc4f9dd.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c1339ff09a2360e5e78d49507a85cdefe0f2b2bfdf80fda31a789d04de2fd500"
+    },
+    {
+      "path": "/content-assets/memocasting/d469c236-5703-4ce2-b834-33e61e8d3227.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "af7c01c7f70710eed7b520dc9559b7002713ba52cdbbc831f2f8daf5cd14163f"
+    },
+    {
+      "path": "/content-assets/memocasting/ccccf85d-2e38-43d7-a968-c0bf9bc7dc6e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5d15ddaac391d218443ade55893beeb4920837783b1125932e1c4da999b01493"
+    },
+    {
+      "path": "/content-assets/memocasting/9e1b58e5-a029-47c3-bf3b-4f45659a25ea.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "84bb748095b3435e96f4ea53e92cf6f64ccbc33665bf995b5d265e33e2486c77"
+    },
+    {
+      "path": "/content-assets/memocasting/48296478-58b8-436d-976d-a5f3d70bc329.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "fb1d56160aea0ce867f92c10c319a8e5ec50b614050dd785e6cf53956afc2d8e"
+    },
+    {
+      "path": "/content-assets/memocasting/fed63060-e038-4a16-b0b0-4aee688833d7.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e72efa632a8d49754a010f537bc817ca1ba14fb5c1a03bac30bf569cd8b8d4e9"
+    },
+    {
+      "path": "/content-assets/memocasting/b07e3189-ce49-4f12-8e80-04968a558603.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a29e64fcc7331c2ba871ce7cea2ce670d4f9182b8b893cf13d1520ea7cbbaa9f"
+    },
+    {
+      "path": "/content-assets/memocasting/c8414c75-2225-4ac7-a788-f3c4d24821b0.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c6ed536dda30a23825ecc9881bffb83ca16d57363d0444cdcd4dd135a51f9cc8"
+    },
+    {
+      "path": "/content-assets/memocasting/e03ac0ac-cd05-4051-a35b-ac788abcc6e0.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "da5b46a8400a5c2e291af3e4cc316388c635ca4001a6cfdd791d52fd6b2775cf"
+    },
+    {
+      "path": "/content-assets/memocasting/a708886f-822c-4966-8858-69e596d0f5c7.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "298e64fa14f9033cf1ab56159000f5af1a3bd437989f011ab552bde3d6893ec3"
+    },
+    {
+      "path": "/content-assets/memocasting/e67e4a2a-e839-4253-b5f8-00040366cd09.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "be9404962017bc228888f91bebfdd09c01307ef4800d7639ad82b7ad05fa4f72"
+    },
+    {
+      "path": "/content-assets/memocasting/45ec0129-3539-4850-a208-b8ec45a6590a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "61c22a5c53374f450a958da8ee44051c6591bbc59753b6d31ea24ba4f0e3a539"
+    },
+    {
+      "path": "/content-assets/memocasting/bfb869a7-1f79-4faf-9d57-04f70d219612.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a0861182f01a9d36debbbad0ccc0972243cfcc356a58d4460f5894ba0eda5027"
+    },
+    {
+      "path": "/content-assets/memocasting/e2c87437-f7d2-418b-80aa-6d33df94accc.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cc32e66467aafc1db2e96ab02369644e4e7f73eceee47786f90477580de210cd"
+    },
+    {
+      "path": "/content-assets/memocasting/ccede13e-d515-4e47-ad9c-f82bcc954b15.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "98882c5d87fb4ca4b48e8aefc8dd3ea27a4e9a7c37bd6d94b059587ae75d4f62"
+    },
+    {
+      "path": "/content-assets/memocasting/74c1ddb7-dc3f-43df-910a-1f665da0af45.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "bc2ba70313d8a7633dfa0c78f1db39b9f9d6b4b88ea9b8735629bf7be7a5d41f"
+    },
+    {
+      "path": "/content-assets/memocasting/6332715f-8904-4372-876c-9b1250c92b82.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "f069845a5e1c388bab5372f6bd51f576d2d0011758d4b24a9abd3db1119c11f5"
+    },
+    {
+      "path": "/content-assets/memocasting/6fdde304-588d-42f9-9c78-c95d1140378d.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "11386ee9abafe7e456040d82abebe19e47897b5e4851e4780095bbe627431beb"
+    },
+    {
+      "path": "/content-assets/memocasting/352771d8-8a91-4093-9de5-3f6283452925.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ce760e56f684c0d199a2eb69a0f5e406f97a0957e282dee869d5c3f99bcf38fb"
+    },
+    {
+      "path": "/content-assets/memocasting/194f5353-63b8-4936-80e3-641234cfe9c1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "0d13d26c6326094391b54a4044906263a1bd8cc4eedecd6dab1d3db5223cc0a3"
+    },
+    {
+      "path": "/content-assets/memocasting/d5a5e474-b7a5-438b-9617-00c264956286.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "52a532b742b44da8e1bf0f3a2294c093698aed4e3fa8c184f622cc3f12711920"
+    },
+    {
+      "path": "/content-assets/memocasting/6b06666a-4910-475d-bae8-f1f9a1cfc243.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ff227fc8a0cf9fa017604d89365f93f518a9344828c69f4b0cfc5c1f4b2e3a1b"
+    },
+    {
+      "path": "/content-assets/memocasting/b3acf31e-824f-41eb-92c1-36d6978c8d9c.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "96a5f8ef6c2380177b6688b37b4af0aa8db4656c4ea298573494e3e7967dd446"
+    },
+    {
+      "path": "/content-assets/memocasting/1b742a95-7d3b-4249-85b0-008970af5aef.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c0269c41feccda1a3b439facfd7aa02a9f394c6e795b5424542b5a88a835d7f7"
+    },
+    {
+      "path": "/content-assets/memocasting/3496a295-816f-469f-b5a3-9e4006d89539.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1729503f3a0b526692aec3dcfe9dc841d17af10918a7550ae3e141a8966a2e0a"
+    },
+    {
+      "path": "/content-assets/memocasting/a586089c-3cfb-4870-84a2-0882e88888bf.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "b13fe7c1802b21080202a1457d214da1e2573ff4e42c4dad070d3b4898d40f5e"
+    },
+    {
+      "path": "/content-assets/memocasting/9d6aca7f-99b9-4071-a105-8cecd7a8038e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5323f49be606c44f579a9e5a8b3734d12049a99b0f80b0fcf2fd1e422089ad83"
+    },
+    {
+      "path": "/content-assets/memocasting/d358fe56-0a78-4236-9bda-3b798b05b5f5.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cb4c610e81463e87916791f006756208a00060c929e0860e737fe4fe22dd14f6"
+    },
+    {
+      "path": "/content-assets/memocasting/2ab26b9e-89ef-4b9f-a44c-ef1c0a003a32.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "07f453ae19b89da6d53b3f4a110c66e74336cf751d2850eff3f61ae60b68b715"
+    },
+    {
+      "path": "/content-assets/memocasting/ff78de75-f7c5-4844-88cd-c46df9cf0b52.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1aa016685d9cca71f8a00f89a7e67e153b60c05eaf32e6384428eb8d99267d4c"
+    },
+    {
+      "path": "/content-assets/memocasting/a7bc3c43-310d-4ae5-8829-5c83b68293c0.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "d21dd15722abb3a662cbfdfe0d1bb47acb0a0652d09b4c182d2ea06a07bbd6d0"
+    },
+    {
+      "path": "/content-assets/memocasting/5db6a3fd-2255-473e-8c48-d4aa80ab5e72.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "22a93cc56212d3a4d9c05503760dbd53fe5fee0cda557215dc57f3c476c8262b"
+    },
+    {
+      "path": "/content-assets/memocasting/a4490554-94bd-44b0-8c2c-75ab89cd37fa.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "75e48456489ee006a15edc36b9f2363c72531c4f77d001035e22e12ea9b9cb3a"
+    },
+    {
+      "path": "/content-assets/memocasting/1cce6efc-8391-45d1-ac5a-f9d360c95812.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "164513b1f8d3c7751b0b6b8ab580757eaefe49500aa8a0979cf0fa856729c694"
+    },
+    {
+      "path": "/content-assets/memocasting/c88dc411-08be-4231-a601-bae6725bcbfa.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "20abec65c5064604de5cf08e3da231a3cc7cb5c7966d43544253791f943d5886"
+    },
+    {
+      "path": "/content-assets/memocasting/afbab149-9aa6-4f7a-92d8-38e52dbcb579.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "18227cf6f404f3386152baf7fdc65ef6904efa66f1d7087e7cc1ba5e971aefbc"
+    },
+    {
+      "path": "/content-assets/memocasting/8e2e745e-2f79-4bd9-8a6d-ce30053cd69a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c1339ff09a2360e5e78d49507a85cdefe0f2b2bfdf80fda31a789d04de2fd500"
+    },
+    {
+      "path": "/content-assets/memocasting/a4e26c61-9d64-4562-a9dd-18e0d624daf2.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "af7c01c7f70710eed7b520dc9559b7002713ba52cdbbc831f2f8daf5cd14163f"
+    },
+    {
+      "path": "/content-assets/memocasting/e83aae25-d808-408b-936f-0dd5355b27b1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5d15ddaac391d218443ade55893beeb4920837783b1125932e1c4da999b01493"
+    },
+    {
+      "path": "/content-assets/memocasting/ce2582dd-83a6-4a97-a386-02c9689e6dc6.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "84bb748095b3435e96f4ea53e92cf6f64ccbc33665bf995b5d265e33e2486c77"
+    },
+    {
+      "path": "/content-assets/memocasting/9cdc8e1b-d27c-461c-a25b-07f484336cbe.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "7388f8342682c4747efc61bd9807d5e84fc2710f89d3c8f46cfe03660b33f5d5"
+    },
+    {
+      "path": "/content-assets/memocasting/cad81cf2-8ff9-45eb-932a-a32b397a5d9c.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "463a66fe7203df3cfafa97d5c5af88e5eeb5baf992eaf13e99c87639d460bc95"
+    },
+    {
+      "path": "/content-assets/memocasting/40d95d7c-da2e-4293-83ae-bb3a9d2324af.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c804be58df066eec1582765c757854d1b254b11babf357e877a8dc0d4f388912"
+    },
+    {
+      "path": "/content-assets/memocasting/62790ab2-f5a1-447a-9241-553c9826fd36.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "dbe15ea4990e7e4108f8dbe5f55b50751407f76fe5ff3ed238255d9d8cebe07f"
+    },
+    {
+      "path": "/content-assets/memocasting/6a95f8d6-f39d-4e82-af88-03cdf111948e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "0872287b5703bd1649594d93fa3d1834285a8fdf51031fe244774b44eea09de6"
+    },
+    {
+      "path": "/content-assets/memocasting/ee6b49dd-bcdd-402d-a8d9-0049e797bc4e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e72efa632a8d49754a010f537bc817ca1ba14fb5c1a03bac30bf569cd8b8d4e9"
+    },
+    {
+      "path": "/content-assets/memocasting/447aa105-57a2-44da-97fa-805dfce69fc1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "fb1d56160aea0ce867f92c10c319a8e5ec50b614050dd785e6cf53956afc2d8e"
+    },
+    {
+      "path": "/content-assets/memocasting/19a70902-74b1-4519-aa9e-58541a92b78e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c6ed536dda30a23825ecc9881bffb83ca16d57363d0444cdcd4dd135a51f9cc8"
+    },
+    {
+      "path": "/content-assets/memocasting/bd30d0d7-2fc8-4fb0-9b64-9b0a17283dca.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "da5b46a8400a5c2e291af3e4cc316388c635ca4001a6cfdd791d52fd6b2775cf"
+    },
+    {
+      "path": "/content-assets/memocasting/4d8a68e1-7b7b-4334-971c-7d9389436a3b.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a29e64fcc7331c2ba871ce7cea2ce670d4f9182b8b893cf13d1520ea7cbbaa9f"
+    },
+    {
+      "path": "/content-assets/memocasting/fb4167f6-3371-4683-bea1-4cf6d5fb8e22.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "55384b4efd091bdb170e9f497c2dc7f1bde900317dc7bfa3c04e98b836c307c0"
+    },
+    {
+      "path": "/content-assets/memocasting/4d8cbb5e-8b5b-4fc5-be94-0ac74e55706a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "00ad7714c61fa6681c5853e852d298f84137d7258feddc32e00a571668557111"
+    },
+    {
+      "path": "/content-assets/memocasting/a01ba7e1-76bf-4868-8b25-6dd77cc38bc2.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "298e64fa14f9033cf1ab56159000f5af1a3bd437989f011ab552bde3d6893ec3"
+    },
+    {
+      "path": "/content-assets/memocasting/5810f900-a9d0-413a-b076-dcea2a8de906.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "be9404962017bc228888f91bebfdd09c01307ef4800d7639ad82b7ad05fa4f72"
+    },
+    {
+      "path": "/content-assets/memocasting/dc9686e2-dd7b-4eba-88e8-ca522652eb38.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "61c22a5c53374f450a958da8ee44051c6591bbc59753b6d31ea24ba4f0e3a539"
+    },
+    {
+      "path": "/content-assets/memocasting/e6165349-3b90-4e1c-b826-234bfee1171e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cc32e66467aafc1db2e96ab02369644e4e7f73eceee47786f90477580de210cd"
+    },
+    {
+      "path": "/content-assets/memocasting/cbdbb2d7-310e-4be0-9b82-2e3b23c4d832.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a0861182f01a9d36debbbad0ccc0972243cfcc356a58d4460f5894ba0eda5027"
+    },
+    {
+      "path": "/content-assets/memocasting/6a445d7a-b720-457f-afa6-43489d2ec33d.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "98882c5d87fb4ca4b48e8aefc8dd3ea27a4e9a7c37bd6d94b059587ae75d4f62"
+    },
+    {
+      "path": "/content-assets/memocasting/5eba2a63-714f-4184-9ed8-88f3aa6feb39.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "f069845a5e1c388bab5372f6bd51f576d2d0011758d4b24a9abd3db1119c11f5"
+    },
+    {
+      "path": "/content-assets/memocasting/deee1895-2c96-4b0c-9390-872523479e60.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "bc2ba70313d8a7633dfa0c78f1db39b9f9d6b4b88ea9b8735629bf7be7a5d41f"
+    },
+    {
+      "path": "/content-assets/memocasting/69a8324d-def2-48a9-8e24-169aa5dba90c.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "11386ee9abafe7e456040d82abebe19e47897b5e4851e4780095bbe627431beb"
+    },
+    {
+      "path": "/content-assets/memocasting/a093f864-e4a8-44e5-a926-37bb2c8791a5.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "0d13d26c6326094391b54a4044906263a1bd8cc4eedecd6dab1d3db5223cc0a3"
+    },
+    {
+      "path": "/content-assets/memocasting/3d21cdef-9e5e-455b-b2b7-3b0094f3a774.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ce760e56f684c0d199a2eb69a0f5e406f97a0957e282dee869d5c3f99bcf38fb"
+    },
+    {
+      "path": "/content-assets/memocasting/860bc592-3787-4b56-9846-5c779ad14f71.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "96a5f8ef6c2380177b6688b37b4af0aa8db4656c4ea298573494e3e7967dd446"
+    },
+    {
+      "path": "/content-assets/memocasting/9f1b4d92-9318-4a82-a4b1-35623f83c98a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ff227fc8a0cf9fa017604d89365f93f518a9344828c69f4b0cfc5c1f4b2e3a1b"
+    },
+    {
+      "path": "/content-assets/memocasting/8e8df54a-72ee-485c-b4f3-493ba90beef8.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "52a532b742b44da8e1bf0f3a2294c093698aed4e3fa8c184f622cc3f12711920"
+    },
+    {
+      "path": "/content-assets/memocasting/13b53d9a-f061-4d2f-b7fe-8c9ff1c77c63.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1729503f3a0b526692aec3dcfe9dc841d17af10918a7550ae3e141a8966a2e0a"
+    },
+    {
+      "path": "/content-assets/memocasting/25b393e6-313a-426c-88e3-45287176b065.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c0269c41feccda1a3b439facfd7aa02a9f394c6e795b5424542b5a88a835d7f7"
+    },
+    {
+      "path": "/content-assets/memocasting/e41809ee-815b-4833-bea3-33ca6c879571.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "b13fe7c1802b21080202a1457d214da1e2573ff4e42c4dad070d3b4898d40f5e"
+    },
+    {
+      "path": "/content-assets/memocasting/339a180f-3b9d-4927-adba-9a24c41f5bd9.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cb4c610e81463e87916791f006756208a00060c929e0860e737fe4fe22dd14f6"
+    },
+    {
+      "path": "/content-assets/memocasting/9442a6be-0df1-4905-ba64-020736510fe5.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5323f49be606c44f579a9e5a8b3734d12049a99b0f80b0fcf2fd1e422089ad83"
+    },
+    {
+      "path": "/content-assets/memocasting/76710faf-6909-436f-ba0a-ba5900ca02d2.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1aa016685d9cca71f8a00f89a7e67e153b60c05eaf32e6384428eb8d99267d4c"
+    },
+    {
+      "path": "/content-assets/memocasting/2a669dc1-9c25-4f20-a3fe-58bb5053083c.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "07f453ae19b89da6d53b3f4a110c66e74336cf751d2850eff3f61ae60b68b715"
+    },
+    {
+      "path": "/content-assets/memocasting/f45a26d1-e45a-4b06-a65f-ff3efefb55a8.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "75e48456489ee006a15edc36b9f2363c72531c4f77d001035e22e12ea9b9cb3a"
+    },
+    {
+      "path": "/content-assets/memocasting/672a4b40-5ec5-4458-a366-5c2c3893247d.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "d21dd15722abb3a662cbfdfe0d1bb47acb0a0652d09b4c182d2ea06a07bbd6d0"
+    },
+    {
+      "path": "/content-assets/memocasting/4eae1567-42e6-444b-a051-3ee1cd6ff902.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "22a93cc56212d3a4d9c05503760dbd53fe5fee0cda557215dc57f3c476c8262b"
+    },
+    {
+      "path": "/content-assets/memocasting/0d22c0fe-851b-420b-9c58-34558de5e4bf.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "20abec65c5064604de5cf08e3da231a3cc7cb5c7966d43544253791f943d5886"
+    },
+    {
+      "path": "/content-assets/memocasting/4048c111-a42b-49e2-afe7-a3bec0d480d5.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "164513b1f8d3c7751b0b6b8ab580757eaefe49500aa8a0979cf0fa856729c694"
+    },
+    {
+      "path": "/content-assets/memocasting/3d312d31-2ef7-47c7-a673-55de4dd38f91.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "18227cf6f404f3386152baf7fdc65ef6904efa66f1d7087e7cc1ba5e971aefbc"
+    },
+    {
+      "path": "/content-assets/memocasting/da8e8a6f-d961-4e5a-b201-e4e3968381cb.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c1339ff09a2360e5e78d49507a85cdefe0f2b2bfdf80fda31a789d04de2fd500"
+    },
+    {
+      "path": "/content-assets/memocasting/4b1883de-df6a-4ac0-9147-3ab3c528cf0e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "af7c01c7f70710eed7b520dc9559b7002713ba52cdbbc831f2f8daf5cd14163f"
+    },
+    {
+      "path": "/content-assets/memocasting/58bab8b9-0234-4816-8b3e-65de638f91ba.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5d15ddaac391d218443ade55893beeb4920837783b1125932e1c4da999b01493"
+    },
+    {
+      "path": "/content-assets/memocasting/4547e918-e757-4903-802c-964dc8cfc320.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "84bb748095b3435e96f4ea53e92cf6f64ccbc33665bf995b5d265e33e2486c77"
+    },
+    {
+      "path": "/content-assets/memocasting/19612a29-1fc0-4427-aa76-4673ea2ed678.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "463a66fe7203df3cfafa97d5c5af88e5eeb5baf992eaf13e99c87639d460bc95"
+    },
+    {
+      "path": "/content-assets/memocasting/9c6d8c1f-2dee-4daf-b847-5b09dda7ef9e.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c804be58df066eec1582765c757854d1b254b11babf357e877a8dc0d4f388912"
+    },
+    {
+      "path": "/content-assets/memocasting/c57773c7-e180-4aff-95bd-f24b9285efd3.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "dbe15ea4990e7e4108f8dbe5f55b50751407f76fe5ff3ed238255d9d8cebe07f"
+    },
+    {
+      "path": "/content-assets/memocasting/f8543a93-8b1e-44a5-8bd2-c989f54ab3ea.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "7388f8342682c4747efc61bd9807d5e84fc2710f89d3c8f46cfe03660b33f5d5"
+    },
+    {
+      "path": "/content-assets/memocasting/d8089435-4342-4e74-8786-c80426e6cb5b.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "0872287b5703bd1649594d93fa3d1834285a8fdf51031fe244774b44eea09de6"
+    },
+    {
+      "path": "/content-assets/memocasting/ba437e06-eff0-4730-9768-d7aca3aaabde.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "fb1d56160aea0ce867f92c10c319a8e5ec50b614050dd785e6cf53956afc2d8e"
+    },
+    {
+      "path": "/content-assets/memocasting/1f7d1886-d2af-4ceb-9f0f-bfb1b236943f.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e72efa632a8d49754a010f537bc817ca1ba14fb5c1a03bac30bf569cd8b8d4e9"
+    },
+    {
+      "path": "/content-assets/memocasting/abe0a193-6703-439a-9069-03d438acf3c6.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c6ed536dda30a23825ecc9881bffb83ca16d57363d0444cdcd4dd135a51f9cc8"
+    },
+    {
+      "path": "/content-assets/memocasting/922ea1a4-c5cb-4287-ae65-19d1e7d9fbd6.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "da5b46a8400a5c2e291af3e4cc316388c635ca4001a6cfdd791d52fd6b2775cf"
+    },
+    {
+      "path": "/content-assets/memocasting/50c64351-a2f1-4d69-a617-b8bd6d515db9.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a29e64fcc7331c2ba871ce7cea2ce670d4f9182b8b893cf13d1520ea7cbbaa9f"
+    },
+    {
+      "path": "/content-assets/memocasting/c9f739a0-ca27-4fa6-8dd0-e72c6cdce539.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "00ad7714c61fa6681c5853e852d298f84137d7258feddc32e00a571668557111"
+    },
+    {
+      "path": "/content-assets/memocasting/57fc8957-ceff-4977-9b6d-35ba485aa50f.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "55384b4efd091bdb170e9f497c2dc7f1bde900317dc7bfa3c04e98b836c307c0"
+    },
+    {
+      "path": "/content-assets/memocasting/5914d7a3-a06c-4964-9ec5-d9f2fdffe91c.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "298e64fa14f9033cf1ab56159000f5af1a3bd437989f011ab552bde3d6893ec3"
+    },
+    {
+      "path": "/content-assets/memocasting/19257e12-4745-4ef3-9591-840c1e1fbced.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "be9404962017bc228888f91bebfdd09c01307ef4800d7639ad82b7ad05fa4f72"
+    },
+    {
+      "path": "/content-assets/memocasting/88f231ae-ac59-4cfe-95b6-d90638dd2dd5.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cc32e66467aafc1db2e96ab02369644e4e7f73eceee47786f90477580de210cd"
+    },
+    {
+      "path": "/content-assets/memocasting/e6113e70-60cf-458a-9946-5dc3f424d1ea.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "61c22a5c53374f450a958da8ee44051c6591bbc59753b6d31ea24ba4f0e3a539"
+    },
+    {
+      "path": "/content-assets/memocasting/242b9c9d-76ba-406f-9d58-035a5c0ed5cf.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a0861182f01a9d36debbbad0ccc0972243cfcc356a58d4460f5894ba0eda5027"
+    },
+    {
+      "path": "/content-assets/memocasting/92379046-9dbe-4462-8a38-cf96d8049e99.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "98882c5d87fb4ca4b48e8aefc8dd3ea27a4e9a7c37bd6d94b059587ae75d4f62"
+    },
+    {
+      "path": "/content-assets/memocasting/2e5b1967-9e46-47cc-8960-cc426cbb5210.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "bc2ba70313d8a7633dfa0c78f1db39b9f9d6b4b88ea9b8735629bf7be7a5d41f"
+    },
+    {
+      "path": "/content-assets/memocasting/ae4dde37-617e-45ac-ba5d-92c2affc5b5f.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "f069845a5e1c388bab5372f6bd51f576d2d0011758d4b24a9abd3db1119c11f5"
+    },
+    {
+      "path": "/content-assets/memocasting/8addb3f5-2559-475c-a374-e79c231874a5.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "11386ee9abafe7e456040d82abebe19e47897b5e4851e4780095bbe627431beb"
+    },
+    {
+      "path": "/content-assets/memocasting/6f2d5024-d3ad-4ce9-9dcd-966be97b7e75.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ce760e56f684c0d199a2eb69a0f5e406f97a0957e282dee869d5c3f99bcf38fb"
+    },
+    {
+      "path": "/content-assets/memocasting/47fe0957-e92e-4d66-816d-57d37a0838ca.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "0d13d26c6326094391b54a4044906263a1bd8cc4eedecd6dab1d3db5223cc0a3"
+    },
+    {
+      "path": "/content-assets/memocasting/6c4c2cf7-2e72-4f39-b77e-c6e8e4012066.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "52a532b742b44da8e1bf0f3a2294c093698aed4e3fa8c184f622cc3f12711920"
+    },
+    {
+      "path": "/content-assets/memocasting/a8945041-b336-402e-a62c-931e5b658b3a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ff227fc8a0cf9fa017604d89365f93f518a9344828c69f4b0cfc5c1f4b2e3a1b"
+    },
+    {
+      "path": "/content-assets/memocasting/8991a062-d23a-43b9-a3ff-f6adc2761165.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "96a5f8ef6c2380177b6688b37b4af0aa8db4656c4ea298573494e3e7967dd446"
+    },
+    {
+      "path": "/content-assets/memocasting/e0569693-392b-41df-be5b-b21d30e49f94.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c0269c41feccda1a3b439facfd7aa02a9f394c6e795b5424542b5a88a835d7f7"
+    },
+    {
+      "path": "/content-assets/memocasting/440e4bb4-c17d-41bc-852b-3bd069c1ea7a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1729503f3a0b526692aec3dcfe9dc841d17af10918a7550ae3e141a8966a2e0a"
+    },
+    {
+      "path": "/content-assets/memocasting/049335ff-85d9-48b0-957c-c9d34dd4fc79.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "b13fe7c1802b21080202a1457d214da1e2573ff4e42c4dad070d3b4898d40f5e"
+    },
+    {
+      "path": "/content-assets/memocasting/f57cc105-dadb-4370-9a5e-7a0d09c5b6ac.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5323f49be606c44f579a9e5a8b3734d12049a99b0f80b0fcf2fd1e422089ad83"
+    },
+    {
+      "path": "/content-assets/memocasting/8ad00434-5ea9-491b-864a-3879c0abee81.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cb4c610e81463e87916791f006756208a00060c929e0860e737fe4fe22dd14f6"
+    },
+    {
+      "path": "/content-assets/memocasting/8b818b78-be22-49cb-acb7-2fa6394a9ec4.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1aa016685d9cca71f8a00f89a7e67e153b60c05eaf32e6384428eb8d99267d4c"
+    },
+    {
+      "path": "/content-assets/memocasting/99105871-dd60-4bea-8a58-c8b647dda66c.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "07f453ae19b89da6d53b3f4a110c66e74336cf751d2850eff3f61ae60b68b715"
+    },
+    {
+      "path": "/content-assets/memocasting/045eed01-d025-41a2-b274-8261e83ee4b9.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "d21dd15722abb3a662cbfdfe0d1bb47acb0a0652d09b4c182d2ea06a07bbd6d0"
+    },
+    {
+      "path": "/content-assets/memocasting/ff97987f-9fe1-4154-8f59-90070410f71b.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "75e48456489ee006a15edc36b9f2363c72531c4f77d001035e22e12ea9b9cb3a"
+    },
+    {
+      "path": "/content-assets/memocasting/76223285-3a9c-43b7-b0c7-ece95b411092.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "22a93cc56212d3a4d9c05503760dbd53fe5fee0cda557215dc57f3c476c8262b"
+    },
+    {
+      "path": "/content-assets/memocasting/93683d54-41e1-4e76-8017-b7ca78b8264f.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "164513b1f8d3c7751b0b6b8ab580757eaefe49500aa8a0979cf0fa856729c694"
+    },
+    {
+      "path": "/content-assets/memocasting/8d342071-b3c5-44b8-b6f0-81d67ae76c0d.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "20abec65c5064604de5cf08e3da231a3cc7cb5c7966d43544253791f943d5886"
+    },
+    {
+      "path": "/content-assets/memocasting/49a06fd3-eba2-4dd7-b8e5-d600447fccf4.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c1339ff09a2360e5e78d49507a85cdefe0f2b2bfdf80fda31a789d04de2fd500"
+    },
+    {
+      "path": "/content-assets/memocasting/78e16e57-afb5-4377-a3a8-f8bdd8e884c9.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "18227cf6f404f3386152baf7fdc65ef6904efa66f1d7087e7cc1ba5e971aefbc"
+    },
+    {
+      "path": "/content-assets/memocasting/718bc032-fb10-4074-af59-f9b37dc16f24.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "af7c01c7f70710eed7b520dc9559b7002713ba52cdbbc831f2f8daf5cd14163f"
+    },
+    {
+      "path": "/content-assets/memocasting/aec3f230-e8ea-4d05-a937-84955d041e2a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5d15ddaac391d218443ade55893beeb4920837783b1125932e1c4da999b01493"
+    },
+    {
+      "path": "/content-assets/memocasting/cc40d449-9ded-45d5-a487-6b3b98fdfda7.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "84bb748095b3435e96f4ea53e92cf6f64ccbc33665bf995b5d265e33e2486c77"
+    },
+    {
+      "path": "/content-assets/memocasting/55083113-cd86-4749-90bc-3a9b41e70eeb.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c804be58df066eec1582765c757854d1b254b11babf357e877a8dc0d4f388912"
+    },
+    {
+      "path": "/content-assets/memocasting/285e0dbd-1ee1-4f41-9a4d-8f4638288430.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "7388f8342682c4747efc61bd9807d5e84fc2710f89d3c8f46cfe03660b33f5d5"
+    },
+    {
+      "path": "/content-assets/memocasting/54139479-0675-45b1-9395-31ae43625632.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "463a66fe7203df3cfafa97d5c5af88e5eeb5baf992eaf13e99c87639d460bc95"
+    },
+    {
+      "path": "/content-assets/memocasting/c1ee1bc7-27bf-4133-a099-404757a97f86.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "dbe15ea4990e7e4108f8dbe5f55b50751407f76fe5ff3ed238255d9d8cebe07f"
+    },
+    {
+      "path": "/content-assets/memocasting/7a1ec55f-1f16-412e-87c0-75a1ed49e7e2.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "0872287b5703bd1649594d93fa3d1834285a8fdf51031fe244774b44eea09de6"
+    },
+    {
+      "path": "/content-assets/memocasting/c937ab88-c22c-42f5-84c2-961344a8ba43.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "e72efa632a8d49754a010f537bc817ca1ba14fb5c1a03bac30bf569cd8b8d4e9"
+    },
+    {
+      "path": "/content-assets/memocasting/0530d49d-dfd1-4651-b9e1-94575e3081a9.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "fb1d56160aea0ce867f92c10c319a8e5ec50b614050dd785e6cf53956afc2d8e"
+    },
+    {
+      "path": "/content-assets/memocasting/3fb082b2-5a32-4681-b8ab-dc37bdec0e8a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "c6ed536dda30a23825ecc9881bffb83ca16d57363d0444cdcd4dd135a51f9cc8"
+    },
+    {
+      "path": "/content-assets/memocasting/8424206b-a10e-460e-b23d-d22dc8d5f5f5.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "da5b46a8400a5c2e291af3e4cc316388c635ca4001a6cfdd791d52fd6b2775cf"
+    },
+    {
+      "path": "/content-assets/memocasting/7624f1c2-142b-4b2a-89db-bbd15f83abb9.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a29e64fcc7331c2ba871ce7cea2ce670d4f9182b8b893cf13d1520ea7cbbaa9f"
+    },
+    {
+      "path": "/content-assets/memocasting/53556601-89b5-46f5-91eb-3836a8b584cd.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "55384b4efd091bdb170e9f497c2dc7f1bde900317dc7bfa3c04e98b836c307c0"
+    },
+    {
+      "path": "/content-assets/memocasting/2ad67b72-3e28-4ab1-aaac-fbae78e7a60a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "00ad7714c61fa6681c5853e852d298f84137d7258feddc32e00a571668557111"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "sha256": "873cbfa893dd8d6ef1ee182ae4df6c762497c01650e78f0547952e2c0b55e195"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "f1e4c199dd6f52dd2ca1691963c2df395b5016b2b68488c8b5949acbda504801"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "1caa817a57de798a18db33bfee40ea2450253917bfb7162dfedb12f14cfa3134"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "9d91d9cea5e6336cc70be4e25d0311e90a46b19b184f554d130a29806f1c75a9"
+    },
+    {
+      "path": "/content-package.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "fe0536465ee084c60f84196295678288e4c2d61a7d73bcace48365513a299a5e"
+    },
+    {
+      "path": "/release-manifest.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2a8e1b085ef9b7b1bd0a738565eefeb897429d18689abc4a6ed67e5b44fd4922"
+    },
+    {
+      "path": "/__niche-check-3b350683681814d4",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "591d3d2973d4cf09653ae19fa13a44a67fe887e54374454a44d9cb5d41273c6d"
+    }
+  ],
+  "auditScore": {
+    "siteId": "memocasting",
+    "evaluatedAt": "2026-10-12T10:43:21.159Z",
+    "stages": {
+      "local": {
+        "passed": 63,
+        "applicable": 72,
+        "score": 8.75,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "R2",
+          "R3",
+          "S2",
+          "U2",
+          "U3",
+          "W1",
+          "W2"
+        ]
+      },
+      "launch": {
+        "passed": 0,
+        "applicable": 10,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3",
+          "I4",
+          "O3",
+          "U4",
+          "W3",
+          "X3",
+          "Z3"
+        ]
+      },
+      "operations": {
+        "passed": 0,
+        "applicable": 2,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A3",
+          "V3"
+        ]
+      }
+    },
+    "categories": {
+      "A": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A3"
+        ]
+      },
+      "B": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3"
+        ]
+      },
+      "C": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "D": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "E": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "F": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "G": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "H": {
+        "passed": 5,
+        "applicable": 5,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "I": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "I4"
+        ]
+      },
+      "J": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "K": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "L": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "M": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "N": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "O": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "O3"
+        ]
+      },
+      "P": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "Q": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "R": {
+        "passed": 1,
+        "applicable": 3,
+        "score": 3.33,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "R2",
+          "R3"
+        ]
+      },
+      "S": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "S2"
+        ]
+      },
+      "T": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "U": {
+        "passed": 1,
+        "applicable": 4,
+        "score": 2.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "U2",
+          "U3",
+          "U4"
+        ]
+      },
+      "V": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "V3"
+        ]
+      },
+      "W": {
+        "passed": 1,
+        "applicable": 4,
+        "score": 2.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "W1",
+          "W2",
+          "W3"
+        ]
+      },
+      "X": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "X3"
+        ]
+      },
+      "Y": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "Z": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "Z3"
+        ]
+      }
+    }
+  },
+  "issues": [
+    "AUDIT_TARGET_OR_PACKAGE_MISMATCH",
+    "LOCAL_AUDIT_INCOMPLETE"
+  ],
+  "limitations": [
+    "HTML checks do not prove computed browser visibility, image pixels, factual correctness or business capability.",
+    "Separate A–Z/browser/performance/form/source evidence and actual launch gates remain required.",
+    "Current package pages only; dynamic catalogue, query facets and other business routes retain their own acceptance.",
+    "Robots checks use the standard parser for search agents, not a verified crawler visit or proof of WAF/CDN/account access. Training and user-request bots have separate owner-controlled policies.",
+    "A controlled-clock local check is not evidence that the future live date has occurred.",
+    "GET requests only; no deployment, approval, paid research, DNS, mail or client writes."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Independent hero backdrop and true-alpha ensemble implemented; generated gallery mockup retained as concept only. Official package/commerce/film preserved.",
+  "checks": [
+    {
+      "command": "npm run test:core; npx tsc --noEmit; npm run build",
+      "result": "PASS",
+      "evidence": "105tests;PUBLIC/output/hero-layers-tests.private.txt,types/buildlogs"
+    },
+    {
+      "command": "node output/hero-layers-http.private.mjs; npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "111HTTP,88public-pageSEO;PUBLIC/output/hero-layers-http.private.json,hero-layers-seo.private.txt"
+    },
+    {
+      "command": "CUA1280x720/1280x630/768x720/320x720 and motion-off",
+      "result": "PASS",
+      "evidence": "Actual full ensemble contain,decoded variants,no overflow,no text overlap;PUBLIC/output/hero-layers-*-final.png"
+    }
+  ],
+  "eventId": "d3afc1b9-7db0-4b4c-aac8-7ebfa0b153f8",
+  "sequence": 2,
+  "at": "2026-10-13T20:46:03.965Z"
+}

@@ -1,0 +1,19 @@
+{
+  "paths": [
+    "tests/memocasting-included-paint.test.mjs",
+    "sites/memocasting/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "evidence": [
+    "PUBLIC full archive test:core 113 PASS / 1 FAIL: gidai/padekos-dovanos stale surcharge; prior regex scanned every guide and matched 3 euro inside 13 euro. Product/home assertions and unchanged cart surcharge rejection remain."
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "siteId": "memocasting",
+  "summary": "Included-paint regression incorrectly rejects unrelated gift-guide budgets and matches suffix digits as kit surcharges",
+  "rollback": "Revert only the included-paint regression scope; no content or pricing changes.",
+  "category": "code",
+  "id": "upgrade-cb8a2179-c785-4005-bbfc-add446950934",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "db1157872eb0f69fada3ab8752b518977a16fa69",
+  "createdAt": "2026-10-14T20:49:49.763Z"
+}

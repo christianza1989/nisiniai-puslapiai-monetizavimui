@@ -1,0 +1,23 @@
+{
+  "siteId": "memocasting",
+  "summary": "A legacy alias could hide a newly restored public native product at the original route. Native eligibility now wins; retired password GET/HEAD drops credential/return queries and gallery moves retain their fragment.",
+  "category": "code",
+  "paths": [
+    "SKILLS/niche-site-builder/references/domain-history.md",
+    "lib/memocasting-routes.mjs",
+    "lib/memocasting-legacy-redirects.mjs",
+    "proxy.ts",
+    "tests/memocasting-routes.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "evidence": [
+    "qa/redirects-20261023/native-precedence-finding.private.json",
+    "qa/redirects-20261023/tests.private.log",
+    "sites/memocasting/REDIRECTS_2026_10_23.md"
+  ],
+  "rollback": "Revert the scoped redirect commit and rule after checking for intervening native restorations. Do not restore old commerce data, package dates, DNS, bindings or credentials.",
+  "id": "upgrade-38b33f22-ac2d-4573-8a47-d0af61029e51",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "7cfb2c24963bbe5cb64c599893398dfad44a140f",
+  "createdAt": "2026-10-22T22:24:16.872Z"
+}

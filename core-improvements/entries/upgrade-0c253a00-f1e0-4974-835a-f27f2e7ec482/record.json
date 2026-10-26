@@ -1,0 +1,18 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Complete operator-readable locker limit/origin errors and assert documented country filtering, alongside the owned locker integration. No new provider permission, paid label or unrelated UI changes.",
+  "evidence": [
+    "sites/memocasting/LOCKERS_2026_10_22.md"
+  ],
+  "paths": [
+    "commerce-core/public/admin.mjs",
+    "commerce-core/test/shipping.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert only new error copy/country-filter assertion; preserve existing shipment facts.",
+  "id": "upgrade-0c253a00-f1e0-4974-835a-f27f2e7ec482",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "5e08a6e1e707a960345f993859ddde63c5f1eff6",
+  "createdAt": "2026-10-22T09:30:45.675Z"
+}

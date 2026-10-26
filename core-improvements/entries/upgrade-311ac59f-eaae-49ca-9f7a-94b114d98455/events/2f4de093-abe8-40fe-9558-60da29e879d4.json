@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "266 public regressions,14 focused mail/fragment cases and TypeScript pass; exact canonical SDK564c5a37. Scoped lint caught synchronous setState in new recovery-error path, fixed through an abort-aware async initialization; original lint failure retained. Final lint and types pass. Actual320/desktop mail HTML previews inspected. Worker packaging passes with WRANGLER_LOG env; unsupported --log-level attempt retained. No production sender/recovery activation claimed by this event.",
+  "checks": [
+    {
+      "command": "cd companion && node --test --test-concurrency=1 tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "266/266; recovery-public-tests.private.txt"
+    },
+    {
+      "command": "cd companion && npx --no-install tsc --noEmit",
+      "result": "PASS",
+      "evidence": "recovery-types-final.private.txt"
+    },
+    {
+      "command": "cd companion && npx --no-install eslint [five owned component/mail/bridge/helper paths] --max-warnings0",
+      "result": "PASS",
+      "evidence": "recovery-lint-final.private.txt"
+    },
+    {
+      "command": "Production-profile Wrangler dry-run for commerce and private mail",
+      "result": "PASS",
+      "evidence": "recovery-backend-dry-final.private.txt / recovery-mail-dry-final.private.txt; no resource mutation"
+    }
+  ],
+  "eventId": "2f4de093-abe8-40fe-9558-60da29e879d4",
+  "sequence": 2,
+  "at": "2026-10-25T18:26:14.919Z"
+}

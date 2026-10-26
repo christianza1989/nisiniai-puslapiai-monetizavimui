@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/83",
+  "commit": "b0f7179923a2100ed43e40f21d2263819c906dfc",
+  "note": "Actual PR83 merge verified, paired fresh checkout contains merged source; production frontendc05ca9d6 runs source8054134b with equivalent merged application tree. Hosted routes/assets and actual PSI tmm1t7726o accepted within the first repair's documented scope. Backend/mail/bindings unchanged. Remaining homepage SSR wait is a separate upgrade; mobile91 is not final speed acceptance. This is actual Memory Casting adoption only, not other PCs/sites.",
+  "eventId": "b4b06632-b45d-46d8-aa40-2a34ba4d50ce",
+  "sequence": 3,
+  "at": "2026-10-25T22:48:29.768Z"
+}

@@ -43,6 +43,7 @@
       "required": ["id", "src", "alt", "width", "height", "rights"],
       "properties": {
         "id": { "type": "string" }, "src": { "type": "string" }, "alt": { "type": "string" },
+        "familyId": { "type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$" },
         "width": { "type": "integer", "minimum": 1 }, "height": { "type": "integer", "minimum": 1 },
         "credit": { "type": "string" }, "rights": { "type": "string", "minLength": 1 }
       }
@@ -67,7 +68,7 @@
             "approvedAt": { "type": "string", "format": "date-time" }, "actorId": { "type": "string" }
           }
         },
-        "media": { "type": "array", "maxItems": 60, "items": { "$ref": "#/$defs/media" } },
+        "media": { "type": "array", "maxItems": 120, "items": { "$ref": "#/$defs/media" } },
         "links": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["targetPageId", "label"], "properties": { "targetPageId": { "type": "string" }, "label": { "type": "string" } } } },
         "externalLinks": { "type": "array", "maxItems": 20, "items": { "type": "object", "additionalProperties": false, "required": ["url", "label", "reason"], "properties": { "url": { "type": "string", "format": "uri", "pattern": "^https://" }, "label": { "type": "string", "minLength": 1 }, "reason": { "type": "string", "minLength": 1 } } } }
       }

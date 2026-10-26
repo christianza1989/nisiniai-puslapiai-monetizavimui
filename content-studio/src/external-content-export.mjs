@@ -8,7 +8,11 @@ import { verifyContentRelease } from './content-release.mjs';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const SDK_FILES = ['scripts/content-package-core.mjs', 'scripts/content-package-v2.mjs',
   'schemas/content-package.v2.schema.json', 'lib/niche-links.mjs',
-  'lib/content-projection-v2.mjs', 'lib/niche-media.mjs'];
+  'lib/content-projection-v2.mjs', 'lib/niche-media.mjs',
+  // niche-links uses the public document allowlist; include exact transitive
+  // modules so a standalone SDK never depends on a sibling checkout at runtime.
+  'lib/memocasting-instruction-documents.mjs',
+  'lib/memocasting-instruction-documents.json', 'lib/streamed-asset-range.mjs'];
 
 async function regularBytes(file) {
   if (!(await lstat(file)).isFile()) throw new Error('Only regular release files are allowed.');

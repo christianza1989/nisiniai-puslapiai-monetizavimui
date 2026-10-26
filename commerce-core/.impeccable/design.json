@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T20:14:48.162Z",
+  "title": "Design System: Prekybos valdymas",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Žaliai pilkas veiksmo akcentas"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Grafito tekstas"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Baltas duomenų paviršius"
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Šviesus darbo fonas"
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Skyriaus antraštė",
+        "purpose": "Pagrindinė darbo skyriaus H1 antraštė."
+      },
+      "body": {
+        "displayName": "Pagrindinis tekstas",
+        "purpose": "Duomenys, pastraipos ir valdiklių bazė."
+      },
+      "utility": {
+        "displayName": "Pagalbinis tekstas",
+        "purpose": "Trumpos etiketės, skaičiai ir antriniai duomenys."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background-color 150ms ease, border-color 150ms ease",
+        "purpose": "Tik mygtukų būsenų spalvos; prefers-reduced-motion išjungia perėjimus."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-max",
+        "value": "760px"
+      },
+      {
+        "name": "compact-max",
+        "value": "1100px"
+      },
+      {
+        "name": "editor-wide-min",
+        "value": "1200px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Pirminis mygtukas",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pagrindinis patvirtinamas formos veiksmas.",
+      "html": "<button class=\"ds-button-primary\" type=\"button\">Išsaugoti juodraštį</button>",
+      "css": ".ds-button-primary{max-width:100%;min-height:44px;border:1px solid #c7c9ce;border-radius:8px;background:var(--paper,#fff);color:var(--ink,#24262b);padding:9px 14px;cursor:pointer;font:500 16px/1.5 'Segoe UI', Arial, sans-serif;overflow-wrap:anywhere;transition:background-color 150ms ease,border-color 150ms ease;}.ds-button-primary:hover{background:var(--hover,#f0f1f3);border-color:#a2a6ad;}.ds-button-primary:active{background:#e7e9ed;}.ds-button-primary:disabled{cursor:default;color:#777c84;background:#f2f3f5;border-color:#e1e2e6;}.ds-button-primary:focus-visible{outline:3px solid var(--focus,#335fd0);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none;}}.ds-button-primary{background:var(--accent,#394743);color:#fff;border-color:var(--accent,#394743);font-weight:600;}.ds-button-primary:hover{background:#283831;}.ds-button-primary,.ds-button-primary:active,.ds-button-primary:disabled{background:var(--accent,#394743);color:#fff;border-color:var(--accent,#394743);font-weight:600;}.ds-button-primary:hover{background:#283831;border-color:var(--accent,#394743);}"
+    },
+    {
+      "name": "Įprastas mygtukas",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Atnaujinimas, peržiūra ar kitas antrinis veiksmas.",
+      "html": "<button class=\"ds-button\" type=\"button\">Atnaujinti</button>",
+      "css": ".ds-button{max-width:100%;min-height:44px;border:1px solid #c7c9ce;border-radius:8px;background:var(--paper,#fff);color:var(--ink,#24262b);padding:9px 14px;cursor:pointer;font:500 16px/1.5 'Segoe UI', Arial, sans-serif;overflow-wrap:anywhere;transition:background-color 150ms ease,border-color 150ms ease;}.ds-button:hover{background:var(--hover,#f0f1f3);border-color:#a2a6ad;}.ds-button:active{background:#e7e9ed;}.ds-button:disabled{cursor:default;color:#777c84;background:#f2f3f5;border-color:#e1e2e6;}.ds-button:focus-visible{outline:3px solid var(--focus,#335fd0);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-button{transition:none;}}"
+    },
+    {
+      "name": "Tylus mygtukas",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Atsijungimo veiksmas navigacijoje.",
+      "html": "<button class=\"ds-button-quiet\" type=\"button\">Atsijungti</button>",
+      "css": ".ds-button-quiet{max-width:100%;min-height:44px;border:1px solid #c7c9ce;border-radius:8px;background:var(--paper,#fff);color:var(--ink,#24262b);padding:9px 14px;cursor:pointer;font:500 16px/1.5 'Segoe UI', Arial, sans-serif;overflow-wrap:anywhere;transition:background-color 150ms ease,border-color 150ms ease;}.ds-button-quiet:hover{background:var(--hover,#f0f1f3);border-color:#a2a6ad;}.ds-button-quiet:active{background:#e7e9ed;}.ds-button-quiet:disabled{cursor:default;color:#777c84;background:#f2f3f5;border-color:#e1e2e6;}.ds-button-quiet:focus-visible{outline:3px solid var(--focus,#335fd0);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-button-quiet{transition:none;}}.ds-button-quiet,.ds-button-quiet:hover,.ds-button-quiet:active{border-color:transparent;background:transparent;text-align:left;color:var(--muted,#62666f);font-size:15px;}"
+    },
+    {
+      "name": "Tekstinis įrašo mygtukas",
+      "kind": "button",
+      "refersTo": "button-link",
+      "description": "Atveria užsakymą iš lentelės; tai kompaktiškas 28px aukščio variantas.",
+      "html": "<button class=\"ds-button-link\" type=\"button\">Užsakymo numeris</button>",
+      "css": ".ds-button-link{max-width:100%;min-height:44px;border:1px solid #c7c9ce;border-radius:8px;background:var(--paper,#fff);color:var(--ink,#24262b);padding:9px 14px;cursor:pointer;font:500 16px/1.5 'Segoe UI', Arial, sans-serif;overflow-wrap:anywhere;transition:background-color 150ms ease,border-color 150ms ease;}.ds-button-link:hover{background:var(--hover,#f0f1f3);border-color:#a2a6ad;}.ds-button-link:active{background:#e7e9ed;}.ds-button-link:disabled{cursor:default;color:#777c84;background:#f2f3f5;border-color:#e1e2e6;}.ds-button-link:focus-visible{outline:3px solid var(--focus,#335fd0);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-button-link{transition:none;}}.ds-button-link,.ds-button-link:hover,.ds-button-link:active{min-height:28px;border:0;padding:0;background:transparent;color:var(--accent,#394743);text-align:left;text-decoration:underline;text-underline-offset:.2em;font-size:15px;font-weight:600;}.ds-button-link:disabled{border:0;background:transparent;color:var(--accent,#394743);}"
+    },
+    {
+      "name": "Paieškos laukas",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Matoma etiketė ir serverio įkeltos imties paieška.",
+      "html": "<label class=\"ds-input-label\" for=\"ds-order-search\">Ieškoti užsakymo<input class=\"ds-input\" id=\"ds-order-search\" type=\"search\" placeholder=\"Numeris, pirkėjas, el. paštas ar prekė\"></label>",
+      "css": ".ds-input-label{display:block;width:min(100%,360px);margin:0;color:var(--ink,#24262b);font:600 15px/1.5 'Segoe UI', Arial, sans-serif;}.ds-input{display:block;box-sizing:border-box;width:100%;min-width:0;min-height:44px;margin-top:6px;border:1px solid #b5b9c0;border-radius:8px;background:var(--paper,#fff);color:var(--ink,#24262b);padding:10px 12px;font:400 15px/1.5 'Segoe UI', Arial, sans-serif;caret-color:var(--accent,#394743);}.ds-input::placeholder{color:#6d717a;}.ds-input:disabled{background:#f1f2f4;color:#6d717a;}.ds-input:focus-visible{outline:3px solid var(--focus,#335fd0);outline-offset:3px;}"
+    },
+    {
+      "name": "Darbo skyriaus navigacija",
+      "kind": "nav",
+      "refersTo": "navigation-item-active",
+      "description": "Pastovi navigacija su piktograma, tekstu ir aktyvaus skyriaus paviršiumi.",
+      "html": "<nav class=\"ds-navigation\" aria-label=\"Administravimo skyriai\"><button class=\"ds-nav-item\" type=\"button\" aria-pressed=\"true\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 3h10l3 4v14H4V7l3-4Zm-3 4h16M9 11h6\"/></svg>Užsakymai</button><button class=\"ds-nav-item\" type=\"button\" aria-pressed=\"false\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m3 3 9 1 9 9-8 8-9-9-1-9Z\"/><circle cx=\"8\" cy=\"8\" r=\"1\"/></svg>Prekės</button></nav>",
+      "css": ".ds-nav-item{max-width:100%;min-height:44px;border:1px solid #c7c9ce;border-radius:8px;background:var(--paper,#fff);color:var(--ink,#24262b);padding:9px 14px;cursor:pointer;font:500 16px/1.5 'Segoe UI', Arial, sans-serif;overflow-wrap:anywhere;transition:background-color 150ms ease,border-color 150ms ease;}.ds-nav-item:hover{background:var(--hover,#f0f1f3);border-color:#a2a6ad;}.ds-nav-item:active{background:#e7e9ed;}.ds-nav-item:disabled{cursor:default;color:#777c84;background:#f2f3f5;border-color:#e1e2e6;}.ds-nav-item:focus-visible{outline:3px solid var(--focus,#335fd0);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-nav-item{transition:none;}}.ds-navigation{display:grid;gap:5px;background:#f0f1f2;padding:24px 14px;}.ds-nav-item{display:flex;align-items:center;gap:12px;border-color:transparent;background:transparent;text-align:left;padding:10px 12px;font-size:15px;line-height:1.4;}.ds-nav-item:hover{border-color:transparent;background:#e7e9eb;}.ds-nav-item[aria-pressed=\"true\"]{background:#fff;border-color:#d9dcdf;color:#26392d;font-weight:600;}.ds-nav-item svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}"
+    },
+    {
+      "name": "Užsakymų būsenų filtrai",
+      "kind": "chip",
+      "refersTo": "filter-active",
+      "description": "Įkeltos imties filtrai su tekstu ir aria-pressed būsena.",
+      "html": "<div class=\"ds-filters\" aria-label=\"Užsakymų būsenos\"><button class=\"ds-filter\" type=\"button\" aria-pressed=\"true\">Visi</button><button class=\"ds-filter\" type=\"button\" aria-pressed=\"false\">Laukia mokėjimo</button><button class=\"ds-filter\" type=\"button\" aria-pressed=\"false\">Apmokėti</button></div>",
+      "css": ".ds-filter{max-width:100%;min-height:44px;border:1px solid #c7c9ce;border-radius:8px;background:var(--paper,#fff);color:var(--ink,#24262b);padding:9px 14px;cursor:pointer;font:500 16px/1.5 'Segoe UI', Arial, sans-serif;overflow-wrap:anywhere;transition:background-color 150ms ease,border-color 150ms ease;}.ds-filter:hover{background:var(--hover,#f0f1f3);border-color:#a2a6ad;}.ds-filter:active{background:#e7e9ed;}.ds-filter:disabled{cursor:default;color:#777c84;background:#f2f3f5;border-color:#e1e2e6;}.ds-filter:focus-visible{outline:3px solid var(--focus,#335fd0);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-filter{transition:none;}}.ds-filters{display:flex;flex-wrap:wrap;gap:6px;background:#fff;}.ds-filter{border-color:transparent;border-radius:6px;padding:8px 10px;font-size:14px;}.ds-filter[aria-pressed=\"true\"]{background:var(--selected,#e7ece9);color:#283f32;font-weight:600;}.ds-filter:hover{border-color:transparent;}"
+    },
+    {
+      "name": "Tekstinės būsenų žymos",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Neutrali, laukimo ir patvirtinta būsena; ne interaktyvūs valdikliai.",
+      "html": "<div class=\"ds-badges\"><span class=\"ds-badge\">Juodraštis</span><span class=\"ds-badge ds-badge-warning\">Laukia mokėjimo</span><span class=\"ds-badge ds-badge-success\">Apmokėta</span></div>",
+      "css": ".ds-badges{display:flex;flex-wrap:wrap;gap:8px;}.ds-badge{display:inline-block;padding:4px 8px;border-radius:6px;background:#edf0f2;color:#4c535b;font:400 14px/1.4 'Segoe UI', Arial, sans-serif;}.ds-badge-warning{background:#fcf0d7;color:#72541a;}.ds-badge-success{background:#e0f0e5;color:#246141;}"
+    },
+    {
+      "name": "Įrašo paviršius",
+      "kind": "card",
+      "refersTo": "surface",
+      "description": "Balta forma ar įrašo grupė; gylį kuria kraštinė, šešėlio nėra.",
+      "html": "<section class=\"ds-surface\"><h3 class=\"ds-surface-title\">Prekė</h3><p class=\"ds-surface-copy\">Aprašymai, kainos, nuotraukos ir pirkėjo pasirinkimai.</p></section>",
+      "css": ".ds-surface{min-width:0;padding:24px;border:1px solid var(--line,#e1e2e6);border-radius:12px;background:var(--paper,#fff);color:var(--ink,#24262b);font:400 16px/1.5 'Segoe UI', Arial, sans-serif;}.ds-surface-title{margin:0 0 10px;font-size:17px;line-height:1.4;font-weight:600;overflow-wrap:anywhere;}.ds-surface-copy{max-width:72ch;margin:0 0 16px;overflow-wrap:anywhere;}@media(max-width:760px){.ds-surface{padding:18px;}}"
+    },
+    {
+      "name": "Veiksmo rezultatas",
+      "kind": "custom",
+      "refersTo": "status",
+      "description": "Uždaromas sėkmės pranešimas; jo vietą darbo ekrane nustato bendras išdėstymas.",
+      "html": "<p class=\"ds-status\" role=\"status\" aria-live=\"polite\">Juodraštis išsaugotas. Dar nepaskelbtas.<button class=\"ds-status-close\" type=\"button\">Uždaryti</button></p>",
+      "css": ".ds-status-close{max-width:100%;min-height:44px;border:1px solid #c7c9ce;border-radius:8px;background:var(--paper,#fff);color:var(--ink,#24262b);padding:9px 14px;cursor:pointer;font:500 16px/1.5 'Segoe UI', Arial, sans-serif;overflow-wrap:anywhere;transition:background-color 150ms ease,border-color 150ms ease;}.ds-status-close:hover{background:var(--hover,#f0f1f3);border-color:#a2a6ad;}.ds-status-close:active{background:#e7e9ed;}.ds-status-close:disabled{cursor:default;color:#777c84;background:#f2f3f5;border-color:#e1e2e6;}.ds-status-close:focus-visible{outline:3px solid var(--focus,#335fd0);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-status-close{transition:none;}}.ds-status{display:flex;align-items:center;gap:16px;max-width:min(720px,calc(100vw - 280px));margin:0;padding:14px 18px;border:1px solid #c6d9cf;border-radius:8px;background:#edf7f0;color:#264f37;font:400 15px/1.5 'Segoe UI', Arial, sans-serif;overflow-wrap:anywhere;}.ds-status-close{flex-shrink:0;background:transparent;}.ds-status-error{color:var(--error,#a32e38);background:#fff0f1;border-color:#e4b6bc;}.ds-status-busy{color:#485761;background:#eff3f7;border-color:#d4dce4;}@media(max-width:760px){.ds-status{max-width:none;padding:12px 14px;}}.ds-status-close{font-size:15px;}.ds-status-close:hover,.ds-status-close:active{background:transparent;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Prekybos darbo erdvė",
+    "overview": "Rami mažos parduotuvės darbo erdvė: grafito viršutinė juosta, šviesus neutralus fonas, pastovi šoninė navigacija ir balti duomenų paviršiai. Užsakymas, prekė ir kitas konkretus įrašas turi aiškią vietą, būseną bei veiksmą. Žaliai pilkas akcentas sutelkia dėmesį į pirminį veiksmą; bendrą hierarchiją kuria išdėstymas ir tipografika.\n\nTai bendro prekybos administravimo modulio sistema. Viešos Memocasting parduotuvės tapatybė aprašoma atskirai. 2026-10-25 atnaujinimas pakeičia ankstesnę žalią administravimo sistemą pagal savininko deleguotą pertvarkymo pavedimą. Krypties palyginimas ir konkretaus ekrano planas yra [administravimo apraše](../sites/memocasting/ADMIN_DASHBOARD_2026_10_25.md); žemiau užfiksuota baigta realizacija.",
+    "keyCharacteristics": [
+      "Pastovi darbo vieta ir aiškiai pažymėtas navigacijos skyrius.",
+      "Įskaitomos lentelės, būsenų žymos ir atskiras prekės redaktorius.",
+      "Lietuviški valdikliai, matomas fokusas ir telefono išdėstymas."
+    ],
+    "rules": [
+      {
+        "name": "The State Label Rule",
+        "body": "Spalvą visada lydi būseną ar veiksmą įvardijantis tekstas; žalia žyma savaime nepatvirtina mokėjimo, siuntos ar dokumento baigties.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stable Workspace Rule",
+        "body": "Navigacija lieka prieinama per visą darbą; atveriamas vienas skyrius arba vienas pasirinkto įrašo redaktorius.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "**Do** rodyti serverio patvirtintą būseną, valiutą ir aiškų veiksmo rezultatą.",
+      "**Do** tęsti tą pačią teksto, formų, lentelių ir fokuso sistemą naujuose skyriuose.",
+      "**Do** išlaikyti matomą įkėlimo, tuščio rezultato, klaidos ir neišsaugotų pakeitimų būseną.",
+      "**Do** patikrinti ilgus lietuviškus pavadinimus, siaurą ekraną ir paveiktų valdiklių didinimą po reikšmingo pakeitimo."
+    ],
+    "donts": [
+      "**Don't** naudoti spalvos kaip vienintelio būsenos paaiškinimo.",
+      "**Don't** testinių dokumentų ar neprijungtų integracijų pristatyti kaip tikros apskaitos ar įvykdyto siuntimo.",
+      "**Don't** juodraščio išsaugojimo pateikti kaip prekės paskelbimo.",
+      "**Don't** šios administravimo sistemos automatiškai perkelti į viešą nišos parduotuvę."
+    ]
+  }
+}

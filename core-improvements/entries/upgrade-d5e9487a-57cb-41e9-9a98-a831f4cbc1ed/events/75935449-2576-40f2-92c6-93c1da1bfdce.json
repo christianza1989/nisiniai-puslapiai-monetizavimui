@@ -1,0 +1,25 @@
+{
+  "status": "local-verified",
+  "note": "Completed owner140/142 cabinet-category priority correction and repeated full local acceptance. Direct owner now authorizes PR merge and live deployment with fixed package and automatic rollback on any failed postcheck.",
+  "checks": [
+    {
+      "command": "npm run test:core; TypeScript; focused ESLint; normal build",
+      "result": "PASS",
+      "evidence": "owner140/:75/75 tests, new explicit1417/1463/1464 cabinet assertions, build/source digest binding"
+    },
+    {
+      "command": "Actual isolated Worker F01/F19 and all-tenant SEO smoke",
+      "result": "PASS",
+      "evidence": "owner140/F01-F19-results.json:1402/1402;1854 pages;55 held-guide404;9 other tenants;14 actual views including owner cabinets"
+    },
+    {
+      "command": "Exact current production package and assets preflight; HTTPS1402 before comparison",
+      "result": "PASS",
+      "evidence": "live-deploy-20261021/baseline-manifest.json;approved-assets-parity.json:3780;registry-parity.json:10;before-verified/result.json:1402/1402"
+    }
+  ],
+  "commit": "c9dbacc38a89b02ac3f8ad0a6e6b453d5d26ffc6",
+  "eventId": "75935449-2576-40f2-92c6-93c1da1bfdce",
+  "sequence": 4,
+  "at": "2026-10-21T13:16:25.701Z"
+}

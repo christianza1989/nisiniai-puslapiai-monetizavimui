@@ -1,0 +1,20 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "siteId": "core",
+  "summary": "Do not look up companion journal literal route scopes in the private core Git tree",
+  "paths": [
+    "scripts/core-upgrade-check.mjs",
+    "scripts/core-upgrade-check.test.mjs",
+    "core-improvements/README.md"
+  ],
+  "rollback": "Scoped revert checker/tests/docs; no source or journal history rewriting.",
+  "evidence": [
+    "Actual scoped carousel handoff rejected valid PUBLIC app/niche/memocasting/instagram/[...path]/route.ts because literalScope consulted CORE head.",
+    "Foreign records cannot attest private changes; validate their path syntax without pretending to validate foreign Git blobs and report separately."
+  ],
+  "category": "workflow",
+  "id": "upgrade-c8b7636a-c9ac-4f09-9beb-527d83e1d2ea",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "60f83bfe6f36b8253b14f0de0af3f62f24c5d014",
+  "createdAt": "2026-10-20T08:06:46.399Z"
+}

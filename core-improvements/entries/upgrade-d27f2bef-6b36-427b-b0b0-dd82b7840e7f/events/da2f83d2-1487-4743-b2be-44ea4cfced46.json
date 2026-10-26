@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "15 tests, including closed-market exclusion and fallback plus duplicate-create/lost-response regressions.",
+      "command": "node --test commerce-core/test/checkout-cart.test.mjs"
+    }
+  ],
+  "note": "Original test first failed with PL/LT/EE, then passed after filtering only optional one-page markets. Classic rendering unchanged; server market checks remain authoritative.",
+  "status": "local-verified",
+  "eventId": "da2f83d2-1487-4743-b2be-44ea4cfced46",
+  "sequence": 2,
+  "at": "2026-10-20T16:14:05.044Z"
+}

@@ -1,0 +1,28 @@
+{
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/HERO_STORYTELLING_2026_10_13.md",
+    "Owner screenshot and direct wheel-speed/cropped-film report, followed by asset-kit request"
+  ],
+  "siteId": "memocasting",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert own scoped paired commits; preserve original masters and official previous Studio package.",
+  "summary": "Owner screenshot demonstrates cover-cropped film and excessive wheel-to-frame jumps. Compact timeline, preserve full frame, slow and smooth bounded scrubbing; create and integrate owner-requested homepage asset kit with faithful product cutouts, editorial images and native SVG icons.",
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "components/niche/memocasting-homepage.css",
+    "lib/memocasting-homepage-motion.mjs",
+    "lib/memocasting-homepage-markup.mjs",
+    "lib/memocasting-homepage-assets.json",
+    "public/memocasting-homepage",
+    "tests/memocasting-homepage-motion.test.mjs",
+    "tests/memocasting-homepage.test.mjs",
+    "content-packages/memocasting",
+    "lib/generated/content-packages.json"
+  ],
+  "id": "upgrade-6ea0a7d2-e1c7-4bee-8c3e-434858238d70",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "03662f03c42486f46489b579f393c26ca5568342",
+  "createdAt": "2026-10-13T10:52:37.172Z"
+}

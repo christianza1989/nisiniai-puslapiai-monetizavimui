@@ -1,0 +1,31 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Optional coupon free shipping preserves carrier validation, operator costs, legacy commands and immutable net orders.",
+  "evidence": [
+    "sites/memocasting/qa/free-shipping-20261026/core-verify-final.private.txt",
+    "sites/memocasting/qa/free-shipping-20261026/dry-run-final.private.txt",
+    "sites/memocasting/FREE_SHIPPING_2026_10_26.md"
+  ],
+  "paths": [
+    "commerce-core/docs/DISCOUNTS.md",
+    "commerce-core/migrations/0028_discount_free_shipping.sql",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/public/discounts-ui.mjs",
+    "commerce-core/src/discounts.mjs",
+    "commerce-core/src/document-pdf.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/test/analytics-worker.test.mjs",
+    "commerce-core/test/checkout-cart.test.mjs",
+    "commerce-core/test/discounts-http.test.mjs",
+    "commerce-core/test/discounts-worker.test.mjs",
+    "commerce-core/test/discounts.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/274",
+  "rollback": "Keep additive migration0028 and immutable orders; disable flag versioned for new uses if needed. Preserve actual provider bindings, policies, secrets, cron and mail.",
+  "id": "upgrade-83e44992-d8d1-4a72-85c8-71a4c52cf268",
+  "branch": "codex/memocasting-free-shipping-coupons-20261026",
+  "baseSha": "9f3f2bc443ad13ad006e9e4c5a5d5479b06cb3fa",
+  "createdAt": "2026-10-26T07:16:18.561Z"
+}

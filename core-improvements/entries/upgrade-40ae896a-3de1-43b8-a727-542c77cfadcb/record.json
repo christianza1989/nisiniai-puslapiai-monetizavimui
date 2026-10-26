@@ -1,0 +1,33 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Existing generic locker primitives did not bind buyer quote identity to the selected terminal, retain configured sender drop-off, verify both carrier addresses, or present a searchable one-page selector. Complete the existing flow with configured DPD/Omniva official v1 bindings, single-parcel limits, private sender origins and regressions; preserve courier and existing paid orders.",
+  "evidence": [
+    "sites/memocasting/LOCKERS_2026_10_22.md",
+    "commerce-core/test/buyer-delivery.test.mjs"
+  ],
+  "paths": [
+    "commerce-core/src/delivery-lockers.mjs",
+    "commerce-core/src/buyer-delivery.mjs",
+    "commerce-core/src/validation.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/src/shipping.mjs",
+    "commerce-core/src/shipping-automation.mjs",
+    "commerce-core/src/shipment-commands.mjs",
+    "commerce-core/src/sendparcel-adapter.mjs",
+    "commerce-core/src/sendparcel-booking.mjs",
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/public/shipping-ui.mjs",
+    "commerce-core/test/locker-delivery.test.mjs",
+    "commerce-core/test/checkout-cart.test.mjs",
+    "commerce-core/test/shipment-commands.test.mjs",
+    "commerce-core/test/buyer-delivery.test.mjs",
+    "commerce-core/docs/SENDPARCEL_V1_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Disable only newly added delivery entries by CAS; retain courier, existing snapshots, original provider IDs and all orders. Code rollback independently, no DB restore.",
+  "id": "upgrade-40ae896a-3de1-43b8-a727-542c77cfadcb",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "5e08a6e1e707a960345f993859ddde63c5f1eff6",
+  "createdAt": "2026-10-22T06:54:38.358Z"
+}

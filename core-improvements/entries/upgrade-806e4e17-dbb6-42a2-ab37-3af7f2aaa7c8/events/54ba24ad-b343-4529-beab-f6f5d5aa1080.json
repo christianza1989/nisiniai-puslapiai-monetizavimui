@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Draft PR96 now contains pushed implementation source b34eef4290cac9ed5d5baf309dc6b0c3030f5d3c and the full delivery roadmap. Local acceptance verified; CI/source review/main adoption and production remain separate. No real provider, site or agent activation.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "commit": "b34eef4290cac9ed5d5baf309dc6b0c3030f5d3c",
+  "eventId": "54ba24ad-b343-4529-beab-f6f5d5aa1080",
+  "sequence": 4,
+  "at": "2026-10-11T20:51:39.868Z"
+}

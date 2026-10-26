@@ -1,0 +1,42 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Separate one customer delivery charge from exact per-parcel operator bookings; retain legacy courier bundles and at-most-once provider guards.",
+  "evidence": [
+    "sites/memocasting/qa/multiparcel-20261026/core-verify.private.txt",
+    "sites/memocasting/qa/multiparcel-20261026/worker-repaired.private.txt",
+    "sites/memocasting/qa/multiparcel-20261026/native-repaired.private.txt",
+    "sites/memocasting/MULTIPARCEL_2026_10_26.md"
+  ],
+  "paths": [
+    "commerce-core/migrations/0029_shipment_parcel_slots.sql",
+    "commerce-core/scripts/update-delivery-pricing.mjs",
+    "commerce-core/src/node-delivery-pricing.mjs",
+    "commerce-core/docs/MULTIPARCEL_SHIPPING.md",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/public/private-files-ui.mjs",
+    "commerce-core/public/shipment-commands-ui.mjs",
+    "commerce-core/public/shipping-ui.mjs",
+    "commerce-core/src/buyer-delivery.mjs",
+    "commerce-core/src/parcels.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/src/shipment-commands.mjs",
+    "commerce-core/src/shipping-automation.mjs",
+    "commerce-core/src/shipping.mjs",
+    "commerce-core/src/validation.mjs",
+    "commerce-core/test/analytics-worker.test.mjs",
+    "commerce-core/test/checkout-cart.test.mjs",
+    "commerce-core/test/discounts-worker.test.mjs",
+    "commerce-core/test/delivery-pricing-update.test.mjs",
+    "commerce-core/test/multiparcel-fixtures.mjs",
+    "commerce-core/test/multiparcel-worker.test.mjs",
+    "commerce-core/test/multiparcel.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/277",
+  "rollback": "Preserve additive29 and all indexed history/completion guards. Scoped policy CAS may reverse customer subsidy using the current full-config hash, without restoring old snapshots or repeating carrier creation.",
+  "id": "upgrade-c594a238-c314-4fd1-8ef7-db404cdbcaf3",
+  "branch": "codex/memocasting-multiparcel-20261026",
+  "baseSha": "0095288ee240e91e2219189e3d2d46a34faa4a56",
+  "createdAt": "2026-10-26T08:49:46.013Z"
+}

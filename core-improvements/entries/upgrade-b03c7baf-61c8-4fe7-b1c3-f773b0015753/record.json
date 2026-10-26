@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Adopt exact canonical Checkout SDK filtering disabled countries and preserving opaque Stripe client_secret without heuristic parsing.",
+  "paths": [
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/commerce-client.mjs",
+    "vendor/commerce-core/source-manifest.json"
+  ],
+  "evidence": [
+    "Canonical source30e86bb106b21a7f6621bde09494da741b29246f; original actual LIVE secret428 characters with percent encoding was rejected by old suffix heuristic. No secret in journal.",
+    "PUBLIC source055197e; SDK export client3a357fa218937f2fc98dbff35375c5f65cb355f0471d35b0e9eeb5a9f0366fc1 and checkout-ui7741c30fca32570cfd734bcb601e8aeb02e6d74745d8cf04fe6f98d8dfc59cac.",
+    "Actual same LIVE unpaid Session recovered twice200, stable original idempotency. No real charge or invoice; visual paid iframe not certified."
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Revert only scoped compatible source changes after fresh actual settings/DB read. Preserve live orders, secrets, cron, claims and other sites. Never replay unknown sends or restore pre-launch database. Explicit alternative requires actual sender and owner-approved access.",
+  "id": "upgrade-b03c7baf-61c8-4fe7-b1c3-f773b0015753",
+  "branch": "codex/memocasting-public-20261012",
+  "baseSha": "8387b9838cb93f08f870bca6d021d145e4bdbc4f",
+  "createdAt": "2026-10-20T17:27:36.119Z"
+}

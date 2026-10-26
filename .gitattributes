@@ -15,3 +15,6 @@
 *.woff2 binary
 # Quarantine payloads retain original bytes across Windows/Linux clones.
 /core-improvements/entries/**/quarantine/source.txt -text
+# Imported SOURCE archives retain their catalogued original bytes, including CRLF.
+**/SOURCE_SKILL.md -text -filter -working-tree-encoding
+**/SOURCE_PROMPT.md -text -filter -working-tree-encoding

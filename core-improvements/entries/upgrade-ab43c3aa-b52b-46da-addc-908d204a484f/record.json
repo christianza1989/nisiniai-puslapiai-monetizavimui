@@ -1,0 +1,25 @@
+{
+  "rollback": "Revert only scoped paired moment-scene commits; preserve official60c8 package and original private image sources.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "category": "code",
+  "summary": "Owner-selected pair/family/gift editorial images must change with moment tabs. Current tabs change text only and always show kit photo. Integrate three approved scene photographs, responsive sizes and accessible reversible selection.",
+  "siteId": "memocasting",
+  "evidence": [
+    "Direct owner2026-10-13 asks to insert approved generated photos",
+    "Current meaning section moment tabs change panels only"
+  ],
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "lib/memocasting-homepage-markup.mjs",
+    "lib/memocasting-homepage-motion.mjs",
+    "lib/memocasting-homepage-assets.json",
+    "components/niche/memocasting-homepage.css",
+    "public/memocasting-homepage/v1/media/moments",
+    "tests/memocasting-homepage-motion.test.mjs"
+  ],
+  "id": "upgrade-ab43c3aa-b52b-46da-addc-908d204a484f",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "ea81fb1f38b96c83c4d279ef0841d9098cfc7109",
+  "createdAt": "2026-10-13T13:08:40.496Z"
+}

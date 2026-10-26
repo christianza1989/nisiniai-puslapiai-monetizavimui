@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Canonical original23 SQL/parser unchanged. Injected-only operator migrator and existing metadata-only store path verified locally. Deployment owner reported CLI+HTTP Cloudflare7500 failures and rollback; real native remote binding adoption remains unverified and is not performed by this task.",
+  "checks": [
+    {
+      "command": "npm run verify (commerce-core 0.14.0)",
+      "result": "PASS",
+      "evidence": "Formatting;132 Node tests; native local workerd/D1/R2/Queue23 migrations; dry-run Worker3180.06KiB/gzip767.76KiB and21 assets. No remote provider calls."
+    },
+    {
+      "command": "node scripts/migrate-production-d1.mjs --account fixture --database fixture --database-name fixture-production --confirm-database fixture (actual valid fixture IDs)",
+      "result": "PASS",
+      "evidence": "PLAN_ONLY_NO_REMOTE_CONNECTION with23 original migration hashes; unconfirmed/placeholder/partial/hash mismatch/replay/prefix paths covered by five focused tests."
+    },
+    {
+      "command": "git diff --exit-code 797b450fca2e96ecdb380b202c21a089b9b3270c -- commerce-core/migrations commerce-core/src/migrations.mjs",
+      "result": "PASS",
+      "evidence": "No historical migration or parser changes."
+    }
+  ],
+  "eventId": "f46d7f13-ad9e-47d8-9703-691ee37fdb1b",
+  "sequence": 2,
+  "at": "2026-10-14T21:51:16.740Z"
+}

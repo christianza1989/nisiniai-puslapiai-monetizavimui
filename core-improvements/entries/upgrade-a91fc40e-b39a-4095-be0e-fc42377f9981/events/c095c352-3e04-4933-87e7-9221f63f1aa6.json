@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "64/64 Studio tests passed. Initial synthetic fixture lacked a seeded Promedical site; corrected fixture by creating it, no production code relaxation. Only exact two IDs/site/type receive117/97 floors; other120 threshold and readiness unchanged. Existing facts, sources, media, links, revision-bound review remain required.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "content-studio/test/minimum-content.test.mjs; 64/64 tests, private core606-tests.log"
+    }
+  ],
+  "eventId": "c095c352-3e04-4933-87e7-9221f63f1aa6",
+  "sequence": 2,
+  "at": "2026-10-24T16:22:25.395Z"
+}

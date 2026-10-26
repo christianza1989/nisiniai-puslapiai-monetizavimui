@@ -1,0 +1,30 @@
+{
+  "siteId": "memocasting",
+  "summary": "PUBLIC adapter preserves configured cart identity and exposes published owner-managed product content/media in SSR, metadata and interactive gallery without changing article publication dates. Adopts exact canonical SDK.",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/PRODUCT_EDITOR_2026_10_21.md",
+    "commerce-core/docs/PRODUCT_EDITOR.md"
+  ],
+  "paths": [
+    "app/layout.tsx",
+    "app/niche/[siteId]/[[...slug]]/page.tsx",
+    "components/niche/memocasting-commerce.tsx",
+    "components/niche/memocasting-native-checkout.tsx",
+    "components/niche/memocasting-product-gallery.tsx",
+    "components/niche/memocasting-product-configurator.tsx",
+    "components/niche/memocasting-site.module.css",
+    "components/niche/memocasting-site.tsx",
+    "lib/memocasting-cart.mjs",
+    "lib/memocasting-commerce-bridge.mjs",
+    "lib/memocasting-product-content.mjs",
+    "lib/memocasting-product-server.ts",
+    "vendor/commerce-core"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Revert only PUBLIC adapter after inspecting configured pending orders; preserve actual commerce bindings, publication dates and original payment recovery.",
+  "id": "upgrade-3549dcd1-71e8-409b-9eb1-bd1980fae6f4",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "861d0d472cb11909c257265616f65624943ebc51",
+  "createdAt": "2026-10-21T10:03:33.879Z"
+}

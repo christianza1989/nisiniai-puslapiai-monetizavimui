@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "V2 integration fixture assumed nine legacy packages and omitted actual compiler dependencies after public main added alias and catalogue checks.",
+  "category": "code",
+  "evidence": [
+    "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md",
+    "content-studio/test/content-v2.test.mjs"
+  ],
+  "paths": [
+    "content-studio/test/content-v2.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/236",
+  "rollback": "Revert only the scoped V2 fixture portability change. Runtime and approval checks are unchanged.",
+  "id": "upgrade-e511f425-8653-4d72-b85e-c9b1835a99ac",
+  "branch": "codex/promedical-gallery-audit-20261021",
+  "baseSha": "d8abc334b4e8f4eaafc5f26ac8d1e9ccc832b1d3",
+  "createdAt": "2026-10-21T17:22:16.745Z"
+}

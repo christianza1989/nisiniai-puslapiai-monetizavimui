@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Final source confirmation after the additional observed boundary case: extreme EUR coupons with free delivery could produce a sub-minimum provider payment. Added a conservative50cent coupon-order floor only after delivery is known, based on official Stripe currency documentation, with a real no-order/stock-side-effect regression; a32cent merchandise preview plus450cent delivery remains valid. Final254/254tests and native workerd/dry-run pass. No production changes yet. Earlier253run and findings remain historical, not rewritten.",
+  "checks": [
+    {
+      "command": "canonical commerce-core npm run verify after final floor guard",
+      "result": "PASS",
+      "evidence": "qa/discounts-20261026-verify-floor.private.txt:254tests,0fail; full native workerd/D1/R2/restart suite, formatting and Wrangler dry-run exit0. Primary EUR floor reference https://docs.stripe.com/currencies#minimum-and-maximum-charge-amounts. API/cent allocation/tenant isolation/cap races/immutable quote/Stripe params/GA4/PDF and lost-reply recovery remain accepted."
+    },
+    {
+      "command": "Final local browser and production preflight read-only snapshot",
+      "result": "PASS",
+      "evidence": "Actual admin code creation/disable/re-enable and buyer2700cent saved-order reload accepted, local use count1 agrees; admin/cart320document width, header margin84px confirmed and no console errors. PUBLIC no-photo layout fallback remains a separate companion acceptance. Before-deploy actual workers88184164/5bc23acb/4b165ec7,26migration hashes,5orders/20168minor aggregate and0coupon tables captured privately; this aggregate is not paid revenue."
+    }
+  ],
+  "eventId": "3619e56e-b057-4a03-950e-6e2e34e22140",
+  "sequence": 3,
+  "at": "2026-10-25T23:57:08.883Z"
+}

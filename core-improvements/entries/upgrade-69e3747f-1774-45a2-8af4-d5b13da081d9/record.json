@@ -1,0 +1,30 @@
+{
+  "siteId": "core",
+  "summary": "Dated root plans and agent-core overview can be mistaken for current authority; manual CLI roles and private receipt boundaries are unclear",
+  "category": "workflow",
+  "evidence": [
+    "Source main9a46650a033d283dfb559d7b835a26384e3225fe: five 2026-09-29 plans, agent-business-core/README.md says no implementation although runtime source is tracked, PROJECT_STATUS.md is a dated snapshot",
+    "Manual CLI source, content-studio/package.json, domain-history/package.json, two GitHub workflows and explicit editorial loader inspected without running migrations",
+    "Ten affected documents baseline: six absent private historical receipt links, one machine-specific Markdown link; purpose and preservation evidence appended in docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md"
+  ],
+  "paths": [
+    "BENDRA_30_SVETAINIU_SISTEMA.md",
+    "FABRIKO_IR_20_SVETAINIU_ARCHITEKTURA.md",
+    "20_SVETAINIU_MODULIAI_IR_TEMU_PLANAS.md",
+    "MONETIZAVIMO_PLANAS.md",
+    "TOP_20_DOMENU.md",
+    "agent-business-core/README.md",
+    "PROJECT_STATUS.md",
+    "agent-business-core/runtime/README.md",
+    "MAIL_CORE.md",
+    "docs/LEGACY_CLI_REFERENCE.md",
+    "docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/197",
+  "rollback": "Scoped revert of the authority/link/CLI documentation patch; keep all original dated evidence and other agents' files",
+  "id": "upgrade-69e3747f-1774-45a2-8af4-d5b13da081d9",
+  "branch": "codex/core-docs-authority-20261017",
+  "baseSha": "9a46650a033d283dfb559d7b835a26384e3225fe",
+  "createdAt": "2026-10-17T14:31:49.853Z"
+}

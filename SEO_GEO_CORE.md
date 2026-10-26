@@ -1,5 +1,57 @@
 # Bendras SEO ir GEO pagrindas nišinėms svetainėms
 
+## Tikro katalogo puslapiavimo canonical
+
+Promedical katalogo ir kategorijų tikri rezultatų puslapiai su vieninteliu
+`p=N` parametru (`N >= 2`) turi savo canonical, atitinkantį tą patį serverio
+rodomą produktų pjūvį. Naudoti vieną katalogo užklausos projekciją sąrašui ir
+canonical, o ne atskirai spėti puslapių skaičių. `p=1` lieka bazinis URL;
+už ribų esantis numeris negali sukurti naujos to paties rodomo pjūvio kopijos.
+Paieškos, filtrų, rūšiavimo ir kitų parametrų kombinacijos lieka baziniame
+kategorijos canonical. Proxy turi perrašyti kliento siunčiamą užklausos konteksto
+antraštę tikru `nextUrl.search`; nepasitikėti kliento nurodytu canonical.
+
+Puslapiavimas išlaiko tikras ankstesnio/kito ir katalogo puslapių `<a href>`
+nuorodas. Vien numeris nekeičia title ar description; query URL papildomai
+neįtraukiami į sitemap. Audito URL vardiklyje atskirti HTTP adresą ir `#` inkarą:
+`?p=2` ir `?p=2#turinys` nėra du skirtingi rezultatų rinkiniai. Tikrinti visas
+įvesties formas, canonical be fragmento ir skirtingus tikrų puslapių produktus.
+
+Pirminė gairė: [Google puslapiavimas](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading).
+Šio nišos pakeitimo netaikyti kitų renderer'ių canonical ar filtrams savaime.
+
+## Katalogo navigacija nepriklauso nuo produkto prozos
+
+Promedical produkto kategorijų narystes ir modelių tapatybes laikyti atskirame
+katalogo ryšių registre. Redakcinės `links` yra skaitymo rekomendacijos, todėl jų
+pakeitimas negali pašalinti produkto iš kategorijos filtro. Katalogo importas
+tikrina visų produktų ir kategorijų ID; šaltinio numeris nėra teksto eilės numeris.
+Kelias, `BreadcrumbList` ir LLM išvestis naudoja tą pačią viešą kategoriją.
+Kelių tinkamų narystės kategorijų pirmenybę sprendžia savininko patvirtinta
+katalogo tvarka. Spinta ant ratukų pirmiausia lieka spinta; mobilumas savaime
+nepakeičia produkto paskirties. Galima antrinė transportavimo narystė išlieka.
+
+Automatinis „Susiję“ blokas iš tos pačios eligible projekcijos pateikia kategoriją,
+2–3 artimiausius būtent rodomos katalogo kategorijos produktus (pirmiausia to paties
+modelio variantus) ir į produktą nukreipiančius publikuotus gidus, iki 5 nuorodų.
+Jei siaura kategorija neturi dviejų kitų viešų produktų, pasirinkti pirmą tinkamą
+produkto katalogo protėvį arba kitą jo patvirtintą kategoriją; puslapio kelias,
+schema ir kategorijos nuoroda turi rodyti tą patį pasirinkimą. Vien bendras
+tolimas protėvis nepateisina produkto, kurio nėra rodomos kategorijos rezultate.
+Jei kataloge likęs tik vienas kitas tos grupės produktas, rodyti jį; trečio produkto
+neišgalvoti. Modelio panašumas yra rikiavimo užuomina, ne suderinamumo teiginys.
+Juodraštis, būsima data, publikavimo pauzė, atšaukta ar pakeista revizija negali
+tapti HTML, schema ar skaitymo išvesties nuoroda. Gidus rikiuoti pagal naujausią
+publikavimo datą, kad naujas tinkamas gidas patektų ir į užpildytą bloką.
+Naujo gido / kategorijos
+publikavimą bandyti prieš ir po datos nekeičiant produkto baitų.
+
+Nuorodų priėmimas apima tikrą SSR `<a href>`, visų tikslų HTTP ir matomo bei
+LLM rinkinio atitiktį. Pasiekiamumo auditui iš naujo skaičiuoti grafą nuo pradžios;
+vien išeinančios produkto nuorodos neįrodo trumpesnio kelio į tą produktą.
+Didelio katalogo puslapiavimas turi pasiūlyti tikras nuorodas ir į tolimus
+rezultatų puslapius. Tai nepakeičia canonical / indeksavimo atskiros patikros.
+
 **GEO pilno kelio peržiūra — 2026-10-07:** taikyti [GEO publishing](SKILLS/niche-seo-geo-core/references/geo-publishing.md) kiekvienam plan/draft/review; bendras loader jį įkelia abiem režimams į naują instrukcijų SHA. [Tyrimas ir source/runtime auditas](research/core-completion-20261007/GEO_AUDIT.md) atskiria ką jau dinamiškai daro core, nustatytas spragas, pataisas ir neįrodytą tikrą AI matomumą. `llms.txt`/`llms-full.txt` generuojami iš bendros eligible projection, ne ranka ar antru cron; naujas studijos tekstas pirmiausia turi būti peržiūrėtas/importuotas/įdiegtas. Įdiegto būsimo turinio atsiradimas pagal publishAt turi iškart sutapti HTML, schemas, nuorodose, sitemap ir tekstų išvestyse. Prieš užbaigimą būtinas bound HTTP verifier ir actual before/after/revocation bandymas. Nežinomos crawl/GSC/Bing/CDN/WAF būsenos nėra PASS.
 
 Google [dabartinė AI paieškos gairė](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=en) nurodo, kad llms.txt Google Search reitingams nenaudojamas. Šį papildomą skaitymo indeksą palaikome kitų įrankių patogumui; prioritetas yra naudingas originalus matomas turinys, jo prieinamumas, patikimumas ir tikras matavimas. 2026-10-07 research patikslina ir naują GSC generative AI impressions report/property inclusion bei Bing AI Performance: tikrinti faktinį domeno prieinamumą ir report/API ribas, ne kartoti seną visuotinį teiginį apie AI ataskaitų nebuvimą. Search, training ir user fetch bots tikrinami atskirai; bot politikos/apsaugos tyliai neperrašomos.
@@ -73,5 +125,7 @@ Assets Workers `run_worker_first` apima content-assets ir legacy images. Origina
 `local-preview` actual canonical paketo testOnly peržiūra vyksta tik izoliuotoje output kopijoje ir loopback host. Realus host ir main importas neleidžiami; tai padeda patikrinti tikrą SEO/canonical turinį nepaskelbiant nepriimtų launch faktų. Preview noindex negalima išjungti dėl Lighthouse SEO balo.
 
 ## Bendras turinio release — 2026-10-05
+
+Pasirinktinį pardavimų matavimą įjungti tik pagal savininko pavedimą ir galiojantį lankytojo sutikimą. Canonical [commerce analytics](commerce-core/ANALYTICS.md) atskiria iš kur atėjo lankytojas, serverio patvirtintą apmokėjimą ir tikrą apskaitą. Mokėjimo mygtukas ar naršyklės callback nėra pirkimo įrodymas; nematuojami ar nesutikę lankytojai nėra nulis pardavimų. Plėsdami matavimo tikslą neperimkite seno sutikimo, nesiųskite kontaktų, laisvo teksto ar privačių URL, nedubliuokite pirkimų ir neišgalvokite istorinio šaltinio. Vietinis testas / Google validation / HTTP priėmimas / reali ataskaita fiksuojami atskirai; fiktyvus LIVE purchase nėra priėmimo būdas.
 
 Visų nišų planavimo/review/paketo sutartis [CONTENT_CORE.md](CONTENT_CORE.md). Planuotų ryšių įtraukimas vyksta į juodraštį prieš agento review ir atomic batch; patvirtintas source snapshot savavališkai nekinta. Naujas release turi paketo/media SHA ir lieka exported-not-deployed. Viešo clock/domain/hash/target projekcijos vartai nekinta. V2 admission receipt ir konkrečių adapterių actual SEO smoke nėra pakeičiami studijos manifestu.

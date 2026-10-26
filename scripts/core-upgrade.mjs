@@ -45,7 +45,7 @@ async function atomic(file, value) {
   finally { await fs.rm(temporary, { force: true }); }
 }
 export function validateRecord(record) {
-  const allowed = ['siteId', 'summary', 'category', 'evidence', 'paths', 'issue', 'rollback'];
+  const allowed = ['siteId', 'summary', 'category', 'evidence', 'paths', 'issue', 'rollback', 'supersedes'];
   if (Object.keys(record).some(k => !allowed.includes(k))) throw new Error('unknown_record_field');
   if (!['rules', 'skills', 'prompt', 'code', 'cleanup', 'workflow'].includes(record.category)
     || !nonempty(record.summary) || !nonempty(record.siteId) || !nonempty(record.issue)
@@ -53,6 +53,12 @@ export function validateRecord(record) {
     || record.evidence.some(v => !nonempty(v)) || !Array.isArray(record.paths) || !record.paths.length)
     throw new Error('incomplete_record');
   record.paths.forEach(validRelative);
+  if (record.supersedes !== undefined && (!Array.isArray(record.supersedes)
+    || !record.supersedes.length || record.supersedes.length > 16
+    || new Set(record.supersedes.map(v => v?.id)).size !== record.supersedes.length
+    || record.supersedes.some(v => !v || Object.keys(v).sort().join(',') !== 'id,treeSha'
+      || !idPattern.test(v.id) || !/^[a-f0-9]{40}$/.test(v.treeSha))))
+    throw new Error('invalid_superseded_snapshot');
   return record;
 }
 async function entryDirectory(root, id) {

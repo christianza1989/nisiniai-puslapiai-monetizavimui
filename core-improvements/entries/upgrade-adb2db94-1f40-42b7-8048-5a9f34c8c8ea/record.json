@@ -1,0 +1,24 @@
+{
+  "siteId": "memocasting",
+  "summary": "Use the owner-requested white family-hand PNG cutout in existing homepage family illustration slots",
+  "category": "code",
+  "evidence": [
+    "Owner supplied bronze family-hand reference and requested matte-white transparent PNG replacing existing family illustration.",
+    "Built-in ImageGen edit and one targeted edge cleanup; source master1122x1402 RGBA retained. Shared responsive importer and exact immutable assets preserve homepage/body admission."
+  ],
+  "paths": [
+    "lib/memocasting-homepage-assets.mjs",
+    "lib/memocasting-homepage-assets.json",
+    "tests/memocasting-homepage.test.mjs",
+    "public/memocasting-homepage/v1/media/asset-kit/family-reference-white-v1-1122.webp",
+    "public/memocasting-homepage/v1/media/asset-kit/family-reference-white-v1-800.webp",
+    "public/memocasting-homepage/v1/media/asset-kit/family-reference-white-v1-640.webp",
+    "public/memocasting-homepage/v1/media/asset-kit/family-reference-white-v1-360.webp"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Revert the media prefix substitution and manifest additions; old family-alpha-v2 assets remain unchanged. No native content, commerce or data rollback.",
+  "id": "upgrade-adb2db94-1f40-42b7-8048-5a9f34c8c8ea",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "5ecc205c2add8476b036dbd9494ab80796f335db",
+  "createdAt": "2026-10-20T08:48:53.721Z"
+}

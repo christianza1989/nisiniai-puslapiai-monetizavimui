@@ -17,6 +17,11 @@
 .review-settings {
   margin-bottom: 32px;
 }
+.review-settings .primary {
+  align-self: end;
+  justify-self: start;
+  min-height: 44px;
+}
 .review-settings h2,
 .review-settings .hint {
   grid-column: 1 / -1;

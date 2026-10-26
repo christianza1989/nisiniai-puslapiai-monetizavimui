@@ -66,7 +66,7 @@ export function reviewMessage(payload, policy) {
   const invitation = payload.kind === 'ReviewInvitation';
   const title = invitation ? 'Kaip pavyko sukurti savo prisiminimą?' : 'Jūsų atsiliepimo nuoroda';
   const body = invitation
-    ? 'Dėkojame, kad pasirinkote „Memory Casting“. Pasidalykite savo patirtimi: kas patiko ir ką galėtume patobulinti? Jei norite, pridėkite savo sukurtos skulptūros nuotraukų. Vertiname kiekvieną sąžiningą įvertinimą.'
+    ? 'Dėkojame, kad pasirinkote mus. Pasidalykite savo patirtimi: kas patiko ir ką galėtume patobulinti? Jei norite, pridėkite nuotraukų. Vertiname kiekvieną sąžiningą įvertinimą.'
     : 'Gavome jūsų prašymą palikti atsiliepimą. Ši privati nuoroda jau susieta su jūsų pirkiniu. Jei nuorodos neprašėte, laišką galite ignoruoti.';
   return {
     schemaVersion: 1,
@@ -78,8 +78,8 @@ export function reviewMessage(payload, policy) {
     to: payload.recipient,
     replyTo: policy.from,
     subject: invitation
-      ? 'Kaip jums sekėsi? Pasidalykite „Memory Casting“ patirtimi'
-      : 'Jūsų „Memory Casting“ atsiliepimo nuoroda',
+      ? 'Kaip jums sekėsi? Pasidalykite savo pirkimo patirtimi'
+      : 'Jūsų atsiliepimo nuoroda',
     text: [
       title,
       body,
@@ -89,7 +89,7 @@ export function reviewMessage(payload, policy) {
       'Atsisakyti kvietimų: ' + payload.stopUrl,
       'Pagalba: ' + policy.from,
     ].join('\n\n'),
-    html: `<!doctype html><html lang="lt"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body style="margin:0;background:#f8f6f3;color:#292625;font:16px/1.6 Arial,sans-serif"><div style="max-width:560px;margin:24px auto;background:#fff;padding:32px 24px"><p style="font-size:22px">Memory Casting</p><h1 style="font-size:26px;line-height:1.3">${title}</h1><p>${body}</p><p>Užsakymas <strong>${escapeHtml(payload.orderNumber)}</strong></p><p style="margin:28px 0"><a href="${escapeHtml(payload.reviewUrl)}" style="display:inline-block;padding:14px 22px;background:#292625;color:#fff;text-decoration:none;border-radius:6px">Palikti atsiliepimą</a></p><p>Nuoroda galioja 90 dienų. Atsiliepimą peržiūrėsime prieš paskelbdami. Nuotraukas pridėti neprivaloma.</p><p>Klausimų? Atsakykite į šį laišką.</p><p style="font-size:13px;border-top:1px solid #e5ddd8;padding-top:20px"><a href="${escapeHtml(payload.stopUrl)}">Atsisakyti kvietimų palikti atsiliepimą</a>. Tai nepakeis užsakymo pranešimų.</p></div></body></html>`,
+    html: `<!doctype html><html lang="lt"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body style="margin:0;background:#f8f6f3;color:#292625;font:16px/1.6 Arial,sans-serif"><div style="max-width:560px;margin:24px auto;background:#fff;padding:32px 24px"><p style="font-size:22px">${escapeHtml(payload.legalName || 'Parduotuvė')}</p><h1 style="font-size:26px;line-height:1.3">${title}</h1><p>${body}</p><p>Užsakymas <strong>${escapeHtml(payload.orderNumber)}</strong></p><p style="margin:28px 0"><a href="${escapeHtml(payload.reviewUrl)}" style="display:inline-block;padding:14px 22px;background:#292625;color:#fff;text-decoration:none;border-radius:6px">Palikti atsiliepimą</a></p><p>Nuoroda galioja 90 dienų. Atsiliepimą peržiūrėsime prieš paskelbdami. Nuotraukas pridėti neprivaloma.</p><p>Klausimų? Atsakykite į šį laišką.</p><p style="font-size:13px;border-top:1px solid #e5ddd8;padding-top:20px"><a href="${escapeHtml(payload.stopUrl)}">Atsisakyti kvietimų palikti atsiliepimą</a>. Tai nepakeis užsakymo pranešimų.</p></div></body></html>`,
   };
 }
 export function paymentReminderMessage(payload, policy) {

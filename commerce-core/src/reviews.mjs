@@ -15,7 +15,8 @@ const text = (v, min, max) =>
 const reference = (o) => String(o.public_number || o.id.slice(0, 8).toUpperCase());
 const purchased = (o) =>
   ['paid', 'partially_refunded', 'refunded'].includes(o.payment_state) && !!o.payment_id;
-const rootSku = (l) => l.baseSku || l.sku.split('__')[0];
+// Native selections keep their authoritative SKU and carry options separately.
+const rootSku = (l) => l.sku;
 
 // Browser re-encoding removes metadata. Enforce a bounded, static WebP container
 // again at the trust boundary; never serve arbitrary uploaded MIME or SVG.
@@ -53,7 +54,7 @@ export class ProductReviews {
     this.storage = storage;
   }
   async settings(store, env) {
-    await this.s.store(store, env);
+    const config = await this.s.store(store, env);
     const row = await this.s.one('SELECT * FROM review_settings WHERE store_id=?', store);
     const counter = await this.s.one(
       'SELECT last_number FROM order_number_counters WHERE store_id=?',
@@ -66,6 +67,7 @@ export class ProductReviews {
       origin: row?.origin || '',
       nextOrderNumber: counter ? counter.last_number + 1 : null,
       consentVersion: REVIEW_CONSENT,
+      storeName: config.legalSnapshot.name,
     };
   }
   async saveSettings(store, env, input, actor) {
@@ -135,7 +137,10 @@ export class ProductReviews {
     requireValue(purchased(o), 'review_order_ineligible', 403);
     const id = crypto.randomUUID(),
       token =
-        'rv1_' + crypto.randomUUID().replaceAll('-', '') + crypto.randomUUID().replaceAll('-', '');
+        'rv1_' +
+        Array.from(crypto.getRandomValues(new Uint8Array(32)), (b) =>
+          b.toString(16).padStart(2, '0'),
+        ).join('');
     await this.s
       .stmt(
         'INSERT INTO review_grants VALUES(?,?,?,?,?,?)',
@@ -201,6 +206,7 @@ export class ProductReviews {
       environment: env,
       orderId: o.id,
       orderNumber: reference(o),
+      legalName: settings.storeName,
       eventId,
       kind,
       recipient: o.snapshot.customer.email,

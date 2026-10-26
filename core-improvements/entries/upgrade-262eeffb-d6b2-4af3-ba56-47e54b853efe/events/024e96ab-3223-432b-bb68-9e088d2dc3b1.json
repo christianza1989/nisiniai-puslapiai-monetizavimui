@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Native rating rendering now targets a reserved slot rather than inserting a third flex heading child. Smaller images, clear price/action row, five proportional SVG stars, reusable manual review carousel, native full-text disclosure, pagination and no new dependencies. Actual component/markup preview with cached public GET-only data accepted desktop1280 and mobile390,20-to40 unique product reviews, original666-character full disclosure and real touch horizontal movement217px with unchanged vertical scroll. This is component acceptance; failed framework previews remain recorded and are not a compiled Worker acceptance. No synthetic reviews, backend writes, provider changes or calendar edits.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "public-tests.private.log287/287 including real DOM-slot/score/replay cleanup regressions; affected-tests.private.log14/14"
+    },
+    {
+      "command": "npx tsc --noEmit; scoped eslint; npm run build",
+      "result": "PASS",
+      "evidence": "types-final/lint-final logs exit0; build.private.log complete with2physical RSC manifests/missing0"
+    },
+    {
+      "command": "impeccable detect --json changed UI targets",
+      "result": "PASS",
+      "evidence": "detector.private.json empty[]; scoped sequential rendered review and one repair batch recorded in product-presentation roadmap"
+    }
+  ],
+  "eventId": "024e96ab-3223-432b-bb68-9e088d2dc3b1",
+  "sequence": 2,
+  "at": "2026-10-26T22:14:15.814Z"
+}

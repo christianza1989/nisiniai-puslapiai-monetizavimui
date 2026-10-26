@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Next dev generated a new tracked AGENTS block during this task. Supported agentRules:false prevents that unintended authority rewrite; only this task's exact generated addition was removed. Actual restart no longer generated the block and Git AGENTS diff is empty. No dependency patched and no authoritative instructions replaced. Node/Vercel preview still did not admit the full niche route, so the final visual review used actual component markup plus a read-only data replay; it does not claim full Next-adapter acceptance.",
+  "checks": [
+    {
+      "command": "Next dev restart with agentRules:false and git diff --exit-code -- AGENTS.md",
+      "result": "PASS",
+      "evidence": "preview-next.private.log before/after restart; actual AGENTS diff empty after explicit generated-block cleanup"
+    },
+    {
+      "command": "npx tsc --noEmit; npm run build",
+      "result": "PASS",
+      "evidence": "types-final.private.log exit0; pinned vinext production build and physical asset gate complete unchanged"
+    }
+  ],
+  "eventId": "7343cea9-1b7b-422b-b5a3-ca8d2331946c",
+  "sequence": 2,
+  "at": "2026-10-26T22:14:17.258Z"
+}

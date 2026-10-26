@@ -1,0 +1,24 @@
+{
+  "siteId": "memocasting",
+  "summary": "Keep native product ratings in a dedicated card row and present real reviews in a manually controlled responsive carousel",
+  "category": "code",
+  "evidence": [
+    "Owner screenshot shows rating inserted as a third child beside product title/price and oversized full-width images",
+    "sites/memocasting/PRODUCT_PRESENTATION_2026_10_26.md"
+  ],
+  "paths": [
+    "components/niche/memocasting-product-cards.css",
+    "components/niche/memocasting-review-carousel.css",
+    "components/niche/memocasting-reviews.tsx",
+    "components/niche/memocasting-site.tsx",
+    "lib/memocasting-homepage-catalogue.mjs",
+    "lib/memocasting-homepage-markup.mjs",
+    "lib/memocasting-reviews.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/94",
+  "rollback": "Scoped frontend revert to2a991e90; retain all native reviews, photos, prices, settings and provider bindings",
+  "id": "upgrade-262eeffb-d6b2-4af3-ba56-47e54b853efe",
+  "branch": "codex/memocasting-product-cards-20261026",
+  "baseSha": "7e8b8bc294bd25d236f9a44a35cdc0d793069b67",
+  "createdAt": "2026-10-26T22:13:55.556Z"
+}

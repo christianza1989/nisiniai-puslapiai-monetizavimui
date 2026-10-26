@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Prevent Next dev from automatically rewriting canonical Git-maintained AGENTS instructions",
+  "category": "workflow",
+  "evidence": [
+    "Actual Next16.3.4 startup added nextjs-agent-rules to tracked AGENTS.md; setting supported agentRules:false stopped re-addition on restart",
+    "Canonical AGENTS.md restored exactly after only the observed generated block was removed"
+  ],
+  "paths": [
+    "next.config.ts"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/94",
+  "rollback": "Revert only agentRules setting if framework-generated instructions become explicitly desired; never overwrite canonical AGENTS content",
+  "id": "upgrade-33931c0c-9102-4f77-aee5-b8301db1bdf4",
+  "branch": "codex/memocasting-product-cards-20261026",
+  "baseSha": "7e8b8bc294bd25d236f9a44a35cdc0d793069b67",
+  "createdAt": "2026-10-26T22:13:57.025Z"
+}

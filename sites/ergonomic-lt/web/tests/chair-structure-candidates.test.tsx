@@ -11,6 +11,7 @@ import {createExpandedEngine} from '../src/lib/expanded-configurator';
 import ExpandedProductDetail from '../src/components/expanded-product-detail';
 import {QuoteProvider} from '../src/components/quote-provider';
 import type {CatalogRuntime} from '../src/lib/catalog-configurator';
+import {packRuntimeTables} from '../src/lib/runtime-tables.mjs';
 import {blockers,transition,release,type Workflow} from '../src/lib/publication-workflow';
 
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex');
@@ -107,4 +108,25 @@ test('fixed construction-only presentation retains request/PDF and explains the 
  assert(!html.includes('Gamintojas nepateikia pasirinktos apdailos vaizdo'));
  const engine=createExpandedEngine(runtime),initial=engine.initialStateForProduct(product);
  assert.deepEqual(engine.parseStateToken(product,engine.stateToken(initial)),initial);
+});
+
+test('tables require exact KSOO004 technical-preview opt-in, verified bytes and original model binding',async()=>{
+ const product=productModels(baseSeed().products).find(p=>p.configurations.find(c=>c.id===p.modelConfigurationId)?.code==='KSOO004WW002')!;assert(product);
+ const sample=product.configurations.find(c=>c.id===product.modelConfigurationId)!,{runtime}=fixture();
+ const f=runtime.family,a=f.anchors[0],code=sample.code!;
+ Object.assign(f,{productId:product.id,sample:sample.id,baseArticle:code,articles:[{code,sample:sample.id,name:code}]});
+ Object.assign(a,{id:code+':structure-'+'c'.repeat(64),article:code,sample:sample.id});
+ a.geometry!.asset='/models/configurator/structure/'+code+'-'+'a'.repeat(20)+'.glb';
+ const bytes=JSON.stringify(packRuntimeTables(runtime)),sha=hash(bytes),key=product.id+':'+sample.id;
+ const entries:ChairCandidates={schemaVersion:1,models:{[key]:{key,productId:product.id,sample:sample.id,code,familyId:f.id,collectionMode:'structure-only',acceptance:'TECHNICAL_DRAFT',optionsRequired:false,runtime:{asset:'/models/configurator/structure/'+code+'-'+sha.slice(0,20)+'.json',sha256:sha,encoding:'tables-v1'},proofs:{sourceGeometryRuntime:hash('TEST KSOO004 SOURCE')}}}};
+ const load=createChairCandidateLoader(entries,async()=>Buffer.from(bytes));assert.deepEqual(await load(product),runtime);
+ await assert.rejects(createChairCandidateLoader(entries,async()=>Buffer.from(bytes+' '))(product),/runtime changed/);
+ const unmarked=structuredClone(entries);delete unmarked.models[key].runtime.encoding;
+ await assert.rejects(createChairCandidateLoader(unmarked,async()=>Buffer.from(bytes))(product),/encoding mismatch/);
+ const legacy=JSON.stringify(runtime),literal=structuredClone(entries),literalSha=hash(legacy);
+ literal.models[key].runtime={asset:'/models/configurator/structure/'+code+'-'+literalSha.slice(0,20)+'.json',sha256:literalSha,encoding:'tables-v1'};
+ await assert.rejects(createChairCandidateLoader(literal,async()=>Buffer.from(legacy))(product),/encoding mismatch/);
+ const other=fixture();other.entries.models[other.key].runtime.encoding='tables-v1';
+ assert.throws(()=>candidateForModel(other.product,other.entries),/not admitted/);
+ const previous=process.env.LAUNCH_SITE;try{process.env.LAUNCH_SITE='true';assert.equal(await load(product),undefined);}finally{if(previous===undefined)delete process.env.LAUNCH_SITE;else process.env.LAUNCH_SITE=previous;}
 });

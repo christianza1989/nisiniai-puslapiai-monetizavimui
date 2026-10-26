@@ -4,6 +4,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {packChairRuntime,restorePackedAssignments} from './pack-chair-runtime.mjs';
+import {packRuntimeTables,unpackRuntimeTables} from '../src/lib/runtime-tables.mjs';
 import {RUNTIME_TRANSPORT_MAX_BYTES,CHAIR_RUNTIME_PACK_ABOVE_BYTES} from '../src/lib/runtime-transport-limits.mjs';
 const arg=n=>process.argv.find(v=>v.startsWith('--'+n+'='))?.slice(n.length+3);
 const root=path.resolve(arg('root')),stage=path.resolve(arg('stage'));
@@ -15,6 +16,9 @@ const queue=await read(path.join(root,'capture-v2/SOURCE-QUEUE.json'));
 const inventory=await read(path.join(root,'INVENTORY.json'));
 const jobs=new Map(inventory.queue.map(j=>[j.job,j]));
 const selectedJobs=arg('jobs')===undefined?null:new Set(arg('jobs').split(','));
+const tableTransport=arg('transport')==='tables-v1';
+assert(arg('transport')===undefined||tableTransport,'Unknown runtime transport');
+if(tableTransport)assert(selectedJobs?.size===1&&selectedJobs.has('b0a056b34baba0ae911994b2'),'Tables transport is admitted only for the owner065 KSOO004 pilot');
 if(selectedJobs){
  assert(selectedJobs.size>0&&[...selectedJobs].every(job=>job&&jobs.has(job)),'Unknown selected job');
  for(const job of selectedJobs)assert(status.rows.some(row=>row.job===job&&row.result==='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY'),'Selected job lacks full offline PASS');
@@ -59,7 +63,13 @@ for(const row of status.rows){
   assert.equal(artifacts['assets/'+file],anchor.geometry.assetSha256);
   if((await fs.stat(path.join(prepared,'assets',file))).size>25*1024*1024)oversized.push(file);
  }
- if(!oversized.length&&bytes.length>CHAIR_RUNTIME_PACK_ABOVE_BYTES){
+ if(!oversized.length&&tableTransport){
+  assert(job.code==='KSOO004WW002');
+  const originalSha256=hash(bytes),originalBytes=bytes.length,tables=packRuntimeTables(runtime);
+  assert.deepEqual(unpackRuntimeTables(tables),runtime,'Exact original table reconstruction required');
+  bytes=Buffer.from(JSON.stringify(tables));
+  runtimeTransport={kind:'exact-runtime-tables-v1',originalSha256,originalBytes,packedSha256:hash(bytes),packedBytes:bytes.length,nodes:tables.nodes.length,allOriginalMetadataReconstructs:true,geometryUnchanged:true,compilerUnchanged:true,limitBytes:RUNTIME_TRANSPORT_MAX_BYTES,semanticVerificationRequired:true};
+ }else if(!oversized.length&&bytes.length>CHAIR_RUNTIME_PACK_ABOVE_BYTES){
   const originalSha256=hash(bytes),originalBytes=bytes.length,packed=packChairRuntime(runtime);
   assert.deepEqual(restorePackedAssignments(packed.runtime),runtime,'Lossless assignment reconstruction required');
   bytes=Buffer.from(JSON.stringify(packed.runtime));
@@ -70,7 +80,7 @@ for(const row of status.rows){
  if(runtimeTransport)await fs.writeFile(path.join(assets,runtimeFile),bytes,{flag:'wx'});else await seal(path.join(prepared,'runtime.json'),path.join(assets,runtimeFile),runtimeSha,true);
  for(const anchor of runtime.family.anchors){const file=path.basename(anchor.geometry.asset);await seal(path.join(prepared,'assets',file),path.join(assets,file),anchor.geometry.assetSha256);}
  const sourceGeometryRuntime=hash(JSON.stringify({job:row.job,checkpointSha256:row.checkpointSha256,tools:row.tools,artifacts:row.artifacts,wire:row.wire,...(runtimeTransport?{runtimeTransport}: {})}));
- manifest.models[key]={key,productId:model.productId,sample:model.configurationId,code:job.code,familyId:runtime.family.id,collectionMode:'structure-only',acceptance:'TECHNICAL_DRAFT',optionsRequired:runtime.family.anchors.some(a=>Object.keys(a.choices).length>0),runtime:{asset:'/models/configurator/structure/'+runtimeFile,sha256:runtimeSha},proofs:{sourceGeometryRuntime}};
+ manifest.models[key]={key,productId:model.productId,sample:model.configurationId,code:job.code,familyId:runtime.family.id,collectionMode:'structure-only',acceptance:'TECHNICAL_DRAFT',optionsRequired:runtime.family.anchors.some(a=>Object.keys(a.choices).length>0),runtime:{asset:'/models/configurator/structure/'+runtimeFile,sha256:runtimeSha,...(tableTransport?{encoding:'tables-v1'}:{})},proofs:{sourceGeometryRuntime}};
  report.models.push({key,job:row.job,code:job.code,path:model.path,states:proof.states,transitions:proof.transitions,proofSha256:sourceGeometryRuntime,...(runtimeTransport?{runtimeTransport}: {})});
 }
 assert(report.models.length>0);

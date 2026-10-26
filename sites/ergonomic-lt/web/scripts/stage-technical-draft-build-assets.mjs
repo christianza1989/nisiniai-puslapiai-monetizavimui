@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
+import {isRuntimeTables,unpackRuntimeTables} from '../src/lib/runtime-tables.mjs';
 const arg=n=>process.argv.find(v=>v.startsWith('--'+n+'='))?.slice(n.length+3);
 const baseline=path.resolve(arg('baseline')),stage=path.resolve(arg('stage')),target=path.resolve('dist/client');
 assert(baseline.startsWith(path.resolve('D:/Core')+path.sep)&&stage.startsWith(path.resolve('D:/Core/output')+path.sep));
@@ -29,7 +30,9 @@ assert.deepEqual(JSON.parse(await fs.readFile('content/chair-structure-candidate
 const receipts={};
 for(const entry of Object.values(manifest.models)){
  const bytes=await fs.readFile(path.join(target,entry.runtime.asset));assert.equal(hash(bytes),entry.runtime.sha256);receipts[entry.runtime.asset]=entry.runtime.sha256;
- const runtime=JSON.parse(bytes);
+ const encoded=JSON.parse(bytes);assert.equal(isRuntimeTables(encoded),entry.runtime.encoding==='tables-v1','Runtime encoding binding mismatch');
+ if(entry.runtime.encoding)assert(entry.runtime.encoding==='tables-v1'&&entry.code==='KSOO004WW002'&&entry.acceptance==='TECHNICAL_DRAFT','Unadmitted table transport');
+ const runtime=entry.runtime.encoding==='tables-v1'?unpackRuntimeTables(encoded):encoded;
  for(const anchor of runtime.family.anchors){const asset=anchor.geometry.asset;if(!receipts[asset]){assert.equal(hash(await fs.readFile(path.join(target,asset))),anchor.geometry.assetSha256);receipts[asset]=anchor.geometry.assetSha256;}}
 }
 let files=0,totalBytes=0;

@@ -5,11 +5,12 @@ import {createHash} from 'node:crypto';
 import {createExpandedEngine} from '../src/lib/expanded-configurator.ts';
 import {modelProduct} from '../src/lib/product-models.ts';
 import {restorePackedAssignments} from './pack-chair-runtime.mjs';
+import {isRuntimeTables,unpackRuntimeTables} from '../src/lib/runtime-tables.mjs';
 import {RUNTIME_TRANSPORT_MAX_BYTES} from '../src/lib/runtime-transport-limits.mjs';
 const arg=n=>process.argv.find(v=>v.startsWith('--'+n+'='))?.slice(n.length+3);
 const originalBytes=await fs.readFile(arg('original')),transportBytes=await fs.readFile(arg('transport'));
-const original=JSON.parse(originalBytes),packed=JSON.parse(transportBytes);assert(transportBytes.length<=RUNTIME_TRANSPORT_MAX_BYTES);
-assert.deepEqual(restorePackedAssignments(packed),original,'All original metadata must reconstruct exactly');
+const original=JSON.parse(originalBytes),transport=JSON.parse(transportBytes),tables=isRuntimeTables(transport),packed=tables?unpackRuntimeTables(transport):transport;assert(transportBytes.length<=RUNTIME_TRANSPORT_MAX_BYTES);
+assert.deepEqual(tables?packed:restorePackedAssignments(packed),original,'All original metadata must reconstruct exactly');
 const seed=JSON.parse(await fs.readFile('content/seed.json','utf8')),parent=seed.products.find(p=>p.id===original.family.productId);assert(parent);
 const product=modelProduct(parent,parent.configurations.find(c=>c.id===original.family.sample));
 const engines=[createExpandedEngine(original),createExpandedEngine(packed)];let transitions=0;
@@ -23,5 +24,5 @@ for(const a of original.family.anchors){
   assert.deepEqual(engines[0].changeField(input,field,value),engines[1].changeField(input,field,value));transitions++;
  }
 }
-const proof={at:new Date().toISOString(),result:'PASS_FULL_ORIGINAL_TRANSPORT_PARITY',originalSha256:createHash('sha256').update(originalBytes).digest('hex'),transportSha256:createHash('sha256').update(transportBytes).digest('hex'),originalBytes:originalBytes.length,transportBytes:transportBytes.length,states:original.family.anchors.length,transitions,fullSelectionsAndSupplierOptionsEqual:true,allTokensEqual:true,allOriginalMetadataReconstructs:true,geometryAndDefaultsAndChoicesUnchanged:true,compilerAndCodecUnchanged:true,runtimeLimitBytes:RUNTIME_TRANSPORT_MAX_BYTES,publicDeployment:false};
+const proof={at:new Date().toISOString(),result:'PASS_FULL_ORIGINAL_TRANSPORT_PARITY',originalSha256:createHash('sha256').update(originalBytes).digest('hex'),transportSha256:createHash('sha256').update(transportBytes).digest('hex'),originalBytes:originalBytes.length,transportBytes:transportBytes.length,states:original.family.anchors.length,transitions,fullSelectionsAndSupplierOptionsEqual:true,allTokensEqual:true,allOriginalMetadataReconstructs:true,geometryAndDefaultsAndChoicesUnchanged:true,compilerUnchanged:true,codec:tables?'exact-runtime-tables-v1':'unchanged-non-finish-assignments-v1',runtimeLimitBytes:RUNTIME_TRANSPORT_MAX_BYTES,publicDeployment:false};
 await fs.writeFile(arg('proof'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));

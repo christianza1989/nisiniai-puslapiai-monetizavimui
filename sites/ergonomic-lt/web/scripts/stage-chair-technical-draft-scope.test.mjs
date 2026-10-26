@@ -26,7 +26,7 @@ async function fixture(){
  await save(path.join(web,'content/chair-structure-candidates.json'),{schemaVersion:1,models:{existing:old}});
  return {root,web,stage,old,job,rows};
 }
-function run(f,jobs){return spawnSync(process.execPath,[script,'--root='+f.root,'--stage='+f.stage,...(jobs===undefined?[]:['--jobs='+jobs])],{cwd:f.web,encoding:'utf8'});}
+function run(f,jobs,extra=[]){return spawnSync(process.execPath,[script,'--root='+f.root,'--stage='+f.stage,...(jobs===undefined?[]:['--jobs='+jobs]),...extra],{cwd:f.web,encoding:'utf8'});}
 test('selected new job preserves the existing technical draft without reading its missing local artifacts',async()=>{
  const f=await fixture(),v=run(f,f.job);assert.equal(v.status,0,v.stderr);
  const manifest=JSON.parse(await fs.readFile(path.join(f.stage,'chair-structure-candidates.json'),'utf8'));
@@ -45,6 +45,13 @@ test('unknown job and selected job without full offline PASS are rejected before
 });
 test('omitting the filter retains the legacy all-rows validation path',async()=>{
  const f=await fixture(),v=run(f);assert.notEqual(v.status,0);assert.match(v.stderr,/existing-job/);
+});
+
+test('the owner065 table codec cannot opt in any other job or unknown encoding',async()=>{
+ const f=await fixture();
+ const other=run(f,f.job,['--transport=tables-v1']);assert.notEqual(other.status,0);assert.match(other.stderr,/admitted only/);
+ const unknown=run(f,f.job,['--transport=unknown']);assert.notEqual(unknown.status,0);assert.match(unknown.stderr,/Unknown runtime transport/);
+ await assert.rejects(fs.access(f.stage));
 });
 
 test('runtime publication accepts 15000000 bytes and defers 15000001 after accepted v1 packing',async()=>{

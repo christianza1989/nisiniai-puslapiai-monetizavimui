@@ -757,3 +757,8 @@ Owner scope: two supplied kit PDFs, native recipe pages, stale support/localized
 Issue: https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/281
 
 Owner: current Ergonomic preview task, branch codex/ergonomic-desks-owner078-20261026. Scope: prepared desk import, source defaults/text-only controls, component/color registries and exact preview list, focused regressions. Preserve published 197 chairs/30 desks and original geometry/materials/world matrices. First five preview only, later COMPLETE batches of ten after actual PASS. No other PC collection takeover. Base integrates published 5f2713f with fetched main a016f2c; companion 026c84b.
+
+
+## Owner078 continuation: batch02, 2026-10-26
+
+Issue281; own branch codex/ergonomic-owner078-batch02-20261026 and paired public worktree. First5 public PASS retained at acb69c1. Scope next10 COMPLETE packages KAER001WW001, KBRY001WW002, KBRY001WW003, KBRY002WW001, KBRY005WW003, KBRY006WW001, KBSP001WW001, KBSP002WW001, KBSP003WW001, KBSP004WW002. Preserve existing197 chairs/35 desks, canonical consolidation keepers and all original IDs. Metadata admission only so far; source SHA, actual loader and browser/color/lazy/HTTP proof still required. Preview only; Native continues above direct D60 floor; no other PC takeover.

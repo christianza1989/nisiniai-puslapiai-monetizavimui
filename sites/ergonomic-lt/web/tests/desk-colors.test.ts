@@ -12,13 +12,26 @@ const sha='a'.repeat(64),materialId='b'.repeat(64),selectorId='c'.repeat(64),cod
 const asset:Asset={asset:'/models/configurator/components/'+code+'-'+sha.slice(0,20)+'.glb',assetSha256:sha,bytes:100};
 function overlay():DeskColors{return {schema:'desk-color-overlay-v1',code,componentRuntimeSha256:sha,sourceColorsSha256:'d'.repeat(64),baseDimensions:{GDWIDTH:'_1400',GDDEPTH:'_700'},fields:{FTOPCOLOR:{label:'Stalviršio spalva',default:'MP',owners:[],selectors:[selectorId],choices:[{value:'MP',text:'MP'},{value:'BI',text:'BI'}],values:{MP:{mode:'material',assignments:[{selectorId,materialId}],automatic:{}},BI:{mode:'material',assignments:[{selectorId,materialId}],automatic:{FAUTOCOLOR:'WHITE'}}}}},bindings:{[sha]:[{node:7,primitive:0,selectors:[{field:'FTOPCOLOR',selectorId}]}]},materialIds:[materialId],materialDocument:{asset:{version:'2.0'},images:[],materials:[{pbrMetallicRoughness:{baseColorFactor:[1,1,1,1]}}]}};}
 const values={GDWIDTH:'_1400',GDDEPTH:'_700',FTOPCOLOR:'BI'};
-test('default restores original; unknown size/component never receives guessed color',()=>{
+test('material uses only active exact bindings across captured sizes; inactive selectors do not block',()=>{
  const source=overlay();validateDeskColors(source,code,sha);
  assert.deepEqual(deskColorPlan(source,{...values,FTOPCOLOR:'MP'},[asset]),{materials:{},hidden:[],assets:[],pending:[]});
  assert.deepEqual(deskColorPlan(source,values,[{...asset,assetSha256:'e'.repeat(64)}]).pending,['FTOPCOLOR']);
  assert.deepEqual(deskColorPlan(source,values,[asset]).materials,{[sha+':7:0']:materialId});
- assert.deepEqual(deskColorPlan(source,{...values,GDWIDTH:'_1800'},[asset]).materials,{});
- source.fields.FTOPCOLOR.selectors.push('f'.repeat(64));assert.deepEqual(deskColorPlan(source,values,[asset]).materials,{});assert.deepEqual(deskColorPlan(source,values,[asset]).pending,['FTOPCOLOR']);
+ assert.deepEqual(deskColorPlan(source,{...values,GDWIDTH:'_1800'},[asset]).materials,{[sha+':7:0']:materialId});
+ // An inactive source selector may have no assignment at all. It is not a
+ // requirement for a component which is absent from the actual assembly.
+ source.fields.FTOPCOLOR.selectors.push('f'.repeat(64));
+ assert.deepEqual(deskColorPlan(source,values,[asset]).materials,{[sha+':7:0']:materialId});
+ assert.deepEqual(deskColorPlan(source,values,[asset]).pending,[]);
+ source.bindings[sha].push({node:8,primitive:0,selectors:[{field:'FTOPCOLOR',selectorId:'f'.repeat(64)}]});
+ assert.deepEqual(deskColorPlan(source,values,[asset]).materials,{});
+ assert.deepEqual(deskColorPlan(source,values,[asset]).pending,['FTOPCOLOR']);
+});
+test('ambiguous active selector or replacement material cannot partially paint a field',()=>{
+ const source=overlay();source.bindings[sha].push({node:8,primitive:0,selectors:[{field:'FTOPCOLOR',selectorId}]});
+ assert.deepEqual(deskColorPlan(source,values,[asset]),{materials:{},hidden:[],assets:[],pending:['FTOPCOLOR']});
+ source.bindings[sha].pop();source.fields.FTOPCOLOR.values.BI.assignments.push({selectorId,materialId:'e'.repeat(64)});
+ assert.deepEqual(deskColorPlan(source,values,[asset]),{materials:{},hidden:[],assets:[],pending:['FTOPCOLOR']});
 });
 test('part swap is base-size-only and requires every removed primitive exactly once',()=>{
  const source=overlay();source.fields.FTOPCOLOR.values.BI={mode:'partSwap',assignments:[],automatic:{},removeSelectors:[selectorId],assets:[asset],baseSizeOnly:true};validateDeskColors(source,code,sha);
@@ -68,11 +81,24 @@ test('source-declared finish names ending in COL remain separate swatches withou
  assert.deepEqual(steps.find(s=>s.id==='colors')?.fields,['FOUTSIDEDESKTOPBOARDCOL']);assert.deepEqual(steps.find(s=>s.id==='construction')?.fields,['GDWIDTH','FBASE']);assert.equal(steps.find(s=>s.id==='colors')?.label,'Spalvos');
  data.fields.FOUTSIDEDESKTOPBOARDCOL.values.BI={mode:'pending',assignments:[],automatic:{}};validateDeskColors(data,code,sha);const plan=deskColorPlan(data,{...values,FOUTSIDEDESKTOPBOARDCOL:'BI'},[asset]);assert.deepEqual(plan.materials,{});assert.deepEqual(plan.pending,['FOUTSIDEDESKTOPBOARDCOL']);
 });
-test('fixed source dimensions do not invent controls; selectable axes still enforce captured size',()=>{
+test('fixed dimensions do not invent controls; exact material bindings remain valid at another captured width',()=>{
  const part={file:'assets/'+sha+'.glb',sha256:sha,componentSha256:sha,bytes:100,needsCompression:false};
  const source:DeskComponents={schema:'desk-components-065-v1',code,coordinates:'original-world-matrices',finishPolicy:'original manufacturer finishes; no FINISH setters',fullGraphClosed:false,contexts:['_1400','_1800'].map(width=>({dimensions:{GDWIDTH:width},choiceRules:'conditional selectable tuples only',invariant:part,textOnly:{},groups:[{fields:[],variants:[{values:{},asset:null}]}]}))};
  const runtime=withDeskColors(adaptDeskComponents(source,{code,sample:'1',productId:'p',familyId:'cfg-123456789abc'}),overlay());
  assert.deepEqual(runtime.family.deskColors!.baseDimensions,{GDWIDTH:'_1400'});assert.equal(runtime.family.anchors[0].choices.GDDEPTH,undefined);
  assert.equal(Object.keys(deskColorPlan(runtime.family.deskColors!,{GDWIDTH:'_1400',FTOPCOLOR:'BI'},[asset]).materials).length,1);
- assert.deepEqual(deskColorPlan(runtime.family.deskColors!,{GDWIDTH:'_1800',FTOPCOLOR:'BI'},[asset]).pending,['FTOPCOLOR']);
+ assert.deepEqual(deskColorPlan(runtime.family.deskColors!,{GDWIDTH:'_1800',FTOPCOLOR:'BI'},[asset]).materials,{[sha+':7:0']:materialId});
+});
+
+test('initial desk context maximizes actual color coverage and is not overwritten by supplier example dimensions',()=>{
+ const part=(id:string)=>({file:'assets/'+id+'.glb',sha256:id,componentSha256:id,bytes:100,needsCompression:false});
+ const source:DeskComponents={schema:'desk-components-065-v1',code,coordinates:'original-world-matrices',finishPolicy:'original manufacturer finishes; no FINISH setters',fullGraphClosed:false,contexts:['_1400','_1800'].map((width,index)=>({dimensions:{GDWIDTH:width},choiceRules:'conditional selectable tuples only',invariant:part(index?sha:'e'.repeat(64)),textOnly:{},groups:[{fields:[],variants:[{values:{},asset:null}]}]}))};
+ const id={code,sample:'1',productId:'p',familyId:'cfg-123456789abc'};
+ const product={id:'p',categorySlug:'rasomieji-stalai-ir-darbo-vietos',modelConfigurationId:'1',configurations:[{id:'1',code,supplierOptions:['GDWIDTH=_1400']}],name:'Desk'}as Product;
+ const runtime=withDeskColors(adaptDeskComponents(source,id),overlay()),engine=createExpandedEngine(runtime);
+ const initial=engine.initialStateForProduct(product);
+ assert.equal(initial.values.GDWIDTH,'_1800');assert.equal(initial.values.FTOPCOLOR,'MP');
+ const oldWidth=engine.changeField(initial,'GDWIDTH','_1400');
+ assert.equal(engine.parseStateToken(product,engine.stateToken(oldWidth)).values.GDWIDTH,'_1400');
+ assert.equal(source.contexts[0].dimensions.GDWIDTH,'_1400');
 });

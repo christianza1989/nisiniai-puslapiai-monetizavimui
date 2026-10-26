@@ -45,7 +45,10 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
    if(!plain(c.default3DValues))fail();
    for(const [f,v] of Object.entries(c.default3DValues)){
     const domain=(c.textOnly as Record<string,string[]>)[f];
-    if(!domain||(v===null?domain.length!==0:!value(v)||!domain.includes(v)))fail();
+    // A source may retain the current read-only value while offering no
+    // alternatives. Keep that explicit captured default, never invent a
+    // selectable singleton. Nonempty domains still require membership.
+    if(!domain||(v===null?domain.length!==0:!value(v)||(domain.length>0&&!domain.includes(v))))fail();
    }
   }
  }
@@ -69,6 +72,7 @@ export function adaptDeskComponents(source:DeskComponents,id:DeskIdentity):Catal
  const anchors:CatalogAnchor[]=source.contexts.map((c,index)=>{
   const defaults:Values={...c.dimensions},choices:Record<string,string[]>=Object.fromEntries(Object.entries(c.textOnly).filter(([,domain])=>domain.length));
   for(const [f,domain] of Object.entries(choices))defaults[f]=c.default3DValues?.[f]??domain[0];
+  for(const [f,v]of Object.entries(c.default3DValues||{}))if(v!==null&&!c.textOnly[f].length)defaults[f]=v;
   // Only dimension pairs explicitly present in the table are selectable.
   Object.assign(choices,dimensionChoices(c.dimensions));
   const components=c.groups.map(g=>{

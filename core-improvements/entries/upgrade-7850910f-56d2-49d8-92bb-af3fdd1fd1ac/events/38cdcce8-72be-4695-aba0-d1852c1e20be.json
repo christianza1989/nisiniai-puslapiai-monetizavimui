@@ -1,0 +1,19 @@
+{
+  "note": "Final native285 tests include actual Chrome canvas ICC normalization and Node private-filesystem namespace. Workerd D1/R2 smoke and exact actual production-profile dry run pass. Previous browser upload400/500 failures preserved in private QA notes; no production fixtures.",
+  "status": "local-verified",
+  "checks": [
+    {
+      "evidence": "qa/reviews-20261026/core-verify-browser-fixes.private.log:285/285; native workerd/D1/R2 smoke; dry run",
+      "result": "PASS",
+      "command": "cd commerce-core && npm run verify"
+    },
+    {
+      "evidence": "Actual production14 bindings, original cron/D1/R2/services retained; backend-predeploy-final.private.log",
+      "result": "PASS",
+      "command": "wrangler deploy --dry-run --config qa/reviews-20261026/commerce.wrangler.private.json"
+    }
+  ],
+  "eventId": "38cdcce8-72be-4695-aba0-d1852c1e20be",
+  "sequence": 3,
+  "at": "2026-10-26T19:41:40.030Z"
+}

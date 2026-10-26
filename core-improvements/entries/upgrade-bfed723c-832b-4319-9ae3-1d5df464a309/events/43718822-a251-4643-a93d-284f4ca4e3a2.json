@@ -1,0 +1,24 @@
+{
+  "note": "Moved shared review CSS imports from three client boundaries to the actual server page boundaries. S2 physical-manifest gate now passes; compiled Chrome product requested memocasting-reviews-DlkEM9HV.js200. Initial phantom dependency404 preserved. No compiler/package version change and no generated-file hash replacement.",
+  "checks": [
+    {
+      "evidence": "public-build-final.private.log S2 full build and automatic check-rsc-assets:two manifests,missing0",
+      "result": "PASS",
+      "command": "npm run build"
+    },
+    {
+      "evidence": "Removed JS despite valid CSS and nested/deduplicated asset failure fixtures pass; first S1 actual manifest was rejected",
+      "result": "PASS",
+      "command": "node --test tests/rsc-assets.test.mjs"
+    },
+    {
+      "evidence": "public-tests-confirmed.private.log281/281 after actual root-layout import mapping; no assertions weakened",
+      "result": "PASS",
+      "command": "npm run test:core"
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "43718822-a251-4643-a93d-284f4ca4e3a2",
+  "sequence": 2,
+  "at": "2026-10-26T19:41:56.116Z"
+}

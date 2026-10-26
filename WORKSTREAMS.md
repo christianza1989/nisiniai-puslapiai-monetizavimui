@@ -750,3 +750,10 @@ Owner scope: two supplied kit PDFs, native recipe pages, stale support/localized
 | 2026-10-26 | commerce worker-smoke refund fixture | issue277 validation: root reserves scripts/worker-smoke.mjs to remove transport bodyUsed inference; exact parsed command IDs retain all assertions | Completed in PR278; full native smoke PASS with exact parsed command IDs; scope released |
 
 2026-10-26 issue277 COMPLETED: single buyer delivery charge for2/3kits and separate operator package labels; additive29, strict two-field full-configCAS, exactSDK and consent-dismissal focus repair. CORE featuree63e695d/refinement655448a5 mergedPR278/279; PUBLICcc1c881d mergedPR89. Active backend a9b884f6 and frontend3bfdde10 at100%.273baseline/core and273PUBLIC, native,16refinement checks, types/lint/build/dry-run and bounded actual hosted/API/browser acceptance. Two local compiled previews failedECONNRESET; published-code read-only mirror proved300CSSpx consent scroll while retaining canonical analytics guard. No test order/charge/refund/label/mail; concurrent owner data preserved. Own localports/vars/overrides/tabs cleaned; foreignfiles untouched. Runbook MULTIPARCEL_2026_10_26.md. Final journal/docs acceptance PR follows.
+
+
+## Ergonomic owner078 — first five supplied desks, 2026-10-26
+
+Issue: https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/281
+
+Owner: current Ergonomic preview task, branch codex/ergonomic-desks-owner078-20261026. Scope: prepared desk import, source defaults/text-only controls, component/color registries and exact preview list, focused regressions. Preserve published 197 chairs/30 desks and original geometry/materials/world matrices. First five preview only, later COMPLETE batches of ten after actual PASS. No other PC collection takeover. Base integrates published 5f2713f with fetched main a016f2c; companion 026c84b.

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Source defaults/hybrid acceptance and explanatory UI verified locally. Engine helper V1 had a real zero-binding Brainy identity-representation failure; Brainy V2 accepts only omitted identity vs the exact explicit identity while retaining geometry/material fingerprints. Engine V2 supplied noncanonical hidden color state in its harness; diagnostic isolated it and V3 uses the actual engine normalization action and separately checks each context. All failures and old overlays retained. Browser/publication still pending.",
+  "checks": [
+    {
+      "command": "node --import tsx --test tests/desk-components.test.ts tests/desk-colors.test.ts tests/catalog-runtime-sharing.test.ts",
+      "result": "PASS",
+      "evidence": "19 actual tests passed, including explicit non-first text default, null/invalid default rejection, no geometry change, source colors/part swaps and runtime sharing."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "Actual exit0 recorded in FIRST5-TSC-ACTUAL-EXIT.json."
+    },
+    {
+      "command": "node --import tsx prove_first5_current_loader_v3_once.mts",
+      "result": "PASS",
+      "evidence": "Actual exit0; all13 supplied contexts,103 source tuples,50 text values,69 original asset full SHA; actual product loader and visible exact-bound color action per desk. Local technical proof, not browser PASS."
+    }
+  ],
+  "eventId": "b048f9eb-c896-4af7-af82-261ab009b68a",
+  "sequence": 2,
+  "at": "2026-10-26T15:37:15.333Z"
+}

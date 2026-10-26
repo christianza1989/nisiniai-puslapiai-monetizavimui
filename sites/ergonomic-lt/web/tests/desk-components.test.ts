@@ -85,3 +85,17 @@ test('explicit unavailable source dimension retains text specification and never
  state=e.changeField(state,'DWIDTH','_2000');assert(e.assembledAssets(state).base);
  const invented=structuredClone(s);invented.textOnlyDimensionChoices=[{DDEPTH:'_900X800',DWIDTH:'_1900'}];assert.throws(()=>validateDeskComponents(invented,missingCode));
 });
+
+test('hybrid text-only scene retains the supplied 3D defaults instead of the first domain value',()=>{
+ const s=source();s.contexts=[{...s.contexts[0],groups:[],hybrid141:true,textOnly:{FMEDIAPORTMIDDLE:['NONE','EVOLINECIRCLE801M'],FSOCKETSTANDARD:[]},default3DValues:{FMEDIAPORTMIDDLE:'EVOLINECIRCLE801M',FSOCKETSTANDARD:null}}];
+ const e=createExpandedEngine(adaptDeskComponents(s,id));let state=e.initialStateForProduct(product);
+ assert.equal(state.values.FMEDIAPORTMIDDLE,'EVOLINECIRCLE801M');assert(!Object.hasOwn(state.values,'FSOCKETSTANDARD'));
+ const original=e.assembledAssets(state);assert.equal(original.patches.length,0);
+ assert.deepEqual(e.catalog.catalogAnchor(state)?.textOnlyFields,['FMEDIAPORTMIDDLE']);
+ state=e.changeField(state,'FMEDIAPORTMIDDLE','NONE');assert.deepEqual(e.assembledAssets(state),original);
+ assert(e.expandedSelection(product,state).configuration.supplierOptions?.includes('FMEDIAPORTMIDDLE=NONE'));
+ assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
+ for(const mutate of [(x:DeskComponents)=>{x.contexts[0].default3DValues!.FMEDIAPORTMIDDLE='INVENTED';},(x:DeskComponents)=>{x.contexts[0].default3DValues!.FMEDIAPORTMIDDLE=null;},(x:DeskComponents)=>{x.contexts[0].default3DValues!.FSOCKETSTANDARD='GE';},(x:DeskComponents)=>{x.contexts[0].default3DValues!.UNKNOWN='NONE';},(x:DeskComponents)=>{delete x.contexts[0].hybrid141;}]){
+  const invalid=structuredClone(s);mutate(invalid);assert.throws(()=>validateDeskComponents(invalid,code));
+ }
+});

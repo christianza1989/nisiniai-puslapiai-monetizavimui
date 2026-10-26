@@ -1,0 +1,21 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Preserve explicit source defaults for hybrid desk text-only controls and explain unchanged 3D; accept the declared intact hybrid scene without invented parts.",
+  "category": "code",
+  "evidence": [
+    "sites/ergonomic-lt/research/owner078-first5/REVIEW.md",
+    "sites/ergonomic-lt/web/tests/desk-components.test.ts"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web/src/lib/desk-components.ts",
+    "sites/ergonomic-lt/web/src/lib/catalog-configurator.ts",
+    "sites/ergonomic-lt/web/src/components/expanded-product-detail.tsx",
+    "sites/ergonomic-lt/web/tests/desk-components.test.ts"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/281",
+  "rollback": "Scoped revert of the four source/test files and new desk bindings; retain all original package and public baseline assets.",
+  "id": "upgrade-bf678e43-97dd-4aeb-afef-3f4808afe0d0",
+  "branch": "codex/ergonomic-desks-owner078-20261026",
+  "baseSha": "33d83730732134a271660f405b356afdc422f49e",
+  "createdAt": "2026-10-26T15:36:36.690Z"
+}

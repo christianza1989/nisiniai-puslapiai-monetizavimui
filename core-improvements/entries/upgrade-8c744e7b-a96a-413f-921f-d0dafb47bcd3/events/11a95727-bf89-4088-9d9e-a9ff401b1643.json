@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Original source field-name rejection preserved; new captured-pair regression rejects unknown fields and noncaptured pairs. Existing original test dependencies linked read-only in own checkout, no target mutation. Browser/public work remains pending.",
+  "checks": [
+    {
+      "command": "node node_modules/tsx/dist/cli.mjs --test tests/desk-components.test.ts tests/desk-colors.test.ts tests/legacy-desk-colors.test.ts",
+      "result": "PASS",
+      "evidence": "22 focused actual tests passed, original session79854 / tool d50fed; batch02/DTOP-DIMENSION-REGRESSION-PROOF.json"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "Original session79854 actual exit0, sequenced before actual all10 runtime shape proof."
+    },
+    {
+      "command": "node node_modules/tsx/dist/cli.mjs batch02/qualify_runtime_shapes_v2_once.mts",
+      "result": "PASS",
+      "evidence": "All ten actual source runtimes accepted; DTOP names retained; no geometry body reads; RUNTIME-SHAPE-QUALIFICATION-V2.json"
+    }
+  ],
+  "eventId": "11a95727-bf89-4088-9d9e-a9ff401b1643",
+  "sequence": 2,
+  "at": "2026-10-26T16:49:50.516Z"
+}

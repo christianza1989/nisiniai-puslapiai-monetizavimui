@@ -54,7 +54,6 @@ export class ShippingAutomation {
     const subsidy = policy.maxCarrierSubsidyMinor ?? 0;
     requireValue(integer(subsidy, 0, 50000), 'automatic_shipping_budget_invalid');
     const maxCost = order.snapshot.delivery.amount + subsidy;
-    requireValue(integer(maxCost, 1), 'automatic_shipping_budget_invalid', 409);
     const read = this.options.shippingReadAdapters?.[store];
     requireValue(
       read && read.accountRef === config.shippingAccountRef && read.environment === env,
@@ -89,11 +88,14 @@ export class ShippingAutomation {
     );
     // The seller explicitly reviews each extra parcel's own carrier cost.
     // A single customer delivery payment is not an unlimited booking budget.
-    if (
+    const manualParcels =
       planParcels(order, { mode: 'individual' }).parcels.length > 1 &&
-      (method.customerCharge === 'single_parcel' || method.kind === 'locker' || dispatch.locker)
-    )
-      return { skipped: true, manualParcels: true, planId };
+      (method.customerCharge === 'single_parcel' ||
+        method.kind === 'locker' ||
+        Boolean(dispatch.locker));
+    if (manualParcels || maxCost === 0)
+      return { skipped: true, manualParcels, manualBudget: maxCost === 0, planId };
+    requireValue(integer(maxCost, 1), 'automatic_shipping_budget_invalid', 409);
     const quoteId = 'autoq_' + orderId + '_' + Math.floor(this.s.now() / 60000);
     const quote = await ops.quote(store, env, planId, { id: quoteId }, read, actor);
     requireValue(

@@ -221,3 +221,39 @@ test('seller can combine all kits in one measured box and register one label wit
     db.close();
   }
 });
+
+for (const quantity of [1, 3])
+  test(
+    'free customer delivery prepares a manual carrier-cost plan without a zero-budget failure: ' +
+      quantity,
+    async () => {
+      const db = new NodeDatabase();
+      db.migrate();
+      const x = await multiparcelFixture(db, { quantity, planned: false, freeShipping: true });
+      try {
+        const config = structuredClone(x.config);
+        config.automationPolicy = {
+          autoPrepareIndividualShipments: true,
+          maxCarrierSubsidyMinor: 0,
+        };
+        await db
+          .prepare('UPDATE stores SET config_json=? WHERE id=?')
+          .bind(JSON.stringify(config), 'store_a')
+          .run();
+        assert.equal(
+          (await x.s.getOrder('store_a', 'sandbox', x.order.id)).snapshot.delivery.amount,
+          0,
+        );
+        const result = await new ShippingAutomation(x.s, {
+          shippingReadAdapters: { store_a: x.adapter },
+        }).preparePacked('store_a', 'sandbox', x.order.id);
+        assert.equal(result.manualBudget, true);
+        assert.equal(result.manualParcels, quantity > 1);
+        assert.equal((await x.s.rows('SELECT * FROM shipment_commands')).length, 0);
+        assert.equal(x.creates(), 0);
+        assert.equal(x.quoteCalls.length, 1);
+      } finally {
+        db.close();
+      }
+    },
+  );

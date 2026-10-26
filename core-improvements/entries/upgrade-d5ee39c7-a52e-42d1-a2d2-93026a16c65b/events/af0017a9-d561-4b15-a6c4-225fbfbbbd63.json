@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Twelve exact native self-reviews approved through maintained scoped overlay874aa0b0;175other approved pages and177other drafts preserved. Public import187pages/800unchangedassets. Native desktop1024/narrow320 actual previews inspected. Compiled/public video rendering remains pending release acceptance; this is not hosted proof.",
+  "checks": [
+    {
+      "command": "PUBLIC npm run test:core",
+      "result": "PASS",
+      "evidence": "275tests/0fail including two exact guide/video/immutable-poster regressions;2026-10-26"
+    },
+    {
+      "command": "PUBLIC node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "exit0 for current twelve-guide/video source"
+    },
+    {
+      "command": "PUBLIC scoped ESLint on four changed source/test files",
+      "result": "PASS",
+      "evidence": "exit0; no dependency change"
+    }
+  ],
+  "eventId": "af0017a9-d561-4b15-a6c4-225fbfbbbd63",
+  "sequence": 2,
+  "at": "2026-10-26T15:55:11.752Z"
+}

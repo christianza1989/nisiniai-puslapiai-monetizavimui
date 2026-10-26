@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Canonical source3ba285c7 merged asf6085584; production backend0e3586fe-7a90-4be1-a590-1f2493ad2265 at07:20:21UTC. Existing coupon flag staysfalse, version/uses unchanged. No real order/payment/mail/shipment test.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/275",
+  "commit": "f6085584d5f4f58b5b46209506a0b8eb2b24e120",
+  "eventId": "482e82ee-9989-4a15-b63c-c64f32576a74",
+  "sequence": 4,
+  "at": "2026-10-26T07:35:34.532Z"
+}

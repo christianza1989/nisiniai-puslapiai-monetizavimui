@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Release acceptance: additive28, actual backend0e3586fe, unchanged bindings/policies/mail/cron/data. 264 tests/native/dry-run plus desktop/320px admin+compiled buyer UI. Hosted admin checkbox exists; no production free-coupon purchase was created.",
+  "checks": [
+    {
+      "command": "migrate-production-d1.mjs --apply-remote",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/free-shipping-20261026/migration.private.txt:27->28 pending0; previous27 checksums preserved"
+    },
+    {
+      "command": "actual Cloudflare before/after + hosted browser/API",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/free-shipping-20261026/comparison.private.json and hosted.private.json; productionReady true, LIVE retained"
+    }
+  ],
+  "eventId": "45180149-bb15-422a-8e29-229bc05f054b",
+  "sequence": 3,
+  "at": "2026-10-26T07:35:34.522Z"
+}

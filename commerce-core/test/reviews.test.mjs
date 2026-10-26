@@ -2,13 +2,82 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { NodeDatabase } from '../src/node-db.mjs';
 import { CommerceService } from '../src/service.mjs';
-import { ProductReviews, REVIEW_CONSENT, reviewPhotoDimensions } from '../src/reviews.mjs';
+import {
+  ProductReviews,
+  REVIEW_CONSENT,
+  reviewPhotoDimensions,
+  stripReviewColourProfile,
+} from '../src/reviews.mjs';
 import { importReviews, prepareReviewImport } from '../src/review-import.mjs';
 import { notificationMessage, CustomerNotifications } from '../src/notifications.mjs';
 import { createHandler } from '../src/http.mjs';
+import { NodePrivateStorage } from '../src/node-private-storage.mjs';
+import { mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 const image = new Uint8Array(
   Buffer.from('UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==', 'base64'),
 );
+test('Chrome canvas ICC profile is removed while pixel bytes remain and private metadata still fails', () => {
+  const extended = Buffer.alloc(18);
+  extended.write('VP8X');
+  extended.writeUInt32LE(10, 4);
+  extended[8] = 0x20;
+  const icc = Buffer.alloc(12);
+  icc.write('ICCP');
+  icc.writeUInt32LE(4, 4);
+  icc.write('sRGB', 8);
+  const source = Buffer.concat([
+    Buffer.from(image.slice(0, 12)),
+    extended,
+    icc,
+    Buffer.from(image.slice(12)),
+  ]);
+  source.writeUInt32LE(source.length - 8, 4);
+  assert.throws(() => reviewPhotoDimensions(source), /invalid_review_photo/);
+  const normal = stripReviewColourProfile(source);
+  assert.deepEqual(reviewPhotoDimensions(normal), { width: 1, height: 1 });
+  assert.equal(Buffer.from(normal).includes(Buffer.from('ICCP')), false);
+  assert.deepEqual(normal.slice(30), image.slice(12));
+  const privateBytes = Buffer.from(source);
+  privateBytes.write('EXIF', 30);
+  assert.throws(
+    () => reviewPhotoDimensions(stripReviewColourProfile(privateBytes)),
+    /invalid_review_photo/,
+  );
+});
+test('real Node private storage accepts only the scoped review namespace and retrieves the integrity-checked photo', async (t) => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'reviews-node-'));
+  assert.ok(
+    path.resolve(directory).startsWith(path.resolve(tmpdir()) + path.sep + 'reviews-node-'),
+  );
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const { s } = await setup(t),
+    r = new ProductReviews(s, new NodePrivateStorage(directory)),
+    o = await paid(s, 98),
+    g = await r.grant('store_a', 'sandbox', o.id);
+  const photo = await r.upload('store_a', 'sandbox', g.token, image),
+    review = await r.submit('store_a', 'sandbox', {
+      token: g.token,
+      sku: 'couple',
+      rating: 4,
+      authorName: 'Fixture buyer',
+      body: 'Isolated real storage fixture.',
+      publicationConsent: true,
+      photoIds: [photo.id],
+    });
+  await r.moderate(
+    'store_a',
+    'sandbox',
+    review.id,
+    { version: 1, state: 'published', reason: 'Fixture publication' },
+    'owner',
+  );
+  assert.deepEqual(await r.photo('store_a', 'sandbox', photo.id), image);
+  const storage = new NodePrivateStorage(directory);
+  await assert.rejects(storage.target('../reviews/' + photo.id + '.webp'), /private_key_invalid/);
+  await assert.rejects(storage.target('store_a/reviews/../../file.webp'), /private_key_invalid/);
+});
 import { fixtureStore, fixtureProducts, cart, key } from './fixtures.mjs';
 async function setup(t) {
   const db = new NodeDatabase();

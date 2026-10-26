@@ -1663,6 +1663,7 @@ function onePageForm({
       syncLockerSelection();
     }
     terms.checked = Boolean(initialOrder);
+    reviewConsent.checked = prefill.snapshot.reviewRequestConsent?.version === 'review-request-v1';
     if (!initialOrder) {
       changed();
       status.textContent =

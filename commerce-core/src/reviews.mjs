@@ -48,6 +48,42 @@ export function reviewPhotoDimensions(bytes) {
   requireValue(image && at === bytes.length, 'invalid_review_photo');
   return dimensions;
 }
+// Chrome canvas can emit an sRGB ICCP chunk even after re-encoding. Strip that
+// bounded colour profile without touching pixel chunks. EXIF/XMP/animation still
+// fail the strict validator below and never enter storage.
+export function stripReviewColourProfile(bytes) {
+  webpDimensions(bytes);
+  const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  let at = 12,
+    profiles = 0;
+  const parts = [bytes.slice(0, 12)];
+  while (at < bytes.length) {
+    requireValue(at + 8 <= bytes.length, 'invalid_review_photo');
+    const kind = String.fromCharCode(...bytes.slice(at, at + 4)),
+      length = dv.getUint32(at + 4, true),
+      end = at + 8 + length + (length % 2);
+    requireValue(length > 0 && end <= bytes.length, 'invalid_review_photo');
+    if (kind === 'ICCP') {
+      profiles++;
+      requireValue(profiles === 1 && length <= 32768, 'invalid_review_photo');
+    } else {
+      const part = bytes.slice(at, end);
+      if (kind === 'VP8X' && length === 10) part[8] &= ~0x20;
+      parts.push(part);
+    }
+    at = end;
+  }
+  requireValue(at === bytes.length, 'invalid_review_photo');
+  if (!profiles) return bytes;
+  const result = new Uint8Array(parts.reduce((n, p) => n + p.length, 0));
+  let offset = 0;
+  for (const part of parts) {
+    result.set(part, offset);
+    offset += part.length;
+  }
+  new DataView(result.buffer).setUint32(4, result.length - 8, true);
+  return result;
+}
 export class ProductReviews {
   constructor(service, storage) {
     this.s = service;
@@ -256,6 +292,7 @@ export class ProductReviews {
   async upload(store, env, token, bytes) {
     const p = await this.proof(store, env, token);
     requireValue(this.storage, 'private_storage_missing', 503);
+    bytes = stripReviewColourProfile(bytes);
     const dimensions = reviewPhotoDimensions(bytes),
       hash = await hashBytes(bytes);
     const id = crypto.randomUUID(),

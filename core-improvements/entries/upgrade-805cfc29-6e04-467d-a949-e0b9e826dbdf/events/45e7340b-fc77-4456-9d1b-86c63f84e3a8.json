@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Native refund response fixture source merged throughPR278; full worker smoke passed after parsing each response once immediately and retaining distinct exact command IDs. This is test harness adoption, not a new production refund.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/278",
+  "commit": "990c5f128e687c36f4ad7a780d8dfe0933f7f34b",
+  "eventId": "45e7340b-fc77-4456-9d1b-86c63f84e3a8",
+  "sequence": 3,
+  "at": "2026-10-26T09:26:04.026Z"
+}

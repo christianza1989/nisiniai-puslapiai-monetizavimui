@@ -598,18 +598,78 @@ function onePageForm({
   });
   const shipping = group(u.method);
   const delivery = field(shipping, 'delivery', t[4], { required: true }, 'select');
-  const lockerSearch = field(
-    shipping,
-    'lockerSearch',
-    language === 'lt' ? 'Ieškoti paštomato pagal miestą ar adresą' : 'Search parcel lockers',
-    {
-      type: 'search',
-      maxlength: 120,
-      autocomplete: 'off',
-      placeholder: language === 'lt' ? 'Pvz., Vilnius, Gabijos' : 'City or street',
+  const lockerCopy = {
+    lt: {
+      search: 'Ieškoti paštomato pagal miestą ar adresą',
+      placeholder: 'Pvz., Vilnius, Salininkai',
+      empty: 'Paštomatų nerasta. Pabandykite kitą miestą ar gatvę.',
+      choose: 'Pasirinkite paštomatą iš sąrašo.',
+      selected: 'Pasirinkta: ',
+      more: 'Patikslinkite miestą ar gatvę, jei nematote savo paštomato.',
     },
-  );
-  const locker = field(shipping, 'locker', t[11], {}, 'select');
+    pl: {
+      search: 'Szukaj punktu według miasta lub adresu',
+      placeholder: 'Miasto lub ulica',
+      empty: 'Nie znaleziono punktów. Wpisz inne miasto lub ulicę.',
+      choose: 'Wybierz punkt z listy.',
+      selected: 'Wybrano: ',
+      more: 'Doprecyzuj miasto lub ulicę, jeśli nie widzisz swojego punktu.',
+    },
+    lv: {
+      search: 'Meklēt pakomātu pēc pilsētas vai adreses',
+      placeholder: 'Pilsēta vai iela',
+      empty: 'Pakomāti nav atrasti. Ievadiet citu pilsētu vai ielu.',
+      choose: 'Izvēlieties pakomātu sarakstā.',
+      selected: 'Izvēlēts: ',
+      more: 'Precizējiet pilsētu vai ielu, ja neredzat savu pakomātu.',
+    },
+    et: {
+      search: 'Otsi pakiautomaati linna või aadressi järgi',
+      placeholder: 'Linn või tänav',
+      empty: 'Pakiautomaate ei leitud. Sisestage teine linn või tänav.',
+      choose: 'Valige pakiautomaat loendist.',
+      selected: 'Valitud: ',
+      more: 'Täpsustage linna või tänavat, kui teie pakiautomaati pole näha.',
+    },
+  }[language] || {
+    search: 'Search parcel lockers by city or address',
+    placeholder: 'City or street',
+    empty: 'No lockers found. Try another city or street.',
+    choose: 'Choose a locker from the results.',
+    selected: 'Selected: ',
+    more: 'Refine the city or street if your locker is not shown.',
+  };
+  const lockerChooser = element('div', { class: 'checkout-locker' });
+  shipping.append(lockerChooser);
+  const lockerSearch = field(lockerChooser, 'lockerSearch', lockerCopy.search, {
+    type: 'search',
+    maxlength: 120,
+    autocomplete: 'off',
+    placeholder: lockerCopy.placeholder,
+    role: 'combobox',
+    'aria-autocomplete': 'list',
+    'aria-expanded': 'false',
+    'aria-controls': 'checkout-locker-results',
+    'aria-describedby': 'checkout-locker-status',
+  });
+  // The hidden field holds only a trusted location ID, never the typed query.
+  const locker = field(shipping, 'locker', t[11], { type: 'hidden' });
+  locker.parentElement.hidden = true;
+  const lockerResults = element('div', {
+    id: 'checkout-locker-results',
+    class: 'checkout-locker-results',
+    role: 'listbox',
+    'aria-label': t[11],
+  });
+  const lockerStatus = element('p', {
+    id: 'checkout-locker-status',
+    class: 'checkout-hint checkout-locker-status',
+    role: 'status',
+    'aria-atomic': 'true',
+  });
+  lockerChooser.append(lockerResults, lockerStatus);
+  let lockerMatches = [],
+    lockerActive = -1;
   const lockerHint = element(
     'p',
     { class: 'checkout-hint', role: 'status' },
@@ -781,6 +841,18 @@ function onePageForm({
   fields.terms = terms;
   const termsLink = element('a', { target: '_blank', rel: 'noopener noreferrer' }, u.terms);
   summary.append(element('label', { class: 'checkout-consent' }, terms, termsLink));
+  const termsUnavailable = element(
+    'p',
+    { class: 'checkout-hint', role: 'status' },
+    {
+      lt: 'Nepavyko patvirtinti galiojančių pirkimo sąlygų. Atnaujinkite puslapį arba susisiekite su mumis.',
+      pl: 'Nie udało się potwierdzić aktualnych warunków zakupu. Odśwież stronę lub skontaktuj się z nami.',
+      lv: 'Neizdevās apstiprināt aktuālos pirkuma noteikumus. Atsvaidziniet lapu vai sazinieties ar mums.',
+      et: 'Kehtivaid ostutingimusi ei õnnestunud kinnitada. Värskendage lehte või võtke meiega ühendust.',
+    }[language] ||
+      'The current purchase terms could not be confirmed. Refresh the page or contact us.',
+  );
+  summary.append(termsUnavailable);
   const submit = element('button', { type: 'submit', class: 'checkout-submit' }, u.continue);
   const security = element('p', { class: 'checkout-security' }, u.payment);
   summary.append(submit, security, element('p', { class: 'checkout-hint' }, u.guest));
@@ -1193,45 +1265,129 @@ function onePageForm({
     }
     if (!isLocker) savedDoorAddress = null;
   };
-  const fillLockers = (keep = true) => {
-    const method = market()?.delivery.find((d) => d.id === delivery.value),
-      prior = keep ? locker.value : '';
-    const query = lockerSearch.value
-      .trim()
-      .toLocaleLowerCase(language)
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '');
-    locker.replaceChildren();
-    locker.append(element('option', { value: '' }, '— ' + t[11] + ' —'));
-    for (const item of method?.lockers || []) {
-      const hay = (item.label + ' ' + (item.city || '') + ' ' + (item.address || ''))
+  const closeLockers = () => {
+    lockerResults.hidden = true;
+    lockerActive = -1;
+    lockerSearch.setAttribute('aria-expanded', 'false');
+    lockerSearch.removeAttribute('aria-activedescendant');
+  };
+  const syncLockerSelection = () => {
+    const point = market()
+      ?.delivery.find((d) => d.id === delivery.value)
+      ?.lockers?.find((l) => l.id === locker.value);
+    locker.value = point?.id || '';
+    lockerSearch.value = point?.label || '';
+    lockerStatus.textContent = point ? lockerCopy.selected + point.label : '';
+    lockerSearch.setCustomValidity?.(locker.required && !point ? lockerCopy.choose : '');
+    closeLockers();
+    updateLockerAddress();
+  };
+  const chooseLocker = (id) => {
+    if (busy || lockedForOrder) return;
+    const point = market()
+      ?.delivery.find((d) => d.id === delivery.value)
+      ?.lockers?.find((l) => l.id === id);
+    if (!point || !locker.required) return;
+    locker.value = point.id;
+    syncLockerSelection();
+    changed();
+    lockerSearch.focus?.({ preventScroll: true });
+  };
+  const showLockers = () => {
+    if (busy || lockedForOrder || !locker.required) return closeLockers();
+    const fold = (value) =>
+      value
         .toLocaleLowerCase(language)
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '');
-      if (!query || hay.includes(query))
-        locker.append(element('option', { value: item.id }, item.label));
+    const words = fold(lockerSearch.value.trim()).split(/\s+/).filter(Boolean);
+    const all = market()?.delivery.find((d) => d.id === delivery.value)?.lockers || [];
+    const matches = all.filter((item) => {
+      const text = fold(item.label + ' ' + (item.city || '') + ' ' + (item.address || ''));
+      return words.every((word) => text.includes(word));
+    });
+    lockerMatches = matches.slice(0, 12);
+    lockerActive = -1;
+    lockerSearch.removeAttribute('aria-activedescendant');
+    lockerResults.replaceChildren();
+    for (const [index, item] of lockerMatches.entries()) {
+      const option = element(
+        'button',
+        {
+          type: 'button',
+          role: 'option',
+          tabindex: '-1',
+          id: 'checkout-locker-option-' + index,
+          class: 'checkout-locker-option',
+          'aria-selected': 'false',
+        },
+        item.label,
+      );
+      option.addEventListener('mousedown', (event) => event.preventDefault());
+      option.addEventListener('click', () => chooseLocker(item.id));
+      lockerResults.append(option);
     }
-    if (Array.from(locker.options).some((o) => o.value === prior)) locker.value = prior;
-    else locker.value = '';
-    updateLockerAddress();
+    lockerResults.hidden = !lockerMatches.length;
+    lockerSearch.setAttribute('aria-expanded', String(Boolean(lockerMatches.length)));
+    lockerStatus.textContent = !matches.length
+      ? lockerCopy.empty
+      : matches.length > lockerMatches.length
+        ? lockerCopy.more
+        : '';
   };
   lockerSearch.addEventListener('input', () => {
-    fillLockers();
+    if (busy || lockedForOrder) return;
+    locker.value = '';
+    lockerSearch.setCustomValidity?.(lockerCopy.choose);
+    updateLockerAddress();
+    showLockers();
     changed();
   });
+  lockerSearch.addEventListener('focus', () => {
+    if (!locker.value) showLockers();
+  });
+  lockerChooser.addEventListener('focusout', (event) => {
+    if (!lockerChooser.contains?.(event.relatedTarget)) closeLockers();
+  });
+  lockerSearch.addEventListener('keydown', (event) => {
+    if (busy || lockedForOrder) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeLockers();
+      return;
+    }
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      if (!lockerResults.hidden && (lockerActive >= 0 || lockerMatches.length === 1))
+        chooseLocker(lockerMatches[Math.max(0, lockerActive)].id);
+      return;
+    }
+    if (!['ArrowDown', 'ArrowUp'].includes(event.key)) return;
+    event.preventDefault();
+    if (lockerResults.hidden) showLockers();
+    if (!lockerMatches.length) return;
+    lockerActive =
+      (lockerActive +
+        (event.key === 'ArrowDown' ? 1 : lockerActive < 0 ? 0 : -1) +
+        lockerMatches.length) %
+      lockerMatches.length;
+    for (const [index, option] of Array.from(lockerResults.children).entries())
+      option.setAttribute('aria-selected', String(index === lockerActive));
+    lockerSearch.setAttribute('aria-activedescendant', 'checkout-locker-option-' + lockerActive);
+    lockerResults.children[lockerActive]?.scrollIntoView?.({ block: 'nearest' });
+  });
   locker.addEventListener('change', () => {
-    updateLockerAddress();
+    syncLockerSelection();
     changed();
   });
   const refreshLocker = () => {
     const method = market()?.delivery.find((d) => d.id === delivery.value);
-    lockerSearch.value = '';
-    fillLockers(false);
     locker.required = method?.kind === 'locker';
-    locker.parentElement.hidden = !locker.required;
-    lockerSearch.parentElement.hidden = !locker.required;
+    locker.value = '';
+    lockerChooser.hidden = !locker.required;
+    lockerSearch.required = locker.required;
     lockerSearch.disabled = !locker.required;
-    updateLockerAddress();
+    syncLockerSelection();
     changed();
   };
   const refresh = () => {
@@ -1258,6 +1414,7 @@ function onePageForm({
     if (href) termsLink.setAttribute('href', href);
     else termsLink.removeAttribute('href');
     terms.disabled = !href;
+    termsUnavailable.hidden = Boolean(href);
     terms.checked = false;
     fields.postalCode.pattern =
       { LT: '(LT-)?[0-9]{5}', PL: '[0-9]{2}-[0-9]{3}', LV: '(LV-)?[0-9]{4}', EE: '[0-9]{5}' }[
@@ -1270,6 +1427,7 @@ function onePageForm({
   const active = () => !signal?.aborted && isCurrent();
   const lockOrder = () => {
     lockedForOrder = true;
+    closeLockers();
     clearTimeout(timer);
     clearTimeout(couponTimer);
     couponTicket++;
@@ -1348,7 +1506,8 @@ function onePageForm({
     paymentPane.append(controls);
   };
   form.addEventListener('input', (event) => {
-    if (event.target !== terms && event.target !== couponInput) changed();
+    if (event.target !== terms && event.target !== couponInput && event.target !== lockerSearch)
+      changed();
   });
   countrySelect.addEventListener('change', refresh);
   delivery.addEventListener('change', refreshLocker);
@@ -1360,6 +1519,8 @@ function onePageForm({
       lockedForOrder ||
       !canOrder ||
       !ready() ||
+      terms.disabled ||
+      !termsLink.getAttribute('href') ||
       !terms.checked ||
       !form.reportValidity()
     )
@@ -1368,6 +1529,7 @@ function onePageForm({
       policyVersion = market().policyVersion;
     const locked = Object.values(fields).map((f) => [f, f.disabled]);
     busy = true;
+    closeLockers();
     clearTimeout(timer);
     for (const [f] of locked) f.disabled = true;
     paint();
@@ -1453,7 +1615,7 @@ function onePageForm({
     refreshLocker();
     if (saved.lockerId) {
       locker.value = saved.lockerId;
-      updateLockerAddress();
+      syncLockerSelection();
     }
     terms.checked = Boolean(initialOrder);
     if (!initialOrder) {

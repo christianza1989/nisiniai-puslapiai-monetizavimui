@@ -85,6 +85,10 @@ function initialState(f:Family):ExpandedState{
 }
 function initialStateForProduct(p:Product):ExpandedState{
  const f=expandedForProduct(p)!;let state=initialState(f);
+ // A measured desk overlay chooses the captured initial context with the best
+ // working color coverage. A catalog example must not silently overwrite that
+ // choice. Explicit state tokens still restore their original configuration.
+ if(catalogFamily(state)?.deskColors)return validateState(p,state);
  const c=p.configurations.find(c=>c.id===p.modelConfigurationId);if(!c)return state;
  const wanted=Object.fromEntries(supplierOptions(c).map(option=>{const [key,original]=option.split('='),field=key.split('.').at(-1)!;
   const value=runtime?.palettes._sourceValueAliases?.[c.id+'/'+field+'='+original]?.text||original;

@@ -112,7 +112,18 @@ test('hybrid text-only scene retains the supplied 3D defaults instead of the fir
  state=e.changeField(state,'FMEDIAPORTMIDDLE','NONE');assert.deepEqual(e.assembledAssets(state),original);
  assert(e.expandedSelection(product,state).configuration.supplierOptions?.includes('FMEDIAPORTMIDDLE=NONE'));
  assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
- for(const mutate of [(x:DeskComponents)=>{x.contexts[0].default3DValues!.FMEDIAPORTMIDDLE='INVENTED';},(x:DeskComponents)=>{x.contexts[0].default3DValues!.FMEDIAPORTMIDDLE=null;},(x:DeskComponents)=>{x.contexts[0].default3DValues!.FSOCKETSTANDARD='GE';},(x:DeskComponents)=>{x.contexts[0].default3DValues!.UNKNOWN='NONE';},(x:DeskComponents)=>{delete x.contexts[0].hybrid141;}]){
+ for(const mutate of [(x:DeskComponents)=>{x.contexts[0].default3DValues!.FMEDIAPORTMIDDLE='INVENTED';},(x:DeskComponents)=>{x.contexts[0].default3DValues!.FMEDIAPORTMIDDLE=null;},(x:DeskComponents)=>{x.contexts[0].default3DValues!.FSOCKETSTANDARD='';},(x:DeskComponents)=>{x.contexts[0].default3DValues!.UNKNOWN='NONE';},(x:DeskComponents)=>{delete x.contexts[0].hybrid141;}]){
   const invalid=structuredClone(s);mutate(invalid);assert.throws(()=>validateDeskComponents(invalid,code));
  }
+});
+test('captured read-only defaults with empty choice lists retain source identity without an invented control',()=>{
+ const s=source();s.contexts[0].textOnly={FDESKTOPTYPE:[]};s.contexts[0].default3DValues={FDESKTOPTYPE:'FIXEDTOP'};
+ validateDeskComponents(s,code);const runtime=adaptDeskComponents(s,id),engine=createExpandedEngine(runtime);
+ const state=engine.initialStateForProduct(product);
+ assert.equal(engine.stateChoices(state).FDESKTOPTYPE,undefined);
+ assert.equal(engine.catalog.catalogValues(state).FDESKTOPTYPE,'FIXEDTOP');
+ assert.throws(()=>engine.changeField(state,'FDESKTOPTYPE','OTHER'));
+ assert(engine.expandedSelection(product,state).configuration.supplierOptions?.includes('FDESKTOPTYPE=FIXEDTOP'));
+ assert.deepEqual(engine.parseStateToken(product,engine.stateToken(state)),state);
+ assert.equal(runtime.family.anchors[0].geometry?.assetSha256,s.contexts[0].invariant.sha256);
 });

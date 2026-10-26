@@ -1,5 +1,5 @@
 import type {Asset} from './expanded-configurator';
-import type {CatalogRuntime} from './catalog-configurator';
+import {createCatalogEngine,type CatalogRuntime} from './catalog-configurator';
 
 type Values=Record<string,string>;
 export type DeskColorTarget={node:number;primitive:number;selectors:{field:string;selectorId:string}[]};
@@ -7,7 +7,7 @@ export type DeskColorValue={mode:'material'|'partSwap'|'pending';assignments:{se
 export type DeskColorField={label:string;default:string;owners:string[];selectors:string[];choices:{value:string;text:string;image?:string;color?:string}[];values:Record<string,DeskColorValue>};
 export type DeskColors={schema:'desk-color-overlay-v1';code:string;componentRuntimeSha256:string;sourceColorsSha256:string;baseDimensions:Values;fields:Record<string,DeskColorField>;bindings:Record<string,DeskColorTarget[]>;materialIds:string[];materialDocument:Record<string,unknown>};
 export type DeskColorPlan={materials:Record<string,string>;hidden:string[];assets:Asset[];pending:string[]};
-export const DESK_COLOR_PENDING='Spalvos peržiūra šiam dydžiui ruošiama';
+export const DESK_COLOR_PENDING='Šiai komplektacijai pasirinkta spalva 3D nerodoma';
 const hash=(x:unknown):x is string=>typeof x==='string'&&/^[a-f0-9]{64}$/.test(x);
 const plain=(x:unknown):x is Record<string,any>=>!!x&&typeof x==='object'&&!Array.isArray(x);
 const field=(x:string)=>/^[A-Z][A-Z0-9_]{0,79}$/.test(x);
@@ -56,10 +56,25 @@ function attachDeskColors(runtime:CatalogRuntime,colors:DeskColors):CatalogRunti
  const palettes:CatalogRuntime['palettes']={...runtime.palettes,_fieldLabels:{...runtime.palettes._fieldLabels}};
  for(const [key,f]of Object.entries(colors.fields)){palettes._fieldLabels[key]={text:f.label};palettes[key]=Object.fromEntries(f.choices.map(c=>[c.value,{text:c.text,image:c.image,color:c.color}]));}
  const anchors=runtime.family.anchors.map(a=>({...a,defaults:{...a.defaults,...Object.fromEntries(Object.entries(colors.fields).map(([k,f])=>[k,f.default]))},choices:{...a.choices,...Object.fromEntries(Object.entries(colors.fields).map(([k,f])=>[k,f.choices.map(c=>c.value)]))}}));
- // Start at a captured size for which the supplied finish witnesses exist.
- const base=anchors.findIndex(a=>a.geometry&&Object.entries(colors.baseDimensions).every(([k,v])=>a.defaults[k]===v));
- if(base>0)anchors.unshift(...anchors.splice(base,1));
- return {family:{...runtime.family,anchors,deskColors:colors},palettes};
+ // Compare real captured default assemblies, never a Cartesian combination of
+ // dimensions/options. Count fields with an applicable alternative, not merely
+ // a palette entry. Stable ties prefer the original finish witness context.
+ const family={...runtime.family,anchors,deskColors:colors},engine=createCatalogEngine(family);
+ const coverage=anchors.map((anchor,index)=>{
+  const state=engine.catalogInitial({...family,anchors:[anchor,...anchors.filter(a=>a!==anchor)]},anchor.article);
+  const values=engine.catalogValues(state),assembly=engine.catalogAssets(state);
+  const assets=[...(assembly.base?[assembly.base]:[]),...assembly.patches.flatMap(p=>p.geometries||(p.geometry?[p.geometry]:[]))];
+  const choices=engine.catalogChoices(state);
+  const fields=Object.entries(colors.fields).filter(([key,f])=>choices[key]&&f.choices.some(c=>{
+   if(c.value===f.default||!choices[key].includes(c.value))return false;
+   const plan=deskColorPlan(colors,{...values,[key]:c.value},assets);
+   return !plan.pending.includes(key)&&(Object.keys(plan.materials).length>0||plan.assets.length>0);
+  })).length;
+  return {index,fields,witness:Number(Object.entries(colors.baseDimensions).every(([k,v])=>values[k]===v))};
+ });
+ coverage.sort((a,b)=>b.fields-a.fields||b.witness-a.witness||a.index-b.index);
+ const preferred=coverage[0]?.index||0;if(preferred>0)anchors.unshift(...anchors.splice(preferred,1));
+ return {family,palettes};
 }
 
 /** Only sealed, exact geometry/material/world-matrix matches are paintable. */
@@ -73,11 +88,17 @@ export function deskColorPlan(colors:DeskColors,values:Values,assets:Asset[]):De
   const v=f.values[selected];if(!v){plan.pending.push(key);continue;}
   if(v.mode==='pending'){plan.pending.push(key);continue;}
   if(f.owners.some(owner=>values[owner]==='NONE'))continue;
-  // No cross-size role transfer is certified by a base-size color witness.
-  if(!sameSize){plan.pending.push(key);continue;}
-  if(v.mode==='material'&&(!f.selectors.length||f.selectors.some(id=>!v.assignments.some(a=>a.selectorId===id)||targets.filter(t=>t.selectors.some(s=>s.field===key&&s.selectorId===id)).length!==1))){plan.pending.push(key);continue;}
+  // Material bindings already identify exact original asset/node/primitive
+  // witnesses. Stored selectors from inactive components must not block the
+  // current assembly. No binding is inferred from size, names or material alone.
+  if(v.mode==='material'){
+   const active=[...new Set(targets.flatMap(t=>t.selectors.filter(s=>s.field===key).map(s=>s.selectorId)))];
+   if(!active.length||active.some(id=>new Set(v.assignments.filter(a=>a.selectorId===id).map(a=>a.materialId)).size!==1||targets.filter(t=>t.selectors.some(s=>s.field===key&&s.selectorId===id)).length!==1)){plan.pending.push(key);continue;}
+  }
   const indexed=new Map(v.assignments.map(a=>[a.selectorId,a.materialId]));let count=0;
   if(v.mode==='partSwap'){
+   // Geometry replacement retains the original captured-size guard.
+   if(!sameSize){plan.pending.push(key);continue;}
    const removed=(v.removeSelectors||[]).map(id=>targets.filter(t=>t.selectors.some(s=>s.field===key&&s.selectorId===id)));
    if(removed.some(matches=>matches.length!==1)){plan.pending.push(key);continue;}
    plan.hidden.push(...removed.flat().map(t=>t.key));plan.assets.push(...v.assets||[]);count=removed.length;

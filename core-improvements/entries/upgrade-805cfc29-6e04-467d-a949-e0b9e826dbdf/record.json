@@ -1,0 +1,19 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Native refund smoke consumes concurrent responses once immediately and selects parsed command identity instead of bodyUsed transport state.",
+  "evidence": [
+    "sites/memocasting/qa/multiparcel-20261026/core-verify-final.private.txt",
+    "sites/memocasting/qa/multiparcel-20261026/worker-final.private.txt",
+    "sites/memocasting/qa/multiparcel-20261026/worker-final2.private.txt"
+  ],
+  "paths": [
+    "commerce-core/scripts/worker-smoke.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/277",
+  "rollback": "Test orchestration only; retain exact 200/200/409 race, distinct command IDs, refund amount and cancellation assertions. No application/provider behavior changes.",
+  "id": "upgrade-805cfc29-6e04-467d-a949-e0b9e826dbdf",
+  "branch": "codex/memocasting-multiparcel-20261026",
+  "baseSha": "0095288ee240e91e2219189e3d2d46a34faa4a56",
+  "createdAt": "2026-10-26T09:01:45.628Z"
+}

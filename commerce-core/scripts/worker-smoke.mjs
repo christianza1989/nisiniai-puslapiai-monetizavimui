@@ -844,18 +844,21 @@ try {
   assert.equal(privateFinancial.status, 200);
   const refundHeaders = { 'x-fixture-operator': 'store_a' };
   const prepared = await Promise.all(
-    ['one', 'two', 'three'].map((id) =>
-      dispatch(
+    ['one', 'two', 'three'].map(async (id) => {
+      const response = await dispatch(
         'store-a.example',
         '/api/operator/orders/' + result.order.id + '/refund-commands',
         'POST',
         { id: 'native_' + id, amount: 1000, reason: 'Native refund test' },
         refundHeaders,
-      ),
-    ),
+      );
+      return { status: response.status, ...(await response.json()) };
+    }),
   );
   assert.deepEqual(prepared.map((r) => r.status).sort(), [200, 200, 409]);
-  const refundCommand = (await prepared.find((r) => r.status === 200).json()).command;
+  const preparedCommands = prepared.filter((r) => r.status === 200).map((r) => r.command);
+  assert.equal(new Set(preparedCommands.map((c) => c.id)).size, 2);
+  const refundCommand = preparedCommands[0];
   const executions = await Promise.all(
     [1, 2].map(() =>
       dispatch(
@@ -882,12 +885,7 @@ try {
     (await service.getOrder('store_a', 'sandbox', result.order.id)).refunded_amount,
     2000,
   );
-  const unsubmitted = (
-    await prepared
-      .filter((r) => r.status === 200)
-      .find((r) => r.bodyUsed === false)
-      .json()
-  ).command;
+  const unsubmitted = preparedCommands.find((c) => c.id !== refundCommand.id);
   assert.equal(
     (
       await dispatch(

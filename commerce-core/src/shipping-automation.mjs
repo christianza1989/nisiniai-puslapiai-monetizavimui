@@ -1,6 +1,7 @@
 import { requireValue, integer, digest, canonical, CommerceError } from './validation.mjs';
 import { ShippingOperations } from './shipping.mjs';
 import { ShipmentCommands, completeSender } from './shipment-commands.mjs';
+import { planParcels } from './parcels.mjs';
 export class ShippingAutomation {
   constructor(service, options = {}) {
     this.s = service;
@@ -86,6 +87,13 @@ export class ShippingAutomation {
       },
       actor,
     );
+    // The seller explicitly reviews each extra parcel's own carrier cost.
+    // A single customer delivery payment is not an unlimited booking budget.
+    if (
+      planParcels(order, { mode: 'individual' }).parcels.length > 1 &&
+      (method.customerCharge === 'single_parcel' || method.kind === 'locker' || dispatch.locker)
+    )
+      return { skipped: true, manualParcels: true, planId };
     const quoteId = 'autoq_' + orderId + '_' + Math.floor(this.s.now() / 60000);
     const quote = await ops.quote(store, env, planId, { id: quoteId }, read, actor);
     requireValue(
@@ -104,26 +112,31 @@ export class ShippingAutomation {
   async collectRegistered(store, env, orderId) {
     const config = await this.s.store(store, env);
     if (config.automationPolicy?.autoCollectShipmentDocuments !== true) return { skipped: true };
-    const command = await this.s.one(
-      "SELECT id FROM shipment_commands WHERE store_id=? AND order_id=? AND provider_id IS NOT NULL AND state IN ('registered','unknown','review')",
+    const commands = await this.s.rows(
+      "SELECT id FROM shipment_commands WHERE store_id=? AND order_id=? AND provider_id IS NOT NULL AND state IN ('registered','unknown','review') ORDER BY parcel_index,id LIMIT 100",
       store,
       orderId,
     );
-    if (!command) return { skipped: true }; // Legacy or unmatched carrier fact requires operator review.
+    if (!commands.length) return { skipped: true }; // Legacy or unmatched carrier fact requires operator review.
     const adapter = this.options.shippingAdapters?.[store];
     requireValue(adapter, 'shipping_not_connected', 503);
-    const result = await new ShipmentCommands(this.s, this.options.privateStorage).refresh(
-      store,
-      env,
-      command.id,
-      adapter,
-      'commerce_automation',
-    );
+    const results = [];
+    for (const command of commands)
+      results.push(
+        await new ShipmentCommands(this.s, this.options.privateStorage).refresh(
+          store,
+          env,
+          command.id,
+          adapter,
+          'commerce_automation',
+        ),
+      );
     // Registration can precede labels by several provider processing cycles.
     // Keep the durable event waiting; never submit a replacement shipment.
-    if (result.requiresReview) throw new CommerceError('carrier_booking_requires_review', 409);
-    if (result.pending || !result.labelsAvailable)
+    if (results.some((r) => r.requiresReview))
+      throw new CommerceError('carrier_booking_requires_review', 409);
+    if (results.some((r) => r.pending || !r.labelsAvailable))
       throw new CommerceError('carrier_documents_pending', 409);
-    return result;
+    return results.length === 1 ? results[0] : { results, labelsAvailable: true };
   }
 }

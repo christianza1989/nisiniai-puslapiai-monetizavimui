@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "273 core tests passed. Initial worker smoke exposed legacy courier bundle auto-prepare regression; restricted manual extra-parcel preparation to the new subsidy/locker policy and verified14 affected tests plus full native worker smoke. Own canonical admin created2 fixture commands/PDFs; buyer2/3 retained472minor one-package fee. No external booking/payment/mail.",
+  "checks": [
+    {
+      "command": "npm --prefix commerce-core run verify",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/core-verify.private.txt:format and273/273 tests; subsequent worker-repaired.private.txt completes native stage after scoped compatibility repair"
+    },
+    {
+      "command": "node --test test/shipping-automation.test.mjs test/multiparcel.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/automation-regression.private.txt:14/14 after final automation condition"
+    },
+    {
+      "command": "node --test test/multiparcel-worker.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/native-repaired.private.txt:historical28->29, durable slots, concurrency, partial/unknown recovery, three documents"
+    },
+    {
+      "command": "canonical localhost admin and buyer desktop/320px browser",
+      "result": "PASS",
+      "evidence": "Two distinct fixture IDs/PDF records; first label retained ready, second completed. 2 kits68.72EUR,3 kits100.72EUR, one472minor delivery. No console errors."
+    }
+  ],
+  "eventId": "aa88b860-1342-431c-82bf-e88b33b995fd",
+  "sequence": 2,
+  "at": "2026-10-26T08:49:46.062Z"
+}

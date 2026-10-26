@@ -230,6 +230,11 @@ export function validateStore(store) {
   );
   for (const market of store.markets)
     for (const d of market.delivery) {
+      requireValue(
+        d.customerCharge === undefined ||
+          (d.customerCharge === 'single_parcel' && d.pricing === 'carrier'),
+        'invalid_markets',
+      );
       if (d.senderMode !== undefined) {
         const origin = store.dispatchLockers?.[d.courier];
         requireValue(

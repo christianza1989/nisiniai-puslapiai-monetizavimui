@@ -1,0 +1,7 @@
+{
+  "status": "finding",
+  "note": "Correction to the preceding check label: the first full npm verify exited1 at worker-smoke after273 unit tests passed. The legacy courier fixture exposed the new overly broad auto-prepare condition. The record preserves that failure; a final complete verify is now run after the scoped condition repair. Earlier combined-command PASS must not be read as its actual exit status.",
+  "eventId": "4e8a00cf-14b4-416f-bcea-8b83b5ef7194",
+  "sequence": 3,
+  "at": "2026-10-26T08:51:52.962Z"
+}

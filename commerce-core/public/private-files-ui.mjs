@@ -14,6 +14,11 @@ export function renderPrivateFiles(content, detail, ctx) {
       table(
         ['Failas', 'Dydis', 'Įkėlimo laikas', 'Veiksmas'],
         detail.files.map((file) => {
+          const command = detail.shipmentCommands?.find((c) => c.id === file.source_id);
+          const parcelName =
+            command?.parcel_index >= 0
+              ? ' · Pakuotė ' + (command.parcel_index + 1) + ' iš ' + command.parcel_count
+              : '';
           const download = node('button', { type: 'button' }, 'Atsisiųsti');
           download.addEventListener('click', () =>
             action(
@@ -31,7 +36,7 @@ export function renderPrivateFiles(content, detail, ctx) {
           return node(
             'tr',
             {},
-            cell(file.filename, 'Failas'),
+            cell(file.filename + parcelName, 'Failas'),
             cell(Math.ceil(file.byte_length / 1024) + ' KB', 'Dydis'),
             cell(date(file.created_at), 'Įkėlimo laikas'),
             cell(download, 'Veiksmas'),

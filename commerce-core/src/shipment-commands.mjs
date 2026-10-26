@@ -8,6 +8,7 @@ import {
   CommerceError,
 } from './validation.mjs';
 import { requireOperation } from './admission.mjs';
+import { shipmentPart } from './parcels.mjs';
 import { PrivateFiles, hashBytes } from './private-storage.mjs';
 const view = (row) =>
   row && { ...row, payload: JSON.parse(row.payload_json), payload_json: undefined };
@@ -69,6 +70,7 @@ export class ShipmentCommands {
       quoteId: input.quoteId,
       serviceId: input.serviceId,
       maxCost: input.maxCost,
+      ...(input.parcelIndex !== undefined ? { parcelIndex: input.parcelIndex } : {}),
       actor,
     };
     const hash = await digest(canonical(request));
@@ -108,14 +110,25 @@ export class ShipmentCommands {
       'shipment_quote_mismatch',
       409,
     );
+    requireValue(quote.payload.parcelIndex === input.parcelIndex, 'shipment_quote_mismatch', 409);
     requireValue(this.s.now() - quote.created_at <= 15 * 60000, 'shipment_quote_stale', 409);
     const order = await this.s.getOrder(store, env, orderId);
+    const part = shipmentPart(order, plan.payload, input.parcelIndex);
+    const projection = await this.s.one(
+      'SELECT provider_id FROM shipments WHERE store_id=? AND order_id=?',
+      store,
+      orderId,
+    );
     requireValue(
-      !(await this.s.one(
-        'SELECT order_id FROM shipments WHERE store_id=? AND order_id=?',
-        store,
-        orderId,
-      )),
+      !projection ||
+        (input.parcelIndex !== undefined &&
+          (await this.s.one(
+            "SELECT id FROM shipment_commands WHERE store_id=? AND order_id=? AND plan_id=? AND parcel_index>=0 AND state='registered' AND provider_id=?",
+            store,
+            orderId,
+            input.planId,
+            projection.provider_id,
+          ))),
       'shipment_command_conflict',
       409,
     );
@@ -149,8 +162,7 @@ export class ShipmentCommands {
         isCompany: plan.payload.recipient.isCompany,
         ...(customer.locker ? { locker: customer.locker } : {}),
       },
-      parcels: plan.payload.parcels,
-      value: plan.payload.value,
+      ...part,
       currency: plan.payload.currency,
       serviceId: offer.serviceId,
       quoteAmount: offer.amount,
@@ -158,7 +170,7 @@ export class ShipmentCommands {
     try {
       await this.s.db.batch([
         this.s.stmt(
-          'INSERT INTO shipment_commands(store_id,id,order_id,plan_id,account_ref,environment,provider,payload_hash,payload_json,actor_ref,created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)',
+          'INSERT INTO shipment_commands(store_id,id,order_id,plan_id,account_ref,environment,provider,payload_hash,payload_json,actor_ref,created_at,parcel_index,parcel_count) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)',
           store,
           input.id,
           orderId,
@@ -170,6 +182,8 @@ export class ShipmentCommands {
           JSON.stringify(payload),
           actor,
           this.s.now(),
+          input.parcelIndex ?? -1,
+          part.parcelCount ?? 1,
         ),
         ...this.s.event(store, 'ShipmentPrepared', input.id, { orderId, actorRef: actor }),
       ]);
@@ -180,7 +194,7 @@ export class ShipmentCommands {
         input.id,
       );
       if (raced && raced.payload_hash === hash) return { command: view(raced), replayed: true };
-      if (String(error.message).includes('UNIQUE'))
+      if (/UNIQUE|shipment_parcel_plan_conflict/.test(String(error.message)))
         throw new CommerceError('shipment_command_conflict', 409);
       throw error;
     }
@@ -335,13 +349,24 @@ export class ShipmentCommands {
         this.s.now(),
       ),
       this.s.stmt(
-        "UPDATE orders SET fulfillment_state='labelled' WHERE store_id=? AND id=? AND EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND lease_token=? AND lease_until>?)",
+        "UPDATE orders SET fulfillment_state='labelled' WHERE store_id=? AND id=? AND fulfillment_state IN ('ready','labelled') AND EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND lease_token=? AND lease_until>?) AND (SELECT COUNT(*) FROM shipment_commands WHERE store_id=? AND order_id=? AND plan_id=? AND state='registered')=?",
         command.store_id,
         command.order_id,
         command.store_id,
         command.id,
         lease,
         this.s.now(),
+        command.store_id,
+        command.order_id,
+        command.plan_id,
+        command.parcel_count,
+      ),
+      this.s.stmt(
+        "UPDATE shipments SET state=CASE WHEN EXISTS(SELECT 1 FROM orders WHERE store_id=? AND id=? AND fulfillment_state IN ('labelled','shipped','delivered')) THEN 'registered' ELSE 'unknown' END WHERE store_id=? AND order_id=?",
+        command.store_id,
+        command.order_id,
+        command.store_id,
+        command.order_id,
       ),
       ...this.s.event(
         command.store_id,
@@ -349,12 +374,14 @@ export class ShipmentCommands {
         command.order_id,
         { providerId: fact.id },
         {
-          sql: "EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND lease_token=? AND lease_until>?) AND NOT EXISTS(SELECT 1 FROM outbox WHERE store_id=? AND kind='ShipmentRegistered' AND aggregate_id=?)",
+          sql: "EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND lease_token=? AND lease_until>?) AND EXISTS(SELECT 1 FROM orders WHERE store_id=? AND id=? AND fulfillment_state='labelled') AND NOT EXISTS(SELECT 1 FROM outbox WHERE store_id=? AND kind='ShipmentRegistered' AND aggregate_id=?)",
           args: [
             command.store_id,
             command.id,
             lease,
             this.s.now(),
+            command.store_id,
+            command.order_id,
             command.store_id,
             command.order_id,
           ],
@@ -375,7 +402,20 @@ export class ShipmentCommands {
       command.store_id,
       command.order_id,
     );
-    requireValue(projection.provider_id === fact.id, 'shipment_projection_conflict', 409);
+    requireValue(
+      projection &&
+        (projection.provider_id === fact.id ||
+          (command.parcel_index >= 0 &&
+            (await this.s.one(
+              "SELECT id FROM shipment_commands WHERE store_id=? AND order_id=? AND plan_id=? AND parcel_index>=0 AND state='registered' AND provider_id=?",
+              command.store_id,
+              command.order_id,
+              command.plan_id,
+              projection.provider_id,
+            )))),
+      'shipment_projection_conflict',
+      409,
+    );
     return {
       command: finished,
       replayed: false,

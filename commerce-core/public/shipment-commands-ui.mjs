@@ -19,7 +19,13 @@ export function renderShipmentCommands(content, detail, ctx) {
     );
   for (const c of detail.shipmentCommands || []) {
     content.append(
-      node('h3', {}, states[c.state] || c.state),
+      node(
+        'h3',
+        {},
+        (c.parcel_index >= 0
+          ? 'Pakuotė ' + (c.parcel_index + 1) + ' iš ' + c.parcel_count + ' · '
+          : '') + (states[c.state] || c.state),
+      ),
       node('p', {}, 'Didžiausia vežėjo kaina: ' + money(c.payload.maxCost, c.payload.currency)),
     );
     const button = (label, run, disabled = false) => {
@@ -98,7 +104,9 @@ export function renderShipmentCommands(content, detail, ctx) {
       content.append(
         node('p', {}, 'Vežėjo siuntos ID: ' + c.provider_id),
         button(
-          'Gauti PDF ir sekimo įvykius',
+          c.parcel_index >= 0
+            ? 'Gauti pakuotės ' + (c.parcel_index + 1) + ' PDF ir sekimą'
+            : 'Gauti PDF ir sekimo įvykius',
           () => api(prefix + 'refresh', {}),
           !has('ship') || !integrations.shippingBooking,
         ),

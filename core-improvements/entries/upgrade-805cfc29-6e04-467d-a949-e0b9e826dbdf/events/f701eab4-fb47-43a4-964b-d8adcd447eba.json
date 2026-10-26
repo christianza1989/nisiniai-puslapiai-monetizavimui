@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Original full native run could not find unread response after async execution; delayed batched parsing also exposed Body already read. Parse each response at completion inside concurrent Promise.all, then use explicit command IDs. All original refund-budget/side-effect checks remain and distinct IDs are now asserted.",
+  "checks": [
+    {
+      "command": "node commerce-core/scripts/worker-smoke.mjs",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/worker-final2.private.txt:complete native smoke PASS after fixture repair"
+    }
+  ],
+  "eventId": "f701eab4-fb47-43a4-964b-d8adcd447eba",
+  "sequence": 2,
+  "at": "2026-10-26T09:01:45.650Z"
+}

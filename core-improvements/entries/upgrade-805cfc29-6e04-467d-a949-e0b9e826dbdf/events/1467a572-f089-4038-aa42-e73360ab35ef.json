@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Final receipt rechecked: current commerce-core/scripts/worker-smoke.mjs exactly matches tested e63e695d source; unchanged full native final2 PASS log retained. No native test rerun or financial action is implied by this receipt verification.",
+  "checks": [
+    {
+      "command": "Exact git show e63e695d:commerce-core/scripts/worker-smoke.mjs versus current source; retained final native PASS receipt verification",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/worker-final2.private.txt; commerce-core/scripts/worker-smoke.mjs unchanged from source PR278"
+    }
+  ],
+  "eventId": "1467a572-f089-4038-aa42-e73360ab35ef",
+  "sequence": 4,
+  "at": "2026-10-26T09:38:02.477Z"
+}

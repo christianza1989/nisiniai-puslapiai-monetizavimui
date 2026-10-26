@@ -1,4 +1,5 @@
 import { requireValue, digest, integer } from './validation.mjs';
+import { settledLines } from './discounts.mjs';
 
 const day = 86400000,
   lifetime = 180 * day,
@@ -97,11 +98,11 @@ export function analyticsSale(order) {
     'analytics_order_invalid',
   );
   let value = 0;
-  const items = snapshot.lines.map((line) => {
+  const items = settledLines(snapshot).map((line) => {
     requireValue(
       /^[a-zA-Z0-9_-]{1,100}$/.test(line.sku) &&
         integer(line.quantity, 1, 1000) &&
-        integer(line.unitAmount, 1) &&
+        integer(line.unitAmount, 0) &&
         line.lineAmount === line.quantity * line.unitAmount,
       'analytics_order_invalid',
     );

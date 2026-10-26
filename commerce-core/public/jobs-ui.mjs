@@ -1,6 +1,31 @@
 export async function renderJobs(content, ctx) {
   const { node, table, cell, api, action, has, date } = ctx;
   const data = await api('/api/operator/automation');
+  if (!content.isConnected) return;
+  const settings = data.notificationSettings;
+  if (settings) {
+    const pairs = [
+      ['Laiškų siuntėjas', settings.sender || 'Nenustatytas'],
+      ['Automatinis laiškų siuntimas', settings.sending ? 'Įjungtas' : 'Išjungtas'],
+    ];
+    if (settings.recovery)
+      pairs.push(
+        ['Apmokėjimo laikas', settings.recovery.reservationHours + ' val.'],
+        ['Vienas priminimas', 'Po ' + settings.recovery.reminderAfterHours + ' val.'],
+      );
+    content.append(
+      node(
+        'section',
+        { class: 'detail-surface' },
+        node('h2', {}, 'Paštas ir apmokėjimas'),
+        node(
+          'dl',
+          {},
+          pairs.flatMap(([k, v]) => [node('dt', {}, k), node('dd', {}, v)]),
+        ),
+      ),
+    );
+  }
   content.append(
     node(
       'p',

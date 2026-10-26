@@ -1,0 +1,1072 @@
+{
+  "siteId": "memocasting",
+  "canonicalHost": "memocasting.lt",
+  "phase": 1,
+  "auditKind": "post-launch-deep-seo-geo-diagnostic",
+  "evaluatedAt": "2026-10-25T15:53:24.142663+00:00",
+  "evaluator": "Codex root, direct public/GSC/browser review",
+  "environment": {
+    "scope": "Report-only; no production changes/transactions; all187URL technical inventory and28publishedLTguides read individually",
+    "browser": "Chrome3 via CUA; mobile emulation320/390, not physical device",
+    "comparison": "Official free primary sources and GSC; no new paid Treg research"
+  },
+  "version": {
+    "packageSha256": "cfec71cb4763224748be22fb5084688dd7f80c16d9e11b6f47c9fd6398db01bb",
+    "sourceVersion": "PUBLIC ecbcd5020e0b8f40929f8ba97c23fbfd06978a0e deployed; a12d13659708a3caedcb8afdb19fe253bb9ea13e identical main tree",
+    "core": "83b2ec3e99df79175284687bfe568249fb62c81a",
+    "frontendWorker": "fca0b35d-46bb-45e9-b9bd-7db8be42f4fe",
+    "commerceWorker": "c3607521-ae24-4efe-9df4-ce3c3050341b",
+    "nativeRelease": "2d2463df-fe76-4efb-9978-60112aa10aaf"
+  },
+  "scope": {
+    "packagePages": 187,
+    "publicPages": 118,
+    "futurePages": 69,
+    "sitemapUrls": 114,
+    "LTGuides": 97,
+    "publicLTGuideBodiesRead": 28,
+    "futureLTGuidesStructureReviewed": 69,
+    "publicLTSupportBodiesRead": 1,
+    "localeCounts": {
+      "lt": 121,
+      "pl": 22,
+      "lv": 22,
+      "et": 22
+    },
+    "fullNativeLanguageReview": false
+  },
+  "verdict": {
+    "audit": "COMPLETE_DIAGNOSTIC_WITH_EXPLICIT_LIMITS",
+    "P0Confirmed": 0,
+    "P1Findings": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05"
+    ],
+    "P2Findings": [
+      "F06",
+      "F07",
+      "F08",
+      "F09",
+      "F10",
+      "F11",
+      "F12"
+    ],
+    "productionRepairsApplied": false,
+    "readiness": "NOT_RE_CERTIFIED_ALL_AZ",
+    "scoreMeaning": "Evidence coverage of broad acceptance catalog; not SEO ranking or site quality percentage."
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "NA",
+      "notes": "This is already-live commerce, not an initial inquiry-only pilot.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "UNVERIFIED",
+      "notes": "Storefront live/ready and product choices render; actual warehouse count/fulfilment capacity not independently counted in this audit.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "notes": "No business expansion decision or qualified revenue cohort analyzed.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "PASS",
+      "notes": "Brand/MB legalName, business phone/email, site schema and visible contact agree.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained.",
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — valid JSON-LD, current32/48EUR Offers and MemoryCasting organization.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-product-inspection.private.txt — indexed product with valid enhancements."
+      ]
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "UNVERIFIED",
+      "notes": "No fabricated review/certification detected in read public LT guides; complete historical asset rights/native-language claims not re-certified.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "PASS",
+      "notes": "Live HTTPS site and Organization legal identity established; prior owner/deployment receipts retained.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — valid JSON-LD, current32/48EUR Offers and MemoryCasting organization.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-product-inspection.private.txt — indexed product with valid enhancements.",
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained."
+      ]
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "notes": "Bounded Oct23 history and current traffic-bearing URL sample, with errors and limits retained.",
+      "evidence": [
+        "sites/memocasting/REDIRECTS_2026_10_23.md — historical URL decisions retained.",
+        "sites/memocasting/qa/deep-audit-20261025/legacy-traffic-user-agent.private.json — three GSC traffic-bearing old URLs301 to current200."
+      ]
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "notes": "Existing exact-intent aliases and guarded future redirects; unknown paths remain404 rather than mass home redirection.",
+      "evidence": [
+        "sites/memocasting/REDIRECTS_2026_10_23.md — historical URL decisions retained.",
+        "sites/memocasting/qa/deep-audit-20261025/legacy-traffic-user-agent.private.json — three GSC traffic-bearing old URLs301 to current200.",
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "PASS",
+      "notes": "Tested password/product/collection/en/blog301 targets all current public200; slash308 and www+UTM preserved.",
+      "evidence": [
+        "sites/memocasting/REDIRECTS_2026_10_23.md — historical URL decisions retained.",
+        "sites/memocasting/qa/deep-audit-20261025/legacy-traffic-user-agent.private.json — three GSC traffic-bearing old URLs301 to current200.",
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
+      "status": "UNVERIFIED",
+      "notes": "Official free sources/current comparator sampled; no full fresh international desktop/mobile reference comparison in audit.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "FAIL",
+      "notes": "Two current LT gift articles promise selectable sold-out wooden base (F01).",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit."
+      ]
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "notes": "Recommendations distinguish true GSC small-sample observations from assumptions; no invented volumes/conversions.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/gsc-queries-28d.private.txt —130 visible queries,54 total clicks/28d.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-indexing.private.txt — dated lagging Google snapshot, not live crawl count."
+      ]
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.",
+      "status": "UNVERIFIED",
+      "notes": "Inspected coherent product/article mobile views; not a new identity/network-diversity acceptance.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
+      "status": "UNVERIFIED",
+      "notes": "Existing DESIGN retained; no full design-system re-certification in SEO scope.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "UNVERIFIED",
+      "notes": "Illustrative nature disclosed in read guides; all historical licences and source-originals not re-audited.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "PASS",
+      "notes": "All118 public routes reachable; no orphan current guide.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/analysis.private.json — all118 public routes reachable within2 clicks; fragment targets valid.",
+        "sites/memocasting/qa/deep-audit-20261025/probes.private.json — gallery/video candidate links are200 assets."
+      ]
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "UNVERIFIED",
+      "notes": "HTTP destinations valid and article TOC exercised; not all header/footer/mobile actions manually executed.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "FAIL",
+      "notes": "Moterims evergreen/Christmas and two packing guides have insufficient differentiation (F02/F09); no automatic merger.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit."
+      ]
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "PASS",
+      "notes": "Live homepage topic/title, visible offer and product navigation clear; product context says production-ready.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "UNVERIFIED",
+      "notes": "Homepage structure inspected, but every mid/end interaction not visually re-tested.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "UNVERIFIED",
+      "notes": "No fresh full error/success checkout/form lifecycle exercised in read-only audit.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "PASS",
+      "notes": "All28 live LT /gidai texts and /pagalba individually read; useful distinct technical/Advent/budget guides identified.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit."
+      ]
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "FAIL",
+      "notes": "F01 contradicts actual availability; multiple priced sources require ongoing bounded verification F12.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit."
+      ]
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "FAIL",
+      "notes": "Several recipient pages lack concrete comparable choices for shopping intent; F02/F09 specific examples retained.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit."
+      ]
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "UNVERIFIED",
+      "notes": "Live long article and TOC320/390 tested, all HTML source blocks present; no every-page mobile render certification.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/product-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-320.private.png — 320px reflow and heading anchor exercised."
+      ]
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "UNVERIFIED",
+      "notes": "Image presence/alt attributes crawled; every future/public asset crop not individually visually certified.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "PASS",
+      "notes": "Visible MB Memocasting byline links to public editorial identity.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "PASS",
+      "notes": "Real MB legal identity and MemoryCasting brand refer to the same stable organization; F06 suggests consolidation, not fictional authorship.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — valid JSON-LD, current32/48EUR Offers and MemoryCasting organization.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-product-inspection.private.txt — indexed product with valid enhancements."
+      ]
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "PASS",
+      "notes": "Real stored publishAt/approval-derived modified dates, no request-based freshness; dates not mutated by audit.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit.",
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained."
+      ]
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "PASS",
+      "notes": "Actual release/deploy receipt separate from planned dates; future404 verified.",
+      "evidence": [
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained.",
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "PASS",
+      "notes": "Public /redakcija/about explain MB responsibility, AI role, sources and contact.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "PASS",
+      "notes": "Byline/AI assistance disclosed; audit explicitly scopes human/native review limitations.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit.",
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "UNVERIFIED",
+      "notes": "Native revision pipeline previously verified; new F01 correction not implemented in report-only audit.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "PASS",
+      "notes": "All118 one H1/title/description/self-canonical; lang verified; no duplicate title/description.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
+      "status": "UNVERIFIED",
+      "notes": "Heart/brand and sampled sharing/alt correct; all heading sequences and image purposes not fully visual-reviewed.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "notes": "All69future404; unknown404; four carts noindex.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "PASS",
+      "notes": "JSON-LD parses and uses stable real entities; same-ID organization declarations can be simplified in F06 without claiming invalid JSON-LD.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — valid JSON-LD, current32/48EUR Offers and MemoryCasting organization.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-product-inspection.private.txt — indexed product with valid enhancements."
+      ]
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "PASS",
+      "notes": "Rendered breadcrumb target/fragment checks valid; Article and public byline/profile relations available.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained.",
+        "sites/memocasting/qa/deep-audit-20261025/analysis.private.json — all118 public routes reachable within2 clicks; fragment targets valid.",
+        "sites/memocasting/qa/deep-audit-20261025/probes.private.json — gallery/video candidate links are200 assets."
+      ]
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "PASS",
+      "notes": "True current32/48Offers and OutOfStock; no fabricated ratings/EAN/review rich-result promises.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — valid JSON-LD, current32/48EUR Offers and MemoryCasting organization.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-product-inspection.private.txt — indexed product with valid enhancements."
+      ]
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "PASS",
+      "notes": "Actual GSC indexed product valid with two optional warnings, dated Oct23; not confused with local validation.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — valid JSON-LD, current32/48EUR Offers and MemoryCasting organization.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-product-inspection.private.txt — indexed product with valid enhancements."
+      ]
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "PASS",
+      "notes": "No broken HTML or fragment target in current public graph; raw media link candidates HEAD200.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/analysis.private.json — all118 public routes reachable within2 clicks; fragment targets valid.",
+        "sites/memocasting/qa/deep-audit-20261025/probes.private.json — gallery/video candidate links are200 assets."
+      ]
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "PASS",
+      "notes": "Authoritative projection used; future targets absent from current links/sitemap/HTML,69future404.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained.",
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained."
+      ]
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "FAIL",
+      "notes": "Clusters reachable but content jobs overlap F02/F09; link count is not an authority metric.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit.",
+        "sites/memocasting/qa/deep-audit-20261025/analysis.private.json — all118 public routes reachable within2 clicks; fragment targets valid.",
+        "sites/memocasting/qa/deep-audit-20261025/probes.private.json — gallery/video candidate links are200 assets."
+      ]
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "UNVERIFIED",
+      "notes": "26 external targets probed:17success,4forbidden,2rate-limited,3transport errors; no proven404, all claims not newly verified.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "PASS",
+      "notes": "Current own-domain targets share current public projection; no unapproved future in audited graph.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/analysis.private.json — all118 public routes reachable within2 clicks; fragment targets valid.",
+        "sites/memocasting/qa/deep-audit-20261025/probes.private.json — gallery/video candidate links are200 assets.",
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained."
+      ]
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "UNVERIFIED",
+      "notes": "Prose/source panels render in inspected article; rights/compensation relationship for every old outbound link not newly established.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "notes": "Active external links sampled; blocked/rate-limited destinations not declared dead or all working.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "PASS",
+      "notes": "Canonical/sitemap/robots/301/308/www/query probes coherent.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained.",
+        "sites/memocasting/REDIRECTS_2026_10_23.md — historical URL decisions retained.",
+        "sites/memocasting/qa/deep-audit-20261025/legacy-traffic-user-agent.private.json — three GSC traffic-bearing old URLs301 to current200."
+      ]
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "PASS",
+      "notes": "Sitemap114 equals eligible118 minus4 carts; future absent; no fresh-date mutation by audit.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained."
+      ]
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "PASS",
+      "notes": "Real HTTPS host and current live package scoped; foreign packages/bindings unchanged.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained.",
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained."
+      ]
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "PASS",
+      "notes": "Used canonical projectPublicPages with actual packages/config; matching current118/sitemap114; LLM exports retrieved.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained.",
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained."
+      ]
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "PASS",
+      "notes": "Current source prior publication/hash/host negative regressions retained; all69 actual future routes404.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained.",
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained."
+      ]
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "PASS",
+      "notes": "Same current source previously passed Studio73/public258/import/export gates; no approval mutations in audit.",
+      "evidence": [
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained."
+      ]
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "FAIL",
+      "notes": "LLM export scope responds, but F01 shared content availability contradiction needs correction in all projections.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit."
+      ]
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "PASS",
+      "notes": "Semantic HTML contains real qualified answers, recipe quantities, visible citations; no model-only version.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained.",
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit."
+      ]
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "notes": "llms.txt and schema expressly not AI/ranking guarantees; official Google current guidance linked.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit."
+      ]
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "UNVERIFIED",
+      "notes": "TOC disclosure and anchor exercised; full keyboard/focus/skip journey not repeated.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "UNVERIFIED",
+      "notes": "320/390 reflow observed; complete contrast/200% text/target audit not executed.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "UNVERIFIED",
+      "notes": "Sample images/headings accessible; form errors and reduced-motion states not fully retested.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "UNVERIFIED",
+      "notes": "Product390/article320/390 and desktop seen; no complete tablet/all-page render matrix.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/product-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-320.private.png — 320px reflow and heading anchor exercised."
+      ]
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "UNVERIFIED",
+      "notes": "TOC and body reflow checked; enlarged text/footer/form paths not all covered.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/product-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-320.private.png — 320px reflow and heading anchor exercised."
+      ]
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "notes": "Explicitly emulated viewport, not physical phone or synthesized touch certification.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/product-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-320.private.png — 320px reflow and heading anchor exercised."
+      ]
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "UNVERIFIED",
+      "notes": "PSI429; no current mobile lab performance score fabricated.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/product-browser-media.private.json — five1122px colour images,total1561802B.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-cwv.private.txt — insufficient field sample.",
+        "sites/memocasting/qa/deep-audit-20261025/psi-0.private.json —429, no Lighthouse score."
+      ]
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "FAIL",
+      "notes": "1122px files for roughly61px colour thumbs cost1561802B; F04. No CWV failure inferred.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/product-browser-media.private.json — five1122px colour images,total1561802B.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-cwv.private.txt — insufficient field sample.",
+        "sites/memocasting/qa/deep-audit-20261025/psi-0.private.json —429, no Lighthouse score."
+      ]
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "notes": "GSC CWV insufficient last90day data; field acceptance cannot be claimed.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/product-browser-media.private.json — five1122px colour images,total1561802B.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-cwv.private.txt — insufficient field sample.",
+        "sites/memocasting/qa/deep-audit-20261025/psi-0.private.json —429, no Lighthouse score."
+      ]
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "UNVERIFIED",
+      "notes": "No fresh isolated inquiry validation/durable-store fault injection in SEO audit.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "UNVERIFIED",
+      "notes": "No new operator mail transport test in this read-only audit.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "UNVERIFIED",
+      "notes": "No new marked Message-ID/INBOX observation in SEO audit.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "notes": "Prior production commerce receipt exists; mail/D1/recovery not comprehensively re-tested now.",
+      "evidence": [
+        "sites/memocasting/NATIVE_DEPLOY_2026_10_25.md",
+        "sites/memocasting/qa/antigravity-review-20261025/FINAL_DEPLOYMENT_RECEIPT.private.json — previous current release acceptance, scope retained."
+      ]
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "UNVERIFIED",
+      "notes": "Prior consent-bound ecommerce implementation retained; bot/test counter semantics not freshly re-tested.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "UNVERIFIED",
+      "notes": "Native privacy/consent recently accepted by separate process; no fresh all-storage inventory.",
+      "evidence": [
+        "sites/memocasting/GA4_ECOMMERCE_2026_10_25.md — prior exact backend acceptance; no new paid transaction in audit."
+      ]
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "notes": "GSC query data available; qualified revenue/source cohort not assessed in this audit.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/gsc-queries-28d.private.txt —130 visible queries,54 total clicks/28d.",
+        "sites/memocasting/qa/deep-audit-20261025/gsc-indexing.private.txt — dated lagging Google snapshot, not live crawl count."
+      ]
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "UNVERIFIED",
+      "notes": "Site is real commerce, not inquiry pilot; no fresh complete legal adequacy assessment.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "UNVERIFIED",
+      "notes": "Visible operator matches; processors/retention/legal requirements not completely re-established.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "notes": "No fresh production deletion/recovery/processor audit.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "UNVERIFIED",
+      "notes": "Prior opt-in/withdrawal accepted; not newly exercised in audit.",
+      "evidence": [
+        "sites/memocasting/GA4_ECOMMERCE_2026_10_25.md — prior exact backend acceptance; no new paid transaction in audit."
+      ]
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "UNVERIFIED",
+      "notes": "No secrets needed/printed; prior publication boundary tests retained; not full bundle/log/payload security scan.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "UNVERIFIED",
+      "notes": "Unknown404/blocked transport recorded; spam/recovery/header risk not full-scoped assessment.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "notes": "No live backup restore/incident/abuse-control exercise; GSC security status is not penetration testing.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "NA",
+      "notes": "Report-only site documents; no shared implementation/schema/validator change to certify.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "NA",
+      "notes": "No runtime/code/package changes; prior exact-source tests retained, new scoped CSV/JSON validations suffice for audit files.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "UNVERIFIED",
+      "notes": "Current canonical entrypoints read; not all first-session workflows executed.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "notes": "New report,187URL/97article CSVs, current package versions, private raw screenshots and all85 criteria recorded.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit.",
+        "sites/memocasting/qa/deep-audit-20261025/crawl.private.json — 187 actual HTTP responses, 118 public200/69 future404; HTML hashes retained.",
+        "sites/memocasting/qa/deep-audit-20261025/product-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-390.private.png",
+        "sites/memocasting/qa/deep-audit-20261025/guide-320.private.png — 320px reflow and heading anchor exercised."
+      ]
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "notes": "No10/10/ranking/domain-ready claim; failed/unverified gates retained; scorer reporting mode only.",
+      "evidence": [
+        "sites/memocasting/qa/deep-audit-20261025/inventory.private.json — exact package and97 LT guide jobs.",
+        "DEEP_SEO_GEO_AUDIT_2026_10_25_ARTICLES.csv — individual public-body findings; future review scope explicit."
+      ]
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "notes": "This is a post-launch SEO diagnostic, not renewed full domain/operations readiness certification.",
+      "evidence": [
+        "DEEP_SEO_GEO_AUDIT_2026_10_25.md — explicit scope/limitation; no unobserved PASS."
+      ]
+    }
+  ]
+}

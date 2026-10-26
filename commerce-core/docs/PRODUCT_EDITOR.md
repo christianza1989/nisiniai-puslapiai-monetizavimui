@@ -11,3 +11,9 @@ A cart line is SKU plus sorted choices. Separate configurations remain separate 
 Adapters must import the exact committed browser SDK; retain selection identity in local storage and recovery comparisons, and feed published catalog content into server-rendered product HTML/metadata. Draft content must never replace the editorial publication filter. Legacy orders with no choices retain their original request hashes and can replay without recalculating prices.
 
 Validation: mixed-choice inventory/parcel/order regression; cross-store/auth/media tests; draft CAS and restart; real browser upload, preview, save, publish and responsive inspection. Tests do not authorize live charges or paid shipments.
+
+## Small catalogue previews
+
+The operator can prepare 192px-wide WebP derivatives for existing images, and new uploads prepare them automatically. POST `/api/operator/catalog-media/:originalId/thumbnail` retains the catalog grant, store/environment isolation, bounded bytes (128KiB), exact proportional dimensions and immutable original-ID ownership. It writes only a derivative media record and file; no product draft, stock, order or approval changes. The existing editor button backfills published images without republishing product content.
+
+Public GET `/api/catalog-media/:originalId?size=192` must first admit the original through the current published catalogue. Direct derivative IDs remain private; revoking the original hides both. Missing derivatives fall back to original bytes for compatibility. Storefronts forward only this enumerated size and use it for small preview controls, retaining original URLs for the main image and zoom. Test draft exclusion, publication, revocation, cross-store access, auth, exact dimensions, integrity, GET/HEAD and legacy fallback before adoption.

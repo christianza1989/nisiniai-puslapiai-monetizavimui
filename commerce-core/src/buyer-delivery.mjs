@@ -80,7 +80,14 @@ export class BuyerDeliveryQuotes {
         method.serviceIds.every(identifier),
       'delivery_not_enabled',
     );
-    const base = await this.s.quote(store, env, input, { ...quoteOptions, draftDelivery: true });
+    // Shipping is priced from the actual parcels/gross product facts. Applying
+    // or removing a promotion must not change this independent quote identity.
+    const base = await this.s.quote(
+      store,
+      env,
+      { ...input, discountCode: undefined },
+      { ...quoteOptions, draftDelivery: true },
+    );
     const packages = planParcels({ snapshot: base }, { mode: 'individual' });
     requireValue(
       config.dispatch?.country === 'LT' &&

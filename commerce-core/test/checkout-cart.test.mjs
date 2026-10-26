@@ -1,7 +1,35 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mountCheckout, normalizeCheckoutCart } from '../public/checkout-ui.mjs';
-import { selectionKey } from '../public/commerce-client.mjs';
+import { selectionKey, CommerceClient } from '../public/commerce-client.mjs';
+
+test('definite rejected coupon clears only an uncommitted attempt; ambiguous failure keeps the same key', async () => {
+  for (const status of [409, 500, undefined]) {
+    const values = new Map(),
+      storage = {
+        setItem: (k, v) => values.set(k, v),
+        getItem: (k) => values.get(k) ?? null,
+        removeItem: (k) => values.delete(k),
+      },
+      client = new CommerceClient({ storage });
+    client.context = { storeId: 'fixture_coupon', canCreateTestOrder: true };
+    client.key = 'commerce.sandbox.fixture_coupon';
+    client.request = async () => {
+      throw Object.assign(new Error('discount_limit_reached'), { status });
+    };
+    await assert.rejects(
+      client.create({ lines: [{ sku: 'couple', quantity: 1 }], discountCode: 'SAVE10' }),
+      /discount_limit_reached/,
+    );
+    if (status === 409) {
+      assert.equal(client.attempt, undefined);
+      assert.equal(values.size, 0);
+    } else {
+      assert.ok(client.attempt.requestKey);
+      assert.equal(values.size, 1);
+    }
+  }
+});
 
 test('mixed finishes stay separate in the mounted sidebar; removing white preserves gold and its price', () =>
   withDom(async () => {
@@ -184,6 +212,31 @@ async function withDom(run) {
     Object.assign(globalThis, previous);
   }
 }
+
+test('pending initialization preserves the caller shell and aborted initialization cannot replace it', () =>
+  withDom(async () => {
+    for (const abort of [false, true]) {
+      const root = new Element('div'),
+        loading = new Element('p'),
+        client = clientFixture(),
+        data = await client.initialize(),
+        controller = new AbortController();
+      loading.append('Serverio krepšelio įkėlimo būsena');
+      root.append(loading);
+      let ready;
+      client.initialize = () =>
+        new Promise((resolve) => {
+          ready = resolve;
+        });
+      const mounted = mountCheckout(root, { client, signal: controller.signal });
+      assert.deepEqual(root.children, [loading]);
+      if (abort) controller.abort();
+      ready(data);
+      await mounted;
+      assert.equal(root.children.includes(loading), abort);
+      if (!abort) assert.ok(textContent(root).includes('Krepšelis tuščias.'));
+    }
+  }));
 
 test('empty cart updates on 0 → 1 → 0 and only permits a same-origin catalogue link', () =>
   withDom(async () => {
@@ -540,6 +593,251 @@ function fillOnePage(root) {
     field(root, name).value = value;
   field(root, 'terms').checked = true;
 }
+
+const couponFixture = (input) => {
+  const lines = input.lines.map((l) => ({
+      ...l,
+      unitAmount: 3200,
+      lineAmount: 3200 * l.quantity,
+      discountAmount: 320 * l.quantity,
+      netLineAmount: 2880 * l.quantity,
+    })),
+    subtotal = lines.reduce((n, l) => n + l.lineAmount, 0),
+    discount = { code: 'SAVE10', amount: subtotal / 10 };
+  return { currency: 'EUR', subtotal, amount: subtotal - discount.amount, lines, discount };
+};
+test('coupon exhausted after preview returns to an editable cart with no stale reduction or new order', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      abort = new AbortController();
+    client.discountPreview = async (input) => couponFixture(input);
+    client.quote = async (input) => {
+      const q = couponFixture(input);
+      return { ...q, amount: q.amount + 450, quoteHash: 'current', delivery: { amount: 450 } };
+    };
+    client.create = async () => {
+      throw Object.assign(new Error('discount_limit_reached'), { status: 409 });
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      signal: abort.signal,
+    });
+    const code = field(root, 'discountCode');
+    code.value = 'SAVE10';
+    await code.fire('input');
+    await button(root, 'Pritaikyti').fire('click');
+    fillOnePage(root);
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('submit');
+    assert.equal(code.disabled, false);
+    assert.equal(nodes(root).find((n) => n.className === 'checkout-discount-total').hidden, true);
+    assert.equal(button(root, 'Tęsti į apmokėjimą').disabled, true);
+    await button(root, 'Pašalinti kodą').fire('click');
+    assert.equal(code.value, '');
+    assert.equal(button(root, 'Tęsti į apmokėjimą').disabled, false);
+    abort.abort();
+  }));
+test('one-page coupon applies before contact data, reaches order input and locks with the original payment amount', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient();
+    let previews = 0,
+      quotes = 0;
+    client.discountPreview = async (input) => {
+      previews++;
+      assert.equal(input.customer, undefined);
+      assert.equal(input.code, 'SAVE10');
+      return couponFixture(input);
+    };
+    client.quote = async (input) => {
+      quotes++;
+      assert.equal(input.discountCode, 'SAVE10');
+      const q = couponFixture(input);
+      return {
+        ...q,
+        amount: q.amount + 450,
+        quoteHash: 'discount-verified',
+        delivery: { amount: 450 },
+      };
+    };
+    client.create = async (input) => {
+      client.created = input;
+      client.attempt = { orderId: client.order.id };
+      return {
+        ...client.order,
+        amount: 3330,
+        snapshot: { ...couponFixture(input), delivery: { amount: 450 } },
+      };
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      productsPlacement: 'summary',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      renderPayment: async () => {},
+    });
+    const code = field(root, 'discountCode');
+    code.value = 'save10';
+    await code.fire('input');
+    await button(root, 'Pritaikyti').fire('click');
+    assert.equal(previews, 1);
+    assert.equal(quotes, 0);
+    assert.equal(code.value, 'SAVE10');
+    assert.equal(client.created, undefined);
+    const row = nodes(root).find((n) => n.className === 'checkout-discount-total');
+    assert.equal(row.hidden, false);
+    assert.match(row.children[1].textContent, /3,20/);
+    fillOnePage(root);
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('submit');
+    assert.equal(client.created.discountCode, 'SAVE10');
+    assert.equal(client.created.quoteHash, 'discount-verified');
+    assert.equal(code.disabled, true);
+    assert.equal(button(root, 'Pašalinti kodą').hidden, true);
+    assert.equal(quotes, 1);
+  }));
+test('removing a coupon clears its discount and late apply responses cannot reinstate an edited code', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient();
+    let release;
+    client.discountPreview = (input) =>
+      new Promise((resolve) => {
+        release = () => resolve(couponFixture(input));
+      });
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    const code = field(root, 'discountCode');
+    code.value = 'SAVE10';
+    await code.fire('input');
+    const pending = button(root, 'Pritaikyti').fire('click');
+    code.value = 'OTHER';
+    await code.fire('input');
+    release();
+    await pending;
+    assert.equal(code.value, 'OTHER');
+    assert.equal(nodes(root).find((n) => n.className === 'checkout-discount-total').hidden, true);
+    client.discountPreview = async (input) => couponFixture(input);
+    code.value = 'SAVE10';
+    await code.fire('input');
+    await button(root, 'Pritaikyti').fire('click');
+    assert.equal(nodes(root).find((n) => n.className === 'checkout-discount-total').hidden, false);
+    await button(root, 'Pašalinti kodą').fire('click');
+    assert.equal(code.value, '');
+    assert.equal(nodes(root).find((n) => n.className === 'checkout-discount-total').hidden, true);
+    fillOnePage(root);
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('submit');
+    assert.equal(client.created.discountCode, undefined);
+  }));
+test('quantity changes refresh the server coupon preview without an address or payment request', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      abort = new AbortController();
+    let calls = 0;
+    client.discountPreview = async (input) => {
+      calls++;
+      return couponFixture(input);
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      signal: abort.signal,
+    });
+    const code = field(root, 'discountCode');
+    code.value = 'SAVE10';
+    await code.fire('input');
+    await button(root, 'Pritaikyti').fire('click');
+    field(root, 'couple').value = '2';
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('input', field(root, 'couple'));
+    await pause(350);
+    assert.equal(calls, 2);
+    assert.match(
+      nodes(root).find((n) => n.className === 'checkout-discount-total').children[1].textContent,
+      /6,40/,
+    );
+    assert.equal(client.created, undefined);
+    abort.abort();
+  }));
+test('informed recovery restores expired basket for fresh quote and unchecked terms, without auto payment or create', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      initialize = client.initialize;
+    let quotes = 0,
+      payments = 0,
+      creates = 0;
+    client.initialize = async () => {
+      const value = await initialize();
+      value.context.paymentRecovery = {
+        noticeVersion: 'recovery_v1',
+        reminderAfterHours: 12,
+        reservationHours: 24,
+      };
+      return value;
+    };
+    client.openRecovery = async () => ({
+      state: 'restore',
+      order: {
+        ...client.order,
+        snapshot: {
+          country: 'LT',
+          lines: [{ sku: 'couple', quantity: 2, unitAmount: 1 }],
+          customer: {
+            name: 'Original Buyer',
+            email: 'original@example.test',
+            phone: '+37060000001',
+            address: { line1: 'Original Street 2', city: 'Vilnius', postalCode: '02211' },
+          },
+          delivery: { id: 'courier', amount: 1 },
+        },
+      },
+    });
+    const quote = client.quote;
+    client.quote = async (input) => {
+      quotes++;
+      return quote(input);
+    };
+    client.create = async () => {
+      creates++;
+      throw Error('no automatic create');
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      recoveryToken: 'fixture',
+      renderPayment: async () => {
+        payments++;
+      },
+    });
+    assert.equal(field(root, 'name').value, 'Original Buyer');
+    assert.equal(field(root, 'couple').value, '2');
+    assert.notEqual(field(root, 'email').disabled, true);
+    assert.equal(field(root, 'terms').checked, false);
+    assert.equal(payments, 0);
+    assert.equal(creates, 0);
+    assert(textContent(root).includes('po 12 val.'));
+    assert(textContent(root).includes('per 24 val.'));
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('submit');
+    assert.equal(creates, 0);
+    await pause(700);
+    assert(quotes > 0);
+  }));
 function carrierClient() {
   const client = onePageClient(),
     initialize = client.initialize;

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Original unsupported-flag failure preserved; installed deploy help excludes it. Actual successful backend/mail deployments and bulk secrets used WRANGLER_LOG=error. No source behavior changed.",
+  "checks": [
+    {
+      "command": "installed Wrangler4.149 deploy --help and MAIL_CORE logging guidance assertion",
+      "result": "PASS",
+      "evidence": "Actual command exit0 on2026-10-25; deploy help lacks --log-level, canonical text names WRANGLER_LOG. Successful actual operations are separately recorded in Memocasting sender acceptance."
+    }
+  ],
+  "eventId": "39a9cfb3-ac78-46e8-a7e0-350fe819413f",
+  "sequence": 2,
+  "at": "2026-10-25T18:57:20.953Z"
+}

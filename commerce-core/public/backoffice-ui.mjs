@@ -9,13 +9,14 @@ export async function renderBackoffice(content, view, ctx) {
     financials:
       'Importuotas šaltinis yra sutikrinimo įrodymas. Jis nepatvirtina mokėjimo ir nesukuria mokestinio įrašo. Mokesčiai, komisiniai ir neatitikimai peržiūrimi atskirai.',
     wholesale:
-      'Partnerio kainynas matomas tik administravime. Pasiūlymas galioja 7 dienas; šioje bandomojoje aplinkoje kuriami išankstinio apmokėjimo užsakymai.',
+      'Partnerio kainynas matomas tik administravime. Pasiūlymas galioja 7 dienas; užsakymas vykdomas po apmokėjimo patvirtinimo.',
   };
   content.append(
     n('p', { class: 'hint' }, hints[view]),
     n('p', { class: 'empty' }, 'Įkeliami duomenys…'),
   );
   const data = await api('/api/operator/' + view);
+  if (!content.isConnected) return;
   content.replaceChildren(n('p', { class: 'hint' }, hints[view]));
   const refresh = () => renderBackoffice(content, view, ctx);
   const field = (label, name, attrs = {}, options) => {

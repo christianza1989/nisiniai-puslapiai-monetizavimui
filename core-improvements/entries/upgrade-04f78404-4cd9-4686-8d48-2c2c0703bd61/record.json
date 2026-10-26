@@ -1,0 +1,34 @@
+{
+  "siteId": "memocasting",
+  "summary": "Replace one-hour abandoned payment dead end with opt-in24h checkout, one informed12h reminder and purpose-bound safe continuation; migrate authenticated primary mailbox without changing payment keys",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/PAYMENT_RECOVERY_2026_10_25.md",
+    "commerce-core/test/payment-recovery.test.mjs",
+    "commerce-core/test/checkout-cart.test.mjs",
+    "commerce-core/test/embedded-checkout.test.mjs"
+  ],
+  "paths": [
+    "commerce-core/src/payment-recovery.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/src/validation.mjs",
+    "commerce-core/src/stripe-adapter.mjs",
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/src/jobs.mjs",
+    "commerce-core/src/notifications.mjs",
+    "commerce-core/public/commerce-client.mjs",
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/public/operator-order-status.mjs",
+    "commerce-core/scripts/dev.mjs",
+    "commerce-core/docs/PAYMENT_RECOVERY.md",
+    "MAIL_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/261",
+  "rollback": "Disable paymentRecovery and notification sending by scoped config CAS; preserve all orders/reservations, commands/receipts and provider keys. Revert scoped code only after disabling policy. Never roll back DB/history.",
+  "id": "upgrade-04f78404-4cd9-4686-8d48-2c2c0703bd61",
+  "branch": "codex/memocasting-final-seo-fixes-20261025",
+  "baseSha": "9746a6fadadf545701085fb0af9f93d8568f66e8",
+  "createdAt": "2026-10-25T18:08:30.738Z"
+}

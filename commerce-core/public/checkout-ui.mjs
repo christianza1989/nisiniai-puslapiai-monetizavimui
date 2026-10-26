@@ -253,6 +253,79 @@ export function normalizeCheckoutCart(lines, catalog) {
   }
   return [...quantities.values()].filter((line) => line.quantity > 0);
 }
+const discountMessages = {
+  lt: {
+    code: 'Nuolaidos kodas',
+    placeholder: 'Įveskite kodą',
+    apply: 'Pritaikyti',
+    remove: 'Pašalinti kodą',
+    discount: 'Nuolaida',
+    checking: 'Tikrinamas kodas…',
+    applied: 'Kodas pritaikytas.',
+    invalid: 'Šis kodas negalioja arba jo limitas pasiektas.',
+    minimum: 'Prekių suma per maža šiam kodui. Patikrinkite sąlygas arba pašalinkite kodą.',
+    network: 'Nepavyko patikrinti kodo. Bandykite dar kartą.',
+  },
+  pl: {
+    code: 'Kod rabatowy',
+    placeholder: 'Wpisz kod',
+    apply: 'Zastosuj',
+    remove: 'Usuń kod',
+    discount: 'Rabat',
+    checking: 'Sprawdzanie kodu…',
+    applied: 'Kod został zastosowany.',
+    invalid: 'Kod jest nieaktywny lub jego limit został osiągnięty.',
+    minimum: 'Wartość produktów jest za niska dla tego kodu. Sprawdź warunki lub usuń kod.',
+    network: 'Nie udało się sprawdzić kodu. Spróbuj ponownie.',
+  },
+  lv: {
+    code: 'Atlaides kods',
+    placeholder: 'Ievadiet kodu',
+    apply: 'Piemērot',
+    remove: 'Noņemt kodu',
+    discount: 'Atlaide',
+    checking: 'Pārbauda kodu…',
+    applied: 'Kods ir piemērots.',
+    invalid: 'Kods nav derīgs vai tā limits ir sasniegts.',
+    minimum: 'Preču summa ir pārāk maza šim kodam. Pārbaudiet noteikumus vai noņemiet kodu.',
+    network: 'Kodu neizdevās pārbaudīt. Mēģiniet vēlreiz.',
+  },
+  et: {
+    code: 'Sooduskood',
+    placeholder: 'Sisestage kood',
+    apply: 'Rakenda',
+    remove: 'Eemalda kood',
+    discount: 'Soodustus',
+    checking: 'Koodi kontrollimine…',
+    applied: 'Kood on rakendatud.',
+    invalid: 'Kood ei kehti või selle kasutuspiir on täis.',
+    minimum:
+      'Toodete summa on selle koodi jaoks liiga väike. Kontrollige tingimusi või eemaldage kood.',
+    network: 'Koodi ei saanud kontrollida. Proovige uuesti.',
+  },
+};
+export function quoteDiscountAmount(quote) {
+  if (!quote.discount) return 0;
+  const d = quote.discount,
+    gross = quote.lines.reduce((n, l) => n + l.unitAmount * l.quantity, 0);
+  if (
+    typeof d.code !== 'string' ||
+    !/^[A-Z0-9][A-Z0-9_-]{2,39}$/.test(d.code) ||
+    !Number.isSafeInteger(d.amount) ||
+    d.amount <= 0 ||
+    d.amount >= gross ||
+    quote.lines.some(
+      (l) =>
+        !Number.isSafeInteger(l.discountAmount) ||
+        l.discountAmount < 0 ||
+        l.discountAmount > l.unitAmount * l.quantity ||
+        l.netLineAmount !== l.unitAmount * l.quantity - l.discountAmount,
+    ) ||
+    quote.lines.reduce((n, l) => n + l.discountAmount, 0) !== d.amount
+  )
+    throw new Error('invalid_quote');
+  return d.amount;
+}
 const onePageMessages = {
   lt: {
     intro: 'Jūsų pasirinkimas, pristatymas ir apmokėjimas – vienoje vietoje.',
@@ -415,9 +488,11 @@ function onePageForm({
   setPaymentCleanup,
   isCurrent,
   initialOrder,
+  restoredOrder,
   signal,
 }) {
   const u = onePageMessages[language] || onePageMessages.lt;
+  const dc = discountMessages[language] || discountMessages.lt;
   const form = element('form', { class: 'checkout-one-page' });
   const summary = element('aside', { class: 'checkout-summary', 'aria-label': u.summary });
   const details = element('div', { class: 'checkout-details' });
@@ -430,7 +505,13 @@ function onePageForm({
     version = 0,
     timer,
     busy = false,
-    lastCart = JSON.stringify(cartLines);
+    lastCart = JSON.stringify(cartLines),
+    activeDiscountCode = initialOrder?.snapshot?.discount?.code || '',
+    couponPreview,
+    couponPending = false,
+    couponTicket = 0,
+    couponTimer,
+    couponLastAttempt = '';
   const market = () => markets.find((v) => v.country === selectedCountry);
   const canOrder = Boolean(
     (context.productionReady || context.canCreateTestOrder) &&
@@ -550,6 +631,15 @@ function onePageForm({
   if (catalogueHref)
     empty.append(element('a', { class: 'checkout-catalogue', href: catalogueHref }, m.catalogue));
   const intro = element('p', { class: 'checkout-intro' }, u.intro);
+  if (context.paymentRecovery && language === 'lt') {
+    details.append(
+      element(
+        'p',
+        { class: 'checkout-hint' },
+        `Neužbaigus apmokėjimo, po ${context.paymentRecovery.reminderAfterHours} val. atsiųsime vieną priminimą el. paštu. Užsakymą galima apmokėti per ${context.paymentRecovery.reservationHours} val. Daugiau priminimų nesiųsime.`,
+      ),
+    );
+  }
   const closed = element('p', { class: 'checkout-notice', role: 'status' }, u.closed);
   const heading = element('h2', {}, u.items);
   const products = element('section', { class: 'checkout-products' }, heading, items);
@@ -645,17 +735,48 @@ function onePageForm({
     const row = element('div', {}, element('dt', {}, name), element('dd', {}));
     return { row, value: row.children[1] };
   };
+  const couponInput = element('input', {
+    id: 'checkout-discount-code',
+    name: 'discountCode',
+    type: 'text',
+    maxlength: 40,
+    autocomplete: 'off',
+    spellcheck: 'false',
+    placeholder: dc.placeholder,
+    value: activeDiscountCode,
+    'aria-describedby': 'checkout-discount-note',
+  });
+  fields.discountCode = couponInput;
+  const couponApply = element('button', { type: 'button' }, dc.apply),
+    couponRemove = element('button', { type: 'button', class: 'checkout-code-remove' }, dc.remove),
+    couponNote = element('p', {
+      id: 'checkout-discount-note',
+      class: 'checkout-code-note',
+      role: 'status',
+      'aria-live': 'polite',
+    });
+  const couponGroup = element(
+    'div',
+    { class: 'checkout-code' },
+    element('label', { for: 'checkout-discount-code' }, dc.code),
+    element('div', { class: 'checkout-code-input' }, couponInput, couponApply),
+    couponNote,
+    couponRemove,
+  );
   const sub = line(u.subtotal),
+    discountLine = line(dc.discount),
     ship = line(u.shipping),
     total = line(u.total);
   const totals = element(
     'dl',
     { class: 'checkout-totals', 'aria-live': 'polite' },
     sub.row,
+    discountLine.row,
     ship.row,
     total.row,
   );
-  summary.append(totals);
+  discountLine.row.className = 'checkout-discount-total';
+  summary.append(couponGroup, totals);
   const terms = element('input', { name: 'terms', type: 'checkbox', required: true });
   fields.terms = terms;
   const termsLink = element('a', { target: '_blank', rel: 'noopener noreferrer' }, u.terms);
@@ -705,7 +826,15 @@ function onePageForm({
     deliveryId: delivery.value,
     lines: lines(),
     customer: customer(),
+    ...(activeDiscountCode ? { discountCode: activeDiscountCode } : {}),
   });
+  const couponFingerprint = () =>
+    JSON.stringify({ country: selectedCountry, currency: market()?.currency, lines: lines() });
+  const currentCouponPreview = () =>
+    couponPreview?.fingerprint === couponFingerprint() &&
+    couponPreview.discount.code === activeDiscountCode
+      ? couponPreview
+      : undefined;
   const ready = () =>
     validQuantities() &&
     lines().length > 0 &&
@@ -715,6 +844,9 @@ function onePageForm({
     ) &&
     (!locker.required || Boolean(locker.value));
   const paint = () => {
+    const preview = currentCouponPreview(),
+      priceSource = quoted || preview,
+      discountAmount = priceSource ? quoteDiscountAmount(priceSource) : 0;
     const isEmpty = !rows.some((r) => !r.row.hidden);
     empty.hidden = !isEmpty;
     form.hidden = isEmpty;
@@ -729,7 +861,7 @@ function onePageForm({
         configuredAmount = resolveCatalogSelection(p, selectedCountry, selection.choices).amount;
       } catch {}
       const unit =
-        quoted?.lines?.find((l) => selectionKey(l) === selectionKey(selection))?.unitAmount ??
+        priceSource?.lines?.find((l) => selectionKey(l) === selectionKey(selection))?.unitAmount ??
         configuredAmount;
       q.disabled = busy || lockedForOrder || row.hidden;
       price.textContent = Number.isSafeInteger(unit)
@@ -749,14 +881,27 @@ function onePageForm({
       remove.disabled = busy || lockedForOrder;
     }
     sub.value.textContent = valid ? money(cents, market().currency) : u.unknown;
+    discountLine.row.hidden = !discountAmount;
+    discountLine.row.children[0].textContent =
+      dc.discount + (priceSource?.discount ? ' (' + priceSource.discount.code + ')' : '');
+    discountLine.value.textContent = '−' + money(discountAmount, market()?.currency || 'EUR');
+    couponInput.disabled = busy || lockedForOrder;
+    couponApply.disabled =
+      busy || lockedForOrder || couponPending || !couponInput.value.trim() || isEmpty;
+    couponRemove.disabled = busy || lockedForOrder || couponPending;
+    couponRemove.hidden = lockedForOrder || (!activeDiscountCode && !couponInput.value);
     ship.value.textContent = quoted ? money(quoted.delivery.amount, quoted.currency) : u.calculated;
     total.value.textContent = quoted
       ? money(quoted.amount, quoted.currency)
       : valid
-        ? money(cents, market().currency) + ' + ' + u.shipping.toLocaleLowerCase(language)
+        ? money(cents - discountAmount, market().currency) +
+          ' + ' +
+          u.shipping.toLocaleLowerCase(language)
         : u.unknown;
     submit.disabled =
       busy ||
+      couponPending ||
+      (Boolean(activeDiscountCode) && !priceSource?.discount) ||
       lockedForOrder ||
       isEmpty ||
       !valid ||
@@ -809,7 +954,10 @@ function onePageForm({
                 r.unitAmount >= 0,
             ),
         ) ||
-        result.lines.reduce((sum, l) => sum + l.unitAmount * l.quantity, 0) +
+        Boolean(input.discountCode) !== Boolean(result.discount) ||
+        (input.discountCode && result.discount?.code !== input.discountCode) ||
+        result.lines.reduce((sum, l) => sum + l.unitAmount * l.quantity, 0) -
+          quoteDiscountAmount(result) +
           result.delivery.amount !==
           result.amount
       )
@@ -817,10 +965,15 @@ function onePageForm({
       quoted = { ...result, ...(deliveryQuote ? { deliveryQuoteId: deliveryQuote.id } : {}) };
       paint();
       return quoted;
-    })().finally(() => {
-      // A stale address response must not clear a newer address's pending quote.
-      if (pendingQuote === pending) pendingQuote = undefined;
-    });
+    })()
+      .catch((error) => {
+        if (!signal?.aborted && version === expected) rejectCoupon(error);
+        throw error;
+      })
+      .finally(() => {
+        // A stale address response must not clear a newer address's pending quote.
+        if (pendingQuote === pending) pendingQuote = undefined;
+      });
     return pending.promise;
   };
   const deliveryFailed = (error) =>
@@ -845,6 +998,7 @@ function onePageForm({
     }
     if (busy || lockedForOrder) return;
     invalidate();
+    queueCouponPreview();
     if (validQuantities()) {
       const next = lines(),
         serialized = JSON.stringify(next);
@@ -864,7 +1018,11 @@ function onePageForm({
           })
           .catch((error) => {
             if (!signal?.aborted && version === expected && !busy) {
-              status.textContent = deliveryFailed(error) ? u.deliveryUnavailable : u.quoteError;
+              status.textContent = error.message.startsWith('discount_')
+                ? couponFailure(error)
+                : deliveryFailed(error)
+                  ? u.deliveryUnavailable
+                  : u.quoteError;
               status.setAttribute('role', 'alert');
             }
           });
@@ -872,6 +1030,153 @@ function onePageForm({
     }
     timer?.unref?.();
   };
+  const couponFailure = (error) =>
+    ['discount_minimum_not_met', 'discount_basket_too_small'].includes(error.message)
+      ? dc.minimum
+      : ['network', 'commerce_connection_failed', 'discount_connection_failed'].includes(
+            error.message,
+          )
+        ? dc.network
+        : dc.invalid;
+  const rejectCoupon = (error) => {
+    if (
+      !activeDiscountCode ||
+      (!error.message.startsWith('discount_') && error.message !== 'quote_price_changed')
+    )
+      return;
+    couponTicket++;
+    clearTimeout(couponTimer);
+    couponPending = false;
+    couponPreview = undefined;
+    quoted = undefined;
+    couponLastAttempt = '';
+    couponNote.textContent =
+      error.message === 'quote_price_changed' ? u.quoteError : couponFailure(error);
+    couponNote.setAttribute('role', 'alert');
+    paint();
+  };
+  const requestCoupon = async (code, commit = false) => {
+    const fingerprint = couponFingerprint(),
+      ticket = ++couponTicket;
+    couponLastAttempt = code + '|' + fingerprint;
+    couponPending = true;
+    couponNote.textContent = dc.checking;
+    couponNote.setAttribute('role', 'status');
+    paint();
+    try {
+      const result = await client.discountPreview({
+        country: selectedCountry,
+        currency: market()?.currency,
+        lines: lines(),
+        code,
+      });
+      if (
+        signal?.aborted ||
+        lockedForOrder ||
+        ticket !== couponTicket ||
+        fingerprint !== couponFingerprint()
+      )
+        return;
+      if (
+        !result ||
+        result.currency !== market()?.currency ||
+        result.discount?.code !== code ||
+        !Array.isArray(result.lines) ||
+        result.lines.length !== lines().length ||
+        lines().some(
+          (l) =>
+            !result.lines.some(
+              (r) =>
+                selectionKey(l) === selectionKey(r) &&
+                l.quantity === r.quantity &&
+                Number.isSafeInteger(r.unitAmount) &&
+                r.unitAmount > 0,
+            ),
+        ) ||
+        result.subtotal !== result.lines.reduce((n, l) => n + l.unitAmount * l.quantity, 0) ||
+        result.amount !== result.subtotal - quoteDiscountAmount(result)
+      )
+        throw new Error('invalid_quote');
+      activeDiscountCode = code;
+      couponInput.value = code;
+      couponPreview = { ...result, fingerprint };
+      couponNote.textContent = dc.applied;
+      couponNote.setAttribute('role', 'status');
+      if (commit) changed();
+      else paint();
+    } catch (error) {
+      if (
+        signal?.aborted ||
+        lockedForOrder ||
+        ticket !== couponTicket ||
+        fingerprint !== couponFingerprint()
+      )
+        return;
+      couponPreview = undefined;
+      couponNote.textContent = couponFailure(error);
+      couponNote.setAttribute('role', 'alert');
+    } finally {
+      if (ticket === couponTicket) {
+        couponPending = false;
+        paint();
+      }
+    }
+  };
+  const queueCouponPreview = () => {
+    clearTimeout(couponTimer);
+    if (!activeDiscountCode || !lines().length) return;
+    const fingerprint = couponFingerprint();
+    if (couponLastAttempt === activeDiscountCode + '|' + fingerprint) return;
+    couponTimer = setTimeout(() => requestCoupon(activeDiscountCode), 300);
+    couponTimer?.unref?.();
+  };
+  const applyCoupon = () => {
+    if (busy || lockedForOrder || couponPending || !lines().length) return;
+    const code = couponInput.value.trim().toUpperCase();
+    if (!/^[A-Z0-9][A-Z0-9_-]{2,39}$/.test(code)) {
+      couponNote.textContent = dc.invalid;
+      couponNote.setAttribute('role', 'alert');
+      return;
+    }
+    return requestCoupon(code, true);
+  };
+  couponApply.addEventListener('click', applyCoupon);
+  couponInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      applyCoupon();
+    }
+  });
+  const clearCoupon = () => {
+    couponTicket++;
+    clearTimeout(couponTimer);
+    couponPending = false;
+    activeDiscountCode = '';
+    couponPreview = undefined;
+    couponLastAttempt = '';
+    couponNote.textContent = '';
+    couponNote.setAttribute('role', 'status');
+  };
+  couponInput.addEventListener('input', () => {
+    if (busy || lockedForOrder) return;
+    clearCoupon();
+    changed();
+  });
+  couponRemove.addEventListener('click', () => {
+    if (busy || lockedForOrder) return;
+    clearCoupon();
+    couponInput.value = '';
+    changed();
+    couponInput.focus?.();
+  });
+  signal?.addEventListener(
+    'abort',
+    () => {
+      couponTicket++;
+      clearTimeout(couponTimer);
+    },
+    { once: true },
+  );
   const updateLockerAddress = () => {
     const method = market()?.delivery.find((d) => d.id === delivery.value),
       isLocker = method?.kind === 'locker';
@@ -966,6 +1271,9 @@ function onePageForm({
   const lockOrder = () => {
     lockedForOrder = true;
     clearTimeout(timer);
+    clearTimeout(couponTimer);
+    couponTicket++;
+    couponPending = false;
     for (const field of Object.values(fields)) field.disabled = true;
     paint();
   };
@@ -1031,21 +1339,30 @@ function onePageForm({
     }
     if (!active()) return;
     action(t[16], complete);
-    action(t[17], async () => {
-      await client.withdrawal();
-      if (active()) status.textContent = t[28];
-    });
+    if (!client.attempt?.recovery)
+      action(t[17], async () => {
+        await client.withdrawal();
+        if (active()) status.textContent = t[28];
+      });
     action(t[18], restart);
     paymentPane.append(controls);
   };
   form.addEventListener('input', (event) => {
-    if (event.target !== terms) changed();
+    if (event.target !== terms && event.target !== couponInput) changed();
   });
   countrySelect.addEventListener('change', refresh);
   delivery.addEventListener('change', refreshLocker);
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    if (busy || lockedForOrder || !canOrder || !ready() || !terms.checked || !form.reportValidity())
+    if (
+      busy ||
+      couponPending ||
+      lockedForOrder ||
+      !canOrder ||
+      !ready() ||
+      !terms.checked ||
+      !form.reportValidity()
+    )
       return;
     const input = proposal(),
       policyVersion = market().policyVersion;
@@ -1064,21 +1381,27 @@ function onePageForm({
         quoteHash: quote.quoteHash,
         ...(quote.deliveryQuoteId ? { deliveryQuoteId: quote.deliveryQuoteId } : {}),
         acceptedPolicyVersion: policyVersion,
+        ...(context.paymentRecovery
+          ? { paymentRecoveryNotice: context.paymentRecovery.noticeVersion }
+          : {}),
       });
       if (signal?.aborted) return;
       emitCart([]);
       await enterPayment(order);
     } catch (error) {
       if (!signal?.aborted) {
+        rejectCoupon(error);
         status.textContent = deliveryFailed(error)
           ? u.deliveryUnavailable
           : error.message === 'network'
             ? t[30]
-            : ['stock_unavailable', 'product_unavailable'].includes(error.message)
-              ? u.unavailable
-              : ['quote_price_changed', 'delivery_quote_conflict'].includes(error.message)
-                ? u.quoteError
-                : t[29];
+            : error.message.startsWith('discount_')
+              ? couponFailure(error)
+              : ['stock_unavailable', 'product_unavailable'].includes(error.message)
+                ? u.unavailable
+                : ['quote_price_changed', 'delivery_quote_conflict'].includes(error.message)
+                  ? u.quoteError
+                  : t[29];
         status.setAttribute('role', 'alert');
         status.focus?.({ preventScroll: true });
       }
@@ -1113,8 +1436,9 @@ function onePageForm({
   });
   signal?.addEventListener('abort', () => clearTimeout(timer), { once: true });
   refresh();
-  if (initialOrder) {
-    const saved = initialOrder.snapshot.customer,
+  const prefill = initialOrder || restoredOrder;
+  if (prefill) {
+    const saved = prefill.snapshot.customer,
       address = saved.address;
     for (const [key, value] of Object.entries({
       name: saved.contactName || saved.name,
@@ -1125,24 +1449,32 @@ function onePageForm({
       postalCode: address.postalCode,
     }))
       fields[key].value = value || '';
-    delivery.value = initialOrder.snapshot.delivery.id;
+    delivery.value = prefill.snapshot.delivery.id;
+    refreshLocker();
     if (saved.lockerId) {
       locker.value = saved.lockerId;
       updateLockerAddress();
     }
-    terms.checked = true;
+    terms.checked = Boolean(initialOrder);
+    if (!initialOrder) {
+      changed();
+      status.textContent =
+        'Pasirinktos prekės ir pristatymo duomenys atkurti. Patikrinkite naują sumą ir pristatymą, tada tęskite apmokėjimą.';
+      return;
+    }
     quoted = {
       amount: initialOrder.amount,
       currency: initialOrder.currency,
       lines: initialOrder.snapshot.lines,
       delivery: initialOrder.snapshot.delivery,
+      ...(initialOrder.snapshot.discount ? { discount: initialOrder.snapshot.discount } : {}),
     };
     return enterPayment(initialOrder);
   }
 }
 /**
  * @param {HTMLElement} root
- * @param {{language?:string,country?:string,client?:CommerceClient,termsUrl?:string|((context:{country:string,language:string,policyVersion:string})=>string|null),catalogueUrl?:string,initialLines?:Array<{sku:string,quantity:number}>,onCartChange?:(lines:Array<{sku:string,quantity:number}>)=>void,headingLevel?:number,title?:string,productTitle?:(product:any,language:string)=>string,layout?:'classic'|'one-page',productsPlacement?:'details'|'summary',paymentPlacement?:'details'|'summary',productImage?:(product:any)=>string|null,renderPayment?:(context:{target:HTMLElement,client:CommerceClient,order:any,onComplete:()=>Promise<void>,signal?:AbortSignal})=>Promise<void|(()=>void)>,signal?:AbortSignal}} options
+ * @param {{language?:string,country?:string,client?:CommerceClient,termsUrl?:string|((context:{country:string,language:string,policyVersion:string})=>string|null),catalogueUrl?:string,initialLines?:Array<{sku:string,quantity:number}>,onCartChange?:(lines:Array<{sku:string,quantity:number}>)=>void,headingLevel?:number,title?:string,productTitle?:(product:any,language:string)=>string,layout?:'classic'|'one-page',productsPlacement?:'details'|'summary',paymentPlacement?:'details'|'summary',recoveryToken?:string,productImage?:(product:any)=>string|null,renderPayment?:(context:{target:HTMLElement,client:CommerceClient,order:any,onComplete:()=>Promise<void>,signal?:AbortSignal})=>Promise<void|(()=>void)>,signal?:AbortSignal}} options
  */
 export async function mountCheckout(
   root,
@@ -1164,19 +1496,13 @@ export async function mountCheckout(
     productImage,
     renderPayment,
     signal,
+    recoveryToken,
   } = {},
 ) {
   const t = translations[language] || translations.lt;
   const m = buyerMessages[language] || buyerMessages.lt;
   const status = element('p', { role: 'status', 'aria-live': 'polite' });
   const content = element('div');
-  root.replaceChildren(
-    ...(Number.isInteger(headingLevel) && headingLevel >= 1 && headingLevel <= 6
-      ? [element('h' + headingLevel, {}, title || t[0])]
-      : []),
-    status,
-    content,
-  );
   const money = (amount, currency) =>
     new Intl.NumberFormat(language, { style: 'currency', currency }).format(amount / 100);
   const run = async (button, task) => {
@@ -1204,6 +1530,18 @@ export async function mountCheckout(
   };
   const { context, catalog, markets } = await client.initialize();
   if (signal?.aborted) return client;
+  // Keep the caller's loading/status shell until data is ready. An aborted
+  // initialization must not replace a newer view or collapse its geometry.
+  root.replaceChildren(
+    ...(Number.isInteger(headingLevel) && headingLevel >= 1 && headingLevel <= 6
+      ? [element('h' + headingLevel, {}, title || t[0])]
+      : []),
+    status,
+    content,
+  );
+  let recovered;
+  if (recoveryToken) recovered = await client.openRecovery(recoveryToken);
+  else if (client.attempt?.recovery) recovered = await client.openRecovery(client.attempt.token);
   let cartLines = normalizeCheckoutCart(initialLines, catalog);
   const emitCart = (next = cartLines) => {
     cartLines = normalizeCheckoutCart(next, catalog);
@@ -1215,6 +1553,12 @@ export async function mountCheckout(
       console.warn('Commerce cart callback failed');
     }
   };
+  if (recovered?.state === 'restore') emitCart(recovered.order.snapshot.lines);
+  if (recovered?.state === 'unavailable') {
+    status.textContent =
+      'Šio užsakymo apmokėjimo tęsti nebegalima. Jei jau pateikėte kitą užsakymą, tikrinkite jo būseną. Jei reikia pagalbos, susisiekite su parduotuve.';
+    return client;
+  }
   const clearCart = () => {
     cartLines = [];
     emitCart();
@@ -1267,6 +1611,18 @@ export async function mountCheckout(
     );
     for (const line of order.snapshot.lines)
       content.append(element('p', {}, productTitle({ ...line }, language) + ' × ' + line.quantity));
+    if (order.snapshot.discount)
+      content.append(
+        element(
+          'p',
+          {},
+          (discountMessages[language] || discountMessages.lt).discount +
+            ' (' +
+            order.snapshot.discount.code +
+            '): −' +
+            money(order.snapshot.discount.amount, order.currency),
+        ),
+      );
     if (order.payment_state === 'pending' && order.stock_state === 'released')
       content.append(element('p', { role: 'status' }, m.expired));
     if (
@@ -1301,7 +1657,11 @@ export async function mountCheckout(
       return b;
     };
     let startPayment;
-    if (order.payment_state === 'pending' && order.stock_state === 'reserved') {
+    if (
+      order.payment_state === 'pending' &&
+      order.stock_state === 'reserved' &&
+      client.recoveryState !== 'processing'
+    ) {
       const pane = element('div', { class: 'checkout-payment' });
       let mounting = false,
         mounted = false;
@@ -1352,10 +1712,19 @@ export async function mountCheckout(
       await orderView(await resumeOrder());
       status.textContent = '';
     });
-    add(t[17], async () => {
-      await client.withdrawal();
-      status.textContent = t[28];
-    });
+    if (!client.attempt?.recovery)
+      add(t[17], async () => {
+        await client.withdrawal();
+        status.textContent = t[28];
+      });
+    if (client.recoveryState === 'processing')
+      content.append(
+        element(
+          'p',
+          { role: 'status' },
+          'Mokėjimo būsena tikrinama. Naujo mokėjimo nepradėkite. Atnaujinkite būseną po kelių minučių.',
+        ),
+      );
     add(t[18], async () => {
       client.newOrder();
       formView();
@@ -1370,7 +1739,7 @@ export async function mountCheckout(
       content.append(element('p', { role: 'status' }, m.canceled));
     if (order.fulfillment_state === 'return_received')
       content.append(element('p', { role: 'status' }, m.returned));
-    if (receipt.documents?.length) {
+    if (receipt.documents?.length && !client.attempt?.recovery) {
       content.append(element('h2', {}, t[33]));
       for (const doc of receipt.documents.filter((d) => ['sale', 'credit'].includes(d.kind))) {
         const download = element('button', { type: 'button' }, doc.number + '.pdf');
@@ -1406,7 +1775,7 @@ export async function mountCheckout(
     )
       await startPayment();
   };
-  const formView = (initialOrder) => {
+  const formView = (initialOrder, restoredOrder) => {
     const currentView = ++viewVersion;
     disposePayment();
     disposePayment = () => {};
@@ -1422,7 +1791,7 @@ export async function mountCheckout(
         catalog,
         markets: markets.filter((market) => market.checkoutEnabled !== false),
         cartLines: initialOrder ? initialOrder.snapshot.lines : cartLines,
-        country: initialOrder ? initialOrder.snapshot.country : country,
+        country: (initialOrder || restoredOrder)?.snapshot.country || country,
         language,
         t,
         m,
@@ -1449,12 +1818,21 @@ export async function mountCheckout(
         },
         isCurrent: () => currentView === viewVersion,
         initialOrder,
+        restoredOrder,
         signal,
       });
       return;
     }
     const form = element('form', { class: 'checkout-form' }),
       fields = {};
+    if (context.paymentRecovery && language === 'lt')
+      form.append(
+        element(
+          'p',
+          { class: 'checkout-hint' },
+          `Neužbaigus apmokėjimo, po ${context.paymentRecovery.reminderAfterHours} val. atsiųsime vieną priminimą el. paštu. Užsakymą galima apmokėti per ${context.paymentRecovery.reservationHours} val. Daugiau priminimų nesiųsime.`,
+        ),
+      );
     const field = (name, label, attrs = {}, tag = 'input') => {
       const input = element(tag, { name, id: 'checkout-' + name, ...attrs });
       fields[name] = input;
@@ -1685,6 +2063,9 @@ export async function mountCheckout(
             quoteHash: quoted.quoteHash,
             ...(deliveryQuoteId ? { deliveryQuoteId } : {}),
             acceptedPolicyVersion: selected().policyVersion,
+            ...(context.paymentRecovery
+              ? { paymentRecoveryNotice: context.paymentRecovery.noticeVersion }
+              : {}),
           });
         } catch (error) {
           if (client.attempt) {
@@ -1724,6 +2105,7 @@ export async function mountCheckout(
         layout === 'one-page' &&
         renderPayment &&
         order.payment_state === 'pending' &&
+        client.recoveryState !== 'processing' &&
         order.stock_state === 'reserved' &&
         order.snapshot.customer?.address &&
         context.paymentConnected &&
@@ -1756,6 +2138,6 @@ export async function mountCheckout(
       );
       content.append(retry);
     }
-  } else formView();
+  } else formView(undefined, recovered?.state === 'restore' ? recovered.order : undefined);
   return client;
 }

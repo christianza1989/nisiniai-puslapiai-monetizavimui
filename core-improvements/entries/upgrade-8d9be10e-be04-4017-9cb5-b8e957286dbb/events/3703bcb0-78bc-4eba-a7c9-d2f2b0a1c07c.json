@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/267",
+  "commit": "ec49fcb68a5addaaa021ea219170d332aee2b625",
+  "note": "Canonical source94f3f27a merged and deployed as commerce52b3b0a7. Native remote migration26to27 verified; all26prior hashes,5orders/20168minor and provider bindings preserved. Authenticated HTTPS Nuolaidos list/create form renders; no production coupon/order/charge/shipment/customer mail created.254tests/native acceptance; companion exact SDK and live cart accepted. Actual provider/database/HTTP/browser evidence in ignored qa/discounts-20261026.",
+  "eventId": "3703bcb0-78bc-4eba-a7c9-d2f2b0a1c07c",
+  "sequence": 6,
+  "at": "2026-10-26T00:17:02.979Z"
+}

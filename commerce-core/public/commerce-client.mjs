@@ -49,7 +49,9 @@ export class CommerceClient {
         saved.version === 1 &&
         saved.storeId === this.context.storeId &&
         saved.until > this.now() &&
-        /^[a-zA-Z0-9_-]{32,128}$/.test(saved.token) &&
+        (saved.recovery === true
+          ? /^r1_[a-f0-9-]{36}_[a-z0-9]{8,11}_[a-f0-9]{64}$/.test(saved.token)
+          : /^[a-zA-Z0-9_-]{32,128}$/.test(saved.token)) &&
         /^[a-zA-Z0-9_-]{16,100}$/.test(saved.requestKey)
       )
         this.attempt = saved;
@@ -70,6 +72,9 @@ export class CommerceClient {
   }
   quote(input) {
     return this.request('/api/quote', { body: input });
+  }
+  discountPreview(input) {
+    return this.request('/api/discount-preview', { body: input });
   }
   deliveryQuote(input) {
     return this.request('/api/delivery-quotes', { body: { ...input, id: crypto.randomUUID() } });
@@ -132,6 +137,11 @@ export class CommerceClient {
               'product_unavailable',
               'quote_price_changed',
               'delivery_quote_conflict',
+              'discount_changed',
+              'discount_limit_reached',
+              'discount_unavailable',
+              'discount_minimum_not_met',
+              'discount_basket_too_small',
             ].includes(error.message)))
       ) {
         this.storage.removeItem(this.key);
@@ -144,10 +154,38 @@ export class CommerceClient {
   }
   async resume() {
     if (!this.attempt) return null;
+    if (this.attempt.recovery) {
+      const result = await this.openRecovery(this.attempt.token);
+      return result.order;
+    }
     if (!this.attempt.orderId) return this.create(JSON.parse(this.attempt.input));
     return this.request('/api/orders/' + this.attempt.orderId, {
       headers: { authorization: 'Bearer ' + this.attempt.token },
     });
+  }
+  async openRecovery(token) {
+    if (typeof token !== 'string' || !/^r1_[a-f0-9-]{36}_[a-z0-9]{8,11}_[a-f0-9]{64}$/.test(token))
+      throw new Error('payment_recovery_forbidden');
+    const result = await this.request('/api/payment-recovery', { body: { token } });
+    if (
+      !['open', 'restore', 'completed', 'processing', 'unavailable'].includes(result.state) ||
+      (result.order && result.order.store_id !== this.context.storeId)
+    )
+      throw new Error('invalid_order_context');
+    this.recoveryState = result.state;
+    if (result.order && result.state !== 'restore') {
+      this.attempt = {
+        version: 1,
+        recovery: true,
+        storeId: this.context.storeId,
+        token,
+        requestKey: crypto.randomUUID(),
+        orderId: result.order.id,
+        until: result.order.created_at + 30 * 86400000,
+      };
+      this.persist();
+    } else this.newOrder();
+    return result;
   }
   async checkout() {
     const result = await this.checkoutDetails();
@@ -218,6 +256,7 @@ export class CommerceClient {
     }
   }
   withdrawal() {
+    if (this.attempt?.recovery) throw new Error('payment_recovery_forbidden');
     if (!this.attempt?.orderId) throw new Error('order_required');
     return this.request('/api/orders/' + this.attempt.orderId + '/withdrawal', {
       body: {},
@@ -231,6 +270,7 @@ export class CommerceClient {
     });
   }
   async document(id) {
+    if (this.attempt?.recovery) throw new Error('payment_recovery_forbidden');
     if (!this.attempt?.orderId || !/^[a-zA-Z0-9_-]{1,100}$/.test(id))
       throw new Error('order_required');
     let response;
@@ -250,6 +290,7 @@ export class CommerceClient {
     if (this.busy) throw new Error('checkout_busy');
     this.storage.removeItem(this.key);
     this.attempt = undefined;
+    this.recoveryState = undefined;
   }
 }
 

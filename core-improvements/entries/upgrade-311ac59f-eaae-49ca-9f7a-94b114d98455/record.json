@@ -1,0 +1,27 @@
+{
+  "siteId": "memocasting",
+  "summary": "Adopt exact recovery SDK and capability fragment handling, preserve HTML mail fingerprints and use the owner-approved authenticated primary mailbox",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/PAYMENT_RECOVERY_2026_10_25.md",
+    "266/266 public tests and TypeScript;14 focused mail/fragment checks"
+  ],
+  "paths": [
+    "components/niche/memocasting-native-checkout.tsx",
+    "lib/memocasting-payment-recovery.mjs",
+    "lib/memocasting-commerce-bridge.mjs",
+    "lib/hostinger-commerce-mail.mjs",
+    "lib/commerce-mail-gateway.mjs",
+    "vendor/commerce-core/commerce-client.mjs",
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json",
+    "workers/commerce-mail/memocasting-production.wrangler.jsonc",
+    "workers/commerce-mail/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/78",
+  "rollback": "Disable recovery policy before frontend rollback. Preserve mail ledger, old unknown commands, authenticated mailbox secrets, existing orders and Stripe/carrier bindings.",
+  "id": "upgrade-311ac59f-eaae-49ca-9f7a-94b114d98455",
+  "branch": "codex/memocasting-final-seo-fixes-20261025",
+  "baseSha": "564c5a3720d064d9a87fa444a2993f24d035b60f",
+  "createdAt": "2026-10-25T18:24:03.523Z"
+}

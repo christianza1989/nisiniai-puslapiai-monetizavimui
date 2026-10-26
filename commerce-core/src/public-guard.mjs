@@ -16,7 +16,7 @@ export class PublicAbuseGuard {
       'public_client_address_missing',
       503,
     );
-    const limit = { quote: 60, delivery: 20, order: 10 }[kind];
+    const limit = { quote: 60, delivery: 20, order: 10, review: 30 }[kind];
     requireValue(limit, 'public_guard_action_invalid');
     const at = this.s.now(),
       window = Math.floor(at / 600000) * 600000;

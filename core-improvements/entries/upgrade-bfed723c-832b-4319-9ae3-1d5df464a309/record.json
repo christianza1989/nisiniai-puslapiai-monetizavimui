@@ -1,0 +1,21 @@
+{
+  "category": "code",
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/92",
+  "evidence": [
+    "Local compiled product browser request returned404 for /_next/static/chunks/memocasting-reviews-DzIFcayM.js; RSC manifests named it but final client manifest and directory did not",
+    "check-rsc-assets against S1 artifact fails for that exact file; two negative unit regressions pass"
+  ],
+  "summary": "Compiled RSC manifests can retain removed CSS-only intermediate JS dependencies; exit-zero builds then produce hydration 404s",
+  "paths": [
+    "scripts/check-rsc-assets.mjs",
+    "package.json",
+    "components/niche/memocasting-site.tsx",
+    "app/niche/memocasting/review/page.tsx"
+  ],
+  "siteId": "core",
+  "rollback": "Scoped revert build gate and review stylesheet ownership; no dependency, data or content-release mutation",
+  "id": "upgrade-bfed723c-832b-4319-9ae3-1d5df464a309",
+  "branch": "codex/memocasting-reviews-20261026",
+  "baseSha": "213816c2903340242198d45756feb5f93614b5ad",
+  "createdAt": "2026-10-26T19:32:06.575Z"
+}

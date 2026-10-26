@@ -1,0 +1,21 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/289",
+  "commit": "e88fac474a567b50ae394561212df7ccb01b007b",
+  "note": "Actual production runtime adopted this source as backend6018f8c2, with14 actual bindings, compatibility, domains, cron and primary mail preserved. Additive migrations30/31, next order9878,30-day optional invitation and original12orders/31860minor retained.214 owner-confirmed same-domain historical reviews and104 validated original WebP photos are published without false purchase badges; real public photo404/restore200 and whole-review trash/restore accepted. Native owner access email accepted by existing sender and actual paid-order proof200; no fabricated order/review/payment. Main Git delivery is separate and follows through PR289; no claim of real future30-day or inbox delivery.",
+  "checks": [
+    {
+      "command": "node sites/memocasting/qa/reviews-20261026/final-acceptance.private.mjs published",
+      "result": "PASS",
+      "evidence": "final-native-acceptance.private.json and provider-accepted.private.json: original records, full binding values, photo/review removal and restored final214/104 verified"
+    },
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "core-verify-storefront.private.log288 tests, native workerd smoke and dry build; final-attestation-limit.private.log12/12 final bound checks"
+    }
+  ],
+  "eventId": "7bc10d00-6568-4847-b85a-e189dd76ef57",
+  "sequence": 8,
+  "at": "2026-10-26T21:08:40.654Z"
+}

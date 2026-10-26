@@ -30,6 +30,8 @@ export function orderMatches(order, filter = 'all', query = '', now = Date.now()
   const needle = String(query).trim().toLocaleLowerCase('lt');
   const text = [
     order.id,
+    order.public_number,
+    order.orderNumber,
     order.snapshot?.customer?.name,
     order.snapshot?.customer?.email,
     ...(order.snapshot?.lines || []).map((l) => l.title),
@@ -44,6 +46,7 @@ export const viewDescriptions = {
   stock: 'Paruoštų prekių kiekiai, rezervacijos ir korekcijų istorija.',
   catalog: 'Valdykite aprašymus, kainas, nuotraukas ir pirkėjo pasirinkimus.',
   discounts: 'Kurkite nuolaidų kodus, nustatykite galiojimą ir stebėkite panaudojimus.',
+  reviews: 'Peržiūrėkite klientų patirtis, nuotraukas ir valdykite vienkartinius kvietimus.',
   documents: 'Sąskaitos, grąžinimo ir komplektavimo dokumentai vienoje vietoje.',
   components: 'Medžiagų apskaita ir rinkinių surinkimas.',
   financials: 'Sutikrinkite mokėjimų, komisinių ir banko duomenis.',

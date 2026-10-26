@@ -20,6 +20,8 @@ import { PaymentDisputes } from './disputes.mjs';
 import { FinishedStock } from './finished-stock.mjs';
 import { CommerceAnalytics } from './analytics.mjs';
 import { PaymentRecovery } from './payment-recovery.mjs';
+import { ProductReviews } from './reviews.mjs';
+import { prepareReviewImport, importReviews } from './review-import.mjs';
 const json = (value, status = 200) =>
   Response.json(value, {
     status,
@@ -88,8 +90,10 @@ export function createHandler({
     recoveryKeys,
   });
   const recovery = new PaymentRecovery(service, { recoveryKeys, paymentAdapters });
+  const reviews = new ProductReviews(service, privateStorage);
   const notifications = new CustomerNotifications(service, notificationAdapters, {
     reminderCheck: (...args) => recovery.canRemind(...args),
+    reviewCheck: (...args) => reviews.canInvite(...args),
   });
   const financeIO = new FinanceIO(service);
   const catalogOperations = new CatalogOperations(service);
@@ -191,6 +195,9 @@ export function createHandler({
       publishOffers: productionReady && eligibleCountries.length > 0,
       eligibleCountries,
       canCreateTestOrder: environment === 'sandbox' && store.testOnly === true,
+      ...((await reviews.settings(store.id, environment)).enabled
+        ? { reviewRequests: { consentVersion: 'review-request-v1' } }
+        : {}),
       ...(store.paymentRecovery?.enabled === true
         ? {
             paymentRecovery: {
@@ -214,14 +221,15 @@ export function createHandler({
       }
       const path = url.pathname;
       if (
-        request.method === 'POST' &&
-        [
-          '/api/quote',
-          '/api/discount-preview',
-          '/api/delivery-quotes',
-          '/api/orders',
-          '/api/payment-recovery',
-        ].includes(path)
+        (request.method === 'POST' &&
+          [
+            '/api/quote',
+            '/api/discount-preview',
+            '/api/delivery-quotes',
+            '/api/orders',
+            '/api/payment-recovery',
+          ].includes(path)) ||
+        (request.method === 'POST' && path.startsWith('/api/reviews/'))
       ) {
         requireValue(
           environment !== 'production' || publicAbuseGuard,
@@ -238,7 +246,7 @@ export function createHandler({
               '/api/delivery-quotes': 'delivery',
               '/api/orders': 'order',
               '/api/payment-recovery': 'order',
-            }[path],
+            }[path] || 'review',
           );
       }
       if (request.method === 'GET' && path === '/api/storefront-context')
@@ -265,6 +273,42 @@ export function createHandler({
         );
         return principal;
       };
+      if (path === '/api/reviews' && request.method === 'GET')
+        return json(
+          await reviews.list(store.id, environment, {
+            sku: url.searchParams.get('sku') || undefined,
+            page: url.searchParams.get('page'),
+          }),
+        );
+      const reviewPhoto = path.match(/^\/api\/reviews\/photos\/([a-f0-9-]{36})$/);
+      if (reviewPhoto && request.method === 'GET')
+        return new Response(await reviews.photo(store.id, environment, reviewPhoto[1]), {
+          headers: {
+            'content-type': 'image/webp',
+            'cache-control': 'private, no-store',
+            'x-content-type-options': 'nosniff',
+          },
+        });
+      if (path.startsWith('/api/reviews/') && request.method === 'POST') {
+        if (path === '/api/reviews/photos') {
+          const raw = JSON.parse(await boundedBody(request, 1450000));
+          requireValue(
+            typeof raw.bytes === 'string' && /^[a-zA-Z0-9+/]*={0,2}$/.test(raw.bytes),
+            'invalid_review_photo',
+          );
+          const bytes = Uint8Array.from(atob(raw.bytes), (c) => c.charCodeAt(0));
+          return json(await reviews.upload(store.id, environment, raw.token, bytes), 201);
+        }
+        const input = await read();
+        if (path === '/api/reviews/request')
+          return json(await reviews.requestLink(store.id, environment, input));
+        if (path === '/api/reviews/access')
+          return json(await reviews.access(store.id, environment, input.token));
+        if (path === '/api/reviews/submit')
+          return json(await reviews.submit(store.id, environment, input), 201);
+        if (path === '/api/reviews/stop')
+          return json(await reviews.stop(store.id, environment, input.token));
+      }
       if (request.method === 'GET' && path === '/api/markets')
         return json(await operations.markets(store.id, environment));
       if (request.method === 'POST' && path === '/api/delivery-quotes')
@@ -277,6 +321,94 @@ export function createHandler({
           ),
         );
       if (path.startsWith('/api/operator/')) {
+        const importPhoto = path.match(/^\/api\/operator\/reviews\/([a-f0-9-]{36})\/photos$/);
+        if (importPhoto && request.method === 'POST') {
+          const actor = await authorize('catalog'),
+            raw = JSON.parse(await boundedBody(request, 1450000));
+          requireValue(
+            typeof raw.bytes === 'string' && /^[a-zA-Z0-9+/]*={0,2}$/.test(raw.bytes),
+            'invalid_review_photo',
+          );
+          return json(
+            await reviews.importPhoto(
+              store.id,
+              environment,
+              importPhoto[1],
+              Uint8Array.from(atob(raw.bytes), (c) => c.charCodeAt(0)),
+              raw.sourceKey,
+              actor.id,
+            ),
+            201,
+          );
+        }
+        if (
+          ['/api/operator/review-import/preview', '/api/operator/review-import/confirm'].includes(
+            path,
+          ) &&
+          request.method === 'POST'
+        ) {
+          const actor = await authorize('catalog'),
+            input = await read();
+          return json(
+            path.endsWith('/preview')
+              ? await prepareReviewImport(service, store.id, environment, input)
+              : await importReviews(service, store.id, environment, input, actor.id),
+          );
+        }
+        if (path === '/api/operator/reviews' && request.method === 'GET') {
+          await authorize('catalog');
+          return json(
+            await reviews.list(store.id, environment, {
+              operator: true,
+              page: url.searchParams.get('page'),
+              deleted: url.searchParams.get('deleted') === '1',
+            }),
+          );
+        }
+        if (path === '/api/operator/review-settings') {
+          const actor = await authorize('catalog');
+          if (request.method === 'GET') return json(await reviews.settings(store.id, environment));
+          if (request.method === 'POST')
+            return json(await reviews.saveSettings(store.id, environment, await read(), actor.id));
+        }
+        const reviewAction = path.match(/^\/api\/operator\/reviews\/([a-f0-9-]{36})$/);
+        if (reviewAction && request.method === 'POST') {
+          const actor = await authorize('catalog');
+          return json(
+            await reviews.moderate(store.id, environment, reviewAction[1], await read(), actor.id),
+          );
+        }
+        const privateReviewPhoto = path.match(/^\/api\/operator\/review-photos\/([a-f0-9-]{36})$/);
+        if (privateReviewPhoto && request.method === 'POST') {
+          const actor = await authorize('catalog');
+          return json(
+            await reviews.moderatePhoto(
+              store.id,
+              environment,
+              privateReviewPhoto[1],
+              await read(),
+              actor.id,
+            ),
+          );
+        }
+        if (privateReviewPhoto && request.method === 'GET') {
+          await authorize('catalog');
+          return new Response(
+            await reviews.photo(store.id, environment, privateReviewPhoto[1], true),
+            {
+              headers: {
+                'content-type': 'image/webp',
+                'cache-control': 'no-store',
+                'x-content-type-options': 'nosniff',
+              },
+            },
+          );
+        }
+        const handed = path.match(/^\/api\/operator\/orders\/([a-f0-9-]{36})\/handed-over$/);
+        if (handed && request.method === 'POST') {
+          const actor = await authorize('ship');
+          return json(await reviews.markShipped(store.id, environment, handed[1], actor.id));
+        }
         if (request.method === 'GET' && path === '/api/operator/discounts') {
           await authorize('catalog');
           return json(await new Discounts(service).list(store.id, environment));

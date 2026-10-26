@@ -1,0 +1,19 @@
+{
+  "note": "Compiled S2 Chrome form now has title Palikti atsiliepimą – Memory Casting, exactly one noindex,nofollow and no homepage canonical. Original S1 homepage title/index failure retained. Additional actual root-layout SSR regression checks review route with no published page, no commerce reads, no canonical/hero/preload.",
+  "checks": [
+    {
+      "evidence": "metadata-render-final2.private.log; actual root SSR review-head regression passes",
+      "result": "PASS",
+      "command": "node --test tests/memocasting-seo-metadata.test.mjs tests/memocasting-reviews.test.mjs tests/rsc-assets.test.mjs"
+    },
+    {
+      "evidence": "CUA2026-10-26T19:40Z title, single noindex and absent canonical; link resumed order9878 correctly",
+      "result": "PASS",
+      "command": "Compiled local browser1280px /atsiliepimas DOM head and visual inspection"
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "bb1942b1-3eb0-4b93-91cf-029ba1151836",
+  "sequence": 2,
+  "at": "2026-10-26T19:41:54.157Z"
+}

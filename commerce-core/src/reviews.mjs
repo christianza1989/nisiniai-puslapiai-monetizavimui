@@ -434,7 +434,7 @@ export class ProductReviews {
       (Math.max(1, Math.min(500, Number(page) || 1)) - 1) * 20,
     );
     const stats = await this.s.rows(
-      "SELECT sku,COUNT(*) count,ROUND(AVG(rating),2) average FROM product_reviews WHERE store_id=? AND state='published' GROUP BY sku",
+      "SELECT sku,COUNT(*) count,ROUND(AVG(rating),2) average,SUM(CASE WHEN source='purchase' THEN 1 ELSE 0 END) directCount,ROUND(AVG(CASE WHEN source='purchase' THEN rating END),2) directAverage FROM product_reviews WHERE store_id=? AND state='published' GROUP BY sku",
       store,
     );
     const photos = items.length

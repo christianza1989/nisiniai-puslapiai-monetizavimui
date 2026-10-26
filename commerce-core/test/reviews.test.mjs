@@ -313,6 +313,8 @@ test('only paid purchased items, one review per product/order, moderation and pu
   );
   const pub = await r.list('store_a', 'sandbox');
   assert.equal(pub.stats[0].average, 2);
+  assert.equal(pub.stats[0].directCount, 1);
+  assert.equal(pub.stats[0].directAverage, 2);
   assert.equal(pub.items[0].verifiedPurchase, true);
   assert.equal(pub.items[0].order_id, undefined);
   assert.equal(pub.items[0].store_id, undefined);
@@ -417,6 +419,11 @@ test('historic rating-only reviews import private WebP without inventing orders 
     'owner',
   );
   assert.equal((await r.list('store_a', 'sandbox')).items[0].photos.length, 1);
+  const historicStats = (await r.list('store_a', 'sandbox')).stats[0];
+  assert.equal(historicStats.count, 1);
+  assert.equal(historicStats.directCount, 0);
+  assert.equal(historicStats.directAverage, null);
+  assert.equal((await r.list('store_a', 'sandbox', { page: 2 })).stats[0].directCount, 0);
   assert.deepEqual(await r.photo('store_a', 'sandbox', photo.id), image);
   await r.moderatePhoto(
     'store_a',

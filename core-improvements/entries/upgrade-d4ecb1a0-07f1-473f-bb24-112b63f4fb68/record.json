@@ -1,0 +1,20 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Exact public checkout SDK shows flagged coupon free delivery and restores ordinary pricing on removal.",
+  "evidence": [
+    "sites/memocasting/qa/free-shipping-20261026/public-tests.private.txt",
+    "sites/memocasting/qa/free-shipping-20261026/public-safety.private.json",
+    "https://github.com/christianza1989/niche-public-core/pull/88"
+  ],
+  "paths": [
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/88",
+  "rollback": "Retain compatible net pricing and saved orders; preserve actual frontend/backend bindings and coupon history.",
+  "id": "upgrade-d4ecb1a0-07f1-473f-bb24-112b63f4fb68",
+  "branch": "codex/memocasting-free-shipping-coupons-20261026",
+  "baseSha": "f6085584d5f4f58b5b46209506a0b8eb2b24e120",
+  "createdAt": "2026-10-26T07:23:58.698Z"
+}

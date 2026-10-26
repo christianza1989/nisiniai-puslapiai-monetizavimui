@@ -6,11 +6,11 @@ This record supersedes the18:34UTC PC restart checkpoint. The owner authorized c
 
 | Surface | Accepted edition |
 | --- | --- |
-| Public site | https://memocasting.lt/ — Worker 51b08875-a113-427a-b61a-92f06bfdc3e0, deployment 4105b3b9-053a-488a-aa51-085338ce479d at 2026-10-26 06:37:39 UTC, 100% |
-| Frontend source | PUBLIC 6c0c6a1a2cc6ef7cc1de91bd2d8bd1f77b0816ef, merged PR87 as 9f6058533d4d61fad4acdc72ca88a7625dc63e51; same application tree |
+| Public site | https://memocasting.lt/ — Worker 603ce8b6-5d3a-4d0d-af4f-81a6f9170ab2, deployment 01efef8a-99e8-4d3f-ae06-8ea558fd0dd9 at 2026-10-26 07:32:48 UTC, 100% |
+| Frontend source | PUBLIC 840cf049c829a4081d91026c420bb2fb9e46d22d, merged PR88 as 806fe9e68180b808dc5155ef34ef1d6923ce178d; same application tree |
 | Content | Native5be826b7-33ee-40c6-8f05-f7ed24b48f8c, SHA256b02879f7df3fdc9207248e3f45775a0f3e3f90ce88f1f525ae4c10e94c89a4dc,187pages/800assets; already-public dates and daily cadence preserved; six future topic slots exchanged in the reviewed editorial release |
-| Admin/commerce | https://login.memocasting.lt/admin — Worker b9a93bd4-2c38-4f6d-9dc2-830b35fe1ca2, deployment aa69ebf9-87ef-4a02-9bca-69c92d02f3af at 2026-10-26 06:26:48 UTC, 100% |
-| Admin code source | CORE 6db4eb58638e124fdfbcc7d16173b0259561bbf3, merged PR272 as 1197ecabd08243173b82d0539085ee2e4370a851; earlier operator workspace retained |
+| Admin/commerce | https://login.memocasting.lt/admin — Worker 0e3586fe-7a90-4be1-a590-1f2493ad2265, deployment 9ae810d2-ae74-460b-b4cd-4229c683334b at 2026-10-26 07:20:21 UTC, 100% |
+| Admin code source | CORE 3ba285c75d146855bedf051ccc7e9354dca58c83, merged PR275 as f6085584d5f4f58b5b46209506a0b8eb2b24e120; earlier operator workspace retained |
 | Private mail | Worker4b165ec7-466e-4b29-8c0b-29bfaecf32e7, authenticated senderinfo@memorycasting.lt / Memory Casting |
 
 ## Completed and checked
@@ -75,3 +75,7 @@ Source PR267 and PUBLIC PR86 are merged; both active editions are listed above. 
 The active editions above include immediate keyword suggestions beneath the locker field, trusted one-click selection, keyboard handling, query/quote invalidation, restored-order locks and responsive presentation. The separate consent blocker was a stale LT market hash after approved terms metadata changed. A validated nativeD1 full-configCAS reconciled only the active LT policy revision; strict matching and existing order snapshots remain. Missing-policy feedback and an explicit submit guard are now covered by regression. A read-only PUBLIC release preflight uses the common eligible projection and checks exact active policy hashes plus live terms HTTP.
 
 261 canonical and273 public tests, native/types/lint/build/dry-run, compiled and hosted desktop/320px acceptance passed within documented boundaries. Current live terms link is /naudojimo-salygos and consent is enabled, unchecked. Actual before/after provider configuration and5orders/20168minor/1owner coupon/27migrations match across deploy; no financial action or customer mail. Physical mobile tap was not claimed because of the observed input-coordinate mapping limitation. Details and mandatory future policy-release preflight are in [LOCKER_SEARCH_2026_10_26.md](LOCKER_SEARCH_2026_10_26.md).
+
+## Optional coupon free delivery accepted
+
+Versioned percent/EUR coupons now have an optional free-delivery checkbox. Normal delivery/carrier validation remains; buyer charge is zero while original tariff, location and operator carrier costs persist. Immutable order/invoice/Stripe/GA4 use net totals. Legacy definitions/commands and saved orders remain compatible through additive0028. 264 canonical tests/native,273 PUBLIC tests/types/lint/build/dry-run, compiled desktop/320px and hosted exact-asset/admin/context checks passed. Provider configuration and6existing orders/20648aggregate minor units/1owner code with version/uses are preserved; no actual charge, shipment, new commercial coupon or customer mail for acceptance. Details and rollback: [FREE_SHIPPING_2026_10_26.md](FREE_SHIPPING_2026_10_26.md).

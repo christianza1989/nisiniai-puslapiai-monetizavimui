@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "273 tests, build/types/lint plus exact compiled desktop/320px free preview/removal. First local startup ECONNRESET recorded; after confirmed exit one retry succeeded. Actual HTTPS asset matches compiled bytes and checkout remains LIVE.",
+  "checks": [
+    {
+      "command": "npm run build + wrangler deploy --dry-run",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/free-shipping-20261026/public-build.private.txt;frontend-dry.private.txt"
+    },
+    {
+      "command": "compiled browser + exact hosted asset hash + checkout policies",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/free-shipping-20261026/hosted.private.json:18cc913f4cb43006f5abb430a71faf2955680a5ad522660ceb310982106b2469; canonical/source policy7893ecb3 unchanged"
+    }
+  ],
+  "eventId": "17e5b085-0084-4977-8967-e263e539ebef",
+  "sequence": 3,
+  "at": "2026-10-26T07:35:34.545Z"
+}

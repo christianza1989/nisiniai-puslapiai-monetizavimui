@@ -26,7 +26,7 @@ test('native D1 migration and atomic discount cap roll back competing order stoc
   try {
     const db = await mf.getD1Database('COMMERCE_DB');
     const sources = await productionMigrationSources();
-    await applyMigrations(db, sources.slice(0, -1));
+    await applyMigrations(db, sources.slice(0, 27));
     const s = new CommerceService(db),
       d = new Discounts(s);
     const config = fixtureStore();
@@ -86,7 +86,7 @@ test('native D1 migration and atomic discount cap roll back competing order stoc
       4,
     );
     assert.equal((await stored.one('SELECT COUNT(*) n FROM order_discounts')).n, 1);
-    assert.equal((await stored.one('SELECT COUNT(*) n FROM commerce_migrations')).n, 28);
+    assert.equal((await stored.one('SELECT COUNT(*) n FROM commerce_migrations')).n, 29);
   } finally {
     await mf.dispose();
   }

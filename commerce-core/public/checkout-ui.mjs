@@ -1083,9 +1083,15 @@ function onePageForm({
     const count = lines().reduce((sum, l) => sum + l.quantity, 0);
     for (const option of delivery.options) {
       const method = market()?.delivery.find((d) => d.id === option.value);
-      option.disabled = Boolean(method?.maxParcels && count > method.maxParcels);
+      option.disabled = Boolean(
+        method?.customerCharge !== 'single_parcel' &&
+        method?.maxParcels &&
+        count > method.maxParcels,
+      );
     }
-    lockerHint.hidden = count <= 1 || !market()?.delivery.some((d) => d.kind === 'locker');
+    lockerHint.hidden =
+      count <= 1 ||
+      !market()?.delivery.some((d) => d.kind === 'locker' && d.customerCharge !== 'single_parcel');
     if (Array.from(delivery.options).find((o) => o.value === delivery.value)?.disabled) {
       delivery.value = Array.from(delivery.options).find((o) => !o.disabled)?.value || '';
       refreshLocker();

@@ -44,31 +44,44 @@ export function renderShipping(content, detail, ctx) {
       ),
     );
     if (p.measurementNote) content.append(node('p', { class: 'hint' }, p.measurementNote));
-    const quoteId = crypto.randomUUID();
-    const quote = node(
-      'button',
-      {
-        type: 'button',
-        disabled:
-          !has('ship') ||
-          !integrations.shippingQuotes ||
-          o.payment_state !== 'paid' ||
-          !['pending', 'ready'].includes(o.fulfillment_state),
-      },
-      'Gauti siuntimo kainas',
-    );
-    quote.addEventListener('click', () =>
-      action(
-        quote,
-        async () => {
-          await api('/api/operator/shipping-plans/' + plan.id + '/quotes', { id: quoteId });
-          await reload();
+    for (const parcelIndex of p.parcels.length > 1
+      ? p.parcels.map((_, index) => index)
+      : [undefined]) {
+      const quoteId = crypto.randomUUID();
+      const quote = node(
+        'button',
+        {
+          type: 'button',
+          disabled:
+            !has('ship') ||
+            !integrations.shippingQuotes ||
+            o.payment_state !== 'paid' ||
+            !['pending', 'ready'].includes(o.fulfillment_state),
         },
-        'Siuntimo kainų pasiūlymai išsaugoti.',
-      ),
-    );
-    content.append(node('div', { class: 'actions' }, quote));
+        parcelIndex === undefined
+          ? 'Gauti siuntimo kainas'
+          : 'Gauti pakuotės ' + (parcelIndex + 1) + ' kainas',
+      );
+      quote.addEventListener('click', () =>
+        action(
+          quote,
+          async () => {
+            await api('/api/operator/shipping-plans/' + plan.id + '/quotes', {
+              id: quoteId,
+              ...(parcelIndex !== undefined ? { parcelIndex } : {}),
+            });
+            await reload();
+          },
+          'Siuntimo kainų pasiūlymai išsaugoti.',
+        ),
+      );
+      content.append(node('div', { class: 'actions' }, quote));
+    }
     for (const q of data.quotes.filter((q) => q.plan_id === plan.id)) {
+      if (q.payload.parcelIndex !== undefined)
+        content.append(
+          node('h4', {}, 'Pakuotė ' + (q.payload.parcelIndex + 1) + ' iš ' + p.parcels.length),
+        );
       content.append(
         node(
           'p',
@@ -107,9 +120,19 @@ export function renderShipping(content, detail, ctx) {
           disabled:
             !has('ship') ||
             o.fulfillment_state !== 'ready' ||
-            Boolean(detail.shipmentCommands?.some((c) => c.state !== 'canceled')),
+            Boolean(
+              detail.shipmentCommands?.some(
+                (c) =>
+                  c.state !== 'canceled' &&
+                  (c.plan_id !== q.plan_id ||
+                    (c.parcel_index ?? -1) === -1 ||
+                    c.parcel_index === (q.payload.parcelIndex ?? -1)),
+              ),
+            ),
         },
-        'Paruošti registravimą',
+        q.payload.parcelIndex === undefined
+          ? 'Paruošti registravimą'
+          : 'Paruošti pakuotę ' + (q.payload.parcelIndex + 1),
       );
     button.addEventListener('click', () =>
       action(
@@ -121,6 +144,7 @@ export function renderShipping(content, detail, ctx) {
             quoteId: q.id,
             serviceId: offer.serviceId,
             maxCost: offer.amount,
+            ...(q.payload.parcelIndex !== undefined ? { parcelIndex: q.payload.parcelIndex } : {}),
           });
           await reload();
         },
@@ -137,7 +161,7 @@ export function renderShipping(content, detail, ctx) {
     node(
       'p',
       { class: 'hint' },
-      'Automatinis Siųsk pigiau siuntų registravimas bus įjungtas patvirtinus kainos ir pakartotinių užklausų tvarką.',
+      'Kiekvienai atskirai dėžei paruoškite savo registravimo užduotį ir lipduką. Papildomų pakuočių siuntimą apmoka pardavėjas; kliento užsakymo suma nesikeičia.',
     ),
   );
   if (

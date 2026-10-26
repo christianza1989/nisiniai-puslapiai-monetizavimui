@@ -1,5 +1,5 @@
 import { requireValue, identifier, integer, canonical, digest } from './validation.mjs';
-import { planParcels } from './parcels.mjs';
+import { planParcels, shipmentPart } from './parcels.mjs';
 import { Backoffice } from './backoffice.mjs';
 import { requireOperation } from './admission.mjs';
 
@@ -157,8 +157,6 @@ export class ShippingOperations {
         409,
       );
     const packages = planParcels(order, input);
-    if (order.snapshot.customer?.locker || origin.payload.locker)
-      requireValue(packages.parcels.length <= 1, 'carrier_locker_parcel_limit', 409);
     const request = {
       orderId,
       originId: input.originId,
@@ -208,15 +206,22 @@ export class ShippingOperations {
     await this.guard(store, env, actor);
     requireValue(identifier(input?.id), 'invalid_shipping_quote');
     const binding = this.binding(adapter, env, 'quote');
-    const request = { planId, ...binding };
+    const request = {
+      planId,
+      ...binding,
+      ...(input.parcelIndex !== undefined ? { parcelIndex: input.parcelIndex } : {}),
+    };
     const old = await this.prior(store, 'shipping_quotes', input.id, request);
     if (old) return old;
     const plan = view(
       await this.s.one('SELECT * FROM shipping_plans WHERE store_id=? AND id=?', store, planId),
     );
     requireValue(plan, 'shipping_plan_not_found', 404);
-    await this.eligible(store, env, plan.order_id);
+    const order = await this.eligible(store, env, plan.order_id);
     const p = plan.payload;
+    const part = shipmentPart(order, p, input.parcelIndex);
+    if (p.recipient.locker || p.origin.locker)
+      requireValue(part.parcels.length === 1, 'carrier_locker_parcel_limit', 409);
     requireValue(
       p.currency === 'EUR' && integer(p.value, 1),
       'carrier_currency_not_supported',
@@ -225,8 +230,8 @@ export class ShippingOperations {
     const offers = await adapter.quote({
       sender: p.origin,
       recipient: p.recipient,
-      parcels: p.parcels,
-      value: p.value,
+      parcels: part.parcels,
+      value: part.value,
       currency: p.currency,
     });
     requireValue(
@@ -242,7 +247,6 @@ export class ShippingOperations {
       'carrier_offer_invalid',
       502,
     );
-    const order = await this.s.getOrder(store, env, plan.order_id);
     if (order.snapshot.customer?.locker) {
       const expected = order.snapshot.delivery.providerServiceId;
       offers.splice(0, offers.length, ...offers.filter((o) => o.serviceId === expected));

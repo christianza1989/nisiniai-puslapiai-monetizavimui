@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Accepted stage-specific validation after both fixes. Full verify wrappers retained their original failures (automation fixture, then response consumption). Format and273 unit tests passed; complete native smoke now passes separately after explicit response-identity repair. Do not report the failed wrapper exit as PASS.",
+  "checks": [
+    {
+      "command": "npm --prefix commerce-core test",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/core-verify-final.private.txt:273/273, fail0 before the separate native stage"
+    },
+    {
+      "command": "node commerce-core/scripts/worker-smoke.mjs",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/worker-final2.private.txt"
+    },
+    {
+      "command": "wrangler deploy --dry-run --config commerce-core/wrangler.jsonc",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/core-dry.private.txt:exit0"
+    }
+  ],
+  "eventId": "37131edc-fd40-4806-87b8-3bcc2fdd462e",
+  "sequence": 4,
+  "at": "2026-10-26T09:01:45.659Z"
+}

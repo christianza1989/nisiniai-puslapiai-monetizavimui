@@ -1556,3 +1556,56 @@ test('missing exact terms link explains the block and does not permit order crea
       .fire('submit');
     assert.equal(client.created, undefined);
   }));
+
+test('single customer delivery fee retains Omniva selection and trusted terminal for two then three kits', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      initialize = client.initialize;
+    client.initialize = async () => {
+      const data = await initialize();
+      data.markets = structuredClone(data.markets);
+      data.markets[0].delivery.push({
+        id: 'omniva',
+        label: 'Omniva paštomatas',
+        kind: 'locker',
+        maxParcels: 1,
+        customerCharge: 'single_parcel',
+        amount: 472,
+        lockers: [
+          {
+            id: 'salininkai',
+            label: 'Vilnius NORFA',
+            address: 'Salininkų g. 129A',
+            city: 'Vilnius',
+            postalCode: '77759',
+          },
+        ],
+      });
+      return data;
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 2 }],
+    });
+    const delivery = field(root, 'delivery');
+    assert.equal(delivery.options.find((o) => o.value === 'omniva').disabled, false);
+    delivery.value = 'omniva';
+    await delivery.fire('change');
+    const search = field(root, 'lockerSearch');
+    search.value = 'salinink';
+    await search.fire('input');
+    await nodes(root)
+      .find((n) => n.attrs.role === 'option')
+      .fire('click');
+    assert.equal(field(root, 'locker').value, 'salininkai');
+    const quantity = field(root, 'couple');
+    quantity.value = '3';
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('input', quantity);
+    assert.equal(delivery.value, 'omniva');
+    assert.equal(delivery.options.find((o) => o.value === 'omniva').disabled, false);
+    assert.equal(field(root, 'locker').value, 'salininkai');
+  }));

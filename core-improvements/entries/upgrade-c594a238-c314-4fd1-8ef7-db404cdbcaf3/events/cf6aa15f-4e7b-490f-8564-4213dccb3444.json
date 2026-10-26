@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Main source PR278 merged990c5f12, refinement PR279 merged48ff3c3f. Actual production commerce Worker a9b884f6-1f40-4e0f-8130-89f68638a7f4 deployed from655448a5 at09:15:36UTC. Additive29 applied after28, CAS enabled single_parcel on only courier and locker_omniva. No real shipment purchased. Frontend and hosted acceptance still pending in this event.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/279",
+  "commit": "48ff3c3f6bff8407b8be56b8267ffaec3241afaa",
+  "eventId": "cf6aa15f-4e7b-490f-8564-4213dccb3444",
+  "sequence": 6,
+  "at": "2026-10-26T09:26:04.015Z"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "PUBLIC sourcecc1c881d mergedPR89 as026c84b9; actual frontend Worker3bfdde10-0d6e-41cb-8854-ebbaa40079f4/deployment33751606-6810-4ee7-9d13-25a910de4ea2 active100% at2026-10-26T09:26:07Z. Actual production GA4 G-LHHK61WT8T restored before deploy, provider bindings/domains unchanged. Content187/800 and dates untouched.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/89",
+  "commit": "026c84b923a58c4c53a9a188331d2dfee0ba8b9c",
+  "eventId": "74d783bf-bccf-4bd9-a732-7eb337628aa2",
+  "sequence": 4,
+  "at": "2026-10-26T09:35:23.429Z"
+}

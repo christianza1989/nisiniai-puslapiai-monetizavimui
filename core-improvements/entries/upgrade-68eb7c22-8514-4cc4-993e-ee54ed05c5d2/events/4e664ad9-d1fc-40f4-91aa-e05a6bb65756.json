@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Exact PUBLIC cc1c881d source merged as026c84b9. 273 companion tests, types/scoped lint, build and production-profile dry-run pass. Two local compiled preview attempts exited ECONNRESET; this is not represented as compiled UI acceptance. Hosted browser validation follows publication.",
+  "checks": [
+    {
+      "command": "npm run test:core; tsc --noEmit; scoped eslint; npm run build; wrangler deploy --dry-run; verify-commerce-sdk; verify-memocasting-checkout-policies",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/public-tests.private.txt; public-build.private.txt; frontend-dry.private.txt; exact SDK e63e695d and LT7893ecb3 verified"
+    }
+  ],
+  "eventId": "4e664ad9-d1fc-40f4-91aa-e05a6bb65756",
+  "sequence": 2,
+  "at": "2026-10-26T09:24:36.287Z"
+}

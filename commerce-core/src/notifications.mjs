@@ -49,6 +49,49 @@ const escapeHtml = (value) =>
     /[&<>"']/g,
     (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c],
   );
+export function reviewMessage(payload, policy) {
+  requireValue(
+    email(payload.recipient) &&
+      email(policy.from) &&
+      typeof payload.orderNumber === 'string' &&
+      /^[a-zA-Z0-9]{1,40}$/.test(payload.orderNumber) &&
+      /^https:\/\/[a-z0-9.-]+\/atsiliepimas#token=rv1_[a-f0-9]{64}$/.test(
+        payload.reviewUrl || '',
+      ) &&
+      payload.stopUrl === payload.reviewUrl.replace('#token=', '#stop='),
+    'notification_message_invalid',
+  );
+  const id = 'commerce-' + payload.eventId.replaceAll('_', '-');
+  requireValue(/^[a-zA-Z0-9-]{1,220}$/.test(id), 'notification_message_invalid');
+  const invitation = payload.kind === 'ReviewInvitation';
+  const title = invitation ? 'Kaip pavyko sukurti savo prisiminimą?' : 'Jūsų atsiliepimo nuoroda';
+  const body = invitation
+    ? 'Dėkojame, kad pasirinkote „Memory Casting“. Pasidalykite savo patirtimi: kas patiko ir ką galėtume patobulinti? Jei norite, pridėkite savo sukurtos skulptūros nuotraukų. Vertiname kiekvieną sąžiningą įvertinimą.'
+    : 'Gavome jūsų prašymą palikti atsiliepimą. Ši privati nuoroda jau susieta su jūsų pirkiniu. Jei nuorodos neprašėte, laišką galite ignoruoti.';
+  return {
+    schemaVersion: 1,
+    environment: payload.environment,
+    storeId: payload.storeId,
+    id,
+    messageId: `<${id}@${policy.from.split('@')[1]}>`,
+    from: policy.from,
+    to: payload.recipient,
+    replyTo: policy.from,
+    subject: invitation
+      ? 'Kaip jums sekėsi? Pasidalykite „Memory Casting“ patirtimi'
+      : 'Jūsų „Memory Casting“ atsiliepimo nuoroda',
+    text: [
+      title,
+      body,
+      'Užsakymas: ' + payload.orderNumber,
+      'Palikti atsiliepimą: ' + payload.reviewUrl,
+      'Nuoroda galioja 90 dienų. Atsiliepimas bus peržiūrėtas prieš paskelbiant.',
+      'Atsisakyti kvietimų: ' + payload.stopUrl,
+      'Pagalba: ' + policy.from,
+    ].join('\n\n'),
+    html: `<!doctype html><html lang="lt"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body style="margin:0;background:#f8f6f3;color:#292625;font:16px/1.6 Arial,sans-serif"><div style="max-width:560px;margin:24px auto;background:#fff;padding:32px 24px"><p style="font-size:22px">Memory Casting</p><h1 style="font-size:26px;line-height:1.3">${title}</h1><p>${body}</p><p>Užsakymas <strong>${escapeHtml(payload.orderNumber)}</strong></p><p style="margin:28px 0"><a href="${escapeHtml(payload.reviewUrl)}" style="display:inline-block;padding:14px 22px;background:#292625;color:#fff;text-decoration:none;border-radius:6px">Palikti atsiliepimą</a></p><p>Nuoroda galioja 90 dienų. Atsiliepimą peržiūrėsime prieš paskelbdami. Nuotraukas pridėti neprivaloma.</p><p>Klausimų? Atsakykite į šį laišką.</p><p style="font-size:13px;border-top:1px solid #e5ddd8;padding-top:20px"><a href="${escapeHtml(payload.stopUrl)}">Atsisakyti kvietimų palikti atsiliepimą</a>. Tai nepakeis užsakymo pranešimų.</p></div></body></html>`,
+  };
+}
 export function paymentReminderMessage(payload, policy) {
   requireValue(
     payload.language === 'lt' &&
@@ -82,6 +125,8 @@ export function paymentReminderMessage(payload, policy) {
   };
 }
 export function notificationMessage(payload, policy) {
+  if (['ReviewInvitation', 'ReviewAccess'].includes(payload.kind))
+    return reviewMessage(payload, policy);
   if (payload.kind === 'PaymentReminder') return paymentReminderMessage(payload, policy);
   const t = copy[payload.language] || copy.lt;
   requireValue(
@@ -109,7 +154,7 @@ export function notificationMessage(payload, policy) {
     subject: '[' + payload.legalName.replace(/[\r\n]/g, ' ') + '] ' + t[payload.kind],
     text: [
       t[payload.kind],
-      t.reference + ': ' + payload.orderId,
+      t.reference + ': ' + (payload.orderNumber || payload.orderId),
       t.amount + ': ' + amount,
       t.help,
     ].join('\n\n'),
@@ -154,10 +199,11 @@ export class CoreMailBindingAdapter {
   }
 }
 export class CustomerNotifications {
-  constructor(service, adapters = {}, { reminderCheck } = {}) {
+  constructor(service, adapters = {}, { reminderCheck, reviewCheck } = {}) {
     this.s = service;
     this.adapters = adapters;
     this.reminderCheck = reminderCheck;
+    this.reviewCheck = reviewCheck;
   }
   async preview(store, env, eventId) {
     const config = await this.s.store(store, env);
@@ -207,6 +253,23 @@ export class CustomerNotifications {
     );
     requireValue(row, 'notification_not_found', 404);
     if (row.state === 'accepted') return { state: 'accepted', replayed: true };
+    if (row.kind === 'ReviewInvitation' && row.first_attempt_at === null) {
+      requireValue(
+        typeof this.reviewCheck === 'function',
+        'notification_review_guard_missing',
+        503,
+      );
+      if (!(await this.reviewCheck(store, env, row.order_id))) {
+        await this.s
+          .stmt(
+            "UPDATE customer_notifications SET state='review' WHERE store_id=? AND event_id=? AND first_attempt_at IS NULL AND state='prepared'",
+            store,
+            eventId,
+          )
+          .run();
+        return { state: 'review', suppressed: true };
+      }
+    }
     if (row.kind === 'PaymentReminder' && row.first_attempt_at === null) {
       requireValue(
         typeof this.reminderCheck === 'function',
@@ -274,7 +337,9 @@ export class CustomerNotifications {
         "UPDATE customer_notifications SET state='sending',first_attempt_at=? WHERE store_id=? AND event_id=? AND first_attempt_at IS NULL AND state='prepared'" +
           (row.kind === 'PaymentReminder'
             ? " AND EXISTS(SELECT 1 FROM orders o WHERE o.store_id=customer_notifications.store_id AND o.id=customer_notifications.order_id AND o.payment_state='pending' AND o.stock_state='reserved' AND o.expires_at>?) AND NOT EXISTS(SELECT 1 FROM withdrawals w WHERE w.store_id=customer_notifications.store_id AND w.order_id=customer_notifications.order_id)"
-            : ''),
+            : row.kind === 'ReviewInvitation'
+              ? ' AND EXISTS(SELECT 1 FROM review_settings rs WHERE rs.store_id=customer_notifications.store_id AND rs.enabled=1) AND NOT EXISTS(SELECT 1 FROM review_optouts ro WHERE ro.store_id=customer_notifications.store_id AND ro.order_id=customer_notifications.order_id) AND NOT EXISTS(SELECT 1 FROM product_reviews pr WHERE pr.store_id=customer_notifications.store_id AND pr.order_id=customer_notifications.order_id)'
+              : ''),
         this.s.now(),
         store,
         eventId,

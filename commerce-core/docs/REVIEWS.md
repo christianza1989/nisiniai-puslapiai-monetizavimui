@@ -1,0 +1,23 @@
+# Verified photo reviews
+
+Migration0030 adds reviews, private photo grants, settings and an opt-in order-number counter. It never renumbers historical orders or financial documents. Configure `lastOrderNumber` once through the store-scoped settings operation; the next newly inserted order gets the next number in the same D1 transaction. Other stores retain their prior UUID display until explicitly configured.
+
+Public routes:
+
+- `GET /api/reviews?sku=couple&page=1`: published projections, twenty per page; exact published statistics by SKU. No emails, order IDs, grant hashes or import provenance.
+- `POST /api/reviews/request {orderNumber,email}`: indistinguishable accepted response. A matching paid order queues a private access link to the stored buyer email only. At most three new links per order per day, plus ingress rate limiting.
+- `POST /api/reviews/access {token}`: purchased lines and display number only. A random256bit token is purpose/store/order-bound, SHA256-hashed in the grant table, valid90days. Its raw link must exist in the private immutable queued email payload to permit delivery/reconciliation; it is never logged or returned to a stranger.
+- `POST /api/reviews/photos {token,bytes}`: base64 of re-encoded static WebP, at most1MiB/1600px. Client JPEG/PNG/WebP conversion strips metadata. Server checks chunk boundaries, rejects metadata/animation/SVG, allocates a bounded private object before storage and verifies integrity on read. Five photos per review; ten uploads per grant allow a bounded retry margin.
+- `POST /api/reviews/submit`: purchased SKU, rating1–5, display name, title/body, photo IDs and explicit publication consent. One review per order/SKU; always pending first. Refunds do not automatically erase honest reviews.
+- `POST /api/reviews/stop {token}`: stop invitations for this order without stopping receipts.
+- `GET /api/reviews/photos/:id`: only attached, published, nonremoved images. Private/no-store prevents stale public media after removal.
+
+All public writes use native same-origin/host admission and a separate bounded ingress rate scope. Order number alone never authorizes access. External media URLs and arbitrary operator routes are not allowed through the buyer bridge.
+
+Operator `catalog` grant controls `/api/operator/reviews`, `/api/operator/review-settings`, versioned review moderation and `/api/operator/review-photos/:id`. Reviews can be removed into a restorable trash view; individual photos can be removed/restored independently. The original content/date, private image object and audit history survive a reversible removal. A real personal-data erasure request requires the operator's separate retention/erasure handling; do not mislabel reversible hiding as physical data deletion.
+
+CSV preview/confirm maps arbitrary columns to `product_sku,rating,author_name,review_date,review_text` with optional `review_title,review_id,image_urls`. UTF-8 comma CSV supports quoted multiline text and BOM, max100rows/50KB per batch. Original text/date/rating remain; source ID and fingerprint conflicts are explicit. A CSV `verified_purchase` flag alone is not proof. Photo-bearing CSV rows are reported explicitly for separate media import rather than silently discarding their photos. Imported records remain pending until reviewed. No fixtures are imported into production.
+
+Invitations default30days after `ShipmentHandedOver`, an actual operator-confirmed dispatch, not label creation. The operator order screen has that explicit confirmation. Settings allow1–180days. New LT checkout displays an optional unchecked consent separate from terms and analytics; the exact `review-request-v1` acceptance timestamp is saved in the immutable order snapshot. Existing orders are not opted in retroactively. Native per-minute automation queues one invitation per eligible order. Existing mail policy, sender binding, idempotent claim, immutable message, unknown-outcome reconciliation and no SMTP resend rule remain authoritative. Changes/optout are checked again before first send. `ReviewAccess` is a buyer-requested verification message, distinct from an unsolicited invitation.
+
+Site integration: a noindex review form reads a private fragment, clears it from the URL and prepopulates the display number after proof verification. Product visible reviews and `Review`/`AggregateRating` use the same moderated public pool; homepage shows only actual product-specific counts/ratings and never an invented Organization rating. Zero reviews means no stars. Source tests are separate from a real provider delivery and real delayed customer acceptance.

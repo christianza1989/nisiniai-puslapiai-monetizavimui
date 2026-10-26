@@ -14,6 +14,7 @@ import {
 import { deliveryFingerprint } from './buyer-delivery.mjs';
 import { FinishedStock } from './finished-stock.mjs';
 import { Discounts, normalizeDiscountCode } from './discounts.mjs';
+import { REVIEW_CONSENT } from './reviews.mjs';
 export class CommerceService {
   constructor(db, { now = () => Date.now() } = {}) {
     this.db = db;
@@ -355,6 +356,9 @@ export class CommerceService {
         deliveryId: input.deliveryId,
         ...(input.deliveryQuoteId !== undefined ? { deliveryQuoteId: input.deliveryQuoteId } : {}),
         accessHash: clientHash,
+        ...(input.reviewRequestConsent !== undefined
+          ? { reviewRequestConsent: input.reviewRequestConsent }
+          : {}),
         ...(input.quoteHash !== undefined ? { quoteHash: input.quoteHash } : {}),
         ...(input.acceptedPolicyVersion !== undefined
           ? { acceptedPolicyVersion: input.acceptedPolicyVersion }
@@ -379,6 +383,10 @@ export class CommerceService {
       return { order: this.view(existing), replayed: true };
     }
     const snapshot = await this.quote(id, environment, input);
+    if (input.reviewRequestConsent !== undefined) {
+      requireValue(input.reviewRequestConsent === REVIEW_CONSENT, 'invalid_review_consent');
+      snapshot.reviewRequestConsent = { version: REVIEW_CONSENT, acceptedAt: this.now() };
+    }
     if (config.paymentRecovery?.enabled === true) {
       requireValue(
         input.paymentRecoveryNotice === config.paymentRecovery.noticeVersion,
@@ -461,7 +469,12 @@ export class CommerceService {
   }
   view(row) {
     const { access_hash, request_hash, ...safe } = row;
-    return { ...safe, snapshot: JSON.parse(row.snapshot_json), snapshot_json: undefined };
+    return {
+      ...safe,
+      orderNumber: String(row.public_number || row.id.slice(0, 8).toUpperCase()),
+      snapshot: JSON.parse(row.snapshot_json),
+      snapshot_json: undefined,
+    };
   }
   async getOrder(store, environment, id) {
     await this.store(store, environment);

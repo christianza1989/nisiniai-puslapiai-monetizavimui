@@ -160,6 +160,7 @@ export const adminAssets = {
   '/catalog-editor.mjs': '/catalog-editor.mjs',
   '/catalog-ui.mjs': '/catalog-ui.mjs',
   '/discounts-ui.mjs': '/discounts-ui.mjs',
+  '/reviews-ui.mjs': '/reviews-ui.mjs',
   '/finance-io-ui.mjs': '/finance-io-ui.mjs',
   '/returns-ui.mjs': '/returns-ui.mjs',
   '/commerce': '/commerce.html',

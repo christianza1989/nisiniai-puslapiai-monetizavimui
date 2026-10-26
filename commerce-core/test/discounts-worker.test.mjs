@@ -86,7 +86,7 @@ test('native D1 migration and atomic discount cap roll back competing order stoc
       4,
     );
     assert.equal((await stored.one('SELECT COUNT(*) n FROM order_discounts')).n, 1);
-    assert.equal((await stored.one('SELECT COUNT(*) n FROM commerce_migrations')).n, 29);
+    assert.equal((await stored.one('SELECT COUNT(*) n FROM commerce_migrations')).n, 30);
   } finally {
     await mf.dispose();
   }

@@ -14,6 +14,57 @@
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 16px;
 }
+.review-settings {
+  margin-bottom: 32px;
+}
+.review-settings h2,
+.review-settings .hint {
+  grid-column: 1 / -1;
+}
+.review-import {
+  margin: 24px 0 32px;
+  padding-block: 20px;
+  border-block: 1px solid var(--line);
+}
+.review-import summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 44px;
+}
+.review-import .fields {
+  margin-block: 20px;
+}
+.review-admin-list {
+  margin-top: 28px;
+}
+.review-admin-row {
+  padding-block: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.review-admin-row h3 {
+  margin: 0 0 8px;
+}
+.review-admin-row .review-body {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-width: 70ch;
+}
+.review-admin-row img {
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  margin: 12px;
+}
+.review-admin-row label {
+  display: grid;
+  gap: 8px;
+  max-width: 640px;
+  margin: 20px 0;
+}
+.review-admin-row input {
+  width: 100%;
+}
 * {
   box-sizing: border-box;
 }

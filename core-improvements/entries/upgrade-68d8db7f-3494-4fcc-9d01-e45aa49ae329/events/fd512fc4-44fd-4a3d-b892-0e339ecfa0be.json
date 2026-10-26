@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/272",
+  "commit": "1197ecabd08243173b82d0539085ee2e4370a851",
+  "note": "Canonical6db4eb58 deployed as backendb9a93bd4 and exact buyerSDK adopted in PUBLIC6c0c6a1a/frontend51b08875. Strict terms matching retained; nativeCAS LTmarket matchesapproved7893ecb3 and currentenableduncheckedconsent verified. Source/review/test/operator and hosted receipts in LOCKER_SEARCH_2026_10_26.md; no financial/customer-mail acceptance claimed.",
+  "eventId": "fd512fc4-44fd-4a3d-b892-0e339ecfa0be",
+  "sequence": 4,
+  "at": "2026-10-26T06:41:56.383Z"
+}

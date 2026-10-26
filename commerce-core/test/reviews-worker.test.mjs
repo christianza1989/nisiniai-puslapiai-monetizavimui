@@ -1,3 +1,4 @@
+import { prepareReviewImport, importReviews } from '../src/review-import.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
@@ -141,9 +142,42 @@ test('native D1/R2 additive reviews preserve historical orders and atomically nu
       'owner',
     );
     await assert.rejects(r.photo('store_a', 'sandbox', photo.id), /review_photo_missing/);
+    const csv =
+      'product_sku,rating,author_name,review_date,review_text,review_id\nfamily,4,Historic Native Buyer,2024-01-01,Puiku,old-native-review';
+    const initialOrders = (await s.one('SELECT COUNT(*) n FROM orders')).n,
+      initialGrants = (await s.one('SELECT COUNT(*) n FROM review_grants')).n;
+    const preview = await prepareReviewImport(s, 'store_a', 'sandbox', { csv });
+    await importReviews(
+      s,
+      'store_a',
+      'sandbox',
+      { csv, hash: preview.hash, ownStoreConfirmed: true },
+      'owner',
+    );
+    const legacy = await s.one(
+      "SELECT id FROM product_reviews WHERE source_id='old-native-review'",
+    );
+    const importedPhoto = await r.importPhoto(
+      'store_a',
+      'sandbox',
+      legacy.id,
+      bytes,
+      'native-old.webp',
+      'owner',
+    );
+    await r.moderate(
+      'store_a',
+      'sandbox',
+      legacy.id,
+      { state: 'published', version: 1, reason: 'Native historic media reviewed' },
+      'owner',
+    );
+    assert.deepEqual(await r.photo('store_a', 'sandbox', importedPhoto.id), bytes);
+    assert.equal((await s.one('SELECT COUNT(*) n FROM orders')).n, initialOrders);
+    assert.equal((await s.one('SELECT COUNT(*) n FROM review_grants')).n, initialGrants);
     const restart = new ProductReviews(new CommerceService(await mf.getD1Database('COMMERCE_DB')));
     assert.equal((await restart.list('store_a', 'sandbox')).stats[0].average, 3);
-    assert.equal((await s.one('SELECT count(*) n FROM commerce_migrations')).n, 30);
+    assert.equal((await s.one('SELECT count(*) n FROM commerce_migrations')).n, 31);
   } finally {
     await mf.dispose();
   }

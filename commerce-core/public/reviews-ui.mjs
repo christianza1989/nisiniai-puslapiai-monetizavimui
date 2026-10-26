@@ -157,7 +157,7 @@ export async function renderReviews(content, ctx) {
                 '/5 · ' +
                 i.date +
                 ' · ' +
-                (i.error || (i.duplicate ? 'Jau yra' : 'Tinka')),
+                (i.error || (i.duplicate ? 'Jau yra' : i.warning || 'Tinka')),
             ),
           ),
         );

@@ -40,15 +40,22 @@ export async function prepareReviewImport(service, store, env, input) {
           ? 'Netaisyklinga arba ateities data'
           : item.authorName.length < 2 ||
               item.authorName.length > 80 ||
-              item.body.length < 10 ||
               item.body.length > 5000 ||
               item.title.length > 160
             ? 'Patikrinkite vardo ir teksto ilgį'
-            : item.images.length
-              ? 'Nuotraukoms reikia atskiro importo: šios eilutės kol kas neimportuosime'
-              : '';
+            : '';
+    item.warning = item.images.length
+      ? 'Nuotraukos įkeliamos atskirai; dabar importuojamas įvertinimas ir tekstas.'
+      : '';
     item.fingerprint = await digest(
-      canonical({ sku, date, rating: item.rating, name: item.authorName, body: item.body }),
+      canonical({
+        sku,
+        date,
+        rating: item.rating,
+        name: item.authorName,
+        title: item.title,
+        body: item.body,
+      }),
     );
     item.sourceId ||= item.fingerprint;
     const old = await service.one(

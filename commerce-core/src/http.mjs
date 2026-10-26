@@ -321,6 +321,26 @@ export function createHandler({
           ),
         );
       if (path.startsWith('/api/operator/')) {
+        const importPhoto = path.match(/^\/api\/operator\/reviews\/([a-f0-9-]{36})\/photos$/);
+        if (importPhoto && request.method === 'POST') {
+          const actor = await authorize('catalog'),
+            raw = JSON.parse(await boundedBody(request, 1450000));
+          requireValue(
+            typeof raw.bytes === 'string' && /^[a-zA-Z0-9+/]*={0,2}$/.test(raw.bytes),
+            'invalid_review_photo',
+          );
+          return json(
+            await reviews.importPhoto(
+              store.id,
+              environment,
+              importPhoto[1],
+              Uint8Array.from(atob(raw.bytes), (c) => c.charCodeAt(0)),
+              raw.sourceKey,
+              actor.id,
+            ),
+            201,
+          );
+        }
         if (
           ['/api/operator/review-import/preview', '/api/operator/review-import/confirm'].includes(
             path,

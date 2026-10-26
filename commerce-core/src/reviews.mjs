@@ -404,7 +404,7 @@ export class ProductReviews {
     await this.s.store(store, env);
     requireValue(identifier(id), 'review_photo_missing', 404);
     const row = await this.s.one(
-      'SELECT p.* FROM review_photos p JOIN product_reviews r ON r.store_id=p.store_id AND r.id=p.review_id WHERE p.store_id=? AND p.id=?' +
+      'SELECT p.* FROM review_media p JOIN product_reviews r ON r.store_id=p.store_id AND r.id=p.review_id WHERE p.store_id=? AND p.id=?' +
         (operator ? '' : " AND r.state='published' AND p.hidden=0"),
       store,
       id,
@@ -439,7 +439,7 @@ export class ProductReviews {
     );
     const photos = items.length
       ? await this.s.rows(
-          'SELECT id,review_id,width,height,hidden FROM review_photos WHERE store_id=? AND review_id IN (' +
+          'SELECT id,review_id,width,height,hidden FROM review_media WHERE store_id=? AND review_id IN (' +
             items.map(() => '?').join(',') +
             ')' +
             (operator ? '' : ' AND hidden=0'),
@@ -464,6 +464,7 @@ export class ProductReviews {
               body: r.body,
               date: r.review_date,
               verifiedPurchase: r.verified === 1,
+              legacyImported: r.source === 'shopify_import',
               photos: r.photos,
             },
       ),
@@ -524,7 +525,7 @@ export class ProductReviews {
       'invalid_review_moderation',
     );
     const current = await this.s.one(
-      'SELECT review_id FROM review_photos WHERE store_id=? AND id=? AND review_id IS NOT NULL',
+      'SELECT review_id FROM review_media WHERE store_id=? AND id=? AND review_id IS NOT NULL',
       store,
       id,
     );
@@ -532,6 +533,12 @@ export class ProductReviews {
     await this.s.db.batch([
       this.s.stmt(
         'UPDATE review_photos SET hidden=? WHERE store_id=? AND id=?',
+        +input.hidden,
+        store,
+        id,
+      ),
+      this.s.stmt(
+        'UPDATE review_import_photos SET hidden=? WHERE store_id=? AND id=?',
         +input.hidden,
         store,
         id,
@@ -548,6 +555,67 @@ export class ProductReviews {
       ),
     ]);
     return { hidden: input.hidden };
+  }
+  async importPhoto(store, env, reviewId, bytes, sourceKey, actor) {
+    await this.s.store(store, env);
+    requireValue(
+      identifier(actor) && identifier(reviewId) && text(sourceKey, 1, 160) && this.storage,
+      'invalid_review_photo',
+    );
+    const review = await this.s.one(
+      "SELECT * FROM product_reviews WHERE store_id=? AND id=? AND source='shopify_import' AND order_id IS NULL",
+      store,
+      reviewId,
+    );
+    requireValue(review, 'review_not_found', 404);
+    bytes = stripReviewColourProfile(bytes);
+    const dimensions = reviewPhotoDimensions(bytes),
+      hash = await hashBytes(bytes);
+    const old = await this.s.one(
+      'SELECT id,sha256,storage_key FROM review_import_photos WHERE store_id=? AND review_id=? AND (source_key=? OR sha256=?)',
+      store,
+      reviewId,
+      sourceKey,
+      hash,
+    );
+    if (old) {
+      requireValue(old.sha256 === hash, 'review_import_photo_conflict', 409);
+      await this.storage.put(old.storage_key, bytes, hash, 'image/webp');
+      await this.s.db.batch(
+        this.s.event(store, 'ReviewPhotoImported', old.id, { actorRef: actor, reviewId }),
+      );
+      return { id: old.id, replayed: true };
+    }
+    requireValue(review.state === 'pending', 'review_photo_import_not_ready', 409);
+    const id = crypto.randomUUID(),
+      key = store + '/reviews/' + id + '.webp';
+    await this.s
+      .stmt(
+        'INSERT INTO review_import_photos VALUES(?,?,?,?,?,?,?,?,?,?,0)',
+        store,
+        id,
+        reviewId,
+        sourceKey,
+        key,
+        hash,
+        dimensions.width,
+        dimensions.height,
+        bytes.length,
+        this.s.now(),
+      )
+      .run();
+    try {
+      await this.storage.put(key, bytes, hash, 'image/webp');
+    } catch (error) {
+      await this.s
+        .stmt('DELETE FROM review_import_photos WHERE store_id=? AND id=?', store, id)
+        .run();
+      throw error;
+    }
+    await this.s.db.batch(
+      this.s.event(store, 'ReviewPhotoImported', id, { actorRef: actor, reviewId }),
+    );
+    return { id, ...dimensions, replayed: false };
   }
   async canInvite(store, env, orderId) {
     const settings = await this.settings(store, env),

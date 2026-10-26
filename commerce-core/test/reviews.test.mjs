@@ -375,3 +375,63 @@ test('historical CSV preserves dates and all rating levels, never trusts a CSV v
   assert.equal(list.items[0].verified, 0);
   assert.equal((await r.list('store_a', 'sandbox')).total, 0);
 });
+
+test('historic rating-only reviews import private WebP without inventing orders or grants, retain moderation and replay safely', async (t) => {
+  const { s, r } = await setup(t),
+    csv =
+      'product_sku,rating,author_name,review_date,review_text,review_title,review_id,image_urls\ncouple,4,Historical Buyer,2024-01-01,,Original title,historic001,original.jpg';
+  const input = { csv, ownStoreConfirmed: true },
+    p = await prepareReviewImport(s, 'store_a', 'sandbox', input);
+  assert.equal(p.ready, 1);
+  assert.ok(p.items[0].warning);
+  await importReviews(s, 'store_a', 'sandbox', { ...input, hash: p.hash }, 'owner');
+  const review = (await r.list('store_a', 'sandbox', { operator: true })).items[0];
+  assert.equal(review.body, '');
+  assert.equal(review.verified, 0);
+  assert.equal(review.order_id, null);
+  assert.equal((await s.one('SELECT COUNT(*) n FROM orders')).n, 0);
+  assert.equal((await s.one('SELECT COUNT(*) n FROM review_grants')).n, 0);
+  const photo = await r.importPhoto(
+    'store_a',
+    'sandbox',
+    review.id,
+    image,
+    'original.webp',
+    'owner',
+  );
+  assert.equal(
+    (await r.importPhoto('store_a', 'sandbox', review.id, image, 'original.webp', 'owner'))
+      .replayed,
+    true,
+  );
+  await assert.rejects(r.photo('store_a', 'sandbox', photo.id), /review_photo_missing/);
+  await assert.rejects(
+    r.importPhoto('store_b', 'sandbox', review.id, image, 'foreign.webp', 'owner'),
+    /review_not_found/,
+  );
+  await r.moderate(
+    'store_a',
+    'sandbox',
+    review.id,
+    { version: 1, state: 'published', reason: 'Historical owner data reviewed' },
+    'owner',
+  );
+  assert.equal((await r.list('store_a', 'sandbox')).items[0].photos.length, 1);
+  assert.deepEqual(await r.photo('store_a', 'sandbox', photo.id), image);
+  await r.moderatePhoto(
+    'store_a',
+    'sandbox',
+    photo.id,
+    { hidden: true, reason: 'Operator photo removal' },
+    'owner',
+  );
+  await assert.rejects(r.photo('store_a', 'sandbox', photo.id), /review_photo_missing/);
+  await r.moderatePhoto(
+    'store_a',
+    'sandbox',
+    photo.id,
+    { hidden: false, reason: 'Operator photo restore' },
+    'owner',
+  );
+  assert.deepEqual(await r.photo('store_a', 'sandbox', photo.id), image);
+});

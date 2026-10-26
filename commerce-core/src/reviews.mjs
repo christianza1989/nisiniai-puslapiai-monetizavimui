@@ -434,7 +434,7 @@ export class ProductReviews {
       (Math.max(1, Math.min(500, Number(page) || 1)) - 1) * 20,
     );
     const stats = await this.s.rows(
-      "SELECT sku,COUNT(*) count,ROUND(AVG(rating),2) average,SUM(CASE WHEN source='purchase' THEN 1 ELSE 0 END) directCount,ROUND(AVG(CASE WHEN source='purchase' THEN rating END),2) directAverage FROM product_reviews WHERE store_id=? AND state='published' GROUP BY sku",
+      "SELECT sku,COUNT(*) count,ROUND(AVG(rating),2) average,SUM(CASE WHEN source IN ('purchase','storefront_import') THEN 1 ELSE 0 END) directCount,ROUND(AVG(CASE WHEN source IN ('purchase','storefront_import') THEN rating END),2) directAverage FROM product_reviews WHERE store_id=? AND state='published' GROUP BY sku",
       store,
     );
     const photos = items.length
@@ -464,7 +464,8 @@ export class ProductReviews {
               body: r.body,
               date: r.review_date,
               verifiedPurchase: r.verified === 1,
-              legacyImported: r.source === 'shopify_import',
+              legacyImported: ['shopify_import', 'storefront_import'].includes(r.source),
+              schemaEligible: ['purchase', 'storefront_import'].includes(r.source),
               photos: r.photos,
             },
       ),
@@ -563,7 +564,7 @@ export class ProductReviews {
       'invalid_review_photo',
     );
     const review = await this.s.one(
-      "SELECT * FROM product_reviews WHERE store_id=? AND id=? AND source='shopify_import' AND order_id IS NULL",
+      "SELECT * FROM product_reviews WHERE store_id=? AND id=? AND source IN ('shopify_import','storefront_import') AND order_id IS NULL",
       store,
       reviewId,
     );

@@ -8,7 +8,11 @@ import {
   reviewPhotoDimensions,
   stripReviewColourProfile,
 } from '../src/reviews.mjs';
-import { importReviews, prepareReviewImport } from '../src/review-import.mjs';
+import {
+  importReviews,
+  prepareReviewImport,
+  attestReviewImportOrigin,
+} from '../src/review-import.mjs';
 import { notificationMessage, CustomerNotifications } from '../src/notifications.mjs';
 import { createHandler } from '../src/http.mjs';
 import { NodePrivateStorage } from '../src/node-private-storage.mjs';
@@ -457,5 +461,107 @@ test('bulk review audit events cannot delay a newly created functional order eve
   assert.ok(
     (await s.one("SELECT COUNT(*) n FROM outbox WHERE kind='ReviewImported' AND state!='done'")).n >
       0,
+  );
+});
+
+test('same-store migration origin is explicit, host-scoped, hash-bound and never creates purchase proof', async (t) => {
+  const { s, r } = await setup(t),
+    csv =
+      'product_sku,rating,author_name,review_date,review_text,review_id\ncouple,4,Historic buyer,2024-01-01,Original historical text.,same-host-1';
+  const input = { csv, ownStoreConfirmed: true },
+    p = await prepareReviewImport(s, 'store_a', 'sandbox', input);
+  await assert.rejects(
+    prepareReviewImport(s, 'store_a', 'sandbox', {
+      ...input,
+      collectionOrigin: 'https://foreign.example',
+      sameStoreCollectionConfirmed: true,
+    }),
+    /invalid_review_origin/,
+  );
+  await assert.rejects(
+    importReviews(
+      s,
+      'store_a',
+      'sandbox',
+      {
+        ...input,
+        hash: p.hash,
+        collectionOrigin: 'https://store-a.example',
+        sameStoreCollectionConfirmed: true,
+      },
+      'owner',
+    ),
+    /review_import_not_confirmed/,
+  );
+  await importReviews(s, 'store_a', 'sandbox', { ...input, hash: p.hash }, 'owner');
+  const old = (await r.list('store_a', 'sandbox', { operator: true })).items[0];
+  await assert.rejects(
+    attestReviewImportOrigin(
+      s,
+      'store_a',
+      'sandbox',
+      { reviewIds: [old.id], collectionOrigin: 'https://store-a.example' },
+      'owner',
+    ),
+    /invalid_review_origin/,
+  );
+  const attestation = {
+    reviewIds: [old.id],
+    collectionOrigin: 'https://store-a.example',
+    sameStoreCollectionConfirmed: true,
+  };
+  await assert.rejects(
+    attestReviewImportOrigin(
+      s,
+      'store_a',
+      'sandbox',
+      { ...attestation, reviewIds: Array.from({ length: 51 }, (_, i) => 'fixture_' + i) },
+      'owner',
+    ),
+    /review_import_not_confirmed/,
+  );
+  assert.equal(
+    (await attestReviewImportOrigin(s, 'store_a', 'sandbox', attestation, 'owner')).attested,
+    1,
+  );
+  assert.equal(
+    (await attestReviewImportOrigin(s, 'store_a', 'sandbox', attestation, 'owner')).attested,
+    0,
+  );
+  const now = (await r.list('store_a', 'sandbox', { operator: true })).items[0];
+  assert.equal(now.source, 'storefront_import');
+  assert.equal(now.body, old.body);
+  assert.equal(now.fingerprint, old.fingerprint);
+  assert.equal(now.verified, 0);
+  assert.equal(now.order_id, null);
+  assert.equal((await prepareReviewImport(s, 'store_a', 'sandbox', input)).ready, 0);
+  await r.moderate(
+    'store_a',
+    'sandbox',
+    old.id,
+    {
+      state: 'published',
+      version: now.version,
+      reason: 'Owner confirmed same storefront migration',
+    },
+    'owner',
+  );
+  const projected = await r.list('store_a', 'sandbox');
+  assert.equal(projected.stats[0].directCount, 1);
+  assert.equal(projected.stats[0].directAverage, 4);
+  assert.equal(projected.items[0].legacyImported, true);
+  assert.equal(projected.items[0].schemaEligible, true);
+  assert.equal(projected.items[0].verifiedPurchase, false);
+  const fresh = {
+      ...input,
+      csv: csv.replaceAll('same-host-1', 'same-host-2').replaceAll('2024-01-01', '2024-01-02'),
+      collectionOrigin: 'https://store-a.example',
+      sameStoreCollectionConfirmed: true,
+    },
+    preview = await prepareReviewImport(s, 'store_a', 'sandbox', fresh);
+  await importReviews(s, 'store_a', 'sandbox', { ...fresh, hash: preview.hash }, 'owner');
+  assert.equal(
+    (await s.one("SELECT source FROM product_reviews WHERE source_id='same-host-2'")).source,
+    'storefront_import',
   );
 });

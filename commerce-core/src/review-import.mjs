@@ -1,7 +1,25 @@
 import { csvRows } from './finance-io.mjs';
-import { requireValue, digest, canonical } from './validation.mjs';
+import { requireValue, digest, canonical, identifier } from './validation.mjs';
+function collectionOrigin(config, input) {
+  if (input.collectionOrigin === undefined) return null;
+  let url;
+  try {
+    url = new URL(input.collectionOrigin);
+  } catch {
+    requireValue(false, 'invalid_review_origin');
+  }
+  requireValue(
+    input.sameStoreCollectionConfirmed === true &&
+      url.protocol === 'https:' &&
+      url.origin === input.collectionOrigin &&
+      config.hosts.includes(url.host),
+    'invalid_review_origin',
+  );
+  return url.origin;
+}
 export async function prepareReviewImport(service, store, env, input) {
-  await service.store(store, env);
+  const config = await service.store(store, env),
+    origin = collectionOrigin(config, input);
   const [headers, ...rows] = csvRows(input.csv);
   const mapping = input.mapping || Object.fromEntries(headers.map((h) => [h, h]));
   requireValue(
@@ -59,10 +77,9 @@ export async function prepareReviewImport(service, store, env, input) {
     );
     item.sourceId ||= item.fingerprint;
     const old = await service.one(
-      'SELECT fingerprint FROM product_reviews WHERE store_id=? AND (fingerprint=? OR (source=? AND source_id=?))',
+      "SELECT fingerprint FROM product_reviews WHERE store_id=? AND (fingerprint=? OR (source IN ('shopify_import','storefront_import') AND source_id=?))",
       store,
       item.fingerprint,
-      'shopify_import',
       item.sourceId,
     );
     item.duplicate = seen.has(item.fingerprint) || old?.fingerprint === item.fingerprint;
@@ -77,7 +94,8 @@ export async function prepareReviewImport(service, store, env, input) {
   return {
     headers,
     items,
-    hash: await digest(canonical(items)),
+    collectionOrigin: origin,
+    hash: await digest(canonical({ items, collectionOrigin: origin })),
     ready: items.filter((i) => !i.error && !i.duplicate).length,
   };
 }
@@ -106,12 +124,15 @@ export async function importReviews(service, store, env, input, actor) {
             i.title,
             i.body,
             i.date,
-            'shopify_import',
+            preview.collectionOrigin ? 'storefront_import' : 'shopify_import',
             i.sourceId,
             i.fingerprint,
             service.now(),
           ),
-          ...service.event(store, 'ReviewImported', id, { actorRef: actor }),
+          ...service.event(store, 'ReviewImported', id, {
+            actorRef: actor,
+            collectionOrigin: preview.collectionOrigin,
+          }),
         ];
       }),
     );
@@ -119,5 +140,62 @@ export async function importReviews(service, store, env, input, actor) {
     imported: items.length,
     duplicates: preview.items.length - items.length,
     state: 'pending',
+  };
+}
+
+// Explicit operator attestation for an already uploaded, still-unpublished migration.
+// Preserve its text, dates, photo IDs, fingerprint and unverified purchase status.
+export async function attestReviewImportOrigin(service, store, env, input, actor) {
+  const origin = collectionOrigin(await service.store(store, env), input);
+  requireValue(
+    origin &&
+      identifier(actor) &&
+      Array.isArray(input.reviewIds) &&
+      input.reviewIds.length > 0 &&
+      input.reviewIds.length <= 50 &&
+      input.reviewIds.every(identifier) &&
+      new Set(input.reviewIds).size === input.reviewIds.length,
+    'review_import_not_confirmed',
+  );
+  const rows = await service.rows(
+    'SELECT id,source,state,version FROM product_reviews WHERE store_id=? AND id IN (' +
+      input.reviewIds.map(() => '?').join(',') +
+      ')',
+    store,
+    ...input.reviewIds,
+  );
+  requireValue(
+    rows.length === input.reviewIds.length &&
+      rows.every(
+        (r) => r.state === 'pending' && ['shopify_import', 'storefront_import'].includes(r.source),
+      ),
+    'review_import_not_confirmed',
+  );
+  const changed = rows.filter((r) => r.source === 'shopify_import');
+  const results = changed.length
+    ? await service.db.batch(
+        changed.flatMap((r) => [
+          service.stmt(
+            "UPDATE product_reviews SET source='storefront_import',version=version+1 WHERE store_id=? AND id=? AND source='shopify_import' AND state='pending' AND version=?",
+            store,
+            r.id,
+            r.version,
+          ),
+          service.stmt(
+            'INSERT INTO review_moderations SELECT ?,?,?,?,?,?,? WHERE changes()=1',
+            store,
+            crypto.randomUUID(),
+            r.id,
+            'origin_attested',
+            'Owner confirms collection on ' + origin,
+            actor,
+            service.now(),
+          ),
+        ]),
+      )
+    : [];
+  return {
+    attested: results.filter((_, i) => i % 2 === 0).reduce((n, r) => n + r.meta.changes, 0),
+    collectionOrigin: origin,
   };
 }

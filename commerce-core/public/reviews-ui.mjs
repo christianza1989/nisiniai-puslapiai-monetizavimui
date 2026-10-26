@@ -77,7 +77,8 @@ export async function renderReviews(content, ctx) {
     mappingArea = n('div', { class: 'fields' });
   const importButton = n('button', { type: 'button' }, 'Patikrinti CSV'),
     confirm = n('button', { type: 'button', class: 'primary', hidden: '' }, 'Importuoti peržiūrai'),
-    own = n('input', { type: 'checkbox', id: 'reviews-own' });
+    own = n('input', { type: 'checkbox', id: 'reviews-own' }),
+    collected = n('input', { type: 'checkbox', id: 'reviews-collected-here' });
   importer.append(
     n('summary', {}, 'Importuoti senus Shopify atsiliepimus'),
     n(
@@ -95,11 +96,25 @@ export async function renderReviews(content, ctx) {
       own,
       'Tai tikri mūsų ankstesnės parduotuvės atsiliepimai ir turime teisę juos paskelbti',
     ),
+    n(
+      'label',
+      { class: 'check-field', for: 'reviews-collected-here' },
+      collected,
+      'Klientai atsiliepimus paliko mūsų ankstesnėje šio domeno parduotuvėje (ne kitoje prekyvietėje)',
+    ),
     confirm,
   );
   let csv = '',
     mapping = {},
     prepared;
+  const provenance = () =>
+    collected.checked
+      ? { collectionOrigin: settings.origin, sameStoreCollectionConfirmed: true }
+      : {};
+  collected.addEventListener('change', () => {
+    prepared = undefined;
+    confirm.hidden = true;
+  });
   const keys = [
     'product_sku',
     'rating',
@@ -141,7 +156,11 @@ export async function renderReviews(content, ctx) {
     action(
       importButton,
       async () => {
-        prepared = await api('/api/operator/review-import/preview', { csv, mapping });
+        prepared = await api('/api/operator/review-import/preview', {
+          csv,
+          mapping,
+          ...provenance(),
+        });
         preview.replaceChildren(
           n('h3', {}, 'Paruošta importuoti: ' + prepared.ready),
           ...prepared.items.map((i) =>
@@ -176,6 +195,7 @@ export async function renderReviews(content, ctx) {
           mapping,
           hash: prepared.hash,
           ownStoreConfirmed: true,
+          ...provenance(),
         });
         confirm.hidden = true;
         await load(1);

@@ -1,4 +1,8 @@
-import { prepareReviewImport, importReviews } from '../src/review-import.mjs';
+import {
+  prepareReviewImport,
+  importReviews,
+  attestReviewImportOrigin,
+} from '../src/review-import.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
@@ -165,11 +169,27 @@ test('native D1/R2 additive reviews preserve historical orders and atomically nu
       'native-old.webp',
       'owner',
     );
+    assert.equal(
+      (
+        await attestReviewImportOrigin(
+          s,
+          'store_a',
+          'sandbox',
+          {
+            reviewIds: [legacy.id],
+            collectionOrigin: 'https://store-a.example',
+            sameStoreCollectionConfirmed: true,
+          },
+          'owner',
+        )
+      ).attested,
+      1,
+    );
     await r.moderate(
       'store_a',
       'sandbox',
       legacy.id,
-      { state: 'published', version: 1, reason: 'Native historic media reviewed' },
+      { state: 'published', version: 2, reason: 'Native historic media reviewed' },
       'owner',
     );
     assert.deepEqual(await r.photo('store_a', 'sandbox', importedPhoto.id), bytes);
@@ -177,6 +197,11 @@ test('native D1/R2 additive reviews preserve historical orders and atomically nu
     assert.equal((await s.one('SELECT COUNT(*) n FROM review_grants')).n, initialGrants);
     const restart = new ProductReviews(new CommerceService(await mf.getD1Database('COMMERCE_DB')));
     assert.equal((await restart.list('store_a', 'sandbox')).stats[0].average, 3);
+    const migratedStats = (await restart.list('store_a', 'sandbox')).stats.find(
+      (x) => x.sku === 'family',
+    );
+    assert.equal(migratedStats.directCount, 1);
+    assert.equal(migratedStats.directAverage, 4);
     assert.equal((await s.one('SELECT count(*) n FROM commerce_migrations')).n, 31);
   } finally {
     await mf.dispose();

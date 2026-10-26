@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Final UI field label for the actual BSpace height control added; exact canonical Git delta is only this label. Ten real current-loader initial states and action tokens remain identical to the full380asset engine proof. Local browser/visual acceptance is still pending.",
+  "checks": [
+    {
+      "command": "node node_modules/tsx/dist/cli.mjs batch02/verify_final_control_labels_once.mts",
+      "result": "PASS",
+      "evidence": "Original bd9d28/session42906, actual17b82c exit0; ten source-model loader states, action tokens and every initial/action control label checked. FINAL-CONTROL-LABEL-CHECK.json."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "Same original session42906 sequenced after label checks, actual17b82c exit0."
+    }
+  ],
+  "eventId": "d955ca88-ae7b-4cda-9721-0083d06e18de",
+  "sequence": 3,
+  "at": "2026-10-26T17:34:05.216Z"
+}

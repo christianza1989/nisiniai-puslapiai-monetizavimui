@@ -33,6 +33,23 @@ test('dimension choices preserve only the captured width/depth pairs',()=>{
  assert.equal(s.values.GDWIDTH,'_1800');assert.deepEqual(e.stateChoices(s).GDWIDTH,['_1800']);
  assert.throws(()=>e.changeField(s,'GDWIDTH','_1600'));
 });
+
+test('source DTOP dimension names retain captured pairs, geometry and token fields',()=>{
+ const s=source();
+ s.contexts=s.contexts.map(c=>({...c,dimensions:{DTOPWIDTH:c.dimensions.GDWIDTH,DTOPDEPTH:c.dimensions.GDDEPTH}}));
+ const adapted=adaptDeskComponents(s,id),e=createExpandedEngine(adapted);let state=e.initialStateForProduct(product);
+ assert.equal(adapted.palettes._fieldLabels.DTOPWIDTH.text,'Stalviršio plotis');
+ assert.equal(adapted.palettes._fieldLabels.DTOPDEPTH.text,'Stalviršio gylis');
+ assert.deepEqual(e.stateChoices(state).DTOPDEPTH,['_800']);
+ assert.throws(()=>e.changeField(state,'DTOPDEPTH','_1000'));
+ state=e.changeField(state,'DTOPWIDTH','_1800');state=e.changeField(state,'DTOPDEPTH','_1000');
+ assert.throws(()=>e.changeField(state,'DTOPWIDTH','_1600'));
+ assert(e.expandedSelection(product,state).configuration.supplierOptions?.includes('DTOPWIDTH=_1800'));
+ assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
+ assert.equal(e.assembledAssets(state).base?.assetSha256,'a'.repeat(64));
+ const unknown=structuredClone(s);unknown.contexts[0].dimensions={OTHERWIDTH:'_1600',DTOPDEPTH:'_800'};
+ assert.throws(()=>validateDeskComponents(unknown,code));
+});
 test('NONE removes the part and text-only socket changes no geometry',()=>{
  const e=engine();let s=e.initialStateForProduct(product);const before=e.assembledAssets(s);
  assert.equal(before.patches[1].geometry,null);

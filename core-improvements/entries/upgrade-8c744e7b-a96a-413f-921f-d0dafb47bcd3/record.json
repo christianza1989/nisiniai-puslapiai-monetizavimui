@@ -1,0 +1,19 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Accept source DTOPDEPTH/DTOPWIDTH dimension fields while retaining only captured pairs and existing geometry/token semantics.",
+  "category": "code",
+  "evidence": [
+    "sites/ergonomic-lt/web/tests/desk-components.test.ts",
+    "Source KAER001WW001 supplied runtime contains DTOPDEPTH=_600 and DTOPWIDTH=_800; original metadata qualification rejected the field names before asset reads."
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web/src/lib/desk-components.ts",
+    "sites/ergonomic-lt/web/tests/desk-components.test.ts"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/281",
+  "rollback": "Revert the two scoped adapter/test changes; retain all original supplied packages and first5 public preview release.",
+  "id": "upgrade-8c744e7b-a96a-413f-921f-d0dafb47bcd3",
+  "branch": "codex/ergonomic-owner078-batch02-20261026",
+  "baseSha": "d283b70fd22983b4a57a91746ee2f36f92c0d157",
+  "createdAt": "2026-10-26T16:49:36.311Z"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "merged",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/95",
+  "commit": "82ae4607922e16ce28a734ef5ae8c715cb776d21",
+  "note": "PUBLIC PR95 merged the supported agentRules:false guard after the actual Next16development append was removed and local confirmation retained canonical AGENTS with zero diff. The final TypeScript, lint and production build pass. Public checkout fetched and fast-forwarded to82ae4607. This records source delivery; it does not claim another PC or active development process has reloaded its instruction snapshot.",
+  "eventId": "83a07d50-c8a9-470e-ba6d-b7f3849673c0",
+  "sequence": 3,
+  "at": "2026-10-26T22:22:30.989Z"
+}

@@ -435,3 +435,20 @@ test('historic rating-only reviews import private WebP without inventing orders 
   );
   assert.deepEqual(await r.photo('store_a', 'sandbox', photo.id), image);
 });
+
+test('bulk review audit events cannot delay a newly created functional order event', async (t) => {
+  const { s, clock, now } = await setup(t);
+  for (let i = 0; i < 45; i++)
+    await s.db.batch(
+      s.event('store_a', 'ReviewImported', 'historical_' + i, { actorRef: 'owner' }),
+    );
+  clock(now() + 1000);
+  await s.createOrder('store_a', 'sandbox', cart(), key(71));
+  const claimed = await s.claimOutbox('store_a', 'sandbox', 1);
+  assert.equal(claimed.length, 1);
+  assert.equal(claimed[0].kind, 'OrderPlaced');
+  assert.ok(
+    (await s.one("SELECT COUNT(*) n FROM outbox WHERE kind='ReviewImported' AND state!='done'")).n >
+      0,
+  );
+});

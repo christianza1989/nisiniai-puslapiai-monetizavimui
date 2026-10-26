@@ -5,7 +5,9 @@ import { CommerceService } from '../src/service.mjs';
 import { Discounts, settledLines, normalizeDiscountCode } from '../src/discounts.mjs';
 import { analyticsSale } from '../src/analytics.mjs';
 import { StripeCheckoutAdapter } from '../src/stripe-adapter.mjs';
-import { fixtureStore, fixtureProducts, key, fakeCheckout } from './fixtures.mjs';
+import { fixtureStore, fixtureProducts, key, fakeCheckout, payment } from './fixtures.mjs';
+import { BuyerDeliveryQuotes } from '../src/buyer-delivery.mjs';
+import { ShippingOperations } from '../src/shipping.mjs';
 const cart = () => ({
   lines: [{ sku: 'couple', quantity: 1 }],
   country: 'LT',
@@ -282,4 +284,181 @@ test('an extreme coupon cannot create a sub-50-cent EUR payment, while paid deli
   await s.provisionStore(config, fixtureProducts());
   await save(d, definition({ code: 'NINETY9', value: 99 }), 'store_floor');
   assert.equal((await s.quote('store_floor', 'sandbox', input)).amount, 482);
+});
+
+test('free delivery preserves existing usage and saved orders while legacy edits and retries stay compatible', async (t) => {
+  const { s, d } = await setup(t),
+    config = fixtureStore('store_free');
+  config.markets[0].delivery[0].amount = 450;
+  await s.provisionStore(config, fixtureProducts());
+  const p = definition({ code: 'FREE10', freeShipping: true });
+  await save(d, p, 'store_free');
+  const input = { ...cart(), discountCode: p.code },
+    q = await s.quote('store_free', 'sandbox', input);
+  assert.equal(q.amount, 2880);
+  assert.equal(q.delivery.amount, 0);
+  assert.equal(q.delivery.amountBeforeDiscount, 450);
+  assert.equal(q.discount.shippingAmount, 450);
+  const { order } = await s.createOrder('store_free', 'sandbox', input, key(1));
+  assert.equal(
+    (await s.one('SELECT shipping_amount FROM order_discounts WHERE store_id=?', 'store_free'))
+      .shipping_amount,
+    450,
+  );
+  const legacy = {
+    ...definition({ id: p.id, code: p.code, value: 20, expectedVersion: 1 }),
+    commandId: crypto.randomUUID(),
+  };
+  assert.equal((await save(d, legacy, 'store_free')).discount.freeShipping, true);
+  assert.equal((await save(d, legacy, 'store_free')).replayed, true);
+  assert.equal((await d.list('store_free', 'sandbox'))[0].uses, 1);
+  await save(
+    d,
+    { ...legacy, commandId: crypto.randomUUID(), expectedVersion: 2, freeShipping: false },
+    'store_free',
+  );
+  const next = await s.quote('store_free', 'sandbox', input);
+  assert.equal(next.delivery.amount, 450);
+  assert.equal(next.amount, 3010);
+  assert.equal((await s.getOrder('store_free', 'sandbox', order.id)).amount, 2880);
+  let captured;
+  const adapter = new StripeCheckoutAdapter({
+    accountRef: 'store_free_sandbox',
+    webhookSecret: 'whsec_fixture',
+    environment: 'sandbox',
+    client: {
+      checkout: {
+        sessions: {
+          create: async (params) => {
+            captured = params;
+            return { id: 'cs_free_fixture', url: 'https://checkout.stripe.test/fixture' };
+          },
+        },
+      },
+    },
+  });
+  await s.checkout('store_free', 'sandbox', order.id, adapter);
+  assert.equal(captured.line_items.length, 1);
+  assert.equal(
+    captured.line_items.reduce((n, l) => n + l.price_data.unit_amount * l.quantity, 0),
+    2880,
+  );
+  assert.deepEqual(
+    { value: analyticsSale(order).value, shipping: analyticsSale(order).shipping },
+    { value: 28.8, shipping: 0 },
+  );
+  await assert.rejects(save(d, definition({ freeShipping: 'true' })), /invalid_discount/);
+  await save(d, definition({ code: 'MINIMUM99', value: 99, freeShipping: true }));
+  await assert.rejects(
+    d.preview('store_a', 'sandbox', { ...cart(), code: 'MINIMUM99' }),
+    /discount_basket_too_small/,
+  );
+});
+
+test('free delivery still requires a valid carrier quote and retains the operator carrier cost', async (t) => {
+  const { s, d } = await setup(t),
+    config = {
+      ...fixtureStore('store_carrierfree'),
+      shippingAccountRef: 'carrier_fixture',
+      requireCustomer: true,
+      requireQuote: true,
+      requireTerms: true,
+      dispatch: { country: 'LT', city: 'Vilnius', postalCode: '02211' },
+    };
+  config.markets[0].delivery = [
+    {
+      id: 'door',
+      kind: 'door',
+      amount: 0,
+      pricing: 'carrier',
+      serviceIds: ['42'],
+      label: 'Kurjeris',
+    },
+  ];
+  await s.provisionStore(config, fixtureProducts());
+  await save(d, definition({ code: 'CARRIER10', freeShipping: true }), 'store_carrierfree');
+  const input = {
+    ...cart(),
+    deliveryId: 'door',
+    discountCode: 'CARRIER10',
+    customer: {
+      name: 'TEST Buyer',
+      email: 'buyer@example.test',
+      phone: '+37060000001',
+      address: { country: 'LT', line1: 'Testinė g. 1', city: 'Vilnius', postalCode: '01101' },
+    },
+  };
+  await assert.rejects(s.quote('store_carrierfree', 'sandbox', input), /delivery_quote_required/);
+  const adapter = {
+    environment: 'sandbox',
+    accountRef: 'carrier_fixture',
+    provider: 'fixture',
+    quote: async () => [
+      { serviceId: '42', name: 'Actual fixture tariff', amount: 699, currency: 'EUR' },
+    ],
+  };
+  const offered = await new BuyerDeliveryQuotes(s).create(
+    'store_carrierfree',
+    'sandbox',
+    { ...input, id: 'free_rate' },
+    adapter,
+  );
+  const priced = { ...input, deliveryQuoteId: offered.id },
+    q = await s.quote('store_carrierfree', 'sandbox', priced);
+  assert.equal(offered.amount, 699);
+  assert.equal(q.amount, 2880);
+  assert.equal(q.delivery.amount, 0);
+  assert.equal(q.delivery.amountBeforeDiscount, 699);
+  assert.equal(q.delivery.providerServiceId, '42');
+  assert.equal(q.delivery.quoteId, offered.id);
+  const made = await s.createOrder(
+    'store_carrierfree',
+    'sandbox',
+    { ...priced, quoteHash: q.quoteHash, acceptedPolicyVersion: config.markets[0].policyVersion },
+    key(2),
+  );
+  await s.checkout('store_carrierfree', 'sandbox', made.order.id, {
+    ...fakeCheckout,
+    accountRef: 'store_carrierfree_sandbox',
+  });
+  await s.acceptPayment(
+    'store_carrierfree',
+    'sandbox',
+    payment(await s.getOrder('store_carrierfree', 'sandbox', made.order.id), 'store_carrierfree'),
+  );
+  const shipping = new ShippingOperations(s);
+  await shipping.origin(
+    'store_carrierfree',
+    'sandbox',
+    {
+      id: 'origin_free',
+      country: 'LT',
+      city: 'Vilnius',
+      postalCode: '02211',
+      isCompany: true,
+      reason: 'TEST origin',
+    },
+    'operator',
+  );
+  const plan = await shipping.prepare(
+    'store_carrierfree',
+    'sandbox',
+    made.order.id,
+    { id: 'plan_free', originId: 'origin_free', recipientIsCompany: false, mode: 'individual' },
+    'operator',
+  );
+  assert.equal(plan.record.payload.value, 2880);
+  const cost = await shipping.quote(
+    'store_carrierfree',
+    'sandbox',
+    plan.record.id,
+    { id: 'cost_free' },
+    adapter,
+    'operator',
+  );
+  assert.equal(cost.record.payload.offers[0].amount, 699);
+  await assert.rejects(
+    s.quote('store_carrierfree', 'sandbox', { ...priced, deliveryQuoteId: 'missing' }),
+    /delivery_quote_conflict/,
+  );
 });

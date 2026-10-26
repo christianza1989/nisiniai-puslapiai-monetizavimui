@@ -259,6 +259,11 @@ export class CommerceService {
       }
     }
     const discounted = await new Discounts(this).price(id, environment, input, priced, market);
+    const deliveryAmountBeforeDiscount = deliveryAmount;
+    if (discounted.discount?.freeShipping) {
+      discounted.discount.shippingAmount = deliveryAmount;
+      deliveryAmount = 0;
+    }
     const amount =
       priced.reduce((a, l) => a + l.lineAmount, deliveryAmount) -
       (discounted.discount?.amount ?? 0);
@@ -280,6 +285,9 @@ export class CommerceService {
       delivery: {
         id: delivery.id,
         amount: deliveryAmount,
+        ...(discounted.discount?.freeShipping
+          ? { amountBeforeDiscount: deliveryAmountBeforeDiscount }
+          : {}),
         label: deliveryLabel,
         ...(providerServiceId ? { providerServiceId, quoteId: input.deliveryQuoteId } : {}),
         kind: delivery.kind || 'door',

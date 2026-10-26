@@ -26,6 +26,7 @@ export function discountDefinition(input) {
       integer(input.expectedVersion, 0, 1000000) &&
       ['percent', 'fixed'].includes(input.kind) &&
       typeof input.enabled === 'boolean' &&
+      (input.freeShipping === undefined || typeof input.freeShipping === 'boolean') &&
       integer(input.value, 1, input.kind === 'percent' ? 99 : 100000000) &&
       integer(input.minimumSubtotal ?? 0, 0) &&
       [startsAt, endsAt].every((t) => t === null || integer(t, 0, 8640000000000000)) &&
@@ -42,6 +43,7 @@ export function discountDefinition(input) {
     value: input.value,
     currency: 'EUR',
     enabled: input.enabled,
+    ...(input.freeShipping !== undefined ? { freeShipping: input.freeShipping } : {}),
     minimumSubtotal: input.minimumSubtotal ?? 0,
     startsAt,
     endsAt,
@@ -127,6 +129,7 @@ const view = (row) => ({
   value: row.value,
   currency: row.currency,
   enabled: row.enabled === 1,
+  freeShipping: row.free_shipping === 1,
   minimumSubtotal: row.minimum_subtotal,
   startsAt: row.starts_at,
   endsAt: row.ends_at,
@@ -256,6 +259,11 @@ export class Discounts {
     requireValue(subtotal >= row.minimum_subtotal, 'discount_minimum_not_met', 409);
     const amount = row.kind === 'fixed' ? row.value : Math.round((subtotal * row.value) / 100);
     const lines = allocateDiscount(priced, amount);
+    requireValue(
+      row.free_shipping !== 1 || subtotal - amount >= 50,
+      'discount_basket_too_small',
+      409,
+    );
     return {
       lines,
       discount: {
@@ -266,6 +274,7 @@ export class Discounts {
         value: row.value,
         amount,
         currency: row.currency,
+        ...(row.free_shipping === 1 ? { freeShipping: true } : {}),
       },
     };
   }
@@ -286,7 +295,11 @@ export class Discounts {
       subtotal,
       amount: subtotal - result.discount.amount,
       lines: result.lines,
-      discount: { code: result.discount.code, amount: result.discount.amount },
+      discount: {
+        code: result.discount.code,
+        amount: result.discount.amount,
+        ...(result.discount.freeShipping ? { freeShipping: true } : {}),
+      },
     };
   }
   reservation(store, snapshot, orderId, at) {
@@ -294,7 +307,7 @@ export class Discounts {
     if (!d) return [];
     return [
       this.s.stmt(
-        'INSERT INTO order_discounts(store_id,order_id,discount_id,version,code,amount,created_at) VALUES(?,?,?,?,?,?,?)',
+        'INSERT INTO order_discounts(store_id,order_id,discount_id,version,code,amount,created_at,shipping_amount) VALUES(?,?,?,?,?,?,?,?)',
         store,
         orderId,
         d.id,
@@ -302,6 +315,7 @@ export class Discounts {
         d.code,
         d.amount,
         at,
+        d.shippingAmount ?? 0,
       ),
     ];
   }

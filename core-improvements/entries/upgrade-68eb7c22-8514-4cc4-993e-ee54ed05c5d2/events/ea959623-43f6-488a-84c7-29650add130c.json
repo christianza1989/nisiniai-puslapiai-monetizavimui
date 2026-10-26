@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Hosted checkout/consent chunks match compiled local bytes. Published code rendered through an isolated read-only public mirror: actual300CSSpx accept449.99997→449.99997, reject600→600; manual close restores footer trigger focus without changing12998.333Y. Desktop/mobile reviewed; real canonical analytics guard refused local measurement. Live own empty cart accepted2kits/Omniva Salininkai and retained selection at3; no order/payment created; own cart removed.",
+  "checks": [
+    {
+      "command": "Exact hosted chunk byte compare; CUA published-code mirror300CSSpx accept/reject/manual close; real product→cart2→3Omniva",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/hosted-chunks.private.json; ui-final.private.json; hosted-quotes.private.json"
+    }
+  ],
+  "eventId": "ea959623-43f6-488a-84c7-29650add130c",
+  "sequence": 3,
+  "at": "2026-10-26T09:35:23.420Z"
+}

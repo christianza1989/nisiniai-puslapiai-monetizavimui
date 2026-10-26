@@ -119,7 +119,9 @@ const errorNames = {
     'Siunta jau galėjo būti užregistruota. Sutikrinkite jos ID vežėjo paskyroje.',
   shipment_facts_mismatch:
     'Vežėjo siuntos siuntėjas, gavėjas arba pakuotės nesutampa su paruoštu planu.',
-  shipment_command_conflict: 'Užsakymui jau paruošta kita siuntos užduotis. Atnaujinkite būseną.',
+  shipment_command_conflict:
+    'Šiai pakuotei jau yra siuntos užduotis arba užsakymui pasirinktas kitas pakavimo planas. Atnaujinkite būseną.',
+  invalid_shipment_parcel: 'Pasirinkite pakuotę iš išsaugoto pakavimo plano.',
   shipment_outcome_unknown:
     'Vežėjo atsakymas negautas. Užduotis išsaugota; prieš kitą veiksmą sutikrinkite vežėjo paskyrą.',
   shipment_execution_busy: 'Užduotis jau vykdoma. Palaukite ir atnaujinkite būseną.',
@@ -678,6 +680,11 @@ function renderOrder(content, detail) {
     pairs.splice(4, 0, [
       'Nuolaida (' + o.snapshot.discount.code + ')',
       '−' + money(o.snapshot.discount.amount, o.currency),
+    ]);
+  if (o.snapshot.discount?.freeShipping)
+    pairs.splice(5, 0, [
+      'Nemokamas pristatymas (' + o.snapshot.discount.code + ')',
+      money(0, o.currency),
     ]);
   if (c)
     pairs.push(

@@ -64,3 +64,52 @@ export function planParcels(order, input) {
     totalWeightGrams: parcels.reduce((sum, p) => sum + p.weightGrams, 0),
   };
 }
+
+// Separate the customer delivery subsidy from actual operator parcel bookings.
+// Stored order cents are assigned to physical units in stable order, then to
+// the plan's exact SKU coverage. This does not change customer/order totals.
+export function shipmentPart(order, plan, parcelIndex) {
+  requireValue(
+    parcelIndex === undefined || integer(parcelIndex, 0, plan.parcels.length - 1),
+    'invalid_shipment_parcel',
+  );
+  if (parcelIndex === undefined) return { parcels: plan.parcels, value: plan.value };
+  const units = new Map();
+  for (const line of order.snapshot.lines) {
+    const total = line.netLineAmount ?? line.lineAmount;
+    requireValue(integer(total, 0) && integer(line.quantity, 1), 'invalid_shipment_value');
+    const values = units.get(line.sku) || [];
+    for (let i = 0; i < line.quantity; i++)
+      values.push(Math.floor(total / line.quantity) + (i < total % line.quantity ? 1 : 0));
+    units.set(line.sku, values);
+  }
+  const values = plan.parcels.map((parcel) =>
+    parcel.lines.reduce((sum, line) => {
+      const available = units.get(line.sku);
+      requireValue(available?.length >= line.quantity, 'parcel_contents_mismatch', 409);
+      return sum + available.splice(0, line.quantity).reduce((n, value) => n + value, 0);
+    }, 0),
+  );
+  requireValue(
+    [...units.values()].every((v) => !v.length),
+    'parcel_contents_mismatch',
+    409,
+  );
+  return {
+    parcels: [plan.parcels[parcelIndex]],
+    // Carrier v1 requires a positive declared value even for a fully discounted
+    // parcel. One cent is a declaration floor, never a customer charge.
+    value: Math.max(1, values[parcelIndex]),
+    parcelIndex,
+    parcelCount: plan.parcels.length,
+  };
+}
+
+export function customerPricedParcel(plan) {
+  return [...plan.parcels].sort(
+    (a, b) =>
+      b.weightGrams - a.weightGrams ||
+      b.dimensionsMm.reduce((v, n) => v * n, 1) - a.dimensionsMm.reduce((v, n) => v * n, 1) ||
+      a.index - b.index,
+  )[0];
+}

@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Adopt immediate locker suggestions and guard public release against checkout policy revision drift",
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/87",
+  "evidence": [
+    "Exact two-file canonical SDK6db4eb58 consumer adoption; old native-select presentation concealed successful matches. Current approved LTterms7893ecb3 required native market reconciliation after metadata-only revision drift. Public release now has a read-only enabled-market/eligible-policy/HTTP preflight and regressions."
+  ],
+  "paths": [
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json",
+    "components/niche/memocasting-checkout.css",
+    "scripts/verify-memocasting-checkout-policies.mjs",
+    "tests/memocasting-checkout-policies-preflight.test.mjs"
+  ],
+  "rollback": "Scope UI revert only; preserve current correct market policy, configured providers, coupons and immutable orders. No package/date or DBrestore. Retain exact policy matching and preflight; never replace known approved terms with stale arbitrary version.",
+  "id": "upgrade-c4860499-b186-4acf-be21-2f5f824725c3",
+  "branch": "codex/memocasting-locker-acceptance-20261026",
+  "baseSha": "1197ecabd08243173b82d0539085ee2e4370a851",
+  "createdAt": "2026-10-26T06:37:19.114Z"
+}

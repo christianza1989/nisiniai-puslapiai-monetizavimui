@@ -25,10 +25,13 @@ test('native D1 migration and atomic discount cap roll back competing order stoc
   );
   try {
     const db = await mf.getD1Database('COMMERCE_DB');
-    await applyMigrations(db, await productionMigrationSources());
+    const sources = await productionMigrationSources();
+    await applyMigrations(db, sources.slice(0, 27));
     const s = new CommerceService(db),
       d = new Discounts(s);
-    await s.provisionStore(fixtureStore(), fixtureProducts(5));
+    const config = fixtureStore();
+    config.markets[0].delivery[0].amount = 450;
+    await s.provisionStore(config, fixtureProducts(5));
     const p = {
       id: crypto.randomUUID(),
       commandId: crypto.randomUUID(),
@@ -40,6 +43,18 @@ test('native D1 migration and atomic discount cap roll back competing order stoc
       maxUses: 1,
     };
     await d.save('store_a', 'sandbox', p, 'owner');
+    await applyMigrations(db, sources);
+    const upgraded = (await d.list('store_a', 'sandbox'))[0];
+    assert.equal(upgraded.freeShipping, false);
+    assert.equal(upgraded.version, 1);
+    assert.equal(upgraded.uses, 0);
+    assert.equal((await d.save('store_a', 'sandbox', p, 'owner')).replayed, true);
+    await d.save(
+      'store_a',
+      'sandbox',
+      { ...p, commandId: crypto.randomUUID(), expectedVersion: 1, freeShipping: true },
+      'owner',
+    );
     const results = await Promise.allSettled(
       [1, 2].map((n) =>
         s.createOrder('store_a', 'sandbox', { ...cart(), discountCode: p.code }, key(n)),
@@ -51,6 +66,14 @@ test('native D1 migration and atomic discount cap roll back competing order stoc
       rows = await stored.rows('SELECT * FROM orders WHERE store_id=?', 'store_a');
     assert.equal(rows.length, 1);
     assert.equal(rows[0].amount, 2200);
+    const snapshot = JSON.parse(rows[0].snapshot_json);
+    assert.equal(snapshot.delivery.amount, 0);
+    assert.equal(snapshot.delivery.amountBeforeDiscount, 450);
+    assert.equal(snapshot.discount.shippingAmount, 450);
+    assert.equal(
+      (await stored.one('SELECT shipping_amount FROM order_discounts')).shipping_amount,
+      450,
+    );
     assert.equal((await new Discounts(stored).list('store_a', 'sandbox'))[0].uses, 1);
     assert.equal(
       (
@@ -63,7 +86,7 @@ test('native D1 migration and atomic discount cap roll back competing order stoc
       4,
     );
     assert.equal((await stored.one('SELECT COUNT(*) n FROM order_discounts')).n, 1);
-    assert.equal((await stored.one('SELECT COUNT(*) n FROM commerce_migrations')).n, 27);
+    assert.equal((await stored.one('SELECT COUNT(*) n FROM commerce_migrations')).n, 29);
   } finally {
     await mf.dispose();
   }

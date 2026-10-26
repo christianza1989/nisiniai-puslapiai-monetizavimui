@@ -135,9 +135,9 @@ class Element {
     callbacks.push(callback);
     this.events.set(type, callbacks);
   }
-  async fire(type, target = this) {
+  async fire(type, target = this, properties = {}) {
     for (const callback of this.events.get(type) || [])
-      await callback({ target, preventDefault() {} });
+      await callback({ target, preventDefault() {}, ...properties });
   }
   get options() {
     return this.children.filter((child) => child.tag === 'option');
@@ -738,6 +738,46 @@ test('removing a coupon clears its discount and late apply responses cannot rein
       .find((n) => n.tag === 'form')
       .fire('submit');
     assert.equal(client.created.discountCode, undefined);
+  }));
+
+test('free delivery coupon immediately displays zero shipping and removing it restores delivery pricing', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient();
+    const free = (input) => {
+      const p = couponFixture(input);
+      p.discount.freeShipping = true;
+      return p;
+    };
+    client.discountPreview = async (input) => free(input);
+    client.quote = async (input) => {
+      const p = free(input);
+      return {
+        ...p,
+        quoteHash: 'free_quote',
+        delivery: { amount: 0, amountBeforeDiscount: 450 },
+        discount: { ...p.discount, shippingAmount: 450 },
+      };
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    const code = field(root, 'discountCode');
+    code.value = 'SAVE10';
+    await code.fire('input');
+    await button(root, 'Pritaikyti').fire('click');
+    const totals = nodes(root).find((n) => n.attrs.class === 'checkout-totals');
+    assert.equal(totals.children[2].children[1].textContent, '0,00 €');
+    assert.equal(totals.children[3].children[1].textContent, '28,80 €');
+    assert.match(
+      nodes(root).find((n) => n.attrs.id === 'checkout-discount-note').textContent,
+      /Nemokamas pristatymas/,
+    );
+    await button(root, 'Pašalinti kodą').fire('click');
+    assert.equal(totals.children[2].children[1].textContent, 'Pagal pristatymo duomenis');
+    assert.match(totals.children[3].children[1].textContent, /pristatymas/);
   }));
 test('quantity changes refresh the server coupon preview without an address or payment request', () =>
   withDom(async () => {
@@ -1373,16 +1413,50 @@ test('one-page locker search uses terminal address, restores courier address and
     field(root, 'postalCode').value = '01111';
     delivery.value = 'omniva';
     await delivery.fire('change');
-    assert.equal(search.parentElement.hidden, false);
+    assert.equal(search.parentElement.parentElement.hidden, false);
     search.value = 'kaun';
     await search.fire('input');
-    assert.equal(locker.options.length, 2);
-    assert.equal(locker.options[1].value, 'kaunas');
-    locker.value = 'kaunas';
-    await locker.fire('change');
+    let options = nodes(root).filter((n) => n.attrs.role === 'option');
+    assert.equal(options.length, 1);
+    assert.ok(textContent(options[0]).includes('Kaunas RIMI'));
+    assert.equal(search.attrs['aria-expanded'], 'true');
+    assert.equal(locker.value, '');
+    await options[0].fire('click');
+    assert.equal(locker.value, 'kaunas');
+    assert.equal(search.value, 'Kaunas RIMI');
+    assert.equal(search.attrs['aria-expanded'], 'false');
     assert.equal(field(root, 'line1').value, 'Testinė g. 1');
     assert.equal(field(root, 'city').value, 'Kaunas');
     assert.equal(field(root, 'line1').parentElement.hidden, true);
+    // A changed query must invalidate the old selection and address immediately.
+    search.value = 'salinink';
+    await search.fire('input');
+    assert.equal(locker.value, '');
+    assert.equal(field(root, 'line1').value, '');
+    options = nodes(root).filter((n) => n.attrs.role === 'option');
+    assert.equal(options.length, 1);
+    assert.ok(textContent(options[0]).includes('Vilnius NORFA'));
+    await search.fire('keydown', search, { key: 'ArrowDown' });
+    assert.equal(options[0].attrs['aria-selected'], 'true');
+    await search.fire('keydown', search, { key: 'Enter' });
+    assert.equal(locker.value, 'vilnius');
+    assert.equal(field(root, 'line1').value, 'Salininkų g. 129A');
+    search.value = 'visai nerandamas';
+    await search.fire('input');
+    assert.equal(nodes(root).filter((n) => n.attrs.role === 'option').length, 0);
+    assert.equal(locker.value, '');
+    assert.equal(search.attrs['aria-expanded'], 'false');
+    assert.ok(
+      nodes(root)
+        .find((n) => n.attrs.id === 'checkout-locker-status')
+        .textContent.includes('nerasta'),
+    );
+    search.value = 'vilnius salininku';
+    await search.fire('input');
+    assert.equal(nodes(root).filter((n) => n.attrs.role === 'option').length, 1);
+    await search.fire('keydown', search, { key: 'Escape' });
+    assert.equal(search.attrs['aria-expanded'], 'false');
+    assert.equal(locker.value, '');
     delivery.value = 'courier';
     await delivery.fire('change');
     assert.equal(field(root, 'line1').value, 'Home g. 5');
@@ -1394,4 +1468,144 @@ test('one-page locker search uses terminal address, restores courier address and
     await form.fire('input', quantity);
     assert.equal(delivery.value, 'courier');
     assert.equal(delivery.options.find((o) => o.value === 'omniva').disabled, true);
+  }));
+
+test('restored locker label stays visible and saved-order result handlers cannot change delivery', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      initialize = client.initialize;
+    client.initialize = async () => {
+      const data = await initialize();
+      data.markets = structuredClone(data.markets);
+      data.markets[0].delivery.push({
+        id: 'omniva',
+        kind: 'locker',
+        label: 'Omniva',
+        amount: 472,
+        lockers: [
+          {
+            id: 'salininkai',
+            label: 'Vilniaus Salininkų NORFA',
+            address: 'Salininkų g. 129A',
+            city: 'Vilnius',
+            postalCode: '02211',
+          },
+        ],
+      });
+      return data;
+    };
+    client.attempt = { orderId: client.order.id };
+    client.order.amount = 3672;
+    client.order.snapshot = {
+      country: 'LT',
+      policyVersion: 'fixture',
+      customer: {
+        name: 'TEST Buyer',
+        email: 'buyer@example.test',
+        phone: '+37060000001',
+        lockerId: 'salininkai',
+        address: {
+          country: 'LT',
+          line1: 'Salininkų g. 129A',
+          city: 'Vilnius',
+          postalCode: '02211',
+        },
+      },
+      lines: [{ sku: 'couple', title: 'Couple', quantity: 1, unitAmount: 3200 }],
+      delivery: { id: 'omniva', amount: 472, label: 'Omniva' },
+    };
+    client.quote = async () => {
+      throw Error('saved order must not reprice');
+    };
+    client.create = async () => {
+      throw Error('saved order must not recreate');
+    };
+    await mountCheckout(root, { client, layout: 'one-page', renderPayment: async () => {} });
+    const search = field(root, 'lockerSearch'),
+      locker = field(root, 'locker');
+    assert.equal(search.value, 'Vilniaus Salininkų NORFA');
+    assert.equal(locker.value, 'salininkai');
+    assert.equal(search.disabled, true);
+    assert.equal(search.attrs['aria-expanded'], 'false');
+    await search.fire('focus');
+    await search.fire('keydown', search, { key: 'ArrowDown' });
+    await search.fire('keydown', search, { key: 'Enter' });
+    assert.equal(locker.value, 'salininkai');
+    assert.equal(nodes(root).filter((n) => n.attrs.role === 'option').length, 0);
+  }));
+
+test('missing exact terms link explains the block and does not permit order creation', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient();
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      termsUrl: () => null,
+    });
+    fillOnePage(root);
+    assert.equal(field(root, 'terms').disabled, true);
+    const notice = nodes(root).find(
+      (n) => n.tag === 'p' && n.children.some((v) => String(v).startsWith('Nepavyko patvirtinti')),
+    );
+    assert.equal(notice.hidden, false);
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('submit');
+    assert.equal(client.created, undefined);
+  }));
+
+test('single customer delivery fee retains Omniva selection and trusted terminal for two then three kits', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      initialize = client.initialize;
+    client.initialize = async () => {
+      const data = await initialize();
+      data.markets = structuredClone(data.markets);
+      data.markets[0].delivery.push({
+        id: 'omniva',
+        label: 'Omniva paštomatas',
+        kind: 'locker',
+        maxParcels: 1,
+        customerCharge: 'single_parcel',
+        amount: 472,
+        lockers: [
+          {
+            id: 'salininkai',
+            label: 'Vilnius NORFA',
+            address: 'Salininkų g. 129A',
+            city: 'Vilnius',
+            postalCode: '77759',
+          },
+        ],
+      });
+      return data;
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 2 }],
+    });
+    const delivery = field(root, 'delivery');
+    assert.equal(delivery.options.find((o) => o.value === 'omniva').disabled, false);
+    delivery.value = 'omniva';
+    await delivery.fire('change');
+    const search = field(root, 'lockerSearch');
+    search.value = 'salinink';
+    await search.fire('input');
+    await nodes(root)
+      .find((n) => n.attrs.role === 'option')
+      .fire('click');
+    assert.equal(field(root, 'locker').value, 'salininkai');
+    const quantity = field(root, 'couple');
+    quantity.value = '3';
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('input', quantity);
+    assert.equal(delivery.value, 'omniva');
+    assert.equal(delivery.options.find((o) => o.value === 'omniva').disabled, false);
+    assert.equal(field(root, 'locker').value, 'salininkai');
   }));

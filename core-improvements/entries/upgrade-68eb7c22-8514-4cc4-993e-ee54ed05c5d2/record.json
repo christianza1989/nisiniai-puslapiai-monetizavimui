@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Companion exact checkout SDK adopts opt-in single delivery fee for multiple kits; automatic analytics consent dismissal no longer focuses the footer and manual focus uses preventScroll.",
+  "evidence": [
+    "sites/memocasting/MULTIPARCEL_2026_10_26.md",
+    "sites/memocasting/qa/multiparcel-20261026/public-tests.private.txt",
+    "sites/memocasting/qa/multiparcel-20261026/public-build.private.txt"
+  ],
+  "paths": [
+    "components/niche/memocasting-analytics-consent.tsx",
+    "lib/commerce-client/checkout-ui.mjs",
+    "lib/commerce-client/manifest.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/89",
+  "rollback": "Scoped companion UI revert; preserve current consent keys, production bindings and backend additive29 history. Do not roll back indexed command completion.",
+  "id": "upgrade-68eb7c22-8514-4cc4-993e-ee54ed05c5d2",
+  "branch": "codex/memocasting-multiparcel-acceptance-20261026",
+  "baseSha": "48ff3c3f6bff8407b8be56b8267ffaec3241afaa",
+  "createdAt": "2026-10-26T09:24:36.264Z"
+}

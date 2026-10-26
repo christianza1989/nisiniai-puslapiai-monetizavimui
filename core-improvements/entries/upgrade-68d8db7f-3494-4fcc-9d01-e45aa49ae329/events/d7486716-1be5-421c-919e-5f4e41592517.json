@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Canonical261tests/nativeworkerd/dryrun accepted. Actual source prototype desktop pointer and keyboard selects Salininku keyword immediately, clears stale choice, shows empty status;320px screenshot/reflow accepted. CDPtouch mapping hit the input instead of the observedoption, so mobiletouch remains unverified (no fabricatedPASS). Readonly independentsource reviewer found no concretechooserdefect. Policy helper independently implemented/reviewed5tests; exact current approved LT hash verifiedlocal+hosted, nativeCAS applied, fresh realcart confirms unchecked enabled terms and correctanchor without acceptance ororder. Missing-href regression initially caught a submit-guard gap; explicitguard added and fullsuite passed. Originalfailures private.",
+  "checks": [
+    {
+      "command": "npm --prefix commerce-core run verify",
+      "result": "PASS",
+      "evidence": "qa/locker-search-20261026/core-verify.private.txt:261/261, format, native D1/R2/workerd/restart, dryrun."
+    },
+    {
+      "command": "Actual local source browser desktop pointer/keyboard and320px",
+      "result": "PASS",
+      "evidence": "prototype320-options.private.png shows immediate Salininku row and scrollWidth320; realpointercommitsID/address, keyboardArrowEnterworks, emptyqueryresultstatus clearsID. Mobiletouchnotclaimed."
+    },
+    {
+      "command": "Exact approved policy proof; native CAS update and actual fresh HTTPScart",
+      "result": "PASS",
+      "evidence": "policy-tests.private.txt5/5; policy-apply.private.txt MARKET_POLICY_UPDATED; localpackage and hostedcart7893ecb3match. Freshcartterms disabledfalse+href/naudojimo-salygos checkedfalse."
+    }
+  ],
+  "eventId": "d7486716-1be5-421c-919e-5f4e41592517",
+  "sequence": 2,
+  "at": "2026-10-26T06:20:00.247Z"
+}

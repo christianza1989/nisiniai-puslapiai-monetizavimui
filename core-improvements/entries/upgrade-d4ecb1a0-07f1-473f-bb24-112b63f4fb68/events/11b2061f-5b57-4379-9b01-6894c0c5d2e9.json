@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "273 PUBLIC tests, TypeScript noEmit, exact SDK verification and scoped ESLint pass. Full repository scan with actual companion secrets root also PASS; an earlier scanner invocation had a misspelled root, so it is not the accepted secret comparison. Build and hosted adoption remain pending.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/free-shipping-20261026/public-tests.private.txt:273/273"
+    },
+    {
+      "command": "tsc --noEmit; eslint vendor/commerce-core/checkout-ui.mjs --no-ignore",
+      "result": "PASS",
+      "evidence": "Exact CORE3ba285c7 SDK; checkout SHA2565e10558f; CLI exit0"
+    },
+    {
+      "command": "repository-safety.mjs . --secrets-root ../nisiniai_puslapiai_monetizavimui",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/free-shipping-20261026/public-safety.private.json"
+    }
+  ],
+  "eventId": "11b2061f-5b57-4379-9b01-6894c0c5d2e9",
+  "sequence": 2,
+  "at": "2026-10-26T07:23:58.723Z"
+}

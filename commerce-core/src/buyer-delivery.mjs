@@ -7,7 +7,7 @@ import {
   integer,
 } from './validation.mjs';
 import { configuredDispatch, selectedLocker, lockerLocation } from './delivery-lockers.mjs';
-import { planParcels } from './parcels.mjs';
+import { planParcels, customerPricedParcel, shipmentPart } from './parcels.mjs';
 export function deliveryFingerprint(input, method) {
   const address =
     method?.kind === 'locker' && method.senderMode === 'locker'
@@ -97,7 +97,8 @@ export class BuyerDeliveryQuotes {
       'shipping_origin_not_found',
       503,
     );
-    if (method.kind === 'locker' || dispatch?.locker)
+    const singleCharge = method.customerCharge === 'single_parcel';
+    if (!singleCharge && (method.kind === 'locker' || dispatch?.locker))
       requireValue(
         packages.parcels.length <= (method.maxParcels ?? 1),
         'carrier_locker_parcel_limit',
@@ -107,6 +108,13 @@ export class BuyerDeliveryQuotes {
       method.senderMode === 'locker'
         ? lockerLocation(selectedLocker(method, input.customer?.lockerId))
         : input.customer.address;
+    const chargedPart = singleCharge
+      ? shipmentPart(
+          { snapshot: base },
+          { ...packages, value: base.amount },
+          customerPricedParcel(packages).index,
+        )
+      : { parcels: packages.parcels, value: base.amount };
     const offers = await adapter.quote({
       sender: { ...dispatch, isCompany: dispatch.isCompany !== false },
       recipient: {
@@ -115,8 +123,8 @@ export class BuyerDeliveryQuotes {
         postalCode: target.postalCode.trim(),
         isCompany: input.customer.isCompany === true,
       },
-      parcels: packages.parcels,
-      value: base.amount,
+      parcels: chargedPart.parcels,
+      value: chargedPart.value,
       currency: base.currency,
     });
     const selected = offers
@@ -144,6 +152,13 @@ export class BuyerDeliveryQuotes {
       provider: adapter.provider,
       accountRef: adapter.accountRef,
       packageMode: 'individual',
+      ...(singleCharge
+        ? {
+            customerCharge: 'single_parcel',
+            pricedParcelIndex: chargedPart.parcelIndex,
+            totalParcels: packages.parcels.length,
+          }
+        : {}),
       itemsHash: await digest(canonical(base.lines)),
       dispatchHash: await digest(canonical(dispatch)),
       ...(method.senderMode === 'locker' ? { dispatch } : {}),

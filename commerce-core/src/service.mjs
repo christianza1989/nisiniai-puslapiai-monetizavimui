@@ -246,6 +246,7 @@ export class CommerceService {
         const q = JSON.parse(row.payload_json);
         requireValue(
           q.accountRef === store.shippingAccountRef &&
+            (q.customerCharge ?? 'all_parcels') === (delivery.customerCharge ?? 'all_parcels') &&
             delivery.serviceIds?.includes(q.providerServiceId) &&
             q.dispatchHash === (await digest(canonical(configuredDispatch(store, delivery)))) &&
             q.public.currency === market.currency &&
@@ -259,6 +260,11 @@ export class CommerceService {
       }
     }
     const discounted = await new Discounts(this).price(id, environment, input, priced, market);
+    const deliveryAmountBeforeDiscount = deliveryAmount;
+    if (discounted.discount?.freeShipping) {
+      discounted.discount.shippingAmount = deliveryAmount;
+      deliveryAmount = 0;
+    }
     const amount =
       priced.reduce((a, l) => a + l.lineAmount, deliveryAmount) -
       (discounted.discount?.amount ?? 0);
@@ -279,7 +285,11 @@ export class CommerceService {
       ...(discounted.discount ? { discount: discounted.discount } : {}),
       delivery: {
         id: delivery.id,
+        ...(delivery.customerCharge === 'single_parcel' ? { customerCharge: 'single_parcel' } : {}),
         amount: deliveryAmount,
+        ...(discounted.discount?.freeShipping
+          ? { amountBeforeDiscount: deliveryAmountBeforeDiscount }
+          : {}),
         label: deliveryLabel,
         ...(providerServiceId ? { providerServiceId, quoteId: input.deliveryQuoteId } : {}),
         kind: delivery.kind || 'door',
@@ -720,6 +730,15 @@ export class CommerceService {
       409,
     );
     const reference = store + '_' + id;
+    requireValue(
+      !(await this.one(
+        "SELECT id FROM shipment_commands WHERE store_id=? AND order_id=? AND state!='canceled'",
+        store,
+        id,
+      )),
+      'shipment_command_conflict',
+      409,
+    );
     await this.stmt(
       "INSERT OR IGNORE INTO shipments(store_id,order_id,reference,state) VALUES(?,?,?,'creating')",
       store,

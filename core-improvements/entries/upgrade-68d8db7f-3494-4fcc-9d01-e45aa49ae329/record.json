@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Expose live locker keyword suggestions and safely reconcile exact current checkout policy versions",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/271",
+  "evidence": [
+    "User screenshot and source show matching lockers only inside a closed native select. Actual user cart also has disabled consent without an anchor because old LT market1ac82535 differs from eligible approved public7893ecb3 after an SEO-only description edit. Exact policy matching must remain."
+  ],
+  "paths": [
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/src/node-market-policy.mjs",
+    "commerce-core/scripts/update-market-policy.mjs",
+    "commerce-core/test/market-policy-update.test.mjs",
+    "commerce-core/docs/MARKET_POLICY_UPDATE.md"
+  ],
+  "rollback": "Revert only chooser presentation using exact prior SDK; preserve existing orders and actual current approved market policy. Never reintroduce stale policy admission, change stock, overwrite a whole store JSON or reset the database. Only validated confirmed nativeD1CAS may update a selected market.",
+  "id": "upgrade-68d8db7f-3494-4fcc-9d01-e45aa49ae329",
+  "branch": "codex/memocasting-locker-search-20261026",
+  "baseSha": "900ae95fe4fb48e7d12ba8073f8d978bcff4f33e",
+  "createdAt": "2026-10-26T06:14:30.228Z"
+}

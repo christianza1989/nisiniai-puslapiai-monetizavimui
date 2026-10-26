@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Final exact production acceptance after source deployment: live read-only quotes2and3kits both448minor delivery, totals6848/10048. Full config SHA matches only two authorized customerCharge additions. All original28migration hashes, exact provider settings/domains/cron/mail preserved;29total migrations,0shipment commands. Concurrent owner orders/coupon uses changed while active and were preserved. No real label or acceptance order purchased.",
+  "checks": [
+    {
+      "command": "Actual hosted delivery-quotes/quote2and3; exact provider before/after; full-store config SHA comparison; migration hashes; SDK/policy preflight",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/multiparcel-20261026/hosted-quotes.private.json; provider-after-receipt.private.json; hosted-chunks.private.json; config-update.private.txt"
+    }
+  ],
+  "eventId": "f054f430-ba92-426a-84ed-057b9ce17e16",
+  "sequence": 7,
+  "at": "2026-10-26T09:35:23.435Z"
+}

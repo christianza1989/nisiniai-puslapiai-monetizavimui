@@ -4,11 +4,11 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-10-13T06:08:55.814Z",
-  "lastResearchDateLocal": "2026-10-13",
-  "lastResearchFile": "research/2026-10-13-domain-holding-cost/RESEARCH.md",
-  "lastResearchValidation": "research/2026-10-13-domain-holding-cost/QA.json",
-  "lastCycleOutcome": "existing_requirement_evidence_updated",
+  "lastResearchAt": "2026-10-26T15:52:00.219Z",
+  "lastResearchDateLocal": "2026-10-26",
+  "lastResearchFile": "research/2026-10-16-facebook-receipt/REVIEW.md",
+  "lastResearchValidation": "research/2026-10-16-facebook-receipt/QA.json",
+  "lastCycleOutcome": "approved_work_receipt_updated",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
     "BDEV-0003",
@@ -94,27 +94,43 @@
     }
   ],
   "researchContinuity": {
-    "completed": "Reviewed LT portfolio holding costs: current registration promotions do not establish renewal; IV wholesale article has conflicting renewal figures and older publication/update dates, Domenai LT page consistent 9.99 exVAT renewal but conflicting 5.49/7.49 registration. DOMREG renewal-by-provider and no-registry-expiry-notice read. Four primary HTML sources, two failed web detail retrievals, one supplementary public IV source GET kept ignored, no account operations. Exact integer renewal-only scenarios for 5 / 50 / 100 checked, no actual inventory or quote. Existing VISION/M9 already require operating costs; no new proposal. All approvals/pending/notifications unchanged; BDEV-0004 unapproved.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision; excavation bank/loose volume and machine delivery versus soil haulage distinction without actual project data, supplier quote, new evidence or owner decision; stair component per-square-metre versus per-piece units, unfinished/warehouse-collection versus installed result and UK-only cladding without actual partner terms, new source or owner decision; BDEV-0004 blind renewal/repair demand experiment without new owner decision, actual demand or provider terms; garage quote-acceptance fee versus completed-and-paid M2, no-show refund deadlines and credit-note versus cash distinction without actual partner/account/settlement data, new terms or owner decision; LT registration-promo versus renewal holding cost and wholesale-price contradictions without actual account quote, changed terms, portfolio data or owner decision",
-    "nextCandidateQuestion": "Read current main and human decisions; BDEV-0004/BI/P1-P4 unapproved. Prefer new paid-result/demand evidence or real authorized operations over additional generic quote/fee/renewal examples; no portfolio scan or paid registration work.",
+    "completed": "Reviewed merged PR135 sanitized executor acceptance: five bounded Lineage2ai tasks, four accepted external publications, later visible Page comment after moderation, all policies paused. Updated stale BDEV-0001 registry without replacing October 1 historical acceptance. This session did not access private credentials, DB or raw receipts, repeat tests or post. Current connection and continuous operation remain unverified. All six pending decisions and owner vision unchanged; no new implementation approval.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision; excavation bank/loose volume and machine delivery versus soil haulage distinction without actual project data, supplier quote, new evidence or owner decision; stair component per-square-metre versus per-piece units, unfinished/warehouse-collection versus installed result and UK-only cladding without actual partner terms, new source or owner decision; BDEV-0004 blind renewal/repair demand experiment without new owner decision, actual demand or provider terms; garage quote-acceptance fee versus completed-and-paid M2, no-show refund deadlines and credit-note versus cash distinction without actual partner/account/settlement data, new terms or owner decision; LT registration-promo versus renewal holding cost and wholesale-price contradictions without actual account quote, changed terms, portfolio data or owner decision; BDEV-0001 October 14 bounded live-test receipt without a new owner scope, current connection evidence, completed operational milestone or material change",
+    "nextCandidateQuestion": "Read current main and direct human decisions; no duplicate Facebook status notification. BDEV-0004/BI/P1-P4 remain proposed. Prefer a concrete new demand or fulfilment bottleneck; no campaigns or live reactivation from this receipt.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
-    "executionScope": "Private research and state only. Own branch integrates current main. Fresh owned companion worktree replaces stale/dirty companion for read-only checks; former executor checkout preserved. No site/runtime, private inbox, SMTP, campaigns, account/DNS changes or paid provider calls."
+    "executionScope": "Private registry documentary receipt review only; core current main integrated. Companion source not needed/read/edited this cycle; prior ec8a9c0 is historical, initial companion fetch failed. No runtime, sites, inbox, campaigns, account/DNS changes or paid calls."
   },
   "approvedWork": [
     {
       "id": "BDEV-0001",
       "executor": "01a0ec4c-c381-7c53-ac6e-8fc4e2755dc5",
       "status": "implemented",
-      "implementationStage": "implemented_local_increment",
+      "implementationStage": "bounded_live_test_receipt_reviewed",
       "scope": "Private local core increment only",
       "executorReceiptReviewedOn": "2026-10-01",
       "evidence": "../research/facebook-module-2026-10-01/QA.md",
       "notVerified": [
+        "Current connection readiness or another site/account access",
+        "Live Page API photo/comment/reply; Messenger/webhook/collector",
+        "Production deployment, retention and continuous runner",
+        "Actual customer demand, revenue or profit"
+      ],
+      "historicalNotVerifiedOn20261001": [
         "Live collector and Page access",
         "Live send and reconciliation",
         "Retention and continuous runner",
         "Actual customer demand or profit"
-      ]
+      ],
+      "currentReceipt": {
+        "reviewedOn": "2026-10-16",
+        "performedOn": "2026-10-14",
+        "scope": "Executor-reported five manual Lineage2ai tasks, four external publications, paused afterwards; no continuing or other-site authorization inferred",
+        "evidence": "../docs/FACEBOOK_LIVE_TEST_2026-10-14.md",
+        "registryReview": "research/2026-10-16-facebook-receipt/REVIEW.md",
+        "verificationLevel": "Sanitized executor receipt and merged source reviewed; no independent live or raw-artifact verification",
+        "coreMainSha": "808581d919d06cb4a2d151cc7f9ec1be1782aba2",
+        "deliveryReviewedOn": "2026-10-26"
+      }
     }
   ],
   "scope": "Private business-development registry; no blanket permission for proposed changes",
@@ -123,10 +139,18 @@
     "localBranch": "codex/bdev-research-20261008-main",
     "prUrl": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/1",
     "remotePrBranch": "ai/bdev-scaffold-fee-20261005",
-    "coreMainSha": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+    "coreMainSha": "a016f2c16e45d1acacf92a5ccf9b085914bee5bc",
     "companionMainSha": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
-    "note": "Core own branch integrated current main without conflicts in merge dd6123836d88aff0490118774b7f297390ef1b9e. Fresh owned companion at ec8a9c0 remains read-only and clean; other checkouts preserved.",
+    "note": "Resumed own pending documentary change. Integrated current core main in a4a1e49f3a7e520bf33cbfc9e5d10393cc495f9a without altering pending registry work; no authored shared source changes. Companion fetch failed on initial gate; no companion source used or edited this cycle, no current companion freshness claim.",
     "companionWorktree": "C:/Users/lenovo/.codex/worktrees/bdev-current/dovanos-memorycasting",
-    "companionBranch": "codex/bdev-public-research-20261010"
+    "companionBranch": "codex/bdev-public-research-20261010",
+    "companionLastVerifiedOn": "2026-10-16",
+    "companionCurrentFreshness": "unverified_fetch_failed"
+  },
+  "lastNotifiedReceipt": {
+    "ideaId": "BDEV-0001",
+    "stage": "bounded_live_test_receipt_reviewed",
+    "date": "2026-10-26",
+    "evidence": "research/2026-10-16-facebook-receipt/REVIEW.md"
   }
 }

@@ -262,6 +262,9 @@ const discountMessages = {
     discount: 'Nuolaida',
     checking: 'Tikrinamas kodas…',
     applied: 'Kodas pritaikytas.',
+    freeShipping: 'Nemokamas pristatymas',
+    paymentMinimum:
+      'Po nuolaidos mokėtina suma turi būti bent 0,50 €. Pakeiskite prekes arba pašalinkite kodą.',
     invalid: 'Šis kodas negalioja arba jo limitas pasiektas.',
     minimum: 'Prekių suma per maža šiam kodui. Patikrinkite sąlygas arba pašalinkite kodą.',
     network: 'Nepavyko patikrinti kodo. Bandykite dar kartą.',
@@ -274,6 +277,9 @@ const discountMessages = {
     discount: 'Rabat',
     checking: 'Sprawdzanie kodu…',
     applied: 'Kod został zastosowany.',
+    freeShipping: 'Darmowa dostawa',
+    paymentMinimum:
+      'Po rabacie do zapłaty musi pozostać co najmniej 0,50 €. Zmień produkty lub usuń kod.',
     invalid: 'Kod jest nieaktywny lub jego limit został osiągnięty.',
     minimum: 'Wartość produktów jest za niska dla tego kodu. Sprawdź warunki lub usuń kod.',
     network: 'Nie udało się sprawdzić kodu. Spróbuj ponownie.',
@@ -286,6 +292,9 @@ const discountMessages = {
     discount: 'Atlaide',
     checking: 'Pārbauda kodu…',
     applied: 'Kods ir piemērots.',
+    freeShipping: 'Bezmaksas piegāde',
+    paymentMinimum:
+      'Pēc atlaides maksājamajai summai jābūt vismaz 0,50 €. Mainiet preces vai noņemiet kodu.',
     invalid: 'Kods nav derīgs vai tā limits ir sasniegts.',
     minimum: 'Preču summa ir pārāk maza šim kodam. Pārbaudiet noteikumus vai noņemiet kodu.',
     network: 'Kodu neizdevās pārbaudīt. Mēģiniet vēlreiz.',
@@ -298,6 +307,9 @@ const discountMessages = {
     discount: 'Soodustus',
     checking: 'Koodi kontrollimine…',
     applied: 'Kood on rakendatud.',
+    freeShipping: 'Tasuta tarne',
+    paymentMinimum:
+      'Pärast soodustust peab tasuda jääma vähemalt 0,50 €. Muutke tooteid või eemaldage kood.',
     invalid: 'Kood ei kehti või selle kasutuspiir on täis.',
     minimum:
       'Toodete summa on selle koodi jaoks liiga väike. Kontrollige tingimusi või eemaldage kood.',
@@ -314,6 +326,13 @@ export function quoteDiscountAmount(quote) {
     !Number.isSafeInteger(d.amount) ||
     d.amount <= 0 ||
     d.amount >= gross ||
+    (d.freeShipping !== undefined && typeof d.freeShipping !== 'boolean') ||
+    (d.freeShipping === true &&
+      quote.delivery &&
+      (quote.delivery.amount !== 0 ||
+        !Number.isSafeInteger(d.shippingAmount) ||
+        d.shippingAmount < 0 ||
+        quote.delivery.amountBeforeDiscount !== d.shippingAmount)) ||
     quote.lines.some(
       (l) =>
         !Number.isSafeInteger(l.discountAmount) ||
@@ -962,13 +981,17 @@ function onePageForm({
       busy || lockedForOrder || couponPending || !couponInput.value.trim() || isEmpty;
     couponRemove.disabled = busy || lockedForOrder || couponPending;
     couponRemove.hidden = lockedForOrder || (!activeDiscountCode && !couponInput.value);
-    ship.value.textContent = quoted ? money(quoted.delivery.amount, quoted.currency) : u.calculated;
+    const freeShipping = priceSource?.discount?.freeShipping === true;
+    ship.value.textContent = quoted
+      ? money(quoted.delivery.amount, quoted.currency)
+      : freeShipping
+        ? money(0, market().currency)
+        : u.calculated;
     total.value.textContent = quoted
       ? money(quoted.amount, quoted.currency)
       : valid
         ? money(cents - discountAmount, market().currency) +
-          ' + ' +
-          u.shipping.toLocaleLowerCase(language)
+          (freeShipping ? '' : ' + ' + u.shipping.toLocaleLowerCase(language))
         : u.unknown;
     submit.disabled =
       busy ||
@@ -1103,13 +1126,15 @@ function onePageForm({
     timer?.unref?.();
   };
   const couponFailure = (error) =>
-    ['discount_minimum_not_met', 'discount_basket_too_small'].includes(error.message)
-      ? dc.minimum
-      : ['network', 'commerce_connection_failed', 'discount_connection_failed'].includes(
-            error.message,
-          )
-        ? dc.network
-        : dc.invalid;
+    error.message === 'discount_basket_too_small'
+      ? dc.paymentMinimum
+      : error.message === 'discount_minimum_not_met'
+        ? dc.minimum
+        : ['network', 'commerce_connection_failed', 'discount_connection_failed'].includes(
+              error.message,
+            )
+          ? dc.network
+          : dc.invalid;
   const rejectCoupon = (error) => {
     if (
       !activeDiscountCode ||
@@ -1172,7 +1197,8 @@ function onePageForm({
       activeDiscountCode = code;
       couponInput.value = code;
       couponPreview = { ...result, fingerprint };
-      couponNote.textContent = dc.applied;
+      couponNote.textContent =
+        dc.applied + (result.discount.freeShipping ? ' ' + dc.freeShipping + '.' : '');
       couponNote.setAttribute('role', 'status');
       if (commit) changed();
       else paint();
@@ -1784,6 +1810,10 @@ export async function mountCheckout(
             '): −' +
             money(order.snapshot.discount.amount, order.currency),
         ),
+      );
+    if (order.snapshot.discount?.freeShipping)
+      content.append(
+        element('p', {}, (discountMessages[language] || discountMessages.lt).freeShipping),
       );
     if (order.payment_state === 'pending' && order.stock_state === 'released')
       content.append(element('p', { role: 'status' }, m.expired));

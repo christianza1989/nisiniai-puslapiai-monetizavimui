@@ -739,6 +739,46 @@ test('removing a coupon clears its discount and late apply responses cannot rein
       .fire('submit');
     assert.equal(client.created.discountCode, undefined);
   }));
+
+test('free delivery coupon immediately displays zero shipping and removing it restores delivery pricing', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient();
+    const free = (input) => {
+      const p = couponFixture(input);
+      p.discount.freeShipping = true;
+      return p;
+    };
+    client.discountPreview = async (input) => free(input);
+    client.quote = async (input) => {
+      const p = free(input);
+      return {
+        ...p,
+        quoteHash: 'free_quote',
+        delivery: { amount: 0, amountBeforeDiscount: 450 },
+        discount: { ...p.discount, shippingAmount: 450 },
+      };
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    const code = field(root, 'discountCode');
+    code.value = 'SAVE10';
+    await code.fire('input');
+    await button(root, 'Pritaikyti').fire('click');
+    const totals = nodes(root).find((n) => n.attrs.class === 'checkout-totals');
+    assert.equal(totals.children[2].children[1].textContent, '0,00 €');
+    assert.equal(totals.children[3].children[1].textContent, '28,80 €');
+    assert.match(
+      nodes(root).find((n) => n.attrs.id === 'checkout-discount-note').textContent,
+      /Nemokamas pristatymas/,
+    );
+    await button(root, 'Pašalinti kodą').fire('click');
+    assert.equal(totals.children[2].children[1].textContent, 'Pagal pristatymo duomenis');
+    assert.match(totals.children[3].children[1].textContent, /pristatymas/);
+  }));
 test('quantity changes refresh the server coupon preview without an address or payment request', () =>
   withDom(async () => {
     const root = new Element('div'),

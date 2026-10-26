@@ -55,6 +55,7 @@ test('discount operator CRUD needs catalogue permission; public preview has no p
     kind: 'percent',
     value: 10,
     enabled: true,
+    freeShipping: true,
   };
   assert.equal((await handler(request('/api/operator/discounts'))).status, 403);
   assert.equal(
@@ -66,12 +67,15 @@ test('discount operator CRUD needs catalogue permission; public preview has no p
     request('/api/operator/discounts', { body: input, token: 'local-owner' }),
   );
   assert.equal(created.status, 200);
-  assert.equal((await created.json()).discount.version, 1);
+  const saved = (await created.json()).discount;
+  assert.equal(saved.version, 1);
+  assert.equal(saved.freeShipping, true);
   const listing = await (
     await handler(request('/api/operator/discounts', { token: 'local-owner' }))
   ).json();
   assert.equal(listing.length, 1);
   assert.equal(listing[0].code, 'VIENAS10');
+  assert.equal(listing[0].freeShipping, true);
   const preview = {
     lines: [{ sku: 'couple', quantity: 1 }],
     country: 'LT',
@@ -81,7 +85,9 @@ test('discount operator CRUD needs catalogue permission; public preview has no p
   const r = await handler(request('/api/discount-preview', { body: preview }));
   assert.equal(r.status, 200);
   assert.equal(r.headers.get('cache-control'), 'no-store');
-  assert.equal((await r.json()).amount, 2880);
+  const checked = await r.json();
+  assert.equal(checked.amount, 2880);
+  assert.equal(checked.discount.freeShipping, true);
   assert.deepEqual(scopes, ['quote']);
   assert.equal(
     (

@@ -679,6 +679,11 @@ function renderOrder(content, detail) {
       'Nuolaida (' + o.snapshot.discount.code + ')',
       '−' + money(o.snapshot.discount.amount, o.currency),
     ]);
+  if (o.snapshot.discount?.freeShipping)
+    pairs.splice(5, 0, [
+      'Nemokamas pristatymas (' + o.snapshot.discount.code + ')',
+      money(0, o.currency),
+    ]);
   if (c)
     pairs.push(
       ['El. paštas', c.email],

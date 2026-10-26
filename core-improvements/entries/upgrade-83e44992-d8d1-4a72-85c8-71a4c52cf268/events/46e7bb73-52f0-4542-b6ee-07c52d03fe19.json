@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "264 core tests and native workerd PASS; local admin create/edit persistence and buyer 0 shipping/remove verified; desktop/320px copy inspected. Isolated fixture only, no live financial/customer operation.",
+  "checks": [
+    {
+      "command": "npm --prefix commerce-core run verify",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/free-shipping-20261026/core-verify-final.private.txt:264/264 plus native workerd; explicit dry-run-final.private.txt exit0"
+    },
+    {
+      "command": "node --test test/discounts-http.test.mjs test/discounts.test.mjs",
+      "result": "PASS",
+      "evidence": "11/11 after grouped checkbox hint; local browser create, edit off/on, 28.80 EUR/0 shipping and removal."
+    }
+  ],
+  "eventId": "46e7bb73-52f0-4542-b6ee-07c52d03fe19",
+  "sequence": 2,
+  "at": "2026-10-26T07:16:18.608Z"
+}

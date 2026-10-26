@@ -86,6 +86,30 @@ export async function renderDiscounts(content, ctx) {
     placeholder: 'Neribotas',
   });
   const enabled = n('input', { type: 'checkbox', id: 'discount-enabled', name: 'enabled' });
+  const freeShipping = n('input', {
+    type: 'checkbox',
+    id: 'discount-free-shipping',
+    name: 'freeShipping',
+    'aria-describedby': 'discount-free-shipping-hint',
+  });
+  controls.freeShipping = freeShipping;
+  fields.append(
+    n(
+      'div',
+      {},
+      n(
+        'label',
+        { class: 'check-field', for: 'discount-free-shipping' },
+        freeShipping,
+        'Nemokamas pristatymas',
+      ),
+      n(
+        'p',
+        { class: 'hint', id: 'discount-free-shipping-hint' },
+        'Pažymėjus klientui pristatymas nekainuos. Nuolaida prekėms taikoma atskirai; po nuolaidos turi likti bent 0,50 € mokėtina suma.',
+      ),
+    ),
+  );
   controls.enabled = enabled;
   fields.append(
     n('label', { class: 'check-field', for: 'discount-enabled' }, enabled, 'Kodas įjungtas'),
@@ -128,6 +152,7 @@ export async function renderDiscounts(content, ctx) {
     controls.ends.value = localInput(item?.endsAt);
     controls.maxUses.value = item?.maxUses ?? '';
     enabled.checked = item?.enabled ?? true;
+    freeShipping.checked = item?.freeShipping ?? false;
     updateKind();
     list.hidden = true;
     editor.hidden = false;
@@ -160,6 +185,7 @@ export async function renderDiscounts(content, ctx) {
       kind: kind.value,
       value: kind.value === 'percent' ? Number(value.value) : cents(value.value),
       enabled: enabled.checked,
+      freeShipping: freeShipping.checked,
       minimumSubtotal: cents(controls.minimum.value || '0'),
       startsAt: controls.starts.value ? new Date(controls.starts.value).getTime() : null,
       endsAt: controls.ends.value ? new Date(controls.ends.value).getTime() : null,
@@ -211,7 +237,7 @@ export async function renderDiscounts(content, ctx) {
       n(
         'p',
         { class: 'hint' },
-        'Vienas kodas vienam užsakymui. Nuolaida taikoma prekėms, pristatymas skaičiuojamas atskirai.',
+        'Vienas kodas vienam užsakymui. Prie prekių nuolaidos galite pridėti nemokamą pristatymą.',
       ),
     );
     if (!items.length) {
@@ -235,7 +261,8 @@ export async function renderDiscounts(content, ctx) {
             {},
             cell(n('strong', {}, item.code), 'Kodas'),
             cell(
-              item.kind === 'percent' ? item.value + ' %' : money(item.value, 'EUR'),
+              (item.kind === 'percent' ? item.value + ' %' : money(item.value, 'EUR')) +
+                (item.freeShipping ? ' + nemokamas pristatymas' : ''),
               'Nuolaida',
             ),
             cell(

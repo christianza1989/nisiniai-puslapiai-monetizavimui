@@ -150,7 +150,15 @@ export async function documentPdf(document, fontBytes) {
     if (document.kind === 'sale') {
       if (p.snapshot.discount)
         text('Nuolaida (' + p.snapshot.discount.code + '): -' + money(p.snapshot.discount.amount));
-      text('Pristatymas: ' + p.snapshot.delivery.label + ' - ' + money(p.snapshot.delivery.amount));
+      text(
+        'Pristatymas: ' +
+          p.snapshot.delivery.label +
+          ' - ' +
+          money(p.snapshot.delivery.amount) +
+          (p.snapshot.discount?.freeShipping
+            ? ' (nemokamas pagal kodą ' + p.snapshot.discount.code + ')'
+            : ''),
+      );
       text('Iš viso: ' + money(p.amount), 15, 20);
     }
     if (customer?.locker) text('Paštomatas: ' + customer.locker.label);

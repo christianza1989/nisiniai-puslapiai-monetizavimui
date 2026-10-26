@@ -4,9 +4,10 @@ import {catalogModelVisible} from './catalog-consolidation';
 import type {Product} from './types';
 import type {CatalogRuntime} from './catalog-configurator';
 import {RUNTIME_TRANSPORT_MAX_BYTES} from './runtime-transport-limits.mjs';
+import {isRuntimeTables,unpackRuntimeTables} from './runtime-tables.mjs';
 
 type ChairProofs={sourceGeometryRuntime:string;optionsGemini?:string;generalGemini?:string;factualReview?:string;desktop?:string;mobile?:string};
-export type ChairCandidate={key:string;productId:string;sample:string;code:string;familyId:string;collectionMode:'structure-only';acceptance:'TECHNICAL_DRAFT'|'DRAFT_READY';optionsRequired:boolean;runtime:{asset:string;sha256:string};proofs:ChairProofs};
+export type ChairCandidate={key:string;productId:string;sample:string;code:string;familyId:string;collectionMode:'structure-only';acceptance:'TECHNICAL_DRAFT'|'DRAFT_READY';optionsRequired:boolean;runtime:{asset:string;sha256:string;encoding?:'tables-v1'};proofs:ChairProofs};
 export type ChairCandidates={schemaVersion:1;models:Record<string,ChairCandidate>};
 export const chairCandidates=data as ChairCandidates;
 const digest=(value:Uint8Array|string)=>createHash('sha256').update(value).digest('hex');
@@ -20,6 +21,8 @@ export function candidateForModel(product:Product,entries=chairCandidates):Chair
  // Owner permits technical previews before Gemini copy. These entries cannot
  // be loaded on the launch host or inherit editorial acceptance.
  if(technical&&process.env.LAUNCH_SITE==='true')return;
+ // Direct owner065/066 pilot: other candidates never silently adopt a codec.
+ if(entry.runtime.encoding!==undefined&&(entry.runtime.encoding!=='tables-v1'||entry.code!=='KSOO004WW002'||!technical))throw Error('Chair runtime transport is not admitted for this model');
  if(entry.runtime.asset!=='/models/configurator/structure/'+entry.code+'-'+entry.runtime.sha256.slice(0,20)+'.json'||!/^[a-f0-9]{64}$/.test(entry.runtime.sha256))throw Error('Chair candidate asset binding mismatch');
  return entry;
 }
@@ -43,7 +46,9 @@ export function createChairCandidateLoader(entries:ChairCandidates,readAsset:(as
   if(typeof anchor==='string'&&!new RegExp('^'+entry.code+':structure-[a-f0-9]{64}$').test(anchor))return;
   const bytes=await readAsset(entry.runtime.asset);
   if(bytes.byteLength>RUNTIME_TRANSPORT_MAX_BYTES||digest(bytes)!==entry.runtime.sha256)throw Error('Chair candidate runtime changed');
-  const runtime=JSON.parse(Buffer.from(bytes).toString('utf8')) as CatalogRuntime;
+  const transport=JSON.parse(Buffer.from(bytes).toString('utf8'));
+  if(isRuntimeTables(transport)!==(entry.runtime.encoding==='tables-v1'))throw Error('Chair runtime encoding mismatch');
+  const runtime=(entry.runtime.encoding==='tables-v1'?unpackRuntimeTables(transport):transport) as CatalogRuntime;
   const f=runtime.family;
   if(f.id!==entry.familyId||f.productId!==entry.productId||f.baseArticle!==entry.code||f.sample!==entry.sample||f.collectionMode!=='structure-only'||f.articles.length!==1||f.articles[0].code!==entry.code||f.articles[0].sample!==entry.sample||!f.anchors.length)throw Error('Chair candidate runtime identity mismatch');
   if(entry.optionsRequired!==f.anchors.some(a=>Object.keys(a.choices).length>0))throw Error('Chair candidate options copy scope mismatch');

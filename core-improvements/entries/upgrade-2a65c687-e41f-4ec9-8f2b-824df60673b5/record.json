@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Adopt canonical coupon-aware buyer SDK, bounded preview relay and responsive cart discount controls",
+  "evidence": [
+    "Owner requests operator-created percentage and EUR codes in the live Memory Casting cart. Canonical CORE94f3f27a source passes254tests/native acceptance. Existing public relay rejects a discount-preview path and the pinned SDK predates coupons. Browser inspection also exposed the fixed photo column narrowing a product without a photo; a scoped CSS fallback is required while retaining normal product images and payment placement."
+  ],
+  "paths": [
+    "vendor/commerce-core/commerce-client.mjs",
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json",
+    "lib/memocasting-commerce-bridge.mjs",
+    "components/niche/memocasting-checkout.css"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/85",
+  "rollback": "Disable code entry/use before a scoped frontend revert, preserve actual backend bindings and all discounted order snapshots. Retain compatible server net-payment/projection support; do not roll back the database or overwrite business data. No content/package/dates or homepage performance repair changes.",
+  "id": "upgrade-2a65c687-e41f-4ec9-8f2b-824df60673b5",
+  "branch": "codex/memocasting-discounts-20261026",
+  "baseSha": "94f3f27a6532404805bbf82213d19789ec2eec4a",
+  "createdAt": "2026-10-25T23:57:37.782Z"
+}

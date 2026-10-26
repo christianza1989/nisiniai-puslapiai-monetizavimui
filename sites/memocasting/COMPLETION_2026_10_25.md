@@ -6,11 +6,11 @@ This record supersedes the18:34UTC PC restart checkpoint. The owner authorized c
 
 | Surface | Accepted edition |
 | --- | --- |
-| Public site | https://memocasting.lt/ — Worker88184164-9401-4ddc-b8ef-c6b391f3328a, deployment9cac52e7-e260-41d9-963e-e19e79dd10d7 at22:57:51UTC,100% |
-| Frontend source | PUBLIC2f6e9881242698940c440eb4a9952e8276a65ae0, merged PR84 as038b1f0f1ab207f1be1012f2714d03f0572beed7; same application tree |
+| Public site | https://memocasting.lt/ — Worker 42faf05d-d251-4a19-9ccf-2765bd103ca4, deployment cf8c5d5a-054f-4e77-9388-f29233163a7f at 2026-10-26 00:11:46 UTC, 100% |
+| Frontend source | PUBLIC 43dc0552a845f00d7365abe9d5eb367b506c5484, merged PR86 as ed35c6ad4788e810ec3dbf13688e342b67177625; same application tree |
 | Content | Native5be826b7-33ee-40c6-8f05-f7ed24b48f8c, SHA256b02879f7df3fdc9207248e3f45775a0f3e3f90ce88f1f525ae4c10e94c89a4dc,187pages/800assets; already-public dates and daily cadence preserved; six future topic slots exchanged in the reviewed editorial release |
-| Admin/commerce | https://login.memocasting.lt/admin — Worker5bc23acb-8ec5-4694-94fd-1f4bf5fc535a, deployment9c40bf4a-dcce-4148-a92a-3ea27b09c057 at21:18:41UTC,100% |
-| Admin code source | CORE0a3919d147986bdba135f9f1004fe99934844941; previous07341ebf admin redesign retained |
+| Admin/commerce | https://login.memocasting.lt/admin — Worker 52b3b0a7-0989-46e1-8a7f-dd9661c088b8, deployment 268ff090-5d2c-43b0-a276-822f486b7d1c at 2026-10-26 00:07:10 UTC, 100% |
+| Admin code source | CORE 94f3f27a6532404805bbf82213d19789ec2eec4a, merged PR267 as ec49fcb68a5addaaa021ea219170d332aee2b625; earlier operator workspace retained |
 | Private mail | Worker4b165ec7-466e-4b29-8c0b-29bfaecf32e7, authenticated senderinfo@memorycasting.lt / Memory Casting |
 
 ## Completed and checked
@@ -59,3 +59,13 @@ Scoped rollback for this follow-up: frontend155bfebf-2641-479a-a658-3623eacc016e
 The active frontend table now reflects the accepted PageSpeed repair. Detailed source, checks, intermediate results and rollback are in [PAGESPEED_2026_10_26.md](PAGESPEED_2026_10_26.md). Homepage loading no longer imports checkout UI or waits for payment readiness just for editorial metadata. Product prices and checkout retain actual LIVE admission. Responsive hero discovery, faithful smaller logo/process assets, readable motion and stable dock controls are active.
 
 Actual final PSI zzh6keplwd: mobile **95/100/100/100**, desktop **99/100/100/100** versus original93/96/100/100 and90/96/96/100. Mobile LCP3.0→2.7s, TBT20→0ms, CLS0.026→0.001, SI3.3→2.4s.269public tests, types, scoped lint, build/dry-run, compiled desktop/320px/keyboard and bounded hosted routes/assets pass. This request was self-reviewed; earlier specialist reviews are not represented as a new independent review. Provider bindings, custom-domain certificates, cron and backend/mail versions match actual before/after reads. Content package/dates are unchanged. No new paid service, real financial/shipment test or customer message; previous owner-deferred evidence remains deferred. Lab scores are not field p75 or a ranking guarantee.
+
+## Discount codes accepted, 26 October
+
+Operator-created percentage (1–99%) and fixed-EUR coupons are live in **Nuolaidos**. The existing one-page buyer cart supports preview, replacement and removal before contacts. Server pricing, immutable orders, Stripe line items, invoice reduction and consented GA4 value agree to exact cents. Shipping remains separate; one code per order. Optional dates, minimum basket and maximum uses are available. A use is claimed when an order is created, including unpaid orders; the editor explains this and defaults to unlimited. No automatic use restoration on cancellation/refund.
+
+Final validation: 254 canonical tests and native workerd/D1/R2/restart; 270 public tests, types, scoped lint, build and production-profile dry-runs. Actual compiled desktop/320px buyer/admin fixtures exercise 10% and 5 EUR, saved-order continuity and no-photo layout. Authenticated live admin list/create form and actual live product add/cart/invalid code were inspected; width and scroll are both 320px, console errors absent. Hosted same-origin preview rejects an unknown code with 409, GET is 405, foreign Origin 403, operator relay 404 and anonymous operator API redirects to Access. LIVE productionReady context remains intact.
+
+The canonical remote operator applied only additive migration 0027: 26 to 27, no pending migrations, every earlier migration checksum retained. Five existing orders and their aggregate 20168 minor units are preserved; this aggregate is not paid revenue. Zero production coupon definitions or discounted orders were created for acceptance. Actual provider bindings/variables/secret names, D1/R2/services, compatibility/observability, domains/certificates, cron, mail, package and dates match before/after. No real charge, shipment or customer message was performed. Prior owner-deferred real purchase evidence remains deferred.
+
+Source PR267 and PUBLIC PR86 are merged; both active editions are listed above. Full evidence, limitations and safe compatible rollback are in [DISCOUNTS_2026_10_26.md](DISCOUNTS_2026_10_26.md) and the canonical commerce discounts contract. This request received bounded self-review, not a new independent specialist review.

@@ -11,7 +11,7 @@ Pirkėjo forma: https://memocasting.lt/atsiliepimas . Įvedus užsakymo numerį 
 
 Siuntėjas – **info@memorycasting.lt** per jau prijungtą parduotuvės pašto jungtį. Įjungtas numeravimas po senojo Shopify numerio 9877: pirmasis naujas užsakymas gauna **9878**. Ankstesni šios sistemos užsakymai nepernumeruoti.
 
-CSV importas palaiko UTF-8, kablelius ir kabutėse esančias kelių eilučių reikšmes; iki 100 eilučių vienu importu. Stulpelius galima susieti administracijoje. Standartiniai pavadinimai:
+CSV importas palaiko UTF-8, kablelius ir kabutėse esančias kelių eilučių reikšmes; iki 100 eilučių ir 50 KB vienu importu. Stulpelius galima susieti administracijoje. Standartiniai pavadinimai:
 
 `product_sku,rating,author_name,review_date,review_text,review_title,review_id,image_urls`
 

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Exact CORE94f3f27a SDK adopted in PUBLIC43dc0552; final270 public tests, types, lint, build and actual compiled UI accepted. No-photo320px body fills its full item width;5EUR preview displays2700 cents. Fixture only, no production coupon/order/payment/mail.",
+  "checks": [
+    {
+      "command": "PUBLIC node --test serial suite; tsc --noEmit; scoped ESLint; npm run build; Wrangler production-profile --dry-run",
+      "result": "PASS",
+      "evidence": "270/270; public-tests/types/lint/build.private.txt and frontend-dry-run.private.txt in ignored qa/discounts-20261026."
+    },
+    {
+      "command": "Actual compiled browser one-page checkout desktop and320px",
+      "result": "PASS",
+      "evidence": "compiled-cart-desktop.private.png; compiled-cart320.private.png; cart-mobile320-no-photo-final.private.png; width/scroll320. Local readonly fixture, no provider call."
+    }
+  ],
+  "eventId": "13bf32c1-e075-4773-88ee-70b72d26d6e9",
+  "sequence": 2,
+  "at": "2026-10-26T00:10:33.454Z"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/86",
+  "commit": "ed35c6ad4788e810ec3dbf13688e342b67177625",
+  "note": "PUBLIC43dc0552 same application tree merged and deployed as frontend42faf05d at100percent. Canonical CORE94f3f27a SDK hashes preserved.270tests/types/lint/build/dry-run and compiled5EUR preview accepted; hosted real product add/cart, invalid-code feedback desktop/320px, same-origin preview and private route protection verified. LIVEcontext remains productionReady; mail/cron/bindings/domains/certificates/content and dates unchanged. No active test coupon or financial/customer-message test. Self-review only.",
+  "eventId": "e69a9634-cad1-46c4-9d43-63acec8378e3",
+  "sequence": 3,
+  "at": "2026-10-26T00:14:53.739Z"
+}

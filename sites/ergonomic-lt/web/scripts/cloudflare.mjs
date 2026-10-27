@@ -6,7 +6,7 @@ const task=process.argv[2];
 const sourceRoot=process.cwd(),buildRoot=task==='build'&&process.env.ERGONOMIC_BUILD_ROOT?resolve(process.env.ERGONOMIC_BUILD_ROOT):sourceRoot;
 if(task==='build'){
  if(process.env.ERGONOMIC_BUILD_OUTPUT)throw Error('Output-directory overrides do not isolate vinext cleanup. Use an isolated ERGONOMIC_BUILD_ROOT.');
- if(buildRoot===sourceRoot&&existsSync('dist/server/wrangler.json'))throw Error('Preserve the deployed build: use an isolated ERGONOMIC_BUILD_ROOT.');
+ if(existsSync(join(buildRoot,'dist/server/wrangler.json')))throw Error('Preserve the deployed build: use a fresh isolated ERGONOMIC_BUILD_ROOT.');
  if(buildRoot!==sourceRoot){
   const physical=realpathSync(buildRoot),inside=relative(realpathSync(sourceRoot),physical);
   if(!physical.toLowerCase().startsWith('e:')||(!inside.startsWith('..')&&!isAbsolute(inside))||existsSync(join(buildRoot,'.git')))throw Error('Expected a separate E build scaffold, not a source checkout.');

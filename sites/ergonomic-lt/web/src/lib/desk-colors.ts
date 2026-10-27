@@ -21,7 +21,7 @@ export function validateDeskColors(input:unknown,code:string,runtimeSha:string):
  const ids=new Set(input.materialIds),selectors=new Set<string>();
  if(Object.keys(input.fields).length>30)fail();
  for(const [key,f]of Object.entries(input.fields)as[string,DeskColorField][]){
-  if(!field(key)||!plain(f)||typeof f.label!=='string'||f.label.length>120||!Array.isArray(f.owners)||!f.owners.every(field)||!Array.isArray(f.selectors)||!f.selectors.every(hash)||new Set(f.selectors).size!==f.selectors.length||!Array.isArray(f.choices)||!f.choices.length||f.choices.length>100||!plain(f.values)||!f.choices.some(c=>c.value===f.default)||new Set(f.choices.map(c=>c.value)).size!==f.choices.length)fail();
+  if(!field(key)||!plain(f)||typeof f.label!=='string'||f.label.length>120||!Array.isArray(f.owners)||!f.owners.every(field)||!Array.isArray(f.selectors)||!f.selectors.every(hash)||new Set(f.selectors).size!==f.selectors.length||!Array.isArray(f.choices)||!f.choices.length||f.choices.length>316||!plain(f.values)||!f.choices.some(c=>c.value===f.default)||new Set(f.choices.map(c=>c.value)).size!==f.choices.length)fail();
   for(const c of f.choices){const v=f.values[c.value];if(typeof c.value!=='string'||!c.value.length||c.value.length>100||typeof c.text!=='string'||c.text.length>160||c.image&&!/^\/models\/configurator\/desk-colors\/[a-f0-9]{64}\.(jpg|png|webp)$/.test(c.image)||c.color&&!/^#[a-f0-9]{6}$/i.test(c.color)||!plain(v)||!['material','partSwap','pending'].includes(v.mode)||!Array.isArray(v.assignments)||!plain(v.automatic)||!Object.entries(v.automatic).every(([k,x])=>field(k)&&/COLOR|COL$/.test(k)&&typeof x==='string'&&x.length<=100))fail();
    for(const a of v.assignments){if(!hash(a.selectorId)||!ids.has(a.materialId))fail();selectors.add(a.selectorId);}
    if(v.mode==='partSwap'&&(v.baseSizeOnly!==true||!Array.isArray(v.removeSelectors)||!v.removeSelectors.length||!v.removeSelectors.every(hash)||!Array.isArray(v.assets)||!v.assets.length||!v.assets.every(asset)))fail();
@@ -50,7 +50,12 @@ function attachDeskColors(runtime:CatalogRuntime,colors:DeskColors):CatalogRunti
  // or prevent an exact primitive/material/matrix match at the captured axes.
  const axes=new Set(runtime.family.anchors.flatMap(a=>a.axes));
  const baseDimensions=Object.fromEntries(Object.entries(colors.baseDimensions).filter(([key])=>axes.has(key)));
- if(!Object.keys(baseDimensions).length||!runtime.family.anchors.some(a=>a.geometry&&Object.entries(baseDimensions).every(([k,v])=>a.defaults[k]===v)))throw Error('Desk color witness has no captured component context');
+ const hasCapturedDefaultGeometry=(anchor:CatalogRuntime['family']['anchors'][number])=>{
+  const family={...runtime.family,anchors:[anchor,...runtime.family.anchors.filter(a=>a!==anchor)]};
+  const engine=createCatalogEngine(family),state=engine.catalogInitial(family,anchor.article),assembly=engine.catalogAssets(state);
+  return !!assembly.base||assembly.patches.some(p=>p.geometry||p.geometries?.length);
+ };
+ if(!Object.keys(baseDimensions).length||!runtime.family.anchors.some(a=>Object.entries(baseDimensions).every(([k,v])=>a.defaults[k]===v)&&hasCapturedDefaultGeometry(a)))throw Error('Desk color witness has no captured component context');
  colors={...colors,baseDimensions};
  if(runtime.family.anchors.some(a=>Object.keys(colors.fields).some(key=>a.axes.includes(key)||a.components.some(c=>c.fields.includes(key)))))throw Error('Desk color field collides with construction');
  const palettes:CatalogRuntime['palettes']={...runtime.palettes,_fieldLabels:{...runtime.palettes._fieldLabels}};

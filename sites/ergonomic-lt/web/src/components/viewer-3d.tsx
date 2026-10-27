@@ -20,20 +20,22 @@ import {lightingPresets,productSceneSettings,type SceneSettings} from '@/lib/vie
 import {roomEnvironment,productShowroom} from '@/lib/showroom';
 import type {DeskColors,DeskColorPlan} from '@/lib/desk-colors';
 import {tagDeskSurfaces,createDeskColorMaterials,createDeskColorApplication} from '@/lib/desk-color-materials';
+import {viewerBaseAsset} from '@/lib/viewer-assembly';
 
 function disposeObject(root:Object3D){
   const materials=new Set<Material>(),textures=new Set<Texture>();root.traverse(o=>{if(o instanceof Mesh){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});
   materials.forEach(m=>{if(m instanceof MeshStandardMaterial)for(const texture of [m.map,m.normalMap,m.roughnessMap,m.metalnessMap])if(texture)textures.add(texture);m.dispose();});textures.forEach(t=>t.dispose());
 }
 type Action='left'|'right'|'in'|'out'|'reset'|'surface';
-export type Assembly={base:Asset;patches:Patch[];finishes:Record<string,FinishPreview>;deskColors?:{source:DeskColors;plan:DeskColorPlan}};
+export type Assembly={base:Asset|null;patches:Patch[];finishes:Record<string,FinishPreview>;deskColors?:{source:DeskColors;plan:DeskColorPlan}};
 export default function Viewer3D({variant,name,assembly,fullscreen=false,onFullscreen,avoidToolbarOverlap=false}:{variant:PilotVariant;name:string;assembly?:Assembly;fullscreen?:boolean;onFullscreen?:()=>void;avoidToolbarOverlap?:boolean}){
   const stage=useRef<HTMLDivElement>(null),canvas=useRef<HTMLCanvasElement>(null),action=useRef<(a:Action)=>void>(()=>{});
   const [state,setState]=useState<'loading'|'ready'|'error'>('loading'),[attempt,setAttempt]=useState(0);
   const [colorState,setColorState]=useState<'original'|'loading'|'ready'|'error'>('original');
   const deskColors=useRef(assembly?.deskColors),applyDeskColors=useRef<()=>Promise<void>>(async()=>{});deskColors.current=assembly?.deskColors;
   const finishes=useRef(assembly?.finishes),applyFinishes=useRef<()=>void>(()=>{});finishes.current=assembly?.finishes;
-  const geometryKey=JSON.stringify([variant.asset,variant.assetSha256,assembly?.patches.map(p=>[p.remove,p.geometry?.assetSha256,p.geometries?.map(g=>g.assetSha256)]),assembly?.deskColors?.plan.assets.map(a=>a.assetSha256)]);
+  const baseAsset=viewerBaseAsset(variant,assembly);
+  const geometryKey=JSON.stringify([baseAsset?.asset,baseAsset?.assetSha256,assembly?.patches.map(p=>[p.remove,p.geometry?.assetSha256,p.geometries?.map(g=>g.assetSha256)]),assembly?.deskColors?.plan.assets.map(a=>a.assetSha256)]);
   useEffect(()=>{applyFinishes.current();},[assembly?.finishes]);
   useEffect(()=>{void applyDeskColors.current();},[assembly?.deskColors]);
   useEffect(()=>{
@@ -157,7 +159,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         const bytes=await response.arrayBuffer();if(bytes.byteLength>32_000_000)throw Error(copyText("ui.45d9a6bdd6b3cc360e15","Asset too large"));
         if(deskColors.current){const digest=await crypto.subtle.digest('SHA-256',bytes);const sha=Array.from(new Uint8Array(digest),n=>n.toString(16).padStart(2,'0')).join('');if(sha!==asset.assetSha256)throw Error('Desk component bytes changed');}
         const gltf=await loader.parseAsync(bytes,'');if(deskColors.current)tagDeskSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,asset.assetSha256);return gltf.scene;}
-        const base=await load(assembly?.base||variant);object=new Group();object.add(base);
+        object=new Group();if(baseAsset)object.add(await load(baseAsset));
         if(assembly){
           for(const patch of assembly.patches){for(const id of patch.remove){const part=object.getObjectByName(id);if(part)part.visible=false;}
             const refs=patch.geometries|| (patch.geometry?[patch.geometry]:[]);

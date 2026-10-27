@@ -748,6 +748,227 @@
       "proofs": {
         "sourceGeometryRuntime": "61e1d45ed328bbf5d1463987edc5bb0d00e5498060a7812a3c1e3d40d7092e7a"
       }
+    },
+    "product_erange-desks_e908d3d0:22074434": {
+      "key": "product_erange-desks_e908d3d0:22074434",
+      "productId": "product_erange-desks_e908d3d0",
+      "sample": "22074434",
+      "code": "KERG019WW001",
+      "familyId": "cfg-130c27e16831",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KERG019WW001-bff208fa871bdd05e8a7.json",
+        "sha256": "bff208fa871bdd05e8a74476a8fcf118f1cd76938fe46f90c370648012b42f76"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "6399f1ea44730864dc1828ca25ac24c88a745e69b4fee6da238841443ffa43a5"
+      }
+    },
+    "product_sqart-workbenches_b61820e8:25218755": {
+      "key": "product_sqart-workbenches_b61820e8:25218755",
+      "productId": "product_sqart-workbenches_b61820e8",
+      "sample": "25218755",
+      "code": "KSQA148WW001",
+      "familyId": "cfg-878a673760dd",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KSQA148WW001-afe855e37264a8c41b4e.json",
+        "sha256": "afe855e37264a8c41b4edd3e47e6f43231f13c862f573ab8969d44481aaa9f89"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "d5cb689911f7fa96f21750129571f50ce0c001f6325b63a28118eb78f844a470"
+      }
+    },
+    "product_erange-desks_e908d3d0:22074435": {
+      "key": "product_erange-desks_e908d3d0:22074435",
+      "productId": "product_erange-desks_e908d3d0",
+      "sample": "22074435",
+      "code": "KERG023WW001",
+      "familyId": "cfg-7c6ce964e227",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KERG023WW001-ca872ae00646076a381c.json",
+        "sha256": "ca872ae00646076a381cb4d760c25e1d28cca387eb9d450f2c7f0d28a412e30c"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "5492bb9c3b378fc5f07b65412b1c61e64ff1146ad13e5df728a872535b596e73"
+      }
+    },
+    "product_erange-desks_e908d3d0:22074432": {
+      "key": "product_erange-desks_e908d3d0:22074432",
+      "productId": "product_erange-desks_e908d3d0",
+      "sample": "22074432",
+      "code": "KERG024WW001",
+      "familyId": "cfg-d34e647f860b",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KERG024WW001-10308bda5a9f9c2a00b1.json",
+        "sha256": "10308bda5a9f9c2a00b140a1360eb70a9b9edfad85f086a9e6be8e74fc5d2167"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "ac43a6fc92acf6bae2e80a1f8bc30ea9d1c255e48e27ea7bcbc4fe4ee3ce6e59"
+      }
+    },
+    "product_erange-desks_e908d3d0:22074436": {
+      "key": "product_erange-desks_e908d3d0:22074436",
+      "productId": "product_erange-desks_e908d3d0",
+      "sample": "22074436",
+      "code": "KERG017WW001",
+      "familyId": "cfg-c95770885c6c",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KERG017WW001-0498e8b938853bcea1c9.json",
+        "sha256": "0498e8b938853bcea1c9ae24c53b29d876b947bd4044bd835785e7596f0fc800"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "080252fe28178255540875e76bbb57e3f6e1fed9ae52e86bb6578401cde3a595"
+      }
+    },
+    "product_levitate-workbenches_b54960e3:16384635": {
+      "key": "product_levitate-workbenches_b54960e3:16384635",
+      "productId": "product_levitate-workbenches_b54960e3",
+      "sample": "16384635",
+      "code": "KLEV026WW002",
+      "familyId": "cfg-9f043bdd9138",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KLEV026WW002-3d9cdabd6f88e0889cbd.json",
+        "sha256": "3d9cdabd6f88e0889cbd7dac744c5ed430e9fa920d633c412c6fff80a48abcd7"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "ad49df3f23fd316e5ac078ce9c7fd61c02fa8490f001a8b073774fb85568266f"
+      }
+    },
+    "product_sqart-desks_345c2715:24972419": {
+      "key": "product_sqart-desks_345c2715:24972419",
+      "productId": "product_sqart-desks_345c2715",
+      "sample": "24972419",
+      "code": "KSQA122WW001",
+      "familyId": "cfg-46a1960036b4",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KSQA122WW001-c5ff2d35cbb35d8c5238.json",
+        "sha256": "c5ff2d35cbb35d8c5238b9e7c9f7404e294bc8b8c3c0e2f2c298787447953799"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "eb4d8a0f71d8d0c5ebf2da87d2a60101a8cf169bdfa7d71c40a3f2ae67e4b3f6"
+      }
+    },
+    "product_easy-space-desks_b8e638ba:22467054": {
+      "key": "product_easy-space-desks_b8e638ba:22467054",
+      "productId": "product_easy-space-desks_b8e638ba",
+      "sample": "22467054",
+      "code": "KESE086WW001",
+      "familyId": "cfg-a806d149080a",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KESE086WW001-50e112091645b41e7b53.json",
+        "sha256": "50e112091645b41e7b53836f18a0c627b923591155b88ce63026f4fbb4073c37"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "4b9debe217bc4770331922bed4ab3dad7b675f2b6c2154eb776d474b452e7b1b"
+      }
+    },
+    "product_emodel-2-0-desks_f22f1a81:23846537": {
+      "key": "product_emodel-2-0-desks_f22f1a81:23846537",
+      "productId": "product_emodel-2-0-desks_f22f1a81",
+      "sample": "23846537",
+      "code": "KEM2017WW002",
+      "familyId": "cfg-ab4c5f0d58fd",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEM2017WW002-4cba55e91375bfdda210.json",
+        "sha256": "4cba55e91375bfdda210c38be96eeb8172764455bead7310df14d70957519922"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "b46174eeaa01a42b42da83e989eaac0f7340c82c500ae803e9c7f902857c0e99"
+      }
+    },
+    "product_sqart-workbenches_b61820e8:25218751": {
+      "key": "product_sqart-workbenches_b61820e8:25218751",
+      "productId": "product_sqart-workbenches_b61820e8",
+      "sample": "25218751",
+      "code": "KSQA154WW001",
+      "familyId": "cfg-359948ae761c",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KSQA154WW001-82725ca286e5185e2e28.json",
+        "sha256": "82725ca286e5185e2e28c3d35b51ed8ce3e519af0196a76b329cd3d6b1592bd4"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "ba7f0776294ab4c18e11cc43882a0cdc4d645bb8748ce46a0f29f567449e3c50"
+      }
+    },
+    "product_bspace-desks_3cf8f926:20495594": {
+      "key": "product_bspace-desks_3cf8f926:20495594",
+      "productId": "product_bspace-desks_3cf8f926",
+      "sample": "20495594",
+      "code": "KBSP006WW001",
+      "familyId": "cfg-32dd4254a88b",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBSP006WW001-e03b3d63ce17a98106fb.json",
+        "sha256": "e03b3d63ce17a98106fb8d3807428968b7051198f62d3f381414a680d385798c"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "b721fe8edd500247fc560364fe7ae6aad7d14ad93e12b4d5e9ab552e35c8e007"
+      }
+    },
+    "product_sqart-workbenches_b61820e8:25218756": {
+      "key": "product_sqart-workbenches_b61820e8:25218756",
+      "productId": "product_sqart-workbenches_b61820e8",
+      "sample": "25218756",
+      "code": "KSQA153WW001",
+      "familyId": "cfg-cf59ae8e7815",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KSQA153WW001-b4693c178c90b9eef014.json",
+        "sha256": "b4693c178c90b9eef014245d294771c432f9065042729409e15b84fa89d1d05e"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "61a169e307203c07b27fdce51ac90bccc669e72ff168d9f84b4f514594e4e698"
+      }
+    },
+    "product_xio20-workbenches_a07036de:16088673": {
+      "key": "product_xio20-workbenches_a07036de:16088673",
+      "productId": "product_xio20-workbenches_a07036de",
+      "sample": "16088673",
+      "code": "KXI2013WW002",
+      "familyId": "cfg-91358eb297bc",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KXI2013WW002-dff45354e8540e2c994f.json",
+        "sha256": "dff45354e8540e2c994f9a43f774e3297955c8f1722d29d88366c7fb1a6410f5"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "c53b62035b1103d9c9527343f989cf7426ead6e9ec2c1e5b24196f88e3f97955"
+      }
     }
   }
 }

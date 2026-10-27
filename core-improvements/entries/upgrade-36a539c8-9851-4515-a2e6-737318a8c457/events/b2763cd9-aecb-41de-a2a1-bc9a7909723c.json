@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Original regression failure referenced the wrong audit column in the new test; retained private FAIL and corrected to existing state column. Then all13review tests passed. Production operation verified214exact selected same-domain imports with content/moderation preserved; this is owner provenance, not an independent audit of old Shopify orders.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/reviews-worker.test.mjs commerce-core/test/reviews.test.mjs",
+      "result": "PASS",
+      "evidence": "13/13 including real isolated native D1/R2 purchase provenance and idempotency."
+    }
+  ],
+  "eventId": "b2763cd9-aecb-41de-a2a1-bc9a7909723c",
+  "sequence": 2,
+  "at": "2026-10-27T07:24:34.917Z"
+}

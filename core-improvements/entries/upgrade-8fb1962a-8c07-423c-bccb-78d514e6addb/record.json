@@ -1,0 +1,38 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Finish owner-requested homepage FAQ, one-gesture video playback and controlled auto-scroll, native guide imagery and admitted payment-brand marks.",
+  "evidence": [
+    "Native package e3d33412-051a-4b4d-9530-17847dca0967 changes homepage only;187dates and186other pages preserved.",
+    "Actual desktop1280/mobile390 component review; trusted visible-card Enter starts playback without moving document/track; motion stops on hover and manual pause; physical iOS remains outside this acceptance.",
+    "293PUBLIC tests; targeted new-package checks, TypeScript/scoped lint and detector recorded in IMAGE_SEO_BRAND_2026_10_27.md."
+  ],
+  "paths": [
+    "components/niche/memocasting-site.tsx",
+    "components/niche/memocasting-footer.css",
+    "components/niche/memocasting-payment-status.tsx",
+    "components/niche/memocasting-reviews.tsx",
+    "components/niche/memocasting-video-carousel.tsx",
+    "components/niche/memocasting-video-carousel.css",
+    "components/niche/memocasting-homepage-faq.tsx",
+    "components/niche/memocasting-homepage-faq.css",
+    "lib/memocasting-homepage-assets.mjs",
+    "lib/memocasting-homepage-images.mjs",
+    "lib/memocasting-homepage-faq.mjs",
+    "lib/memocasting-payment-status.mjs",
+    "package.json",
+    "package-lock.json",
+    "content-packages/memocasting",
+    "lib/generated/content-packages.json",
+    "public/memocasting-payments/v1",
+    "tests/memocasting-homepage.test.mjs",
+    "tests/memocasting-homepage-faq.test.mjs",
+    "tests/memocasting-footer.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/96",
+  "rollback": "Scoped frontend rollback to f45cbb3c. Preserve existing shop/mail/DNS/data; old illustration and native admission prefix remain intact.",
+  "id": "upgrade-8fb1962a-8c07-423c-bccb-78d514e6addb",
+  "branch": "codex/memocasting-image-trust-20261027",
+  "baseSha": "113869b0a2fbf151f030afe5231f694e54111016",
+  "createdAt": "2026-10-27T07:23:41.668Z"
+}

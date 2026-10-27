@@ -1,0 +1,44 @@
+# Public image discoverability and homepage brand evidence
+
+Scope: answer the owner's image-search question, repair observed public image indexing restrictions, and add a tidy server-rendered homepage brand section. CORE issue294; PUBLIC issue96. Bases CORE113869b0 / PUBLIC82ae4607. Actual Google indexing/ranking is separate from accessible images; no promised result placement, authority score or fabricated trust badge.
+
+Owner's subsequent screenshot removes the existing “Viskas prasideda nuo jūsų” / id=sudetis visual section. A narrow homepage lead projection omits it together with the already-hidden meaning section; original source/admission and all product-page contents remain. The in-progress first build was stopped at RSC build after this steering, not accepted/deployed; its original log is retained and a final build is required after the removal.
+
+Read-only baseline2026-10-27:116sitemap pages,527HTML img elements,619distinct image URLs including responsive variants,114image sitemap entries. Every page and image request returned200/image; no missing alt attribute.124empty alt values include decorative/redundantly linked images;42pages without social images are not automatically defects.26public WebP URLs, including both Product.image/social catalogue photos and displayed review photographs, receive noindex,nofollow from the buyer bridge. Main public content/assets are allowed by robots and page metadata permits large previews. These are technical checks, not stored Google index observations.
+
+Direction: preserve white/warm surfaces, Manrope, ink and rose. A single open brand section after the inspiration gallery and before customer reviews, with an asymmetric heading/body composition and a compact proof-link row. No new stock/generated photograph or fake endorsement. Native reviewed homepage body supplies text; exact original86-block homepage admission prefix stays unchanged. Existing company/instruction/contact/review links are used only when currently eligible. Typography: heading28–40px, body16–18px/1.75, paragraph measure60–68ch, links14px/min44px target, mobile single-column with no horizontal overflow.
+
+- [x] Paired freshness and scoped branches/issues.
+- [x] Live whole-sitemap image discovery/status/header baseline; official Google guidance read.
+- [x] Exact successful public image GET/HEAD header repair and privacy/error regressions.
+- [x] Native brand copy review and scoped immutable release; all other pages/assets/dates preserved.
+- [x] Server-rendered section and duplicate-free fallback body with working eligible links.
+- [x] One desktop/mobile review and final history-text confirmation; source checks pass, final compiled/hosted checks below.
+- [ ] Preserve actual production settings, deploy frontend and verify specific image headers/brand/native exports.
+- [ ] Scoped Git delivery and actual hosted receipt.
+
+Owner subsequently confirmed the2019start and supplied a2024Wayback screenshot of the longstanding homepage statement. Final text says the brand trades kits in Lithuania since2019; no assertion that MB was legally incorporated in2019. Owner also asserts first-in-Lithuania; the archived self-claim does not independently establish competitors' chronology, so this comparative claim is omitted. The10,000figure remains undefined between orders/kits/unique customers and is omitted; no happy-customer count is inferred from an old order number. Direct web retrieval of the archive failed; the supplied screenshot and owner statement are the actual evidence, not a claimed successful independent archive crawl.
+
+Native final release88ca0139-bfa7-44eb-a23f-fd15ab599fc7 / SHAa013240ef18e3c847571603a2c64a879e8d20dd0e1cc50abdf75f4ea91e27ed2 changes only homepage4cc41bac-2537-4c4f-985b-3f8df01edbed revisionae3099529b59ba028869b928f1b3b06b947f7968df699cf2939b7e8b6f61cfb4. The prior no-history draft/release remains immutable and was never deployed. All186other approved pages,188unselected mutable records,800asset hashes and every187publishAt are preserved through the native scoped overlay and common import; generated projection compiled normally.
+
+Sequential actual component/styles/native-copy review1280desktop/390phone, followed by the final2019text confirmation: no document overflow, full heading/body readable, links53.67px tall. Final detector[];289PUBLIC tests, focused6homepage/content cases, TypeScript and scoped lint pass. Component preview is not compiled adapter acceptance; production build and intended-host behavior remain independent gates. No additional agents were spawned.
+
+Evidence is ignored under sites/memocasting/qa/image-seo-20261027. This task makes no paid Treg call, no new recurring automation, no backend/DB/order/mail/payment mutation, no security permission change and no generated image.
+
+## Owner additions and final source scope
+
+The owner then requested guide-card image replacement, payment marks, one-tap mobile video playback, controlled video auto-scroll, a clearer FAQ and prior-store verified-buyer labels. These are additive to the initial image/brand work. Ordinary source and interface work resumed after the owner's explicit PC-reboot pause; no deployment happened during the pause.
+
+- [x] Hide only the existing homepage contents/meaning sections in presentation; original narrative/admission and product descriptions retained.
+- [x] Shared native import of supplied product-v2-1536.webp: five responsive WebP variants360–1536; selected first preparation card only. Illustration alt does not imply a wooden base is included.
+- [x] Visa/Mastercard/Stripe local vector marks, original CC0 artwork/license/provenance retained, shown only with actual admitted production payment availability.
+- [x] Video mounts and calls play synchronously within the trusted user event. Continuous slow card auto-scroll stops on hover, keyboard focus, video opening, dragging, offscreen/hidden page, reduced motion or the existing global motion switch; explicit pause/resume control. No autoplay of all videos. Touch devices do not inherit desktop hover transforms.
+- [x] New native-details FAQ uses all six existing reviewed answers, with eligible instruction/help/delivery/returns/contact links. Answer HTML is server rendered and remains usable without JavaScript; original content prefix stays intact. Google discontinued FAQ rich results in2026 (official Search updates, June15); no unsupported FAQPage promise added.
+- [x] Separate owner declaration confirms all214selected Shopify migrations were paid, previously verified purchases. Maintained operator helper records origin/actor/evidence with version checks and idempotency; existing verified flag changes only. Exact214row operation preserved original body/date/rating/state/photo IDs, created no synthetic orders/grants, applied no schema and requires no backend redeploy. Existing source/import declarations alone still confer no purchase verification.
+- [x] Scope checks:293PUBLIC regressions,21targeted tests after final native import,13review tests including isolated native D1/R2; TypeScript and scoped lint, scoped detector[]. Original test failure used nonexistent audit column action; corrected to actual state and original failure retained. Initial lint ref access was corrected to stable React state initialization; no lint suppression.
+
+Final native release e3d33412-051a-4b4d-9530-17847dca0967, package SHA2564b326c5c3547d164950631fe5b793b6b38a65cd84b16bfd545a47f5d04c8c548, homepage revision1d3c05b7592fc1496e1e4dba9eba833d733ba020e2e1d473b6603d697a671f68. Common import/compile:187pages/805assets;186other pages and every publishAt preserved. Earlier releases remain immutable. Production frozen build and actual hosted receipt are recorded below once observed; component preview does not certify the compiled runtime.
+
+Actual sequential component pass:1280desktop/390mobile showed readable16px answers/17px mobile questions,48px navigation, no document overflow and loaded selected photo/payment vectors. Carousel transform changed automatically then stopped on hover; a visible card started playback from one trusted Enter action with unchanged scrollY and track transform. Browser200% origin zoom complicated coordinate touch automation; no physical iOS or completed touch-device playback claim is made. This does not negate the synchronous activation and touch-hover fixes. A first combined build was deliberately interrupted before final touch-hover correction; only the later frozen build can be accepted.
+
+Read-only GSC product report updated2026-10-25:0invalid/3valid; two main kits plus restored sold-out baby-feet page. Optional review warnings are lagged report data; current main-product HTML already contains first-party reviews/aggregate ratings. No indexing request, validation restart or invented rating for baby feet. Technical crawlability remains distinct from Google indexing, thumbnails or ranking.

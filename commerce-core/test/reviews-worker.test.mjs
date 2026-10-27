@@ -2,6 +2,7 @@ import {
   prepareReviewImport,
   importReviews,
   attestReviewImportOrigin,
+  attestReviewImportPurchase,
 } from '../src/review-import.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -202,6 +203,76 @@ test('native D1/R2 additive reviews preserve historical orders and atomically nu
     );
     assert.equal(migratedStats.directCount, 1);
     assert.equal(migratedStats.directAverage, 4);
+    const importedBefore = await s.one('SELECT * FROM product_reviews WHERE id=?', legacy.id);
+    const proof = {
+      reviews: [{ id: legacy.id, version: importedBefore.version }],
+      collectionOrigin: 'https://store-a.example',
+      sameStoreCollectionConfirmed: true,
+      paidPurchasesConfirmed: true,
+      priorStoreVerificationConfirmed: true,
+      evidence: 'Human owner confirms prior store paid and verified purchases.',
+    };
+    await assert.rejects(
+      attestReviewImportPurchase(
+        s,
+        'store_a',
+        'sandbox',
+        { ...proof, paidPurchasesConfirmed: false },
+        'owner',
+      ),
+      /review_purchase_not_confirmed/,
+    );
+    await assert.rejects(
+      attestReviewImportPurchase(
+        s,
+        'store_a',
+        'sandbox',
+        { ...proof, reviews: [{ id: legacy.id, version: 1 }] },
+        'owner',
+      ),
+      /review_purchase_not_confirmed/,
+    );
+    await assert.rejects(
+      attestReviewImportPurchase(
+        s,
+        'store_a',
+        'sandbox',
+        { ...proof, reviews: [{ id: review.id, version: 2 }] },
+        'owner',
+      ),
+      /review_purchase_not_confirmed/,
+    );
+    assert.equal(
+      (await attestReviewImportPurchase(s, 'store_a', 'sandbox', proof, 'owner')).attested,
+      1,
+    );
+    assert.equal(
+      (await attestReviewImportPurchase(s, 'store_a', 'sandbox', proof, 'owner')).attested,
+      0,
+    );
+    const importedAfter = await s.one('SELECT * FROM product_reviews WHERE id=?', legacy.id);
+    assert.deepEqual(
+      { ...importedAfter, verified: importedBefore.verified, version: importedBefore.version },
+      importedBefore,
+    );
+    assert.equal(importedAfter.verified, 1);
+    assert.equal(importedAfter.order_id, null);
+    assert.equal(
+      (await restart.list('store_a', 'sandbox', { sku: 'family' })).items[0].verifiedPurchase,
+      true,
+    );
+    assert.deepEqual(await r.photo('store_a', 'sandbox', importedPhoto.id), bytes);
+    assert.equal((await s.one('SELECT COUNT(*) n FROM orders')).n, initialOrders);
+    assert.equal((await s.one('SELECT COUNT(*) n FROM review_grants')).n, initialGrants);
+    assert.equal(
+      (
+        await s.one(
+          "SELECT COUNT(*) n FROM review_moderations WHERE review_id=? AND state='purchase_attested'",
+          legacy.id,
+        )
+      ).n,
+      1,
+    );
     assert.equal((await s.one('SELECT count(*) n FROM commerce_migrations')).n, 31);
   } finally {
     await mf.dispose();

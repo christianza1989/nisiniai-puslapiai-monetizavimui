@@ -199,3 +199,72 @@ export async function attestReviewImportOrigin(service, store, env, input, actor
     collectionOrigin: origin,
   };
 }
+
+// Separate from ownership/origin: an explicit human declaration that these
+// exact migrated reviews were verified against paid purchases in the old store.
+// Operator-only maintenance API; never trust a CSV flag or buyer request.
+export async function attestReviewImportPurchase(service, store, env, input, actor) {
+  const origin = collectionOrigin(await service.store(store, env), input);
+  requireValue(
+    origin &&
+      identifier(actor) &&
+      input.paidPurchasesConfirmed === true &&
+      input.priorStoreVerificationConfirmed === true &&
+      typeof input.evidence === 'string' &&
+      input.evidence.trim().length >= 20 &&
+      input.evidence.length <= 1000 &&
+      Array.isArray(input.reviews) &&
+      input.reviews.length > 0 &&
+      input.reviews.length <= 50 &&
+      input.reviews.every(
+        (r) => identifier(r.id) && Number.isInteger(r.version) && r.version > 0,
+      ) &&
+      new Set(input.reviews.map((r) => r.id)).size === input.reviews.length,
+    'review_purchase_not_confirmed',
+  );
+  const rows = await service.rows(
+    'SELECT id,source,order_id,verified,version FROM product_reviews WHERE store_id=? AND id IN (' +
+      input.reviews.map(() => '?').join(',') +
+      ')',
+    store,
+    ...input.reviews.map((r) => r.id),
+  );
+  requireValue(
+    rows.length === input.reviews.length &&
+      rows.every(
+        (r) =>
+          r.source === 'storefront_import' &&
+          r.order_id === null &&
+          (r.verified === 1 || r.version === input.reviews.find((v) => v.id === r.id).version),
+      ),
+    'review_purchase_not_confirmed',
+    409,
+  );
+  const changed = rows.filter((r) => r.verified !== 1);
+  const results = changed.length
+    ? await service.db.batch(
+        changed.flatMap((r) => [
+          service.stmt(
+            "UPDATE product_reviews SET verified=1,version=version+1 WHERE store_id=? AND id=? AND source='storefront_import' AND order_id IS NULL AND verified=0 AND version=?",
+            store,
+            r.id,
+            r.version,
+          ),
+          service.stmt(
+            'INSERT INTO review_moderations SELECT ?,?,?,?,?,?,? WHERE changes()=1',
+            store,
+            crypto.randomUUID(),
+            r.id,
+            'purchase_attested',
+            'Prior store verified paid purchase on ' + origin + '. ' + input.evidence.trim(),
+            actor,
+            service.now(),
+          ),
+        ]),
+      )
+    : [];
+  return {
+    attested: results.filter((_, i) => i % 2 === 0).reduce((n, r) => n + r.meta.changes, 0),
+    collectionOrigin: origin,
+  };
+}

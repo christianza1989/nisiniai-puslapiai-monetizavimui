@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Retain prior-store verified paid-purchase provenance through an explicit operator attestation, without inventing orders or trusting CSV flags.",
+  "evidence": [
+    "Owner directly confirms the migrated Shopify reviews belonged to paid buyers and had purchase verification in the previous store,2026-10-27.",
+    "Native D1/R2 regression tests exact versions, required declaration, rejected native purchase row, idempotency, preserved text/state/photos and no fabricated orders/grants.",
+    "Owner-authorized operation verified exactly214previously imported same-domain rows; existing public projection reads the verified flag. No new schema, route, permission, backend deploy or mail."
+  ],
+  "paths": [
+    "commerce-core/src/review-import.mjs",
+    "commerce-core/test/reviews-worker.test.mjs",
+    "commerce-core/docs/REVIEWS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/294",
+  "rollback": "Revert helper source independently. Existing audited verification flags reflect owner-confirmed facts; do not restore DB snapshots over actual orders or moderation.",
+  "id": "upgrade-36a539c8-9851-4515-a2e6-737318a8c457",
+  "branch": "codex/memocasting-image-trust-20261027",
+  "baseSha": "113869b0a2fbf151f030afe5231f694e54111016",
+  "createdAt": "2026-10-27T07:23:40.086Z"
+}

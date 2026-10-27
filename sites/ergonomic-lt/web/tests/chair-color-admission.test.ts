@@ -21,6 +21,12 @@ test('ambiguous selector, material mismatch and a duplicate assignment are rejec
 test('original restoration has no manufactured material assignments',()=>{
  const f=fixture();assert.deepEqual(chairColorPlan({...f,selection:{kind:'original'}}),{status:'original',resetOriginalMaterialsFirst:true,assignments:[],materials:{},fullPalettePass:false});
 });
+test('inactive own variants are validated but never addressed as visible surfaces',()=>{
+ const f=fixture(),inactive='f'.repeat(64);f.selectors.assets[inactive]={assetSha256:inactive,slots:[{selectorId:s,materialId:base,sourceNodePath:[0],primitive:0}]};
+ if(f.palette.schema==='chair-colors-observed-partial-344-v1')f.palette.observedPairs[0].bindings.push({...pair.bindings[0],assetSha256:inactive});
+ const plan=chairColorPlan(f);assert.equal(plan.status,'observed-state');assert.equal(plan.assignments.length,1);assert.equal(plan.assignments[0].assetSha256,a);
+ f.selectors.assets[inactive].slots[0].materialId=inactive;assert.equal(chairColorPlan(f).status,'unavailable');
+});
 test('full-state palettes require an explicit construction witness and one exact record',()=>{
  const f=fixture(),id='f'.repeat(64);
  const palette:ChairPalette={schema:'chair-colors-full-state-329-v1',code:f.code,runtimeSha256:runtime,records:{[id]:{actualStateSha256:id,field:'CUPHCOLOR',value:'RED',finishControllerContext:{CPRICEGROUP:'_1'},exactFullStateOverrideOnly:true,jointIndependentFinishCompositionValidated:false,binding:pair}},selectionLinks:{one:{actualStateSha256:id,context:{CPRICEGROUP:'_1'},field:'CUPHCOLOR',value:'RED'}}};

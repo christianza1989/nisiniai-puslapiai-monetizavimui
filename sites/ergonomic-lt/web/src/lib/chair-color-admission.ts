@@ -1,5 +1,5 @@
 /** PC2 palettes are observed states, not independently composable swatches.
- * This draft admission boundary is deliberately not wired into the live loader.
+ * Used only by the separately gated technical review, never the live loader.
  */
 type Values=Record<string,string>;
 type Binding={assetSha256:string;selectorId:string;baseMaterialId:string;materialId:string};
@@ -23,12 +23,18 @@ function admitBindings(state:BoundState,selectors:Selectors,activeAssets:Set<str
  const seen=new Set<string>();
  for(const b of state.bindings){
   const asset=selectors.assets[b.assetSha256],slots=asset?.slots.filter(s=>s.selectorId===b.selectorId);
-  if(!hash(b.assetSha256)||!hash(b.selectorId)||!hash(b.materialId)||!hash(b.baseMaterialId)||!activeAssets.has(b.assetSha256)||asset?.assetSha256!==b.assetSha256||slots?.length!==1||slots[0].materialId!==b.baseMaterialId||!state.materials?.[b.materialId])return empty('unavailable');
+  if(!hash(b.assetSha256)||!hash(b.selectorId)||!hash(b.materialId)||!hash(b.baseMaterialId)||asset?.assetSha256!==b.assetSha256||slots?.length!==1||slots[0].materialId!==b.baseMaterialId||!state.materials?.[b.materialId])return empty('unavailable');
   const key=b.assetSha256+':'+b.selectorId;
   if(seen.has(key))return empty('unavailable');
   seen.add(key);
  }
- return {status:'observed-state',resetOriginalMaterialsFirst:true,assignments:state.bindings.map(b=>({...b})),materials:{...state.materials},fullPalettePass:false};
+ // The package may index the same observed surface on several mutually
+ // exclusive component assets. Validate every own binding above, then apply
+ // only the exact asset currently assembled. Never use an inactive variant's
+ // selector or a matching name/material SHA to find a visible replacement.
+ const assignments=state.bindings.filter(b=>activeAssets.has(b.assetSha256)).map(b=>({...b}));
+ if(!assignments.length)return empty('unavailable');
+ return {status:'observed-state',resetOriginalMaterialsFirst:true,assignments,materials:{...state.materials},fullPalettePass:false};
 }
 
 /** One whole observed state per request. Never merge two independent records.
@@ -43,7 +49,7 @@ export function chairColorPlan(input:{palette:ChairPalette;selectors:Selectors;c
  if(selection.kind==='full-state'){
   if(palette.schema!=='chair-colors-full-state-329-v1'||!input.fullStateConstructionScope||!matches(input.fullStateConstructionScope,values))return empty('unavailable');
   const link=palette.selectionLinks[selection.link],record=link&&palette.records[link.actualStateSha256];
-  if(!record||!hash(record.actualStateSha256)||record.actualStateSha256!==link.actualStateSha256||record.exactFullStateOverrideOnly!==true||record.jointIndependentFinishCompositionValidated!==false||!exact(link.context,record.finishControllerContext)||!matches(link.context,values)||record.field!==link.field||record.value!==link.value||values[link.field]!==link.value)return empty('unavailable');
+  if(!record||!hash(record.actualStateSha256)||record.actualStateSha256!==link.actualStateSha256||record.exactFullStateOverrideOnly!==true||record.jointIndependentFinishCompositionValidated!==false||!exact(link.context,record.finishControllerContext)||!matches(link.context,values)||record.field!==link.field||record.value!==link.value||(link.field!=='__CONTEXT_DEFAULT__'&&values[link.field]!==link.value))return empty('unavailable');
   // The record represents a full-state override relative to original materials.
   // A caller must reset before applying it, even after another selected record.
   return admitBindings(record.binding,selectors,assets);

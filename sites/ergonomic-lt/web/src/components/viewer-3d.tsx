@@ -21,27 +21,33 @@ import {roomEnvironment,productShowroom} from '@/lib/showroom';
 import type {DeskColors,DeskColorPlan} from '@/lib/desk-colors';
 import {tagDeskSurfaces,createDeskColorMaterials,createDeskColorApplication} from '@/lib/desk-color-materials';
 import {viewerBaseAsset} from '@/lib/viewer-assembly';
+import type {ChairPreview} from '@/lib/chair-preview';
+import type {ChairColorPlan} from '@/lib/chair-color-admission';
+import {tagChairSurfaces,createChairColorMaterials,createChairColorApplication} from '@/lib/chair-color-materials';
 
 function disposeObject(root:Object3D){
   const materials=new Set<Material>(),textures=new Set<Texture>();root.traverse(o=>{if(o instanceof Mesh){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});
   materials.forEach(m=>{if(m instanceof MeshStandardMaterial)for(const texture of [m.map,m.normalMap,m.roughnessMap,m.metalnessMap])if(texture)textures.add(texture);m.dispose();});textures.forEach(t=>t.dispose());
 }
 type Action='left'|'right'|'in'|'out'|'reset'|'surface';
-export type Assembly={base:Asset|null;patches:Patch[];finishes:Record<string,FinishPreview>;deskColors?:{source:DeskColors;plan:DeskColorPlan}};
+export type Assembly={base:Asset|null;patches:Patch[];finishes:Record<string,FinishPreview>;deskColors?:{source:DeskColors;plan:DeskColorPlan};chairColors?:{source:ChairPreview;plan:ChairColorPlan}};
 export default function Viewer3D({variant,name,assembly,fullscreen=false,onFullscreen,avoidToolbarOverlap=false}:{variant:PilotVariant;name:string;assembly?:Assembly;fullscreen?:boolean;onFullscreen?:()=>void;avoidToolbarOverlap?:boolean}){
   const stage=useRef<HTMLDivElement>(null),canvas=useRef<HTMLCanvasElement>(null),action=useRef<(a:Action)=>void>(()=>{});
   const [state,setState]=useState<'loading'|'ready'|'error'>('loading'),[attempt,setAttempt]=useState(0);
   const [colorState,setColorState]=useState<'original'|'loading'|'ready'|'error'>('original');
   const deskColors=useRef(assembly?.deskColors),applyDeskColors=useRef<()=>Promise<void>>(async()=>{});deskColors.current=assembly?.deskColors;
+  const chairColors=useRef(assembly?.chairColors),applyChairColors=useRef<()=>Promise<void>>(async()=>{});chairColors.current=assembly?.chairColors;
   const finishes=useRef(assembly?.finishes),applyFinishes=useRef<()=>void>(()=>{});finishes.current=assembly?.finishes;
   const baseAsset=viewerBaseAsset(variant,assembly);
   const geometryKey=JSON.stringify([baseAsset?.asset,baseAsset?.assetSha256,assembly?.patches.map(p=>[p.remove,p.geometry?.assetSha256,p.geometries?.map(g=>g.assetSha256)]),assembly?.deskColors?.plan.assets.map(a=>a.assetSha256)]);
   useEffect(()=>{applyFinishes.current();},[assembly?.finishes]);
   useEffect(()=>{void applyDeskColors.current();},[assembly?.deskColors]);
+  useEffect(()=>{void applyChairColors.current();},[assembly?.chairColors]);
   useEffect(()=>{
     const host=stage.current,element=canvas.current;if(!host||!element)return;
     let disposed=false,object:Object3D|undefined,renderer:WebGLRenderer|undefined,disposeShadow:undefined|(()=>void);
     let colorMaterials:ReturnType<typeof createDeskColorMaterials>|undefined,colorApplication:ReturnType<typeof createDeskColorApplication>|undefined,colorRevision=0,colorFailed=false;
+    let chairMaterials:ReturnType<typeof createChairColorMaterials>|undefined,chairApplication:ReturnType<typeof createChairColorApplication>|undefined;
     const abort=new AbortController(),scene=new Scene();scene.background=new Color(productSceneSettings.color);
     setState('loading');
     try{renderer=new WebGLRenderer({canvas:element,antialias:true,alpha:false,powerPreference:'high-performance'});}
@@ -157,8 +163,8 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         async function load(asset:Asset){const response=await fetch(asset.asset+'?v='+asset.assetSha256.slice(0,12),{signal:abort.signal});
         if(!response.ok)throw Error(copyText("ui.acd2f775d28e2afadd69","Asset unavailable"));
         const bytes=await response.arrayBuffer();if(bytes.byteLength>32_000_000)throw Error(copyText("ui.45d9a6bdd6b3cc360e15","Asset too large"));
-        if(deskColors.current){const digest=await crypto.subtle.digest('SHA-256',bytes);const sha=Array.from(new Uint8Array(digest),n=>n.toString(16).padStart(2,'0')).join('');if(sha!==asset.assetSha256)throw Error('Desk component bytes changed');}
-        const gltf=await loader.parseAsync(bytes,'');if(deskColors.current)tagDeskSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,asset.assetSha256);return gltf.scene;}
+        if(deskColors.current||chairColors.current){const digest=await crypto.subtle.digest('SHA-256',bytes);const sha=Array.from(new Uint8Array(digest),n=>n.toString(16).padStart(2,'0')).join('');if(sha!==asset.assetSha256||chairColors.current&&bytes.byteLength!==asset.bytes)throw Error('Component bytes changed');}
+        const gltf=await loader.parseAsync(bytes,'');if(deskColors.current)tagDeskSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,asset.assetSha256);if(chairColors.current)tagChairSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,chairColors.current.source,asset.assetSha256);return gltf.scene;}
         object=new Group();if(baseAsset)object.add(await load(baseAsset));
         if(assembly){
           for(const patch of assembly.patches){for(const id of patch.remove){const part=object.getObjectByName(id);if(part)part.visible=false;}
@@ -172,8 +178,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         }
         for(const asset of deskColors.current?.plan.assets||[])object.add(await load(asset));
         if(disposed){disposeObject(object);return;}
-        isolateFinishMaterials(object);
-        physicalUpholstery(object);
+        if(!chairColors.current){isolateFinishMaterials(object);physicalUpholstery(object);}
         object.traverse(o=>{if(o instanceof Mesh){o.castShadow=true;o.receiveShadow=true;for(const material of Array.isArray(o.material)?o.material:[o.material])if(material instanceof MeshStandardMaterial){for(const texture of [material.map,material.normalMap])if(texture)texture.anisotropy=renderer!.capabilities.getMaxAnisotropy();}}});
         scene.add(object);disposeShadow=contactShadow(renderer!,scene,object);
         roomSurfaces=productShowroom(object,light);scene.add(roomSurfaces.group,roomSurfaces.target);applyScene();applyFinishes.current();
@@ -181,11 +186,15 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
           applyDeskColors.current=async()=>{if(!deskColors.current||!colorApplication||!colorMaterials||disposed)return;const revision=++colorRevision;colorFailed=false;setColorState('loading');try{const applied=await colorApplication.apply(deskColors.current.plan,colorMaterials.get);if(applied&&!disposed&&revision===colorRevision){renderer!.shadowMap.needsUpdate=true;render();setColorState('ready');}}catch{if(!disposed&&revision===colorRevision){colorFailed=true;setColorState('error');setState('error');}}};
           await applyDeskColors.current();
           if(colorFailed)return;
+        }else if(chairColors.current){
+          chairMaterials=createChairColorMaterials(chairColors.current.source);chairApplication=createChairColorApplication(object);
+          applyChairColors.current=async()=>{if(!chairColors.current||!chairMaterials||!chairApplication||disposed)return;const revision=++colorRevision;colorFailed=false;setColorState('loading');try{const applied=await chairApplication.apply(chairColors.current.plan,chairMaterials.get);if(applied&&!disposed&&revision===colorRevision){renderer!.shadowMap.needsUpdate=true;render();setColorState('ready');}}catch{if(!disposed&&revision===colorRevision){colorFailed=true;render();setColorState('error');setState('error');}}};
+          await applyChairColors.current();if(colorFailed)return;
         }else setColorState('original');
         if(disposed)return;controls.enabled=true;fit();setState('ready');
       }catch{if(!disposed&&!abort.signal.aborted)setState('error');}
     })();
-    return()=>{disposed=true;colorRevision++;colorApplication?.dispose();colorMaterials?.dispose();applyDeskColors.current=async()=>{};abort.abort();observer.disconnect();element.removeEventListener('webglcontextlost',contextLost);element.removeEventListener('dblclick',inspectPointer);
+    return()=>{disposed=true;colorRevision++;colorApplication?.dispose();colorMaterials?.dispose();chairApplication?.dispose();chairMaterials?.dispose();applyDeskColors.current=async()=>{};applyChairColors.current=async()=>{};abort.abort();observer.disconnect();element.removeEventListener('webglcontextlost',contextLost);element.removeEventListener('dblclick',inspectPointer);
       controls.removeEventListener('change',render);controls.dispose();disposeShadow?.();disposeObject(scene);if(object&&!object.parent)disposeObject(object);textures.forEach(t=>t.dispose());originals.forEach(t=>{t.map?.dispose();t.normal?.dispose();});environments.forEach(environment=>environment.dispose());pmrem.dispose();light.shadow.dispose();renderer?.dispose();action.current=()=>{};applyFinishes.current=()=>{};};
   },[geometryKey,attempt,avoidToolbarOverlap]);
   return <div className="viewer-3d" data-state={state} data-color-state={colorState} data-variant={variant.id}>

@@ -1,0 +1,42 @@
+{
+  "schema": "pc2-first5-review-111-v1",
+  "acceptance": "LOCAL_TECHNICAL_REVIEW_ONLY",
+  "rendererOwnerApprovalRequired": true,
+  "entries": [
+    {
+      "code": "KLYN002WW002",
+      "name": "Lynx",
+      "asset": "/models/configurator/chairs/KLYN002WW002-5c902a0f825fb3f6881e/review-460c58172fc170fec373.json",
+      "sha256": "460c58172fc170fec373ba7aaab59c96d17638072009998453133eb9ea10b5c5",
+      "bytes": 289321
+    },
+    {
+      "code": "KLYN001WW002",
+      "name": "Lynx",
+      "asset": "/models/configurator/chairs/KLYN001WW002-76951a94dc3c15c8efd6/review-3cad58261d1a64c27887.json",
+      "sha256": "3cad58261d1a64c2788767be69d3de0b2477df14bec00a0fb960a30185e987d3",
+      "bytes": 291207
+    },
+    {
+      "code": "KSOU001WW003",
+      "name": "Souly",
+      "asset": "/models/configurator/chairs/KSOU001WW003-b5096de5ebb1b4366648/review-200e23cb6ff626d07e47.json",
+      "sha256": "200e23cb6ff626d07e47cbfade4bde1182ee65a73617050629bbf1579c5ae7a3",
+      "bytes": 285507
+    },
+    {
+      "code": "KTRF001WW001",
+      "name": "Trofi",
+      "asset": "/models/configurator/chairs/KTRF001WW001-11924f0e9c5a9d36ac65/review-9c4a348d6ae1729d9565.json",
+      "sha256": "9c4a348d6ae1729d95658d13d142130d41ed01771c7a8f050e1cb988d3b98026",
+      "bytes": 19183
+    },
+    {
+      "code": "KNAU018WW001",
+      "name": "Naudu",
+      "asset": "/models/configurator/chairs/KNAU018WW001-56370ba1ea4ff1e06c82/review-a901790d4fb5c577dd60.json",
+      "sha256": "a901790d4fb5c577dd60f93e9d6280236e0a24f480f48fa03660291047b8324d",
+      "bytes": 64983
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Prevent an upstream rewrite noindex header from overriding final published-image admission; verify the actual proxy/relay composition.",
+  "evidence": [
+    "Hosted bc1cff1c successfully rendered new UI, but real product/review image GET/HEAD still carried noindex. Actual proxy.ts set a rewrite header that overrode the already-repaired relay. Original hosted failure is retained.",
+    "New regression bundles the actual proxy and invokes real NextRequest/NextResponse with isolated Worker env, then composes its headers with the actual relay. It failed on original middleware and passed after removing the premature robots override.",
+    "8focused tests cover public catalogue/review images, revoked404, JSON and private PDF;294PUBLIC tests pass. TypeScript/lint pass. Final hosted correction must still verify26actual image headers."
+  ],
+  "rollback": "Scoped proxy revert only. Private/error/no-store protections stay in final relay; do not disable admission or restore customer DB snapshots.",
+  "paths": [
+    "proxy.ts",
+    "tests/memocasting-image-routing.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/96",
+  "id": "upgrade-401509e5-c54e-47e9-aeb3-2d9afb2700ba",
+  "branch": "codex/memocasting-image-trust-20261027",
+  "baseSha": "ebbc3f22cde85e1c7e72f9d4a9e71c31c1a32ffb",
+  "createdAt": "2026-10-27T07:38:32.837Z"
+}

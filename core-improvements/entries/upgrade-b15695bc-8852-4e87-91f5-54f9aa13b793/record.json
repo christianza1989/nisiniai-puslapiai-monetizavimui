@@ -1,0 +1,18 @@
+{
+  "siteId": "memocasting",
+  "summary": "New functional review rewrite omitted the original path, so the shared head rendered homepage title, canonical and an index directive despite the correct HTTP noindex header",
+  "category": "code",
+  "evidence": [
+    "Local compiled review form CUA2026-10-26:document title was homepage and DOM robots contained index and noindex; bounded320px form itself had no overflow",
+    "Public issue92 review feature"
+  ],
+  "paths": [
+    "app/layout.tsx"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/92",
+  "rollback": "Scoped revert only the review metadata override; preserve generic site metadata and HTTP noindex protection",
+  "id": "upgrade-b15695bc-8852-4e87-91f5-54f9aa13b793",
+  "branch": "codex/memocasting-reviews-20261026",
+  "baseSha": "06de33537faeb040c01b62e83e27aae9780c3c61",
+  "createdAt": "2026-10-26T19:18:43.571Z"
+}

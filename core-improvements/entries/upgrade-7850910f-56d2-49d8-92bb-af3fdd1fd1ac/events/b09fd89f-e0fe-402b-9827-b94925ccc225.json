@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Historical ownership is not collection-origin proof. Native public statistics now separately aggregate only directly collected purchase-linked ratings, independent of pagination, allowing the public renderer to avoid syndicating unknown/external imported ratings into Google Review markup while still displaying owner-authorized historical content. No migration or original source data changed. Google primary guideline checked2026-10-26; provenance question is pending, not presumed answered.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "core-verify-origin.private.log:287/287 tests, native D1/R2 worker smoke and sandbox dry build pass; direct native and historical zero counters covered"
+    }
+  ],
+  "eventId": "b09fd89f-e0fe-402b-9827-b94925ccc225",
+  "sequence": 6,
+  "at": "2026-10-26T20:46:59.270Z"
+}

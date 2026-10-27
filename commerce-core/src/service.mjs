@@ -14,6 +14,7 @@ import {
 import { deliveryFingerprint } from './buyer-delivery.mjs';
 import { FinishedStock } from './finished-stock.mjs';
 import { Discounts, normalizeDiscountCode } from './discounts.mjs';
+import { REVIEW_CONSENT } from './reviews.mjs';
 export class CommerceService {
   constructor(db, { now = () => Date.now() } = {}) {
     this.db = db;
@@ -355,6 +356,9 @@ export class CommerceService {
         deliveryId: input.deliveryId,
         ...(input.deliveryQuoteId !== undefined ? { deliveryQuoteId: input.deliveryQuoteId } : {}),
         accessHash: clientHash,
+        ...(input.reviewRequestConsent !== undefined
+          ? { reviewRequestConsent: input.reviewRequestConsent }
+          : {}),
         ...(input.quoteHash !== undefined ? { quoteHash: input.quoteHash } : {}),
         ...(input.acceptedPolicyVersion !== undefined
           ? { acceptedPolicyVersion: input.acceptedPolicyVersion }
@@ -379,6 +383,10 @@ export class CommerceService {
       return { order: this.view(existing), replayed: true };
     }
     const snapshot = await this.quote(id, environment, input);
+    if (input.reviewRequestConsent !== undefined) {
+      requireValue(input.reviewRequestConsent === REVIEW_CONSENT, 'invalid_review_consent');
+      snapshot.reviewRequestConsent = { version: REVIEW_CONSENT, acceptedAt: this.now() };
+    }
     if (config.paymentRecovery?.enabled === true) {
       requireValue(
         input.paymentRecoveryNotice === config.paymentRecovery.noticeVersion,
@@ -461,7 +469,12 @@ export class CommerceService {
   }
   view(row) {
     const { access_hash, request_hash, ...safe } = row;
-    return { ...safe, snapshot: JSON.parse(row.snapshot_json), snapshot_json: undefined };
+    return {
+      ...safe,
+      orderNumber: String(row.public_number || row.id.slice(0, 8).toUpperCase()),
+      snapshot: JSON.parse(row.snapshot_json),
+      snapshot_json: undefined,
+    };
   }
   async getOrder(store, environment, id) {
     await this.store(store, environment);
@@ -909,7 +922,7 @@ export class CommerceService {
     const token = crypto.randomUUID(),
       now = this.now();
     await this.stmt(
-      "UPDATE outbox SET state='leased',lease_token=?,lease_until=?,attempts=attempts+1 WHERE store_id=? AND id IN (SELECT o.id FROM outbox o WHERE o.store_id=? AND o.state!='done' AND o.lease_until<=? AND NOT EXISTS(SELECT 1 FROM outbox_delivery d WHERE d.store_id=o.store_id AND d.event_id=o.id AND (d.state='dead' OR d.next_attempt_at>?)) ORDER BY o.created_at,o.id LIMIT ?)",
+      "UPDATE outbox SET state='leased',lease_token=?,lease_until=?,attempts=attempts+1 WHERE store_id=? AND id IN (SELECT o.id FROM outbox o WHERE o.store_id=? AND o.state!='done' AND o.lease_until<=? AND NOT EXISTS(SELECT 1 FROM outbox_delivery d WHERE d.store_id=o.store_id AND d.event_id=o.id AND (d.state='dead' OR d.next_attempt_at>?)) ORDER BY CASE WHEN o.kind IN ('ReviewImported','ReviewPhotoImported','ReviewSettingsChanged') THEN 1 ELSE 0 END,o.created_at,o.id LIMIT ?)",
       token,
       now + 60000,
       store,

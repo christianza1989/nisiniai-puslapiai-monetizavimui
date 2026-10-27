@@ -1,0 +1,19 @@
+{
+  "note": "Owner supplied236 actual historical entries and104 available photos; confirmed own former store and excludes22 belly-casting records. Native additive31 admits separate operator media without fake orders or purchase grants, preserving public/removed photo gates. Historical short/rating-only text remains unchanged and CSV flags never become purchase verification. Shared optimizer produced104 validated WebP files; original files untouched.",
+  "status": "local-verified",
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "cd commerce-core && npm run verify",
+      "evidence": "core-verify-import-replay.private.log286/286, formatting, native D1/R2 migration/import preserving order/grant counts, worker dry run"
+    },
+    {
+      "result": "PASS",
+      "command": "native historical media review tests",
+      "evidence": "Private-before-publish, source/hash replay, two-store rejection, original rating/date/body, imported photo remove/restore; direct native R2 acceptance included"
+    }
+  ],
+  "eventId": "2ecae9e9-c61d-4d35-9fb2-53ace13933f6",
+  "sequence": 4,
+  "at": "2026-10-26T20:22:57.881Z"
+}

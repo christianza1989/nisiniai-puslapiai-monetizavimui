@@ -107,7 +107,7 @@ test('native D1 additive29 preserves a historical command and enforces durable p
     assert.equal(parcel_index, -1);
     assert.equal(parcel_count, 1);
     await proveParcelSlots(db);
-    assert.equal((await s.one('SELECT count(*) n FROM commerce_migrations')).n, 29);
+    assert.equal((await s.one('SELECT count(*) n FROM commerce_migrations')).n, 31);
   } finally {
     await mf.dispose();
   }

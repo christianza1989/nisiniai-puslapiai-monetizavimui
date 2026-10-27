@@ -1,0 +1,31 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/93",
+  "commit": "35a4e6e72983c6c7e03f7ba63073bff7fa419053",
+  "note": "Actual frontend2a991e90 adopted PUBLIC35a4e6e7 with all six provider bindings retained, exact unchanged content package and no publication-date changes. HTTPS verified all214 original reviews,104 WebP endpoints,21 form assets, native purchase/privacy gates, product32/48 and matching same-domain migration ratings166/48. Unknown imports fail closed; owner explicitly confirmed this migration came from previous memocasting.lt/Shopify. Actual Chrome desktop1280/mobile390 product reviews and pagination20-to40 retained scroll, homepage prices/ratings/four cards, and native operator390px import/provenance fields accepted. Main Git delivery remains separate through PR93.",
+  "checks": [
+    {
+      "command": "npm run test:core; npx tsc --noEmit; scoped eslint",
+      "result": "PASS",
+      "evidence": "public-tests-storefront.private.log285/285; storefront-types.private.log and storefront-lint.private.log exit0"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "public-build-storefront.private.log complete; physical RSC gate2manifests/missing0"
+    },
+    {
+      "command": "node sites/memocasting/qa/reviews-20261026/hosted-history.private.mjs",
+      "result": "PASS",
+      "evidence": "hosted-history.private.json214 source-matched reviews,104 images,21 assets, correct product ratings/schema and no private order/email leak"
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=memocasting SEO_SMOKE_BASE_URL=https://memocasting.lt node tests/seo-core-smoke.mjs",
+      "result": "PASS",
+      "evidence": "hosted-seo-smoke-storefront.private.log120 public pages, canonical/schema/robots/sitemap/llms/host isolation/404"
+    }
+  ],
+  "eventId": "ebb35d5a-fd36-40a6-9cbd-0eef1c38bee9",
+  "sequence": 3,
+  "at": "2026-10-26T21:08:42.173Z"
+}

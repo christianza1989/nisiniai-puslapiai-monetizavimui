@@ -1,0 +1,24 @@
+{
+  "note": "Original EPROTO failure retained. Transport SNI now stays bound to the HTTPS origin while varying HTTP Host. Local rejection remains404; native Cloudflare403/421 requires Cloudflare response and absence of niche title/canonical. Certificate verification remains intact.",
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "node --test tests/seo-smoke-transport.test.mjs",
+      "result": "PASS",
+      "evidence": "Two regression cases: correct transport SNI, no certificate bypass, local403/200/leaking content rejected; actual edge403 accepted"
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=memocasting SEO_SMOKE_BASE_URL=https://memocasting.lt npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "hosted-seo-smoke-confirmed.private.log:120 actual public pages, canonical, schema, robots, sitemap, llms, missing and internal URLs and host isolation"
+    },
+    {
+      "command": "eslint scripts/seo-smoke-transport.mjs tests/seo-core-smoke.mjs tests/seo-smoke-transport.test.mjs",
+      "result": "PASS",
+      "evidence": "smoke-transport-lint.private.log exit0"
+    }
+  ],
+  "eventId": "3996c665-ffa5-414f-ae7e-3e491b470bd1",
+  "sequence": 2,
+  "at": "2026-10-26T19:59:42.691Z"
+}

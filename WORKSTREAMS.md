@@ -752,6 +752,10 @@ Owner scope: two supplied kit PDFs, native recipe pages, stale support/localized
 2026-10-26 issue277 COMPLETED: single buyer delivery charge for2/3kits and separate operator package labels; additive29, strict two-field full-configCAS, exactSDK and consent-dismissal focus repair. CORE featuree63e695d/refinement655448a5 mergedPR278/279; PUBLICcc1c881d mergedPR89. Active backend a9b884f6 and frontend3bfdde10 at100%.273baseline/core and273PUBLIC, native,16refinement checks, types/lint/build/dry-run and bounded actual hosted/API/browser acceptance. Two local compiled previews failedECONNRESET; published-code read-only mirror proved300CSSpx consent scroll while retaining canonical analytics guard. No test order/charge/refund/label/mail; concurrent owner data preserved. Own localports/vars/overrides/tabs cleaned; foreignfiles untouched. Runbook MULTIPARCEL_2026_10_26.md. Final journal/docs acceptance PR follows.
 
 
+## Ergonomic owner111 — first five PC2 chairs, 2026-10-28
+
+Owner: this Ergonomic chat, existing E-backed branch codex/ergonomic-owner111-chair-admission, draft PR298 stacked on296. Scope: sites/ergonomic-lt/web chair-specific admission/material helpers, five immutable review bindings, gated /3d-perziura-pc2 and its documentation. Source70e658c, paired main25292e20/publicc2d9a1fa. First five original packages455 files and277 primitive/matrix/PBR comparisons staged on E after D60 hold resolved. Isolated compiler actual0; original supervisor1 filename postcondition and automation inspector-cache failures preserved and narrowly reconciled. Actual Chrome desktop/phone bounded colour/original-reference/GPU/geometry/context-return evidence for all five, with320px reflow; physical phone and200% browser zoom unverified. Draft remains unmerged and unpublished. Current197chairs/58desks and both Worker capsules/dependencies preserved. Main Native is permanently stopped under111;56 PC2 assignment and202 completed source unchanged. No fullPalette/fullGraph/fullAcceptance/Launch claim.
+
 ## Ergonomic owner078 — first five supplied desks, 2026-10-26
 
 Issue: https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/281

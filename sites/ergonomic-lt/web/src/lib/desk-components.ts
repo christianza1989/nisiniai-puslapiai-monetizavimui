@@ -3,7 +3,7 @@ import type {Asset,Patch} from './expanded-configurator';
 
 type Values=Record<string,string>;
 export type DeskAsset={file:string;sha256:string;componentSha256:string;bytes:number;needsCompression:boolean};
-export type DeskContext={dimensions:Values;choiceRules:'conditional selectable tuples only';invariant:DeskAsset;groups:{fields:string[];variants:{values:Values;asset:DeskAsset|null}[]}[];textOnly:Record<string,string[]>;default3DValues?:Record<string,string|null>;hybrid141?:boolean};
+export type DeskContext={dimensions:Values;choiceRules:'conditional selectable tuples only';invariant:DeskAsset|null;groups:{fields:string[];variants:{values:Values;asset:DeskAsset|null}[]}[];textOnly:Record<string,string[]>;default3DValues?:Record<string,string|null>;hybrid141?:boolean};
 export type DeskComponents={schema:'desk-components-065-v1';code:string;coordinates:'original-world-matrices';finishPolicy:'original manufacturer finishes; no FINISH setters';fullGraphClosed:false;contexts:DeskContext[];dimensionChoices?:Values[];textOnlyDimensionChoices?:Values[];missing3D?:string[];unavailable3DMessage?:string};
 export type DeskIdentity={productId:string;sample:string;familyId:string;code:string};
 const matches=(a:Values,b:Values,except?:string)=>Object.entries(a).every(([k,v])=>k===except||b[k]===v);
@@ -22,8 +22,8 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
  const checkAsset=(a:unknown)=>{asset(a);const x=a as DeskAsset,old=assets.get(x.file);if(old&&old!==JSON.stringify(x))fail();assets.set(x.file,JSON.stringify(x));};
  for(const c of input.contexts){
   if(!plain(c)||c.choiceRules!=='conditional selectable tuples only')fail();values(c.dimensions);
-  if(!Object.keys(c.dimensions as Values).every(f=>['GDDEPTH','GDWIDTH','GDTOPDEPTH','GDTOPWIDTH','DDEPTH','DWIDTH','DTOPDEPTH','DTOPWIDTH'].includes(f))||!Object.values(c.dimensions as Values).every(v=>/^_\d+(?:X\d+)*$/.test(v)))fail();
-  const key=JSON.stringify(Object.entries(c.dimensions as Values).sort());if(contexts.has(key))fail();contexts.add(key);checkAsset(c.invariant);
+  if(!Object.keys(c.dimensions as Values).every(f=>['GDDEPTH','GDWIDTH','GDTOPDEPTH','GDTOPWIDTH','GDTOPSDEPTH','GDTOPSWIDTH','DDEPTH','DWIDTH','DTOPDEPTH','DTOPWIDTH'].includes(f))||!Object.values(c.dimensions as Values).every(v=>/^_\d+(?:X\d+)*$/.test(v)))fail();
+  const key=JSON.stringify(Object.entries(c.dimensions as Values).sort());if(contexts.has(key))fail();contexts.add(key);if(c.invariant!==null)checkAsset(c.invariant);
   if(!Array.isArray(c.groups)||c.groups.length>30||!plain(c.textOnly))fail();
   // A supplied hybrid may contain one intact original scene and only textual
   // options. An empty component list must not invent geometry alternatives.
@@ -38,6 +38,9 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
     const key=JSON.stringify(Object.entries(v.values).sort());if(tuples.has(key))fail();tuples.add(key);if(v.asset!==null)checkAsset(v.asset);
    }
   }
+  // No common invariant is legitimate when a supplied group always provides
+  // real geometry. Do not invent a base, or admit an empty assembled scene.
+  if(c.invariant===null&&!(c.groups as DeskContext['groups']).some(g=>g.variants.every(v=>v.asset!==null)))fail();
   for(const [f,domain] of Object.entries(c.textOnly as Record<string,unknown>)){
    if(!field(f)||fields.has(f)||/COLOR|FINISH|GROUP/.test(f)||!Array.isArray(domain)||!domain.every(value)||new Set(domain).size!==domain.length)fail();fields.add(f);
   }
@@ -63,7 +66,7 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
  }
 }
 export function deskAssetReference(code:string,a:DeskAsset):Asset{return {asset:'/models/configurator/components/'+code+'-'+a.sha256.slice(0,20)+'.glb',assetSha256:a.sha256,bytes:a.bytes};}
-export function deskReferencedAssets(source:DeskComponents){return [...new Map(source.contexts.flatMap(c=>[c.invariant,...c.groups.flatMap(g=>g.variants.flatMap(v=>v.asset?[v.asset]:[]))]).map(a=>[a.file,a])).values()];}
+export function deskReferencedAssets(source:DeskComponents){return [...new Map(source.contexts.flatMap(c=>[...(c.invariant?[c.invariant]:[]),...c.groups.flatMap(g=>g.variants.flatMap(v=>v.asset?[v.asset]:[]))]).map(a=>[a.file,a])).values()];}
 /** Adapt original world-space parts to the existing additive assembly path. */
 export function adaptDeskComponents(source:DeskComponents,id:DeskIdentity):CatalogRuntime{
  validateDeskComponents(source,id.code);
@@ -83,12 +86,13 @@ export function adaptDeskComponents(source:DeskComponents,id:DeskIdentity):Catal
     return {key:String(n),values:v.values,defaults:{},choices:available,transitions:{},patch};
    })};
   });
-  return {id:id.code+':components-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(c.dimensions),defaults,choices,classes:{},geometry:deskAssetReference(id.code,c.invariant),components,profiles:[],textOnlyFields:Object.keys(c.textOnly).filter(f=>c.textOnly[f].length)};
+  return {id:id.code+':components-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(c.dimensions),defaults,choices,classes:{},geometry:c.invariant?deskAssetReference(id.code,c.invariant):null,components,profiles:[],textOnlyFields:Object.keys(c.textOnly).filter(f=>c.textOnly[f].length)};
  });
  for(const [index,d] of (source.textOnlyDimensionChoices||[]).entries())anchors.push({id:id.code+':unavailable-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(d),defaults:{...d},choices:dimensionChoices(d),classes:{},geometry:null,unavailable3D:source.unavailable3DMessage,components:[],profiles:[]});
  const labels:Record<string,string>={GDWIDTH:'Plotis',GDDEPTH:'Gylis',FBASEFEET:'Pagrindas',FCASTORS:'Ratukai',FCABLECOVER:'Laidų uždanga',FHADJUSTMENTWAY:'Aukščio valdymas',FHORWIRETRUNKING:'Horizontalus laidų kanalas',FVERWIRETRUNKING:'Vertikalus laidų kanalas',FMEDIAPORTLEFT:'Kairysis įvadas',FMEDIAPORTMIDDLE:'Vidurinis įvadas',FMEDIAPORTRIGHT:'Dešinysis įvadas',FSOCKETSTANDARD:'Lizdo standartas'};
  Object.assign(labels,{GDTOPWIDTH:'Stalviršio plotis',GDTOPDEPTH:'Stalviršio gylis',DTOPWIDTH:'Stalviršio plotis',DTOPDEPTH:'Stalviršio gylis',DWIDTH:'Plotis',DDEPTH:'Gylis',DTOPTHICKNESS:'Stalviršio storis',FDESKTOPTYPE:'Stalviršio tipas',FPANEL:'Uždanga',FUPPERPANEL:'Viršutinė pertvara',FCOLUMNSHAPE:'Kolonos forma',FCOLUMN:'Kolona',FBASE:'Pagrindo tipas',FTOPSHAPE:'Stalviršio forma',FWIRETRUNKING:'Laidų kanalas',FMODESTYPANEL:'Priekinė uždanga',FSOCKETMEDIAPORTLEFT:'Kairiojo įvado lizdas'});
  Object.assign(labels,{FCONFIGURATIONMEDIARIGHT:'Dešiniojo įvado komplektacija',FSOCKETMEDIAPORTRIGHT:'Dešiniojo įvado lizdas',FSOCKETMEDIAPORT:'Elektros lizdo standartas',FPANELACCESSORIES:'Pertvaros priedai',FTOPACCESSORIES:'Stalviršio priedai',FPEDESTAL:'Stalčių blokas',FHEIGHTADJUSTMENT:'Aukščio reguliavimas'});
+ Object.assign(labels,{GDTOPSWIDTH:'Stalviršių plotis',GDTOPSDEPTH:'Stalviršių gylis'});
  const dimensionLabels=Object.fromEntries(dimensions.flatMap(d=>Object.entries(d).map(([f,v])=>[f+'='+v,{text:v.slice(1)}])));
  return {family:{id:id.familyId,kind:'catalog',productId:id.productId,baseArticle:id.code,sample:id.sample,articles:[{code:id.code,sample:id.sample,name:id.code}],anchors,collectionMode:'desk-components'},palettes:{_fieldLabels:Object.fromEntries(Object.entries(labels).map(([k,text])=>[k,{text}])),_valueLabels:dimensionLabels}};
 }

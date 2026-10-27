@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {adaptDeskComponents,validateDeskComponents,type DeskAsset,type DeskComponents} from '../src/lib/desk-components';
+import {adaptDeskComponents,validateDeskComponents,deskReferencedAssets,type DeskAsset,type DeskComponents} from '../src/lib/desk-components';
 import {createDeskComponentLoader,type DeskCandidates} from '../src/lib/desk-component-candidates';
 import {createExpandedEngine} from '../src/lib/expanded-configurator';
 import type {Product} from '../src/lib/types';
@@ -125,5 +125,35 @@ test('captured read-only defaults with empty choice lists retain source identity
  assert.throws(()=>engine.changeField(state,'FDESKTOPTYPE','OTHER'));
  assert(engine.expandedSelection(product,state).configuration.supplierOptions?.includes('FDESKTOPTYPE=FIXEDTOP'));
  assert.deepEqual(engine.parseStateToken(product,engine.stateToken(state)),state);
- assert.equal(runtime.family.anchors[0].geometry?.assetSha256,s.contexts[0].invariant.sha256);
+ assert.equal(runtime.family.anchors[0].geometry?.assetSha256,s.contexts[0].invariant!.sha256);
+});
+
+test('captured plural-top dimension aliases preserve symbolic values, pairs and tokens',()=>{
+ const s=source();
+ s.contexts=s.contexts.map((c,i)=>({...c,dimensions:{GDTOPSWIDTH:i?'_2X16003200':'_2X14002800',GDTOPSDEPTH:i===2?'_2X9001840':'_2X8001640'}}));
+ const adapted=adaptDeskComponents(s,id),e=createExpandedEngine(adapted);let state=e.initialStateForProduct(product);
+ assert.equal(adapted.palettes._fieldLabels.GDTOPSWIDTH.text,'Stalviršių plotis');
+ assert.equal(adapted.palettes._fieldLabels.GDTOPSDEPTH.text,'Stalviršių gylis');
+ assert.equal(state.values.GDTOPSWIDTH,'_2X14002800');
+ assert.throws(()=>e.changeField(state,'GDTOPSDEPTH','_2X9001840'));
+ state=e.changeField(state,'GDTOPSWIDTH','_2X16003200');state=e.changeField(state,'GDTOPSDEPTH','_2X9001840');
+ assert.throws(()=>e.changeField(state,'GDTOPSWIDTH','_2X14002800'));
+ assert(e.expandedSelection(product,state).configuration.supplierOptions?.includes('GDTOPSWIDTH=_2X16003200'));
+ assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
+ assert.equal(e.assembledAssets(state).base?.assetSha256,'a'.repeat(64));
+ const unknown=structuredClone(s);unknown.contexts[0].dimensions={GDTOPSHEIGHT:'_1600',GDTOPSDEPTH:'_800'};
+ assert.throws(()=>validateDeskComponents(unknown,code));
+});
+
+test('no common invariant keeps original variant geometry and rejects a potentially empty scene',()=>{
+ const s=source();for(const c of s.contexts)c.invariant=null;
+ const e=createExpandedEngine(adaptDeskComponents(s,id));let state=e.initialStateForProduct(product);
+ assert.equal(e.assembledAssets(state).base,null);
+ assert.equal(e.assembledAssets(state).patches[0].geometry?.assetSha256,'b'.repeat(64));
+ assert(!deskReferencedAssets(s).some(a=>a.sha256==='a'.repeat(64)));
+ state=e.changeField(state,'FBASEFEET','CASTORBASE');
+ assert.equal(e.assembledAssets(state).patches[0].geometry?.assetSha256,'c'.repeat(64));
+ assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
+ const empty=structuredClone(s);empty.contexts[0].groups[0].variants[0].asset=null;
+ assert.throws(()=>validateDeskComponents(empty,code));
 });

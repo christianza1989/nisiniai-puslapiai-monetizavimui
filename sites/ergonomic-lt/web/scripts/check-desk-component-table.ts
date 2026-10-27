@@ -14,7 +14,7 @@ const product={...parent,modelConfigurationId:sample.id},runtime=adaptDeskCompon
 let variants=0,textSelections=0;const coverage=[];
 for(const [index,context] of source.contexts.entries()){
  const anchor=runtime.family.anchors[index],initial=engine.catalog.catalogInitial({...runtime.family,anchors:[anchor]});engine.validateState(product,initial);
- assert.equal(initial.anchor,anchor.id);assert.deepEqual(engine.assembledAssets(initial).base,deskAssetReference(source.code,context.invariant));
+ assert.equal(initial.anchor,anchor.id);assert.deepEqual(engine.assembledAssets(initial).base,context.invariant?deskAssetReference(source.code,context.invariant):null);
  for(const [field,domain] of Object.entries(context.textOnly))for(const value of domain){
   const next=engine.changeField(initial,field,value);assert.deepEqual(engine.assembledAssets(next),engine.assembledAssets(initial));
   assert(engine.expandedSelection(product,next).configuration.supplierOptions?.includes(field+'='+value));textSelections++;

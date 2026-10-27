@@ -102,3 +102,25 @@ test('initial desk context maximizes actual color coverage and is not overwritte
  assert.equal(engine.parseStateToken(product,engine.stateToken(oldWidth)).values.GDWIDTH,'_1400');
  assert.equal(source.contexts[0].dimensions.GDWIDTH,'_1400');
 });
+
+
+test('color witness accepts the real default component assembly without an invariant base',()=>{
+ const part={file:'assets/'+sha+'.glb',sha256:sha,componentSha256:sha,bytes:100,needsCompression:false};
+ const source:DeskComponents={schema:'desk-components-065-v1',code,coordinates:'original-world-matrices',finishPolicy:'original manufacturer finishes; no FINISH setters',fullGraphClosed:false,contexts:[{dimensions:{GDWIDTH:'_1400',GDDEPTH:'_700'},choiceRules:'conditional selectable tuples only',invariant:null,textOnly:{},groups:[{fields:[],variants:[{values:{},asset:part}]}]}]};
+ const id={code,sample:'1',productId:'p',familyId:'cfg-123456789abc'};
+ const runtime=withDeskColors(adaptDeskComponents(source,id),overlay());
+ assert.equal(runtime.family.anchors[0].geometry,null);
+ assert.deepEqual(deskColorPlan(runtime.family.deskColors!,values,[asset]).materials,{[sha+':7:0']:materialId});
+ const unknown=overlay();unknown.baseDimensions.GDWIDTH='_1700';
+ assert.throws(()=>withDeskColors(adaptDeskComponents(source,id),unknown),/no captured component context/);
+});
+
+
+test('bounded source upholstery palette preserves316 real choices and rejects overflow',()=>{
+ const data=overlay(),field=data.fields.FTOPCOLOR;
+ field.choices=Array.from({length:316},(_,i)=>({value:i===0?'MP':'SOURCE'+i,text:'Source '+i}));
+ field.values=Object.fromEntries(field.choices.map(c=>[c.value,{mode:'material' as const,assignments:[{selectorId,materialId}],automatic:{}}]));
+ validateDeskColors(data,code,sha);
+ field.choices.push({value:'OVERFLOW',text:'Overflow'});field.values.OVERFLOW=field.values.MP;
+ assert.throws(()=>validateDeskColors(data,code,sha));
+});

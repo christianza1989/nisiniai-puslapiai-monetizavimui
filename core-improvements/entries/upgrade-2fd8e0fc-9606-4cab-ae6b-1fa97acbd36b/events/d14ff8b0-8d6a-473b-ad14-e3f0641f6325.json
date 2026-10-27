@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "The guidance covers only eligible destinations and keeps the original contextual labels. The PUBLIC implementation remains pending separate integration and hosted verification.",
+  "checks": [
+    {
+      "command": "node --test tests/niche-links.test.mjs",
+      "result": "PASS",
+      "evidence": "Companion PUBLIC checkout e2124946; six tests include multiple labels for one target, exact-ID boundaries, unavailable targets and untouched prose anchors."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "result": "PASS",
+      "evidence": "Companion PUBLIC checkout with shared runtime dependencies; no compile errors."
+    }
+  ],
+  "eventId": "d14ff8b0-8d6a-473b-ad14-e3f0641f6325",
+  "sequence": 2,
+  "at": "2026-10-27T10:31:35.045Z"
+}

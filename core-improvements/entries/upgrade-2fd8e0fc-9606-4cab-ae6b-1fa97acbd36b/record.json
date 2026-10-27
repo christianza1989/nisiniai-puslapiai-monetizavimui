@@ -1,0 +1,17 @@
+{
+  "siteId": "memocasting",
+  "summary": "Specify that related lists deduplicate eligible destinations without altering contextual labels",
+  "category": "skills",
+  "evidence": [
+    "Actual Memory Casting product renderer showed duplicate related entries and React key warnings when two approved labels referenced one instruction target. The reviewed source must keep both labels in prose while the related list shows the target once."
+  ],
+  "paths": [
+    "SKILLS/niche-seo-geo-core/references/geo-publishing.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/297",
+  "rollback": "Revert the scoped instruction change and paired PUBLIC helper/adapter change, preserving existing content, publication dates and deployment state.",
+  "id": "upgrade-2fd8e0fc-9606-4cab-ae6b-1fa97acbd36b",
+  "branch": "codex/memocasting-product-clarity-20261027",
+  "baseSha": "ae137a78acdc2dcdca3c56a6a04b8820341bd0a1",
+  "createdAt": "2026-10-27T10:30:45.994Z"
+}

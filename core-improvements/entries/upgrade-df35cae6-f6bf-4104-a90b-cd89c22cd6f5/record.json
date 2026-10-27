@@ -1,0 +1,19 @@
+{
+  "siteId": "memocasting",
+  "summary": "Keep all legitimate contextual labels while deduplicating related-page lists by eligible target identity",
+  "category": "code",
+  "evidence": [
+    "Local Memory Casting product renderer produced duplicate-key warning and related-list duplicates for two labels with the same approved instruction target. PUBLIC source baseline 5659fbb5ad297989aa0919538ec9624f82b57713."
+  ],
+  "paths": [
+    "lib/niche-links.mjs",
+    "components/niche/memocasting-site.tsx",
+    "tests/niche-links.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/98",
+  "rollback": "Revert the scoped PUBLIC helper, adapter and regression test without changing source pages, publish dates or commerce state.",
+  "id": "upgrade-df35cae6-f6bf-4104-a90b-cd89c22cd6f5",
+  "branch": "codex/memocasting-product-clarity-20261027",
+  "baseSha": "ae137a78acdc2dcdca3c56a6a04b8820341bd0a1",
+  "createdAt": "2026-10-27T10:30:50.654Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "PUBLIC helper and Memory Casting adapter tested locally; actual renderer and hosted behavior remain integration acceptance tasks. Other site adapters were not changed.",
+  "checks": [
+    {
+      "command": "node --test tests/niche-links.test.mjs",
+      "result": "PASS",
+      "evidence": "PUBLIC checkout e2124946; six tests include duplicate target IDs, distinct labels, exact-ID boundaries, unavailable targets, original-link immutability and independently linked prose anchors."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "result": "PASS",
+      "evidence": "PUBLIC checkout with shared runtime dependencies; no compile errors."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs --staged",
+      "result": "PASS",
+      "evidence": "Exact staged PUBLIC blobs: three files, no findings."
+    }
+  ],
+  "eventId": "e716e11a-b781-4c94-83eb-d4382e362063",
+  "sequence": 2,
+  "at": "2026-10-27T10:31:39.959Z"
+}

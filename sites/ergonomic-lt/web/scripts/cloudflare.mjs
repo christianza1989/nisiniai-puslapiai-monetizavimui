@@ -1,5 +1,6 @@
 import {spawnSync} from 'node:child_process';
 import {writeFileSync,readFileSync,existsSync} from 'node:fs';
+import {join} from 'node:path';
 
 const task=process.argv[2];
 if(task==='build'){
@@ -20,7 +21,7 @@ const result=spawnSync(process.execPath,command,options);
 if(task!=='types')for(const entry of generated)writeFileSync(entry.path,entry.bytes);
 if(result.error)throw result.error;
 if(result.status!==0)process.exit(result.status??1);
-if(task==='build')writeFileSync('dist/client/_headers',`/*
+if(task==='build')writeFileSync(join(process.env.ERGONOMIC_BUILD_OUTPUT||'dist','client/_headers'),`/*
   X-Robots-Tag: noindex, follow
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

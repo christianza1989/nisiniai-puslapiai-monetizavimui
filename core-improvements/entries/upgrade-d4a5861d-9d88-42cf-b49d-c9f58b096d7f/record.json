@@ -1,0 +1,17 @@
+{
+  "category": "code",
+  "siteId": "core",
+  "paths": [
+    "content-studio/src/server.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/299",
+  "evidence": [
+    "content-studio/test/core.test.mjs HTTP preview regression"
+  ],
+  "summary": "Studio preview labeled an unapproved working revision as approved when an older scheduled revision existed.",
+  "rollback": "Revert the scoped preview status change.",
+  "id": "upgrade-d4a5861d-9d88-42cf-b49d-c9f58b096d7f",
+  "branch": "ai/dovanos-preview-status-20261028",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-28T08:39:43.267Z"
+}

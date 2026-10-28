@@ -29,7 +29,7 @@ const readBody = request => new Promise((resolve, reject) => {
   request.on('error', reject);
 });
 function preview(site, page) {
-  const status = page.publishedRevision && Date.parse(page.publishedRevision.publishAt) <= Date.now() ? 'Publikavimo data atėjo; viešą domeną reikia tikrinti atskirai. Čia rodoma redaguojama studijos kopija' : page.publishedRevision ? 'Patvirtinta, bet dar neskelbiama' : 'Tik privatus juodraštis — viešoje svetainėje nerodomas';
+  const status = page.status !== 'approved' ? (page.publishedRevision ? 'Privatus nepatvirtintas juodraštis; ankstesnė patvirtinta versija išsaugota. Viešą domeną tikrinkite atskirai.' : 'Tik privatus juodraštis — viešoje svetainėje nerodomas') : page.publishedRevision && Date.parse(page.publishedRevision.publishAt) <= Date.now() ? 'Publikavimo data atėjo; viešą domeną reikia tikrinti atskirai. Čia rodoma redaguojama studijos kopija' : page.publishedRevision ? 'Patvirtinta, bet dar neskelbiama' : 'Tik privatus juodraštis — viešoje svetainėje nerodomas';
   const hero = page.media.find(item => !page.body.some(block => block.type === 'image' && block.assetId === item.id));
   const localMedia=page.media.map(asset=>({...asset,src:`/api/media/${encodeURIComponent(site.id)}/${encodeURIComponent(path.basename(asset.src))}`}));
   const imageHtml=(asset,eager=false)=>{const local=localMedia.find(a=>a.id===asset.id);return `<img src="${safe(local.src)}" srcset="${safe(imageSrcSet(localMedia,local))}" sizes="(max-width: 828px) calc(100vw - 48px), 780px" width="${asset.width}" height="${asset.height}" alt="${safe(asset.alt)}" loading="${eager?'eager':'lazy'}" ${eager?'fetchpriority="high"':''}>`;};

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Reproduced scheduled approved baseline mislabeled after editing; fixed working draft label. Companion sparse checkout supplied schemas after initial missing-schema test failure.",
+  "checks": [
+    {
+      "evidence": "Four tests passed, including HTTP approved baseline then unapproved edit.",
+      "result": "PASS",
+      "command": "node --test test/core.test.mjs"
+    },
+    {
+      "evidence": "HTTP 200, updated title, unapproved label, noindex on localhost.",
+      "result": "PASS",
+      "command": "Invoke-WebRequest local preview"
+    }
+  ],
+  "eventId": "edbb74b4-a915-422e-884b-466d7090769f",
+  "sequence": 2,
+  "at": "2026-10-28T08:39:48.763Z"
+}

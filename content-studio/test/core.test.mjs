@@ -65,6 +65,13 @@ test('HTTP studio is local, previews are noindex and state changes need studio h
     const calendar = await fetch(`${base}/api/calendar`);
     assert.equal(calendar.status, 200);
     assert.ok((await calendar.json()).some(entry => entry.siteId === site.id && entry.pageId === page.id && entry.status === 'planned'));
+    await model.editPage(site.id, page.id, { body: [{ type: 'paragraph', text: longText }], publishAt: new Date(Date.now() + 86400000).toISOString() });
+    await model.approvePage(site.id, page.id, 'tester');
+    assert.match(await (await fetch(`${base}/preview/${site.id}/${page.id}`)).text(), /Patvirtinta, bet dar neskelbiama/);
+    await model.editPage(site.id, page.id, { title: 'Naujas nepatvirtintas tekstas' });
+    const updatedPreview = await (await fetch(`${base}/preview/${site.id}/${page.id}`)).text();
+    assert.match(updatedPreview, /Privatus nepatvirtintas juodraštis/);
+    assert.doesNotMatch(updatedPreview, /Patvirtinta, bet dar neskelbiama/);
   } finally { await new Promise(resolve => server.close(resolve)); }
 });
 

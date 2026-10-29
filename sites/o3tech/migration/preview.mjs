@@ -43,16 +43,17 @@ const server=http.createServer(async(req,res)=>{
   if(/^\/content-assets\/o3tech\/[a-f0-9-]+\.webp$/.test(pathname)){file=path.join(privateRoot,'preview-assets',path.basename(pathname));mime='image/webp';}
   if(/^\/fonts\/o3tech\/[a-z-]+\.woff2$/.test(pathname)){file=path.join(pub,'public',pathname);mime='font/woff2';}
   if(pathname==='/o3tech.css'){const css=await readFile(path.join(pub,'components/niche/o3tech-fonts.css'),'utf8')+await readFile(path.join(pub,'components/niche/o3tech.css'),'utf8');res.writeHead(200,{...common,'Content-Type':'text/css'});res.end(req.method==='HEAD'?'':css);return;}
+  if(pathname==='/o3tech-ui.js'){const bytes=await readFile(path.join(pub,'public/o3tech-ui.js'));res.writeHead(200,{...common,'Content-Type':'text/javascript','Content-Length':bytes.length});res.end(req.method==='HEAD'?undefined:bytes);return;}
   if(file){try{const bytes=await readFile(file);res.writeHead(200,{...common,'Content-Type':mime,'Content-Length':bytes.length});res.end(req.method==='HEAD'?undefined:bytes);}catch{res.writeHead(404,common);res.end();}return;}
   const page=site.pages.find(p=>('/'+p.slug+'/').replace('//','/')===pathname);
   if(!page){res.writeHead(404,{...common,'Content-Type':'text/html;charset=utf-8'});res.end('<!doctype html><html lang="lt"><meta name="robots" content="noindex"><title>404</title><p>404</p><a href="/">o3tech</a></html>');return;}
   const layout=JSON.parse(await readFile(path.join(pub,'config/o3tech-layout.json'),'utf8'));
   const rendererPath=path.join(pub,'lib/o3tech-render.mjs');
   const renderer=await import(pathToFileURL(rendererPath).href+'?version='+(await stat(rendererPath)).mtimeMs);
-  const markup=renderer.o3techMarkup({pkg,page,pages:site.pages,layout});
+  const markup=renderer.o3techMarkup({pkg,page,pages:site.pages,layout,query:Object.fromEntries(url.searchParams)});
   const icon=site.pages.find(p=>p.type==='home').media.find(a=>a.id===layout.assets.icon);
-  const html=`<!doctype html><html lang="lt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${esc(page.title)} | o3tech.lt</title><meta name="description" content="${esc(page.description)}"><link rel="canonical" href="https://o3tech.lt${pathname}"><link rel="icon" type="image/webp" href="${icon?.src||''}"><link rel="stylesheet" href="/o3tech.css"><style>body{margin:0}</style></head><body>${markup}</body></html>`;
-  res.writeHead(200,{...common,'Content-Type':'text/html;charset=utf-8','Content-Security-Policy':"default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"});res.end(req.method==='HEAD'?'':html);
+  const html=`<!doctype html><html lang="lt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${esc(page.title)} | o3tech.lt</title><meta name="description" content="${esc(page.description)}"><link rel="canonical" href="https://o3tech.lt${pathname}"><link rel="icon" type="image/webp" href="${icon?.src||''}"><link rel="stylesheet" href="/o3tech.css"><style>body{margin:0}</style></head><body>${markup}<script src="/o3tech-ui.js" defer></script></body></html>`;
+  res.writeHead(200,{...common,'Content-Type':'text/html;charset=utf-8','Content-Security-Policy':"default-src 'none'; img-src 'self'; script-src 'self'; connect-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"});res.end(req.method==='HEAD'?'':html);
  }catch(e){console.error(e);res.writeHead(500,common);res.end('Preview error');}
 });
 server.listen(4783,'127.0.0.1',()=>console.log('o3tech private draft preview: http://127.0.0.1:4783/ (noindex; mail disabled)'));

@@ -122,3 +122,4 @@ await writeFile(path.join(root,'private','layout.json'),JSON.stringify(layout,nu
 await writeFile(path.join(root,'dovanos-memorycasting','config','o3tech-layout.json'),JSON.stringify(layout,null,2)+'\n');
 await writeFile(path.join(root,'private','migration-report.json'),JSON.stringify({capturedAt:new Date().toISOString(),included:sourceReport,excluded:[...skipped],assets:Object.keys(assetMap).length,approved:site.pages.filter(p=>p.approval).length,sourceTextPolicy:'original words retained, whitespace normalized; no new prose'},null,2));
 console.log(JSON.stringify({pages:sourceReport.length,assets:Object.keys(assetMap).length,approved:0,report:'private/migration-report.json'}));
+await import('./presentation.mjs');

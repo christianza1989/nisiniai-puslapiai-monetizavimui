@@ -11,7 +11,8 @@ for(const p of site.pages){
  assert.equal(d.querySelectorAll('h1').length,1,route+' single H1');assert.equal(d.querySelector('h1').textContent,p.title);
  assert.equal(d.querySelector('html').lang,'lt');assert.ok(d.querySelector('meta[name=description]')?.content);
  assert.equal(d.querySelector('link[rel=canonical]').href,'https://o3tech.lt'+route);
- assert.equal(d.querySelectorAll('script,iframe,object,embed').length,0,route+' no legacy/client scripts');
+ assert.equal(d.querySelectorAll('iframe,object,embed').length,0,route+' no legacy embeds');
+ assert.deepEqual([...d.querySelectorAll('script')].map(s=>s.getAttribute('src')),['/o3tech-ui.js'],route+' only dependency-free local controls');
  assert.equal(d.querySelectorAll('[name=add-to-cart],.cart,.woocommerce,.elementor').length,0);
  const text=norm(d.querySelector('main').textContent);const missing=[];
  for(const a of p.media)assets.add(a.src);
@@ -31,8 +32,9 @@ const valid={name:'Test Fixture',email:'migration-check@example.test',message:'S
 async function submit(values,origin='http://127.0.0.1:4783'){return fetch('http://127.0.0.1:4783/uzklausa',{method:'POST',headers:{Origin:origin,'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(values)});}
 assert.equal((await submit(valid,'https://unrelated.example')).status,403);
 assert.equal((await submit({...valid,consent:''})).status,400);
-assert.equal((await submit({...valid,message:'',phone:'+37060000000'})).status,400);
+assert.equal((await submit({...valid,name:'',message:'',phone:''})).status,200);
 assert.equal((await submit({...valid,phone:'bad\r\nvalue'})).status,400);
+assert.equal((await submit({...valid,email:'invalid'})).status,400);
 const ok=await submit(valid);assert.equal(ok.status,200);assert.match(await ok.text(),/tik šiame kompiuteryje/);
-const report={at:new Date().toISOString(),stage:'local-draft-preview',pages:results,bodyBlocks,internalLinksChecked:links.size,webpVariantsChecked:assets.size,publicProjectionCount:0,privateHostGuard:true,form:{originRejected:true,invalidConsentRejected:true,emptyMessageRejected:true,headerInjectionRejected:true,validStored:true,mailSent:false},limits:['Native approved package/release not authorized','Production SEO HTTP, D1/SMTP/INBOX and field performance not claimed']};
+const report={at:new Date().toISOString(),stage:'local-draft-preview',pages:results,bodyBlocks,internalLinksChecked:links.size,webpVariantsChecked:assets.size,publicProjectionCount:0,privateHostGuard:true,form:{originRejected:true,invalidConsentRejected:true,emailOnlyAccepted:true,invalidEmailRejected:true,headerInjectionRejected:true,validStored:true,mailSent:false},limits:['Native approved package/release not authorized','Production SEO HTTP, D1/SMTP/INBOX and field performance not claimed']};
 await writeFile(path.join(root,'private/preview-checks.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({pages:results.length,bodyBlocks,internalLinks:links.size,webpVariants:assets.size,form:'native route / local durable SQLite / no email',publicPages:0}));

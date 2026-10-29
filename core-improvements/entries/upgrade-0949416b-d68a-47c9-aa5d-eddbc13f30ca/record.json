@@ -1,0 +1,36 @@
+{
+  "siteId": "o3tech",
+  "summary": "Owner-requested fidelity repair: restore incumbent page-specific layouts, responsive visibility, source-bound formatting/lists/links, progressive catalogue/gallery controls and optional inquiry fields. Price facets remain nonindexable and every content/media/related target remains inside the native publication slice.",
+  "category": "code",
+  "evidence": [
+    "sites/o3tech/FIDELITY.md",
+    "tests/o3tech.test.mjs",
+    "tests/o3tech-catalogue.test.mjs",
+    "tests/memocasting-seo-metadata.test.mjs"
+  ],
+  "paths": [
+    "app/layout.tsx",
+    "app/niche/[siteId]/[[...slug]]/page.tsx",
+    "app/niche/[siteId]/lead/route.ts",
+    "proxy.ts",
+    "lib/o3tech-catalogue.mjs",
+    "lib/o3tech-format.mjs",
+    "lib/o3tech-inquiry.mjs",
+    "lib/o3tech-render.mjs",
+    "components/niche/o3tech-site.tsx",
+    "components/niche/o3tech.css",
+    "components/niche/o3tech-fonts.css",
+    "config/o3tech-layout.json",
+    "public/o3tech-ui.js",
+    "public/fonts/o3tech",
+    "tests/o3tech.test.mjs",
+    "tests/memocasting-seo-metadata.test.mjs",
+    "sites/o3tech"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/101",
+  "rollback": "Revert only the paired fidelity repair commits, preserving the earlier catalogue rebuild. No real approved package, live deployment, DNS or customer delivery exists to roll back.",
+  "id": "upgrade-0949416b-d68a-47c9-aa5d-eddbc13f30ca",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "104992844d8175fee20e51ddba4f3fdef1daad21",
+  "createdAt": "2026-10-29T19:39:46.123Z"
+}

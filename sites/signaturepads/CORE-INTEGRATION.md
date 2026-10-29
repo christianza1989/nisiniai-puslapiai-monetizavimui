@@ -2,6 +2,8 @@
 
 Tiesioginis savininko pavedimas: „Gerai, dabar užbaik Core integraciją ir užklausų siuntimą el. paštu, o gyvos svetainės dar nekeisk.“ Vietinė Core integracija baigta. Tikro pašto autentifikacija ir matching INBOX patikra laukia prieigos. WordPress, DNS, hostingas ir gyva svetainė nepakeisti; niekas nedeployinta ir Git pakeitimai nepushinti.
 
+Papildomas [originalo ir native Core auditas](DEEP-COMPARISON-20261029.md) rado 7 atvirus vizualinius / funkcinius neatitikimus. Šios integracijos techniniai PASS nėra viso vaizdo atkūrimo ar paleidimo priėmimas; Sigma tekste patvirtinta papildoma dubliuota pristatymo pastraipa. Audito metu šaltinio kodas ir paketas nekeisti.
+
 ## Turinio ir vaizdo autoritetas
 
 Native Studio schema v2: 26 puslapiai, 19 produktų, 3 kategorijos. Originalūs tekstai ir kainos išliko; šešiems programinės įrangos aprašams galioja ankstesnė konkreti Roko autorystės išimtis. Bendri `recordEditorialReview` → `approveReviewedBatch` → `releaseContent` API, o ne rankiniai approval hash. Actor yra Codex pagal pavedimą vietinei integracijai, ne fiktyvus savininko perskaitymo įrašas.

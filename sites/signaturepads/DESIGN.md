@@ -49,3 +49,9 @@ Rokas tiesiogiai pavedė sutvarkyti visus audito skirtumus vietinėje versijoje 
 - [x] 26 aktyvūs URL / 160 vidinių tikslų ir originalus tekstas; 1440 / 390 / 320 px, intervalų / rikiavimo / galerijos / meniu / quick view / teksto tarpų būsenos. Tikras 200% browser zoom ir actual touch – UNVERIFIED, nepaslepiama viewport bandymu.
 
 Rezultatai ir įrodymai: [VISUAL-RESTORATION.md](VISUAL-RESTORATION.md). Ši dalis pakeičia ankstesnę atvirų VF01–VF09 radinių būseną; istorinė audito ataskaita nepakeista. CSS laikomas vienoje per-site sistemoje, be papildomo override failo. Open Sans 400–700 svoriai išlaikyti; mažo teksto / mygtukų akcentas tamsesnis dėl kontrasto, o antraščių spalva atkurta iš originalo.
+
+## Naujas native Core palyginimas: priėmimas dar neužbaigtas
+
+[DEEP-COMPARISON-20261029.md](DEEP-COMPARISON-20261029.md) papildo ankstesnius įrodymus 26 adresais ir tikromis funkcijų būsenomis. A01–A07 lieka atviri. Originalo mobile katalogai skirtingi: programinės įrangos filtrai apačioje, bendrame kataloge jų nėra, įrangos kategorijose viršuje; ties 768 px originalas turi 3 produktų stulpelius. Matuoti faktinio teksto a elementą (kortelėse 14 px), ne vien H3 konteinerį (16 px). Originalo produkto H1 600, vietinio 400; nuotraukų / paraščių mastelis dar nesutampa.
+
+Greitosios peržiūros atvėrimo PASS nepakeičia jos turinio patikros: dabartinis dialogas turi tik kortelę. Po pataisų reikalingas pilno produkto parametrų, galerijos, pavadinto dialogo ir mobilios navigacijos priėmimas. Dizaino tapatybės neperkurti; kontrasto / fokuso pagerinimus palikti. Originalo 768 px kontaktų formos 8 px horizontalus slinkimas Core nesikartoja ir nėra atkūrimo tikslas.

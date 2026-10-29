@@ -49,3 +49,9 @@ node sites/signaturepads/scripts/verify-signaturepads-preview.mjs http://127.0.0
 Vėlesniu Roko prašymu atliktas originalo / peržiūros palyginimas: [VISUAL-AUDIT.md](signaturepads/VISUAL-AUDIT.md), 8 adresai / 32 nuotraukos. Rastos 9 skirtumų grupės; pagrindinės – dvi kategorijų iliustracijos, mobile dviejų stulpelių tinklelis ir apatinis logotipas. Tai papildo ankstesnę URL / tekstų patikrą; jos PASS nereiškė viso originalaus maketo išsaugojimo. Sąsaja per šį auditą nekeista. Radinius pirmiausia aptarti, pagal ankstesnį savininko nurodymą.
 
 Vėlesniu tiesioginiu pavedimu Rokas leido pataisyti visas devynias grupes vietinėje versijoje. [VISUAL-RESTORATION.md](signaturepads/VISUAL-RESTORATION.md) fiksuoja įgyvendintus pataisymus ir dabartinius įrodymus: 26 aktyvūs URL / 160 vidinių tikslų PASS, 1440 / 390 / 320 px vaizdai ir tikri valdiklių veiksmai. Tekstai, kainos, kontaktai ir adresai išlaikyti; bendro Core ir gyvos svetainės nekeista. Production admission / email / launch lieka atskiras etapas.
+
+## Papildomas originalo / native Core auditas
+
+2026-10-29 tiesioginiu Roko prašymu pakartotas platesnis palyginimas: [DEEP-COMPARISON-20261029.md](signaturepads/DEEP-COMPARISON-20261029.md). 26 adresai desktop / mobile, 120 bazinių bei papildomų breakpoint vaizdų, visos 19 kainų ir galerijų sudėtys. Kainos / galerijų nuotraukos išlaikytos; 12 įrangos aprašymų ir 13 paryškinimų rinkinių tiksliai sutampa su gyvu originalu. Sigma turi papildomą pristatymo pastraipą.
+
+Atviri A01–A07: nepilna greitoji peržiūra, skirtingų katalogų responsive struktūra, nuotraukų mastelis, teksto vaidmenys / paraštės, Sigma dublikatas, neveikiantis orderby=date ir neįvardytas dialogas. Ankstesnis techninis PASS nepanaikina šių radinių. Audito metu programos kodas, native paketas ir gyva svetainė nekeisti. Tikras pašto gavimas, fiziniai įrenginiai / Safari / 200% zoom ir istorinių įeinančių URL inventorius lieka nepatvirtinti.

@@ -1,0 +1,25 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Restore original site roles and interactions on native Core, with digest-guarded rich ranges, correctly ordered widgets, exact media frames and original favicon.",
+  "category": "code",
+  "evidence": [
+    "Companion public PR104; private sites/kvapunaikinimas/VISUAL-REPAIR-2026-10-29.md and CORE_FEEDBACK.md"
+  ],
+  "paths": [
+    "app/layout.tsx",
+    "app/niche/[siteId]/brand-icon/route.ts",
+    "components/niche/kvapunaikinimas-site.tsx",
+    "components/niche/kvapunaikinimas-site.module.css",
+    "components/niche/kvapunaikinimas-controls.tsx",
+    "config/kvapunaikinimas-layout.json",
+    "lib/kvapunaikinimas-presentation.mjs",
+    "lib/kvapunaikinimas-favicon.mjs",
+    "tests/kvapunaikinimas-presentation.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "rollback": "Revert the scoped public visual-fidelity commit; keep native body and shared host/media/lead routes. No production release has occurred.",
+  "id": "upgrade-e9f6e95b-8e1e-4615-8a4d-15de71d94384",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "38c2f5b521c9d45582a1091a6a7fce5797323b6d",
+  "createdAt": "2026-10-29T20:04:08.291Z"
+}

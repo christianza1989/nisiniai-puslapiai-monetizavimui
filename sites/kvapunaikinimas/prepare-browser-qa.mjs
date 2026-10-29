@@ -6,7 +6,7 @@ const code=`async page => {
  const results=[];
  for(const s of source){
   const r=await page.goto(${JSON.stringify(base)}+s.path,{waitUntil:'domcontentloaded'});
-  const result=await page.evaluate(()=>{const main=document.querySelector('main')?.cloneNode(true);for(const e of main?.querySelectorAll('p,h1,h2,h3,h4,li,summary')||[])e.before(document.createTextNode(' '));return{canonical:document.querySelector('link[rel=canonical]')?.href,description:document.querySelector('meta[name=description]')?.content,h1:[...document.querySelectorAll('h1')].map(e=>e.innerText),text:main?.textContent?.replace(/\\s+/g,' ').trim()||'',schema:[...document.querySelectorAll('script[type="application/ld+json"]')].flatMap(e=>JSON.parse(e.textContent)['@graph']||[]),externalScripts:[...document.scripts].map(s=>s.src).filter(s=>s&&!s.startsWith(location.origin)),contactsPreserved:['+37064819979','+37069199833','+37068460688','+37065354982'].every(t=>document.querySelector('a[href="tel:'+t+'"]'))&&!!document.querySelector('a[href="mailto:sales@kvapunaikinimas.lt"]')};});
+  const result=await page.evaluate(()=>{const main=document.querySelector('main')?.cloneNode(true);for(const e of main?.querySelectorAll('p,h1,h2,h3,h4,li,summary')||[])e.before(document.createTextNode(' '));return{canonical:document.querySelector('link[rel=canonical]')?.href,description:document.querySelector('meta[name=description]')?.content,h1:[...document.querySelectorAll('h1')].map(e=>e.innerText),text:main?.textContent?.replace(/\\s+/g,' ').trim()||'',schema:[...document.querySelectorAll('script[type="application/ld+json"]')].flatMap(e=>JSON.parse(e.textContent)['@graph']||[]),externalScripts:[...document.scripts].map(s=>s.src).filter(s=>s&&!s.startsWith(location.origin)),contactsPreserved:(location.pathname==='/musu-slapuku-politika'?['+37064819979']:['+37064819979','+37069199833','+37068460688','+37065354982']).every(t=>document.querySelector('a[href="tel:'+t+'"]'))&&!!document.querySelector('a[href="mailto:sales@kvapunaikinimas.lt"]')};});
   let beforeContact=true;const expected=[];
   if(s.path!=='/musu-slapuku-politika/')for(const w of s.widgets){if(w.kind==='heading.default'&&w.text==='KONTAKTAI')beforeContact=false;if(!beforeContact)continue;for(const b of w.blocks){if(b.type==='list')expected.push(...b.items);else if(b.text?.trim())expected.push(b.text);}if(w.kind==='button.default'&&w.text)expected.push(w.text);}
   const missing=expected.filter(t=>!result.text.includes(t.replace(/\\s+/g,' ').trim()));
@@ -17,3 +17,4 @@ const code=`async page => {
  return results.map(({missing,...r})=>({...r,missingCount:missing.length}));
 }`;
 await writeFile(output,code);console.log(JSON.stringify({prepared:output,routes:source.pages.length}));
+

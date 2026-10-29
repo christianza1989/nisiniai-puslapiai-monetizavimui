@@ -1,5 +1,7 @@
 # Kvapunaikinimas.lt: vietinės migracijos priėmimas
 
+Vėlesnė Roko užsakyta vizualinės atitikties pataisa ir nauji galutinės versijos matavimai: [VISUAL-REPAIR-2026-10-29.md](VISUAL-REPAIR-2026-10-29.md). Žemiau išsaugoti ankstesnio migracijos etapo rezultatai yra istorinis priėmimas, ne galutinės pataisos greičio ar sąveikų rezultatas.
+
 Būsena: parengta vietinei savininko peržiūrai. Gyva svetainė, DNS ir tikras paštas nekeisti. Tikras `kvapunaikinimas.lt` turinys lieka Studio juodraštis be savininko approve/release. Naršyklės bandymams naudojamas atskiras `kvapunaikinimas.example` paketas; jo sintetiniai patvirtinimai nesuteikia teisės publikuoti tikro domeno.
 
 Peržiūra: `http://127.0.0.1:8918/`. Izoliuotas runtime: `D:/Core/output/kvapunaikinimas-preview-20261029`. Šaltinis: šio darbo Core ir public worktree, bazės `25292e20219b735df7f04c5807dd4c100f98addc` ir `c2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da`. Pakeitimai dar nėra visiems PC galiojantis main.

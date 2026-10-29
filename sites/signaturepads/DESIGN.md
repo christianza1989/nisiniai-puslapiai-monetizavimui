@@ -30,3 +30,7 @@ Rokas 2026-10-29 pasirinko 1 variantą: Codex gali parašyti šiuos šešis apra
 - [x] 320 px ir vienu metu taikomi vartotojo teksto tarpų nustatymai Adobe produkto tekste: turinys lieka matomas, horizontalaus overflow nėra; tikras 200% browser zoom lieka UNVERIFIED.
 
 Įrodymai: output `software-browser-check.json`, `software-adobe-desktop.png`, `software-adobe-mobile.png`, `software-adobe-mobile-reading.png`. Desktop tekstas Open Sans 14 px / 25,2 px, mobile 15 px / 27 px, desktop skaitymo plotis 547,5 px. Tekstas rgb(74,74,74), pabrauktos nuorodos rgb(35,126,146), baltas fonas. Išdėstymo ar šriftų defektų šioje ribotoje patikroje nenustatyta; CSS nekeitėme.
+
+## Atitikimo originalui palyginimas po savininko prašymo
+
+2026-10-29 palyginti 8 pagrindiniai adresai, 32 originalo / peržiūros desktop / mobile vaizdai. Ankstesnė tekstų / URL ir šešių naujų aprašymų patikra nepakeičia viso maketo atitikimo patikros. [VISUAL-AUDIT.md](VISUAL-AUDIT.md) fiksuoja 9 skirtumų grupes: dvi praleistos kategorijų iliustracijos ir jų maketas, mobile tinkleliai, apatinis logotipas, rėmeliai, katalogo valdikliai, kortelių užvedimo būsena, panašūs produktai, tipografika / antraštė ir statinių puslapių dubliuotos antraštės. Tai atviri radiniai, pataisos šiame audite nedarytos. Originalių 1×1 sekiklių skaičiaus nelaikome turinio paveikslėliais; spaudos puslapio iliustracijos praradimo įtarimas atmestas.

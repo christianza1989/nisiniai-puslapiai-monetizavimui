@@ -41,3 +41,7 @@ node sites/signaturepads/scripts/signaturepads-prepare.mjs D:/Core/output/signat
 node sites/signaturepads/scripts/signaturepads-preview.mjs D:/Core/output/signaturepads-migration-20261029 8956
 node sites/signaturepads/scripts/verify-signaturepads-preview.mjs http://127.0.0.1:8956 D:/Core/output/signaturepads-migration-20261029
 ```
+
+## Atviri vizualinio atitikimo radiniai
+
+Vėlesniu Roko prašymu atliktas originalo / peržiūros palyginimas: [VISUAL-AUDIT.md](signaturepads/VISUAL-AUDIT.md), 8 adresai / 32 nuotraukos. Rastos 9 skirtumų grupės; pagrindinės – dvi kategorijų iliustracijos, mobile dviejų stulpelių tinklelis ir apatinis logotipas. Tai papildo ankstesnę URL / tekstų patikrą; jos PASS nereiškė viso originalaus maketo išsaugojimo. Sąsaja per šį auditą nekeista. Radinius pirmiausia aptarti, pagal ankstesnį savininko nurodymą.

@@ -15,6 +15,15 @@ const matches=(a:Values,b:Values,except?:string)=>Object.entries(a).every(([k,v]
 function fail():never{throw Error('Invalid prepared chair component table');}
 /** Distinct chair admission; the existing desk validator is not broadened. */
 export function validateChairComponents(input:unknown,code:string):asserts input is ChairComponents{
+ validateChairTable(input,code,true);
+}
+/** The separate review selects one complete captured context at a time.
+ * Unlike the catalog adapter, it never derives independent dimension choices
+ * between contexts that have different axes. All other source guards apply. */
+export function validateChairReviewComponents(input:unknown,code:string):asserts input is ChairComponents{
+ validateChairTable(input,code,false);
+}
+function validateChairTable(input:unknown,code:string,consistentAxes:boolean):asserts input is ChairComponents{
  if(!plain(input)||input.schema!=='desk-components-065-v1'||input.code!==code||!/^K[A-Z0-9]{2,79}$/.test(code)||input.coordinates!=='original-world-matrices'||input.finishPolicy!=='original manufacturer finishes; no FINISH setters'||input.fullGraphClosed!==false||!Array.isArray(input.contexts)||!input.contexts.length||input.contexts.length>1000)fail();
  const contexts=new Set<string>(),parts=new Map<string,string>();
  const part=(a:unknown)=>{
@@ -26,7 +35,7 @@ export function validateChairComponents(input:unknown,code:string):asserts input
   if(!plain(c)||c.choiceRules!=='conditional selectable tuples only'||!tuple(c.dimensions)||!Array.isArray(c.groups)||c.groups.length>30||!plain(c.textOnly))fail();
   // Chair context keys include captured seat dimensions, colour-version
   // construction axes and fixed ranges. Never turn a range into new poses.
-  const currentAxes=Object.keys(c.dimensions).sort().join(',');if(axes!==undefined&&axes!==currentAxes)fail();axes=currentAxes;
+  const currentAxes=Object.keys(c.dimensions).sort().join(',');if(consistentAxes&&axes!==undefined&&axes!==currentAxes)fail();axes=currentAxes;
   const id=key(c.dimensions);if(contexts.has(id))fail();contexts.add(id);
   if(c.invariant!==null)part(c.invariant);
   if(!c.groups.length&&(c.hybrid141!==true||c.invariant===null))fail();

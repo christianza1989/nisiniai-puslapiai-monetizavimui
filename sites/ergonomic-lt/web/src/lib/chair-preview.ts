@@ -1,16 +1,19 @@
 import type {ChairComponents} from './chair-components';
 import {chairColorPlan,type ChairPalette,type ChairColorPlan} from './chair-color-admission';
 import type {Asset,Patch} from './expanded-configurator';
+import {qualifiedChairPlan,qualifiedWitnessMatches,type ChairQualifiedData,type QualifiedSelection} from './chair-qualified-colors';
 
 export type ChairSlot={selectorId:string;materialId:string;sourceNodePath:number[];primitive:number;transformChain:{matrix:number[]}[]};
 export type ChairSelectors={schema:'canonical-world-primitive-selectors-329-v1';assets:Record<string,{assetSha256:string;slots:ChairSlot[];materials:Record<string,unknown>}>};
-export type ChairPreview={schema:'pc2-chair-review-111-v1';code:string;name:string;runtimeSha256:string;runtime:ChairComponents;palette:ChairPalette;selectors:ChairSelectors;assets:Record<string,Asset>;textures:Record<string,{asset:string;sha256:string;bytes:number}>};
+export type ChairPreview={schema:'pc2-chair-review-111-v1';code:string;name:string;runtimeSha256:string;runtime:ChairComponents;palette:ChairPalette;selectors:ChairSelectors;assets:Record<string,Asset>;textures:Record<string,{asset:string;sha256:string;bytes:number}>;qualified?:ChairQualifiedData;unavailableFinishChoices?:{label:string;count:number;context:number;reason:string}[]};
 export type ChairObservedChoice={id:string;label:string;selection:{kind:'original'}|{kind:'full-state';link:string}|{kind:'observed-pair';index:number};values:Record<string,string>};
 export function chairInitialContext(data:ChairPreview){
+ if(data.qualified?.witnesses.length)return data.qualified.witnesses[0].context;
  const scope=data.palette.schema==='chair-colors-observed-partial-344-v1'?data.palette.observedPairs[0]?.constructionScope||{}:{};
  const index=data.runtime.contexts.findIndex(c=>Object.entries(c.dimensions).every(([k,v])=>scope[k]===v));return index<0?0:index;
 }
 export function chairInitialVariants(data:ChairPreview,index:number){
+ const witness=data.qualified?.witnesses.find(w=>w.context===index);if(witness)return [...witness.variants];
  const scope=data.palette.schema==='chair-colors-observed-partial-344-v1'?data.palette.observedPairs[0]?.constructionScope||{}:{};
  return data.runtime.contexts[index].groups.map(g=>{const n=g.variants.findIndex(v=>Object.entries(v.values).every(([k,x])=>scope[k]===x));return n<0?0:n;});
 }
@@ -18,18 +21,25 @@ export function chairObservedChoices(data:ChairPreview):ChairObservedChoice[]{
  const original:ChairObservedChoice={id:'original',label:'Originalios medžiagos',selection:{kind:'original'},values:{}};
  const p=data.palette;
  if(p.schema==='chair-colors-full-state-329-v1')return [original,...Object.entries(p.selectionLinks).map(([id,link])=>({id,label:[link.field==='__CONTEXT_DEFAULT__'?'Pradinė būsena':link.field+' = '+link.value,...Object.entries(link.context).map(([k,v])=>k+' = '+v)].join(' · '),selection:{kind:'full-state' as const,link:id},values:{...link.context,...(link.field==='__CONTEXT_DEFAULT__'?{}:{[link.field]:link.value})}}))];
+ if(p.schema==='chair-base-observed-colours-v1')return [original];
  return [original,...p.observedPairs.map((pair,index)=>({id:String(index),label:Object.entries(pair.finishAlternativeScope).filter(([k,v])=>pair.finishBaseScope[k]!==v).map(([k,v])=>k+' = '+v).join(' · ')||'Surinkta būsena '+(index+1),selection:{kind:'observed-pair' as const,index},values:{...pair.finishAlternativeScope}}))];
 }
 /** A complete observed tuple, never independent colour fields. */
-export function chairPreviewAssembly(data:ChairPreview,contextIndex:number,variants:number[],choice:ChairObservedChoice):{base:Asset|null;patches:Patch[];finishes:Record<string,never>;chairColors:{source:ChairPreview;plan:ChairColorPlan}}{
+export function chairPreviewAssembly(data:ChairPreview,contextIndex:number,variants:number[],choice:ChairObservedChoice,qualifiedSelection?:QualifiedSelection):{base:Asset|null;patches:Patch[];finishes:Record<string,never>;chairColors:{source:ChairPreview;plan:ChairColorPlan}}{
  const c=data.runtime.contexts[contextIndex];if(!c)throw Error('Unknown chair context');
- const baseScope=data.palette.schema==='chair-colors-observed-partial-344-v1'?data.palette.observedPairs[0]?.constructionScope||{}:{};
- const values={...baseScope,...c.dimensions,...choice.values},active:string[]=[],patches:Patch[]=[];
+ const firstScope=data.palette.schema==='chair-colors-observed-partial-344-v1'?data.palette.observedPairs[0]?.constructionScope||{}:{};
+ // A scope field present only in another captured context is not evidence
+ // about this context. Colour choices cannot replace actual geometry values.
+ const changing=new Set(data.runtime.contexts.flatMap(context=>[...Object.keys(context.dimensions),...context.groups.flatMap(g=>g.fields)]));
+ const baseScope=Object.fromEntries(Object.entries(firstScope).filter(([field])=>!changing.has(field)));
+ const defaults=Object.fromEntries(Object.entries(c.default3DValues||{}).filter((entry):entry is [string,string]=>entry[1]!==null));
+ const values={...baseScope,...defaults,...choice.values,...c.dimensions},active:string[]=[],patches:Patch[]=[];
  const ref=(part:NonNullable<typeof c.invariant>)=>{const asset=data.assets[part.sha256];if(!asset||asset.assetSha256!==part.sha256||asset.bytes!==part.bytes||active.includes(part.sha256))throw Error('Chair asset identity mismatch or duplicate active component');active.push(part.sha256);return asset;};
  const base=c.invariant?ref(c.invariant):null;
  c.groups.forEach((g,index)=>{const v=g.variants[variants[index]??0];if(!v)throw Error('Unknown chair tuple');Object.assign(values,v.values);patches.push({remove:[],addIds:[],changes:{},choices:{},geometry:v.asset?ref(v.asset):null});});
  const scope={...c.dimensions,...Object.fromEntries(c.groups.flatMap((g,index)=>Object.entries(g.variants[variants[index]??0].values)))};
- const plan=chairColorPlan({palette:data.palette,selectors:data.selectors,code:data.code,runtimeSha256:data.runtimeSha256,activeAssetSha256:active,values,selection:choice.selection,fullStateConstructionScope:scope});
+ let plan=qualifiedSelection?qualifiedChairPlan(data,contextIndex,variants,active,qualifiedSelection):chairColorPlan({palette:data.palette,selectors:data.selectors,code:data.code,runtimeSha256:data.runtimeSha256,activeAssetSha256:active,values,selection:choice.selection,fullStateConstructionScope:scope});
+ if(!qualifiedSelection&&choice.selection.kind!=='original'&&data.qualified?.legacyScopes.length&&!data.qualified.legacyScopes.some(w=>qualifiedWitnessMatches(data,w,contextIndex,variants,active)))plan={status:'unavailable',resetOriginalMaterialsFirst:true,assignments:[],materials:{},fullPalettePass:false};
  return {base,patches,finishes:{},chairColors:{source:data,plan}};
 }
 

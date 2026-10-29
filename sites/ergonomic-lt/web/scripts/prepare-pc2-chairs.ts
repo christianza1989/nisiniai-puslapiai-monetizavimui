@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import {parseArgs} from 'node:util';
 import {validateChairComponents} from '../src/lib/chair-components';
 import {chairObservedChoices,chairPreviewAssembly,chairInitialVariants,type ChairPreview,type ChairSelectors} from '../src/lib/chair-preview';
-import type {ChairPalette} from '../src/lib/chair-color-admission';
+import type {BoundChairPalette as ChairPalette} from '../src/lib/chair-color-admission';
 
 const sha=(value:Uint8Array|string)=>createHash('sha256').update(value).digest('hex');
 const plain=(v:unknown):v is Record<string,any>=>!!v&&typeof v==='object'&&!Array.isArray(v);

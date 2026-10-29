@@ -8,12 +8,21 @@ const surfaceKey='ergonomicChairSelector';
  * At runtime, use GLTFLoader source associations, never mesh names or ordering.
  */
 export function tagChairSurfaces(root:Object3D,associations:Map<Object3D,{nodes?:number;primitives?:number}>,data:ChairPreview,sha:string){
- const source=data.selectors.assets[sha];if(!source||source.assetSha256!==sha)throw Error('Missing own chair selectors');
+ if(data.palette?.schema==='chair-base-observed-colours-v1'&&!data.qualified){
+  if(data.assets[sha]?.assetSha256!==sha||Object.keys(data.selectors.assets).length||data.palette.availableMaterialBindings.length)throw Error('Unqualified original-only chair');
+  return;
+ }
+ const source=data.selectors.assets[sha];
+ if(!source&&data.qualified&&(data.qualified.opaqueAssets.includes(sha)||data.palette.schema==='chair-base-observed-colours-v1'&&data.assets[sha]?.assetSha256===sha))return;
+ if(!source||source.assetSha256!==sha)throw Error('Missing own chair selectors');
  const found=new Set<string>();
  function visit(object:Object3D,parentNode?:number){
   const a=associations.get(object),node=a?.nodes??parentNode;
   if(object instanceof Mesh){
    const slots=source.slots.filter(s=>s.sourceNodePath.length===1&&s.sourceNodePath[0]===node&&s.primitive===a?.primitives);
+   // A supplied additional part may contain untouched primitives. Only its
+   // individually admitted OWN addresses are taggable; the rest stay original.
+   if(slots.length===0&&data.qualified?.extraAssets[sha]){for(const child of object.children)visit(child,node);return;}
    if(slots.length!==1||found.has(slots[0].selectorId))throw Error('Ambiguous chair primitive association');
    found.add(slots[0].selectorId);object.userData[surfaceKey]=sha+':'+slots[0].selectorId;
   }
@@ -39,15 +48,19 @@ export function createChairColorMaterials(data:ChairPreview){
  return {get(id:string,source:unknown){let result=cached.get(id);if(!result){result=load(id,source);cached.set(id,result);}return result;},dispose(){disposed=true;abort.abort();disposeOwned();}};
 }
 export function createChairColorApplication(root:Object3D){
- const originals=new Map<Mesh,Material|Material[]>();root.traverse(o=>{if(o instanceof Mesh)originals.set(o,o.material);});
+ const originals=new Map<Mesh,{material:Material|Material[];visible:boolean}>();
+ const register=(object:Object3D)=>object.traverse(o=>{if(o instanceof Mesh&&!originals.has(o))originals.set(o,{material:o.material,visible:o.visible});});register(root);
  const clones=new Set<Material>();let revision=0;
- function restore(){for(const [mesh,material]of originals)mesh.material=material;for(const clone of clones)clone.dispose();clones.clear();}
- return {async apply(plan:ChairColorPlan,get:(id:string,source:unknown)=>Promise<Material>){
+ function restore(){for(const [mesh,source]of originals){mesh.material=source.material;mesh.visible=source.visible;}for(const clone of clones)clone.dispose();clones.clear();}
+ return {register,resetOriginal(){revision++;restore();},async apply(plan:ChairColorPlan,get:(id:string,source:unknown)=>Promise<Material>){
   const current=++revision;restore();
+  try{
+  for(const target of plan.hidden||[]){const meshes=[...originals.keys()].filter(mesh=>mesh.userData[surfaceKey]===target.assetSha256+':'+target.selectorId);if(meshes.length!==1)throw Error('Chair hidden target missing');meshes[0].visible=false;}
   const targets=plan.assignments.map(binding=>{const meshes=[...originals.keys()].filter(mesh=>mesh.userData[surfaceKey]===binding.assetSha256+':'+binding.selectorId);if(meshes.length!==1)throw Error('Chair assignment target missing');return {mesh:meshes[0],id:binding.materialId};});
   const materials=new Map(await Promise.all([...new Set(targets.map(t=>t.id))].map(async id=>[id,await get(id,plan.materials[id])]as const)));
   if(current!==revision)return false;
   for(const target of targets){const material=materials.get(target.id)!.clone();if('vertexColors'in material)material.vertexColors=!!target.mesh.geometry.attributes.color;if('flatShading'in material)material.flatShading=!target.mesh.geometry.attributes.normal;clones.add(material);target.mesh.material=material;}
   return true;
+  }catch(error){if(current===revision)restore();throw error;}
  },dispose(){revision++;restore();}};
 }

@@ -969,6 +969,125 @@
       "proofs": {
         "sourceGeometryRuntime": "c53b62035b1103d9c9527343f989cf7426ead6e9ec2c1e5b24196f88e3f97955"
       }
+    },
+    "product_bspace-workbenches_59f6a184:20496266": {
+      "key": "product_bspace-workbenches_59f6a184:20496266",
+      "productId": "product_bspace-workbenches_59f6a184",
+      "sample": "20496266",
+      "code": "KBSP007WW002",
+      "familyId": "cfg-479c000b93d3",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBSP007WW002-8b80bca6d4248458bab5.json",
+        "sha256": "8b80bca6d4248458bab532a2edd32bf1fab923e3c37e3a12467bd3ce499b0079"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "42b80c1283c740d97bcd04ee39069f958e32405d1436eb5391994092808aa65d"
+      }
+    },
+    "product_bspace-workbenches_59f6a184:20496265": {
+      "key": "product_bspace-workbenches_59f6a184:20496265",
+      "productId": "product_bspace-workbenches_59f6a184",
+      "sample": "20496265",
+      "code": "KBSP008WW002",
+      "familyId": "cfg-5b66fea9615f",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KBSP008WW002-7fb478f424b1c24a4804.json",
+        "sha256": "7fb478f424b1c24a4804abd3e66a4c3d02acb027ce500ed6f60608d696c5a8a2"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "0d609e8885fe71a36de139241da24a06a8932e75afa5a1aea7ee2b52683089ca"
+      }
+    },
+    "product_cs5040-desks_2fa98d2c:19767959": {
+      "key": "product_cs5040-desks_2fa98d2c:19767959",
+      "productId": "product_cs5040-desks_2fa98d2c",
+      "sample": "19767959",
+      "code": "KC54077WW001",
+      "familyId": "cfg-46adc2d8f8e6",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KC54077WW001-a3c3c5183ac999bea26f.json",
+        "sha256": "a3c3c5183ac999bea26f39a85353ff2fc0ae844f79b101418725cb7f9fb23206"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "f0e63dc85983c5f2653633157fd778f11a72a4d29299328e62aaf78dbe88cbb9"
+      }
+    },
+    "product_cs5040-desks_2fa98d2c:20937850": {
+      "key": "product_cs5040-desks_2fa98d2c:20937850",
+      "productId": "product_cs5040-desks_2fa98d2c",
+      "sample": "20937850",
+      "code": "KC54126WW002",
+      "familyId": "cfg-0969618107f9",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KC54126WW002-3b24d5832bbc806aec4a.json",
+        "sha256": "3b24d5832bbc806aec4ad6a466930fc76524a356a8f8c3c0e04391078aba9362"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "6a9af65c43285b7c9d79da0392cbecf0ea8ed76f8197b326f1ffdbc8415cef8c"
+      }
+    },
+    "product_emodel-2-0-workbenches_df989c5a:16032698": {
+      "key": "product_emodel-2-0-workbenches_df989c5a:16032698",
+      "productId": "product_emodel-2-0-workbenches_df989c5a",
+      "sample": "16032698",
+      "code": "KEM2008WW002",
+      "familyId": "cfg-d2098cd13067",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEM2008WW002-ae667dba996b5e16d30f.json",
+        "sha256": "ae667dba996b5e16d30f7205bda27605078495f339a6bc0919d1c1877db11ee9"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "059bcc092295aa7659f9463f19ea72c9d723a646c38467a868e7c63b832d911c"
+      }
+    },
+    "product_emodel-2-0-workbenches_df989c5a:23850598": {
+      "key": "product_emodel-2-0-workbenches_df989c5a:23850598",
+      "productId": "product_emodel-2-0-workbenches_df989c5a",
+      "sample": "23850598",
+      "code": "KEM2008WW003",
+      "familyId": "cfg-9b15504d4170",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KEM2008WW003-0e808d90af9811db4668.json",
+        "sha256": "0e808d90af9811db4668a22fabd892891c7fddda2852da9bb7aa89f7cafee976"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "b13e4d5044b702343ebf1903feb4704c1fc29d5cf61797567088bafe6d1998be"
+      }
+    },
+    "product_easy-space-desks_b8e638ba:22467053": {
+      "key": "product_easy-space-desks_b8e638ba:22467053",
+      "productId": "product_easy-space-desks_b8e638ba",
+      "sample": "22467053",
+      "code": "KESE079WW001",
+      "familyId": "cfg-187848238646",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KESE079WW001-cac26fb51bda38c893c9.json",
+        "sha256": "cac26fb51bda38c893c971b33029bbf345ae17c18644748f41e136840f193216"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "4b581279de106ff970e2326ea73dd6c66352c8c5e7af9817a83db6e4066196af"
+      }
     }
   }
 }

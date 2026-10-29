@@ -10,8 +10,12 @@ type FullRecord={actualStateSha256:string;field:string;value:string;finishContro
 type FullPalette={schema:'chair-colors-full-state-329-v1';code:string;runtimeSha256:string;records:Record<string,FullRecord>;selectionLinks:Record<string,{actualStateSha256:string;context:Values;field:string;value:string}>};
 type Pair=BoundState & {constructionScope:Values;finishAlternativeScope:Values;finishBaseScope:Values;requiresExactConstructionAndFinishScope:boolean;requiresExactObservedState:boolean;onlyThisObservedPairQualified:boolean;mode:string};
 type PartialPalette={schema:'chair-colors-observed-partial-344-v1';code:string;runtimeSha256:string;actualPaletteComplete:false;observedPairs:Pair[]};
-export type ChairPalette=FullPalette|PartialPalette;
-export type ChairColorPlan={status:'original'|'observed-state'|'unavailable';resetOriginalMaterialsFirst:true;assignments:Binding[];materials:Record<string,unknown>;fullPalettePass:false};
+/** Captured original finishes only; the listed textual alternatives have no
+ * admitted material bindings and must never become independent 3D swatches. */
+export type BaseObservedPalette={schema:'chair-base-observed-colours-v1';sourceSchema:string;code:string;runtimeSha256:string;actualPaletteComplete:false;independentFinishCompositionAllowed:false;availableMaterialBindings:[];baselineObservedFinish:Record<string,{value:string;knownCurrentPrefixChoices:string[]}>};
+export type BoundChairPalette=FullPalette|PartialPalette;
+export type ChairPalette=BoundChairPalette|BaseObservedPalette;
+export type ChairColorPlan={status:'original'|'observed-state'|'unavailable';resetOriginalMaterialsFirst:true;assignments:Binding[];materials:Record<string,unknown>;fullPalettePass:false;hidden?:{assetSha256:string;selectorId:string}[];assets?:import('./expanded-configurator').Asset[]};
 const hash=(s:unknown):s is string=>typeof s==='string'&&/^[a-f0-9]{64}$/.test(s);
 const matches=(scope:Values,values:Values)=>Object.entries(scope).every(([k,v])=>values[k]===v);
 const exact=(a:Values,b:Values)=>Object.keys(a).length===Object.keys(b).length&&matches(a,b);
@@ -45,6 +49,7 @@ export function chairColorPlan(input:{palette:ChairPalette;selectors:Selectors;c
  const {palette,selectors,selection,values}=input;
  if(!hash(input.runtimeSha256)||palette.code!==input.code||palette.runtimeSha256!==input.runtimeSha256||selectors.schema!=='canonical-world-primitive-selectors-329-v1')return empty('unavailable');
  if(selection.kind==='original')return empty('original');
+ if(palette.schema==='chair-base-observed-colours-v1')return empty('unavailable');
  const assets=new Set(input.activeAssetSha256);
  if(selection.kind==='full-state'){
   if(palette.schema!=='chair-colors-full-state-329-v1'||!input.fullStateConstructionScope||!matches(input.fullStateConstructionScope,values))return empty('unavailable');

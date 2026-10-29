@@ -182,7 +182,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         if(disposed){disposeObject(object);return;}
         if(!chairColors.current){isolateFinishMaterials(object);physicalUpholstery(object);}
         object.traverse(o=>{if(o instanceof Mesh){o.castShadow=true;o.receiveShadow=true;for(const material of Array.isArray(o.material)?o.material:[o.material])if(material instanceof MeshStandardMaterial){for(const texture of [material.map,material.normalMap])if(texture)texture.anisotropy=renderer!.capabilities.getMaxAnisotropy();}}});
-        scene.add(object);disposeShadow=contactShadow(renderer!,scene,object);
+        scene.add(object);disposeShadow=contactShadow(renderer!,scene,object,!!chairColors.current);
         roomSurfaces=productShowroom(object,light);scene.add(roomSurfaces.group,roomSurfaces.target);applyScene();applyFinishes.current();
         if(deskColors.current){colorMaterials=createDeskColorMaterials(deskColors.current.source);colorApplication=createDeskColorApplication(object);
           applyDeskColors.current=async()=>{if(!deskColors.current||!colorApplication||!colorMaterials||disposed)return;const revision=++colorRevision;colorFailed=false;setColorState('loading');try{const applied=await colorApplication.apply(deskColors.current.plan,colorMaterials.get);if(applied&&!disposed&&revision===colorRevision){renderer!.shadowMap.needsUpdate=true;render();setColorState('ready');}}catch{if(!disposed&&revision===colorRevision){colorFailed=true;setColorState('error');setState('error');}}};
@@ -205,10 +205,10 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
               const applied=await chairApplication.apply(plan,chairMaterials.get);
               if(applied&&!disposed&&revision===colorRevision){
                 const nextShape=JSON.stringify([wanted.map(a=>a.assetSha256).sort(),(plan.hidden||[]).map(t=>t.assetSha256+':'+t.selectorId).sort()]);
-                if(nextShape!==chairShapeKey){disposeShadow?.();disposeShadow=contactShadow(renderer!,scene,object);chairShapeKey=nextShape;}
+                if(nextShape!==chairShapeKey){disposeShadow?.();disposeShadow=contactShadow(renderer!,scene,object,true);chairShapeKey=nextShape;}
                 renderer!.shadowMap.needsUpdate=true;render();setColorState('ready');
               }
-            }catch{if(!disposed&&revision===colorRevision){chairApplication.resetOriginal();for(const group of chairExtras.values())group.removeFromParent();disposeShadow?.();disposeShadow=contactShadow(renderer!,scene,object);chairShapeKey='[[],[]]';colorFailed=true;render();setColorState('error');setState('error');}}
+            }catch{if(!disposed&&revision===colorRevision){chairApplication.resetOriginal();for(const group of chairExtras.values())group.removeFromParent();disposeShadow?.();disposeShadow=contactShadow(renderer!,scene,object,true);chairShapeKey='[[],[]]';colorFailed=true;render();setColorState('error');setState('error');}}
           };
           await applyChairColors.current();if(colorFailed)return;
         }else setColorState('original');

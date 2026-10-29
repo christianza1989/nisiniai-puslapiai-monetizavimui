@@ -14,6 +14,8 @@ Current source preparation evidence is private under owner111/all-ready-publicat
 
 The owner's subsequent direct request to put all ready packets into ergonomic-preview authorizes this technical preview integration. It does not authorize production launch, main merge, or importing another chat's local pilot. The earlier five-packet local browser evidence below is historical and is not substituted for this revision's required verification. Main Native remains disabled under111.
 
+The new Chrome audit first completed nine desktop model cases. KWI2003WW002 then restored identical original geometry, materials, visibility and camera after an OWN part swap, but its framebuffer differed in the floor shadow. The initial shadow predates ProductShowroom; a later whole-scene override projection also captured its transparent shadow receiver as opaque geometry. Chair-only shadow projection now excludes other scene children for the offscreen draw and immediately restores their original visibility. Other viewer paths retain their original default projection. Three focused regression checks cover receiver exclusion, the unchanged default scope, and visibility restoration after a failed projection; TypeScript checking passes. A new build and a narrow actual GPU restore check are required before adopting this fix. Completed earlier colour evidence is retained, not silently replayed or relabelled.
+
 The first five received packages are KLYN002WW002, KLYN001WW002, KSOU001WW003, KTRF001WW001 and KNAU018WW001. They use chair-specific finite-table and observed-palette admission. The existing desk validator and the public catalog loader are unchanged.
 
 ## Review surface

@@ -129,4 +129,3 @@ Kitas žmogus gali nepriklausomai:
 - fiziniame telefone atlikti kelią kategorija → produktas → kontaktai; po pašto sąrankos atskirai patvirtinti realų laiško gavimą.
 
 Dokumentas fiksuoja atvirus radinius. Ankstesni techniniai PASS ir atliktas vietinis release jų neuždaro.
-

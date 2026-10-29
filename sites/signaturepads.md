@@ -45,3 +45,5 @@ node sites/signaturepads/scripts/verify-signaturepads-preview.mjs http://127.0.0
 ## Atviri vizualinio atitikimo radiniai
 
 Vėlesniu Roko prašymu atliktas originalo / peržiūros palyginimas: [VISUAL-AUDIT.md](signaturepads/VISUAL-AUDIT.md), 8 adresai / 32 nuotraukos. Rastos 9 skirtumų grupės; pagrindinės – dvi kategorijų iliustracijos, mobile dviejų stulpelių tinklelis ir apatinis logotipas. Tai papildo ankstesnę URL / tekstų patikrą; jos PASS nereiškė viso originalaus maketo išsaugojimo. Sąsaja per šį auditą nekeista. Radinius pirmiausia aptarti, pagal ankstesnį savininko nurodymą.
+
+Vėlesniu tiesioginiu pavedimu Rokas leido pataisyti visas devynias grupes vietinėje versijoje. [VISUAL-RESTORATION.md](signaturepads/VISUAL-RESTORATION.md) fiksuoja įgyvendintus pataisymus ir dabartinius įrodymus: 26 aktyvūs URL / 160 vidinių tikslų PASS, 1440 / 390 / 320 px vaizdai ir tikri valdiklių veiksmai. Tekstai, kainos, kontaktai ir adresai išlaikyti; bendro Core ir gyvos svetainės nekeista. Production admission / email / launch lieka atskiras etapas.

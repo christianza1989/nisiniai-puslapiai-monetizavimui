@@ -34,3 +34,18 @@ Rokas 2026-10-29 pasirinko 1 variantą: Codex gali parašyti šiuos šešis apra
 ## Atitikimo originalui palyginimas po savininko prašymo
 
 2026-10-29 palyginti 8 pagrindiniai adresai, 32 originalo / peržiūros desktop / mobile vaizdai. Ankstesnė tekstų / URL ir šešių naujų aprašymų patikra nepakeičia viso maketo atitikimo patikros. [VISUAL-AUDIT.md](VISUAL-AUDIT.md) fiksuoja 9 skirtumų grupes: dvi praleistos kategorijų iliustracijos ir jų maketas, mobile tinkleliai, apatinis logotipas, rėmeliai, katalogo valdikliai, kortelių užvedimo būsena, panašūs produktai, tipografika / antraštė ir statinių puslapių dubliuotos antraštės. Tai atviri radiniai, pataisos šiame audite nedarytos. Originalių 1×1 sekiklių skaičiaus nelaikome turinio paveikslėliais; spaudos puslapio iliustracijos praradimo įtarimas atmestas.
+
+## Patvirtinta atkūrimo partija
+
+Rokas tiesiogiai pavedė sutvarkyti visus audito skirtumus vietinėje versijoje ir išsaugoti visas nuorodas. Planas: viena suderinta VF01–VF09 realizacija per-site renderer / CSS / client, paskui desktop/mobile patvirtinimas ir URL / teksto regresija. Bendro Core modelio / SEO / publikavimo bibliotekų nekeisti.
+
+- [x] Kategorijų originalios iliustracijos, įvadas šalia paveikslo ir likęs tekstas platesniu maketu.
+- [x] Planšečių, monitorių ir panašių produktų mobile 2 stulpeliai; software katalogas – originalo vienas stulpelis.
+- [x] Footer logotipas, home rėmeliai, logotipų mastelis, kontaktų nuotraukos kampai.
+- [x] Natūralūs kainos intervalo slankikliai, matomas rikiavimas pagal kainą; query / URL išsaugojimas.
+- [x] Alternatyvios kortelių nuotraukos, Quick View hover / keyboard būsena, 3 desktop panašių produktų stulpeliai, didinimo ir grįžimo į viršų ženklai.
+- [x] Originalo Open Sans vaidmenys: žalios #276d72 antraštės, 32 px home antraštės, 16 px / 600 kortelės; mobile viršutinis logotipas ~142 px; aktyvus meniu.
+- [x] Statinių puslapių vienas H1 iš esamos turinio antraštės, 720 px antraštės ir 560 px teksto stulpelis, pagal actual originalą.
+- [x] 26 aktyvūs URL / 160 vidinių tikslų ir originalus tekstas; 1440 / 390 / 320 px, intervalų / rikiavimo / galerijos / meniu / quick view / teksto tarpų būsenos. Tikras 200% browser zoom ir actual touch – UNVERIFIED, nepaslepiama viewport bandymu.
+
+Rezultatai ir įrodymai: [VISUAL-RESTORATION.md](VISUAL-RESTORATION.md). Ši dalis pakeičia ankstesnę atvirų VF01–VF09 radinių būseną; istorinė audito ataskaita nepakeista. CSS laikomas vienoje per-site sistemoje, be papildomo override failo. Open Sans 400–700 svoriai išlaikyti; mažo teksto / mygtukų akcentas tamsesnis dėl kontrasto, o antraščių spalva atkurta iš originalo.

@@ -1,5 +1,7 @@
 # signaturepads.lt – esamos svetainės migracija
 
+Aktuali būsena 2026-10-29: vietinė peržiūra jau naudoja native Core turinio / medijos / SEO / D1 užklausų kelią. Tikro pašto autentifikacija ir INBOX patikra laukia prieigos; gyva svetainė nepakeista. Tikslus statusas, paleidimas ir įrodymai: [CORE-INTEGRATION](signaturepads/CORE-INTEGRATION.md). Ankstesni šio dokumento etapų įrašai lieka istoriniu kontekstu.
+
 Savininko pavedimas 2026-10-29: išsaugoti esamą išvaizdą, tekstus, kontaktus ir ypač visas nuorodas; identiškumas iki pikselio nereikalingas. Svetainė priima tik užklausas (tiesioginis atsakymas šiame chate), apmokėjimų nereikia.
 
 Tai esamo verslo techninė migracija. Originalus turinys paimamas iš savininko viešos svetainės. Nauju tiesioginiu 2026-10-29 pavedimu savininkas papildomai užsakė metaduomenų sutvarkymą ir šešių programinės įrangos produktų aprašymus, patvirtino dviejų senų puslapių išėmimą ir atsisakė Paysera bei užsakymų svetainėje. Nauji gidai, kontaktai ir Pinet rekvizitai nepridedami.

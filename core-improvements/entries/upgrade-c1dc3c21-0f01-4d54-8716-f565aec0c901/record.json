@@ -1,0 +1,38 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Registered reviewed V2 catalogue renderer preserves WordPress URLs and asset aliases without bypassing native publication, local admission or other host routing.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/102",
+    "sites/signaturepads/CORE-INTEGRATION.md"
+  ],
+  "paths": [
+    "app/gift/[siteId]/[[...slug]]/page.tsx",
+    "app/gift/[siteId]/seo/[kind]/route.ts",
+    "app/layout.tsx",
+    "config/content-media-aliases.json",
+    "config/niche-network.json",
+    "lib/content-framework-request.mjs",
+    "lib/content-model-v2.ts",
+    "lib/content-projection-v2.mjs",
+    "lib/content-renderers.mjs",
+    "lib/content-seo-v2.mjs",
+    "lib/gift-seo.ts",
+    "lib/signaturepads-content.mjs",
+    "lib/signaturepads-routes.mjs",
+    "proxy.ts",
+    "scripts/content-v2-admission.mjs",
+    "tests/memocasting-instruction-documents.test.mjs",
+    "tests/memocasting-merchant-feed.test.mjs",
+    "tests/memocasting-seo-metadata.test.mjs",
+    "tests/signaturepads-integration.test.mjs",
+    "vite.config.ts",
+    "worker-entry.ts"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Scoped revert of companion registration/routing and restore prior exact shadow package. Do not alter another site's deployed Worker or registry.",
+  "id": "upgrade-c1dc3c21-0f01-4d54-8716-f565aec0c901",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "808ccd1ecf16b0cf4ac3725e8d31ac4e6fe64d16",
+  "createdAt": "2026-10-29T17:46:01.183Z"
+}

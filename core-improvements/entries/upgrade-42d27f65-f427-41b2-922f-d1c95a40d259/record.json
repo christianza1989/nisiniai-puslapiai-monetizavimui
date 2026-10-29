@@ -1,0 +1,23 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Shared inquiry route retains phone/preference, negotiates JSON/HTML, and durably claims one scoped Hostinger HTTPS notification without retries or false inbox assertions.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/102",
+    "sites/signaturepads/CORE-INTEGRATION.md"
+  ],
+  "paths": [
+    "app/niche/[siteId]/lead/route.ts",
+    "cloudflare-env.d.ts",
+    "lib/niche-mail.ts",
+    "lib/niche-lead-fields.mjs",
+    "lib/niche-lead-mail-api.mjs",
+    "tests/signaturepads-integration.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Disable LEAD_HOSTINGER_ENABLED and scoped revert companion inquiry changes. Preserve saved leads and unknown delivery claims; never retry uncertain mail automatically.",
+  "id": "upgrade-42d27f65-f427-41b2-922f-d1c95a40d259",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "808ccd1ecf16b0cf4ac3725e8d31ac4e6fe64d16",
+  "createdAt": "2026-10-29T17:46:03.178Z"
+}

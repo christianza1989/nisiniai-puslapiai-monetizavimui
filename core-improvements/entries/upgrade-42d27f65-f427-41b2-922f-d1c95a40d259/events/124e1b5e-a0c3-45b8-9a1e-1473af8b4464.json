@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Shared inquiry storage, contact fields, native HTML/JSON, idempotent inquiry identity and one-shot unknown receipt behavior verified. Mail authentication/SMTP/API acceptance/matching INBOX remain UNVERIFIED; no real email sent.",
+  "checks": [
+    {
+      "command": "verify-signaturepads-core.mjs engine http://127.0.0.1:8956",
+      "result": "PASS",
+      "evidence": "10 HTTP/native D1 cases incl native HTMLUnicode, JSON, phone/preference/consent, replay1row, conflict409, origin403, honeypot and exact cleanup. core-http-verification.json."
+    },
+    {
+      "command": "Actual browser submit/reset and scoped D1 read/delete",
+      "result": "PASS",
+      "evidence": "Phone required/reset; UUID rotates; saved phone/preference; statusnew with mail0; exact cleanup. browser-form-d1.json / browser-verification.json."
+    },
+    {
+      "command": "Native no-credential mail fixture + identical replay",
+      "result": "PASS",
+      "evidence": "Preflight rejects before fetch, one durable mail-unknown claim and one notification attempt across two identical POST. mail-failure-probe.json; no external mail requests or inbox assertion."
+    },
+    {
+      "command": "node --test tests/signaturepads-integration.test.mjs",
+      "result": "PASS",
+      "evidence": "Registered route/publication/time/revocation/media/isolation; mocked sender identity/API204/unknown-no-retry; ordinary mail remains disabled."
+    }
+  ],
+  "eventId": "124e1b5e-a0c3-45b8-9a1e-1473af8b4464",
+  "sequence": 2,
+  "at": "2026-10-29T18:47:13.153Z"
+}

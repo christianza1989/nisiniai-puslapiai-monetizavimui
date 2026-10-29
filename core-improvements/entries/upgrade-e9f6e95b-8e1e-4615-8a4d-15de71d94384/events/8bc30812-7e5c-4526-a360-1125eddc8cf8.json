@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Verified visual repair source pushed to the existing draft PR; main merge, production publication and other-PC adoption are not asserted.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/104",
+  "commit": "f6486c6c65781a7dde3681576c1bb84b10c8341b",
+  "eventId": "8bc30812-7e5c-4526-a360-1125eddc8cf8",
+  "sequence": 3,
+  "at": "2026-10-29T20:06:31.551Z"
+}

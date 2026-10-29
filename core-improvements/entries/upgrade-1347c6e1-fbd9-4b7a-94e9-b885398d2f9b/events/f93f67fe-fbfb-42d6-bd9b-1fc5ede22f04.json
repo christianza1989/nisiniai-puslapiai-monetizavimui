@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Verified visual repair source pushed to the existing draft PR; main merge, production publication and other-PC adoption are not asserted.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/305",
+  "commit": "a1edb44ef97757e01f9c34e0ca9e867e990a1298",
+  "eventId": "f93f67fe-fbfb-42d6-bd9b-1fc5ede22f04",
+  "sequence": 3,
+  "at": "2026-10-29T20:06:28.003Z"
+}

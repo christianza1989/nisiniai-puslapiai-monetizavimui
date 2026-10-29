@@ -17,4 +17,3 @@ const code=`async page => {
  return results.map(({missing,...r})=>({...r,missingCount:missing.length}));
 }`;
 await writeFile(output,code);console.log(JSON.stringify({prepared:output,routes:source.pages.length}));
-

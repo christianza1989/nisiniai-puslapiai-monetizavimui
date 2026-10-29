@@ -1,0 +1,363 @@
+{
+  "state": "READY_FOR_LOCAL_OWNER_REVIEW_NOT_PRODUCTION",
+  "checkedAt": "2026-10-29T17:25:59.616Z",
+  "syntheticHost": "kvapunaikinimas.example",
+  "realHostApproval": false,
+  "productionDeployment": false,
+  "realMailSent": false,
+  "sourceTextChecks": 261,
+  "routes": [
+    {
+      "path": "/",
+      "finalPath": "/",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 19,
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/patalpu-kvapu-naikinimas/",
+      "finalPath": "/patalpu-kvapu-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/patalpu-kvapu-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 34,
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/patalpu-kvapu-naikinimas"
+    },
+    {
+      "path": "/kvapu-naikinimas/",
+      "finalPath": "/kvapu-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/kvapu-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 35,
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/kvapu-naikinimas"
+    },
+    {
+      "path": "/pelesio-naikinimas/",
+      "finalPath": "/pelesio-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/pelesio-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 34,
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/pelesio-naikinimas"
+    },
+    {
+      "path": "/ozonavimas-kas-tai/",
+      "finalPath": "/ozonavimas-kas-tai",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/ozonavimas-kas-tai",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 23,
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/gyvunu-kvapo-naikinimas/",
+      "finalPath": "/gyvunu-kvapo-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/gyvunu-kvapo-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 30,
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/gyvunu-kvapo-naikinimas"
+    },
+    {
+      "path": "/kvapu-naikinimas-automobilyje-ozonavimas/",
+      "finalPath": "/kvapu-naikinimas-automobilyje-ozonavimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/kvapu-naikinimas-automobilyje-ozonavimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 34,
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/kvapu-naikinimas-automobilyje-ozonavimas"
+    },
+    {
+      "path": "/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas/",
+      "finalPath": "/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 21,
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas"
+    },
+    {
+      "path": "/ozonavimas-kaune-kaina/",
+      "finalPath": "/ozonavimas-kaune-kaina",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/ozonavimas-kaune-kaina",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 6,
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/dazniausiai-uzduodami-klausimai/",
+      "finalPath": "/dazniausiai-uzduodami-klausimai",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/dazniausiai-uzduodami-klausimai",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 19,
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/ozonavimas-vilniuje-kaina/",
+      "finalPath": "/ozonavimas-vilniuje-kaina",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/ozonavimas-vilniuje-kaina",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 6,
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/musu-slapuku-politika/",
+      "finalPath": "/musu-slapuku-politika",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/musu-slapuku-politika",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 0,
+      "internalRedirects": [],
+      "externalScripts": []
+    }
+  ],
+  "metrics": {
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "lcpMs": 2306.1119999999996,
+    "tbtMs": 21,
+    "cls": 0.006752806035506085,
+    "transferBytes": 423859,
+    "seoIndexBlockingIntentional": true
+  },
+  "nativeChecks": 17,
+  "productionDependencyFindings": 0,
+  "fullDependencyFindings": {
+    "info": 0,
+    "low": 1,
+    "moderate": 10,
+    "high": 9,
+    "critical": 0,
+    "total": 20
+  },
+  "standardCompletionIssues": [
+    "NO_PUBLIC_ARTICLE_INDEX",
+    "NO_PUBLIC_ARTICLE_TO_INSPECT"
+  ],
+  "packageSha256": "60eb5cb95a6c8c43e938a6f53103b1ef4ac5cff7cc040100af89e839fdbd2bfa",
+  "originalSnapshotSha256": "5a2abee82473d7d6784b0104a932ba63cb9ae72a0f5a5cefad3eb7c6df004d2a",
+  "source": [
+    {
+      "file": "components/niche/kvapunaikinimas-site.tsx",
+      "sha256": "2600efd1bfa807f7c098f11aafda11910e20ef2f109ff96311b71df455034642"
+    },
+    {
+      "file": "components/niche/kvapunaikinimas-form.tsx",
+      "sha256": "8742f5e392ed75834c1161e6379665a6f055d1d1b8c120493bffd300c0099a13"
+    },
+    {
+      "file": "components/niche/kvapunaikinimas-site.module.css",
+      "sha256": "d4f2c3277f6b8e1716ffb69531f1ee84a48271615db4c9cd547fa07342e15507"
+    },
+    {
+      "file": "app/niche/[siteId]/[[...slug]]/page.tsx",
+      "sha256": "44565f68f1fd1e1344b64b6dede634dec10c3fd4f8493bda706b72397ae0744d"
+    },
+    {
+      "file": "app/niche/[siteId]/lead/route.ts",
+      "sha256": "55d7789b9b4faf4c4625d21861a81edb1ec7049160b2590f320e928823cc5b26"
+    },
+    {
+      "file": "lib/niche-contact-method.mjs",
+      "sha256": "8e2530a912d59887e547f22ec66d8162d798d3d6e47c23ef4202e72191dd7136"
+    },
+    {
+      "file": "lib/niche-seo.ts",
+      "sha256": "8d9dddabe1556c6125f08eee24e67062cb312a138c8c5f0ecc8a448c0bebf99f"
+    },
+    {
+      "file": "proxy.ts",
+      "sha256": "8fb9627cf183269c87c9094cf895ee2aec2c56d5d55f729cf3e85a08a63f7cf6"
+    },
+    {
+      "file": "config/kvapunaikinimas-layout.json",
+      "sha256": "1813cc6c2ee2c3a3771fcc66b1cad918cb6bd2b2547317c1164092bf9898dd50"
+    },
+    {
+      "file": "config/niche-network.json",
+      "sha256": "5e54d16b7410b5f73bff1617c0b77fe10b715771778fd43a41dd7cb66b389c36"
+    },
+    {
+      "file": "package.json",
+      "sha256": "b7e97d3d754712f3f2eccd0e2c3d477a2c830e3bdf1670687855b6e6758147d6"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "4bbbe3616486d2abd8154cb57b66b3b89a848c8333d6a1095c3d3fc025bff8ae"
+    }
+  ],
+  "originalImageCache": [
+    {
+      "file": "alergenai-1.png",
+      "sha256": "62cf87bc22479d5396216758cf43a14ca917418b85de346d141aa29342b0f7c3"
+    },
+    {
+      "file": "blogi-kvapai.png",
+      "sha256": "f7c16e92a2816c2b0c71c9e49e58e62bf4685d82afbffa6fda9f46a835f092ab"
+    },
+    {
+      "file": "CIGARECIU-KVAPO-NAIKINIMAS.jpg",
+      "sha256": "df1a40debd3f2421c314a5a5a2869f745d1e3e6f8044ef48106287cc3060e41a"
+    },
+    {
+      "file": "Cigareciu-kvapu-naikinimas.jpg",
+      "sha256": "5ff5515fce897f7fdc672f80230499167c6359355ba14b3c12338b78c35dbcb6"
+    },
+    {
+      "file": "dulkiu-erkutes2.png",
+      "sha256": "4dc4062bc0d50041ebd7a3d8bfd45b6b20576c90bc005b598f3da2e4d630bedf"
+    },
+    {
+      "file": "gaivus-oras.webp",
+      "sha256": "18e9f98259533b466846c6fcb1ecaa11aabf0ecb16e810a3b7283d95efb0ac7c"
+    },
+    {
+      "file": "Gyvunu-kvapo-naikinimas.jpg",
+      "sha256": "140a9d53d38f40e55f2d0d472fdf38d7c0f75879f272d4e7ff9ee60e9ac3a121"
+    },
+    {
+      "file": "imageedit_11_8985628063.png",
+      "sha256": "4001c62c97484c705b7105e96b1944845e042db881d42adae8ef1e807d4d81c0"
+    },
+    {
+      "file": "imageedit_1_4410406638-1.png",
+      "sha256": "4a6804600953085c2c7e9b1bd7b4528b97be7fc186fc24278e194b81613525bd"
+    },
+    {
+      "file": "imageedit_5_2550315103.png",
+      "sha256": "20edab2f6a79d0458b84b6a38e11f7eeebb98a9b4a82601067ce51fcb944bf25"
+    },
+    {
+      "file": "imageedit_9_6143204277.png",
+      "sha256": "c3a692575c6bcfd5895b72739318feefd677364cdff4962844142542dc11c05c"
+    },
+    {
+      "file": "iStock_91690391_MEDIUM-e1467380495312.jpg",
+      "sha256": "bc3a042bafb99c3861f2d2960ff7622fbb1d5e58b1e4a306a9a45ae4a98fc8a6"
+    },
+    {
+      "file": "kaip-veikia-ozonas.png",
+      "sha256": "ed6048fc9c5b2cdd6d1ba25fba80ffb71eb9ee14ecaf3ff2cc5b5277829fa0e1"
+    },
+    {
+      "file": "Kvapu-naikinimas-automobilyje-1.jpg",
+      "sha256": "3569dd178e9829eb87e970d08c961e03642edd88315d26b6c401430d2773375c"
+    },
+    {
+      "file": "kvapu-naikinimas-automobilyje-2.jpg",
+      "sha256": "9ebae0737851cf558d43b6e9832300b3bdf55323d17aca85cb123fdf6949e029"
+    },
+    {
+      "file": "Kvapu-naikinimas-kontaktai.jpg",
+      "sha256": "1762f0193f4ed79f5709d7035fa8a67f3a02669efd2be2b0cf3ef232c248b3d1"
+    },
+    {
+      "file": "kvapu-naikinimas-patalpose.jpg",
+      "sha256": "642ec9d591ab6551b89f111204e3cd57acecdef6bfe06cbc4d84586ca3b21574"
+    },
+    {
+      "file": "logo-o3.png",
+      "sha256": "d2d8e97f6057f153a644fd1fe302c793e994985ae33a2bdc743936c23870e8ef"
+    },
+    {
+      "file": "ozonas-kas-tai.png",
+      "sha256": "3d782fce0eed1c5b5c9a07e1e3f733f6bfc777b067d38c9c204da8758254b610"
+    },
+    {
+      "file": "ozonavimas-kaune-kaina.jpeg",
+      "sha256": "fc66035172309ec869c46cbd245426dd68760475ca2ae0e2291e6240aa23fcf0"
+    },
+    {
+      "file": "ozonavimas-Vilniuje-kaina.jpeg",
+      "sha256": "d65d9695891da7c5df3a1ce66fff2e52a91838151ab79c7f1a855ec1e6b4a515"
+    },
+    {
+      "file": "ozonavimas.jpg",
+      "sha256": "d0cb813398095420f0de2a775344c202d398b69d4d5fc5ca6cf45edffc0af6fb"
+    },
+    {
+      "file": "ozonavimo-eiga.png",
+      "sha256": "7cfe2f20a363973f813da0e61b7a98c273a5c69b82b8b90c21df3b9170515c8f"
+    },
+    {
+      "file": "ozone-for-pet-odors.png",
+      "sha256": "b7626b4d7a8a0e28a0ffc9506e9a2a6f6bdd30c7535a09458a31d87939531bd4"
+    },
+    {
+      "file": "Patalpu-kvapu-naikinimas.jpg",
+      "sha256": "a58493a0d99d815701e01df819e652c34f21aae2ad4710e389cbdbf46571900e"
+    },
+    {
+      "file": "pelesio-naikinimas-1.webp",
+      "sha256": "6d1121c7dae856620108e4337f3251adfcc1779eea5522176b24d747c81623bd"
+    },
+    {
+      "file": "pelesio-naikinimas.jpg",
+      "sha256": "100a26e6563d313afc225754720643e61aecc12916461b80da6adc6caa5ad275"
+    },
+    {
+      "file": "pelesis.png",
+      "sha256": "2cc3cdd710fbeaf72702e57f15da9993d2b289ac5af108df56e0772447111ed3"
+    },
+    {
+      "file": "virusai.png",
+      "sha256": "fce253c07289b8b28403e0ca679b22ae733a882683508ae652368e85b84ea6f3"
+    }
+  ],
+  "limitations": [
+    "Existing-page migration with no new article quota; standard new-site acceptance remains NOT_COMPLETE.",
+    "Native FAQ DOM activation verified; IAB trusted interaction was inconclusive and must be checked manually before live acceptance.",
+    "Actual legal/operator facts, production mail receipt and broader build-toolchain upgrade remain launch gates."
+  ]
+}

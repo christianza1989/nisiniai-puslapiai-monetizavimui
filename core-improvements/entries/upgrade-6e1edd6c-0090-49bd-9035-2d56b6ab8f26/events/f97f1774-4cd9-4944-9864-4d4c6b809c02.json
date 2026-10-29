@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Verified own scoped source. This is local implementation evidence, not main adoption, owner approval, production deployment, full legal compliance or real inbox receipt. Full build-toolchain findings and IAB interaction limitations remain explicit in acceptance.",
+  "checks": [
+    {
+      "command": "node --test SKILLS/niche-site-audit/scripts/completion.test.mjs SKILLS/scripts/audit-skills.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/ACCEPTANCE.md; 10/10 tests; canonical-host HTTP output has no rendered/discovery issues; two new-article requirements remain not applicable to this migration"
+    }
+  ],
+  "eventId": "f97f1774-4cd9-4944-9864-4d4c6b809c02",
+  "sequence": 2,
+  "at": "2026-10-29T17:26:05.686Z"
+}

@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,readdir} from 'node:fs/promises';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+const [evidence,runtime,publicRoot]=process.argv.slice(2);
+if(!evidence||!runtime||!publicRoot)throw Error('Provide own evidence, isolated runtime and source worktree.');
+const json=async p=>JSON.parse(await readFile(p,'utf8'));
+const digest=async p=>createHash('sha256').update(await readFile(p)).digest('hex');
+const routes=await json(path.join(evidence,'core-route-verification-final.json'));
+assert.equal(routes.length,12);for(const r of routes){assert.equal(r.status,200);assert.equal(r.h1Count,1);assert.ok(r.descriptionPresent&&r.contactsPreserved);assert.equal(r.missing.length,0);assert.deepEqual(r.internalRedirects,[]);assert.equal(r.externalScripts.length,0);assert.equal(new URL(r.canonical).pathname,r.finalPath);}
+const native=await json(path.join(evidence,'native-local-verification.json'));assert.equal(native.status,'PASS');
+const lighthouse=await json(path.join(evidence,'lighthouse-core-mobile.json'));
+assert.ok(lighthouse.categories.performance.score>=.9);assert.equal(lighthouse.categories.accessibility.score,1);assert.equal(lighthouse.categories['best-practices'].score,1);
+const failedSeo=lighthouse.categories.seo.auditRefs.filter(r=>{const s=lighthouse.audits[r.id].score;return s!==1&&s!==null;}).map(r=>r.id);assert.deepEqual(failedSeo,['is-crawlable']);
+const completion=await json(path.join(evidence,'SITE_COMPLETION.json'));
+assert.deepEqual(completion.issues,['NO_PUBLIC_ARTICLE_INDEX','NO_PUBLIC_ARTICLE_TO_INSPECT']);
+const productionAudit=await json(path.join(evidence,'dependency-production-final.json'));assert.equal(productionAudit.metadata.vulnerabilities.total,0);
+const toolchain=await json(path.join(evidence,'dependency-toolchain-final.json'));
+const files=['components/niche/kvapunaikinimas-site.tsx','components/niche/kvapunaikinimas-form.tsx','components/niche/kvapunaikinimas-site.module.css','app/niche/[siteId]/[[...slug]]/page.tsx','app/niche/[siteId]/lead/route.ts','lib/niche-contact-method.mjs','lib/niche-seo.ts','proxy.ts','config/kvapunaikinimas-layout.json','config/niche-network.json','package.json','package-lock.json'];
+const sourceImages=await readdir(new URL('./source/images/',import.meta.url));
+const summary={state:'READY_FOR_LOCAL_OWNER_REVIEW_NOT_PRODUCTION',checkedAt:new Date().toISOString(),syntheticHost:'kvapunaikinimas.example',realHostApproval:false,productionDeployment:false,realMailSent:false,sourceTextChecks:routes.reduce((n,r)=>n+r.sourceTextChecks,0),routes:routes.map(({missing,...r})=>r),metrics:{scores:Object.fromEntries(Object.entries(lighthouse.categories).map(([k,v])=>[k,v.score*100])),lcpMs:lighthouse.audits['largest-contentful-paint'].numericValue,tbtMs:lighthouse.audits['total-blocking-time'].numericValue,cls:lighthouse.audits['cumulative-layout-shift'].numericValue,transferBytes:lighthouse.audits['total-byte-weight'].numericValue,seoIndexBlockingIntentional:true},nativeChecks:native.checks.length,productionDependencyFindings:0,fullDependencyFindings:toolchain.metadata.vulnerabilities,standardCompletionIssues:completion.issues,packageSha256:await digest(path.join(runtime,'content-packages/kvapunaikinimas/content-package.json')),originalSnapshotSha256:await digest(new URL('./source/pages.json',import.meta.url)),source:await Promise.all(files.map(async file=>({file,sha256:await digest(path.join(publicRoot,file))}))),originalImageCache:await Promise.all(sourceImages.map(async file=>({file,sha256:await digest(new URL('./source/images/'+file,import.meta.url))}))),limitations:['Existing-page migration with no new article quota; standard new-site acceptance remains NOT_COMPLETE.','Native FAQ DOM activation verified; IAB trusted interaction was inconclusive and must be checked manually before live acceptance.','Actual legal/operator facts, production mail receipt and broader build-toolchain upgrade remain launch gates.']};
+await writeFile(new URL('./QA-summary.json',import.meta.url),JSON.stringify(summary,null,2)+'\n');
+console.log(JSON.stringify({state:summary.state,routes:routes.length,textChecks:summary.sourceTextChecks,sourceImages:sourceImages.length,metrics:summary.metrics}));

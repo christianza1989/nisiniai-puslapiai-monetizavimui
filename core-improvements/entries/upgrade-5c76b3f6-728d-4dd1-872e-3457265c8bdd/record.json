@@ -1,0 +1,27 @@
+{
+  "siteId": "kvapunaikinimas",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/ACCEPTANCE.md"
+  ],
+  "rollback": "Scoped revert of the reviewed change; retain original site and native drafts.",
+  "summary": "Preserve the existing twelve-page site with a dedicated renderer and site-scoped preferred-contact handling through native lead storage, plus matching SEO export.",
+  "paths": [
+    "app/niche/[siteId]/[[...slug]]/page.tsx",
+    "app/niche/[siteId]/lead/route.ts",
+    "components/niche/kvapunaikinimas-site.tsx",
+    "components/niche/kvapunaikinimas-form.tsx",
+    "components/niche/kvapunaikinimas-site.module.css",
+    "config/kvapunaikinimas-layout.json",
+    "config/niche-network.json",
+    "lib/niche-contact-method.mjs",
+    "lib/niche-seo.ts",
+    "proxy.ts",
+    "public/fonts/kvapunaikinimas"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "id": "upgrade-5c76b3f6-728d-4dd1-872e-3457265c8bdd",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-29T16:23:10.363Z"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Privatumo informacija ir slapukai",
+  "description": "Informacija apie kvapunaikinimas.lt užklausos formoje pateikiamus duomenis, jų naudojimo paskirtį ir slapukus.",
+  "blocks": [
+    {"type":"heading","level":2,"text":"Privatumo informacija ir slapukai"},
+    {"type":"paragraph","text":"Šiame puslapyje paaiškinama, kokie duomenys pateikiami kvapunaikinimas.lt užklausos formoje ir kam jie naudojami."},
+    {"type":"heading","level":2,"text":"Užklausos duomenys"},
+    {"type":"paragraph","text":"Siųsdami užklausą pateikiate vardą arba įmonės pavadinimą, pasirenkate atsakymo būdą ir nurodote telefono numerį arba el. pašto adresą. Kitą kontaktą ir žinutę galite pateikti pasirinktinai."},
+    {"type":"paragraph","text":"Kartu išsaugomas užklausos pateikimo laikas ir svetainės puslapis, iš kurio pateikta užklausa."},
+    {"type":"heading","level":2,"text":"Kam naudojami duomenys"},
+    {"type":"paragraph","text":"Užklausa išsaugoma, kad kvapunaikinimas.lt komanda galėtų ją išnagrinėti ir atsakyti jūsų pasirinktu būdu. Formos pateikimas neprenumeruoja reklaminių laiškų."},
+    {"type":"heading","level":2,"text":"Slapukai ir sekimas"},
+    {"type":"paragraph","text":"Šioje svetainės versijoje nenaudojami reklaminiai ar analitikos slapukai ir nekeliami išoriniai lankytojų sekimo scenarijai. Svetainės prieglobos paslaugų teikėjas gali tvarkyti techninius ryšio duomenis, reikalingus svetainės veikimui ir saugumui."},
+    {"type":"heading","level":2,"text":"Klausimai dėl duomenų"},
+    {"type":"paragraph","text":"Jei turite klausimų apie savo pateiktą užklausą ar norite kreiptis dėl joje esančių duomenų, rašykite sales@kvapunaikinimas.lt."}
+  ],
+  "privateReview": {
+    "authorException": "Owner explicitly authorized Codex to write this short notice in this chat on2026-10-29 after the Gemini UI failed to submit.",
+    "scope": "Factual form/technology notice; no company identity or retention period invented. Not a complete Article13 compliance declaration.",
+    "unresolvedLaunchFacts": ["Actual controller identity", "retention criteria and operational data lifecycle", "actual production hosting/mail recipients/processors and applicable rights/legal-basis information"],
+    "sources": ["Actual dedicated renderer and native contact form", "lib/niche-contact-method.mjs", "app/niche/[siteId]/lead/route.ts", "Owner-provided contact preservation instruction"]
+  }
+}

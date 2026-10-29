@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Verified own scoped source. This is local implementation evidence, not main adoption, owner approval, production deployment, full legal compliance or real inbox receipt. Full build-toolchain findings and IAB interaction limitations remain explicit in acceptance.",
+  "checks": [
+    {
+      "command": "STUDIO_NETWORK_SETTINGS=<companion>/config/niche-network.json STUDIO_PUBLIC_CORE_DIR=<companion> npm test (content-studio)",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/ACCEPTANCE.md; 75/75; studio-tests-final.log"
+    }
+  ],
+  "eventId": "fe7077e4-02b8-45e5-98ce-4b2bbacb48dd",
+  "sequence": 2,
+  "at": "2026-10-29T17:26:01.157Z"
+}

@@ -1,0 +1,19 @@
+{
+  "siteId": "kvapunaikinimas",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/ACCEPTANCE.md"
+  ],
+  "rollback": "Scoped revert of the reviewed change; retain original site and native drafts.",
+  "summary": "Production-classified dependency audit reported six affected packages including critical Next.js; pin patched Next/Zod and update vulnerable transitive packages and sharp override.",
+  "paths": [
+    "package.json",
+    "package-lock.json",
+    "tests/ingest-zod-compatibility.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "id": "upgrade-336aed46-9fec-46cb-940f-be43987a7b92",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-29T16:23:11.980Z"
+}

@@ -1,0 +1,11 @@
+# Catalogue-preserving migration evidence
+
+Owner explicitly requires original design/copy and no online sales. Initial native import produced6empty-bodycatalogueindices whose real visible contents are product cards. Existing minimum-body admission demanded120characters and public validator required nonemptybody. Filling the page with unrelated prose would contradict the owner's brief. On2026-10-29the owner saidok after the plain-language proposal to accept real catalogue membership without added prose.
+
+Upgrade `upgrade-d9b0e304-74be-4038-97e4-76e441a05e59`: exact6-indexregistry, native structural validation, original-titlebodylists, unchanged facts/review/dependency/approval/hash gates. A one-productindex passes only with the correct existing product identity/title/link. Unknown/foreign/revoked/mismatched/empty/fake lists fail. Actual isolated native atomic approval/export plus public package validation passes. Real drafts are never auto-approved.
+
+Companion projection uses the same exact registry before final link filtering. Future/unapproved/revoked products vanish from catalogue body and links; an index with no available products and its incoming links disappear together. It never rewrites the raw approved package or another tenant's projection. Production SSR/schema/sitemap/LLM continue to consume the shared projected pages, with no site-specific SEO engine.
+
+Observed compatibility regression retained: first fullnative run failed because standalone SDK export and an isolated V2 fixture copied niche-links without its new catalogue module/config. Upgrade `upgrade-061ef493-9335-4ddb-bfd6-22b50a595376` closes those exact dependencies. The actual exported standalone SDK and V2 importer regressions pass afterward. Earlier failure log remains private (`studio-tests-final.log`); accepted run is separate. Public root metadata test fixtures now import the actual brandhelper instead of falling through an unresolved alias; unrelated Memocasting SSR semantics are rechecked.
+
+No generic text minimum was disabled; no policy exception was borrowed from another site. No private lead, source review, rawcapture or originalasset is added to the public source package. Main merge/runtime adoption, actual content approval/release and live domain replacement remain separate from local source verification.

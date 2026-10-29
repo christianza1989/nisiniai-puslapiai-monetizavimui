@@ -1,0 +1,23 @@
+# o3tech migration checkpoint · 2026-10-29
+
+Owner brief: preserve the existing o3tech.lt design, original text, images, contacts and useful paths; remove online shopping. Owner subsequently explicitly authorized the narrow catalogue admission fix after a plain-language explanation. Approval of content, release and live replacement were not requested or performed.
+
+Implemented locally:23keptpaths,11products,5categories;38originalrasterfamilies with108responsivevariants; original Open Sans/logo/colours/bubble backgrounds, native responsive header/catalogue/product/rental/information/footer/form. Existing phone/contact preference survive the shared native durable lead route. No WordPress, Elementor, jQuery, WooCommerce, checkout/account/cart, recaptcha or legacy tracker runtime is shipped in the new renderer.
+
+Working draft preview: `http://127.0.0.1:4783/`, bound only127.0.0.1. The agent-owned preview is retained for the owner's review at this checkpoint; its PID/command are recorded in the private workspace. To restart after ending review, run `node core/sites/o3tech/migration/preview.mjs` from `D:/Core/o3tech-migration-20261029`. Native data/raw/originals and synthetic local leadDB remain in `private`. No actual mail was sent. Do not import the synthetic leadDB into production.
+
+Verification:
+- Native Studio75/75tests, including exact-index structural admission, unchanged legacy minima, actual isolated atomic approval/export and public-validator acceptance, standaloneSDK/V2closure.
+- Public Core299/299tests, including catalogue time/approval/tenant/body/link filtering and actual other-tenantSSRmetadata; TypeScript exit0; full native Vinext build and2RSCassetmanifest checksPASS.
+- Actual draft HTTP:23routes,392bodyblocks/listitems,43internalURLs/fragments,108WebPvariants, required metadata/oneH1, unknown/private/removed404 and nonloopbackHost421.
+- Native local form rejects foreignOrigin, missingconsent, empty/oversized/injectedfields; valid marked fixture survives in local SQLite with maildisabled.
+- Desktop1440,390/320mobile, catalogue/product/rental/longinformation/policy and native menu inspected;320pxfooter overflow repaired; simultaneous text-spacing override checked. Actual200%browserzoom remainsUNVERIFIED. Browser tooling's initial background/lazy screenshot limitations were resolved by a fresh agent-owned page and bounded visible-pixel checks.
+- Private mobile Lighthouse13.6.0:99performance,100accessibility;FCP0.8s,LCP2.2s,TBT48ms,CLS0.00038,272373transferredbytes. This is an unapproved local draft lab, not production/fieldSEOorWCAG certification. Expected noindex lowers itsSEOscore; it is never removed to inflate a score.
+
+Source: CORE/PUBLIC branches`codex/o3tech-migration-20261029`; fresh basesCORE25292e20219b735df7f04c5807dd4c100f98addc/PUBLICc2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da. Public implementation commit`5e031989656cba8c44a4a3ea7178b5e93d89263a`. No o3tech approved package exists. The compiled local smoke checks existing tenants, not an invented o3tech public release. Exact final smoke/PR receipts are in the appended handoff note and private logs.
+
+Remaining launch gates: review retained ozone/safety/model/price/delivery assertions and ecommerce-era legal/privacy pages, native ownerapproval/release, package import and bound actual-host/time/revocation SEOcompletion, real storage/mail/INBOX/abuse/privacy/measurement, actual domain deployment/SSL. Native policy/media/body/source preparation does not certify those steps. DNS/hosting/plugins and live o3tech.lt were not modified; no paid research, new prose, messaging, voice, campaign or recurring automation was started.
+
+Preservation checkpoint: private/preservation-20261029contains231files/18564104bytes with per-fileSHA256manifest, before the final icon/catalogue-policy additions. The final preservation manifest is separate; preserve the original captures and earlier checkpoint bytes. Tests/failure logs are kept independently, not rewritten into a historicPASS. Core upgrade IDs: d9b0e304-74be-4038-97e4-76e441a05e59(nativeadmission),061ef493-9335-4ddb-bfd6-22b50a595376(SDKclosure),f936ef8a-a5e0-42c0-8876-b9bea50c143b(companionrenderer/projection).
+
+Final compiledWorker acceptance: all11existingV1tenants passed canonical SEOsmoke on127.0.0.1:4784, including Promedical and Memocasting. Receipt private/seo-smoke-all.json. No o3tech release was fabricated to perform those checks. Final preservation archive: D:/Core/o3tech-migration-20261029/o3tech-preservation-20261029.zip; per-fileSHA256manifest excludes all leadDB/credentials. Own QAWorker is stopped after checks; owner-review draft server remains explicitly retained.

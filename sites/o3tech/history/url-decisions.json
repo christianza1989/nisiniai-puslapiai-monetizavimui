@@ -1,0 +1,314 @@
+{
+  "auditCheckedAt": "2026-10-29T16:52:36.806Z",
+  "domain": "o3tech.lt",
+  "entries": [
+    {
+      "oldUrl": "https://o3tech.lt/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/musu-slapuku-politika/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/musu-slapuku-politika/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/paskyra/",
+      "action": "remove-404",
+      "reason": "Owner removes ecommerce runtime or WordPress sample; no equivalent successor.",
+      "evidenceUrls": [
+        "https://o3tech.lt/paskyra/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/apmokejimas/",
+      "action": "remove-404",
+      "reason": "Owner removes ecommerce runtime or WordPress sample; no equivalent successor.",
+      "evidenceUrls": [
+        "https://o3tech.lt/apmokejimas/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/krepselis/",
+      "action": "remove-404",
+      "reason": "Owner removes ecommerce runtime or WordPress sample; no equivalent successor.",
+      "evidenceUrls": [
+        "https://o3tech.lt/krepselis/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/prekes/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/prekes/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/garantija-ir-grazinimas/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/garantija-ir-grazinimas/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/taisykles/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/taisykles/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/ozono-generatoriaus-ozonatoriaus-nuoma/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/ozono-generatoriaus-ozonatoriaus-nuoma/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/ozonas-geriausia-kvapu-naikinimo-priemone/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/ozonas-geriausia-kvapu-naikinimo-priemone/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/sample-page/",
+      "action": "remove-404",
+      "reason": "Owner removes ecommerce runtime or WordPress sample; no equivalent successor.",
+      "evidenceUrls": [
+        "https://o3tech.lt/sample-page/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/pramoninis-ozonatorius-120g-h/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/pramoninis-ozonatorius-120g-h/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/pramoninis-ozonatorius-225g-h/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/pramoninis-ozonatorius-225g-h/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/filtrai-3m-a1-anglinis-filtras-6051/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/filtrai-3m-a1-anglinis-filtras-6051/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/puskauke-3m-6000/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/puskauke-3m-6000/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/puskauke-3m-7500/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/puskauke-3m-7500/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/pramoninis-ozonatorius-300g-h/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/pramoninis-ozonatorius-300g-h/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/pramoninis-ozonatorius-90g-h/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/pramoninis-ozonatorius-90g-h/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/profesionalus-ozonatorius-16-g-h/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/profesionalus-ozonatorius-16-g-h/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/profesionalus-ozonatorius-24-g-h/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/profesionalus-ozonatorius-24-g-h/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/buitinis-ozonatorius-7-g-h/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/buitinis-ozonatorius-7-g-h/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produktas/buitinis-ozonatorius-10-g-h/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produktas/buitinis-ozonatorius-10-g-h/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produkto-kategorija/buitiniai-ozonatoriai/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produkto-kategorija/buitiniai-ozonatoriai/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produkto-kategorija/profesionalus-ozonatoriai/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produkto-kategorija/profesionalus-ozonatoriai/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produkto-kategorija/pramoniniai-ozonatoriai/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produkto-kategorija/pramoniniai-ozonatoriai/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produkto-kategorija/automobiliniai-ozonatoriai/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produkto-kategorija/automobiliniai-ozonatoriai/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produkto-kategorija/priedai/",
+      "action": "rewrite-authorized-content",
+      "reason": "Owner-authorized same-site unchanged-content migration; preserve useful path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produkto-kategorija/priedai/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "private-preview-only"
+    },
+    {
+      "oldUrl": "https://o3tech.lt/produkto-kategorija/kitos-prekes/",
+      "action": "remove-404",
+      "reason": "Current source already404; correct category navigation uses existing priedai path.",
+      "evidenceUrls": [
+        "https://o3tech.lt/produkto-kategorija/kitos-prekes/"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "implementation": "no-public-change"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "siteId": "o3tech",
+  "canonicalHost": "o3tech.lt",
+  "indices": [
+    {
+      "pageId": "7c955eb1-368b-455d-b99f-e87e0d4fdb00",
+      "slug": "prekes",
+      "productIds": [
+        "0aa808ea-8614-4d29-9e28-f48d71d8d71f",
+        "2d5ddb8b-434f-43b8-955f-b6ba85666058",
+        "62a7a8e0-f76e-43f1-a62c-683adb6aeaad",
+        "4f0a453b-4618-4908-b410-23423c009291",
+        "fa2a0295-f390-4a5a-a1b8-c90cd339d75f",
+        "c9bf2d95-1114-41dc-bec5-5c8213a0abe3",
+        "cd073952-1164-4866-aeca-f69a7a53cccb",
+        "7b1fa636-a429-409e-9360-78808734dd72",
+        "4e1c0eba-6827-499b-adb3-89952ff8c673",
+        "446abe3d-c833-4c95-93ea-fcf6c69058ac",
+        "f3e50004-5019-4343-9f52-1b468ec3cb58"
+      ]
+    },
+    {
+      "pageId": "397bd0ed-5ff0-45ef-b546-efe5e325eaa3",
+      "slug": "produkto-kategorija/buitiniai-ozonatoriai",
+      "productIds": [
+        "0aa808ea-8614-4d29-9e28-f48d71d8d71f",
+        "2d5ddb8b-434f-43b8-955f-b6ba85666058"
+      ]
+    },
+    {
+      "pageId": "178f3cea-1162-4918-bc41-6918a3f61d9f",
+      "slug": "produkto-kategorija/profesionalus-ozonatoriai",
+      "productIds": [
+        "62a7a8e0-f76e-43f1-a62c-683adb6aeaad",
+        "4f0a453b-4618-4908-b410-23423c009291"
+      ]
+    },
+    {
+      "pageId": "646b75f6-78b5-4dd6-b854-6bd9c39d41f2",
+      "slug": "produkto-kategorija/pramoniniai-ozonatoriai",
+      "productIds": [
+        "fa2a0295-f390-4a5a-a1b8-c90cd339d75f",
+        "c9bf2d95-1114-41dc-bec5-5c8213a0abe3",
+        "cd073952-1164-4866-aeca-f69a7a53cccb",
+        "7b1fa636-a429-409e-9360-78808734dd72"
+      ]
+    },
+    {
+      "pageId": "fcb5bbde-29b9-4a30-aa7b-c98443f5a0eb",
+      "slug": "produkto-kategorija/automobiliniai-ozonatoriai",
+      "productIds": [
+        "0aa808ea-8614-4d29-9e28-f48d71d8d71f"
+      ]
+    },
+    {
+      "pageId": "3d67700b-e8c0-4cc0-a04c-12d03cec6c11",
+      "slug": "produkto-kategorija/priedai",
+      "productIds": [
+        "4e1c0eba-6827-499b-adb3-89952ff8c673",
+        "446abe3d-c833-4c95-93ea-fcf6c69058ac",
+        "f3e50004-5019-4343-9f52-1b468ec3cb58"
+      ]
+    }
+  ]
+}

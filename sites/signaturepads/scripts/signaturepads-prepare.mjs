@@ -42,7 +42,7 @@ for(const route of data.routes){
  route.metaTitle=route.metaTitle.replace(/\s*[-–|]\s*$/u,'').trim();
  if(!route.description&&labelMetadata[route.path]){route.description=labelMetadata[route.path];route.metadataProvenance='verbatim existing page/homepage labels; formatting only';}
  const update=editorial.pages.find(p=>p.path===route.path&&p.review?.status==='verified-local-draft');
- if(update){route.description=update.description;route.html=update.html;route.editorialProvenance=update.provenance;const product=data.products.find(p=>p.id===route.productId);if(product)product.contentHtml=update.html;}
+ if(update){route.description=update.description;route.metadataProvenance='owner-authorized software draft; see editorialProvenance';route.html=update.html;route.editorialProvenance=update.provenance;const product=data.products.find(p=>p.id===route.productId);if(product)product.contentHtml=update.html;}
 }
 for(const product of data.products){
  // Retain displayed catalogue prices; discard unused transactional machinery.

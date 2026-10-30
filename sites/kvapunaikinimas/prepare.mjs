@@ -79,6 +79,21 @@ for(const record of presentation.pages.flatMap(p=>p.widgets).filter(w=>w.kind===
  }
  assets[base]=asset;
 }
+// Owner-requested photo edits create new immutable families. Missing private
+// input must fail closed, never silently restore the unredacted photograph.
+const mediaEdits=JSON.parse(await readFile(new URL('./source/media-edits.json',import.meta.url),'utf8'));
+for(const edit of mediaEdits){
+ if(!Array.isArray(edit.aliases)||!edit.aliases.length||edit.aliases.some(name=>!assets[name])||!/^[-\w.]+\.png$/.test(edit.file)||! /^[a-f0-9]{64}$/.test(edit.sha256))throw Error('Invalid owner media edit.');
+ const alt=assets[edit.aliases[0]].alt,rights=`Owner-requested blank registration plate; source photo retained privately. Edited source SHA256: ${edit.sha256}`;
+ let asset=existing.assets.find(a=>a.rights===rights);
+ if(!asset){
+  const bytes=await readFile(path.join(sourceRoot,'images',edit.file));
+  if(createHash('sha256').update(bytes).digest('hex')!==edit.sha256)throw Error('Owner media edit source hash mismatch.');
+  asset=await saveResponsiveAsset(id,{mime:'image/png',alt,rights,prompt:edit.prompt},bytes);existing.assets.push(...asset.variants);
+  provenance.push({source:'owner-authorized-imagegen-edit',file:edit.file,sha256:edit.sha256,sourceBytes:bytes.length,variants:asset.optimization.variantBytes});
+ }
+ for(const name of edit.aliases)assets[name]=asset;
+}
 const clean=b=>b.type==='heading'?{type:'heading',level:b.level>=3?3:2,text:b.text}:b;
 const layout={version:3,assets:Object.fromEntries(Object.entries(assets).map(([name,a])=>[name,a.alt])),pages:{}};
 const specs=[];

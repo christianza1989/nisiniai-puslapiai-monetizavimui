@@ -314,6 +314,81 @@
       "asset": "/models/configurator/components/KESE079WW001-1c2ee68bb1dc63c59cb0.json",
       "componentRuntimeSha256": "cac26fb51bda38c893c971b33029bbf345ae17c18644748f41e136840f193216",
       "sha256": "1c2ee68bb1dc63c59cb081b7960aa6e759ffc34eccd6810477464b46cbebea68"
+    },
+    "KESE085WW001": {
+      "asset": "/models/configurator/components/KESE085WW001-aa27181caa9fc02902a9.json",
+      "componentRuntimeSha256": "a3a6b30878ddc208a8bbb8c4759754e6aa1b934237ea45ec92b939e9f8f2e7ca",
+      "sha256": "aa27181caa9fc02902a9d2a9b4ce755efd76556c0dcbbb9a4c76a570e4e627ed"
+    },
+    "KESE088WW001": {
+      "asset": "/models/configurator/components/KESE088WW001-1be948ac9fcad31ff5dd.json",
+      "componentRuntimeSha256": "04f1c0e3059d09b9728d0804a83b7919a68db57914d5f8227318511506b6fc4a",
+      "sha256": "1be948ac9fcad31ff5dd664e3a4a9ce15b60c40c9957a16fa322068ef578148b"
+    },
+    "KESE126WW001": {
+      "asset": "/models/configurator/components/KESE126WW001-c42699ccd303ad16448a.json",
+      "componentRuntimeSha256": "bbf4be91d383cd078bf9a945b5f887757fe16782e2e8f48f9b881b0172035f21",
+      "sha256": "c42699ccd303ad16448a6cfbd16e8c720d214195d687ec00ae16487bfe43a486"
+    },
+    "KPW2001WW001": {
+      "asset": "/models/configurator/components/KPW2001WW001-cac1aafd5d51f40e732a.json",
+      "componentRuntimeSha256": "7d3ae19eada32fa568ea44ac9e96ff1e78f7a30989e2374647f02dc34be90558",
+      "sha256": "cac1aafd5d51f40e732a82d7bc5fcb43d53a494d76ac69e9adc8519873939e87"
+    },
+    "KPW2005WW002": {
+      "asset": "/models/configurator/components/KPW2005WW002-6d56200ccc920eeac448.json",
+      "componentRuntimeSha256": "bd416b4b92fe909611eb2c115bab0a7afc97134ea29cee3cb9905acea9ccf8c7",
+      "sha256": "6d56200ccc920eeac448a48ae969b14d26000094dc078464bf4703f3e104981d"
+    },
+    "KPW2021WW002": {
+      "asset": "/models/configurator/components/KPW2021WW002-444ff0d917fa22cb96df.json",
+      "componentRuntimeSha256": "a5994f82fb8599288555f10003f99ee001d018d9d758de9dbff3e9caf4fcfa3a",
+      "sha256": "444ff0d917fa22cb96df3f165c1eeed998908a6954032de06317a848ffa71153"
+    },
+    "KSQA126WW001": {
+      "asset": "/models/configurator/components/KSQA126WW001-d815327ea9b681f6f3b4.json",
+      "componentRuntimeSha256": "4f90746a711b2be1295cb7c0e050994f0af86e751f9e2cd14f18d5509309edee",
+      "sha256": "d815327ea9b681f6f3b4ebac120032097e40858fc24dab673e984167f4ca6d24"
+    },
+    "KSQA127WW001": {
+      "asset": "/models/configurator/components/KSQA127WW001-4733e3abf9478946c6a0.json",
+      "componentRuntimeSha256": "797c73e4bafc7a4379bfc969ebdac205c7f2a42676ac1d75f85b5c219329dd76",
+      "sha256": "4733e3abf9478946c6a00fa1b85c29d8b41773bf3e26ed20d493dc02b89cb837"
+    },
+    "KSQA130WW001": {
+      "asset": "/models/configurator/components/KSQA130WW001-9f52da3ceed59f6b8857.json",
+      "componentRuntimeSha256": "52aae0122efd40891581ce776d954080e5e2b5b7ce66bd557976d3d4a8c3070b",
+      "sha256": "9f52da3ceed59f6b88579c31935e6b4a4eb6a61ff983b92295523460237861f8"
+    },
+    "KSQA131WW001": {
+      "asset": "/models/configurator/components/KSQA131WW001-da94fffbdbaba67e55b8.json",
+      "componentRuntimeSha256": "ef11a6181b5de868cb3e70e8a4ad82124f6b6472f293c822559b0f42dfe7dbc4",
+      "sha256": "da94fffbdbaba67e55b829e3d06c6edd12ef3e842877cbe55b1ed7e197208636"
+    },
+    "KSQA160WW001": {
+      "asset": "/models/configurator/components/KSQA160WW001-94fb9a1f0894ffe4aa73.json",
+      "componentRuntimeSha256": "6012580b04b56bcd07e6b1c9e080aac28ff30bf81817c96934ba5750051de240",
+      "sha256": "94fb9a1f0894ffe4aa734846b274d9450e0696404c4feec75b1a2a00b21f15ea"
+    },
+    "KXI2012WW003": {
+      "asset": "/models/configurator/components/KXI2012WW003-9b7ea13f23ee7c416c7c.json",
+      "componentRuntimeSha256": "5d8bd20b141c24b096f8dbd6f570ce86a6b47be94abe62a99777d9cc07d72b53",
+      "sha256": "9b7ea13f23ee7c416c7c1eb4d7fdda182276a8a9836e8ec2b16439ae94b6a6d3"
+    },
+    "KC54080WW001": {
+      "asset": "/models/configurator/components/KC54080WW001-df1fccbea3321ea4f685.json",
+      "componentRuntimeSha256": "b9d50dc8190808ab715aba70c0ff1cbc8dc9a9a013caef98f2fef652b505fd36",
+      "sha256": "df1fccbea3321ea4f6853921e7d181d5015e7b69112040bf107e22ae7990be9a"
+    },
+    "KC54083WW001": {
+      "asset": "/models/configurator/components/KC54083WW001-833c315ebfe251cef07e.json",
+      "componentRuntimeSha256": "113760737f719327924c6e7511ac1bcd5aceb334574cee2372811e3ab718d55d",
+      "sha256": "833c315ebfe251cef07e94362707545dcf30ecc13948573ccc49692a57eaed37"
+    },
+    "KEM2007WW002": {
+      "asset": "/models/configurator/components/KEM2007WW002-7f8ce82757a927385812.json",
+      "componentRuntimeSha256": "a98db72e6ab469993be7e824d46b67e0da4e18c2b3650263767535ce1dcf0791",
+      "sha256": "7f8ce82757a927385812afefabba81c5eb06094b010cd519389a473512fdf35f"
     }
   },
   "schemaVersion": 1

@@ -21,3 +21,12 @@ Verification plan:
 - Check all12 routes, long headings, native menu/FAQ/carousel/form states and keyboard focus.
 - Inspect contrast, glyphs, actual fonts, dimensions and loading; assess user text enlargement and spacing with bounded evidence.
 - One combined visual defect pass, one batch of repairs and one confirmation, plus targeted verification only for a demonstrated unresolved defect.
+
+2026-10-30 measured fidelity closure:
+- [x] Separate navigation tablet1024 and content767 breakpoints; restore375 logo/H1, tablet hero spacing.
+- [x] Restore article heading measure, nested title bullets and dark source text.
+- [x] Retain safe glyph-level typography and normal parent line boxes; match process geometry.
+- [x] Match expanded FAQ padding, final paragraph space and border.
+- [x] Confirm all12 routes and all nine expanded answers,375/390/801/1024/1440 views, narrow reflow and native SEO/form gates. Keep actual-domain draft and historical evidence.
+
+Closure and limits: SECOND-FIDELITY-2026-10-30.md / QA-SECOND-FIDELITY-2026-10-30.json. Same-origin font hints additionally remove the observed font-swap shift; final375/801 render reconfirmed. No pixel-perfect or physical-device certificate.

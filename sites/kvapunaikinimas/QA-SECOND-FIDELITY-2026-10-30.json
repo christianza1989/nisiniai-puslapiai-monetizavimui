@@ -1,0 +1,322 @@
+{
+  "status": "PASS",
+  "at": "2026-10-30T14:14:44.976Z",
+  "sourceBases": {
+    "private": "32f86ec24df064262d6cbed644227a7d18ce6224",
+    "public": "f6486c6c65781a7dde3681576c1bb84b10c8341b",
+    "fetchedPrivateMain": "25292e20219b735df7f04c5807dd4c100f98addc",
+    "fetchedPublicMain": "c2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da"
+  },
+  "checks": [
+    {
+      "id": "tablet-navigation",
+      "pass": true,
+      "evidence": "responsive.json",
+      "observed": "79px header at801/1024; H1 Y matches live source within1px"
+    },
+    {
+      "id": "phone-logo-h1",
+      "pass": true,
+      "evidence": "final-render.json",
+      "observed": "375viewport/360client: logo136,H1size32,header74,titleY154"
+    },
+    {
+      "id": "article-heading-measure",
+      "pass": true,
+      "evidence": "confirmed/metrics.json",
+      "observed": {
+        "h": 64,
+        "w": 335,
+        "x": 20,
+        "y": 2583.4375
+      }
+    },
+    {
+      "id": "category-markers-color",
+      "pass": true,
+      "evidence": "confirmed/metrics.json",
+      "observed": "Nine disc lists,25px indent,dark source title text"
+    },
+    {
+      "id": "glyph-process-geometry",
+      "pass": true,
+      "evidence": "confirmed/metrics.json",
+      "observed": {
+        "desktopColumn": 260,
+        "parent": {
+          "color": "rgb(89, 89, 89)",
+          "letter": "normal",
+          "line": "normal",
+          "size": "15px",
+          "weight": "400"
+        },
+        "runs": [
+          {
+            "color": "rgb(89, 89, 89)",
+            "letter": "1px",
+            "line": "normal",
+            "size": "14px",
+            "text": "Prieš ozonavimą",
+            "weight": "600"
+          },
+          {
+            "color": "rgb(89, 89, 89)",
+            "letter": "1px",
+            "line": "normal",
+            "size": "14px",
+            "text": "Prieš ozonavimą",
+            "weight": "600"
+          }
+        ]
+      }
+    },
+    {
+      "id": "expanded-faq",
+      "pass": true,
+      "evidence": "faq-open.json",
+      "observed": "18 expanded states; mobile first answer196.125px,padding12px10px; desktop padding15px"
+    }
+  ],
+  "visual": {
+    "screens": 24,
+    "routes": 12,
+    "widths": [
+      1440,
+      390
+    ],
+    "extraWidths": [
+      320,
+      375,
+      801,
+      1024
+    ],
+    "horizontalOverflow": 0,
+    "failedImages": 0,
+    "pendingOffscreenCarouselImages": [
+      {
+        "slug": "",
+        "width": 1440,
+        "alt": "Virusai",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 1661.546875,
+          "y": 328.4375
+        }
+      },
+      {
+        "slug": "",
+        "width": 1440,
+        "alt": "Alergenai",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 2027.578125,
+          "y": 328.4375
+        }
+      },
+      {
+        "slug": "",
+        "width": 1440,
+        "alt": "Pelėsis",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 2393.609375,
+          "y": 328.4375
+        }
+      },
+      {
+        "slug": "",
+        "width": 1440,
+        "alt": "Pelėsio naikinimo iliustracija",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 1661.546875,
+          "y": 1533.890625
+        }
+      },
+      {
+        "slug": "",
+        "width": 1440,
+        "alt": "Kvapų naikinimo automobilyje iliustracija",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 2027.578125,
+          "y": 1533.890625
+        }
+      },
+      {
+        "slug": "",
+        "width": 1440,
+        "alt": "Kvapų naikinimo profesionalai",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 2393.609375,
+          "y": 1533.890625
+        }
+      },
+      {
+        "slug": "",
+        "width": 390,
+        "alt": "Virusai",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 643.5,
+          "y": 792.25
+        }
+      },
+      {
+        "slug": "",
+        "width": 390,
+        "alt": "Alergenai",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 946.5,
+          "y": 792.25
+        }
+      },
+      {
+        "slug": "",
+        "width": 390,
+        "alt": "Pelėsis",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 1249.5,
+          "y": 792.25
+        }
+      },
+      {
+        "slug": "",
+        "width": 390,
+        "alt": "Pelėsio naikinimo iliustracija",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 643.5,
+          "y": 2655.3125
+        }
+      },
+      {
+        "slug": "",
+        "width": 390,
+        "alt": "Kvapų naikinimo automobilyje iliustracija",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 946.5,
+          "y": 2655.3125
+        }
+      },
+      {
+        "slug": "",
+        "width": 390,
+        "alt": "Kvapų naikinimo profesionalai",
+        "box": {
+          "h": 300,
+          "w": 300,
+          "x": 1249.5,
+          "y": 2655.3125
+        }
+      }
+    ],
+    "fontsLoaded": true,
+    "originalResponsiveSamples": 8,
+    "finalAfterFontPreload": [
+      {
+        "client": 360,
+        "fonts": "loaded",
+        "h1": "32px",
+        "header": 74,
+        "logo": 136,
+        "overflow": false,
+        "titleY": 154,
+        "width": 375
+      },
+      {
+        "client": 786,
+        "fonts": "loaded",
+        "h1": "32px",
+        "header": 79,
+        "logo": 137.1875,
+        "overflow": false,
+        "titleY": 221.25,
+        "width": 801
+      }
+    ]
+  },
+  "content": {
+    "fragments": 261,
+    "missing": [],
+    "unchangedPageDigests": 12,
+    "changedPageDigests": []
+  },
+  "functional": {
+    "menus": [
+      {
+        "width": 390,
+        "initialOpen": 2,
+        "exclusive": true,
+        "escape": true,
+        "outside": true
+      },
+      {
+        "width": 1440,
+        "initialOpen": 1,
+        "exclusive": true,
+        "escape": true,
+        "outside": true
+      }
+    ],
+    "expandedFaqStates": 18,
+    "nativeFormChecks": 17,
+    "publicTests": 305,
+    "types": "PASS",
+    "scopedLint": "PASS",
+    "productionBuild": "PASS",
+    "seoSmoke": "PASS"
+  },
+  "performance": {
+    "tool": "Lighthouse13.6/Chrome156 simulated mobile",
+    "performance": 90,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 69,
+    "LCPms": 3701.0252500000006,
+    "TBTms": 44,
+    "CLS": 0,
+    "priorSameBatch": [
+      89,
+      89
+    ],
+    "fontHint": "Two same-origin font preloads emitted as HTTP Link headers; requests begin53/55ms vs184ms; CLS0 after hint",
+    "limitation": "Local simulation, not field INP. Earlier96 had benchmark757 vscurrent1952-2103; not a controlled speed regression comparison. Current score is90; do not reuse96. Preview noindex intentionally retained."
+  },
+  "intentionalDifferences": [
+    "Approved two-column mobile service cards",
+    "Visible mobile call action, native labels and form/privacy state",
+    "Accessible contrast tokens and semantic heading levels",
+    "Approved factual privacy notice; ozone assertion rewriting remains excluded"
+  ],
+  "scope": {
+    "realDomain": "DRAFT_ONLY",
+    "syntheticFixture": "LOCAL_ONLY",
+    "production": false,
+    "dns": false,
+    "smtp": false,
+    "physicalSafariAndroid": false
+  },
+  "limitations": [
+    "Playwright relay timed out; final visual/interaction evidence captured through working IAB/CUA browser",
+    "Twelve unrequested offscreen carousel images were deferred; they are not failed visible images",
+    "Gallery full-page captures illustrate structure; fixed backgrounds must also be judged in viewport captures or live preview",
+    "24 full-page captures precede a resource-hint-only edit; final375/801 geometry/fonts reconfirmed afterward"
+  ],
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-final-fidelity-20261030"
+}

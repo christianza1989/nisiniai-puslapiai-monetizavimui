@@ -3,7 +3,7 @@
 import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
-import {blockDigest,pageDigest,orderedWidgets} from '../../../niche-public-core/lib/kvapunaikinimas-presentation.mjs';
+import {blockDigest,pageDigest,orderedWidgets,originalTextStyle} from '../../../niche-public-core/lib/kvapunaikinimas-presentation.mjs';
 import {initialize,listSites,createSite,editSite,getSite,addPage,editPage,saveResponsiveAsset,approvePage,exportPackage,DATA,OUTPUT} from '../../content-studio/src/model.mjs';
 
 const fixture=process.argv.includes('--fixture');
@@ -80,7 +80,7 @@ for(const record of presentation.pages.flatMap(p=>p.widgets).filter(w=>w.kind===
  assets[base]=asset;
 }
 const clean=b=>b.type==='heading'?{type:'heading',level:b.level>=3?3:2,text:b.text}:b;
-const layout={version:2,assets:Object.fromEntries(Object.entries(assets).map(([name,a])=>[name,a.alt])),pages:{}};
+const layout={version:3,assets:Object.fromEntries(Object.entries(assets).map(([name,a])=>[name,a.alt])),pages:{}};
 const specs=[];
 for(const p of source.pages){
  const slug=p.path.replace(/^\/+|\/+$/g,''),body=[],widgets={},formats={};let beforeContact=true;
@@ -89,7 +89,7 @@ for(const p of source.pages){
  const append=b=>{
   const block=b.type==='list'?{type:'list',items:b.items.map(i=>typeof i==='string'?i:i.text)}:clean({type:b.type,...(b.type==='heading'?{level:b.level}:{}),text:b.text});
   const index=body.length;body.push(block);
-  formats[index]={digest:blockDigest(block),...(b.style?{style:{size:Math.round(b.style.size),weight:Math.round(b.style.weight/100)*100,...(typeof b.style.line==='number'&&b.style.line>0?{line:Math.round(b.style.line*100)/100}:{}),align:b.style.align,letter:b.style.letter,marginTop:b.style.marginTop,marginBottom:b.style.marginBottom}}:{}),...(b.marks?.length?{marks:b.marks}:{}),...(b.type==='list'?{ordered:b.ordered===true,start:b.start||1,itemMarks:b.items.map(i=>i.marks||[])}:{})};
+  formats[index]={digest:blockDigest(block),...(b.style?{style:{size:Math.round(b.style.size),weight:Math.round(b.style.weight/100)*100,...(b.style.line==='normal'?{line:'normal'}:typeof b.style.line==='number'&&b.style.line>0?{line:Math.round(b.style.line*100)/100}:{}),align:b.style.align,letter:b.style.letter,color:originalTextStyle(b.style).color,marginTop:b.style.marginTop,marginBottom:b.style.marginBottom}}:{}),...(b.marker?{marker:b.marker}:{}),...(b.marks?.length?{marks:b.marks}:{}),...(b.type==='list'?{ordered:b.ordered===true,start:b.start||1,itemMarks:b.items.map(i=>i.marks||[])}:{})};
  };
  for(const w of p.widgets){
   if(w.kind==='heading.default'&&w.text==='KONTAKTAI')beforeContact=false;

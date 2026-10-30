@@ -44,8 +44,9 @@ const server=http.createServer(async(req,res)=>{
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405,{...common,Allow:'GET, HEAD'});res.end();return;}
   let file=null,mime='';
   if(/^\/content-assets\/o3tech\/[a-f0-9-]+\.webp$/.test(pathname)){file=path.join(privateRoot,'preview-assets',path.basename(pathname));mime='image/webp';}
+  if(pathname==='/brand/o3tech/hero-circles.png'){file=path.join(pub,'public/brand/o3tech/hero-circles.png');mime='image/png';}
   if(/^\/fonts\/o3tech\/[a-z-]+\.woff2$/.test(pathname)){file=path.join(pub,'public',pathname);mime='font/woff2';}
-  if(pathname==='/o3tech.css'){const css=await readFile(path.join(pub,'components/niche/o3tech-fonts.css'),'utf8')+await readFile(path.join(pub,'components/niche/o3tech.css'),'utf8');res.writeHead(200,{...common,'Content-Type':'text/css'});res.end(req.method==='HEAD'?'':css);return;}
+  if(pathname==='/o3tech.css'){const css=await readFile(path.join(pub,'components/niche/o3tech-fonts.css'),'utf8')+await readFile(path.join(pub,'components/niche/o3tech.css'),'utf8')+await readFile(path.join(pub,'components/niche/o3tech-hero06.css'),'utf8');res.writeHead(200,{...common,'Content-Type':'text/css'});res.end(req.method==='HEAD'?'':css);return;}
   if(pathname==='/o3tech-ui.js'){const bytes=await readFile(path.join(pub,'public/o3tech-ui.js'));res.writeHead(200,{...common,'Content-Type':'text/javascript','Content-Length':bytes.length});res.end(req.method==='HEAD'?undefined:bytes);return;}
   if(file){try{const bytes=await readFile(file);res.writeHead(200,{...common,'Content-Type':mime,'Content-Length':bytes.length});res.end(req.method==='HEAD'?undefined:bytes);}catch{res.writeHead(404,common);res.end();}return;}
   const page=site.pages.find(p=>('/'+p.slug+'/').replace('//','/')===pathname);

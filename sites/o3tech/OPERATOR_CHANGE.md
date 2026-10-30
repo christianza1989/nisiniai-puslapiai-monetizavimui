@@ -10,3 +10,14 @@ Direct owner instruction replaces UAB A-Z Prekyba with MB Anvera throughout the 
 - All 23 local/exported routes pass checks for removal of the former operator, old company code and requested English labels. Nine existing focused public tests pass.
 
 Evidence: `private/product-label-20261030/`. Cloudflare static review version `5c976fb9-a172-48b3-85de-8dd9a4d12537` contains these changes, remains noindex and blocks form submission. The owner additionally requested actual-domain migration; that is an active separate launch step, not established by this review deployment. Hostinger DNS was captured for preservation of Google Workspace records. No nameserver, WordPress or original-host change has occurred at this checkpoint.
+
+## Owner-selected text cleanup · 2026-10-30
+
+The owner selected proposals **1–6 and 13** and rejected changes **7–12 and 14–20**. This authorizes the specified presentation edits; it does not establish factual/legal acceptance of retained legacy claims or a native publishing approval.
+
+- Applied1–6 through maintained Studio `editPage`: shortened the terms title using its existing wording; removed checkout/cart acceptance and online banking descriptions, automatic invoice footnotes and the old delivery tariff/free-delivery promise. Updated affected section numbering, references and matching standoff formatting. Retained the original statutory warranty/return clauses and original SSL wording, excluding only the separately approved obsolete banking sentence.
+- Corrected the previously missed declined company name `UAB „A-Z Prekybą“` in the warranty page. The preceding operator scan was too narrow to catch this form; the current scoped check includes the `A-Z Prekyb` stem.
+- Point13 is partial: removed descriptions of unused cart/login/advertising/performance/function cookies. The owner's rejected point12 (the original consent sentence) remains byte-identical. Actual technology-inventory wording awaits the owner-designated writer: required Gemini4Argon LOW was locked on checked accounts; no prompt, purchase or substitute-model output was used.
+- Verified23 local/exported routes, all20 other pages byte-identical, preserved selected warranty/return blocks, valid formatting signatures and9 existing renderer/catalogue tests. Desktop1440 and mobile390 checks show no horizontal overflow. Content notes and all23 unapproved native states remain intact. No mail was sent and the actual domain has not been switched.
+
+Private current evidence and rollback snapshots: `private/owner-selected-edits-20261030/`. Review exports remain noindex and block form submission. This local content revision and its presentation metadata must stay paired; the native content JSON and previous evidence remain private.

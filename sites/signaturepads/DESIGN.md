@@ -65,3 +65,7 @@ Nauja [pataisų ataskaita](PARITY-FIXES-20261030.md) ir [planas](FIX-PLAN-202610
 ## Hero fono slinkimo tapatybė
 
 Pagal papildomą Roko pastebėjimą ir 2026-10-30 originalo matavimą: 1920×837 banner900000058 kompozicija kairėje viršuje, nekartojama; desktop >1024 px fonas fixed, <=1024 px scroll. Tekstas / kortelė nefiksuojami. Naudojamas esamas optimizuotas WebP, 1920 px CSS demonstravimo plotis išlaiko originalios nuotraukos iškirpimą. Papildomas gradientas nėra originalo dalis. Reikalingi ne vien viršaus, bet ir scroll400/800 kadrai. [HERO-FOLLOWUP-20261030.md](HERO-FOLLOWUP-20261030.md) atskiria šį papildomą radinį nuo ankstesnio A01–A07 priėmimo.
+
+## Antrasis – programinės įrangos – nuotraukos fonas
+
+Roko priedas tiksliai identifikavo `pexels-mikhail-nilov-7988079.jpg`: du žmonės prie kompiuterių, už programinės įrangos akordeono ir produkto dėžutės. Atskira home native media šeima, jos laukas `softwareBackground` ir CSS kintamasis; naudoti tik native tinkamą rodyti mediją. Originalo1920×1282 natūralios kompozicijos demonstravimas1920 px, center/center, no-repeat, >1024 fixed / <=1024 scroll, sekcijos minimumas720 px. Patikra turi fiziškai nuslinkti ir aktyvinti visas pagrindinio puslapio sekcijas: pradinio DOM fono inventoriaus nepakanka Nitro offscreen fonams. Dabartinis atkūrimas ir faktiniai įrodymai – [SOFTWARE-BACKGROUND-20261030.md](SOFTWARE-BACKGROUND-20261030.md); ankstesnis12šeimų inventorius šios nuotraukos neapėmė.

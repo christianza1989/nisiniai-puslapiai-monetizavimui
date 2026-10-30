@@ -55,3 +55,9 @@ Rezultatai ir įrodymai: [VISUAL-RESTORATION.md](VISUAL-RESTORATION.md). Ši dal
 [DEEP-COMPARISON-20261029.md](DEEP-COMPARISON-20261029.md) papildo ankstesnius įrodymus 26 adresais ir tikromis funkcijų būsenomis. A01–A07 lieka atviri. Originalo mobile katalogai skirtingi: programinės įrangos filtrai apačioje, bendrame kataloge jų nėra, įrangos kategorijose viršuje; ties 768 px originalas turi 3 produktų stulpelius. Matuoti faktinio teksto a elementą (kortelėse 14 px), ne vien H3 konteinerį (16 px). Originalo produkto H1 600, vietinio 400; nuotraukų / paraščių mastelis dar nesutampa.
 
 Greitosios peržiūros atvėrimo PASS nepakeičia jos turinio patikros: dabartinis dialogas turi tik kortelę. Po pataisų reikalingas pilno produkto parametrų, galerijos, pavadinto dialogo ir mobilios navigacijos priėmimas. Dizaino tapatybės neperkurti; kontrasto / fokuso pagerinimus palikti. Originalo 768 px kontaktų formos 8 px horizontalus slinkimas Core nesikartoja ir nėra atkūrimo tikslas.
+
+## 2026-10-30 A01–A07 pataisos
+
+Rokas tiesiogiai pavedė pataisyti visas septynias grupes vietoje. Įgyvendinti atskiri katalogų maketai, 300 px pradinis galerijos vaizdas / 100 px miniatiūros, faktinio a teksto 14/21/600 vaidmuo ir 600 produkto antraštė / strong. Greitoji peržiūra turi pilną native produktą, atskirą nuotraukos dialogą, pavadinimą ir grįžtantį fokusą; desktop ilgam pavadinimui rezervuojama uždarymo valdiklio vieta. Originalios užklausų nuorodos priimamos abiem kiekio parametrų formomis; date / popularity / rating remiasi faktinėmis originalo sekomis.
+
+Nauja [pataisų ataskaita](PARITY-FIXES-20261030.md) ir [planas](FIX-PLAN-20261030.md) nustato dabartinę A01–A07 būseną; aukščiau lieka ankstesnių auditų kontekstas. Kontrastas / fokusas pagerintas sąmoningai, pikselių tapatumas nėra tikslas. Fizinis telefonas / Safari / tikras browser zoom 200% lieka UNVERIFIED; 390 / 320 px Chrome lietimo emuliacija tikrai atlikta.

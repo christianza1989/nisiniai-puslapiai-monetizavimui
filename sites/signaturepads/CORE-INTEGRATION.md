@@ -45,3 +45,9 @@ Studio duomenys: `D:/Core/signaturepads-migration-20261029/studio/data`; output 
 Prieš gyvą paleidimą atskirai būtina tikra pašto autentifikacija ir konkretaus laiško INBOX gavimas, teisinio operatoriaus / užklausos privatumo patikra bei savininko pavedimas publikuoti. Esama slapukų politika išsaugota; jos nelaikome naujai parengta pilna užklausos privatumo politika. Production admission, DNS ir WordPress pakeitimai šiame pavedime neatlikti.
 
 Koordinavimas: private issue303 / public issue102. Upgrade `c1dc3c21-0f01-4d54-8716-f565aec0c901` (native adapter / keliai), `42d27f65-f427-41b2-922f-d1c95a40d259` (užklausos / paštas). Šaltinis savo lokaliose šakose; jokio main merge ar kito PC adoption teiginio.
+
+## 2026-10-30 atitikimo pataisų atnaujinimas
+
+Ankstesnis `5482f34b` backend / `8fb0ec75` paketas yra istorinis priėmimas. Dabartinių A01–A07 pataisų source `47b957972aad55c3bd6cf6243a94d2233a790e02`; naujas native paketas `38a9024fc02d9f31062e98438214413402d147573822bcd5cbdaa486a4827b81`, release `3a7cbc66-bbac-42b1-a1c0-1da892287e77`. Pakeista tik viena Sigma pastraipa, kiti 25 įrašai, kontaktai ir 199 media baitai išliko. Tik savo output engine turi `local-preview/testOnly` admission, PUBLIC checkout lieka shadow.
+
+Patikrinti 305 Core testai, TypeScript / scoped lint, 26 HTTP URL, 199 media, 225 aliases, 10 vietinio D1 / formos scenarijų ir 19 native vaizdų ties 1440 / 768 / 390 / 320 px. Lietimo emuliacijos 390 / 320 px dialogai / galerija / kontaktų navigacija PASS. Tikslūs naujausio build / dialogo patvirtinimo duomenys, ribos ir failai: [PARITY-FIXES-20261030.md](PARITY-FIXES-20261030.md). Šis priėmimas nepakeičia ankstesnės nepatvirtintos pašto autentifikacijos ir INBOX būsenos; SMTP/API/voice lieka 0, gyva svetainė nepakeista.

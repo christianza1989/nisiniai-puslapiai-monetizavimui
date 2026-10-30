@@ -83,3 +83,9 @@ Po atskiro Roko leidimo atsakingas diegėjas:
 - `node tests/browser/content-inline-fixture.mjs`: atsitiktinis tik localhost portas, fiktyvi paskyra, realus renderer/API/SQLite. `tests/browser/content-inline-editor.mjs` tikrina pažymėjimą, pastabą, juodraštį, palyginimą, Roko dialogą jo nepateikdamas, konfliktą ir telefono plotį. Fiktyvus slaptažodis naudojamas tik šiame neprieinamame iš tinklo testiniame serveryje.
 
 Visos šiame etape naudotos DB yra vietinės. Gyvų juodraščių, slaptažodžių, tokenų ir publikavimo būsena nekeista.
+
+## Roko demonstracija: naudoti įdiegto maketo kopiją
+
+2026-10-30 Rokas pastebėjo, kad pirmoji demonstracija rodė senesnį main maketą ir visus gidus. Tai buvo demonstracijos klaida: fixture nenaudojo publikavimo ribojimo ir bendro `niche-base.css`. PUBLIC `df88ca0a` pataiso fixture, bet nekeičia svetainės tekstų ar produkcinio kodo. Pridėta regresija: tik du paskelbti gidai ir 404 nepaskelbtam matmenų patikros gidui; pakartotinis visas izoliuotas naršyklės bandymas praėjo ir telefonu.
+
+3510 savininko demonstracijai prieš paleidžiant PUBLIC fixture nustatyti `PROMEDICAL_FIXTURE_SITE_ROOT=D:/Core/output/promedical-pr80-deploy-20261026/public-build`. Fixture tik skaito šią išsaugotą įdiegto maketo/turinio/konfigūracijos kopiją, atmintyje prideda naujos TVS žymas ir naudoja dabartinį TVS kodą; išvestis bei izoliuota DB yra atskiri. Viešas sąrašas taiko tą pačią publikavimo projekciją kaip admin peržiūra. Tai nėra gyvos D1 ar jos 20 juodraščių kopija ir nėra naujas diegimas. Demonstracija neturi perrašymo failų eksportuotojo; paspaudimas „Perrašyti“ sukuria tik vietinę bandomąją eilutę, ne rašytojo užduotį.

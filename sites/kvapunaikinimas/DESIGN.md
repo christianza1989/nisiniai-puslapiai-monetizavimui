@@ -6,7 +6,7 @@ Use one scoped token system: text #595959, teal #276d72, pale blue #e1f1f6; dark
 
 Desktop: centered1140px content, original header/navigation order; original hero composition with text panel and fixed-size illustration area; six service cards in one row. Preserve section sequence and image subject. Use the source cloud shape as decorative geometry and reserve dimensions before images/fonts load.
 
-Mobile: same identity with two-column service cards; sticky header with visible phone action plus native menu. No horizontal overflow at320/390px. Carousels retain one complete300px image with2000ms automatic advance, manual controls and pause/focus/reduced-motion handling. The form keeps its current fields; clear labels, telephone keyboard, contact-method-dependent required state, readable error/success feedback and durable storage before success.
+Mobile: same identity with two-column service cards; sticky header with visible phone action plus native menu. No horizontal overflow at320/390px. Both carousels start automatically with one complete300px image and2000ms advance; no Play/Pause button. Previous/next and pointer interaction pause briefly then resume automatically; keyboard focus pauses while active. The reduced-motion preference removes the transition animation, without blocking the owner's explicitly requested automatic cycling. The form keeps its current fields; clear labels, telephone keyboard, contact-method-dependent required state, readable error/success feedback and durable storage before success.
 
 2026-10-29 owner-directed fidelity repair plan (supersedes the earlier approximate-layout choices):
 - [x] Audit all12 original/Core pages at1440 and390px; recorded under D:/Core/output/kvapunaikinimas-visual-review-20261029/.
@@ -37,3 +37,5 @@ Closure and limits: SECOND-FIDELITY-2026-10-30.md / QA-SECOND-FIDELITY-2026-10-3
 - [x] Confirm representative wide/desktop/mobile frames and scroll states in one bounded pass, plus native build/SEO and scoped source gates. Screenshots, not computed attachment alone, are acceptance evidence.
 
 HOME-BACKGROUND-2026-10-30.md records24 viewport frames under actual reduced-motion:true. Source and Core both fixed on desktop, scroll on mobile; human-head frame matches at1920×900. Do not reintroduce the reduced-motion background override while preserving original fidelity.
+
+2026-10-30 later owner request: both carousels must start automatically with no Play buttons. This supersedes the paused reduced-motion carousel behavior mentioned in the earlier background checklist. Reduced preference now affects only transition animation; manual interaction resumes automatically and keyboard-visible focus pauses until blur. AUTOPLAY-2026-10-30.md/json records full5/4-image loops at1440/390, actual ambient reduce:true, manual/keyboard resume and no Play/Pause controls. Layout, original imagery and stationary backgrounds are preserved.

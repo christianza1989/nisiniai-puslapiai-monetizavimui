@@ -1,0 +1,18 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Start both illustration carousels automatically under actual preference; remove Play/Pause buttons and automatically resume after pointer interaction.",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/AUTOPLAY-2026-10-30.md",
+    "sites/kvapunaikinimas/AUTOPLAY-2026-10-30.json"
+  ],
+  "paths": [
+    "components/niche/kvapunaikinimas-controls.tsx"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "rollback": "Revert this scoped controls commit and rebuild the isolated preview; no package/media/mail or global carousel changes.",
+  "id": "upgrade-7134a85f-0089-4bb6-a883-7bc7db0f7b9a",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "05d64c991aa861e87f0535a69b8e9efaa299713c",
+  "createdAt": "2026-10-30T17:37:17.952Z"
+}

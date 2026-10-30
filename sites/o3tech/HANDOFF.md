@@ -1,5 +1,7 @@
 # o3tech migration checkpoint · 2026-10-29
 
+Latest owner-requested visual continuation2026-10-30: [MODERNIZATION.md](MODERNIZATION.md) supersedes source-only presentation fidelity. Clear-air background/photo transitions, refined type/spacing/contrast/navigation/form, visible mobile intro/inquiry and native compact mobile filters are implemented. Exact words/link targets across23routes unchanged;303public tests, final7focused checks/types/fullbuild/2manifests pass. Local mobile Lighthouse96/100/100 (LCP2.8s; no field guarantee), explicit native-zoom/tool and physical-device limitations retained. Current DESIGN records the new roles. Review-only preview4783 remains; no release/live/mail change.
+
 Owner brief: preserve the existing o3tech.lt design, original text, images, contacts and useful paths; remove online shopping. Owner subsequently explicitly authorized the narrow catalogue admission fix after a plain-language explanation. Approval of content, release and live replacement were not requested or performed.
 
 Implemented locally:23keptpaths,11products,5categories;38originalrasterfamilies with108responsivevariants; original Open Sans/logo/colours/bubble backgrounds, native responsive header/catalogue/product/rental/information/footer/form. Existing phone/contact preference survive the shared native durable lead route. No WordPress, Elementor, jQuery, WooCommerce, checkout/account/cart, recaptcha or legacy tracker runtime is shipped in the new renderer.

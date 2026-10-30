@@ -8,6 +8,14 @@ All5actual served WebP assets are300×200, contain alpha transparency, have full
 
 Targeted private comparison: http://127.0.0.1:4790/icon-test/. A retains original transparent WebP, B losslessly re-encodes the same decoded pixels as transparent PNG, and C flattens them onto exactly #e1f1f5 before PNG encoding. All3rows use Arial and the same page background, with no Core renderer, webfonts, scripts or motion. Browser verified15/15images loaded and no horizontal overflow at766px. Owner live outcome is pending; do not claim a successful workaround from the JPEG capture. Private icon-inspection.json preserves hashes, alpha/corner results and screenshot colour runs; icon-comparison.jpg records the fixture. Only the own read-only4790helper was restarted, after command/PID/loopback-port verification. Actual4783/mail/source remain unchanged.
 
+### Owner icon result and position control
+
+Owner replied to the initial icon comparison: “tik a svari” — only A(original transparent WebP) is clean; B(transparent PNG) and C(flattened PNG) show patches. This is an actual live observation, not a JPEG inference. It does not yet isolate the codec: initial variants occupied different rows, and actual captured image widths were smaller than the homepage208px presentation. Original homepage evidence also showed patches with WebP.
+
+Decoded pixel comparison passes for all5assets: WebP RGBA exactly equals the transparent PNG RGBA; expected flattened WebP RGB exactly equals opaque PNG RGB. Transparent PNG chunks are IHDR,pHYs,IDAT,IEND only, with no ICC/gamma profile. The visible result cannot be explained by intentionally different decoded source backgrounds in those controls.
+
+Preserved first fixture as private/icon-test-first.html and added a targeted position control at the same4790/icon-test/URL: same first icon, rotated A/B/C → C/A/B → B/C/A, no webfont/Core/scripts. Actual browser verifies9/9loaded images, all208px wide, no overflow at766px. Screenshot icon-order-comparison.jpg and owner-icon-result.json are private. Owner result for the rotated control is pending; do not conclude a PNG bug or apply image/font replacements before that observation. Actual4783and application source/mail remain untouched.
+
 ## Earlier font controls and their limits
 
 Owner reports recurring faint rectangles on this and other Core sites, visible in both ordinary Chrome and the in-app browser. Uploaded PNG near footer Nuoma/Taisyklės contains opaque base RGB225,241,245 (#e1f1f5) and secondary RGB230,238,247 (#e6eef7).

@@ -34,3 +34,21 @@ Final evidence: D:/Core/output/promedical-inquiry-20261030/FINAL.json, build-ver
 2026-10-30 15:02 UTC: Rokas rejected the published form/basket and explicitly instructed immediate removal from the live site and further work in local test environment only. Restored exact prior Worker909b4e7e-0eb1-4bfb-98d3-47fbc7bb6cbf at100%. Homepage, contacts and Mayo product return200 with the new form and basket absent. No D1 write, content restore, DNS or credential operation. Receipt D:/Core/output/promedical-inquiry-20261030/OWNER_ROLLBACK.json. The previous deployment/acceptance section is historical, not current release authority.
 
 Current status: LOCAL REVIEW ONLY; do not redeploy81ff5dd7, merge/adopt this design, or publish further changes without a new explicit owner approval after preview. Preserve all source and evidence for local revision. Local candidate uses isolated DB and disabled mail at http://127.0.0.1:8933/. PR107 is on hold; code tests did not constitute owner design approval.
+
+## Local style refinement — 2026-10-30
+
+Owner requests matching homepage typography and joining the footer directly to the form at identical width. LOCAL ONLY. No live deployment, new copy, endpoint or data change.
+
+- [x] Inventory current styles and actual computed baseline: Roboto present, but inputs inherit500 weight; nested form30px padding shrinks fields; form/footer separated82px; footer pseudo-element bleeds beyond matching boxes.
+- [x] Use existing section-heading scale24–32px/700, responsive secondary headings18–21px/600, body/input16px/400, labels15px/500, help14px/400, buttons15px/500; line-height1.5–1.6 and normal tracking.
+- [x] Remove nested form panel/padding; retain responsive white fields and red actions, recolor contact links to homepage ink/red.
+- [x] Join section and footer with shared width/gutters/background and no gap or pseudo-element bleed. Stack contact area below1000px; validate1440/768/390/320.
+- [x] Inspect real local desktop/mobile and focus; preserve basket/form behavior. Native zoom/text-spacing limits stay explicit.
+
+Local iteration uses a loopback-only style gateway over the unchanged compiled isolated Worker. It injects the exact source CSS, with no compiled bundle mutation or remote resource. The source imports that same stylesheet for the later normal build after owner approval. Production version909b4e7e remains the accepted live baseline.
+
+Local result: http://127.0.0.1:8935/#uzklausa. Exact source stylesheet is imported by the homepage; existing conflicting contact rules removed. Desktop/tablet/mobile width checks1440/768/390/320: identical form/footer edges, zero join gap, no horizontal document overflow, footer bleed disabled. Inputs computed16px/400; focus email solid3px after keyboard Tab. Visible contact sales@azprekyba.lt retained. CSS parser0warnings; scoped ESLintPASS; Impeccable detector0findings; git diff--checkPASS. Raw measurements and desktop/mobile screenshots: D:/Core/output/promedical-inquiry-20261030/style-browser-checks.json and style-*.png. Computed family is PromedicalRoboto; browser DOM font-face enumeration is empty, so actual font loading is not asserted from that API. Native200% zoom and custom text spacing remain UNVERIFIED.
+
+Gateway request forwarding maps only its own loopback origin8935 to the isolated upstream8933; other origins retain server rejection. Empty same-origin form submission correctly returns400 instead of403, with no stored lead or email. No production form submission, mail, content write or deploy. Existing full compiled form/basket tests remain historical backend evidence; this CSS iteration has not had another full application build. Source CSS parse and browser proof are the current typography/layout evidence. Full build remains required before a later owner-approved release.
+
+Public source commit: c1fad522d53796d46e0efc2eaf1756e71f6a350b. Core main25292e20219b735df7f04c5807dd4c100f98addc; public mainc2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da. Paired handoff freshnessPASS at2026-10-30T15:14Z. PR107/311 stay draft/on hold. No merge or deployment. Viewport override reset; updated local tab retained as owner deliverable. Current live remains909b4e7e.

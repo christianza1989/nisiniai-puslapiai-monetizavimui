@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-30T17:02:53.212Z",
+  "siteId": "kvapunaikinimas",
+  "environment": "local-native-example-fixture",
+  "sender": "kontaktuforma@kontaktuforma.lt",
+  "recipient": "sales@kvapunaikinimas.lt",
+  "rawTlsAuth": true,
+  "installedLoaderLiteralRoundtrip": true,
+  "actualWorkerAuth": true,
+  "initialSubmission": "definite authentication rejection before DATA",
+  "acceptedTestMessages": 1,
+  "messageId": "<20da0c18-2eee-4abf-b86c-833a6fe05b7e@kontaktuforma.lt>",
+  "nativeStoredStatus": "notified",
+  "inboxReceipt": "owner-confirmed-exact-test",
+  "syntheticRowsCleaned": 2,
+  "mailEnabledQaGuard": "PASS (expected exit1 before requests)",
+  "publicCoreTests": {
+    "passed": 307,
+    "failed": 0
+  },
+  "scopedEslint": "PASS (exec session98957 exit0)",
+  "productionDeployed": false,
+  "actualLtContent": "draft-only",
+  "privateBase": "b8d30962d9aeb2aff9490028c5c0ac72c36b9411",
+  "publicBase": "03a977118117c6ccd7927da6a6672add4bca0372",
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-mail-20261030",
+  "secretValuesIncluded": false
+}

@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Preserve literal local SMTP secrets through actual Wrangler dotenv expansion and keep historical verifier reader compatibility.",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/MAIL-CONNECTION-2026-10-30.md",
+    "sites/kvapunaikinimas/MAIL-CONNECTION-2026-10-30.json"
+  ],
+  "paths": [
+    "scripts/hostinger-mail-env.mjs",
+    "scripts/setup-hostinger-mail.mjs",
+    "scripts/verify-hostinger-mail.mjs",
+    "scripts/verify-hostinger-inbox.mjs",
+    "tests/hostinger-mail-env.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "rollback": "Scoped companion commit revert; keep prior private files and explicitly disable preview SMTP until its actual environment is qualified.",
+  "id": "upgrade-f4f1c510-e465-4313-b964-fbae7f6d9fe9",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "b8d30962d9aeb2aff9490028c5c0ac72c36b9411",
+  "createdAt": "2026-10-30T17:03:36.251Z"
+}

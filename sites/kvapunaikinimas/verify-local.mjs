@@ -3,6 +3,7 @@ import {readdir,writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {DatabaseSync} from 'node:sqlite';
 const [runtime,evidence,base='http://127.0.0.1:8918']=process.argv.slice(2);
+if(process.env.KVAPU_QA_MAIL_DISABLED!=='1')throw Error('This verifier submits several valid forms. Restart the own runtime with LEAD_SMTP_ENABLED:0 and no native email binding, then explicitly set KVAPU_QA_MAIL_DISABLED=1. No request was submitted.');
 if(!runtime||!evidence||new URL(base).hostname!=='127.0.0.1')throw Error('Local QA requires explicit own runtime, evidence and loopback base.');
 const directory=path.join(runtime,'.wrangler/state/v3/d1/miniflare-D1DatabaseObject');
 const files=(await readdir(directory)).filter(n=>n.endsWith('.sqlite')&&n!=='metadata.sqlite');

@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Owner-authorized local SMTP sender connected; one accepted native test and exact owner inbox receipt. Initial pre-auth rejection preserved; no production or unknown retry.",
+  "checks": [
+    {
+      "command": "npm run test:core (companion)",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-mail-20261030/core-tests.log:307/307"
+    },
+    {
+      "command": "npx eslint scripts/hostinger-mail-env.mjs scripts/setup-hostinger-mail.mjs scripts/verify-hostinger-mail.mjs scripts/verify-hostinger-inbox.mjs tests/hostinger-mail-env.test.mjs",
+      "result": "PASS",
+      "evidence": "Exec session98957 exit0; no dependency/bundle changes"
+    },
+    {
+      "command": "Installed Wrangler getVarsForDev and actual workerd auth-only qualification",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-mail-20261030/env-loader-check.json and worker-auth-probe.json"
+    },
+    {
+      "command": "One owner-authorized native form /uzklausa test and exact owner receipt",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/MAIL-CONNECTION-2026-10-30.json; unique Message-ID20da0c18-2eee-4abf-b86c-833a6fe05b7e@kontaktuforma.lt"
+    },
+    {
+      "command": "Mail-enabled multi-form verifier refuses before requests without explicit disabled attestation",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-mail-20261030/verifier-guard.json expected exit1; two exact synthetic DB rows backed up and cleaned"
+    }
+  ],
+  "eventId": "a58f4782-0469-45f8-b2fd-88c57ce4960d",
+  "sequence": 2,
+  "at": "2026-10-30T17:03:56.177Z"
+}

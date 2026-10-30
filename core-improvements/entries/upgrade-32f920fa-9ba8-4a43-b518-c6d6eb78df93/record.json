@@ -1,0 +1,24 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Connect owner-authorized sender with one received native-form test, document literal-loader qualification and block unintended QA mail.",
+  "category": "workflow",
+  "evidence": [
+    "sites/kvapunaikinimas/MAIL-CONNECTION-2026-10-30.md",
+    "sites/kvapunaikinimas/MAIL-CONNECTION-2026-10-30.json"
+  ],
+  "paths": [
+    "MAIL_CORE.md",
+    "WORKSTREAMS.md",
+    "sites/kvapunaikinimas/verify-local.mjs",
+    "sites/kvapunaikinimas/ACCEPTANCE.md",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md",
+    "sites/kvapunaikinimas/MAIL-CONNECTION-2026-10-30.md",
+    "sites/kvapunaikinimas/MAIL-CONNECTION-2026-10-30.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "rollback": "Scoped source revert; stop only this local preview and restart with SMTP0. Preserve private credentials and immutable test evidence.",
+  "id": "upgrade-32f920fa-9ba8-4a43-b518-c6d6eb78df93",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "b8d30962d9aeb2aff9490028c5c0ac72c36b9411",
+  "createdAt": "2026-10-30T17:03:34.862Z"
+}

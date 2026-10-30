@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Owner explicitly confirmed the historical reviews were collected on the previous memocasting.lt/Shopify storefront. Added separate hash-bound same-domain collection declaration and audited CAS migration attestation, preserving original review/photo/order identity and never promoting purchase verification. Unknown/foreign marketplace imports remain schema-ineligible.50-ID migration batches stay bounded; native D1/R2 regression proves same-domain eligibility per SKU. No new migration or public attestation endpoint.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "core-verify-storefront.private.log288/288, native worker smoke and dry run; final-attestation-limit.private.log12/12 checks final50-ID cap"
+    },
+    {
+      "command": "node --test commerce-core/test/reviews.test.mjs",
+      "result": "PASS",
+      "evidence": "final-attestation-limit.private.log12/12; owner-origin proof remains separate from paid-order verification and replays safely"
+    }
+  ],
+  "eventId": "90eefaab-54b2-42bf-b091-5e6fed15614d",
+  "sequence": 7,
+  "at": "2026-10-26T20:56:21.260Z"
+}

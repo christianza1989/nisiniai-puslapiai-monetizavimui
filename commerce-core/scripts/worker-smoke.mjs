@@ -67,6 +67,7 @@ const options = {
           'shipment-commands-ui.mjs',
           'jobs-ui.mjs',
           'catalog-ui.mjs',
+          'reviews-ui.mjs',
           'finance-io-ui.mjs',
           'returns-ui.mjs',
           'commerce.html',

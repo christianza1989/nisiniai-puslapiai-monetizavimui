@@ -1,0 +1,25 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Place an existing owner-authorized local video beside the matching reviewed guide section, preserving native controls, publication eligibility, text and lazy video loading.",
+  "evidence": [
+    "sites/memocasting/EDITORIAL_DEPTH_2026_10_26.md",
+    "sites/memocasting/qa/editorial-depth-20261026/selected-before.json",
+    "sites/memocasting/qa/editorial-depth-20261026/reference.txt"
+  ],
+  "paths": [
+    "components/niche/memocasting-guide-video.tsx",
+    "components/niche/memocasting-guide-video.module.css",
+    "components/niche/memocasting-site.tsx",
+    "lib/memocasting-guide-videos.mjs",
+    "tests/memocasting-guide-video.test.mjs",
+    "content-packages/memocasting/content-package.json",
+    "lib/generated/content-packages.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/90",
+  "rollback": "Scoped companion source/content rollback with current provider bindings. Preserve all native historical revisions, dates, existing video assets and commerce data.",
+  "id": "upgrade-d5ee39c7-a52e-42d1-a2d2-93026a16c65b",
+  "branch": "codex/memocasting-editorial-depth-20261026",
+  "baseSha": "a016f2c16e45d1acacf92a5ccf9b085914bee5bc",
+  "createdAt": "2026-10-26T15:32:24.655Z"
+}

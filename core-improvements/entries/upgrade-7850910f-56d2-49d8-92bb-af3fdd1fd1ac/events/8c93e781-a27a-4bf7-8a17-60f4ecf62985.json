@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "core-verify-import-priority.private.log287/287, formatting, native D1/R2 worker acceptance and dry run; regression selects the real new order event ahead of45 earlier import audits"
+    }
+  ],
+  "note": "Bulk historical review audit events are now claimed after functional order/payment/shipping events, so the214-review import cannot delay transaction processing. Lease, replay, acknowledgement, backoff and chronology within priority are unchanged.",
+  "eventId": "8c93e781-a27a-4bf7-8a17-60f4ecf62985",
+  "sequence": 5,
+  "at": "2026-10-26T20:31:22.272Z"
+}

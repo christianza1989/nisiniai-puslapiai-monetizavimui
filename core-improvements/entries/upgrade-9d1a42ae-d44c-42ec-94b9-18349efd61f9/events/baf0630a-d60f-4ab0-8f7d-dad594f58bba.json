@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "PUBLIC code/build/tests verified; runtime browser acceptance remains pending because compiled local Wrangler preview exited ECONNRESET. Original full run277/278 preserved; one test VM import allowlist did not include the new pure review projection. Added that real dependency and reran its full merchant-feed/review suite15/15. No original price/host/source assertions weakened. UI deployment and real customer review publication are separate states.",
+  "checks": [
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/reviews-20261026/public-build.private.log:five-stage vinext build complete, current native package and exact CORE bb0410b9 SDK"
+    },
+    {
+      "command": "npm run test:core then node --test tests/memocasting-merchant-feed.test.mjs tests/memocasting-reviews.test.mjs after explicit VM dependency fix",
+      "result": "PASS",
+      "evidence": "public-tests.private.log277/278 initially; public-affected-tests.private.log15/15 after the one identified failure repair; total278 distinct cases covered"
+    },
+    {
+      "command": "scoped eslint and tsc --noEmit",
+      "result": "PASS",
+      "evidence": "Scoped ESLint exit0 after async link initialization/native-link correction, TypeScript exit0; review bridge negative routes/body caps and schema truth tested"
+    }
+  ],
+  "eventId": "baf0630a-d60f-4ab0-8f7d-dad594f58bba",
+  "sequence": 2,
+  "at": "2026-10-26T19:14:27.547Z"
+}

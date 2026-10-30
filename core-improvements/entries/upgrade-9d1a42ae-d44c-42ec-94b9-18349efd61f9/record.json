@@ -1,0 +1,32 @@
+{
+  "siteId": "memocasting",
+  "summary": "Expose native verified review collection, moderated photo/ratings and noindex proof form without fabricated shop stars or number-only access",
+  "category": "code",
+  "evidence": [
+    "sites/memocasting/REVIEWS_2026_10_26.md",
+    "Native commerce feature CORE issue287; existing homepage only had prices and no product reviews"
+  ],
+  "paths": [
+    "proxy.ts",
+    "app/niche/memocasting/commerce/[...path]/route.ts",
+    "app/niche/memocasting/review/page.tsx",
+    "components/niche/memocasting-site.tsx",
+    "components/niche/memocasting-homepage-motion.tsx",
+    "components/niche/memocasting-review-form.tsx",
+    "components/niche/memocasting-review-privacy.tsx",
+    "components/niche/memocasting-reviews.tsx",
+    "components/niche/memocasting-reviews.css",
+    "lib/memocasting-commerce-bridge.mjs",
+    "lib/memocasting-homepage-catalogue.mjs",
+    "lib/memocasting-product-server.ts",
+    "lib/memocasting-reviews.mjs",
+    "lib/memocasting-structure.mjs",
+    "vendor/commerce-core"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/92",
+  "rollback": "Scoped frontend revert; retain native review and customer records, keep private proof/media gates; disable invitations separately if needed",
+  "id": "upgrade-9d1a42ae-d44c-42ec-94b9-18349efd61f9",
+  "branch": "codex/memocasting-reviews-20261026",
+  "baseSha": "bb0410b9dfca01ffaf358c651625662e89af4181",
+  "createdAt": "2026-10-26T19:06:10.944Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Native review feature and existing commerce regression verified. First full run exposed3hard-coded migration-count assertions (29to30) and an old-store notification UUID assertion; updated only the new schema count and preserved legacy notification references, then full283tests/worker/dry-run passed. Follow-up removal, grouped photo projection,256bit proof, authoritative native SKU and generic store mail identity have targeted D1/R2/review/mail regression. Desktop1280/mobile390 operator empty/settings/trash/import surfaces inspected. Production migration0030 applied separately; hosted feature activation still pending.",
+  "checks": [
+    {
+      "command": "commerce-core npm run verify",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/reviews-20261026/core-verify-final.private.log:283/283 plus native workerd smoke and Wrangler4.149 dry-run"
+    },
+    {
+      "command": "node --test test/reviews*.test.mjs test/notifications.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/reviews-20261026/reviews-final-mail.private.log:10/10; includes real local D1/R2 migration, atomic numbers, exact one-time invitation transport and removal/public media boundaries"
+    },
+    {
+      "command": "production profile wrangler deploy --dry-run",
+      "result": "PASS",
+      "evidence": "sites/memocasting/qa/reviews-20261026/backend-dryrun.private.log:actual memocasting-commerce bindings preserved; no upload"
+    }
+  ],
+  "eventId": "17e826d9-9151-4101-b41d-673837c67583",
+  "sequence": 2,
+  "at": "2026-10-26T19:13:59.894Z"
+}

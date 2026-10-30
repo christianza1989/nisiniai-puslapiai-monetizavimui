@@ -1,0 +1,18 @@
+{
+  "siteId": "memocasting",
+  "summary": "Commerce lacks verified customer photo reviews, invitation settings and continuous human order numbering requested by store owner",
+  "category": "code",
+  "evidence": [
+    "commerce-core/src/service.mjs: createOrder stores only opaque UUID; no review module or review migration before0030",
+    "sites/memocasting/REVIEWS_2026_10_26.md"
+  ],
+  "paths": [
+    "commerce-core"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/287",
+  "rollback": "Revert scoped source; retain additive review tables, human numbers and customer records; disable invitations without deleting data",
+  "id": "upgrade-7850910f-56d2-49d8-92bb-af3fdd1fd1ac",
+  "branch": "codex/memocasting-reviews-20261026",
+  "baseSha": "172bfabd15c59370846c97e12b98f3c755edb395",
+  "createdAt": "2026-10-26T18:38:48.994Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original isolated relay tests missed the outer rewrite policy. Hosted failure and actual-proxy red regression preserved; actual-proxy green regression covers the complete header composition with runtime env fixture. Final edge acceptance remains separate.",
+  "checks": [
+    {
+      "command": "node --test tests/memocasting-image-routing.test.mjs tests/memocasting-commerce-bridge.test.mjs",
+      "result": "PASS",
+      "evidence": "8/8. Same actual proxy composition failed before the narrow header fix."
+    },
+    {
+      "command": "npm run test:core; npx tsc --noEmit; npx eslint proxy.ts",
+      "result": "PASS",
+      "evidence": "294tests, types/lint exit0. Canonical SEO_GEO_CORE now requires outer rewrite/final-handler composition and actual GET/HEAD checks."
+    }
+  ],
+  "eventId": "4823c24c-5329-4372-8f14-9de6c70e1393",
+  "sequence": 2,
+  "at": "2026-10-27T07:38:56.745Z"
+}

@@ -860,6 +860,18 @@ function onePageForm({
   fields.terms = terms;
   const termsLink = element('a', { target: '_blank', rel: 'noopener noreferrer' }, u.terms);
   summary.append(element('label', { class: 'checkout-consent' }, terms, termsLink));
+  const reviewConsent = element('input', { name: 'reviewRequestConsent', type: 'checkbox' });
+  if (language === 'lt' && context.reviewRequests) {
+    fields.reviewRequestConsent = reviewConsent;
+    summary.append(
+      element(
+        'label',
+        { class: 'checkout-consent checkout-review-consent' },
+        reviewConsent,
+        'Sutinku po pirkimo gauti vieną el. laišką su prašymu įvertinti įsigytą rinkinį. Neprivaloma.',
+      ),
+    );
+  }
   const termsUnavailable = element(
     'p',
     { class: 'checkout-hint', role: 'status' },
@@ -1575,6 +1587,7 @@ function onePageForm({
         quoteHash: quote.quoteHash,
         ...(quote.deliveryQuoteId ? { deliveryQuoteId: quote.deliveryQuoteId } : {}),
         acceptedPolicyVersion: policyVersion,
+        ...(reviewConsent.checked ? { reviewRequestConsent: 'review-request-v1' } : {}),
         ...(context.paymentRecovery
           ? { paymentRecoveryNotice: context.paymentRecovery.noticeVersion }
           : {}),
@@ -1650,6 +1663,7 @@ function onePageForm({
       syncLockerSelection();
     }
     terms.checked = Boolean(initialOrder);
+    reviewConsent.checked = prefill.snapshot.reviewRequestConsent?.version === 'review-request-v1';
     if (!initialOrder) {
       changed();
       status.textContent =
@@ -1793,7 +1807,13 @@ export async function mountCheckout(
       failed: t[26],
     };
     content.append(
-      element('p', {}, t[27] + ': ' + order.id.slice(0, 8).toUpperCase()),
+      element(
+        'p',
+        {},
+        t[27] +
+          ': ' +
+          (order.orderNumber || order.public_number || order.id.slice(0, 8).toUpperCase()),
+      ),
       element(
         'p',
         {},

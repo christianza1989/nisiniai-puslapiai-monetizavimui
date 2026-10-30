@@ -162,6 +162,7 @@ const assets = {
   '/catalog-editor.mjs': ['catalog-editor.mjs', 'text/javascript; charset=utf-8'],
   '/catalog-ui.mjs': ['catalog-ui.mjs', 'text/javascript; charset=utf-8'],
   '/discounts-ui.mjs': ['discounts-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/reviews-ui.mjs': ['reviews-ui.mjs', 'text/javascript; charset=utf-8'],
   '/finance-io-ui.mjs': ['finance-io-ui.mjs', 'text/javascript; charset=utf-8'],
   '/returns-ui.mjs': ['returns-ui.mjs', 'text/javascript; charset=utf-8'],
   '/commerce': ['commerce.html', 'text/html; charset=utf-8'],

@@ -1,0 +1,19 @@
+{
+  "paths": [
+    "tests/seo-core-smoke.mjs",
+    "scripts/seo-smoke-transport.mjs"
+  ],
+  "summary": "Hosted SEO verifier uses foreign HTTP Host as TLS SNI, failing handshake before host-isolation assertions",
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/92",
+  "evidence": [
+    "Hosted npm run test:seo-smoke: EPROTO ssl/tls alert handshake failure",
+    "Explicit verified SNI memocasting.lt with HTTP Host unknown-domain.example returns Cloudflare403 and no niche content"
+  ],
+  "rollback": "Scoped verifier revert; retain certificate validation and local app404 assertions. No production runtime change",
+  "siteId": "core",
+  "category": "code",
+  "id": "upgrade-b431c016-a2d6-4e52-ac4c-0eceb9fec8bd",
+  "branch": "codex/memocasting-reviews-20261026",
+  "baseSha": "d284ae49531cd332163abb99e0de46a43e511f90",
+  "createdAt": "2026-10-26T19:55:31.271Z"
+}

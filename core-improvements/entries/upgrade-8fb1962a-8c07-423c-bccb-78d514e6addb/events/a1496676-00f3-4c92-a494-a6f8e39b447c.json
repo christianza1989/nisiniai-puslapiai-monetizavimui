@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Sequential actual desktop1280/mobile390 component and native-copy inspection. Native214review purchase attestation is separate from frontend presentation. Coordinate touch automation was limited by browser origin zoom; actual trusted Enter on visible video starts playback without moving track/document. Physical iOS acceptance is not claimed. Final build/hosted acceptance remain independent.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "293PUBLIC regressions, including public image/private response admission."
+    },
+    {
+      "command": "node --test tests/memocasting-homepage.test.mjs tests/memocasting-homepage-brand.test.mjs tests/memocasting-homepage-faq.test.mjs tests/memocasting-commerce-bridge.test.mjs tests/memocasting-reviews.test.mjs",
+      "result": "PASS",
+      "evidence": "21cases after final187page/805asset native import."
+    },
+    {
+      "command": "npx tsc --noEmit; scoped eslint; impeccable detect --no-design-system",
+      "result": "PASS",
+      "evidence": "Types exit0; frozen lint0errors/0warnings; detector[]. Site typography reviewed directly because network-level design context is not this brand."
+    }
+  ],
+  "eventId": "a1496676-00f3-4c92-a494-a6f8e39b447c",
+  "sequence": 2,
+  "at": "2026-10-27T07:25:49.429Z"
+}

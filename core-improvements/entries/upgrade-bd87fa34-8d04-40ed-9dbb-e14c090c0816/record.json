@@ -1,0 +1,25 @@
+{
+  "siteId": "memocasting",
+  "summary": "Permit indexing only for already-published public buyer images while keeping private API responses excluded, and project reviewed brand evidence on the homepage",
+  "category": "code",
+  "evidence": [
+    "Live image audit116pages/619URLs:26successful public product/review image responses carried generic buyer API noindex, including Product.image and social assets",
+    "Native homepage brand section remains reviewed content, not a hard-coded duplicate, and removes only its own duplicate hidden remainder",
+    "sites/memocasting/IMAGE_SEO_BRAND_2026_10_27.md"
+  ],
+  "paths": [
+    "lib/memocasting-commerce-bridge.mjs",
+    "lib/memocasting-homepage-brand.mjs",
+    "components/niche/memocasting-brand-story.tsx",
+    "components/niche/memocasting-brand-story.css",
+    "components/niche/memocasting-site.tsx",
+    "tests/memocasting-commerce-bridge.test.mjs",
+    "tests/memocasting-homepage-brand.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/96",
+  "rollback": "Frontend rollback to f45cbb3c-3f39-4041-82b9-f376a3e70f83 only; preserve live commerce/mail versions, customer data, actual bindings and article calendar. Native prior approved homepage remains in immutable baseline release874aa0b0.",
+  "id": "upgrade-bd87fa34-8d04-40ed-9dbb-e14c090c0816",
+  "branch": "codex/memocasting-image-trust-20261027",
+  "baseSha": "113869b0a2fbf151f030afe5231f694e54111016",
+  "createdAt": "2026-10-27T06:27:52.280Z"
+}

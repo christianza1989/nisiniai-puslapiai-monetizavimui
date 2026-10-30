@@ -5,6 +5,7 @@ import { renderShipmentCommands } from './shipment-commands-ui.mjs';
 import { renderJobs } from './jobs-ui.mjs';
 import { renderCatalog } from './catalog-ui.mjs';
 import { renderDiscounts } from './discounts-ui.mjs';
+import { renderReviews } from './reviews-ui.mjs';
 import { renderReturns } from './returns-ui.mjs';
 import { usesOnlySimpleStock } from './finished-stock-ui.mjs';
 import { paymentLabel, fulfillmentLabel, refundableAmount } from './operator-order-status.mjs';
@@ -38,6 +39,7 @@ const titles = {
   automation: 'Automatiniai darbai',
   catalog: 'Prekės ir kainos',
   discounts: 'Nuolaidų kodai',
+  reviews: 'Atsiliepimai',
 };
 const paymentNames = {
   pending: 'Laukia mokėjimo',
@@ -52,6 +54,8 @@ const fulfillmentNames = {
   pending: 'Laukia komplektavimo',
   ready: 'Sukomplektuota',
   labelled: 'Siunta užregistruota',
+  shipped: 'Perduota vežėjui',
+  delivered: 'Pristatyta',
   stock_exception: 'Trūksta prekių',
 };
 const kinds = {
@@ -60,6 +64,14 @@ const kinds = {
   packing: 'Komplektavimo lapas',
 };
 const errorNames = {
+  invalid_review_settings: 'Dienų skaičius turi būti nuo 1 iki 180.',
+  invalid_review_origin: 'Naudokite šios parduotuvės HTTPS adresą be kelio gale.',
+  review_version_conflict: 'Įrašas jau pasikeitė. Atnaujinkite skyrių ir bandykite dar kartą.',
+  invalid_review_moderation: 'Įrašykite bent 3 simbolių peržiūros paaiškinimą.',
+  review_csv_mapping_invalid: 'Priskirkite visus privalomus CSV stulpelius.',
+  review_import_not_confirmed: 'Patikrinkite visas CSV eilutes ir patvirtinkite atsiliepimų kilmę.',
+  review_shipment_not_ready:
+    'Pirma užregistruokite siuntą; perdavimą žymėkite tik faktiškai išsiuntę.',
   invalid_discount: 'Patikrinkite nuolaidos dydį, galiojimo datas ir naudojimų limitą.',
   invalid_discount_code: 'Kodui naudokite 3–40 raidžių A–Z, skaitmenis, brūkšnelį arba pabraukimą.',
   discount_code_exists: 'Toks nuolaidos kodas jau yra. Pasirinkite kitą kodą.',
@@ -365,7 +377,7 @@ function table(headers, rows, extra = '') {
   );
 }
 function orderLabel(order) {
-  return order.id.slice(0, 8).toUpperCase();
+  return String(order.public_number || order.orderNumber || order.id.slice(0, 8).toUpperCase());
 }
 function render() {
   $('#view-title').textContent = titles[state.view];
@@ -399,6 +411,11 @@ function render() {
   if (state.view === 'orders') renderOrders(content);
   if (state.view === 'stock') renderStock(content);
   if (state.view === 'documents') renderDocuments(content);
+  if (state.view === 'reviews')
+    return load(
+      () => renderReviews(content, { node, api, action, has, binary }),
+      'Nepavyko įkelti atsiliepimų. Patikrinkite ryšį ir bandykite dar kartą.',
+    );
   if (state.view === 'discounts')
     return load(
       () =>
@@ -923,6 +940,33 @@ function renderOrder(content, detail) {
     integrations: state.data.integrations,
   });
   renderPrivateFiles(content, detail, { node, table, cell, action, has, binary, reload, date });
+  if (o.fulfillment_state === 'labelled' && has('ship')) {
+    const sent = node('button', { type: 'button' }, 'Patvirtinti: siunta perduota vežėjui');
+    sent.addEventListener('click', () =>
+      action(
+        sent,
+        async () => {
+          await api('/api/operator/orders/' + o.id + '/handed-over', {});
+          await reload();
+          await openOrder(o.id);
+        },
+        'Perdavimas užfiksuotas. Nuo šios datos skaičiuojamas atsiliepimo kvietimo laukimo laikas.',
+      ),
+    );
+    content.append(
+      node(
+        'section',
+        {},
+        node('h2', {}, 'Siuntos perdavimas'),
+        node(
+          'p',
+          { class: 'hint' },
+          'Paspauskite tik iš tikrųjų įdėję siuntą į paštomatą arba perdavę kurjeriui. Vien lipduko sukūrimas dar nėra išsiuntimas.',
+        ),
+        sent,
+      ),
+    );
+  }
 }
 function renderRefunds(content, detail) {
   const o = detail.order,

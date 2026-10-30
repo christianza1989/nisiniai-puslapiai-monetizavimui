@@ -6,6 +6,7 @@ import { ShipmentCommands } from './shipment-commands.mjs';
 import { CustomerNotifications } from './notifications.mjs';
 import { ShippingAutomation } from './shipping-automation.mjs';
 import { PaymentRecovery } from './payment-recovery.mjs';
+import { ProductReviews } from './reviews.mjs';
 const notifyKinds = [
   'OrderPlaced',
   'PaymentConfirmed',
@@ -30,6 +31,7 @@ export class CommerceJobs {
       storeId: store,
       environment: env,
       orderId: order.id,
+      ...(order.public_number ? { orderNumber: String(order.public_number) } : {}),
       eventId: event.id,
       kind: event.kind,
       recipient: order.snapshot.customer.email,
@@ -266,6 +268,8 @@ export class CommerceJobs {
       config.notificationPolicy?.approved === true
     ) {
       const recovery = new PaymentRecovery(this.s, this.options);
+      const reviews = new ProductReviews(this.s, this.options.privateStorage);
+      await reviews.schedule(store, env);
       if (config.paymentRecovery?.enabled === true) {
         for (const order of await this.s.rows(
           "SELECT id FROM orders WHERE store_id=? AND payment_state='pending' AND stock_state='reserved' AND created_at>=? AND created_at<=? AND expires_at>? AND NOT EXISTS(SELECT 1 FROM customer_notifications n WHERE n.store_id=orders.store_id AND n.order_id=orders.id AND n.kind='PaymentReminder') ORDER BY created_at LIMIT 20",
@@ -293,6 +297,7 @@ export class CommerceJobs {
       }
       const notifications = new CustomerNotifications(this.s, this.options.notificationAdapters, {
         reminderCheck: (...args) => recovery.canRemind(...args),
+        reviewCheck: (...args) => reviews.canInvite(...args),
       });
       for (const n of await this.s.rows(
         "SELECT event_id FROM customer_notifications WHERE store_id=? AND state IN ('prepared','unknown','sending') ORDER BY created_at LIMIT 20",

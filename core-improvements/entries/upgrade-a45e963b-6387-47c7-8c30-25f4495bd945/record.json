@@ -1,0 +1,18 @@
+{
+  "siteId": "kvapunaikinimas",
+  "evidence": [
+    "D:/Core/output/kvapunaikinimas-cloud-safe-20261030/before.json",
+    "sites/kvapunaikinimas/CLOUD-SAFE-2026-10-30.md"
+  ],
+  "rollback": "Scoped revert of the cloud-clearance CSS and related acceptance documentation; retain prior visual/mail changes.",
+  "summary": "Prevent text intersecting cloud SVG bands at both edges across responsive and wrapped states",
+  "category": "code",
+  "paths": [
+    "components/niche/kvapunaikinimas-site.module.css"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "id": "upgrade-a45e963b-6387-47c7-8c30-25f4495bd945",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "0a4d35b7fca34df619f9162ccb8f5b86150e9e0f",
+  "createdAt": "2026-10-30T18:28:06.574Z"
+}

@@ -1,0 +1,23 @@
+{
+  "siteId": "kvapunaikinimas",
+  "evidence": [
+    "D:/Core/output/kvapunaikinimas-cloud-safe-20261030/before.json",
+    "sites/kvapunaikinimas/CLOUD-SAFE-2026-10-30.md"
+  ],
+  "rollback": "Scoped revert of the cloud-clearance CSS and related acceptance documentation; retain prior visual/mail changes.",
+  "summary": "Reserve responsive decorative-cloud clearance and document all-route text-edge acceptance",
+  "category": "workflow",
+  "paths": [
+    "sites/kvapunaikinimas/DESIGN.md",
+    "sites/kvapunaikinimas/ACCEPTANCE.md",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md",
+    "sites/kvapunaikinimas/CLOUD-SAFE-2026-10-30.md",
+    "sites/kvapunaikinimas/CLOUD-SAFE-2026-10-30.json",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "id": "upgrade-26d660ea-a220-4b97-9eb3-83cb534b0e77",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "0a4d35b7fca34df619f9162ccb8f5b86150e9e0f",
+  "createdAt": "2026-10-30T18:28:04.576Z"
+}

@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "summary": "Shared V1 Service/Organization projection cannot express a confirmed service territory without a schema copy; add optional territory through existing factual configuration.",
+  "category": "code",
+  "evidence": [
+    "Companion lib/niche-schema-core.mjs: Service graph has provider but no areaServed input; confirmed territory cannot be projected by existing adapter."
+  ],
+  "paths": [
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/180",
+  "rollback": "Scoped revert of optional companion schema/network adapter changes; unconfigured sites retain existing output. No deployment.",
+  "id": "upgrade-b5b4be2b-a137-4213-b4f5-cfceab41bad3",
+  "branch": "codex/geraskvapas-market-20261015",
+  "baseSha": "dc920fc00d6208a89cd3dfbbd2b189944750c1b1",
+  "createdAt": "2026-10-16T05:38:07.642Z"
+}

@@ -32,7 +32,25 @@ class Element:
     def text(self, visible=True):
         if visible and self.hidden():
             return ''
-        return ' '.join(c.text(visible) if isinstance(c, Element) else c for c in self.children)
+        if self.tag in ('br', 'hr'):
+            return '\n'
+        # Inline elements do not invent spaces: <a>guide</a>. is "guide.",
+        # and pa<strong>ti</strong>krinta remains one word. Only semantic
+        # block/cell boundaries separate reading text; hidden nodes add none.
+        blocks = {'address', 'article', 'aside', 'blockquote', 'body', 'dd',
+                  'details', 'div', 'dl', 'dt', 'fieldset', 'figcaption',
+                  'figure', 'footer', 'form', 'h1', 'h2', 'h3', 'h4', 'h5',
+                  'h6', 'header', 'li', 'main', 'nav', 'ol', 'p', 'pre',
+                  'section', 'summary', 'table', 'tbody', 'td', 'tfoot',
+                  'th', 'thead', 'tr', 'ul'}
+        parts = []
+        for child in self.children:
+            if isinstance(child, Element):
+                value = child.text(visible)
+                parts.append(' ' + value + ' ' if value and child.tag in blocks else value)
+            else:
+                parts.append(child)
+        return ''.join(parts)
 
 
 class Document(HTMLParser):

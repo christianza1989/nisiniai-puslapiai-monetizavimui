@@ -1,0 +1,21 @@
+{
+  "status": "local-verified",
+  "note": "Owner authorized one genuine writer -> reviewed local draft test. PUBLIC beb39d0758a9531502083d625e879fe6e1c1c2dd adds opt-in local capability fixture, virtual in-process HTTPS bridge routing, persistent isolated SQLite and publication/policy disable. No production auth changes. Full editorial round trip remains pending, not PASS.",
+  "checks": [
+    {
+      "command": "Owner UI rewrite + real CORE bridge with pinned loopback transport",
+      "result": "PASS",
+      "evidence": "preflight.json: one authorized job exported as 002-rewrite.md; unauthorized key401; publish route rejected without network; live and draft equal original; history0. Genuine writer answer and Claude approval still pending."
+    },
+    {
+      "command": "Scoped fixture ESLint, git diff --check, staged repository safety",
+      "result": "PASS",
+      "evidence": "end-to-end/public-safety.json; opt-in fixture actually running on loopback55955. Production credentials/bindings absent."
+    }
+  ],
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/106",
+  "commit": "beb39d0758a9531502083d625e879fe6e1c1c2dd",
+  "eventId": "3f2bb7fa-cdcc-437a-96b8-021f652fd81e",
+  "sequence": 5,
+  "at": "2026-10-30T13:39:30.106Z"
+}

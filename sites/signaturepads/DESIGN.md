@@ -66,6 +66,17 @@ Nauja [pataisų ataskaita](PARITY-FIXES-20261030.md) ir [planas](FIX-PLAN-202610
 
 Pagal papildomą Roko pastebėjimą ir 2026-10-30 originalo matavimą: 1920×837 banner900000058 kompozicija kairėje viršuje, nekartojama; desktop >1024 px fonas fixed, <=1024 px scroll. Tekstas / kortelė nefiksuojami. Naudojamas esamas optimizuotas WebP, 1920 px CSS demonstravimo plotis išlaiko originalios nuotraukos iškirpimą. Papildomas gradientas nėra originalo dalis. Reikalingi ne vien viršaus, bet ir scroll400/800 kadrai. [HERO-FOLLOWUP-20261030.md](HERO-FOLLOWUP-20261030.md) atskiria šį papildomą radinį nuo ankstesnio A01–A07 priėmimo.
 
+## Visų pagrindinio puslapio sekcijų atkūrimas H01–H08
+
+Roko 2026-10-30 tiesioginis pavedimas „pataisyk ka radai“ apima HOMEPAGE-COMPARISON-20261030.md radinius. Dabartinis planas ir priėmimas – HOMEPAGE-FIXES-20261030.md. Native paketas94de2ef5 ir visos26 puslapių kopijos nekeisti; atstatomas pateikimas ir11 papildomų originalo srcset adresų. Originalo duomenis rinkti iš visų img/srcset/lazy variantų, ne vien tuo metu pasirinkto currentSrc.
+
+- Header >1024 nefiksuotas; <=1024 prisegtas. Įranga lieka tikra nuoroda greta atskiro native submenu valdiklio; kategorių tvarka parašo planšetės /monitorių išplėtimai /programinė įranga. Revoked kategorija neturi palikti parent nuorodos.
+- Hero ir software turi atskirus stulpelius: ties1440 hero540/540 su99% iliustracija, software585/495 su99% iliustracija. Teksto fonas nepermatomas, iliustracijos opacity0.95; akordeono aukštis pagal turinį, ne ištemptas iki iliustracijos.
+- Įrangos tinklelis >=768px turi4 stulpelius, <=767px –1. Kortelės2px #595959 /20px kampai, iliustracijos95% /24px kampai;4px tarpai. Trust ta pati kortelių sistema,250x200 logotipai; mobile1 stulpelis.
+- Hero ir software mobile skydeliai ties390 plotis318px, ties320 plotis248px; iliustracijos99%. Naudoti originalias15/20px vidines paraštes ir14px /25.2px tekstą. Atviri tekstai ir visos8 antraštės lieka native.
+- Kontaktų nuotrauka desktop550px, mobile390→354px;40px kampai. Mobile poraštės logotipas202px, desktop225px; originalo blyškus fonas#e1f1f6. Formos sutikimas ir kontrastas išlaikomi; jų papildoma vieta nelaikoma klaida.
+- Vienkartinis1250ms pasirodymas kortelių grupei; turinys visada matomas be JS, reduced-motion efekto nevykdo. Nepridedami Elementor/Nitro ar mokami įskiepiai.
+
 ## Antrasis – programinės įrangos – nuotraukos fonas
 
 Roko priedas tiksliai identifikavo `pexels-mikhail-nilov-7988079.jpg`: du žmonės prie kompiuterių, už programinės įrangos akordeono ir produkto dėžutės. Atskira home native media šeima, jos laukas `softwareBackground` ir CSS kintamasis; naudoti tik native tinkamą rodyti mediją. Originalo1920×1282 natūralios kompozicijos demonstravimas1920 px, center/center, no-repeat, >1024 fixed / <=1024 scroll, sekcijos minimumas720 px. Patikra turi fiziškai nuslinkti ir aktyvinti visas pagrindinio puslapio sekcijas: pradinio DOM fono inventoriaus nepakanka Nitro offscreen fonams. Dabartinis atkūrimas ir faktiniai įrodymai – [SOFTWARE-BACKGROUND-20261030.md](SOFTWARE-BACKGROUND-20261030.md); ankstesnis12šeimų inventorius šios nuotraukos neapėmė.

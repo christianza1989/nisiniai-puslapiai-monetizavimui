@@ -394,6 +394,46 @@
       "sha256": "e147be535e6a10501728cad0a39ab3afa4cc274cf61cc1ebcadc4dd5cd7ba23e",
       "bytes": 882140,
       "version": "base"
+    },
+    {
+      "code": "KNXT002WW002",
+      "name": "Nexter",
+      "version": "base+lossless-20261030-v1",
+      "asset": "/models/configurator/chairs/KNXT002WW002-edc6a6ee751a202e9737/review-7e625b02321fc5d4997e.json",
+      "sha256": "7e625b02321fc5d4997e03689036ce36ea320fea54cf277ded64f07103058693",
+      "bytes": 88617
+    },
+    {
+      "code": "KPOX002WW002",
+      "name": "Prox",
+      "version": "base+lossless-20261030-v1",
+      "asset": "/models/configurator/chairs/KPOX002WW002-b04600c6b410c55e1095/review-06880c79f8bbc0efb7c7.json",
+      "sha256": "06880c79f8bbc0efb7c7aad9e5dca23cd86187fafc2b638ea05377bdca67b523",
+      "bytes": 148091
+    },
+    {
+      "code": "KPOX002WW001",
+      "name": "Prox",
+      "version": "base+lossless-20261030-v1",
+      "asset": "/models/configurator/chairs/KPOX002WW001-cf03dc9d861bb7084efa/review-9b54388aca185274076c.json",
+      "sha256": "9b54388aca185274076cfb851986fee0aacd32ad80b547432a6818f85d752eed",
+      "bytes": 117897
+    },
+    {
+      "code": "KJUP001WW002",
+      "name": "Jupiter",
+      "version": "base+lossless-20261030-v1",
+      "asset": "/models/configurator/chairs/KJUP001WW002-5474e4bbccd00d79f486/review-06f2ec88780809099c84.json",
+      "sha256": "06f2ec88780809099c845284eccfa54fd4d8e65c6c25ff49db759fe8aff2385e",
+      "bytes": 2265
+    },
+    {
+      "code": "KUTI005WW001",
+      "name": "Utila",
+      "version": "base+lossless-20261030-v1",
+      "asset": "/models/configurator/chairs/KUTI005WW001-5eca0df0196a3d6e01d1/review-7015a0c470f9734d9047.json",
+      "sha256": "7015a0c470f9734d904763421b21844105274ee0fa38ca038e2ea36cb57dafdd",
+      "bytes": 298743
     }
   ]
 }

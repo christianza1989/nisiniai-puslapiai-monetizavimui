@@ -1,5 +1,15 @@
 # Subtle background rectangles · 2026-10-30
 
+## Latest evidence: icons are also affected
+
+The owner subsequently supplied a1244×209PNG showing the same patches around all five benefit icons, including areas outside the icon circles. Its two dominant colours are again #e1f1f5 (159656pixels) and #e6eef7 (43717pixels). At screenshot row145 the secondary colour spans x0–263,328–455,584–711 and1032–1159, separated by the base colour. The regular block edges do not track each individual image boundary. This is evidence of a broader visible rendering symptom; the earlier font-only comparison must not be treated as a complete root-cause diagnosis or a whole-site Arial fix.
+
+All5actual served WebP assets are300×200, contain alpha transparency, have fully transparent corners and margins, and have no embedded colour profile. Current browser computed styles from each image through its ancestor chain show transparent image/containers, one section background rgb(225,241,245), opacity1, blend normal, and no background image/filter/backdrop-filter/transform/shadow. The gray blocks are not baked into those transparent source margins and no matching authored icon background was found. These observations do not identify a specific browser, GPU or driver defect.
+
+Targeted private comparison: http://127.0.0.1:4790/icon-test/. A retains original transparent WebP, B losslessly re-encodes the same decoded pixels as transparent PNG, and C flattens them onto exactly #e1f1f5 before PNG encoding. All3rows use Arial and the same page background, with no Core renderer, webfonts, scripts or motion. Browser verified15/15images loaded and no horizontal overflow at766px. Owner live outcome is pending; do not claim a successful workaround from the JPEG capture. Private icon-inspection.json preserves hashes, alpha/corner results and screenshot colour runs; icon-comparison.jpg records the fixture. Only the own read-only4790helper was restarted, after command/PID/loopback-port verification. Actual4783/mail/source remain unchanged.
+
+## Earlier font controls and their limits
+
 Owner reports recurring faint rectangles on this and other Core sites, visible in both ordinary Chrome and the in-app browser. Uploaded PNG near footer Nuoma/Taisyklės contains opaque base RGB225,241,245 (#e1f1f5) and secondary RGB230,238,247 (#e6eef7).
 
 Current PUBLIC source e8395f42be84d0c86a1202b0f6135090bce6487a has a single opaque footer background; links and intervening ancestors are transparent, with no filter, transform, shadow or opacity change. Chrome forced-colors/more-contrast/dark-scheme/HDR are false, reduced motion true. This does not establish a general palette defect across the network.

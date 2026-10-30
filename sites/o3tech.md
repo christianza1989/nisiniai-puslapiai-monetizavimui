@@ -2,7 +2,7 @@
 
 Owner brief, 2026-10-29: reproduce the existing o3tech.lt appearance and content as closely as practical. Preserve logo, images, text, contacts and useful paths; remove WooCommerce, cart, checkout and online selling. This is an existing-business technical migration, not a new identity, offer or content commission.
 
-siteId: `o3tech`; canonical host: `o3tech.lt`; locale: `lt-LT`; timezone: `Europe/Vilnius`. Existing operator and contact retained at the owner's request: UAB A-Z Prekyba, sales@o3tech.lt, +37064819979, Buivydiškių g.22, Vilnius07195. They are sourced from the live site, not Pinet defaults. No new operator facts are inferred from hosting access.
+siteId: `o3tech`; canonical host: `o3tech.lt`; locale: `lt-LT`; timezone: `Europe/Vilnius`. Current operator confirmed by owner2026-10-30: MB Anvera, company code308123004, VAT LT100020788717. Existing contact retained at the owner's request: sales@o3tech.lt, +37064819979, Buivydiškių g.22, Vilnius07195. They are sourced from the live site, not Pinet defaults. No new operator facts are inferred from hosting access.
 
 Paired fresh source: CORE `25292e20219b735df7f04c5807dd4c100f98addc`; PUBLIC `c2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da`. Isolated branches `codex/o3tech-migration-20261029`; GitHub coordination CORE issue302. Raw public captures, Studio data, original media and local test records remain beneath `D:/Core/o3tech-migration-20261029/private`, outside either repository.
 

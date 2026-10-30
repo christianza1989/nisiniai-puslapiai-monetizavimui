@@ -37,7 +37,7 @@ export async function loadPreviewMail({configPath,privateRoot,transport=smtpNode
   if(!password||/[\r\n\x00]/.test(password))throw Error();
   return{enabled:true,async send(_env,mail){
    if(mail.to!==settings.to[0])throw Error('Unconfigured mail recipient');
-   const message={...mail,from:settings.username,fromName:'UAB A-Z Prekyba'};
+   const message={...mail,from:settings.username,fromName:'MB Anvera'};
    smtpMessage(message); // Validate all headers before connecting to the provider.
    return transport({user:settings.username,password},message);
   }};

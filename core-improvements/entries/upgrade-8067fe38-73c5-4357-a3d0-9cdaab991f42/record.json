@@ -1,0 +1,26 @@
+{
+  "siteId": "o3tech",
+  "summary": "A single-tenant Worker must not embed unrelated content or apply publication pauses for absent tenants. Compile only after complete source validation, emitting matched package, admission and network settings; preserve canonical publication eligibility and default multi-site behavior.",
+  "category": "code",
+  "evidence": [
+    "docs/NICHE_WORKER_BUILD.md",
+    "tests/niche-build-scope.test.mjs",
+    "sites/o3tech/NATIVE_CLOUDFLARE.md"
+  ],
+  "paths": [
+    "scripts/compile-content-packages.mjs",
+    "lib/niche-build-scope.mjs",
+    "lib/generated/niche-network.json",
+    "lib/niche-sites.ts",
+    "lib/content-model-v2.ts",
+    "tests/niche-build-scope.test.mjs",
+    "tests/seo-core-smoke.mjs",
+    "docs/NICHE_WORKER_BUILD.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/103",
+  "rollback": "Revert the scoped compiler helper and generated network readers together, regenerate the full registry and rebuild the affected owned deployment. Do not replace native runtime with the static review export.",
+  "id": "upgrade-8067fe38-73c5-4357-a3d0-9cdaab991f42",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "2c9d3440f45e8286c71bc18da1c6483b98488b1b",
+  "createdAt": "2026-10-30T20:35:18.405Z"
+}

@@ -21,3 +21,8 @@ The owner selected proposals **1–6 and 13** and rejected changes **7–12 and 
 - Verified23 local/exported routes, all20 other pages byte-identical, preserved selected warranty/return blocks, valid formatting signatures and9 existing renderer/catalogue tests. Desktop1440 and mobile390 checks show no horizontal overflow. Content notes and all23 unapproved native states remain intact. No mail was sent and the actual domain has not been switched.
 
 Private current evidence and rollback snapshots: `private/owner-selected-edits-20261030/`. Review exports remain noindex and block form submission. This local content revision and its presentation metadata must stay paired; the native content JSON and previous evidence remain private.
+
+Later2026-10-30: owner approved point13; exact text is applied and visible online.
+Native23-page approval/release and dedicated Cloudflare upload are complete.
+Actual-domain activation remains pending. Current checkpoint and rollback:
+[NATIVE_CLOUDFLARE.md](NATIVE_CLOUDFLARE.md).

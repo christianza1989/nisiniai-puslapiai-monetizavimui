@@ -47,3 +47,10 @@ Fidelity owner continuation COMPLETE2026-10-29: PUBLIC127a2b2f97b4e61ee2c30d2be7
 Repeat audit continuation: PUBLIC39410fa510350a1bdcf3b62a28456bf09182dfdd(code8f03b7f9). See RE-AUDIT.md and private/re-audit-20261029/ATASKAITA.md.303public tests, final typecheck/build/2RSCmanifests and emitted CSS/UI/renderer checksPASS; actual23paired pages, responsive/state/zoom proofs retained. Source mobile hero/form hiding and old copy/contrast remain explicit review limits; physicaltouch/Safari not tested. No new11tenant runtime claim or real release. Previous archives unchanged; new scoped preservation follows. Owner review4783 remains.
 
 2026-10-30 final form receipt: owner explicitly confirmed the exact second browser-form email98380279/O3-FORMA-20261030-B1 at sales@o3tech.lt. Local browser→native storage→SMTP→recipient receipt now confirmed. See MAIL_CONNECTION; no third send, source change or production activation.
+
+Later2026-10-30: approved point13 applied;23 native pages reviewed, approved,
+released, imported and built as an isolated Worker. D1, secrets and two routes
+configured; registrar change accepted. Web DNS remains original DNS-only while
+zone/certificate are pending.306tests/types/build, compiled23-page SEO and10local
+HTTP checks pass. No new real mail or actual-domain cutover is claimed. See
+[NATIVE_CLOUDFLARE.md](NATIVE_CLOUDFLARE.md).

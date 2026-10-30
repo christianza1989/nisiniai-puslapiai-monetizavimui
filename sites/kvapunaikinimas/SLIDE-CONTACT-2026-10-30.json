@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-30T18:04:57.525Z",
+  "status": "PASS",
+  "siteId": "kvapunaikinimas",
+  "sourceWidget": {
+    "navigation": "none",
+    "effect": "slide",
+    "autoplayMs": 2000,
+    "transitionMs": 500
+  },
+  "ambientReducedMotion": true,
+  "loops": [
+    {
+      "device": "desktop",
+      "count": 5,
+      "samples": 111,
+      "intermediateFrames": 21,
+      "wraps": 2,
+      "leftward": true,
+      "noControls": true
+    },
+    {
+      "device": "desktop",
+      "count": 4,
+      "samples": 111,
+      "intermediateFrames": 21,
+      "wraps": 2,
+      "leftward": true,
+      "noControls": true
+    },
+    {
+      "device": "mobile",
+      "count": 5,
+      "samples": 76,
+      "intermediateFrames": 10,
+      "wraps": 2,
+      "leftward": true,
+      "noControls": true
+    },
+    {
+      "device": "mobile",
+      "count": 4,
+      "samples": 76,
+      "intermediateFrames": 10,
+      "wraps": 2,
+      "leftward": true,
+      "noControls": true
+    }
+  ],
+  "contact": {
+    "desktopWidth": 1280,
+    "mobileWidth": 390,
+    "originalFieldHeights": [
+      40,
+      40.796875,
+      40.796875,
+      40.796875,
+      144.34375
+    ],
+    "nativeFieldHeights": [
+      40,
+      40.796875,
+      40.796875,
+      40.796875,
+      144.34375
+    ],
+    "placeholdersMatch": true,
+    "associatedLabelsRetained": true,
+    "photoAlignment": {
+      "top": 1,
+      "bottom": 3.25
+    },
+    "photoDimensionsWithinOnePixelOfOriginal": true,
+    "requiredPhoneEmailStates": "PASS",
+    "consentRequired": true,
+    "formPosts": 0
+  },
+  "sourceRuntimeSha256": {
+    "kvapunaikinimas-controls.tsx": "0301c985ada55052b998a7f507827c6167e4c6531ff27ae3b012fcc560146550",
+    "kvapunaikinimas-form.tsx": "77cdf38de1e4da4539b6c48874990de55e08972f8f24163928699f36b0886256",
+    "kvapunaikinimas-site.tsx": "1b77eb6c40384206062df4db1520abf21636a50319587a4ac59ae202e8d126ec",
+    "kvapunaikinimas-site.module.css": "bb57530bb1f9ea988465c144f88d1824e6612dd919f9d01d051562f97b51514c"
+  },
+  "coreTests": 307,
+  "typescript": "PASS",
+  "scopedLint": "PASS",
+  "build": "PASS,2 RSC manifests",
+  "seoSmoke": "PASS,12 pages/robots/sitemap/llms/schemas/host isolation/404",
+  "additionalMailSent": 0,
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-slide-contact-20261030",
+  "actualLtState": "draft-only",
+  "productionDeployed": false,
+  "privateBase": "ed117449b1f4e320704f65074a1ec519308a869a",
+  "publicBase": "93ec9d8fdd11a8c093aeafc79023572e2a266472"
+}

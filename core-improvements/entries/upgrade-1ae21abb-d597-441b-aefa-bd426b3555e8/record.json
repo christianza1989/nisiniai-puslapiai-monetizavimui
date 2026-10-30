@@ -1,0 +1,23 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Record measured original-only sliding/no-controls and original placeholder/contact-photo fidelity with retained form semantics.",
+  "category": "workflow",
+  "evidence": [
+    "sites/kvapunaikinimas/SLIDE-CONTACT-2026-10-30.md",
+    "sites/kvapunaikinimas/SLIDE-CONTACT-2026-10-30.json"
+  ],
+  "paths": [
+    "WORKSTREAMS.md",
+    "sites/kvapunaikinimas/DESIGN.md",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md",
+    "sites/kvapunaikinimas/ACCEPTANCE.md",
+    "sites/kvapunaikinimas/SLIDE-CONTACT-2026-10-30.md",
+    "sites/kvapunaikinimas/SLIDE-CONTACT-2026-10-30.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "rollback": "Scoped docs/journal revert; preserve original/live measurement evidence and prior immutable acceptances.",
+  "id": "upgrade-1ae21abb-d597-441b-aefa-bd426b3555e8",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "ed117449b1f4e320704f65074a1ec519308a869a",
+  "createdAt": "2026-10-30T18:06:17.382Z"
+}

@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "origin": "https://promedical.lt",
+  "root": "J:/My Drive/Claude-Orkestratoriaus-Chats/2026-10-27-Tekstai-Gemini/rezultatai/antigravity-bandymas",
+  "state": "D:/Core/promedical-rewrite-bridge/bridge.sqlite",
+  "tokenFile": "D:/Core/promedical-rewrite-bridge/rewrite-token.dpapi",
+  "codexJs": "C:/Users/VP/AppData/Roaming/npm/node_modules/@openai/codex/bin/codex.js",
+  "threadId": "01a153d9-64bc-7bb3-a350-9508d7f0f725"
+}

@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Final local candidate verified; no production access, migration, token activation, uploads, approval, publishing or deployment. Public packages unchanged. Browser owner approval dialog cancelled.",
+  "checks": [
+    {
+      "command": "npm run test:core; TypeScript; scoped ESLint; npm run build",
+      "result": "PASS",
+      "evidence": "311/311 tests, types/lint pass, build-release.log: two asset manifests, zero missing files."
+    },
+    {
+      "command": "node tests/content-admin-rewrites-workerd.mjs <CORE checkout>",
+      "result": "PASS",
+      "evidence": "Actual workerd + isolated D1 + CORE bridge: one export, one draft write, retry idempotent, zero publications."
+    },
+    {
+      "command": "SEO smoke against locally compiled Worker, Promedical and Memocasting",
+      "result": "PASS",
+      "evidence": "1,853 and 125 public pages, robots/sitemap/llms/schemas, host isolation and 404."
+    },
+    {
+      "command": "Actual React StrictMode/admin fixture browser acceptance and anonymous compiled Worker check",
+      "result": "PASS",
+      "evidence": "Manual/whole/partial drafts, old/new, repeat request, 409 and 401 retention, desktop/mobile/200% text/keyboard. No publication. D:/Core/output/promedical-inline-20261030/browser-verification.json and built-browser.json."
+    },
+    {
+      "command": "Package/registry byte checks and scoped Impeccable detector",
+      "result": "PASS",
+      "evidence": "All 11 tenant packages and compiled registry unchanged; final design detector zero findings, sequential self-review."
+    }
+  ],
+  "eventId": "ce90af73-f4d9-4662-bf44-60a263a3a074",
+  "sequence": 2,
+  "at": "2026-10-30T10:17:22.881Z"
+}

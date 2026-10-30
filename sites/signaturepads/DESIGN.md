@@ -61,3 +61,7 @@ Greitosios peržiūros atvėrimo PASS nepakeičia jos turinio patikros: dabartin
 Rokas tiesiogiai pavedė pataisyti visas septynias grupes vietoje. Įgyvendinti atskiri katalogų maketai, 300 px pradinis galerijos vaizdas / 100 px miniatiūros, faktinio a teksto 14/21/600 vaidmuo ir 600 produkto antraštė / strong. Greitoji peržiūra turi pilną native produktą, atskirą nuotraukos dialogą, pavadinimą ir grįžtantį fokusą; desktop ilgam pavadinimui rezervuojama uždarymo valdiklio vieta. Originalios užklausų nuorodos priimamos abiem kiekio parametrų formomis; date / popularity / rating remiasi faktinėmis originalo sekomis.
 
 Nauja [pataisų ataskaita](PARITY-FIXES-20261030.md) ir [planas](FIX-PLAN-20261030.md) nustato dabartinę A01–A07 būseną; aukščiau lieka ankstesnių auditų kontekstas. Kontrastas / fokusas pagerintas sąmoningai, pikselių tapatumas nėra tikslas. Fizinis telefonas / Safari / tikras browser zoom 200% lieka UNVERIFIED; 390 / 320 px Chrome lietimo emuliacija tikrai atlikta.
+
+## Hero fono slinkimo tapatybė
+
+Pagal papildomą Roko pastebėjimą ir 2026-10-30 originalo matavimą: 1920×837 banner900000058 kompozicija kairėje viršuje, nekartojama; desktop >1024 px fonas fixed, <=1024 px scroll. Tekstas / kortelė nefiksuojami. Naudojamas esamas optimizuotas WebP, 1920 px CSS demonstravimo plotis išlaiko originalios nuotraukos iškirpimą. Papildomas gradientas nėra originalo dalis. Reikalingi ne vien viršaus, bet ir scroll400/800 kadrai. [HERO-FOLLOWUP-20261030.md](HERO-FOLLOWUP-20261030.md) atskiria šį papildomą radinį nuo ankstesnio A01–A07 priėmimo.

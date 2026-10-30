@@ -30,3 +30,10 @@ Verification plan:
 - [x] Confirm all12 routes and all nine expanded answers,375/390/801/1024/1440 views, narrow reflow and native SEO/form gates. Keep actual-domain draft and historical evidence.
 
 Closure and limits: SECOND-FIDELITY-2026-10-30.md / QA-SECOND-FIDELITY-2026-10-30.json. Same-origin font hints additionally remove the observed font-swap shift; final375/801 render reconfirmed. No pixel-perfect or physical-device certificate.
+
+2026-10-30 owner screenshot follow-up: homepage background fidelity
+- [x] Compare original/Core in the actual reduced-motion environment at matching viewport/scroll positions; record both hero and proof layers.
+- [x] Restore original stationary background anchoring and human-head framing. Preserve text/layout, paused reduced-motion carousels and white plate.
+- [x] Confirm representative wide/desktop/mobile frames and scroll states in one bounded pass, plus native build/SEO and scoped source gates. Screenshots, not computed attachment alone, are acceptance evidence.
+
+HOME-BACKGROUND-2026-10-30.md records24 viewport frames under actual reduced-motion:true. Source and Core both fixed on desktop, scroll on mobile; human-head frame matches at1920×900. Do not reintroduce the reduced-motion background override while preserving original fidelity.

@@ -1,0 +1,22 @@
+{
+  "siteId": "promedical",
+  "summary": "Preserve numbered selected fields and reusable owner terminology in review-gated writer tasks.",
+  "category": "code",
+  "evidence": [
+    "tests/content-rewrite-bridge.test.mjs",
+    "sites/promedical/INLINE_EDITOR.md"
+  ],
+  "paths": [
+    "scripts/content-rewrite-bridge.mjs",
+    "tests/content-rewrite-bridge.test.mjs",
+    "sites/promedical/INLINE_EDITOR.md",
+    "sites/promedical/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/308",
+  "rollback": "Revert only this scoped source change. Preserve existing local data, historical reviews and queued jobs; no production migration or deployment was performed.",
+  "id": "upgrade-db70d66d-aa42-4563-96bf-10bd664a40b5",
+  "branch": "codex/promedical-inline-editor-20261030",
+  "baseSha": "dbd7501da817ea0616d2417706aef47b9e0a832d",
+  "createdAt": "2026-10-30T14:56:03.919Z"
+}

@@ -3,7 +3,13 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {randomUUID} from 'node:crypto';
-import {runOnce,openState,sha256,reviewedPayload,bridgeRequest} from '../scripts/content-rewrite-bridge.mjs';
+import {runOnce,openState,sha256,reviewedPayload,bridgeRequest,taskText} from '../scripts/content-rewrite-bridge.mjs';
+
+test('writer receives pinned site terminology and separately numbered selected fields',()=>{
+ const job={id:randomUUID(),etag:'base:2',mode:'selection',note:'Fixture correction',snapshot:{siteId:'promedical',type:'guide',slug:'gidai/fixture',title:'Fixture',description:'Fixture description',body:[{type:'heading',level:2,text:'Kreipiančiųjų bėgelių tipai'},{type:'paragraph',text:'Krepšiai įstatomi į kreipiančiąsias.'}]},selection:{ranges:[{from:'body.0.text',quote:'Kreipiančiųjų bėgelių tipai'},{from:'body.1.text',quote:'Krepšiai įstatomi į kreipiančiąsias.'}]},rules:[{id:'fixture',term:'kreipianč',instruction:'Vartoti bėgeliai.'}]};
+ const text=taskText(job,'004');assert.match(text,/Dalis 1 \(body\.0\.text\):\nKreipiančiųjų/);assert.match(text,/Dalis 2 \(body\.1\.text\)/);assert.match(text,/Nenaudoti „kreipianč“/);assert.match(text,/JSON masyvą/);assert(!text.includes('undefined'));assert(text.endsWith('--- PABAIGA ---\n'));
+ const single=taskText({...job,selection:job.selection.ranges[0]},'005');assert.match(single,/tik pažymėtos dalies pakaitinį tekstą/);assert(!single.includes('JSON masyvą'));
+});
 
 test('file bridge preserves trial, retries stable task, waits for hash-bound double review, recovers ambiguous import',async()=>{
  const dir=await fs.mkdtemp(path.resolve('output/bridge-test-'));const root=path.join(dir,'writer'),state=path.join(dir,'bridge.sqlite');

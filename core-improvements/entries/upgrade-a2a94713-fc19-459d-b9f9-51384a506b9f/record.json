@@ -1,0 +1,33 @@
+{
+  "siteId": "promedical",
+  "summary": "Allow selection of new draft text and reusable site feedback without losing unselected content or superseding other pending jobs.",
+  "category": "code",
+  "evidence": [
+    "tests/content-admin-editorial.test.mjs",
+    "tests/content-admin-rewrites-workerd.mjs",
+    "docs/PROMEDICAL_REWRITE_SELECTION.md"
+  ],
+  "paths": [
+    "db/content-admin-rewrites.sql",
+    "lib/content-admin-api.mjs",
+    "lib/content-admin-rewrites.mjs",
+    "lib/content-admin-store.mjs",
+    "lib/content-rewrite-contract.mjs",
+    "public/brand/promedical/admin/admin.css",
+    "public/brand/promedical/admin/admin.js",
+    "public/brand/promedical/admin/inline.js",
+    "tests/browser/content-inline-editor.mjs",
+    "tests/browser/content-inline-fixture.mjs",
+    "tests/content-admin-rewrites-workerd.mjs",
+    "docs/PROMEDICAL_REWRITE_SELECTION.md",
+    "lib/content-admin-editorial.mjs",
+    "public/brand/promedical/admin/selection.js",
+    "tests/content-admin-editorial.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/105",
+  "rollback": "Revert only this scoped source change. Preserve existing local data, historical reviews and queued jobs; no production migration or deployment was performed.",
+  "id": "upgrade-a2a94713-fc19-459d-b9f9-51384a506b9f",
+  "branch": "codex/promedical-inline-editor-20261030",
+  "baseSha": "dbd7501da817ea0616d2417706aef47b9e0a832d",
+  "createdAt": "2026-10-30T14:56:05.595Z"
+}

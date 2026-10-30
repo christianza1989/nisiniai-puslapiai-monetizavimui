@@ -99,3 +99,9 @@ PUBLIC fixture turi pasirenkamą `PROMEDICAL_FIXTURE_BRIDGE_TOKEN`: tik nauja at
 CORE `runOnce` ir `bridgeRequest` bandyme naudojami su transporto adapteriu, kurio vienintelė tinklo kryptis yra tikslus loopback adresas. Adapteris priima vieną konkretų užduoties ID, leidžia tik list/status/draft, draudžia redirect ir filtruoja eksportą iki šio ID. Produkcinis CLI lieka nepakeistas ir išjungtas. Tikras rašytojo atsakymas ir tikras Claude hash patvirtinimas būtini; jų testas neimituoja. Įkėlus vieną juodraštį bandymo stebėtojas sustoja. Atsakymo bei importo pranešimai siunčiami tik esamam TX-GEM pokalbiui, su vienkartiniu dispatch žurnalu.
 
 Šio bandymo privatus adapteris ir kvitai: `D:/Core/output/promedical-inline-20261030/end-to-end/`. Pirmoji patikra įrodė UI → eilė → `002-rewrite.md`, vieną queued įrašą, klaidingo rakto atmetimą, jokio importo be tikrintojų ir nepakitusią viešą kopiją. Atsakymo / Claude / importo pabaiga fiksuojama atskirai; vien eksportas nėra visos eigos PASS.
+
+## Juodraščio pažymėjimas ir svetainės taisyklės
+
+PUBLIC docs/PROMEDICAL_REWRITE_SELECTION.md describes the selection/feedback contract. A selected job may contain selection.ranges: one exact UTF-16 anchor per text field. Writer output and the reviewed candidate must provide a replacement array in the same order; merging preserves unselected text and block types. Whole-text jobs keep the existing structured changes contract. taskText prints numbered fragments and the pinned site rules; it never performs AI review or writes approvals.
+
+The page-specific note is distinct from a reusable site instruction. The additional rule tables are additive, require a separately authorized production migration, and do not grant any new machine capability. Local-only term rejection is an extra guard, not a language-quality certificate.

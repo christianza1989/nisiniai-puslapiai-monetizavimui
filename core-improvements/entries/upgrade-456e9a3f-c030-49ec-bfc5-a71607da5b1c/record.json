@@ -1,0 +1,21 @@
+{
+  "siteId": "o3tech",
+  "summary": "Record the owner-rejected visual attempt and actual source/user-browser correction, including real prefers-reduced-motion failure rather than inferring success from headless normal-motion tests.",
+  "category": "workflow",
+  "evidence": [
+    "sites/o3tech/HERO-RESTORATION.md"
+  ],
+  "paths": [
+    "sites/o3tech/DESIGN.md",
+    "sites/o3tech/HERO-RESTORATION.md",
+    "sites/o3tech/HANDOFF.md",
+    "sites/o3tech/MODERNIZATION.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/302",
+  "rollback": "Revert this correction's documentation append; preserve prior attempt and all source/real-browser failure receipts.",
+  "id": "upgrade-456e9a3f-c030-49ec-bfc5-a71607da5b1c",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "d99e96510094d8d2a5e436c18e6b7d8a5003963b",
+  "createdAt": "2026-10-30T14:23:23.179Z"
+}

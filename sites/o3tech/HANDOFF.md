@@ -1,5 +1,7 @@
 # o3tech migration checkpoint · 2026-10-29
 
+Current owner correction2026-10-30: [HERO-RESTORATION.md](HERO-RESTORATION.md) supersedes the rejected modernization palette/transitions. Original hero/colour/type/section system restored; actual source header hover1.2/.4sand all four photo hovers1.1/.8smeasured and reproduced. Mobile hero/inquiry and native catalogue disclosure retained. Earlier performance scores remain tied to their earlier source; no live deployment/content/mail change.
+
 Latest owner-requested visual continuation2026-10-30: [MODERNIZATION.md](MODERNIZATION.md) supersedes source-only presentation fidelity. Clear-air background/photo transitions, refined type/spacing/contrast/navigation/form, visible mobile intro/inquiry and native compact mobile filters are implemented. Exact words/link targets across23routes unchanged;303public tests, final7focused checks/types/fullbuild/2manifests pass. Local mobile Lighthouse96/100/100 (LCP2.8s; no field guarantee), explicit native-zoom/tool and physical-device limitations retained. Current DESIGN records the new roles. Review-only preview4783 remains; no release/live/mail change.
 
 Owner brief: preserve the existing o3tech.lt design, original text, images, contacts and useful paths; remove online shopping. Owner subsequently explicitly authorized the narrow catalogue admission fix after a plain-language explanation. Approval of content, release and live replacement were not requested or performed.

@@ -1,5 +1,7 @@
 # o3tech visual refinement · 2026-10-30
 
+Superseded after direct owner feedback: new palette/transitions were rejected and original hover growth was missing. Current design and source acceptance is in [HERO-RESTORATION.md](HERO-RESTORATION.md). Preserve this document as the actual earlier attempt and its scoped evidence, not current visual approval or performance certification.
+
 The owner's new instruction supersedes pixel fidelity for presentation: modernize the existing site, preserve its words, contacts, photographs and routes, add purposeful movement and soft image/section transitions. No content approval or production deployment is implied.
 
 Direction: clear air. Retain the original Open Sans, molecular logo, turquoise identity and photographic composition. Replace the thick hero frame with a quiet white reading surface, let the bubble background dissolve into the page, and give the original imagery one short transition from soft focus to clarity. Keep copy sharp throughout. No new stock images, invented claims, animation library, perpetual decorative motion, or new content store.

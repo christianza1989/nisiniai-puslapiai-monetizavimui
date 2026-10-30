@@ -29,4 +29,6 @@ This checks all23draft paths, original imported text blocks, internal URLs/fragm
 
 No live deployment, DNS mutation, email, new prose, paid research or Core/index exception is enabled by these commands. Read CONTENT_READINESS before release.
 
+Mail opt-in2026-10-30: the default preview above remains mail-disabled. The owner separately authorized the explicit private O3TECH_MAIL_CONFIG option; see ../MAIL_CONNECTION.md for the actual enabled local instance, protected credentials, checks and the single authorized direct-adapter delivery test. This Node adapter does not qualify the eventual hosted Worker transport.
+
 Fidelity continuation: importer now invokes `presentation.mjs` to recover source formatting/section boundaries without duplicating text. For a presentation-only recapture, run that script directly after preserving existing inputs. The preview serves the same site-local progressive UI script as the actual renderer and passes GET facet values; its CSP permits only same-origin script/connect. Synthetic email-only inquiries are accepted for o3tech, retaining mandatory native consent and all other tenants' minima. See `../FIDELITY.md`; old no-client-script/old form-minimum acceptance belongs to the earlier source revision.

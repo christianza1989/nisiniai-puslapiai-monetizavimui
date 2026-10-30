@@ -5,6 +5,7 @@ import {pathToFileURL} from 'node:url';
 import {stripTypeScriptTypes} from 'node:module';
 import {AsyncLocalStorage} from 'node:async_hooks';
 import {DatabaseSync} from 'node:sqlite';
+import {loadPreviewMail} from './preview-mail.mjs';
 import {o3techMarkup} from '../../../../dovanos-memorycasting/lib/o3tech-render.mjs';
 const root=path.resolve(process.env.O3TECH_MIGRATION_ROOT||path.resolve(import.meta.dirname,'../../../..')),pub=path.join(root,'dovanos-memorycasting');
 const privateRoot=path.join(root,'private'),runtime=path.join(privateRoot,'preview-runtime');await mkdir(runtime,{recursive:true});
@@ -13,9 +14,11 @@ const context=new AsyncLocalStorage();
 const database=new DatabaseSync(path.join(privateRoot,'preview-leads.sqlite'));
 database.exec('CREATE TABLE IF NOT EXISTS niche_leads(id TEXT PRIMARY KEY,site_id TEXT,created_at INTEGER,source_path TEXT,name TEXT,email TEXT,message TEXT,consent_at INTEGER,status TEXT)');
 const env={DB:{prepare(sql){return{bind(...values){return{run(){return database.prepare(sql).run(...values);}};}};}}};
-globalThis.__o3techPreview={context,env};
+const mail=await loadPreviewMail({configPath:process.env.O3TECH_MAIL_CONFIG,privateRoot});
+if(mail.enabled)env.LEAD_SMTP_ENABLED='1';
+globalThis.__o3techPreview={context,env,sendMail:mail.send};
 const stubFile=path.join(runtime,'bindings.mjs');
-await writeFile(stubFile,`export const env=globalThis.__o3techPreview.env;export async function headers(){return globalThis.__o3techPreview.context.getStore().request.headers;}export function publicSiteByHost(host){return /^(127\\.0\\.0\\.1|localhost)(:\\d+)?$/.test(host||'')?globalThis.__o3techPreview.context.getStore().pkg:null;}export function publicSitePage(pkg,slug){return pkg.pages.find(p=>p.slug===slug);}export function publicSitePages(pkg){return pkg.pages;}export function nicheNetworkContact(){return{operatorName:'UAB A-Z Prekyba'};}export function nicheLeadRecipient(id,email){return email;}export async function sendNicheLeadMail(){throw Error('Preview never sends mail');}\n`);
+await writeFile(stubFile,`export const env=globalThis.__o3techPreview.env;export async function headers(){return globalThis.__o3techPreview.context.getStore().request.headers;}export function publicSiteByHost(host){return /^(127\\.0\\.0\\.1|localhost)(:\\d+)?$/.test(host||'')?globalThis.__o3techPreview.context.getStore().pkg:null;}export function publicSitePage(pkg,slug){return pkg.pages.find(p=>p.slug===slug);}export function publicSitePages(pkg){return pkg.pages;}export function nicheNetworkContact(){return{operatorName:'UAB A-Z Prekyba'};}export function nicheLeadRecipient(id,email){return email;}export async function sendNicheLeadMail(...args){return globalThis.__o3techPreview.sendMail(...args);}\n`);
 let source=await readFile(path.join(pub,'app/niche/[siteId]/lead/route.ts'),'utf8');
 source=source.replace(/^import .*;\r?\n/gm,'');
 const prefix=`import {env,headers,publicSiteByHost,publicSitePage,publicSitePages,nicheLeadRecipient,nicheNetworkContact,sendNicheLeadMail} from ${JSON.stringify(pathToFileURL(stubFile).href)};import {memoLeadContext,memoLeadText} from ${JSON.stringify(pathToFileURL(path.join(pub,'lib/memocasting-lead-response.mjs')).href)};import {o3techInquiryMessage} from ${JSON.stringify(pathToFileURL(path.join(pub,'lib/o3tech-inquiry.mjs')).href)};\n`;
@@ -56,5 +59,5 @@ const server=http.createServer(async(req,res)=>{
   res.writeHead(200,{...common,'Content-Type':'text/html;charset=utf-8','Content-Security-Policy':"default-src 'none'; img-src 'self'; script-src 'self'; connect-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"});res.end(req.method==='HEAD'?'':html);
  }catch(e){console.error(e);res.writeHead(500,common);res.end('Preview error');}
 });
-server.listen(4783,'127.0.0.1',()=>console.log('o3tech private draft preview: http://127.0.0.1:4783/ (noindex; mail disabled)'));
+server.listen(4783,'127.0.0.1',()=>console.log('o3tech private draft preview: http://127.0.0.1:4783/ (noindex; mail '+(mail.enabled?'enabled to sales@o3tech.lt':'disabled')+')'));
 process.on('SIGTERM',()=>server.close(()=>{database.close();process.exit(0);}));

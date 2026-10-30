@@ -2,7 +2,45 @@
 
 Taikoma visų naujų verslų ir esamų svetainių tekstų kūrimui bei redagavimui: puslapių ir straipsnių pavadinimams, aprašams, pastraipoms, sąrašams, nuorodoms, paveikslų aprašams, navigacijai, mygtukams, formoms ir viešiems sąsajos pranešimams. Rašymo kalbą ir adresatą nustato konkrečios svetainės locale, verslo faktai ir vartotojo pavedimas. Lietuviško verslo tekstai turi būti taisyklingi, rišlūs, natūralūs ir įtraukiantys lietuviškai; kitoms kalboms taikoma jų įprasta sintaksė bei terminija.
 
-Tai autoriaus pareiga nuo pirmo juodraščio, ne papildoma paslauga po savininko pastabų. **Tas pats agentas pats parašo, atlieka atskirą redagavimo peržiūrą ir ištaiso tekstą. Antro agento ar naujos sesijos nereikia.** Rašymo ir patikros instrukcijos nepakeičia verslo faktų, publikavimo, išlaidų ar veiksmų autorizacijos.
+Tai autoriaus pareiga nuo pirmo juodraščio, ne papildoma paslauga po savininko pastabų. Autorius atlieka atskirą viso teksto saviredakciją. Jei savininkas nustatė atskirą rašytoją ir tikrintoją (pvz., Tekstų sistemos v2 Gemini / Antigravity eigą), išlaikyk šias roles: tikrintojas perduoda konkrečias kalbos pastabas leistam rašytojui, neperima autorystės. Kitais atvejais antras agentas ar sesija nereikalingi. Rašymo ir patikros instrukcijos nepakeičia verslo faktų, publikavimo, išlaidų ar veiksmų autorizacijos.
+
+## NE-AI-RASYMAS: privaloma redakcinė adaptacija
+
+2026-10-30 savininko pateikto `ne-ai-rasymas` skill principai integruoti į šį kanoninį failą. Jie taikomi lietuviškiems puslapiams, kategorijoms, produktų ir paslaugų aprašams, gidams, straipsniams, metadata ir sąsajos tekstams nuo pirmo juodraščio iki galutinės peržiūros. Tikslas – aiškus, natūralus, konkrečiam skaitytojui naudingas tekstas. Nežadėk „jokių DI požymių“, detektoriaus rezultato ar žmogaus autorystės. Nekeisk tikros autorystės ir peržiūros kilmės.
+
+### Faktų ir SEO/GEO pirmenybė
+
+- Stilius gerina pateikimą, bet nekeičia įrodymo stiprumo. „Gali“ netampa „padeda“ ar „užtikrina“ be pagrindo; sąsaja netampa priežastimi. Neprikabink naudos kiekvienam parametrui, jei jos šaltinis nepatvirtina. Tikslus parametras be naudos pažado yra tinkamas sakinys.
+- Nepatvirtinto teiginio negalima išgelbėti ištrynus „tyrimai rodo“ ir palikus jį kaip faktą. Patikrink konkretų šaltinį arba teiginį pašalink / susiaurink pagal turimus įrodymus. Patvirtintą šaltinį įvardyk konkrečiai ir susiek su teiginiu.
+- Išsaugok saugos, medicinines ir teisines sąlygas, neiginius, įspėjimus, taikymo ribas, vienetus, modelius, komplektacijos išimtis ir tikrus verslo faktus. Nežinomą nebūtiną detalę praleisk; jei be trūkstamo fakto patarimas klaidina arba tampa nesaugus, paveiktas tekstas lieka juodraščiu su privačia tikrinimo pastaba. „Trumpiau“ nereiškia „be apribojimų“.
+- Savininko skill techniniai pavyzdžiai nėra šaltiniai. Iš aliuminio savaime neišvesk variklio neperkaitimo, iš IP klasės – visų montavimo sąlygų, iš reguliuojamo aukščio – garantuoto poveikio sveikatai. Skaičius iš pavyzdžio neperkeliamas į tikro produkto tekstą.
+- Išlaikyk puslapio paieškos ketinimą, temos terminus, tiesų atsakymą, naudingus skirtumus ir išimtis. Raktažodžius linksniuok natūraliai; nereikalauk pažodinės frazės pirmame sakinyje. Nesukurk sinonimų URL, DUK, žodžių kiekio ar raktažodžių tankio kvotų. Title, H1 ir description turi sutapti prasme su tikru puslapio turiniu.
+- Išsaugok realius nuorodų taikinius ir šaltinių ryšius. Stiliaus taisymas nekeičia URL, ID, canonical, datų, schemų ar publikavimo teisių. Naudok aktualaus adapterio palaikomą formatą; V1 rašymo užduočiai negrąžink lentelių, HTML, Markdown nuorodų ar nepalaikomų laukų. Po turinio pakeitimo taikoma naujos revizijos patikra, ne seno approval pernaudojimas.
+
+### Rišli lietuviška proza
+
+Rašyk taip, kaip kompetentingas žmogus paaiškintų pasirinkimą klientui: pradėk nuo atsakymo, toliau plėtok mintį ir paaiškink reikalingas sąlygas. Pastraipa turi vieną aiškią mintį; kitas sakinys ją tęsia, o ne iš naujo pristato prekę. Techninius terminus išlaikyk, prireikus paaiškink. Gyvumą kuria konkretūs skirtumai ir skaitytojui atpažįstama situacija, o ne tariama autoriaus patirtis.
+
+- Atsisakyk tuščių įžangų apie „šiuolaikinį pasaulį“, dirbtinio reikšmingumo („vaidina kertinį vaidmenį“), superlatyvų ir miglotų pažadų. Sakinį, tinkantį bet kuriam gaminiui pakeitus pavadinimą, pakeisk tikru skirtumu arba išbrauk.
+- Venk reklaminių žodžių virtinių („inovatyvus, nepriekaištingas ir išskirtinis“), angliškų kalkių, daiktavardžių sankaupų ir kanceliarizmų. „Vykdomas reguliavimas“ paprastai galima pasakyti „reguliuojama“. Rinkis tikslų veiksmą: laiko, sveria, turi, tinka, reguliuoja. Veikiamoji rūšis nėra privaloma, kai neveikiamoji lietuviškai natūralesnė arba veikėjas nežinomas.
+- Patikrink abstrakčias metaforas („ekosistema“, „sinergija“, „pakelti į naują lygį“), „užtikrina“, „esminis“, „visapusiškas“, „sklandus“. Šie žodžiai nėra automatiškai klaida: tikra ekologinė ekosistema, teisinis terminas ar tiksli citata išsaugomi. Redaguok visą sakinį pagal prasmę, o ne keisk žodį sinonimu ar skaičiuok leistiną jo kiekį.
+- Išmesk tuščias sakinių uodegas („…, taip užtikrinant nepriekaištingą patirtį“). Konkrečią ir pagrįstą pasekmę paaiškink tiesiai, prireikus atskiru sakiniu. Taisyklingų dalyvinių konstrukcijų nedrausk vien dėl jų formos.
+- Venk retorinių priešpriešų „ne tik X, bet ir Y“, „tai daugiau nei X“. Tikras palyginimas, neiginys ar perspėjimas turi likti: neprarask skirtumo tarp priedo ir komplekto, modelių, leidžiamos ir draudžiamos paskirties.
+- Sakinių ir pastraipų ilgį lemia mintis. Nekaitaliok ilgų ir 4–7 žodžių sakinių pagal formulę, nedėk dirbtinių fragmentų. Nei trys tikri parametrai, nei vienodo ilgio pastraipos savaime nėra trūkumas; venk tik bereikšmių trejetų ir mechaniškai vienodos eigos.
+- Gaminį vadink jo tikru pavadinimu, vartok aiškiai nurodančius įvardžius arba praleisk savaime suprantamą veiksnį. Nekurk perifrazių „nepakeičiamas pagalbininkas“ vien kartojimui išvengti. Nepašalink skaitytojui reikalingo termino dėl raktažodžių baimės.
+- Pradėk naudingu atsakymu. Apibrėžimas tinka, kai skaitytojas klausia „kas yra“; kategorijai nebūtina vadovėlinė įžanga. Pabaik paskutine naudinga mintimi ar tikru, svetainės užduotyje leidžiamu veiksmu. Nepridėk „apibendrinant“, bendro pardavimo šūkio ar pokalbio su užsakovu frazių.
+
+### Struktūra pagal skaitytojo užduotį
+
+- **Kategorija:** padėk susiorientuoti, kas joje pateikiama, kuo skiriasi tikros gaminių grupės ir kaip pasirinkti. Indeksui užtenka trumpo paaiškinimo bei realių nuorodų. Nekartok gaminių sąrašo kaip straipsnio ir neišgalvok visai kategorijai bendrų savybių.
+- **Produktas:** aiškiai įvardyk tipą, modelį, patvirtintą paskirtį ir reikšmingus skirtumus. Konstrukciją, valdymą, priežiūrą ir komplektaciją įtrauk tik tiek, kiek yra duomenų ir reikia pirkėjui. Parametrų sąrašas gali papildyti rišlią prozą; papildoma nauda nėra privaloma prie kiekvienos eilutės.
+- **Paslauga / pradinis puslapis:** paaiškink, kam skirtas pasiūlymas, ką klientas realiai gauna, kaip vyksta paslauga ir koks tikras kitas žingsnis. Nežinomų kainų, terminų, komandos ar rezultatų nesukurk dėl patrauklesnio teksto.
+- **Gidas / straipsnis:** atsakyk į pagrindinį klausimą, paskui aiškink kriterijus, palyginimus ir atvejus, kai atsakymas keičiasi. Skaičių, pavyzdžių ar skyrių kiekį lemia įrodymai ir užduotis. Iliustracinis pavyzdys aiškiai skiriasi nuo tikros kliento istorijos.
+- **Metadata / sąsaja:** trumpai ir tiksliai nusakyk tikrą turinį ar veiksmą. Nenaudok straipsnio įžangos mygtuke; pažadas apie parsisiuntimą, kainą ar užsakymą turi atitikti veikiančią funkciją.
+
+Antraštes rašyk sakinio rašyba, su tikriniais pavadinimais, be taško gale ir bereikalingo „Įvadas / Apibendrinimas“. Išlaikyk semantinius lygius; rendererio H1 nedubliuok tekste. Sąrašai tinka parametrams, veiksmams, alternatyvoms ir palyginimui, bet neturi sukapoti paaiškinimo į padrikas frazes. Nepradėk kiekvieno punkto paryškinta etikete su dvitaškiu. Lentelė tinka glaustam palyginimui, jei ją palaiko adapteris ir ji patogiai skaitoma; ne ilgoms pastraipoms paslėpti. Paryškinimus ir emoji naudok tik pagal konkrečios svetainės pagrįstą stilių, ne kaip automatinę puošybą. Lietuviškos kabutės – „…“, vienetai atskiriami tarpu (150 kg, 24 °C). Skyrybą rinkis pagal sakinio gramatiką; brūkšniai nėra draudžiami ir neprivalo žymėti dramatiškų pauzių.
+
+Prieš grąžindamas rezultatą, perskaityk jį kaip vientisą tekstą, įskaitant pavadinimą, metadata ir pabaigą. Patikrink tuščius pažadus, neaiškius įvardžius, pasikartojančią eigą, vertinius, nereikalingus sąrašus ir sakinius, kurių prasmė pasikeitė trumpinant. Palygink su faktų šaltiniais, patikrink linksnius nuorodose ir pasirinktą formatą. Jei skamba nenatūraliai, taisyk pastraipos minties eigą, o ne vien „DI žodžius“. Ši peržiūra papildo toliau nurodytą faktinės reikšmės ir realizuotos sąsajos patikrą.
 
 ## Kaip rašyti
 

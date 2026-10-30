@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Integrate owner-supplied Lithuanian editorial rules into canonical language policy and actual writing templates while retaining evidence and SEO/GEO contracts",
+  "category": "skills",
+  "evidence": [
+    "docs/NE_AI_RASYMAS_2026_10_30.md"
+  ],
+  "paths": [
+    "SKILLS/niche-content-planner/SKILL.md",
+    "SKILLS/niche-content-planner/references/language-quality.md",
+    "SKILLS/niche-content-planner/references/quality-review.md",
+    "SKILLS/catalog.json",
+    "WORKSTREAMS.md",
+    "docs/NE_AI_RASYMAS_2026_10_30.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/306",
+  "rollback": "Scoped Core revert; guarded restore of recorded Drive files from local byte backups.",
+  "id": "upgrade-e7f0589f-c41d-4817-a3ed-65b42f1da417",
+  "branch": "codex/ne-ai-rasymas-20261030",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-30T08:24:43.366Z"
+}

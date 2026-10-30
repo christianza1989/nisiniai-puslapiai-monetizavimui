@@ -1,0 +1,25 @@
+{
+  "siteId": "promedical",
+  "summary": "Owner rewrite requests need a durable no-AI file transport that waits for exact Codex and Claude reviews before draft import.",
+  "category": "workflow",
+  "evidence": [
+    "sites/promedical/INLINE_EDITOR.md",
+    "tests/content-rewrite-bridge.test.mjs"
+  ],
+  "paths": [
+    "scripts/content-rewrite-bridge.mjs",
+    "scripts/run-content-rewrite-bridge.ps1",
+    "scripts/install-content-rewrite-bridge.ps1",
+    "tests/content-rewrite-bridge.test.mjs",
+    "sites/promedical/INLINE_EDITOR.md",
+    "sites/promedical/IMPLEMENTATION_STATUS.md",
+    "sites/promedical/rewrite-bridge.example.json",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/308",
+  "rollback": "Revert this scoped change; keep the prepared Windows task disabled. Do not remove state or review evidence.",
+  "id": "upgrade-fc60f46f-92ca-49f2-8863-d15a1286c6a7",
+  "branch": "codex/promedical-inline-editor-20261030",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-30T10:13:03.245Z"
+}

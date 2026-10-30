@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Owner found demo fidelity bug. PUBLIC df88ca0a changes only test fixtures: preserved deployed-site rendering with in-memory editor markers, actual publication pause/public overlay, base document reset and explicit non-dispatching demo banner. No production source/packages changed.",
+  "checks": [
+    {
+      "command": "Corrected isolated browser fixture using preserved PR80 site",
+      "result": "PASS",
+      "evidence": "Exactly two published guide links, unpublished dimensions guide 404; full editor workflow, desktop/mobile/200% text, conflicts pass. No approval submitted. correction-regression/passed.json."
+    },
+    {
+      "command": "Scoped ESLint, diff check and staged repository safety",
+      "result": "PASS",
+      "evidence": "Both changed fixture files pass. Initial mobile overflow exposed missing niche-base reset; included reset and reran full targeted browser test successfully."
+    }
+  ],
+  "eventId": "5ff428f6-119b-417e-860f-c316f7352f75",
+  "sequence": 4,
+  "at": "2026-10-30T12:31:39.996Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Sequential self-review; no independent agent review claimed. Initial new editorial fixture omitted settings and failed503; seeded the fixture and reran4/4PASS. Owner terminology finding invalidates recommendation to approve the existing test draft; historical reviews stay unchanged. No new actual writer job, deployment or publication. Browser search failure exposed a raw non-JSON parse error; final handler now uses a plain-language message and retains retry state.",
+  "checks": [
+    {
+      "command": "node --test tests/content-rewrite-bridge.test.mjs",
+      "result": "PASS",
+      "evidence": "4/4, pinned rules, numbered field fragments, hash-bound double review, stable task numbering/restart."
+    },
+    {
+      "command": "PUBLIC node tests/content-admin-rewrites-workerd.mjs <CORE>",
+      "result": "PASS",
+      "evidence": "Actual CORE module + isolated workerd/D1:2exports,2draft writes,3independent selected fields, unchanged public source, no publications. Fixture output rewrite-workerd-Mb7Akk."
+    }
+  ],
+  "eventId": "929bd417-e1c7-4230-93d0-ef6abb8e9b83",
+  "sequence": 2,
+  "at": "2026-10-30T15:02:28.212Z"
+}

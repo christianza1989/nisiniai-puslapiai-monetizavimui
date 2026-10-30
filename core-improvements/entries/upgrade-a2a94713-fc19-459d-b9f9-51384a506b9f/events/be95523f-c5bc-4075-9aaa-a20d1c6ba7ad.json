@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Sequential self-review; no independent agent review claimed. Initial new editorial fixture omitted settings and failed503; seeded the fixture and reran4/4PASS. Owner terminology finding invalidates recommendation to approve the existing test draft; historical reviews stay unchanged. No new actual writer job, deployment or publication. Browser search failure exposed a raw non-JSON parse error; final handler now uses a plain-language message and retains retry state.",
+  "checks": [
+    {
+      "command": "PUBLIC npm run test:core",
+      "result": "PASS",
+      "evidence": "315/315 tests; editorial-core-tests.log under local end-to-end evidence."
+    },
+    {
+      "command": "PUBLIC node tests/content-admin-rewrites-workerd.mjs <CORE>",
+      "result": "PASS",
+      "evidence": "2synthetic exports/drafts including3selected fields; CSRF denial, required reviews, exact source and unchanged public content."
+    },
+    {
+      "command": "PUBLIC scoped ESLint; node --check admin.js; Impeccable detect --json",
+      "result": "PASS",
+      "evidence": "Changed modules/fixture/tests lint clean; static UI detector zero findings, manual desktop/mobile inspection."
+    },
+    {
+      "command": "CUA desktop1280/mobile390/200% text and read-only local proof",
+      "result": "PASS",
+      "evidence": "Whole and actual heading selection, old-side rejection, separate local/global fields,58unchecked matches, disabled approval, no overflow, retry recovers. editorial-final-unchanged.json:publicSHA473e71cde1def47ebf49b5dccdb8bc381b209c75d1024f59be265d20d0dbc3b3; draft/approved/ETag unchanged,0newjobs."
+    }
+  ],
+  "eventId": "be95523f-c5bc-4075-9aaa-a20d1c6ba7ad",
+  "sequence": 2,
+  "at": "2026-10-30T15:02:29.826Z"
+}

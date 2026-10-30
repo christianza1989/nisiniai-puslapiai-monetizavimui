@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Prepared source only. Three isolated transport tests and actual companion workerd/D1 integration pass. PowerShell scripts parsed; scheduled-task registration, token provisioning and live activation were not executed.",
+  "checks": [
+    {
+      "command": "node --test tests/content-rewrite-bridge.test.mjs",
+      "result": "PASS",
+      "evidence": "3/3 tests: stable numbering, incomplete files, double review, lost-response idempotency, lock, redirects, partial task recovery and uncertain notification receipts."
+    },
+    {
+      "command": "node tests/content-admin-rewrites-workerd.mjs <CORE checkout> (companion PUBLIC)",
+      "result": "PASS",
+      "evidence": "Actual CORE bridge, workerd and isolated D1: one export, one draft write, zero publications; repeat produces no second write."
+    },
+    {
+      "command": "PowerShell Parser.ParseFile on install-content-rewrite-bridge.ps1 and run-content-rewrite-bridge.ps1; node --check scripts/content-rewrite-bridge.mjs",
+      "result": "PASS",
+      "evidence": "No syntax errors. ScheduledTasks parameter metadata verified locally; no task installed."
+    }
+  ],
+  "eventId": "5aeeb6f5-624d-4384-abd4-32c8b3ffba06",
+  "sequence": 2,
+  "at": "2026-10-30T10:13:34.512Z"
+}

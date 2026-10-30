@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/106",
+  "commit": "9776ac971ade8973b623a22c5c4fd94357397ae3",
+  "note": "Draft PR opened after local acceptance. Separate deployment authorization still required; no merge, runtime adoption or scheduler activation.",
+  "eventId": "6fa69443-3785-4db3-a78e-4248242be4f7",
+  "sequence": 3,
+  "at": "2026-10-30T10:20:12.480Z"
+}

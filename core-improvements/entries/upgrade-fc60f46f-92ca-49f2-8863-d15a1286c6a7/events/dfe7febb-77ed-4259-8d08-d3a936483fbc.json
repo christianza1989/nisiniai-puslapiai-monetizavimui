@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/309",
+  "commit": "8eb1b2bb78549dafc9f35dc74b908d949418adbd",
+  "note": "Draft PR opened after local acceptance. Separate deployment authorization still required; no merge, runtime adoption or scheduler activation.",
+  "eventId": "dfe7febb-77ed-4259-8d08-d3a936483fbc",
+  "sequence": 3,
+  "at": "2026-10-30T10:20:10.808Z"
+}

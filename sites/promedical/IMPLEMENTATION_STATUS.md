@@ -17,7 +17,7 @@ Base CORE25292e20219b735df7f04c5807dd4c100f98addc / PUBLICc2d9a1fa69daa6285bcc8e
 
 No production polling, DB migration, existing token access/activation, draft upload, approval, release, publishing, merge or deployment during implementation. Original001 Antigravity trial remains untouched. All test data is isolated. The 3510 program and installation procedure will be prepared; live activation remains pending deployment approval.
 
-Status: local implementation and acceptance complete; paired draft PR delivery. PUBLIC feature commit: `9776ac971ade8973b623a22c5c4fd94357397ae3`. This is source prepared for review, not a deployed or activated service.
+Status: local implementation and acceptance complete; paired draft [CORE PR309](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/309) and [PUBLIC PR106](https://github.com/christianza1989/niche-public-core/pull/106). Implementation commits: CORE `8eb1b2bb78549dafc9f35dc74b908d949418adbd`, PUBLIC `9776ac971ade8973b623a22c5c4fd94357397ae3`. This is source prepared for review, not a deployed or activated service.
 
 ## Verified result — 2026-10-30
 

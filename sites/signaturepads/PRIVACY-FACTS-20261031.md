@@ -33,8 +33,12 @@ paskirtas Gemini rašytojas, tikrinama ir tvirtinama pagal šią sistemą.
   0foreignrequests. Įrodymai prelaunch-20261031/verified-browser.json. Tai nėra
   absoliutus visų Cloudflare saugumo iššūkių/būsenų pažadas.
   GSC patvirtinimo meta žyma nėra analitikos skriptas.
-- Jokio naujo duomenų saugojimo / automatinio ištrynimo termino nenustatyta.
-  D1 ištrynimas savaime neištrina gavėjo ir siuntėjo pašto kopijų.
+- Rokas 2026-10-31 pasirinko 6 mėnesius nuo paskutinio bendravimo užklausoms,
+  kurios nevirsta užsakymu, įskaitant jų el. pašto kopijas. Tai savininko
+  pasirinkta būsima taisyklė, ne įstatymo nustatytas terminas.
+  Automatinio ištrynimo, paskutinio bendravimo ir virtimo užsakymu apskaitos
+  šiuo metu nėra. D1 ištrynimas savaime neištrina gavėjo ir siuntėjo pašto
+  kopijų. Juodraštis negali žadėti veikiančio automatinio ištrynimo.
 
 ## Reikalingi Roko faktai ir sprendimai
 
@@ -42,8 +46,10 @@ paskirtas Gemini rašytojas, tikrinama ir tvirtinama pagal šią sistemą.
    esamas sales@signaturepads.lt. Nekartoti prašymo Rokui pasirinkti įmonės
    pavadinimą. Valdytojo identifikavimo reikalavimo teisinė patikra lieka
    atvira; vien šis pavadinimo sprendimas nereiškia visos privatumo atitikties.
-2. Kiek laiko saugoti užklausas, kurios nevirsta užsakymu; atskirai aiškus
-   D1 ir el. pašto kopijų tvarkymas. Tai turi atitikti tikrą darbo procesą.
+2. Saugojimo terminas jau pasirinktas: 6 mėnesiai nuo paskutinio bendravimo
+   užklausoms, kurios nevirsta užsakymu. Prieš publikavimą dar reikia
+   įgyvendinti šio termino apskaitą ir D1 / siuntėjo / gavėjo pašto kopijų
+   tvarkymo procesą. Pakartotinai termino neklausti.
 3. Kas priima / įgyvendina prieigos, taisymo ir ištrynimo prašymus.
 4. Tiekėjų sutarčių / perdavimo informacijos ir faktinio duomenų tvarkymo
    pagrindo patikra. Vien formos checkbox nėra visų tikslų teisėtumo įrodymas.
@@ -57,6 +63,10 @@ dabartinis patvirtintas native paketas94de lieka nepakeistas.
 
 - Tiesioginė Roko žinutė: „Nerasysim kas yra valdytojas imone - rasyk signaturepads.lt“.
   Tai pavadinimo pavedimas; saugojimo terminas šia žinute nepasirinktas.
+- Vėlesnė tiesioginė Roko žinutė: „6 menesius, tesk privatumo teksto paruosima.
+  Gyvos svetaines dar nekeisk.“ Termino pasirinkimas įrašytas atskirai
+  `RETENTION-DECISION-20261031.json`; tai nėra privatumo revizijos approve
+  ar leidimas deploy / DNS / seno WordPress pakeitimams.
 - VDAI skaidrių6puslapis nurodo BDAR13/14 informaciją apie valdytojo tapatybę,
   kontaktus ir saugojimo laikotarpius arba jų nustatymo kriterijus:
   https://vdai.lrv.lt/uploads/vdai/documents/files/07_%20Teises.pdf

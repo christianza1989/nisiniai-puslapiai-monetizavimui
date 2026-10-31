@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-31T12:54:59.246Z",
+  "scope": "privacy-draft-preparation-only",
+  "draftResultSchema": "PASS",
+  "schemaSource": "content-studio/schemas/draft-result.schema.json",
+  "validator": "existing Ajv",
+  "bodyBlocks": 30,
+  "factChecksPending": 7,
+  "publicNotesExcluded": true,
+  "nativeReleaseSha256": "94de2ef54c802d69399727aa243918f9e828a44b51013c3a05cf4d01dbc3dd25",
+  "nativeReleaseUnchanged": true,
+  "studioMutated": false,
+  "cloudflareDeploymentChanged": false,
+  "liveSiteChanged": false,
+  "domainChanged": false,
+  "emailSent": false,
+  "dataDeleted": false,
+  "claudeReview": false,
+  "ownerExactRevisionApproval": false,
+  "publicationReady": false
+}

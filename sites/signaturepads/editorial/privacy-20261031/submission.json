@@ -1,0 +1,10 @@
+{
+  "sentAt": "2026-10-31T12:42:43.038Z",
+  "url": "https://gemini.google.com/u/2/app",
+  "account": "/u/2",
+  "model": "4 Argon",
+  "thinking": "LOW",
+  "normalizedPromptSha256": "d50a20e1d98a2ccc3a062a2827a1b7a9a18fed6cd86332d01e15bb68a03e78e6",
+  "domPromptCharacters": 12823,
+  "submitted": true
+}

@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-31T12:53:09.505Z",
+  "read": [
+    {
+      "url": "https://www.dataprotection.ie/en/individuals/know-your-rights/right-be-informed-transparency-article-13-14-gdpr",
+      "label": "DPC: skaidrumas",
+      "reason": "Pranešimo informacija ir pagrindų atskyrimas; domeno pasirinkimas nėra atitikties patvirtinimas."
+    },
+    {
+      "url": "https://www.dataprotection.ie/en/individuals/exercising-your-rights/how-long-will-it-take",
+      "label": "DPC: teisių prašymų terminai",
+      "reason": "Vienas mėnuo ir sąlyginis dviejų mėnesių pratęsimas."
+    },
+    {
+      "url": "https://www.dataprotection.ie/en/individuals/know-your-rights/right-access-information",
+      "label": "DPC: teisė susipažinti",
+      "reason": "Duomenų kopija, susijusi informacija ir sąlyginės teisės."
+    },
+    {
+      "url": "https://www.cloudflare.com/privacypolicy/",
+      "label": "Cloudflare privatumo politika",
+      "reason": "Lankytojų techninių duomenų tvarkymas ir pasaulinės paslaugos; ne konkrečios paskyros auditas."
+    },
+    {
+      "url": "https://www.cloudflare.com/cloudflare-customer-dpa/",
+      "label": "Cloudflare DPA",
+      "reason": "Tiekėjo skelbiamos tvarkymo ir tarptautinių perdavimų sąlygos; konkretaus srauto priemonės dar tikrintinos."
+    },
+    {
+      "url": "https://www.hostinger.com/legal/dpa",
+      "label": "Hostinger DPA",
+      "reason": "Tiekėjo paskelbtos duomenų tvarkymo sąlygos; konkreti pašto paskyra dar tikrintina."
+    },
+    {
+      "url": "https://policies.google.com/privacy?hl=lt",
+      "label": "Google privatumo politika",
+      "reason": "Pasaulinė paslaugų infrastruktūra; MX neįrodo Workspace plano ar ES rezidavimo."
+    },
+    {
+      "url": "https://vdai.lrv.lt/lt/",
+      "label": "Valstybinė duomenų apsaugos inspekcija",
+      "reason": "Lietuvos priežiūros institucijos pavadinimas ir oficialus tinklalapis."
+    }
+  ],
+  "notReliedUpon": [
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679",
+      "reason": "Robot verification; regulation contents not retrieved."
+    },
+    {
+      "url": "https://www.edpb.europa.eu/sme-data-protection-guide/process-personal-data-lawfully_en",
+      "reason": "429 response; contents not retrieved."
+    }
+  ]
+}

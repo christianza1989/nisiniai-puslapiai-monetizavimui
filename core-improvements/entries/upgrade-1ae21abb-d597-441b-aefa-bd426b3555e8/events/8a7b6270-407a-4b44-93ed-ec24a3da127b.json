@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Latest direct owner requests: smooth500ms original slide with no user controls, in-field names and original van/input alignment. Real motion/geometry verified; associated labels, privacy and delivery configuration retained. No form POST or mail.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-slide-contact-20261030/core-tests.log:307/307"
+    },
+    {
+      "command": "npx tsc --noEmit and scoped ESLint on three site TSX files",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-slide-contact-20261030/types.log / lint.log, exec session88151 exit0"
+    },
+    {
+      "command": "Isolated runtime npm run build",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-slide-contact-20261030/build.log:2 RSC manifests,0 missing"
+    },
+    {
+      "command": "Actual original/native DOM comparison and187 motion samples at1280/390; node verify-evidence.mjs",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/SLIDE-CONTACT-2026-10-30.json; intermediate frames, loops, exact fields, hidden associations, both required-state branches"
+    },
+    {
+      "command": "Actual native fixture npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-slide-contact-20261030/seo-smoke.log:12 pages, schemas, robots/sitemap/llms,host isolation and404"
+    }
+  ],
+  "eventId": "8a7b6270-407a-4b44-93ed-ec24a3da127b",
+  "sequence": 2,
+  "at": "2026-10-30T18:07:16.907Z"
+}

@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Native48 route/viewport and18 actually expanded FAQ states pass visible-text cloud clearance with unchanged text; source/runtime CSS SHA matches. Raw baseline hidden-answer geometry is distinguished from painted content.",
+  "checks": [
+    {
+      "command": "node D:/Core/output/kvapunaikinimas-cloud-safe-20261030/verify-evidence.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-cloud-safe-20261030/after.json; faq-expanded.json; before.json"
+    },
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-cloud-safe-20261030/core-tests.log:307/307"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-cloud-safe-20261030/build.log:2 RSC manifests,0 missing"
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=kvapunaikinimas SEO_SMOKE_BASE_URL=http://127.0.0.1:8918 npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-cloud-safe-20261030/seo-smoke.log:12 routes/host isolation"
+    },
+    {
+      "command": "impeccable detect --json --scope layout components/niche/kvapunaikinimas-site.module.css",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-cloud-safe-20261030/layout-before.json; layout-after.json:no findings"
+    }
+  ],
+  "eventId": "baba2ab3-0b6d-47dd-9334-d0511ce152e8",
+  "sequence": 2,
+  "at": "2026-10-30T18:33:46.834Z"
+}

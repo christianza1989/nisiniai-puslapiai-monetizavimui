@@ -1,0 +1,22 @@
+{
+  "siteId": "kvapunaikinimas",
+  "category": "code",
+  "summary": "Apply owner-authorized blank vehicle plate as a new immutable responsive family after original crop import; SHA-bound private input fails closed and native text/layout remain unchanged.",
+  "evidence": [
+    "sites/kvapunaikinimas/PLATE-REDACTION-2026-10-30.md",
+    "sites/kvapunaikinimas/source/media-edits.json"
+  ],
+  "paths": [
+    "WORKSTREAMS.md",
+    "sites/kvapunaikinimas/prepare.mjs",
+    "sites/kvapunaikinimas/source/media-edits.json",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md",
+    "sites/kvapunaikinimas/PLATE-REDACTION-2026-10-30.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "rollback": "Scoped source revert; preserve old and new private originals/immutable families. Reverting the photo requires explicit owner intent because it restores the visible registration plate.",
+  "id": "upgrade-9aa5ecc9-f63e-46f1-af75-2917ec6f3060",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "daddbf37eeecae61aa24b18eb8c8f29202c677e5",
+  "createdAt": "2026-10-30T15:41:31.170Z"
+}

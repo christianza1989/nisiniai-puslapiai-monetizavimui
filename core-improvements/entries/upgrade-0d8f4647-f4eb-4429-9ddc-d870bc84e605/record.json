@@ -1,0 +1,18 @@
+{
+  "siteId": "kvapunaikinimas",
+  "evidence": [
+    "sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.md",
+    "sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.json"
+  ],
+  "rollback": "Scoped revert of the background preference rule only; keep original bitmap, native content, white plate and immutable evidence.",
+  "category": "code",
+  "summary": "Restore original desktop fixed hero/proof backgrounds under reduced-motion; removing the section-scroll override restores human-head framing without changing bitmap, mobile behavior or carousel motion guards.",
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "paths": [
+    "components/niche/kvapunaikinimas-site.module.css"
+  ],
+  "id": "upgrade-0d8f4647-f4eb-4429-9ddc-d870bc84e605",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "bb1eb609b6db5cb7d37d7ab605fa58058971f9b2",
+  "createdAt": "2026-10-30T16:15:28.784Z"
+}

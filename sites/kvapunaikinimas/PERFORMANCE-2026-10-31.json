@@ -1,0 +1,147 @@
+{
+  "status": "LIVE_VERIFIED",
+  "publicSource": "99c82d7010767090d60f0d799163340c33e1cdcd",
+  "productionBuild": "01a19228-4614-7208-b12d-7bb349d2a7c6",
+  "stageBuild": "01a19223-f08f-718b-b05e-2fa8fcb73b20",
+  "archive": {
+    "file": "kvapu_20261031_perf_v9.zip",
+    "bytes": 4033234,
+    "sha256": "51f7ea1ac4f0faee4da18b06b3b5ecdef918aa0eb879d759fc4252666ae523a5"
+  },
+  "nativeRelease": "2690244f-d1f7-452a-96ed-987ad872b388",
+  "tests": 324,
+  "pages": 12,
+  "originalMedia": 81,
+  "immutableCopies": 85,
+  "responsiveCases": 24,
+  "paintedRoles": 712,
+  "productionHttpFindings": 0,
+  "productionLayoutFindings": 0,
+  "sourceMain": {
+    "core": "25292e20219b735df7f04c5807dd4c100f98addc",
+    "public": "c2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da"
+  },
+  "additionalEmails": 0,
+  "formPosts": 0,
+  "mainMerged": false,
+  "pagespeed": {
+    "measured": "2026-10-31",
+    "page": "https://kvapunaikinimas.lt/",
+    "method": "Three Google PageSpeed remote Lighthouse 13.6.0 reports; mobile Moto G Power / Slow 4G and Desktop; lab data only, all runs retained.",
+    "runs": [
+      {
+        "run": 1,
+        "profile": "mobile",
+        "url": "https://pagespeed.web.dev/analysis/https-kvapunaikinimas-lt/fvg4wdcasr?form_factor=mobile",
+        "performance": 100,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 0.9,
+        "lcpSeconds": 1.7,
+        "tbtMs": 0,
+        "cls": 0.002,
+        "speedIndexSeconds": 2.4
+      },
+      {
+        "run": 1,
+        "profile": "desktop",
+        "url": "https://pagespeed.web.dev/analysis/https-kvapunaikinimas-lt/fvg4wdcasr?form_factor=desktop",
+        "performance": 99,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 0.3,
+        "lcpSeconds": 0.4,
+        "tbtMs": 40,
+        "cls": 0,
+        "speedIndexSeconds": 1.2
+      },
+      {
+        "run": 2,
+        "profile": "mobile",
+        "url": "https://pagespeed.web.dev/analysis/https-kvapunaikinimas-lt/uaqxdn0akb?form_factor=mobile",
+        "performance": 97,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 0.9,
+        "lcpSeconds": 2.4,
+        "tbtMs": 30,
+        "cls": 0,
+        "speedIndexSeconds": 2.6
+      },
+      {
+        "run": 2,
+        "profile": "desktop",
+        "url": "https://pagespeed.web.dev/analysis/https-kvapunaikinimas-lt/uaqxdn0akb?form_factor=desktop",
+        "performance": 100,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 0.3,
+        "lcpSeconds": 0.6,
+        "tbtMs": 10,
+        "cls": 0,
+        "speedIndexSeconds": 0.9
+      },
+      {
+        "run": 3,
+        "profile": "mobile",
+        "url": "https://pagespeed.web.dev/analysis/https-kvapunaikinimas-lt/n3vdmu1r3e?form_factor=mobile",
+        "performance": 95,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 0.9,
+        "lcpSeconds": 2.5,
+        "tbtMs": 50,
+        "cls": 0,
+        "speedIndexSeconds": 4.1
+      },
+      {
+        "run": 3,
+        "profile": "desktop",
+        "url": "https://pagespeed.web.dev/analysis/https-kvapunaikinimas-lt/n3vdmu1r3e?form_factor=desktop",
+        "performance": 100,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 0.3,
+        "lcpSeconds": 0.6,
+        "tbtMs": 10,
+        "cls": 0,
+        "speedIndexSeconds": 0.9
+      }
+    ],
+    "summary": {
+      "mobile": {
+        "performanceMedian": 97,
+        "performanceRange": [
+          95,
+          100
+        ],
+        "lcpSecondsMedian": 2.4,
+        "lcpSecondsRange": [
+          1.7,
+          2.5
+        ],
+        "otherCategories": 100
+      },
+      "desktop": {
+        "performanceMedian": 100,
+        "performanceRange": [
+          99,
+          100
+        ],
+        "lcpSecondsMedian": 0.6,
+        "lcpSecondsRange": [
+          0.4,
+          0.6
+        ],
+        "otherCategories": 100
+      }
+    }
+  },
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-performance-20261031"
+}

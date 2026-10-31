@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Actual preference/scroll background repair delivered to existing open draft. Implementation 03a977118117c6ccd7927da6a6672add4bca0372; no real-domain release or main merge. Source/native bitmaps and white plate unchanged.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/104",
+  "commit": "03a977118117c6ccd7927da6a6672add4bca0372",
+  "eventId": "a0a534fe-2e41-46d7-b12c-9d9f1215c593",
+  "sequence": 3,
+  "at": "2026-10-30T16:17:20.636Z"
+}

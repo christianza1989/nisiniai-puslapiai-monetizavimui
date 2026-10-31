@@ -1,0 +1,23 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Record owner-authorized Hostinger migration target, old-site backup, native release, isolated staging and deployment verification",
+  "category": "workflow",
+  "evidence": [
+    "Owner2026-10-31 request to move the new site to Hostinger in place of the old one",
+    "sites/kvapunaikinimas/HOSTINGER-DEPLOYMENT-2026-10-31.md"
+  ],
+  "paths": [
+    "WORKSTREAMS.md",
+    "sites/kvapunaikinimas/HOSTINGER-DEPLOYMENT-2026-10-31.md",
+    "sites/kvapunaikinimas/HOSTINGER-DEPLOYMENT-2026-10-31.json",
+    "sites/kvapunaikinimas/.hostinger/site.json",
+    "sites/kvapunaikinimas/ACCEPTANCE.md",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "rollback": "Restore exact old WordPress files and DB from verified pre-cutover backup, restore serving mode; preserve native source/releases and mail DNS.",
+  "id": "upgrade-fb5f705d-a986-4e86-aee5-49d64b517c6d",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "a9ef2720f3be881da80bc779d554c9ba4f640846",
+  "createdAt": "2026-10-31T07:14:23.719Z"
+}

@@ -1,0 +1,29 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Add an explicit Hostinger Node production target using the canonical Core lead handler and SMTP protocol with MySQL/TLS binding adapters",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/HOSTINGER-DEPLOYMENT-2026-10-31.md",
+    "Existing Cloud Professional plan1004998542 supports Node; current Workers-only bindings and read-only Vercel stub cannot accept leads on Node."
+  ],
+  "paths": [
+    "next.config.ts",
+    "package.json",
+    "package-lock.json",
+    "db/hostinger-node-env.ts",
+    "db/hostinger-node-d1.mjs",
+    "db/hostinger-node-sockets.mjs",
+    "db/hostinger-node-email.mjs",
+    "db/hostinger-leads.sql",
+    "scripts/build-hostinger.mjs",
+    "scripts/start-hostinger.mjs",
+    "tests/hostinger-node.test.mjs",
+    "docs/HOSTINGER_NODE.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "rollback": "Revert only explicit Node target modules/config/dependency and restore archived old site if cutover fails. Workers/Vercel defaults and existing media/content remain.",
+  "id": "upgrade-dc4db1f2-e57a-4561-9590-5bd5a035c9e0",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "a9ef2720f3be881da80bc779d554c9ba4f640846",
+  "createdAt": "2026-10-31T07:14:22.358Z"
+}

@@ -1,0 +1,23 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Load original real Open Sans italic locally instead of synthesizing slanted normal glyphs; hint only pages with italic runs",
+  "category": "code",
+  "evidence": [
+    "D:/Core/output/kvapunaikinimas-all-pages-20261031/paragraph-detail.json",
+    "D:/Core/output/kvapunaikinimas-all-pages-20261031/font-bundle.json",
+    "sites/kvapunaikinimas/ALL-PAGES-2026-10-31.md"
+  ],
+  "paths": [
+    "components/niche/kvapunaikinimas-site.tsx",
+    "components/niche/kvapunaikinimas-site.module.css",
+    "public/fonts/kvapunaikinimas/open-sans-italic-latin.woff2",
+    "public/fonts/kvapunaikinimas/open-sans-italic-latin-ext.woff2",
+    "public/fonts/kvapunaikinimas/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "rollback": "Revert scoped italic faces and conditional hints; remove only these two new font files and their source README. Preserve normal fonts and prior layout/media/form changes.",
+  "id": "upgrade-ca7d9866-17fa-40a8-bea1-12cffd24926d",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "37a92526d18cc211c503e8b11ae59435fc16fb9a",
+  "createdAt": "2026-10-31T06:00:07.196Z"
+}

@@ -1,0 +1,19 @@
+{
+  "siteId": "kvapunaikinimas",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/ACCEPTANCE.md"
+  ],
+  "rollback": "Scoped revert of the reviewed change; retain original site and native drafts.",
+  "summary": "Legacy Studio list items were silently cut at700 characters, losing existing migration copy; preserve up to3000 and reject overflow.",
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/README.md",
+    "content-studio/test/legacy-list-preservation.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "id": "upgrade-875db006-07ec-421a-825a-37dba3e005e5",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-29T16:23:08.659Z"
+}

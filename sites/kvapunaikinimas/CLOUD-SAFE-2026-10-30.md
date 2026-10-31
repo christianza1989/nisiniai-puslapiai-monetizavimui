@@ -1,0 +1,11 @@
+# Cloud-edge text clearance — 2026-10-30
+
+The owner requested that breadcrumbs and all other colored-section text stay clear of the white cloud shapes at both ends. The previous fixed heading offsets could place desktop breadcrumbs inside the full SVG band; long mobile breadcrumbs also overran that band.
+
+Only the site CSS changes. Reserve the SVG's complete27.8/283.5 height plus24px, preserve larger original offsets, and let wrapped breadcrumbs determine their own grid-row height. Both homepage sections and colored inner-page bottoms use the same responsive boundary. Original SVG geometry, palette, fonts and flow remain; no clipping, hidden text or decorative stacking workaround. White legal/process/form surfaces retain their intended treatment. This explicit legibility request takes precedence over unsafe source spacing.
+
+Validation:48 route/viewport cases covering all12 routes at320/390/1280/1920, plus18 sequential expanded FAQ states at390/1280. No painted-text edge violation or horizontal overflow; minimum observed top/bottom clearances26.34375/41.34375px. All12 main-text SHA256 digests are unchanged, and source/runtime CSS SHA256 matches.307 core tests, native build with2 manifests/0 missing,12-route SEO/host-isolation smoke and before/after layout scans PASS. No TSX/JS or form behavior changed.
+
+Raw baseline geometry initially included the browser's layout boxes for hidden FAQ answer descendants. Those paragraph bottom measurements do not establish painted overlap. The final audit excludes closed-answer descendants, then checks each actually opened answer; the breadcrumb top defect is independently reproduced. Audit code/evidence and screenshots are under D:/Core/output/kvapunaikinimas-cloud-safe-20261030. The paired JSON records exact scope, hashes, counts and limitations.
+
+The desktop1920 homepage and narrow320 long title were visually inspected alongside1280/390 ozonation and expanded FAQ bottom frames. Desktop fixed-background/head framing, automatic slides, field placeholders/photo and private mail configuration are retained. Zero form POST or additional mail. Actual.lt remains a native unapproved draft; no production/DNS/main merge/release. Physical-device and actual zoom certification remain separate; prior performance measurements are historical.

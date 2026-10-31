@@ -1,0 +1,349 @@
+{
+  "state": "READY_FOR_LOCAL_OWNER_REVIEW_NOT_PRODUCTION",
+  "checkedAt": "2026-10-29T20:04:51.838Z",
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-fidelity-repair-20261029",
+  "preview": "http://127.0.0.1:8918/",
+  "comparison": "http://127.0.0.1:8919/?page=home",
+  "realDomainState": "DRAFT_ONLY",
+  "productionDeployment": false,
+  "realMailSent": false,
+  "sourceTextChecks": 261,
+  "routes": [
+    {
+      "path": "/",
+      "finalPath": "/",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 19,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/patalpu-kvapu-naikinimas/",
+      "finalPath": "/patalpu-kvapu-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/patalpu-kvapu-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 34,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/patalpu-kvapu-naikinimas"
+    },
+    {
+      "path": "/kvapu-naikinimas/",
+      "finalPath": "/kvapu-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/kvapu-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 35,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/kvapu-naikinimas"
+    },
+    {
+      "path": "/pelesio-naikinimas/",
+      "finalPath": "/pelesio-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/pelesio-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 34,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/pelesio-naikinimas"
+    },
+    {
+      "path": "/ozonavimas-kas-tai/",
+      "finalPath": "/ozonavimas-kas-tai",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/ozonavimas-kas-tai",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 23,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/gyvunu-kvapo-naikinimas/",
+      "finalPath": "/gyvunu-kvapo-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/gyvunu-kvapo-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 30,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/gyvunu-kvapo-naikinimas"
+    },
+    {
+      "path": "/kvapu-naikinimas-automobilyje-ozonavimas/",
+      "finalPath": "/kvapu-naikinimas-automobilyje-ozonavimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/kvapu-naikinimas-automobilyje-ozonavimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 34,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/kvapu-naikinimas-automobilyje-ozonavimas"
+    },
+    {
+      "path": "/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas/",
+      "finalPath": "/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 21,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": [],
+      "serviceSchemaUrl": "https://kvapunaikinimas.example/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas"
+    },
+    {
+      "path": "/ozonavimas-kaune-kaina/",
+      "finalPath": "/ozonavimas-kaune-kaina",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/ozonavimas-kaune-kaina",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 6,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/dazniausiai-uzduodami-klausimai/",
+      "finalPath": "/dazniausiai-uzduodami-klausimai",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/dazniausiai-uzduodami-klausimai",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 19,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/ozonavimas-vilniuje-kaina/",
+      "finalPath": "/ozonavimas-vilniuje-kaina",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/ozonavimas-vilniuje-kaina",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 6,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": []
+    },
+    {
+      "path": "/musu-slapuku-politika/",
+      "finalPath": "/musu-slapuku-politika",
+      "status": 200,
+      "canonical": "https://kvapunaikinimas.example/musu-slapuku-politika",
+      "contactsPreserved": true,
+      "descriptionPresent": true,
+      "h1Count": 1,
+      "sourceTextChecks": 0,
+      "missing": [],
+      "internalRedirects": [],
+      "externalScripts": []
+    }
+  ],
+  "visual": {
+    "pages": 12,
+    "viewports": [
+      1440,
+      390
+    ],
+    "screenshots": 24,
+    "originalScreenshots": 24,
+    "additionalHomeViewportImages": 8,
+    "brokenImages": 0,
+    "sourceMedia": "Exact displayed WordPress crop variants imported through canonical responsive asset pipeline.",
+    "samePresentationLayoutSHA256": "9998117146ece5ab298e959b666acf47cf83bd067b8f8b3b10c488cdf18ec559"
+  },
+  "interactions": {
+    "at": "2026-10-29T19:59:51.054Z",
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "carousel advances automatically",
+        "pass": true,
+        "detail": {
+          "start": 0,
+          "left": 366,
+          "w": 366
+        }
+      },
+      {
+        "name": "one complete 300px image without adjacent peek",
+        "pass": true,
+        "detail": [
+          {
+            "left": 33.15625,
+            "right": 333.15625,
+            "w": 300,
+            "h": 300
+          }
+        ]
+      },
+      {
+        "name": "manual action pauses autoplay",
+        "pass": true
+      },
+      {
+        "name": "home panel collapses",
+        "pass": true
+      },
+      {
+        "name": "home panel reopens",
+        "pass": true
+      },
+      {
+        "name": "sticky desktop header",
+        "pass": true
+      },
+      {
+        "name": "back to top appears",
+        "pass": true
+      },
+      {
+        "name": "back to top returns to top",
+        "pass": true
+      },
+      {
+        "name": "phone preference required state",
+        "pass": true
+      },
+      {
+        "name": "email preference required state",
+        "pass": true
+      },
+      {
+        "name": "reduced motion disables automatic carousel",
+        "pass": true
+      },
+      {
+        "name": "responsive widths do not overflow",
+        "pass": true,
+        "detail": [
+          {
+            "width": 320,
+            "client": 305,
+            "scroll": 305,
+            "header": 74,
+            "serviceColumns": "129.5px 129.5px"
+          },
+          {
+            "width": 390,
+            "client": 375,
+            "scroll": 375,
+            "header": 74,
+            "serviceColumns": "164.5px 164.5px"
+          },
+          {
+            "width": 768,
+            "client": 753,
+            "scroll": 753,
+            "header": 74,
+            "serviceColumns": "353.5px 353.5px"
+          },
+          {
+            "width": 1440,
+            "client": 1425,
+            "scroll": 1425,
+            "header": 83,
+            "serviceColumns": "182.5px 182.5px 182.5px 182.5px 182.5px 182.5px"
+          }
+        ]
+      },
+      {
+        "name": "mobile menu opens",
+        "pass": true
+      },
+      {
+        "name": "mobile menu closes on navigation",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens and shows answer",
+        "pass": true
+      },
+      {
+        "name": "process text has nonzero line height",
+        "pass": true
+      },
+      {
+        "name": "2x text is not clipped or horizontally overflowing",
+        "pass": true,
+        "detail": {
+          "client": 375,
+          "scroll": 375,
+          "clipped": 0
+        }
+      }
+    ],
+    "trustedPointerActions": true,
+    "realMailSent": false
+  },
+  "coreTests": {
+    "pass": 303,
+    "fail": 0
+  },
+  "nativeFormChecks": {
+    "pass": 17,
+    "syntheticRowsRemoved": 3,
+    "smtpEnabled": false
+  },
+  "lighthouse": {
+    "version": "13.6.0",
+    "at": "2026-10-29T20:00:07.352Z",
+    "performance": 96,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 69,
+    "LCP_ms": 2243.832,
+    "TBT_ms": 189.556,
+    "CLS": 0,
+    "totalBytes": 430966,
+    "labOnly": true,
+    "previewNoindexPreserved": true
+  },
+  "freshBases": {
+    "core": "25292e20219b735df7f04c5807dd4c100f98addc",
+    "public": "c2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da"
+  },
+  "upgradeIds": [
+    "upgrade-1347c6e1-fbd9-4b7a-94e9-b885398d2f9b",
+    "upgrade-e9f6e95b-8e1e-4615-8a4d-15de71d94384"
+  ],
+  "limitations": [
+    "Owner-authorized mobile cards/call action, form/privacy, contrast and semantic navigation differences retained.",
+    "True keyboard-user confirmation remains separate from the verified pointer actions.",
+    "Actual controller facts, production inbox receipt, wider development dependency findings and native approve/release remain prelaunch work.",
+    "Original ozone claims remain unchanged as explicitly requested."
+  ]
+}

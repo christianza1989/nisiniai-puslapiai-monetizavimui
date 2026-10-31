@@ -1,0 +1,26 @@
+{
+  "siteId": "kvapunaikinimas",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/SECOND-FIDELITY-2026-10-30.md",
+    "sites/kvapunaikinimas/QA-SECOND-FIDELITY-2026-10-30.json"
+  ],
+  "rollback": "Scoped revert of this follow-up source commit; preserve prior native packages, source snapshots and journal events.",
+  "summary": "Restore observed text-run styles, nested title markers and explicit normal line-height during source presentation extraction/preparation; retain unchanged native copy digests.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "paths": [
+    "WORKSTREAMS.md",
+    "sites/kvapunaikinimas/DESIGN.md",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md",
+    "sites/kvapunaikinimas/ACCEPTANCE.md",
+    "sites/kvapunaikinimas/SECOND-FIDELITY-2026-10-30.md",
+    "sites/kvapunaikinimas/QA-SECOND-FIDELITY-2026-10-30.json",
+    "sites/kvapunaikinimas/prepare.mjs",
+    "sites/kvapunaikinimas/source/extract-presentation.browser.js",
+    "sites/kvapunaikinimas/source/presentation.json"
+  ],
+  "id": "upgrade-3c7a7182-5da5-490b-95ec-ccde5fc58859",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "32f86ec24df064262d6cbed644227a7d18ce6224",
+  "createdAt": "2026-10-30T14:18:21.864Z"
+}

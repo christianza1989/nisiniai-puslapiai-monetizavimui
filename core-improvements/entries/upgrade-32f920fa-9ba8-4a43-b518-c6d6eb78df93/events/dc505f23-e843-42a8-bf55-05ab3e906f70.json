@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Verified actual open draft PR head after successful push. Local sender/recipient and one exact owner-confirmed native test; no main merge or production. Secrets remain private.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/305",
+  "commit": "d7c96d9326dbba43a0a1287d51be94ca4f0abc1d",
+  "eventId": "dc505f23-e843-42a8-bf55-05ab3e906f70",
+  "sequence": 3,
+  "at": "2026-10-30T17:06:26.429Z"
+}

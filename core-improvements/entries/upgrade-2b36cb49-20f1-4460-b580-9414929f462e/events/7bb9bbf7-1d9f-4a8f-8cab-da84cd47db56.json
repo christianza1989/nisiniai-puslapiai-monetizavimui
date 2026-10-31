@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Explicit owner request implemented in site-scoped controls. Actual reduce:true reloads cycle all5/4 images at1440/390; no Play control, automatic interaction resume and keyboard pause/blur resume. No form submission or production.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-autoplay-20261030/core-tests.log:307/307"
+    },
+    {
+      "command": "npx tsc --noEmit; npx eslint components/niche/kvapunaikinimas-controls.tsx",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-autoplay-20261030/types.log / lint.log, exec session73121 exit0"
+    },
+    {
+      "command": "Isolated runtime npm run build",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-autoplay-20261030/build.log:2 RSC manifests,0 missing"
+    },
+    {
+      "command": "Actual IAB1440x900/390x844 timed loops and interactions; node verify-evidence.mjs",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/AUTOPLAY-2026-10-30.json and D:/Core/output/kvapunaikinimas-autoplay-20261030/browser.json /8 viewport frames"
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=kvapunaikinimas npm run test:seo-smoke in actual fixture runtime",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-autoplay-20261030/seo-smoke.log:12 native routes,host isolation and404"
+    }
+  ],
+  "eventId": "7bb9bbf7-1d9f-4a8f-8cab-da84cd47db56",
+  "sequence": 2,
+  "at": "2026-10-30T17:37:50.675Z"
+}

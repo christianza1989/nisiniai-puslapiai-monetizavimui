@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Actual reduced-motion:true original/Core comparison confirms fixed desktop, source scroll mobile and visible matching head. Historical incorrect/full-page proofs retained. Actual.lt remains draft, no production/mail.",
+  "checks": [
+    {
+      "command": "IAB actual1920/1440/390 viewport comparison at0/200px and proof +80px",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.md"
+    },
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "305/305; sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.md"
+    },
+    {
+      "command": "npm run build and npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "2RSC manifests and12-route native SEO; sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.md"
+    },
+    {
+      "command": "impeccable detect --json --scope layout components/niche/kvapunaikinimas-site.module.css",
+      "result": "PASS",
+      "evidence": "[] before/after; visual proof remains independent in sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.md"
+    }
+  ],
+  "eventId": "9603fc97-562c-4b1c-ac8c-068f18ccb2aa",
+  "sequence": 2,
+  "at": "2026-10-30T16:15:30.791Z"
+}

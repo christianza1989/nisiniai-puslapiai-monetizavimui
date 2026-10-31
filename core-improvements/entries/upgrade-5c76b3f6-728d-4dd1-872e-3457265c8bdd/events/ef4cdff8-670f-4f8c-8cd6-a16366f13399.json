@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Draft PR created and attached to this task. Source is on the named own branch; no main merge, production activation, owner content approval or other-PC adoption is represented.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/104",
+  "commit": "95134a597bef57fd1cb6b5d88c7979ea598a8545",
+  "eventId": "ef4cdff8-670f-4f8c-8cd6-a16366f13399",
+  "sequence": 3,
+  "at": "2026-10-29T17:34:31.011Z"
+}

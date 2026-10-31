@@ -1,5 +1,15 @@
 # Bendras nišinių svetainių paštas
 
+## Literal local secrets — 2026-10-30
+
+An explicit `--env-file` is parsed by the installed Wrangler dotenv loader, including variable expansion. JSON.stringify alone is not a safe dotenv credential serializer: a Node verifier can authenticate the original password while the actual Worker receives a different value. Reproduced in kvapunaikinimas; the first form was durably stored and rejected at SMTP authentication, before any DATA acceptance.
+
+Companion `scripts/hostinger-mail-env.mjs` now writes versioned literal values, escapes interpolation and preserves backslashes using a compatible delimiter. Values that cannot be represented fail before writing. The SMTP and IMAP verifiers read the new format and historical JSON-quoted files; the setup tool keeps its existing owner mailbox guard. Regression uses the actual installed Wrangler4.92.0 loader with synthetic credentials, not a mock parser. See companion draft [PR104](https://github.com/christianza1989/niche-public-core/pull/104); not yet main adoption.
+
+For this owner's new mailbox, the isolated local kvapunaikinimas preview uses authenticated `kontaktuforma@kontaktuforma.lt` and recipient `sales@kvapunaikinimas.lt`. Actual Worker auth, native form → D1 notified → SMTP acceptance and exact owner-confirmed receipt passed for one marked test. [Acceptance](sites/kvapunaikinimas/MAIL-CONNECTION-2026-10-30.md) separates the initial failure, corrected result and production limits. Secrets are outside Git. Default previews of other sites are unaffected.
+
+Do not run the multi-submission kvapunaikinimas verifier against the mail-enabled preview. It now requires an explicit `KVAPU_QA_MAIL_DISABLED=1` attestation after restarting that runtime with SMTP0 and no native email binding. The attestation is a deliberate operator checkpoint, not automatic proof of the server's environment.
+
 ## Per-store primary sender and payment recovery — 2026-10-25
 
 Use the exact authenticated mailbox, not only a cosmetic Reply-To/name. Canonical [payment recovery and sender migration](commerce-core/docs/PAYMENT_RECOVERY.md) preserves old immutable/unknown commands, provides a separate mail-only identity configuration without rewriting payment/carrier keys, and requires actual Worker acceptance plus exact owner inbox receipt. Hostinger HTML is optional, bounded, fingerprinted and accompanied by text. One informed neutral cart reminder is distinct from marketing; never enroll older orders, blindly retry unknown mail or infer a bank decline from an expired Checkout Session.

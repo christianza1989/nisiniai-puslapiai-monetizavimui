@@ -1,0 +1,123 @@
+{
+  "checkedAt": "2026-10-30T17:37:13.118Z",
+  "siteId": "kvapunaikinimas",
+  "status": "PASS",
+  "ambientReducedMotion": true,
+  "loops": [
+    {
+      "device": "desktop",
+      "width": 1440,
+      "label": "Ozonavimo iliustracijos",
+      "count": 5,
+      "sequence": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        0,
+        0,
+        1,
+        1
+      ],
+      "fullLoop": true
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "label": "Ozonavimo įranga",
+      "count": 4,
+      "sequence": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "fullLoop": true
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "label": "Ozonavimo iliustracijos",
+      "count": 5,
+      "sequence": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        0,
+        0,
+        1,
+        1
+      ],
+      "fullLoop": true
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "label": "Ozonavimo įranga",
+      "count": 4,
+      "sequence": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "fullLoop": true
+    }
+  ],
+  "noPlayPauseButtons": true,
+  "manualResume": true,
+  "keyboardPauseAndBlurResume": true,
+  "horizontalOverflow": false,
+  "mobileProofFullyInViewport": {
+    "bottom": 525.3125,
+    "height": 844,
+    "scroll": 2430,
+    "top": 225.3125
+  },
+  "sourceAndRuntimeControlsSha256": "347d3be8794f8b5868b2f90469c07551a4b9583d44e5f764b23007e7743c1015",
+  "coreTests": 307,
+  "typescript": "PASS",
+  "scopedEslint": "PASS",
+  "build": "PASS,2 RSC manifests",
+  "seoSmoke": "PASS,12 native routes/host isolation/sitemap/robots/llms/schemas/404",
+  "formSubmissionsThisTask": 0,
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-autoplay-20261030",
+  "toolLimit": "Existing-tab access and viewport.reset reported browser.user unavailable. Kept the freshly owned preview; restored observed1280x720 size with supported viewport.set.",
+  "actualLtState": "draft-only",
+  "productionDeployed": false,
+  "privateBase": "05d64c991aa861e87f0535a69b8e9efaa299713c",
+  "publicBase": "129b60128b02880aea0ef3a41a7aaac50b10a413"
+}

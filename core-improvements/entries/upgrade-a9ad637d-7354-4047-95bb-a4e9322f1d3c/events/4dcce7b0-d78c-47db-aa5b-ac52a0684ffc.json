@@ -1,0 +1,30 @@
+{
+  "status": "local-verified",
+  "commit": "99c82d7010767090d60f0d799163340c33e1cdcd",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-performance-20261031/core-tests-v9.log:324/324; final source local TypeScript/scoped ESLint and actual hosted builds pass"
+    },
+    {
+      "command": "node D:/Core/output/kvapunaikinimas-performance-20261031/verify-hosted.mjs https://kvapunaikinimas.lt production-v9",
+      "result": "PASS",
+      "evidence": "production-v9-http.json:12 pages,81 originals+81 managed copies,13 resources,36 variants,0 findings"
+    },
+    {
+      "command": "node D:/Core/output/kvapunaikinimas-performance-20261031/compare-layout.mjs production-v9",
+      "result": "PASS",
+      "evidence": "production-v9-comparison.json:24 cases/712 roles plus images/sections,0 findings"
+    },
+    {
+      "command": "Google PageSpeed web UI:3 final homepage reports, mobile and desktop profiles",
+      "result": "PASS",
+      "evidence": "pagespeed-final.json:mobile median97/range95-100/LCP2.4s; desktop100/99-100/LCP0.6s; accessibility/best practices/SEO100"
+    }
+  ],
+  "note": "Final V9 identical archive staged and deployed; approved native package/layout/font bytes and automatic2000ms/500ms motion retained. Actual live full wraps and onscreen lazy images verified. Failed optimizer/header/typecheck/tool probes retained; no form POST/additional email/main merge.",
+  "eventId": "4dcce7b0-d78c-47db-aa5b-ac52a0684ffc",
+  "sequence": 2,
+  "at": "2026-10-31T13:43:14.657Z"
+}

@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "siteId": "kvapunaikinimas",
+  "date": "2026-10-30",
+  "environment": "Native isolated .example loopback fixture; real .lt remains unapproved draft",
+  "privateBase": "0a4d35b7fca34df619f9162ccb8f5b86150e9e0f",
+  "publicBase": "0c377c753d9ec5ddd77dcb01ae4b2ef89fe50e26",
+  "cssSha256": "eecd09821de7e5de7ed4ee5ef6af065fbb70410740fd7e20c4a9294ad660ecdc",
+  "policy": {
+    "svgRatio": "283.5/27.8",
+    "reserved": "9.806vw + 24px",
+    "largerSourceOffsetsPreserved": true,
+    "wrappedBreadcrumbIntrinsicRow": true,
+    "cloudsUnchanged": true
+  },
+  "checks": {
+    "pages": 12,
+    "widths": [
+      320,
+      390,
+      1280,
+      1920
+    ],
+    "routeViewportCases": 48,
+    "expandedFaqStates": 18,
+    "cloudSectionsMeasured": 66,
+    "visibleTextViolations": 0,
+    "horizontalOverflowCases": 0,
+    "allRouteTextShaUnchanged": true,
+    "minimumTopGap": 26.34375,
+    "minimumBottomGap": 41.34375,
+    "runtimeSourceShaMatch": true,
+    "coreTests": {
+      "pass": 307,
+      "fail": 0
+    },
+    "build": {
+      "manifests": 2,
+      "missing": 0
+    },
+    "seo": "12 routes, robots, sitemap, llms, schemas, host isolation and404 PASS",
+    "layoutDetector": {
+      "before": 0,
+      "after": 0
+    }
+  },
+  "auditMethod": "Read actual DOM rectangles against the complete top/bottom cloud SVG bands, with20px minimum acceptance margin. Skip descendants of closed details except summaries; open all nine FAQ answers sequentially at390/1280. CSS reserves24px. Raw before.json also measured hidden answer layout boxes; its FAQ paragraph bottom collisions are not evidence of painted overlap. The reproduced NAV top collisions remain valid.",
+  "preserved": [
+    "All12 main-text digests",
+    "Original fonts/media/cloud geometry",
+    "Desktop fixed and mobile scrolling backgrounds",
+    "Pure automatic500ms leftward slides with no controls",
+    "In-field labels, associated semantics and white vehicle plate",
+    "Connected sender/recipient configuration"
+  ],
+  "operations": {
+    "formPosts": 0,
+    "additionalMail": 0,
+    "production": false,
+    "dns": false,
+    "mainMerge": false
+  },
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-cloud-safe-20261030",
+  "screenshots": [
+    "after-ozonavimas-kas-tai-1280.jpg",
+    "after-ozonavimas-kas-tai-390.jpg",
+    "after-kvapu-naikinimas-automobilyje-ozonavimas-320.jpg",
+    "after-home-1920.jpg",
+    "after-faq-bottom-390.jpg",
+    "after-faq-bottom-1280.jpg"
+  ],
+  "limits": [
+    "IAB Chromium viewport evidence; physical Safari/Android and actual page/text zoom were not certified",
+    "No new performance benchmark or production qualification"
+  ]
+}

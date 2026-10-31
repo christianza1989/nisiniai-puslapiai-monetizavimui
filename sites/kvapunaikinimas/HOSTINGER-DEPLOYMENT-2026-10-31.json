@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-31",
+  "state": "production-live-verified",
+  "domain": "kvapunaikinimas.lt",
+  "url": "https://kvapunaikinimas.lt/",
+  "username": "u538533883",
+  "orderId": 1004998542,
+  "runtime": "Hostinger Node24 / Next production / MySQL / TLS SMTP; no WordPress runtime",
+  "sourceCommit": "b4a9ebf55294ce17e96db88ec02a8d89f7e19670",
+  "nativeRelease": "2690244f-d1f7-452a-96ed-987ad872b388",
+  "packageSha256": "0879e710f120d0084c6cdcf86b29e24474656727f85eb7abbb981328c3430326",
+  "archive": {
+    "name": "kvapu_20261031_v4.zip",
+    "bytes": 4093058,
+    "sha256": "b74df6e5ffe38e3e1844bfc37887d54efab7dfcdad90cb539a2e8050fd8307a6"
+  },
+  "buildUuid": "01a1910f-9931-7031-8d5a-e0ea3331720e",
+  "stage": {
+    "domain": "mediumblue-kudu-106374.hostingersite.com",
+    "buildUuid": "01a19104-ea1f-71d5-a836-a306ae7641bf",
+    "sourceCommit": "f607dcfe8e1f74042a363e87bab7f33d4d816486",
+    "mailEnabled": false,
+    "noindex": true,
+    "persistedSyntheticRows": 1
+  },
+  "backup": {
+    "providerSnapshotUtc": "2026-10-31T07:14:00Z",
+    "localDisplayedTime": "2026-10-31 09:14",
+    "scope": "files and original WordPress database",
+    "state": "provider snapshot complete; restore choices verified; no restoration performed",
+    "localArchiveDownload": "not verified; prepared in hPanel only",
+    "oldDatabase": "preserved untouched"
+  },
+  "checks": {
+    "coreTests": 318,
+    "stageResponsiveRouteCases": 24,
+    "livePages": 12,
+    "allNativeAssetHashes": 81,
+    "productionNoindex": false,
+    "httpToHttps": 301,
+    "wwwToCanonical": 308,
+    "wpEndpoints": 404,
+    "sourceFiles": "404; .env denied403",
+    "dnsUnchanged": true,
+    "mail": {
+      "authorized": true,
+      "validSubmitAttempts": 1,
+      "phase": "smtp-accepted-and-durably-notified",
+      "sender": "kontaktuforma@kontaktuforma.lt",
+      "recipient": "sales@kvapunaikinimas.lt",
+      "timestamp": "2026-10-31T08:28:36.028Z",
+      "uiResponse": "Jūsų žinutė išsaugota ir perduota operatoriaus pašto serveriui.",
+      "inboxReceipt": "owner-confirmed",
+      "leadId": "2c62a4b1-80b7-4db4-b353-eae0af67bd80",
+      "databaseRows": 1,
+      "ownerConfirmationDate": "2026-10-31"
+    },
+    "seoSmoke": "local qualified12-route smoke PASS; stock remote smoke stops at Hostinger unknown-Host ECONNRESET. Independent actual production checks pass for12 canonical/schema pages,12-URL sitemaps including legacy aliases, robots, LLM outputs, icons and404. Canonical HTTPS host200; unknown Host connection reset with no body."
+  },
+  "operations": {
+    "cache": "Removed retained NitroPack/WP Rocket/WordPress cache rewrites and obsolete PHP7.4 handler; preserved8 IP allow rules and exact provider Passenger configuration; CacheLookup off. Hosting cache was already off; CDN retained and purged.",
+    "database": "separate new production MySQL database; original WordPress DB untouched",
+    "mail": "exactly one owner-authorized valid production form POST, SMTP accepted and MySQL row notified. No additional sends.",
+    "paidUpgrades": 0,
+    "mainMerge": false
+  },
+  "limits": [
+    "Owner retained inherited ozone claims; no medical/factual recertification",
+    "Legal operator identification remains owner-declined; no blanket legal compliance claim",
+    "No new Lighthouse score or physical-device certification",
+    "Hostinger website_type still reports legacy wordpress registration although current Node build serves all pages and original executable WP files are absent. Do not run WP uninstall against the new site.",
+    "Native content package/assets and deployment archives are local/private runtime artifacts, not synchronized by the code PR alone"
+  ],
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-hostinger-20261031"
+}

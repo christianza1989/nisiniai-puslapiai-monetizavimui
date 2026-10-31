@@ -118,7 +118,11 @@ export function normalizeBlocks(input) {
   if (input.length > 100) throw new Error('Per daug turinio blokų.');
   return input.map(block => {
     if (block.type === 'heading') return { type: 'heading', level: block.level === 3 ? 3 : 2, text: plain(block.text, 500) };
-    if (block.type === 'list') return { type: 'list', items: (Array.isArray(block.items) ? block.items : []).slice(0, 30).map(item => plain(item, 700)) };
+    if (block.type === 'list') return { type: 'list', items: (Array.isArray(block.items) ? block.items : []).slice(0, 30).map(item => {
+      const text = plain(item, 3001);
+      if (text.length > 3000) throw new Error('Sąrašo punktas negali viršyti 3000 ženklų. Padalykite tekstą į atskirus punktus.');
+      return text;
+    }) };
     if (block.type === 'image') return { type: 'image', assetId: plain(block.assetId, 80) };
     if (block.type === 'paragraph') return { type: 'paragraph', text: plain(block.text, 3000) };
     throw new Error('Nežinomas turinio bloko tipas.');

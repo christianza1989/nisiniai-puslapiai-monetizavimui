@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Draft PR created and attached to this task. Source is on the named own branch; no main merge, production activation, owner content approval or other-PC adoption is represented.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/305",
+  "commit": "7d2c1f2bd256cd54fbc6b742eb0c2926656d51c0",
+  "eventId": "6af87a6e-9fb5-4db2-b787-484cca4b4437",
+  "sequence": 3,
+  "at": "2026-10-29T17:34:29.542Z"
+}

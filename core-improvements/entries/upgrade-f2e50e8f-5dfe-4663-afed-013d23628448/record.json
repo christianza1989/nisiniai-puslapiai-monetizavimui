@@ -1,0 +1,21 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Preserve strict public HTTPS form origins on Node despite internal Next loopback rewrites; keep default Worker origin checks unchanged",
+  "category": "code",
+  "evidence": [
+    "D:/Core/output/kvapunaikinimas-hostinger-20261031/node-origin-baseline.json",
+    "Node loopback hostname alignment closes reproduced self-proxy404; canonical HTTPS Origin incorrectly403 while internal localhost reaches validation400."
+  ],
+  "paths": [
+    "app/niche/[siteId]/lead/route.ts",
+    "lib/niche-request-origin.mjs",
+    "tests/niche-request-origin.test.mjs",
+    "scripts/start-hostinger.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "rollback": "Revert Node-only public-origin helper/selection and stage-host wrapper; retain default Worker request-origin behavior, no data or approval rewriting.",
+  "id": "upgrade-f2e50e8f-5dfe-4663-afed-013d23628448",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "a9ef2720f3be881da80bc779d554c9ba4f640846",
+  "createdAt": "2026-10-31T07:32:21.947Z"
+}

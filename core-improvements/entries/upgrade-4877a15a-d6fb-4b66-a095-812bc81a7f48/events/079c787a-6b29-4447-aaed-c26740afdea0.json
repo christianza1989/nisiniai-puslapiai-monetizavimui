@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Actual preference/scroll background repair delivered to existing open draft. Implementation 9b3a6cf5ff839a3d16d117db48fd2b9df16da1e6; no real-domain release or main merge. Source/native bitmaps and white plate unchanged.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/305",
+  "commit": "9b3a6cf5ff839a3d16d117db48fd2b9df16da1e6",
+  "eventId": "079c787a-6b29-4447-aaed-c26740afdea0",
+  "sequence": 3,
+  "at": "2026-10-30T16:17:18.308Z"
+}

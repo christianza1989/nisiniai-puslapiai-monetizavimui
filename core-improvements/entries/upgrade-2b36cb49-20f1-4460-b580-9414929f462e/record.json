@@ -1,0 +1,23 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Record explicit original-style autoplay behavior, complete desktop/mobile loops and manual/keyboard resume without Play controls.",
+  "category": "workflow",
+  "evidence": [
+    "sites/kvapunaikinimas/AUTOPLAY-2026-10-30.md",
+    "sites/kvapunaikinimas/AUTOPLAY-2026-10-30.json"
+  ],
+  "paths": [
+    "WORKSTREAMS.md",
+    "sites/kvapunaikinimas/DESIGN.md",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md",
+    "sites/kvapunaikinimas/ACCEPTANCE.md",
+    "sites/kvapunaikinimas/AUTOPLAY-2026-10-30.md",
+    "sites/kvapunaikinimas/AUTOPLAY-2026-10-30.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "rollback": "Scoped docs/journal revert; keep immutable earlier evidence and private mail configuration.",
+  "id": "upgrade-2b36cb49-20f1-4460-b580-9414929f462e",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "05d64c991aa861e87f0535a69b8e9efaa299713c",
+  "createdAt": "2026-10-30T17:37:15.687Z"
+}

@@ -1,0 +1,27 @@
+{
+  "siteId": "kvapunaikinimas",
+  "evidence": [
+    "D:/Core/output/kvapunaikinimas-all-pages-20261031/baseline.json",
+    "D:/Core/output/kvapunaikinimas-all-pages-20261031/source-cigarette-detail.json",
+    "sites/kvapunaikinimas/ALL-PAGES-2026-10-31.md"
+  ],
+  "rollback": "Scoped revert of list inset, two digest-bound block-gap corrections and preparation replay; retain prior cloud/form/mail/media changes.",
+  "category": "workflow",
+  "summary": "Preserve measured inter-block source whitespace without changing native content; verify all routes against live source",
+  "paths": [
+    "sites/kvapunaikinimas/prepare.mjs",
+    "sites/kvapunaikinimas/block-spacing.mjs",
+    "sites/kvapunaikinimas/block-spacing.json",
+    "sites/kvapunaikinimas/DESIGN.md",
+    "sites/kvapunaikinimas/ACCEPTANCE.md",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md",
+    "sites/kvapunaikinimas/ALL-PAGES-2026-10-31.md",
+    "sites/kvapunaikinimas/ALL-PAGES-2026-10-31.json",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "id": "upgrade-0c1f226f-549a-486a-aecd-7cabc4bf9f57",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "37a92526d18cc211c503e8b11ae59435fc16fb9a",
+  "createdAt": "2026-10-31T05:38:05.812Z"
+}

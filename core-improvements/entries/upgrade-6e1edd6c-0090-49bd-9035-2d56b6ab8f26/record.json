@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "The rendered completion verifier used Node fetch with a custom Host, which current Node ignored; canonical sitemap returned a false404. Use bounded wire-level HTTP and preserve TLS origin verification and manual redirects.",
+  "evidence": [
+    "sites/kvapunaikinimas/ACCEPTANCE.md",
+    "SKILLS/niche-site-audit/scripts/completion.test.mjs"
+  ],
+  "paths": [
+    "SKILLS/niche-site-audit/SKILL.md",
+    "SKILLS/niche-site-audit/scripts/verify-site-completion.mjs",
+    "SKILLS/niche-site-audit/scripts/completion.test.mjs",
+    "SKILLS/catalog.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "rollback": "Scoped revert of verifier transport, accompanying rule and entry fingerprint.",
+  "id": "upgrade-6e1edd6c-0090-49bd-9035-2d56b6ab8f26",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-29T16:45:30.020Z"
+}

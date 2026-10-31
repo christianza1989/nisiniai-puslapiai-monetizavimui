@@ -1,0 +1,21 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Restore500ms leftward automatic illustrations with no controls and original in-field contact labels/photo alignment.",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/SLIDE-CONTACT-2026-10-30.md",
+    "sites/kvapunaikinimas/SLIDE-CONTACT-2026-10-30.json"
+  ],
+  "paths": [
+    "components/niche/kvapunaikinimas-controls.tsx",
+    "components/niche/kvapunaikinimas-form.tsx",
+    "components/niche/kvapunaikinimas-site.tsx",
+    "components/niche/kvapunaikinimas-site.module.css"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "rollback": "Scoped four-file revert and isolated preview rebuild; no content package/media/private mail or global renderer change.",
+  "id": "upgrade-1dd53517-dcbc-49c0-9e4c-809ec48ad6ab",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "ed117449b1f4e320704f65074a1ec519308a869a",
+  "createdAt": "2026-10-30T18:06:19.217Z"
+}

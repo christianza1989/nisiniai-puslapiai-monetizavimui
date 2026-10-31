@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "at": "2026-10-30T16:13:42.233Z",
+  "cause": "The final prefers-reduced-motion rule overrode desktop fixed backgrounds with scroll, changing their positioning area from the viewport to the720px section and cropping the head.",
+  "repair": "Remove only the reduced-motion background-attachment override. Keep native carousel reduced-motion guard, transition suppression and source mobile scroll behavior.",
+  "actualReducedMotion": true,
+  "viewports": [
+    [
+      1920,
+      900
+    ],
+    [
+      1440,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "versions": [
+    "original",
+    "core"
+  ],
+  "screenshots": 24,
+  "heroScrollPixels": 200,
+  "proofAdditionalScrollPixels": 80,
+  "matchingDesktopAttachment": "fixed",
+  "matchingMobileAttachment": "scroll",
+  "matchingPosition": "50% 100%",
+  "matchingSize": "cover",
+  "headVisuallyConfirmed": "1920x900 current viewport matches source head framing; see core-1920-top.jpg and original-1920-top.jpg",
+  "originalLiveUrl": "https://kvapunaikinimas.lt/",
+  "nativeUrl": "http://127.0.0.1:8918/",
+  "publicTests": 305,
+  "productionBuild": "PASS",
+  "rscManifests": 2,
+  "seoSmokePages": 12,
+  "layoutScanBefore": [],
+  "layoutScanAfter": [],
+  "unchanged": [
+    "native body/media package",
+    "white vehicle plate",
+    "form/contacts",
+    "approved mobile two-column cards and call action",
+    "real-domain draft state"
+  ],
+  "production": false,
+  "smtp": false,
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-home-background-20261030"
+}

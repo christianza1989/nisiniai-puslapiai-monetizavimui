@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/104",
+  "commit": "99c82d7010767090d60f0d799163340c33e1cdcd",
+  "note": "Final verified companion source pushed to the existing owned draft PR104. Actual live adoption/build is separate from source merge and other-PC adoption; private evidence is tracked by PR305.",
+  "eventId": "9b92a021-9de8-4fb6-a438-539cd0e15c01",
+  "sequence": 3,
+  "at": "2026-10-31T13:43:16.335Z"
+}

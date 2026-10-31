@@ -1,0 +1,25 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Legacy production Hostinger vhost serves public image/font files outside Node and ignores both Next public-file header policy and staged document-root headers. Deliver byte-identical, fully-public native assets via Next managed immutable static paths; preserve default Worker/original URLs and fail closed on future/revoked/paused releases.",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/PERFORMANCE-2026-10-31.md",
+    "D:/Core/output/kvapunaikinimas-performance-20261031/production-v7-http.json",
+    "D:/Core/output/kvapunaikinimas-performance-20261031/post-purge-cache-probes.json",
+    "PUBLIC baseline37dc0c225a318ff894d253ac9000e16c75379c35; fully passing hosted stage and differing production headers"
+  ],
+  "paths": [
+    "lib/kvapunaikinimas-asset-delivery.mjs",
+    "scripts/hostinger-static-assets.mjs",
+    "scripts/build-hostinger.mjs",
+    "scripts/export-hostinger.mjs",
+    "components/niche/kvapunaikinimas-site.tsx",
+    "docs/HOSTINGER_NODE.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/104",
+  "rollback": "Scoped revert of delivery adapter and rebuild retained native release; do not mutate native package/fonts/media, databases, DNS or provider/security .htaccess rules. Experimental header blocks restored to original bytes.",
+  "id": "upgrade-a9ad637d-7354-4047-95bb-a4e9322f1d3c",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "46d94ac9cdd243e3125aef4233da9278ae0da9d2",
+  "createdAt": "2026-10-31T13:22:00.773Z"
+}

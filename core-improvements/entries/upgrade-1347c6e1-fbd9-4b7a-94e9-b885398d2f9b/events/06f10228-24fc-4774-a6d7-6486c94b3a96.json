@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Owner-directed fidelity repair verified on isolated native .example build. Real .lt draft, item5 copy, SMTP-off and no-production boundaries retained. Historical runs preserved.",
+  "checks": [
+    {
+      "command": "npm run test:core; npx tsc --noEmit; scoped eslint; npm run build",
+      "result": "PASS",
+      "evidence": "303 core tests; types/lint and native RSC asset build. Detailed acceptance in sites/kvapunaikinimas/VISUAL-REPAIR-2026-10-29.md."
+    },
+    {
+      "command": "12-route browser text/visual/interaction verification; test:seo-smoke; verify-local.mjs",
+      "result": "PASS",
+      "evidence": "261 fragments,24 route/view screenshots,17 pointer/responsive states,17 mail-disabled native checks. Local Lighthouse96/100/100 CLS0; no field-performance assertion."
+    }
+  ],
+  "eventId": "06f10228-24fc-4774-a6d7-6486c94b3a96",
+  "sequence": 2,
+  "at": "2026-10-29T20:04:11.032Z"
+}

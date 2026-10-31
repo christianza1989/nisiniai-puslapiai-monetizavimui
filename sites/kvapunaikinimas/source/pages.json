@@ -1,0 +1,3528 @@
+{
+  "source": "https://kvapunaikinimas.lt",
+  "capturedAt": "2026-10-29T15:25:07.817Z",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "Kvapų naikinimas - Ozonavimas",
+      "description": null,
+      "widgets": [
+        {
+          "id": "6a38103",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "Kvapų naikinimas ozonu - efektyviausias kvapų naikinimo būdas!",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Kvapų naikinimas ozonu - efektyviausias kvapų naikinimo būdas!",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "69b9db1",
+          "kind": "accordion.default",
+          "text": "Pagrindiniai ozonavimo privalumai: – Ozonas yra chemiškai švarus, natūralus ir ekologiškas.– Ozonas sunaikina ne tik kvapus, bet ir virusus, bakterijas. Gamtoje nėra ozonui atsparių virusų ar bakterijų.– Ozonas suardo kenkėjų išskiriamus alergenus (pelių, žiurkių, tarakonų, dulkių erkučių ir kt.).– Ozono poveikis yra daug stipresnis nei kitų tradicinių dezinfekavimo būdų, pvz.: ozonas veikia 50 kartų stipriau ir 300 kartų greičiau, nei chloras",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Pagrindiniai ozonavimo privalumai:"
+            },
+            {
+              "type": "paragraph",
+              "text": "– Ozonas yra chemiškai švarus, natūralus ir ekologiškas."
+            },
+            {
+              "type": "paragraph",
+              "text": "– Ozonas sunaikina ne tik kvapus, bet ir virusus, bakterijas. Gamtoje nėra ozonui atsparių virusų ar bakterijų."
+            },
+            {
+              "type": "paragraph",
+              "text": "– Ozonas suardo kenkėjų išskiriamus alergenus (pelių, žiurkių, tarakonų, dulkių erkučių ir kt.)."
+            },
+            {
+              "type": "paragraph",
+              "text": "– Ozono poveikis yra daug stipresnis nei kitų tradicinių dezinfekavimo būdų, pvz.: ozonas veikia 50 kartų stipriau ir 300 kartų greičiau, nei chloras"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "9515426",
+          "kind": "image-carousel.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/blogi-kvapai-300x300.png",
+              "alt": "blogi-kvapai"
+            },
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/dulkiu-erkutes2-300x300.png",
+              "alt": "dulkiu-erkutes2"
+            },
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/virusai-300x300.png",
+              "alt": "virusai"
+            },
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/alergenai-1-300x300.png",
+              "alt": "alergenai"
+            },
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/pelesis-300x300.png",
+              "alt": "pelesis"
+            }
+          ],
+          "settings": "{\"navigation\":\"none\",\"autoplay_speed\":2000,\"slides_to_show\":\"1\",\"autoplay\":\"yes\",\"pause_on_hover\":\"yes\",\"pause_on_interaction\":\"yes\",\"infinite\":\"yes\",\"effect\":\"slide\",\"speed\":500}"
+        },
+        {
+          "id": "ade0e70",
+          "kind": "heading.default",
+          "text": "MŪSŲ PASLAUGOS:",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "MŪSŲ PASLAUGOS:",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "f00aa24",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/Patalpu-kvapu-naikinimas.jpg",
+              "alt": ""
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "dffd8f7",
+          "kind": "button.default",
+          "text": "Patalpų kvapų naikinimas",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "7694e05",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/Kvapu-naikinimas-automobilyje-1.jpg",
+              "alt": ""
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "2468773",
+          "kind": "button.default",
+          "text": "Kvapų naikinimas automobilyje",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "79f1e7d",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/Cigareciu-kvapu-naikinimas.jpg",
+              "alt": ""
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "424953c",
+          "kind": "button.default",
+          "text": "Cigarečių kvapų naikinimas",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d555b79",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/Gyvunu-kvapo-naikinimas.jpg",
+              "alt": ""
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "bd1ef8d",
+          "kind": "button.default",
+          "text": "Gyvunu kvapo naikinimas",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6a3e0ad",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/pelesio-naikinimas-1.webp",
+              "alt": ""
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "e5f7cd7",
+          "kind": "button.default",
+          "text": "Pelėsio naikinimas",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "597aa5d",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimas.jpg",
+              "alt": ""
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "f80da2b",
+          "kind": "button.default",
+          "text": "Ozonavimas / Kitų kvapų naikinimas",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d5b9fe1",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5080467",
+          "kind": "heading.default",
+          "text": "Kvapunaikinimas.lt - kvapų naikinimo profesionalai!",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Kvapunaikinimas.lt - kvapų naikinimo profesionalai!",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "83439ef",
+          "kind": "accordion.default",
+          "text": "Kodėl verta rinktis mūsų komandos paslaugas? – Kvapų ir pelėsio naikinimą atliekame nuo 2013 m., todėl turime įtin didelę patirtį ir žinių bagažą, kaip kovoti su šiomis problemomis– Specializuojames tik kvapų ir pelėsio naikinimo srityse, todėl turime galingiausius ir techniškai moderniausius ozonatorius bei kvalifikuotus technikus– Mūsų tikslas – patenkinti klientai. Todėl visada konsultuojame nemokamai, įsigiliname į problemos esmę ir parenkame optimalų sprendimą",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Kodėl verta rinktis mūsų komandos paslaugas?"
+            },
+            {
+              "type": "paragraph",
+              "text": "– Kvapų ir pelėsio naikinimą atliekame nuo 2013 m., todėl turime įtin didelę patirtį ir žinių bagažą, kaip kovoti su šiomis problemomis"
+            },
+            {
+              "type": "paragraph",
+              "text": "– Specializuojames tik kvapų ir pelėsio naikinimo srityse, todėl turime galingiausius ir techniškai moderniausius ozonatorius bei kvalifikuotus technikus"
+            },
+            {
+              "type": "paragraph",
+              "text": "– Mūsų tikslas – patenkinti klientai. Todėl visada konsultuojame nemokamai, įsigiliname į problemos esmę ir parenkame optimalų sprendimą"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "e490c58",
+          "kind": "image-carousel.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/imageedit_1_4410406638-1-300x300.png",
+              "alt": "imageedit_1_4410406638"
+            },
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/imageedit_5_2550315103-300x300.png",
+              "alt": "imageedit_5_2550315103"
+            },
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/imageedit_9_6143204277-300x300.png",
+              "alt": "imageedit_9_6143204277"
+            },
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/imageedit_11_8985628063-300x300.png",
+              "alt": "imageedit_11_8985628063"
+            }
+          ],
+          "settings": "{\"navigation\":\"none\",\"autoplay_speed\":2000,\"slides_to_show\":\"1\",\"autoplay\":\"yes\",\"pause_on_hover\":\"yes\",\"pause_on_interaction\":\"yes\",\"infinite\":\"yes\",\"effect\":\"slide\",\"speed\":500}"
+        },
+        {
+          "id": "472bb54",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "1475fd5",
+          "kind": "heading.default",
+          "text": "SUSISIEKITE SU MŪSŲ KOMANDA!",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "SUSISIEKITE SU MŪSŲ KOMANDA!",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "81e0dd8",
+          "kind": "menu-anchor.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "4b2c55a",
+          "kind": "form.default",
+          "text": "-Pasirinkite- Telefonu El. paštu SIŲSTI ŽINUTĘ",
+          "blocks": [],
+          "images": [],
+          "settings": "{\"step_next_label\":\"Next\",\"step_previous_label\":\"Previous\",\"step_icon_shape\":\"none\",\"button_width\":\"100\",\"step_type\":\"number_text\"}"
+        },
+        {
+          "id": "caf5d1d",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/03/Kvapu-naikinimas-kontaktai-1024x694.jpg",
+              "alt": ""
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/blogi-kvapai-300x300.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/dulkiu-erkutes2-300x300.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/virusai-300x300.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/alergenai-1-300x300.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/pelesis-300x300.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/Patalpu-kvapu-naikinimas.jpg",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/Kvapu-naikinimas-automobilyje-1.jpg",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/Cigareciu-kvapu-naikinimas.jpg",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/Gyvunu-kvapo-naikinimas.jpg",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/pelesio-naikinimas-1.webp",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimas.jpg",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/imageedit_1_4410406638-1-300x300.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/imageedit_5_2550315103-300x300.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/imageedit_9_6143204277-300x300.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/imageedit_11_8985628063-300x300.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/03/Kvapu-naikinimas-kontaktai-1024x694.jpg"
+      ]
+    },
+    {
+      "path": "/patalpu-kvapu-naikinimas/",
+      "status": 200,
+      "title": "Patalpų kvapų naikinimas - Patalpų ozonavimas - Kvapo naikinimas",
+      "description": "Blogo kvapo naikinimas namuose ir kitose patalpose - Namų ir kitų patalpų ozonavimas - Patalpų kvapų naikinimas",
+      "widgets": [
+        {
+          "id": "6a38103",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "PATALPŲ KVAPŲ NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "PATALPŲ KVAPŲ NAIKINIMAS",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "7f0d2d9",
+          "kind": "text-editor.default",
+          "text": "Patalpų kvapų naikinimas yra opi problema, su kuria susiduria nemaža dalis patalpų savininkų ir nuomininkų. Nesvarbu, ar tai būtų prisvilusio maisto, naminių gyvūnų, ar drėgmės sukelti pelėsių kvapai, veiksmingai pašalinti šiuos kvapus kartais gali būti tikrai nelengva užduotis.Dažniausiai iš mūsų klientų girdimos problemos, susiduriant su patalpų kvapų naikinimuŠaltinio identifikavimas. Dažnai sunkiausia kovojant su patalpų kvapais yra nustatyti tikslų jų šaltinį. Kvapai gali sklisti iš paslėptų ar neprieinamų vietų, pavyzdžiui, iš už sienų, iš po grindų ar ortakių. Nenustačius ir nepašalinus pagrindinės priežasties, kvapas gali išlikti nepaisant pastangų jį pašalinti.Akytos medžiagos. Kvapai gali prasiskverbti pro porėtas medžiagas, pavyzdžiui, medieną, kiliminę dangą, audinius ir gipso kartoną. Šios medžiagos, sugėrusios kvapus, gali nuolat skleisti kvapą atgal į orą, todėl patalpų kvapų naikinimas nepakeitus medžiagos arba nenaudojant specialių valymo metodų gali būti sudėtingas.Cheminė kvapų prigimtis. Kai kurie kvapai susideda iš lakiųjų organinių junginių, kurie gali būti sunkiai neutralizuojami. Cheminiai valikliai gali laikinai užmaskuoti šiuos kvapus, bet ne panaikinti, todėl reikia sudėtingesnių metodų, pavyzdžiui, fermentinių valiklių arba valymo ozonu.Pasikartojimas. Kai kuriais atvejais kvapai atsiranda dėl nuolatinių problemų, pavyzdžiui, drėgmės, dėl kurios nuolat auga pelėsis, arba nuolatinio kvapo šaltinio, pavyzdžiui, naminių gyvūnų pleiskanų ar tabako dūmų. Nuolatiniams ar pasikartojantiems kvapų šaltiniams reikia nuolatinių, o ne vienkartinių patalpų kvapų naikinimo sprendimų, pavyzdžiui pelėsio naikinimo ir drėgmės eliminavimo patalpose.Ventiliacijos trūkumas. Prasta ventiliacija gali sulaikyti kvapus patalpose ir neleisti šviežiam orui išsklaidyti ir išnešioti kvapo molekulių.Priemonių ar galimybių trūkumas. Saugus kai kurių kvapų šalinimas, ypač tų, kurie susiję su biologiniu pavojumi (pvz., nuotekos) ar cheminėmis medžiagomis, reikalauja profesionalios intervencijos. Patalpų savininkai gali neturėti reikiamos įrangos, apsauginių priemonių ar patirties, kad saugiai atliktų patalpų kvapų naikinimą.Psichologiniai/fiziologiniai veiksniai. Jautrumas kvapams gali būti labai skirtingas. Tai, kas vienam žmogui yra lengvas dirgiklis, kitam gali būti nepakeliama. Be to, žmonės pripranta prie kvapų, su kuriais dažnai susiduria, todėl sunku įvertinti, ar kvapas buvo veiksmingai pašalintas.Netinkami patalpų kvapų naikinimo metodai. Kartais naudojami valymo būdai gali dar labiau padidinti kvapo problemą. Pavyzdžiui, naudojant per daug vandens kilimams valyti, gali atsirasti pelėsių ar grybelių, o tai dar labiau pagilina kvapo problemą. Be to, kai kurios valymo priemonės gali chemiškai reaguoti su kvapo šaltiniu, todėl kvapas tampa stipresnis arba nemalonesnis.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Patalpų kvapų naikinimas yra opi problema, su kuria susiduria nemaža dalis patalpų savininkų ir nuomininkų. Nesvarbu, ar tai būtų prisvilusio maisto, naminių gyvūnų, ar drėgmės sukelti pelėsių kvapai, veiksmingai pašalinti šiuos kvapus kartais gali būti tikrai nelengva užduotis."
+            },
+            {
+              "type": "paragraph",
+              "text": "Dažniausiai iš mūsų klientų girdimos problemos, susiduriant su patalpų kvapų naikinimu"
+            },
+            {
+              "type": "paragraph",
+              "text": "Šaltinio identifikavimas. Dažnai sunkiausia kovojant su patalpų kvapais yra nustatyti tikslų jų šaltinį. Kvapai gali sklisti iš paslėptų ar neprieinamų vietų, pavyzdžiui, iš už sienų, iš po grindų ar ortakių. Nenustačius ir nepašalinus pagrindinės priežasties, kvapas gali išlikti nepaisant pastangų jį pašalinti."
+            },
+            {
+              "type": "paragraph",
+              "text": "Akytos medžiagos. Kvapai gali prasiskverbti pro porėtas medžiagas, pavyzdžiui, medieną, kiliminę dangą, audinius ir gipso kartoną. Šios medžiagos, sugėrusios kvapus, gali nuolat skleisti kvapą atgal į orą, todėl patalpų kvapų naikinimas nepakeitus medžiagos arba nenaudojant specialių valymo metodų gali būti sudėtingas."
+            },
+            {
+              "type": "paragraph",
+              "text": "Cheminė kvapų prigimtis. Kai kurie kvapai susideda iš lakiųjų organinių junginių, kurie gali būti sunkiai neutralizuojami. Cheminiai valikliai gali laikinai užmaskuoti šiuos kvapus, bet ne panaikinti, todėl reikia sudėtingesnių metodų, pavyzdžiui, fermentinių valiklių arba valymo ozonu."
+            },
+            {
+              "type": "paragraph",
+              "text": "Pasikartojimas. Kai kuriais atvejais kvapai atsiranda dėl nuolatinių problemų, pavyzdžiui, drėgmės, dėl kurios nuolat auga pelėsis, arba nuolatinio kvapo šaltinio, pavyzdžiui, naminių gyvūnų pleiskanų ar tabako dūmų. Nuolatiniams ar pasikartojantiems kvapų šaltiniams reikia nuolatinių, o ne vienkartinių patalpų kvapų naikinimo sprendimų, pavyzdžiui pelėsio naikinimo ir drėgmės eliminavimo patalpose."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ventiliacijos trūkumas. Prasta ventiliacija gali sulaikyti kvapus patalpose ir neleisti šviežiam orui išsklaidyti ir išnešioti kvapo molekulių."
+            },
+            {
+              "type": "paragraph",
+              "text": "Priemonių ar galimybių trūkumas. Saugus kai kurių kvapų šalinimas, ypač tų, kurie susiję su biologiniu pavojumi (pvz., nuotekos) ar cheminėmis medžiagomis, reikalauja profesionalios intervencijos. Patalpų savininkai gali neturėti reikiamos įrangos, apsauginių priemonių ar patirties, kad saugiai atliktų patalpų kvapų naikinimą."
+            },
+            {
+              "type": "paragraph",
+              "text": "Psichologiniai/fiziologiniai veiksniai. Jautrumas kvapams gali būti labai skirtingas. Tai, kas vienam žmogui yra lengvas dirgiklis, kitam gali būti nepakeliama. Be to, žmonės pripranta prie kvapų, su kuriais dažnai susiduria, todėl sunku įvertinti, ar kvapas buvo veiksmingai pašalintas."
+            },
+            {
+              "type": "paragraph",
+              "text": "Netinkami patalpų kvapų naikinimo metodai. Kartais naudojami valymo būdai gali dar labiau padidinti kvapo problemą. Pavyzdžiui, naudojant per daug vandens kilimams valyti, gali atsirasti pelėsių ar grybelių, o tai dar labiau pagilina kvapo problemą. Be to, kai kurios valymo priemonės gali chemiškai reaguoti su kvapo šaltiniu, todėl kvapas tampa stipresnis arba nemalonesnis."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "14a4328",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/kvapu-naikinimas-patalpose-800x450.jpg",
+              "alt": "kvapų naikinimas patalpose"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "feb2f5d",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "4793f9c",
+          "kind": "heading.default",
+          "text": "PATALPŲ OZONAVIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "PATALPŲ OZONAVIMAS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "8fbf61a",
+          "kind": "text-editor.default",
+          "text": "Patalpų kvapų naikinimui ozono dujos naudojamas jau ne vieną dešimtmetį. Ozonas pašalina kvapus vykstant oksidacijos procesui. Ši reakcija pakeičia kvapo molekulių cheminę struktūrą ir taip jas neutralizuoja. Patalpų ozonavimas veiksmingas kovojant su įvairiais kvapais, įskaitant dūmų, naminių gyvūnų, pelėsių ar sugędusio maisto sukeliamais kvapais. Ozono generatoriai naudojami įvairiose patalpose kvapams šalinti, bakterijoms naikinti ir ore esantiems patogenams neutralizuoti. Štai keletas įprastų patalpų vietų, kuriose gali pagelbėti patalpų ozonavimas: Viešbučiai: patalpų ozonavimas dažnai naudojamas kambariuose ir kitose uždarose erdvėse, kad atšviežintų orą ir pašalintų kvapus tarp svečių viešnagių. Arba kad rūkantiems skirtuose kambariuose būtų panaikintas tabako kvapas. Biurai: oro kokybei pagerinti ir išlikusiems maisto gaminimo, dūmų ar kitų šaltinių kvapams pašalinti. Sporto salės ir sporto centrai: patalpų ozonavimas efektyviai pašalina prakaito ir kitus biologinius kvapus, būdingus treniruočių zonoms. Ligoninės ir sveikatos priežiūros įstaigos: patalpų ozonavimas naudojamas patalpoms dezinfekuoti ir dezodoruoti, ypač oro ir paviršiaus patogenams šalinti. Komerciniai ir pramoniniai pastatai: sandėliuose ir gamybinėse patalpose kvapams kontroliuoti ir sanitarinėms sąlygoms palaikyti. Namuose: ypač tose vietose, kuriose būna nemalonių kvapų, pvz., virtuvėse, rūsiuose ar vonios kambariuose. Patalpų ozonavimas taip pat naudojamas dūmų kvapams pašalinti po rūkymo patalpose ar gaisrų.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Patalpų kvapų naikinimui ozono dujos naudojamas jau ne vieną dešimtmetį. Ozonas pašalina kvapus vykstant oksidacijos procesui. Ši reakcija pakeičia kvapo molekulių cheminę struktūrą ir taip jas neutralizuoja. Patalpų ozonavimas veiksmingas kovojant su įvairiais kvapais, įskaitant dūmų, naminių gyvūnų, pelėsių ar sugędusio maisto sukeliamais kvapais."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ozono generatoriai naudojami įvairiose patalpose kvapams šalinti, bakterijoms naikinti ir ore esantiems patogenams neutralizuoti. Štai keletas įprastų patalpų vietų, kuriose gali pagelbėti patalpų ozonavimas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "Viešbučiai: patalpų ozonavimas dažnai naudojamas kambariuose ir kitose uždarose erdvėse, kad atšviežintų orą ir pašalintų kvapus tarp svečių viešnagių. Arba kad rūkantiems skirtuose kambariuose būtų panaikintas tabako kvapas."
+            },
+            {
+              "type": "paragraph",
+              "text": "Biurai: oro kokybei pagerinti ir išlikusiems maisto gaminimo, dūmų ar kitų šaltinių kvapams pašalinti."
+            },
+            {
+              "type": "paragraph",
+              "text": "Sporto salės ir sporto centrai: patalpų ozonavimas efektyviai pašalina prakaito ir kitus biologinius kvapus, būdingus treniruočių zonoms."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ligoninės ir sveikatos priežiūros įstaigos: patalpų ozonavimas naudojamas patalpoms dezinfekuoti ir dezodoruoti, ypač oro ir paviršiaus patogenams šalinti."
+            },
+            {
+              "type": "paragraph",
+              "text": "Komerciniai ir pramoniniai pastatai: sandėliuose ir gamybinėse patalpose kvapams kontroliuoti ir sanitarinėms sąlygoms palaikyti."
+            },
+            {
+              "type": "paragraph",
+              "text": "Namuose: ypač tose vietose, kuriose būna nemalonių kvapų, pvz., virtuvėse, rūsiuose ar vonios kambariuose. Patalpų ozonavimas taip pat naudojamas dūmų kvapams pašalinti po rūkymo patalpose ar gaisrų."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "3054466",
+          "kind": "heading.default",
+          "text": "BLOGO KVAPO NAIKINIMAS NAMUOSE",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "BLOGO KVAPO NAIKINIMAS NAMUOSE",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "166e37a",
+          "kind": "text-editor.default",
+          "text": "Blogo kvapo naikinimas namuose dažniausia užklausa, kurią gauname iš klientų. Yra daugybė būdų, kaip paslėpti nemalonius kvapus – nuo dezodoravimo iki oro gaiviklių ir paviršių valymo, taip pat yra labai daug tam tikslui naudojamų medžiagų. Blogo kvapo naikinimui namuose naudojami įvairūs valikliai ir buityje sutinkamos medžiagos, pavyzdžiui: actas, maistinė soda, amoniakas, garai, kava ir pan. Tačiau norint pašalinti blogus kvapus visam laikui, nenaudojant jokių cheminių medžiagų ar maskuojamųjų priemonių, patalpų apdorojimas ozono dujomis yra efektyviausias būdas.Nors ozonas yra galinga ir veiksminga kvapų kontrolės priemonė, svarbu jį naudoti saugiai. Ozonas yra stiprus oksidatorius ir gali būti kenksmingas, jei įkvepiama didelė jo koncentracija. Todėl labai svarbu ozono generatorius naudoti pagal gamintojo rekomendacijas, užtikrinant, kad apdorojimo metu zonoje nebūtų žmonių ir nebūtų viršyta saugi ozono koncentracija. Taip pat po ozonavimo patalpa privalo būti gerai išvėdinama, kad ozonas išsisklaidytų.Jei nežinote, kaip efektyviai kovoti su kvapais ar turite bet kokią blogo kvapo namuose naikinimo problemą – susisiekite su mūsų komanda ir mes mielai jus pakonsultuosime, kaip galima lengvai išnaikinti konkretų Jums ramybės neduodantį kvapą!",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Blogo kvapo naikinimas namuose dažniausia užklausa, kurią gauname iš klientų. Yra daugybė būdų, kaip paslėpti nemalonius kvapus – nuo dezodoravimo iki oro gaiviklių ir paviršių valymo, taip pat yra labai daug tam tikslui naudojamų medžiagų. Blogo kvapo naikinimui namuose naudojami įvairūs valikliai ir buityje sutinkamos medžiagos, pavyzdžiui: actas, maistinė soda, amoniakas, garai, kava ir pan. Tačiau norint pašalinti blogus kvapus visam laikui, nenaudojant jokių cheminių medžiagų ar maskuojamųjų priemonių, patalpų apdorojimas ozono dujomis yra efektyviausias būdas."
+            },
+            {
+              "type": "paragraph",
+              "text": "Nors ozonas yra galinga ir veiksminga kvapų kontrolės priemonė, svarbu jį naudoti saugiai. Ozonas yra stiprus oksidatorius ir gali būti kenksmingas, jei įkvepiama didelė jo koncentracija. Todėl labai svarbu ozono generatorius naudoti pagal gamintojo rekomendacijas, užtikrinant, kad apdorojimo metu zonoje nebūtų žmonių ir nebūtų viršyta saugi ozono koncentracija. Taip pat po ozonavimo patalpa privalo būti gerai išvėdinama, kad ozonas išsisklaidytų."
+            },
+            {
+              "type": "paragraph",
+              "text": "Jei nežinote, kaip efektyviai kovoti su kvapais ar turite bet kokią blogo kvapo namuose naikinimo problemą – susisiekite su mūsų komanda ir mes mielai jus pakonsultuosime, kaip galima lengvai išnaikinti konkretų Jums ramybės neduodantį kvapą!"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "2f7578a",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "27f2c03",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimo-eiga-1024x131.png",
+              "alt": "ozonavimas"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "a3255c9",
+          "kind": "text-editor.default",
+          "text": "Prieš ozonavimą Būtina išvalyti norimą ozonuoti aplinką ir išvesti žmones ir gyvūnus iš patalpų.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Prieš ozonavimą"
+            },
+            {
+              "type": "paragraph",
+              "text": "Būtina išvalyti norimą ozonuoti aplinką ir išvesti žmones ir gyvūnus iš patalpų."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "8432579",
+          "kind": "text-editor.default",
+          "text": "Ozonavimo įrangos pajungimas Įvertinę aplinką, mūsų sertifikuoti specialistai parinks tinkamą ozono dozę.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ozonavimo įrangos pajungimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Įvertinę aplinką, mūsų sertifikuoti specialistai parinks tinkamą ozono dozę."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "e84801a",
+          "kind": "text-editor.default",
+          "text": "Ozonavimas Ozonatorius ir ventiliatoriai pripildo aplinką ozonu. Ozonas prasiskverbia į sunkiausiai pasiekiamas vietas.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ozonavimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ozonatorius ir ventiliatoriai pripildo aplinką ozonu."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ozonas prasiskverbia į sunkiausiai pasiekiamas vietas."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "a515030",
+          "kind": "text-editor.default",
+          "text": "Vėdinimas Baigus ozonavimą būtina išvėdinti aplinką. Esant ventiliacijai – 30 min., be ventiliacijos – 120 min.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Vėdinimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Baigus ozonavimą būtina išvėdinti aplinką."
+            },
+            {
+              "type": "paragraph",
+              "text": "Esant ventiliacijai – 30 min., be ventiliacijos – 120 min."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/kvapu-naikinimas-patalpose-800x450.jpg",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimo-eiga-1024x131.png"
+      ]
+    },
+    {
+      "path": "/kvapu-naikinimas/",
+      "status": 200,
+      "title": "Kvapų naikinimas - Ozonavimas",
+      "description": "Kvapų naikinimas ozonu - šlapimo, šaldytuvo, gaisro, degesių, pūvimo, dažų, skalbimo mašinos, kanalizacijos ir kitų kvapų naikinimas",
+      "widgets": [
+        {
+          "id": "6a38103",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "KVAPŲ NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KVAPŲ NAIKINIMAS",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "7f0d2d9",
+          "kind": "text-editor.default",
+          "text": "Mokslininkai nustatė, kad priklausomai nuo nosies jautrumo, žmogus geba atpažinti nuo kelių šimtų tūkstančių iki trilijono skirtingų kvapų. Tokie sugebėjimai mums nebuvo suteikti atsitiktinai – uoslės jausmas ne tik teikia malonumą žmogui, bet ir įspėja apie pavojų, pavyzdžiui, ore esant nuodingoms medžiagoms. Neatsitiktinai ir daugelis nuodingų žmonėms medžiagų turi aitrius, nemalonius kvapus.Kvapų naikinimas labai nemaloni ir kartais sunkiai išsprendžiama problema. Todėl dažnai girdime klientų klausimus: kaip panaikinti degėsių kvapą namuose? Kaip pašalinti tabako, šaldytuvo ar kitus kvapus, kurie įsigėrę į namų sienas, grindis bei baldus?Atsakymas paprastas! Beveik visų nemalonių kvapų naikinimas galimas ozonavimo pagalba. Ozonas yra ekologiška, draugiška aplinkai priemonė, kuri, atlikusi savo darbą, greitai suskyla į deguonį, nepalikdama jokių pėdsakų.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Mokslininkai nustatė, kad priklausomai nuo nosies jautrumo, žmogus geba atpažinti nuo kelių šimtų tūkstančių iki trilijono skirtingų kvapų. Tokie sugebėjimai mums nebuvo suteikti atsitiktinai – uoslės jausmas ne tik teikia malonumą žmogui, bet ir įspėja apie pavojų, pavyzdžiui, ore esant nuodingoms medžiagoms. Neatsitiktinai ir daugelis nuodingų žmonėms medžiagų turi aitrius, nemalonius kvapus."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kvapų naikinimas labai nemaloni ir kartais sunkiai išsprendžiama problema. Todėl dažnai girdime klientų klausimus: kaip panaikinti degėsių kvapą namuose? Kaip pašalinti tabako, šaldytuvo ar kitus kvapus, kurie įsigėrę į namų sienas, grindis bei baldus?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Atsakymas paprastas! Beveik visų nemalonių kvapų naikinimas galimas ozonavimo pagalba. Ozonas yra ekologiška, draugiška aplinkai priemonė, kuri, atlikusi savo darbą, greitai suskyla į deguonį, nepalikdama jokių pėdsakų."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "faa8a34",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/iStock_91690391_MEDIUM-e1467380495312-800x450.jpg",
+              "alt": "kvapų naikinimas"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "428b684",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "4793f9c",
+          "kind": "heading.default",
+          "text": "KVAPŲ NAIKINIMAS OZONU",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KVAPŲ NAIKINIMAS OZONU",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "8fbf61a",
+          "kind": "text-editor.default",
+          "text": "Nors kvapų naikinimas ozonu vis dar pakankamai retai naudojamas, bet tarp išbandžiusiųjų šią paslaugą – tai geras rekomendacijas turintis ir pasiteisinęs būdas. Ozonas molekuliniame lygmenyje sunaikina ne tik kvapus, bet ir grybų sporas, pelėsių sporas, mikrobus, virusus bei bakterijas. Lyginant su tradiciniais cheminiais valikliais arba dezodorantais, ozonas ne užmaskuoja kvapo priežastį, o tiesiog suardo blogus kvapus sukeliančias molekules. Kvapų naikinimas ozonu gali sėkmingai eliminuoti daugumą buityje atsirandančių blogų kvapų: Šlapimo kvapo naikinimas ozonu Šlapimo kvapas atsiranda dėl šlapime išsiskiriančio karbamido junginio skilimo. Skylant karbamidui, susidaro amoniakas, kuris ir sukelia stiprų, dažnai nemalonų kvapą. Šlapimo kvapui įtakos gali turėti ir kitos medžiagos, pavyzdžiui, maistas, vaistai, sveikatos būklė ir pan. Šaldytuvo kvapų naikinimas ozonu Blogi kvapai šaldytuvuose paprastai atsiranda dėl sugedusio maisto, pelėsių ir bakterijų. Kai maistas genda arba per ilgai laikomas šaldytuve, iš jo gali išsiskirti nemalonūs kvapai. Be to, bakterijos ir pelėsiai klesti drėgnose aplinkose. Tokia aplinka pasižymi ir šaldytuvai, todėl dažnai problema dar labiau paaštrėja. Gaisro / degėsių kvapo naikinimas ozonu Dėl medžiagų degimo atsirandantis blogas kvapas priklauso nuo medžiagų, kurios degė arba smilko. Pavyzdžiui, degant plastikui, maisto produktams ar organinėms medžiagoms išsiskiria skirtingi junginiai, kurie sukelia nemalonų kvapą. Tai gali būti sieros junginiai, azoto oksidai ir įvairūs kiti lakieji organiniai junginiai. Cigarečių kvapo naikinimas ozonu Cigarečių kvapą sukelia degančio tabako dūmai, kuriuose yra daug cheminių medžiagų, įskaitant dervą, nikotiną ir įvairias kitas kenksmingas medžiagas. Šie junginiai gali prikibti prie beveik bet kokio paviršiaus, įskaitant sienas, baldus, drabužius ir kitas aplinkoje esančias medžiagas. Laikui bėgant šie likučiai kaupiasi ir toliau skleidžia nuolatinį kvapą. Pūvimo kvapo naikinimas ozonu Puvimo kvapas, kuris dažniausiai jaučiamas pūvant organinėms medžiagoms, pavyzdžiui, maisto atliekoms, nugaišusiems gyvūnams ar augmenijai, visų pirma atsiranda bakterijoms ir grybeliams skaidant šias medžiagas. Šio irimo proceso metu susidaro įvairių dujų, įskaitant metaną, vandenilio sulfidą (kuris kvepia supuvusiais kiaušiniais) ir kitus lakiuosius organinius junginius, kurie sukelia stiprų ir nemalonų kvapą. Dažų kvapo naikinimas ozonu Blogą dažų kvapą pirmiausia sukelia lakieji organiniai junginiai, kurie išsiskiria džiūstant dažams. Šie junginiai – tai į orą išsiskiriantys tirpikliai, kuriuos gali sudaryti įvairios cheminės medžiagos, priklausomai nuo dažų rūšies (lateksiniai, aliejiniai ar kt.). Dažniausiai kvapas yra stipriausias dažymo metu. Tačiau ir dažams džiūstant, priklausomai nuo ventiliacijos, temperatūros ir drėgmės lygio jis gali išlikti ilgai. Paprastai dažų kvapas išsiskaido savaime, tačiau, jei norima procesą paspartinti galimas dažų kvapo naikinimas ozonu. Skalbimo mašinos kvapo naikinimas ozonu Blogas kvapas skalbimo mašinose dažnai atsiranda dėl to, kad skalbyklės viduje auga pelėsis, grybeliai ir bakterijos. Paprastai tai būna drėgmės, kuri skalbyklėje užsilaiko pasibaigus ciklams, ypač sandarinimo gumose, skalbimo priemonių stalčiuose arba būgne, pasekmė. Kanalizacijos kvapo naikinimas ozonu Blogas kanalizacijos kvapas, dažnai juntamas kriauklėse, dušuose ir kituose santechnikos įrengimuose, paprastai atsiranda dėl bakterijų ir jų sukeliamų procesų. Bakterijos gali daugintis organinėse medžiagose, kurios kaupiasi kanalizacijoje, pavyzdžiui, maisto dalelėse, riebaluose, plaukuose arba šiukšlėse. Skaidydamos šias medžiagas, bakterijos išskiria nemalonaus kvapo dujas. Kitų nemalonių kvapų naikinimas ozonu Kvapų naikinimas ozonu yra universali kvapų šalinimo priemonė, todėl gali būti naudojama įvairiose situacijose. Ozonas yra labai galingas oksidatorius ir gali veiksmingai pašalinti skirtingos kilmės kvapus. Jei nežinote, kaip efektyviai kovoti su kvapais ar turite bet kokią kvapų naikimo problemą – susisiekite su mūsų komanda ir mes mielai jus pakonsultuosime, kaip galima lengvai išnaikinti konkretų kvapą!",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Nors kvapų naikinimas ozonu vis dar pakankamai retai naudojamas, bet tarp išbandžiusiųjų šią paslaugą – tai geras rekomendacijas turintis ir pasiteisinęs būdas. Ozonas molekuliniame lygmenyje sunaikina ne tik kvapus, bet ir grybų sporas, pelėsių sporas, mikrobus, virusus bei bakterijas. Lyginant su tradiciniais cheminiais valikliais arba dezodorantais, ozonas ne užmaskuoja kvapo priežastį, o tiesiog suardo blogus kvapus sukeliančias molekules."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Kvapų naikinimas ozonu gali sėkmingai eliminuoti daugumą buityje atsirandančių blogų kvapų:"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Šlapimo kvapo naikinimas ozonu"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Šlapimo kvapo naikinimas ozonu"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Šlapimo kvapas atsiranda dėl šlapime išsiskiriančio karbamido junginio skilimo. Skylant karbamidui, susidaro amoniakas, kuris ir sukelia stiprų, dažnai nemalonų kvapą. Šlapimo kvapui įtakos gali turėti ir kitos medžiagos, pavyzdžiui, maistas, vaistai, sveikatos būklė ir pan."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Šaldytuvo kvapų naikinimas ozonu"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Šaldytuvo kvapų naikinimas ozonu"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Blogi kvapai šaldytuvuose paprastai atsiranda dėl sugedusio maisto, pelėsių ir bakterijų. Kai maistas genda arba per ilgai laikomas šaldytuve, iš jo gali išsiskirti nemalonūs kvapai. Be to, bakterijos ir pelėsiai klesti drėgnose aplinkose. Tokia aplinka pasižymi ir šaldytuvai, todėl dažnai problema dar labiau paaštrėja."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Gaisro / degėsių kvapo naikinimas ozonu"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Gaisro / degėsių kvapo naikinimas ozonu"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Dėl medžiagų degimo atsirandantis blogas kvapas priklauso nuo medžiagų, kurios degė arba smilko. Pavyzdžiui, degant plastikui, maisto produktams ar organinėms medžiagoms išsiskiria skirtingi junginiai, kurie sukelia nemalonų kvapą. Tai gali būti sieros junginiai, azoto oksidai ir įvairūs kiti lakieji organiniai junginiai."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Cigarečių kvapo naikinimas ozonu"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Cigarečių kvapo naikinimas ozonu"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Cigarečių kvapą sukelia degančio tabako dūmai, kuriuose yra daug cheminių medžiagų, įskaitant dervą, nikotiną ir įvairias kitas kenksmingas medžiagas. Šie junginiai gali prikibti prie beveik bet kokio paviršiaus, įskaitant sienas, baldus, drabužius ir kitas aplinkoje esančias medžiagas. Laikui bėgant šie likučiai kaupiasi ir toliau skleidžia nuolatinį kvapą."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Pūvimo kvapo naikinimas ozonu"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Pūvimo kvapo naikinimas ozonu"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Puvimo kvapas, kuris dažniausiai jaučiamas pūvant organinėms medžiagoms, pavyzdžiui, maisto atliekoms, nugaišusiems gyvūnams ar augmenijai, visų pirma atsiranda bakterijoms ir grybeliams skaidant šias medžiagas. Šio irimo proceso metu susidaro įvairių dujų, įskaitant metaną, vandenilio sulfidą (kuris kvepia supuvusiais kiaušiniais) ir kitus lakiuosius organinius junginius, kurie sukelia stiprų ir nemalonų kvapą."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Dažų kvapo naikinimas ozonu"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Dažų kvapo naikinimas ozonu"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Blogą dažų kvapą pirmiausia sukelia lakieji organiniai junginiai, kurie išsiskiria džiūstant dažams. Šie junginiai – tai į orą išsiskiriantys tirpikliai, kuriuos gali sudaryti įvairios cheminės medžiagos, priklausomai nuo dažų rūšies (lateksiniai, aliejiniai ar kt.). Dažniausiai kvapas yra stipriausias dažymo metu. Tačiau ir dažams džiūstant, priklausomai nuo ventiliacijos, temperatūros ir drėgmės lygio jis gali išlikti ilgai. Paprastai dažų kvapas išsiskaido savaime, tačiau, jei norima procesą paspartinti galimas dažų kvapo naikinimas ozonu."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Skalbimo mašinos kvapo naikinimas ozonu"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Skalbimo mašinos kvapo naikinimas ozonu"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Blogas kvapas skalbimo mašinose dažnai atsiranda dėl to, kad skalbyklės viduje auga pelėsis, grybeliai ir bakterijos. Paprastai tai būna drėgmės, kuri skalbyklėje užsilaiko pasibaigus ciklams, ypač sandarinimo gumose, skalbimo priemonių stalčiuose arba būgne, pasekmė."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Kanalizacijos kvapo naikinimas ozonu"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Kanalizacijos kvapo naikinimas ozonu"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Blogas kanalizacijos kvapas, dažnai juntamas kriauklėse, dušuose ir kituose santechnikos įrengimuose, paprastai atsiranda dėl bakterijų ir jų sukeliamų procesų. Bakterijos gali daugintis organinėse medžiagose, kurios kaupiasi kanalizacijoje, pavyzdžiui, maisto dalelėse, riebaluose, plaukuose arba šiukšlėse. Skaidydamos šias medžiagas, bakterijos išskiria nemalonaus kvapo dujas."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Kitų nemalonių kvapų naikinimas ozonu"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Kitų nemalonių kvapų naikinimas ozonu"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Kvapų naikinimas ozonu yra universali kvapų šalinimo priemonė, todėl gali būti naudojama įvairiose situacijose. Ozonas yra labai galingas oksidatorius ir gali veiksmingai pašalinti skirtingos kilmės kvapus."
+            },
+            {
+              "type": "paragraph",
+              "text": "Jei nežinote, kaip efektyviai kovoti su kvapais ar turite bet kokią kvapų naikimo problemą – susisiekite su mūsų komanda ir mes mielai jus pakonsultuosime, kaip galima lengvai išnaikinti konkretų kvapą!"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "64ae4f2",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/iStock_91690391_MEDIUM-e1467380495312-800x450.jpg"
+      ]
+    },
+    {
+      "path": "/pelesio-naikinimas/",
+      "status": 200,
+      "title": "Pelėsio naikinimas - Pelėsio kvapo naikinimas - Pelėsio valikliai",
+      "description": "Kaip veiksmingai atlikti pelėsio naikinimo procedūrą? - Koks geriausias pelėsio valiklis? - Pelėsio naikinimas kaina",
+      "widgets": [
+        {
+          "id": "6a38103",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "PELĖSIO NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "PELĖSIO NAIKINIMAS",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "7f0d2d9",
+          "kind": "text-editor.default",
+          "text": "Pelėsio naikinimas – labai dažna užklausa, kurią gauna mūsų komanda. Dėl ganėtinai šalto ir drėgno klimato Lietuvoje dažnai susiduriame su pelėsio keliamomis problemomis. Pelėsis plinta sporomis, kurios pasklinda ore ir gali jame išbūti ilgą laiką. Aptikę pelėsį, paprastai žmonės sunerimsta ir domisi pelėsio naikinimu dėl pažeistų sienų, apdailos bei kitų atsiradusių estetinių trūkumų. Deja, pelėsio skleidžiamos sporos labiausiai pavojingos ne patalpoms, bet jose gyvenančių žmonių sveikatai. Nedideli sporų kiekiai nepavojingi – tai dalis natūralios mūsų aplinkos, bet ilgalaikis pelėsio sporų poveikis jau yra žalingas sveikatai. Išvešėjęs į aplinką pelėsis išskiria galybę nuodingų lakių medžiagų – mikrotoksinų, kurių įkvėpę gauname stiprias alergines reakcijas ir kitas sveikatos problemas.Pelėsio naikinimas patalpose gali būti nelengva užduotis, ypač drėgnose patalpose arba ten, kur buvo padaryta žala užliejus vandeniu.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Pelėsio naikinimas – labai dažna užklausa, kurią gauna mūsų komanda. Dėl ganėtinai šalto ir drėgno klimato Lietuvoje dažnai susiduriame su pelėsio keliamomis problemomis. Pelėsis plinta sporomis, kurios pasklinda ore ir gali jame išbūti ilgą laiką. Aptikę pelėsį, paprastai žmonės sunerimsta ir domisi pelėsio naikinimu dėl pažeistų sienų, apdailos bei kitų atsiradusių estetinių trūkumų. Deja, pelėsio skleidžiamos sporos labiausiai pavojingos ne patalpoms, bet jose gyvenančių žmonių sveikatai. Nedideli sporų kiekiai nepavojingi – tai dalis natūralios mūsų aplinkos, bet ilgalaikis pelėsio sporų poveikis jau yra žalingas sveikatai. Išvešėjęs į aplinką pelėsis išskiria galybę nuodingų lakių medžiagų – mikrotoksinų, kurių įkvėpę gauname stiprias alergines reakcijas ir kitas sveikatos problemas."
+            },
+            {
+              "type": "paragraph",
+              "text": "Pelėsio naikinimas patalpose gali būti nelengva užduotis, ypač drėgnose patalpose arba ten, kur buvo padaryta žala užliejus vandeniu."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "14a4328",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/pelesio-naikinimas-768x387.jpg",
+              "alt": "pelėsio naikinimas"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "8fbf61a",
+          "kind": "text-editor.default",
+          "text": "Pateikiame veiksmingo pelėsio šalinimo procedūrą žingsnis po žingsnio:Suraskite visus pelėsio židiniusVizuali apžiūra. Atlikite kruopščią galimų pelėsio židinių, pavyzdžiui, rūsių, palėpių, už tapetų, po kilimais ir sienų ertmėse, apžiūrą. Ieškokite matomų pelėsio augimo požymių: tai gali būti juodos, žalios arba baltos spalvos dėmės.Specialistų atliekamas vertinimas. Jei nesate tikri dėl pelėsio tipo ar užterštumo masto, pasamdykite profesionalų pelėsio inspektorių. Specialistas gali atlikti išsamią analizę ir rekomenduoti, kaip elgtis atsižvelgiant į pelėsio tipą.Paruoškite pelėsio naikinimo įrankius ir medžiagasApsauginės priemonės. Darbo drabužiai naikinant pelėsį turi būti ilgomis rankovėmis, ilgomis kelnėmis, papildomai naudokite N95 kaukes arba respiratorius ir neporėtas pirštines, kad išvengtumėte tiesioginio kontakto su pelėsiu ar pelėsio sporomis.Valymo priemonės. Priklausomai nuo pelėsio išplitimo lygio ir tipo, galite naudoti natūralius tirpalus, pavyzdžiui, baltąjį actą, arba stipresnes chemines medžiagas, pavyzdžiui, vandenilio peroksidą, baliklį ar specialiai šiai užduočiai skirtas pelėsio šalinimo priemones.Įrankiai ir įranga. Pasirūpinkite šveitimo šepečiais, kempinėmis, kibiru, šiukšlių maišais ir dulkių siurbliu su HEPA filtru.Izoliuokite valomą teritorijąVėdinimas. Atidarykite langus, užtikrinkite gerą patalpos vėdinimą, kad kuo daugiau pakilusių valomo pelėsio sporų išeitų į lauką kartu su vėdinamu oru.Izoliacija. Pelėsio pažeistą vietą nuo likusios namo dalies atskirkite polietileno plėvele, visas siūles sutvirtinkite juosta, kad būtų išvengta kitų patalpų užteršimo.Pelėsio naikinimasDrėgnas valymas. Prieš valydami lengvai sudrėkinkite supelijusias vietas, kad sumažintumėte pelėsio sporų patekimą į orą.Paviršiaus valymas. Pasirinktu valymo tirpalu kruopščiai nuvalykite visus kietus paviršius. Pelėsiu užterštas porėtas medžiagas, tokias kaip lubų plyteles ar gipskartonio plokštes, gali tekti pašalinti ir išmesti.Giluminis valymas. Pelėsio naikinimas bus sėkmingas tik tokiu atveju, jei pašalinsite visus, net ir sunkiai prieinamus židinius. Stipraus užkrėtimo atvejais gali prireikti pašalinti ir pakeisti pažeistus namo konstrukcinius elementus.Po pelėsio naikinimo gerai išdžiovinkite aplinkąVeiksmingas džiovinimas. Po valymo visiškai išdžiovinkite teritoriją naudodami ventiliatorius ir oro sausintuvus, kad pašalintumėte likusią drėgmę.Stebėkite drėgmę. Naudokite drėgmės matuoklius drėgmės lygiui stebėti ir užtikrinkite, kad aplinkoje būtų mažesnis nei 50 % drėgnumas – tai padės užkirsti kelią naujam pelėsių augimui.Medžiagų šalinimasSaugus šalinimas. Prieš išnešdami pelėsiu užterštas medžiagas iš valytos patalpos, jas užklijuokite plastikiniuose maišuose, kad sumažintumėte poveikį likusiai namo daliai.Pelėsio naikinimas ozono dujomisPaskutinis žingsnis išvalius pelėsio židinius – pelėsio naikinimas ozonu. Tam, kad galutinai sunaikintumėte ore esančias ir plika akimi nematomas pelėsio sporas, atliekamas patalpų ozonavimas. Ozonas yra stiprus oksidantas ir gali deaktyvuoti įvairius mikroorganizmus, įskaitant bakterijas ir virusus, pažeisdamas jų ląstelių struktūras. Ši oksidacinė savybė mirtina ir pelėsių sporoms, kurios gali žūti arba tapti negyvybingos, kai yra veikiamos pakankamai didelės ozono koncentracijos. Mūsų pelėsio ir kvapų naikinimo specialistai parinks optimalią ozono dozę, apdoros visą plotą naudodami ozono generatorius ir tokiu būdu pašalins likusias pelėsio sporas.",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Pateikiame veiksmingo pelėsio šalinimo procedūrą žingsnis po žingsnio:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Suraskite visus pelėsio židinius"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Vizuali apžiūra. Atlikite kruopščią galimų pelėsio židinių, pavyzdžiui, rūsių, palėpių, už tapetų, po kilimais ir sienų ertmėse, apžiūrą. Ieškokite matomų pelėsio augimo požymių: tai gali būti juodos, žalios arba baltos spalvos dėmės."
+            },
+            {
+              "type": "paragraph",
+              "text": "Specialistų atliekamas vertinimas. Jei nesate tikri dėl pelėsio tipo ar užterštumo masto, pasamdykite profesionalų pelėsio inspektorių. Specialistas gali atlikti išsamią analizę ir rekomenduoti, kaip elgtis atsižvelgiant į pelėsio tipą."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Paruoškite pelėsio naikinimo įrankius ir medžiagas"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Apsauginės priemonės. Darbo drabužiai naikinant pelėsį turi būti ilgomis rankovėmis, ilgomis kelnėmis, papildomai naudokite N95 kaukes arba respiratorius ir neporėtas pirštines, kad išvengtumėte tiesioginio kontakto su pelėsiu ar pelėsio sporomis."
+            },
+            {
+              "type": "paragraph",
+              "text": "Valymo priemonės. Priklausomai nuo pelėsio išplitimo lygio ir tipo, galite naudoti natūralius tirpalus, pavyzdžiui, baltąjį actą, arba stipresnes chemines medžiagas, pavyzdžiui, vandenilio peroksidą, baliklį ar specialiai šiai užduočiai skirtas pelėsio šalinimo priemones."
+            },
+            {
+              "type": "paragraph",
+              "text": "Įrankiai ir įranga. Pasirūpinkite šveitimo šepečiais, kempinėmis, kibiru, šiukšlių maišais ir dulkių siurbliu su HEPA filtru."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Izoliuokite valomą teritoriją"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Vėdinimas. Atidarykite langus, užtikrinkite gerą patalpos vėdinimą, kad kuo daugiau pakilusių valomo pelėsio sporų išeitų į lauką kartu su vėdinamu oru."
+            },
+            {
+              "type": "paragraph",
+              "text": "Izoliacija. Pelėsio pažeistą vietą nuo likusios namo dalies atskirkite polietileno plėvele, visas siūles sutvirtinkite juosta, kad būtų išvengta kitų patalpų užteršimo."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Pelėsio naikinimas"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Drėgnas valymas. Prieš valydami lengvai sudrėkinkite supelijusias vietas, kad sumažintumėte pelėsio sporų patekimą į orą."
+            },
+            {
+              "type": "paragraph",
+              "text": "Paviršiaus valymas. Pasirinktu valymo tirpalu kruopščiai nuvalykite visus kietus paviršius. Pelėsiu užterštas porėtas medžiagas, tokias kaip lubų plyteles ar gipskartonio plokštes, gali tekti pašalinti ir išmesti."
+            },
+            {
+              "type": "paragraph",
+              "text": "Giluminis valymas. Pelėsio naikinimas bus sėkmingas tik tokiu atveju, jei pašalinsite visus, net ir sunkiai prieinamus židinius. Stipraus užkrėtimo atvejais gali prireikti pašalinti ir pakeisti pažeistus namo konstrukcinius elementus."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Po pelėsio naikinimo gerai išdžiovinkite aplinką"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Veiksmingas džiovinimas. Po valymo visiškai išdžiovinkite teritoriją naudodami ventiliatorius ir oro sausintuvus, kad pašalintumėte likusią drėgmę."
+            },
+            {
+              "type": "paragraph",
+              "text": "Stebėkite drėgmę. Naudokite drėgmės matuoklius drėgmės lygiui stebėti ir užtikrinkite, kad aplinkoje būtų mažesnis nei 50 % drėgnumas – tai padės užkirsti kelią naujam pelėsių augimui."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Medžiagų šalinimas"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Saugus šalinimas. Prieš išnešdami pelėsiu užterštas medžiagas iš valytos patalpos, jas užklijuokite plastikiniuose maišuose, kad sumažintumėte poveikį likusiai namo daliai."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Pelėsio naikinimas ozono dujomis"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Paskutinis žingsnis išvalius pelėsio židinius – pelėsio naikinimas ozonu. Tam, kad galutinai sunaikintumėte ore esančias ir plika akimi nematomas pelėsio sporas, atliekamas patalpų ozonavimas. Ozonas yra stiprus oksidantas ir gali deaktyvuoti įvairius mikroorganizmus, įskaitant bakterijas ir virusus, pažeisdamas jų ląstelių struktūras. Ši oksidacinė savybė mirtina ir pelėsių sporoms, kurios gali žūti arba tapti negyvybingos, kai yra veikiamos pakankamai didelės ozono koncentracijos. Mūsų pelėsio ir kvapų naikinimo specialistai parinks optimalią ozono dozę, apdoros visą plotą naudodami ozono generatorius ir tokiu būdu pašalins likusias pelėsio sporas."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "4793f9c",
+          "kind": "heading.default",
+          "text": "GERIAUSIAS PELĖSIO VALIKLIS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "GERIAUSIAS PELĖSIO VALIKLIS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "58667c2",
+          "kind": "text-editor.default",
+          "text": "Dažnai gidime klientų klausimą: kuri iš specializuotų priemonių yra geriausas pelėsio valiklis? Iš savo patirties galime rekomenduoti Vokietijos gamintojo Kometa pelėsių naikinimo priemonę „Pufas“. Šį purškiamą pelėsio valiklį galite rasti daugumoje statybinių ir namų apyvokos prekių parduotuvių. Jis lengvai naudojamas, nebrangus ir pakankamai efektyvus.Valiklis „Pufas“ skirtas naudoti neprofesionaliems vartotojams. Todėl neteigiame, kad tai pats stipriausias ir geriausias pelėsio valiklis rinkoje, kadangi kai kuriuos koncentruotus ir ypač stiprius valiklius gali įsigyti tik profesionalios valymo įmonės. Vistik „Pufas“ tikrai puikiai išvalo pelėsio židinius ir nenusileidžia efektyvumu profesionalų naudojamoms priemonėms.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dažnai gidime klientų klausimą: kuri iš specializuotų priemonių yra geriausas pelėsio valiklis? Iš savo patirties galime rekomenduoti Vokietijos gamintojo Kometa pelėsių naikinimo priemonę „Pufas“. Šį purškiamą pelėsio valiklį galite rasti daugumoje statybinių ir namų apyvokos prekių parduotuvių. Jis lengvai naudojamas, nebrangus ir pakankamai efektyvus."
+            },
+            {
+              "type": "paragraph",
+              "text": "Valiklis „Pufas“ skirtas naudoti neprofesionaliems vartotojams. Todėl neteigiame, kad tai pats stipriausias ir geriausias pelėsio valiklis rinkoje, kadangi kai kuriuos koncentruotus ir ypač stiprius valiklius gali įsigyti tik profesionalios valymo įmonės. Vistik „Pufas“ tikrai puikiai išvalo pelėsio židinius ir nenusileidžia efektyvumu profesionalų naudojamoms priemonėms."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d363f3",
+          "kind": "heading.default",
+          "text": "PELĖSIO KVAPO NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "PELĖSIO KVAPO NAIKINIMAS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "86d58a4",
+          "kind": "text-editor.default",
+          "text": "Efektyviausias pelėsio kvapo naikinimas – ozono dujomis. Nemalonų pelėsio kvapą sukelia mikrobiniai lakūs organiniai junginiai, kuriuos pelėsis išskiria augdamas ir vykdydamas medžiagų apykaitą. Šie junginiai yra dujos, kurios gali turėti stiprų ir dažnai nemalonų kvapą. Kvapo intensyvumas gali skirtis priklausomai nuo pelėsio rūšies, substrato (medžiagos), ant kurio jis auga, ir augimo stadijos.Pelėsio kvapo naikinimas ozonu veikia labai efektyviai. Ozono generatorių gaminamos dujos (O3) yra galingas oksidatorius, galintis neutralizuoti įvairius kvapus molekuliniu lygmeniu. Ozonas naikina visus organinės kilmės junginius, tame tarpe ir tuos, kurie sukelia nemalonų pelėsio kvapą.Ozonas veikia skaidydamas kvapo molekules cheminės reakcijos, vadinamos oksidacija, būdu. Ši reakcija pakeičia kvapą sukeliančių medžiagų cheminę struktūrą ir taip jas neutralizuoja. Pelėsių kvapus sukeliančius organinius junginius ozonas gali veiksmingai suskaidyti taip panaikindamas jų kvapą.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Efektyviausias pelėsio kvapo naikinimas – ozono dujomis. Nemalonų pelėsio kvapą sukelia mikrobiniai lakūs organiniai junginiai, kuriuos pelėsis išskiria augdamas ir vykdydamas medžiagų apykaitą. Šie junginiai yra dujos, kurios gali turėti stiprų ir dažnai nemalonų kvapą. Kvapo intensyvumas gali skirtis priklausomai nuo pelėsio rūšies, substrato (medžiagos), ant kurio jis auga, ir augimo stadijos."
+            },
+            {
+              "type": "paragraph",
+              "text": "Pelėsio kvapo naikinimas ozonu veikia labai efektyviai. Ozono generatorių gaminamos dujos (O3) yra galingas oksidatorius, galintis neutralizuoti įvairius kvapus molekuliniu lygmeniu. Ozonas naikina visus organinės kilmės junginius, tame tarpe ir tuos, kurie sukelia nemalonų pelėsio kvapą."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ozonas veikia skaidydamas kvapo molekules cheminės reakcijos, vadinamos oksidacija, būdu. Ši reakcija pakeičia kvapą sukeliančių medžiagų cheminę struktūrą ir taip jas neutralizuoja. Pelėsių kvapus sukeliančius organinius junginius ozonas gali veiksmingai suskaidyti taip panaikindamas jų kvapą."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "9600f9e",
+          "kind": "heading.default",
+          "text": "PELĖSIO NAIKINIMAS: KAINA",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "PELĖSIO NAIKINIMAS: KAINA",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "a50adcb",
+          "kind": "text-editor.default",
+          "text": "Pelėsio naikinimo kaina, priklausomai nuo objekto, prasideda nuo 100 Eur. Kainų lygis priklauso nuo daugelio faktorių, tokių kaip: objekto atstumas, objekto dydis, objekto išplanavimas, lubų aukštis (patalpos tūris), pelėsio išplitimo lygis ir t.t. Norėdami gauti tikslią pelėsio naikinimo kainą, prašome susisiekti su mūsų specialistais, kurie mielai pakonsultuos telefonu, elektroniniu paštu ar, esant būtinybei, atvyks į objekto vietą.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Pelėsio naikinimo kaina, priklausomai nuo objekto, prasideda nuo 100 Eur. Kainų lygis priklauso nuo daugelio faktorių, tokių kaip: objekto atstumas, objekto dydis, objekto išplanavimas, lubų aukštis (patalpos tūris), pelėsio išplitimo lygis ir t.t. Norėdami gauti tikslią pelėsio naikinimo kainą, prašome susisiekti su mūsų specialistais, kurie mielai pakonsultuos telefonu, elektroniniu paštu ar, esant būtinybei, atvyks į objekto vietą."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "3cc8616",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/pelesio-naikinimas-768x387.jpg"
+      ]
+    },
+    {
+      "path": "/ozonavimas-kas-tai/",
+      "status": 200,
+      "title": "Ozonavimas - kas tai? - Ozonavimas",
+      "description": "Ozonavimas kas tai? - Oro ozonavimas - Blogo kvapo naikinimas ozonu - Ozonavimo privalumai - Kas yra ozonavimas?",
+      "widgets": [
+        {
+          "id": "6a38103",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "OZONAVIMAS – KAS TAI?",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "OZONAVIMAS – KAS TAI?",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "14a4328",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonas-kas-tai-768x155.png",
+              "alt": "Ozonavimas kas tai?"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "7f0d2d9",
+          "kind": "text-editor.default",
+          "text": "Ozonas yra molekulė, sudaryta iš trijų deguonies atomų, chemiškai žymima kaip O3. Tai deguonies atmaina, turinti ryškų, aštrų kvapą. Ozonas (O3) yra labai aktyvi ir greitai skylanti deguonies forma. Ozonas yra natūraliai gamtoje susidarančios dujos. Tai labai aktyvi molekulė, galinti suskaidyti ir neutralizuoti organinius junginius, įskaitant tuos, kurie sukelia nemalonius kvapus. Ozono, kaip labai aktyvaus cheminio elemento, poveikis žmonijai žinomas jau daugelį metų. Su ozonu kiekvienas esame susidūrę po stipraus lietaus su griaustiniu. Būtent dėl griaustinio metu išsiskiriančio ozono oras po lietaus tampa toks lengvas, tyras ir gaivus.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ozonas yra molekulė, sudaryta iš trijų deguonies atomų, chemiškai žymima kaip O3. Tai deguonies atmaina, turinti ryškų, aštrų kvapą. Ozonas (O3) yra labai aktyvi ir greitai skylanti deguonies forma. Ozonas yra natūraliai gamtoje susidarančios dujos. Tai labai aktyvi molekulė, galinti suskaidyti ir neutralizuoti organinius junginius, įskaitant tuos, kurie sukelia nemalonius kvapus. Ozono, kaip labai aktyvaus cheminio elemento, poveikis žmonijai žinomas jau daugelį metų. Su ozonu kiekvienas esame susidūrę po stipraus lietaus su griaustiniu. Būtent dėl griaustinio metu išsiskiriančio ozono oras po lietaus tampa toks lengvas, tyras ir gaivus."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "4793f9c",
+          "kind": "heading.default",
+          "text": "OZONAVIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "OZONAVIMAS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "8fbf61a",
+          "kind": "text-editor.default",
+          "text": "Ozonavimas tai procesas, kurio metu ozono generatoriai gamina ozoną skaidydami aplinkoje esančio deguonies (O2) molekules. Deguonies molekulės suskaidomos į pavienius deguonies atomus, kurie susijungia su kitomis O2 molekulėmis sudarydami naujas ozono (O3) molekules. Ozonavimas gali būti atliekamas dviem būdais: elektros iškrovos būdu, kai deguonies molekulėms suskaidyti naudojamas elektros išlydis, arba per UV spinduliuotę deguonies molekulėms suskaidyti. Ozonavimo metu kambario temperatūroje ozonas matomas plika akimi kaip blyškiai mėlynos spalvos dujos. Ozonas yra labai nestabilus, nes trečiasis deguonies atomas prisijungia labai silpnai. Po susijungimo nestabilus trečiasis atomas akimirksniu pradeda oksiduotis su organinėmis ir neorganinėmis nemalonius kvapus sukeliančiomis molekulėmis, virusais, bakterijomis, pelėsiais, tokiu būdu sunaikindamas arba pakeisdamas jų savybes.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ozonavimas tai procesas, kurio metu ozono generatoriai gamina ozoną skaidydami aplinkoje esančio deguonies (O2) molekules. Deguonies molekulės suskaidomos į pavienius deguonies atomus, kurie susijungia su kitomis O2 molekulėmis sudarydami naujas ozono (O3) molekules. Ozonavimas gali būti atliekamas dviem būdais: elektros iškrovos būdu, kai deguonies molekulėms suskaidyti naudojamas elektros išlydis, arba per UV spinduliuotę deguonies molekulėms suskaidyti. Ozonavimo metu kambario temperatūroje ozonas matomas plika akimi kaip blyškiai mėlynos spalvos dujos. Ozonas yra labai nestabilus, nes trečiasis deguonies atomas prisijungia labai silpnai. Po susijungimo nestabilus trečiasis atomas akimirksniu pradeda oksiduotis su organinėmis ir neorganinėmis nemalonius kvapus sukeliančiomis molekulėmis, virusais, bakterijomis, pelėsiais, tokiu būdu sunaikindamas arba pakeisdamas jų savybes."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "1b1598d",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/kaip-veikia-ozonas-1024x213.png",
+              "alt": "OZONAVIMAS"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "64ae4f2",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "66f7ddf",
+          "kind": "heading.default",
+          "text": "ORO OZONAVIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ORO OZONAVIMAS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "2b7fdad",
+          "kind": "text-editor.default",
+          "text": "Oro ozonavimas yra viena iš saugiausių ir efektyviausių priemonių kvapų šalinimui bei dezinfekcijai. Ozonavimas atliekamas naudojant specialius ozono generatorius, kurie ozoną gamina imituodami natūralų procesą, vykstantį perkūnijos metu. Ozono generatoriaus pagalba sukurtos ozono molekulės veiksmingai naikina ne tik kvapus, bet ir grybų sporas, pelėsius, mikrobus, virusus bei bakterijas molekuliniame lygmenyje. Lyginant su tradiciniais cheminiais valikliais arba dezodorantais, oro ozonavimas ne maskuoja kvapų priežastis, o tiesiog suardo blogus kvapus sukeliančias molekules. Tokiu būdu kvapo priežastis pašalinama iš esmės. Neutralizavęs blogus kvapus, ozonas skyls į deguonį.ORO OZONAVIMO PRIVALUMAIOzonavimo metu sunaikinami ne tik kvapai, bet ir virusai bei bakterijos – gamtoje nėra ozonui atsparių virusų ar bakterijųOzonas dezinfekuoja paviršiusPo ozonavimo nereikia atlikti papildomo patalpų valymoOzonavimas chemiškai švarus ir ekologiškasOzono poveikis yra daug stipresnis nei kitų tradicinių dezinfekavimo būdų, pvz.: ozonas veikia 50 kartų stipriau ir 300 kartų greičiau, nei chlorasOzonas yra puikus cheminių valiklių ir dezinfektantų pakaitalas, kuris neteršia aplinkosPrailgina sandėliuojamų produktų galiojimo laikąSuardo kenkėjų išskiriamus alergenus (pelių, žiurkių, tarakonų, dulkių erkučių, vabzdžių ir kt.)",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Oro ozonavimas yra viena iš saugiausių ir efektyviausių priemonių kvapų šalinimui bei dezinfekcijai. Ozonavimas atliekamas naudojant specialius ozono generatorius, kurie ozoną gamina imituodami natūralų procesą, vykstantį perkūnijos metu. Ozono generatoriaus pagalba sukurtos ozono molekulės veiksmingai naikina ne tik kvapus, bet ir grybų sporas, pelėsius, mikrobus, virusus bei bakterijas molekuliniame lygmenyje. Lyginant su tradiciniais cheminiais valikliais arba dezodorantais, oro ozonavimas ne maskuoja kvapų priežastis, o tiesiog suardo blogus kvapus sukeliančias molekules. Tokiu būdu kvapo priežastis pašalinama iš esmės. Neutralizavęs blogus kvapus, ozonas skyls į deguonį."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ORO OZONAVIMO PRIVALUMAI"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Ozonavimo metu sunaikinami ne tik kvapai, bet ir virusai bei bakterijos – gamtoje nėra ozonui atsparių virusų ar bakterijų",
+                "Ozonas dezinfekuoja paviršius",
+                "Po ozonavimo nereikia atlikti papildomo patalpų valymo",
+                "Ozonavimas chemiškai švarus ir ekologiškas",
+                "Ozono poveikis yra daug stipresnis nei kitų tradicinių dezinfekavimo būdų, pvz.: ozonas veikia 50 kartų stipriau ir 300 kartų greičiau, nei chloras",
+                "Ozonas yra puikus cheminių valiklių ir dezinfektantų pakaitalas, kuris neteršia aplinkos",
+                "Prailgina sandėliuojamų produktų galiojimo laiką",
+                "Suardo kenkėjų išskiriamus alergenus (pelių, žiurkių, tarakonų, dulkių erkučių, vabzdžių ir kt.)"
+              ]
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d7bd4a1",
+          "kind": "heading.default",
+          "text": "BLOGO KVAPO NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "BLOGO KVAPO NAIKINIMAS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5ed7e0e",
+          "kind": "text-editor.default",
+          "text": "Ozonas dėl savo galingų oksidacinių savybių labai dažnai naudojamas blogo kvapo naikinime. Išsamiai apžvelgsime, kodėl blogo kvapo naikinimas ozonu toks veiksmingas.Kvapų molekulių oksidavimas. Ozonas veikia oksiduodamas kvapus sudarančias molekules. Susidūręs su kvapo molekulėmis, ozonas „perduoda“ vieną iš savo deguonies atomų toms molekulėms. Dėl šios reakcijos kvapo molekulės suskyla į mažesnes, ne tokias sudėtingas ir nekvepiančias molekules, pavyzdžiui, anglies dioksidą ir vandenį.Platus veikimo spektras. Ozonas gali veiksmingai neutralizuoti įvairius organinius ir neorganinius kvapus. Tai apima bakterijų, pelėsių, dūmų, lakiųjų organinių junginių, naminių gyvūnų, maisto ir kitų panašių šaltinių sukeltus kvapus. Dėl tokio plataus spektro veiksmingumo ozonas yra universali blogo kvapo naikinimo priemonė.Dezinfekavimas ir sterilizavimas. Ozonas ne tik neutralizuoja kvapus, bet ir pasižymi puikiomis dezinfekavimo savybėmis. Jis sunaikina bakterijas, virusus ir kitus mikroorganizmus, kurie gali būti susiję su kvapais.Ekologiškumas. Skirtingai nei kai kurie cheminiai dezodorantai, kurie maskuoja kvapus, ozonas juos pašalina cheminės reakcijos būdu. Be to, ozonui sureagavus su kvapo molekulėmis, jis vėl virsta deguonimi, nepalikdamas kenksmingų liekanų ar cheminių šalutinių produktų. Todėl, lyginat su kai kuriomis cheminėmis alternatyvomis, blogo kvapo naikinimas ozonu yra ekologiškas.Skvarba. Ozonas gali prasiskverbti į audinius, baldus ir kitas akytas medžiagas, kuriose dažnai būna nemalonių kvapų. Dėl to galima veiksmingai pašalinti giliai į medžiagas įsiskverbusius kvapus, kuriuos gali būti sunku pasiekti naudojant skystus dezodorantus.Ploto aprėptis. Ozonas, kaip dujos, gali tolygiai pasklisti po visą plotą, pasiekdamas kampus ir plyšius, kurie kitais būdais gali būti nepasiekiami. Taip užtikrinamas tolygus blogo kvapo naikinimas visoje erdvėje.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ozonas dėl savo galingų oksidacinių savybių labai dažnai naudojamas blogo kvapo naikinime. Išsamiai apžvelgsime, kodėl blogo kvapo naikinimas ozonu toks veiksmingas."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kvapų molekulių oksidavimas. Ozonas veikia oksiduodamas kvapus sudarančias molekules. Susidūręs su kvapo molekulėmis, ozonas „perduoda“ vieną iš savo deguonies atomų toms molekulėms. Dėl šios reakcijos kvapo molekulės suskyla į mažesnes, ne tokias sudėtingas ir nekvepiančias molekules, pavyzdžiui, anglies dioksidą ir vandenį."
+            },
+            {
+              "type": "paragraph",
+              "text": "Platus veikimo spektras. Ozonas gali veiksmingai neutralizuoti įvairius organinius ir neorganinius kvapus. Tai apima bakterijų, pelėsių, dūmų, lakiųjų organinių junginių, naminių gyvūnų, maisto ir kitų panašių šaltinių sukeltus kvapus. Dėl tokio plataus spektro veiksmingumo ozonas yra universali blogo kvapo naikinimo priemonė."
+            },
+            {
+              "type": "paragraph",
+              "text": "Dezinfekavimas ir sterilizavimas. Ozonas ne tik neutralizuoja kvapus, bet ir pasižymi puikiomis dezinfekavimo savybėmis. Jis sunaikina bakterijas, virusus ir kitus mikroorganizmus, kurie gali būti susiję su kvapais."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ekologiškumas. Skirtingai nei kai kurie cheminiai dezodorantai, kurie maskuoja kvapus, ozonas juos pašalina cheminės reakcijos būdu. Be to, ozonui sureagavus su kvapo molekulėmis, jis vėl virsta deguonimi, nepalikdamas kenksmingų liekanų ar cheminių šalutinių produktų. Todėl, lyginat su kai kuriomis cheminėmis alternatyvomis, blogo kvapo naikinimas ozonu yra ekologiškas."
+            },
+            {
+              "type": "paragraph",
+              "text": "Skvarba. Ozonas gali prasiskverbti į audinius, baldus ir kitas akytas medžiagas, kuriose dažnai būna nemalonių kvapų. Dėl to galima veiksmingai pašalinti giliai į medžiagas įsiskverbusius kvapus, kuriuos gali būti sunku pasiekti naudojant skystus dezodorantus."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ploto aprėptis. Ozonas, kaip dujos, gali tolygiai pasklisti po visą plotą, pasiekdamas kampus ir plyšius, kurie kitais būdais gali būti nepasiekiami. Taip užtikrinamas tolygus blogo kvapo naikinimas visoje erdvėje."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "2f7578a",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonas-kas-tai-768x155.png",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/kaip-veikia-ozonas-1024x213.png"
+      ]
+    },
+    {
+      "path": "/gyvunu-kvapo-naikinimas/",
+      "status": 200,
+      "title": "Gyvūnų kvapo naikinimas",
+      "description": "Gyvūnų kvapo naikinimas- Katės šlapimo kvapo naikinimas - Šuns šlapimo kvapo naikinimas - Šuns kailio kvapo naikinimas",
+      "widgets": [
+        {
+          "id": "6a38103",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "GYVŪNŲ KVAPO NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "GYVŪNŲ KVAPO NAIKINIMAS",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "7f0d2d9",
+          "kind": "text-editor.default",
+          "text": "Žmonės, auginantys naminius gyvūnus, pripranta prie jų kvapo. Taip yra todėl, kad žmogaus uoslė linkusi priprasti prie kvapų, su kuriais dažnai susiduriama. Todėl kartais gyvūnų kvapo naikinimas šeimininkams gali atrodyti neaktualus ir yra sunku pastebėti, kad augintinis išvis skleidžia kokį nors kvapą. Vistik naminiai gyvūnai dažnai tampa namų, automobilių, biurų ar kitų patalpų blogo kvapo sukelėjais. Dažniausiai blogus kvapus sukelia bakterijos ir mielės, esančios gyvūnų odos riebaluose. Kiekvienas, kada nors turėjęs naminį gyvūną, gali patvirtinti, kad nepageidaujamo naminių gyvūnų kvapo naikinimas yra sudėtinga užduotis. Kad ir kaip dažnai praustume savo augintinius, jų kvapas vis tiek išlieka, laikui bėgant nepageidaujamas mūsų mylimų augintinių kvapas įsigeria į sofas, sienas, baldus ir kilimus. Jau nekalbant apie visiems, deja, gerai pažįstamus augintinio šlapimo ar išmatų kvapus, kurie ore tvyro dar ilgai po to, kai ištuštinama kraiko dėžė ar išmetamos palutės.Šių naminių gyvūnų kvapų naikinimas neveiksmingas nei valymu, nei bandymais neutralizuoti oro gaivikliais. Oro dezodoravimo priemonės tik maskuoja kvapą, bet nepašalina pagrindinės kvapo priežasties. Patikimas gyvūnų kvapo naikinimo būdas – ozono dujų naudojimas, nes jos ne maskuoja kvapą, bet sunaikina kvapo šaltinį molekuliniame lygmenyje.Ozono generatoriai suskaido deguonį (O2) į atskirus atomus, kurie virsta ozonu (O3). Generatoriai naudoja ultravioletinius spindulius arba elektros krūvį, kad suskaidytų molekulinį deguonį ir sukurtų ozoną. Patalpą pripildžius ozonu, jis sunaikina naminių gyvūnų kvapus, bakterijas, virusus, pelėsį ir dezinfekuoja orą nuo kitų teršalų.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Žmonės, auginantys naminius gyvūnus, pripranta prie jų kvapo. Taip yra todėl, kad žmogaus uoslė linkusi priprasti prie kvapų, su kuriais dažnai susiduriama. Todėl kartais gyvūnų kvapo naikinimas šeimininkams gali atrodyti neaktualus ir yra sunku pastebėti, kad augintinis išvis skleidžia kokį nors kvapą. Vistik naminiai gyvūnai dažnai tampa namų, automobilių, biurų ar kitų patalpų blogo kvapo sukelėjais. Dažniausiai blogus kvapus sukelia bakterijos ir mielės, esančios gyvūnų odos riebaluose. Kiekvienas, kada nors turėjęs naminį gyvūną, gali patvirtinti, kad nepageidaujamo naminių gyvūnų kvapo naikinimas yra sudėtinga užduotis. Kad ir kaip dažnai praustume savo augintinius, jų kvapas vis tiek išlieka, laikui bėgant nepageidaujamas mūsų mylimų augintinių kvapas įsigeria į sofas, sienas, baldus ir kilimus. Jau nekalbant apie visiems, deja, gerai pažįstamus augintinio šlapimo ar išmatų kvapus, kurie ore tvyro dar ilgai po to, kai ištuštinama kraiko dėžė ar išmetamos palutės."
+            },
+            {
+              "type": "paragraph",
+              "text": "Šių naminių gyvūnų kvapų naikinimas neveiksmingas nei valymu, nei bandymais neutralizuoti oro gaivikliais. Oro dezodoravimo priemonės tik maskuoja kvapą, bet nepašalina pagrindinės kvapo priežasties. Patikimas gyvūnų kvapo naikinimo būdas – ozono dujų naudojimas, nes jos ne maskuoja kvapą, bet sunaikina kvapo šaltinį molekuliniame lygmenyje."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ozono generatoriai suskaido deguonį (O2) į atskirus atomus, kurie virsta ozonu (O3). Generatoriai naudoja ultravioletinius spindulius arba elektros krūvį, kad suskaidytų molekulinį deguonį ir sukurtų ozoną. Patalpą pripildžius ozonu, jis sunaikina naminių gyvūnų kvapus, bakterijas, virusus, pelėsį ir dezinfekuoja orą nuo kitų teršalų."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "14a4328",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozone-for-pet-odors.png",
+              "alt": "GYVŪNŲ KVAPO NAIKINIMAS"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "c480f0a",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "4793f9c",
+          "kind": "heading.default",
+          "text": "ŠUNS ŠLAPIMO KVAPO NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ŠUNS ŠLAPIMO KVAPO NAIKINIMAS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "8fbf61a",
+          "kind": "text-editor.default",
+          "text": "Šunų šlapimas yra labai dažnas stipraus kvapo šaltinis namuose, nes jis lengvai įsigeria į baldus, grindjuostes, kiliminę dangą ir kitas sunkiai pasiekiamas vietas. Dauguma šuns šlapimo problemų aptinkamos tik tada, kai jau giliai įsiskverbia į kilimą ar grindis. Jei jūsų šuo šlapinasi ant grindų, jis greičiausiai nesustos, kol nepašalinsite kvapo. Todėl šuns kvapo naikinimas yra labai svarbi procedūra norint, kad namuose neliktų „gamtinių reikalų atlikimo vietelių“ ir jūsų keturkojai augintiniai būtų atgrasyti nuo pakartotinių veiksmų.Kad šunų šlapimo kvapo naikinimas būtų efektyvus rekomenduojame laikytis šių žingsnių:Kaip įmanoma skubiau išvalykite šlapimą. Visada svarbu nedelsiant išvalyti bet kokias augintinio šlapimo vietas, kai tik jos atsiranda. Naudokite popierinius rankšluosčius, kad kuo daugiau šlapimo susigertų į juos, o ne į aplinką. Valymui galite naudoti paprastą vandenį ir buitinius valiklius.Suraskite nepastebėtas augintinio šlapimosi vietas. Deja, ne visas šlapimo dėmes pavyksta pamatyti iš karto. Šunų šlapimo dėmes galima aptikti tamsoje, šviečiant ultravioletine šviesa. Šlapimo dėmės švyti UV šviesoje ir paprastai būna blyškiai geltonos spalvos. Atkreipkite dėmesį, kad švyti ne tik šlapimas, fluorescuoti gali ir kitos biologinės medžiagos. Pavyzdžiui, seilių, vėmimo ir kai kurių valymo priemonių pėdsakai. Todėl, norėdami nustatyti, ar švytėjimas gali būti nuo šlapimo, atsižvelkite į švytėjimo vietą ir formą. Šiam tikslui geriausiai tinka ultravioletiniai žibintuvėliai ar šviestuvai, kurių bangos ilgis yra maždaug 365-385 nanometrai. UV įrangą galite įsigyti elektrotechnikos parduotuvėse arba galite kreiptis į mūsų kvapų naikinimo specialistus, kurie suras bet kokias nepastebėtas šlapimo dėmes.Šuns šlapimo kvapo naikinimas specialiais valikliais. Naudokite specialius šunų šlapimo kvapo naikinimui skirtus valiklius su bioenzimais. Šie valikliai veikia skaidydami šlapimo molekules, sukeliančias nemalonų kvapą.Šuns šlapimo kvapo naikinimas ozonu. Aptikus ir išvalius visas šlapimu paveiktas vietas patalpoje rekomenduojama atlikti ozonavimą, kad šuns šlapimo kvapas būtų pašalintas iš visos aplinkos. Mūsų kvapų naikinimo specialistai parinks optimalią ozono dozę, apdoros visą plotą naudodami ozono generatorius ir tokiu būdu pašalins visus likusius kvapus.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Šunų šlapimas yra labai dažnas stipraus kvapo šaltinis namuose, nes jis lengvai įsigeria į baldus, grindjuostes, kiliminę dangą ir kitas sunkiai pasiekiamas vietas. Dauguma šuns šlapimo problemų aptinkamos tik tada, kai jau giliai įsiskverbia į kilimą ar grindis. Jei jūsų šuo šlapinasi ant grindų, jis greičiausiai nesustos, kol nepašalinsite kvapo. Todėl šuns kvapo naikinimas yra labai svarbi procedūra norint, kad namuose neliktų „gamtinių reikalų atlikimo vietelių“ ir jūsų keturkojai augintiniai būtų atgrasyti nuo pakartotinių veiksmų."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Kad šunų šlapimo kvapo naikinimas būtų efektyvus rekomenduojame laikytis šių žingsnių:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Kaip įmanoma skubiau išvalykite šlapimą. Visada svarbu nedelsiant išvalyti bet kokias augintinio šlapimo vietas, kai tik jos atsiranda. Naudokite popierinius rankšluosčius, kad kuo daugiau šlapimo susigertų į juos, o ne į aplinką. Valymui galite naudoti paprastą vandenį ir buitinius valiklius.",
+                "Suraskite nepastebėtas augintinio šlapimosi vietas. Deja, ne visas šlapimo dėmes pavyksta pamatyti iš karto. Šunų šlapimo dėmes galima aptikti tamsoje, šviečiant ultravioletine šviesa. Šlapimo dėmės švyti UV šviesoje ir paprastai būna blyškiai geltonos spalvos. Atkreipkite dėmesį, kad švyti ne tik šlapimas, fluorescuoti gali ir kitos biologinės medžiagos. Pavyzdžiui, seilių, vėmimo ir kai kurių valymo priemonių pėdsakai. Todėl, norėdami nustatyti, ar švytėjimas gali būti nuo šlapimo, atsižvelkite į švytėjimo vietą ir formą. Šiam tikslui geriausiai tinka ultravioletiniai žibintuvėliai ar šviestuvai, kurių bangos ilgis yra maždaug 365-385 nanometrai. UV įrangą galite įsigyti elektrotechnikos parduotuvėse arba galite kreiptis į mūsų kvapų naikinimo specialistus, kurie suras bet kokias nepastebėtas šlapimo dėmes.",
+                "Šuns šlapimo kvapo naikinimas specialiais valikliais. Naudokite specialius šunų šlapimo kvapo naikinimui skirtus valiklius su bioenzimais. Šie valikliai veikia skaidydami šlapimo molekules, sukeliančias nemalonų kvapą.",
+                "Šuns šlapimo kvapo naikinimas ozonu. Aptikus ir išvalius visas šlapimu paveiktas vietas patalpoje rekomenduojama atlikti ozonavimą, kad šuns šlapimo kvapas būtų pašalintas iš visos aplinkos. Mūsų kvapų naikinimo specialistai parinks optimalią ozono dozę, apdoros visą plotą naudodami ozono generatorius ir tokiu būdu pašalins visus likusius kvapus."
+              ]
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "66f7ddf",
+          "kind": "heading.default",
+          "text": "ŠUNS KAILIO KVAPO NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "ŠUNS KAILIO KVAPO NAIKINIMAS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "2b7fdad",
+          "kind": "text-editor.default",
+          "text": "Šuns kailio kvapo naikinimas ypač aktualu tiems, kas augina didesnių veislių šunis bei laiko juos lauke arba mėgsta ilgus pasivaikščiojimus su savo augintiniais. Kai šunys praleidžia daug laiko lauke, ypač kai oro drėgmė aukšta arba sušlampa nuo lietaus, jų kailis gali skleisti specifinį kvapą. Šis kvapas dažnai vadinamas ,,šlapio šuns kvapu“. Šį kvapą sukelia keletas veiksnių:Mikroorganizmai: šunų kailyje ir odoje natūraliai veisiasi bakterijos ir mielės. Kai kailis sudrėksta, dėl vandens šie mikroorganizmai išskiria lakiuosius junginius. Šie junginiai dažnai būna pelėsių arba aštraus kvapo.Sebumas – tai riebalinis sekretas, kurį gamina šuns odos riebalinės liaukos. Kai jis sušlampa, vanduo susimaišo su sebumu ir sustiprina natūralaus kvapo plitimą ir jo stiprumą.Nešvarumai ir organinės medžiagos: šunų kailyje dažnai susikaupia purvo ar kitų organinių medžiagų. Lietaus vanduo gali sukelti šių medžiagų skilimą, todėl išsiskiria papildomi kvapai.,,Šlapio šuns kvapas“ paprastai būna labiau juntamas iškart po lietaus, nes kvapą sukeliantys junginiai yra laidesni ir drėgnoje aplinkoje lengviau pasklinda ore.Šuns kailio kvapo naikinimas ozono dujomis labai efektyvus. Šunų kailio kvapą sukeliantys junginiai yra organinės molekulės, susidarančios dėl mikroorganizmų ir mielių ant šuns odos. Ozonas suskaido šias organines molekules į paprastesnius, mažiau lakius junginius, kurie neskleidžia kvapo.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Šuns kailio kvapo naikinimas ypač aktualu tiems, kas augina didesnių veislių šunis bei laiko juos lauke arba mėgsta ilgus pasivaikščiojimus su savo augintiniais. Kai šunys praleidžia daug laiko lauke, ypač kai oro drėgmė aukšta arba sušlampa nuo lietaus, jų kailis gali skleisti specifinį kvapą. Šis kvapas dažnai vadinamas ,,šlapio šuns kvapu“. Šį kvapą sukelia keletas veiksnių:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Mikroorganizmai: šunų kailyje ir odoje natūraliai veisiasi bakterijos ir mielės. Kai kailis sudrėksta, dėl vandens šie mikroorganizmai išskiria lakiuosius junginius. Šie junginiai dažnai būna pelėsių arba aštraus kvapo.",
+                "Sebumas – tai riebalinis sekretas, kurį gamina šuns odos riebalinės liaukos. Kai jis sušlampa, vanduo susimaišo su sebumu ir sustiprina natūralaus kvapo plitimą ir jo stiprumą.",
+                "Nešvarumai ir organinės medžiagos: šunų kailyje dažnai susikaupia purvo ar kitų organinių medžiagų. Lietaus vanduo gali sukelti šių medžiagų skilimą, todėl išsiskiria papildomi kvapai."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": ",,Šlapio šuns kvapas“ paprastai būna labiau juntamas iškart po lietaus, nes kvapą sukeliantys junginiai yra laidesni ir drėgnoje aplinkoje lengviau pasklinda ore."
+            },
+            {
+              "type": "paragraph",
+              "text": "Šuns kailio kvapo naikinimas ozono dujomis labai efektyvus. Šunų kailio kvapą sukeliantys junginiai yra organinės molekulės, susidarančios dėl mikroorganizmų ir mielių ant šuns odos. Ozonas suskaido šias organines molekules į paprastesnius, mažiau lakius junginius, kurie neskleidžia kvapo."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d7bd4a1",
+          "kind": "heading.default",
+          "text": "KATĖS ŠLAPIMO KVAPO NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KATĖS ŠLAPIMO KVAPO NAIKINIMAS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5ed7e0e",
+          "kind": "text-editor.default",
+          "text": "Katės skleidžia mažiau nemalonių kvapų nei šunys ir dažniausiai nepasižymi blogu kailio kvapų. Tačiau katės šlapimo kvapo naikinimas yra dažniausia mūsų klientų problema iš visų gaunamų užklausų dėl gyvūnų kvapų naikinimo. Taip yra dėl to, kad kačių šlapimas pasižymi ypač stipriu ir nemaloniu kvapu dėl keletos specifinių cheminių komponentų ir biologinių veiksnių:Karbamido skilimas. Šviežias kačių šlapimas yra santykinai bekvapis. Tačiau jam pradėjus skaidytis, bakterijos skaido karbamidą ir išskiria amoniaką. Dėl didelės amoniako koncentracijos kačių šlapimas gali įgauti stiprų, aštrų kvapą, kuris yra intensyvesnis, palyginti su daugelio kitų rūšių naminių gyvūnėlių šlapimu.Katės turi labai efektyvius inkstus, kurie taupo vandenį, kad palaikytų jų hidrataciją. Dėl to šlapime yra daugiau inkstų išskiriamų atliekų, įskaitant karbamidą, kreatininą ir šlapimo rūgštį. Kai šlapimas suskyla, didelė šių medžiagų koncentracija lemia ypač stiprų kvapą.Kačių patinai su šlapimu išskiria sieros turinčią aminorūgštį, vadinamą felininu. Felininui skylant susidaro junginys, kuris suteikia kačių šlapimui būdingą stiprų muskuso kvapą. Šis kvapas ypač paplitęs nekastruotų patinų šlapime. Pažymėtina, kad nekastruoti patinai šlapindamiesi taip pat labiau linkę „žymėti“ savo teritoriją.Šlapimo rūgštis. Katės šlapime yra šlapimo rūgšties, kuri sunkiai tirpsta vandenyje. Todėl net ir išvalius, šlapimo rūgšties kristalai gali išlikti ir, veikiami drėgmės, skleisti kvapą. Šlapimo rūgštis prikimba prie paviršių ir ją sunku visiškai pašalinti, todėl nemalonus kvapas išlieka labai ilgai.Dėl šių veiksnių katės šlapimo kvapo naikinimas buitinėmis priemonėmis sunkiai įveikiamas.Kad kačių šlapimo kvapo naikinimas būtų efektyvus rekomenduojame laikytis šių žingsnių:Kaip įmanoma greičiau išvalykite šlapimą ir reguliariai keiskite kraiko dėžutę. Labai svarbu kuo skubiau išvalyti katės šlapimo vietas, kai tik jos atsirado. Naudokite popierinius rankšluosčius, kad kuo daugiau šlapimo susigertų į juos, o ne į aplinką. Pradiniam valymui galite naudoti paprastą vandenį ir buitinius valiklius.Suraskite nepastebėtas augintinio šlapimosi vietas. Tamsoje naudojant UV (ultravioletinę) šviesą galima aptikti plika akimi nematomas kačių šlapimo dėmes. Kačių šlapimas UV šviesoje fluorescuoja, nes jo sudėtyje yra fosforo ir tam tikrų baltymų, kurie, veikiami UV spindulių, švyti. Šiam tikslui geriausiai tinka ultravioletiniai žibintuvėliai ar šviestuvai, kurių bangos ilgis yra maždaug 365-385 nanometrai. UV įrangą galite įsigyti elektrotechnikos parduotuvėse arba galite kreiptis į mūsų kvapų naikinimo specialistus, kurie suras bet kokias nepastebėtas šlapimo dėmes.Katės šlapimo kvapo naikinimas specialiais valikliais. Naudokite specialius kačių šlapimo kvapo naikinimui skirtus valiklius su bioenzimais. Šie valikliai veikia skaidydami šlapimo molekules, sukeliančias nemalonų kvapą.Kačių šlapimo kvapo naikinimas ozonu. Aptikus ir išvalius visas šlapimu paveiktas vietas patalpoje, rekomenduojama atlikti ozonavimą, kad katės šlapimo kvapas būtų pašalintas iš visos aplinkos. Mūsų kvapų naikinimo specialistai parinks optimalią ozono dozę, apdoros visą plotą naudodami ozono generatorius ir tokiu būdu pašalins visus likusius kvapus.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Katės skleidžia mažiau nemalonių kvapų nei šunys ir dažniausiai nepasižymi blogu kailio kvapų. Tačiau katės šlapimo kvapo naikinimas yra dažniausia mūsų klientų problema iš visų gaunamų užklausų dėl gyvūnų kvapų naikinimo. Taip yra dėl to, kad kačių šlapimas pasižymi ypač stipriu ir nemaloniu kvapu dėl keletos specifinių cheminių komponentų ir biologinių veiksnių:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Karbamido skilimas. Šviežias kačių šlapimas yra santykinai bekvapis. Tačiau jam pradėjus skaidytis, bakterijos skaido karbamidą ir išskiria amoniaką. Dėl didelės amoniako koncentracijos kačių šlapimas gali įgauti stiprų, aštrų kvapą, kuris yra intensyvesnis, palyginti su daugelio kitų rūšių naminių gyvūnėlių šlapimu.",
+                "Katės turi labai efektyvius inkstus, kurie taupo vandenį, kad palaikytų jų hidrataciją. Dėl to šlapime yra daugiau inkstų išskiriamų atliekų, įskaitant karbamidą, kreatininą ir šlapimo rūgštį. Kai šlapimas suskyla, didelė šių medžiagų koncentracija lemia ypač stiprų kvapą.",
+                "Kačių patinai su šlapimu išskiria sieros turinčią aminorūgštį, vadinamą felininu. Felininui skylant susidaro junginys, kuris suteikia kačių šlapimui būdingą stiprų muskuso kvapą. Šis kvapas ypač paplitęs nekastruotų patinų šlapime. Pažymėtina, kad nekastruoti patinai šlapindamiesi taip pat labiau linkę „žymėti“ savo teritoriją.",
+                "Šlapimo rūgštis. Katės šlapime yra šlapimo rūgšties, kuri sunkiai tirpsta vandenyje. Todėl net ir išvalius, šlapimo rūgšties kristalai gali išlikti ir, veikiami drėgmės, skleisti kvapą. Šlapimo rūgštis prikimba prie paviršių ir ją sunku visiškai pašalinti, todėl nemalonus kvapas išlieka labai ilgai."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Dėl šių veiksnių katės šlapimo kvapo naikinimas buitinėmis priemonėmis sunkiai įveikiamas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "Kad kačių šlapimo kvapo naikinimas būtų efektyvus rekomenduojame laikytis šių žingsnių:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Kaip įmanoma greičiau išvalykite šlapimą ir reguliariai keiskite kraiko dėžutę. Labai svarbu kuo skubiau išvalyti katės šlapimo vietas, kai tik jos atsirado. Naudokite popierinius rankšluosčius, kad kuo daugiau šlapimo susigertų į juos, o ne į aplinką. Pradiniam valymui galite naudoti paprastą vandenį ir buitinius valiklius.",
+                "Suraskite nepastebėtas augintinio šlapimosi vietas. Tamsoje naudojant UV (ultravioletinę) šviesą galima aptikti plika akimi nematomas kačių šlapimo dėmes. Kačių šlapimas UV šviesoje fluorescuoja, nes jo sudėtyje yra fosforo ir tam tikrų baltymų, kurie, veikiami UV spindulių, švyti. Šiam tikslui geriausiai tinka ultravioletiniai žibintuvėliai ar šviestuvai, kurių bangos ilgis yra maždaug 365-385 nanometrai. UV įrangą galite įsigyti elektrotechnikos parduotuvėse arba galite kreiptis į mūsų kvapų naikinimo specialistus, kurie suras bet kokias nepastebėtas šlapimo dėmes.",
+                "Katės šlapimo kvapo naikinimas specialiais valikliais. Naudokite specialius kačių šlapimo kvapo naikinimui skirtus valiklius su bioenzimais. Šie valikliai veikia skaidydami šlapimo molekules, sukeliančias nemalonų kvapą.",
+                "Kačių šlapimo kvapo naikinimas ozonu. Aptikus ir išvalius visas šlapimu paveiktas vietas patalpoje, rekomenduojama atlikti ozonavimą, kad katės šlapimo kvapas būtų pašalintas iš visos aplinkos. Mūsų kvapų naikinimo specialistai parinks optimalią ozono dozę, apdoros visą plotą naudodami ozono generatorius ir tokiu būdu pašalins visus likusius kvapus."
+              ]
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "2f7578a",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozone-for-pet-odors.png"
+      ]
+    },
+    {
+      "path": "/kvapu-naikinimas-automobilyje-ozonavimas/",
+      "status": 200,
+      "title": "Kvapų naikinimas automobilyje - Automobilio salono ozonavimas",
+      "description": "Kvapų naikinimas automobilyje: cigarečių, pelėsio, gėrimų, kuro, dažų ir kt. - Automobilio kvapo naikinimas ozonu - Salono ozonavimas",
+      "widgets": [
+        {
+          "id": "6a38103",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "KVAPŲ NAIKINIMAS AUTOMOBILYJE",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KVAPŲ NAIKINIMAS AUTOMOBILYJE",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "7f0d2d9",
+          "kind": "text-editor.default",
+          "text": "Kvapų naikinimas automobilyje – viena iš dažniausių problemų, su kuria susiduria mūsų klientai. Deja, kvapai automobilyje labai sunkiai pašalinami buitinėmis priemonėmis. Taip yra dėl keletos priežasčių:uždara aplinka: lyginant su gyvenamosiomis patalpomis, automobiliai yra mažos ir sandarios erdvės. Dėl tokio uždarumo kvapai gali koncentruotis, nes neturi kur pasklisti ir išsivėdinti.medžiagos: automobilyje esančios minkštos ir porėtos medžiagos, įskaitant plastiką, audinius ir apmušalus, gali sugerti ir išlaikyti kvapus. Šioms medžiagoms sugėrus kvapą, laikui bėgant jis gali lėtai grįžti atgal į orą, todėl kvapas dažnai atrodo intensyvesnis ir išlieka ilgiau. Kvapų naikinimas automobilyje valikliais menkai padeda, nes kvapas įsigėręs giliai.šiluma ir drėgmė: automobiliuose gali būti labai karšta, ypač kai jie stovi saulėje. Karštis gali sustiprinti kvapus – dėl karščio padidėja kvapų lakumas, todėl jie tampa labiau jaučiami. Drėgmė taip pat gali sustiprinti kvapus. Esant didelei drėgmei, sandariai uždarytame audomobilyje kvapų šaltiniai įgauna labai palankią terpę rūgti ir pūti.ventiliacijos trūkumas: automobiliui stovint stovėjimo aikštelėje, jo ventiliacija paprastai būna labai silpna. Dėl oro srauto trūkumo kvapai ilgainiui kaupiasi, todėl kai atidarote dureles ir sėdate į vidų, jus pasitinka koncentruotas kvapų, kurie tvyrojo uždaroje aplinkoje, pliūpsnis.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Kvapų naikinimas automobilyje – viena iš dažniausių problemų, su kuria susiduria mūsų klientai. Deja, kvapai automobilyje labai sunkiai pašalinami buitinėmis priemonėmis. Taip yra dėl keletos priežasčių:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "uždara aplinka: lyginant su gyvenamosiomis patalpomis, automobiliai yra mažos ir sandarios erdvės. Dėl tokio uždarumo kvapai gali koncentruotis, nes neturi kur pasklisti ir išsivėdinti.",
+                "medžiagos: automobilyje esančios minkštos ir porėtos medžiagos, įskaitant plastiką, audinius ir apmušalus, gali sugerti ir išlaikyti kvapus. Šioms medžiagoms sugėrus kvapą, laikui bėgant jis gali lėtai grįžti atgal į orą, todėl kvapas dažnai atrodo intensyvesnis ir išlieka ilgiau. Kvapų naikinimas automobilyje valikliais menkai padeda, nes kvapas įsigėręs giliai.",
+                "šiluma ir drėgmė: automobiliuose gali būti labai karšta, ypač kai jie stovi saulėje. Karštis gali sustiprinti kvapus – dėl karščio padidėja kvapų lakumas, todėl jie tampa labiau jaučiami. Drėgmė taip pat gali sustiprinti kvapus. Esant didelei drėgmei, sandariai uždarytame audomobilyje kvapų šaltiniai įgauna labai palankią terpę rūgti ir pūti.",
+                "ventiliacijos trūkumas: automobiliui stovint stovėjimo aikštelėje, jo ventiliacija paprastai būna labai silpna. Dėl oro srauto trūkumo kvapai ilgainiui kaupiasi, todėl kai atidarote dureles ir sėdate į vidų, jus pasitinka koncentruotas kvapų, kurie tvyrojo uždaroje aplinkoje, pliūpsnis."
+              ]
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "14a4328",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/kvapu-naikinimas-automobilyje-2-800x450.jpg",
+              "alt": "kvapų naikinimas automobilyje"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "feb2f5d",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "4793f9c",
+          "kind": "heading.default",
+          "text": "AUTOMOBILIO SALONO OZONAVIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "AUTOMOBILIO SALONO OZONAVIMAS",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "8fbf61a",
+          "kind": "text-editor.default",
+          "text": "Tapo nemalonu naudotis automobiliu dėl blogo kvapo viduje? Negalite parduoti automobilio dėl įsigėrusių cigarečių ar kitų kvapų? Dažnu atveju Jums gali padėti tik automobilio salono ozonavimas. Kvepinant automobilį kvapikliais ar net atlikus automobilio salono cheminį valymą, sunaikinti įsisenėjusių kvapų dažniausiai nepavyksta. Valymo ir kvepinimo priemonės tik trumpam pagerina situaciją, tačiau vėliau problema atsinaujina, o kartais net tampa dar blogesnė. Ozonas yra labai aktyvus ir stiprus oksidatorius, naikinantis įsisenėjusius kvapus, pvz.: cigarečių, dūmų, naminių gyvūnų, pelėsio, maisto. Atlikus automobilio salono ozonavimą, galima pagrįstai tikėtis pilnai išnaikinti ne tik blogus kvapus, bet ir virusus bei bakterijas. Nors Lietuvoje automobilio salono ozonavimas ganėtinai naujas kvapų šalinimo būdas, Europoje jis plačiai naudojamas dėl savo paprastumo ir ekologiškumo. Svarbu ozono generatorius naudoti saugiai ir teisingai, nes netinkamai naudojamas ozonas gali būti labai kenksmingas žmonėms ir naminiams gyvūnams. Ilgalaikis arba didelio lygio ozono dujų poveikis gali sukelti rimtų kvėpavimo takų problemų, įskaitant plaučių audinių pažeidimą. Taip yra todėl, kad ozonas reaguoja su organizme esančiomis organinėmis molekulėmis, sukeldamas oksidacinį stresą ir uždegimą. Patikėkite savo automobilio salono ozonavimą mūsų profesionalams, kurie parinks saugią ir optimalią ozono dozę pagal kvapo šaltinį bei intensyvumą.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tapo nemalonu naudotis automobiliu dėl blogo kvapo viduje? Negalite parduoti automobilio dėl įsigėrusių cigarečių ar kitų kvapų? Dažnu atveju Jums gali padėti tik automobilio salono ozonavimas."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kvepinant automobilį kvapikliais ar net atlikus automobilio salono cheminį valymą, sunaikinti įsisenėjusių kvapų dažniausiai nepavyksta. Valymo ir kvepinimo priemonės tik trumpam pagerina situaciją, tačiau vėliau problema atsinaujina, o kartais net tampa dar blogesnė."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ozonas yra labai aktyvus ir stiprus oksidatorius, naikinantis įsisenėjusius kvapus, pvz.: cigarečių, dūmų, naminių gyvūnų, pelėsio, maisto. Atlikus automobilio salono ozonavimą, galima pagrįstai tikėtis pilnai išnaikinti ne tik blogus kvapus, bet ir virusus bei bakterijas. Nors Lietuvoje automobilio salono ozonavimas ganėtinai naujas kvapų šalinimo būdas, Europoje jis plačiai naudojamas dėl savo paprastumo ir ekologiškumo. Svarbu ozono generatorius naudoti saugiai ir teisingai, nes netinkamai naudojamas ozonas gali būti labai kenksmingas žmonėms ir naminiams gyvūnams. Ilgalaikis arba didelio lygio ozono dujų poveikis gali sukelti rimtų kvėpavimo takų problemų, įskaitant plaučių audinių pažeidimą. Taip yra todėl, kad ozonas reaguoja su organizme esančiomis organinėmis molekulėmis, sukeldamas oksidacinį stresą ir uždegimą. Patikėkite savo automobilio salono ozonavimą mūsų profesionalams, kurie parinks saugią ir optimalią ozono dozę pagal kvapo šaltinį bei intensyvumą."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "bf553a0",
+          "kind": "heading.default",
+          "text": "Automobilio kvapų šalinimas",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Automobilio kvapų šalinimas",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6e0b9eb",
+          "kind": "text-editor.default",
+          "text": "Ozonavimo pagalba galime panaikinti dažniausiai automobilių salone pasitaikančius blogus kvapus: Cigarečių kvapų šalinimas Išpiltų gėrimų (kava, pienas, kefyras, sultys, alkoholis ir pan.) kvapų šalinimas Kelio dulkių kvapų šalinimas Benzino /dyzelino kvapų šalinimas Išmetamųjų dujų kvapų šalinimas Pelėsio kvapų šalinimas Dažų / lako kvapų šalinimas Kitų automobilio kvapų šalinimas",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ozonavimo pagalba galime panaikinti dažniausiai automobilių salone pasitaikančius blogus kvapus:"
+            },
+            {
+              "type": "paragraph",
+              "text": "Cigarečių kvapų šalinimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Išpiltų gėrimų (kava, pienas, kefyras, sultys, alkoholis ir pan.) kvapų šalinimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kelio dulkių kvapų šalinimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Benzino /dyzelino kvapų šalinimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Išmetamųjų dujų kvapų šalinimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Pelėsio kvapų šalinimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Dažų / lako kvapų šalinimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kitų automobilio kvapų šalinimas"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "311d7f3",
+          "kind": "heading.default",
+          "text": "Automobilio kvapo naikinimas",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Automobilio kvapo naikinimas",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "166e37a",
+          "kind": "text-editor.default",
+          "text": "Automobilio paruošimas kvapų šalinimui Paruoškite automobilio saloną ozonavimui: kiek įmanoma panaikinkite kvapo priežastį. Pavyzdžiui, jei automobilyje atsirado blogas kvapas dėl pelėsio, mechaniškai išvalykite pelėsį. Jei problema atsirado dėl išpilto gėrimo, išvalykite ir išdžiovinkite tą vietą. Išdžiovinkite saloną: pasirūpinkite, kad automobilio salonas būtų visiškai sausas. Automobilio kvapo naikinimas ozonu geriausiai veikia sausoje aplinkoje, o drėgmė mažina jo veiksmingumą. Uždarykite visus langus, duris ir stoglangį, kad kvapų šalinimo metu ozonas neišeitų pro atviras ertmes. Tam, kad pasiektume maksimalų rezultatą ozonuojant, mes atidarome visus skyrelius ir ertmes salono viduje. Todėl rekomenduojame išimti papildomus daiktus iš automobilio salone esančių daiktinių, porankių dėtuvių ir pan.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Automobilio paruošimas kvapų šalinimui"
+            },
+            {
+              "type": "paragraph",
+              "text": "Paruoškite automobilio saloną ozonavimui: kiek įmanoma panaikinkite kvapo priežastį. Pavyzdžiui, jei automobilyje atsirado blogas kvapas dėl pelėsio, mechaniškai išvalykite pelėsį. Jei problema atsirado dėl išpilto gėrimo, išvalykite ir išdžiovinkite tą vietą."
+            },
+            {
+              "type": "paragraph",
+              "text": "Išdžiovinkite saloną: pasirūpinkite, kad automobilio salonas būtų visiškai sausas. Automobilio kvapo naikinimas ozonu geriausiai veikia sausoje aplinkoje, o drėgmė mažina jo veiksmingumą. Uždarykite visus langus, duris ir stoglangį, kad kvapų šalinimo metu ozonas neišeitų pro atviras ertmes. Tam, kad pasiektume maksimalų rezultatą ozonuojant, mes atidarome visus skyrelius ir ertmes salono viduje. Todėl rekomenduojame išimti papildomus daiktus iš automobilio salone esančių daiktinių, porankių dėtuvių ir pan."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "2f7578a",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "27f2c03",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimo-eiga-1024x131.png",
+              "alt": "ozonavimas"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "a3255c9",
+          "kind": "text-editor.default",
+          "text": "Prieš ozonavimą Būtina išvalyti norimą ozonuoti aplinką ir išvesti žmones ir gyvūnus iš patalpų.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Prieš ozonavimą"
+            },
+            {
+              "type": "paragraph",
+              "text": "Būtina išvalyti norimą ozonuoti aplinką ir išvesti žmones ir gyvūnus iš patalpų."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "8432579",
+          "kind": "text-editor.default",
+          "text": "Ozonavimo įrangos pajungimas Įvertinę aplinką, mūsų sertifikuoti specialistai parinks tinkamą ozono dozę.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ozonavimo įrangos pajungimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Įvertinę aplinką, mūsų sertifikuoti specialistai parinks tinkamą ozono dozę."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "e84801a",
+          "kind": "text-editor.default",
+          "text": "Ozonavimas Ozonatorius ir ventiliatoriai pripildo aplinką ozonu. Ozonas prasiskverbia į sunkiausiai pasiekiamas vietas.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ozonavimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ozonatorius ir ventiliatoriai pripildo aplinką ozonu."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ozonas prasiskverbia į sunkiausiai pasiekiamas vietas."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "a515030",
+          "kind": "text-editor.default",
+          "text": "Vėdinimas Baigus ozonavimą būtina išvėdinti aplinką. Esant ventiliacijai – 30 min., be ventiliacijos – 120 min.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Vėdinimas"
+            },
+            {
+              "type": "paragraph",
+              "text": "Baigus ozonavimą būtina išvėdinti aplinką."
+            },
+            {
+              "type": "paragraph",
+              "text": "Esant ventiliacijai – 30 min., be ventiliacijos – 120 min."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/kvapu-naikinimas-automobilyje-2-800x450.jpg",
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimo-eiga-1024x131.png"
+      ]
+    },
+    {
+      "path": "/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas/",
+      "status": 200,
+      "title": "Cigarečių kvapo naikinimas - Rūkalų kvapų šalinimas - Kaip panaikinti",
+      "description": "Kaip panaikinti rūkalų kvapą automobilyje, namuose ar kitose patalpose? - Cigarečių kvapo naikinimas - patarimai - Kvapų naikinimo paslaugos",
+      "widgets": [
+        {
+          "id": "6a38103",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "CIGAREČIŲ KVAPO NAIKINIMAS",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "CIGAREČIŲ KVAPO NAIKINIMAS",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "7f0d2d9",
+          "kind": "text-editor.default",
+          "text": "Cigarečių kvapo naikinimas neabejotinai yra pati dažniausia problema, dėl kurios kreipiasi mūsų klientai. LR Vyriausybė jau ne vienerius metus taiko rūkalų pardavimo stabdymo priemones bei koreguoja įstatymus. Tačiau LR Statistikos departamento duomenimis apie ketvirtadalį Lietuvoje gyvenančių suaugusio amžiaus žmonių rūko tabako gaminius. Toks didelis rūkalių skaičius pridaro problemų ne tik patiems rūkantiesiems, bet ir likusiems aplinkiniams. Jei buvo intensyviai rūkoma, užtenka vos kelių dienų, kad naujas automobilio salonas ar kambarys įsigertų dūmais. Deja, cigarečių kvapo panaikinimas nėra paprasta užduotis. Su mažai prirūkytais objektais galima lengvai susitvarkyti ir namuose randamomis priemonėmis. Tačiau jei objektas buvo prirūkytas stipriai ir norite kvapų atsikratyti per trumpą laiką – problemos be profesionalių priemonių išspręsti nepavyks. Tokiu atveju mūsų kvapų šalinimo komanda pasiruošusi Jums pagelbėti!",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Cigarečių kvapo naikinimas neabejotinai yra pati dažniausia problema, dėl kurios kreipiasi mūsų klientai. LR Vyriausybė jau ne vienerius metus taiko rūkalų pardavimo stabdymo priemones bei koreguoja įstatymus. Tačiau LR Statistikos departamento duomenimis apie ketvirtadalį Lietuvoje gyvenančių suaugusio amžiaus žmonių rūko tabako gaminius. Toks didelis rūkalių skaičius pridaro problemų ne tik patiems rūkantiesiems, bet ir likusiems aplinkiniams. Jei buvo intensyviai rūkoma, užtenka vos kelių dienų, kad naujas automobilio salonas ar kambarys įsigertų dūmais. Deja, cigarečių kvapo panaikinimas nėra paprasta užduotis. Su mažai prirūkytais objektais galima lengvai susitvarkyti ir namuose randamomis priemonėmis. Tačiau jei objektas buvo prirūkytas stipriai ir norite kvapų atsikratyti per trumpą laiką – problemos be profesionalių priemonių išspręsti nepavyks. Tokiu atveju mūsų kvapų šalinimo komanda pasiruošusi Jums pagelbėti!"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "14a4328",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/CIGARECIU-KVAPO-NAIKINIMAS-768x202.jpg",
+              "alt": "CIGAREČIŲ KVAPO NAIKINIMAS"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "4793f9c",
+          "kind": "heading.default",
+          "text": "KAIP PANAIKINTI RŪKALŲ KVAPĄ AUTOMOBILYJE, NAMUOSE AR KITOSE PATALPOSE?",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KAIP PANAIKINTI RŪKALŲ KVAPĄ AUTOMOBILYJE, NAMUOSE AR KITOSE PATALPOSE?",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "8fbf61a",
+          "kind": "text-editor.default",
+          "text": "RŪKALŲ KVAPO NAIKINIMAS BUITINĖMIS PRIEMONĖS: Kvapo šaltinio panaikinimas, valymas ir vėdinimas Pirmiausia, būtina panaikinti kvapų šaltinį. Išvalyti pelenines, išmesti nuorūkas, dulkių siurbliu išsiurbti visus pelenų likučius. Valymo priemonių pagalba išvalykite grindis, sienas bei kitus paviršius. Išskalbkite cigarečių kvapais įsigėrusius daiktus: patalynę, rankšluosčius, pledus, užuolaidas, minkštus žaislus ir pan. Išvėdinkite patalpas. Cigarečių kvapo molekules veikia oksidacija – kuo ilgiau vėdinama, tuo silpnesnis tampa rūkalų kvapas. Actas Actą galite naudoti valydami paviršius arba garindami. Valant paviršius reiktų truputį acto sumaišyti su vandeniu (~5 šaukštai acto 1 litrui vandens). Tokiu tirpalu galite valyti visus kietus paviršius – baldus, palanges, grindis ir pan. Taip pat rūkalų kvapus galite pašalinti garindami actą. Garinimui užvirkite 1-2 litrus acto ir, išpilstę į dubenėlius, pastatykite skirtinguose kambariuose. Dūmų kvapų naikinimas acto garais – viena efektyviausių priemonių. Tačiau šis būdas palieka stiprų acto kvapą, kuriam išvėdinti taip pat reikia laiko. Amoniakas Paviršių valymui vietoje acto galima naudoti amoniaką (~1 šaukštas amoniako 3 litrams vandens). Maistinė soda Prirūkytose patalpose arba automobilyje palikite praplėštus maistinės sodos pakelius. Soda gerai sugeria aplinkos kvapus ir pati nepalieka jokio kvapo. Taip pat galima soda apibarstyti rūkalų kvapo įsigėrusius kilimus ar kitus daiktus. Apibarsčius reiktų palikti bent parai laiko, kad soda sugertų kvapus. Vėliau sodos miltelius galima susiurbti dulkių siurbliu. Prieš naudojant šį būdą, vertėtų išbandyti sodą nelabai matomoje paviršiaus vietoje. Tokiu būdu patikrinsite, ar sodos naudojimas nepažeis paviršiaus ir nesukels pakitimų. Garinimas Panaikinti dūmų bei kitus nemalonius kvapus padeda vandens garai. Galite naudoti tiek garinius valytuvus, tiek ir garinimo funkciją turinčius lygintuvus. Karšti vandens garai puikiai neutralizuoja kvapus bei užmuša bakterijas ir virusus. Kava Tiems, kas mėgsta kavos kvapą, galima naudoti geros kokybės, aromatingas kavos pupeles. Kavą reiktų suberti į atvirus indelius ir pastatyti skirtinguose kambariuose. Kava sugeria kvapą bei skleidžia savo aromatą. TABAKO DŪMŲ KVAPŲ NAIKINIMAS PROFESIONALIOMIS PRIEMONĖMIS: Kaip panaikinti cigarečių kvapą greitai? Iš patirties galime teigti, kad geriausia priemonė, skirta pašalinti cigarečių kvapus – ozonavimas. Šis aplinkai nekenksmingas būdas ne dezodoruoja ir užmaskuoja kvapus, bet išnaikina juos molekuliniame lygmenyje. Ozono dujomis veikiamos dūmų kvapo molekulės greitai išsiskaido. Neutralizavęs blogus kvapus ozonas virsta deguonimi. Daugiau apie ozonavimo technologiją galite rasti >>> Kainos -> Cigarečių kvapų naikinimas automobilyje / patalpose >>>",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "RŪKALŲ KVAPO NAIKINIMAS BUITINĖMIS PRIEMONĖS:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Kvapo šaltinio panaikinimas, valymas ir vėdinimas"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Pirmiausia, būtina panaikinti kvapų šaltinį. Išvalyti pelenines, išmesti nuorūkas, dulkių siurbliu išsiurbti visus pelenų likučius. Valymo priemonių pagalba išvalykite grindis, sienas bei kitus paviršius. Išskalbkite cigarečių kvapais įsigėrusius daiktus: patalynę, rankšluosčius, pledus, užuolaidas, minkštus žaislus ir pan. Išvėdinkite patalpas. Cigarečių kvapo molekules veikia oksidacija – kuo ilgiau vėdinama, tuo silpnesnis tampa rūkalų kvapas."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Actas"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Actą galite naudoti valydami paviršius arba garindami. Valant paviršius reiktų truputį acto sumaišyti su vandeniu (~5 šaukštai acto 1 litrui vandens). Tokiu tirpalu galite valyti visus kietus paviršius – baldus, palanges, grindis ir pan."
+            },
+            {
+              "type": "paragraph",
+              "text": "Taip pat rūkalų kvapus galite pašalinti garindami actą. Garinimui užvirkite 1-2 litrus acto ir, išpilstę į dubenėlius, pastatykite skirtinguose kambariuose. Dūmų kvapų naikinimas acto garais – viena efektyviausių priemonių. Tačiau šis būdas palieka stiprų acto kvapą, kuriam išvėdinti taip pat reikia laiko."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Amoniakas"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Paviršių valymui vietoje acto galima naudoti amoniaką (~1 šaukštas amoniako 3 litrams vandens)."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Maistinė soda"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Prirūkytose patalpose arba automobilyje palikite praplėštus maistinės sodos pakelius. Soda gerai sugeria aplinkos kvapus ir pati nepalieka jokio kvapo. Taip pat galima soda apibarstyti rūkalų kvapo įsigėrusius kilimus ar kitus daiktus. Apibarsčius reiktų palikti bent parai laiko, kad soda sugertų kvapus. Vėliau sodos miltelius galima susiurbti dulkių siurbliu. Prieš naudojant šį būdą, vertėtų išbandyti sodą nelabai matomoje paviršiaus vietoje. Tokiu būdu patikrinsite, ar sodos naudojimas nepažeis paviršiaus ir nesukels pakitimų."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Garinimas"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Panaikinti dūmų bei kitus nemalonius kvapus padeda vandens garai. Galite naudoti tiek garinius valytuvus, tiek ir garinimo funkciją turinčius lygintuvus. Karšti vandens garai puikiai neutralizuoja kvapus bei užmuša bakterijas ir virusus."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Kava"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Tiems, kas mėgsta kavos kvapą, galima naudoti geros kokybės, aromatingas kavos pupeles. Kavą reiktų suberti į atvirus indelius ir pastatyti skirtinguose kambariuose. Kava sugeria kvapą bei skleidžia savo aromatą."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "TABAKO DŪMŲ KVAPŲ NAIKINIMAS PROFESIONALIOMIS PRIEMONĖMIS:"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kaip panaikinti cigarečių kvapą greitai? Iš patirties galime teigti, kad geriausia priemonė, skirta pašalinti cigarečių kvapus – ozonavimas. Šis aplinkai nekenksmingas būdas ne dezodoruoja ir užmaskuoja kvapus, bet išnaikina juos molekuliniame lygmenyje. Ozono dujomis veikiamos dūmų kvapo molekulės greitai išsiskaido. Neutralizavęs blogus kvapus ozonas virsta deguonimi."
+            },
+            {
+              "type": "paragraph",
+              "text": "Daugiau apie ozonavimo technologiją galite rasti >>>"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kainos -> Cigarečių kvapų naikinimas automobilyje / patalpose >>>"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "2f7578a",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/CIGARECIU-KVAPO-NAIKINIMAS-768x202.jpg"
+      ]
+    },
+    {
+      "path": "/ozonavimas-kaune-kaina/",
+      "status": 200,
+      "title": "Ozonavimas Kaune - Kaina",
+      "description": "Ozonavimo kaina Kaune - Kvapų naikinimo kainos - Pelėsio naikinimo ozonu kainos - Automobilio salono kvapų naikinimo kainos",
+      "widgets": [
+        {
+          "id": "7ebc0fd",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "Ozonavimas Kaune. Paslaugos kaina:",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Ozonavimas Kaune. Paslaugos kaina:",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "69b9db1",
+          "kind": "accordion.default",
+          "text": "Automobilio salono kvapų naikinimas – kaina nuo 80,- €Kvapų naikinimas namuose ar kitose patalpose – kaina nuo 80,- €Parduotuvių, restoranų, apgyvendinimo įstaigų kvapų naikinimas – kaina nuo 100,- €Pelėsio naikinimas ozonu – kaina nuo 100,- €",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": ""
+            },
+            {
+              "type": "paragraph",
+              "text": "Automobilio salono kvapų naikinimas – kaina nuo 80,- €"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kvapų naikinimas namuose ar kitose patalpose – kaina nuo 80,- €"
+            },
+            {
+              "type": "paragraph",
+              "text": "Parduotuvių, restoranų, apgyvendinimo įstaigų kvapų naikinimas – kaina nuo 100,- €"
+            },
+            {
+              "type": "paragraph",
+              "text": "Pelėsio naikinimas ozonu – kaina nuo 100,- €"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "01c81de",
+          "kind": "accordion.default",
+          "text": "*Pateikiamos preliminarios ozonavimo kainos Kaune, kituose miestuose papildomai skaičiuojame atstumo mokestį pagal nuvažiuotus kilometrus. Kainų lygis priklauso nuo daugelio faktorių, tokių kaip: objekto atstumas, objekto dydis, objekto išplanavimas, lubų aukštis (patalpos tūris), kvapo ar pelėsio išplitimo lygis ir t.t. Norėdami gauti tikslią paslaugos kainą, prašome susisiekti su mūsų specialistais, kurie mielai pakonsultuos telefonu, elektroniniu paštu ar, esant būtinybei, atvyks į objekto vietą.",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": ""
+            },
+            {
+              "type": "paragraph",
+              "text": "*Pateikiamos preliminarios ozonavimo kainos Kaune, kituose miestuose papildomai skaičiuojame atstumo mokestį pagal nuvažiuotus kilometrus. Kainų lygis priklauso nuo daugelio faktorių, tokių kaip: objekto atstumas, objekto dydis, objekto išplanavimas, lubų aukštis (patalpos tūris), kvapo ar pelėsio išplitimo lygis ir t.t. Norėdami gauti tikslią paslaugos kainą, prašome susisiekti su mūsų specialistais, kurie mielai pakonsultuos telefonu, elektroniniu paštu ar, esant būtinybei, atvyks į objekto vietą."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "eb2bc5d",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimas-kaune-kaina-800x450.jpeg",
+              "alt": "ozonavimas kaune kaina"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "9ea2b5a",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimas-kaune-kaina-800x450.jpeg"
+      ]
+    },
+    {
+      "path": "/dazniausiai-uzduodami-klausimai/",
+      "status": 200,
+      "title": "Kvapų naikinimas - Ozonavimas Dažniausiai užduodami klausimai",
+      "description": null,
+      "widgets": [
+        {
+          "id": "6a38103",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "KVAPŲ NAIKINIMAS, OZONAVIMAS | D.U.K",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KVAPŲ NAIKINIMAS, OZONAVIMAS | D.U.K",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "1ad4f69",
+          "kind": "toggle.default",
+          "text": "1. Ar saugu naikinti kvapus ozonatoriumi? Taip. Ozonas yra chemiškai švarus, ekologiškas ir nekenkia aplinkai. Skirtingai nuo kai kurių cheminių kvapų šalinimo produktų, ozono naudojimas nepalieka kenksmingų medžiagų ar liekanų, kurios galėtų patekti į aplinką. 2. Ar pavojingi sveikatai ozonavimo metu susidarantys junginiai? Ne. Gyvenamosiose patalpose ozonavimo metu susidarę junginiai yra nepavojingi sveikatai dėl naudojamos atitinkamos ozono koncentracijos. Ore padidėja deguonies koncentracija, jame sunaikinami virusai ir bakterijos. 3. Ar galima atlikti ozonavimą patalpoje esant žmonėms arba gyvūnams? Ne. Ozonas yra labai stiprus oksidantas, kuris pavojingas kvėpavimui ir gali pažeisti plaučius. Tačiau ozono skaidymasis yra greitas, todėl atlikus ozonavimą ir išvėdinus patalpas ozono nelieka per 20-30 minučių ir patalpos tampa saugios naudojimui. 4. Ar reikia iš patalpų išnešti gėles ar kitus augalus prieš ozonavimą? Ne. Patalpose esančių augalų ląstelės yra didesnės negu mikroorganizmų, turi daugiasluoksnę sienelių struktūrą ir yra prisitaikiusios prie trumpalaikio ir mažos koncentracijos ozono veikimo, nuo apdorojimo jos nenukenčia. 5. Kaip paruošti patalpas ozonavimui? Norint užtikrinti maksimalų ozonavimo efektyvumą prieš procedūrą rekomenduojama išvalyti patalpas. Taip pat būtina panaikinti didelius blogą kvapą sukeliančius objektus. Pavyzdžiui, patalpų sienose užstrigus ir nudvėsus graužikui, būtina surasti ir sunaikinti jo likučius. Taip pat reikia išdžiovinti patalpas. Ozonavimas atliekamas esant ne didesniam nei 60% patalpų drėgnumui. 6. Ar galima ozonatorių lyginti su oro filtrais? Ne. Oro filtrai savyje sulaiko tik mechanines daleles. Visi cheminiai garai ir dujos praeina net per pačius geriausius filtrus. Ozonatorius nevalo oro perfiltruodamas jį per save kaip tai daro oro filtrai. Jis gamina aktyvų deguonį, kuris sunaikina visus kvapus, grybų sporas, pelėsius, mikrobus, virusus bei bakterijas patalpoje. 7. Ar reikalingas ozonavimas patalpose, kuriose yra kondicionierius? Taip. Po to, kai oras praeina pro kondicionierius ir šilumos įrenginius, ore sumažėja deguonies koncentracija, bet ne toksinių medžiagų kiekis. Be to, seni kondicionieriai dažnai patys yra taršos ir užkrato šaltiniai (uždarų patalpų sindromas – galvos skausmas, nuovargis, dažni kvėpavimo takų susirgimai). Patalpų, kuriose yra kondicionieriai, ozonavimas yra būtinas. 8. Ar ozonavimas efektyviai naikina cigarečių dūmų kvapą patalpose ir dažų ar lako kvapus po remonto? Taip, labai efektyviai. 9. Suvirinimo darbų metu bei naudojant spausdinimo aparatus į orą taip pat yra išskiriamas ozonas. Ar jis kenksmingas? Taip, kenksmingas, nes šiuo atveju ozonas išskiriamas su pavojingomis priemaišomis. Ozonas, kurį gamina ozonatorius, yra švarus ir saugus.",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "1. Ar saugu naikinti kvapus ozonatoriumi?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Taip. Ozonas yra chemiškai švarus, ekologiškas ir nekenkia aplinkai. Skirtingai nuo kai kurių cheminių kvapų šalinimo produktų, ozono naudojimas nepalieka kenksmingų medžiagų ar liekanų, kurios galėtų patekti į aplinką."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "2. Ar pavojingi sveikatai ozonavimo metu susidarantys junginiai?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ne. Gyvenamosiose patalpose ozonavimo metu susidarę junginiai yra nepavojingi sveikatai dėl naudojamos atitinkamos ozono koncentracijos. Ore padidėja deguonies koncentracija, jame sunaikinami virusai ir bakterijos."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "3. Ar galima atlikti ozonavimą patalpoje esant žmonėms arba gyvūnams?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ne. Ozonas yra labai stiprus oksidantas, kuris pavojingas kvėpavimui ir gali pažeisti plaučius. Tačiau ozono skaidymasis yra greitas, todėl atlikus ozonavimą ir išvėdinus patalpas ozono nelieka per 20-30 minučių ir patalpos tampa saugios naudojimui."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "4. Ar reikia iš patalpų išnešti gėles ar kitus augalus prieš ozonavimą?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ne. Patalpose esančių augalų ląstelės yra didesnės negu mikroorganizmų, turi daugiasluoksnę sienelių struktūrą ir yra prisitaikiusios prie trumpalaikio ir mažos koncentracijos ozono veikimo, nuo apdorojimo jos nenukenčia."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "5. Kaip paruošti patalpas ozonavimui?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Norint užtikrinti maksimalų ozonavimo efektyvumą prieš procedūrą rekomenduojama išvalyti patalpas. Taip pat būtina panaikinti didelius blogą kvapą sukeliančius objektus. Pavyzdžiui, patalpų sienose užstrigus ir nudvėsus graužikui, būtina surasti ir sunaikinti jo likučius. Taip pat reikia išdžiovinti patalpas. Ozonavimas atliekamas esant ne didesniam nei 60% patalpų drėgnumui."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "6. Ar galima ozonatorių lyginti su oro filtrais?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ne. Oro filtrai savyje sulaiko tik mechanines daleles. Visi cheminiai garai ir dujos praeina net per pačius geriausius filtrus. Ozonatorius nevalo oro perfiltruodamas jį per save kaip tai daro oro filtrai. Jis gamina aktyvų deguonį, kuris sunaikina visus kvapus, grybų sporas, pelėsius, mikrobus, virusus bei bakterijas patalpoje."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "7. Ar reikalingas ozonavimas patalpose, kuriose yra kondicionierius?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Taip. Po to, kai oras praeina pro kondicionierius ir šilumos įrenginius, ore sumažėja deguonies koncentracija, bet ne toksinių medžiagų kiekis. Be to, seni kondicionieriai dažnai patys yra taršos ir užkrato šaltiniai (uždarų patalpų sindromas – galvos skausmas, nuovargis, dažni kvėpavimo takų susirgimai). Patalpų, kuriose yra kondicionieriai, ozonavimas yra būtinas."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "8. Ar ozonavimas efektyviai naikina cigarečių dūmų kvapą patalpose ir dažų ar lako kvapus po remonto?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Taip, labai efektyviai."
+            },
+            {
+              "type": "heading",
+              "level": 3,
+              "text": "9. Suvirinimo darbų metu bei naudojant spausdinimo aparatus į orą taip pat yra išskiriamas ozonas. Ar jis kenksmingas?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Taip, kenksmingas, nes šiuo atveju ozonas išskiriamas su pavojingomis priemaišomis. Ozonas, kurį gamina ozonatorius, yra švarus ir saugus."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": []
+    },
+    {
+      "path": "/ozonavimas-vilniuje-kaina/",
+      "status": 200,
+      "title": "Ozonavimas Vilniuje - Kaina",
+      "description": "Ozonavimo kaina Vilniuje - Kvapų naikinimo kainos - Pelėsio naikinimo ozonu kainos - Automobilio salono kvapų naikinimo kainos",
+      "widgets": [
+        {
+          "id": "09a97eb",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "37b20e2",
+          "kind": "heading.default",
+          "text": "Ozonavimas Vilniuje. Paslaugos kaina:",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Ozonavimas Vilniuje. Paslaugos kaina:",
+              "originalTag": "H1"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "69b9db1",
+          "kind": "accordion.default",
+          "text": "Automobilio salono kvapų naikinimas – kaina nuo 80,- €Kvapų naikinimas namuose ar kitose patalpose – kaina nuo 80,- €Parduotuvių, restoranų, apgyvendinimo įstaigų kvapų naikinimas – kaina nuo 100,- €Pelėsio naikinimas ozonu – kaina nuo 100,- €",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": ""
+            },
+            {
+              "type": "paragraph",
+              "text": "Automobilio salono kvapų naikinimas – kaina nuo 80,- €"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kvapų naikinimas namuose ar kitose patalpose – kaina nuo 80,- €"
+            },
+            {
+              "type": "paragraph",
+              "text": "Parduotuvių, restoranų, apgyvendinimo įstaigų kvapų naikinimas – kaina nuo 100,- €"
+            },
+            {
+              "type": "paragraph",
+              "text": "Pelėsio naikinimas ozonu – kaina nuo 100,- €"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "01c81de",
+          "kind": "accordion.default",
+          "text": "*Pateikiamos preliminarios ozonavimo kainos Vilniuje, kituose miestuose papildomai skaičiuojame atstumo mokestį pagal nuvažiuotus kilometrus. Kainų lygis priklauso nuo daugelio faktorių, tokių kaip: objekto atstumas, objekto dydis, objekto išplanavimas, lubų aukštis (patalpos tūris), kvapo ar pelėsio išplitimo lygis ir t.t. Norėdami gauti tikslią paslaugos kainą, prašome susisiekti su mūsų specialistais, kurie mielai pakonsultuos telefonu, elektroniniu paštu ar, esant būtinybei, atvyks į objekto vietą.",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 3,
+              "text": ""
+            },
+            {
+              "type": "paragraph",
+              "text": "*Pateikiamos preliminarios ozonavimo kainos Vilniuje, kituose miestuose papildomai skaičiuojame atstumo mokestį pagal nuvažiuotus kilometrus. Kainų lygis priklauso nuo daugelio faktorių, tokių kaip: objekto atstumas, objekto dydis, objekto išplanavimas, lubų aukštis (patalpos tūris), kvapo ar pelėsio išplitimo lygis ir t.t. Norėdami gauti tikslią paslaugos kainą, prašome susisiekti su mūsų specialistais, kurie mielai pakonsultuos telefonu, elektroniniu paštu ar, esant būtinybei, atvyks į objekto vietą."
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "3ecb748",
+          "kind": "image.default",
+          "text": "",
+          "blocks": [],
+          "images": [
+            {
+              "src": "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimas-Vilniuje-kaina-800x450.jpeg",
+              "alt": "ozonavimas vilniuje kaina"
+            }
+          ],
+          "settings": null
+        },
+        {
+          "id": "9595a80",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "cd7ac94",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6677869",
+          "kind": "heading.default",
+          "text": "KONTAKTAI",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "KONTAKTAI",
+              "originalTag": "H6"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "5d988ab",
+          "kind": "icon-list.default",
+          "text": "Tel. Vilniuje: +37064819979 +37069199833",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Vilniuje:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37064819979"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37069199833"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "abb902a",
+          "kind": "icon-list.default",
+          "text": "Tel. Kaune: +37068460688 +37065354982",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Tel. Kaune:"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37068460688"
+            },
+            {
+              "type": "paragraph",
+              "text": "+37065354982"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "d8e0051",
+          "kind": "icon-list.default",
+          "text": "El. paštas: sales@kvapunaikinimas.lt",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El. paštas:"
+            },
+            {
+              "type": "paragraph",
+              "text": "sales@kvapunaikinimas.lt"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "6541c81",
+          "kind": "spacer.default",
+          "text": "",
+          "blocks": [],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": [
+        "https://cdn-ljhal.nitrocdn.com/iVMnZlvajadwMOOzIxApZodmYcZOlchd/assets/images/optimized/rev-b806789/kvapunaikinimas.lt/wp-content/uploads/2024/04/ozonavimas-Vilniuje-kaina-800x450.jpeg"
+      ]
+    },
+    {
+      "path": "/musu-slapuku-politika/",
+      "status": 200,
+      "title": "Mūsų slapukų politika - Kvapų naikinimas - Ozonavimas",
+      "description": null,
+      "widgets": [
+        {
+          "id": "7c53f55",
+          "kind": "heading.default",
+          "text": "Mūsų slapukų politika",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Mūsų slapukų politika",
+              "originalTag": "H2"
+            }
+          ],
+          "images": [],
+          "settings": null
+        },
+        {
+          "id": "46f5086",
+          "kind": "text-editor.default",
+          "text": "Svetainė naudoja slapukų failus (slapukus). Naršydami mūsų puslapyje, jūs sutinkate naudoti slapukų failus, atsižvelgiant į dabartinius Jūsų naršyklės nustatymus.www.kvapunaikinimas.lt interneto svetainėje naudojame slapukus (angl. cookies), todėl šiame skyriuje jums pateikiama išsami informacija apie tai, kaip slapukai naudojami ir kaip jums apsispręsti, ar slapukus palikti, ar pašalinti. Kas yra slapukas? Slapukais vadinami informacijos elementai, perkeliami iš interneto svetainės į jūsų kompiuterio standųjį diską. Tai nedideli informacijos failai, kurie leidžia interneto svetainėms išsaugoti ir vėl pasiekti informaciją apie naudotojo naršymo įpročius. Slapukus naudoja dauguma interneto svetainių, nes jie yra viena iš daugybės priemonių, kurios padeda pritaikyti interneto turinį prie naudotojų poreikių. Slapukai leidžia interneto svetainėms teikti prie naudotojų poreikių pritaikytas paslaugas (pavyzdžiui, įsimenant prisijungimo duomenis, išlaikant pirkinius pirkinių krepšelyje arba rodant tik konkretų naudotoją dominantį turinį). Slapukų būna skirtingų: laikinieji slapukai (arba seanso slapukai) – pašalinami, kai užveriama naršyklė; nuolatiniai slapukai – nepašalinami ir lieka tol, kol pašalinami aktyviais veiksmais arba kol baigiasi jų galiojimas.KAIP PAŠALINTI SLAPUKĄDaugelis naršyklių yra nustatytos taip, kad automatiškai priimtų slapukus. Galite naršyklėje slapukus išjungti, bet žinokite, kad jeigu taip padarysite, galite netekti galimybės naudotis daugybe funkcijų, kurios būtinos, kad interneto svetainė veiktų deramai.Jeigu jums reikia išsamesnės informacijos apie slapukus, apsilankykite interneto svetainėje www.aboutcookies.org, kur rasite išsamios, nepriklausomos informacijos apie tai, kaip išjungti slapukus per naršyklės nuostatas ir kaip pašalinti slapukus, kurie jau yra jūsų kompiuteryje. Kad pašalintumėte slapukus iš mobiliojo telefono, turėsite pasiskaityti telefono naudojimo instrukciją.SLAPUKŲ TIPAIBūtinieji slapukai: tokie slapukai yra būtini tam, kad galėtumėte žvalgytis po interneto svetainę ir naudotis jos funkcijomis, tokiomis kaip prieiga prie saugių interneto svetainės sričių. Be šių slapukų negalėtų būti jūsų pageidaujamos paslaugos, pavyzdžiui, pirkimo internetu.Veikimą gerinantys slapukai: šie slapukai renka informaciją apie tai, kai naudotojai naudojasi tam tikra interneto svetaine, pavyzdžiui, kurie puslapiai lankomi dažniausiai ir ar lankytojai iš tinklalapių gauna klaidų pranešimų. Šie slapukai nerenka informacijos, leidžiančios atpažinti svetainės lankytoją. Visa šių slapukų renkama informacija yra bendrojo pobūdžio, todėl anoniminė. Ji naudojama tik svetainės veiklai pagerinti.Funkciniai slapukai: šie slapukai leidžia interneto svetainei įsiminti jūsų pasirinktus dalykus (tokius, kaip jūsų vardas, kalba ar regionas) ir pasiūlyti patobulintas, jums asmeniškai pritaikytas funkcijas. Šių slapukų renkamą informaciją galima padaryti anoniminę, be to, jie negali stebėti jūsų naršymo veiklos kitose interneto svetainėse.Tiksliniai arba reklaminiai slapukai: šie slapukai naudojami tam, kad rodytų reklaminius skelbimus, kurie turėtų būti įdomūs būtent jums ir atitikti jūsų interesus. Jie taip pat naudojami tam, kad tam tikras reklamas matytumėte tik tam tikrą kartų skaičių ir kad padėtų matuoti reklaminės kampanijos efektyvumą.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Svetainė naudoja slapukų failus (slapukus). Naršydami mūsų puslapyje, jūs sutinkate naudoti slapukų failus, atsižvelgiant į dabartinius Jūsų naršyklės nustatymus."
+            },
+            {
+              "type": "paragraph",
+              "text": "www.kvapunaikinimas.lt interneto svetainėje naudojame slapukus (angl. cookies), todėl šiame skyriuje jums pateikiama išsami informacija apie tai, kaip slapukai naudojami ir kaip jums apsispręsti, ar slapukus palikti, ar pašalinti. Kas yra slapukas? Slapukais vadinami informacijos elementai, perkeliami iš interneto svetainės į jūsų kompiuterio standųjį diską. Tai nedideli informacijos failai, kurie leidžia interneto svetainėms išsaugoti ir vėl pasiekti informaciją apie naudotojo naršymo įpročius. Slapukus naudoja dauguma interneto svetainių, nes jie yra viena iš daugybės priemonių, kurios padeda pritaikyti interneto turinį prie naudotojų poreikių. Slapukai leidžia interneto svetainėms teikti prie naudotojų poreikių pritaikytas paslaugas (pavyzdžiui, įsimenant prisijungimo duomenis, išlaikant pirkinius pirkinių krepšelyje arba rodant tik konkretų naudotoją dominantį turinį). Slapukų būna skirtingų: laikinieji slapukai (arba seanso slapukai) – pašalinami, kai užveriama naršyklė; nuolatiniai slapukai – nepašalinami ir lieka tol, kol pašalinami aktyviais veiksmais arba kol baigiasi jų galiojimas."
+            },
+            {
+              "type": "paragraph",
+              "text": "KAIP PAŠALINTI SLAPUKĄ"
+            },
+            {
+              "type": "paragraph",
+              "text": "Daugelis naršyklių yra nustatytos taip, kad automatiškai priimtų slapukus. Galite naršyklėje slapukus išjungti, bet žinokite, kad jeigu taip padarysite, galite netekti galimybės naudotis daugybe funkcijų, kurios būtinos, kad interneto svetainė veiktų deramai."
+            },
+            {
+              "type": "paragraph",
+              "text": "Jeigu jums reikia išsamesnės informacijos apie slapukus, apsilankykite interneto svetainėje www.aboutcookies.org, kur rasite išsamios, nepriklausomos informacijos apie tai, kaip išjungti slapukus per naršyklės nuostatas ir kaip pašalinti slapukus, kurie jau yra jūsų kompiuteryje. Kad pašalintumėte slapukus iš mobiliojo telefono, turėsite pasiskaityti telefono naudojimo instrukciją."
+            },
+            {
+              "type": "paragraph",
+              "text": "SLAPUKŲ TIPAI"
+            },
+            {
+              "type": "paragraph",
+              "text": "Būtinieji slapukai: tokie slapukai yra būtini tam, kad galėtumėte žvalgytis po interneto svetainę ir naudotis jos funkcijomis, tokiomis kaip prieiga prie saugių interneto svetainės sričių. Be šių slapukų negalėtų būti jūsų pageidaujamos paslaugos, pavyzdžiui, pirkimo internetu."
+            },
+            {
+              "type": "paragraph",
+              "text": "Veikimą gerinantys slapukai: šie slapukai renka informaciją apie tai, kai naudotojai naudojasi tam tikra interneto svetaine, pavyzdžiui, kurie puslapiai lankomi dažniausiai ir ar lankytojai iš tinklalapių gauna klaidų pranešimų. Šie slapukai nerenka informacijos, leidžiančios atpažinti svetainės lankytoją. Visa šių slapukų renkama informacija yra bendrojo pobūdžio, todėl anoniminė. Ji naudojama tik svetainės veiklai pagerinti."
+            },
+            {
+              "type": "paragraph",
+              "text": "Funkciniai slapukai: šie slapukai leidžia interneto svetainei įsiminti jūsų pasirinktus dalykus (tokius, kaip jūsų vardas, kalba ar regionas) ir pasiūlyti patobulintas, jums asmeniškai pritaikytas funkcijas. Šių slapukų renkamą informaciją galima padaryti anoniminę, be to, jie negali stebėti jūsų naršymo veiklos kitose interneto svetainėse."
+            },
+            {
+              "type": "paragraph",
+              "text": "Tiksliniai arba reklaminiai slapukai: šie slapukai naudojami tam, kad rodytų reklaminius skelbimus, kurie turėtų būti įdomūs būtent jums ir atitikti jūsų interesus. Jie taip pat naudojami tam, kad tam tikras reklamas matytumėte tik tam tikrą kartų skaičių ir kad padėtų matuoti reklaminės kampanijos efektyvumą."
+            }
+          ],
+          "images": [],
+          "settings": null
+        }
+      ],
+      "imageSources": []
+    }
+  ]
+}

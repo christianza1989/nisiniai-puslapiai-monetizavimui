@@ -1,0 +1,19 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Restore incumbent presentation during native import: rich ranges, ordered steps, actual image crops, responsive geometry and source order.",
+  "category": "code",
+  "evidence": [
+    "sites/kvapunaikinimas/VISUAL-REPAIR-2026-10-29.md",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md"
+  ],
+  "paths": [
+    "sites/kvapunaikinimas",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "rollback": "Revert this scoped fidelity import/acceptance commit; retain original source caches, previous draft state and immutable historical QA.",
+  "id": "upgrade-1347c6e1-fbd9-4b7a-94e9-b885398d2f9b",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "38c2f5b521c9d45582a1091a6a7fce5797323b6d",
+  "createdAt": "2026-10-29T20:04:05.296Z"
+}

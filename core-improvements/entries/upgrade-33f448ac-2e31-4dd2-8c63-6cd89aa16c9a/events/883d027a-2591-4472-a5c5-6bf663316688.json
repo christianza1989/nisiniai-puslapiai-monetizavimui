@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Companion implementation 0f2dc4e05bb1b6f11469c82b3db2a8fa137aef21 pushed to the existing draft PR104 branch; actual remote head verified separately. Native source copy unchanged; current evidence is in the private companion acceptance. No main merge or production adoption.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/104",
+  "commit": "0f2dc4e05bb1b6f11469c82b3db2a8fa137aef21",
+  "eventId": "883d027a-2591-4472-a5c5-6bf663316688",
+  "sequence": 3,
+  "at": "2026-10-30T14:29:25.572Z"
+}

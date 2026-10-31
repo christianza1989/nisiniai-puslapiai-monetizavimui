@@ -5,7 +5,22 @@ import {spawnSync} from 'node:child_process';
 import path from 'node:path';
 import os from 'node:os';
 import {catalogFromMarkdown} from './score-audit.mjs';
-import {articleExpectations,verifySiteCompletion,verifyDiscoveryOutputs} from './verify-site-completion.mjs';
+import {articleExpectations,verifySiteCompletion,verifyDiscoveryOutputs,requestVerificationDocument} from './verify-site-completion.mjs';
+import {createServer as createVerifierFixtureServer} from 'node:http';
+
+test('local rendered verifier sends the canonical Host on the wire without following redirects',async()=>{
+  const server=createVerifierFixtureServer((req,res)=>{
+    if(req.headers.host!=='canonical-fixture.example'){res.writeHead(404);res.end('wrong host');return;}
+    res.writeHead(301,{'Location':'/target','Content-Type':'text/plain'});res.end('canonical fixture');
+  });
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  try{
+    const url=new URL('http://127.0.0.1:'+server.address().port+'/sitemap.xml');
+    const response=await requestVerificationDocument(url,'canonical-fixture.example');
+    assert.equal(response.status,301);assert.equal(response.headers.location,'/target');assert.equal(response.data.toString(),'canonical fixture');
+    assert.equal((await requestVerificationDocument(url,'unrelated-fixture.example')).status,404);
+  }finally{await new Promise(resolve=>server.close(resolve));}
+});
 
 test('reading verification binds each body to its canonical section and uses exact hidden URLs',()=>{
   const base={type:'guide',contentVersion:2,title:'Useful answer',description:'Description',media:[],editorial:{authors:[],datePublished:'2026-10-07T07:00:00Z',dateModified:null},links:[],externalLinks:[]};

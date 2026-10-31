@@ -1,0 +1,8 @@
+[
+  {
+    "aliases": ["Kvapu-naikinimas-kontaktai.jpg", "Kvapu-naikinimas-kontaktai-1024x694.jpg"],
+    "file": "Kvapu-naikinimas-kontaktai-baltas-numeris.png",
+    "sha256": "50081a745d085292692856a8c0fae23635f43bf1d7dc91179032728510aa108e",
+    "prompt": "Use case: precise-object-edit. Edit the supplied existing vehicle photograph for its owner's website. Change ONLY the rear license plate inside its existing thin black frame into a completely plain solid white blank plate, matching the existing perspective and natural lighting. Remove every license character and the blue EU strip so no registration information remains visible. Preserve the original photograph's exact crop/aspect ratio and resolution (1024x694), vehicle, bodywork, VW and Caddy badges, window branding, website address and all existing window lettering/phone digits, tires, shadows, forest and ground. Do not redraw, restyle, sharpen, add or remove anything outside the license plate. Keep all other pixels as close to the input as possible. No new text, no symbols, no watermark."
+  }
+]

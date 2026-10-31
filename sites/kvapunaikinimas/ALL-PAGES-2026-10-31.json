@@ -1,0 +1,685 @@
+{
+  "date": "2026-10-31",
+  "status": "LOCAL_VERIFIED",
+  "source": "https://kvapunaikinimas.lt/",
+  "native": "http://127.0.0.1:8918/",
+  "gallery": "http://127.0.0.1:8919/",
+  "originalRoutes": 12,
+  "baselineCases": 48,
+  "captured": "2026-10-31",
+  "cases": [
+    {
+      "slug": "",
+      "width": 1440,
+      "widgets": 0,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "widgets": 4,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "gyvunu-kvapo-naikinimas",
+      "width": 1440,
+      "widgets": 8,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "kvapu-naikinimas-automobilyje-ozonavimas",
+      "width": 1440,
+      "widgets": 8,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "cigareciu-tabako-dumu-rukalu-kvapo-naikinimas",
+      "width": 1440,
+      "widgets": 4,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "ozonavimas-kaune-kaina",
+      "width": 1440,
+      "widgets": 3,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "ozonavimas-vilniuje-kaina",
+      "width": 1440,
+      "widgets": 3,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "dazniausiai-uzduodami-klausimai",
+      "width": 1440,
+      "widgets": 1,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "musu-slapuku-politika",
+      "width": 1440,
+      "widgets": 0,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "",
+      "width": 390,
+      "widgets": 0,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "widgets": 4,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "gyvunu-kvapo-naikinimas",
+      "width": 390,
+      "widgets": 8,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "kvapu-naikinimas-automobilyje-ozonavimas",
+      "width": 390,
+      "widgets": 8,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "cigareciu-tabako-dumu-rukalu-kvapo-naikinimas",
+      "width": 390,
+      "widgets": 4,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "ozonavimas-kaune-kaina",
+      "width": 390,
+      "widgets": 3,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "ozonavimas-vilniuje-kaina",
+      "width": 390,
+      "widgets": 3,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "dazniausiai-uzduodami-klausimai",
+      "width": 390,
+      "widgets": 1,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "musu-slapuku-politika",
+      "width": 390,
+      "widgets": 0,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "ozonavimas-kas-tai",
+      "width": 390,
+      "widgets": 9,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "patalpu-kvapu-naikinimas",
+      "width": 390,
+      "widgets": 6,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "pelesio-naikinimas",
+      "width": 390,
+      "widgets": 9,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "pelesio-naikinimas",
+      "width": 1440,
+      "widgets": 9,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "patalpu-kvapu-naikinimas",
+      "width": 1440,
+      "widgets": 6,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    },
+    {
+      "slug": "ozonavimas-kas-tai",
+      "width": 1440,
+      "widgets": 9,
+      "overflow": false,
+      "mainTextUnchanged": true,
+      "contactsMatch": true
+    }
+  ],
+  "widgets": 110,
+  "paragraphs": 388,
+  "images": 20,
+  "dimensionDifferences": [],
+  "relativePositionDifferences": [],
+  "nonPaintedWrapperBoxes": [
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "id": "8fbf61a",
+      "paragraph": 2,
+      "source": [
+        1100,
+        23.796875
+      ],
+      "core": [
+        1080,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "id": "8fbf61a",
+      "paragraph": 5,
+      "source": [
+        1100,
+        23.796875
+      ],
+      "core": [
+        1080,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "id": "8fbf61a",
+      "paragraph": 8,
+      "source": [
+        1100,
+        23.796875
+      ],
+      "core": [
+        1080,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "id": "8fbf61a",
+      "paragraph": 11,
+      "source": [
+        1100,
+        23.796875
+      ],
+      "core": [
+        1080,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "id": "8fbf61a",
+      "paragraph": 14,
+      "source": [
+        1100,
+        23.796875
+      ],
+      "core": [
+        1080,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "id": "8fbf61a",
+      "paragraph": 17,
+      "source": [
+        1100,
+        23.796875
+      ],
+      "core": [
+        1080,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "id": "8fbf61a",
+      "paragraph": 20,
+      "source": [
+        1100,
+        23.796875
+      ],
+      "core": [
+        1080,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "id": "8fbf61a",
+      "paragraph": 23,
+      "source": [
+        1100,
+        23.796875
+      ],
+      "core": [
+        1080,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 1440,
+      "id": "8fbf61a",
+      "paragraph": 26,
+      "source": [
+        1100,
+        23.796875
+      ],
+      "core": [
+        1080,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "id": "8fbf61a",
+      "paragraph": 2,
+      "source": [
+        335,
+        23.796875
+      ],
+      "core": [
+        315,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "id": "8fbf61a",
+      "paragraph": 5,
+      "source": [
+        335,
+        23.796875
+      ],
+      "core": [
+        315,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "id": "8fbf61a",
+      "paragraph": 8,
+      "source": [
+        335,
+        47.59375
+      ],
+      "core": [
+        315,
+        47.59375
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "id": "8fbf61a",
+      "paragraph": 11,
+      "source": [
+        335,
+        23.796875
+      ],
+      "core": [
+        315,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "id": "8fbf61a",
+      "paragraph": 14,
+      "source": [
+        335,
+        23.796875
+      ],
+      "core": [
+        315,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "id": "8fbf61a",
+      "paragraph": 17,
+      "source": [
+        335,
+        23.796875
+      ],
+      "core": [
+        315,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "id": "8fbf61a",
+      "paragraph": 20,
+      "source": [
+        335,
+        47.59375
+      ],
+      "core": [
+        315,
+        47.59375
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "id": "8fbf61a",
+      "paragraph": 23,
+      "source": [
+        335,
+        23.796875
+      ],
+      "core": [
+        315,
+        23.796875
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "width": 390,
+      "id": "8fbf61a",
+      "paragraph": 26,
+      "source": [
+        335,
+        47.59375
+      ],
+      "core": [
+        315,
+        47.59375
+      ],
+      "reason": "Source outer heading contains UL/LI; native heading is inside LI. Adjacent inner text boxes, actual type and line heights match; outer empty boxes are not painted text."
+    }
+  ],
+  "faq": [
+    {
+      "width": 390,
+      "answersOpened": 9,
+      "sourceHeight": 2481.5,
+      "coreHeight": 2481.5
+    },
+    {
+      "width": 1440,
+      "answersOpened": 9,
+      "sourceHeight": 1369.5625,
+      "coreHeight": 1369.5625
+    }
+  ],
+  "interactions": [
+    {
+      "state": "desktop-prices",
+      "links": [
+        "/ozonavimas-vilniuje-kaina",
+        "/ozonavimas-kaune-kaina"
+      ],
+      "open": 1
+    },
+    {
+      "state": "mobile-services",
+      "menuWidth": 375,
+      "open": 2,
+      "overflow": false,
+      "viewport": 390
+    },
+    {
+      "state": "mobile-escape",
+      "focus": "Atverti meniu",
+      "open": 0
+    },
+    {
+      "state": "form-Telefonu",
+      "emailRequired": false,
+      "phoneRequired": true,
+      "placeholders": [
+        "Vardas / Įmonės pavadinimas",
+        "Telefono nr.",
+        "El. paštas",
+        "Žinutė",
+        ""
+      ]
+    },
+    {
+      "state": "form-El. paštu",
+      "emailRequired": true,
+      "phoneRequired": false,
+      "placeholders": [
+        "Vardas / Įmonės pavadinimas",
+        "Telefono nr.",
+        "El. paštas",
+        "Žinutė",
+        ""
+      ]
+    },
+    {
+      "state": "form--Pasirinkite-",
+      "emailRequired": false,
+      "phoneRequired": false,
+      "placeholders": [
+        "Vardas / Įmonės pavadinimas",
+        "Telefono nr.",
+        "El. paštas",
+        "Žinutė",
+        ""
+      ]
+    }
+  ],
+  "carousels": {
+    "before": [
+      {
+        "controls": 0,
+        "name": "Ozonavimo iliustracijos",
+        "transform": "matrix(1, 0, 0, 1, -828.061, 0)"
+      },
+      {
+        "controls": 0,
+        "name": "Ozonavimo įranga",
+        "transform": "matrix(1, 0, 0, 1, -828.061, 0)"
+      }
+    ],
+    "after": [
+      {
+        "name": "Ozonavimo iliustracijos",
+        "transform": "matrix(1, 0, 0, 1, -1212, 0)"
+      },
+      {
+        "name": "Ozonavimo įranga",
+        "transform": "matrix(1, 0, 0, 1, -1212, 0)"
+      }
+    ]
+  },
+  "narrow": [
+    {
+      "slug": "kvapu-naikinimas",
+      "bottomGap": 155.96875,
+      "overflow": false,
+      "topGap": 45.359375,
+      "width": 320
+    },
+    {
+      "slug": "cigareciu-tabako-dumu-rukalu-kvapo-naikinimas",
+      "bottomGap": 154.96875,
+      "overflow": false,
+      "topGap": 26.34375,
+      "width": 320
+    }
+  ],
+  "sourceReplay": {
+    "status": "PASS",
+    "replayedRules": 11,
+    "marginRules": 2,
+    "markerRules": 9,
+    "all12PageDigestsPreserved": true,
+    "blockDigests": 225,
+    "unrelatedAndStaleInert": true,
+    "invalidGapRejected": true
+  },
+  "artifacts": {
+    "status": "PASS",
+    "hashes": [
+      {
+        "file": "components/niche/kvapunaikinimas-site.tsx",
+        "sha256": "b051640cbc2d5bad1d5b9d37e5994f5cce5832f7025a24865d380b13fe35e465",
+        "bytes": 17990
+      },
+      {
+        "file": "components/niche/kvapunaikinimas-site.module.css",
+        "sha256": "d65554f5bf014647ba6c582e646ac230d108a631450d0a02a1bc56162d161a24",
+        "bytes": 16541
+      },
+      {
+        "file": "config/kvapunaikinimas-layout.json",
+        "sha256": "5f5083d35c4bd8edee3821c6f04d17b81d0a903b64eafde7d6c8110fbe4aac68",
+        "bytes": 187015
+      },
+      {
+        "file": "public/fonts/kvapunaikinimas/open-sans-italic-latin.woff2",
+        "sha256": "8df90accd45bfd23e80b325300058648f6d4b293d1c8f399dfa4cda318d203e0",
+        "bytes": 45072
+      },
+      {
+        "file": "public/fonts/kvapunaikinimas/open-sans-italic-latin-ext.woff2",
+        "sha256": "2e9001fa91a298120a6ab2e7062fb761c0153a1fa82a55f0485d1a8dd63cdc0d",
+        "bytes": 33076
+      }
+    ],
+    "assets": [
+      {
+        "file": "public/fonts/kvapunaikinimas/open-sans-italic-latin.woff2",
+        "status": 200,
+        "contentType": "font/woff2",
+        "sha256": "8df90accd45bfd23e80b325300058648f6d4b293d1c8f399dfa4cda318d203e0"
+      },
+      {
+        "file": "public/fonts/kvapunaikinimas/open-sans-italic-latin-ext.woff2",
+        "status": 200,
+        "contentType": "font/woff2",
+        "sha256": "2e9001fa91a298120a6ab2e7062fb761c0153a1fa82a55f0485d1a8dd63cdc0d"
+      }
+    ],
+    "hints": [
+      {
+        "slug": "",
+        "italicFontHttpHints": 0
+      },
+      {
+        "slug": "ozonavimas-kas-tai",
+        "italicFontHttpHints": 2
+      }
+    ],
+    "publicTests": 307,
+    "types": "PASS",
+    "scopedLint": "PASS",
+    "build": {
+      "rscManifests": 2,
+      "missing": 0
+    },
+    "seoRoutes": 12,
+    "noFormSubmission": true
+  },
+  "fontsOnlyOnPages": [
+    "patalpu-kvapu-naikinimas",
+    "pelesio-naikinimas",
+    "ozonavimas-kas-tai"
+  ],
+  "nativeNonImageDigestsPreserved": 225,
+  "nativePageDigestsPreserved": 12,
+  "formPosts": 0,
+  "additionalMail": 0,
+  "actualLt": "unapproved Studio draft",
+  "productionChanged": false,
+  "newLighthouseMeasurement": false,
+  "physicalDeviceVerified": false,
+  "viewportOverrideReset": true,
+  "finalScreenshots": [
+    "D:/Core/output/kvapunaikinimas-all-pages-20261031/final-desktop.png",
+    "D:/Core/output/kvapunaikinimas-all-pages-20261031/final-mobile.png"
+  ],
+  "evidenceRoot": "D:/Core/output/kvapunaikinimas-all-pages-20261031"
+}

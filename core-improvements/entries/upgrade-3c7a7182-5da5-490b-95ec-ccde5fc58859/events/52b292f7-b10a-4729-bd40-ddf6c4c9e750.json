@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Actual-domain native draft remains unreleased. Final browser evidence uses IAB after relay timeout; all failed tooling/performance probes preserved. Only offscreen carousel images deferred. Physical devices and production inbox not claimed.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "305/305; sites/kvapunaikinimas/SECOND-FIDELITY-2026-10-30.md"
+    },
+    {
+      "command": "npx tsc --noEmit and scoped eslint",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/SECOND-FIDELITY-2026-10-30.md"
+    },
+    {
+      "command": "npm run build and native SEO smoke",
+      "result": "PASS",
+      "evidence": "Two RSC manifests;12 routes; sites/kvapunaikinimas/SECOND-FIDELITY-2026-10-30.md"
+    },
+    {
+      "command": "IAB/CUA responsive,261-fragment,18-expanded-answer and menu confirmation",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/QA-SECOND-FIDELITY-2026-10-30.json"
+    },
+    {
+      "command": "node sites/kvapunaikinimas/verify-local.mjs <own-runtime> <own-evidence>",
+      "result": "PASS",
+      "evidence": "17 mail-disabled native checks; sites/kvapunaikinimas/SECOND-FIDELITY-2026-10-30.md"
+    }
+  ],
+  "eventId": "52b292f7-b10a-4729-bd40-ddf6c4c9e750",
+  "sequence": 2,
+  "at": "2026-10-30T14:19:17.334Z"
+}

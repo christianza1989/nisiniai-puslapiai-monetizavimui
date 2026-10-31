@@ -1,6 +1,8 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {spawn,execFileSync} from 'node:child_process';
+import {request as httpVerificationRequest} from 'node:http';
+import {request as httpsVerificationRequest} from 'node:https';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {catalogFromMarkdown,scoreAudit} from './score-audit.mjs';
@@ -8,6 +10,20 @@ import {catalogFromMarkdown,scoreAudit} from './score-audit.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const arg=(name,args)=>{const i=args.indexOf(name);return i<0?null:args[i+1];};
 const required=(name,args)=>{const v=arg(name,args);if(!v||v.startsWith('--'))throw Error(`Missing ${name}`);return v;};
+// Node fetch does not reliably forward a custom Host on current Node versions.
+// Use the actual wire Host for isolated previews; TLS still authenticates the
+// transport origin, as in the public core's SEO smoke transport.
+export function requestVerificationDocument(target,canonicalHost){
+  return new Promise((resolve,reject)=>{
+    const loopback=isLoopback(target),client=target.protocol==='https:'?httpsVerificationRequest:httpVerificationRequest;
+    const request=client(target,{signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache',...(loopback?{Host:canonicalHost}:{})},...(target.protocol==='https:'?{servername:target.hostname}:{})},response=>{
+      const chunks=[];let bytes=0;
+      response.on('data',chunk=>{bytes+=chunk.length;if(bytes>8*1024*1024){response.destroy(Error('Response exceeds bounded inspector size.'));return;}chunks.push(chunk);});
+      response.on('error',reject);response.on('end',()=>resolve({status:response.statusCode,headers:response.headers,data:Buffer.concat(chunks)}));
+    });
+    request.on('error',reject);request.end();
+  });
+}
 const isLoopback=u=>['127.0.0.1','localhost','[::1]'].includes(u.hostname);
 const urlFor=(pkg,p)=>new URL('/'+p.slug,'https://'+pkg.canonicalHost).href;
 const urlsIn=text=>new Set((text.match(/https?:\/\/[^\s<>\[\]()"']+/g)||[]).map(u=>u.replace(/&amp;/g,'&').split('#')[0]));
@@ -86,11 +102,9 @@ export async function verifySiteCompletion(args){
   if(!pages.some(p=>p.slug===indexSlug))issues.push('NO_PUBLIC_ARTICLE_INDEX');
   if(!pages.some(p=>['guide','article'].includes(p.type)))issues.push('NO_PUBLIC_ARTICLE_TO_INSPECT');
   const get=async pathname=>{
-    const response=await fetch(new URL(pathname,origin),{redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache',...(isLoopback(origin)?{Host:pkg.canonicalHost}:{})}});
-    const data=Buffer.from(await response.arrayBuffer());
-    if(data.length>8*1024*1024)throw Error('Response exceeds bounded inspector size: '+pathname);
-    const receipt={path:pathname,status:response.status,contentType:response.headers.get('content-type')||'',sha256:sha(data)};
-    const header=arg('--package-header',args);if(header&&response.headers.get(header)!==packageSha256)issues.push('HOSTED_PACKAGE_HEADER:'+pathname);
+    const response=await requestVerificationDocument(new URL(pathname,origin),pkg.canonicalHost),data=response.data;
+    const receipt={path:pathname,status:response.status,contentType:response.headers['content-type']||'',sha256:sha(data)};
+    const header=arg('--package-header',args);if(header&&response.headers[header.toLowerCase()]!==packageSha256)issues.push('HOSTED_PACKAGE_HEADER:'+pathname);
     http.push(receipt);return {...receipt,html:data.toString('utf8')};
   };
   const each=async(items,fn)=>{let next=0;await Promise.all(Array.from({length:Math.min(items.length,4)},async()=>{while(next<items.length)await fn(items[next++]);}));};

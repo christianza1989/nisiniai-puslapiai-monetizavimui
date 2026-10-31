@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "All12 live-source/native routes compared at1440/390, reproduced list/empty-space/italic repairs confirmed.110 widgets,388 paragraph boxes,20 images and relative positions pass;18 nonpainted wrapper diagnostics retained and classified. No form POST/additional mail or production. Companion blobs/assets/runtime hashes checked separately.",
+  "checks": [
+    {
+      "command": "node D:/Core/output/kvapunaikinimas-all-pages-20261031/compare-final.mjs",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/ALL-PAGES-2026-10-31.json"
+    },
+    {
+      "command": "node D:/Core/output/kvapunaikinimas-all-pages-20261031/verify-source-replay.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-all-pages-20261031/source-replay.json"
+    },
+    {
+      "command": "npm run test:core; npx tsc --noEmit; scoped eslint; npm run build; canonical-host12-route SEO smoke; actual source/runtime/font/hint checks",
+      "result": "PASS",
+      "evidence": "D:/Core/output/kvapunaikinimas-all-pages-20261031/final-artifacts.json"
+    }
+  ],
+  "eventId": "2faae851-9656-47c7-a4eb-9c39e8a7623d",
+  "sequence": 2,
+  "at": "2026-10-31T06:09:53.244Z"
+}

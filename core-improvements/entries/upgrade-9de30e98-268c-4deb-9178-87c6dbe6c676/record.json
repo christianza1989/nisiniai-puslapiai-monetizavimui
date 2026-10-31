@@ -1,0 +1,27 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Single-site Hostinger build leaks unrelated renderer CSS/client references, requests another site's missing stylesheet, and lacks explicit browser lifetimes for immutable public assets. Preserve the approved renderer while isolating its build entry and versioning unchanged fonts; bound circular image delivery to native 300/500px candidates.",
+  "category": "code",
+  "evidence": [
+    "https://pagespeed.web.dev/analysis/https-kvapunaikinimas-lt/hw5e2j6d5g?form_factor=mobile",
+    "sites/kvapunaikinimas/PERFORMANCE-2026-10-31.md",
+    "PUBLIC baseline09df965c1f2764f7307b5d69194c146c1716f3d2; productionb4a9ebf55294ce17e96db88ec02a8d89f7e19670"
+  ],
+  "paths": [
+    "scripts/export-hostinger.mjs",
+    "app/niche/[siteId]/[[...slug]]/page.tsx",
+    "lib/niche-page-context.ts",
+    "next.config.ts",
+    "lib/hostinger-asset-headers.mjs",
+    "lib/kvapunaikinimas-image-delivery.mjs",
+    "components/niche/kvapunaikinimas-site.tsx",
+    "components/niche/kvapunaikinimas-site.module.css",
+    "docs/HOSTINGER_NODE.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/104",
+  "rollback": "Scoped source revert and rebuild the retained original verified native release; production rollback archive kvapu_20261031_v4.zip and sourceb4a9ebf55294ce17e96db88ec02a8d89f7e19670 retained. Preserve all databases/mail/DNS and existing snapshots.",
+  "id": "upgrade-9de30e98-268c-4deb-9178-87c6dbe6c676",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "46d94ac9cdd243e3125aef4233da9278ae0da9d2",
+  "createdAt": "2026-10-31T12:44:06.600Z"
+}

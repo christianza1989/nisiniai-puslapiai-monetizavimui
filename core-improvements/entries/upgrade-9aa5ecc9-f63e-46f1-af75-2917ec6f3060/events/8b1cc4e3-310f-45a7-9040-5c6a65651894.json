@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Actual.lt remains draft-only. Built-in imagegen edit visually checked in source and640px WebP, then actual1440/390 browser views. No shared renderer change or real mail.",
+  "checks": [
+    {
+      "command": "node sites/kvapunaikinimas/prepare.mjs (actual draft and isolated --fixture)",
+      "result": "PASS",
+      "evidence": "sites/kvapunaikinimas/PLATE-REDACTION-2026-10-30.md"
+    },
+    {
+      "command": "node D:/Core/output/kvapunaikinimas-white-plate-20261030/verify-media.mjs",
+      "result": "PASS",
+      "evidence": "Five new200/SHA/dimension checks; four obsolete404s;12 unchanged text/alt pages and true actual-domain draft gate. See PLATE-REDACTION-2026-10-30.md."
+    },
+    {
+      "command": "npm run build and npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "Production/RSC and12-route native SEO smoke; PLATE-REDACTION-2026-10-30.md"
+    },
+    {
+      "command": "IAB/CUA1440/390 image confirmation",
+      "result": "PASS",
+      "evidence": "Actual new640/360 src selected, blank white plate visible, dimensions and overflow recorded under D:/Core/output/kvapunaikinimas-white-plate-20261030/browser.json"
+    }
+  ],
+  "eventId": "8b1cc4e3-310f-45a7-9040-5c6a65651894",
+  "sequence": 2,
+  "at": "2026-10-30T15:41:33.523Z"
+}

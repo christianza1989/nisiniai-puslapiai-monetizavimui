@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Exact companion draft104 head verified; deployed runtime b4a9ebf5, latest09df965c documentation-only delta. Production/inbox verified; no merge.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/104",
+  "commit": "09df965c1f2764f7307b5d69194c146c1716f3d2",
+  "eventId": "79378529-8dfa-4065-8e61-7db643fce526",
+  "sequence": 3,
+  "at": "2026-10-31T08:36:52.862Z"
+}

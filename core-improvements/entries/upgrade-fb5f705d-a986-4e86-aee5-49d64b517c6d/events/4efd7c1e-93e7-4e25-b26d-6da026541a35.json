@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Exact private draft305 source head verified. Production Node target, native release, rollback and owner-confirmed test receipt recorded; no merge.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/305",
+  "commit": "43814a9cd87994e08a4cad6972bcec6bb8f0e089",
+  "eventId": "4efd7c1e-93e7-4e25-b26d-6da026541a35",
+  "sequence": 3,
+  "at": "2026-10-31T08:36:59.249Z"
+}

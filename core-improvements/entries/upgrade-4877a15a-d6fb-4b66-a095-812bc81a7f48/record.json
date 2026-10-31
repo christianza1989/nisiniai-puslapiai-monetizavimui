@@ -1,0 +1,22 @@
+{
+  "siteId": "kvapunaikinimas",
+  "evidence": [
+    "sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.md",
+    "sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.json"
+  ],
+  "rollback": "Scoped revert of the background preference rule only; keep original bitmap, native content, white plate and immutable evidence.",
+  "category": "workflow",
+  "summary": "Require actual ambient media-preference and same-viewport scroll evidence for incumbent homepage backgrounds; earlier forced no-preference/full-page captures missed the crop regression.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/301",
+  "paths": [
+    "WORKSTREAMS.md",
+    "sites/kvapunaikinimas/DESIGN.md",
+    "sites/kvapunaikinimas/CORE_FEEDBACK.md",
+    "sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.md",
+    "sites/kvapunaikinimas/HOME-BACKGROUND-2026-10-30.json"
+  ],
+  "id": "upgrade-4877a15a-d6fb-4b66-a095-812bc81a7f48",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "bb1eb609b6db5cb7d37d7ab605fa58058971f9b2",
+  "createdAt": "2026-10-30T16:15:22.436Z"
+}

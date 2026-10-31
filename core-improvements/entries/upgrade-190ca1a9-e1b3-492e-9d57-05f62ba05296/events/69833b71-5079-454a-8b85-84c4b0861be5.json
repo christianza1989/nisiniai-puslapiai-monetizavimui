@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Exact open draft companion source head verified after push; six committed PUBLIC blobs checked against tested source, runtime and served fonts independently of the private coverage checker. Source/native spacing and real italic/hints verified at1440/390. No production/main merge, .lt release or additional mail.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/104",
+  "commit": "3263bc78c51be4f53c829d52aa08c6fe30d7c516",
+  "eventId": "69833b71-5079-454a-8b85-84c4b0861be5",
+  "sequence": 3,
+  "at": "2026-10-31T06:13:51.249Z"
+}

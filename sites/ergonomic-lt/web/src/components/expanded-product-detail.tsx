@@ -28,6 +28,7 @@ import {expandedProductCardPath} from '@/lib/expanded-product-card-path';
 import {armrestChoiceLabel,armrestFieldLabel,armrestSourceText,presentArmrestConfiguration,safeArmrestFallback} from '@/presentation/armrest-labels';
 import {deskColorPlan,DESK_COLOR_PENDING} from '@/lib/desk-colors';
 import {hasAssemblyGeometry} from '@/lib/viewer-assembly';
+import {legacyChairMaterialControls,chairFinishRoles,type LegacyChairRoleProof} from '@/lib/chair-material-groups';
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export default function ExpandedProductDetail({product,url,presets,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage}:{product:Product;url:string;presets:ReactNode;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string}){
  const engine=useMemo(()=>createExpandedEngine(catalogRuntime),[catalogRuntime]);
@@ -45,6 +46,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const [customized,setCustomized]=useState(initialCustomized);
  const [selection,setSelection]=useState<ExpandedState>(()=>initialConfiguration||initialStateForProduct(product)),[photo,setPhoto]=useState(!builderFirstPreview&&!!product.modelConfigurationId&&!configurableArticle(product)),[presetMode,setPresetMode]=useState(false),[quantity,setQuantity]=useState(1),[added,setAdded]=useState(false),[message,setMessage]=useState(configurationMessage||'');
  const [fullscreen,setFullscreen]=useState(false),workspace=useRef<HTMLDivElement>(null),closeButton=useRef<HTMLButtonElement>(null);
+ const [chairRoleProof,setChairRoleProof]=useState<LegacyChairRoleProof>(),[originalMaterials,setOriginalMaterials]=useState(false);
  const returnFocus=useRef<HTMLElement|null>(null),returnScroll=useRef(0),nativeFullscreen=useRef(false);
  const {items,add}=useQuote();
  async function openFullscreen(){returnFocus.current=document.activeElement as HTMLElement;returnScroll.current=window.scrollY;setFullscreen(true);
@@ -64,6 +66,11 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const presentedConfiguration=presentArmrestConfiguration(selected.configuration,selection.values,catalogRuntime?.palettes._fieldLabels?.CARMRESTS?.text);
  const fieldLabels:Record<string,string>={...baseFieldLabels,...Object.fromEntries(Object.entries(catalogRuntime?.palettes._fieldLabels||{}).map(([key,label])=>[key,label.text])),...articleFieldLabels(product),...(armrestFieldLabel(selected.configuration.code)?{CARMRESTS:armrestFieldLabel(selected.configuration.code)!}:{})};
  const choices=stateChoices(selection);
+ const chairMaterials=useMemo(()=>product.categorySlug==='kedes'&&!structureOnly?legacyChairMaterialControls({state:selection,proof:chairRoleProof,
+  assets:[...(selected.assets.base?[selected.assets.base]:[]),...selected.assets.patches.flatMap(p=>p.geometries||(p.geometry?[p.geometry]:[]))],
+  choices:stateChoices,change:changeField,values:engine.stateValues}):[],[selection,chairRoleProof,product,structureOnly,selected.assets,engine]);
+ const hiddenChairFields=new Set(chairMaterials.flatMap(c=>c.hiddenFields));
+ const displayChoices={...Object.fromEntries(Object.entries(choices).filter(([k])=>!hiddenChairFields.has(k))),...Object.fromEntries(chairMaterials.map(c=>[c.id,c.options.map(o=>o.id)]))};
  const interactive=Object.keys(choices).length>0;
  const article=engine.selectionArticle(product,selected.state);
  const summaryDetails=product.id.includes('xilium-swivel')?presentedConfiguration.details?.filter(d=>['Mechanizmas','Galvos atrama','Porankiai','Pagrindas','Ratukai'].includes(d.label)):presentedConfiguration.details?.slice(0,4);
@@ -74,17 +81,28 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
   // Literal structure-only assets already contain the complete measured PBR
   // materials. Recolouring them through a generic palette would change proof.
   const desk=deskColors?{source:deskColors,plan:deskColorPlan(deskColors,selection.values,[...(selected.assets.base?[selected.assets.base]:[]),...selected.assets.patches.flatMap(p=>p.geometries||(p.geometry?[p.geometry]:[]))])}:undefined;
-  return {...selected.assets,deskColors:desk,finishes:structureOnly?{}:Object.fromEntries(Object.entries(values).map(([k,v])=>[k,{...palettes[k]?.[v],material:activeMaterials?.[k]?.[v],code:v,group:values[finishGroup[k]]||(k==='CUPHSEATCOLOR'?values.CSEATUPHGROUP:k==='CUPHCOLOR'?values.CUPHGROUP:k==='CHEADRESTUPHCOLOR'?values.CHEADRESTUPHGROUP:undefined)}]))};
- },[selected,palettes,activeMaterials,structureOnly,deskColors,selection.values]);
+  return {...selected.assets,deskColors:desk,finishes:structureOnly||originalMaterials?{}:Object.fromEntries(Object.entries(values).map(([k,v])=>[k,{...palettes[k]?.[v],material:activeMaterials?.[k]?.[v],code:v,group:values[finishGroup[k]]||(k==='CUPHSEATCOLOR'?values.CSEATUPHGROUP:k==='CUPHCOLOR'?values.CUPHGROUP:k==='CHEADRESTUPHCOLOR'?values.CHEADRESTUPHGROUP:undefined)}]))};
+ },[selected,palettes,activeMaterials,structureOnly,deskColors,selection.values,originalMaterials]);
  const variant={...selected.variant,...selected.assets.base} as PilotVariant;
  const token=stateToken(selection);
  const pdf=expandedProductCardPath(product,token,!!article);
  const quote=expandedQuoteEntry(product,presentedConfiguration,selection,{url,model,customized,quantity,choiceLabel});
  function change(field:string,value:string){try{setSelection(changeField(selection,field,value));setCustomized(true);setAdded(false);setMessage('');setPhoto(false);}catch{setMessage(copyText("ui.9382165cbfa58b82bfc9","Šis pasirinkimas negalimas su dabartine konstrukcija. Rinkitės kitą variantą."));}}
- function field(k:string){const value=selection.values[k],color=!!deskColors?.fields[k]||/COLOR|CHCOL/.test(k);
+ function field(k:string){
+  const material=chairMaterials.find(c=>c.id===k);
+  if(material)return <div key={k} className="configuration-field" data-chair-material={material.id} data-chair-material-fields={material.fields.join(',')} data-chair-material-value={material.value}>
+   {material.options.length?<FinishSelect label={material.label} value={material.value} options={[
+    ...(!material.value?[{value:'',label:'Pradinės dalių spalvos'}]:[]),
+    ...material.options.map(o=>({value:o.id,label:[o.collection&&choiceLabel(material.hiddenFields.find(f=>f.endsWith('GROUP'))||'',o.collection),o.code].filter(Boolean).join(' · '),image:renderMaterial({code:o.code}).image}))
+   ]} onChange={id=>{const o=material.options.find(o=>o.id===id);if(!o)return;setSelection(o.state);setOriginalMaterials(false);setCustomized(true);setAdded(false);setMessage('');setPhoto(false);}}/>:
+   <label className="field">{material.label}<select disabled aria-label={material.label}><option>Spalvos pasirinkimas neprieinamas</option></select></label>}
+   {material.reason&&<p className="form-note">{material.reason}</p>}
+  </div>;
+  const value=selection.values[k],color=!!deskColors?.fields[k]||/COLOR|CHCOL/.test(k);
   const label=fieldLabels[k]||k;
-  const textOnly=catalogAnchor(selection)?.textOnlyFields?.includes(k),noteId=textOnly?'desk-text-only-'+k:undefined;
-  if(color&&!k.startsWith('CPLASTIC'))return <FinishSelect key={k} label={label} value={value} onChange={v=>change(k,v)} options={choices[k].map(v=>({value:v,label:choiceLabel(k,v),image:activeMaterials?.[k]?.[v]?.image||palettes[k]?.[v]?.image||(deskColors?undefined:renderMaterial({code:v}).image),color:palettes[k]?.[v]?.color}))}/>;
+  const unboundChairColor=product.categorySlug==='kedes'&&!structureOnly&&color&&!/^(?:CPLASTIC|CFRAME)/.test(k)&&!chairFinishRoles[k];
+  const textOnly=catalogAnchor(selection)?.textOnlyFields?.includes(k)||unboundChairColor,noteId=textOnly?'desk-text-only-'+k:undefined;
+  if(color&&!k.startsWith('CPLASTIC')&&!unboundChairColor)return <FinishSelect key={k} label={label} value={value} onChange={v=>change(k,v)} options={choices[k].map(v=>({value:v,label:choiceLabel(k,v),image:activeMaterials?.[k]?.[v]?.image||palettes[k]?.[v]?.image||(deskColors?undefined:renderMaterial({code:v}).image),color:palettes[k]?.[v]?.color}))}/>;
   return <div key={k} className="configuration-field"><label className="field">{label}
    <select value={value} aria-describedby={noteId} onChange={e=>change(k,e.target.value)}>{choices[k].map(v=><option key={v} value={v} title={k==='CARMRESTS'?armrestSourceText(selected.configuration.code,v):undefined}>{choiceLabel(k,v)}</option>)}</select></label>
    {textOnly&&<p id={noteId} className="form-note">Pasirinkimas įrašomas į specifikaciją. 3D vaizde lieka gamintojo pradinis variantas.</p>}
@@ -98,15 +116,17 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  </>;
  const gallery=<div key="gallery" className="gallery">
   <div className="product-view-switch" role="group" aria-label={copyText("ui.b9442465d0b687df4540","Produkto peržiūra")}><button aria-pressed={!photo} onClick={()=>setPhoto(false)}>{copyText("ui.f8e94106288faa882ee7","3D konfigūratorius")}</button><button aria-pressed={photo} onClick={()=>setPhoto(true)}>{copyText("ui.12ef5d8d56f194f5cbd4","Nuotraukos")}</button></div>
-  {photo?<ProductGallery key={model?.id||selected.configuration.id} primary={product.modelConfigurationId?product.image:selected.configuration.image} images={(model||product.configurations.find(c=>c.id===selected.configuration.id))?.gallery||[]} name={product.name} specificCount={product.modelGalleryCount} backdrops={product.galleryBackdrops}/>:hasAssemblyGeometry(assembly)?<Viewer3D variant={variant} name={product.name} assembly={assembly} fullscreen={fullscreen} onFullscreen={()=>void openFullscreen()} avoidToolbarOverlap={product.categorySlug==='rasomieji-stalai-ir-darbo-vietos'}/>:<div className="viewer-placeholder" role="status">{catalogAnchor(selection)?.unavailable3D||'3D peržiūra šiam dydžiui neprieinama'}</div>}
+  {photo?<ProductGallery key={model?.id||selected.configuration.id} primary={product.modelConfigurationId?product.image:selected.configuration.image} images={(model||product.configurations.find(c=>c.id===selected.configuration.id))?.gallery||[]} name={product.name} specificCount={product.modelGalleryCount} backdrops={product.galleryBackdrops}/>:hasAssemblyGeometry(assembly)?<Viewer3D variant={variant} name={product.name} assembly={assembly} onChairRoles={product.categorySlug==='kedes'&&!structureOnly?setChairRoleProof:undefined} fullscreen={fullscreen} onFullscreen={()=>void openFullscreen()} avoidToolbarOverlap={product.categorySlug==='rasomieji-stalai-ir-darbo-vietos'}/>:<div className="viewer-placeholder" role="status">{catalogAnchor(selection)?.unavailable3D||'3D peržiūra šiam dydžiui neprieinama'}</div>}
   <p className="visualization-note">{structureOnly&&!deskColors?'Rodoma šio varianto apdaila. Dėl kitų spalvų teiraukitės.':copyText("ui.1f86445eb42b83be0ee5","Spalvos ekrane orientacinės. Nuotrauka — modelio pavyzdys; individualią komplektaciją žymi jūsų pasirinkimai.")}</p>
   {!!assembly.deskColors?.plan.pending.length&&<p className="form-note" role="status">{DESK_COLOR_PENDING}</p>}
   {photo&&article&&<p className="visualization-note">{article.photoNote}</p>}
   {missingFinish&&<p className="form-note" role="status">{copyText("ui.3d2d0a1dccfd3cf4986c","Gamintojas nepateikia pasirinktos apdailos vaizdo. Jos spalvą patvirtinsime pasiūlyme; pasirinktas kodas išsaugomas užklausoje.")}</p>}
+  {!!chairMaterials.length&&<label className="consent"><input type="checkbox" checked={originalMaterials} onChange={e=>setOriginalMaterials(e.target.checked)}/><span>Rodyti originalias modelio medžiagas</span></label>}
+  {originalMaterials&&<p className="form-note" role="status">Rodomos originalios 3D modelio medžiagos. Užklausos pasirinkimai išsaugoti.</p>}
   {message&&<p className="configuration-status" role="status">{message}</p>}
   {article&&!builderFirstPreview&&!!summaryDetails?.length&&<div className="duo-live-summary"><p>Jūsų pasirinkimai</p><dl>{summaryDetails.map(d=><div key={d.label}><dt>{d.label}</dt><dd>{d.value}</dd></div>)}</dl></div>}
  </div>;
- const productInfo=<div key="product-info" className="product-info">{article||builderFirstPreview?<DuoBackBuilder finishFields={Object.keys(deskColors?.fields||{})} preview={builderFirstPreview?gallery:undefined} studio={builderFirstPreview} heading={builderFirstPreview?'Susikomplektuokite savo norimą kėdę su 3D konfigūratoriumi':undefined} extraControls={catalog&&catalog.articles.length>1?<label className="field studio-model-picker">{copyText("ui.40ae815c6fd93bd1128a","Kėdės modelis")}<select value={catalogAnchor(selection)?.article} onChange={e=>{setSelection(catalogInitial(catalog,e.target.value));setAdded(false);setMessage(copyText("ui.ced1e103d19ade62c867","Pasirinktas kitas kėdės modelis."));}}>{catalog.articles.map(a=><option key={a.code} value={a.code}>{a.name} · {a.code}</option>)}</select></label>:undefined} product={product} state={selected.state} choices={choices} article={article} control={field} actions={actions} details={presentedConfiguration.details||[]}/>:<><h1>{product.publicHeading||product.name}</h1><p className="product-description">{product.description}</p><p className="price-note">{copyText("ui.7712573f04829fa4cead","Kaina pagal pasirinktą komplektaciją")}</p>
+ const productInfo=<div key="product-info" className="product-info">{article||builderFirstPreview?<DuoBackBuilder finishFields={[...Object.keys(deskColors?.fields||{}),...chairMaterials.map(c=>c.id)]} preview={builderFirstPreview?gallery:undefined} studio={builderFirstPreview} heading={builderFirstPreview?'Susikomplektuokite savo norimą kėdę su 3D konfigūratoriumi':undefined} extraControls={catalog&&catalog.articles.length>1?<label className="field studio-model-picker">{copyText("ui.40ae815c6fd93bd1128a","Kėdės modelis")}<select value={catalogAnchor(selection)?.article} onChange={e=>{setSelection(catalogInitial(catalog,e.target.value));setAdded(false);setMessage(copyText("ui.ced1e103d19ade62c867","Pasirinktas kitas kėdės modelis."));}}>{catalog.articles.map(a=><option key={a.code} value={a.code}>{a.name} · {a.code}</option>)}</select></label>:undefined} product={product} state={selected.state} choices={displayChoices} article={article} control={field} actions={actions} details={presentedConfiguration.details||[]}/>:<><h1>{product.publicHeading||product.name}</h1><p className="product-description">{product.description}</p><p className="price-note">{copyText("ui.7712573f04829fa4cead","Kaina pagal pasirinktą komplektaciją")}</p>
   {catalog&&catalog.articles.length>1&&<label className="field">{copyText("ui.40ae815c6fd93bd1128a","Kėdės modelis")}<select value={catalogAnchor(selection)?.article} onChange={e=>{setSelection(catalogInitial(catalog,e.target.value));setAdded(false);setMessage(copyText("ui.ced1e103d19ade62c867","Pasirinktas kitas kėdės modelis."));}}>{catalog.articles.map(a=><option key={a.code} value={a.code}>{a.name} · {a.code}</option>)}</select></label>}
   {model&&<p className="configuration-model">{customized?copyText("ui.3dad75de298a208bae2c","Individuali šio modelio komplektacija"):copyText("ui.b549610f5be9e81ec852","Pasirinktas gamintojo pavyzdys")} · {model.code}</p>}<p className="configuration-model">{catalog?catalogAnchor(selection)?.name:family.id==='xilium'?copyText("ui.682d34e4afb5e79cfa12","Duo-Back atlošas"):copyText("ui.63098d690dc9fb73bce7","Tinklinis atlošas")} · {selected.configuration.code}</p>
   {!article&&<><details className="configuration-section" open><summary>{copyText("ui.00e28775dffa5860871b","Konstrukcija ir funkcijos")}</summary><div className="configuration-grid">{Object.keys(choices).filter(k=>!k.includes('GROUP')&&!/COLOR|CHCOL/.test(k)||k.startsWith('CPLASTIC')).map(field)}</div></details>

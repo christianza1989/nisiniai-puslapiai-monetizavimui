@@ -1,0 +1,760 @@
+{
+  "at": "2026-10-31T05:37:40.950Z",
+  "sourceBase": "483220d31c721f2f3d7314beb332d735a1dba307",
+  "coreMain": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "companionMain": "c2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da",
+  "newVariantsCreated": 0,
+  "NativeAllowed": false,
+  "productionApproved": false,
+  "pc2": [
+    {
+      "code": "KLYN002WW002",
+      "version": "colors-20261028-v3-witness-qualified449",
+      "reviewSha256": "a5bd8d0b50467058d5c23c3be33dc5f8dab3de71bec9a378326389a73ff43baf",
+      "schema": "chair-colors-full-state-329-v1",
+      "selectorAssets": 1,
+      "controls": [],
+      "retainedFullStateOrPairs": 97,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KLYN001WW002",
+      "version": "colors-20261028-v3-witness-qualified449",
+      "reviewSha256": "ccbc248c976d7a9c6b120f1a8640d974a541841e1d00a2dcbd6dcc93b44994c9",
+      "schema": "chair-colors-full-state-329-v1",
+      "selectorAssets": 1,
+      "controls": [],
+      "retainedFullStateOrPairs": 97,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KTRF001WW001",
+      "version": "colors-20261028-v2-runtime-qualified441",
+      "reviewSha256": "7cd7e4d3c52b01a7111c47909366af79de4e420d8f7cc8d31c95723f804b6cc7",
+      "schema": "chair-colors-full-state-329-v1",
+      "selectorAssets": 1,
+      "controls": [],
+      "retainedFullStateOrPairs": 3,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KSOU001WW003",
+      "version": "base",
+      "reviewSha256": "57fb82e30272eb74c9b85901b1a4c470349b429e9d8373b3cddc2f9bb2ccb20b",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 32,
+      "controls": [],
+      "retainedFullStateOrPairs": 5,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KNAU017WW001",
+      "version": "base",
+      "reviewSha256": "7c822e266d9c82a1b3b3608b7d6a4e19a90f3c277554335b94e9a501ae6187d7",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 2,
+      "controls": [],
+      "retainedFullStateOrPairs": 7,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KNAU018WW001",
+      "version": "base",
+      "reviewSha256": "c42de666c435f144747bddf0b3fa36a8b14edcf9a45ee73ff3eecdc505ee07ea",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 2,
+      "controls": [],
+      "retainedFullStateOrPairs": 8,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KNXT001WW002",
+      "version": "base",
+      "reviewSha256": "213f59e5fd714ec1e3a3c66b3d18873931e737984da0798d04ad3c080082db3f",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 10,
+      "controls": [],
+      "retainedFullStateOrPairs": 3,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KWI2001WW001",
+      "version": "colors-20261027-v4-group-library-WI2-353",
+      "reviewSha256": "9e11cc5e544e3cf63fc977d66b4b1a10ac00c43d82088eae34ac6ae759220db4",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 15,
+      "controls": [],
+      "retainedFullStateOrPairs": 6,
+      "retainedWholeQualifiedStates": 86,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KWI2003WW001",
+      "version": "colors-20261027-v4-group-library-WI2-353",
+      "reviewSha256": "e70f18984f10b329f4ca2c3e4f70d37d50beb65a1b11f942b888ec47d6666f39",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 3,
+      "controls": [],
+      "retainedFullStateOrPairs": 6,
+      "retainedWholeQualifiedStates": 85,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KWI2003WW002",
+      "version": "colors-20261028-v5-two-group-witnesses438",
+      "reviewSha256": "68bddefc7a9eb45f5fa9831894d4b73f836d65c35452289fdbb3ba5dab3bfaef",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 3,
+      "controls": [
+        {
+          "witness": "38d244a153a8774c8acc5b0c6d96019df7285b38a71ed6a179f357f5c9bd8a0a",
+          "controls": [
+            {
+              "label": "Gobelenas",
+              "fields": [
+                "CUPHCOLOR"
+              ],
+              "options": 763
+            }
+          ],
+          "remainingWholeGroups": 2
+        },
+        {
+          "witness": "9c8b03badc6cbb270e8070f4df71610d0f4cb93d0921767a023e0e82a59857fc",
+          "controls": [],
+          "remainingWholeGroups": 2
+        }
+      ],
+      "retainedFullStateOrPairs": 6,
+      "retainedWholeQualifiedStates": 3090,
+      "status": "GROUPED_ADMITTED_OPTIONS"
+    },
+    {
+      "code": "KXEN032WW001",
+      "version": "base",
+      "reviewSha256": "6514cd5688e4d1affc8cb0c2d39c7930931631d89eaf8677a5814a84993b41a9",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 24,
+      "controls": [],
+      "retainedFullStateOrPairs": 9,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KXEN033WW003",
+      "version": "base",
+      "reviewSha256": "6f7a37538a825f7500c454b78a12e6e8e3f10c4ce63e9ba2df9cfe9167319386",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 15,
+      "controls": [],
+      "retainedFullStateOrPairs": 5,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KYOU002WW001",
+      "version": "colors-20261028-v3-library-you444",
+      "reviewSha256": "11373d27aca2fcbb5485a2bf345c5c19fde2ed12c27cf4d1ab1fbb4aa6089922",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 24,
+      "controls": [],
+      "retainedFullStateOrPairs": 4,
+      "retainedWholeQualifiedStates": 13,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KYOU001WW001",
+      "version": "colors-20261028-v7-conditional-you385",
+      "reviewSha256": "825307551e646f33d4a285febbce6daf1f5207485fba18ae8eb8c90c502a5e06",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 30,
+      "controls": [
+        {
+          "witness": "da9383a663ca10e9dcc6cd72d22af3450696306db0f03184bd7102a96f25cf2b",
+          "controls": [
+            {
+              "label": "Gobelenas",
+              "fields": [
+                "CUPHSEATCOLOR",
+                "CUPHBACKCOLOR"
+              ],
+              "options": 77
+            }
+          ],
+          "remainingWholeGroups": 1
+        }
+      ],
+      "retainedFullStateOrPairs": 6,
+      "retainedWholeQualifiedStates": 0,
+      "status": "GROUPED_ADMITTED_OPTIONS"
+    },
+    {
+      "code": "KYOU002WW002",
+      "version": "colors-20261028-v3-library-you444",
+      "reviewSha256": "ffe11198fdbb4879bef28145cc991b4b38c27325a950febec26ed7755a50fcc6",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 36,
+      "controls": [],
+      "retainedFullStateOrPairs": 4,
+      "retainedWholeQualifiedStates": 13,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KWI2006WW001",
+      "version": "colors-20261027-v4-group-library-WI2-353",
+      "reviewSha256": "30ba63059fab83f711454f4b194419a468e5929ca712b32ad6e12035fb926d31",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 12,
+      "controls": [],
+      "retainedFullStateOrPairs": 4,
+      "retainedWholeQualifiedStates": 71,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KWI2011WW001",
+      "version": "colors-20261027-v5-frame-bench357",
+      "reviewSha256": "adb24229907c330230fb7e9f1b3c92ec2f01b096c5b100fcd9deb351576b52c9",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 12,
+      "controls": [],
+      "retainedFullStateOrPairs": 2,
+      "retainedWholeQualifiedStates": 9,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KYOU001WW003",
+      "version": "colors-20261028-v3-library-you444",
+      "reviewSha256": "ca50b4f42534f53b654fe7073754041a601c1cd3ada505c58fd6592f50ea9539",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 24,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 44,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KZBO004WW001",
+      "version": "base",
+      "reviewSha256": "89dba3cd80fce6335876050c6b73b997a6868df1c2c2ae267f26a61c6367b5a9",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 10,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KHOL001WW002",
+      "version": "base",
+      "reviewSha256": "bc79fa192cb7d86c90273f7f426695806c60ce9c11f06b56b2ec3d312091d13f",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 8,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KWI2005WW001",
+      "version": "colors-20261028-v6-saved-own-parts373",
+      "reviewSha256": "7217b2ff1d190302f413fc1ebc74116820b793a932bdfae0894409cec56a410d",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 9,
+      "controls": [],
+      "retainedFullStateOrPairs": 4,
+      "retainedWholeQualifiedStates": 15,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KVAP008WW001",
+      "version": "colors-20261028-v6-saved-own-parts373",
+      "reviewSha256": "9d490a7e305b17b2aa36ba5fb487c04c246f81ea274f1ffc6a7a7b4ac46abba0",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 30,
+      "controls": [],
+      "retainedFullStateOrPairs": 6,
+      "retainedWholeQualifiedStates": 1,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KUTI004WW002",
+      "version": "base",
+      "reviewSha256": "5b4a92b4a3cedb2b8f6fcd60bca89d995828d63c37e6b02e8f77b1513887c5e9",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KUTI004WW001",
+      "version": "base",
+      "reviewSha256": "b5f32b8a311600730224da99639ecfc9558dac08d782ef3da31ebd6e4df3c02f",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KNAV001WW006",
+      "version": "base",
+      "reviewSha256": "0d8eff6ce9dede5737289dff98b29358514171c77ab09a9f59cea807fb9a8e3e",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KUTI001WW002",
+      "version": "base",
+      "reviewSha256": "e349dd64aa7c8a8ff5db6bd21c4ffd209dcdcec9ec2e4c55afc5407c0356409e",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KXEN034WW001",
+      "version": "base",
+      "reviewSha256": "bc2bedf2544230b43da6d047acbc698bbd6240f612783c500d0e20637b7b293e",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "K2ME001WW002",
+      "version": "base",
+      "reviewSha256": "a9567566700233c703353f50500d42c8848a95b62d8642d13bb3dbf14fc6cef6",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "K2ME003WW001",
+      "version": "colors-20261028-v2-own-saved-part452",
+      "reviewSha256": "b4582d69917195389f036ed09d0b892fc53586f4922e9f6738813387dadab9de",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "K2ME003WW002",
+      "version": "base",
+      "reviewSha256": "9a4568a51cc03f530493eef31dd66d96ba67cc23af6b4c62f072edac4cb8a095",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "K2ME004WW004",
+      "version": "base",
+      "reviewSha256": "fe885cddd6ee740f139b8e6cc02ac830ccb6cc0aa64dfd22d3971037c1e9330a",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "K4ME001WW003",
+      "version": "base",
+      "reviewSha256": "bb196222e475537120c126c5fa341b35c8e9ab287f010066a93f299aedff8272",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "K4ME002WW004",
+      "version": "base",
+      "reviewSha256": "63b59b1429467143a5ad5a1ad526b962661adee008018cbb18316713d3e3de01",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KAII001WW001",
+      "version": "colors-20261028-v9-fixed-finish406",
+      "reviewSha256": "041550b1c1f6aea924117f85eaef92221c40eefc2d40568487bc2bbf1b6c699b",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "FIXED_DECLARED_SOURCE_FINISHES"
+    },
+    {
+      "code": "KAII001WW002",
+      "version": "colors-20261028-v9-fixed-finish406",
+      "reviewSha256": "1e51799188462166d002457bd50e053b4d94de43a9f1740aa1b5861b18a7d0b0",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "FIXED_DECLARED_SOURCE_FINISHES"
+    },
+    {
+      "code": "KAII001WW003",
+      "version": "colors-20261028-v9-fixed-finish406",
+      "reviewSha256": "056edeb1c2b9ef19c58a23941ec9e2a04dbed29f3f56bad90dd963a7dd0ef312",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "FIXED_DECLARED_SOURCE_FINISHES"
+    },
+    {
+      "code": "KAII001WW004",
+      "version": "colors-20261028-v9-fixed-finish406",
+      "reviewSha256": "e7f1e33417178dbd9b726a2dc6d975af463de2833626f97871d0d6625a69d62c",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "FIXED_DECLARED_SOURCE_FINISHES"
+    },
+    {
+      "code": "KALT001WW002",
+      "version": "base",
+      "reviewSha256": "b877ff9195657652fcbf8048e1d222a50efd98283f189312122f9cb85d898a15",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KARN008WW003",
+      "version": "colors-20261028-v8-two-witnesses397",
+      "reviewSha256": "88a1c959b7c2032204fe29a4968191aa32a3754ab11e5a241fa7a45789a5746a",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KBJA003WW002",
+      "version": "base",
+      "reviewSha256": "49dac4cd0a0d3e1302c11fc94a01937691fe8cb6e26df482615a92889d6444e9",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KBJA002WW002",
+      "version": "base",
+      "reviewSha256": "771b84d9868d71273084fea8e7906b2b6edaa34876c5d9e6adb8c2320e99246b",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KBJA001WW002",
+      "version": "base",
+      "reviewSha256": "7cf173389d6b44a3a8ab0356060f813ba6a40381323512563d7550226da387ab",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KEGG001WW001",
+      "version": "base",
+      "reviewSha256": "606d4b34aff83e358052fb9162e4e54a4b98e59836244a51c4b89331e46926d2",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KXLI001WW002",
+      "version": "base",
+      "reviewSha256": "5d3d527c9da494875629ee31faf99c6f4d0fa5fc7232f19ce91879924342105b",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KSAI008WW002",
+      "version": "base",
+      "reviewSha256": "2abc23a5fbd6cdfe7237e2271bab4f4e11c2e21548fe8e473a0fd521921b3004",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KXEN035WW001",
+      "version": "base",
+      "reviewSha256": "922ae5c9aa1356c3497c365cf1e31ba4aa4689ec487db2f72da2f2e8c9a2f532",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KXEN028WW001",
+      "version": "base",
+      "reviewSha256": "c5453f8f7b4fcee5d7608425e1ca937269f76b22d8d1b71a062c7304fd234578",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KXLI002WW002",
+      "version": "base",
+      "reviewSha256": "a67a26052db6840c48f36871eede46c1eec69eedb9b22d656c03eca48226b4b1",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KSAI001WW002",
+      "version": "base",
+      "reviewSha256": "e147be535e6a10501728cad0a39ab3afa4cc274cf61cc1ebcadc4dd5cd7ba23e",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KNXT002WW002",
+      "version": "base+lossless-20261030-v1",
+      "reviewSha256": "7e625b02321fc5d4997e03689036ce36ea320fea54cf277ded64f07103058693",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 9,
+      "controls": [],
+      "retainedFullStateOrPairs": 3,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KPOX002WW002",
+      "version": "base+lossless-20261030-v1",
+      "reviewSha256": "06880c79f8bbc0efb7c7aad9e5dca23cd86187fafc2b638ea05377bdca67b523",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 12,
+      "controls": [],
+      "retainedFullStateOrPairs": 6,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KPOX002WW001",
+      "version": "base+lossless-20261030-v1",
+      "reviewSha256": "9b54388aca185274076cfb851986fee0aacd32ad80b547432a6818f85d752eed",
+      "schema": "chair-colors-observed-partial-344-v1",
+      "selectorAssets": 5,
+      "controls": [],
+      "retainedFullStateOrPairs": 4,
+      "retainedWholeQualifiedStates": 0,
+      "status": "WHOLE_OBSERVED_STATES_ONLY"
+    },
+    {
+      "code": "KJUP001WW002",
+      "version": "base+lossless-20261030-v1",
+      "reviewSha256": "06f2ec88780809099c845284eccfa54fd4d8e65c6c25ff49db759fe8aff2385e",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    },
+    {
+      "code": "KUTI005WW001",
+      "version": "base+lossless-20261030-v1",
+      "reviewSha256": "7015a0c470f9734d904763421b21844105274ee0fa38ca038e2ea36cb57dafdd",
+      "schema": "chair-base-observed-colours-v1",
+      "selectorAssets": 0,
+      "controls": [],
+      "retainedFullStateOrPairs": 0,
+      "retainedWholeQualifiedStates": 0,
+      "status": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS"
+    }
+  ],
+  "legacyFamilies": [
+    {
+      "family": "4me",
+      "baseArticle": "K4ME002WW004",
+      "anchors": 2,
+      "fields": [
+        "CMESHCOLOR",
+        "CUPHCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "altum",
+      "baseArticle": "KALT001WW002",
+      "anchors": 2,
+      "fields": [
+        "CMESHCOLOR",
+        "CUPHCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "bjarg",
+      "baseArticle": "KBJA003WW002",
+      "anchors": 4,
+      "fields": [
+        "CUPHCOLOR",
+        "CHEADRESTUPHCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "eggy",
+      "baseArticle": "KEGG001WW001",
+      "anchors": 2,
+      "fields": [
+        "CMESHCOLOR",
+        "CUPHCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "jupiter",
+      "baseArticle": "KJUP001WW002",
+      "anchors": 1,
+      "fields": [
+        "CUPHCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "trofi",
+      "baseArticle": "KTRF001WW001",
+      "anchors": 1,
+      "fields": [
+        "CUPHSEATCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "z-body",
+      "baseArticle": "KZBO004WW001",
+      "anchors": 2,
+      "fields": [
+        "CUPHSEATCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "lynx",
+      "baseArticle": "KLYN002WW002",
+      "anchors": 2,
+      "fields": [
+        "CUPHCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "nexter",
+      "baseArticle": "KNXT001WW002",
+      "anchors": 2,
+      "fields": [
+        "CUPHCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "prox",
+      "baseArticle": "KPOX002WW002",
+      "anchors": 2,
+      "fields": [
+        "C3DBACKRESTMESHCOLOR",
+        "CUPHSEATCOLOR",
+        "CHEADRESTUPHCHCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "xilium",
+      "baseArticle": "KXIL044WW001",
+      "anchors": 4,
+      "fields": [
+        "CUPHBACKRESTCOLOR",
+        "CUPHSEATCOLOR",
+        "CSEBASIDEPROFILUPHCOLOR",
+        "CHEADRESTUPHCHCOLOR",
+        "CHEADSIDEPROFUPHCHCOL"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    },
+    {
+      "family": "souly",
+      "baseArticle": "KSOU001WW003",
+      "anchors": 4,
+      "fields": [
+        "CMESHCOLOR",
+        "CUPHCOLOR"
+      ],
+      "admission": "Runtime controls require a fresh own SHA/bytes/node/primitive role callback; metadata alone is not browser admission"
+    }
+  ]
+}

@@ -45,6 +45,15 @@ const catalogEngine=createCatalogEngine(runtime?.family);
 const {catalogFamily,catalogForProduct,catalogInitial,catalogChoices,catalogChange,catalogValidate,catalogAssets,catalogSelection}=catalogEngine;
 function expandedForProduct(p:Product){return catalogForProduct(p) as unknown as Family||families.find(f=>!f.kind&&f.productId===p.id&&(!p.modelConfigurationId||p.configurations.find(c=>c.id===p.modelConfigurationId)?.code===f.baseArticle)&&(p.configurations.some(c=>c.id===f.sample&&c.code===f.baseArticle)||(typeof (p as Product&{publicationOriginalCount?:number}).publicationOriginalCount==='number'&&p.configurations.some(c=>c.id===p.modelConfigurationId&&c.code===f.baseArticle))));}
 function anchorFor(s:ExpandedState){return catalogEngine.catalogAnchor(s) as unknown as (Anchor&{profiles:Profile[]})||families.find(f=>f.id===s.family)?.anchors.find(a=>a.id===s.anchor);}
+// Read the same effective supplier values for material controls and exports.
+// Xilium's seat collection is a captured mirror of its backrest collection;
+// an old anchor default must not classify that seat as a different material.
+function stateValues(s:ExpandedState):Record<string,string>{
+ if(catalogFamily(s))return catalogEngine.catalogValues(s);
+ const values={...anchorFor(s)!.defaults,...s.values};
+ if(values.CBACKRESTUPHGROUP)values.CSEATUPHGROUP=values.CBACKRESTUPHGROUP;
+ return values;
+}
 const isGroup=(k:string)=>k.endsWith('GROUP')&&k!=='CPRICEGROUP';
 const sideSeat=(seat:string)=>['UPHCPLASTICSPROFILES','UPHSIDEPROFILESSP'].includes(seat);
 function profilesFor(s:ExpandedState){const a=anchorFor(s)!;if(s.family!=='souly')return a.profiles;return a.profiles.filter(p=>sideSeat(s.values.CSEAT)?p.defaults.CSEAT===s.values.CSEAT:!sideSeat(p.defaults.CSEAT));}
@@ -132,7 +141,7 @@ function expandedSelection(product:Product,input:unknown){
    return model?{...selected,configuration:{...selected.configuration,id:model.id,image:'/media/configurator/'+model.id+'.jpg',description:product.name},variant:{...selected.variant,image:'/media/configurator/'+model.id+'.jpg',label:product.name}}:selected;
  }
  const state=validateState(product,input),f=expandedForProduct(product)!,a=anchorFor(state)!;
- const values={...a.defaults,...state.values};if(values.CBACKRESTUPHGROUP)values.CSEATUPHGROUP=values.CBACKRESTUPHGROUP;
+ const values=stateValues(state);
  const specKeys=new Set(Object.keys(state.values));if(values.CASSEMBLY)specKeys.add('CASSEMBLY');if(values.CBACKRESTUPHGROUP&&values.CSEATUPHGROUP)specKeys.add('CSEATUPHGROUP');
  for(const key of specKeys)if(!a.classes[key])throw Error(copyText("ui.c557d5e4cad349878adc","Nerastas pasirinkimo gamintojo kodas: ")+key);
  const options=Object.entries(values).filter(([k])=>specKeys.has(k)&&a.classes[k]).sort(([a],[b])=>a.localeCompare(b)).map(([k,v])=>a.classes[k]+'.'+k+'='+(k==='CPRICEGROUP'?v.replace(/^_/,''):v));
@@ -149,7 +158,7 @@ function selectionArticle(product:Product,input:unknown){
  const state=validateState(product,input),labels={...fieldLabels,...Object.fromEntries(Object.entries(runtime?.palettes._fieldLabels||{}).map(([k,v])=>[k,v.text])),...articleFieldLabels(product)};
  return resolveConfigurationArticle(product,state,stateChoices(state),(k,v)=>articleChoiceLabel(product,k,v)||choiceLabel(k,v,runtime?.palettes,state.family),labels);
 }
-return {expandedForProduct,anchorFor,stateChoices,initialState,initialStateForProduct,changeField,validateState,stateToken,parseStateToken,assembledAssets,stateDetails,expandedSelection,selectionArticle,catalog:catalogEngine};
+return {expandedForProduct,anchorFor,stateValues,stateChoices,initialState,initialStateForProduct,changeField,validateState,stateToken,parseStateToken,assembledAssets,stateDetails,expandedSelection,selectionArticle,catalog:catalogEngine};
 }
 export const {expandedForProduct,anchorFor,stateChoices,initialState,initialStateForProduct,changeField,validateState,stateToken,parseStateToken,assembledAssets,stateDetails,expandedSelection}=createExpandedEngine();
 

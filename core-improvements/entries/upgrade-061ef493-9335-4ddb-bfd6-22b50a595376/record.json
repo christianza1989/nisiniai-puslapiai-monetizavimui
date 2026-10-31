@@ -1,0 +1,20 @@
+{
+  "siteId": "o3tech",
+  "summary": "The catalogue projection adds a real dependency of niche-links; standalone SDK export and isolated V2 importer fixtures must include its module and public policy JSON. Preserve original missing-module failures and validate the actual exported bundle.",
+  "category": "code",
+  "evidence": [
+    "sites/o3tech/CORE_FEEDBACK.md",
+    "private/studio-tests-final.log: missing sdk/lib/o3tech-catalogue.mjs before closure repair"
+  ],
+  "paths": [
+    "content-studio/src/external-content-export.mjs",
+    "content-studio/test/content-v2.test.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/302",
+  "rollback": "Revert only this dependency-closure addition together with its companion projection import; no unrelated SDK or actual packages altered.",
+  "id": "upgrade-061ef493-9335-4ddb-bfd6-22b50a595376",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-29T17:03:53.634Z"
+}

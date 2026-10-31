@@ -1,0 +1,23 @@
+{
+  "siteId": "o3tech",
+  "summary": "State comparison exposed a thumbnail-density clone in full-image viewer, white popup instead of source black viewer, missing native fullscreen/counter, single-image unnecessary thumbnails and forced enlargement of small3Mphotos. Use a fresh decoded full image, native-size caps, source thumbnail/related metadata and native fullscreen/gallery controls.",
+  "category": "code",
+  "evidence": [
+    "sites/o3tech/RE-AUDIT.md",
+    "tests/o3tech.test.mjs"
+  ],
+  "paths": [
+    "components/niche/o3tech.css",
+    "lib/o3tech-render.mjs",
+    "public/o3tech-ui.js",
+    "config/o3tech-layout.json",
+    "tests/o3tech.test.mjs",
+    "sites/o3tech"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/101",
+  "rollback": "Revert only repeat-audit gallery commits and re-run original presentation extractor; historical source/receipts remain private. No content approval or live release exists.",
+  "id": "upgrade-0dde57b7-abf0-40f0-b6b2-22edae6d3c7b",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "11718ad5881a336c61096b700182fd37c1c00f3c",
+  "createdAt": "2026-10-29T20:47:08.002Z"
+}

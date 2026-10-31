@@ -1,0 +1,22 @@
+{
+  "siteId": "o3tech",
+  "summary": "Whole-site source comparison revealed an incorrect tablet navigation breakpoint and legal text measure/list/empty-paragraph rhythm. Restore1024pxmenu,source tablet hero width/type and bound legal560pxparagraphs/720pxheading/724pximage, preserving source empty-block spacing only for exact text and bounded numbers.",
+  "category": "code",
+  "evidence": [
+    "sites/o3tech/RE-AUDIT.md",
+    "tests/o3tech.test.mjs"
+  ],
+  "paths": [
+    "components/niche/o3tech.css",
+    "lib/o3tech-render.mjs",
+    "config/o3tech-layout.json",
+    "tests/o3tech.test.mjs",
+    "sites/o3tech"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/101",
+  "rollback": "Revert only the repeat-audit repair commits. Existing draft migration, historical audit receipts and owner preview remain; no live release exists.",
+  "id": "upgrade-e7c79c79-e6f0-40df-aa6a-aa1051f0f48a",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "11718ad5881a336c61096b700182fd37c1c00f3c",
+  "createdAt": "2026-10-29T20:31:20.127Z"
+}

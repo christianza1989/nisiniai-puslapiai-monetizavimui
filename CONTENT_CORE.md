@@ -1,5 +1,27 @@
 # Bendra visų svetainių turinio sistema
 
+## Esami katalogai be papildomos prozos — o3tech2026-10-29
+
+Roko atskiras leidimas taikomas tik šešiems `sites/o3tech/catalogue.json`
+užregistruotiems V1 `faq` indeksams. Jų body yra vienas tikrų prekių pavadinimų
+sąrašas, o links tiksliai atitinka tą pačią tvarką ir tos svetainės produktų ID.
+Native `catalogue-index.mjs` tikrina host, pageID, slug, tipą, tikslus, etiketes
+ir neatšauktą būseną vietoje120ženklų prozos slenksčio. Tuščias, pakeistas,
+svetimas ar fiktyvus sąrašas nepraeina net pridėjus ilgą pastraipą. Kitų puslapių
+120ženklų taisyklė ir ankstesnės exact-ID išimtys nesikeičia.
+
+Šis sąrašas semantiškai atitinka matomas produkto korteles; naujos prozos ar
+paslėptų SEO tekstų nepridedama. Native review, faktai, atominių priklausomybių,
+approval/hash ir release vartai lieka privalomi. Public `niche-links.mjs`
+prieš galutinį nuorodų filtrą projekuoja tik eligible prekes į indeksų body;
+indeksas be nė vienos prieinamos prekės kartu su į jį vedančiomis nuorodomis
+paslepiamas nuo HTML, sitemap, schemų ir LLM išvesties. Raw approval baitai
+nekeičiami. Source politikos neplėsti automatiškai perskenavus WordPress:
+pasikeitusi narystė reikalauja peržiūrėto scoped pakeitimo.
+
+Pirmas native ir public bandymas yra izoliuotas; ši pataisa savaime nepatvirtina
+o3tech tekstų, nekuria release ir nekeičia gyvos svetainės.
+
 Pilnas privatus ištirtos temos aprašas perduodamas esamam V1 `enqueue('draft', siteId, pageId, {fullBrief})`: tikslus `slug`, `question`, `contribution`, `outline` ir papildomi JSON duomenys iki 128 KiB. Jis perduodamas kaip nepatikima `pageData.editorialBrief` duomenų dalis, be trumpinimo, tačiau negauna instrukcijų ar patvirtinimo galios. Netinkamas adresas atmetamas prieš sukuriant darbą; caller objekto pakeitimai nekeičia eilėje esančio aprašo. Senas kvietimas be aprašo lieka suderinamas. Viešų schemų, patvirtinimų ir istorinių instrukcijų fingerprint šis laukas nekeičia. V2 generatoriaus vartas lieka uždaras.
 
 ## Dviejų trumpų indeksų išimtis (2026-10-24)

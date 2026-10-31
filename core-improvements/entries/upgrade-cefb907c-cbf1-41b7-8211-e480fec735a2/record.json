@@ -1,0 +1,20 @@
+{
+  "siteId": "o3tech",
+  "summary": "Owner-requested modern visual refinement replaces source-only heavy framing and hidden mobile intro/inquiry. Preserve exact projected text/links while adding bounded photo focus transitions, accessible native filters, responsive image sizes and readable contrast/reflow.",
+  "category": "code",
+  "evidence": [
+    "sites/o3tech/MODERNIZATION.md",
+    "tests/o3tech.test.mjs"
+  ],
+  "paths": [
+    "components/niche/o3tech.css",
+    "lib/o3tech-render.mjs",
+    "public/o3tech-ui.js"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/101",
+  "rollback": "Revert only the visual-refinement commit to the preserved fidelity source. No content, release, DNS or live state changed.",
+  "id": "upgrade-cefb907c-cbf1-41b7-8211-e480fec735a2",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "354d398d892351ba7d5f7dc2c0bae708b7fb7110",
+  "createdAt": "2026-10-30T13:46:53.624Z"
+}

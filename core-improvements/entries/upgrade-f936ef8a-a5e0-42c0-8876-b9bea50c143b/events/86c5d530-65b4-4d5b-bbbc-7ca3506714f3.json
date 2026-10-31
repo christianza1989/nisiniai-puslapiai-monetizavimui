@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Public site renderer and publication/metadata/tenant regressions verified. No approved o3tech package or live deployment created. Prior missing alias in actual-layout test fixture repaired using the actual brand helper.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "299/299; private/public-tests-accepted.log. Includes future/unapproved catalogue body/link visibility, unchanged raw bytes, foreign tenant and actual Memocasting SSR metadata."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "private/types-final.log; exit0 before canonical framework build."
+    },
+    {
+      "command": "node core/sites/o3tech/migration/check-preview.mjs",
+      "result": "PASS",
+      "evidence": "23actual local noindex routes, source text/native form/media checks in private/preview-checks.json."
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "evidence": "private/build-catalogue.log; complete Vinext build and2RSCmanifests passed."
+    },
+    {
+      "command": "node core/sites/o3tech/migration/smoke-all.mjs",
+      "result": "PASS",
+      "evidence": "private/seo-smoke-all.json;11existingV1tenantcompiledWorkerSEOsmokespassed."
+    }
+  ],
+  "eventId": "86c5d530-65b4-4d5b-bbbc-7ca3506714f3",
+  "sequence": 3,
+  "at": "2026-10-29T17:12:13.905Z"
+}

@@ -39,6 +39,7 @@ export function contactShadow(renderer:WebGLRenderer,scene:Scene,object:Object3D
   renderer.setRenderTarget(previousTarget);renderer.setClearColor(clear,clearAlpha);
   renderer.shadowMap.enabled=shadowEnabled;renderer.shadowMap.needsUpdate=true;
   const floor=new Mesh(new PlaneGeometry(extent,extent),new MeshBasicMaterial({map:a.texture,transparent:true,depthWrite:false,toneMapped:false}));
+  floor.name='ProductContactShadow';
   floor.rotation.x=-Math.PI/2;floor.position.set(center.x,box.min.y-.002,center.z);scene.add(floor);
   projection.dispose();horizontal.dispose();vertical.dispose();quad.geometry.dispose();b.dispose();
   return ()=>{scene.remove(floor);floor.geometry.dispose();floor.material.dispose();a.dispose();};

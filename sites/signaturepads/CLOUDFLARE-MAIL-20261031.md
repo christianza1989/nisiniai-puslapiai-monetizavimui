@@ -110,3 +110,16 @@ Ankstesni privačių CLI harness žingsnių FAIL neištrinami: pirmas
 secret loader turėjo Windows --import kelią; types CLI netinkamą cwd;
 D1 JSON skaitymą slopino log lygis, vėliau file-upload progress. Pataisyti
 tik operaciniai skriptai; tikra forma po sėkmės nebesiųsta iš naujo.
+
+## Savininko patvirtintas gavimas
+
+2026-10-31 Rokas, atsakydamas į klausimą apie konkretų laišką tema
+`[signaturepads.lt] Poreikio užklausa 104777af`, patvirtino:
+„Gavau bandomąjį laišką.“ Taip užbaigta peržiūros formos → D1 → Hostinger
+→ gavėjo dėžutės patikra. Įrodymas `owner-receipt.json` tame pačiame
+privačiame output aplanke. Tai tiesioginis savininko gavimo patvirtinimas;
+konkretaus Inbox / Spam aplanko ir gavėjo antraščių netikrinome.
+Ankstesni serverio / Sent / Gmail kvitai palikti kaip istoriniai įrodymai.
+Papildomo laiško nesiųsta, Worker neperdiegtas, gyva svetainė ir DNS nekeisti.
+Production operatoriaus / privatumo kvalifikacija ir atskiras domeno
+perkėlimo pavedimas lieka savarankiški darbai.

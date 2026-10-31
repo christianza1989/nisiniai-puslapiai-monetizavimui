@@ -1,0 +1,2 @@
+# Keep the recorded prompt bytes stable across Windows checkouts.
+*.txt text eol=lf

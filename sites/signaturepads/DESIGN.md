@@ -1,0 +1,104 @@
+# Esamos tapatybės išsaugojimas
+
+Pagrindas – 2026-10-29 faktinis `signaturepads.lt` desktop vaizdas, WordPress tekstai ir originali medija. Tai techninė migracija: balta ir šviesiai mėlyna, Open Sans, siaura horizontali antraštė, nuotraukos fonas, išskleidžiami tekstai ir produktų paveikslai. Produktas išdėstomas dviem stulpeliais, apačioje panašūs produktai. Kataloge lieka kategorijos, kainos ir produktų kortelės. Naujų kompozicijų ar rinkodaros tekstų neieškoma.
+
+## Tekstų sistema ir patikros planas
+
+- [x] Išlaikyti Open Sans ir lietuviškas raides; lokaliai aptarnauti tikrus 400–700 svorius.
+- [x] Bendras tekstas 14–16 px, apie 1,75 eilutės aukštis; antraštės 22–30 px pagal vaidmenį; mobiliajame nemažinti teksto dėl vietos.
+- [x] Vienas 1140 px pločio karkasas, produkto dviejų stulpelių maketas ir siauresnis ilgo teksto plotis.
+- [x] Matomi keyboard focus, atidaromas mobilus meniu, natyvūs details/summary ir tikros nuorodos.
+- [x] Faktinės desktop/mobile nuotraukos, 320 px reflow ir tekstų tarpų patikra.
+- [ ] Tikras naršyklės teksto padidinimas iki 200%: UNVERIFIED, neteigiama, kad viewport patikra jį atstoja.
+- [x] Peržiūroje patikrintos visų 28 URL source fragmentų reikšmės; nesutrumpinti parametrai, nepridėta produktų savybių.
+
+Originalios produkto ir logotipų nuotraukos naudojamos to paties savininko svetainės migracijai. Failų kilmė, URL ir SHA saugomi atskirame asset-manifest. Naudojami esami WordPress skirtingo dydžio vaizdai; nauji vaizdai negeneruojami.
+
+## 2026-10-29 peržiūros įrodymai
+
+2026-10-31 techninio pasiruošimo papildymas: [PRELAUNCH-20261031.md](PRELAUNCH-20261031.md).
+Šriftas, jo svoriai, dydžiai, spalvos, maketas, originalios nuotraukos ir
+fixed/scroll lūžio taškai neperrašyti. Pakeisti tik tinkamų hero/font resursų
+head hint ir kontekstinė katalogoH2/relatedH3 semantika, išlaikant tuos pačius
+card stilius. Chrome/WebKit320–1440px patikrinti; software sekcijos fonas
+papildomai peržiūrėtas scrolled viewport vaizduose. Full-page capture už
+viewport esančio fixed fono neužfiksuoja patikimai. Actual200% native zoom
+bandytas, bet Windows capture/input prieiga neveikė; jis liekaUNVERIFIED,
+šios klaidos neišsprendžia DPR/viewport emuliacija. Source/build/metrics
+atskirti nuo vizualinio sprendimo ir tikro telefono/macosSafari neteigiami.
+
+`D:/Core/output/signaturepads-migration-20261029/` turi desktop homepage, mobile homepage, desktop katalogo ir mobile produkto vaizdus; atskirai `PREVIEW-VERIFICATION.json` ir `reflow-check.json`. Patikrintas mobilus meniu, galerijos keitimas, zoom dialogo atidarymas/uždarymas ir originalių kategorijų antraščių įtraukimas. Detector vienintelis perspėjimas dėl Open Sans ignoruojamas pagrįstai: šriftas sąmoningai išlaikomas pagal savininko nurodymą nekeisti esamos tapatybės.
+
+Tai vietinė nepatvirtinto migracijos snapshot peržiūra. Production Core publikavimo adapteris ir bendro SEO/GEO priėmimas dar neintegruoti; nėra production Lighthouse ar paleidimo deklaracijos. Savininkas paprašė radinius ir papildomus optimizavimus pirmiausia aptarti.
+
+## Šešių programinės įrangos aprašymų patikros planas
+
+Rokas 2026-10-29 pasirinko 1 variantą: Codex gali parašyti šiuos šešis aprašymus iš patikrintų gamintojų šaltinių. Tai konkreti autorystės išimtis, ne publikavimo leidimas. Išlaikomas esamas produkto maketas ir bendri `.sp-prose` p / h2 / ul / a vaidmenys; CSS ir šriftai nekeičiami.
+
+- [x] Aprašymų skirtumai: Java SDK, Windows COM SDK, vietinė programa, žiniatinklio programa, Adobe įskiepis, Pro automatizavimas. Produktų vardai, URL ir kainos neliečiami.
+- [x] Visų šešių tekstų kalba, metaduomenys ir techniniai skaičiai palyginti su gamintojo šaltiniais; nepažadėti licencijų priedai ir teisinė galia nepridedami.
+- [x] Visų šešių aprašymų DOM tekstas / antraštės / sąrašai / šaltinių nuorodos 1440 / 390 / 320 px: nėra paslėptų blokų ar horizontalaus overflow, Open Sans įkeltas. Adobe faktinės desktop / mobile / mobile-reading ekrano nuotraukos perskaitytos.
+- [x] 320 px ir vienu metu taikomi vartotojo teksto tarpų nustatymai Adobe produkto tekste: turinys lieka matomas, horizontalaus overflow nėra; tikras 200% browser zoom lieka UNVERIFIED.
+
+Įrodymai: output `software-browser-check.json`, `software-adobe-desktop.png`, `software-adobe-mobile.png`, `software-adobe-mobile-reading.png`. Desktop tekstas Open Sans 14 px / 25,2 px, mobile 15 px / 27 px, desktop skaitymo plotis 547,5 px. Tekstas rgb(74,74,74), pabrauktos nuorodos rgb(35,126,146), baltas fonas. Išdėstymo ar šriftų defektų šioje ribotoje patikroje nenustatyta; CSS nekeitėme.
+
+## Atitikimo originalui palyginimas po savininko prašymo
+
+2026-10-29 palyginti 8 pagrindiniai adresai, 32 originalo / peržiūros desktop / mobile vaizdai. Ankstesnė tekstų / URL ir šešių naujų aprašymų patikra nepakeičia viso maketo atitikimo patikros. [VISUAL-AUDIT.md](VISUAL-AUDIT.md) fiksuoja 9 skirtumų grupes: dvi praleistos kategorijų iliustracijos ir jų maketas, mobile tinkleliai, apatinis logotipas, rėmeliai, katalogo valdikliai, kortelių užvedimo būsena, panašūs produktai, tipografika / antraštė ir statinių puslapių dubliuotos antraštės. Tai atviri radiniai, pataisos šiame audite nedarytos. Originalių 1×1 sekiklių skaičiaus nelaikome turinio paveikslėliais; spaudos puslapio iliustracijos praradimo įtarimas atmestas.
+
+## Patvirtinta atkūrimo partija
+
+Rokas tiesiogiai pavedė sutvarkyti visus audito skirtumus vietinėje versijoje ir išsaugoti visas nuorodas. Planas: viena suderinta VF01–VF09 realizacija per-site renderer / CSS / client, paskui desktop/mobile patvirtinimas ir URL / teksto regresija. Bendro Core modelio / SEO / publikavimo bibliotekų nekeisti.
+
+- [x] Kategorijų originalios iliustracijos, įvadas šalia paveikslo ir likęs tekstas platesniu maketu.
+- [x] Planšečių, monitorių ir panašių produktų mobile 2 stulpeliai; software katalogas – originalo vienas stulpelis.
+- [x] Footer logotipas, home rėmeliai, logotipų mastelis, kontaktų nuotraukos kampai.
+- [x] Natūralūs kainos intervalo slankikliai, matomas rikiavimas pagal kainą; query / URL išsaugojimas.
+- [x] Alternatyvios kortelių nuotraukos, Quick View hover / keyboard būsena, 3 desktop panašių produktų stulpeliai, didinimo ir grįžimo į viršų ženklai.
+- [x] Originalo Open Sans vaidmenys: žalios #276d72 antraštės, 32 px home antraštės, 16 px / 600 kortelės; mobile viršutinis logotipas ~142 px; aktyvus meniu.
+- [x] Statinių puslapių vienas H1 iš esamos turinio antraštės, 720 px antraštės ir 560 px teksto stulpelis, pagal actual originalą.
+- [x] 26 aktyvūs URL / 160 vidinių tikslų ir originalus tekstas; 1440 / 390 / 320 px, intervalų / rikiavimo / galerijos / meniu / quick view / teksto tarpų būsenos. Tikras 200% browser zoom ir actual touch – UNVERIFIED, nepaslepiama viewport bandymu.
+
+Rezultatai ir įrodymai: [VISUAL-RESTORATION.md](VISUAL-RESTORATION.md). Ši dalis pakeičia ankstesnę atvirų VF01–VF09 radinių būseną; istorinė audito ataskaita nepakeista. CSS laikomas vienoje per-site sistemoje, be papildomo override failo. Open Sans 400–700 svoriai išlaikyti; mažo teksto / mygtukų akcentas tamsesnis dėl kontrasto, o antraščių spalva atkurta iš originalo.
+
+## Naujas native Core palyginimas: priėmimas dar neužbaigtas
+
+[DEEP-COMPARISON-20261029.md](DEEP-COMPARISON-20261029.md) papildo ankstesnius įrodymus 26 adresais ir tikromis funkcijų būsenomis. A01–A07 lieka atviri. Originalo mobile katalogai skirtingi: programinės įrangos filtrai apačioje, bendrame kataloge jų nėra, įrangos kategorijose viršuje; ties 768 px originalas turi 3 produktų stulpelius. Matuoti faktinio teksto a elementą (kortelėse 14 px), ne vien H3 konteinerį (16 px). Originalo produkto H1 600, vietinio 400; nuotraukų / paraščių mastelis dar nesutampa.
+
+Greitosios peržiūros atvėrimo PASS nepakeičia jos turinio patikros: dabartinis dialogas turi tik kortelę. Po pataisų reikalingas pilno produkto parametrų, galerijos, pavadinto dialogo ir mobilios navigacijos priėmimas. Dizaino tapatybės neperkurti; kontrasto / fokuso pagerinimus palikti. Originalo 768 px kontaktų formos 8 px horizontalus slinkimas Core nesikartoja ir nėra atkūrimo tikslas.
+
+## 2026-10-30 A01–A07 pataisos
+
+Rokas tiesiogiai pavedė pataisyti visas septynias grupes vietoje. Įgyvendinti atskiri katalogų maketai, 300 px pradinis galerijos vaizdas / 100 px miniatiūros, faktinio a teksto 14/21/600 vaidmuo ir 600 produkto antraštė / strong. Greitoji peržiūra turi pilną native produktą, atskirą nuotraukos dialogą, pavadinimą ir grįžtantį fokusą; desktop ilgam pavadinimui rezervuojama uždarymo valdiklio vieta. Originalios užklausų nuorodos priimamos abiem kiekio parametrų formomis; date / popularity / rating remiasi faktinėmis originalo sekomis.
+
+Nauja [pataisų ataskaita](PARITY-FIXES-20261030.md) ir [planas](FIX-PLAN-20261030.md) nustato dabartinę A01–A07 būseną; aukščiau lieka ankstesnių auditų kontekstas. Kontrastas / fokusas pagerintas sąmoningai, pikselių tapatumas nėra tikslas. Fizinis telefonas / Safari / tikras browser zoom 200% lieka UNVERIFIED; 390 / 320 px Chrome lietimo emuliacija tikrai atlikta.
+
+## Hero fono slinkimo tapatybė
+
+Pagal papildomą Roko pastebėjimą ir 2026-10-30 originalo matavimą: 1920×837 banner900000058 kompozicija kairėje viršuje, nekartojama; desktop >1024 px fonas fixed, <=1024 px scroll. Tekstas / kortelė nefiksuojami. Naudojamas esamas optimizuotas WebP, 1920 px CSS demonstravimo plotis išlaiko originalios nuotraukos iškirpimą. Papildomas gradientas nėra originalo dalis. Reikalingi ne vien viršaus, bet ir scroll400/800 kadrai. [HERO-FOLLOWUP-20261030.md](HERO-FOLLOWUP-20261030.md) atskiria šį papildomą radinį nuo ankstesnio A01–A07 priėmimo.
+
+## Visų pagrindinio puslapio sekcijų atkūrimas H01–H08
+
+Roko 2026-10-30 tiesioginis pavedimas „pataisyk ka radai“ apima HOMEPAGE-COMPARISON-20261030.md radinius. Dabartinis planas ir priėmimas – HOMEPAGE-FIXES-20261030.md. Native paketas94de2ef5 ir visos26 puslapių kopijos nekeisti; atstatomas pateikimas ir11 papildomų originalo srcset adresų. Originalo duomenis rinkti iš visų img/srcset/lazy variantų, ne vien tuo metu pasirinkto currentSrc.
+
+- Header >1024 nefiksuotas; <=1024 prisegtas. Įranga lieka tikra nuoroda greta atskiro native submenu valdiklio; kategorių tvarka parašo planšetės /monitorių išplėtimai /programinė įranga. Revoked kategorija neturi palikti parent nuorodos.
+- Hero ir software turi atskirus stulpelius: ties1440 hero540/540 su99% iliustracija, software585/495 su99% iliustracija. Teksto fonas nepermatomas, iliustracijos opacity0.95; akordeono aukštis pagal turinį, ne ištemptas iki iliustracijos.
+- Įrangos tinklelis >=768px turi4 stulpelius, <=767px –1. Kortelės2px #595959 /20px kampai, iliustracijos95% /24px kampai;4px tarpai. Trust ta pati kortelių sistema,250x200 logotipai; mobile1 stulpelis.
+- Hero ir software mobile skydeliai ties390 plotis318px, ties320 plotis248px; iliustracijos99%. Naudoti originalias15/20px vidines paraštes ir14px /25.2px tekstą. Atviri tekstai ir visos8 antraštės lieka native.
+- Kontaktų nuotrauka desktop550px, mobile390→354px;40px kampai. Mobile poraštės logotipas202px, desktop225px; originalo blyškus fonas#e1f1f6. Formos sutikimas ir kontrastas išlaikomi; jų papildoma vieta nelaikoma klaida.
+- Vienkartinis1250ms pasirodymas kortelių grupei; turinys visada matomas be JS, reduced-motion efekto nevykdo. Nepridedami Elementor/Nitro ar mokami įskiepiai.
+
+## Antrasis – programinės įrangos – nuotraukos fonas
+
+Roko priedas tiksliai identifikavo `pexels-mikhail-nilov-7988079.jpg`: du žmonės prie kompiuterių, už programinės įrangos akordeono ir produkto dėžutės. Atskira home native media šeima, jos laukas `softwareBackground` ir CSS kintamasis; naudoti tik native tinkamą rodyti mediją. Originalo1920×1282 natūralios kompozicijos demonstravimas1920 px, center/center, no-repeat, >1024 fixed / <=1024 scroll, sekcijos minimumas720 px. Patikra turi fiziškai nuslinkti ir aktyvinti visas pagrindinio puslapio sekcijas: pradinio DOM fono inventoriaus nepakanka Nitro offscreen fonams. Dabartinis atkūrimas ir faktiniai įrodymai – [SOFTWARE-BACKGROUND-20261030.md](SOFTWARE-BACKGROUND-20261030.md); ankstesnis12šeimų inventorius šios nuotraukos neapėmė.
+
+## 2026-10-31 native zoom API papildymas
+
+Ankstesnį Windows OS capture/input ribojimą papildė sėkmingas tikras Chrome
+zoom API testas atskirame CFT151 profilyje:1→2,nativeviewport1424→712,
+tas pats outerWidth1440. Homepage/software/policy head/footer kadrai peržiūrėti,
+overflow0; nativecapture po compositorframes reikalingas teisingam vaizdui.
+Corefont/copy/maketas neperrašytas. Tai neatstoja fizinio telefono/Safari ar
+fullmanualWCAG. Dabartinės versijos fiziniai320/390/768/1024/1440viewport
+kadrai ir iš tikrųjų nuslinkti fonai saugomi prelaunch-20261031/runtime-*.
+Galutinė versija ir metrika: DEPENDENCY-HARDENING-20261031.md.

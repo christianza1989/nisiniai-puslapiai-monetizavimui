@@ -1,0 +1,20 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Fix catalogue H1-to-H3 skip without changing card design, words or quick-view labels",
+  "category": "code",
+  "evidence": [
+    "Actual Lighthouse software catalogue accessibility98 identifies heading-order: first product H3 follows page H1 before sidebar H2. Catalogue cards become H2; related cards remain H3 under their H2 section. CSS and quick-view selector accept both tags; real native-package regression covers both contexts."
+  ],
+  "paths": [
+    "components/niche/signaturepads/render.mjs",
+    "components/niche/signaturepads/client.js",
+    "components/niche/signaturepads/signaturepads.css",
+    "tests/signaturepads-parity.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Revert only semantic card heading/context selectors. Keep content, URLs, image bytes and unrelated rendering intact.",
+  "id": "upgrade-ab120de1-7515-4ea3-9d86-d3eb11b2f0ab",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "fae50645f197258dafb6e307e2dd09202e2cffb5",
+  "createdAt": "2026-10-31T10:09:55.166Z"
+}

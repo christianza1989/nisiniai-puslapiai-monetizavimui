@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "Exact-host read-only Cloudflare preview deployed and verified. Full Vite/RSC build at10f0efe5 plus canonical asset-boundary helper6c1a9d50 composed by the hash-recording shared adapter. Initial real CSS404 repaired; initial failure and later harness-assumption failures preserved. No production/domain/mail/DB activation or main merge claimed.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/signaturepads-migration-20261029/cloudflare-preview-20261031/core-tests-asset-fix.log (314)"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "D:/Core/output/signaturepads-migration-20261029/cloudflare-preview-20261031/typecheck-asset-fix.log (exit0)"
+    },
+    {
+      "command": "node scripts/run-framework.mjs build; node scripts/check-rsc-assets.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/signaturepads-migration-20261029/cloudflare-preview-20261031/build.log and rsc-check.json, base10f0efe5; no claim of full rebuild after entry fix"
+    },
+    {
+      "command": "node scripts/prepare-hosted-preview-runtime.mjs; wrangler deploy --config returned-config",
+      "result": "PASS",
+      "evidence": "D:/Core/output/signaturepads-migration-20261029/cloudflare-preview-20261031/runtime-adapter.json and deploy-asset-fix.log, version9041cad4-bdbd-4120-8fd0-42e8654956de"
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=signaturepads SEO_SMOKE_BASE_URL=https://signaturepads-preview.pinet-azprekyba.workers.dev node tests/seo-core-smoke.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/signaturepads-migration-20261029/cloudflare-preview-20261031/seo-smoke-edge.log (26pages/14resources)"
+    },
+    {
+      "command": "node remote-http.mjs; node legacy-page-links.mjs; node remote-browser.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/signaturepads-migration-20261029/cloudflare-preview-20261031/remote-http.json, legacy-page-links.json, remote-browser.json (26/204/237;50/25;4widths/8pages/16frames)"
+    }
+  ],
+  "eventId": "49b6e7a6-2710-466e-87cc-fdf6d1c9920c",
+  "sequence": 2,
+  "at": "2026-10-31T06:09:26.700Z"
+}

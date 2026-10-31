@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "note": "Original public Google verification restored exactly once; actual hosted HTTP and cross-site/source regressions pass. GSC API data remains unavailable, not reported empty.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/core-tests-final.log:325/325"
+    },
+    {
+      "command": "node verify-head.mjs",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/head-verification.json"
+    }
+  ],
+  "commit": "f2344dfc9d03cb95b9a3e3c727e1f86ed7a977a8",
+  "eventId": "371a250b-364c-4189-ae8d-898fe68fbb12",
+  "sequence": 2,
+  "at": "2026-10-31T10:29:02.271Z"
+}

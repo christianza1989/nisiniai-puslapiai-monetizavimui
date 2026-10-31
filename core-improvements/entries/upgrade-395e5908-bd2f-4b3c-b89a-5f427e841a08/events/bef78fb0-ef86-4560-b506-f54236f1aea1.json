@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/108",
+  "commit": "4363ad2df6c85cd40bcd3e9159cc09179392a1d3",
+  "note": "Actual source pushed and existing draftPR108 updated for final native migration/review/mail scope. Companion privatePR318 updated with actual provider-acceptance qualification. Preview runtime deployed under direct owner authorization; no main merge or other-site adoption. Receiver INBOX pending owner confirmation; original WordPress and DNS unchanged.",
+  "eventId": "bef78fb0-ef86-4560-b506-f54236f1aea1",
+  "sequence": 4,
+  "at": "2026-10-31T08:45:42.700Z"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "signaturepads-privacy-20261031",
+  "path": "/musu-slapuku-politika/",
+  "pageId": "sp-page-30273dda6cc8",
+  "templatePath": "G:/My Drive/Web puslapiai/Visi verslai/Tekstu-Sistema-v2/sablonai/gemini-straipsnis.md",
+  "templateSha256": "15267d03ca26307c1b5216552c793593893a180b1ade7b731cc31684f522e053",
+  "promptSha256": "b7bde7048978cc389d5081b24674ec9b41029d4374464fa5820e5d651f55894f",
+  "status": "draft-prepared-awaiting-review-not-publishable",
+  "author": "Gemini 4 Argon LOW",
+  "createdAt": "2026-10-31T12:41:57.541Z",
+  "publicationAuthorized": false,
+  "preparedAt": "2026-10-31T12:53:09.499Z",
+  "draftArtifactSha256": "35efd8af1a48d2fb59271e7efaadddae923611cb3cc1a91055a8632f7b1d5099",
+  "bodyArtifactSha256": "6b13fc97117a97d100578060a6e4ba36c88e21177ed0b738f7d627003c630439",
+  "writerConversations": [
+    "https://gemini.google.com/u/2/app/f65d6a7f6e5ce9c9",
+    "https://gemini.google.com/u/2/app/4287ff7d7d984610"
+  ],
+  "sourceExtraction": "response-element innerText plus original semantic DOM headings/lists; Copy button attempted, clipboard path did not yield verified Markdown; no claim of clipboard extraction",
+  "correctionRoundCount": 1,
+  "correctionsApplied": [
+    "A",
+    "B",
+    "C"
+  ],
+  "correctionDNotApplied": "Unverified separate post-sale storage and blanket backup exclusion are not accepted. Original corresponding paragraph omitted as a whole; missing categories remain private factChecks.",
+  "wholeParagraphsOmitted": [
+    {
+      "sourceBlock": 14,
+      "reason": "Actual form checkbox says consent to use data for an answer, not merely acknowledgement."
+    },
+    {
+      "sourceBlock": 27,
+      "reason": "Post-sale storage, logs and backups terms/criteria are not verified; do not invent them."
+    }
+  ],
+  "sourceHeads": {
+    "private": "0704a34506379c38a7475ad82b2c919bc6f3261b",
+    "public": "a9b8a6276110d5dfbf23d8c2d7675d799a4d5974",
+    "privateMain": "25292e20219b735df7f04c5807dd4c100f98addc",
+    "publicMain": "c2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da"
+  },
+  "claudeReviewReceived": false,
+  "ownerExactRevisionApproved": false,
+  "studioMutated": false,
+  "releaseMutated": false,
+  "liveChanged": false
+}

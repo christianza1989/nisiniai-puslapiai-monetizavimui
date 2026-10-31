@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "siteId": "signaturepads",
+  "decisionDate": "2026-10-31",
+  "source": "direct-owner-message-in-current-chat",
+  "ownerQuote": "6 menesius, tesk privatumo teksto paruosima. Gyvos svetaines dar nekeisk.",
+  "retention": {
+    "months": 6,
+    "clock": "last-communication",
+    "scope": "inquiries-that-do-not-become-orders",
+    "includes": ["inquiry-database", "sender-mail-copies", "recipient-mail-copies"],
+    "scopeBasis": "Existing question and conversation context; the quoted reply chooses six months.",
+    "statutoryPeriodClaimed": false,
+    "customerContractAndAccountingRetentionSpecified": false,
+    "platformLogAndBackupRetentionSpecified": false
+  },
+  "implementation": {
+    "automaticDeletionImplemented": false,
+    "lastCommunicationFieldImplemented": false,
+    "conversionOrLegalHoldRegisterImplemented": false,
+    "actualDataDeletedByThisTask": false,
+    "manualProcedureRequiresOperationalAdoption": true
+  },
+  "publicOperatorLabel": "signaturepads.lt",
+  "privacyDraftPreparationAuthorized": true,
+  "exactPrivacyRevisionApproved": false,
+  "legalComplianceCertified": false,
+  "publicationAuthorized": false,
+  "domainSwitchAuthorized": false,
+  "liveSiteChanged": false
+}

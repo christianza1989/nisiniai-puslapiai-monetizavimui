@@ -1,0 +1,21 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Refresh six vulnerable production-lock dependency names and preserve bounded review-only ingest semantics with patched Zod",
+  "category": "code",
+  "evidence": [
+    "Actual npm audit --omit=dev:6affected package names,1critical3high2moderate. GHSA-2464-fhr4-w9xw next<=16.4.0, GHSA-wq5f-xc86-pv6w sharp<0.35.5, GHSA-mrhx-c7xc-m3w5 zod<4.6.6 verified against primary advisory records2026-10-31.",
+    "Old installed Zod3 regression fails by traversing an oversized51-article collection before rejecting max50; legitimate reviewed ingest and forbidden published state are tested with the real schema/library. No brute-force resource exhaustion payload is used.",
+    "Updated lock-only audit reports0production vulnerabilities; actual isolated npm CI, full Core/types/build and hosted-only checks must follow before a verified/adoption claim."
+  ],
+  "paths": [
+    "package.json",
+    "package-lock.json",
+    "tests/ingest-bounds.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Scoped revert of dependency manifest/lock/test on own branch. Keep incumbent WordPress untouched; do not roll a known vulnerable package into the real-domain deployment.",
+  "id": "upgrade-7bb0d2e0-837e-4054-8c59-b21ab20928cf",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "23f10a629d7d2e6e07e6a874f701293a97c5f763",
+  "createdAt": "2026-10-31T10:35:08.634Z"
+}

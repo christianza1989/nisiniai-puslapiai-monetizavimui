@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Owner directly confirmed receipt of the previously identified exact synthetic test. This completes preview form→D1→Hostinger→recipient receipt qualification. Confirmation is manual; exact Inbox/Spam folder and raw receiver headers were not supplied. No new send, deploy, domain or code action.",
+  "checks": [
+    {
+      "command": "Manual owner reply to exact subject104777af test-receipt question",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\signaturepads-migration-20261029\\cloudflare-mail-20261031/owner-receipt.json; quote: Gavau bandomąjį laišką.; id:104777af-db4f-47e2-aa2d-1453af1f393b"
+    }
+  ],
+  "eventId": "24faebe8-a55b-4807-b832-3f5bbf295f22",
+  "sequence": 5,
+  "at": "2026-10-31T09:22:39.750Z"
+}

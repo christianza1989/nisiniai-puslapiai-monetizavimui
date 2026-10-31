@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "note": "Opt-in native/hosted guard and strict production config tested; dedicated empty EU D1/schema prepared. Actual invalid-only rate probe429; no extra mail, no real-domain routes, admission or deployment.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/core-tests-final.log:325/325"
+    },
+    {
+      "command": "node probe-forms.mjs --rate",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/rate-forms.json"
+    }
+  ],
+  "commit": "f2344dfc9d03cb95b9a3e3c727e1f86ed7a977a8",
+  "eventId": "50cc00e1-c38a-42ae-beed-7230ade4796d",
+  "sequence": 2,
+  "at": "2026-10-31T10:29:03.805Z"
+}

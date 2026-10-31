@@ -1,0 +1,19 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Treat bundled dev-classified RSC/OG modules as production runtime, patch React/RSC and align the build toolchain instead of trusting omit-dev alone",
+  "category": "code",
+  "evidence": [
+    "Full audit after the first six-package patch still reports36affected names/9high, including react-server-dom-webpack19.2.6 used by the Worker. GHSA-wx67-qw84-cm4g primary React advisory prescribes19.2.8. Omit-dev0 is not proof about the compiled runtime.",
+    "Own intermediate cf6d37d4 build deliberately stopped before upload; old verified hosted version remains active. Fresh aligned framework/RSC/Cloudflare tools and same-major fflate0.7.5 backport selected, no force/legacy-peer or unsafe audit-suggested downgrades."
+  ],
+  "paths": [
+    "package.json",
+    "package-lock.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Scoped dependency revert on own branch or retain the existing hosted review while repairing compatibility; do not activate the real domain with known affected runtime modules. Preserve native package/media and the incumbent WordPress.",
+  "id": "upgrade-995dbb06-ba02-4829-88c0-dbba0b411f8e",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "23f10a629d7d2e6e07e6a874f701293a97c5f763",
+  "createdAt": "2026-10-31T10:47:26.226Z"
+}

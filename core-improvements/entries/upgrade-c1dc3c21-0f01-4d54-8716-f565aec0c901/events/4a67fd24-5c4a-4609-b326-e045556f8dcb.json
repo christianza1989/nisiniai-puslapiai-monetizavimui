@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Native reviewed v2 signaturepads adapter accepted in an isolated local-preview Worker. Source remains local branch-only; no production admission/deploy/DNS or main adoption. Exact metadata and trailing-slash corrections are based on actual Worker HTML, not only mocked source.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "301/301 public Core tests; D:/Core/output/signaturepads-migration-20261029/core-integration/core-tests.log"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false; scoped eslint; framework build; check-rsc-assets",
+      "result": "PASS",
+      "evidence": "TypeScript0; scoped lint33 files0errors6warnings; framework5482f34b; 2 manifests0missing. sites/signaturepads/CORE-INTEGRATION.md"
+    },
+    {
+      "command": "verify-signaturepads-core.mjs engine http://127.0.0.1:8956; SEO_SMOKE_SITE_ID=greitossvetaines",
+      "result": "PASS",
+      "evidence": "26 URLs; 199 media; 225 aliases; metadata uniqueness; local/foreign host isolation. Baseline7-page tenant SEO smoke PASS. core-http-verification.json / seo-smoke.log."
+    },
+    {
+      "command": "Actual browser native render/controller checks",
+      "result": "PASS",
+      "evidence": "12 desktop/mobile template views; additional320px; keyboard Quick View, sorting, menu and actual form. browser-verification.json. Physical touch/real200% zoom unverified."
+    }
+  ],
+  "eventId": "4a67fd24-5c4a-4609-b326-e045556f8dcb",
+  "sequence": 2,
+  "at": "2026-10-29T18:47:11.214Z"
+}

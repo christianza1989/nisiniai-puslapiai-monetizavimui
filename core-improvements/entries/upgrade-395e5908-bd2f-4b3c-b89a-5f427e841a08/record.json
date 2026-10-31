@@ -1,0 +1,25 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Owner-authorized inquiry capability on an exact hosted review origin without weakening read-only or production launch admission",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/102#issuecomment-6541112731",
+    "Direct owner instructed actual form mail on the existing review host using an owned Hostinger mailbox, preserving incumbent domain. Canonical Hostinger API reuses existing native handler; actual SMTP/API authentication qualified before activation."
+  ],
+  "paths": [
+    "lib/content-hosted-preview.mjs",
+    "lib/content-model-v2.ts",
+    "proxy.ts",
+    "worker-entry.ts",
+    "scripts/content-v2-admission.mjs",
+    "scripts/hosted-content-preview.mjs",
+    "scripts/prepare-hosted-preview-runtime.mjs",
+    "docs/HOSTED_CONTENT_PREVIEW.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Revert only this preview Worker to the retained read-only version; keep original WordPress/DNS, mailbox and unrelated relay unchanged. Preserve inquiry/acceptance records and never resend unknown deliveries automatically.",
+  "id": "upgrade-395e5908-bd2f-4b3c-b89a-5f427e841a08",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "7bed6bb6ae047c67da88b2e99b116cfcca0d3080",
+  "createdAt": "2026-10-31T08:31:14.440Z"
+}

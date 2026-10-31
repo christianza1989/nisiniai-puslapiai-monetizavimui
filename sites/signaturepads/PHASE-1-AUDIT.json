@@ -1,0 +1,1260 @@
+{
+  "siteId": "signaturepads",
+  "canonicalHost": "signaturepads.lt",
+  "phase": 1,
+  "evaluatedAt": "2026-10-31T11:15:54.835Z",
+  "evaluator": "Codex Agent — bounded prelaunch migration review; not legal certification or physical-device testing",
+  "environment": {
+    "origin": "https://signaturepads-preview.pinet-azprekyba.workers.dev/",
+    "workerVersion": "2a867b0c-8d9e-4503-98f9-252a0f1b3d01",
+    "physicalDevice": false,
+    "nativeZoomVerified": true,
+    "actualSafariBrowser": false,
+    "liveOriginalChanged": false,
+    "backupExcludedByOwner": true,
+    "nativeZoomMethod": "automated Chrome native API; isolated CFT151 profile, viewport:null, no OS input"
+  },
+  "version": {
+    "packageSha256": "94de2ef54c802d69399727aa243918f9e828a44b51013c3a05cf4d01dbc3dd25",
+    "publicSource": "a9b8a6276110d5dfbf23d8c2d7675d799a4d5974",
+    "engine": "80fa086c3efb6921df8f75609ce4ea912798663d",
+    "gitTree": "6956a2f7ee66024f5afa53ace7655fc700311a29"
+  },
+  "verdict": {
+    "local": "NOT-COMPLETE — privacy/identity and bounded manual-testing gaps",
+    "launch": "NOT-AUTHORIZED-NOT-READY",
+    "demand": "UNMEASURED",
+    "visual": "PRESERVED — scoped source/viewport review; no pixel-identical or physical-device claim"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Owner confirmed inquiries only; no Paysera/checkout/order handling. Synthetic QA excluded from demand."
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Existing owner business, original catalogue/contact/quoted prices retained. Primary action is an inquiry, not a paid order or stock confirmation."
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Qualified customer demand/value/capacity is not measured by synthetic QA; this migration does not assert it."
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Original brand, phone and recipient agree. Actual legal controller is not yet confirmed; no Pinet default is substituted."
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Only original signaturepads brand/contact/assets preserved; Hostinger billing identity and unrelated Pinet contacts not substituted."
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "PRIVACY-FACTS-20261031.md",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Owner domain authorization exists; legal name/code/address/privacy responsibility still missing."
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Bounded evidence: original capture, owner history, current WordPress sitemaps. Historical GSC unavailable; no claim that inaccessible history is empty."
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/legacy-sitemaps.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "26 native routes retained; original29 sitemap entries map27x200/2x410, including duplicate. Old unrelated/checkout routes intentionally retired per owner."
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/legacy-page-links.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Retained legacy query/slash/media redirects on the actual review host have current same-host eligible200 targets and no loops; production-host repetition still belongs to O3."
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Preservation task: actual original and current desktop/mobile regions, not a newly commissioned competitive redesign. Full-page fixed-background capture limitation explicitly resolved with scrolled viewport images."
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Owner authorizes migration of their existing public copy/assets. No new public prose this batch; unverified legacy technical claims remain H2, not adopted as new advice."
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "No claimed search volumes, business returns or proven demand. GSC access limitation recorded."
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Original niche identity deliberately retained. Current actual homepage, catalogue and narrow pages inspected; no new identity needing a nearest-network redesign comparison."
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "DESIGN documents preserved Open Sans, tokens/layout and actual testing scope. Only resource hints and heading semantics changed; no new typography/design system."
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Native media retain original asset manifest and exact bytes; no AI/customer-project image or generator badge introduced. Owner-provided original migration scope."
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/runtime-journeys.json"
+      ],
+      "notes": "All26 approved pages plus eligible native navigation and legacy aliases checked; existing catalogue, not new orphan guides."
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/runtime-journeys.json"
+      ],
+      "notes": "Header/menu/catalogue/quick-view/form/footer bounded current checks and prior unchanged-controller evidence retained."
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "19products,3categories,home/legal/press; retired unrelated ozone/sample pages410; no new doorway URLs."
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Original signature-pad offer, visible product choice and genuine inquiry CTA preserved."
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Equipment, software, customer logos and inquiry sections retain their distinct original roles. No new repetitive promotion added."
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Real contact/privacy route, native required/phone state, honeypot/security failures and durable known delivery/replay states; inaccurate policy content remains W1/W2."
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "NA",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Existing commercial catalogue migration; three new editorial guides are not commissioned and would change the original site."
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Legacy hardware claims were preserved, not independently recertified in this preparation batch. Prior software corrections have separate retained reviews."
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "NA",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "No new guide-writing scope; preserved product/software catalogue remains the agreed information architecture."
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Original long product/software fragments are retained by exact native package; current narrow policy and software catalogue render, earlier full product parity retained."
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Actual original hero, equipment, software, trust and contact media remain. Legal notice is text-focused by purpose; no new editorial guides in scope."
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "The real original brand is visible; actual legal Organization attribution needs owner facts."
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Brand schema is consistent, but legal operator/profile identity remains unconfirmed. No new expert is invented."
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Native package publication/review dates preserved, not generated per request or changed to pretend a canonical-domain launch."
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "New native version has not launched on the canonical domain; preview and old WordPress dates are distinct."
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Existing commercial migration preserves the original pages; a new editorial/AI-method public page is not authored or approved in this batch."
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Review attributed to Codex and actual owner migration/delivery statements only. No fabricated human/legal/expert approval."
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Frozen native94de package unchanged. New head/heading changes have actual layout SSR and semantic regression tests, not manual approved-hash edits."
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "SEO smoke tests all26 eligible pages for usefulH1/title/description/lt-LT/canonical."
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/head-verification.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Correct catalogueH2 and relatedH3 regression; actual rendered head/favicon identity/GSC token checks plus media hashes."
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Unknown, WordPress admin and wrong host/path endpoints tested404/noindex; retired paths410, no blanket homepage canonical."
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Actual per-page JSON-LD parses and agrees with preserved visible brand/page/product facts; unknown legal identity separately blocked."
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Canonical breadcrumbs/schema relations validated by native SEO smoke and shared eligibility tests."
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "No new fabricated reviews/ratings/stock or rich-result guarantees; original catalogue prices remain informational."
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "No new crawlable canonical-domain deployment or official URL Inspection. GSC API access returned an expired/invalid-session error."
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Retained native target IDs/fragments and actual same-host routes checked by native smoke/parity and HTTP alias tests."
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "325core tests include revocation/future/draft/cross-host projection isolation; changes do not bypass that shared predicate."
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Original categories/product relations retained, no new all-to-all SEO links or synonym pages."
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Primary software sources were checked in prior scoped correction; this batch does not claim fresh checks for every inherited external/hardware/legal source."
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "NA",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "No new owned-network editorial links are introduced or rendered in this migration."
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Original source/related links retained; no new paid/UGC links or fake partner implication introduced."
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Canonical-domain launch is expressly prohibited this turn; final live external-destination check is pending that launch."
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/legacy-page-links.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Actual hosted canonical/path/sitemap/robots/legacy query and slash tests pass; intentionally noindex review is distinct from later production."
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "26eligible sitemap URLs; preview noindex/disallow retained. Noindex is explicitly not called access control for this owner-authorized public review."
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Preview TLS/host isolation passes; signaturepads.lt still serves original WordPress by instruction."
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Native core single approved projection controls rendered pages, media, schema and LLM exports."
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Hash/date/revocation/cross-host negative tests pass. This authorized hosted review contains the preserved public package; private new prose/fact drafts are not imported or published. No claim that its public URL is access-controlled."
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Immutable native hash retained, compile/RSC/current HTTP pass and unrelated tenants excluded from uploaded assets."
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Actual llms exports and links are checked with the same eligible26-page projection and original contacts."
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Semantic visible copy remains the source; no model-only claim added; inherited claim recertification limitation recorded in H2."
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "No AI ranking/traffic guarantee, special schema or llms-only success claim."
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/runtime-journeys.json"
+      ],
+      "notes": "Quick-view focus/Enter/Escape and mobile menu open/close exercised. A complete fresh keyboard/skip-link walk on every page is not claimed."
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/native-zoom.json",
+        "DEPENDENCY-HARDENING-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/native-zoom-api.json"
+      ],
+      "notes": "Actual native200% Chrome zoom, same-window1424→712CSSpx, native screenshot and narrow reflow/automated contrast pass. Complete manual contrast/touch-target audit is not asserted; whole criterion remains UNVERIFIED, not a WCAG certificate."
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/supplementary-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Image/headings/form/disclosure and reduced-motion content visibility pass bounded checks; a complete reduced-motion behavior audit is not claimed."
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Current Chrome/WebKit320/390/768/1024/1440 actual viewports: no horizontal overflow/pageerrors, original backgrounds retained."
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/native-zoom-api.json"
+      ],
+      "notes": "Native200% homepage/software/policy heading/footer captures and320–1440reflow inspected; not every long product/source/byline/form state was freshly enlarged, so full criterion remains UNVERIFIED."
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/native-zoom.json",
+        "DEPENDENCY-HARDENING-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/native-zoom-api.json"
+      ],
+      "notes": "Windows Chrome and Playwright WebKit with emulated touch recorded as such; no physical phone/macOS Safari claim."
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-lighthouse-summary.json",
+        "DEPENDENCY-HARDENING-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/runtime-lighthouse-summary.json"
+      ],
+      "notes": "Actual current compiled Worker mobile score90; threshold90. See runtime-lighthouse-summary.json, not the earlier90 result."
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/baseline-lighthouse-summary.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/final-lighthouse-summary.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-lighthouse-summary.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/head-verification.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Baseline86 and failed intermediate84 retained. Actual hero hint regression fixed and actual HTTP verified; currentLCP3.49s/CLS0/TBT22ms, LCP field-good threshold still not achieved."
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Preview Lighthouse is not production CrUX/field CWV. Field measurements follow an authorized launch."
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/negative-forms.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/rate-forms.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/preview-d1-after.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "325unit/contracts plus actual origin/consent/honeypot/rate-only probes. Preview D1 still exactly one prior test/notified1; no new mail in this batch."
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/secret-names-verified.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/../cloudflare-mail-20261031/owner-receipt.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "HostingerAPI accepted prior exact marked test, correct sender/contact recipient/Sent copy; not SMTP. Secret remains scoped/installed and is absent from public build."
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/../cloudflare-mail-20261031/owner-receipt.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Direct owner reply confirms receipt of the specifically identified marked104777af test. Raw receiver headers/folder not inspected; do not describe this as forensic INBOX Message-ID matching. No demand claim."
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Dedicated production DB/schema prepared and empty; real production Worker/bindings/domain/mail not activated or tested."
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "NA",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "No visitor counters/marketing analytics are enabled. Inquiry delivery and its synthetic test are recorded separately, never treated as customer demand."
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "FAIL",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "PRIVACY-FACTS-20261031.md",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Inherited cookie/commerce policy does not describe the current cookie-free inquiry-only implementation; public prose needs confirmed operator/retention facts and prescribed review."
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Search Console account access unavailable; customer demand, traffic and launch observation interval not inferred. Voice remains off."
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "FAIL",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "PRIVACY-FACTS-20261031.md",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Inherited commerce/automatic-consent policy is inaccurate for the rebuilt inquiry-only site. No public replacement was fabricated."
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "FAIL",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "PRIVACY-FACTS-20261031.md",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Legal operator, final retention/deletion and processor/transfer wording remain unconfirmed; fact brief is ready for the designated writer."
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "PRIVACY-FACTS-20261031.md",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Legal controller/retention and approved public notice missing; no production privacy qualification is asserted."
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "PRIVACY-FACTS-20261031.md",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "No GA/GTM/ads or nonessential stores observed in10views; inquiry checkbox is purpose-limited and is not marketing permission."
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/pre-deploy.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/public-followup-safety.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Scoped repository safety and build secret scan; known tenant, origin, resource, size/schema and publication boundary tests pass."
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/dependency-exposure.json"
+      ],
+      "notes": "Fail-closed missing resource/config, origin and approximate edge limits covered; native durable claim/replay and mail_unknown behavior preserved. ReplyTo limitation disclosed. Full dependency audit0critical/0high;20moderate build-tool entries from2advisory families evaluated by actual source/operating mode. RSC dev classification was not accepted as a runtime exemption."
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Production launch/access/incident checks pending. WordPress backup explicitly excluded by owner and NOT made; rollback DNS configuration retained."
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Shared resource verification/config/guard corrections in public core; signaturepads card semantics remain in site renderer. Native schema/content unchanged."
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/runtime-core-tests.log"
+      ],
+      "notes": "328Core tests, TypeScript, current SEO smoke/RSC and real hosted HTTP/browser checks pass on aligned installed dependencies;2existing no-css-tags warnings. No new tests against other live domains are asserted."
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Current site journal/runbook and canonical core acceptance instructions are linked. Generic verify-site-completion.mjs referenced by the skill was not present in either fetched checkout; no fabricated SITE_COMPLETION output."
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "This complete85-item catalogue, baseline/intermediate/final metrics, screenshots, source/build/package and remaining gates retained."
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "No10/10/local-ready/domain-ready claim. Formal score/report-only vs require-local failure is explicitly recorded."
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PRELAUNCH-20261031.md",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/remote-http.json",
+        "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-browser.json",
+        "DEPENDENCY-HARDENING-20261031.md"
+      ],
+      "notes": "Owner explicitly excludes real-domain launch now; all launch gates are not proved."
+    }
+  ]
+}

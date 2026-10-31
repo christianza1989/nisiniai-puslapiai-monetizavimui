@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "source": "https://kvapunaikinimas.lt/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas/",
+  "captured": "2026-10-31",
+  "reason": "Two cigarette-page vc_empty_space divs add27px beyond the existing20px paragraph gap; nine kvapu-naikinimas title lists use source20px instead of fallback25px indent. Preserve source/native text bytes.",
+  "sources": ["https://kvapunaikinimas.lt/cigareciu-tabako-dumu-rukalu-kvapo-naikinimas/", "https://kvapunaikinimas.lt/kvapu-naikinimas/"],
+  "corrections": [
+    {
+      "slug": "cigareciu-tabako-dumu-rukalu-kvapo-naikinimas",
+      "digest": "48651c9dc529dd31851f30198e9ccb1b95cce70e687ec8d06343df05ddfe22f3",
+      "marginTop": 47,
+      "sourceWidget": "8fbf61a",
+      "sourceBlock": 14,
+      "observed": [
+        {
+          "width": 1440,
+          "gap": 47
+        },
+        {
+          "width": 390,
+          "gap": 47
+        }
+      ],
+      "emptyDivHeight": 27
+    },
+    {
+      "slug": "cigareciu-tabako-dumu-rukalu-kvapo-naikinimas",
+      "digest": "76a08d17154ee19c4b424d1796b980a479634f4fe875aa09b3ff73749b6d7677",
+      "marginTop": 47,
+      "sourceWidget": "8fbf61a",
+      "sourceBlock": 15,
+      "observed": [
+        {
+          "width": 1440,
+          "gap": 47
+        },
+        {
+          "width": 390,
+          "gap": 47
+        }
+      ],
+      "emptyDivHeight": 27
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "digest": "87adbf732221fa5e562763a1f54c4437593bedb5ac4d649e1b36114664b48ead",
+      "markerIndent": 20,
+      "sourceBlock": 8,
+      "observed": [
+        {
+          "width": 1440,
+          "indent": 20
+        },
+        {
+          "width": 390,
+          "indent": 20
+        }
+      ]
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "digest": "0769cc5b8c52163eebf1f20711eb4102bf09c7e2fbfea4805834b51acb1ff995",
+      "markerIndent": 20,
+      "sourceBlock": 10,
+      "observed": [
+        {
+          "width": 1440,
+          "indent": 20
+        },
+        {
+          "width": 390,
+          "indent": 20
+        }
+      ]
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "digest": "b366df97d063492b983d97bbaf35408d0cce8573262ac1a043b7e05d063a8f8b",
+      "markerIndent": 20,
+      "sourceBlock": 12,
+      "observed": [
+        {
+          "width": 1440,
+          "indent": 20
+        },
+        {
+          "width": 390,
+          "indent": 20
+        }
+      ]
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "digest": "0e3cc26001e3b61549f6bb6435e6bad89a6686ee88a59e9b01418c0d577e1fe7",
+      "markerIndent": 20,
+      "sourceBlock": 14,
+      "observed": [
+        {
+          "width": 1440,
+          "indent": 20
+        },
+        {
+          "width": 390,
+          "indent": 20
+        }
+      ]
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "digest": "4a6151f50dbbd3b65887b5af7dac3470bb0c8558995041140961491fd703aae6",
+      "markerIndent": 20,
+      "sourceBlock": 16,
+      "observed": [
+        {
+          "width": 1440,
+          "indent": 20
+        },
+        {
+          "width": 390,
+          "indent": 20
+        }
+      ]
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "digest": "a138c6fece659e87272b896b7519e6a8ca229c224498a42b1c6b9258807f412d",
+      "markerIndent": 20,
+      "sourceBlock": 18,
+      "observed": [
+        {
+          "width": 1440,
+          "indent": 20
+        },
+        {
+          "width": 390,
+          "indent": 20
+        }
+      ]
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "digest": "2d3e4e894a56fbc08899de762a530b695a6465b37ae6cd84bc36ccdb96bf880f",
+      "markerIndent": 20,
+      "sourceBlock": 20,
+      "observed": [
+        {
+          "width": 1440,
+          "indent": 20
+        },
+        {
+          "width": 390,
+          "indent": 20
+        }
+      ]
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "digest": "513674c03a2016937abad9476ab6c5bf95e70bcd79a767ccfcbcf82698f4c8aa",
+      "markerIndent": 20,
+      "sourceBlock": 22,
+      "observed": [
+        {
+          "width": 1440,
+          "indent": 20
+        },
+        {
+          "width": 390,
+          "indent": 20
+        }
+      ]
+    },
+    {
+      "slug": "kvapu-naikinimas",
+      "digest": "dfc65f2c3ac08f339fc77455f95d9ecb0f838c8c09ef00d0702cbaa30bed6512",
+      "markerIndent": 20,
+      "sourceBlock": 24,
+      "observed": [
+        {
+          "width": 1440,
+          "indent": 20
+        },
+        {
+          "width": 390,
+          "indent": 20
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "siteId": "kvapunaikinimas",
+  "evidence": [
+    "D:/Core/output/kvapunaikinimas-all-pages-20261031/baseline.json",
+    "D:/Core/output/kvapunaikinimas-all-pages-20261031/source-cigarette-detail.json",
+    "sites/kvapunaikinimas/ALL-PAGES-2026-10-31.md"
+  ],
+  "rollback": "Scoped revert of list inset, two digest-bound block-gap corrections and preparation replay; retain prior cloud/form/mail/media changes.",
+  "category": "code",
+  "summary": "Match original list inset and restore omitted standalone source whitespace with existing digest-bound margin metadata",
+  "paths": [
+    "components/niche/kvapunaikinimas-site.module.css",
+    "config/kvapunaikinimas-layout.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "id": "upgrade-190ca1a9-e1b3-492e-9d57-05f62ba05296",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "37a92526d18cc211c503e8b11ae59435fc16fb9a",
+  "createdAt": "2026-10-31T05:38:07.204Z"
+}

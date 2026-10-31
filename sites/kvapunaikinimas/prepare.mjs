@@ -3,6 +3,7 @@
 import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {applyBlockSpacing} from './block-spacing.mjs';
 import {blockDigest,pageDigest,orderedWidgets,originalTextStyle} from '../../../niche-public-core/lib/kvapunaikinimas-presentation.mjs';
 import {initialize,listSites,createSite,editSite,getSite,addPage,editPage,saveResponsiveAsset,approvePage,exportPackage,DATA,OUTPUT} from '../../content-studio/src/model.mjs';
 
@@ -15,6 +16,7 @@ const source=JSON.parse(await readFile(new URL('./source/pages.json',import.meta
 const presentation=JSON.parse(await readFile(new URL('./source/presentation.json',import.meta.url),'utf8'));
 const mobileGeometry=JSON.parse(await readFile(new URL('./source/mobile-geometry.json',import.meta.url),'utf8'));
 const widgetSpacing=JSON.parse(await readFile(new URL('./source/widget-spacing.json',import.meta.url),'utf8'));
+const blockSpacing=JSON.parse(await readFile(new URL('./block-spacing.json',import.meta.url),'utf8'));
 const privacy=JSON.parse(await readFile(new URL('./privacy-copy.json',import.meta.url),'utf8'));
 await initialize();
 await mkdir(OUTPUT,{recursive:true});
@@ -105,6 +107,7 @@ for(const p of source.pages){
   const block=b.type==='list'?{type:'list',items:b.items.map(i=>typeof i==='string'?i:i.text)}:clean({type:b.type,...(b.type==='heading'?{level:b.level}:{}),text:b.text});
   const index=body.length;body.push(block);
   formats[index]={digest:blockDigest(block),...(b.style?{style:{size:Math.round(b.style.size),weight:Math.round(b.style.weight/100)*100,...(b.style.line==='normal'?{line:'normal'}:typeof b.style.line==='number'&&b.style.line>0?{line:Math.round(b.style.line*100)/100}:{}),align:b.style.align,letter:b.style.letter,color:originalTextStyle(b.style).color,marginTop:b.style.marginTop,marginBottom:b.style.marginBottom}}:{}),...(b.marker?{marker:b.marker}:{}),...(b.marks?.length?{marks:b.marks}:{}),...(b.type==='list'?{ordered:b.ordered===true,start:b.start||1,itemMarks:b.items.map(i=>i.marks||[])}:{})};
+  formats[index]=applyBlockSpacing(slug,formats[index].digest,formats[index],blockSpacing.corrections);
  };
  for(const w of p.widgets){
   if(w.kind==='heading.default'&&w.text==='KONTAKTAI')beforeContact=false;

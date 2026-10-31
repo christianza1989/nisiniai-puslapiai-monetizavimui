@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-31",
+  "sources": [
+    {
+      "id": "M1",
+      "url": "https://support.microsoft.com/en-us/excel/connection-properties",
+      "title": "Connection properties",
+      "read": true,
+      "type": "primary_official_documentation",
+      "facts": [
+        "Background query execution, interval refresh and refresh-on-open are separate controls"
+      ],
+      "limit": "No evidence that our workbook runs unattended, closed or on a powered-off computer"
+    },
+    {
+      "id": "M2",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365-apps/licensing-activation/overview-unattended",
+      "title": "Unattended RPA overview",
+      "read": true,
+      "type": "primary_official_documentation",
+      "lastUpdated": "2024-07-22",
+      "facts": [
+        "Described Microsoft 365 Apps for enterprise unattended scenario requires unattended license and supported Windows version",
+        "One unattended license per unique physical or virtual OSE; shared computer activation unsupported"
+      ],
+      "limit": "Article body readable despite authorization banner; no account/Product Terms/actual-license/price verification; not a claim about every Excel license"
+    },
+    {
+      "id": "M3",
+      "url": "https://learn.microsoft.com/en-us/office/client-developer/integration/considerations-unattended-automation-office-microsoft-365-for-unattended-rpa",
+      "title": "Unattended Office automation considerations",
+      "read": true,
+      "type": "primary_official_documentation",
+      "lastUpdated": "2022-07-05",
+      "facts": [
+        "Unattended licensed context still has interactive-dialog, identity and stability caveats",
+        "Non-interactive service-side Office automation is separately not recommended/supported; direct file processing alternatives discussed"
+      ],
+      "limit": "Article body readable despite authorization banner; no unattended worker, Office install or one-for-one Power Query alternative tested"
+    }
+  ],
+  "actualExcelRuns": 0,
+  "paidCalls": 0
+}

@@ -1343,6 +1343,142 @@
       "proofs": {
         "sourceGeometryRuntime": "16bc9cce9e90d8cf97971addb72a3d470c5207c2556d1cbbaf177b61602f6ef8"
       }
+    },
+    "product_play-work-workbenches_6051de1e:24039457": {
+      "key": "product_play-work-workbenches_6051de1e:24039457",
+      "productId": "product_play-work-workbenches_6051de1e",
+      "sample": "24039457",
+      "code": "KPW2017WW001",
+      "familyId": "cfg-6fb2568e40eb",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KPW2017WW001-78d42802304cafa9d1cd.json",
+        "sha256": "78d42802304cafa9d1cdc72538ccf9387633fb361a7fee329c14a813b54a6c02"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "262a0e39d3584f89367369a7e28f055524bf0856d0758ac30df05a22fb6984e0"
+      }
+    },
+    "product_play-work-workbenches_6051de1e:29359970": {
+      "key": "product_play-work-workbenches_6051de1e:29359970",
+      "productId": "product_play-work-workbenches_6051de1e",
+      "sample": "29359970",
+      "code": "KPW2018WW002",
+      "familyId": "cfg-1303b8db71a3",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KPW2018WW002-2551eccf8b0cc9a0cadc.json",
+        "sha256": "2551eccf8b0cc9a0cadcaaf3718e3e34ab2bd1b7f256479b37604a47cab098f0"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "3812a8aff00f8bec7154346ce35fee4f53a84cd09fa08d901f9180fcf3a31ac7"
+      }
+    },
+    "product_play-work-workbenches_6051de1e:29359971": {
+      "key": "product_play-work-workbenches_6051de1e:29359971",
+      "productId": "product_play-work-workbenches_6051de1e",
+      "sample": "29359971",
+      "code": "KPW2020WW002",
+      "familyId": "cfg-2ea978ead857",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KPW2020WW002-563120ab4a1934fb58a6.json",
+        "sha256": "563120ab4a1934fb58a6d41620ba89df53fab891499c38e3cb494162635a0c73"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "b26004562ebbe6434c91e900484437241b07ed154e5d2e0b4969061bd07b40d2"
+      }
+    },
+    "product_sqart-workbenches_b61820e8:25218753": {
+      "key": "product_sqart-workbenches_b61820e8:25218753",
+      "productId": "product_sqart-workbenches_b61820e8",
+      "sample": "25218753",
+      "code": "KSQA155WW001",
+      "familyId": "cfg-df5e9e342227",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KSQA155WW001-925644ee22d74bad83a2.json",
+        "sha256": "925644ee22d74bad83a22bff5a54c8f08fb65afd25f73c0b41f5d54f50b35e3f"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "0bdae20b8dc5abb09857840927360fa1b665e08c08842eeea02d1dbfc98b51d8"
+      }
+    },
+    "product_xio20-desks_c7ca56f6:28627496": {
+      "key": "product_xio20-desks_c7ca56f6:28627496",
+      "productId": "product_xio20-desks_c7ca56f6",
+      "sample": "28627496",
+      "code": "KXI2019WW003",
+      "familyId": "cfg-40a78763d38d",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KXI2019WW003-5b80ef0347daabc4d198.json",
+        "sha256": "5b80ef0347daabc4d198b99d578c0c980d671550fa9f58c477dab890d22d3e5f"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "fe48b4fe9c5a1eaa661815faac2ec4bca5e173ad21e5b919e2689df69aacccbc"
+      }
+    },
+    "product_cs5040-desks_2fa98d2c:20937849": {
+      "key": "product_cs5040-desks_2fa98d2c:20937849",
+      "productId": "product_cs5040-desks_2fa98d2c",
+      "sample": "20937849",
+      "code": "KC54082WW002",
+      "familyId": "cfg-24081289fce5",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KC54082WW002-dc0b739dab53dc9b14c7.json",
+        "sha256": "dc0b739dab53dc9b14c79e45b1a0a099da547baacde18750fe57cc1541c53468"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "ec44cbfae003e9502ea4f69fbb4d7fb779c2f98f8a34d6bdde941ec5ca99abfc"
+      }
+    },
+    "product_cs5040-workbenches_9e746ab9:19769466": {
+      "key": "product_cs5040-workbenches_9e746ab9:19769466",
+      "productId": "product_cs5040-workbenches_9e746ab9",
+      "sample": "19769466",
+      "code": "KC54102WW001",
+      "familyId": "cfg-d3ab661c4e98",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KC54102WW001-cc668bd0f67af283c10a.json",
+        "sha256": "cc668bd0f67af283c10a2d9e428b0b4e55d6cf6ec5dc4c4a3e5a6a291099a962"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "8ed44655b5372728c81012bfac455864b0c3e5771e661ce3d308c1c35d54eb95"
+      }
+    },
+    "product_easy-space-desks_b8e638ba:22467056": {
+      "key": "product_easy-space-desks_b8e638ba:22467056",
+      "productId": "product_easy-space-desks_b8e638ba",
+      "sample": "22467056",
+      "code": "KESE080WW001",
+      "familyId": "cfg-bf5f235b852f",
+      "collectionMode": "desk-components",
+      "acceptance": "TECHNICAL_DRAFT",
+      "optionsRequired": true,
+      "runtime": {
+        "asset": "/models/configurator/components/KESE080WW001-9e6d9c9fa9b240459b7d.json",
+        "sha256": "9e6d9c9fa9b240459b7da37009ad10870235bacf4e74b33159fb47e736de48f1"
+      },
+      "proofs": {
+        "sourceGeometryRuntime": "91eadcb23f0c206753e90392694727efe47b02dd257aafb43ec403dd53ea1f01"
+      }
     }
   }
 }

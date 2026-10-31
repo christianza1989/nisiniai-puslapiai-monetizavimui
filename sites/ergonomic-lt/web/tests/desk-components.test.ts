@@ -179,3 +179,29 @@ test('no common invariant keeps original variant geometry and rejects a potentia
  const empty=structuredClone(s);empty.contexts[0].groups[0].variants[0].asset=null;
  assert.throws(()=>validateDeskComponents(empty,code));
 });
+
+
+test('captured overall and top dimension aliases change together through exact scene tuples',()=>{
+ const s=source(),tuples=[
+  {GDDEPTH:'_1600',GDTOPDEPTH:'_2X792',GDTOPWIDTH:'_2X1400',GDWIDTH:'_3600'},
+  {GDDEPTH:'_1600',GDTOPDEPTH:'_2X792',GDTOPWIDTH:'_2X1600',GDWIDTH:'_4000'},
+  {GDDEPTH:'_1800',GDTOPDEPTH:'_2X892',GDTOPWIDTH:'_2X1600',GDWIDTH:'_4000'}
+ ];
+ s.contexts=s.contexts.map((c,i)=>({...c,dimensions:tuples[i],invariant:part(['a','f','9'][i])}));
+ const e=createExpandedEngine(adaptDeskComponents(s,id));let state=e.initialStateForProduct(product);const original=e.stateToken(state);
+ assert.deepEqual(e.stateChoices(state).GDWIDTH,['_3600','_4000']);assert.deepEqual(e.stateChoices(state).GDTOPWIDTH,['_2X1400','_2X1600']);
+ assert.throws(()=>e.changeField(state,'GDDEPTH','_1800'));
+ state=e.changeField(state,'GDWIDTH','_4000');assert.equal(state.values.GDTOPWIDTH,'_2X1600');assert.equal(e.assembledAssets(state).base?.assetSha256,'f'.repeat(64));
+ state=e.changeField(state,'GDDEPTH','_1800');assert.equal(state.values.GDTOPDEPTH,'_2X892');assert.equal(e.assembledAssets(state).base?.assetSha256,'9'.repeat(64));
+ assert.deepEqual(e.stateChoices(state).GDWIDTH,['_4000']);assert.throws(()=>e.changeField(state,'GDWIDTH','_3600'));
+ state=e.changeField(state,'GDTOPDEPTH','_2X792');state=e.changeField(state,'GDTOPWIDTH','_2X1400');assert.equal(state.values.GDWIDTH,'_3600');assert.deepEqual(e.stateToken(state),original);
+ assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
+});
+
+test('an ambiguous overall-width alias never chooses one of two captured top widths',()=>{
+ const s=source();s.contexts=s.contexts.map((c,i)=>({...c,dimensions:{GDDEPTH:'_1600',GDTOPDEPTH:'_2X792',GDTOPWIDTH:['_2X1400','_2X1600','_2X1800'][i],GDWIDTH:i?'_4000':'_3600'},invariant:part(['a','f','9'][i])}));
+ const e=createExpandedEngine(adaptDeskComponents(s,id));let state=e.initialStateForProduct(product);
+ assert.deepEqual(e.stateChoices(state).GDWIDTH,['_3600']);assert.throws(()=>e.changeField(state,'GDWIDTH','_4000'));
+ state=e.changeField(state,'GDTOPWIDTH','_2X1800');assert.equal(state.values.GDWIDTH,'_4000');assert.equal(e.assembledAssets(state).base?.assetSha256,'9'.repeat(64));
+ assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
+});

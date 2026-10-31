@@ -10,7 +10,7 @@ was in Cloudflare's prohibited outbound TCP range. A new authenticated Node22
 relay on kontaktuforma.lt uses the existing Cloud Professional plan and central
 mailbox, the maintained mail gateway/SMTP modules and a durable MySQL acceptance
 ledger. No purchase, new mail provider, plugin or WordPress modification.
-Worker version `c488b6b6-7191-4cb4-803d-827b17a0a676` selects HTTPS relay
+Worker version `815eba1c-4c86-4bb4-90b8-9e996c005fb1` selects HTTPS relay
 explicitly; direct SMTP is off. Secret values are absent from source/receipts.
 
 Actual browser form test `O3-CF-LIVE-20261031-B1` stored D1 lead
@@ -22,7 +22,7 @@ Do not conflate the earlier owner-confirmed local test with hosted receipt.
 The preceding hosted A1 test remains saved/new and was proven not to reach SMTP;
 it is synthetic and was not resent. Do not import these tests as real demand.
 
-312 public tests, TypeScript, build and2RSC manifests pass. Live21-page SEO,
+313 public tests, TypeScript, build and2RSC manifests pass. Live21-page SEO,
 HTTPS/WWW, desktop1280/mobile390, menu, sticky header and visible mobile form
 pass without horizontal overflow. Private proof: `private/launch-20261031/`.
 Rollback retains original WordPress files and all original DNS targets; restore
@@ -51,6 +51,15 @@ product image starts eagerly at high priority. Related/below-fold cards stay laz
 Original hero pixels and product prose are unchanged. See
 [PageSpeed evidence](PAGESPEED_20261031.md). Private current delivery/evidence:
 `private/catalogue-cleanup-20261031/`; old23-page launch evidence is preserved.
+
+Desktop/category follow-up fixes active/hover link contrast, removes the nested
+interactive link from the native menu disclosure (catalogue link remains inside
+its dropdown), and separates min/max price sliders into visibly labelled,
+non-overlapping rows. Targets are24px high,44px on coarse pointers. Actual
+catalogue and industrial category reports show mobile98/100 and desktop100/100
+performance/accessibility, with100Best Practices/SEO. Live1280px and draft320px
+keyboard/range/menu checks pass without overflow;10focused renderer tests pass.
+No additional mail was sent.
 
 ## Earlier accepted copy checkpoint · historical
 

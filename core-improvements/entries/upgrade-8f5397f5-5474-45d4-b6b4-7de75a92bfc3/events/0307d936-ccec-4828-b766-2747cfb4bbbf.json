@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Desktop/category follow-up on the same measured repair: active/hover contrast, non-nested native menu disclosure, separated labelled native price sliders. Native Worker815eba1c-4c86-4bb4-90b8-9e996c005fb1; no content-release/mail/global-default change.",
+  "checks": [
+    {
+      "command": "npm run test:core; node --test tests/o3tech.test.mjs",
+      "result": "PASS",
+      "evidence": "313 full tests and10 scoped tests, including no interactive summary descendant/visible range labels"
+    },
+    {
+      "command": "Production scoped build and actual-domain SEO/cleanup checks",
+      "result": "PASS",
+      "evidence": "2RSC manifests/0missing,21 live pages,2removed404 and company/cookie checks"
+    },
+    {
+      "command": "Actual PageSpeed catalogue and industrial category, mobile plus desktop",
+      "result": "PASS",
+      "evidence": "08:13 reports: mobile98/100/100/100, desktop100/100/100/100, CLS0/TBT0; sites/o3tech/PAGESPEED_20261031.md"
+    },
+    {
+      "command": "CUA1280px live and320px draft keyboard/menu/range checks",
+      "result": "PASS",
+      "evidence": "Native menu opens,0nested interactive controls; minimum30→31/output update;24px slider targets57px apart; no overflow"
+    }
+  ],
+  "eventId": "0307d936-ccec-4828-b766-2747cfb4bbbf",
+  "sequence": 3,
+  "at": "2026-10-31T06:17:53.575Z"
+}

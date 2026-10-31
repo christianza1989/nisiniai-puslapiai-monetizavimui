@@ -66,3 +66,11 @@ preload to stabilize first rendering; italic source faces remain unchanged.
 Current native21-page release, exact reports and remaining CSS/JS/image suggestions
 are in [PAGESPEED_20261031.md](PAGESPEED_20261031.md). Lab CLS0 does not certify all
 devices or field performance. No all-site graphics workaround or rule was added.
+
+Desktop/category acceptance adds dark teal active/hover links, non-nested native
+menu disclosure with its overview link in the dropdown, and two separate labelled
+price-slider rows. Preserve14px inherited labels; control height24px desktop,44px
+on coarse pointers,16px teal thumbs. Original hover scaling remains. Actual1280px
+live and320px draft keyboard/menu/range checks pass, including minimum30→31 and
+updated output. Both catalogue/category lab profiles now100accessibility; mobile
+98performance, desktop100. Source release remains21 pages.

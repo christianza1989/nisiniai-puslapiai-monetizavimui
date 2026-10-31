@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Actual native domain, HTTPS relay AUTH with no DATA, browser B1 form, D1 notified and durable SMTP acceptance are qualified. Current recipient INBOX has not been independently inspected. No automatic retry, paid service, source WP deletion or main merge.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "sites/o3tech/NATIVE_CLOUDFLARE.md:311 public tests"
+    },
+    {
+      "command": "npx tsc --noEmit; scoped npm run build",
+      "result": "PASS",
+      "evidence": "sites/o3tech/NATIVE_CLOUDFLARE.md:types/build/two RSC manifests"
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=o3tech SEO_SMOKE_BASE_URL=https://o3tech.lt node tests/seo-core-smoke.mjs",
+      "result": "PASS",
+      "evidence": "sites/o3tech/NATIVE_CLOUDFLARE.md:23 live pages and SEO endpoints"
+    },
+    {
+      "command": "hosted browser form B1 and read-only relay/D1 acceptance lookup",
+      "result": "PASS",
+      "evidence": "sites/o3tech/NATIVE_CLOUDFLARE.md:fe042284-a764-454b-9d87-e7882980a5e6"
+    }
+  ],
+  "eventId": "89749107-29c9-423d-8e7b-b393b2a8dfc2",
+  "sequence": 2,
+  "at": "2026-10-31T05:15:13.209Z"
+}

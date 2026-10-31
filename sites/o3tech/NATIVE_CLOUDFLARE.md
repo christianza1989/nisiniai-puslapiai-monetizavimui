@@ -1,5 +1,34 @@
 # Native Cloudflare migration checkpoint · 2026-10-30
 
+**2026-10-31: actual-domain cutover completed.** Zone and universal certificate
+are active; all five web records are proxied. Native o3tech.lt and www serve the
+owned Worker, HTTPS redirects and23-page live SEO smoke pass. Original mail DNS
+values are preserved. The earlier waiting-state section below is historical.
+
+Direct Workers TCP to smtp.hostinger.com failed before AUTH because its address
+was in Cloudflare's prohibited outbound TCP range. A new authenticated Node22
+relay on kontaktuforma.lt uses the existing Cloud Professional plan and central
+mailbox, the maintained mail gateway/SMTP modules and a durable MySQL acceptance
+ledger. No purchase, new mail provider, plugin or WordPress modification.
+Worker version `df80d1d9-1a00-436f-bab5-0d6c62a9c9fe` selects HTTPS relay
+explicitly; direct SMTP is off. Secret values are absent from source/receipts.
+
+Actual browser form test `O3-CF-LIVE-20261031-B1` stored D1 lead
+`fe042284-a764-454b-9d87-e7882980a5e6` as notified, after exact SMTP acceptance
+through the relay at sales@o3tech.lt, with the owner-confirmed client address
+as Reply-To. Current connected info@azprekyba.lt Gmail search found no forwarded
+copy; recipient INBOX placement for this hosted test is not independently seen.
+Do not conflate the earlier owner-confirmed local test with hosted receipt.
+The preceding hosted A1 test remains saved/new and was proven not to reach SMTP;
+it is synthetic and was not resent. Do not import these tests as real demand.
+
+311 public tests, TypeScript, build and2RSC manifests pass. Live23-page SEO,
+HTTPS/WWW, desktop1280/mobile390, menu, sticky header and visible mobile form
+pass without horizontal overflow. Private proof: `private/launch-20261031/`.
+Rollback retains original WordPress files and all original DNS targets; restore
+only the five web proxy switches if needed. Hostinger must remain available for
+the central mailbox and relay. See public docs/NICHE_HOSTINGER_MAIL_RELAY.md.
+
 The owner accepted the exact Codex-written point13 draft and instructed its
 publication plus real-domain migration. Changes1–6 and13 are applied;7–12 and
 14–20 are retained as selected. Point12's original cookie consent remains.

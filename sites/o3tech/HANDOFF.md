@@ -54,3 +54,5 @@ configured; registrar change accepted. Web DNS remains original DNS-only while
 zone/certificate are pending.306tests/types/build, compiled23-page SEO and10local
 HTTP checks pass. No new real mail or actual-domain cutover is claimed. See
 [NATIVE_CLOUDFLARE.md](NATIVE_CLOUDFLARE.md).
+
+2026-10-31 actual cutover is complete; NATIVE_CLOUDFLARE.md now leads with the current state. Native Cloudflare domain, SSL, five proxied web records,23-page live SEO,311 public tests and actual hosted form SMTP acceptance pass. Search Console sitemap.xml resubmitted successfully on31Oct in the selected Rokas account; processing/indexing is asynchronous. Private current delivery: private/launch-20261031/DELIVERY.json. Original source WordPress and DNS rollback remain; Hostinger still serves the central mailbox and authenticated relay. No recipient INBOX or retained safety/legal copy certification is claimed.

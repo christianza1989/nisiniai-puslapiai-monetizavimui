@@ -1,5 +1,6 @@
 import type {CatalogRuntime,CatalogAnchor} from './catalog-configurator';
 import type {Asset,Patch} from './expanded-configurator';
+import partialDeskPreviewScopes from '../../content/desk-partial-preview-scopes.json';
 
 type Values=Record<string,string>;
 export type DeskAsset={file:string;sha256:string;componentSha256:string;bytes:number;needsCompression:boolean};
@@ -55,7 +56,20 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
    }
   }
  }
- if(input.dimensionChoices!==undefined||input.textOnlyDimensionChoices!==undefined||input.missing3D!==undefined||input.unavailable3DMessage!==undefined){
+ if(Object.hasOwn(partialDeskPreviewScopes,code)||input.dimensionChoices!==undefined||input.textOnlyDimensionChoices!==undefined||input.missing3D!==undefined||input.unavailable3DMessage!==undefined){
+  const supplied=Object.hasOwn(partialDeskPreviewScopes,code)?(partialDeskPreviewScopes as Record<string,{available:Values[];unavailable:Values[];missing3D:string[]}>)[code]:undefined;
+  if(supplied){
+   // These three owner-authorized partial packets retain exactly the supplied
+   // captured and unavailable tuples. Missing tuples never receive geometry.
+   const key=(d:Values)=>JSON.stringify(Object.entries(d).sort());
+   const equalSet=(actual:unknown,expected:Values[])=>{
+    if(!Array.isArray(actual)||actual.length!==expected.length)return false;
+    const keys=new Set<string>();
+    for(const d of actual){values(d);const k=key(d as Values);if(keys.has(k))return false;keys.add(k);}
+    return expected.every(d=>keys.has(key(d)));
+   };
+   if(input.unavailable3DMessage!=='3D peržiūra šiam dydžiui neprieinama'||JSON.stringify(input.missing3D)!==JSON.stringify(supplied.missing3D)||!equalSet(input.textOnlyDimensionChoices,supplied.unavailable)||!equalSet(input.dimensionChoices,[...supplied.available,...supplied.unavailable])||contexts.size!==supplied.available.length||supplied.available.some(d=>!contexts.has(key(d))))fail();
+  }else{
   // Only the explicitly supplied unavailable tuple is admitted. It receives
   // no substitute geometry or inferred component specification.
   if(code!=='KEM2013WW009'||JSON.stringify(input.missing3D)!==JSON.stringify(['1800×900X800'])||input.unavailable3DMessage!=='3D peržiūra šiam dydžiui neprieinama'||!Array.isArray(input.dimensionChoices)||!Array.isArray(input.textOnlyDimensionChoices)||JSON.stringify(input.textOnlyDimensionChoices)!==JSON.stringify([{DDEPTH:'_900X800',DWIDTH:'_1800'}]))fail();
@@ -63,6 +77,7 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
   for(const d of input.dimensionChoices){values(d);const key=JSON.stringify(Object.entries(d as Values).sort());if(declared.has(key))fail();declared.add(key);}
   const missing=JSON.stringify(Object.entries(input.textOnlyDimensionChoices[0] as Values).sort());
   if(contexts.has(missing)||declared.size!==contexts.size+1||!declared.has(missing)||[...contexts].some(k=>!declared.has(k)))fail();
+  }
  }
 }
 export function deskAssetReference(code:string,a:DeskAsset):Asset{return {asset:'/models/configurator/components/'+code+'-'+a.sha256.slice(0,20)+'.glb',assetSha256:a.sha256,bytes:a.bytes};}
@@ -71,7 +86,20 @@ export function deskReferencedAssets(source:DeskComponents){return [...new Map(s
 export function adaptDeskComponents(source:DeskComponents,id:DeskIdentity):CatalogRuntime{
  validateDeskComponents(source,id.code);
  const dimensions=[...source.contexts.map(c=>c.dimensions),...source.textOnlyDimensionChoices||[]];
- const dimensionChoices=(d:Values)=>Object.fromEntries(Object.keys(d).map(f=>[f,[...new Set(dimensions.filter(other=>matches(d,other,f)).map(other=>other[f]))]]));
+ const tupleKey=(d:Values)=>JSON.stringify(Object.entries(d).sort());
+ // A captured size can couple overall and top widths (or depths). Offer a
+ // value only when it identifies one complete supplied tuple with the other
+ // dimension kind fixed. Ambiguous aliases never pick an arbitrary scene.
+ const dimensionTargets=(d:Values,f:string)=>{
+  const kind=f.endsWith('WIDTH')?'WIDTH':'DEPTH',sameKind=(k:string)=>k.endsWith(kind);
+  const candidates=dimensions.filter(other=>Object.keys(other).sort().join(',')===Object.keys(d).sort().join(',')&&Object.entries(d).every(([k,v])=>sameKind(k)||other[k]===v));
+  return [...new Set(candidates.map(other=>other[f]))].flatMap(v=>{
+   if(v===d[f])return [[v,d]as const];
+   const targets=candidates.filter(other=>other[f]===v);
+   return new Set(targets.map(tupleKey)).size===1?[[v,targets[0]]as const]:[];
+  });
+ };
+ const dimensionChoices=(d:Values)=>Object.fromEntries(Object.keys(d).map(f=>[f,dimensionTargets(d,f).map(([v])=>v)]));
  const anchors:CatalogAnchor[]=source.contexts.map((c,index)=>{
   const defaults:Values={...c.dimensions},choices:Record<string,string[]>=Object.fromEntries(Object.entries(c.textOnly).filter(([,domain])=>domain.length));
   for(const [f,domain] of Object.entries(choices))defaults[f]=c.default3DValues?.[f]??domain[0];
@@ -89,6 +117,9 @@ export function adaptDeskComponents(source:DeskComponents,id:DeskIdentity):Catal
   return {id:id.code+':components-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(c.dimensions),defaults,choices,classes:{},geometry:c.invariant?deskAssetReference(id.code,c.invariant):null,components,profiles:[],textOnlyFields:Object.keys(c.textOnly).filter(f=>c.textOnly[f].length)};
  });
  for(const [index,d] of (source.textOnlyDimensionChoices||[]).entries())anchors.push({id:id.code+':unavailable-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(d),defaults:{...d},choices:dimensionChoices(d),classes:{},geometry:null,unavailable3D:source.unavailable3DMessage,components:[],profiles:[]});
+ // Anchor defaults carry the exact captured aliases together. This maps
+ // between existing scenes; it is not a new supplier setter or a mixed tuple.
+ for(const [index,d]of dimensions.entries())anchors[index].axisTransitions=Object.fromEntries(Object.keys(d).flatMap(f=>dimensionTargets(d,f).map(([v,target])=>[f+'='+v,anchors[dimensions.findIndex(other=>tupleKey(other)===tupleKey(target))].id])));
  const labels:Record<string,string>={GDWIDTH:'Plotis',GDDEPTH:'Gylis',FBASEFEET:'Pagrindas',FCASTORS:'Ratukai',FCABLECOVER:'Laidų uždanga',FHADJUSTMENTWAY:'Aukščio valdymas',FHORWIRETRUNKING:'Horizontalus laidų kanalas',FVERWIRETRUNKING:'Vertikalus laidų kanalas',FMEDIAPORTLEFT:'Kairysis įvadas',FMEDIAPORTMIDDLE:'Vidurinis įvadas',FMEDIAPORTRIGHT:'Dešinysis įvadas',FSOCKETSTANDARD:'Lizdo standartas'};
  Object.assign(labels,{GDTOPWIDTH:'Stalviršio plotis',GDTOPDEPTH:'Stalviršio gylis',DTOPWIDTH:'Stalviršio plotis',DTOPDEPTH:'Stalviršio gylis',DWIDTH:'Plotis',DDEPTH:'Gylis',DTOPTHICKNESS:'Stalviršio storis',FDESKTOPTYPE:'Stalviršio tipas',FPANEL:'Uždanga',FUPPERPANEL:'Viršutinė pertvara',FCOLUMNSHAPE:'Kolonos forma',FCOLUMN:'Kolona',FBASE:'Pagrindo tipas',FTOPSHAPE:'Stalviršio forma',FWIRETRUNKING:'Laidų kanalas',FMODESTYPANEL:'Priekinė uždanga',FSOCKETMEDIAPORTLEFT:'Kairiojo įvado lizdas'});
  Object.assign(labels,{FCONFIGURATIONMEDIARIGHT:'Dešiniojo įvado komplektacija',FSOCKETMEDIAPORTRIGHT:'Dešiniojo įvado lizdas',FSOCKETMEDIAPORT:'Elektros lizdo standartas',FPANELACCESSORIES:'Pertvaros priedai',FTOPACCESSORIES:'Stalviršio priedai',FPEDESTAL:'Stalčių blokas',FHEIGHTADJUSTMENT:'Aukščio reguliavimas'});

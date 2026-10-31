@@ -6,7 +6,7 @@ import {visibleBounds} from './viewer-camera';
 
 // Cache a height-attenuated projection of the actual assembly onto its floor.
 // No per-frame shadow rendering is needed when the camera rotates.
-export function contactShadow(renderer:WebGLRenderer,scene:Scene,object:Object3D){
+export function contactShadow(renderer:WebGLRenderer,scene:Scene,object:Object3D,objectOnly=false){
   object.updateMatrixWorld(true);
   const box=visibleBounds(object),size=box.getSize(new Vector3()),center=box.getCenter(new Vector3());
   const extent=Math.max(size.x,size.z)*1.45,resolution=512;
@@ -19,7 +19,13 @@ export function contactShadow(renderer:WebGLRenderer,scene:Scene,object:Object3D
   const previousTarget=renderer.getRenderTarget(),background=scene.background,override=scene.overrideMaterial;
   const clear=renderer.getClearColor(new Color()).clone(),clearAlpha=renderer.getClearAlpha();
   const shadowEnabled=renderer.shadowMap.enabled;renderer.shadowMap.enabled=false;
-  scene.background=null;scene.overrideMaterial=projection;renderer.setClearColor(0x000000,0);renderer.setRenderTarget(a);renderer.clear();renderer.render(scene,camera);
+  // A chair part swap rebuilds its shadow after the showroom exists. Its
+  // transparent room receivers must not become opaque casters under override.
+  // Preserve the existing default projection for other viewer paths.
+  const others=objectOnly?scene.children.filter(child=>child!==object).map(child=>({child,visible:child.visible})):[];
+  scene.background=null;scene.overrideMaterial=projection;renderer.setClearColor(0x000000,0);renderer.setRenderTarget(a);renderer.clear();
+  try{for(const {child}of others)child.visible=false;renderer.render(scene,camera);}
+  finally{for(const {child,visible}of others)child.visible=visible;}
   scene.background=background;scene.overrideMaterial=override;
   const blurScene=new Scene(),blurCamera=new OrthographicCamera(-1,1,1,-1,0,2);
   blurCamera.position.z=1;
@@ -33,6 +39,7 @@ export function contactShadow(renderer:WebGLRenderer,scene:Scene,object:Object3D
   renderer.setRenderTarget(previousTarget);renderer.setClearColor(clear,clearAlpha);
   renderer.shadowMap.enabled=shadowEnabled;renderer.shadowMap.needsUpdate=true;
   const floor=new Mesh(new PlaneGeometry(extent,extent),new MeshBasicMaterial({map:a.texture,transparent:true,depthWrite:false,toneMapped:false}));
+  floor.name='ProductContactShadow';
   floor.rotation.x=-Math.PI/2;floor.position.set(center.x,box.min.y-.002,center.z);scene.add(floor);
   projection.dispose();horizontal.dispose();vertical.dispose();quad.geometry.dispose();b.dispose();
   return ()=>{scene.remove(floor);floor.geometry.dispose();floor.material.dispose();a.dispose();};

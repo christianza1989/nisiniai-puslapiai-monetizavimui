@@ -59,3 +59,26 @@ Atviri A01–A07: nepilna greitoji peržiūra, skirtingų katalogų responsive s
 ## 2026-10-30 vietinės A01–A07 pataisos
 
 Tiesioginis Roko pavedimas visoms septynioms grupėms įvykdomas per-site source ir naują native Sigma reviziją. Dabartinė būsena / įrodymai: [PARITY-FIXES-20261030.md](signaturepads/PARITY-FIXES-20261030.md), ankstesni auditai išsaugoti. PUBLIC source `47b95797`, paketas `38a9024f`; ta pati Core peržiūra `http://127.0.0.1:8956/`. Išliko 26 aktyvūs URL, 19 kainų ir galerijų, kontaktai; 25 kiti įrašai / 199 media baitai nepakeisti. 305 testai, HTTP ir Chrome desktop / touch-emulated mobile patikra; gyvos svetainės / DNS / WordPress / realaus pašto pakeitimų nėra. Fiziniai įrenginiai / Safari ir pašto INBOX lieka nepatvirtinti.
+
+## 2026-10-31 aktualus pasiruošimas
+
+Savininko nurodymu užbaigiamas techninis pasiruošimas, domeno ir originalaus
+WordPress nekeičiant; 5 punktas (WordPress backup) aiškiai praleidžiamas.
+Aktuali [prelaunch ataskaita](signaturepads/PRELAUNCH-20261031.md) pakeičia
+ankstesnius dabartinės peržiūros būklės teiginius, bet ne istorinių bandymų faktus.
+Native paketas94de neperrašytas, source f2344dfc, Worker versija d6ac644e-aada-4d00-9fb9-a17361768fb3.
+Peržiūra: https://signaturepads-preview.pinet-azprekyba.workers.dev/.
+
+325Core testai,26puslapių HTTP/SEO,204asset SHA,237alias ir Chrome/WebKit
+320–1440px PASS. Lighthouse homepage90mobile/100desktop, a11y100;
+šis balas nėra fizinio telefono, field CWV ar WCAG patvirtinimas. Tikras200%
+zoom nepavyko dėl Windows native prieigos. Pašto transportas jau atskirai
+patikrintas ir savininkas patvirtino gavęs pažymėtą testą; šį etapą naujų
+laiškų nesiųsta. Actual gavėjo raw headers/aplankas neinspektuoti.
+
+[Privatumo faktai rašytojui](signaturepads/PRIVACY-FACTS-20261031.md) ir
+[production eiga](signaturepads/PRODUCTION-PREPARATION.md) paruošti, dedikuota
+production D1 tuščia, DNS importas nepritaikytas. Tikras valdytojas ir užklausų
+saugojimo terminas dar nežinomi; jokio production admission ar domain-ready
+teiginio nėra. [Visas85kriterijų auditas](signaturepads/PHASE-1-AUDIT.md) turi
+matomus FAIL/UNVERIFIED; reporting exit0 neatstoja require-local.

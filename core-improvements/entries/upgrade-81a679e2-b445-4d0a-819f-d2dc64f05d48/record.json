@@ -1,0 +1,22 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Prepare exact production deployment config and preserve inquiry resource/origin/rate guards outside hosted review scope",
+  "category": "code",
+  "evidence": [
+    "Existing guards applied only to hosted-inquiries. Removing the review admission for a real domain would otherwise drop those guards. Production13 evidence must remain required, no review receipt may activate a domain. New unused dedicated EU D1 is prepared; .lt remains unchanged."
+  ],
+  "paths": [
+    "vite.config.ts",
+    "scripts/content-production-config.mjs",
+    "lib/inquiry-request-guard.mjs",
+    "lib/content-hosted-preview.mjs",
+    "app/niche/[siteId]/lead/route.ts",
+    "tests/content-production-config.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Remove only new opt-in production profile and guard. Existing preview scope remains independent; no production routing is activated by this preparation.",
+  "id": "upgrade-81a679e2-b445-4d0a-819f-d2dc64f05d48",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "fae50645f197258dafb6e307e2dd09202e2cffb5",
+  "createdAt": "2026-10-31T09:50:41.640Z"
+}

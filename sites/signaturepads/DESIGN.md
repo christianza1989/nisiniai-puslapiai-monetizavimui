@@ -16,6 +16,17 @@ Originalios produkto ir logotipų nuotraukos naudojamos to paties savininko svet
 
 ## 2026-10-29 peržiūros įrodymai
 
+2026-10-31 techninio pasiruošimo papildymas: [PRELAUNCH-20261031.md](PRELAUNCH-20261031.md).
+Šriftas, jo svoriai, dydžiai, spalvos, maketas, originalios nuotraukos ir
+fixed/scroll lūžio taškai neperrašyti. Pakeisti tik tinkamų hero/font resursų
+head hint ir kontekstinė katalogoH2/relatedH3 semantika, išlaikant tuos pačius
+card stilius. Chrome/WebKit320–1440px patikrinti; software sekcijos fonas
+papildomai peržiūrėtas scrolled viewport vaizduose. Full-page capture už
+viewport esančio fixed fono neužfiksuoja patikimai. Actual200% native zoom
+bandytas, bet Windows capture/input prieiga neveikė; jis liekaUNVERIFIED,
+šios klaidos neišsprendžia DPR/viewport emuliacija. Source/build/metrics
+atskirti nuo vizualinio sprendimo ir tikro telefono/macosSafari neteigiami.
+
 `D:/Core/output/signaturepads-migration-20261029/` turi desktop homepage, mobile homepage, desktop katalogo ir mobile produkto vaizdus; atskirai `PREVIEW-VERIFICATION.json` ir `reflow-check.json`. Patikrintas mobilus meniu, galerijos keitimas, zoom dialogo atidarymas/uždarymas ir originalių kategorijų antraščių įtraukimas. Detector vienintelis perspėjimas dėl Open Sans ignoruojamas pagrįstai: šriftas sąmoningai išlaikomas pagal savininko nurodymą nekeisti esamos tapatybės.
 
 Tai vietinė nepatvirtinto migracijos snapshot peržiūra. Production Core publikavimo adapteris ir bendro SEO/GEO priėmimas dar neintegruoti; nėra production Lighthouse ar paleidimo deklaracijos. Savininkas paprašė radinius ir papildomus optimizavimus pirmiausia aptarti.

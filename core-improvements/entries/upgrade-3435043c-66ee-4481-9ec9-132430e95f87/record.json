@@ -1,0 +1,17 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Expose eligible hero background and first-use font to the preload scanner without changing original imagery or scroll behavior",
+  "category": "code",
+  "evidence": [
+    "Actual Lighthouse13.6 mobile baseline:86performance, LCP3.5s,CLS0.007,TBT190ms; lcp-discovery insight flags hidden/low-priority background image. Head preload uses the same projected media ID that renders the existing background, never raw draft content."
+  ],
+  "paths": [
+    "app/layout.tsx"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Remove only the measured resource hints; keep original native package, image bytes and CSS scroll behavior intact.",
+  "id": "upgrade-3435043c-66ee-4481-9ec9-132430e95f87",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "fae50645f197258dafb6e307e2dd09202e2cffb5",
+  "createdAt": "2026-10-31T09:50:43.552Z"
+}

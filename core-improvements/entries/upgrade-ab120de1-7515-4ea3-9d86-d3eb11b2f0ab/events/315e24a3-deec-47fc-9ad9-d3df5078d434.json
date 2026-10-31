@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "note": "Catalogue cards H2, related cards H3; CSS/title selector preserves both. Actual6software cards and source regression pass. Software a11y98->100; no broader WCAG claim.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/core-tests-final.log:325/325"
+    },
+    {
+      "command": "node verify-head.mjs",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/head-verification.json"
+    }
+  ],
+  "commit": "f2344dfc9d03cb95b9a3e3c727e1f86ed7a977a8",
+  "eventId": "315e24a3-deec-47fc-9ad9-d3df5078d434",
+  "sequence": 2,
+  "at": "2026-10-31T10:29:07.364Z"
+}

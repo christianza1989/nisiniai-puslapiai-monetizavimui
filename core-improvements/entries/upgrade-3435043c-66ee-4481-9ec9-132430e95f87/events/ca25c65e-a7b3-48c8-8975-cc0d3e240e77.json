@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "note": "First35a13d2b erroneously compared hero familyID as an assetID; intermediate84/no-hint result retained. f2344dfc uses eligible family, exact favicon remains assetID. Actual RootLayout regression and hosted head pass; final mobile90/LCP3.49s/CLS0/TBT22ms, desktop100. No field CWV claim.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/core-tests-final.log:325/325"
+    },
+    {
+      "command": "node lighthouse.mjs verified",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\signaturepads-migration-20261029\\prelaunch-20261031/verified-lighthouse-summary.json"
+    }
+  ],
+  "commit": "f2344dfc9d03cb95b9a3e3c727e1f86ed7a977a8",
+  "eventId": "ca25c65e-a7b3-48c8-8975-cc0d3e240e77",
+  "sequence": 2,
+  "at": "2026-10-31T10:29:05.464Z"
+}

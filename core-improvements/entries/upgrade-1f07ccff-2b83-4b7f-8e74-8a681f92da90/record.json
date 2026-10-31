@@ -1,0 +1,20 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Preserve original Google Search Console ownership metadata across native migration without cross-tenant token inheritance",
+  "category": "code",
+  "evidence": [
+    "Original signaturepads.lt has exactlyone Google verification meta tag and no DNS verification; native review has none. Actual capture stored in prelaunch-20261031/incumbent-before.json. Direct owner requests all remaining prelaunch preparation, excluding live/domain changes."
+  ],
+  "paths": [
+    "app/layout.tsx",
+    "lib/site-verification.mjs",
+    "config/site-verification.json",
+    "tests/content-production-config.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Revert only verification registry/helper/head integration; retain original WordPress and DNS.",
+  "id": "upgrade-1f07ccff-2b83-4b7f-8e74-8a681f92da90",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "fae50645f197258dafb6e307e2dd09202e2cffb5",
+  "createdAt": "2026-10-31T09:50:40.059Z"
+}

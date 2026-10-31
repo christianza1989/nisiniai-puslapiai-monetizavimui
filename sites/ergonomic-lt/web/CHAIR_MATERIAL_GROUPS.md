@@ -65,6 +65,20 @@ Tai naršyklės telefono pločio emuliacija, ne fizinio telefono testas. Pilnas 
 
 ## Integravimas ir atkūrimas
 
+### Visų kėdžių tęsinys · 2026-10-31
+
+Po tiesioginio pavedimo taikyti visoms kėdėms bendras adapteris patikrintas pagal visą dabar publikuoto `/3d-visi.html` sąrašą, o ne tik 4ME, Xilium ir Souly pavyzdžius. Tikslus 251 kėdės kodas, peržiūros kelias, priėmimo režimas ir nekintamo paketo SHA yra `content/chair-material-rollout.json`. Šis sąrašas apima 197 konstrukcijų konfigūratorius su originalia apdaila ir 54 PC2 paketus: 2 su patvirtintais medžiagų grupių pasirinkimais, 23 tik su pilnomis stebėtomis spalvinėmis būsenomis, 25 be patvirtintų alternatyvų ir 4 su deklaruota fiksuota apdaila. Tai nereiškia 251 naujos spalvų paletės ar 251 modelio vizualinio priėmimo.
+
+Papildomai inventorizuotos visų 12 ankstesnių šeimų 28 pagrindinės būsenos, kad bendras adapteris aprėptų ir ankstesnes išsaugotas komplektacijas. Rastas trūkstamas Tref `CBACKRESTMESHCOLOR` originalaus atlošo tinklelio vaidmuo. Jis dabar atskiriamas nuo sėdynės apmušalo; fiksuotas FX01 nekeičiamas pasirenkant kitą sėdynės spalvą. Nauja regresija naudoja tikrą Tref variklį ir jo leistą LAR101 pasirinkimą. Atnaujintas medžiagų testų failas: 13/13 PASS; svetainės `tsc --noEmit --incremental false`: PASS.
+
+Vienkartinio aprėpties audito komanda, vykdoma iš `web`:
+
+```powershell
+node node_modules/tsx/dist/cli.mjs scripts/audit-chair-material-rollout.ts --asset-map=PATH/ASSET-FILE-IDENTITIES.json
+```
+
+Sąrašą atnaujina aiškus `--write`. Auditas sutikrina publikuotų modelių rinkinio ir jau priimtų paketų tapatybes, neperleidžia užbaigtų Native / geometrijos / transporto / PDF patikrų. Ankstesnių įrodymų negalima pernaudoti pasikeitus jų source ar juos vartojančiai logikai. Šio tęsinio kamera, rendererio ciklas, geometrija, užklausų ir PDF kodas nesikeitė; todėl ankstesnės jų patikros nekartotos. Naujo build ar publikavimo nėra.
+
 Nuotraukų chatas atskirai ruošia `viewer-controls.ts` / kameros pakeitimą nuo tos pačios 483220d3 bazės. Su juo suderinta maža viewer import / props / load callback integracija pagal abiejų commit diff. Šio darbo source nekeičia jo helperio, focus, ratuko, fullscreen, contact-shadow ar kito checkout. Vienintelis bendros peržiūros publikavimo integratorius lieka pagrindinis 3D chatas; šiam spalvų pakeitimui publikavimo leidimas dar atskiras.
 
 Atkūrimas – revert tik šio PR commit savo integracijos šakoje; prieš tai apsaugoti kito 3D valdymo commit. Paketai / originalai / viešo Worker build / vienas ankstesnis build ir G: duomenys nepakeisti. MAIN NATIVE lieka OFF pagal 111.

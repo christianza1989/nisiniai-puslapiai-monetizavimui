@@ -1,0 +1,1638 @@
+{
+  "schemaVersion": 1,
+  "publishedListSha256": "de5b451bba46b3dbe964b608ff3b0677885c43ccbec01133a74fc5727ff71220",
+  "sourceCoverage": "chair-material-group-coverage.json",
+  "scope": "Shared controls for all admitted materials; immutable full states remain whole; original-only models retain their original finish",
+  "geometryRechecked": false,
+  "NativeAllowed": false,
+  "newVariantsCreated": 0,
+  "productionApproved": false,
+  "counts": {
+    "FIXED_DECLARED_SOURCE_FINISHES": 4,
+    "GROUPED_ADMITTED_OPTIONS": 2,
+    "ORIGINAL_FINISH_ONLY": 197,
+    "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS": 25,
+    "WHOLE_OBSERVED_STATES_ONLY": 23
+  },
+  "baseline": [
+    {
+      "family": "xilium",
+      "code": "KXIL044WW001",
+      "anchors": 4,
+      "fields": [
+        "CHEADRESTUPHCHCOLOR",
+        "CHEADSIDEPROFUPHCHCOL",
+        "CSEBASIDEPROFILUPHCOLOR",
+        "CUPHBACKRESTCOLOR",
+        "CUPHSEATCOLOR"
+      ]
+    },
+    {
+      "family": "souly",
+      "code": "KSOU001WW003",
+      "anchors": 4,
+      "fields": [
+        "CMESHCOLOR",
+        "CUPHCOLOR"
+      ]
+    },
+    {
+      "family": "4me",
+      "code": "K4ME002WW004",
+      "anchors": 2,
+      "fields": [
+        "CMESHCOLOR",
+        "CUPHCOLOR"
+      ]
+    },
+    {
+      "family": "altum",
+      "code": "KALT001WW002",
+      "anchors": 2,
+      "fields": [
+        "CMESHCOLOR",
+        "CUPHCOLOR"
+      ]
+    },
+    {
+      "family": "bjarg",
+      "code": "KBJA003WW002",
+      "anchors": 4,
+      "fields": [
+        "CHEADRESTUPHCOLOR",
+        "CUPHCOLOR"
+      ]
+    },
+    {
+      "family": "eggy",
+      "code": "KEGG001WW001",
+      "anchors": 2,
+      "fields": [
+        "CMESHCOLOR",
+        "CUPHCOLOR"
+      ]
+    },
+    {
+      "family": "jupiter",
+      "code": "KJUP001WW002",
+      "anchors": 1,
+      "fields": [
+        "CUPHCOLOR"
+      ]
+    },
+    {
+      "family": "trofi",
+      "code": "KTRF001WW001",
+      "anchors": 1,
+      "fields": [
+        "CBACKRESTMESHCOLOR",
+        "CUPHSEATCOLOR"
+      ]
+    },
+    {
+      "family": "z-body",
+      "code": "KZBO004WW001",
+      "anchors": 2,
+      "fields": [
+        "CHEADRESTUPHCHCOLOR",
+        "CMESHCOLOR",
+        "CUPHSEATCOLOR"
+      ]
+    },
+    {
+      "family": "lynx",
+      "code": "KLYN002WW002",
+      "anchors": 2,
+      "fields": [
+        "CUPHCOLOR"
+      ]
+    },
+    {
+      "family": "nexter",
+      "code": "KNXT001WW002",
+      "anchors": 2,
+      "fields": [
+        "CMESHCOLOR",
+        "CUPHCOLOR"
+      ]
+    },
+    {
+      "family": "prox",
+      "code": "KPOX002WW002",
+      "anchors": 2,
+      "fields": [
+        "C3DBACKRESTMESHCOLOR",
+        "CHEADRESTUPHCHCOLOR",
+        "CUPHSEATCOLOR"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "code": "K2ME001WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "a9567566700233c703353f50500d42c8848a95b62d8642d13bb3dbf14fc6cef6",
+      "url": "/3d-perziura-pc2/?chair=K2ME001WW002"
+    },
+    {
+      "code": "K2ME003WW001",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "b4582d69917195389f036ed09d0b892fc53586f4922e9f6738813387dadab9de",
+      "url": "/3d-perziura-pc2/?chair=K2ME003WW001"
+    },
+    {
+      "code": "K2ME003WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "9a4568a51cc03f530493eef31dd66d96ba67cc23af6b4c62f072edac4cb8a095",
+      "url": "/3d-perziura-pc2/?chair=K2ME003WW002"
+    },
+    {
+      "code": "K2ME004WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b92f4dd96e511cabe35c90ded3f0f032ae8c2bd9d76f9c8be47ee5bac25eeff9",
+      "url": "/produktai/kedes/2me-susitikimu-ir-lankytoju-kedes-modelis-16088548/"
+    },
+    {
+      "code": "K2ME004WW004",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "fe885cddd6ee740f139b8e6cc02ac830ccb6cc0aa64dfd22d3971037c1e9330a",
+      "url": "/3d-perziura-pc2/?chair=K2ME004WW004"
+    },
+    {
+      "code": "K4ME001WW003",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "bb196222e475537120c126c5fa341b35c8e9ab287f010066a93f299aedff8272",
+      "url": "/3d-perziura-pc2/?chair=K4ME001WW003"
+    },
+    {
+      "code": "K4ME002WW004",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "63b59b1429467143a5ad5a1ad526b962661adee008018cbb18316713d3e3de01",
+      "url": "/3d-perziura-pc2/?chair=K4ME002WW004"
+    },
+    {
+      "code": "KAII001WW001",
+      "mode": "FIXED_DECLARED_SOURCE_FINISHES",
+      "bindingSha256": "041550b1c1f6aea924117f85eaef92221c40eefc2d40568487bc2bbf1b6c699b",
+      "url": "/3d-perziura-pc2/?chair=KAII001WW001"
+    },
+    {
+      "code": "KAII001WW002",
+      "mode": "FIXED_DECLARED_SOURCE_FINISHES",
+      "bindingSha256": "1e51799188462166d002457bd50e053b4d94de43a9f1740aa1b5861b18a7d0b0",
+      "url": "/3d-perziura-pc2/?chair=KAII001WW002"
+    },
+    {
+      "code": "KAII001WW003",
+      "mode": "FIXED_DECLARED_SOURCE_FINISHES",
+      "bindingSha256": "056edeb1c2b9ef19c58a23941ec9e2a04dbed29f3f56bad90dd963a7dd0ef312",
+      "url": "/3d-perziura-pc2/?chair=KAII001WW003"
+    },
+    {
+      "code": "KAII001WW004",
+      "mode": "FIXED_DECLARED_SOURCE_FINISHES",
+      "bindingSha256": "e7f1e33417178dbd9b726a2dc6d975af463de2833626f97871d0d6625a69d62c",
+      "url": "/3d-perziura-pc2/?chair=KAII001WW004"
+    },
+    {
+      "code": "KALT001WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "b877ff9195657652fcbf8048e1d222a50efd98283f189312122f9cb85d898a15",
+      "url": "/3d-perziura-pc2/?chair=KALT001WW002"
+    },
+    {
+      "code": "KARN003WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "86d07a95b6dff15dddb5c197d252e4a4c091f3ddc8f8b4bbd4734e4270a4b1f7",
+      "url": "/produktai/kedes/arn-susitikimu-ir-lankytoju-kedes-modelis-29497497/"
+    },
+    {
+      "code": "KARN003WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3cefa650bcc05fccf423ad4f3e1cdffcffad9560d30a86323a15b3fcceaf4930",
+      "url": "/produktai/kedes/arn-susitikimu-ir-lankytoju-kedes-modelis-29497493/"
+    },
+    {
+      "code": "KARN007WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "97fb5679a6f953bbcb9a720ca4b61d69d6ad8519ce49960104d2032613ee765e",
+      "url": "/produktai/kedes/arn-taburetes-ir-baro-kedes-modelis-29507406/"
+    },
+    {
+      "code": "KARN007WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "77af18636868e162f844559a53d87d1d203295f10cd8a47265bb2cc56ea7f1ec",
+      "url": "/produktai/kedes/arn-taburetes-ir-baro-kedes-modelis-29507407/"
+    },
+    {
+      "code": "KARN008WW003",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "88a1c959b7c2032204fe29a4968191aa32a3754ab11e5a241fa7a45789a5746a",
+      "url": "/3d-perziura-pc2/?chair=KARN008WW003"
+    },
+    {
+      "code": "KARN008WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "aee1e4944dd4b9f5674df575e33482251aa80a1b76439af4c3498f899e6c53d6",
+      "url": "/produktai/kedes/arn-susitikimu-ir-lankytoju-kedes-modelis-29497494/"
+    },
+    {
+      "code": "KATM004WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b0d3b4aed1b13682b02f5dc234aa012423a0de702ad74ce1fded7f4c217ebc9e",
+      "url": "/produktai/kedes/motion-darbo-kedes-modelis-21288726/"
+    },
+    {
+      "code": "KATM004WW005",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "127fcaf0a127c14c5d6b9e771d29cdd64f909be55451aac441672713439e4ec3",
+      "url": "/produktai/kedes/motion-darbo-kedes-modelis-23549349/"
+    },
+    {
+      "code": "KATM004WW006",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "30102c51bec4d77610a2320459d1b9da59e301f4cecd588f2508ca98107bb873",
+      "url": "/produktai/kedes/motion-darbo-kedes-modelis-23549350/"
+    },
+    {
+      "code": "KATM006WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "407dff92191554267131fd48c9a7dea4c07ffe55d692107827204b81ceb1303f",
+      "url": "/produktai/kedes/motion-susitikimu-ir-lankytoju-kedes-modelis-15693705/"
+    },
+    {
+      "code": "KAXO001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "750a4c78c5bd59370b35d4bea33af5c1bc10bd9fd42f1be01cdd0db294f86a81",
+      "url": "/produktai/kedes/axo-susitikimu-ir-lankytoju-kedes-modelis-19837275/"
+    },
+    {
+      "code": "KAXO001WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "a796b2d04a74e7c7d00ce4e274002633126d4d3c9df0aa1b8c88ae2a132c9e47",
+      "url": "/produktai/kedes/axo-susitikimu-ir-lankytoju-kedes-modelis-19837278/"
+    },
+    {
+      "code": "KBET001WW005",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "2cf050957feff72e6d19b0513e7f618f5ab0d0cd2f21ca146bccf5a4969ba8b0",
+      "url": "/produktai/kedes/beta-susitikimu-ir-lankytoju-kedes-modelis-28565137/"
+    },
+    {
+      "code": "KBET001WW006",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "f975f4cb24c9accb38b4c7a6db66e108bd955f426570185f21370737282d2bfb",
+      "url": "/produktai/kedes/beta-susitikimu-ir-lankytoju-kedes-modelis-28565139/"
+    },
+    {
+      "code": "KBET001WW008",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "95ea5c28da4b6ce4231b4b58c241493e19c69d1ce9e7f34388c24cdb0fefd1ef",
+      "url": "/produktai/kedes/beta-susitikimu-ir-lankytoju-kedes-modelis-28565138/"
+    },
+    {
+      "code": "KBET002WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "1595206f1ad5b656c4733f03e52bf974597482cea1777a8841cecff26c5be6ea",
+      "url": "/produktai/kedes/beta-susitikimu-ir-lankytoju-kedes-modelis-28565140/"
+    },
+    {
+      "code": "KBEW001WW005",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "af94ed7c6031972918b9b1668caefa30fc23a4728b933781a7bf2e98d6fbc909",
+      "url": "/produktai/kedes/bewise-susitikimu-ir-lankytoju-kedes-modelis-26143410/"
+    },
+    {
+      "code": "KBEW001WW006",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "f3eca857278b73aba244f92b7417fd0c8a6185c96105178d85557f11fb5034c5",
+      "url": "/produktai/kedes/bewise-susitikimu-ir-lankytoju-kedes-modelis-26143408/"
+    },
+    {
+      "code": "KBEW001WW007",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "ca11eb858118d8f37b4af2e4f7f23cd785e674e6f7796a081345aa349f01f827",
+      "url": "/produktai/kedes/bewise-susitikimu-ir-lankytoju-kedes-modelis-26143409/"
+    },
+    {
+      "code": "KBEW001WW008",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "519bb42f996e4800aa14844034c2daed8c64a11d86bcd4d1df2a282c0a30e6da",
+      "url": "/produktai/kedes/bewise-susitikimu-ir-lankytoju-kedes-modelis-26143411/"
+    },
+    {
+      "code": "KBJA001WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "7cf173389d6b44a3a8ab0356060f813ba6a40381323512563d7550226da387ab",
+      "url": "/3d-perziura-pc2/?chair=KBJA001WW002"
+    },
+    {
+      "code": "KBJA002WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "771b84d9868d71273084fea8e7906b2b6edaa34876c5d9e6adb8c2320e99246b",
+      "url": "/3d-perziura-pc2/?chair=KBJA002WW002"
+    },
+    {
+      "code": "KBJA003WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "49dac4cd0a0d3e1302c11fc94a01937691fe8cb6e26df482615a92889d6444e9",
+      "url": "/3d-perziura-pc2/?chair=KBJA003WW002"
+    },
+    {
+      "code": "KBLS001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "137fefcddcdb838abe2294fb8e9e53f20a8c11982dc1e1f25b274209b7b2ea9e",
+      "url": "/produktai/kedes/belise-taburetes-ir-baro-kedes-modelis-19783109/"
+    },
+    {
+      "code": "KBLS001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "639442f03548dbcc54bd00f3b1b59be953e30ee7251cdfa9cbf4f6b53ce31a8b",
+      "url": "/produktai/kedes/belise-taburetes-ir-baro-kedes-modelis-19783110/"
+    },
+    {
+      "code": "KBZM001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c8a5b41e80cb38a5ee7abd09f5bebe31bc846c9196a3c3756ad2dc698560b7e2",
+      "url": "/produktai/kedes/bzoom-susitikimu-ir-lankytoju-kedes-modelis-31132658/"
+    },
+    {
+      "code": "KCAD001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "81bcc639b220fb3fe18c469fb9b1c98b52dfe6ea7a82d8d9f172b1bd631112e3",
+      "url": "/produktai/kedes/cadeira-susitikimu-ir-lankytoju-kedes-modelis-16088241/"
+    },
+    {
+      "code": "KCAD001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e24e72523b3e7581d0d605be5cbfa42608a5842cf514b13d33619722eecdcfe1",
+      "url": "/produktai/kedes/cadeira-susitikimu-ir-lankytoju-kedes-modelis-16088246/"
+    },
+    {
+      "code": "KCAD001WW005",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "880906dd2a3eb36c6e636a00ba514e9f39616b786c726e03d83ee44d7d12602e",
+      "url": "/produktai/kedes/cadeira-susitikimu-ir-lankytoju-kedes-modelis-16088247/"
+    },
+    {
+      "code": "KCAF003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "2c43818d2809d8734f0e15d84df5fb7cb22136c7f803ef5bd07c74c8ad21bc61",
+      "url": "/produktai/kedes/cafe-susitikimu-ir-lankytoju-kedes-modelis-19840265/"
+    },
+    {
+      "code": "KCAF005WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3a12ae73fc5c159abadbc4bb8499bd39f56f181700d1846117522fd17108ea4a",
+      "url": "/produktai/kedes/cafe-susitikimu-ir-lankytoju-kedes-modelis-19840262/"
+    },
+    {
+      "code": "KCAF005WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e8b2119d4fc762e57534ff315e3cda7794452404a1fa164c5d7b14a79a32f034",
+      "url": "/produktai/kedes/cafe-susitikimu-ir-lankytoju-kedes-modelis-19840263/"
+    },
+    {
+      "code": "KCAF007WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "42f712043c34aacfd2928d1a887f601318ef6dfb6938a183da69557fc65b1331",
+      "url": "/produktai/kedes/cafe-taburetes-ir-baro-kedes-modelis-19868169/"
+    },
+    {
+      "code": "KCAF008WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "907ab7651ccebbd8f40cb74e09aeec2fc763daa7b049980b7812998bda648718",
+      "url": "/produktai/kedes/cafe-taburetes-ir-baro-kedes-modelis-19868167/"
+    },
+    {
+      "code": "KCAF010WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "2892d3afb74e927a3475053d4077d252736d6e13309e3bf11b860803cf579382",
+      "url": "/produktai/kedes/cafe-taburetes-ir-baro-kedes-modelis-19868693/"
+    },
+    {
+      "code": "KCAF011WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "bef47690e395287dbedd7f6a1a158cf042423d8c82144e59318aa4436e528498",
+      "url": "/produktai/kedes/cafe-taburetes-ir-baro-kedes-modelis-23515638/"
+    },
+    {
+      "code": "KCAF014WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b9e58e447c35376df126adc3621ac5ecd039ec7e159bad8f42e133f895125a95",
+      "url": "/produktai/kedes/cafe-susitikimu-ir-lankytoju-kedes-modelis-23530297/"
+    },
+    {
+      "code": "KCAF016WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "89c957e084cd23c173435df805e51f1c05b2f08fb53bd3acf50b26dc0dd59985",
+      "url": "/produktai/kedes/cafe-susitikimu-ir-lankytoju-kedes-modelis-23530295/"
+    },
+    {
+      "code": "KCAL001WW005",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "ac327a814f4c894b6c7ff524bddbe22ca278cca836f0af081ec129ad5b8c41ff",
+      "url": "/produktai/kedes/calado-susitikimu-ir-lankytoju-kedes-modelis-28425985/"
+    },
+    {
+      "code": "KCAL001WW008",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "a50ad0d2d2b30fc88de479a620009770bbeff10276c44e57afcc2bb5ebc578fd",
+      "url": "/produktai/kedes/calado-susitikimu-ir-lankytoju-kedes-modelis-28425984/"
+    },
+    {
+      "code": "KCAL002WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "08389bdd4062b877abe65f97cb8300a26fc42431bde11a71d1cdb24754007d07",
+      "url": "/produktai/kedes/calado-susitikimu-ir-lankytoju-kedes-modelis-28425986/"
+    },
+    {
+      "code": "KCAL004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "126a4859a52e8eb1fb3c69effbc393e4814faa42603496960b70a514111bc007",
+      "url": "/produktai/kedes/calado-taburetes-ir-baro-kedes-modelis-28427625/"
+    },
+    {
+      "code": "KCHI001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "d7240066513d565338486d8f74c88139d5358db2b41d20bacd61dad2559d28db",
+      "url": "/produktai/kedes/chico-taburetes-ir-baro-kedes-modelis-24800027/"
+    },
+    {
+      "code": "KCHI001WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "37800a5b709ac37407a2a434eb26210c10ce8f2fe7fe96fc8bc489dfb53e868e",
+      "url": "/produktai/kedes/chico-taburetes-ir-baro-kedes-modelis-25416173/"
+    },
+    {
+      "code": "KCIS001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b1fad71d9a70d2ff3c22d73157487a4d430b8e03424737032de5de668ea5b2fd",
+      "url": "/produktai/kedes/calis-darbo-kedes/"
+    },
+    {
+      "code": "KCRE032WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3507ed52f4faac88f7a823bff619b44752ef71e734f30250b0171fff08c5a396",
+      "url": "/produktai/kedes/creva-taburetes-ir-baro-kedes-modelis-24809573/"
+    },
+    {
+      "code": "KCRE033WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "adc6477f9c6450798e0f5e0c1e6d141ab5aeb4883045ff535ea23e5cf46f5d49",
+      "url": "/produktai/kedes/creva-taburetes-ir-baro-kedes-modelis-24809571/"
+    },
+    {
+      "code": "KCRE034WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "7ff13044b050fd370fa7c1d8444660eb41ba92cf20f016266e9184b51c92166a",
+      "url": "/produktai/kedes/creva-taburetes-ir-baro-kedes-modelis-24809570/"
+    },
+    {
+      "code": "KCRE035WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "51493474043ad0e60d590b578f91d42c1989de81b000e9ba2cf119141cbfa3c7",
+      "url": "/produktai/kedes/creva-taburetes-ir-baro-kedes-modelis-24809574/"
+    },
+    {
+      "code": "KCRE036WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e499e8e640281d77cf5fd271cb2402a23d1a1ad70783dae04bdca5c9e8928d36",
+      "url": "/produktai/kedes/creva-taburetes-ir-baro-kedes-modelis-24809572/"
+    },
+    {
+      "code": "KEGG001WW001",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "606d4b34aff83e358052fb9162e4e54a4b98e59836244a51c4b89331e46926d2",
+      "url": "/3d-perziura-pc2/?chair=KEGG001WW001"
+    },
+    {
+      "code": "KELO001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e45883c79edaf4eb286abf1190782f130ca013451fb685926946f72e9c5815f1",
+      "url": "/produktai/kedes/elovie-darbo-kedes-modelis-30470553/"
+    },
+    {
+      "code": "KELO001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "d9a63f7c971bb60c3f3cde2da7ef6c3b7402a5ecfa8f462ba0845b639073e7fa",
+      "url": "/produktai/kedes/elovie-darbo-kedes-modelis-30470552/"
+    },
+    {
+      "code": "KFLS001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3bcfc50ba5f6309be09516fa3ae7c6bb54dc81c7ec7a5d612e5a741b240ed5f8",
+      "url": "/produktai/kedes/flesco-susitikimu-ir-lankytoju-kedes-modelis-27215084/"
+    },
+    {
+      "code": "KFLS001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "fe6374ae4e55bfd6d186a19760dd2035a8ea6f8004ec2a10d8c43a1ff77aee4c",
+      "url": "/produktai/kedes/flesco-susitikimu-ir-lankytoju-kedes-modelis-27214071/"
+    },
+    {
+      "code": "KFLS002WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "6b785e6629364fc364c6e99384ce7d16d59f51d1592e1932c657432c6c5a13f1",
+      "url": "/produktai/kedes/flesco-susitikimu-ir-lankytoju-kedes-modelis-27214922/"
+    },
+    {
+      "code": "KFLS002WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "cdf3056ceca0ce30f1b246fd80f55ae4b8d609cc4d050685dbe675d01c31d4dc",
+      "url": "/produktai/kedes/flesco-susitikimu-ir-lankytoju-kedes-modelis-27214974/"
+    },
+    {
+      "code": "KFON001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "fec765e349c93681c7cec9019668056463e24d11f9bbea7aa2d240c256558b16",
+      "url": "/produktai/kedes/fondo-susitikimu-ir-lankytoju-kedes-modelis-23530747/"
+    },
+    {
+      "code": "KFON001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "164bf1523ad263606233282f9696a20544b560796febaa2e1d1934f3a8145a05",
+      "url": "/produktai/kedes/fondo-susitikimu-ir-lankytoju-kedes-modelis-19852156/"
+    },
+    {
+      "code": "KFON003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "70088e51ffd63bc7329c5292edcc6d6d592cbbb5a610f350d9d2662ff1fd1589",
+      "url": "/produktai/kedes/fondo-taburetes-ir-baro-kedes-modelis-19857765/"
+    },
+    {
+      "code": "KFON004WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b14334c3407db075fabdd85efd0fb195844802830ce708261961b3a591d7a550",
+      "url": "/produktai/kedes/fondo-susitikimu-ir-lankytoju-kedes-modelis-19852157/"
+    },
+    {
+      "code": "KHOL001WW002",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "bc79fa192cb7d86c90273f7f426695806c60ce9c11f06b56b2ec3d312091d13f",
+      "url": "/3d-perziura-pc2/?chair=KHOL001WW002"
+    },
+    {
+      "code": "KHOL004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "beb1fe3027bd3932a26d876536d3fcf2d95e95dcefb440dd940f968a1b490db8",
+      "url": "/produktai/kedes/hola-taburetes-ir-baro-kedes-modelis-26630713/"
+    },
+    {
+      "code": "KINT001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "80fb5cd08be1168664169b417c0984bf11dcb9b9287a3d0a9211a9f6b5d13aeb",
+      "url": "/produktai/kedes/intrata-darbo-kedes-modelis-19964482/"
+    },
+    {
+      "code": "KINT002WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "9ee28ed9b4feeb74b05609272e31c30b7460080aa541e7763fa1714aed253ed5",
+      "url": "/produktai/kedes/intrata-darbo-kedes-modelis-19964483/"
+    },
+    {
+      "code": "KINT003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "2b23c931c425556215d14226c50fd6dbe41d29b373518a96035bed2c2b7d4738",
+      "url": "/produktai/kedes/intrata-darbo-kedes-modelis-19964484/"
+    },
+    {
+      "code": "KINT004WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "add6e24c584f7a928fb32a25cd151b276dc81d29419bb7df0f822ac8ec233779",
+      "url": "/produktai/kedes/intrata-darbo-kedes-modelis-19964479/"
+    },
+    {
+      "code": "KINT005WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "0b10ce690ad01c020e269fa4fce37f27b6758d5481c98e7c65a2ab264bcf2a41",
+      "url": "/produktai/kedes/intrata-darbo-kedes-modelis-19964480/"
+    },
+    {
+      "code": "KINT006WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "497f8dc112b4f2301bbef9a8e43a66e1f6630a05d7b231a27e7a8fb9e4973b82",
+      "url": "/produktai/kedes/intrata-darbo-kedes-modelis-19964478/"
+    },
+    {
+      "code": "KINT006WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "aad2ac71b98b28be75753741b812e90e06cbdd212da5bc636a6036c81d68a243",
+      "url": "/produktai/kedes/intrata-darbo-kedes-modelis-19964481/"
+    },
+    {
+      "code": "KINT009WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "7f407158a225d8b4f24637e1cb0eecdb0d595ecf4aa9477f852d3d065b85e23f",
+      "url": "/produktai/kedes/intrata-susitikimu-ir-lankytoju-kedes-modelis-25324226/"
+    },
+    {
+      "code": "KINT010WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c456c32812a304d6f679a61bdc33efc22fdcb20d8f17239fe8016d98427cad5a",
+      "url": "/produktai/kedes/intrata-susitikimu-ir-lankytoju-kedes-modelis-25324229/"
+    },
+    {
+      "code": "KINT011WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "2878b0393e4f94421a6a056e57c6930766bf2984d864ee1e9ab28b3ee6e32da0",
+      "url": "/produktai/kedes/intrata-susitikimu-ir-lankytoju-kedes-modelis-25324228/"
+    },
+    {
+      "code": "KINT012WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e3e973d12da2418733452cfadee3edc6cb7fb6e7b1bcd11c0af6820f287148dc",
+      "url": "/produktai/kedes/intrata-susitikimu-ir-lankytoju-kedes-modelis-25324227/"
+    },
+    {
+      "code": "KISO001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "59d689464d14dcb69db49a8427231aaf2bbf650b2c3b4a1c98a5e068544e6725",
+      "url": "/produktai/kedes/iso-susitikimu-ir-lankytoju-kedes-modelis-21307282/"
+    },
+    {
+      "code": "KISO004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "fc2531f7431192ee9049b7201ee6847eb9520cab3497ac873db6f780e3ca20c1",
+      "url": "/produktai/kedes/iso-susitikimu-ir-lankytoju-kedes-modelis-21307284/"
+    },
+    {
+      "code": "KISO005WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e07c4f1f36eafd79fd44a3698d086ea7c2e8bee0d668de5fd33a8e34f3c07cee",
+      "url": "/produktai/kedes/iso-susitikimu-ir-lankytoju-kedes-modelis-21307286/"
+    },
+    {
+      "code": "KISO006WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "801119577f2910a0c3cb77a429a7e07cf42dad2c8d39402c4c3a30fd9df85b06",
+      "url": "/produktai/kedes/iso-susitikimu-ir-lankytoju-kedes-modelis-21307285/"
+    },
+    {
+      "code": "KISO006WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "49733b1fbee3ed592549673eecb613b20c447c8c9702aab5cb0db2b3aaae0bcf",
+      "url": "/produktai/kedes/iso-susitikimu-ir-lankytoju-kedes-modelis-21307288/"
+    },
+    {
+      "code": "KISO016WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "5ed7d9bd94c91a9d52df16bbb139275b138e16cba5467782ad918943143275e2",
+      "url": "/produktai/kedes/iso-susitikimu-ir-lankytoju-kedes-modelis-21307289/"
+    },
+    {
+      "code": "KISO028WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "87c50c51aa2b7de17e0b69a95b91e23c1a84ac79cab25ef2735b55334d08d095",
+      "url": "/produktai/kedes/iso-susitikimu-ir-lankytoju-kedes-modelis-21307287/"
+    },
+    {
+      "code": "KITA001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "91786f76ae6fc4486f291d5b303b81c06e0911e48f6c96648562f173b67401a4",
+      "url": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-20624634/"
+    },
+    {
+      "code": "KITA001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "9c79faa0d7b7d6753ff6fc25e205c2f75c5af61352f25f1cf81ab1db0d373073",
+      "url": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-20624632/"
+    },
+    {
+      "code": "KJUP001WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "06f2ec88780809099c845284eccfa54fd4d8e65c6c25ff49db759fe8aff2385e",
+      "url": "/3d-perziura-pc2/?chair=KJUP001WW002"
+    },
+    {
+      "code": "KLEV007WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "f822510f392bd43d352358f3a559d15e47cabeb45868ce3ec8197c337aaa57dc",
+      "url": "/produktai/kedes/levitate-taburetes-ir-baro-kedes-modelis-14770759/"
+    },
+    {
+      "code": "KLEV008WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "57ebbfa0fbf131954e5ea7561f07e1eaa26b60c7d5054e1cea165bfc98730087",
+      "url": "/produktai/kedes/levitate-taburetes-ir-baro-kedes-modelis-14770758/"
+    },
+    {
+      "code": "KLEV009WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c22045c28056f6e5170d457dabe89619b68d22ff1f1fdfeacfc5e1eb06801076",
+      "url": "/produktai/kedes/levitate-taburetes-ir-baro-kedes-modelis-14770760/"
+    },
+    {
+      "code": "KLEV013WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "58067c46fb32fbeb80ca98dc92b8f758d3074f4137d844791afe4d3bac8197e4",
+      "url": "/produktai/kedes/levitate-taburetes-ir-baro-kedes-modelis-14770761/"
+    },
+    {
+      "code": "KLPN019WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "103a324fa8976d5f8a5a51a641ee9d1cea5243889ea90d63b1a58fff6befbd79",
+      "url": "/produktai/kedes/lupino-taburetes-ir-baro-kedes-modelis-29764556/"
+    },
+    {
+      "code": "KLPN020WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "8c0b361a62c078d04569d5ca8804b92f9bf987faf075f6d81a1e5e0ce8bccfd6",
+      "url": "/produktai/kedes/lupino-taburetes-ir-baro-kedes-modelis-29764555/"
+    },
+    {
+      "code": "KLPN021WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "d0427c5432903c09ffb84d5338e8c1c6275a9e633e21ccc1da7ec1673a6b46d7",
+      "url": "/produktai/kedes/lupino-taburetes-ir-baro-kedes-modelis-29764554/"
+    },
+    {
+      "code": "KLYN001WW002",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "ccbc248c976d7a9c6b120f1a8640d974a541841e1d00a2dcbd6dcc93b44994c9",
+      "url": "/3d-perziura-pc2/?chair=KLYN001WW002"
+    },
+    {
+      "code": "KLYN002WW002",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "a5bd8d0b50467058d5c23c3be33dc5f8dab3de71bec9a378326389a73ff43baf",
+      "url": "/3d-perziura-pc2/?chair=KLYN002WW002"
+    },
+    {
+      "code": "KLYN003WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3e79a5a58e876e52eda7b82c3d250870b5fd684a5511b5e56ce8e124f2704fa2",
+      "url": "/produktai/kedes/lynx-susitikimu-ir-lankytoju-kedes-modelis-28758854/"
+    },
+    {
+      "code": "KMNS001WW006",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "d6031d161c7ea05db15134a5d48b05937c57b5446dacdf632ff00ef6fc3b40e5",
+      "url": "/produktai/kedes/ministyle-darbo-kedes-modelis-24876527/"
+    },
+    {
+      "code": "KMNS001WW007",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "bae2155120c6a9c18e529da307504f9e66c1cc91d6812ece1db6b0061c76a528",
+      "url": "/produktai/kedes/ministyle-darbo-kedes-modelis-24876528/"
+    },
+    {
+      "code": "KMNS001WW008",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "41034af1864e63dd694a03ad2a5abe82caa363eed22a4c4e7e9bad95bfd6d5b2",
+      "url": "/produktai/kedes/ministyle-darbo-kedes-modelis-24876525/"
+    },
+    {
+      "code": "KMNS001WW009",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "6014527ed79d4969ba5c9e497d0ed61cde092d01656de831648c2dc248b1df3b",
+      "url": "/produktai/kedes/ministyle-darbo-kedes-modelis-24876529/"
+    },
+    {
+      "code": "KMNS001WW010",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "45dd8d6ad474ae96e9ac3a41fd19bc01eacfff4af9748700baceb3c4e9a86cdf",
+      "url": "/produktai/kedes/ministyle-darbo-kedes-modelis-24876526/"
+    },
+    {
+      "code": "KNAD001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "20463cc413f86a3f7fbfb324544222b755d6ff46e397cf95583d4ac29dcabf64",
+      "url": "/produktai/kedes/nadir-darbo-kedes-modelis-28434501/"
+    },
+    {
+      "code": "KNAD003WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "12e3783bd5588c65f880ecc94ef8bd19648a5945d3d464962fc031fde5771d1b",
+      "url": "/produktai/kedes/nadir-susitikimu-ir-lankytoju-kedes-modelis-28433477/"
+    },
+    {
+      "code": "KNAU015WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "ea05dcc0e83ff767bffedd5fdac57f778c4360ba15a538ab8c0c94124ac01fba",
+      "url": "/produktai/kedes/naudu-taburetes-ir-baro-kedes-modelis-29782032/"
+    },
+    {
+      "code": "KNAU016WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3e0b3a0e42181084a4916aa53da6848d9cec48c0645f16c590645916731a97a0",
+      "url": "/produktai/kedes/naudu-taburetes-ir-baro-kedes-modelis-29782034/"
+    },
+    {
+      "code": "KNAU017WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "7c822e266d9c82a1b3b3608b7d6a4e19a90f3c277554335b94e9a501ae6187d7",
+      "url": "/3d-perziura-pc2/?chair=KNAU017WW001"
+    },
+    {
+      "code": "KNAU018WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "c42de666c435f144747bddf0b3fa36a8b14edcf9a45ee73ff3eecdc505ee07ea",
+      "url": "/3d-perziura-pc2/?chair=KNAU018WW001"
+    },
+    {
+      "code": "KNAV001WW006",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "0d8eff6ce9dede5737289dff98b29358514171c77ab09a9f59cea807fb9a8e3e",
+      "url": "/3d-perziura-pc2/?chair=KNAV001WW006"
+    },
+    {
+      "code": "KNAV002WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "4547bf0dcbe3891f4cf4cb65dc28c0aeabf5d421d535b7cc657af8508bd8577e",
+      "url": "/produktai/kedes/navigo-darbo-kedes-modelis-22495144/"
+    },
+    {
+      "code": "KNXT001WW002",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "213f59e5fd714ec1e3a3c66b3d18873931e737984da0798d04ad3c080082db3f",
+      "url": "/3d-perziura-pc2/?chair=KNXT001WW002"
+    },
+    {
+      "code": "KNXT002WW002",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "7e625b02321fc5d4997e03689036ce36ea320fea54cf277ded64f07103058693",
+      "url": "/3d-perziura-pc2/?chair=KNXT002WW002"
+    },
+    {
+      "code": "KOVI001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c856a9b73debf4785e21665e4b48134aa52752c5713c26c00e612ee2643c5c4b",
+      "url": "/produktai/kedes/ovia-susitikimu-ir-lankytoju-kedes-modelis-31075253/"
+    },
+    {
+      "code": "KOVI001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "a135ef8e93587fd4aeda462a58619d3d48b21f205f90a9aece7e94cd14046dd7",
+      "url": "/produktai/kedes/ovia-susitikimu-ir-lankytoju-kedes-modelis-31075252/"
+    },
+    {
+      "code": "KPER001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "0391cbb10dfa2d868313df1ad786ad5e47bbc07b89d516f0ab1e92f739225d6c",
+      "url": "/produktai/kedes/perfect-darbo-kedes-modelis-27061806/"
+    },
+    {
+      "code": "KPER001WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "ba00cf557103c30868218951f6facc67ab00d022b28ac8bc87c9cae860e09a9b",
+      "url": "/produktai/kedes/perfect-darbo-kedes-modelis-27061805/"
+    },
+    {
+      "code": "KPOX002WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "9b54388aca185274076cfb851986fee0aacd32ad80b547432a6818f85d752eed",
+      "url": "/3d-perziura-pc2/?chair=KPOX002WW001"
+    },
+    {
+      "code": "KPOX002WW002",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "06880c79f8bbc0efb7c7aad9e5dca23cd86187fafc2b638ea05377bdca67b523",
+      "url": "/3d-perziura-pc2/?chair=KPOX002WW002"
+    },
+    {
+      "code": "KPRA001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e43fd09cc0d927814b85466cedda6c92486089fb3dd8c5a005f95f4049be2f38",
+      "url": "/produktai/kedes/prado-darbo-kedes-modelis-24888549/"
+    },
+    {
+      "code": "KPRA001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "6773f058b9f11ea2f947ddb06bf97c26ec2a28f13ccfee52f7953458de2240eb",
+      "url": "/produktai/kedes/prado-darbo-kedes-modelis-24888548/"
+    },
+    {
+      "code": "KSAI001WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "e147be535e6a10501728cad0a39ab3afa4cc274cf61cc1ebcadc4dd5cd7ba23e",
+      "url": "/3d-perziura-pc2/?chair=KSAI001WW002"
+    },
+    {
+      "code": "KSAI004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "0cb5da6d66fc1365ed579bcd4849c91eee0efcd4371a8e600d2cf5324e8132a5",
+      "url": "/produktai/kedes/sail-susitikimu-ir-lankytoju-kedes-modelis-19640461/"
+    },
+    {
+      "code": "KSAI006WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "48cc3dc8aee41f556d38bd7b5a3ebd97eef4e670ee4f9767f81ad4d63ec71ce9",
+      "url": "/produktai/kedes/sail-susitikimu-ir-lankytoju-kedes-modelis-19640462/"
+    },
+    {
+      "code": "KSAI007WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "748de2e24bc9725e48eeb3ee057679b08aa40d773f16f75589b2cd07f3e65c0a",
+      "url": "/produktai/kedes/sail-susitikimu-ir-lankytoju-kedes-modelis-19640464/"
+    },
+    {
+      "code": "KSAI008WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "2abc23a5fbd6cdfe7237e2271bab4f4e11c2e21548fe8e473a0fd521921b3004",
+      "url": "/3d-perziura-pc2/?chair=KSAI008WW002"
+    },
+    {
+      "code": "KSEG002WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "999ec0c6911103a21cfb146cd5ff86d5234b70bba11d67f9adb3bc8ea61971d8",
+      "url": "/produktai/kedes/segla-darbo-kedes-modelis-24228584/"
+    },
+    {
+      "code": "KSEG003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "896af68861b46eb49143a312aa9e3d08a81737517e39b1f28ece5951c8a3f53c",
+      "url": "/produktai/kedes/segla-darbo-kedes-modelis-24228580/"
+    },
+    {
+      "code": "KSML001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b0946065ca5445e696578e25e996bd2098020576a8a96bab54bab7447f7c6f14",
+      "url": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628159/"
+    },
+    {
+      "code": "KSML002WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e8008f124f4f3a0a3dc7d402ab66c4c23f62740183b43ff79152b512ba9af0d6",
+      "url": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628157/"
+    },
+    {
+      "code": "KSML005WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "23d0f42bfb5a89f838d1cc128437bbf55e734a62339b1693cf6e103b47280c94",
+      "url": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628162/"
+    },
+    {
+      "code": "KSML006WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "5a12256ccab8e79909b4d93a2b35b5e8eaf484f0069f5ca798f7b25a81dd3268",
+      "url": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628158/"
+    },
+    {
+      "code": "KSOO003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c12365b8b7e3779050fcdf9a1d8636d87f3a877cff0956533bf470aae6cb032e",
+      "url": "/produktai/kedes/so-one-susitikimu-ir-lankytoju-kedes-modelis-23374286/"
+    },
+    {
+      "code": "KSOO004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "cdf2fe7d1df963d66676d29361ecba977e3779e51303344f925b269184b70921",
+      "url": "/produktai/kedes/so-one-darbo-kedes-modelis-23374292/"
+    },
+    {
+      "code": "KSOO005WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "f172a8bfc3481eb5304cc2c36405edd154f0077599d7e6e16a37632843f6229f",
+      "url": "/produktai/kedes/so-one-darbo-kedes-modelis-23374293/"
+    },
+    {
+      "code": "KSOU001WW003",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "57fb82e30272eb74c9b85901b1a4c470349b429e9d8373b3cddc2f9bb2ccb20b",
+      "url": "/3d-perziura-pc2/?chair=KSOU001WW003"
+    },
+    {
+      "code": "KSQA176WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e80b99560902db6884c49ef98ae97cda76b207adb6e5011edabd529488ee3c11",
+      "url": "/produktai/kedes/sqart-taburetes-ir-baro-kedes-modelis-24758701/"
+    },
+    {
+      "code": "KSRI001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c664a5a00382a8da4474a6c38a0d2cb7bfe2d84d6ab3104b0cd7afa093a6717a",
+      "url": "/produktai/kedes/sitari-susitikimu-ir-lankytoju-kedes-modelis-29965436/"
+    },
+    {
+      "code": "KSRI002WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "5f1d6e10ac8a05c16df0ecb4ffcecade8e2724c22e9ca270df351eb139b16b37",
+      "url": "/produktai/kedes/sitari-susitikimu-ir-lankytoju-kedes-modelis-29965438/"
+    },
+    {
+      "code": "KSRI003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "31a74acc2e60d38e510f1fd59ff58487059993f9ef288680fc10a7704427171a",
+      "url": "/produktai/kedes/sitari-susitikimu-ir-lankytoju-kedes-modelis-29965435/"
+    },
+    {
+      "code": "KSRI004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "5460c19fca67679502c79bddb9403b309c1dcb3680890452c2ebe09b50786888",
+      "url": "/produktai/kedes/sitari-susitikimu-ir-lankytoju-kedes-modelis-29965437/"
+    },
+    {
+      "code": "KSTY001WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "ae0c9078dd512ba564049f263b610a865b66689273e4851e2402d43cf6c6b619",
+      "url": "/produktai/kedes/styl-susitikimu-ir-lankytoju-kedes-modelis-20929371/"
+    },
+    {
+      "code": "KSTY001WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "4e9e569fe4163b9ceb90912da67e9bb4efcdfb2aed79cca5fa7fc8c0f5d88323",
+      "url": "/produktai/kedes/styl-susitikimu-ir-lankytoju-kedes-modelis-20929369/"
+    },
+    {
+      "code": "KSYL001WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "736621fef1eec0242046568e4fc1e8de3b79d696f3720753fedb8d796ee00714",
+      "url": "/produktai/kedes/sylwia-s-susitikimu-ir-lankytoju-kedes-modelis-27819538/"
+    },
+    {
+      "code": "KSYL001WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "6d7bba4c8164473d26467e116a039c344713722b616d51abb2ec04b12ee8ea10",
+      "url": "/produktai/kedes/sylwia-s-susitikimu-ir-lankytoju-kedes-modelis-27819537/"
+    },
+    {
+      "code": "KTAK001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "63a62084bf2fa296457a2867e2a8c704176c50249964ebab25011d3ace33e317",
+      "url": "/produktai/kedes/taktik-darbo-kedes-modelis-20402645/"
+    },
+    {
+      "code": "KTAK002WW006",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3ff39920d10a5468ace7beadcbbd5919bd6a87db33d04de370f07517130e3010",
+      "url": "/produktai/kedes/taktik-darbo-kedes-modelis-20402648/"
+    },
+    {
+      "code": "KTAU001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "1042bfc5b95a8a01a81b6d91cf6fbe3f5c8ebf93bdd4172034c5ab0dac3c27ac",
+      "url": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088374/"
+    },
+    {
+      "code": "KTAU002WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "81b73f8aa984fd1b0bb7d1e39ac88da95f34d27ddce9bf9fd47a579653cd260f",
+      "url": "/produktai/kedes/tauko-taburetes-ir-baro-kedes-modelis-16088356/"
+    },
+    {
+      "code": "KTAU002WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "0d0c6159fe3ea6e82b3958f7f173f3c10ab4aa89aa450215ea34d5a28fe7b441",
+      "url": "/produktai/kedes/tauko-taburetes-ir-baro-kedes-modelis-16088352/"
+    },
+    {
+      "code": "KTAU003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "dd6bdcce8afa95bf4a982eb92dfac297c6476faaaa9deec71b023081aa38ab75",
+      "url": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088378/"
+    },
+    {
+      "code": "KTAU003WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "89494f30d8c6490d0b13060042f4142b53c1cdbcf14edaf3805aae5a9e984f0e",
+      "url": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088380/"
+    },
+    {
+      "code": "KTAU004WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "8230f4e25a7c54fcc0d99044d44e178635d9a34e007f16dd1f436978757e0bd5",
+      "url": "/produktai/kedes/tauko-taburetes-ir-baro-kedes-modelis-16088358/"
+    },
+    {
+      "code": "KTAU004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "5fc94a1e0e91d8bcdc6c88a18ffec075fd6c21f3eca645039c67c2ee672de478",
+      "url": "/produktai/kedes/tauko-taburetes-ir-baro-kedes-modelis-16088361/"
+    },
+    {
+      "code": "KTAU008WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "1d514ae572be44335ae16f33dc7b18d449166283a6ecbcb148e337b8061a9db5",
+      "url": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088382/"
+    },
+    {
+      "code": "KTGU001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "df90df5a3948c41ef5df949296d3c6f1da74cd931a3f662827b7f828aebdd625",
+      "url": "/produktai/kedes/tiger-up-darbo-kedes-modelis-26117039/"
+    },
+    {
+      "code": "KTGU004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e4874a1697e24da08a0ea517ba22e09b2f40c4d765a0215a3d2bed6c8673e786",
+      "url": "/produktai/kedes/tiger-up-darbo-kedes-modelis-26117038/"
+    },
+    {
+      "code": "KTGU007WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "cdad6802b1bff00d72860b4fb6d0f1a14467f697c07e25b531eab1fe67deb07a",
+      "url": "/produktai/kedes/tiger-up-susitikimu-ir-lankytoju-kedes-modelis-26117951/"
+    },
+    {
+      "code": "KTGU008WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "1131e501f834750139474f004bb381fb61eec5d9edfae51fc8cc3603c1df7c1f",
+      "url": "/produktai/kedes/tiger-up-susitikimu-ir-lankytoju-kedes-modelis-26117950/"
+    },
+    {
+      "code": "KTIM001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "9e15e0abf140746b0707a36002d24d2027bc17c788b1e6a60930780d03e7493c",
+      "url": "/produktai/kedes/timmi-taburetes-ir-baro-kedes-modelis-20501895/"
+    },
+    {
+      "code": "KTRF001WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "7cd7e4d3c52b01a7111c47909366af79de4e420d8f7cc8d31c95723f804b6cc7",
+      "url": "/3d-perziura-pc2/?chair=KTRF001WW001"
+    },
+    {
+      "code": "KTUL001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "6271b30e57f056081674dbc9339b440af928672c906cd25d8666c117af95b4a6",
+      "url": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075291/"
+    },
+    {
+      "code": "KTUL001WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "f2e4e14406653a2c93e7fc0b1adb5296ac6d54e4df7d11c5881fc4bc37bc7233",
+      "url": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075295/"
+    },
+    {
+      "code": "KTUL001WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "532b6d758f9d451f51c46baeba25e3030bae878cb73b99271d4ccd573dfcef57",
+      "url": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075296/"
+    },
+    {
+      "code": "KTUL002WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "fcbd7105420a7ea40a362259750c0431beabb95c6e29bf2b37612031e5d87826",
+      "url": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075293/"
+    },
+    {
+      "code": "KTUL003WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "2c56c0081e4e3f2a1754a90cbd418fa6f2f0ed2c34ea4394d7f8c6d07f49a9ff",
+      "url": "/produktai/kedes/tulipan-taburetes-ir-baro-kedes-modelis-26084477/"
+    },
+    {
+      "code": "KTUL003WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3a2cf1ccb27b87d7cd98d1bca21755f1eff87b958de4e05addaca0fc9ff011de",
+      "url": "/produktai/kedes/tulipan-taburetes-ir-baro-kedes-modelis-26084480/"
+    },
+    {
+      "code": "KTUL003WW007",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "f8d477578f934c027e92be2b91250bb9bf4fce0edcc8aeae088b3f1d2534fc65",
+      "url": "/produktai/kedes/tulipan-taburetes-ir-baro-kedes-modelis-26084481/"
+    },
+    {
+      "code": "KTUL003WW008",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "bc922a0e7c51b27378f1e3f50b26e083da1452b526aa135bf366a27ad9670fa6",
+      "url": "/produktai/kedes/tulipan-taburetes-ir-baro-kedes-modelis-26084483/"
+    },
+    {
+      "code": "KTUL003WW009",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "7c5792527a7ada546952f18d61553ef67a7e095b57452d3d9ba39cf187edca35",
+      "url": "/produktai/kedes/tulipan-taburetes-ir-baro-kedes-modelis-26084484/"
+    },
+    {
+      "code": "KUTI001WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "e349dd64aa7c8a8ff5db6bd21c4ffd209dcdcec9ec2e4c55afc5407c0356409e",
+      "url": "/3d-perziura-pc2/?chair=KUTI001WW002"
+    },
+    {
+      "code": "KUTI002WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "ceea799aab7b70179869c81d43463bbdf9af02787960aa9c79421a22014c5505",
+      "url": "/produktai/kedes/utila-darbo-kedes-modelis-20119623/"
+    },
+    {
+      "code": "KUTI003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b4777f8b1c5152bd7d9d81938c52251baff9e3b65690a5ce580acc9f102968dd",
+      "url": "/produktai/kedes/utila-darbo-kedes-modelis-20119625/"
+    },
+    {
+      "code": "KUTI004WW001",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "b5f32b8a311600730224da99639ecfc9558dac08d782ef3da31ebd6e4df3c02f",
+      "url": "/3d-perziura-pc2/?chair=KUTI004WW001"
+    },
+    {
+      "code": "KUTI004WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "5b4a92b4a3cedb2b8f6fcd60bca89d995828d63c37e6b02e8f77b1513887c5e9",
+      "url": "/3d-perziura-pc2/?chair=KUTI004WW002"
+    },
+    {
+      "code": "KUTI005WW001",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "7015a0c470f9734d904763421b21844105274ee0fa38ca038e2ea36cb57dafdd",
+      "url": "/3d-perziura-pc2/?chair=KUTI005WW001"
+    },
+    {
+      "code": "KVAP001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "20ce59a30c0c8caed5c46ccb7128b5cbb9ed9be2f911382f42a0e10e1823a6aa",
+      "url": "/produktai/kedes/vapaa-susitikimu-ir-lankytoju-kedes-modelis-26876445/"
+    },
+    {
+      "code": "KVAP001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e221eadb71d2f3df8251e998fe37ed92a4d739fa96fba2504d78e6d1dcec2c8c",
+      "url": "/produktai/kedes/vapaa-susitikimu-ir-lankytoju-kedes-modelis-27611825/"
+    },
+    {
+      "code": "KVAP002WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b7e0c88a1d92e43faf27e91e988f607bc5c8b6a8f08c44976486e43d7cc9a4d4",
+      "url": "/produktai/kedes/vapaa-susitikimu-ir-lankytoju-kedes-modelis-26880326/"
+    },
+    {
+      "code": "KVAP002WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "742ab0e089383e54e490da4df5e41d30fcddbb4bf91f2e461a1dd0af301cfb83",
+      "url": "/produktai/kedes/vapaa-susitikimu-ir-lankytoju-kedes-modelis-27611822/"
+    },
+    {
+      "code": "KVAP003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "5f242cf8e6d5e0fa098321fff034c7c2289e7b80122db1141e4ade08e6e9f5ed",
+      "url": "/produktai/kedes/vapaa-taburetes-ir-baro-kedes-modelis-26875228/"
+    },
+    {
+      "code": "KVAP003WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c6f0d2b9d1f1e07c93749ff383b8a83ae0817a218f77c560b2a57e9c368b8fb5",
+      "url": "/produktai/kedes/vapaa-taburetes-ir-baro-kedes-modelis-26875070/"
+    },
+    {
+      "code": "KVAP004WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "815e1d7ee44cf1149526ff17d08b815146936e6e888733cce46b4ef60441e001",
+      "url": "/produktai/kedes/vapaa-taburetes-ir-baro-kedes-modelis-26873332/"
+    },
+    {
+      "code": "KVAP004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "edf12d55ff62e54c98d8474e8e80e52abc411bfce3c3f611f0c803656f8e02e1",
+      "url": "/produktai/kedes/vapaa-taburetes-ir-baro-kedes-modelis-26875026/"
+    },
+    {
+      "code": "KVAP005WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b63bc9d61328aede1d2fa0ab540ce11c54a665e5456840ef4970178d45a97a00",
+      "url": "/produktai/kedes/vapaa-susitikimu-ir-lankytoju-kedes-modelis-27611824/"
+    },
+    {
+      "code": "KVAP008WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "9d490a7e305b17b2aa36ba5fb487c04c246f81ea274f1ffc6a7a7b4ac46abba0",
+      "url": "/3d-perziura-pc2/?chair=KVAP008WW001"
+    },
+    {
+      "code": "KVAP008WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "38397e0dcd3743954f739d53bb2cfc24ad5be311fe25fb29e8c56ba56e636940",
+      "url": "/produktai/kedes/vapaa-susitikimu-ir-lankytoju-kedes-modelis-27611823/"
+    },
+    {
+      "code": "KVAP011WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "cd88a9374e8de14848cbecf6a14dca26d04281217166438c5477d7e31ba8dac3",
+      "url": "/produktai/kedes/vapaa-taburetes-ir-baro-kedes-modelis-26875628/"
+    },
+    {
+      "code": "KVAP012WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "eb3f1d96c5515ebfdf6f5145ba4c4904b1bf3aa7fa3356701204d0cbdba392df",
+      "url": "/produktai/kedes/vapaa-taburetes-ir-baro-kedes-modelis-26876030/"
+    },
+    {
+      "code": "KVAP018WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "04988aa693c78b2355c892798df22d829bc74c22fdd4bead9444011ac660214b",
+      "url": "/produktai/kedes/vapaa-susitikimu-ir-lankytoju-kedes-modelis-26980439/"
+    },
+    {
+      "code": "KVAP020WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "02480a0940fb55adb9693936018945218639f5ce9ecb3f478e2c12b19fc5e747",
+      "url": "/produktai/kedes/vapaa-susitikimu-ir-lankytoju-kedes-modelis-26880456/"
+    },
+    {
+      "code": "KVCR001WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c67eabf5d02ac8e836ad43e117b63f3f3af7e48715982e982b05faa634003366",
+      "url": "/produktai/kedes/v-care-susitikimu-ir-lankytoju-kedes-modelis-24865526/"
+    },
+    {
+      "code": "KVCR001WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c2e1caa558d7ad867c098d14207ccc6ac04b60d1946ecb1cb280f99299862c11",
+      "url": "/produktai/kedes/v-care-susitikimu-ir-lankytoju-kedes-modelis-24865524/"
+    },
+    {
+      "code": "KVCR002WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "587df69a79314c7a681b7038f2fdbf35aee4317f185251ac2fc9d2872415868a",
+      "url": "/produktai/kedes/v-care-susitikimu-ir-lankytoju-kedes-modelis-24865525/"
+    },
+    {
+      "code": "KVCR002WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "a991e8b39972110a17d01114c7bcfdc3db689c0e4c319a91d6c01ab6e8bef056",
+      "url": "/produktai/kedes/v-care-susitikimu-ir-lankytoju-kedes-modelis-24865527/"
+    },
+    {
+      "code": "KVID006WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "b3ad6f3f3b0aed1ee695ad47e7ee566cd9460fa60830363f728b7d6d4a7d0c45",
+      "url": "/produktai/kedes/viden-darbo-kedes-modelis-22841934/"
+    },
+    {
+      "code": "KVID008WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "77c72c1f46f5548e23147fa13a2b8d00de0d3c42ef60880cef97ba47050cdd7c",
+      "url": "/produktai/kedes/viden-darbo-kedes-modelis-22841933/"
+    },
+    {
+      "code": "KVID009WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "374c48888de2dff88a177962890f8d682bdbef55c915a2be2216d3568befb41a",
+      "url": "/produktai/kedes/viden-darbo-kedes-modelis-22841935/"
+    },
+    {
+      "code": "KVID010WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "6ef5e0d990151de50f106440b4c677487d74d60b883e55f642dfe72664ac211d",
+      "url": "/produktai/kedes/viden-darbo-kedes-modelis-22841938/"
+    },
+    {
+      "code": "KVSN001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "9f5927d8270ef76940f98051a4c223597339aeb4e0785a1f665d303862b81cd3",
+      "url": "/produktai/kedes/vesta-new-susitikimu-ir-lankytoju-kedes-modelis-23531795/"
+    },
+    {
+      "code": "KVSN001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "226d2c2d7711ea7e5fcffe8a3ef797a9847644b6e3a9ce677100e5ce802a7814",
+      "url": "/produktai/kedes/vesta-new-susitikimu-ir-lankytoju-kedes-modelis-20835921/"
+    },
+    {
+      "code": "KVSN002WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "eada320987874d422b55302f5715a47dfe04fff4556c24ff9eb2809b4eee1722",
+      "url": "/produktai/kedes/vesta-new-susitikimu-ir-lankytoju-kedes-modelis-23531796/"
+    },
+    {
+      "code": "KVSN002WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "92ce4df9ddc987ff2edc12ec8bd789ee01603b86dad3acf008617095ad85118f",
+      "url": "/produktai/kedes/vesta-new-susitikimu-ir-lankytoju-kedes-modelis-20835923/"
+    },
+    {
+      "code": "KWI2001WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "9e11cc5e544e3cf63fc977d66b4b1a10ac00c43d82088eae34ac6ae759220db4",
+      "url": "/3d-perziura-pc2/?chair=KWI2001WW001"
+    },
+    {
+      "code": "KWI2002WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "97bd047dd74c2fa9c28bdb046c05ed14081ee721de31ac963f3f6396d1833b57",
+      "url": "/produktai/kedes/wing-susitikimu-ir-lankytoju-kedes-modelis-28702865/"
+    },
+    {
+      "code": "KWI2003WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "e70f18984f10b329f4ca2c3e4f70d37d50beb65a1b11f942b888ec47d6666f39",
+      "url": "/3d-perziura-pc2/?chair=KWI2003WW001"
+    },
+    {
+      "code": "KWI2003WW002",
+      "mode": "GROUPED_ADMITTED_OPTIONS",
+      "bindingSha256": "68bddefc7a9eb45f5fa9831894d4b73f836d65c35452289fdbb3ba5dab3bfaef",
+      "url": "/3d-perziura-pc2/?chair=KWI2003WW002"
+    },
+    {
+      "code": "KWI2005WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "7217b2ff1d190302f413fc1ebc74116820b793a932bdfae0894409cec56a410d",
+      "url": "/3d-perziura-pc2/?chair=KWI2005WW001"
+    },
+    {
+      "code": "KWI2006WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "30ba63059fab83f711454f4b194419a468e5929ca712b32ad6e12035fb926d31",
+      "url": "/3d-perziura-pc2/?chair=KWI2006WW001"
+    },
+    {
+      "code": "KWI2011WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "adb24229907c330230fb7e9f1b3c92ec2f01b096c5b100fcd9deb351576b52c9",
+      "url": "/3d-perziura-pc2/?chair=KWI2011WW001"
+    },
+    {
+      "code": "KWIT001WW005",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "96aad6893203ab0346f2849b33e14ccd7f2e0129ab5136441144fb2ceb8da924",
+      "url": "/produktai/kedes/withme-susitikimu-ir-lankytoju-kedes-modelis-29244269/"
+    },
+    {
+      "code": "KWIT001WW006",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "eaaabfd9cd045689e49cc5d7d3a0a5f8b6892ae635cb2daebcf334a058760870",
+      "url": "/produktai/kedes/withme-susitikimu-ir-lankytoju-kedes-modelis-29244405/"
+    },
+    {
+      "code": "KWIT003WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "af01efcd65b26be17ee0cd2a5fe45f460e4cda7fe81fc8b59b7ea0b957ab978c",
+      "url": "/produktai/kedes/withme-susitikimu-ir-lankytoju-kedes-modelis-29244319/"
+    },
+    {
+      "code": "KWIT003WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "173cab1a88f7e5498d7784556503156cb1007909e33ba459d4a48c89414bc06d",
+      "url": "/produktai/kedes/withme-susitikimu-ir-lankytoju-kedes-modelis-29244234/"
+    },
+    {
+      "code": "KWIT006WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "52d2f3508d7042006e68ce6eac2d5364a18914b43fc193dcf52166549ae00de5",
+      "url": "/produktai/kedes/withme-susitikimu-ir-lankytoju-kedes-modelis-29244231/"
+    },
+    {
+      "code": "KWIT006WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3edb9e7f57220d36e4a7de5265cf0077b39e835cb9993b022a15d2c14c4ac69f",
+      "url": "/produktai/kedes/withme-susitikimu-ir-lankytoju-kedes-modelis-29244285/"
+    },
+    {
+      "code": "KXEN028WW001",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "c5453f8f7b4fcee5d7608425e1ca937269f76b22d8d1b71a062c7304fd234578",
+      "url": "/3d-perziura-pc2/?chair=KXEN028WW001"
+    },
+    {
+      "code": "KXEN032WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "6514cd5688e4d1affc8cb0c2d39c7930931631d89eaf8677a5814a84993b41a9",
+      "url": "/3d-perziura-pc2/?chair=KXEN032WW001"
+    },
+    {
+      "code": "KXEN033WW003",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "6f7a37538a825f7500c454b78a12e6e8e3f10c4ce63e9ba2df9cfe9167319386",
+      "url": "/3d-perziura-pc2/?chair=KXEN033WW003"
+    },
+    {
+      "code": "KXEN034WW001",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "bc2bedf2544230b43da6d047acbc698bbd6240f612783c500d0e20637b7b293e",
+      "url": "/3d-perziura-pc2/?chair=KXEN034WW001"
+    },
+    {
+      "code": "KXEN035WW001",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "922ae5c9aa1356c3497c365cf1e31ba4aa4689ec487db2f72da2f2e8c9a2f532",
+      "url": "/3d-perziura-pc2/?chair=KXEN035WW001"
+    },
+    {
+      "code": "KXEN036WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "038e363af94f8bf74a2f6263f08e8e2bc0c442dacebff704a20d8daa644aeca7",
+      "url": "/produktai/kedes/xenium-susitikimu-ir-lankytoju-kedes-modelis-23567997/"
+    },
+    {
+      "code": "KXEN037WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "4e5d986836e28cf9f34ccbdb2d6c9f05521b4d1d67960a519a36687a4a59af00",
+      "url": "/produktai/kedes/xenium-susitikimu-ir-lankytoju-kedes-modelis-23567998/"
+    },
+    {
+      "code": "KXEN046WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "c1a916a0192e76dfff0ea6ad42e886d7a125420f9233bc70c9ffa1d3f0a11cf7",
+      "url": "/produktai/kedes/xenium-susitikimu-ir-lankytoju-kedes-modelis-23568001/"
+    },
+    {
+      "code": "KXEN047WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "29b7ea1ce229abe9de609c3a1cff04cb51d7a0cc39d58b07bb9196c4045337cd",
+      "url": "/produktai/kedes/xenium-susitikimu-ir-lankytoju-kedes-modelis-23567999/"
+    },
+    {
+      "code": "KXEN048WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "a62fe76540c9e61e6ae6ab180846d89e8bebac37bf40cd9879693f957df518e9",
+      "url": "/produktai/kedes/xenium-susitikimu-ir-lankytoju-kedes-modelis-23568000/"
+    },
+    {
+      "code": "KXLI001WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "5d3d527c9da494875629ee31faf99c6f4d0fa5fc7232f19ce91879924342105b",
+      "url": "/3d-perziura-pc2/?chair=KXLI001WW002"
+    },
+    {
+      "code": "KXLI002WW002",
+      "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
+      "bindingSha256": "a67a26052db6840c48f36871eede46c1eec69eedb9b22d656c03eca48226b4b1",
+      "url": "/3d-perziura-pc2/?chair=KXLI002WW002"
+    },
+    {
+      "code": "KYOU001WW001",
+      "mode": "GROUPED_ADMITTED_OPTIONS",
+      "bindingSha256": "825307551e646f33d4a285febbce6daf1f5207485fba18ae8eb8c90c502a5e06",
+      "url": "/3d-perziura-pc2/?chair=KYOU001WW001"
+    },
+    {
+      "code": "KYOU001WW003",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "ca50b4f42534f53b654fe7073754041a601c1cd3ada505c58fd6592f50ea9539",
+      "url": "/3d-perziura-pc2/?chair=KYOU001WW003"
+    },
+    {
+      "code": "KYOU002WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "11373d27aca2fcbb5485a2bf345c5c19fde2ed12c27cf4d1ab1fbb4aa6089922",
+      "url": "/3d-perziura-pc2/?chair=KYOU002WW001"
+    },
+    {
+      "code": "KYOU002WW002",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "ffe11198fdbb4879bef28145cc991b4b38c27325a950febec26ed7755a50fcc6",
+      "url": "/3d-perziura-pc2/?chair=KYOU002WW002"
+    },
+    {
+      "code": "KYOU003WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "832e457ff86bbfcdbf9aee429d96cd73713489c113c4d3a0a1c4586654d81689",
+      "url": "/produktai/kedes/youteam-susitikimu-ir-lankytoju-kedes-modelis-16088577/"
+    },
+    {
+      "code": "KYOU003WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "4b0d9b7a8035d47c1231b2315dc2cc1c857c4e470d96afd84e2f0ceb19b5aafa",
+      "url": "/produktai/kedes/youteam-susitikimu-ir-lankytoju-kedes-modelis-16088578/"
+    },
+    {
+      "code": "KYOU004WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "490197e835ad6a47ecdd52db41ed5ea5f88726dacd106c34cb1d0c5046361f9d",
+      "url": "/produktai/kedes/youteam-susitikimu-ir-lankytoju-kedes-modelis-16088580/"
+    },
+    {
+      "code": "KYOU004WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "adec6ecbaba11f2c7a65e5581b8dd9c5fe60cd784f08f7d778c77a3367b89dcf",
+      "url": "/produktai/kedes/youteam-susitikimu-ir-lankytoju-kedes-modelis-16088579/"
+    },
+    {
+      "code": "KYOU005WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "4a53c72515c126f8a2216adad1836afbaee30e91e39b2404d93aeaff40f44f2b",
+      "url": "/produktai/kedes/youteam-susitikimu-ir-lankytoju-kedes-modelis-16088582/"
+    },
+    {
+      "code": "KYUN001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "e4df0aee2c8820198cf4da6be890f2ee0911c5e16d8331fafbf09a2003f68d49",
+      "url": "/produktai/kedes/yuni-susitikimu-ir-lankytoju-kedes-modelis-28958404/"
+    },
+    {
+      "code": "KYUN001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "566b5a2e119ae2b5a6fa79532708b45225b18eb3c0e39ccf06b434a54b4a6bf9",
+      "url": "/produktai/kedes/yuni-susitikimu-ir-lankytoju-kedes-modelis-28958406/"
+    },
+    {
+      "code": "KZBO002WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "22af5463161e387a3667caa9708d1f38581b708f41e3c549aaa79c2dc3fa1957",
+      "url": "/produktai/kedes/z-body-susitikimu-ir-lankytoju-kedes-modelis-24893026/"
+    },
+    {
+      "code": "KZBO004WW001",
+      "mode": "WHOLE_OBSERVED_STATES_ONLY",
+      "bindingSha256": "89dba3cd80fce6335876050c6b73b997a6868df1c2c2ae267f26a61c6367b5a9",
+      "url": "/3d-perziura-pc2/?chair=KZBO004WW001"
+    },
+    {
+      "code": "KZET001WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "a2b6e3d48aeca6aeaf1d73104cae43bae3780516da8d2dfb356b7f364ce8e75c",
+      "url": "/produktai/kedes/zeta-taburetes-ir-baro-kedes-modelis-25038984/"
+    },
+    {
+      "code": "KZET002WW002",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "5f6a18150e075da9eb20e367237cb6b24c466ad8dc1695e32856e30396e4dec0",
+      "url": "/produktai/kedes/zeta-taburetes-ir-baro-kedes-modelis-25038986/"
+    }
+  ]
+}

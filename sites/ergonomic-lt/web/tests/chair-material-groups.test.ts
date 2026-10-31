@@ -38,6 +38,16 @@ test('Souly mesh remains independent; missing own roles never become guessed con
  assert.ok(controls(undefined,{...proof,surfaces:[]}).every(c=>c.options.length===0&&c.reason));
  const foreign={...proof,assets:proof.assets.map(a=>({...a,assetSha256:'f'.repeat(64)}))};assert.ok(controls(undefined,foreign).every(c=>!c.options.length));
 });
+
+test('Tref fixed back mesh remains a separate original material while its seat color changes',()=>{
+ const family=families.find(f=>f.baseArticle==='KTRF001WW001')!,state=engine.initialState(family),assembly=engine.assembledAssets(state);
+ const asset=assembly.base!,proof:LegacyChairRoleProof={assets:[asset],surfaces:['CUPHSEATCOLOR','CBACKRESTMESHCOLOR'].map((field,node)=>({assetSha256:asset.assetSha256,node,primitive:0,material:node,field}))};
+ const controls=legacyChairMaterialControls({state,assets:[asset],proof,choices:engine.stateChoices,values:engine.stateValues,change:engine.changeField});
+ const mesh=controls.find(c=>c.label==='Tinklelis')!,seat=controls.find(c=>c.fields.includes('CUPHSEATCOLOR'))!;
+ assert.deepEqual(mesh.fields,['CBACKRESTMESHCOLOR']);assert.deepEqual(mesh.options.map(o=>o.code),['FX01']);
+ assert.ok(seat.options.some(o=>o.code==='LAR101'));
+ for(const option of seat.options)assert.equal(engine.stateValues(option.state).CBACKRESTMESHCOLOR,'FX01');
+});
 test('a fixed differently colored upholstered part blocks a fake common color',()=>{
  const state:ExpandedState={family:'fixture',anchor:'a',values:{CUPHSEATCOLOR:'RED',CUPHBACKRESTCOLOR:'BLUE',CBASE:'POL'}},asset={asset:'/own.glb',assetSha256:'a'.repeat(64),bytes:123};
  const proof={assets:[asset],surfaces:['CUPHSEATCOLOR','CUPHBACKRESTCOLOR'].map((field,node)=>({assetSha256:asset.assetSha256,node,primitive:0,material:node,field}))};

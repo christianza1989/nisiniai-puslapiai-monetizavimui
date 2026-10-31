@@ -1,0 +1,21 @@
+{
+  "siteId": "o3tech",
+  "summary": "Preserve enquiry-only catalogue continuity when owner revokes obsolete commerce-policy pages; keep company identifiers visible, repair accessible product-card names and contrast, and reserve gallery geometry before resources load. Original product copy, pixels and other-tenant defaults remain unchanged.",
+  "category": "code",
+  "evidence": [
+    "sites/o3tech/NATIVE_CLOUDFLARE.md",
+    "tests/o3tech.test.mjs"
+  ],
+  "paths": [
+    "lib/o3tech-render.mjs",
+    "components/niche/o3tech.css",
+    "components/niche/o3tech-site.tsx",
+    "tests/o3tech.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/103",
+  "rollback": "Restore the prior reviewed23-page release and renderer/styles together only if required; preserve revoked revisions and published snapshots. Do not restore misleading browse-implies-consent text or unqualified privacy promises silently.",
+  "id": "upgrade-8f5397f5-5474-45d4-b6b4-7de75a92bfc3",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "7db209199d8e7ebd5433867cf56d2735f214c742",
+  "createdAt": "2026-10-31T05:50:27.071Z"
+}

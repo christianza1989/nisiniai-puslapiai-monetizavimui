@@ -1,8 +1,8 @@
-# Native Cloudflare migration checkpoint · 2026-10-30
+# Native Cloudflare migration checkpoint · 2026-10-31
 
 **2026-10-31: actual-domain cutover completed.** Zone and universal certificate
 are active; all five web records are proxied. Native o3tech.lt and www serve the
-owned Worker, HTTPS redirects and23-page live SEO smoke pass. Original mail DNS
+owned Worker, HTTPS redirects and21-page live SEO smoke pass. Original mail DNS
 values are preserved. The earlier waiting-state section below is historical.
 
 Direct Workers TCP to smtp.hostinger.com failed before AUTH because its address
@@ -10,7 +10,7 @@ was in Cloudflare's prohibited outbound TCP range. A new authenticated Node22
 relay on kontaktuforma.lt uses the existing Cloud Professional plan and central
 mailbox, the maintained mail gateway/SMTP modules and a durable MySQL acceptance
 ledger. No purchase, new mail provider, plugin or WordPress modification.
-Worker version `df80d1d9-1a00-436f-bab5-0d6c62a9c9fe` selects HTTPS relay
+Worker version `c488b6b6-7191-4cb4-803d-827b17a0a676` selects HTTPS relay
 explicitly; direct SMTP is off. Secret values are absent from source/receipts.
 
 Actual browser form test `O3-CF-LIVE-20261031-B1` stored D1 lead
@@ -22,12 +22,37 @@ Do not conflate the earlier owner-confirmed local test with hosted receipt.
 The preceding hosted A1 test remains saved/new and was proven not to reach SMTP;
 it is synthetic and was not resent. Do not import these tests as real demand.
 
-311 public tests, TypeScript, build and2RSC manifests pass. Live23-page SEO,
+312 public tests, TypeScript, build and2RSC manifests pass. Live21-page SEO,
 HTTPS/WWW, desktop1280/mobile390, menu, sticky header and visible mobile form
 pass without horizontal overflow. Private proof: `private/launch-20261031/`.
 Rollback retains original WordPress files and all original DNS targets; restore
 only the five web proxy switches if needed. Hostinger must remain available for
 the central mailbox and relay. See public docs/NICHE_HOSTINGER_MAIL_RELAY.md.
+
+## Owner catalogue cleanup and PageSpeed follow-up · 2026-10-31
+
+Direct owner request removes `/taisykles` and `/garantija-ir-grazinimas`.
+Maintained `revokePage` preserves their historical revisions; edited dependencies
+were reviewed/approved and released through the normal Studio workflow. Release
+`65d68ca1-6338-433c-b783-44c57f68f3fc` has21pages/104assets, SHA256
+`fd352075d4859fb544bdc75a992f0c42270ccb38b11fbd57397d3677c4b76f29`.
+The two routes now404 and are absent from links and sitemap. MB Anvera's owner
+provided company and VAT identifiers remain visible at contacts and in footers.
+
+Cookie adaptation uses registered deletions and heading formatting: remove the
+obsolete browse-implies-consent introduction, preserve the previously accepted
+point13, and retain existing removal guidance. This supersedes the earlier
+point12 retention below; it does not certify a complete privacy notice.
+
+Product-card image links and quick views now have title-derived accessible names;
+small text/buttons meet measured contrast requirements. Gallery frames reserve
+space, original regular fonts preload, and only the first visible catalogue
+product image starts eagerly at high priority. Related/below-fold cards stay lazy.
+Original hero pixels and product prose are unchanged. See
+[PageSpeed evidence](PAGESPEED_20261031.md). Private current delivery/evidence:
+`private/catalogue-cleanup-20261031/`; old23-page launch evidence is preserved.
+
+## Earlier accepted copy checkpoint · historical
 
 The owner accepted the exact Codex-written point13 draft and instructed its
 publication plus real-domain migration. Changes1–6 and13 are applied;7–12 and

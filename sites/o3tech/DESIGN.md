@@ -41,3 +41,28 @@ Site-side background-rendering candidate2026-10-30: keep the exact original pale
 ## Owner-selected hero06 · 2026-10-30
 
 Current homepage hero authority is [HERO06.md](HERO06.md): the owner selected exact variant06 from the second gallery with the unchanged four-circle PNG. Apply its framed panel, gradient, split heading, actions and responsive spacing; retain every original paragraph and the rest of the page. The earlier compositor candidate above is historical and was removed after direct-device viewing was clean. No shared Core rule changes were requested or made.
+
+## Catalogue accessibility and loading repair · 2026-10-31
+
+The original blue/white action contrast exception above is superseded for normal
+buttons: reuse existing heading teal #276d72 with white text, hover #205b60.
+Preserve Open Sans family/real weights and existing role geometry: action14px600,
+product email action12px600, category metadata12px300italic (11px on mobile).
+Category text now #666 on
+white. Company identifiers reuse existing contact/footer text roles. No new font,
+palette, hero geometry or image pixels. Existing regular Latin/Latin-ext faces
+preload to stabilize first rendering; italic source faces remain unchanged.
+
+- [x] Inventory affected product/catalogue/related cards, buttons, contacts/footer.
+- [x] Correct measured unnamed-link and normal-text contrast failures together.
+- [x] Preserve all product prose, link destinations and original selected hero.
+- [x] Reserve gallery/thumbnail geometry and prioritize only first catalogue image.
+- [x] Check actual production PageSpeed mobile screenshots and accessibility100;
+  desktop policy/contact rendering and title-derived names are inspected.
+- [x] Interactive inventory fits actual320/736px containers with no overflow.
+- [ ] Fresh browser200%zoom/physical Safari/touch verification in this batch;
+  prior evidence remains historical and is not retroactively re-certified.
+
+Current native21-page release, exact reports and remaining CSS/JS/image suggestions
+are in [PAGESPEED_20261031.md](PAGESPEED_20261031.md). Lab CLS0 does not certify all
+devices or field performance. No all-site graphics workaround or rule was added.

@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Owner-requested21-page catalogue release deployed natively. Correct unnamed links/contrast and lazy catalogue LCP; reserve gallery geometry. Actual mobile reports99/100 catalogue,97–99/100 product,100/100 home; no field-CWV or original CLS-trigger certification.",
+  "checks": [
+    {
+      "command": "npm run test:core (full12-site registry)",
+      "result": "PASS",
+      "evidence": "312 tests pass; private/catalogue-cleanup-20261031/core-tests-final.log"
+    },
+    {
+      "command": "node --test tests/o3tech.test.mjs",
+      "result": "PASS",
+      "evidence": "9 renderer tests, including first-visible-card priority versus lazy related cards"
+    },
+    {
+      "command": "npx tsc --noEmit; scoped production npm run build",
+      "result": "PASS",
+      "evidence": "TypeScript, all build stages and2RSC manifests/0missing"
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=o3tech SEO_SMOKE_BASE_URL=https://o3tech.lt node tests/seo-core-smoke.mjs",
+      "result": "PASS",
+      "evidence": "21 live pages, discovery/schema/isolation/404;7obsolete URLs404"
+    },
+    {
+      "command": "Public mobile PageSpeed reports and live cleanup checks",
+      "result": "PASS",
+      "evidence": "sites/o3tech/PAGESPEED_20261031.md; current Worker c488b6b6-7191-4cb4-803d-827b17a0a676"
+    }
+  ],
+  "eventId": "24bb7d1d-bb19-4fa6-877f-b2a01913a8b3",
+  "sequence": 2,
+  "at": "2026-10-31T06:03:22.403Z"
+}

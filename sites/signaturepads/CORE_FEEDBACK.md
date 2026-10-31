@@ -22,3 +22,17 @@ Galutinė priėmimo ataskaita: [Cloudflare peržiūra](CLOUDFLARE-PREVIEW-202610
 314 testų, types, tikras SEO smoke ir4 pločių browser PASS. Tiksli dalinio
 build / adapterio kilmė ir ankstesni FAIL išsaugoti. Nepriskirti production
 launch, SMTP / INBOX, main merge ar automatinio kitų PC adoption.
+
+2026-10-31: tiesiogiai užsakytas realus formos paštas tik Cloudflare
+peržiūroje. Read-only admission negalima tyliai paversti rašančiu:
+pridėtas atskiras hosted-inquiries su owner/auth įrodymais, vienu tiksliu
+POST /uzklausa, pilnu native build, dedicated D1, fail-closed Origin /
+bindings ir platformos per-edge ribojimu. Esamas native D1 claim /
+Hostinger transportas pakartotinai panaudotas, production13 neapeiti.
+Upgrade395e5908-bd2f-4b3c-b89a-5f427e841a08, public source4363ad2d,
+versija f3de2d79-9a93-44b7-b655-1195a6186025.319 testų ir actual hosted
+browser→D1notified→Hostinger204 / viena Sent kopija po replay PASS.
+API neturi custom Reply-To: kliento adresas tekste, apribojimas pasakytas
+savininkui. Gavėjo INBOX neprilyginta serverio kvitui; laukiama Roko
+patvirtinimo. Esamas o3tech relay / env / DB, originalus WordPress ir DNS
+nekeisti. Išsami ataskaita: CLOUDFLARE-MAIL-20261031.md.

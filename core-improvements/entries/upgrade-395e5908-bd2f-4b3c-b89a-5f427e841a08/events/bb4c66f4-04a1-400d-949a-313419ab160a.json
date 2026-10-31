@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Actual full native Vite source4363ad2d deployed to owner-authorized preview only, versionf3de2d79-9a93-44b7-b655-1195a6186025. One actual browser form accepted; replay same payload200/different409; D1notified1 and one Hostinger Sent copy. INBOX not claimed; WordPress/DNS/unchangedHTML and local8956 independently checked. Approximate edge limiter observed429, not a strict global10/60 guarantee.",
+  "checks": [
+    {
+      "command": "Full native build; check-rsc-assets; generated Wrangler types; deploy dry-run; explicit exact preview deploy",
+      "result": "PASS",
+      "evidence": "output/signaturepads-migration-20261029/cloudflare-mail-20261031/{build.log,rsc-check.json,pre-deploy.json,deployments-after.txt}"
+    },
+    {
+      "command": "actual browser form once; sameID replay; D1/Sent proof; negative forms and rate controls",
+      "result": "PASS",
+      "evidence": "output/signaturepads-migration-20261029/cloudflare-mail-20261031/{form-test-ledger.json,d1-test.json,sent-test.json,negative-forms.json,rate-forms.json}"
+    },
+    {
+      "command": "actual remote HTTP and canonical SEO smoke",
+      "result": "PASS",
+      "evidence": "26pages/204nativeSHA/237mediaAliases/50legacyQueries/25slashRedirects/14renderedResources; remote-http.json + legacy-page-links.json + seo-smoke.log"
+    },
+    {
+      "command": "incumbent before/after HTML+A+MX; local8956; exact committed secret scan",
+      "result": "PASS",
+      "evidence": "incumbent-before.json / incumbent-after.json sameHTML64d1cd11 andsameDNS; source-secrets.json10committedfiles no real mail credentials; original website untouched"
+    }
+  ],
+  "eventId": "bb4c66f4-04a1-400d-949a-313419ab160a",
+  "sequence": 3,
+  "at": "2026-10-31T08:43:42.033Z"
+}

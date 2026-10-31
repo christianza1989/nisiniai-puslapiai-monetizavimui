@@ -2,7 +2,8 @@
 import {useEffect,useMemo,useState} from 'react';
 import dynamic from 'next/dynamic';
 import {chairObservedChoices,chairPreviewAssembly,chairInitialContext,chairInitialVariants,type ChairPreview} from '@/lib/chair-preview';
-import {qualifiedWitnessMatches,qualifiedDefaultSelection,type QualifiedSelection,type QualifiedGroup} from '@/lib/chair-qualified-colors';
+import {qualifiedWitnessMatches,qualifiedDefaultSelection,qualifiedChairPlan,type QualifiedSelection,type QualifiedGroup} from '@/lib/chair-qualified-colors';
+import {qualifiedChairMaterialControls} from '@/lib/chair-material-groups';
 import type {PilotVariant} from '@/lib/configurator';
 import './pc2-chair-review.css';
 
@@ -14,7 +15,8 @@ function ModelReview({data}:{data:ChairPreview}){
  const baseline=useMemo(()=>chairPreviewAssembly(data,context,variants,choices[0]),[data,context,variants,choices]);
  const active=[baseline.base,...baseline.patches.flatMap(p=>p.geometry?[p.geometry]:[])].filter(a=>a!==null).map(a=>a.assetSha256);
  const witnesses=(data.qualified?.witnesses||[]).filter(w=>qualifiedWitnessMatches(data,w,context,variants,active));
- const selectedWitness=witnesses.find(w=>w.id===qualified?.witness),branch=selectedWitness?.branches.find(b=>b.id===qualified?.branch);
+ const selectedWitness=witnesses.find(w=>w.id===qualified?.witness);
+ const materialControls=selectedWitness&&qualified?qualifiedChairMaterialControls(selectedWitness,qualified,s=>qualifiedChairPlan(data,context,variants,active,s).status!=='unavailable'):undefined;
  const assembly=useMemo(()=>chairPreviewAssembly(data,context,variants,choice,observed.startsWith('__q')?qualified:undefined),[data,context,variants,choice,qualified,observed]);
  const current=data.runtime.contexts[context],status=assembly.chairColors.plan.status;
  const variant={id:data.code,asset:assembly.base?.asset||'',assetSha256:assembly.base?.assetSha256||'',bytes:assembly.base?.bytes||0} as PilotVariant;
@@ -31,9 +33,15 @@ function ModelReview({data}:{data:ChairPreview}){
    {data.runtime.contexts.length>1&&<label className="field">Surinkta konstrukcija<select aria-label="Surinkta konstrukcija" value={context} onChange={e=>{const next=Number(e.target.value);setContext(next);setVariants(chairInitialVariants(data,next));setObserved('original');setQualified(undefined);}}>{data.runtime.contexts.map((c,index)=><option value={index} key={index}>{Object.entries(c.dimensions).map(([k,v])=>k+' = '+v).join(' · ')||'Pradinė konstrukcija'}</option>)}</select></label>}
    {current.groups.filter(g=>g.fields.length).map(g=>{const index=current.groups.indexOf(g);return <label className="field" key={index}>{g.fields.join(' / ')}<select aria-label={g.fields.join(' / ')} value={variants[index]??0} onChange={e=>{const next=[...variants];next[index]=Number(e.target.value);setVariants(next);setObserved('original');setQualified(undefined);}}>{g.variants.map((v,n)=><option key={n} value={n}>{Object.entries(v.values).map(([k,value])=>k+' = '+value).join(' · ')}</option>)}</select></label>;})}
    {(choices.length>1||witnesses.some(w=>w.groups.length||w.branches.length||w.singles.length))&&<label className="field">Surinkta spalvinė būsena<select aria-label="Surinkta spalvinė būsena" value={observed} onChange={e=>choose(e.target.value)}>{choices.map(c=><option key={c.id} value={c.id}>{c.label}</option>)}{witnesses.filter(w=>w.groups.length||w.branches.length).map(w=><option key={w.id} value={'__qg:'+w.id}>{w.label}</option>)}{witnesses.flatMap(w=>w.singles.map(s=><option key={w.id+s.id} value={'__qs:'+w.id+':'+s.id}>{s.label}</option>))}</select></label>}
+   {!witnesses.some(w=>w.groups.length||w.branches.length)&&(choices.length>1||witnesses.some(w=>w.singles.length>0))&&<p className="form-note">Galimos tik perduotos pilnos spalvinės būsenos. Atskiras vienodos visų apmuštų dalių spalvos pasirinkimas nepatvirtintas.</p>}
+   {data.palette.schema==='chair-base-observed-colours-v1'&&!witnesses.some(w=>w.fixed||w.groups.length||w.branches.length||w.singles.length)&&<p className="form-note">Kitoms spalvoms trūksta patvirtinto ryšio su šios konstrukcijos paviršiais. 3D rodoma originali apdaila.</p>}
    {observed.startsWith('__qg:')&&selectedWitness&&<>
     {selectedWitness.branches.length>0&&<label className="field">Apdailos grupė<select aria-label="Apdailos grupė" value={qualified?.branch} onChange={e=>{const b=selectedWitness.branches.find(b=>b.id===e.target.value);setQualified(q=>q&&b?{...q,branch:b.id,groups:{...q.groups,...Object.fromEntries(b.groups.map(g=>[g.id,g.base]))}}:q);}}>{selectedWitness.branches.map(b=><option key={b.id} value={b.id}>{b.label}</option>)}</select></label>}
-    {selectedWitness.groups.map(groupControl)}{branch?.groups.map(groupControl)}
+    {materialControls?.controls.map(c=><label className="field" key={c.id} data-chair-material={c.id} data-chair-material-fields={c.fields.join(',')} data-chair-material-value={c.value}>{c.label}<select aria-label={c.label} disabled={!c.options.length} value={c.value} onChange={e=>{const o=c.options.find(o=>o.id===e.target.value);if(o)setQualified(o.state);}}>
+     {!c.value&&<option value="" disabled>{c.options.length?'Pradinės dalių spalvos':'Bendros spalvos pasirinkimas neprieinamas'}</option>}
+     {c.options.map(o=><option key={o.id} value={o.id}>{o.code}</option>)}
+    </select>{c.reason&&<span className="form-note">{c.reason}</span>}</label>)}
+    {materialControls?.remaining.map(groupControl)}
    </>}
    {observed.startsWith('__q')&&selectedWitness?.inference&&<p className="form-note">Dalis atspalvių pritaikoma pagal šiam variantui patikrintą bendrą medžiagų biblioteką.</p>}
    <p className="form-note" role="status">{status==='original'?'Rodomos originalios medžiagos.':status==='observed-state'?'Taikomas šiai konstrukcijai perduotas spalvų pasirinkimas.':'Šiai konstrukcijai ši spalvinė būsena 3D nerodoma. Rodomos originalios medžiagos.'}</p>

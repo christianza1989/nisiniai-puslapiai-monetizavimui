@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "status": "documented_not_executed",
+  "scope": "Existing small-jobs qualification and quote comparison, no separate experiment approval",
+  "suggestedWorkLimitHours": 1,
+  "cases": [
+    {"id":"MIN1","input":"Published IKEA 59 EUR callout and 48 EUR assembly minimum for the matching service/location","expected":"107 EUR component arithmetic only, extras unknown, no actual booking or our quote"},
+    {"id":"MIN2","input":"Provider says 50 EUR minimum includes arrival and work","expected":"Do not add arrival a second time or infer material inclusion"},
+    {"id":"MIN3","input":"Two small jobs in one client request, number of providers and visits unknown","expected":"No automatic single minimum or discounted bundle"},
+    {"id":"MIN4","input":"Materials available but shopping time, travel and reimbursements unspecified","expected":"Separate material cost, procurement work and travel; unknown costs are not zero"},
+    {"id":"MIN5","input":"Foreign platform profile lists a higher hourly minimum but actual client agreement absent","expected":"Do not interpret profile alone as confirmed terms; do not apply foreign tariff to our offer"},
+    {"id":"MIN6","input":"Furniture assembly plus electrical work in a proposed one-visit list","expected":"Exclude out-of-scope electrical work; no confirmed mixed-service provider or visit"}
+  ]
+}

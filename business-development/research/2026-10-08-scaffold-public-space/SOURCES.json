@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-08",
+  "primarySources": [
+    {"url": "https://paslaugos.vilnius.lt/service/Leidimu-kasineti-ir-aptverti-isdavimas", "status": "opened_html", "use": "Public-area permit service, displayed 10 business days and fee reference; not an object-specific legal conclusion"},
+    {"url": "https://paslaugos.vilnius.lt/service/29", "status": "opened_html", "use": "Separate extension service; actual document conditions not established"},
+    {"url": "https://paslaugos.vilnius.lt/service/Leidimu-kasineti-ir-aptverti-uzdarymas", "status": "opened_html", "use": "Separate closure service; actual object obligations not established"}
+  ],
+  "limitedSources": [
+    {"url": "https://aktai.vilnius.lt/document/30353068", "status": "opened_zero_readable_lines", "use": "No legal-content claim"},
+    {"url": "https://aktai.vilnius.lt/document/30351812", "status": "opened_zero_readable_lines", "use": "No tariff claim"},
+    {"url": "https://paslaugos.vilnius.lt/en/service/Leidimu-kasineti-ir-aptverti-isdavimas", "status": "opened_duplicate_locale", "use": "Same service metadata, not independent evidence"},
+    {"url": "https://epaslaugos.kaunas.lt/paslaugos/leidimo-atlikti-kasinejimo-darbus-kauno-miesto-savivaldybes-viesojo-naudojimo-teritorijoje-atitverti-ja-ar-jos-dali-arba-apriboti-eisma-joje-isdavimas/", "status": "open_failed", "use": "Excluded from substantive conclusions"}
+  ],
+  "catalogDiscovery": {
+    "tool": "mcp__treg__catalog_search",
+    "query": "Lithuania Vilnius municipal public land scaffolding permit requirements",
+    "verdict": "none",
+    "matches": 0,
+    "catalogGetExecuted": false,
+    "providerCallsExecuted": 0,
+    "limit": "One query is not an exhaustive catalog audit"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Separate exact-host read-only Cloudflare review admission; loopback-only and production launch gates remain intact",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/102#issuecomment-6539635942",
+    "Original local-preview build rejects remote hosts by design; owner requested Cloudflare deployment while preserving incumbent signaturepads.lt."
+  ],
+  "paths": [
+    "scripts/content-v2-admission.mjs",
+    "lib/content-hosted-preview.mjs",
+    "lib/content-model-v2.ts",
+    "worker-entry.ts",
+    "proxy.ts",
+    "vite.config.ts",
+    "scripts/hosted-content-preview.mjs",
+    "docs/HOSTED_CONTENT_PREVIEW.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Revert the scoped public code commit; remove only the dedicated signaturepads-preview Worker if explicitly requested. Existing WordPress/domain and8956 unchanged.",
+  "id": "upgrade-cc4ba8c4-8141-4d57-8efe-944cf5db6cb7",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "2bc61c79d421d9e9c1ee3a6d7f3ed81021b98729",
+  "createdAt": "2026-10-31T05:39:17.599Z"
+}

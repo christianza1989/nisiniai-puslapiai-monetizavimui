@@ -1,0 +1,22 @@
+{
+  "siteId": "signaturepads",
+  "summary": "Worker-first Vinext deployment must forward guarded framework CSS/JS to ASSETS; HTML/media200 did not prove styled output",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/102#issuecomment-6539834723",
+    "Actual hosted CSS returned404 despite existing uploaded asset; header-probe.json and browser failure retained. Canonical guarded ASSETS fallback produces200 text/css while preserving exact-host/read-only/noindex gates."
+  ],
+  "paths": [
+    "lib/content-hosted-preview.mjs",
+    "worker-entry.ts",
+    "scripts/prepare-hosted-preview-runtime.mjs",
+    "docs/HOSTED_CONTENT_PREVIEW.md",
+    "tests/seo-core-smoke.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/102",
+  "rollback": "Scoped public source revert. Preserve original build/config and exact adapter provenance. A rollback to the first unstyled preview version is not an acceptable final delivery; no incumbent-domain change was performed.",
+  "id": "upgrade-f2d7b5ba-5b0f-48ff-a51e-9ac2367f08e2",
+  "branch": "codex/signaturepads-assessment-20261029",
+  "baseSha": "2bc61c79d421d9e9c1ee3a6d7f3ed81021b98729",
+  "createdAt": "2026-10-31T06:06:12.638Z"
+}

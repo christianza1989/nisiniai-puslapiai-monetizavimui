@@ -1,0 +1,9 @@
+{
+  "domain": "kvapunaikinimas.lt",
+  "username": "u538533883",
+  "type": "nodejs",
+  "orderId": 1004998542,
+  "nodeVersion": 24,
+  "appType": "express",
+  "entryFile": "scripts/start-hostinger.mjs"
+}

@@ -1,0 +1,21 @@
+{
+  "siteId": "kvapunaikinimas",
+  "summary": "Export a committed Hostinger application with one verified native release and scoped per-package configuration, excluding secrets and unrelated site data",
+  "category": "code",
+  "evidence": [
+    "D:/Core/output/kvapunaikinimas-hostinger-20261031/next-build-canonical.log",
+    "D:/Core/output/kvapunaikinimas-hostinger-20261031/next-build-scoped.log",
+    "Existing strict compiler rejects pause/path-alias records for intentionally unpackaged sites; preserve those guards and project only the selected native release."
+  ],
+  "paths": [
+    "scripts/export-hostinger.mjs",
+    "tests/hostinger-export.test.mjs",
+    "docs/HOSTINGER_NODE.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/100",
+  "rollback": "Revert Hostinger exporter only. Do not modify canonical network pause/alias policy or native release data; prior artifacts and old-site backups remain.",
+  "id": "upgrade-88e577f4-2c58-4f3b-b9d4-f13d3ea179a6",
+  "branch": "codex/kvapunaikinimas-assessment-core-20261029",
+  "baseSha": "a9ef2720f3be881da80bc779d554c9ba4f640846",
+  "createdAt": "2026-10-31T07:54:45.045Z"
+}

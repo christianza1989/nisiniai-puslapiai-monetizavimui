@@ -72,3 +72,7 @@ browser zoom ir produkcijos našumo skaičiai šiame deploy nepatvirtinti.
 Koordinacija issue303 /102; šaltinio perdavimas atskiras nuo main merge ir
 kito PC adoption. Bendri upgrade: `cc4ba8c4-8141-4d57-8efe-944cf5db6cb7`
 ir `f2d7b5ba-5b0f-48ff-a51e-9ac2367f08e2`.
+
+Šaltinis perduotas per draft PR: [PUBLIC108](https://github.com/christianza1989/niche-public-core/pull/108)
+ir [CORE318](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/318).
+Main nesujungtas; tai atskira nuo veikiančios peržiūros ir nekeičia gyvo domeno.

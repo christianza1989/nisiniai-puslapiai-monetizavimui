@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/108",
+  "commit": "0281505298429953c2046040fb56818bf4903381",
+  "note": "Verified source pushed and draft public PR108 opened. Companion private PR318 contains migration acceptance and canonical upgrade journal. No main merge, canonical-domain cutover or cross-PC adoption.",
+  "eventId": "b22f2cc7-2da8-4ae4-8e94-1bc660dc6420",
+  "sequence": 3,
+  "at": "2026-10-31T06:12:54.076Z"
+}

@@ -10,8 +10,11 @@ paskirtas Gemini rašytojas, tikrinama ir tvirtinama pagal šią sistemą.
 - Svetainė: signaturepads.lt. Pardavimo užklausų katalogas; nėra svetainės
   užsakymo / apmokėjimo / Paysera, naudotojų paskyrų ar rinkodaros prenumeratos.
 - Vieši kontaktai iš išsaugoto originalo: sales@signaturepads.lt,
-  +37068688369. `signaturepads.lt` yra prekės ženklo / operatoriaus etiketei
-  išsaugotas domenas; jo negalima pateikti kaip patvirtinto juridinio asmens.
+  +37068688369. Rokas 2026-10-31 tiesiogiai nurodė viešam operatoriaus
+  pavadinimui naudoti **signaturepads.lt**, įmonės rekvizitų nerašyti.
+  Tai patvirtintas viešas pavadinimas, ne juridinio asmens tapatybės įrodymas.
+  Nepridėti išgalvoto UAB / MB pavadinimo, kodo ar adreso ir nenaudoti
+  Hostinger mokėtojo ar kito verslo rekvizitų.
 - Forma: vardas / įmonės pavadinimas, el. paštas, žinutė; telefono ir
   susisiekimo pasirinkimo laukai. Duomenys naudojami atsakyti į užklausą.
   Failai, dokumentai, parašų biometriniai duomenys per šią formą nepriimami.
@@ -35,9 +38,10 @@ paskirtas Gemini rašytojas, tikrinama ir tvirtinama pagal šią sistemą.
 
 ## Reikalingi Roko faktai ir sprendimai
 
-1. Tikras juridinis svetainės valdytojas: pavadinimas, kodas, adresas ir
-   kontaktas privatumo klausimams. Hostinger paskyros mokėtojas nėra
-   automatiškai šios svetainės duomenų valdytojas.
+1. Viešas pavadinimas jau nuspręstas: **signaturepads.lt**, kontaktas —
+   esamas sales@signaturepads.lt. Nekartoti prašymo Rokui pasirinkti įmonės
+   pavadinimą. Valdytojo identifikavimo reikalavimo teisinė patikra lieka
+   atvira; vien šis pavadinimo sprendimas nereiškia visos privatumo atitikties.
 2. Kiek laiko saugoti užklausas, kurios nevirsta užsakymu; atskirai aiškus
    D1 ir el. pašto kopijų tvarkymas. Tai turi atitikti tikrą darbo procesą.
 3. Kas priima / įgyvendina prieigos, taisymo ir ištrynimo prašymus.
@@ -48,3 +52,15 @@ Neužpildyti faktai blokuoja viešo privatumo teksto patvirtinimą ir
 production admission. Jokie rekvizitai ar terminai nebus išgalvoti.
 Senos prekybos / slapukų pastraipos perrašomos tik faktams paaiškėjus;
 dabartinis patvirtintas native paketas94de lieka nepakeistas.
+
+## Sprendimo ir patikros šaltiniai
+
+- Tiesioginė Roko žinutė: „Nerasysim kas yra valdytojas imone - rasyk signaturepads.lt“.
+  Tai pavadinimo pavedimas; saugojimo terminas šia žinute nepasirinktas.
+- VDAI skaidrių6puslapis nurodo BDAR13/14 informaciją apie valdytojo tapatybę,
+  kontaktus ir saugojimo laikotarpius arba jų nustatymo kriterijus:
+  https://vdai.lrv.lt/uploads/vdai/documents/files/07_%20Teises.pdf
+- Airijos priežiūros institucijos BDAR13/14 paaiškinimas perskaitytas 2026-10-31:
+  https://www.dataprotection.ie/en/individuals/know-your-rights/right-be-informed-transparency-article-13-14-gdpr
+  Šaltiniai nepatvirtina, kad domenas savaime visada pakankamai identifikuoja
+  faktinį valdytoją; teisinės atitikties PASS nesuteiktas.

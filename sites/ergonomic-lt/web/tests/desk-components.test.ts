@@ -5,6 +5,7 @@ import {adaptDeskComponents,validateDeskComponents,deskReferencedAssets,type Des
 import {createDeskComponentLoader,type DeskCandidates} from '../src/lib/desk-component-candidates';
 import {createExpandedEngine} from '../src/lib/expanded-configurator';
 import type {Product} from '../src/lib/types';
+import partialDeskPreviewScopes from '../content/desk-partial-preview-scopes.json';
 
 const code='KEM2013WW004',sample='23846535',productId='product_emodel-2-0-desks_f22f1a81';
 const id={code,sample,productId,familyId:'cfg-123456789abc'};
@@ -114,6 +115,27 @@ test('hybrid text-only scene retains the supplied 3D defaults instead of the fir
  assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
  for(const mutate of [(x:DeskComponents)=>{x.contexts[0].default3DValues!.FMEDIAPORTMIDDLE='INVENTED';},(x:DeskComponents)=>{x.contexts[0].default3DValues!.FMEDIAPORTMIDDLE=null;},(x:DeskComponents)=>{x.contexts[0].default3DValues!.FSOCKETSTANDARD='';},(x:DeskComponents)=>{x.contexts[0].default3DValues!.UNKNOWN='NONE';},(x:DeskComponents)=>{delete x.contexts[0].hybrid141;}]){
   const invalid=structuredClone(s);mutate(invalid);assert.throws(()=>validateDeskComponents(invalid,code));
+ }
+});
+
+test('three supplied partial desks select missing dimensions without substituting any geometry',()=>{
+ for(const [partialCode,scope]of Object.entries(partialDeskPreviewScopes)){
+  const s=source();s.code=partialCode;s.contexts=scope.available.map(dimensions=>({...structuredClone(s.contexts[0]),dimensions}));
+  s.dimensionChoices=[...scope.available,...scope.unavailable];s.textOnlyDimensionChoices=scope.unavailable;s.missing3D=scope.missing3D;s.unavailable3DMessage='3D peržiūra šiam dydžiui neprieinama';
+  const p={...product,configurations:[{id:sample,code:partialCode}]}as Product;
+  const e=createExpandedEngine(adaptDeskComponents(s,{...id,code:partialCode}));
+  for(const dimensions of scope.unavailable){
+   let state=e.initialStateForProduct(p);for(const [field,value]of Object.entries(dimensions))state=e.changeField(state,field,value);
+   assert.equal(e.catalog.catalogAnchor(state)?.unavailable3D,s.unavailable3DMessage);
+   const selected=e.expandedSelection(p,state);assert.equal(selected.assets.base,null);assert.deepEqual(selected.assets.patches,[]);
+   for(const [field,value]of Object.entries(dimensions))assert(selected.configuration.supplierOptions?.includes(field+'='+value));
+   assert.deepEqual(e.parseStateToken(p,e.stateToken(state)),state);
+   for(const [field,value]of Object.entries(scope.available[0]))state=e.changeField(state,field,value);
+   assert.equal(e.assembledAssets(state).base?.assetSha256,'a'.repeat(64));
+  }
+  for(const mutate of[(x:DeskComponents)=>{x.textOnlyDimensionChoices=x.textOnlyDimensionChoices!.slice(1);},(x:DeskComponents)=>{x.dimensionChoices!.push({GDWIDTH:'_9999',GDDEPTH:'_9999'});},(x:DeskComponents)=>{x.contexts.pop();},(x:DeskComponents)=>{x.contexts.push({...structuredClone(x.contexts[0]),dimensions:scope.unavailable[0]});},(x:DeskComponents)=>{x.missing3D=['invented'];},(x:DeskComponents)=>{x.code='OTHERDESK';},(x:DeskComponents)=>{delete x.dimensionChoices;delete x.textOnlyDimensionChoices;delete x.missing3D;delete x.unavailable3DMessage;}]){
+   const invalid=structuredClone(s);mutate(invalid);assert.throws(()=>validateDeskComponents(invalid,invalid.code));
+  }
  }
 });
 test('captured read-only defaults with empty choice lists retain source identity without an invented control',()=>{

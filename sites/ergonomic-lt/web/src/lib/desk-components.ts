@@ -1,5 +1,6 @@
 import type {CatalogRuntime,CatalogAnchor} from './catalog-configurator';
 import type {Asset,Patch} from './expanded-configurator';
+import partialDeskPreviewScopes from '../../content/desk-partial-preview-scopes.json';
 
 type Values=Record<string,string>;
 export type DeskAsset={file:string;sha256:string;componentSha256:string;bytes:number;needsCompression:boolean};
@@ -55,7 +56,20 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
    }
   }
  }
- if(input.dimensionChoices!==undefined||input.textOnlyDimensionChoices!==undefined||input.missing3D!==undefined||input.unavailable3DMessage!==undefined){
+ if(Object.hasOwn(partialDeskPreviewScopes,code)||input.dimensionChoices!==undefined||input.textOnlyDimensionChoices!==undefined||input.missing3D!==undefined||input.unavailable3DMessage!==undefined){
+  const supplied=Object.hasOwn(partialDeskPreviewScopes,code)?(partialDeskPreviewScopes as Record<string,{available:Values[];unavailable:Values[];missing3D:string[]}>)[code]:undefined;
+  if(supplied){
+   // These three owner-authorized partial packets retain exactly the supplied
+   // captured and unavailable tuples. Missing tuples never receive geometry.
+   const key=(d:Values)=>JSON.stringify(Object.entries(d).sort());
+   const equalSet=(actual:unknown,expected:Values[])=>{
+    if(!Array.isArray(actual)||actual.length!==expected.length)return false;
+    const keys=new Set<string>();
+    for(const d of actual){values(d);const k=key(d as Values);if(keys.has(k))return false;keys.add(k);}
+    return expected.every(d=>keys.has(key(d)));
+   };
+   if(input.unavailable3DMessage!=='3D peržiūra šiam dydžiui neprieinama'||JSON.stringify(input.missing3D)!==JSON.stringify(supplied.missing3D)||!equalSet(input.textOnlyDimensionChoices,supplied.unavailable)||!equalSet(input.dimensionChoices,[...supplied.available,...supplied.unavailable])||contexts.size!==supplied.available.length||supplied.available.some(d=>!contexts.has(key(d))))fail();
+  }else{
   // Only the explicitly supplied unavailable tuple is admitted. It receives
   // no substitute geometry or inferred component specification.
   if(code!=='KEM2013WW009'||JSON.stringify(input.missing3D)!==JSON.stringify(['1800×900X800'])||input.unavailable3DMessage!=='3D peržiūra šiam dydžiui neprieinama'||!Array.isArray(input.dimensionChoices)||!Array.isArray(input.textOnlyDimensionChoices)||JSON.stringify(input.textOnlyDimensionChoices)!==JSON.stringify([{DDEPTH:'_900X800',DWIDTH:'_1800'}]))fail();
@@ -63,6 +77,7 @@ export function validateDeskComponents(input:unknown,code:string):asserts input 
   for(const d of input.dimensionChoices){values(d);const key=JSON.stringify(Object.entries(d as Values).sort());if(declared.has(key))fail();declared.add(key);}
   const missing=JSON.stringify(Object.entries(input.textOnlyDimensionChoices[0] as Values).sort());
   if(contexts.has(missing)||declared.size!==contexts.size+1||!declared.has(missing)||[...contexts].some(k=>!declared.has(k)))fail();
+  }
  }
 }
 export function deskAssetReference(code:string,a:DeskAsset):Asset{return {asset:'/models/configurator/components/'+code+'-'+a.sha256.slice(0,20)+'.glb',assetSha256:a.sha256,bytes:a.bytes};}

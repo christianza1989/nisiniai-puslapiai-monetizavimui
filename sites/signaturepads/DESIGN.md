@@ -91,3 +91,14 @@ Roko 2026-10-30 tiesioginis pavedimas „pataisyk ka radai“ apima HOMEPAGE-COM
 ## Antrasis – programinės įrangos – nuotraukos fonas
 
 Roko priedas tiksliai identifikavo `pexels-mikhail-nilov-7988079.jpg`: du žmonės prie kompiuterių, už programinės įrangos akordeono ir produkto dėžutės. Atskira home native media šeima, jos laukas `softwareBackground` ir CSS kintamasis; naudoti tik native tinkamą rodyti mediją. Originalo1920×1282 natūralios kompozicijos demonstravimas1920 px, center/center, no-repeat, >1024 fixed / <=1024 scroll, sekcijos minimumas720 px. Patikra turi fiziškai nuslinkti ir aktyvinti visas pagrindinio puslapio sekcijas: pradinio DOM fono inventoriaus nepakanka Nitro offscreen fonams. Dabartinis atkūrimas ir faktiniai įrodymai – [SOFTWARE-BACKGROUND-20261030.md](SOFTWARE-BACKGROUND-20261030.md); ankstesnis12šeimų inventorius šios nuotraukos neapėmė.
+
+## 2026-10-31 native zoom API papildymas
+
+Ankstesnį Windows OS capture/input ribojimą papildė sėkmingas tikras Chrome
+zoom API testas atskirame CFT151 profilyje:1→2,nativeviewport1424→712,
+tas pats outerWidth1440. Homepage/software/policy head/footer kadrai peržiūrėti,
+overflow0; nativecapture po compositorframes reikalingas teisingam vaizdui.
+Corefont/copy/maketas neperrašytas. Tai neatstoja fizinio telefono/Safari ar
+fullmanualWCAG. Dabartinės versijos fiziniai320/390/768/1024/1440viewport
+kadrai ir iš tikrųjų nuslinkti fonai saugomi prelaunch-20261031/runtime-*.
+Galutinė versija ir metrika: DEPENDENCY-HARDENING-20261031.md.

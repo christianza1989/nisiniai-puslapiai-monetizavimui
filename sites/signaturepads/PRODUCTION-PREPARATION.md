@@ -79,3 +79,10 @@ retention periods, human approvals or production acceptance to complete a build.
   deletion period. The owner must set it first; deleting a D1 row alone does not
   erase mail copies. Review native `mail_unknown` claims manually before any
   resend to avoid duplicate mail. Do not promise automatic retention or recovery.
+
+Full dependency audit and runtime reachability review are required, alongside
+the production-only view. This preparation found bundled React Server Components
+inside devDependencies; omit-dev zero did not cover the actual Worker. Patched
+runtime/tree and remaining trusted-input lint/Drizzle CLI issues are documented
+in DEPENDENCY-HARDENING-20261031.md. Do not force incompatible downgrades simply
+to obtain a zero report. Use the current lock with a fresh canonical installer.

@@ -26,7 +26,9 @@ paskirtas Gemini rašytojas, tikrinama ir tvirtinama pagal šią sistemą.
   `niche_leads` lentelėje IP lauko nėra; platformos HTTP žurnalai vertinami
   atskirai. Programos siuntimo žurnale tik siteId, leadId ir transportas.
 - Source peržiūroje nėra GA / GTM integracijos ir reklamos pikselių;
-  tikras naršyklės cookie / storage / network inventorius pridedamas po QA.
+  actual Chrome/WebKit10viewports inventorius:0cookies,0local/sessionStorage,
+  0foreignrequests. Įrodymai prelaunch-20261031/verified-browser.json. Tai nėra
+  absoliutus visų Cloudflare saugumo iššūkių/būsenų pažadas.
   GSC patvirtinimo meta žyma nėra analitikos skriptas.
 - Jokio naujo duomenų saugojimo / automatinio ištrynimo termino nenustatyta.
   D1 ištrynimas savaime neištrina gavėjo ir siuntėjo pašto kopijų.

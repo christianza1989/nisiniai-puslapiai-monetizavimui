@@ -1,5 +1,10 @@
 # Signaturepads — pasiruošimas prieš domeno perjungimą, 2026-10-31
 
+Tai pirminio325testų / d6ac644e etapo istorinis rezultatas. Dabartinis source,
+328testų, saugumo atnaujinimų,200% zoom ir Worker2a867b0c rezultatas pateiktas
+[galutinėje techninėje ataskaitoje](DEPENDENCY-HARDENING-20261031.md).
+Toliau esantys pirminiai matavimai ir tuometinės ribos neperrašyti.
+
 ## Rezultatas ir leidimo riba
 
 Techninis paruošimas bei žemiau nurodytos peržiūros patikros atliktos.

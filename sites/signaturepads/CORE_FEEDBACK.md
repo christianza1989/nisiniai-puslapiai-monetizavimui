@@ -83,3 +83,28 @@ platesnis core įgyvendinimas nepakeičiamas šios migracijos HTTP testų suma.
 Pilnas85kriterijų reporting rezultatas7.94local nėra viso pavedimo10/10.
 WordPress backup praleistas savininko pavedimu; DNS rollback konfigūracija
 neprilyginama backup. Aktualus rezultatas: PRELAUNCH-20261031.md.
+
+## 2026-10-31 dependency runtime classification
+
+Actual npm audit omit-dev6vardų (1critical/3high/2moderate) nulinti nepakanka:
+full36/9high dar turėjo Worker naudojamą dev-classifiedRSC. Patched React/RSC
+19.2.8,Vinext1.0.0,RSCplugin0.5.34,Vite8.3.5,CFplugin1.66,Wrangler4.156,
+WorkersTypes5 ir scoped ff late backport; jokio force/legacy-peer/downgrade.
+Actual root schema su Zod4.6.7 atmeta per didelę kolekciją prieš iteravimą;
+senosZod3regresija atkuriamaiFAIL, naujos328Core testsPASS. Actual types,
+fullbuild/RSC ir hosted HTTP/browser/SEO PASS; tai ne vien lock-only analizė.
+Upgrade7bb0d2e0-837e-4054-8c59-b21ab20928cf ir995dbb06-ba02-4829-88c0-dbba0b411f8e.
+
+Final full audit0critical/0high/20moderate —2šeimos:ESLint minimatch ir
+DrizzleCLI esbuild serve. App/lib/components jų neimportuoja; publicglobs /
+esbuildserve nepaleidžiami. Operating-mode vertinimas nėra blanketdev išimtis
+ar pažadas apie būsimą naudojimą. Senas sourcecheckout node_modules išsaugotas
+local8956; nauji testai/build vykdyti atskirame įdiegtame security-engine.
+
+Native200%: SkyOS capture/input nepavyko, tačiau Chrome tabs.setZoom/getZoom
+veikia atskirameCFT profilyje (viewport:null,getZoom2,1424→712CSSpx).
+Playwright PNG atnativezoom kirpo vaizdą; nativecaptureVisibleTab ir2RAF+250ms
+davė tikrą1424×905kadrą po scroll. Testas naudojo tik own disposableprofile,
+ne vartotojoChrome. Visi tarpiniai klaidingo fiksavimo kadrai palikti atskirai.
+Physicalphone/Safari ir fullmanuala11y neteigiami. Aktualus ataskaitos/worker
+šaltinis: DEPENDENCY-HARDENING-20261031.md, Sourcea9b8a627 / version2a867b0c.

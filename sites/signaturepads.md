@@ -60,7 +60,7 @@ Atviri A01–A07: nepilna greitoji peržiūra, skirtingų katalogų responsive s
 
 Tiesioginis Roko pavedimas visoms septynioms grupėms įvykdomas per-site source ir naują native Sigma reviziją. Dabartinė būsena / įrodymai: [PARITY-FIXES-20261030.md](signaturepads/PARITY-FIXES-20261030.md), ankstesni auditai išsaugoti. PUBLIC source `47b95797`, paketas `38a9024f`; ta pati Core peržiūra `http://127.0.0.1:8956/`. Išliko 26 aktyvūs URL, 19 kainų ir galerijų, kontaktai; 25 kiti įrašai / 199 media baitai nepakeisti. 305 testai, HTTP ir Chrome desktop / touch-emulated mobile patikra; gyvos svetainės / DNS / WordPress / realaus pašto pakeitimų nėra. Fiziniai įrenginiai / Safari ir pašto INBOX lieka nepatvirtinti.
 
-## 2026-10-31 aktualus pasiruošimas
+## 2026-10-31 pirminis pasiruošimas
 
 Savininko nurodymu užbaigiamas techninis pasiruošimas, domeno ir originalaus
 WordPress nekeičiant; 5 punktas (WordPress backup) aiškiai praleidžiamas.
@@ -82,3 +82,21 @@ production D1 tuščia, DNS importas nepritaikytas. Tikras valdytojas ir užklau
 saugojimo terminas dar nežinomi; jokio production admission ar domain-ready
 teiginio nėra. [Visas85kriterijų auditas](signaturepads/PHASE-1-AUDIT.md) turi
 matomus FAIL/UNVERIFIED; reporting exit0 neatstoja require-local.
+
+## 2026-10-31 aktualus saugumo ir techninio pasiruošimo rezultatas
+
+[Galutinė techninė ataskaita](signaturepads/DEPENDENCY-HARDENING-20261031.md):
+Worker2a867b0c-8d9e-4503-98f9-252a0f1b3d01,public sourcea9b8a627,
+build80fa086c / same tracked tree6956a2f7. Native94de neperrašytas.
+328testai / types / build / RSC ir actual26URL /204SHA /237alias / legacy
+URL /10Chrome-WebKit viewports bei tikri meniu→contact→catalogue→product
+veiksmai PASS. Actual rendered CSS/JS6resursai. Native200% Chrome API testas
+ir pilni native kadrai PASS; fizinio telefono/macOSSafari/manualWCAG neteigiama.
+
+Atnaujintos pažeidžiamos priklausomybės, įskaitant bundledRSC, nepatenkantį į
+omit-dev. Production audit0; full0critical/0high/20moderate, iš2trusted-input
+lint/DrizzleCLI advisory šeimų, su reachability/naudojimo ribų vertinimu.
+Lighthouse homepage90mobile/100desktop;software98/100;a11y100.
+Preview noindex,originalo HTML/NS/A/AAAA/MX ir local8956 išliko, WordPress
+backup pagal savininko nurodymą nedarytas. Privatumo valdytojas/retention
+nepatvirtinti; production admission/domeno aktyvavimo ir main merge nėra.

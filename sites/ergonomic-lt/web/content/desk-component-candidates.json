@@ -1439,8 +1439,8 @@
       "acceptance": "TECHNICAL_DRAFT",
       "optionsRequired": true,
       "runtime": {
-        "asset": "/models/configurator/components/KC54082WW002-dc0b739dab53dc9b14c7.json",
-        "sha256": "dc0b739dab53dc9b14c79e45b1a0a099da547baacde18750fe57cc1541c53468"
+        "asset": "/models/configurator/components/KC54082WW002-d3500d431f34e0a1be81.json",
+        "sha256": "d3500d431f34e0a1be81db469d8031dfd2a7652fcc3e69e8384cb82ab4e20ff6"
       },
       "proofs": {
         "sourceGeometryRuntime": "ec44cbfae003e9502ea4f69fbb4d7fb779c2f98f8a34d6bdde941ec5ca99abfc"

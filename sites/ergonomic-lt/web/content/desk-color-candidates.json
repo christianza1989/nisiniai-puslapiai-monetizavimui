@@ -416,9 +416,9 @@
       "componentRuntimeSha256": "5b80ef0347daabc4d198b99d578c0c980d671550fa9f58c477dab890d22d3e5f"
     },
     "KC54082WW002": {
-      "asset": "/models/configurator/components/KC54082WW002-6aae024aebb0dfa95b1b.json",
-      "sha256": "6aae024aebb0dfa95b1b9dd7290a84bec41fbe376d2978da555b57d53965eb66",
-      "componentRuntimeSha256": "dc0b739dab53dc9b14c79e45b1a0a099da547baacde18750fe57cc1541c53468"
+      "asset": "/models/configurator/components/KC54082WW002-4b56065b1096f76e596d.json",
+      "sha256": "4b56065b1096f76e596dfbbf264a63c23578b88bdf8d9ed12ca89736359531bb",
+      "componentRuntimeSha256": "d3500d431f34e0a1be81db469d8031dfd2a7652fcc3e69e8384cb82ab4e20ff6"
     },
     "KC54102WW001": {
       "asset": "/models/configurator/components/KC54102WW001-a3ec09256090c962b428.json",

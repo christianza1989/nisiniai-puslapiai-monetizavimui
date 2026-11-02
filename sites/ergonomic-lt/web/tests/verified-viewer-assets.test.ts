@@ -25,3 +25,9 @@ test('LRU memory is bounded and identity includes the expected byte count',()=>{
  assert.equal(cache.get({...a.asset,bytes:5}),undefined);
  const oversized=fixture('123456789');cache.put(oversized.asset,oversized.bytes);assert.equal(cache.size,8);
 });
+test('every cache hit still receives the original full SHA check before parsing',async()=>{
+ const f=fixture('original'),cache=new VerifiedAssetCache(100);
+ cache.put(f.asset,new TextEncoder().encode('tampered').buffer);
+ await assert.rejects(()=>verifiedViewerAsset(f.asset,new AbortController().signal,cache,async()=>{throw Error('Must check the cache hit');}),/Component bytes changed/);
+ assert.equal(cache.size,0);
+});

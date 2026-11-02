@@ -15,6 +15,7 @@ import {renderMaterial,type FinishPreview} from '@/lib/render-materials';
 import {contactShadow,prepareContactShadow} from '@/lib/contact-shadow';
 import {verifiedViewerAsset} from '@/lib/verified-viewer-assets';
 import {productEnvironment,type ProductEnvironment} from '@/lib/product-environment';
+import {prepareViewerTextures} from '@/lib/prepare-viewer-textures';
 import {isolateFinishMaterials} from '@/lib/finish-materials';
 import {visibleMeshes,visibleBounds,cameraNear,unobstructedCameraViewport} from '@/lib/viewer-camera';
 import {finishField,physicalUpholstery,setFabricSheen,copyTexturePlacement} from '@/lib/viewer-materials';
@@ -233,7 +234,8 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
           };
           await applyChairColors.current();if(colorFailed)return;
         }else setColorState('original');
-        if(disposed)return;await renderer!.compileAsync(scene,camera);if(disposed)return;
+        if(disposed)return;await prepareViewerTextures(renderer!,scene,abort.signal);if(disposed)return;
+        await renderer!.compileAsync(scene,camera);if(disposed)return;
         initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');
       }catch{if(!disposed&&!abort.signal.aborted)setState('error');}
     })();

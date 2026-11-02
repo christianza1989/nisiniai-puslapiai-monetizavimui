@@ -18,7 +18,13 @@ Changes:
 - Reuse the renderer/environment while changing geometry. Prepare the unchanged
   projection/blur and product shader programs asynchronously before first draw.
 - A24MB LRU retains verified bytes; each mutable model scene is still parsed
-  independently. Length/SHA checks,32MB input cap and abort behaviour remain.
+  independently. Every cache hit is rehashed before parsing. Length/SHA checks,
+  the32MB input cap and abort behaviour remain.
+- Full-resolution HTML material images are decoded asynchronously into bitmaps
+  with the same orientation/alpha/colour-space behaviour. Pre-upload each active
+  texture in separate tasks, including the original environment texels; preserve
+  all image dimensions and sampling. Unsupported bitmap decoding retains the
+  original image path. Never reinitialize existing render-target textures.
 - Separate quote display labels and the selected-model selector from catalog/
   editorial modules so generic site clients avoid these dependency graphs.
 - Shared logos use responsive variants from the canonical Core media pipeline;

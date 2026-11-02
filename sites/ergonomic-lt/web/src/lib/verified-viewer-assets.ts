@@ -18,19 +18,23 @@ export class VerifiedAssetCache {
   while(this.bytes>this.limit){const oldest=this.entries.keys().next().value!;this.bytes-=this.entries.get(oldest)!.byteLength;this.entries.delete(oldest);}
  }
  get size(){return this.bytes;}
+ delete(asset:Asset){const key=this.key(asset),bytes=this.entries.get(key);if(bytes){this.entries.delete(key);this.bytes-=bytes.byteLength;}}
 }
 const originals=new VerifiedAssetCache();
 
 export async function verifiedViewerAsset(asset:Asset,signal:AbortSignal,cache=originals,fetcher:typeof fetch=fetch):Promise<ArrayBuffer>{
  signal.throwIfAborted();
  if(!/^[a-f0-9]{64}$/.test(asset.assetSha256)||!Number.isSafeInteger(asset.bytes)||asset.bytes<=0||asset.bytes>32_000_000)throw Error('Invalid component identity');
- const cached=cache.get(asset);if(cached)return cached;
- const response=await fetcher(asset.asset+'?v='+asset.assetSha256.slice(0,12),{signal});
- if(!response.ok)throw Error('Asset unavailable');
- const bytes=await response.arrayBuffer();signal.throwIfAborted();
- if(bytes.byteLength!==asset.bytes)throw Error('Component bytes changed');
+ const cached=cache.get(asset);
+ let bytes=cached;
+ if(!bytes){
+  const response=await fetcher(asset.asset+'?v='+asset.assetSha256.slice(0,12),{signal});
+  if(!response.ok)throw Error('Asset unavailable');bytes=await response.arrayBuffer();
+ }
+ signal.throwIfAborted();
+ if(bytes.byteLength!==asset.bytes){cache.delete(asset);throw Error('Component bytes changed');}
  const digest=await crypto.subtle.digest('SHA-256',bytes);
  const sha=Array.from(new Uint8Array(digest),n=>n.toString(16).padStart(2,'0')).join('');
- if(sha!==asset.assetSha256)throw Error('Component bytes changed');
- signal.throwIfAborted();cache.put(asset,bytes);return bytes;
+ if(sha!==asset.assetSha256){cache.delete(asset);throw Error('Component bytes changed');}
+ signal.throwIfAborted();if(!cached)cache.put(asset,bytes);return bytes;
 }

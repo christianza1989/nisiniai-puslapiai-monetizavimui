@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedListSha256": "de5b451bba46b3dbe964b608ff3b0677885c43ccbec01133a74fc5727ff71220",
+  "publishedListSha256": "8eda3caaa26658d9e0e004aae8cb5d1b68faa440b43f2bccdd0384735234e240",
   "sourceCoverage": "chair-material-group-coverage.json",
   "scope": "Shared controls for all admitted materials; immutable full states remain whole; original-only models retain their original finish",
   "geometryRechecked": false,
@@ -10,7 +10,7 @@
   "counts": {
     "FIXED_DECLARED_SOURCE_FINISHES": 4,
     "GROUPED_ADMITTED_OPTIONS": 2,
-    "ORIGINAL_FINISH_ONLY": 197,
+    "ORIGINAL_FINISH_ONLY": 202,
     "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS": 25,
     "WHOLE_OBSERVED_STATES_ONLY": 23
   },
@@ -507,6 +507,12 @@
       "url": "/3d-perziura-pc2/?chair=KEGG001WW001"
     },
     {
+      "code": "KEGO001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "5cb90dcb6e8d3e542100da900064a4d0490616b6014d2b107087b43906a3f64b",
+      "url": "/produktai/kedes/ergo1-darbo-kedes/"
+    },
+    {
       "code": "KELO001WW001",
       "mode": "ORIGINAL_FINISH_ONLY",
       "bindingSha256": "e45883c79edaf4eb286abf1190782f130ca013451fb685926946f72e9c5815f1",
@@ -831,10 +837,22 @@
       "url": "/3d-perziura-pc2/?chair=KNAU018WW001"
     },
     {
+      "code": "KNAV001WW005",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "28ea1aed8c99d50e7add835cb95965fb6f9b7d4a60b861f0fd40c486b4681c91",
+      "url": "/produktai/kedes/navigo-darbo-kedes-modelis-22495141/"
+    },
+    {
       "code": "KNAV001WW006",
       "mode": "ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS",
       "bindingSha256": "0d8eff6ce9dede5737289dff98b29358514171c77ab09a9f59cea807fb9a8e3e",
       "url": "/3d-perziura-pc2/?chair=KNAV001WW006"
+    },
+    {
+      "code": "KNAV002WW003",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "465e7b288e0eac86ba105952cc1270432fd9ab6c5b18b836f61fb08ae82a2344",
+      "url": "/produktai/kedes/navigo-darbo-kedes-modelis-22495143/"
     },
     {
       "code": "KNAV002WW004",
@@ -1051,6 +1069,12 @@
       "mode": "ORIGINAL_FINISH_ONLY",
       "bindingSha256": "63a62084bf2fa296457a2867e2a8c704176c50249964ebab25011d3ace33e317",
       "url": "/produktai/kedes/taktik-darbo-kedes-modelis-20402645/"
+    },
+    {
+      "code": "KTAK002WW004",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "68ff39fd182c64b4c609285657a758f9abaa02eb56d084b168bfd05ae6ae1198",
+      "url": "/produktai/kedes/taktik-darbo-kedes-modelis-20402646/"
     },
     {
       "code": "KTAK002WW006",
@@ -1369,6 +1393,12 @@
       "mode": "ORIGINAL_FINISH_ONLY",
       "bindingSha256": "6ef5e0d990151de50f106440b4c677487d74d60b883e55f642dfe72664ac211d",
       "url": "/produktai/kedes/viden-darbo-kedes-modelis-22841938/"
+    },
+    {
+      "code": "KVNN001WW001",
+      "mode": "ORIGINAL_FINISH_ONLY",
+      "bindingSha256": "3589adad0d102c02cfc2ed73110b4e0ca31af90bce3a5bee6da2fc76969b1e46",
+      "url": "/produktai/kedes/vienna-darbo-kedes/"
     },
     {
       "code": "KVSN001WW001",

@@ -41,6 +41,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const family=expandedForProduct(product)!;
  const catalog=catalogForProduct(product);
  const previewCoverage=(chairPreviewCoverage as Record<string,string>)[catalog?.baseArticle||''];
+ const originalSampleReset=['KTAK002WW004','KNAV001WW005','KNAV002WW003'].includes(catalog?.baseArticle||'');
  const structureOnly=['structure-only','desk-components'].includes(catalog?.collectionMode||'')&&!product.id.toLowerCase().includes('xilium');
  const deskColors=catalog?.deskColors;
  const model=selectedModelConfiguration(product);
@@ -104,6 +105,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
   {photo?<ProductGallery key={model?.id||selected.configuration.id} primary={product.modelConfigurationId?product.image:selected.configuration.image} images={(model||product.configurations.find(c=>c.id===selected.configuration.id))?.gallery||[]} name={product.name} specificCount={product.modelGalleryCount} backdrops={product.galleryBackdrops}/>:hasAssemblyGeometry(assembly)?<Viewer3D variant={variant} name={product.name} assembly={assembly} fullscreen={fullscreen} onFullscreen={()=>void openFullscreen()} avoidToolbarOverlap={product.categorySlug==='rasomieji-stalai-ir-darbo-vietos'}/>:<div className="viewer-placeholder" role="status">{catalogAnchor(selection)?.unavailable3D||'3D peržiūra šiam dydžiui neprieinama'}</div>}
   <p className="visualization-note">{structureOnly&&!deskColors?'Rodoma šio varianto apdaila. Dėl kitų spalvų teiraukitės.':copyText("ui.1f86445eb42b83be0ee5","Spalvos ekrane orientacinės. Nuotrauka — modelio pavyzdys; individualią komplektaciją žymi jūsų pasirinkimai.")}</p>
   {previewCoverage&&<p className="form-note" data-chair-preview-coverage>{previewCoverage}</p>}
+  {originalSampleReset&&<button type="button" className="text-link configurator-back" onClick={()=>{setSelection(initialStateForProduct(product));setCustomized(false);setAdded(false);setMessage('');}}><RotateCcw size={16}/>Atkurti pradinę komplektaciją</button>}
   {!!assembly.deskColors?.plan.pending.length&&<p className="form-note" role="status">{DESK_COLOR_PENDING}</p>}
   {photo&&article&&<p className="visualization-note">{article.photoNote}</p>}
   {missingFinish&&<p className="form-note" role="status">{copyText("ui.3d2d0a1dccfd3cf4986c","Gamintojas nepateikia pasirinktos apdailos vaizdo. Jos spalvą patvirtinsime pasiūlyme; pasirinktas kodas išsaugomas užklausoje.")}</p>}

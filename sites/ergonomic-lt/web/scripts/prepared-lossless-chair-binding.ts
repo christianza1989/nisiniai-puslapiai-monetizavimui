@@ -9,18 +9,20 @@ const canonical=(v:unknown):string=>JSON.stringify(v,(_k,x)=>x&&typeof x==='obje
 const same=(a:any,b:any)=>a.dev===b.dev&&a.ino===b.ino&&a.size===b.size&&a.mtimeMs===b.mtimeMs;
 export type LosslessBinding={source:string;target:string;bytes:number;proof:any;receiptSha256:string;receipt:string};
 export async function priorLosslessBindings(file:string,old:ChairPreview){
- assert(['KJUP001WW002','KUTI005WW001'].includes(old.code),'Only the two original-only lossless packages');
- assert(old.palette.schema==='chair-base-observed-colours-v1'&&!old.qualified?.witnesses.length,'New binding requires an original-only prior package');
+ const nxt=old.code==='KNXT002WW002'&&old.runtimeSha256==='c34242487c4332706adfbe3fc1f62a9bad6e7f2b70ba97d15ff2132289245053'&&old.palette.schema==='chair-colors-observed-partial-344-v1';
+ assert(['KJUP001WW002','KUTI005WW001'].includes(old.code)||nxt,'Only explicitly admitted prior lossless packages');
+ assert((old.palette.schema==='chair-base-observed-colours-v1'||nxt)&&!old.qualified?.witnesses.length,'New binding requires a prior package without qualified scopes');
  const result=JSON.parse(await fs.readFile(file,'utf8')),out=new Map<string,LosslessBinding>();
  assert(result.allFilesWithin25MiB===true&&result.originalsModified===false&&result.NativeAllowed===false);
  for(const row of result.assets.filter((r:any)=>r.code===old.code)){
   const bytes=await fs.readFile(row.proof),p=JSON.parse(bytes.toString()),a=old.assets[row.derivedSha256];
   assert(p.code===old.code&&p.sourceSha256===row.sourceSha256&&p.derivedSha256===row.derivedSha256&&p.sourceBytes===row.sourceBytes&&p.derivedBytes===row.derivedBytes,'Lossless receipt identity changed');
   assert(p.allDecodedBufferBytesExactlyEqual===true&&p.sceneMaterialsMatricesIdsExactlyEqual===true&&p.quantization===false&&p.simplification===false&&p.reordered===false&&p.sourceBytes<=55_000_000,'Prior source equivalence absent');
+  if(nxt)assert.equal(p.sourceManifestSha256,'60e242c359affec1a27f733db3c947b1258f6aca8f9a0ce2d0a275c93fd7d8ad','NXT original manufacturer package differs');
   assert(a?.assetSha256===p.derivedSha256&&a.bytes===p.derivedBytes&&a.bytes<=25*1024*1024,'Prior published transport differs');
   assert(!out.has(p.sourceSha256),'Duplicate raw identity');out.set(p.sourceSha256,{source:p.sourceSha256,target:p.derivedSha256,bytes:p.derivedBytes,proof:p,receipt:row.proof,receiptSha256:sha(bytes)});
  }
- assert(out.size>0);return out;
+ assert(out.size>0);if(nxt){assert.equal(out.size,9,'NXT prior runtime requires all nine exact transport mappings');assert(out.get('e7ae437c151a08be24d0af5b42c27089010fc150af225dce2df0143c7a776041')?.target==='8ee4036572e20475af670419dda7cc67e972faeb12fb0024fda1d38cb62b080b','NXT OWN base transport changed');}return out;
 }
 export function rebindLosslessRuntime(raw:any,old:ChairPreview,map:Map<string,LosslessBinding>){
  const runtime=structuredClone(raw);

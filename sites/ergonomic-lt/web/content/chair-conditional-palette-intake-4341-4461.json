@@ -1,0 +1,122 @@
+{
+  "schema": "chair-two-finite-context-receiving-intake-v1",
+  "entries": [
+    {
+      "code": "KNXT002WW002",
+      "entry": {
+        "code": "KNXT002WW002",
+        "name": "Nexter",
+        "version": "colors-20261102-v1-qualified-context4341",
+        "asset": "/models/configurator/chairs/KNXT002WW002-05bd923e2f535e2c6867/review-defa5993b469a03226ba.json",
+        "sha256": "defa5993b469a03226ba8763b1da07fcf3edee70333b2f166f24df611305074e",
+        "bytes": 133538
+      },
+      "producerManifestSha256": "05bd923e2f535e2c6867369b2fe5b2d605a4cbb66db8e29344857d999dccebea",
+      "sourceRuntimeSha256": "b337f1b44087f309ecc99684c313b6dfe8a302a174a4b4ea3bbfd465224ca154",
+      "receivingRuntimeSha256": "c34242487c4332706adfbe3fc1f62a9bad6e7f2b70ba97d15ff2132289245053",
+      "context": 1,
+      "kind": "QUALIFIED_CONDITIONAL_NXT2_13_OWN_4341",
+      "scopeToken": "af9d9e300e07b148996dbe7c3286e91e8ad2101ad23a78b2b1867a9d17e5095e",
+      "fixedFinishPrefix": {
+        "CPRICEGROUP": "_1",
+        "CUPHGROUP": "YB"
+      },
+      "readonlyInvariantProperties": {
+        "CBACKCOVERPLASTICCOLOR": "BLACK",
+        "CSEATCOVERPLASTICCOLOR": "BL"
+      },
+      "qualifiedConditionalFinishContextComplete": true,
+      "actualPaletteComplete": false,
+      "allGeometryContextsCovered": false,
+      "sourceAdmittedOptions": 13,
+      "losslessBindingReceipts": [
+        {
+          "rawSha256": "1622e6ee56cb3781c088ebd2cb352701c0179f842c5eff9621157e3667bbb75e",
+          "transportSha256": "9d01383416bb32c5d9c2be07555b8df34280b109e12fd01574e77d7373f735de",
+          "receiptSha256": "574d98e67ed8f6bd52a0c4410720770b62192b3fb36dac9428d2fd73e22a81db"
+        },
+        {
+          "rawSha256": "0b63efde4de6de35420f435481402389853bc7add83fb35066f47a4d823739df",
+          "transportSha256": "ca2f5ea0f95888695b0bd27b31630c8b63cf3074dde2f4c34081773096301697",
+          "receiptSha256": "1e88accee36d3b719454b23e8104f7af550a3f61497a95812c4d902c94647700"
+        },
+        {
+          "rawSha256": "816e398d09261604f989d9d832de4446340c46bc1339f5e5a59fa98ed960bf83",
+          "transportSha256": "9ba09bd8780573150dfac1826078b1b6426a2e9ba110180da931d5ef2a1b30bf",
+          "receiptSha256": "30c29acb2a751f51ad31f3a760bc7da815ba58df54980bb4924df317c3b87236"
+        },
+        {
+          "rawSha256": "25ee13de494725ef4bd09b6c18441f16aaf626deae5f889f7bdf6abfa12db99f",
+          "transportSha256": "bb19b6937f503bfcf7c922e29a1f2b0573d3c835bd4f4e45113d952a8b428218",
+          "receiptSha256": "e2de79853f9467ac21824fd19efca651f4240f82b9af5843e9740ea19fb72ca0"
+        },
+        {
+          "rawSha256": "50a0741ccdb6c4a03038b589656a2fc03082a9e02d297ee75019a7ac7ef7ba81",
+          "transportSha256": "3f20a3a061fe7b47a0abff226d03a613470e2ef8ae440b724ee0be3865e8aced",
+          "receiptSha256": "f67fb40c1511895912d344f6b78d1bd8a39e858139f8fda2e1a69af99ddf6e25"
+        },
+        {
+          "rawSha256": "bb8856c7bc54e367366063a5d4126441ead906dfc91692fa097c5433629f7229",
+          "transportSha256": "7a2dbc7375042c782b0c19dc2eda7c32de71376ca6e8dd8eb132367a206bc3a9",
+          "receiptSha256": "d8039a9dc1d4e46b28a4ec489cb05a8bb4461945ea082d5df27d8b77fa9c66b0"
+        },
+        {
+          "rawSha256": "ddc77e2b65d32b1b90d5ede1ff09b0a402222cabf0b467eb7800bebde43278be",
+          "transportSha256": "d9cd8451939db562013db9adc72d474d9e9687d76388192f4e0e162b1907c106",
+          "receiptSha256": "9c54770f7fe5d7c58d18668a77e5d4dec87bbaa07ac65191f0f013a0ac11557b"
+        },
+        {
+          "rawSha256": "bffd178884106e9b9feb8c697f9daecb237e4ee97712dde61dec3a5a4a926980",
+          "transportSha256": "8d93211507de07a05eb545b7f2881a88bd15f5f650279fe2810161b3a7688e4a",
+          "receiptSha256": "9b0f07fe9870f5953403cc6b4377cc70d874ecd944d6bc3c5429c3cef6184dcd"
+        },
+        {
+          "rawSha256": "e7ae437c151a08be24d0af5b42c27089010fc150af225dce2df0143c7a776041",
+          "transportSha256": "8ee4036572e20475af670419dda7cc67e972faeb12fb0024fda1d38cb62b080b",
+          "receiptSha256": "2b4b42bedfb71b2085c1391cf0578c58d332dacefc1c59705827643e276eb373"
+        }
+      ],
+      "newGeometryCopies": 0,
+      "NativeRequests": 0,
+      "publicPass": false
+    },
+    {
+      "code": "KUTI004WW002",
+      "entry": {
+        "code": "KUTI004WW002",
+        "name": "Utila",
+        "asset": "/models/configurator/chairs/KUTI004WW002-8f67a053b904587a935d/review-025011387e9f85d2c2ec.json",
+        "sha256": "025011387e9f85d2c2ecc3560758f1e9f470e7e78f27401e7e941fc0e7311fa4",
+        "bytes": 120503,
+        "version": "colors-20261102-v1-qualified-context4461"
+      },
+      "producerManifestSha256": "8f67a053b904587a935da503b7df8a86d6615e05769097c579b0622e459f3089",
+      "sourceRuntimeSha256": "8f383c487dd4add69f27283e4c16f1a2bf99596916874a4460c706d1c2cd025a",
+      "receivingRuntimeSha256": "8f383c487dd4add69f27283e4c16f1a2bf99596916874a4460c706d1c2cd025a",
+      "context": 0,
+      "kind": "QUALIFIED_CONDITIONAL_UTI4V2_13UPH6MESH_OWN_4461",
+      "scopeToken": "ee8c6950082db5d2b7459f36e1159a1d01e36be6077f4a89f51d6d5a7752e8e3",
+      "fixedFinishPrefix": {
+        "CPRICEGROUP": "_1",
+        "CUPHGROUP": "YB"
+      },
+      "readonlyInvariantProperties": {
+        "CFRAMEPLASTICCOLOR": "LIGHTGREY",
+        "CMESHGROUP": "MT",
+        "CSEATCOVERPLASTICCOLOR": "LIGHTGREY"
+      },
+      "qualifiedConditionalFinishContextComplete": true,
+      "actualPaletteComplete": false,
+      "allGeometryContextsCovered": false,
+      "sourceAdmittedOptions": 19,
+      "losslessBindingReceipts": [],
+      "newGeometryCopies": 0,
+      "NativeRequests": 0,
+      "publicPass": false
+    }
+  ],
+  "priorBja193IntakeUnchanged": true,
+  "other52CandidateEntriesUnchanged": true,
+  "previous19GroupVersionsRetained": true,
+  "publicationApproved": false
+}

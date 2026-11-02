@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto';
 import type {ChairPreview} from '../src/lib/chair-preview';
 import type {Asset} from '../src/lib/expanded-configurator';
 import type {ChairQualifiedData,QualifiedWitness,QualifiedPatch,QualifiedGroup,QualifiedOption} from '../src/lib/chair-qualified-colors';
+import {conditionalChairMaterialGroups,conditionalChairAdmissions} from './conditional-chair-finish-contexts';
 type Obj=Record<string,any>;
 const entries=(v:any):Obj[]=>Array.isArray(v)?v:Object.values(v||{});
 const canonical=(v:any):string=>JSON.stringify(v,(_k,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a<b?-1:a>b?1:0)):x);
@@ -73,6 +74,18 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
    requireValue(d.qualifiedByDecision353===true&&d.qualifiedWitnessGroupPaletteComplete===true,'Group qualification absent');
    const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas);const groups=entries(d.groups).map(group);
    for(const g of groups){const previous=w.groups.find(x=>x.id===g.id);requireValue(!previous||canonical(previous)===canonical(g),'Contradictory duplicate group');if(!previous)w.groups.push(g);}
+  }else if(Object.values(conditionalChairAdmissions).some(p=>p.contract===d.schema)){
+   requireValue(documents['colors-groups.json']?.schema===conditionalChairAdmissions[data.code]?.palette,'Finite conditional contract has no corresponding palette');
+  }else if(Object.values(conditionalChairAdmissions).some(p=>p.palette===d.schema)){
+   const scope=conditionalChairMaterialGroups(data.code,data.runtimeSha256,documents),c=scope.contract;
+   const w=witness(c.runtimeContextIndex,c.exactConstructionAndDerivedValues,c.requiredOwnedBaseAssetShas,'Apmušalas YB · tik šiai konstrukcijai');w.fixed=scope.readonly;
+   for(const g of scope.groups){
+    const options:QualifiedOption[]=g.values.map((v:Obj)=>option(v,v.values,g.mesh?v.values.CMESHCOLOR:v.values.CUPHCOLOR));
+    const baseline=options.find(o=>canonical(o.values)===canonical(g.source.baseValues));
+    // The original PRICE2/EGL control is outside the PRICE1/YB domain. Keep
+    // original startup and reset; never invent it as a fourteenth YB option.
+    w.groups.push({id:g.source.id,label:g.label,options,base:(baseline||options[0]).id});
+   }
   }else if(d.schema==='chair-exact-conditional-finish-context-contract-4300-v1'){
    requireValue(documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1','Conditional contract has no scoped palette');
   }else if(d.schema==='chair-qualified-conditional-context-palette-4181-v1'){

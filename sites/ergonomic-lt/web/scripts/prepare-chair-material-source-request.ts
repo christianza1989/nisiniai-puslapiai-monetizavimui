@@ -46,11 +46,22 @@ const fields=models.flatMap((m:any)=>m.fields),summary={models:models.length,clo
  modelsRequiringNewSource:models.filter((m:any)=>m.requiresNewSourceEvidence).length,
  upholsteryMeshAndControllerFields:fields.length,missingKnownCapturedValues:fields.reduce((n:number,f:any)=>n+(f.missingKnownValues??0),0),
  lowerBoundOrUnknownDomainRows:fields.filter((f:any)=>f.capturedDomainValues===null||f.domainScope==='LOWER_BOUND_OR_UNKNOWN').length};
+const pc2Index=JSON.parse(fs.readFileSync('content/pc2-chair-review-candidates.json','utf8'));
+const coverage=JSON.parse(fs.readFileSync('content/chair-material-group-coverage.json','utf8'));
+const pc2=pc2Index.entries.map((entry:any)=>{
+ const proof=coverage.pc2.find((p:any)=>p.code===entry.code);assert(proof&&proof.reviewSha256===entry.sha256&&proof.version===entry.version,'Changed PC2 source needs a scoped reconciliation');
+ const mode=proof.status;
+ return {code:entry.code,reviewSha256:entry.sha256,version:entry.version,mode,
+  request:mode==='ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS'?'SUPPLY_OWN_ALTERNATIVE_BINDINGS':
+   mode==='WHOLE_OBSERVED_STATES_ONLY'?'KEEP_WHOLE_STATES_SUPPLY_UNIFORMITY_OR_UNCOVERED_SCOPE_PROOF':
+   mode==='GROUPED_ADMITTED_OPTIONS'?'REUSE_QUALIFIED_GROUPS_ONLY_REPORT_ACTUAL_SCOPE_GAPS':'KEEP_DECLARED_FIXED_FINISH',
+  recaptureAdmittedStates:false};
+});
 const report={schemaVersion:1,kind:'CHAIR_MATERIAL_SOURCE_REQUEST_NOT_COMPLETION',sourceAuditResult:audit.result,sourceCsvSha256:sha256,
  sourceGeometryReads:0,checkpointBodyReads:0,supplierRequests:0,NativeAllowed:false,summary,
  requiredDelivery:['Exact current own runtime/asset identities and construction tuple','Actual post-prefix material/collection domains; unknown domains stay unknown',
  'Causal own primitive bindings, or whole observed-state/part-swap bindings; disjoint composition must be proved',
  'Original manufacturer material/texture identities and retained original materials','Explicit coverage limits for uncaptured construction contexts'],
- models};
+ models,pc2};
 fs.mkdirSync(path.dirname(output),{recursive:true});fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
-console.log(JSON.stringify({result:'SOURCE_REQUEST_PREPARED_NOT_PALETTE_PASS',...summary,sourceGeometryReads:0,checkpointBodyReads:0,supplierRequests:0,output}));
+console.log(JSON.stringify({result:'SOURCE_REQUEST_PREPARED_NOT_PALETTE_PASS',...summary,pc2Models:pc2.length,pc2WithoutAlternativeBindings:pc2.filter((p:any)=>p.mode==='ORIGINAL_ONLY_NO_ADMITTED_ALTERNATIVE_BINDINGS').length,sourceGeometryReads:0,checkpointBodyReads:0,supplierRequests:0,output}));

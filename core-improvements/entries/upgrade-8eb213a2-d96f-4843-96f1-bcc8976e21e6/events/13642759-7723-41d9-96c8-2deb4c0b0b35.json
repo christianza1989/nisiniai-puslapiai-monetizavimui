@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Built cf3f1ed preserves accepted Souly source exactly outside two owned page files. Both TS,8 inherited admission tests,8 preview browser and2 production-local home cases pass; paired contacts mobile94→96,59.5% byte reduction,TBT177→11.5ms. Preview PUT waits owner public full SHA.",
+  "checks": [
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit; node node_modules/typescript/bin/tsc --project tsconfig.cloudflare.json --noEmit",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-launch-readiness-20261102T1908/INTEGRATED-SOURCE-QUALIFICATION.json"
+    },
+    {
+      "command": "node node_modules/tsx/dist/cli.mjs --test tests/chair-components.test.ts tests/chair-original-only-palette.test.ts",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-launch-readiness-20261102T1908/integrated-souly-qualification-tests.stdout.log"
+    },
+    {
+      "command": "check-preview-contact-browser-v2.mjs; check-production-browser-v3.mjs; measure-contact-mobile-local-v2.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-launch-readiness-20261102T1908/browser-local-v2/SUMMARY.json; D:/Core/output/ergonomic-launch-readiness-20261102T1908/production-local-browser-v3/SUMMARY.json; D:/Core/output/ergonomic-launch-readiness-20261102T1908/contact-mobile-local-v2/SUMMARY.json"
+    }
+  ],
+  "eventId": "13642759-7723-41d9-96c8-2deb4c0b0b35",
+  "sequence": 2,
+  "at": "2026-11-02T18:02:39.951Z"
+}

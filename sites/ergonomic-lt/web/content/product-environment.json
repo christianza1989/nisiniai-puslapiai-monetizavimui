@@ -1,0 +1,17 @@
+{
+  "asset": "/models/configurator/environments/product-side-81d21a22409fd6199a68.bin",
+  "assetSha256": "81d21a22409fd6199a68eec36b92d45ce79ee1dd410382bd8fa8898dc9ced448",
+  "bytes": 6291456,
+  "width": 768,
+  "height": 1024,
+  "threeRevision": "186",
+  "lighting": "side",
+  "sigma": 0.04,
+  "showroomSha256Lf": "e8ada16aaf69a974db580fab0d86b6c8fe04c48a09122ea7ee265ad836cf727f",
+  "sceneSettingsSha256Lf": "38d43129a8b2b763c71a76642fd536575a9ad8c579eb0ecf3c4c325f4a09a61e",
+  "encoding": "RGBA16F little-endian CubeUV; exact PMREM render-target texels",
+  "qualification": "960000 rendered channels compared against original PMREM; zero differences",
+  "threeVersion": "0.186.1",
+  "pmremSha256Lf": "78f7cc24a9aa22852f4c46052f39e5fe5507bee6313a824851ba899ed2219ecc",
+  "roomEnvironmentSha256Lf": "55f466192cc84298755a424c5e040345006b2ee1455589b3b54126c2ea4123f4"
+}

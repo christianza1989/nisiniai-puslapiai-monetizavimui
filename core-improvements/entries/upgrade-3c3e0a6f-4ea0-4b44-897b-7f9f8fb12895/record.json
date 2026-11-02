@@ -1,0 +1,20 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Shared product startup synchronously generated PMREM and uploaded full-resolution HTML material images on the first draw; GLBs were sent uncompressed with revalidation. Preserve exact model bytes/visuals while preparing the common environment and GPU resources asynchronously, streaming native gzip and separating client-safe helpers.",
+  "category": "code",
+  "evidence": [
+    "sites/ergonomic-lt/web/PERFORMANCE-COMMON-20261102.md",
+    "D:/Core/output/ergonomic-performance-20261102/NATIVE-TRANSPORT-v1.json",
+    "D:/Core/output/ergonomic-performance-20261102/FIRST-MODEL-PIXEL-COMPARISON.json",
+    "D:/Core/output/ergonomic-performance-20261102/lighthouse-built-v2/SUMMARY.json"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/319",
+  "rollback": "Scoped revert of the common performance commits; retain published99eda1f source/version24f218dc and its unchanged344-model asset manifest. No original model, supplier runtime or Native changes.",
+  "id": "upgrade-3c3e0a6f-4ea0-4b44-897b-7f9f8fb12895",
+  "branch": "codex/ergonomic-product-performance-20261102",
+  "baseSha": "1727d32a613c72de873105001edd15ff7e0dda5f",
+  "createdAt": "2026-11-02T11:12:59.642Z"
+}

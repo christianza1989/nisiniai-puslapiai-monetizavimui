@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "models": {
+    "product_emodel-2-0-desks_f22f1a81:23846540": {
+      "code": "KEM2013WW009",
+      "asset": "/media/pdf-products/5403129975e90f79cd3740ce422579553edbd1a8c47efd08a1bfa5fdb789a621.png",
+      "sha256": "5403129975e90f79cd3740ce422579553edbd1a8c47efd08a1bfa5fdb789a621",
+      "size": 261662,
+      "source": {
+        "asset": "/media/products-v2/ba46b2257145048c668b-1600x1600/1600.webp",
+        "sha256": "152efa5f6a8f49aa532747b3c189f49aa0978ec273648a098711880d895a29e5",
+        "width": 1600,
+        "height": 1600
+      }
+    }
+  }
+}

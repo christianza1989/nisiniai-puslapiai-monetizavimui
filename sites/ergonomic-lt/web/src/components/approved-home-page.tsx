@@ -4,10 +4,11 @@ import {approvedHeroMarkup,approvedSectionsMarkup} from '@/lib/approved-home-mar
 import {ApprovedHomeInteractive} from './approved-home-interactive';
 import {ApprovedHomeContact} from './approved-home-contact';
 import {applyEditorialHtml} from '@/lib/editorial-server';
+import {responsiveHomeHero} from '@/lib/home-hero';
 
 export function generateMetadata(){return legacyMetadata(findLegacy('/')!);}
 export default function Home(){return <ApprovedHomeInteractive>
-  <div dangerouslySetInnerHTML={{__html:applyEditorialHtml('home-hero',approvedHeroMarkup)}}/>
+  <div dangerouslySetInnerHTML={{__html:responsiveHomeHero(applyEditorialHtml('home-hero',approvedHeroMarkup))}}/>
   <div dangerouslySetInnerHTML={{__html:applyEditorialHtml('home-sections',approvedSectionsMarkup)}}/>
   <ApprovedHomeContact/>
 </ApprovedHomeInteractive>;}

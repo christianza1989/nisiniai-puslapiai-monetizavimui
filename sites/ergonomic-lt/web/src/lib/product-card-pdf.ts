@@ -3,6 +3,7 @@
 import {copyText} from '@/lib/editorial-copy';
 import PDFDocument from 'pdfkit';
 import {pdfAsset} from './pdf-assets';
+import {productPdfImage} from './product-pdf-image';
 import type {Product,Configuration} from './types';
 import type {PilotVariant} from './configurator';
 import {fieldLabels,choiceLabel} from './expanded-configurator';
@@ -13,7 +14,7 @@ import type {CatalogRuntime} from './catalog-configurator';
 export async function productCardPdf(product:Product,configuration:Configuration,variant:PilotVariant,individual=false,article?:ResolvedConfigurationArticle,articleLabel?:(field:string,value:string)=>string|undefined,labels?:{palettes?:CatalogRuntime['palettes'];family?:string}):Promise<Buffer>{
   const optionLabels={...fieldLabels,...Object.fromEntries(Object.entries(labels?.palettes?._fieldLabels||{}).map(([k,v])=>[k,v.text])),...articleFieldLabels(product)};
   if(!/^\/media\/configurator\/\d+\.jpg$/.test(variant.image))throw Error(copyText("ui.6c1acd725c966f609aa2","Invalid local product image"));
-  const [font,image]=await Promise.all([pdfAsset('/fonts/manrope.ttf'),pdfAsset(variant.image)]);
+  const [font,image]=await Promise.all([pdfAsset('/fonts/manrope.ttf'),productPdfImage(product,configuration,variant.image)]);
   return new Promise((resolve,reject)=>{
     const doc=new PDFDocument({size:'A4',margin:42,bufferPages:true,
       info:{Title:copyText("ui.90f1cb5ecb2c38a01a9b","{{p0}} - produkto kortelė",{p0:(product.name)}),Author:'Ergonomic.lt',Subject:variant.label}});

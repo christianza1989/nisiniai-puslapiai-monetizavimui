@@ -7,7 +7,7 @@ import seed from '../content/seed.json';
 import type {Product} from '../src/lib/types';
 
 test('the browser engine has no dependency on the full family/catalog registries',async()=>{
- const result=await build({entryPoints:['src/lib/expanded-engine.ts'],bundle:true,write:false,metafile:true,platform:'browser',format:'esm',tsconfig:'tsconfig.json',logLevel:'silent'});
+ const result=await build({entryPoints:['src/lib/expanded-engine.ts','src/components/product-detail-client.tsx'],bundle:true,write:false,metafile:true,platform:'browser',format:'esm',outdir:'scope-check',external:['react','react-dom','react/jsx-runtime','next/*','three','three/*'],tsconfig:'tsconfig.json',logLevel:'silent'});
  for(const input of Object.keys(result.metafile!.inputs))assert(!/content[\\/]configurator-(?:catalog|expanded)\.json$/.test(input),input);
 });
 

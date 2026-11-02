@@ -26,7 +26,7 @@ import {productSpecificationRows} from '@/lib/product-specifications';
 import {expandedQuoteEntry} from '@/lib/expanded-quote-entry';
 import {expandedProductCardPath} from '@/lib/expanded-product-card-path';
 import {armrestChoiceLabel,armrestFieldLabel,armrestSourceText,presentArmrestConfiguration,safeArmrestFallback} from '@/presentation/armrest-labels';
-import {deskColorPlan,DESK_COLOR_PENDING} from '@/lib/desk-colors';
+import {deskColorPlan,DESK_COLOR_PENDING} from '@/lib/desk-color-plan';
 import {hasAssemblyGeometry} from '@/lib/viewer-assembly';
 import {visibleDeskPreviewChoices} from '@/lib/desk-preview-choices';
 import chairPreviewCoverage from '../../content/chair-preview-coverage.json';

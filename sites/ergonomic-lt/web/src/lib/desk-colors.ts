@@ -1,5 +1,5 @@
 import {deskColorPlan} from './desk-color-plan';
-export {deskColorPlan} from './desk-color-plan';
+export {deskColorPlan,DESK_COLOR_PENDING} from './desk-color-plan';
 import type {Asset} from './expanded-configurator';
 import {createCatalogEngine,type CatalogRuntime} from './catalog-configurator';
 
@@ -9,7 +9,6 @@ export type DeskColorValue={mode:'material'|'partSwap'|'pending';assignments:{se
 export type DeskColorField={label:string;default:string;owners:string[];selectors:string[];choices:{value:string;text:string;image?:string;color?:string}[];values:Record<string,DeskColorValue>};
 export type DeskColors={schema:'desk-color-overlay-v1';code:string;componentRuntimeSha256:string;sourceColorsSha256:string;baseDimensions:Values;fields:Record<string,DeskColorField>;bindings:Record<string,DeskColorTarget[]>;materialIds:string[];materialDocument:Record<string,unknown>};
 export type DeskColorPlan={materials:Record<string,string>;hidden:string[];assets:Asset[];pending:string[]};
-export const DESK_COLOR_PENDING='Šiai komplektacijai pasirinkta spalva 3D nerodoma';
 const hash=(x:unknown):x is string=>typeof x==='string'&&/^[a-f0-9]{64}$/.test(x);
 const plain=(x:unknown):x is Record<string,any>=>!!x&&typeof x==='object'&&!Array.isArray(x);
 const field=(x:string)=>/^[A-Z][A-Z0-9_]{0,79}$/.test(x);

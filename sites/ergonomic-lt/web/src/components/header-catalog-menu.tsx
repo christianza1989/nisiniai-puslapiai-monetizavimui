@@ -10,5 +10,5 @@ export function HeaderCatalogMenu({label,links}:{label:string;links:{href:string
   document.addEventListener('pointerdown',outside);document.addEventListener('keydown',escape);
   return ()=>{document.removeEventListener('pointerdown',outside);document.removeEventListener('keydown',escape);};
  },[]);
- return <details ref={ref} className="header-catalog-menu"><summary>{label}<ChevronDown size={16}/></summary><div className="header-catalog-links">{links.map(link=><Link key={link.href} href={link.href} onClick={()=>{if(ref.current)ref.current.open=false;}}>{link.label}</Link>)}</div></details>;
+ return <details ref={ref} className="header-catalog-menu"><summary>{label}<ChevronDown size={16}/></summary><div className="header-catalog-links">{links.map(link=><Link prefetch={false} key={link.href} href={link.href} onClick={()=>{if(ref.current)ref.current.open=false;}}>{link.label}</Link>)}</div></details>;
 }

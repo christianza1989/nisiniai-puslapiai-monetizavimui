@@ -16,6 +16,7 @@ import {contactShadow,prepareContactShadow} from '@/lib/contact-shadow';
 import {verifiedViewerAsset} from '@/lib/verified-viewer-assets';
 import {productEnvironment,type ProductEnvironment} from '@/lib/product-environment';
 import {prepareViewerTextures} from '@/lib/prepare-viewer-textures';
+import {activateProductViewerWhenNear} from '@/lib/viewer-activation';
 import {isolateFinishMaterials} from '@/lib/finish-materials';
 import {visibleMeshes,visibleBounds,cameraNear,unobstructedCameraViewport} from '@/lib/viewer-camera';
 import {finishField,physicalUpholstery,setFabricSheen,copyTexturePlacement} from '@/lib/viewer-materials';
@@ -56,7 +57,10 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
   useEffect(()=>{applyFinishes.current();},[assembly?.finishes]);
   useEffect(()=>{void applyDeskColors.current();},[assembly?.deskColors]);
   useEffect(()=>{void applyChairColors.current();},[assembly?.chairColors]);
+  const [activated,setActivated]=useState(false);
+  useEffect(()=>{const host=stage.current;if(host)return activateProductViewerWhenNear(host,()=>setActivated(true));},[]);
   useEffect(()=>{
+    if(!activated)return;
     const host=stage.current,element=canvas.current;if(!host||!element)return;
     let disposed=false,initialized=false,object:Object3D|undefined,renderer:WebGLRenderer|undefined,disposeShadow:undefined|(()=>void);
     let colorMaterials:ReturnType<typeof createDeskColorMaterials>|undefined,colorApplication:ReturnType<typeof createDeskColorApplication>|undefined,colorRevision=0,colorFailed=false;
@@ -241,8 +245,8 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
     })();
     return()=>{disposed=true;colorRevision++;colorApplication?.dispose();colorMaterials?.dispose();chairApplication?.dispose();chairMaterials?.dispose();applyDeskColors.current=async()=>{};applyChairColors.current=async()=>{};abort.abort();observer.disconnect();element.removeEventListener('webglcontextlost',contextLost);element.removeEventListener('dblclick',inspectPointer);
       controls.removeEventListener('change',render);releasePageScroll();controls.dispose();disposeShadow?.();for(const group of chairExtras.values()){group.removeFromParent();disposeObject(group);}chairExtras.clear();disposeObject(scene);if(object&&!object.parent)disposeObject(object);textures.forEach(t=>t.dispose());originals.forEach(t=>{t.map?.dispose();t.normal?.dispose();});light.shadow.dispose();action.current=()=>{};applyFinishes.current=()=>{};};
-  },[geometryKey,attempt,avoidToolbarOverlap]);
-  useEffect(()=>{const context=renderContext.current;return()=>{if(context){disposeContext(context);if(renderContext.current===context)renderContext.current=undefined;}};},[attempt]);
+  },[geometryKey,attempt,avoidToolbarOverlap,activated]);
+  useEffect(()=>{const context=renderContext.current;return()=>{if(context){disposeContext(context);if(renderContext.current===context)renderContext.current=undefined;}};},[attempt,activated]);
   return <div className="viewer-3d" data-state={state} data-color-state={colorState} data-variant={variant.id}>
     <div className="viewer-toolbar" role="group" aria-label="3D vaizdo valdymas">
       <button type="button" aria-label={copyText("ui.3931f10cc38ef591b0c7","Apžiūrėti apmušalą")} title={copyText("ui.3931f10cc38ef591b0c7","Apžiūrėti apmušalą")} aria-pressed={inspecting} disabled={state!=='ready'||!canInspect} onClick={()=>action.current('surface')}><Focus size={19}/></button>

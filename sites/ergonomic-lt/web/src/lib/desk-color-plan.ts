@@ -1,6 +1,7 @@
 import type {Asset} from './expanded-configurator';
 import type {DeskColors,DeskColorPlan} from './desk-colors';
 type Values=Record<string,string>;
+export const DESK_COLOR_PENDING='Šiai komplektacijai pasirinkta spalva 3D nerodoma';
 
 /** Only sealed, exact geometry/material/world-matrix matches are paintable. */
 export function deskColorPlan(colors:DeskColors,values:Values,assets:Asset[]):DeskColorPlan{

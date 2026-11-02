@@ -1,0 +1,19 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Authorized followup: LAUNCH_SITE home branch bypasses owner-approved homepage/metadata and emits fallback noindex/no canonical; contact CTA prefetches3.3MB decoded quote-form plus image/runtime modules before intent. Share existing approved homepage in both modes and disable only contact CTA prefetch, preserve actual navigation, publication admission and all Native assets/processes. New prose and unreviewed product approvals remain outside this technical chat.",
+  "category": "code",
+  "evidence": [
+    "D:/Core/output/ergonomic-performance-20261102/mobile-pdf-seo-v1/SEO-HTML-PREFLIGHT-v2.json",
+    "D:/Core/output/ergonomic-performance-20261102/mobile-pdf-seo-v1/mobile-public-v2/contact.json",
+    "D:/Core/output/ergonomic-launch-readiness-20261102T1908/LIVE-BASELINE.json"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/319",
+  "rollback": "Retain full current f0ddd0bb/build-v9/source77a and current49985-row asset map; revert only scoped homepage/contact changes if qualification fails. No original/source/runtime/model deletion, no completed archive/publisher replay.",
+  "id": "upgrade-8eb213a2-d96f-4843-96f1-bcc8976e21e6",
+  "branch": "codex/ergonomic-product-performance-20261102",
+  "baseSha": "2b90b4fcab77be2e80d0c32639719b9b125059d7",
+  "createdAt": "2026-11-02T17:16:35.247Z"
+}

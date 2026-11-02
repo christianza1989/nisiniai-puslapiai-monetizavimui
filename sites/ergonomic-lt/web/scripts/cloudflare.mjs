@@ -53,6 +53,16 @@ if(task==='build')writeFileSync(join(buildRoot,'dist/client/_headers'),`/*
 /fonts/manrope-*.woff2
   Cache-Control: public, max-age=31536000, immutable
 
+# Core-generated hero variants have content-addressed immutable names.
+/media/home-hero/*
+  Content-Type: image/webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# Exact full-resolution model photographs consumed by the PDF byte loader.
+/media/pdf-products/*
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
 # Only the static design examples can be compared in same-origin frames.
 /pavyzdziai/*
   ! X-Frame-Options

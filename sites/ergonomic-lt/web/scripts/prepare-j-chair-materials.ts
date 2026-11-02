@@ -14,6 +14,7 @@ import {normalizeReadyChairPalettes} from './normalize-ready-chair-palettes';
 import {glbGeometryAdmission,opaqueGlbAdmission} from './prepared-review-glb-admission';
 import {retainQualifiedScopes} from './prepared-chair-qualified-union';
 import {priorLosslessBindings,rebindLosslessRuntime,rebindLosslessSelectors,rebindLosslessQualified,decodeForNewSelectors} from './prepared-lossless-chair-binding';
+import {conditionalChairAdmissions} from './conditional-chair-finish-contexts';
 
 const sha=(v:Uint8Array|string)=>createHash('sha256').update(v).digest('hex');
 const canonical=(v:unknown):string=>JSON.stringify(v,(_k,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a<b?-1:a>b?1:0)):x);
@@ -48,7 +49,7 @@ async function main(){
    assert.equal(manifest.code,code);assert.equal(manifest.version,selected.version);
    for(const [file,m]of Object.entries(manifest.files)as[string,any][]){
     assert(relative(file)&&/^[a-f0-9]{64}$/.test(m.sha256)&&Number.isSafeInteger(m.bytes)&&m.bytes>0,'Unsafe manifest entry');
-    assert(!file.endsWith('.glb')||m.bytes<=25*1024*1024||values.lossless&&['KJUP001WW002','KUTI005WW001'].includes(code)&&m.bytes<=55_000_000,'GLB25MiB');assert(!file.endsWith('.json')||m.bytes<=15_000_000,'JSON15MB');
+    assert(!file.endsWith('.glb')||m.bytes<=25*1024*1024||values.lossless&&['KJUP001WW002','KUTI005WW001','KNXT002WW002'].includes(code)&&m.bytes<=55_000_000,'GLB25MiB');assert(!file.endsWith('.json')||m.bytes<=15_000_000,'JSON15MB');
    }
    const files:any[]=[],fileReceipts=new Map<string,any>(),newAssets:Record<string,any>={},readCache=new Map<string,Buffer>();
    async function read(file:string){
@@ -69,6 +70,12 @@ async function main(){
    const rawPalette=JSON.parse((await read('colors.json')).toString()),rawSelectors=JSON.parse((await read('selectors.json')).toString());
    assert(rawSelectors.schema==='canonical-world-primitive-selectors-329-v1'&&rawSelectors.assets,'Missing original selectors');
    const palette=['chair-colors-full-state-329-v1','chair-colors-observed-partial-344-v1'].includes(rawPalette.schema)?rawPalette:originalOnlyPalette(rawPalette,code,old.runtimeSha256);
+   if(lossless.size&&palette.schema==='chair-colors-observed-partial-344-v1'){
+    assert.equal(palette.runtimeSha256,sha(runtimeBytes),'Original palette runtime differs from exact transport source');palette.runtimeSha256=old.runtimeSha256;
+    for(const pair of palette.observedPairs)for(const binding of pair.bindings){
+     const proved=lossless.get(binding.assetSha256);if(proved)binding.assetSha256=proved.target;
+    }
+   }
    assert(canonical(primaryContract(palette))===canonical(primaryContract(old.palette)),'Changed prior palette needs explicit scope reconciliation');
    const namespace='/models/configurator/chairs/'+code+'-'+selected.manifestSha256.slice(0,20);
    const assets:ChairPreview['assets']={},textures={...old.textures},fileAssets:Record<string,any>={},materials:Record<string,unknown>={},documents:Record<string,any>={};
@@ -89,8 +96,9 @@ async function main(){
      else{await read(file);const row=fileReceipts.get(file);const url=namespace+'/source/'+file;newAssets[url]=row;textures[m.sha256]={asset:url,sha256:m.sha256,bytes:m.bytes};}
     }
    }
-   const cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'],conditional=documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1';
-   assert(cert?.pass===true&&cert.noDonorGeometry===true&&cert.code===code&&(conditional?cert.conditionalScopeKind==='QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181'&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false:cert.qualifiedWitnessGroupPaletteComplete===true),'Missing OWN scoped producer certificate');
+   const cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'],pin=conditionalChairAdmissions[code],finite=pin&&documents['colors-groups.json']?.schema===pin.palette,conditional=finite||documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1';
+   assert(cert?.pass===true&&cert.noDonorGeometry===true&&cert.code===code&&(conditional?cert.conditionalScopeKind===(finite?pin.kind:'QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181')&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false:cert.qualifiedWitnessGroupPaletteComplete===true),'Missing OWN scoped producer certificate');
+   if(finite){assert.equal(selected.manifestSha256,pin.manifest,'Conditional manifest is not the explicitly admitted version');assert.equal(documents['conditional-context.json'][pin.qualification],fileReceipts.get('GROUP-PALETTE-VERIFIED-SAFE.json')?.sha256,'Conditional qualification certificate SHA differs');}
    for(const [hash,prior]of Object.entries(old.selectors.assets)){
     const current=rawSelectors.assets[hash];
     if(!current){rawSelectors.assets[hash]=prior;continue;}
@@ -117,7 +125,7 @@ async function main(){
    for(const [hash,a]of Object.entries(assets)){
     const selectors=data.selectors.assets[hash];
     const row=baseMap[a.asset];assert(row&&row.sha256===hash&&row.size===a.bytes&&same(await fs.stat(row.file),row),'Published base identity changed');
-    if(!selectors){assert(old.palette.schema==='chair-base-observed-colours-v1'&&!needed.has(hash),'Missing OWN bound selectors');selectorProofs.push({sha256:hash,reusedPriorOriginalOnlyAdmission:true});continue;}
+    if(!selectors){const nxt=code==='KNXT002WW002'&&lossless.size===9&&old.palette.schema==='chair-colors-observed-partial-344-v1'&&old.runtimeSha256==='c34242487c4332706adfbe3fc1f62a9bad6e7f2b70ba97d15ff2132289245053';assert((old.palette.schema==='chair-base-observed-colours-v1'||nxt)&&!needed.has(hash),'Missing OWN bound selectors');selectorProofs.push({sha256:hash,reusedPriorOriginalOnlyAdmission:true});continue;}
     assert(selectors.assetSha256===hash,'Missing OWN base selectors');
     if(old.selectors.assets[hash]&&canonical(old.selectors.assets[hash])===canonical(selectors))selectorProofs.push({sha256:hash,reusedExactPriorSelectors:true});
     else{

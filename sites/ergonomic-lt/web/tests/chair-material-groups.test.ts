@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {Group,Mesh,BoxGeometry,MeshStandardMaterial,Texture} from 'three';
-import {legacyChairMaterialControls,qualifiedChairMaterialControls,type LegacyChairRoleProof} from '../src/lib/chair-material-groups';
+import {legacyChairMaterialControls,qualifiedChairMaterialControls,chairFinishCollection,type LegacyChairRoleProof} from '../src/lib/chair-material-groups';
 import {tagLegacyChairRoles,visibleLegacyChairRoles,createLegacyChairMaterialApplication} from '../src/lib/chair-surface-roles';
 import {createExpandedEngine,families,type ExpandedState} from '../src/lib/expanded-configurator';
 import type {QualifiedWitness,QualifiedSelection,QualifiedGroup} from '../src/lib/chair-qualified-colors';
@@ -55,6 +55,35 @@ test('a fixed differently colored upholstered part blocks a fake common color',(
  assert.equal(c[0].options.length,0);assert.ok(c[0].reason);
 });
 const group=(id:string,field:string,colors:string[]):QualifiedGroup=>({id,label:field,base:colors[0],options:colors.map(code=>({id:code,label:code,values:{[field]:code},patch:{bindings:[],remove:[],assets:[]}}))});
+
+function admittedMaterials(values:Record<string,string>,domains:Record<string,string[]>){
+ const state:ExpandedState={family:'owned-source',anchor:'own',values},asset={asset:'/own.glb',assetSha256:'e'.repeat(64),bytes:123};
+ const proof:LegacyChairRoleProof={assets:[asset],surfaces:Object.keys(domains).map((field,node)=>({assetSha256:asset.assetSha256,node,primitive:0,material:node,field}))};
+ return legacyChairMaterialControls({state,assets:[asset],proof,choices:()=>domains,values:s=>s.values,change:(s,k,v)=>({...s,values:{...s.values,[k]:v}})});
+}
+test('actual arm-pad upholstery controller joins fabric, leaving plastic and mesh unchanged',()=>{
+ const controls=admittedMaterials({CUPHGROUP:'CSE',CUPHCOLOR:'CSE01',CARMPADSUPHCOLOR:'CSE02',CMESHCOLOR:'OP25',CARMPADPLCOLOR:'BL'},
+  {CUPHCOLOR:['CSE01','CSE02'],CARMPADSUPHCOLOR:['CSE01','CSE02'],CMESHCOLOR:['OP25','OP24N']});
+ const fabric=controls.find(c=>c.label==='Gobelenas')!;assert.deepEqual(fabric.fields,['CUPHCOLOR','CARMPADSUPHCOLOR']);
+ for(const o of fabric.options){assert.equal(o.state.values.CUPHCOLOR,o.state.values.CARMPADSUPHCOLOR);assert.equal(o.state.values.CARMPADPLCOLOR,'BL');assert.equal(o.state.values.CMESHCOLOR,'OP25');}
+});
+test('dedicated side-profile collection keeps leather out of a fabric control and renderer group',()=>{
+ const values={CUPHGROUP:'CSE',CSIDEPROFILSEATUPHGROUP:'LE',CUPHCOLOR:'CSE01',CUPHSIDECOLORSEAT:'LE01'};
+ const controls=admittedMaterials(values,{CUPHCOLOR:['CSE01','CSE02'],CUPHSIDECOLORSEAT:['LE01','LE02']});
+ assert.equal(chairFinishCollection('CUPHSIDECOLORSEAT',values),'LE');assert.equal(controls.length,2);
+ assert.deepEqual(controls.find(c=>c.label==='Gobelenas')!.fields,['CUPHCOLOR']);assert.deepEqual(controls.find(c=>c.label==='Oda')!.fields,['CUPHSIDECOLORSEAT']);
+});
+test('3D upholstery mesh and ordinary back mesh preserve their different actual color domains',()=>{
+ const controls=admittedMaterials({C3DMESHCOLOR:'RN60025',CMESHCOLOR:'OP25',CMESHGROUP:'OP'},
+  {C3DMESHCOLOR:['RN60025','RN60165'],CMESHCOLOR:['OP25','OP24N']});
+ assert.equal(controls.length,2);assert.equal(controls.find(c=>c.label==='3D tinklelis')!.options.length,2);assert.equal(controls.find(c=>c.label==='Tinklelis')!.options.length,2);
+});
+test('a qualified tuple mixing ordinary and 3D mesh remains an indivisible source tuple',()=>{
+ const mixed=group('both','CMESHCOLOR',['OP25']);mixed.options[0].values.C3DMESHCOLOR='RN60025';
+ const w={id:'w',groups:[mixed],branches:[]} as unknown as QualifiedWitness;
+ const p=qualifiedChairMaterialControls(w,{witness:'w',kind:'groups',groups:{}},()=>true);
+ assert.equal(p.controls.length,0);assert.deepEqual(p.remaining,[mixed]);
+});
 test('qualified synchronization intersects whole disjoint groups and preserves the branch/metal selection',()=>{
  const seat=group('seat','CUPHSEATCOLOR',['RED','BLUE']),back=group('back','CUPHBACKCOLOR',['BLUE','GREEN']),metal=group('metal','CBASEMETALCOLOR',['POL','BLACK']);
  const w={id:'w',groups:[metal],branches:[{id:'b',values:{CUPHGROUP:'CSE'},groups:[seat,back]}]} as unknown as QualifiedWitness;

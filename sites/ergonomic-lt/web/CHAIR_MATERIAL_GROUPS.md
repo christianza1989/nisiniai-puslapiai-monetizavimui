@@ -65,6 +65,16 @@ Tai naršyklės telefono pločio emuliacija, ne fizinio telefono testas. Pilnas 
 
 ## Integravimas ir atkūrimas
 
+### Tęsinys iki visų apmušalų spalvų · 2026-11-02
+
+Pavedimas neužbaigtas vien 251 įrašo inventoriumi. Toliau plečiama tikra kėdžių medžiagų aprėptis: pagal esamo 110 audito tiekėjo laukus pridėti aptraukti porankių padukai, pagalvėlė, vidinės / išorinės atlošo pusės, korpuso viršutinis / apatinis apmušalas ir šoniniai profiliai. Specializuotas šoninio profilio kolekcijos valdiklis turi pirmenybę prieš bendrą `CUPHGROUP` tiek parinkčių grupavime, tiek rendererio medžiagos kolekcijoje. Paprastas OP tinklelis ir 3D RN tinklelis yra skirtingos medžiagos; jų nesuderinamos spalvų sritys nebesujungiamos į vieną neveikiantį valdiklį. Mišrus kvalifikuotas tuple lieka nedalomas. Medžiagų testai: 17/17 PASS.
+
+Tai nesuteikia leidimo nuspalvinti neįrodytų paviršių: originalių asset / node / primitive ir pilnų kvalifikuotų būsenų vartai lieka. Naujų spalvų ar kolekcijų iš tekstinių sąrašų nekuriama.
+
+`scripts/prepare-chair-material-source-request.ts` naudoja jau baigto `COLOR-AUDIT110-V2-RESULT.json` audito CSV, sutikrina jo tapatybę ir parengia konkretų papildymo prašymą, nekartodamas 907 MB šaltinių audito. Gautas `output/chair-material-groups/continuation-20261102/SOURCE-REQUEST.json`: 203 šaltinio įrašai (202 uždaryti), 175 modeliai su apmušalų / tinklelio įrodymų spragomis, 657 susiję spalvų ir kolekcijų laukai, 10 141 žinoma nepadengta reikšmė ir 132 ribotos arba nežinomos srities laukai. Reikšmių suma nėra savarankiškų užklausų skaičius: priklausomi prefiksai ir tuple turi būti išsaugoti. CSV neišsamumas nėra įrodymas, kad kitų 28 modelių apmušalų nėra.
+
+Prašyme reikalingos tikros dabartinio runtime ir savo geometrijos tapatybės, po prefikso galiojančios sritys, priežastiniai paviršių ryšiai arba pilnos stebėtos / keičiamų dalių būsenos, originalios medžiagos bei aiškios aprėpties ribos. Apie konkretų papildymą pranešta pagrindiniam 3D integruotojui, kuris jau valdo PC2 kanalą. Svetimi PC2 `UZDUOTIS` / `EILE` failai neredaguoti; pagrindinis Native lieka išjungtas pagal 111. Ši suvestinė nėra spalvų priėmimas ar viso pavedimo užbaigimas.
+
 ### Visų kėdžių tęsinys · 2026-10-31
 
 Po tiesioginio pavedimo taikyti visoms kėdėms bendras adapteris patikrintas pagal visą dabar publikuoto `/3d-visi.html` sąrašą, o ne tik 4ME, Xilium ir Souly pavyzdžius. Tikslus 251 kėdės kodas, peržiūros kelias, priėmimo režimas ir nekintamo paketo SHA yra `content/chair-material-rollout.json`. Šis sąrašas apima 197 konstrukcijų konfigūratorius su originalia apdaila ir 54 PC2 paketus: 2 su patvirtintais medžiagų grupių pasirinkimais, 23 tik su pilnomis stebėtomis spalvinėmis būsenomis, 25 be patvirtintų alternatyvų ir 4 su deklaruota fiksuota apdaila. Tai nereiškia 251 naujos spalvų paletės ar 251 modelio vizualinio priėmimo.

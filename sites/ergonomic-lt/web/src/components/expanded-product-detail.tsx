@@ -28,7 +28,7 @@ import {expandedProductCardPath} from '@/lib/expanded-product-card-path';
 import {armrestChoiceLabel,armrestFieldLabel,armrestSourceText,presentArmrestConfiguration,safeArmrestFallback} from '@/presentation/armrest-labels';
 import {deskColorPlan,DESK_COLOR_PENDING} from '@/lib/desk-colors';
 import {hasAssemblyGeometry} from '@/lib/viewer-assembly';
-import {legacyChairMaterialControls,chairFinishRoles,type LegacyChairRoleProof} from '@/lib/chair-material-groups';
+import {legacyChairMaterialControls,chairFinishRoles,chairFinishCollection,type LegacyChairRoleProof} from '@/lib/chair-material-groups';
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export default function ExpandedProductDetail({product,url,presets,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage}:{product:Product;url:string;presets:ReactNode;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string}){
  const engine=useMemo(()=>createExpandedEngine(catalogRuntime),[catalogRuntime]);
@@ -81,8 +81,8 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
   // Literal structure-only assets already contain the complete measured PBR
   // materials. Recolouring them through a generic palette would change proof.
   const desk=deskColors?{source:deskColors,plan:deskColorPlan(deskColors,selection.values,[...(selected.assets.base?[selected.assets.base]:[]),...selected.assets.patches.flatMap(p=>p.geometries||(p.geometry?[p.geometry]:[]))])}:undefined;
-  return {...selected.assets,deskColors:desk,finishes:structureOnly||originalMaterials?{}:Object.fromEntries(Object.entries(values).map(([k,v])=>[k,{...palettes[k]?.[v],material:activeMaterials?.[k]?.[v],code:v,group:values[finishGroup[k]]||(k==='CUPHSEATCOLOR'?values.CSEATUPHGROUP:k==='CUPHCOLOR'?values.CUPHGROUP:k==='CHEADRESTUPHCOLOR'?values.CHEADRESTUPHGROUP:undefined)}]))};
- },[selected,palettes,activeMaterials,structureOnly,deskColors,selection.values,originalMaterials]);
+  return {...selected.assets,deskColors:desk,finishes:structureOnly||originalMaterials?{}:Object.fromEntries(Object.entries(values).map(([k,v])=>[k,{...palettes[k]?.[v],material:activeMaterials?.[k]?.[v],code:v,group:product.categorySlug==='kedes'&&chairFinishRoles[k]?chairFinishCollection(k,values):values[finishGroup[k]]}]))};
+ },[selected,palettes,activeMaterials,structureOnly,deskColors,selection.values,originalMaterials,product.categorySlug]);
  const variant={...selected.variant,...selected.assets.base} as PilotVariant;
  const token=stateToken(selection);
  const pdf=expandedProductCardPath(product,token,!!article);

@@ -8,12 +8,28 @@ export const chairFinishRoles:Record<string,'upholstery'|'mesh'>={
  CUPHCOLOR:'upholstery',CUPHSEATCOLOR:'upholstery',CUPHBACKRESTCOLOR:'upholstery',CUPHBACKCOLOR:'upholstery',
  CSEBASIDEPROFILUPHCOLOR:'upholstery',CUPHSIDECOLORSEAT:'upholstery',CHEADRESTUPHCHCOLOR:'upholstery',
  CHEADRESTUPHCOLOR:'upholstery',CHEADSIDEPROFUPHCHCOL:'upholstery',CARMRESTUPHCOLOR:'upholstery',
- CMESHCOLOR:'mesh',CBACKRESTMESHCOLOR:'mesh',C3DBACKRESTMESHCOLOR:'mesh',
+ CARMPADSUPHCOLOR:'upholstery',CPILLOWUPHCOLOR:'upholstery',CUPHBACKRESTBACKCOLOR:'upholstery',CUPHBACKRESTFRONTCOLOR:'upholstery',
+ CUPHSHELLBOTTOMCOLOR:'upholstery',CUPHSHELLUPPERCOLOR:'upholstery',CUPHSIDECOLOR:'upholstery',CSIDEBOTTOMBAUPHCOLOR:'upholstery',
+ CUPHLOWERCOLOR:'upholstery',CUPHUPPERCOLOR:'upholstery',CUPHSIDECOLORBACKREST:'upholstery',
+ CMESHCOLOR:'mesh',CBACKRESTMESHCOLOR:'mesh',CBACKBACKRESTMESHCOLOR:'mesh',
+ C3DMESHCOLOR:'mesh',C3DBACKRESTMESHCOLOR:'mesh',C3DSEATMESHCOLOR:'mesh',
 };
-const controllers:Record<string,string[]>={CUPHCOLOR:['CUPHGROUP'],CUPHSEATCOLOR:['CSEATUPHGROUP','CBACKRESTUPHGROUP','CUPHGROUP'],
+const controllers:Record<string,string[]>={CUPHCOLOR:['CUPHGROUP'],CUPHSEATCOLOR:['CSEATUPHGROUP','CBACKRESTUPHGROUP','CUPHGROUPINTBACKSEAT','CUPHGROUP'],
  CUPHBACKRESTCOLOR:['CBACKRESTUPHGROUP','CUPHGROUP'],CUPHBACKCOLOR:['CBACKUPHGROUP','CBACKRESTUPHGROUP','CUPHGROUP'],CSEBASIDEPROFILUPHCOLOR:['CSEBASIDEPROFILUPHGROUP'],
- CUPHSIDECOLORSEAT:['CUPHGROUP'],CHEADRESTUPHCHCOLOR:['CHEADRESTUPHCHGROUP'],CHEADRESTUPHCOLOR:['CHEADRESTUPHGROUP'],
- CHEADSIDEPROFUPHCHCOL:['CHEADSIDEPROFUPHCHGROUP'],CMESHCOLOR:['CMESHGROUP']};
+ CUPHSIDECOLORSEAT:['CSIDEPROFILSEATUPHGROUP','CUPHGROUP'],CHEADRESTUPHCHCOLOR:['CHEADRESTUPHCHGROUP'],CHEADRESTUPHCOLOR:['CHEADRESTUPHGROUP'],
+ CHEADSIDEPROFUPHCHCOL:['CHEADSIDEPROFUPHCHGROUP'],CMESHCOLOR:['CMESHGROUP'],
+ CARMPADSUPHCOLOR:['CUPHGROUP'],CPILLOWUPHCOLOR:['CUPHGROUPCUSHION'],
+ CUPHBACKRESTBACKCOLOR:['CUPHGROUPEXTBACK'],CUPHBACKRESTFRONTCOLOR:['CUPHGROUPINTBACKSEAT'],
+ CUPHSHELLBOTTOMCOLOR:['CUPHGROUP'],CUPHSHELLUPPERCOLOR:['CUPHGROUP'],
+ CUPHSIDECOLOR:['CSIDEPROFILEUPHGROUP','CUPHGROUP'],CSIDEBOTTOMBAUPHCOLOR:['CSIDEBOTTOMBAUPHGROUP','CUPHGROUP'],
+ CUPHLOWERCOLOR:['CUPHGROUP'],CUPHUPPERCOLOR:['CUPHGROUP'],
+ CUPHSIDECOLORBACKREST:['CSIDEPROFILBACKUPHGROUP','CBACKRESTUPHGROUP','CUPHGROUP'],
+};
+const spacerMesh=new Set(['C3DMESHCOLOR','C3DBACKRESTMESHCOLOR','C3DSEATMESHCOLOR']);
+/** A chair's dedicated collection controller wins over its global one. */
+export function chairFinishCollection(field:string,values:Record<string,string>){
+ const controller=(controllers[field]||[]).find(k=>values[k]!==undefined);return controller?values[controller]:undefined;
+}
 const textiles=new Set(['CSE','BN','YB','SM','SMM','CUR','EGL','XR','ST','STG','STMG','CUZ','RX','C','M','EF','OL','FLG','MR','F','LDS','FYR']);
 function materialClass(collection:string|undefined){return collection&&textiles.has(collection)?'textile':collection==='VL'?'leatherette':collection&&['SD','LE','SP'].includes(collection)?'leather':'upholstery';}
 export function chairMaterialLabel(kind:'upholstery'|'mesh',groups:string[]=[]){
@@ -41,14 +57,14 @@ export function legacyChairMaterialControls(input:{state:ExpandedState;proof?:Le
  const proofMatches=!!proof&&JSON.stringify(proof.assets.map(assetKey).sort())===JSON.stringify(assets.map(assetKey).sort())&&
   new Set(addresses).size===addresses.length&&proof.surfaces.every(s=>assets.some(a=>a.assetSha256===s.assetSha256)&&[s.node,s.primitive,s.material].every(n=>Number.isSafeInteger(n)&&n>=0));
  const controller=(f:string)=>(controllers[f]||[]).find(k=>current[k]!==undefined||domains[k]);
- const fieldClass=(f:string)=>chairFinishRoles[f]==='mesh'?'mesh':materialClass(current[controller(f)||'']);
+ const fieldClass=(f:string)=>spacerMesh.has(f)?'mesh-3d':chairFinishRoles[f]==='mesh'?'mesh':materialClass(current[controller(f)||'']);
  const allOffered=Object.keys(domains).filter(f=>chairFinishRoles[f]),allSurfaces=proofMatches?proof!.surfaces:[];
  const allFields=unique([...allOffered,...allSurfaces.map(s=>s.field)]).filter(f=>chairFinishRoles[f]);
  return unique(allFields.map(fieldClass)).flatMap(kind=>{
   const offered=allOffered.filter(f=>fieldClass(f)===kind),surfaces=allSurfaces.filter(s=>fieldClass(s.field)===kind);
   const fields=allFields.filter(f=>fieldClass(f)===kind);if(!fields.length)return [];
   const groupFields=unique(fields.flatMap(f=>controller(f)?[controller(f)!]:[]));
-  const label=kind==='mesh'?'Tinklelis':kind==='textile'?'Gobelenas':kind==='leatherette'?'Dirbtinė oda':kind==='leather'?'Oda':'Apmušalas';
+  const label=kind==='mesh-3d'?'3D tinklelis':kind==='mesh'?'Tinklelis':kind==='textile'?'Gobelenas':kind==='leatherette'?'Dirbtinė oda':kind==='leather'?'Oda':'Apmušalas';
   const control:ChairMaterialControl<ExpandedState>={id:'chair-material-'+kind,label,fields,hiddenFields:[...fields,...groupFields],value:'',options:[]};
   if(!proofMatches||offered.some(f=>!surfaces.some(s=>s.field===f))){control.reason='Trūksta šios konstrukcijos originalių paviršių ir medžiagos ryšio.';return [control];}
   if(!surfaces.length){control.reason='Šiai medžiagai nepateikta keičiamų 3D paviršių.';return [control];}
@@ -86,17 +102,18 @@ export function qualifiedChairMaterialControls(w:QualifiedWitness,selection:Qual
  const descriptors=groups.flatMap(g=>{
   const fields=unique(g.options.flatMap(o=>Object.keys(o.values).filter(f=>chairFinishRoles[f])));if(!fields.length)return [];
   const role=chairFinishRoles[fields[0]];if(fields.some(f=>chairFinishRoles[f]!==role))return [];
+  if(role==='mesh'&&fields.some(f=>spacerMesh.has(f)!==spacerMesh.has(fields[0])))return [];
   const allowed=new Set([...fields,...fields.flatMap(f=>controllers[f]||[]),'CPRICEGROUP']);
   if(g.options.some(o=>Object.keys(o.values).some(f=>!allowed.has(f))||fields.some(f=>!o.values[f])))return [];
   const collections=(o:typeof g.options[number])=>unique([...fields.flatMap(f=>{const k=(controllers[f]||[]).find(k=>o.values[k]!==undefined||branch?.values[k]!==undefined);return k?[o.values[k]??branch!.values[k]]:[];})]).sort();
   const current=g.options.find(o=>o.id===(selection.groups[g.id]??g.base))||g.options.find(o=>o.id===g.base)!;
-  const prefix=collections(current),kind=role==='mesh'?'mesh':materialClass(prefix.length===1?prefix[0]:undefined);
+  const prefix=collections(current),kind=spacerMesh.has(fields[0])?'mesh-3d':role==='mesh'?'mesh':materialClass(prefix.length===1?prefix[0]:undefined);
   const signature=(o:typeof g.options[number])=>unique(fields.map(f=>o.values[f])).length===1?JSON.stringify([collections(o),o.values[fields[0]]]):undefined;
   return [{g,fields,kind,signature,collections}];
  });
  const controls=unique(descriptors.map(d=>d.kind)).map(kind=>{
   const members=descriptors.filter(d=>d.kind===kind);members.forEach(d=>used.add(d.g.id));
-  const fields=unique(members.flatMap(d=>d.fields)),label=kind==='mesh'?'Tinklelis':kind==='textile'?'Gobelenas':kind==='leatherette'?'Dirbtinė oda':kind==='leather'?'Oda':'Apmušalas';
+  const fields=unique(members.flatMap(d=>d.fields)),label=kind==='mesh-3d'?'3D tinklelis':kind==='mesh'?'Tinklelis':kind==='textile'?'Gobelenas':kind==='leatherette'?'Dirbtinė oda':kind==='leather'?'Oda':'Apmušalas';
   const control:ChairMaterialControl<QualifiedSelection>={id:'chair-material-'+kind,label,fields,hiddenFields:members.map(d=>d.g.id),value:'',options:[]};
   for(const id of unique(members[0].g.options.map(members[0].signature).filter((x):x is string=>!!x))){
    const options=members.map(d=>d.g.options.filter(o=>d.signature(o)===id));if(options.some(o=>o.length!==1))continue;

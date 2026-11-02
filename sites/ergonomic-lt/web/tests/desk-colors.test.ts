@@ -1,3 +1,4 @@
+import {visibleDeskPreviewChoices} from '../src/lib/desk-preview-choices';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {Group,Mesh,BoxGeometry,MeshStandardMaterial} from 'three';
@@ -123,4 +124,48 @@ test('bounded source upholstery palette preserves316 real choices and rejects ov
  validateDeskColors(data,code,sha);
  field.choices.push({value:'OVERFLOW',text:'Overflow'});field.values.OVERFLOW=field.values.MP;
  assert.throws(()=>validateDeskColors(data,code,sha));
+});
+
+
+function availablePreviewFixture(code='KPW2017WW001',field='FTOPCOLOR',widths=['_1400','_1800'],sameGeometry=false){
+ const part=(hash:string)=>({file:'assets/'+hash+'.glb',sha256:hash,componentSha256:hash,bytes:100,needsCompression:false});
+ const source:DeskComponents={schema:'desk-components-065-v1',code,coordinates:'original-world-matrices',finishPolicy:'original manufacturer finishes; no FINISH setters',fullGraphClosed:false,contexts:widths.map((width,i)=>({dimensions:{GDWIDTH:width,GDDEPTH:'_700'},choiceRules:'conditional selectable tuples only',invariant:part(i&&!sameGeometry?'b'.repeat(64):sha),textOnly:{},groups:[{fields:[],variants:[{values:{},asset:null}]}]}))};
+ const colors=overlay();colors.code=code;colors.baseDimensions.GDWIDTH=widths[0];if(field!=='FTOPCOLOR'){colors.fields[field]=colors.fields.FTOPCOLOR;delete colors.fields.FTOPCOLOR;for(const targets of Object.values(colors.bindings))for(const target of targets)for(const selector of target.selectors)selector.field=field;}
+ const id={code,sample:'1',productId:'p',familyId:'cfg-123456789abc'},product={id:'p',categorySlug:'rasomieji-stalai-ir-darbo-vietos',modelConfigurationId:'1',configurations:[{id:'1',code}]}as Product;
+ const runtime=withDeskColors(adaptDeskComponents(source,id),colors);return {runtime,engine:createExpandedEngine(runtime),product,colors};
+}
+
+test('available-only desk colors retain exact supported choices and reset a finish at an unbound size',()=>{
+ const {runtime,engine:e,product,colors}=availablePreviewFixture();let state=e.initialStateForProduct(product);const original=e.assembledAssets(state);
+ assert.deepEqual(e.stateChoices(state).FTOPCOLOR,['MP','BI']);state=e.changeField(state,'FTOPCOLOR','BI');
+ assert.deepEqual(e.assembledAssets(state),original);assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
+ state=e.changeField(state,'GDWIDTH','_1800');assert.equal(e.catalog.catalogValues(state).FTOPCOLOR,'MP');
+ assert.deepEqual(e.stateChoices(state).FTOPCOLOR,['MP']);assert.equal(visibleDeskPreviewChoices(runtime.family,e.stateChoices(state)).FTOPCOLOR,undefined);
+ assert(e.expandedSelection(product,state).configuration.supplierOptions!.includes('FTOPCOLOR=MP'));
+ assert.throws(()=>e.changeField(state,'FTOPCOLOR','BI'));assert.throws(()=>e.parseStateToken(product,e.stateToken({...state,values:{...state.values,FTOPCOLOR:'BI'}})));
+ assert.deepEqual(colors.fields.FTOPCOLOR.choices.map(c=>c.value),['MP','BI']);
+ state=e.changeField(state,'GDWIDTH','_1400');assert.deepEqual(e.stateChoices(state).FTOPCOLOR,['MP','BI']);assert.deepEqual(e.assembledAssets(state),original);
+});
+
+test('pending finish alternatives disappear without removing the original finish or geometry',()=>{
+ const {runtime,product,colors}=availablePreviewFixture();colors.fields.FTOPCOLOR.values.BI={mode:'pending',assignments:[],automatic:{}};
+ const e=createExpandedEngine(runtime),state=e.initialStateForProduct(product);assert.deepEqual(e.stateChoices(state).FTOPCOLOR,['MP']);
+ assert.equal(visibleDeskPreviewChoices(runtime.family,e.stateChoices(state)).FTOPCOLOR,undefined);assert(e.assembledAssets(state).base);
+ assert.equal(e.catalog.catalogValues(state).FTOPCOLOR,'MP');assert.throws(()=>e.changeField(state,'FTOPCOLOR','BI'));
+});
+
+test('unproven edge finish is hidden only in its measured width; partial frame finish remains fixed',()=>{
+ const {runtime,engine:e}=availablePreviewFixture('KPW2020WW002','FTABLEEDGECOLOR',['_4200','_4800'],true);
+ const initial=e.catalog.catalogInitial({...runtime.family,anchors:[...runtime.family.anchors].sort((a,b)=>a.defaults.GDWIDTH.localeCompare(b.defaults.GDWIDTH))});
+ assert.equal(initial.values.GDWIDTH,'_4200');assert.deepEqual(e.stateChoices(initial).FTABLEEDGECOLOR,['MP']);
+ const wider=e.changeField(initial,'GDWIDTH','_4800');assert.deepEqual(e.stateChoices(wider).FTABLEEDGECOLOR,['MP','BI']);
+ const frame=availablePreviewFixture('KXI2019WW003','FBASECOLOR');const state=frame.engine.initialStateForProduct(frame.product);
+ assert.deepEqual(frame.engine.stateChoices(state).FBASECOLOR,['MP']);assert.equal(visibleDeskPreviewChoices(frame.runtime.family,frame.engine.stateChoices(state)).FBASECOLOR,undefined);
+ assert(frame.engine.assembledAssets(state).base);assert.equal(frame.engine.catalog.catalogValues(state).FBASECOLOR,'MP');
+});
+
+test('availability policy does not change another collected desk or its text-only finish domain',()=>{
+ const {runtime,engine:e,product}=availablePreviewFixture('KEM300WW001');let state=e.initialStateForProduct(product);state=e.changeField(state,'GDWIDTH','_1800');
+ assert.deepEqual(e.stateChoices(state).FTOPCOLOR,['MP','BI']);assert.deepEqual(visibleDeskPreviewChoices(runtime.family,e.stateChoices(state)).FTOPCOLOR,['MP','BI']);
+ state=e.changeField(state,'FTOPCOLOR','BI');assert.equal(e.catalog.catalogValues(state).FTOPCOLOR,'BI');
 });

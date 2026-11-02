@@ -106,3 +106,16 @@ Followup candidate after real Google report0vowtca8lh (desktop69/mobile56):
 - Current baseline remains7104ee68 while this isolated followup is qualified.
   Check both initial offscreen behaviour and the actual full-quality stage after
   scrolling; a page-load-only performance score does not qualify3D interaction.
+- The light stage now also defers importing the original renderer/Three module;
+  the loading dimensions, keyboard focus and automatic activation are retained.
+  No CSS child/sibling selector depends on the transparent display:contents host.
+- Canonical catalog/expanded calculation bodies are separated from full static
+  source registries. Existing server entry points retain the original data and
+  API, including PDF/validation and explicit legacy callers. Server wrappers pass
+  the entire active captured family and needed fallback palette entries to one
+  client UI; local runtime palettes remain complete. Other products' facts are
+  not bundled into every product. No source JSON or captured option rule changed.
+  Archived-code parity covers static families, explicit scopes and four actual
+  published product runtimes, including dependent choices, palette metadata,
+  all tested transitions, original asset identities and supplier option codes.
+  The browser-engine bundle has a regression guard against full registry imports.

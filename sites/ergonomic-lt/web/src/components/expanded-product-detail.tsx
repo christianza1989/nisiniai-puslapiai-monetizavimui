@@ -13,7 +13,7 @@ import {createExpandedEngine,palettes as basePalettes,fieldLabels as baseFieldLa
 import {useQuote,entryKey} from './quote-provider';
 import {finishGroup,hasSourceMaterial,renderMaterial} from '@/lib/render-materials';
 import type {CatalogRuntime} from '@/lib/catalog-configurator';
-import {selectedModelConfiguration} from '@/lib/product-models';
+import {selectedModelConfiguration} from '@/lib/selected-model-configuration';
 import FinishSelect from './finish-select';
 import {ProductGallery} from './product-gallery';
 import {isolateWorkspace,workspaceFocusables} from '@/lib/fullscreen-workspace';

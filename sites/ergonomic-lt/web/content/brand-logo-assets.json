@@ -1,0 +1,56 @@
+{
+  "source": {
+    "asset": "/branding/ergonomic-logo.png",
+    "sha256": "1bec640a1f65682ceb7fb5c4fac32e5e762879bca22b7add98bc3276019926aa",
+    "width": 1700,
+    "height": 210
+  },
+  "policy": "responsive-webp-v1",
+  "variants": [
+    {
+      "width": 1600,
+      "height": 198,
+      "asset": "/branding/ergonomic-logo-1600-35666ebbbbcd.webp",
+      "sha256": "35666ebbbbcde9e0a6f0457f92ae48df87acdb912e2ef277946e525857462a86",
+      "bytes": 42372,
+      "sourceMediaId": "0e90d9b7-0b12-4ae5-882a-3251465d743e",
+      "familyId": "c31c7b11-665d-441b-ab9f-d54375f748ab"
+    },
+    {
+      "width": 1200,
+      "height": 148,
+      "asset": "/branding/ergonomic-logo-1200-8c9c55f0c83c.webp",
+      "sha256": "8c9c55f0c83c2a2490b444c0c9e84b78f71a8d30c4fd6542364c1cf1b45db156",
+      "bytes": 33932,
+      "sourceMediaId": "b662ddb7-41eb-4b6e-96fd-fb9c8d8be9a3",
+      "familyId": "c31c7b11-665d-441b-ab9f-d54375f748ab"
+    },
+    {
+      "width": 800,
+      "height": 99,
+      "asset": "/branding/ergonomic-logo-800-b14d3168541f.webp",
+      "sha256": "b14d3168541f311ccf5b10b93685193b86aedb7447a85850d0a1d63193d9d028",
+      "bytes": 22612,
+      "sourceMediaId": "39e8ed2f-3d74-4c07-9e9b-4e6d59523f3f",
+      "familyId": "c31c7b11-665d-441b-ab9f-d54375f748ab"
+    },
+    {
+      "width": 640,
+      "height": 79,
+      "asset": "/branding/ergonomic-logo-640-17171ddb787a.webp",
+      "sha256": "17171ddb787ad7674041663835c5c33127ae2c91bc558349156e0d1ed2cdb42a",
+      "bytes": 18186,
+      "sourceMediaId": "a9da9c9e-f94c-4774-8b0c-8c5ae5247a84",
+      "familyId": "c31c7b11-665d-441b-ab9f-d54375f748ab"
+    },
+    {
+      "width": 360,
+      "height": 44,
+      "asset": "/branding/ergonomic-logo-360-bf29fb571c28.webp",
+      "sha256": "bf29fb571c287b667152f0b489f421083183f6b70edff61f851cf3cad1571fc2",
+      "bytes": 9474,
+      "sourceMediaId": "53aacc0f-7d55-4346-9f0d-fafdb8d6be4c",
+      "familyId": "c31c7b11-665d-441b-ab9f-d54375f748ab"
+    }
+  ]
+}

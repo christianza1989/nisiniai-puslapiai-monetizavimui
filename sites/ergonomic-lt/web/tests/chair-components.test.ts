@@ -1,10 +1,23 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {adaptChairComponents,validateChairComponents,type ChairComponents} from '../src/lib/chair-components';
+import {adaptChairComponents,validateChairComponents,validateChairReviewComponents,type ChairComponents} from '../src/lib/chair-components';
 import {validateDeskComponents} from '../src/lib/desk-components';
 const part={file:'assets/'+ 'a'.repeat(64)+'.glb',componentSha256:'a'.repeat(64),sha256:'b'.repeat(64),bytes:1024,needsCompression:false as const};
 const id={code:'KTEST001',sample:'1234',familyId:'cfg-0123456789ab',productId:'product_test'};
 function fixture():ChairComponents{return {schema:'desk-components-065-v1',code:id.code,coordinates:'original-world-matrices',finishPolicy:'original manufacturer finishes; no FINISH setters',fullGraphClosed:false,contexts:[{dimensions:{DSEATWIDTH:'_480',CPLASTICCOLORVERSION:'BLACKEDITION'},choiceRules:'conditional selectable tuples only',invariant:{...part},groups:[],textOnly:{},default3DValues:{},hybrid141:true}]};}
+
+test('large captured review tables do not broaden catalog admission or truncate validation',()=>{
+ const f=fixture(),template=f.contexts[0];
+ f.contexts=Array.from({length:1392},(_,i)=>({...structuredClone(template),dimensions:{DSEATWIDTH:String(i)}}));
+ assert.doesNotThrow(()=>validateChairReviewComponents(f,id.code));
+ assert.throws(()=>validateChairComponents(f,id.code),'catalog keeps its original context bound');
+ f.contexts[1391].invariant!.bytes=25*1024*1024+1;
+ assert.throws(()=>validateChairReviewComponents(f,id.code),'last context retains every asset guard');
+ f.contexts[1391]=structuredClone(f.contexts[0]);
+ assert.throws(()=>validateChairReviewComponents(f,id.code),'duplicate constructions across the whole table are rejected');
+ f.contexts=Array.from({length:1501},(_,i)=>({...structuredClone(template),dimensions:{DSEATWIDTH:String(i)}}));
+ assert.throws(()=>validateChairReviewComponents(f,id.code),'review input is still bounded');
+});
 test('a chair invariant-only source preserves original bytes and invents no controls',()=>{
  const f=fixture(),before=structuredClone(f);const out=adaptChairComponents(f,id);
  assert.equal(out.family.anchors[0].geometry?.assetSha256,part.sha256);assert.equal(out.family.anchors[0].components.length,0);assert.deepEqual(f,before);

@@ -1,0 +1,46 @@
+{
+  "source": {
+    "asset": "/media/home-final/assets/plates/room.png",
+    "sha256": "43ad1036c13175ae0009473a820b27ea50469eaa01272bc2f480860725ae8d15",
+    "width": 1626,
+    "height": 967
+  },
+  "policy": "responsive-webp-v1",
+  "variants": [
+    {
+      "url": "/media/home-hero/bec84dcd8a2b14fe556e-1600.webp",
+      "sha256": "bec84dcd8a2b14fe556eaedb958eedeb184ed43c371a4232fa94f30e6c50bf83",
+      "size": 106286,
+      "width": 1600,
+      "height": 952
+    },
+    {
+      "url": "/media/home-hero/c8074d98a1f9b65c40da-1200.webp",
+      "sha256": "c8074d98a1f9b65c40da0352ef08b4d398eb0daa445ef93edae975aaf6b8d92c",
+      "size": 71876,
+      "width": 1200,
+      "height": 714
+    },
+    {
+      "url": "/media/home-hero/ef20a5b023331fb03dad-800.webp",
+      "sha256": "ef20a5b023331fb03dad294dcadc632e768eeb72fbed0471802ebb7bcfb20697",
+      "size": 38058,
+      "width": 800,
+      "height": 476
+    },
+    {
+      "url": "/media/home-hero/d544270f532f17c3853a-640.webp",
+      "sha256": "d544270f532f17c3853aea3e4914f94ae3ef2d10966d5327befcb902109c356a",
+      "size": 27180,
+      "width": 640,
+      "height": 381
+    },
+    {
+      "url": "/media/home-hero/bf662f782ac05c6a5d56-360.webp",
+      "sha256": "bf662f782ac05c6a5d56e2f75e5c0e54dd9ddbb8e20d4d680ce92b5e5eb7b1f6",
+      "size": 10908,
+      "width": 360,
+      "height": 214
+    }
+  ]
+}

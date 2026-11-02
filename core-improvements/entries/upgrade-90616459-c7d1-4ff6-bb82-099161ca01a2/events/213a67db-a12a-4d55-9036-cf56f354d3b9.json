@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Actual preview05aa92fe at100% adopts exact sourcef4e7a996, with full current groups547 data and49985 asset rows. Public functional/framebuffer/HTTP verification passes. Actual public-URL PC Lighthouse100/100 desktop,91 phone; Google web DNS-style error/API429 prevented a new hosted PSI result. This is preview runtime adoption only; shared main/Launch unchanged.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/320",
+  "commit": "f4e7a99677876df9c78394e180b8f89ca1e9d554",
+  "eventId": "213a67db-a12a-4d55-9036-cf56f354d3b9",
+  "sequence": 4,
+  "at": "2026-11-02T14:39:33.996Z"
+}

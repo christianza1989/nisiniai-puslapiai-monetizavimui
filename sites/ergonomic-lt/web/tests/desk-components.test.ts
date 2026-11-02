@@ -5,6 +5,7 @@ import {adaptDeskComponents,validateDeskComponents,deskReferencedAssets,type Des
 import {createDeskComponentLoader,type DeskCandidates} from '../src/lib/desk-component-candidates';
 import {createExpandedEngine} from '../src/lib/expanded-configurator';
 import type {Product} from '../src/lib/types';
+import partialDeskPreviewScopes from '../content/desk-partial-preview-scopes.json';
 
 const code='KEM2013WW004',sample='23846535',productId='product_emodel-2-0-desks_f22f1a81';
 const id={code,sample,productId,familyId:'cfg-123456789abc'};
@@ -116,6 +117,32 @@ test('hybrid text-only scene retains the supplied 3D defaults instead of the fir
   const invalid=structuredClone(s);mutate(invalid);assert.throws(()=>validateDeskComponents(invalid,code));
  }
 });
+
+test('three partial previews retain only21 captured tuples and reject all19 unavailable choices',()=>{
+ for(const [partialCode,scope]of Object.entries(partialDeskPreviewScopes)){
+  const s=source();s.code=partialCode;s.contexts=scope.available.map(dimensions=>({...structuredClone(s.contexts[0]),dimensions}));
+  s.dimensionChoices=[...scope.available,...scope.unavailable];s.textOnlyDimensionChoices=scope.unavailable;s.missing3D=scope.missing3D;s.unavailable3DMessage='3D peržiūra šiam dydžiui neprieinama';
+  const original=structuredClone(s),p={...product,configurations:[{id:sample,code:partialCode}]}as Product;
+  const runtime=adaptDeskComponents(s,{...id,code:partialCode}),e=createExpandedEngine(runtime);
+  assert.deepEqual(s,original);assert.equal(runtime.family.anchors.length,scope.available.length);
+  const key=(dimensions:Record<string,string>)=>JSON.stringify(Object.entries(dimensions).sort());
+  assert.deepEqual(new Set(runtime.family.anchors.map(a=>key(Object.fromEntries(a.axes.map(f=>[f,a.defaults[f]]))))),new Set(scope.available.map(key)));
+  for(const anchor of runtime.family.anchors){
+   const state=e.catalog.catalogInitial({...runtime.family,anchors:[anchor,...runtime.family.anchors.filter(a=>a!==anchor)]});
+   assert(e.assembledAssets(state).base);assert.deepEqual(e.parseStateToken(p,e.stateToken(state)),state);
+   for(const field of anchor.axes)for(const value of e.stateChoices(state)[field]){
+    const next=e.changeField(state,field,value),target=e.catalog.catalogAnchor(next)!;
+    assert(scope.available.some(d=>key(d)===key(Object.fromEntries(target.axes.map(f=>[f,target.defaults[f]])))));
+   }
+  }
+  for(const dimensions of scope.unavailable){
+   assert.throws(()=>{let state=e.initialStateForProduct(p);for(const [field,value]of Object.entries(dimensions))state=e.changeField(state,field,value);});
+  }
+  for(const mutate of[(x:DeskComponents)=>{x.textOnlyDimensionChoices=x.textOnlyDimensionChoices!.slice(1);},(x:DeskComponents)=>{x.dimensionChoices!.push({GDWIDTH:'_9999',GDDEPTH:'_9999'});},(x:DeskComponents)=>{x.contexts.pop();},(x:DeskComponents)=>{x.contexts.push({...structuredClone(x.contexts[0]),dimensions:scope.unavailable[0]});},(x:DeskComponents)=>{x.missing3D=['invented'];},(x:DeskComponents)=>{x.code='OTHERDESK';},(x:DeskComponents)=>{delete x.dimensionChoices;delete x.textOnlyDimensionChoices;delete x.missing3D;delete x.unavailable3DMessage;}]){
+   const invalid=structuredClone(s);mutate(invalid);assert.throws(()=>validateDeskComponents(invalid,invalid.code));
+  }
+ }
+});
 test('captured read-only defaults with empty choice lists retain source identity without an invented control',()=>{
  const s=source();s.contexts[0].textOnly={FDESKTOPTYPE:[]};s.contexts[0].default3DValues={FDESKTOPTYPE:'FIXEDTOP'};
  validateDeskComponents(s,code);const runtime=adaptDeskComponents(s,id),engine=createExpandedEngine(runtime);
@@ -156,4 +183,30 @@ test('no common invariant keeps original variant geometry and rejects a potentia
  assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
  const empty=structuredClone(s);empty.contexts[0].groups[0].variants[0].asset=null;
  assert.throws(()=>validateDeskComponents(empty,code));
+});
+
+
+test('captured overall and top dimension aliases change together through exact scene tuples',()=>{
+ const s=source(),tuples=[
+  {GDDEPTH:'_1600',GDTOPDEPTH:'_2X792',GDTOPWIDTH:'_2X1400',GDWIDTH:'_3600'},
+  {GDDEPTH:'_1600',GDTOPDEPTH:'_2X792',GDTOPWIDTH:'_2X1600',GDWIDTH:'_4000'},
+  {GDDEPTH:'_1800',GDTOPDEPTH:'_2X892',GDTOPWIDTH:'_2X1600',GDWIDTH:'_4000'}
+ ];
+ s.contexts=s.contexts.map((c,i)=>({...c,dimensions:tuples[i],invariant:part(['a','f','9'][i])}));
+ const e=createExpandedEngine(adaptDeskComponents(s,id));let state=e.initialStateForProduct(product);const original=e.stateToken(state);
+ assert.deepEqual(e.stateChoices(state).GDWIDTH,['_3600','_4000']);assert.deepEqual(e.stateChoices(state).GDTOPWIDTH,['_2X1400','_2X1600']);
+ assert.throws(()=>e.changeField(state,'GDDEPTH','_1800'));
+ state=e.changeField(state,'GDWIDTH','_4000');assert.equal(state.values.GDTOPWIDTH,'_2X1600');assert.equal(e.assembledAssets(state).base?.assetSha256,'f'.repeat(64));
+ state=e.changeField(state,'GDDEPTH','_1800');assert.equal(state.values.GDTOPDEPTH,'_2X892');assert.equal(e.assembledAssets(state).base?.assetSha256,'9'.repeat(64));
+ assert.deepEqual(e.stateChoices(state).GDWIDTH,['_4000']);assert.throws(()=>e.changeField(state,'GDWIDTH','_3600'));
+ state=e.changeField(state,'GDTOPDEPTH','_2X792');state=e.changeField(state,'GDTOPWIDTH','_2X1400');assert.equal(state.values.GDWIDTH,'_3600');assert.deepEqual(e.stateToken(state),original);
+ assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
+});
+
+test('an ambiguous overall-width alias never chooses one of two captured top widths',()=>{
+ const s=source();s.contexts=s.contexts.map((c,i)=>({...c,dimensions:{GDDEPTH:'_1600',GDTOPDEPTH:'_2X792',GDTOPWIDTH:['_2X1400','_2X1600','_2X1800'][i],GDWIDTH:i?'_4000':'_3600'},invariant:part(['a','f','9'][i])}));
+ const e=createExpandedEngine(adaptDeskComponents(s,id));let state=e.initialStateForProduct(product);
+ assert.deepEqual(e.stateChoices(state).GDWIDTH,['_3600']);assert.throws(()=>e.changeField(state,'GDWIDTH','_4000'));
+ state=e.changeField(state,'GDTOPWIDTH','_2X1800');assert.equal(state.values.GDWIDTH,'_4000');assert.equal(e.assembledAssets(state).base?.assetSha256,'9'.repeat(64));
+ assert.deepEqual(e.parseStateToken(product,e.stateToken(state)),state);
 });

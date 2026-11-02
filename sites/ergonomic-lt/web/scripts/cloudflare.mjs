@@ -15,6 +15,8 @@ if(task==='build'){
  }
 }
 if(task==='build'){
+ const environmentCheck=spawnSync(process.execPath,['scripts/check-product-environment.mjs'],{cwd:process.cwd(),stdio:'inherit'});
+ if(environmentCheck.status!==0)process.exit(environmentCheck.status??1);
  const check=spawnSync(process.execPath,['scripts/check-admin-snapshot.mjs'],{cwd:process.cwd(),stdio:'inherit'});
  if(check.status!==0)process.exit(check.status??1);
 }
@@ -41,6 +43,24 @@ if(task==='build')writeFileSync(join(buildRoot,'dist/client/_headers'),`/*
 
 # Content-addressed responsive photographs can be cached across page visits.
 /media/products-v2/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Core-generated brand variants have immutable content digests in their names.
+/branding/ergonomic-logo-*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# Original Manrope glyphs in a lossless, content-addressed web container.
+/fonts/manrope-*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# Core-generated hero variants have content-addressed immutable names.
+/media/home-hero/*
+  Content-Type: image/webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# Exact full-resolution model photographs consumed by the PDF byte loader.
+/media/pdf-products/*
+  Content-Type: image/png
   Cache-Control: public, max-age=31536000, immutable
 
 # Only the static design examples can be compared in same-origin frames.

@@ -1,0 +1,24 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {Group,Mesh,BoxGeometry,MeshStandardMaterial} from 'three';
+import {validateChairComponents,validateChairReviewComponents} from '../src/lib/chair-components';
+import {chairObservedChoices,chairPreviewAssembly,type ChairPreview} from '../src/lib/chair-preview';
+import {chairColorPlan} from '../src/lib/chair-color-admission';
+import {createChairColorApplication,tagChairSurfaces} from '../src/lib/chair-color-materials';
+import {originalOnlyPalette} from '../scripts/prepare-ready-review-inventory';
+const h=(c:string)=>c.repeat(64),code='KTEST001WW001';
+const part={file:'assets/'+h('a')+'.glb',sha256:h('b'),componentSha256:h('a'),bytes:100,needsCompression:false as const};
+function data():ChairPreview{
+ const runtime:ChairPreview['runtime']={schema:'desk-components-065-v1',code,coordinates:'original-world-matrices',finishPolicy:'original manufacturer finishes; no FINISH setters',fullGraphClosed:false,contexts:[{dimensions:{DHEIGHT:'_1'},choiceRules:'conditional selectable tuples only',invariant:part,groups:[],textOnly:{},hybrid141:true},{dimensions:{DWIDTH:'_2'},choiceRules:'conditional selectable tuples only',invariant:part,groups:[],textOnly:{},hybrid141:true}]};
+ const palette=originalOnlyPalette({schema:'chair-base-observed-colours-366-v1',code,actualPaletteComplete:false,independentFinishCompositionAllowed:false,availableMaterialBindings:[],baselineObservedFinish:{CUPHCOLOR:{value:'RED',knownCurrentPrefixChoices:['RED','BLUE']}}},code,h('c'));
+ return {schema:'pc2-chair-review-111-v1',code,name:code,runtimeSha256:h('c'),runtime,palette,selectors:{schema:'canonical-world-primitive-selectors-329-v1',assets:{}},assets:{[h('b')]:{asset:'/models/test.glb',assetSha256:h('b'),bytes:100}},textures:{}} as ChairPreview;
+}
+test('whole-context review admits different captured axes while the catalog guard still rejects them',()=>{const d=data();validateChairReviewComponents(d.runtime,code);assert.throws(()=>validateChairComponents(d.runtime,code));const assembly=chairPreviewAssembly(d,1,[],chairObservedChoices(d)[0]);assert.equal(assembly.base?.assetSha256,h('b'));assert.equal(assembly.chairColors.plan.status,'original');});
+test('textual finish evidence creates no independently selectable colour',()=>{const d=data();assert.equal(chairObservedChoices(d).length,1);const plan=chairColorPlan({palette:d.palette,selectors:d.selectors,code,runtimeSha256:h('c'),activeAssetSha256:[h('b')],values:{CUPHCOLOR:'BLUE'},selection:{kind:'observed-pair',index:0}});assert.equal(plan.status,'unavailable');assert.deepEqual(plan.assignments,[]);});
+test('original-only rendering keeps the exact materials, matrices and geometry without selector guesses',async()=>{const d=data(),root=new Group(),mesh=new Mesh(new BoxGeometry(),new MeshStandardMaterial({color:'red'}));root.add(mesh);const material=mesh.material,geometry=mesh.geometry,matrix=mesh.matrix.toArray();tagChairSurfaces(root,new Map(),d,h('b'));const app=createChairColorApplication(root),assembly=chairPreviewAssembly(d,0,[],chairObservedChoices(d)[0]);await app.apply(assembly.chairColors.plan,async()=>{throw Error('Must not load a textual finish');});assert.equal(mesh.material,material);assert.equal(mesh.geometry,geometry);assert.deepEqual(mesh.matrix.toArray(),matrix);app.dispose();});
+test('unproved bindings cannot enter the original-only fallback',()=>{const d=data();assert.throws(()=>originalOnlyPalette({...d.palette,schema:'chair-base-observed-colours-366-v1',availableMaterialBindings:[{name:'seat'}]},code,h('c')));d.selectors.assets[h('b')]={assetSha256:h('b'),slots:[],materials:{}};assert.throws(()=>tagChairSurfaces(new Group(),new Map(),d,h('b')),/Unqualified/);});
+test('a colour observation cannot inherit a dimension absent from the selected whole context',()=>{
+ const d=data();d.selectors.assets[h('b')]={assetSha256:h('b'),slots:[{selectorId:h('d'),materialId:h('e'),sourceNodePath:[0],primitive:0,transformChain:[]}],materials:{}};
+ d.palette={schema:'chair-colors-observed-partial-344-v1',code,runtimeSha256:h('c'),actualPaletteComplete:false,observedPairs:[{status:'EXACT_SAVED_PAIR_OWN_RUNTIME_BINDINGS',bindings:[{assetSha256:h('b'),selectorId:h('d'),baseMaterialId:h('e'),materialId:h('f')}],materials:{[h('f')]:{}},targetOwnedRuntimeBindingProof:true,generalizedAcrossConstructionContexts:false,geometryReusedFromOtherModel:false,constructionScope:{DHEIGHT:'_1'},finishAlternativeScope:{CUPHCOLOR:'BLUE'},finishBaseScope:{CUPHCOLOR:'RED'},requiresExactConstructionAndFinishScope:true,requiresExactObservedState:true,onlyThisObservedPairQualified:true,mode:'materialFullObservedStateOverride'}]};
+ const choice=chairObservedChoices(d)[1];assert.equal(chairPreviewAssembly(d,0,[],choice).chairColors.plan.status,'observed-state');assert.equal(chairPreviewAssembly(d,1,[],choice).chairColors.plan.status,'unavailable');
+});

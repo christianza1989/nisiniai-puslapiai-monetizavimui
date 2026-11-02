@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Qualified exact code eda22b4b against published99eda1f with two real built local Workers and isolated DB snapshots. Four models, desktop/phone, twenty pixel-identical state comparisons plus four pixel-identical DPR2 comparisons; controls and renderer reuse verified. Local desktop67/68→95/96, mobile47→55; no public score or deployment claimed.52-case focused run:51PASS,1 unavailable historical quality fixture, explicitly recorded; no weakened checks. Eight actual original albedos independently rehashed/measured. One default desk PDF already400 on public baseline, unchanged; other three PDFs200 with identical sizes. Sole-publisher integration remains pending; no Native or other-chat writes.",
+  "checks": [
+    {
+      "command": "tsc --noEmit; tsc -p tsconfig.cloudflare.json --noEmit; node scripts/check-product-environment.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/FINAL-QUALIFICATION-v1.json"
+    },
+    {
+      "command": "node D:/Core/output/ergonomic-performance-20261102/browser-functional-v2.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/browser-functional-v2/SUMMARY.json"
+    },
+    {
+      "command": "node D:/Core/output/ergonomic-performance-20261102/pdf-and-high-dpr-v3.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/pdf-dpr-v3/SUMMARY.json (behaviour parity; known baseline default desk PDF400 retained)"
+    },
+    {
+      "command": "node D:/Core/output/ergonomic-performance-20261102/finalize-common-qualification-v1.mjs",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/FINAL-SHARED-ASSET-QUALIFICATION.json"
+    },
+    {
+      "command": "actual built baseline/candidate cold Chrome Lighthouse13.6.0 alternating desktop twice/mobile once",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/lighthouse-built-v3/SUMMARY.json"
+    }
+  ],
+  "eventId": "9f85795a-f05f-47f4-9712-c0a77a1e7022",
+  "sequence": 2,
+  "at": "2026-11-02T11:46:23.045Z"
+}

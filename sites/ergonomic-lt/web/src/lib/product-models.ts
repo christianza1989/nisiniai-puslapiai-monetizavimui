@@ -4,6 +4,8 @@ import {uniqueGalleryPhotos} from './gallery-photo-identity';
 import {editorialConfiguration,editorialModelArticle} from './editorial-server';
 import {catalogModelVisible,historicalCatalogPreset} from './catalog-consolidation';
 import {privateArticle} from './publication-copy-view';
+import {selectedModelConfiguration} from './selected-model-configuration';
+export {selectedModelConfiguration} from './selected-model-configuration';
 
 // Supplier record IDs remain the authority for quotes, imports and saved 3D
 // specifications. Public model URLs identify the individual supplier example.
@@ -52,4 +54,3 @@ export function resolveProduct(products:Product[],category:string,slug:string){
     if(c)return modelProduct(p,c);
   }
 }
-export function selectedModelConfiguration(p:Product){return p.configurations.find(c=>c.id===p.modelConfigurationId);}

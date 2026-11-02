@@ -1,0 +1,42 @@
+{
+  "schema": "desk-preview-available-choices-v1",
+  "codes": [
+    "KPW2017WW001",
+    "KPW2018WW002",
+    "KPW2020WW002",
+    "KSQA155WW001",
+    "KXI2019WW003",
+    "KC54082WW002",
+    "KC54102WW001",
+    "KESE080WW001"
+  ],
+  "capturedDimensionsOnly": [
+    "KC54082WW002",
+    "KC54102WW001",
+    "KESE080WW001"
+  ],
+  "blockedColorFields": [
+    {
+      "code": "KPW2020WW002",
+      "when": {
+        "GDWIDTH": "_4200"
+      },
+      "field": "FTABLEEDGECOLOR",
+      "reason": "No demonstrated visible edge change in original4200 context"
+    },
+    {
+      "code": "KC54082WW002",
+      "when": {
+        "GDWIDTH": "_1200"
+      },
+      "field": "FTABLEEDGECOLOR",
+      "reason": "No demonstrated visible edge change in original1200 context"
+    },
+    {
+      "code": "KXI2019WW003",
+      "when": {},
+      "field": "FBASECOLOR",
+      "reason": "Only partial visible frame recoloring; retain original finish"
+    }
+  ]
+}

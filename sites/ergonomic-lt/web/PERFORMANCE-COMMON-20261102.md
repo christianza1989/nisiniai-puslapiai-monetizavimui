@@ -75,3 +75,18 @@ derivatives retain exact SHA/size, and actual model images remain identical.
 Three model PDFs return200 with the same byte counts; KEM2013WW009 default PDF
 already returns400 in baseline and the existing public preview as well as this
 candidate. That unrelated failure is recorded, not claimed fixed.
+
+Preview publication was explicitly requested by Rokas after the handoff. Actual
+version7104ee68-e41d-4633-ad2c-f1888a3acc33 now serves100% with source2fe1f96;
+previous24f218dc is retained for rollback. A new bounded publisher uploaded only
+34 server-requested common assets (11,470,573B), preserving all344 configurators
+and49936 manifest entries. No original model hash was uploaded again. Other
+collector jobs, leases, worktrees and pending colour work were not modified.
+The actual public Worker passes gzip/identity decoded SHA/size and immutable
+negotiation for four original GLBs and the environment. Eight public desktop/
+phone cases retain controls/choices; twenty comparisons against the qualified
+build have zero changed pixels. These checks prove preview runtime adoption,
+not a main merge or a public Lighthouse95. Current publisher assets and ledger:
+D:/Core/output/ergonomic-performance-20261102/publisher-common-v1. Next releases
+must integrate PR320, preserve its model worker routing and reconcile this new
+manifest/version before publishing, including the separately prepared colours.

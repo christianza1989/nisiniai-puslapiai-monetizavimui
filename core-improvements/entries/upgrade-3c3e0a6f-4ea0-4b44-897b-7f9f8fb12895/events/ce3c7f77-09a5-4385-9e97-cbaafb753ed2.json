@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/320",
+  "commit": "2fe1f96adf3d349890479906146da18e87dd77e6",
+  "note": "Direct Rokas instruction explicitly authorized preview publication after handoff. Actual preview version7104ee68-e41d-4633-ad2c-f1888a3acc33 at100%, previous24f218dc retained. One Worker PUT;34 server-requested scoped assets11,470,573B uploaded, no baseline asset reupload,49936 asset rows, all344 configurators preserved. Exact original public gzip/identity SHA and immutable negotiation pass for four GLBs plus environment. Four public models desktop/phone retain controls and choices;20 stage comparisons against the qualified build are pixel-identical. Native/collector leases/source and other worktrees untouched. This is preview runtime adoption of an unmerged PR, not core-main merge, production Launch or a claim of public PageSpeed95. Actual deployment and public checks under output/ergonomic-performance-20261102/publisher-common-v1/DEPLOYMENT.json, PUBLIC-HTTP-QUALIFICATION-v1.json and browser-public-v1/SUMMARY.json. Google PageSpeed follow-up pending separately. First v1 preflight stopped before auth/API because its own freshness parent was matched; a narrowly reviewed v2 excluded only the exact verified parent, with no unknown-outcome replay.",
+  "eventId": "ce3c7f77-09a5-4385-9e97-cbaafb753ed2",
+  "sequence": 4,
+  "at": "2026-11-02T12:17:31.339Z"
+}

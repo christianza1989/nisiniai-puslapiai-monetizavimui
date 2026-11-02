@@ -318,10 +318,10 @@
     {
       "code": "KBJA003WW002",
       "name": "Bjarg",
-      "asset": "/models/configurator/chairs/KBJA003WW002-8820413c9e2280907ea9/review-49dac4cd0a0d3e1302c1.json",
-      "sha256": "49dac4cd0a0d3e1302c11fc94a01937691fe8cb6e26df482615a92889d6444e9",
-      "bytes": 303418,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KBJA003WW002-17ff76a2acc4463b0812/review-e72b74c852da9f4036d6.json",
+      "sha256": "e72b74c852da9f4036d6d56b84376e0d126c712886071f126b2a49b9f643fd80",
+      "bytes": 2048334,
+      "version": "colors-20261102-v1-qualified-context4181"
     },
     {
       "code": "KBJA002WW002",

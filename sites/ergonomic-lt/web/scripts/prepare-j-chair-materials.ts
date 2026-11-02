@@ -77,18 +77,20 @@ async function main(){
     const mapped=lossless.get(a.sha256),target=mapped?.target||a.sha256,m=manifest.files[a.file],prior=old.assets[target];assert(m?.sha256===a.sha256&&m.bytes===a.bytes&&prior?.bytes===(mapped?.bytes||a.bytes),'Runtime geometry changed');
     assets[target]=prior;
    }
-   await bounded(Object.keys(manifest.files).filter(file=>/^library\/materials\/[a-f0-9]{64}\.json$/.test(file)||/^(colors-.+\.json|GROUP-PALETTE-VERIFIED-SAFE\.json)$/.test(file)),read);
+   const supplemental=(file:string)=>/^(colors-.+\.json|conditional-context\.json|GROUP-PALETTE-VERIFIED-SAFE\.json)$/.test(file);
+   await bounded(Object.keys(manifest.files).filter(file=>/^library\/materials\/[a-f0-9]{64}\.json$/.test(file)||supplemental(file)),read);
    for(const [file,m]of Object.entries(manifest.files)as[string,any][]){
     if(file.endsWith('.glb'))fileAssets[file]=oldAssets[m.sha256]?.bytes===m.bytes?oldAssets[m.sha256]:{asset:namespace+'/source/'+file,assetSha256:m.sha256,bytes:m.bytes};
     if(/^library\/materials\/[a-f0-9]{64}\.json$/.test(file)){const b=await read(file),id=path.basename(file,'.json');assert.equal(sha(b),id);materials[id]=JSON.parse(b.toString());}
-    if(/^(colors-.+\.json|GROUP-PALETTE-VERIFIED-SAFE\.json)$/.test(file))documents[file]=JSON.parse((await read(file)).toString());
+    if(supplemental(file))documents[file]=JSON.parse((await read(file)).toString());
     if(/\.(png|jpe?g|webp)$/i.test(file)){
      const existing=existingBlobs.get(m.sha256+':'+m.bytes);
      if(existing){assert(same(await fs.stat(existing.entry.file),existing.entry),'Existing immutable image changed');textures[m.sha256]={asset:existing.url,sha256:m.sha256,bytes:m.bytes};}
      else{await read(file);const row=fileReceipts.get(file);const url=namespace+'/source/'+file;newAssets[url]=row;textures[m.sha256]={asset:url,sha256:m.sha256,bytes:m.bytes};}
     }
    }
-   const cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'];assert(cert?.pass===true&&cert.noDonorGeometry===true&&cert.qualifiedWitnessGroupPaletteComplete===true&&cert.code===code,'Missing OWN scoped producer certificate');
+   const cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'],conditional=documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1';
+   assert(cert?.pass===true&&cert.noDonorGeometry===true&&cert.code===code&&(conditional?cert.conditionalScopeKind==='QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181'&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false:cert.qualifiedWitnessGroupPaletteComplete===true),'Missing OWN scoped producer certificate');
    for(const [hash,prior]of Object.entries(old.selectors.assets)){
     const current=rawSelectors.assets[hash];
     if(!current){rawSelectors.assets[hash]=prior;continue;}
@@ -141,6 +143,7 @@ async function main(){
     assert(!w.branches.length,'Conditional branch update needs separate scope reconciliation');
     const base=qualifiedDefaultSelection(w);
     for(const g of w.groups)for(const o of g.options){const s={...base,kind:'groups' as const,groups:{...base.groups,[g.id]:o.id}};assert(qualifiedChairPlan(data,w.context,w.variants,w.requiredAssets,s).status!=='unavailable','Unadmitted group option');options++;}
+    for(const o of w.singles){assert(qualifiedChairPlan(data,w.context,w.variants,w.requiredAssets,{...base,kind:'single',single:o.id}).status!=='unavailable','Unadmitted whole tuple option');options++;}
    }
    const bytes=Buffer.from(JSON.stringify(data)+'\n');assert(bytes.length<=15_000_000,'Review JSON15MB');
    const reviewSha=sha(bytes),reviewFile=path.join(out,'review-'+reviewSha.slice(0,20)+'.json'),url=namespace+'/review-'+reviewSha.slice(0,20)+'.json';

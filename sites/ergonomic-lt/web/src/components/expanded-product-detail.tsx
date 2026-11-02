@@ -29,6 +29,7 @@ import {armrestChoiceLabel,armrestFieldLabel,armrestSourceText,presentArmrestCon
 import {deskColorPlan,DESK_COLOR_PENDING} from '@/lib/desk-colors';
 import {hasAssemblyGeometry} from '@/lib/viewer-assembly';
 import {visibleDeskPreviewChoices} from '@/lib/desk-preview-choices';
+import chairPreviewCoverage from '../../content/chair-preview-coverage.json';
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export default function ExpandedProductDetail({product,url,presets,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage}:{product:Product;url:string;presets:ReactNode;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string}){
  const engine=useMemo(()=>createExpandedEngine(catalogRuntime),[catalogRuntime]);
@@ -39,6 +40,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
 
  const family=expandedForProduct(product)!;
  const catalog=catalogForProduct(product);
+ const previewCoverage=(chairPreviewCoverage as Record<string,string>)[catalog?.baseArticle||''];
  const structureOnly=['structure-only','desk-components'].includes(catalog?.collectionMode||'')&&!product.id.toLowerCase().includes('xilium');
  const deskColors=catalog?.deskColors;
  const model=selectedModelConfiguration(product);
@@ -101,6 +103,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
   <div className="product-view-switch" role="group" aria-label={copyText("ui.b9442465d0b687df4540","Produkto peržiūra")}><button aria-pressed={!photo} onClick={()=>setPhoto(false)}>{copyText("ui.f8e94106288faa882ee7","3D konfigūratorius")}</button><button aria-pressed={photo} onClick={()=>setPhoto(true)}>{copyText("ui.12ef5d8d56f194f5cbd4","Nuotraukos")}</button></div>
   {photo?<ProductGallery key={model?.id||selected.configuration.id} primary={product.modelConfigurationId?product.image:selected.configuration.image} images={(model||product.configurations.find(c=>c.id===selected.configuration.id))?.gallery||[]} name={product.name} specificCount={product.modelGalleryCount} backdrops={product.galleryBackdrops}/>:hasAssemblyGeometry(assembly)?<Viewer3D variant={variant} name={product.name} assembly={assembly} fullscreen={fullscreen} onFullscreen={()=>void openFullscreen()} avoidToolbarOverlap={product.categorySlug==='rasomieji-stalai-ir-darbo-vietos'}/>:<div className="viewer-placeholder" role="status">{catalogAnchor(selection)?.unavailable3D||'3D peržiūra šiam dydžiui neprieinama'}</div>}
   <p className="visualization-note">{structureOnly&&!deskColors?'Rodoma šio varianto apdaila. Dėl kitų spalvų teiraukitės.':copyText("ui.1f86445eb42b83be0ee5","Spalvos ekrane orientacinės. Nuotrauka — modelio pavyzdys; individualią komplektaciją žymi jūsų pasirinkimai.")}</p>
+  {previewCoverage&&<p className="form-note" data-chair-preview-coverage>{previewCoverage}</p>}
   {!!assembly.deskColors?.plan.pending.length&&<p className="form-note" role="status">{DESK_COLOR_PENDING}</p>}
   {photo&&article&&<p className="visualization-note">{article.photoNote}</p>}
   {missingFinish&&<p className="form-note" role="status">{copyText("ui.3d2d0a1dccfd3cf4986c","Gamintojas nepateikia pasirinktos apdailos vaizdo. Jos spalvą patvirtinsime pasiūlyme; pasirinktas kodas išsaugomas užklausoje.")}</p>}

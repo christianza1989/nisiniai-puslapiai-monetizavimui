@@ -90,3 +90,19 @@ not a main merge or a public Lighthouse95. Current publisher assets and ledger:
 D:/Core/output/ergonomic-performance-20261102/publisher-common-v1. Next releases
 must integrate PR320, preserve its model worker routing and reconcile this new
 manifest/version before publishing, including the separately prepared colours.
+
+Followup candidate after real Google report0vowtca8lh (desktop69/mobile56):
+- Preserve automatic3D, but initialize the full original renderer only when at
+  least25% of its stage is visible or the stage receives keyboard focus. A thin
+  offscreen edge does not initialize the GPU. Once activated, normal changes,
+  scrolling, resets and resource reuse remain unchanged. Browsers without
+  IntersectionObserver use immediate activation. No click-to-load control,
+  poster substitution or reduced geometry/material quality is introduced.
+- Keep the same complete Manrope program in a lossless content-addressed WOFF2,
+  with a crossorigin font preload and immutable caching. Original164700B TTF
+  remains untouched for PDF/old pages; WOFF2 is53892B. All742 glyphs, cmap,
+  variations, hint instructions and original metric/layout tables were compared
+  after decoding. No character subset, new typeface or weight change.
+- Current baseline remains7104ee68 while this isolated followup is qualified.
+  Check both initial offscreen behaviour and the actual full-quality stage after
+  scrolling; a page-load-only performance score does not qualify3D interaction.

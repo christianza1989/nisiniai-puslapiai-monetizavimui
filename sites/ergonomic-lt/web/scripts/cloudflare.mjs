@@ -49,6 +49,10 @@ if(task==='build')writeFileSync(join(buildRoot,'dist/client/_headers'),`/*
 /branding/ergonomic-logo-*.webp
   Cache-Control: public, max-age=31536000, immutable
 
+# Original Manrope glyphs in a lossless, content-addressed web container.
+/fonts/manrope-*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
 # Only the static design examples can be compared in same-origin frames.
 /pavyzdziai/*
   ! X-Frame-Options

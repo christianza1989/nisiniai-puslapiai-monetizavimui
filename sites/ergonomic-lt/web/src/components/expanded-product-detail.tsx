@@ -104,7 +104,8 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
   </div>;
   const value=selection.values[k],color=!!deskColors?.fields[k]||/COLOR|CHCOL/.test(k);
   const label=fieldLabels[k]||k;
-  const unboundChairColor=product.categorySlug==='kedes'&&!structureOnly&&color&&!/^(?:CPLASTIC|CFRAME)/.test(k)&&!chairFinishRoles[k];
+  const unboundChairColor=product.categorySlug==='kedes'&&!structureOnly&&color&&!chairFinishRoles[k]&&
+   !engine.anchorFor(selection)?.classes[k]?.endsWith('_OPTIONS');
   const textOnly=catalogAnchor(selection)?.textOnlyFields?.includes(k)||unboundChairColor,noteId=textOnly?'desk-text-only-'+k:undefined;
   if(color&&!k.startsWith('CPLASTIC')&&!unboundChairColor)return <FinishSelect key={k} label={label} value={value} onChange={v=>change(k,v)} options={choices[k].map(v=>({value:v,label:choiceLabel(k,v),image:activeMaterials?.[k]?.[v]?.image||palettes[k]?.[v]?.image||(deskColors?undefined:renderMaterial({code:v}).image),color:palettes[k]?.[v]?.color}))}/>;
   return <div key={k} className="configuration-field"><label className="field">{label}

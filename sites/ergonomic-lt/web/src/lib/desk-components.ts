@@ -1,3 +1,4 @@
+import previewChoicePolicy from '../../content/desk-preview-choice-policy.json';
 import type {CatalogRuntime,CatalogAnchor} from './catalog-configurator';
 import type {Asset,Patch} from './expanded-configurator';
 import partialDeskPreviewScopes from '../../content/desk-partial-preview-scopes.json';
@@ -85,7 +86,9 @@ export function deskReferencedAssets(source:DeskComponents){return [...new Map(s
 /** Adapt original world-space parts to the existing additive assembly path. */
 export function adaptDeskComponents(source:DeskComponents,id:DeskIdentity):CatalogRuntime{
  validateDeskComponents(source,id.code);
- const dimensions=[...source.contexts.map(c=>c.dimensions),...source.textOnlyDimensionChoices||[]];
+ // Keep unavailable source tuples sealed for provenance, outside selectable 3D.
+ const unavailable=previewChoicePolicy.capturedDimensionsOnly.includes(id.code)?[]:source.textOnlyDimensionChoices||[];
+ const dimensions=[...source.contexts.map(c=>c.dimensions),...unavailable];
  const tupleKey=(d:Values)=>JSON.stringify(Object.entries(d).sort());
  // A captured size can couple overall and top widths (or depths). Offer a
  // value only when it identifies one complete supplied tuple with the other
@@ -116,7 +119,7 @@ export function adaptDeskComponents(source:DeskComponents,id:DeskIdentity):Catal
   });
   return {id:id.code+':components-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(c.dimensions),defaults,choices,classes:{},geometry:c.invariant?deskAssetReference(id.code,c.invariant):null,components,profiles:[],textOnlyFields:Object.keys(c.textOnly).filter(f=>c.textOnly[f].length)};
  });
- for(const [index,d] of (source.textOnlyDimensionChoices||[]).entries())anchors.push({id:id.code+':unavailable-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(d),defaults:{...d},choices:dimensionChoices(d),classes:{},geometry:null,unavailable3D:source.unavailable3DMessage,components:[],profiles:[]});
+ for(const [index,d] of unavailable.entries())anchors.push({id:id.code+':unavailable-'+index,article:id.code,sample:id.sample,name:id.code,axes:Object.keys(d),defaults:{...d},choices:dimensionChoices(d),classes:{},geometry:null,unavailable3D:source.unavailable3DMessage,components:[],profiles:[]});
  // Anchor defaults carry the exact captured aliases together. This maps
  // between existing scenes; it is not a new supplier setter or a mixed tuple.
  for(const [index,d]of dimensions.entries())anchors[index].axisTransitions=Object.fromEntries(Object.keys(d).flatMap(f=>dimensionTargets(d,f).map(([v,target])=>[f+'='+v,anchors[dimensions.findIndex(other=>tupleKey(other)===tupleKey(target))].id])));

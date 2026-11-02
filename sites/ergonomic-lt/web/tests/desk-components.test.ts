@@ -118,20 +118,25 @@ test('hybrid text-only scene retains the supplied 3D defaults instead of the fir
  }
 });
 
-test('three supplied partial desks select missing dimensions without substituting any geometry',()=>{
+test('three partial previews retain only21 captured tuples and reject all19 unavailable choices',()=>{
  for(const [partialCode,scope]of Object.entries(partialDeskPreviewScopes)){
   const s=source();s.code=partialCode;s.contexts=scope.available.map(dimensions=>({...structuredClone(s.contexts[0]),dimensions}));
   s.dimensionChoices=[...scope.available,...scope.unavailable];s.textOnlyDimensionChoices=scope.unavailable;s.missing3D=scope.missing3D;s.unavailable3DMessage='3D peržiūra šiam dydžiui neprieinama';
-  const p={...product,configurations:[{id:sample,code:partialCode}]}as Product;
-  const e=createExpandedEngine(adaptDeskComponents(s,{...id,code:partialCode}));
+  const original=structuredClone(s),p={...product,configurations:[{id:sample,code:partialCode}]}as Product;
+  const runtime=adaptDeskComponents(s,{...id,code:partialCode}),e=createExpandedEngine(runtime);
+  assert.deepEqual(s,original);assert.equal(runtime.family.anchors.length,scope.available.length);
+  const key=(dimensions:Record<string,string>)=>JSON.stringify(Object.entries(dimensions).sort());
+  assert.deepEqual(new Set(runtime.family.anchors.map(a=>key(Object.fromEntries(a.axes.map(f=>[f,a.defaults[f]]))))),new Set(scope.available.map(key)));
+  for(const anchor of runtime.family.anchors){
+   const state=e.catalog.catalogInitial({...runtime.family,anchors:[anchor,...runtime.family.anchors.filter(a=>a!==anchor)]});
+   assert(e.assembledAssets(state).base);assert.deepEqual(e.parseStateToken(p,e.stateToken(state)),state);
+   for(const field of anchor.axes)for(const value of e.stateChoices(state)[field]){
+    const next=e.changeField(state,field,value),target=e.catalog.catalogAnchor(next)!;
+    assert(scope.available.some(d=>key(d)===key(Object.fromEntries(target.axes.map(f=>[f,target.defaults[f]])))));
+   }
+  }
   for(const dimensions of scope.unavailable){
-   let state=e.initialStateForProduct(p);for(const [field,value]of Object.entries(dimensions))state=e.changeField(state,field,value);
-   assert.equal(e.catalog.catalogAnchor(state)?.unavailable3D,s.unavailable3DMessage);
-   const selected=e.expandedSelection(p,state);assert.equal(selected.assets.base,null);assert.deepEqual(selected.assets.patches,[]);
-   for(const [field,value]of Object.entries(dimensions))assert(selected.configuration.supplierOptions?.includes(field+'='+value));
-   assert.deepEqual(e.parseStateToken(p,e.stateToken(state)),state);
-   for(const [field,value]of Object.entries(scope.available[0]))state=e.changeField(state,field,value);
-   assert.equal(e.assembledAssets(state).base?.assetSha256,'a'.repeat(64));
+   assert.throws(()=>{let state=e.initialStateForProduct(p);for(const [field,value]of Object.entries(dimensions))state=e.changeField(state,field,value);});
   }
   for(const mutate of[(x:DeskComponents)=>{x.textOnlyDimensionChoices=x.textOnlyDimensionChoices!.slice(1);},(x:DeskComponents)=>{x.dimensionChoices!.push({GDWIDTH:'_9999',GDDEPTH:'_9999'});},(x:DeskComponents)=>{x.contexts.pop();},(x:DeskComponents)=>{x.contexts.push({...structuredClone(x.contexts[0]),dimensions:scope.unavailable[0]});},(x:DeskComponents)=>{x.missing3D=['invented'];},(x:DeskComponents)=>{x.code='OTHERDESK';},(x:DeskComponents)=>{delete x.dimensionChoices;delete x.textOnlyDimensionChoices;delete x.missing3D;delete x.unavailable3DMessage;}]){
    const invalid=structuredClone(s);mutate(invalid);assert.throws(()=>validateDeskComponents(invalid,invalid.code));

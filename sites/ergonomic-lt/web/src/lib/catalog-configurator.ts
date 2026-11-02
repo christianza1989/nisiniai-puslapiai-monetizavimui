@@ -7,6 +7,7 @@ import type {ExpandedState,Asset,Patch} from './expanded-configurator';
 import type {PilotVariant} from './configurator';
 import type {SourceFinishMaterial} from './render-materials';
 import type {DeskColors} from './desk-colors';
+import {availableDeskColorChoices,hasDeskPreviewChoicePolicy} from './desk-preview-choices';
 type Values=Record<string,string>;
 type Choices=Record<string,string[]>;
 type Variant={key:string;values:Values;defaults:Values;choices:Choices;dependentChoices?:Record<string,string[]|null>;destinationAnchor?:string;transitions:Values;patch:Patch};
@@ -19,6 +20,7 @@ export type CatalogRuntime={family:CatalogFamily;palettes:typeof catalogPalettes
 // Additional models are supplied per request, never registered into shared
 // server state or bundled as the entire catalog in every product page.
 export function createCatalogEngine(scoped?:CatalogFamily){
+const previewChoicesCache=new Map<string,Choices>();
 const candidates=()=>scoped?[scoped,...catalogFamilies]:catalogFamilies;
 const catalogFamily=(s:ExpandedState)=>candidates().find(f=>f.id===s.family);
 const catalogAnchor=(s:ExpandedState)=>catalogFamily(s)?.anchors.find(a=>a.id===s.anchor);
@@ -61,6 +63,13 @@ function catalogChoices(s:ExpandedState):Choices{
  }
  const deskColors=catalogFamily(s)?.deskColors;
  if(deskColors)for(const [key,f]of Object.entries(deskColors.fields))if(f.owners.some(owner=>effective[owner]==='NONE'))delete lists[key];
+ if(deskColors&&hasDeskPreviewChoicePolicy(catalogFamily(s))){
+  const family=catalogFamily(s)!,assembly=catalogAssets(s),assets=[...(assembly.base?[assembly.base]:[]),...assembly.patches.flatMap(p=>p.geometries||(p.geometry?[p.geometry]:[]))];
+  const key=JSON.stringify([family.baseArticle,assets.map(a=>a.assetSha256),effective,lists]);
+  const cached=previewChoicesCache.get(key);if(cached)return cached;
+  const available=availableDeskColorChoices(family,lists,effective,assets);
+  if(previewChoicesCache.size>=64)previewChoicesCache.clear();previewChoicesCache.set(key,available);return available;
+ }
  return lists;
 }
 function normalize(s:ExpandedState,hops=0):ExpandedState{

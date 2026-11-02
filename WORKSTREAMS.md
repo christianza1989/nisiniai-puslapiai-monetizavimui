@@ -790,3 +790,9 @@ Issue281; own branch codex/ergonomic-owner078-batch02-20261026 and paired public
 ## Ergonomic owner111 — CS5040 lossless transport remainder, 2026-11-01
 
 Owner: this 3D chat; existing codex/ergonomic-owner111-chair-admission worktree. Source parent de072411b96ce2abb07445683f637ef6c2844ab0, canonical main25292e20219b735df7f04c5807dd4c100f98addc, companionc2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da. Only the KC54082WW002 runtime and color overlay references in the two desk candidate registries change. All755 original geometry buffers/materials/world matrices/IDs are exact after decoding;9.47GB becomes5.56GB. Five supplied contexts and three unavailable sizes stay identical, other seven models untouched. Original publisher stopped naturally before a new request at session expiry;1012 accepted assets are retained and must not be resent. Canonical runtime/color schemas and all755 asset references passed. Private build and real narrow CS5040 desktop/mobile check, then remainder upload and affected public checks still required. NativeOFF111; no fullPalette/fullGraph/fullAcceptance/Launch. Evidence: remaining8-lossless-partial-20261031/C540-TRANSPORT-SOURCE-VALIDATION.json.
+
+
+### Ergonomic available-only preview choices ·2026-11-02
+- Owner: current 3D-ARCH chat; existing owner111 branch/worktree.
+- Scope: current8 desk choice projection; only captured21 partial-desk dimensions; no unsupported color alternatives, original fixed finishes retained. Files: desk-components.ts, desk-color-plan.ts, desk-colors.ts, catalog-configurator.ts, desk-preview-choices.ts, expanded-product-detail.tsx, choice-policy JSON, focused tests.
+- Preserve source packets, renderer geometry/material/matrix/ID, current251/88 baseline; Native disabled111. No other chat files or production launch.

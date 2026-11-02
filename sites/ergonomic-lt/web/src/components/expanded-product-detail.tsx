@@ -28,6 +28,7 @@ import {expandedProductCardPath} from '@/lib/expanded-product-card-path';
 import {armrestChoiceLabel,armrestFieldLabel,armrestSourceText,presentArmrestConfiguration,safeArmrestFallback} from '@/presentation/armrest-labels';
 import {deskColorPlan,DESK_COLOR_PENDING} from '@/lib/desk-colors';
 import {hasAssemblyGeometry} from '@/lib/viewer-assembly';
+import {visibleDeskPreviewChoices} from '@/lib/desk-preview-choices';
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export default function ExpandedProductDetail({product,url,presets,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage}:{product:Product;url:string;presets:ReactNode;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string}){
  const engine=useMemo(()=>createExpandedEngine(catalogRuntime),[catalogRuntime]);
@@ -63,7 +64,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const selected=useMemo(()=>expandedSelection(product,selection),[product,selection,expandedSelection]);
  const presentedConfiguration=presentArmrestConfiguration(selected.configuration,selection.values,catalogRuntime?.palettes._fieldLabels?.CARMRESTS?.text);
  const fieldLabels:Record<string,string>={...baseFieldLabels,...Object.fromEntries(Object.entries(catalogRuntime?.palettes._fieldLabels||{}).map(([key,label])=>[key,label.text])),...articleFieldLabels(product),...(armrestFieldLabel(selected.configuration.code)?{CARMRESTS:armrestFieldLabel(selected.configuration.code)!}:{})};
- const choices=stateChoices(selection);
+ const choices=visibleDeskPreviewChoices(catalog,stateChoices(selection));
  const interactive=Object.keys(choices).length>0;
  const article=engine.selectionArticle(product,selected.state);
  const summaryDetails=product.id.includes('xilium-swivel')?presentedConfiguration.details?.filter(d=>['Mechanizmas','Galvos atrama','Porankiai','Pagrindas','Ratukai'].includes(d.label)):presentedConfiguration.details?.slice(0,4);

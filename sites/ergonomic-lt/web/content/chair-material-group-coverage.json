@@ -1084,7 +1084,7 @@
     {
       "code": "KJUP001WW002",
       "version": "colors-20261030-v2-qualified-groups547",
-      "reviewSha256": "6d5344f8c32de02f545670b9b351abba6222fda47294c6bcb179ef81dbbad8ca",
+      "reviewSha256": "2ac173360a21c167c0e5d14f36dcdd6302271dfc66d14548b5e4622bb5170e1c",
       "schema": "chair-base-observed-colours-v1",
       "selectorAssets": 1,
       "controls": [
@@ -1106,7 +1106,7 @@
       "retainedWholeQualifiedStates": 0,
       "status": "GROUPED_ADMITTED_OPTIONS",
       "scopedSourceUpdate": {
-        "oldReviewSha256": "06f2ec88780809099c845284eccfa54fd4d8e65c6c25ff49db759fe8aff2385e",
+        "oldReviewSha256": "6d5344f8c32de02f545670b9b351abba6222fda47294c6bcb179ef81dbbad8ca",
         "manifestSha256": "1410e7eff3ba91354407df8f8eb37b2cb3ce54881be3c4bd786e45397b6d895a",
         "indexSha256": "d89ccf8b94e86f2a2386404739679411214725cb3ba391454b4962173de91f89",
         "runtimeSha256": "6f8ab9f576cbdba7691d63a7fe71cf81fdcb8f0af93006be2712a011897c46df",
@@ -1118,6 +1118,15 @@
             "receiptSha256": "aed212a82bb317117ad66b4e40c10e2433f3de07f3b54a93014b82c8cb936061"
           }
         ],
+        "originalAdmissionReviewSha256": "06f2ec88780809099c845284eccfa54fd4d8e65c6c25ff49db759fe8aff2385e",
+        "optimizedAliasIntake": {
+          "manifestSha256": "f802bfd90ee22e1416bfb2da4982075bf8dd93ec80f26a8fadc964ba9aa8db2f",
+          "validatedMappings": 24,
+          "installedCanonicalMappings": 24,
+          "producerGeometryProbesReplayed": false,
+          "newGeometryReads": 0,
+          "newNativeRequests": 0
+        },
         "newSelectorAssets": 1,
         "extraOwnAssets": 0,
         "producerWholeReplayed": false,

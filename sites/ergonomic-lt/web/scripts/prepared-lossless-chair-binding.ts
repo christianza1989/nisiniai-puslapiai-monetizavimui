@@ -39,6 +39,42 @@ export function rebindLosslessQualified(raw:ChairQualifiedData,targetRuntimeSha:
  for(const w of q.witnesses){w.requiredAssets=w.requiredAssets.map(target);for(const patch of [...w.groups.flatMap(g=>g.options.map(o=>o.patch)),...w.singles.map(s=>s.patch),...w.branches.flatMap(b=>[b.patch,...b.groups.flatMap(g=>g.options.map(o=>o.patch))])])for(const b of [...patch.bindings,...patch.remove])b.assetSha256=target(b.assetSha256);}
  for(const s of q.legacyScopes)s.requiredAssets=s.requiredAssets.map(target);return q;
 }
+type OptimizedPins={sourcePackageManifestSha256:string;sourceRuntimeSha256:string;sourceSelectorsSha256:string;receivingReviewSha256:string;rawAssetSha256:string};
+/** Install producer-supplied canonical IDs only through their explicit OWN
+ * bijection. Geometry was already admitted; this validates the metadata join
+ * and retains the original manufacturer target material JSON unchanged. */
+export function applyExplicitOptimizedAlias(data:ChairPreview,original:ChairSelectors['assets'][string],record:any,pins:OptimizedPins){
+ assert(record.schema==='exact-own-public-optimized-selector-rebind-v1'&&record.code===data.code,'Wrong optimized alias source');
+ for(const [k,v]of Object.entries(pins))assert(record[k]===v,'Optimized alias scope differs: '+k);
+ const h=record.optimizedAssetSha256,part=data.assets[h],next=record.optimizedCanonicalSelectors,proof=record.proof;
+ assert(part?.asset===record.optimizedPublicAsset&&next?.assetSha256===h&&original.assetSha256===record.rawAssetSha256,'Optimized OWN transport differs');
+ assert(proof?.allVertexAttributeBytesAndOrientedTriangleMultiplicityEqual===true&&proof.allWholePrimitiveMultiplicitiesCompared===true&&proof.materialImagesAndSamplerValuesUnchanged===true&&proof.worldAndPbrComparedAsExactJsonNumberRatios===true&&proof.numericTolerance===0&&proof.noAmbiguousTargetAssignments===true,'Optimized primitive proof absent');
+ const contexts=data.runtime.contexts.filter(c=>[c.invariant,...c.groups.flatMap(g=>g.variants.map(v=>v.asset))].some(a=>a?.sha256===h));
+ assert(contexts.some(c=>canonical(c.dimensions)===canonical(record.dimensions)),'Optimized construction differs');
+ const aliases=new Map<string,{old:any;next:any}>(),used=new Set<string>();
+ const withoutFile=(v:any):any=>Array.isArray(v)?v.map(withoutFile):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).filter(([k])=>k!=='file').map(([k,x])=>[k,withoutFile(x)])):v;
+ assert(record.selectorAliases.length===original.slots.length&&next.slots.length===original.slots.length&&proof.primitiveCount===original.slots.length,'Incomplete optimized bijection');
+ for(const alias of record.selectorAliases){
+  const before=original.slots.find(s=>s.selectorId===alias.originalSelectorId),after=next.slots.find((s:any)=>s.selectorId===alias.optimizedSelectorId),node=record.optimizedOriginalNodeMapping[alias.optimizedSelectorId];
+  assert(before&&after&&!aliases.has(before.selectorId)&&!used.has(after.selectorId),'Ambiguous optimized alias');
+  assert(canonical(before.sourceNodePath)===canonical(after.sourceNodePath)&&before.primitive===after.primitive&&canonical(before.transformChain)===canonical(after.transformChain)&&(before as any).geometrySha256===after.geometrySha256,'Optimized original address/geometry differs');
+  assert(canonical(node?.originalNodePath)===canonical(after.sourceNodePath)&&node.primitiveIndex===after.primitive&&canonical(node.originalWorldMatrix)===canonical(after.transformChain[0].matrix),'Optimized original node mapping differs');
+  assert(canonical(withoutFile(original.materials[before.materialId]))===canonical(withoutFile(next.materials[after.materialId])),'Optimized original PBR differs');
+  aliases.set(before.selectorId,{old:before,next:after});used.add(after.selectorId);
+ }
+ const current=data.selectors.assets[h];
+ if(!current)return {data,validatedMappings:aliases.size,appliedMappings:0};
+ assert(canonical(current.slots)===canonical(original.slots)&&canonical(current.materials)===canonical(original.materials),'Previously admitted selectors differ');
+ assert(data.palette.schema==='chair-base-observed-colours-v1'&&data.qualified,'Alias application needs an original-only base');
+ const out=structuredClone(data);out.selectors.assets[h]=next;
+ for(const w of out.qualified!.witnesses){
+  if(w.requiredAssets.includes(h))assert(canonical(out.runtime.contexts[w.context].dimensions)===canonical(record.dimensions),'Qualified witness differs from optimized scope');
+  const patches=[...w.groups.flatMap(g=>g.options.map(o=>o.patch)),...w.singles.map(s=>s.patch),...w.branches.flatMap(b=>[b.patch,...b.groups.flatMap(g=>g.options.map(o=>o.patch))])];
+  for(const p of patches){for(const b of p.bindings)if(b.assetSha256===h){const a=aliases.get(b.selectorId);assert(a&&b.baseMaterialId===a.old.materialId,'Qualified binding has no exact optimized alias');b.selectorId=a.next.selectorId;b.baseMaterialId=a.next.materialId;}
+   for(const r of p.remove)if(r.assetSha256===h){const a=aliases.get(r.selectorId);assert(a,'Removal has no exact optimized alias');r.selectorId=a.next.selectorId;}}
+ }
+ return {data:out,validatedMappings:aliases.size,appliedMappings:aliases.size};
+}
 /** Decode only for newly supplied selector admission. No encoding, factory
  * reconstruction, original source reread, model copy or prior probe replay. */
 export async function decodeForNewSelectors(binding:LosslessBinding,map:Record<string,any>,storedUrl:string){

@@ -6,6 +6,34 @@ const hash=(v:unknown):v is string=>typeof v==='string'&&/^[a-f0-9]{64}$/.test(v
 const canonical=(v:any):string=>JSON.stringify(v,(_k,value)=>plain(value)?Object.fromEntries(Object.entries(value).sort(([a],[b])=>a.localeCompare(b))):value);
 function assert(ok:unknown,message:string):asserts ok{if(!ok)throw Error(message);}
 const identity=[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1];
+/** An opaque OWN replacement has no independently recolorable addresses.
+ * Validate transport and self containment; the producer's exact full-state
+ * proof supplies its permitted use, not any inferred surface correspondence. */
+export function opaqueGlbAdmission(bytes:Buffer){
+ assert(bytes.length>=28&&bytes.length<=25*1024*1024&&bytes.readUInt32LE(0)===0x46546c67&&bytes.readUInt32LE(4)===2&&bytes.readUInt32LE(8)===bytes.length,'Invalid bounded GLB2');
+ const length=bytes.readUInt32LE(12),end=20+length;
+ assert(length%4===0&&end+8<=bytes.length&&bytes.readUInt32LE(16)===0x4e4f534a,'Invalid opaque JSON chunk');
+ const d=JSON.parse(bytes.subarray(20,end).toString('utf8')),binLength=bytes.readUInt32LE(end);
+ assert(bytes.readUInt32LE(end+4)===0x004e4942&&end+8+binLength===bytes.length,'Invalid opaque BIN chunk');
+ assert(d.asset?.version==='2.0'&&d.buffers?.length===1&&!d.buffers[0].uri&&Number.isSafeInteger(d.buffers[0].byteLength)&&d.buffers[0].byteLength<=binLength,'External/unknown opaque buffer');
+ assert(!d.animations?.length&&!d.skins?.length&&(d.extensionsRequired||[]).every((e:string)=>e==='KHR_texture_transform'),'Opaque animation/required extension needs separate admission');
+ for(const v of d.bufferViews||[])assert(v.buffer===0&&Number.isSafeInteger(v.byteOffset??0)&&Number.isSafeInteger(v.byteLength)&&v.byteLength>0&&(v.byteOffset??0)>=0&&(v.byteOffset??0)+v.byteLength<=d.buffers[0].byteLength,'Opaque view outside BIN');
+ for(const i of d.images||[])assert(!i.uri&&d.bufferViews?.[i.bufferView]&&['image/png','image/jpeg','image/webp'].includes(i.mimeType),'Opaque image not embedded');
+ for(const a of d.accessors||[]){
+  const v=d.bufferViews?.[a.bufferView];assert(v&&!a.sparse&&Number.isSafeInteger(a.count)&&a.count>0,'Opaque accessor needs separate admission');
+  const size=({5120:1,5121:1,5122:2,5123:2,5125:4,5126:4}as Record<number,number>)[a.componentType],count=({SCALAR:1,VEC2:2,VEC3:3,VEC4:4,MAT2:4,MAT3:9,MAT4:16}as Record<string,number>)[a.type];
+  const width=size*count,stride=v.byteStride||width,offset=a.byteOffset||0;
+  assert(width>0&&Number.isSafeInteger(stride)&&stride>=width&&Number.isSafeInteger(offset)&&offset>=0&&offset+(a.count-1)*stride+width<=v.byteLength,'Opaque accessor outside view');
+ }
+ const seen=new Set<number>(),visiting=new Set<number>();let primitives=0;
+ function node(i:number){
+  assert(Number.isInteger(i)&&d.nodes?.[i]&&!visiting.has(i)&&!seen.has(i),'Invalid opaque node graph');visiting.add(i);seen.add(i);const n=d.nodes[i];
+  if(n.mesh!==undefined){const m=d.meshes?.[n.mesh];assert(m?.primitives?.length,'Opaque mesh absent');for(const p of m.primitives){assert((p.mode??4)===4&&!p.targets&&!p.extensions&&d.accessors?.[p.attributes?.POSITION]&&(p.indices===undefined||d.accessors[p.indices]),'Opaque primitive unsupported');for(const a of Object.values(p.attributes||{}))assert(d.accessors?.[a as number],'Opaque attribute absent');primitives++;}}
+  for(const c of n.children||[])node(c);visiting.delete(i);
+ }
+ const scene=d.scenes?.[d.scene??0];assert(scene?.nodes?.length,'Opaque scene absent');for(const n of scene.nodes)node(n);assert(primitives>0,'Opaque scene empty');
+ return {selfContainedOriginalPart:true,primitives,independentRecoloringAllowed:false};
+}
 function withoutFile(v:any):any{if(Array.isArray(v))return v.map(withoutFile);if(plain(v))return Object.fromEntries(Object.entries(v).filter(([k])=>k!=='file').map(([k,value])=>[k,withoutFile(value)]));return v;}
 
 export function glbAdmission(bytes:Buffer,selectors:ChairSelectors['assets'][string]){

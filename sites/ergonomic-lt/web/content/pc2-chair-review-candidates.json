@@ -30,10 +30,10 @@
     {
       "code": "KSOU001WW003",
       "name": "Souly",
-      "asset": "/models/configurator/chairs/KSOU001WW003-b5096de5ebb1b4366648/review-57fb82e30272eb74c9b8.json",
-      "sha256": "57fb82e30272eb74c9b85901b1a4c470349b429e9d8373b3cddc2f9bb2ccb20b",
-      "bytes": 285123,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KSOU001WW003-9deeac1e19c0e9aa4161/review-d120c51bfa76230730bb.json",
+      "sha256": "d120c51bfa76230730bbcccf42dba4d24719f98e689694386ffe9007b4161c82",
+      "bytes": 1104538,
+      "version": "colors-20261031-v1-qualified-groups547"
     },
     {
       "code": "KNAU017WW001",
@@ -54,34 +54,34 @@
     {
       "code": "KNXT001WW002",
       "name": "Nexter",
-      "asset": "/models/configurator/chairs/KNXT001WW002-53ce5bbd866a225f96c9/review-213f59e5fd714ec1e3a3.json",
-      "sha256": "213f59e5fd714ec1e3a3c66b3d18873931e737984da0798d04ad3c080082db3f",
-      "bytes": 97322,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KNXT001WW002-35b0396e41b62453aeab/review-8907142a748f259e9ecf.json",
+      "sha256": "8907142a748f259e9ecf3e5c9da6e8c6f2fc8f1439c16d142df5481b3556f708",
+      "bytes": 501642,
+      "version": "colors-20261030-v2-qualified-groups547"
     },
     {
       "code": "KWI2001WW001",
       "name": "Wing",
-      "asset": "/models/configurator/chairs/KWI2001WW001-b713e6a25ab1a95569f8/review-9e11cc5e544e3cf63fc9.json",
-      "sha256": "9e11cc5e544e3cf63fc977d66b4b1a10ac00c43d82088eae34ac6ae759220db4",
-      "bytes": 335710,
-      "version": "colors-20261027-v4-group-library-WI2-353"
+      "asset": "/models/configurator/chairs/KWI2001WW001-603a75f3e4a57c382568/review-51e1e31850f4665502d9.json",
+      "sha256": "51e1e31850f4665502d9876b5814befa84737f2ce1b2b70ae0e05968dc9eeca5",
+      "bytes": 398836,
+      "version": "colors-20261031-v1-qualified-groups547"
     },
     {
       "code": "KWI2003WW001",
       "name": "Wing",
-      "asset": "/models/configurator/chairs/KWI2003WW001-81ace5576dc15fe04271/review-e70f18984f10b329f4ca.json",
-      "sha256": "e70f18984f10b329f4ca2c3e4f70d37d50beb65a1b11f942b888ec47d6666f39",
-      "bytes": 196196,
-      "version": "colors-20261027-v4-group-library-WI2-353"
+      "asset": "/models/configurator/chairs/KWI2003WW001-4a7fecef73d9da22437c/review-a02b40526c5115ead0ef.json",
+      "sha256": "a02b40526c5115ead0ef66f9081388075cbcd65ca7cef06113c49152795cc669",
+      "bytes": 1252797,
+      "version": "colors-20261031-v1-qualified-groups547"
     },
     {
       "code": "KWI2003WW002",
       "name": "Wing",
-      "asset": "/models/configurator/chairs/KWI2003WW002-e5e855d4f2e390e4da3e/review-68bddefc7a9eb45f5fa9.json",
-      "sha256": "68bddefc7a9eb45f5fa9831894d4b73f836d65c35452289fdbb3ba5dab3bfaef",
-      "bytes": 5547526,
-      "version": "colors-20261028-v5-two-group-witnesses438"
+      "asset": "/models/configurator/chairs/KWI2003WW002-b459f786e3649837c2e3/review-e59ace2ed7b28f6d336c.json",
+      "sha256": "e59ace2ed7b28f6d336c838750f9692f98cbf08aace27527c239c868286559a6",
+      "bytes": 6025918,
+      "version": "colors-20261031-v1-qualified-groups547"
     },
     {
       "code": "KXEN032WW001",
@@ -126,18 +126,18 @@
     {
       "code": "KWI2006WW001",
       "name": "Wing",
-      "asset": "/models/configurator/chairs/KWI2006WW001-3e90e39f940f09768490/review-30ba63059fab83f71145.json",
-      "sha256": "30ba63059fab83f711454f4b194419a468e5929ca712b32ad6e12035fb926d31",
-      "bytes": 281665,
-      "version": "colors-20261027-v4-group-library-WI2-353"
+      "asset": "/models/configurator/chairs/KWI2006WW001-a179e70716eceaf18bba/review-f09002234479c6037f8c.json",
+      "sha256": "f09002234479c6037f8cc9a706e62db1c433d585efef196aeab1e51529eb62dc",
+      "bytes": 1394911,
+      "version": "colors-20261031-v1-qualified-groups547"
     },
     {
       "code": "KWI2011WW001",
       "name": "Wing",
-      "asset": "/models/configurator/chairs/KWI2011WW001-b9462d91d6bf843983a4/review-adb24229907c330230fb.json",
-      "sha256": "adb24229907c330230fb7e9f1b3c92ec2f01b096c5b100fcd9deb351576b52c9",
-      "bytes": 185438,
-      "version": "colors-20261027-v5-frame-bench357"
+      "asset": "/models/configurator/chairs/KWI2011WW001-c31e5d90903be6e02295/review-98734d80bcfa57adddb4.json",
+      "sha256": "98734d80bcfa57adddb410b7185a6eb4033929eb7070b20c77c0e0c36148c123",
+      "bytes": 267020,
+      "version": "colors-20261031-v1-qualified-groups547"
     },
     {
       "code": "KYOU001WW003",
@@ -158,18 +158,18 @@
     {
       "code": "KHOL001WW002",
       "name": "¡Hola!",
-      "asset": "/models/configurator/chairs/KHOL001WW002-a479e58f320ea30f6a5c/review-bc79fa192cb7d86c9027.json",
-      "sha256": "bc79fa192cb7d86c90273f7f426695806c60ce9c11f06b56b2ec3d312091d13f",
-      "bytes": 114415,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KHOL001WW002-780aa54018bc724fbb88/review-3294d13c6888915f535b.json",
+      "sha256": "3294d13c6888915f535b00583abdcadaf6655a5712385cfb710dbf61d95ea1fe",
+      "bytes": 202848,
+      "version": "colors-20261030-v2-qualified-groups547"
     },
     {
       "code": "KWI2005WW001",
       "name": "Wing",
-      "asset": "/models/configurator/chairs/KWI2005WW001-48c9f31fcdb8f2245e8a/review-7217b2ff1d190302f413.json",
-      "sha256": "7217b2ff1d190302f413fc1ebc74116820b793a932bdfae0894409cec56a410d",
-      "bytes": 126655,
-      "version": "colors-20261028-v6-saved-own-parts373"
+      "asset": "/models/configurator/chairs/KWI2005WW001-5719d623f19f9c6895df/review-c5b05f497b9f55902d9f.json",
+      "sha256": "c5b05f497b9f55902d9f6fd566da79d7d2c523ef0911321f91cb57c2093acf6a",
+      "bytes": 185961,
+      "version": "colors-20261030-v7-qualified-groups547"
     },
     {
       "code": "KVAP008WW001",
@@ -198,18 +198,18 @@
     {
       "code": "KNAV001WW006",
       "name": "Navigo",
-      "asset": "/models/configurator/chairs/KNAV001WW006-11ac68a8ad1ca7773957/review-0d8eff6ce9dede573728.json",
-      "sha256": "0d8eff6ce9dede5737289dff98b29358514171c77ab09a9f59cea807fb9a8e3e",
-      "bytes": 117895,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KNAV001WW006-b5ff42ad22d754f84fe6/review-45d100dcb8c2237bd253.json",
+      "sha256": "45d100dcb8c2237bd253360b461b65b937d2ec57757d8174a1b031ec16fc2b11",
+      "bytes": 2450183,
+      "version": "colors-20261030-v2-qualified-groups547"
     },
     {
       "code": "KUTI001WW002",
       "name": "Utila",
-      "asset": "/models/configurator/chairs/KUTI001WW002-09d41b986f204fbab0e7/review-e349dd64aa7c8a8ff5db.json",
-      "sha256": "e349dd64aa7c8a8ff5db6bd21c4ffd209dcdcec9ec2e4c55afc5407c0356409e",
-      "bytes": 22693,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KUTI001WW002-f10b7a588b6a1784f444/review-4b45b69b6402083031b7.json",
+      "sha256": "4b45b69b6402083031b7fd6b8267a77dc5b2eafd37d152132433818fa6edf1bc",
+      "bytes": 1305466,
+      "version": "colors-20261031-v1-qualified-groups547"
     },
     {
       "code": "KXEN034WW001",
@@ -230,10 +230,10 @@
     {
       "code": "K2ME003WW001",
       "name": "2ME",
-      "asset": "/models/configurator/chairs/K2ME003WW001-a3450d742e32df280f1e/review-b4582d69917195389f03.json",
-      "sha256": "b4582d69917195389f036ed09d0b892fc53586f4922e9f6738813387dadab9de",
-      "bytes": 4179,
-      "version": "colors-20261028-v2-own-saved-part452"
+      "asset": "/models/configurator/chairs/K2ME003WW001-2c8d1c109dc725bfb5ac/review-3941febf24a5dadbdaa2.json",
+      "sha256": "3941febf24a5dadbdaa2b45760c8409b870066ecc592e377bdc3a2c46ca15e4b",
+      "bytes": 885539,
+      "version": "colors-20261030-v3-qualified-groups547"
     },
     {
       "code": "K2ME003WW002",
@@ -254,18 +254,18 @@
     {
       "code": "K4ME001WW003",
       "name": "4ME",
-      "asset": "/models/configurator/chairs/K4ME001WW003-023640a3fbf3d445a6c8/review-bb196222e475537120c1.json",
-      "sha256": "bb196222e475537120c126c5fa341b35c8e9ab287f010066a93f299aedff8272",
-      "bytes": 158558,
-      "version": "base"
+      "asset": "/models/configurator/chairs/K4ME001WW003-0dd820cf9ddfbab8c237/review-ddbd0c2d413b43e02991.json",
+      "sha256": "ddbd0c2d413b43e029913693bc5aea13e8d294063552b44d306c9e26f871f0d0",
+      "bytes": 1989505,
+      "version": "colors-20261030-v2-qualified-groups547"
     },
     {
       "code": "K4ME002WW004",
       "name": "4ME",
-      "asset": "/models/configurator/chairs/K4ME002WW004-fdf5c333e3158ea0fe31/review-63b59b1429467143a5ad.json",
-      "sha256": "63b59b1429467143a5ad5a1ad526b962661adee008018cbb18316713d3e3de01",
-      "bytes": 159000,
-      "version": "base"
+      "asset": "/models/configurator/chairs/K4ME002WW004-4d645943cfa855b5e148/review-c0360960f835f75d555c.json",
+      "sha256": "c0360960f835f75d555ce3678c3095ada41ff61bfb4e28d2696a06de629fb100",
+      "bytes": 2086385,
+      "version": "colors-20261102-v1-qualified-groups547"
     },
     {
       "code": "KAII001WW001",
@@ -302,10 +302,10 @@
     {
       "code": "KALT001WW002",
       "name": "Altum",
-      "asset": "/models/configurator/chairs/KALT001WW002-bc749d00cab7a3e95f62/review-b877ff9195657652fcbf.json",
-      "sha256": "b877ff9195657652fcbf8048e1d222a50efd98283f189312122f9cb85d898a15",
-      "bytes": 52484,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KALT001WW002-e8d183c57c6eb826fc5e/review-c05b868ce3c41cc1d88d.json",
+      "sha256": "c05b868ce3c41cc1d88d8a7c278bb9eb1275e28a9196cc35ccfa6051171d8e07",
+      "bytes": 762981,
+      "version": "colors-20261030-v2-qualified-groups547"
     },
     {
       "code": "KARN008WW003",
@@ -334,18 +334,18 @@
     {
       "code": "KBJA001WW002",
       "name": "Bjarg",
-      "asset": "/models/configurator/chairs/KBJA001WW002-d6d181809c500cd98dde/review-7cf173389d6b44a3a8ab.json",
-      "sha256": "7cf173389d6b44a3a8ab0356060f813ba6a40381323512563d7550226da387ab",
-      "bytes": 232773,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KBJA001WW002-dd381296857672dd1bc2/review-e83f07ffcff6d0620236.json",
+      "sha256": "e83f07ffcff6d0620236ac14d36b2152ee3b3fede47534e5d0cad52c4e0cfb44",
+      "bytes": 5668772,
+      "version": "colors-20261030-v2-qualified-groups547"
     },
     {
       "code": "KEGG001WW001",
       "name": "Eggy",
-      "asset": "/models/configurator/chairs/KEGG001WW001-caab1e00067f0c513fa1/review-606d4b34aff83e358052.json",
-      "sha256": "606d4b34aff83e358052fb9162e4e54a4b98e59836244a51c4b89331e46926d2",
-      "bytes": 16648,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KEGG001WW001-4ca461edad9626caaa3f/review-76c17cada847eed921f4.json",
+      "sha256": "76c17cada847eed921f4d1d21cf76c635f5ba26304e03b23783a90d994884e8a",
+      "bytes": 488296,
+      "version": "colors-20261030-v2-qualified-groups547"
     },
     {
       "code": "KXLI001WW002",
@@ -422,18 +422,18 @@
     {
       "code": "KJUP001WW002",
       "name": "Jupiter",
-      "version": "base+lossless-20261030-v1",
-      "asset": "/models/configurator/chairs/KJUP001WW002-5474e4bbccd00d79f486/review-06f2ec88780809099c84.json",
-      "sha256": "06f2ec88780809099c845284eccfa54fd4d8e65c6c25ff49db759fe8aff2385e",
-      "bytes": 2265
+      "version": "colors-20261030-v2-qualified-groups547",
+      "asset": "/models/configurator/chairs/KJUP001WW002-1410e7eff3ba91354407/review-6d5344f8c32de02f5456.json",
+      "sha256": "6d5344f8c32de02f545670b9b351abba6222fda47294c6bcb179ef81dbbad8ca",
+      "bytes": 468157
     },
     {
       "code": "KUTI005WW001",
       "name": "Utila",
-      "version": "base+lossless-20261030-v1",
-      "asset": "/models/configurator/chairs/KUTI005WW001-5eca0df0196a3d6e01d1/review-7015a0c470f9734d9047.json",
-      "sha256": "7015a0c470f9734d904763421b21844105274ee0fa38ca038e2ea36cb57dafdd",
-      "bytes": 298743
+      "version": "colors-20261030-v2-qualified-groups547",
+      "asset": "/models/configurator/chairs/KUTI005WW001-dc47b69822c744369135/review-a4352793bb0bd56f0f33.json",
+      "sha256": "a4352793bb0bd56f0f338d0ab95f82e036a22c0f4c00867e6e160e0a8d3c696a",
+      "bytes": 946322
     }
   ]
 }

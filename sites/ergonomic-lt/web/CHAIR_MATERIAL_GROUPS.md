@@ -32,12 +32,12 @@ Tikslus kiekvieno PC2 kodo ir versijos sąrašas: `content/chair-material-group-
 
 | Rezultatas | Paketų skaičius | Ribos |
 |---|---:|---|
-| Kvalifikuotos medžiagų grupės | 2 | KWI2003WW002: 763 tikros apmušalo tuple parinktys viename witness; KYOU001WW001: 77 bendros sėdynės/atlošo parinktys pradinėje sąlyginėje šakoje. Kitos jų grupės / witness išsaugoti. |
-| Tik pilnos stebėtos būsenos | 23 | Nėra naujo laisvo bendro gobeleno pasirinkimo; išlaikytos originalios visos būsenos ir jų apribojimai. |
-| Tik originalios medžiagos | 25 | Nėra patvirtinto alternatyvų ryšio su originaliais paviršiais. Čia patenka abu 4ME PC2 paketai. |
+| Kvalifikuotos medžiagų grupės | 20 | Prijungtos visos 19 dabartinio J indekso groups547 versijų ir išsaugota ankstesnė KYOU sąlyginė paletė. Kiekviena grupė galioja tik savo konstrukcijai; dalis grupių yra medžio, metalo ar plastiko, ne apmušalo. |
+| Tik pilnos stebėtos būsenos | 15 | Nėra naujo laisvo bendro gobeleno pasirinkimo; išlaikytos originalios visos būsenos ir jų apribojimai. |
+| Tik originalios medžiagos | 15 | Nėra patvirtinto alternatyvų ryšio su originaliais paviršiais. |
 | Deklaruota fiksuota apdaila | 4 | Šaltinis nedeklaruoja kitų apdailos pasirinkimų. |
 
-Ankstesnio pagrindinio kelio 12 šeimų / 28 anchor metaduomenys ir jų originalūs vaidmenų laukai įrašyti tame pačiame faile. Bendras adapteris taikomas ir vėliau įkeltam pilnam runtime, kai jo paties SHA, node/primitive ryšys ir leistini perėjimai praeina tas pačias patikras. `structure-only` kėdės lieka originalių apdailų. 198 įrašai kandidatuose ar 231 įrašas papildomame indekse nėra tiek pat naujai patvirtintų spalvinių palečių; ne visi indeksų įrašai atitinka atskirą aktyvią viešą kortelę. Viešas 251/80 skaičius šiuo darbu nekeičiamas.
+Ankstesnio pagrindinio kelio 12 šeimų / 28 anchor metaduomenys ir jų originalūs vaidmenų laukai įrašyti tame pačiame faile. Bendras adapteris taikomas ir vėliau įkeltam pilnam runtime, kai jo paties SHA, node/primitive ryšys ir leistini perėjimai praeina tas pačias patikras. `structure-only` kėdės lieka originalių apdailų. Dabartinis inventorius sutikrintas su 256 kėdžių sąrašu: 202 pagrindinio kelio originalios apdailos ir 54 PC2 paketai. Šis skaičius nėra spalvų palečių priėmimas. Šiame chate J duomenų atnaujinimas paruoštas vietinei integracijai; viešą leidimą valdo pagrindinis 3D integruotojas.
 
 Pirmiausia patikrinti 4ME MESH WHITE K4ME002WW004, Xilium DUO-BACK KXIL044WW001 ir Souly KSOU001WW003 originalūs asset SHA bei originalūs node vaidmenys. Xilium apima sėdynę, atlošo apmušalą, šoninius apmuštus profilius ir galvos atramą; 4ME ir Souly atskiria tinklelį. Šiuose atrinktuose porankiuose neįrodytas gobelenas, todėl jie neperdažomi. Būsimos tikrai aptrauktos porankio dalys gali jungtis tik gavus tokį pat originalų paviršiaus vaidmens įrodymą.
 
@@ -100,3 +100,13 @@ Sąrašą atnaujina aiškus `--write`. Auditas sutikrina publikuotų modelių ri
 Nuotraukų chatas atskirai ruošia `viewer-controls.ts` / kameros pakeitimą nuo tos pačios 483220d3 bazės. Su juo suderinta maža viewer import / props / load callback integracija pagal abiejų commit diff. Šio darbo source nekeičia jo helperio, focus, ratuko, fullscreen, contact-shadow ar kito checkout. Vienintelis bendros peržiūros publikavimo integratorius lieka pagrindinis 3D chatas; šiam spalvų pakeitimui publikavimo leidimas dar atskiras.
 
 Atkūrimas – revert tik šio PR commit savo integracijos šakoje; prieš tai apsaugoti kito 3D valdymo commit. Paketai / originalai / viešo Worker build / vienas ankstesnis build ir G: duomenys nepakeisti. MAIN NATIVE lieka OFF pagal 111.
+
+### J paketų priėmimas ir PC2 pavedimas · 2026-11-02
+
+Tiesioginis Roko leidimas perduoti surinkimą PC2 įvykdytas naujomis 3D-STAL žinutėmis 182 ir 183. Perduotas konkrečių spragų prašymas su visu 24 J įrašų momentiniu sąrašu; 19 jų turi groups547 versijas. Svetimi eilės ar užduoties failai neredaguoti. PC2 biudžetai ir Native limitai nepadidinti; pagrindinis Native tebėra OFF111. PC2 priėmimo atsakymas dar negautas. 175 pagrindinio kelio modelių įrodymų spragos tebėra atviros.
+
+Visos 19 jau pateiktų grupių versijų priimtos naudojant `scripts/prepare-j-chair-materials.ts`. Originali geometrija ir jau patikrintos senos būsenos pakartotinai neeksportuotos. Skirtingų versijų witness išsaugomi atskirai, jų grupės tarpusavyje nekomponuojamos. To paties OWN papildomo failo SHA alias iš grupių ir pilnos būsenos dokumentų turi vieną nekintamą transporto nuorodą.
+
+Jupiter ir Utila naudoja anksčiau paskelbto lossless transporto SHA. Tikslus ankstesnis originalaus dokumento ir BIN įrodymas susieja RAW su esamu transportu; nauji node/primitive, matricos, accessor ir PBR ryšiai tikrinami atskirai. Jupiter dekoduotas atmintyje tik naujiems paviršių ryšiams; Utila nepakeistų kitų konstrukcijų geometrijos patikros nekartotos. Originalų kopijų, kodavimo ar Native užklausų nėra. Viešai skaitomų failų 25 MiB riba nepakeista.
+
+Valdikliai iškart atsiveria tik kai jų visas pradinis tuple nekeičia originalios medžiagos. Originalo peržiūros žymimasis langelis išlaiko pasirinktus kodus. Nekintančio pasirinkto kodo / SHA / baitų paketo nebeperkrauna kito katalogo įrašo atnaujinimas. Medžiagų, scoped būsenų, alias ir lossless perrišimo patikros: 39 PASS; TypeScript PASS. Vietiniai desktop / phone įrodymai saugomi `output/chair-material-groups/browser-j-*`; ankstesni nepaveikti užklausų, PDF, Native ir transporto įrodymai pernaudoti.

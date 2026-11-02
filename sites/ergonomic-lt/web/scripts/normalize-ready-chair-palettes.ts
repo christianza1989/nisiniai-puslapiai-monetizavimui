@@ -34,7 +34,12 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
  }
  function asset(ref:Obj):Asset{
   const a=fileAssets[ref.file];requireValue(a&&hash(ref.sha256)&&a.assetSha256===ref.sha256&&a.bytes===ref.bytes&&Number.isSafeInteger(a.bytes)&&a.bytes!>0&&a.bytes!<=25*1024*1024,'Additional asset absent, changed, or over25MiB');
-  requireValue(!data.assets[a.assetSha256],'Additional part duplicates an active runtime asset');q.extraAssets[a.assetSha256]=a;usedFiles.add(ref.file);return a;
+  requireValue(!data.assets[a.assetSha256],'Additional part duplicates an active runtime asset');
+  // Two documents may publish the same OWN bytes under different filenames.
+  // All patches must share one transport identity for that exact payload.
+  const previous=q.extraAssets[a.assetSha256];requireValue(!previous||previous.bytes===a.bytes,'Contradictory OWN payload size');
+  if(previous)return previous;
+  q.extraAssets[a.assetSha256]=a;usedFiles.add(ref.file);return a;
  }
  function patch(raw:Obj):QualifiedPatch{
   raw=raw.patch||raw;requireValue(raw&&typeof raw==='object','Missing patch');

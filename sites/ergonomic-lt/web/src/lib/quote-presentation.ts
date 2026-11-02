@@ -1,4 +1,4 @@
-import {choiceLabel,fieldLabels} from './expanded-configurator';
+import {choiceLabel,fieldLabels} from './choice-presentation';
 import type {ExpandedState} from './expanded-configurator';
 type Item={configurationState?:ExpandedState;configurationDetails?:{label:string;value:string}[];configurationLabel?:string;supplierOptions?:string[]};
 const fields:Record<string,string>={Armrests:'CARMRESTS',Porankiai:'CARMRESTS',Base:'CBASE',Pagrindas:'CBASE',Castors:'CCASTORS',Ratukai:'CCASTORS'};

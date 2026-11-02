@@ -262,9 +262,9 @@
     {
       "code": "K4ME002WW004",
       "name": "4ME",
-      "asset": "/models/configurator/chairs/K4ME002WW004-4d645943cfa855b5e148/review-c0360960f835f75d555c.json",
-      "sha256": "c0360960f835f75d555ce3678c3095ada41ff61bfb4e28d2696a06de629fb100",
-      "bytes": 2086385,
+      "asset": "/models/configurator/chairs/K4ME002WW004-4d645943cfa855b5e148/review-9880db08dfef92f86f43.json",
+      "sha256": "9880db08dfef92f86f437c471dfe0c3c61439e14672a7a25a6b712c57e554620",
+      "bytes": 2086305,
       "version": "colors-20261102-v1-qualified-groups547"
     },
     {

@@ -733,7 +733,7 @@
     {
       "code": "K4ME002WW004",
       "version": "colors-20261102-v1-qualified-groups547",
-      "reviewSha256": "c0360960f835f75d555ce3678c3095ada41ff61bfb4e28d2696a06de629fb100",
+      "reviewSha256": "9880db08dfef92f86f437c471dfe0c3c61439e14672a7a25a6b712c57e554620",
       "schema": "chair-base-observed-colours-v1",
       "selectorAssets": 52,
       "controls": [
@@ -771,7 +771,13 @@
         "producerWholeReplayed": false,
         "NativeRequests": 0,
         "fullPalettePass": false,
-        "publicPass": false
+        "publicPass": false,
+        "reusedPublishedEquivalentReview": {
+          "fromReviewSha256": "c0360960f835f75d555ce3678c3095ada41ff61bfb4e28d2696a06de629fb100",
+          "source": "62cb9c4bc0d7db40a520c728f4f14261928a95c3",
+          "textureUrlChanges": 4,
+          "allGeometrySelectorsGroupsPbrAndTextureBytesIdentical": true
+        }
       }
     },
     {

@@ -845,3 +845,9 @@ Direct owner forwarded J205: receive KUTI004WW001 colors-20261103-v1-qualified-c
 ## Remaining nine PC2 chair additions · 2026-11-03
 
 3D-ARCH owns codex/remaining9-chair-updates-20261103 in the existing E-backed worktree, based on published c9b42378 (CF1f564032). Direct owner authorizes receiving, qualification and preview publication of the ready subset of nine pinned packages. Scope: finite conditional admission profiles7321/8121, exact calibrated2ME tuples, three independently owned bounded runtimes and one saved Naudu construction state; scoped normalizer/receiver helpers, focused real-metadata regressions, candidate registry and existing unified preview list. Preserve all prior palette witnesses, original Native product links, runtime/GLB/material/matrix/selector identities and current+rollback builds. No new supplier/Native/WHOLE collection, no G or readonly J archive writes, no foreign worktree changes, no all-palette/all-construction claims. New receiving evidence lives under owner111/all-ready-publication-20261029/remaining9-additions-20261103. Qualify exact files and scope before any browser/public acceptance; a failed model does not block independent ready additions.
+
+
+## 2026-11-03 · Utila remaining exact contexts
+- Owner: this Ergonomic 3D chat, branch `codex/utila-remaining-contexts-20261103`, base `6c6d0fd0d9acb0df745b533f21de5ed51b7e219e`.
+- Scope: nine additional pinned Utila contexts, explicit external registry input for serial version admission, and two review entries retaining all four published contexts. No GPU renderer, geometry, material identity or Native changes.
+- Admission: nine immutable J packages / 857 files / 2096257650 B independently source/target full-SHA checked; nine source admissions yield 350 + 79 options across thirteen separate scopes, not full palette/graph or independent manufacturer combination exports. Browser/build/public checks remain pending.

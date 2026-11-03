@@ -182,18 +182,18 @@
     {
       "code": "KUTI004WW002",
       "name": "Utila",
-      "asset": "/models/configurator/chairs/KUTI004WW002-4e6889b9c9c63f643b50/review-3ec239c81e5a4f730c1d.json",
-      "sha256": "3ec239c81e5a4f730c1d0485af17630f1c566c722f4c8644e8d709d49ce0d094",
-      "bytes": 149309,
-      "version": "colors-20261103-v1-qualified-context8121"
+      "asset": "/models/configurator/chairs/KUTI004WW002-9e28c52bc6e461094b30/review-0ad4b4fea09c6e65435a.json",
+      "sha256": "0ad4b4fea09c6e65435a078feb7af2b75d9f86c0440eb25418b49282492f0e79",
+      "bytes": 205603,
+      "version": "colors-20261103-v1-qualified-context7921"
     },
     {
       "code": "KUTI004WW001",
       "name": "Utila",
-      "asset": "/models/configurator/chairs/KUTI004WW001-96fef0b43f31bcd3df0c/review-067dfccb6fcd55b0f794.json",
-      "sha256": "067dfccb6fcd55b0f7943f6dddedc2987b6067759490bee2089c98f8a7b757d8",
-      "bytes": 297802,
-      "version": "colors-20261103-v1-qualified-context7321"
+      "asset": "/models/configurator/chairs/KUTI004WW001-081eeff82e56c63a9a5f/review-fd687ce56721859f403c.json",
+      "sha256": "fd687ce56721859f403c28b79412c48d882c0ca3a095d4ce4abff2496110bb58",
+      "bytes": 755140,
+      "version": "colors-20261103-v1-qualified-context7121"
     },
     {
       "code": "KNAV001WW006",

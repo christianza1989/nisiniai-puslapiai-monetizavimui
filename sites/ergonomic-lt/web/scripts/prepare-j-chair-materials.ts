@@ -30,14 +30,14 @@ function primaryContract(p:any){
 }
 
 async function main(){
- const {values}=parseArgs({options:{index:{type:'string'},'asset-map':{type:'string'},only:{type:'string'},output:{type:'string'},lossless:{type:'string'}}});
+ const {values}=parseArgs({options:{index:{type:'string'},'asset-map':{type:'string'},only:{type:'string'},output:{type:'string'},lossless:{type:'string'},registry:{type:'string'}}});
  assert(values.index&&values['asset-map']&&values.only&&values.output,'Required --index --asset-map --only --output');
  const e=await fs.statfs('E:/'),d=await fs.statfs('D:/');assert(e.bavail*e.bsize>=150e9&&d.bavail*d.bsize>=60e9,'E150/D60');
  assert((await fs.realpath(path.dirname(values.output))).toLowerCase().startsWith('e:\\ergonomic\\'),'Physical output must remain on E:/Ergonomic');
  await fs.mkdir(values.output,{recursive:false});
  const indexBytes=await fs.readFile(values.index),index=JSON.parse(indexBytes.toString()),baseMap=await json(values['asset-map']);
  assert(index.schema==='chair-public-j-package-index-560-v1');
- const registry=await json('content/pc2-chair-review-candidates.json'),prepared:any[]=[],attention:any[]=[];
+ const registry=await json(values.registry||'content/pc2-chair-review-candidates.json'),prepared:any[]=[],attention:any[]=[];
  const existingBlobs=new Map<string,{url:string;entry:any}>();
  for(const [url,entry]of Object.entries(baseMap)as[string,any][])if(/^\/(models|media)\//.test(url)&&entry.sha256)existingBlobs.set(entry.sha256+':'+entry.size,{url,entry});
  const codes=values.only.split(',');assert(new Set(codes).size===codes.length&&codes.every(c=>/^K[A-Z0-9]+$/.test(c)));

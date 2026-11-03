@@ -53,6 +53,13 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   if(value)values[code+':'+id]=value;
  }
  for(const d of defs.filter(d=>d.role==='Produkto tekstas')){const value=publishedText(d,edits.get(d.id),'');if(value)values[d.id]=value;}
+ const optionCodesByTerm=new Map<string,string[]>();
+ for(const [binding,id] of Object.entries(known?.bindings||{})){
+  if(!binding.startsWith('value:'))continue;
+  const codes=optionCodesByTerm.get(id)||[];
+  codes.push(binding.slice('value:'.length));
+  optionCodesByTerm.set(id,codes);
+ }
  const entries:ReviewEntry[]=defs.map(def=>{
   const shared=def.role!=='Produkto tekstas',global=edits!.get(def.id),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
   const edit=local||global,baseStatus=textReviewStatus(def,edit);
@@ -61,7 +68,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const customerNameRequired=customerTextHasCode(def,currentText),status=baseStatus==='approved'&&customerTextHasCode(def,edit?.state==='kept'?currentText:edit?.draft||currentText)?'changed':baseStatus;
   const config=p.configurations.find(c=>c.code===model);
   const isPublished=status==='approved'&&(edit?.state==='kept'||edit?.published_hash===def.sourceHash&&edit.published===edit.draft);
-  return {...def,currentText,customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||def.id,shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?def.modelCount:1};
+  return {...def,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||def.id,shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?def.modelCount:1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at};

@@ -16,3 +16,4 @@ export function customerCapabilities(secret:string){
  return {id,seal,open};
 }
 export function customerKey(){return customerCapabilities(process.env.PUBLIC_CONFIGURATION_SECRET||process.env.SESSION_SECRET||'');}
+export function customerQuoteFormToken(){return customerKey().seal('quote-form',{at:Date.now()});}

@@ -26,4 +26,4 @@ export type LegacyPage = {path:string; title:string; description:string|null; h1
   sourceHash:string; expectedBlocks:string[]; oldImages:{url:string;alt:string}[]};
 export type Seed = {categories:Category[];products:Product[];lines:Line[];legacy:LegacyPage[];hero:string;provenance:unknown[]};
 export type QuoteItem = {productId:string;configurationId:string|null;configurationState?:import('./expanded-configurator').ExpandedState;configurationToken?:string;customerSelectionId?:string;quantity:number;note:string};
-export type QuotePayload = {name:string;email:string;phone:string;company:string;message:string;items:QuoteItem[];consent:true;submissionKey:string;website:string;startedAt:number};
+export type QuotePayload = {name:string;email:string;phone:string;company:string;message:string;items:QuoteItem[];consent:true;submissionKey:string;website:string;startedAt:number;formToken?:string};

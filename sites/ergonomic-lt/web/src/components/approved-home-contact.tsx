@@ -5,7 +5,7 @@ import {copyText} from '@/lib/editorial-copy';
 import Link from 'next/link';
 import {useEffect,useRef,useState} from 'react';
 
-export function ApprovedHomeContact(){
+export function ApprovedHomeContact({formToken}:{formToken?:string}={}){
   const started=useRef(0),submissionKey=useRef(''),request=useRef<AbortController|null>(null);
   const [busy,setBusy]=useState(false),[error,setError]=useState(''),[saved,setSaved]=useState('');
   useEffect(()=>{started.current=Date.now();submissionKey.current=crypto.randomUUID();return ()=>request.current?.abort();},[]);
@@ -17,7 +17,7 @@ export function ApprovedHomeContact(){
       event.preventDefault();if(busy||saved)return;
       const fields=new FormData(event.currentTarget);setBusy(true);setError('');request.current=new AbortController();
       try{
-        const response=await fetch('/api/quotes/',{method:'POST',headers:{'Content-Type':'application/json'},signal:request.current.signal,body:JSON.stringify({name:fields.get('name'),company:fields.get('company'),email:fields.get('email'),phone:'',message:fields.get('message'),items:[],consent:fields.get('consent')==='on',website:fields.get('website')||'',startedAt:started.current,submissionKey:submissionKey.current})});
+        const response=await fetch('/api/quotes/',{method:'POST',headers:{'Content-Type':'application/json'},signal:request.current.signal,body:JSON.stringify({name:fields.get('name'),company:fields.get('company'),email:fields.get('email'),phone:'',message:fields.get('message'),items:[],consent:fields.get('consent')==='on',website:fields.get('website')||'',startedAt:started.current,formToken,submissionKey:submissionKey.current})});
         const result=await response.json();
         if(!response.ok||typeof result.id!=='string')throw new Error(result.error||copyText("ui.eea36ed4474b232f0d3d","Nepavyko išsaugoti užklausos. Bandykite dar kartą."));
         setSaved(result.id);

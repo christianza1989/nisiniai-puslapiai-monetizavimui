@@ -9,13 +9,13 @@ import {ArrowRight,Trash2,Check} from 'lucide-react';
 import {useQuote,entryKey} from './quote-provider';
 import {publicProductText} from '@/lib/public-product-copy';
 import {stateToken,stateDetails} from '@/lib/expanded-configurator';
-export function QuoteForm({initialMessage=''}:{initialMessage?:string}){
+export function QuoteForm({initialMessage='',formToken}:{initialMessage?:string;formToken?:string}){
   const {items,remove,update,clear,ready}=useQuote();const [busy,setBusy]=useState(false),[error,setError]=useState(''),[success,setSuccess]=useState('');
   const key=useRef(''),started=useRef(0);useEffect(()=>{key.current=crypto.randomUUID();started.current=Date.now();},[]);
   async function submit(event:FormEvent<HTMLFormElement>){
     event.preventDefault();setError('');setBusy(true);const form=new FormData(event.currentTarget);
     try{const response=await fetch('/api/quotes/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
-      name:form.get('name'),email:form.get('email'),phone:form.get('phone'),company:form.get('company'),message:form.get('message'),consent:form.get('consent')==='on',website:form.get('website'),submissionKey:key.current,startedAt:started.current,
+      name:form.get('name'),email:form.get('email'),phone:form.get('phone'),company:form.get('company'),message:form.get('message'),consent:form.get('consent')==='on',website:form.get('website'),submissionKey:key.current,startedAt:started.current,formToken,
       items:items.map(i=>({productId:i.productId,configurationId:i.configurationId,configurationState:i.configurationState,quantity:i.quantity,note:i.note}))})});
       const body=await response.json();if(!response.ok)throw new Error(body.error||copyText("ui.75cba954ce9a61afecab","Nepavyko išsaugoti užklausos."));setSuccess(body.id);clear();
     }catch(e){setError(e instanceof Error?e.message:copyText("ui.3444a63c0e9dc4599258","Ryšio klaida. Bandykite dar kartą."));}finally{setBusy(false);}

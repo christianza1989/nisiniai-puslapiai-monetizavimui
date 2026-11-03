@@ -145,3 +145,23 @@ KUTI004WW001 `colors-20261103-v1-qualified-context6601` is pinned to manifest906
 All73 payload files243939238B passed source and independent target SHA. Five exact352B Google Drive UTF16LE desktop.ini shell files were classified separately by path/hash/text/attributes and excluded, with no generic ignore rule. Only this model’s15 existing asset URLs were requalified to the byte-identical independently verified E received files; other model bodies and previous versions were not scanned, moved or changed. Python Windows dev/mtime representations differ from Node: the first helper attention is retained and a separate Node identity binding supplies the consumer’s exact stat representation without weakening equality guards.
 
 Receiver admission retains original runtime/geometry and all prior selectors, validates every new OWN material target and emits21 scoped options. Focused regression28/28 and both TypeScript configurations pass. Ninety unit consumer plans test the supplied disjoint grammar; the producer reports31 WHOLE states, not90 direct exports, all palettes or all constructions. Browser verification and draft PR evidence are recorded in the E-backed `conditional-j205-20261103` continuation. No Native, supplier requests, producer WHOLE replay or website publication is authorized by this package.
+
+
+## 2026-11-03: remaining nine package receiving and scoped publication
+
+All nine selected versions passed source and independent target full SHA:1690 files,818867142 bytes, preserving original J package bytes.42 exact known352B Drive shell files were separately classified by path/hash/attributes and excluded. Source intake remains separate from browser/public acceptance.
+
+Six existing model material updates are admitted:2ME001/003/004 retain their original runtimes and use whole calibrated PRICE/GROUP/COLOR tuples (and whole frame tuples), always resetting other finishes to the original OWN baseline; library inference stays explicitly labelled. Naudu17 uses one exact saved whole frame/footrest state, including the automatic FBRAL→FBCR construction change and exact original restoration. Utila4V1 adds72 VL tuples plus six mesh choices while retaining CUR;4V2 adds14 SM tuples plus six mesh choices while retaining YB. No cross-version groups are composed.
+
+The SHA-qualified routing8401 handoff contains13 contexts. Only received and independently admitted versions can be selected; latestVersion never substitutes another prefix. The exact8121 display erratum requires original contract6e64f4ec, qualification94211eb7, scope4e8494ef and original field textaceb3305 before changing PRICE4 prose to PRICE1. Structured PRICE1/SM routing and all original package bytes stay unchanged. Nine other routing versions remain outside this first publication batch (CUR/YB already published separately).
+
+Chico, Lynx and Nadir use a separately qualified finite runtime view, pinned to exact original runtime bytes and OWN contracts. The first three schema ATTENTION receipts are retained. The view changes only policy strings and logical filename aliases and adds one empty null tuple, exposing no new selectable states or geometry. Every original dimension, component ID, asset byte hash and original world matrix stays unchanged; the general validator is unchanged. All three new OWN base scenes passed actual canonical geometry admission;322 material plans passed. Nadir exposes only supported SH castors as construction, never a readonly finish. The existing Native products stay intact and receive separate colour-review links in the same345-row list.
+
+Affected-role verification plan (same Manrope field/form-note/link roles; no CSS or font changes):
+- [x] Exact package/provenance bindings and atomic/readonly/structural negative regressions.
+- [ ] Desktop and390px actual material/saved-state changes, original restoration and console/HTTP proof for the six ready updates.
+- [ ] Retained Utila CUR/YB witness visibility and no invented outside-construction choices.
+- [ ] Unified345-row list/search and unchanged homepage/header/footer.
+- [ ] New OWN castor field: same16px mobile input/44px target, supported SH only; bounded construction rather than a readonly finish. Pending its separate runtime admission and real browser checks.
+
+Evidence: owner111/all-ready-publication-20261029/remaining9-additions-20261103.18 conditional and26 remaining-scope regressions pass; source checks are not browser or public PASS. Native remains OFF111; no G or readonly J archive writes.

@@ -75,3 +75,11 @@ test('Published headings reach catalogue cards without changing model IDs or reo
  const after=contentDefinitions(result).find(e=>e.id===d.id)!;assert.equal(after.sourceHash,d.sourceHash);assert.equal((await buildReviewScope(result)).entries.find(e=>e.id===d.id)!.status,'approved');
  assert.equal(textReviewStatus({...d,previousIds:['prior-id']},undefined),'changed');
 });
+
+test('A shared model-name translation reaches headings and cards of separate products while original codes stay unchanged',async()=>{
+ const matches=Object.entries(inventories).filter(([,m])=>m.bindings['name:UPH']);const nid=matches[0][1].bindings['name:UPH'],d=terms[nid];
+ const prior=await dbAll<{revision:number}>('SELECT revision FROM text_review_edits WHERE key=?',nid);const revision=prior[0]?.revision||0;
+ await mutateText(d,{key:nid,sourceHash:d.sourceHash,expectedRevision:revision,action:'approve',text:'Apvilktas audiniu'});await mutateText(d,{key:nid,sourceHash:d.sourceHash,expectedRevision:revision+1,action:'publish',text:'Apvilktas audiniu'});
+ const chosen=[matches[0],matches.find(([,m])=>m.productId!==matches[0][1].productId)!];
+ for(const [,m]of chosen){const p=seed.products.find(p=>p.id===m.productId)! as Product,c=p.configurations.find(c=>c.id===m.sample)!;const before=modelProduct(p,c),projected=await reviewedCatalogTitles({...seed,products:[p]});const after=modelProduct(projected.products[0],c);assert(productHeading(after).includes('Apvilktas audiniu'));assert.equal(after.name,before.name);assert.equal(after.configurations.find(c=>c.id===m.sample)!.code,c.code);}
+});

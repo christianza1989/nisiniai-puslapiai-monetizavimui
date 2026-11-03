@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 import inventoryData from '../../content/text-review-inventory.json';
-import {dbAll,dbAtomic} from './db';
+import {dbAll,dbAtomic} from './text-review-db';
 import {publicProductView} from './public-product-copy';
 import {studioDescriptionParagraphs,productStudioPresentation} from './product-studio';
 import {configurableArticle} from './configuration-article';
@@ -76,6 +76,7 @@ export async function mutateText(def:TextDefinition,args:{key:string;sourceHash:
  let text=(args.text??previous?.draft??'').trim();
  if(args.action!=='keep'&&args.action!=='unpublish'&&(!text||text.length>12000||/<[^>]*>|\[\[(?:open|close|void)/.test(text)))throw Error('Įrašykite tekstą be HTML žymų (iki 12 000 ženklų).');
  if(def.id.endsWith(':title')&&text.length>250)throw Error('Pavadinimas gali būti iki 250 ženklų.');
+ if(def.role!=='Produkto tekstas'&&text.length>500)throw Error('Parinkties tekstas gali būti iki 500 ženklų.');
  if(/Nowy\s*Styl|SOHOS|Kusch\s*\+\s*Co/i.test(text))throw Error('Viešame tekste negalima skelbti vidinės tiekėjo tapatybės.');
  if(args.action==='publish'&&(previous?.state!=='approved'||previous.source_hash!==def.sourceHash||previous.draft!==text))throw new ReviewConflict('Prieš skelbdami patvirtinkite dabartinę teksto versiją.');
  let state:TextEdit['state']=args.action==='draft'?'draft':args.action==='keep'?'kept':previous?.state||'approved';

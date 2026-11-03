@@ -37,7 +37,7 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
   const entry=editing?scope?.entries.find(e=>e.id===id):undefined,edit=entry?.edit;
   if(edit&&edit.source_hash===entry?.sourceHash&&edit.state!=='kept'&&edit.draft&&(edit.key===id||entry.model===model))return edit.draft;
   let value=publicScope.values[model+':'+id]||publicScope.values[id]||fallback;
-  if(id.endsWith(':title'))for(const [key,termId]of Object.entries(publicScope.bindings[model]||{}))if(key.startsWith('name:')){
+  if(id.endsWith(':title')&&value!==fallback)for(const [key,termId]of Object.entries(publicScope.bindings[model]||{}))if(key.startsWith('name:')){
    const word=key.slice(5),replacement=publicScope.values[model+':'+termId];
    if(replacement){const escaped=word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');value=value.replace(new RegExp('(^|[^A-Za-z0-9])'+escaped+'(?=$|[^A-Za-z0-9])','g'),(_,prefix)=>prefix+replacement);}
   }

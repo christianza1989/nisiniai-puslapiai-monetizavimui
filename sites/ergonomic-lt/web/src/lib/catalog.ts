@@ -53,13 +53,13 @@ export const catalogAsync=cache(async():Promise<Seed>=>{
     dbOne<{data:string}>('SELECT data FROM supplier_import WHERE id=1'),
     dbAll<{id:string;data:string}>('SELECT id,data FROM product_edits'),
   ]);
-  let seed=await reviewedCatalogTitles(assembleCatalog(imported,edits));
+  let seed=assembleCatalog(imported,edits);
   if(process.env.LAUNCH_SITE==='true'){
-    try{const drafts=await readDrafts();return launchProjection({...seed,products:applyDrafts(seed.products,drafts)},drafts);}catch{return {...seed,products:[],lines:[]};}
+    try{const drafts=await readDrafts();return reviewedCatalogTitles(await launchProjection({...seed,products:applyDrafts(seed.products,drafts)},drafts));}catch{return {...seed,products:[],lines:[]};}
   }else if(await privatePreview()){
     seed={...seed,products:applyDrafts(seed.products,await readDrafts())};
   }
-  return launchProjection(seed);
+  return reviewedCatalogTitles(await launchProjection(seed));
 });
 export async function visibleProductsAsync(){return (await catalogAsync()).products.filter(p=>productIsVisible(p,previewMode()));}
 export async function visibleModelsAsync(){return productModels(await visibleProductsAsync());}

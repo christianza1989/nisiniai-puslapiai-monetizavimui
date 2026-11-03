@@ -1,9 +1,10 @@
 import {TEXT_REVIEW_ASSET_ORIGIN} from '../lib/text-review-asset-origin';
+import {referenceAsset} from './text-review-reference-assets';
 import {RUNTIME_TRANSPORT_MAX_BYTES} from '../lib/runtime-transport-limits.mjs';
 /** Metadata only; full source SHA is still validated by the canonical loaders. */
 export async function configuratorRuntimeAsset(asset:string):Promise<Uint8Array>{
  if(!/^\/models\/configurator\/(?:runtime|structure|components)\/K[A-Z0-9]+-[a-f0-9]{20}\.json$/.test(asset))throw Error('Invalid configurator runtime asset');
- const response=await fetch(TEXT_REVIEW_ASSET_ORIGIN+asset,{redirect:'error'});
+ const response=await referenceAsset(new Request(TEXT_REVIEW_ASSET_ORIGIN+asset));
  if(!response.ok)throw Error('Configurator runtime asset unavailable: '+response.status);
  if(Number(response.headers.get('Content-Length'))>RUNTIME_TRANSPORT_MAX_BYTES)throw Error('Runtime source too large');
  const reader=response.body?.getReader();if(!reader)throw Error('Empty runtime source');

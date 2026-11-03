@@ -4,7 +4,7 @@ import {isAdmin,originAllowed,readJson} from '@/lib/auth';
 import {catalogAsync} from '@/lib/catalog';
 import {allProductModels} from '@/lib/product-models';
 import {buildReviewScope,localTextKey,mutateText,ReviewConflict,reviewProductForCode} from '@/lib/text-review-server';
-import {dbAll} from '@/lib/db';
+import {dbAll} from '@/lib/text-review-db';
 const headers={'Cache-Control':'private, no-store','X-Robots-Tag':'noindex, nofollow'};
 const json=(v:unknown,status=200)=>NextResponse.json(v,{status,headers});
 async function product(id:string,sample?:string){const p=(await catalogAsync()).products.find(p=>p.id===id);if(!p)return;return sample?allProductModels([p]).find(m=>m.modelConfigurationId===sample):p;}

@@ -9,10 +9,14 @@ import {loadCatalogRuntime} from '@/lib/catalog-runtime-loader';
 import {modelProduct} from '@/lib/product-models';
 import {configurableArticle,articleChoiceLabel} from '@/lib/configuration-article';
 import {armrestChoiceLabel,armrestFieldLabel,safeArmrestFallback,presentArmrestConfiguration} from '@/presentation/armrest-labels';
+import {isAdmin} from '@/lib/auth';
+import {customerCardPdf} from '@/lib/customer-card-pdf';
 export const runtime='nodejs';
 export const dynamic='force-dynamic';
 export async function GET(request:Request){
   const query=new URL(request.url).searchParams,id=query.get('produktas'),cid=query.get('komplektacija');
+  if(query.has('v')){try{const token=query.get('v')||'';if(!/^v1_[A-Za-z0-9_-]{40,24000}$/.test(token))throw Error('Invalid token');const bytes=await customerCardPdf(token);return new Response(new Uint8Array(bytes),{headers:{'Content-Type':'application/pdf','Content-Disposition':'attachment; filename="ergonomic-komplektacija.pdf"','Cache-Control':'private, no-store','X-Robots-Tag':'noindex, nofollow'}});}catch{return Response.json({error:'Nepavyko paruošti komplektacijos PDF.'},{status:400});}}
+  if(process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&!await isAdmin())return Response.json({error:'Pasirinkite komplektaciją produkto puslapyje.'},{status:400});
   if(id&&query.has('konfig')){
     const product=(await visibleProducts()).find(p=>p.id===id);if(!product)return Response.json({error:copyText("ui.66a3aeec731259a7d56f","Produktas nerastas.")},{status:404});
     try{

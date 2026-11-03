@@ -44,7 +44,7 @@ export async function storeQuote(input:unknown,options={customerOnly:process.env
       const configured=configurableArticle(candidate)?candidate:p,engine=createExpandedEngine(await loadCatalogRuntime(configured,item.configurationState)),selection=engine.expandedSelection(configured,item.configurationState),article=engine.selectionArticle(configured,selection.state);
       if(item.configurationId!==selection.configuration.id)throw Error(copyText("ui.b67f291ae5800555e0e3","Komplektacijos kodas neatitinka produkto."));
       const selectedSample=p.configurations.find(c=>c.id===selection.configuration.id&&c.code===selection.configuration.code)||p.configurations.find(c=>c.code===selection.configuration.code);
-      resolved.push({...item,...supplierReference(p),configurationState:selection.state,productName:article?configured.name:selectedSample?modelName(p,selectedSample):p.name,configurationName:selection.configuration.description,baseArticle:selection.configuration.code,supplierOptions:selection.configuration.supplierOptions,configurationDetails:selection.configuration.details,
+      resolved.push({...item,...supplierReference(p),configurationState:selection.state,configurationCodeStatus:'validated-runtime',productName:article?configured.name:selectedSample?modelName(p,selectedSample):p.name,configurationName:selection.configuration.description,baseArticle:selection.configuration.code,supplierOptions:selection.configuration.supplierOptions,configurationDetails:selection.configuration.details,
         ...(article?{configurationArticle:article}:{}),...(article?{configurationArticle:article}:{}),...(article?{configurationArticle:article}:{}),configurationEvidence:{schemaVersion:2,kind:'public-export-independent-parts',base:selection.assets.base,patches:selection.assets.patches.map(p=>({remove:p.remove,geometry:p.geometry,...(p.geometries?{geometries:p.geometries}:{})})),notice:selection.variant.visualizationNote}});
       continue;
     }
@@ -52,7 +52,7 @@ export async function storeQuote(input:unknown,options={customerOnly:process.env
     if(item.configurationId&&!config)throw new Error(copyText("ui.d55fae12d560ae5536d1","Pasirinkta konfigūracija nebegalioja."));
     const pilot=config?pilotSelection(p,config.id):undefined;
     resolved.push({...item,...supplierReference(p),productName:config?modelName(p,config):p.name,configurationName:pilot?.variant.label||config?.description||null,baseArticle:config?.code||null,
-      supplierOptions:config?supplierOptions(config):[],configurationDetails:config?.details|| (config?optionDetails(supplierOptions(config)):[]),supplierConfigurationDescription:config?.sourceDescription||config?.description||null,
+      configurationCodeStatus:!config?.code?'missing-base-code':supplierOptions(config).length?'catalog-preset':'base-only',supplierOptions:config?supplierOptions(config):[],configurationDetails:config?.details|| (config?optionDetails(supplierOptions(config)):[]),supplierConfigurationDescription:config?.sourceDescription||config?.description||null,
       configurationEvidence:pilot?{schemaVersion:1,kind:'public-preset-3d-pilot',supplierOptions:pilot.variant.supplierOptions,
         model:pilot.variant.asset,modelSha256:pilot.variant.assetSha256,sourceCad:pilot.variant.sourceCadUrl,sourceCadSha256:pilot.variant.sourceCadSha256,
         image:pilot.variant.image,notice:pilot.variant.visualizationNote}:null});

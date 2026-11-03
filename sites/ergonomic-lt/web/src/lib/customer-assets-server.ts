@@ -2,9 +2,15 @@ import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {customerKey} from './customer-capability';
 import {customerGlb} from './customer-glb';
+import {customerImageBytes} from './customer-image-bytes';
 import {customerSourceAsset} from './customer-source-asset';
 import type {CustomerAsset} from './customer-configuration';
 type SourceAsset={asset:string;assetSha256?:string;bytes?:number};
+export async function customerSourceGlbDocument(source:SourceAsset){
+ const bytes=await customerSourceAsset(source.asset);if(source.assetSha256&&digest(bytes)!==source.assetSha256||source.bytes!==undefined&&bytes.byteLength!==source.bytes)throw Error('Source asset identity mismatch');
+ const buffer=Buffer.from(bytes);if(buffer.toString('ascii',0,4)!=='glTF'||buffer.readUInt32LE(4)!==2||buffer.readUInt32LE(8)!==buffer.length||buffer.readUInt32LE(16)!==0x4e4f534a)throw Error('Invalid source GLB');
+ return JSON.parse(buffer.subarray(20,20+buffer.readUInt32LE(12)).toString('utf8'));
+}
 const digest=(bytes:Uint8Array)=>createHash('sha256').update(bytes).digest('hex');
 const prepared=new Map<string,Promise<CustomerAsset>>();
 export const customerSceneName=(name:string)=>'n_'+customerKey().id('scene',name);
@@ -20,7 +26,7 @@ async function prepare(source:SourceAsset):Promise<CustomerAsset>{
  if(source.assetSha256&&source.assetSha256!==sha||source.bytes!==undefined&&source.bytes!==bytes.byteLength)throw Error('Source asset identity mismatch');
  const mime=publicMime(source.asset);if(!mime)throw Error('Unsupported public asset');
  const token=cap.seal('asset',{asset:source.asset,assetSha256:sha,bytes:bytes.byteLength});
- const body=source.asset.endsWith('.glb')?projectGlb(bytes,token):bytes;
+ const body=source.asset.endsWith('.glb')?projectGlb(bytes,token):customerImageBytes(bytes);
  return {url:'/media/p/'+token,sha256:digest(body),bytes:body.byteLength};
 }
 export async function customerAssetResponse(token:string,request:Request){
@@ -28,7 +34,7 @@ export async function customerAssetResponse(token:string,request:Request){
  if(!source||typeof source.asset!=='string')throw Error('Invalid asset');
  const bytes=await customerSourceAsset(source.asset),sha=digest(bytes);if(source.assetSha256&&sha!==source.assetSha256||source.bytes!==undefined&&bytes.byteLength!==source.bytes)throw Error('Source identity changed');
  let mime=publicMime(source.asset);if(!mime)throw Error('Unsupported asset');
- let body:Uint8Array=source.asset.endsWith('.glb')?projectGlb(bytes,token):bytes;
+ let body:Uint8Array=source.asset.endsWith('.glb')?projectGlb(bytes,token):customerImageBytes(bytes);
  const resource=new URL(request.url).searchParams.get('resource');
  if(resource){
   if(!source.asset.endsWith('.glb')||!/^[a-f0-9]{32}$/.test(resource))throw Error('Invalid resource');
@@ -36,7 +42,7 @@ export async function customerAssetResponse(token:string,request:Request){
   const walk=(v:any)=>{if(!v||typeof v!=='object')return;for(const[k,x]of Object.entries(v)){if(k==='uri'&&typeof x==='string')uris.push(x);else walk(x);}};walk(doc);
   const uri=uris.find(uri=>cap.id('resource',uri)===resource);if(!uri)throw Error('Unknown resource');
   const base=new URL('https://internal.invalid'+source.asset),resolved=new URL(uri,base);if(resolved.origin!==base.origin)throw Error('External resource is not admitted');
-  mime=publicMime(resolved.pathname);if(!mime||resolved.pathname.endsWith('.glb'))throw Error('Unsupported resource');body=await customerSourceAsset(resolved.pathname);
+  mime=publicMime(resolved.pathname);if(!mime||resolved.pathname.endsWith('.glb'))throw Error('Unsupported resource');body=customerImageBytes(await customerSourceAsset(resolved.pathname));
  }
  const headers={'Content-Type':mime,'Cache-Control':'public, max-age=31536000, immutable','X-Content-Type-Options':'nosniff',ETag:'"'+digest(body)+'"'};
  if(request.headers.get('If-None-Match')===headers.ETag)return new Response(null,{status:304,headers});

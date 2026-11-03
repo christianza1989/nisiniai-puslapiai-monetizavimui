@@ -10,5 +10,5 @@ export async function POST(req:NextRequest){
   if(!originAllowed(req))return NextResponse.json({error:copyText("ui.6e3dda43283e5f75b67f","Neleistina užklausos kilmė.")},{status:403});
   if(!await rateAllowed(rateKey(req,'quote'),30,15*60_000))return NextResponse.json({error:copyText("ui.a347af082196e24a60bc","Per daug užklausų. Bandykite vėliau.")},{status:429});
   try{const saved=await storeQuote(await readJson(req),{customerOnly:process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&!await isAdmin()});after(()=>deliverQuote(saved.id).then(()=>{}));return NextResponse.json({id:saved.id},{status:saved.duplicate?200:201});}
-  catch(e){return NextResponse.json({error:e instanceof Error&&e.name!=='ZodError'?e.message:copyText("ui.963080f705db05ff672b","Patikrinkite vardą, el. paštą, kiekį ir sutikimą.")},{status:400});}
+  catch(e){return NextResponse.json({error:process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&!await isAdmin()?'Užklausos išsaugoti nepavyko. Patikrinkite kontaktinius duomenis ir pasirinkite komplektaciją iš naujo.':e instanceof Error&&e.name!=='ZodError'?e.message:copyText("ui.963080f705db05ff672b","Patikrinkite vardą, el. paštą, kiekį ir sutikimą.")},{status:400});}
 }

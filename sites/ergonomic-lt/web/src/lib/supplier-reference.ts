@@ -27,6 +27,7 @@ export function quoteOrderText(item:any){
   (i.configurationId?'\nKomplektacijos ID: '+i.configurationId:'')+
   (supplierSourceUrl(i.sourceUrl)?'\nOriginali prekė: '+supplierSourceUrl(i.sourceUrl):'')+
   (i.baseArticle?'\nGamintojo bazinis kodas: '+i.baseArticle:'')+
+  (i.configurationCodeStatus==='missing-base-code'?'\nDĖMESIO: bazinis gamintojo kodas šaltinyje nepateiktas; specifikaciją būtina patikslinti.':i.configurationCodeStatus==='base-only'?'\nDĖMESIO: turimas tik bazinis kodas; opcijų sąrašą būtina patikslinti.':'')+
   (i.configurationDetails?.length?'\n'+i.configurationDetails.map((d:any)=>d.label+': '+d.value).join('\n'):'')+
   (i.supplierOptions?.length?'\nGamintojo pasirinkimų kodai: '+i.supplierOptions.join(';'):'')+
   (i.note?'\nPastaba: '+i.note:'');

@@ -4,7 +4,7 @@ import {dbAll,dbAtomic} from './text-review-db';
 import {publicProductView} from './public-product-copy';
 import {studioDescriptionParagraphs,productStudioPresentation} from './product-studio';
 import {configurableArticle} from './configuration-article';
-import {publishedText,textReviewStatus,reviewCounts} from './text-review-state';
+import {publishedText,textReviewStatus,reviewCounts,customerTextHasCode} from './text-review-state';
 import {contentTextKey,type ReviewScope,type ReviewEntry,type TextDefinition,type TextEdit} from './text-review-types';
 import type {Product} from './types';
 
@@ -55,12 +55,13 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  for(const d of defs.filter(d=>d.role==='Produkto tekstas')){const value=publishedText(d,edits.get(d.id),'');if(value)values[d.id]=value;}
  const entries:ReviewEntry[]=defs.map(def=>{
   const shared=def.role!=='Produkto tekstas',global=edits!.get(def.id),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
-  const edit=local||global,status=textReviewStatus(def,edit);
+  const edit=local||global,baseStatus=textReviewStatus(def,edit);
   const originalText=shared?known?.current[def.id]||def.current[0]||def.sourceCode:def.current[0];
   const currentText=publishedText(def,local,publishedText(def,global,originalText));
+  const customerNameRequired=customerTextHasCode(def,currentText),status=baseStatus==='approved'&&customerTextHasCode(def,edit?.state==='kept'?currentText:edit?.draft||currentText)?'changed':baseStatus;
   const config=p.configurations.find(c=>c.code===model);
   const isPublished=status==='approved'&&(edit?.state==='kept'||edit?.published_hash===def.sourceHash&&edit.published===edit.draft);
-  return {...def,currentText,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||def.id,shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?def.modelCount:1};
+  return {...def,currentText,customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||def.id,shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?def.modelCount:1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at};
@@ -74,6 +75,8 @@ export async function mutateText(def:TextDefinition,args:{key:string;sourceHash:
  const previous=prior[0];
  if((previous?.revision||0)!==args.expectedRevision)throw new ReviewConflict('Šį tekstą jau pakeitė kita sesija. Atnaujinkite įrašą.');
  let text=(args.text??previous?.draft??'').trim();
+ if(args.action==='keep'&&customerTextHasCode(def,(def as Partial<ReviewEntry>).currentText||def.current[0]||''))throw Error('Klientui reikia pavadinimo be gamintojo kodo. Įrašykite pavadinimą.');
+ if(['approve','publish'].includes(args.action)&&customerTextHasCode(def,text))throw Error('Pašalinkite gamintojo ar parinkties kodą iš klientui skirto teksto.');
  if(args.action!=='keep'&&args.action!=='unpublish'&&(!text||text.length>12000||/<[^>]*>|\[\[(?:open|close|void)/.test(text)))throw Error('Įrašykite tekstą be HTML žymų (iki 12 000 ženklų).');
  if(def.id.endsWith(':title')&&text.length>250)throw Error('Pavadinimas gali būti iki 250 ženklų.');
  if(def.role!=='Produkto tekstas'&&text.length>500)throw Error('Parinkties tekstas gali būti iki 500 ženklų.');

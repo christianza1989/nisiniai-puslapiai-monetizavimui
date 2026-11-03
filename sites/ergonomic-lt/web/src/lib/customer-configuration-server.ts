@@ -12,6 +12,10 @@ import type {Product} from './types';
 import {renderMaterial,finishGroup} from './render-materials';
 import {deskColorPlan} from './desk-color-plan';
 import {visibleDeskPreviewChoices} from './desk-preview-choices';
+import {customerChairControls} from './customer-chair-controls-server';
+import {chairFinishRoles,chairFinishCollection} from './chair-material-groups';
+import {customerProductCodes} from './customer-product-presentation';
+import {pilotSelection} from './configurator';
 import {customerGltfDocument} from './customer-glb';
 import {palettes as sourcePalettes} from './expanded-configurator';
 const textile=new Set(['CSE','MT','RX','SD','SC','SY','ST','CN','ME','CUR','ERA','X','YS','YB']);
@@ -37,14 +41,16 @@ export async function customerConfiguration(product:Product,token?:string,change
  let context=await customerContext(product),state:CustomerState['state'];
  if(token){const resolved=await resolveCustomerSnapshot(token);if(resolved.saved.product!==scope.product||resolved.saved.sample!==scope.sample)throw Error('Komplektacija priklauso kitam modeliui.');context=resolved.context;state=resolved.saved.state;}
  else if(context.family)state=context.engine.initialStateForProduct(product);
- if(change){if(!state)throw Error('Parinktys nepasiekiamos.');const native=resolveCustomerChange(visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state)),ids,change);state=context.engine.changeField(state,native.field,native.value);}
+ let materialControls=state?await customerChairControls(product,context,state):[];
+ if(change){if(!state)throw Error('Parinktys nepasiekiamos.');const group=materialControls.find(c=>ids.field(c.id)===change.field);if(group){const option=group.options.find(o=>ids.choice(group.id,o.id)===change.value);if(!option)throw Error('Nepatvirtintas medžiagos pasirinkimas.');state=option.state;}else{const hidden=new Set(materialControls.flatMap(c=>c.hiddenFields)),domains=Object.fromEntries(Object.entries(visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state))).filter(([field])=>!hidden.has(field)));const native=resolveCustomerChange(domains,ids,change);state=context.engine.changeField(state,native.field,native.value);}materialControls=await customerChairControls(product,context,state);}
  const selected=state?context.engine.expandedSelection(product,state):undefined,review=await buildReviewScope(product),model=selected?.configuration.code||product.configurations.find(c=>c.id===scope.sample)?.code||'';
- const codes=new Set<string>(product.configurations.flatMap(c=>c.code?[c.code]:[]));
+ const codes=customerProductCodes(product);for(const[field,value]of Object.entries(state?.values||{})){codes.add(field);codes.add(value);}
  for(const key of Object.keys(inventoryModels()[model]?.bindings||{}))if(key.startsWith('name:'))codes.add(key.slice(5));
- const choices=state?visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state)):{};
- for(const [field,values]of Object.entries(choices)){codes.add(field);for(const value of values)codes.add(value);}
+ const hiddenMaterialFields=new Set(materialControls.flatMap(c=>c.hiddenFields)),allChoices=state?visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state)):{},choices=Object.fromEntries(Object.entries(allChoices).filter(([field])=>!hiddenMaterialFields.has(field)));
+ for(const [field,values]of Object.entries(allChoices)){codes.add(field);for(const value of values)codes.add(value);}
  const published=(field:string,value?:string)=>{const id=review.publicScope.bindings[model]?.[(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value)];return id?review.publicScope.values[model+':'+id]:undefined;};
  const controls=Object.entries(choices).map(([field,values],i)=>({id:ids.field(field),label:customerLabel(published(field)||context.runtime?.palettes._fieldLabels?.[field]?.text||fieldLabels[field],codes,'Parinktis '+(i+1)),value:ids.choice(field,state!.values[field]),choices:values.map((value,j)=>({id:ids.choice(field,value),label:customerLabel(published(field,value)||context.engine.choiceLabel(field,value,context.runtime?.palettes,state?.family),codes,'Pasirinkimas '+(j+1))}))}));
+ for(const group of materialControls)controls.push({id:ids.field(group.id),label:group.label,value:ids.choice(group.id,group.value||'original'),choices:[...(!group.value?[{id:ids.choice(group.id,'original'),label:'Pradinės dalių spalvos'}]:[]),...group.options.map((option,i)=>({id:ids.choice(group.id,option.id),label:customerLabel(published(group.fields[0],option.code)||(()=>{const id=review.publicScope.bindings[model]?.['name:'+option.code];return id?review.publicScope.values[model+':'+id]:undefined;})()||context.engine.choiceLabel(group.fields[0],option.code,context.runtime?.palettes,state?.family),codes,'Spalva '+(i+1))}))],disabled:!group.options.length,note:group.reason} as typeof controls[number]);
  const assets:CustomerConfiguration['assets']={base:null,patches:[]},finishes:CustomerConfiguration['finishes']={},assetMap=new Map<string,string>();let desk:CustomerConfiguration['desk'];
  async function prepare(ref:Parameters<typeof prepareCustomerAsset>[0]){const result=await prepareCustomerAsset(ref);if(ref.assetSha256)assetMap.set(ref.assetSha256,result.sha256);return result;}
  if(selected){
@@ -54,7 +60,7 @@ export async function customerConfiguration(product:Product,token?:string,change
   if(!structureOnly){
    const values=Object.fromEntries((selected.configuration.supplierOptions||[]).map(option=>{const [field,value]=option.split('=');return [field.split('.').at(-1)!,value];})),materials=context.engine.catalog.catalogAnchor(state!)?.materials;
    for(const [field,value]of Object.entries(values)){
-    const palette={...sourcePalettes[field]?.[value],...context.runtime?.palettes[field]?.[value]},group=values[finishGroup[field]]||(field==='CUPHSEATCOLOR'?values.CSEATUPHGROUP:field==='CUPHCOLOR'?values.CUPHGROUP:field==='CHEADRESTUPHCOLOR'?values.CHEADRESTUPHGROUP:undefined);
+    const palette={...sourcePalettes[field]?.[value],...context.runtime?.palettes[field]?.[value]},group=product.categorySlug==='kedes'&&chairFinishRoles[field]?chairFinishCollection(field,values):values[finishGroup[field]];
     const preview=renderMaterial({...palette,material:materials?.[field]?.[value],code:value,group});
     finishes[customerSceneName(field)]={color:preview.color,approximate:preview.approximate,...('factor'in preview?{factor:preview.factor}:{}),...('roughness'in preview?{roughness:preview.roughness}:{}),...('metalness'in preview?{metalness:preview.metalness}:{}),image:preview.image?(await prepare({asset:preview.image})).url:undefined,normalImage:preview.normalImage?(await prepare({asset:preview.normalImage})).url:undefined,sheen:group&&textile.has(group)?.12:0};
    }
@@ -70,5 +76,7 @@ export async function customerConfiguration(product:Product,token?:string,change
    desk={document:doc,materialIds:colors.materialIds.map(customerSceneName),materials:Object.fromEntries(Object.entries(plan.materials).map(([key,id])=>[selector(key),customerSceneName(id)])),hidden:plan.hidden.map(selector),assets:extra,pending:plan.pending.length>0};
   }
  }
- return {token:cap.seal('configuration',{...scope,state,revision:context.revision}),selectionId:cap.id('selection',{...scope,state,revision:context.revision}),productId:'product_public_'+cap.id('product',scope),name:customerLabel(product.textReviewHeading||productHeading(product),codes,'Biuro baldas'),controls,details:controls.map(c=>({label:c.label,value:c.choices.find(v=>v.id===c.value)?.label||'Pasirinkta'})),assets,finishes,desk,available3D:!!assets.base||assets.patches.some(p=>p.assets.length>0)||!!desk?.assets.length};
+ if(!selected){const preset=product.configurations.find(c=>c.id===scope.sample),pilot=preset?pilotSelection(product,preset.id):undefined;if(pilot?.variant.asset)assets.base=await prepare(pilot.variant);}
+ const nativeCatalog=context.engine.catalog.catalogForProduct(product),legacyChair=!!state&&product.categorySlug==='kedes'&&!['structure-only','desk-components'].includes(nativeCatalog?.collectionMode||'');
+ return {legacyChair,token:cap.seal('configuration',{...scope,state,revision:context.revision}),selectionId:cap.id('selection',{...scope,state,revision:context.revision}),productId:'product_public_'+cap.id('product',scope),name:customerLabel(product.textReviewHeading||productHeading(product),codes,'Biuro baldas'),controls,details:controls.map(c=>({label:c.label,value:c.choices.find(v=>v.id===c.value)?.label||'Pasirinkta'})),assets,finishes,desk,available3D:!!assets.base||assets.patches.some(p=>p.assets.length>0)||!!desk?.assets.length};
 }

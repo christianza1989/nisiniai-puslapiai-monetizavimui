@@ -3,6 +3,9 @@ import assert from 'node:assert/strict';
 import {customerCapabilities} from '../src/lib/customer-capability';
 import {customerGlb} from '../src/lib/customer-glb';
 import {customerLabel} from '../src/lib/customer-names';
+import {customerImageBytes} from '../src/lib/customer-image-bytes';
+import {customerHttpBoundary,sourceRequestAuthorized} from '../src/lib/customer-http-boundary';
+import {customerTextHasCode} from '../src/lib/text-review-state';
 import {customerControlIds,resolveCustomerChange} from '../src/lib/customer-configuration';
 const cap=customerCapabilities('a-private-test-key-with-more-than-thirty-two-characters');
 test('Customer state is encrypted, purpose-bound, tamper-evident and reconstructs every supplier code',()=>{
@@ -37,4 +40,22 @@ test('Public transitions cannot reuse another field or product choice identity',
  assert.throws(()=>resolveCustomerChange(choices,ids,{field:ids.field('CBASE'),value:ids.choice('CARMRESTS','B')}));
  assert.throws(()=>resolveCustomerChange(choices,customerControlIds(cap,{product:'other',sample:'a'}),{field:ids.field('CBASE'),value:ids.choice('CBASE','B')}));
  assert.throws(()=>resolveCustomerChange(choices,ids,{field:'CBASE',value:'B'}));
+});
+test('Lossless JPEG cleanup removes EXIF and comments while preserving scan bytes and colour profile',()=>{
+ const segment=(marker:number,data:Buffer)=>{const head=Buffer.alloc(4);head[0]=255;head[1]=marker;head.writeUInt16BE(data.length+2,2);return Buffer.concat([head,data]);};
+ const pixels=Buffer.from([255,218,0,2,42,41,40,255,217]),profile=segment(0xe2,Buffer.from('ICC_PROFILE\0qualified-srgb'));
+ const jpeg=Buffer.concat([Buffer.from([255,216]),segment(0xe1,Buffer.from('Exif\0KSUP001WW001 R55POLWBPU')),profile,segment(0xfe,Buffer.from('Supplier CSE14')),pixels]);
+ const cleaned=customerImageBytes(jpeg);assert.deepEqual(cleaned,Buffer.concat([Buffer.from([255,216]),profile,pixels]));assert(jpeg.toString().includes('KSUP001WW001'));assert(!Buffer.from(cleaned).toString().includes('CSE14'));
+});
+test('Anonymous requests cannot bypass the source/bundle boundary through old or encoded URLs',()=>{
+ const env={PUBLIC_CUSTOMER_BOUNDARY:'true',PRIVATE_SOURCE_READ_TOKEN:'private-read-key',PUBLIC_CLIENT_CHUNKS:JSON.stringify(['/_next/static/chunks/customer-safe.js'])};
+ for(const path of ['/models/configurator/private.json','/media/configurator/cse14.jpg','/3d-perziura-183.html','/.vite/manifest.json','/_next/static/chunks/old-native.js','/media/home-final/demo.js','/%6dodels/configurator/private.json','/%252fmodels/configurator/private.json','/media/pdf-products/private.pdf'])assert.equal(customerHttpBoundary(new Request('https://example.test'+path),env)?.status,404,path);
+ assert.equal(customerHttpBoundary(new Request('https://example.test/_next/static/chunks/customer-safe.js'),env),undefined);
+ assert.equal(customerHttpBoundary(new Request('https://example.test/media/p/v1_opaque'),env),undefined);
+ const machine=new Request('https://example.test/models/configurator/private.json',{headers:{Authorization:'Bearer private-read-key'}});assert(sourceRequestAuthorized(machine,env));assert.equal(customerHttpBoundary(machine,env),undefined);
+ assert(!sourceRequestAuthorized(new Request(machine.url,{headers:{Authorization:'Bearer wrong'}}),env));
+});
+test('Review cannot treat supplier codes as completed customer-facing names, or confuse punctuation with codes',()=>{
+ const def={sourceCode:'FPOWERSTRIP'} as Parameters<typeof customerTextHasCode>[0];
+ assert(customerTextHasCode(def,'FPOWERSTRIP'));assert(customerTextHasCode(def,'FPOWERSTRIP · Elektros lizdų blokas'));assert(!customerTextHasCode(def,'Elektros lizdų blokas.'));assert(!customerTextHasCode(def,'740 mm'));assert(!customerTextHasCode(def,'Viena eilutė.\n\nKita eilutė.'));
 });

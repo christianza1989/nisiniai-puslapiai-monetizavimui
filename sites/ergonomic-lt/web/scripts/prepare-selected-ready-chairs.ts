@@ -9,6 +9,8 @@ import {catalogModelVisible} from '../src/lib/catalog-consolidation';
 import {originalOnlyPalette} from './prepare-ready-review-inventory';
 import {glbGeometryAdmission} from './prepared-review-glb-admission';
 import {normalizeReadyChairPalettes} from './normalize-ready-chair-palettes';
+import {ownChairOriginalPalette,ownChairRuntimeView,assertRemainingChairHeaders} from './remaining-chair-scope-admissions';
+import {publicProductText} from '../src/lib/public-product-copy';
 import type {ChairPreview} from '../src/lib/chair-preview';
 const sha=(v:Uint8Array|string)=>createHash('sha256').update(v).digest('hex');
 const same=(s:any,r:any)=>s.dev===r.dev&&s.ino===r.ino&&s.size===r.size&&s.mtimeMs===r.mtimeMs;
@@ -25,22 +27,29 @@ async function main(){
    const received=await json(values.integrity+'/'+row.code+'/RESULT.json');assert(received.allProvidedFileHashesMatched===true&&received.headerSha256===row.manifestSha256&&received.version===row.version,'Selected packet not yet fully received');
    const byRelative=new Map<string,any>(received.files.map((r:any)=>[r.relative,r]));
    async function read(relative:string){const r=byRelative.get(relative);assert(r&&same(await fs.stat(r.file),r),'Received file changed: '+relative);assert(r.size<=25*1024*1024,'Bounded file25MiB');const bytes=await fs.readFile(r.file);assert(bytes.length===r.size&&sha(bytes)===r.sha256&&same(await fs.stat(r.file),r),'File readback changed: '+relative);return bytes;}
-   const runtimeBytes=await read('runtime.json'),runtime=JSON.parse(runtimeBytes.toString('utf8')),runtimeSha256=sha(runtimeBytes);validateChairReviewComponents(runtime,row.code);
+   const runtimeBytes=await read('runtime.json'),runtimeSha256=sha(runtimeBytes);let runtime=JSON.parse(runtimeBytes.toString('utf8'));
    const sourcePalette=JSON.parse((await read('colors.json')).toString('utf8')),hasSelectors=byRelative.has('selectors.json'),rawSelectors=hasSelectors?JSON.parse((await read('selectors.json')).toString('utf8')):{schema:'canonical-world-primitive-selectors-329-v1',assets:{}};
    assert(rawSelectors.schema==='canonical-world-primitive-selectors-329-v1'&&rawSelectors.assets,'Unknown OWN selector index');
-   const primary=['chair-colors-full-state-329-v1','chair-colors-observed-partial-344-v1'].includes(sourcePalette.schema),palette=primary?sourcePalette:originalOnlyPalette(sourcePalette,row.code,runtimeSha256);
+   const ownDocuments:Record<string,any>={};
+   if(sourcePalette.ownSourceContract){
+    assertRemainingChairHeaders(row.code,row.version,row.manifestSha256,new Map(received.files.map((r:any)=>[r.relative,r])));
+    for(const file of ['colors-groups.json','own-source-contract.json','native10-qualification.json','construction-scope.json'])if(byRelative.has(file))ownDocuments[file]=JSON.parse((await read(file)).toString('utf8'));
+   }
+   const ownView=sourcePalette.ownSourceContract?ownChairRuntimeView(runtimeBytes,row.code,ownDocuments):undefined;
+   if(ownView)runtime=ownView.runtime;else validateChairReviewComponents(runtime,row.code);
+   const primary=['chair-colors-full-state-329-v1','chair-colors-observed-partial-344-v1'].includes(sourcePalette.schema),palette=primary?sourcePalette:sourcePalette.ownSourceContract?ownChairOriginalPalette(sourcePalette,row.code,runtimeSha256,ownDocuments):originalOnlyPalette(sourcePalette,row.code,runtimeSha256);
    assert(!primary||hasSelectors,'A bound primary palette requires the supplied OWN selector index');
    assert(palette.code===row.code&&palette.runtimeSha256===runtimeSha256,'Primary palette binding mismatch');
    const catalog=seed.products.flatMap((p:any)=>p.configurations.filter((c:any)=>c.code===row.code&&catalogModelVisible(p.id,c)).map((c:any)=>({productId:p.id,sample:c.id,name:p.name})));assert(catalog.length===1,'Catalog model is not unique');
-   const namespace='/models/configurator/chairs/'+row.code+'-'+row.manifestSha256.slice(0,20),assets:ChairPreview['assets']={},textures:ChairPreview['textures']={},fileAssets:Record<string,any>={},materials:Record<string,unknown>={},documents:Record<string,any>={};
-   for(const c of runtime.contexts)for(const a of [c.invariant,...c.groups.flatMap((g:any)=>g.variants.map((v:any)=>v.asset))])if(a&&!assets[a.sha256]){const r=byRelative.get(a.file);assert(r?.sha256===a.sha256&&r.size===a.bytes&&!a.needsCompression&&a.bytes<=25*1024*1024,'Runtime source asset mismatch');assets[a.sha256]={asset:namespace+'/source/'+a.file,assetSha256:a.sha256,bytes:a.bytes};}
+   const namespace='/models/configurator/chairs/'+row.code+'-'+row.manifestSha256.slice(0,20),assets:ChairPreview['assets']={},textures:ChairPreview['textures']={},fileAssets:Record<string,any>={},materials:Record<string,unknown>={},documents:Record<string,any>={...ownDocuments};
+   for(const c of runtime.contexts)for(const a of [c.invariant,...c.groups.flatMap((g:any)=>g.variants.map((v:any)=>v.asset))])if(a&&!assets[a.sha256]){const file=ownView?.files[a.file]||a.file,r=byRelative.get(file);assert(r?.sha256===a.sha256&&r.size===a.bytes&&!a.needsCompression&&a.bytes<=25*1024*1024,'Runtime source asset mismatch');assets[a.sha256]={asset:namespace+'/source/'+file,assetSha256:a.sha256,bytes:a.bytes};}
    for(const r of received.files){
     if(/\.(png|jpe?g|webp)$/i.test(r.relative))textures[r.sha256]={asset:namespace+'/source/'+r.relative,sha256:r.sha256,bytes:r.size};
     if(r.relative.endsWith('.glb'))fileAssets[r.relative]={asset:namespace+'/source/'+r.relative,assetSha256:r.sha256,bytes:r.size};
     if(/^library\/materials\/[a-f0-9]{64}\.json$/.test(r.relative)){const b=await read(r.relative),id=path.basename(r.relative,'.json');assert(sha(b)===id,'OWN material ID differs from document SHA');materials[id]=JSON.parse(b.toString('utf8'));}
     if(/^(colors-.+\.json|GROUP-PALETTE-VERIFIED-SAFE\.json)$/.test(r.relative))documents[r.relative]=JSON.parse((await read(r.relative)).toString('utf8'));
    }
-   const data:ChairPreview={schema:'pc2-chair-review-111-v1',code:row.code,name:catalog[0].name,runtimeSha256,runtime,palette,selectors:primary||Object.keys(documents).length?rawSelectors:{schema:'canonical-world-primitive-selectors-329-v1',assets:{}},assets,textures};
+   const data:ChairPreview={schema:'pc2-chair-review-111-v1',code:row.code,name:publicProductText(catalog[0].name),runtimeSha256,runtime,palette,selectors:primary||Object.keys(documents).length?rawSelectors:{schema:'canonical-world-primitive-selectors-329-v1',assets:{}},assets,textures};
    const availableDocuments={...documents};
    if(!hasSelectors){
     data.unavailableFinishChoices=[];
@@ -55,7 +64,7 @@ async function main(){
     }
    }
    const supplemental=normalizeReadyChairPalettes(data,availableDocuments,materials,fileAssets,row.version);if(Object.keys(availableDocuments).length)data.qualified=supplemental.qualified;
-   const proof:any={code:row.code,version:row.version,manifestSha256:row.manifestSha256,runtimeSha256,sourceRoot:row.packagePath,allProvidedFileHashesMatched:true,independentPrivatePayloadCopy:false,geometry:[],supplemental:supplemental.diagnostics,missingOwnSelectorIndex:!hasSelectors&&!!data.unavailableFinishChoices?.length,unavailableFinishChoices:data.unavailableFinishChoices||[],sourceOnly:true,browserPass:false,publicPass:false,fullGraphPass:false,fullPalettePass:false,NativeAllowed:false};
+   const proof:any={code:row.code,version:row.version,manifestSha256:row.manifestSha256,runtimeSha256,sourceRoot:row.packagePath,allProvidedFileHashesMatched:true,independentPrivatePayloadCopy:false,...ownView?{runtimeView:ownView.proof}:{},geometry:[],supplemental:supplemental.diagnostics,missingOwnSelectorIndex:!hasSelectors&&!!data.unavailableFinishChoices?.length,unavailableFinishChoices:data.unavailableFinishChoices||[],sourceOnly:true,browserPass:false,publicPass:false,fullGraphPass:false,fullPalettePass:false,NativeAllowed:false};
    if(!values['metadata-only']){
     let old:any;try{old=await json(values.prior+'/'+row.code+'/RESULT.json');}catch{}
     const oldSelector=old?.files.find((f:any)=>f.relative==='selectors.json');const reuse=old?.result==='SCOPED_CHAIR_SOURCE_ADMITTED_NOT_BROWSER_OR_PUBLIC_PASS'&&old.runtimeSha256===runtimeSha256&&oldSelector?.sha256===row.headers['selectors.json'];

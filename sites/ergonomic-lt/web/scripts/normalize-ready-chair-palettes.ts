@@ -3,6 +3,8 @@ import {createHash} from 'node:crypto';
 import type {ChairPreview} from '../src/lib/chair-preview';
 import type {Asset} from '../src/lib/expanded-configurator';
 import type {ChairQualifiedData,QualifiedWitness,QualifiedPatch,QualifiedGroup,QualifiedOption} from '../src/lib/chair-qualified-colors';
+import {conditionalChairMaterialGroups,conditionalChairAdmissions,conditionalChairAdmission} from './conditional-chair-finish-contexts';
+import {calibratedChairLibrary,ownChairScope,savedAutoChairState} from './remaining-chair-scope-admissions';
 type Obj=Record<string,any>;
 const entries=(v:any):Obj[]=>Array.isArray(v)?v:Object.values(v||{});
 const canonical=(v:any):string=>JSON.stringify(v,(_k,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a<b?-1:a>b?1:0)):x);
@@ -34,7 +36,12 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
  }
  function asset(ref:Obj):Asset{
   const a=fileAssets[ref.file];requireValue(a&&hash(ref.sha256)&&a.assetSha256===ref.sha256&&a.bytes===ref.bytes&&Number.isSafeInteger(a.bytes)&&a.bytes!>0&&a.bytes!<=25*1024*1024,'Additional asset absent, changed, or over25MiB');
-  requireValue(!data.assets[a.assetSha256],'Additional part duplicates an active runtime asset');q.extraAssets[a.assetSha256]=a;usedFiles.add(ref.file);return a;
+  requireValue(!data.assets[a.assetSha256],'Additional part duplicates an active runtime asset');
+  // Two documents may publish the same OWN bytes under different filenames.
+  // All patches must share one transport identity for that exact payload.
+  const previous=q.extraAssets[a.assetSha256];requireValue(!previous||previous.bytes===a.bytes,'Contradictory OWN payload size');
+  if(previous)return previous;
+  q.extraAssets[a.assetSha256]=a;usedFiles.add(ref.file);return a;
  }
  function patch(raw:Obj):QualifiedPatch{
   raw=raw.patch||raw;requireValue(raw&&typeof raw==='object','Missing patch');
@@ -57,7 +64,9 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
   if(d.schema==='chair-exact-state-primitive-swaps-329-v1')requireValue(d.exactFullStateOnly===true&&d.independentFinishCompositionAllowed===false&&(d.runtimeSha256===undefined||d.runtimeSha256===data.runtimeSha256),'Saved-state scope is not exact');
   else requireValue(d.runtimeSha256===data.runtimeSha256,'Supplemental runtime mismatch');
  }
+ const own=documents['own-source-contract.json']?ownChairScope(data.code,data.runtimeSha256,documents):undefined;
  for(const [file,d]of Object.entries(documents)){
+  if(own&&['own-source-contract.json','native10-qualification.json','construction-scope.json'].includes(file)){diagnostics.push({file,kind:'EXACT_NEW_OWN_SCOPE_EVIDENCE'});continue;}
   if(!d.schema){requireValue(file==='GROUP-PALETTE-VERIFIED-SAFE.json'&&d.pass===true,'Unknown supplemental certificate');continue;}
   checkDocument(d);
   if(d.schema==='chair-qualified-exhaustive-witness-palette-447-v1'||d.schema==='chair-qualified-exhaustive-runtime-palette-440-v1'){
@@ -66,12 +75,82 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
    q.legacyScopes.push({context:w.context,construction:w.construction,requiredAssets:w.requiredAssets});
   }else if(d.schema==='chair-qualified-group-palette-353-v1'){
    requireValue(d.qualifiedByDecision353===true&&d.qualifiedWitnessGroupPaletteComplete===true,'Group qualification absent');
-   const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas);const groups=entries(d.groups).map(group);
+   const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas);
+   if(own?.atomic){
+    w.fixed=d.fixedObservedFinishValues;
+    for(const v of own.values)w.singles.push(option(v,{...v.values,...v.derivedFinishValues}));
+    diagnostics.push({file,kind:'ATOMIC_WITH_COUPLED_READONLY_FINISH',count:own.values.length});continue;
+   }
+   if(own)w.fixed=d.fixedObservedFinishValues;
+   const groups=entries(d.groups).map(group);
    for(const g of groups){const previous=w.groups.find(x=>x.id===g.id);requireValue(!previous||canonical(previous)===canonical(g),'Contradictory duplicate group');if(!previous)w.groups.push(g);}
+  }else if(d.schema==='chair-qualified-conditional-own-construction-palette-5840-v1'){
+   requireValue(own?.atomic&&own.structural,'OWN construction scope evidence absent');
+   const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas,'Apmušalas · ratukai SH');w.structural=own.structural;
+   for(const v of own.values)w.singles.push(option(v,v.values));
+  }else if(Object.values(conditionalChairAdmissions).some(p=>p.contract===d.schema)){
+   requireValue(!!conditionalChairAdmission(data.code,documents['colors-groups.json']?.schema),'Finite conditional contract has no corresponding palette');
+  }else if(Object.values(conditionalChairAdmissions).some(p=>p.palette===d.schema)){
+   const scope=conditionalChairMaterialGroups(data.code,data.runtimeSha256,documents),c=scope.contract;
+   const w=witness(c.runtimeContextIndex,c.exactConstructionAndDerivedValues,c.requiredOwnedBaseAssetShas,'Apmušalas '+scope.finishPrefix.CUPHGROUP+' · tik šiai konstrukcijai');w.fixed=scope.readonly;
+   for(const g of scope.groups){
+    const options:QualifiedOption[]=g.values.map((v:Obj)=>option(v,v.values,g.mesh?v.values.CMESHCOLOR:v.values.CUPHCOLOR));
+    const baseline=options.find(o=>canonical(o.values)===canonical(g.source.baseValues));
+    // An original calibration tuple can be outside this exact prefix. Keep
+    // original startup/reset; never add it to the scoped selectable domain.
+    w.groups.push({id:g.source.id,label:g.label,options,base:(baseline||options[0]).id});
+   }
+  }else if(d.schema==='chair-exact-conditional-finish-context-contract-4300-v1'){
+   requireValue(documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1','Conditional contract has no scoped palette');
+  }else if(d.schema==='chair-qualified-conditional-context-palette-4181-v1'){
+   const contract=documents['conditional-context.json'],cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'];
+   const kind='QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181';
+   requireValue(data.code==='KBJA003WW002'&&d.conditionalScopeKind===kind&&contract?.schema==='chair-exact-conditional-finish-context-contract-4300-v1'&&contract.kind===kind,'Unknown conditional source kind');
+   requireValue(d.qualifiedByDecision353===true&&d.qualifiedConditionalFinishContextComplete===true&&d.qualifiedWitnessGroupPaletteComplete===false&&d.actualPaletteComplete===false&&d.allGeometryContextsCovered===false,'Conditional source promoted to a full palette');
+   requireValue(contract.qualifiedConditionalFinishContextComplete===true&&contract.qualifiedWitnessGroupPaletteComplete===false&&contract.actualPaletteComplete===false&&contract.allGeometryContextsCovered===false&&hash(contract.qualification4181Sha256),'Conditional qualification absent');
+   requireValue(hash(d.conditionalScopeToken)&&d.conditionalScopeToken===contract.scopeToken&&cert?.conditionalScopeToken===contract.scopeToken&&cert.conditionalScopeKind===kind,'Conditional scope token differs');
+   requireValue(cert.code===data.code&&cert.pass===true&&cert.noDonorGeometry===true&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false&&cert.actualPaletteComplete===false&&cert.allGeometryContextsCovered===false,'Conditional OWN certificate absent');
+   requireValue(cert.groupValueRecords===74&&cert.actualWholeManufacturerStatesReconstructed===75&&cert.jointFullStatesReconstructed===10&&cert.jointDistinctSignatures===10&&cert.allSelectableFieldsNondefaultCovered===true,'Conditional whole-state qualification incomplete');
+   for(const key of ['code','runtimeSha256','runtimeContextIndex','exactConstructionAndDerivedValues','requiredOwnedBaseAssetShas'])requireValue(canonical(d[key])===canonical(contract[key]),'Conditional construction/runtime pin differs: '+key);
+   const fixed=contract.fixedSelectableFinishValues,fields=['CHEADRESTUPHCOLOR','CHEADRESTUPHGROUP','CPRICEGROUP','CUPHCOLOR','CUPHGROUP'];
+   requireValue(canonical(fixed)===canonical({CHEADRESTUPHCOLOR:'VL5002',CHEADRESTUPHGROUP:'VL',CPRICEGROUP:'_2'})&&canonical(d.requiredFixedFinishContext)===canonical(fixed)&&canonical(cert.requiredFixedFinishContext)===canonical(fixed),'Conditional fixed FINISH prefix differs');
+   requireValue(canonical(contract.allFiveOriginalSelectableFieldsRemainActive.slice().sort())===canonical(fields)&&canonical(cert.selectableFields.slice().sort())===canonical(fields),'Conditional selectable fields differ');
+   requireValue(d.groups.length===1&&contract.actualReachableWholeFinishTuples===74,'Conditional tuple count differs');
+   const g=d.groups[0],records=entries(g.values),domains=contract.variableGroups;
+   requireValue(g.completeActualPostPrefixDomain===false&&g.completeActualPostPrefixDomainInsideFixedFinishContext===true&&g.actualGroupValueCount===74&&records.length===74&&canonical(g.fields.slice().sort())===canonical(fields),'Conditional group is not an exact whole tuple domain');
+   requireValue(canonical(Object.keys(domains).sort())===canonical(['CUR','EGL','VL','XR']),'Conditional material groups differ');
+   const expected=new Set<string>();
+   for(const [name,domain]of Object.entries(domains)as[string,Obj][]){
+    requireValue(domain.actualControllerGroupValue===name&&canonical(domain.groupEditableSelectableChoices.slice().sort())===canonical(Object.keys(domains).sort()),'Conditional controller domain differs');
+    const observed=domain.observedColourValuesForOriginalTupleAccounting;
+    requireValue(Array.isArray(observed)&&observed.length>0&&new Set(observed).size===observed.length,'Conditional observed colour values absent');
+    if(domain.fixedHiddenColourNotSelectableChoice===true)requireValue(name==='VL'&&observed.length===1&&domain.actualSelectableColourChoices.length===0,'Hidden invariant became a selectable colour');
+    else requireValue(domain.fixedHiddenColourNotSelectableChoice===false&&canonical(domain.actualSelectableColourChoices.slice().sort())===canonical(observed.slice().sort()),'Selectable colour domain differs');
+    for(const colour of observed)expected.add(canonical({...fixed,CUPHGROUP:name,CUPHCOLOR:colour}));
+   }
+   requireValue(expected.size===74,'Conditional domain accounting differs');
+   const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas,'Apmušalai · galvos atrama VL5002');
+   for(const record of records){
+    requireValue(record.mode==='material'&&record.values&&canonical(Object.keys(record.values).sort())===canonical(fields),'Conditional tuple is incomplete');
+    requireValue(expected.delete(canonical(record.values)),'Conditional tuple is outside the prefix, duplicated, or invented');
+    const name=record.values.CUPHGROUP,domain=domains[name];
+    // Each patch contains all five captured FINISH values and is applied from
+    // its OWN baseline. No prefix/leaf factorization or independent mixing.
+    const title=name+' · '+(domain.fixedHiddenColourNotSelectableChoice?'Fiksuota spalva':record.values.CUPHCOLOR)+' · galvos atrama '+fixed.CHEADRESTUPHCOLOR;
+    w.singles.push(option(record,record.values,title));
+   }
+   requireValue(Number(expected.size)===0,'Conditional tuple domain is incomplete');
   }else if(d.schema==='chair-qualified-group-witness-palettes-397-v1'){
    requireValue(d.independentCrossWitnessCompositionAllowed===false&&d.witnesses.length===d.qualifiedWitnessCount,'Unknown cross-witness contract');
    for(const ref of d.witnesses){const source=documents[ref.file];requireValue(source?.schema==='chair-qualified-group-palette-353-v1'&&source.witnessActualTupleSha256===ref.witnessActualTupleSha256&&source.runtimeContextIndex===ref.runtimeContextIndex,'Referenced group witness absent or changed');witness(ref.runtimeContextIndex,ref.exactConstructionAndDerivedValues,ref.requiredOwnedBaseAssetShas);}
   }else if(d.schema==='chair-color-library-reuse-329-v1'){
+   if(d.reuse682ProofSha256){
+    for(const scope of calibratedChairLibrary(data,d)){
+     const f=scope.source,w=witness(f.targetRuntimeContextIndex,f.targetBaseFullActualState);w.inference=true;
+     for(const v of scope.values)w.singles.push(option(v,v.targetFullReachableGroupValues,label(v.targetFullReachableGroupValues)+' · patikrinta biblioteka'));
+    }
+    diagnostics.push({file,kind:'CALIBRATED_ATOMIC_LIBRARY_INFERENCE'});continue;
+   }
    requireValue(d.requireOtherFinishValuesMatchTargetBase===true&&d.independentCompositionValidated===false&&d.applyOnlyAtExactTargetWitnessConstruction===true&&d.geometryReusedFromOtherModel===false,'Reuse contract not bounded to one OWN target');
    for(const f of entries(d.fields)){
     requireValue(f.targetRuntimeSha256===data.runtimeSha256,'Reuse target scope not pinned');
@@ -79,6 +158,9 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
     const base=f.targetBaseFullActualState;for(const [k,v]of Object.entries(f.requiredCausalPartControllerContext||{}))requireValue(base[data.code+'_FINISHES.'+k]===v,'Reuse causal prefix differs from its captured base');
     for(const v of entries(f.values)){requireValue(v.mode==='material','Nonmaterial library reuse');w.singles.push(option(v,{[f.field]:String(v.value)},f.field+' = '+v.value+' · patikrinta biblioteka'));}
    }
+  }else if(d.schema==='exact-saved-own-auto-construction-primitive-swap-1301-v1'){
+   const state=savedAutoChairState(data,d),w=witness(0,state.before,[d.removeOwnSelectors[0].assetSha256],'Surinkta chromuoto rėmo ir pakojo būsena');
+   w.singles.push(option(state.patch,state.values,'Chromuotas rėmas ir pakojis · FBCR'));
   }else if(d.schema==='chair-exact-witness-colors-329-v1'){
    for(const scope of entries(d.witnessScopes))for(const r of entries(scope.records)){
     requireValue(r.independentCompositionValidated===false&&r.requiresExactConstructionAndFinishState===true,'Observed state does not prohibit independent composition');

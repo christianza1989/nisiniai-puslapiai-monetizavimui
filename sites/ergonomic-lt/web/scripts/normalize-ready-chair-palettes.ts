@@ -3,7 +3,8 @@ import {createHash} from 'node:crypto';
 import type {ChairPreview} from '../src/lib/chair-preview';
 import type {Asset} from '../src/lib/expanded-configurator';
 import type {ChairQualifiedData,QualifiedWitness,QualifiedPatch,QualifiedGroup,QualifiedOption} from '../src/lib/chair-qualified-colors';
-import {conditionalChairMaterialGroups,conditionalChairAdmissions} from './conditional-chair-finish-contexts';
+import {conditionalChairMaterialGroups,conditionalChairAdmissions,conditionalChairAdmission} from './conditional-chair-finish-contexts';
+import {calibratedChairLibrary,ownChairScope,savedAutoChairState} from './remaining-chair-scope-admissions';
 type Obj=Record<string,any>;
 const entries=(v:any):Obj[]=>Array.isArray(v)?v:Object.values(v||{});
 const canonical=(v:any):string=>JSON.stringify(v,(_k,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a<b?-1:a>b?1:0)):x);
@@ -63,7 +64,9 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
   if(d.schema==='chair-exact-state-primitive-swaps-329-v1')requireValue(d.exactFullStateOnly===true&&d.independentFinishCompositionAllowed===false&&(d.runtimeSha256===undefined||d.runtimeSha256===data.runtimeSha256),'Saved-state scope is not exact');
   else requireValue(d.runtimeSha256===data.runtimeSha256,'Supplemental runtime mismatch');
  }
+ const own=documents['own-source-contract.json']?ownChairScope(data.code,data.runtimeSha256,documents):undefined;
  for(const [file,d]of Object.entries(documents)){
+  if(own&&['own-source-contract.json','native10-qualification.json','construction-scope.json'].includes(file)){diagnostics.push({file,kind:'EXACT_NEW_OWN_SCOPE_EVIDENCE'});continue;}
   if(!d.schema){requireValue(file==='GROUP-PALETTE-VERIFIED-SAFE.json'&&d.pass===true,'Unknown supplemental certificate');continue;}
   checkDocument(d);
   if(d.schema==='chair-qualified-exhaustive-witness-palette-447-v1'||d.schema==='chair-qualified-exhaustive-runtime-palette-440-v1'){
@@ -72,18 +75,29 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
    q.legacyScopes.push({context:w.context,construction:w.construction,requiredAssets:w.requiredAssets});
   }else if(d.schema==='chair-qualified-group-palette-353-v1'){
    requireValue(d.qualifiedByDecision353===true&&d.qualifiedWitnessGroupPaletteComplete===true,'Group qualification absent');
-   const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas);const groups=entries(d.groups).map(group);
+   const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas);
+   if(own?.atomic){
+    w.fixed=d.fixedObservedFinishValues;
+    for(const v of own.values)w.singles.push(option(v,{...v.values,...v.derivedFinishValues}));
+    diagnostics.push({file,kind:'ATOMIC_WITH_COUPLED_READONLY_FINISH',count:own.values.length});continue;
+   }
+   if(own)w.fixed=d.fixedObservedFinishValues;
+   const groups=entries(d.groups).map(group);
    for(const g of groups){const previous=w.groups.find(x=>x.id===g.id);requireValue(!previous||canonical(previous)===canonical(g),'Contradictory duplicate group');if(!previous)w.groups.push(g);}
+  }else if(d.schema==='chair-qualified-conditional-own-construction-palette-5840-v1'){
+   requireValue(own?.atomic&&own.structural,'OWN construction scope evidence absent');
+   const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas,'Apmušalas · ratukai SH');w.structural=own.structural;
+   for(const v of own.values)w.singles.push(option(v,v.values));
   }else if(Object.values(conditionalChairAdmissions).some(p=>p.contract===d.schema)){
-   requireValue(documents['colors-groups.json']?.schema===conditionalChairAdmissions[data.code]?.palette,'Finite conditional contract has no corresponding palette');
+   requireValue(!!conditionalChairAdmission(data.code,documents['colors-groups.json']?.schema),'Finite conditional contract has no corresponding palette');
   }else if(Object.values(conditionalChairAdmissions).some(p=>p.palette===d.schema)){
    const scope=conditionalChairMaterialGroups(data.code,data.runtimeSha256,documents),c=scope.contract;
-   const w=witness(c.runtimeContextIndex,c.exactConstructionAndDerivedValues,c.requiredOwnedBaseAssetShas,'Apmušalas YB · tik šiai konstrukcijai');w.fixed=scope.readonly;
+   const w=witness(c.runtimeContextIndex,c.exactConstructionAndDerivedValues,c.requiredOwnedBaseAssetShas,'Apmušalas '+scope.finishPrefix.CUPHGROUP+' · tik šiai konstrukcijai');w.fixed=scope.readonly;
    for(const g of scope.groups){
     const options:QualifiedOption[]=g.values.map((v:Obj)=>option(v,v.values,g.mesh?v.values.CMESHCOLOR:v.values.CUPHCOLOR));
     const baseline=options.find(o=>canonical(o.values)===canonical(g.source.baseValues));
-    // The original PRICE2/EGL control is outside the PRICE1/YB domain. Keep
-    // original startup and reset; never invent it as a fourteenth YB option.
+    // An original calibration tuple can be outside this exact prefix. Keep
+    // original startup/reset; never add it to the scoped selectable domain.
     w.groups.push({id:g.source.id,label:g.label,options,base:(baseline||options[0]).id});
    }
   }else if(d.schema==='chair-exact-conditional-finish-context-contract-4300-v1'){
@@ -130,6 +144,13 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
    requireValue(d.independentCrossWitnessCompositionAllowed===false&&d.witnesses.length===d.qualifiedWitnessCount,'Unknown cross-witness contract');
    for(const ref of d.witnesses){const source=documents[ref.file];requireValue(source?.schema==='chair-qualified-group-palette-353-v1'&&source.witnessActualTupleSha256===ref.witnessActualTupleSha256&&source.runtimeContextIndex===ref.runtimeContextIndex,'Referenced group witness absent or changed');witness(ref.runtimeContextIndex,ref.exactConstructionAndDerivedValues,ref.requiredOwnedBaseAssetShas);}
   }else if(d.schema==='chair-color-library-reuse-329-v1'){
+   if(d.reuse682ProofSha256){
+    for(const scope of calibratedChairLibrary(data,d)){
+     const f=scope.source,w=witness(f.targetRuntimeContextIndex,f.targetBaseFullActualState);w.inference=true;
+     for(const v of scope.values)w.singles.push(option(v,v.targetFullReachableGroupValues,label(v.targetFullReachableGroupValues)+' · patikrinta biblioteka'));
+    }
+    diagnostics.push({file,kind:'CALIBRATED_ATOMIC_LIBRARY_INFERENCE'});continue;
+   }
    requireValue(d.requireOtherFinishValuesMatchTargetBase===true&&d.independentCompositionValidated===false&&d.applyOnlyAtExactTargetWitnessConstruction===true&&d.geometryReusedFromOtherModel===false,'Reuse contract not bounded to one OWN target');
    for(const f of entries(d.fields)){
     requireValue(f.targetRuntimeSha256===data.runtimeSha256,'Reuse target scope not pinned');
@@ -137,6 +158,9 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
     const base=f.targetBaseFullActualState;for(const [k,v]of Object.entries(f.requiredCausalPartControllerContext||{}))requireValue(base[data.code+'_FINISHES.'+k]===v,'Reuse causal prefix differs from its captured base');
     for(const v of entries(f.values)){requireValue(v.mode==='material','Nonmaterial library reuse');w.singles.push(option(v,{[f.field]:String(v.value)},f.field+' = '+v.value+' · patikrinta biblioteka'));}
    }
+  }else if(d.schema==='exact-saved-own-auto-construction-primitive-swap-1301-v1'){
+   const state=savedAutoChairState(data,d),w=witness(0,state.before,[d.removeOwnSelectors[0].assetSha256],'Surinkta chromuoto rėmo ir pakojo būsena');
+   w.singles.push(option(state.patch,state.values,'Chromuotas rėmas ir pakojis · FBCR'));
   }else if(d.schema==='chair-exact-witness-colors-329-v1'){
    for(const scope of entries(d.witnessScopes))for(const r of entries(scope.records)){
     requireValue(r.independentCompositionValidated===false&&r.requiresExactConstructionAndFinishState===true,'Observed state does not prohibit independent composition');

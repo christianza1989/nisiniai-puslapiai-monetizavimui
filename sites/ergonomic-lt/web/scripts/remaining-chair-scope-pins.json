@@ -1,0 +1,295 @@
+{
+  "K2ME001WW002": {
+    "version": "colors-20261030-v4-calibrated-2me681",
+    "manifestSha256": "04a5ba737f5e3012dbd10e3f4668fde9d9ecfe978cd1ae7c7b9a27a8cc9d6144",
+    "headers": {
+      "colors-reuse.json": "a88b03c8b71223698b7d310210cc2194949fd5f1b86d6fcec12a0502dcc749c2",
+      "colors.json": "f3aa3d3e423c32d4dcab971f3bf99494e7d5344a902acf816adb97292daf6244",
+      "runtime.json": "76089b0a44457d758776b7e7a144e34820236d3149306c62d80ccd36247da108",
+      "selectors.json": "7ffe4c9f4bf1ff2b44f58ef2e21fc6878bce4f7236dd8f3191a69de6d8a92b74",
+      "SHA256SUMS.json": "04a5ba737f5e3012dbd10e3f4668fde9d9ecfe978cd1ae7c7b9a27a8cc9d6144"
+    },
+    "runtime": "76089b0a44457d758776b7e7a144e34820236d3149306c62d80ccd36247da108",
+    "kind": "calibrated-library",
+    "scopes": [
+      {
+        "field": "CUPHCOLOR",
+        "context": 0,
+        "prefix": {
+          "CPRICEGROUP": "_4",
+          "CUPHGROUP": "SY"
+        },
+        "fields": [
+          "CPRICEGROUP",
+          "CUPHCOLOR",
+          "CUPHGROUP"
+        ],
+        "count": 75
+      },
+      {
+        "field": "CUPHCOLOR",
+        "context": 0,
+        "prefix": {
+          "CPRICEGROUP": "_1",
+          "CUPHGROUP": "CSE"
+        },
+        "fields": [
+          "CPRICEGROUP",
+          "CUPHCOLOR",
+          "CUPHGROUP"
+        ],
+        "count": 44
+      },
+      {
+        "field": "CFRAMEMETALCOLOR",
+        "context": 0,
+        "prefix": {
+          "CFRAMEMETALMATERIAL": "STEELPC"
+        },
+        "fields": [
+          "CFRAMEMETALCOLOR",
+          "CFRAMEMETALMATERIAL"
+        ],
+        "count": 8
+      },
+      {
+        "field": "CUPHCOLOR",
+        "context": 0,
+        "prefix": {
+          "CPRICEGROUP": "_4",
+          "CUPHGROUP": "MLF"
+        },
+        "fields": [
+          "CPRICEGROUP",
+          "CUPHCOLOR",
+          "CUPHGROUP"
+        ],
+        "count": 14
+      }
+    ]
+  },
+  "K2ME003WW002": {
+    "version": "colors-20261030-v4-calibrated-2me681",
+    "manifestSha256": "9cd0a8cb4bb729cf598d8e077e2319ed89ecbd7cdac5d518bd95f36458319b1d",
+    "headers": {
+      "colors-reuse.json": "543849a8ec86e7dfee7b621eac01427b5e39b80015e8089d8c0d44763a16f062",
+      "colors.json": "b22246e3c1845dc4af23e85f94aa70db8c1582d58e541a2e4a119a22679c3907",
+      "runtime.json": "0ddb8f4efa8470386d2501095b5234420f7ff3587eb313fb24028f6a807c0925",
+      "selectors.json": "0fb5cb7bafaef9ef1dc81d1a26c9007cc3f83745ef148d44012860dc476522ad",
+      "SHA256SUMS.json": "9cd0a8cb4bb729cf598d8e077e2319ed89ecbd7cdac5d518bd95f36458319b1d"
+    },
+    "runtime": "0ddb8f4efa8470386d2501095b5234420f7ff3587eb313fb24028f6a807c0925",
+    "kind": "calibrated-library",
+    "scopes": [
+      {
+        "field": "CUPHCOLOR",
+        "context": 1,
+        "prefix": {
+          "CPRICEGROUP": "_5",
+          "CUPHGROUP": "RX"
+        },
+        "fields": [
+          "CPRICEGROUP",
+          "CUPHCOLOR",
+          "CUPHGROUP"
+        ],
+        "count": 18
+      },
+      {
+        "field": "CUPHCOLOR",
+        "context": 1,
+        "prefix": {
+          "CPRICEGROUP": "_1",
+          "CUPHGROUP": "CSE"
+        },
+        "fields": [
+          "CPRICEGROUP",
+          "CUPHCOLOR",
+          "CUPHGROUP"
+        ],
+        "count": 44
+      },
+      {
+        "field": "CFRAMEMETALCOLOR",
+        "context": 1,
+        "prefix": {
+          "CFRAMEMETALMATERIAL": "STEELPC"
+        },
+        "fields": [
+          "CFRAMEMETALCOLOR",
+          "CFRAMEMETALMATERIAL"
+        ],
+        "count": 8
+      }
+    ]
+  },
+  "K2ME004WW004": {
+    "version": "colors-20261030-v4-calibrated-2me681",
+    "manifestSha256": "150f1c36acc04cae2b340ec71796850d22576d714f5ef65ddc4cd92074ec5ce8",
+    "headers": {
+      "colors-reuse.json": "cac55848fd7ce90e8aa5093f3cfb7a23e54a8b45ae8c6c8895c1f57a0f1e3783",
+      "colors.json": "d8cca63f316020013b1e283ed06a6e38c27cc1323346249ba188adb36402dbbf",
+      "runtime.json": "74e2e90abcfb750f8e6924f3d7219b8b25eb5f628c0548bd1336867136634a2f",
+      "selectors.json": "d44afe9e27d1b271164a93936439fded50d0b368ccf6e14fb461cceb640b3fb4",
+      "SHA256SUMS.json": "150f1c36acc04cae2b340ec71796850d22576d714f5ef65ddc4cd92074ec5ce8"
+    },
+    "runtime": "74e2e90abcfb750f8e6924f3d7219b8b25eb5f628c0548bd1336867136634a2f",
+    "kind": "calibrated-library",
+    "scopes": [
+      {
+        "field": "CUPHCOLOR",
+        "context": 0,
+        "prefix": {
+          "CPRICEGROUP": "_4",
+          "CUPHGROUP": "SY"
+        },
+        "fields": [
+          "CPRICEGROUP",
+          "CUPHCOLOR",
+          "CUPHGROUP"
+        ],
+        "count": 75
+      },
+      {
+        "field": "CUPHCOLOR",
+        "context": 0,
+        "prefix": {
+          "CPRICEGROUP": "_1",
+          "CUPHGROUP": "CSE"
+        },
+        "fields": [
+          "CPRICEGROUP",
+          "CUPHCOLOR",
+          "CUPHGROUP"
+        ],
+        "count": 44
+      },
+      {
+        "field": "CUPHCOLOR",
+        "context": 0,
+        "prefix": {
+          "CPRICEGROUP": "_4",
+          "CUPHGROUP": "MLF"
+        },
+        "fields": [
+          "CPRICEGROUP",
+          "CUPHCOLOR",
+          "CUPHGROUP"
+        ],
+        "count": 14
+      }
+    ]
+  },
+  "KNAU017WW001": {
+    "version": "colors-20261030-v2-exact-own-auto-swap1301",
+    "manifestSha256": "85db517e55fca25a6b2b361ec0091184765905852d1fa94e41679582ad64e069",
+    "headers": {
+      "colors-saved-auto-construction-swaps.json": "6a2339806d6ee0b5cc6024738a43d3d30a3c7b69edfc2b0967530069d494e640",
+      "colors.json": "65f7e9ee18a865fe218c04fba77570b1f4485ead6a9498cdc7b21e2474ec43bd",
+      "runtime.json": "db2eaa293ae858ca82a8b62d43c669b4221d20873f0e00f6c68e3c9fdfe1d97d",
+      "selectors-auto-swap-qualification.json": "1d987659c461bb778cd6b8e114b62f39667e6b43a1be5393c3eaa92f4610efc4",
+      "selectors-auto-swap.json": "d0ac3c84cfe41f2647de9095a244c369bc9327caff5b97ca2ceaebc3835b4507",
+      "selectors.json": "918f2a79ea4e0218221d37c9c9b627fd683f5a03aaa3c9b73e652dccaca26935",
+      "SHA256SUMS.json": "85db517e55fca25a6b2b361ec0091184765905852d1fa94e41679582ad64e069"
+    },
+    "runtime": "db2eaa293ae858ca82a8b62d43c669b4221d20873f0e00f6c68e3c9fdfe1d97d",
+    "kind": "saved-auto-state"
+  },
+  "KCHI001WW004": {
+    "version": "colors-20261102-v1-qualified-own-groups5061",
+    "manifestSha256": "39b2ff7f45237cb861328ab21378eca1ef731b74c259b23046a2ce36f080dd7a",
+    "headers": {
+      "colors-groups.json": "41ba0a7685c79f638890d859d68b62e9f17540c2133fe35aa17a10f808236134",
+      "colors.json": "2f6992166242526c33b6e42810183364a7a205e2f1a4838a5475b0e04ddf48c3",
+      "native10-qualification.json": "6ed4ee922409667017b80bacad8e49fc0dfd87ee963ccd16bf654713b73c0579",
+      "own-source-contract.json": "0e7673f1ecdb99fb8da315c022f80e5ff465ec22b73ba8a86b797ba8c57b2577",
+      "runtime.json": "b2d8aa67b70151a7e561cbd2b59af7ff4fc7ad80171c6901c42fc4eef40a5ce2",
+      "selectors-qualification.json": "005d9fceeb1b841295e9047a4756feeaa25410ac2172b1549a0cbc4c36176f13",
+      "selectors.json": "df65e2e36d90c16170c02e169f75cbb16da283346f9354675c859e18da60a6df",
+      "SHA256SUMS.json": "39b2ff7f45237cb861328ab21378eca1ef731b74c259b23046a2ce36f080dd7a"
+    },
+    "runtime": "b2d8aa67b70151a7e561cbd2b59af7ff4fc7ad80171c6901c42fc4eef40a5ce2",
+    "kind": "new-own",
+    "contract": "qualified-new-own-runtime-group-contract-5110-v1",
+    "palette": "chair-qualified-group-palette-353-v1",
+    "sourceKind": "QUALIFIED_NEW_OWN_GROUP5061_CHI_NATIVE10",
+    "asset": "6308040991cb7d8b821ba6ed2860672ee33bee39461ec916746845944625557d",
+    "qualification": "d039cdab4028258c9c4ccbff4a4577a14d0c2da94738601e50cf2f08c136bac6",
+    "witness": "26ee6e42b8a8da2ea4b4b58ff39758f8f340bc16ec496bcac34006d69ed3d2a7",
+    "count": 30,
+    "fields": [
+      "CUPHGROUP",
+      "CUPHCOLOR"
+    ],
+    "selectors": 1,
+    "fixed": {
+      "CFRAMEMETALCOLOR": "CR",
+      "CFRAMEMETALMATERIAL": "STEELCR",
+      "CPRICEGROUP": "_0"
+    }
+  },
+  "KLYN003WW002": {
+    "version": "colors-20261102-v1-qualified-own-groups5401",
+    "manifestSha256": "b06a2b4ab6acc0804a041e0e53b166a5478799e27dc7fdeeea165e5eb5b8428c",
+    "headers": {
+      "colors-groups.json": "86f55a28c12f60d144fca9bd9e22c1be575c2c2cc06277204d2cbc013ea1be5b",
+      "colors.json": "9822a069870440a18161db5cc0ec8ef943712d8fcaf887cd70b208b440a667bf",
+      "native10-qualification.json": "4ee46513d4972402f7bd217e990d080c84829a5b21864abcc454effd41327c39",
+      "own-source-contract.json": "88945bec529fa6a399af9e800e1523a75aa0e6da5ac35198a7a1168ca5f8b9ef",
+      "runtime.json": "b8fdc646eb3006f96b1c946c4f0f4347a7f83a39bf66d297a69b013fa28802b0",
+      "selectors-qualification.json": "f5c365371bb02ac64d908b6a4fd55753374652c1a050e92f85c3fdf5c5c9d691",
+      "selectors.json": "b6d3880d8f047d6cc60d9ac6e0ac79d34b53a8969b39f6ea1e86fd90c75bd450",
+      "SHA256SUMS.json": "b06a2b4ab6acc0804a041e0e53b166a5478799e27dc7fdeeea165e5eb5b8428c"
+    },
+    "runtime": "b8fdc646eb3006f96b1c946c4f0f4347a7f83a39bf66d297a69b013fa28802b0",
+    "kind": "new-own",
+    "contract": "qualified-new-own-runtime-group-contract-5440-v1",
+    "palette": "chair-qualified-group-palette-353-v1",
+    "sourceKind": "QUALIFIED_NEW_OWN_GROUP5401_LYN_NATIVE10",
+    "asset": "5a54e408b76ad0d74cb9a729491ba46376c3efe274db514f179bcefb1dc7ac62",
+    "qualification": "4bbe143986033d4326d49cd796136b4381375084dbf99df8bc5e6aacfdbcc1ef",
+    "witness": "847985a7e2c9e355221a91d09bad9e7cbd3843ed343e117d0489c3627441a01b",
+    "count": 92,
+    "fields": [
+      "CPRICEGROUP",
+      "CUPHCOLOR"
+    ],
+    "selectors": 3,
+    "fixed": {
+      "CARMPADSCOLOR": "_3097",
+      "CFRAMEMETALCOLOR": "CR",
+      "CFRAMEMETALMATERIAL": "STEELCR"
+    }
+  },
+  "KNAD001WW002": {
+    "version": "colors-20261103-v1-qualified-own-context5681-sh",
+    "manifestSha256": "6b867ec8bd4b06ef9ffff9b23214e60a1e2c76d292630af4f82de078fd6b4a73",
+    "headers": {
+      "colors-groups.json": "6510498dee8691093578547c0b1c1963274a2ab2f9b742c9b933fd2120ba8af6",
+      "colors.json": "ec921855cde6faebf25fa3d05604c3c4d393b629ccf0a6ae549352e909d2a987",
+      "construction-scope.json": "7a891e73c9ec24414ed5191a0535d12f041ae916262b03ac15256efe7233622e",
+      "native10-qualification.json": "624e6d223bb2d73e062b5c0f7b9b04f4076c2eea07ede641b4d7eb68bd5738e7",
+      "own-source-contract.json": "810e1fc3a034cbaeefcfa128cb5459c8f964eacf91f20f3664dc3e0a1db34dd2",
+      "runtime.json": "ca43aeca5f3e9d444eeeecb307a807d4d4e28541e3a986e8686c7fef4dd39425",
+      "selectors-qualification.json": "cc19907061b34c6ba631baad949100a5234cf6ebc0096c784d4bf2a072e98b81",
+      "selectors.json": "d1f0e3e207f8152f47eaabe0fbd8964abe4d76551ff0349c72bcf742727e24ca",
+      "SHA256SUMS.json": "6b867ec8bd4b06ef9ffff9b23214e60a1e2c76d292630af4f82de078fd6b4a73"
+    },
+    "runtime": "ca43aeca5f3e9d444eeeecb307a807d4d4e28541e3a986e8686c7fef4dd39425",
+    "kind": "new-own",
+    "contract": "qualified-own-fixed-construction-context-contract-5840-v1",
+    "palette": "chair-qualified-conditional-own-construction-palette-5840-v1",
+    "sourceKind": "QUALIFIED_CONDITIONAL_OWN5681_NAD_CASTORS_SH_NATIVE10",
+    "asset": "885582b401ce33a7388d6725547b03ac34435c70bb34a3db19235ca40ac8a834",
+    "qualification": "5a54bf8d9314aae99062523a242b6d90009f9000333bd65f9fe103e61517ada4",
+    "witness": "1dc805e01ee6b1d4cb9e624036c07f5c295a8418c5d5d8fc2b1a0af06d4a2044",
+    "count": 200,
+    "fields": [
+      "CPRICEGROUP",
+      "CUPHCOLOR",
+      "CUPHGROUP"
+    ],
+    "selectors": 7,
+    "fixed": {}
+  }
+}

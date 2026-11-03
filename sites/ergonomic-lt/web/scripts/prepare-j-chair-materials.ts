@@ -14,7 +14,8 @@ import {normalizeReadyChairPalettes} from './normalize-ready-chair-palettes';
 import {glbGeometryAdmission,opaqueGlbAdmission} from './prepared-review-glb-admission';
 import {retainQualifiedScopes} from './prepared-chair-qualified-union';
 import {priorLosslessBindings,rebindLosslessRuntime,rebindLosslessSelectors,rebindLosslessQualified,decodeForNewSelectors} from './prepared-lossless-chair-binding';
-import {conditionalChairAdmissions} from './conditional-chair-finish-contexts';
+import {conditionalChairAdmission,conditionalChairContractDisplay} from './conditional-chair-finish-contexts';
+import {remainingChairScopePins,assertRemainingChairHeaders,calibratedChairLibrary,savedAutoChairState} from './remaining-chair-scope-admissions';
 
 const sha=(v:Uint8Array|string)=>createHash('sha256').update(v).digest('hex');
 const canonical=(v:unknown):string=>JSON.stringify(v,(_k,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a<b?-1:a>b?1:0)):x);
@@ -44,6 +45,7 @@ async function main(){
   const out=path.join(values.output,code);await fs.mkdir(out,{recursive:false});
   try{
    const selected=index.packages.find((p:any)=>p.code===code)?.latestVersion;assert(selected&&relative(selected.packagePath),'Missing J version');
+   const additional=remainingChairScopePins[code]?.version===selected.version?remainingChairScopePins[code]:undefined;
    const root=path.join(path.dirname(values.index),selected.packagePath),manifestBytes=await fs.readFile(root+'/SHA256SUMS.json');
    assert.equal(sha(manifestBytes),selected.manifestSha256);const manifest=JSON.parse(manifestBytes.toString());
    assert.equal(manifest.code,code);assert.equal(manifest.version,selected.version);
@@ -76,7 +78,11 @@ async function main(){
      const proved=lossless.get(binding.assetSha256);if(proved)binding.assetSha256=proved.target;
     }
    }
-   assert(canonical(primaryContract(palette))===canonical(primaryContract(old.palette)),'Changed prior palette needs explicit scope reconciliation');
+   if(additional?.kind==='calibrated-library'){
+    assert(palette.schema==='chair-base-observed-colours-v1'&&old.palette.schema==='chair-base-observed-colours-v1','Calibrated update requires the original-only baseline');
+    const baseline=(p:any)=>Object.fromEntries(Object.entries(p.baselineObservedFinish).map(([field,v]:[string,any])=>[field,v.value]));
+    assert(canonical(baseline(palette))===canonical(baseline(old.palette)),'Calibrated package changed an original finish');
+   }else assert(canonical(primaryContract(palette))===canonical(primaryContract(old.palette)),'Changed prior palette needs explicit scope reconciliation');
    const namespace='/models/configurator/chairs/'+code+'-'+selected.manifestSha256.slice(0,20);
    const assets:ChairPreview['assets']={},textures={...old.textures},fileAssets:Record<string,any>={},materials:Record<string,unknown>={},documents:Record<string,any>={};
    const oldAssets={...old.assets,...old.qualified?.extraAssets};
@@ -85,6 +91,7 @@ async function main(){
     assets[target]=prior;
    }
    const supplemental=(file:string)=>/^(colors-.+\.json|conditional-context\.json|GROUP-PALETTE-VERIFIED-SAFE\.json)$/.test(file);
+   if(additional)await bounded(Object.keys(additional.headers).filter(file=>file!=='SHA256SUMS.json'),read);
    await bounded(Object.keys(manifest.files).filter(file=>/^library\/materials\/[a-f0-9]{64}\.json$/.test(file)||supplemental(file)),read);
    for(const [file,m]of Object.entries(manifest.files)as[string,any][]){
     if(file.endsWith('.glb'))fileAssets[file]=oldAssets[m.sha256]?.bytes===m.bytes?oldAssets[m.sha256]:{asset:namespace+'/source/'+file,assetSha256:m.sha256,bytes:m.bytes};
@@ -96,9 +103,28 @@ async function main(){
      else{await read(file);const row=fileReceipts.get(file);const url=namespace+'/source/'+file;newAssets[url]=row;textures[m.sha256]={asset:url,sha256:m.sha256,bytes:m.bytes};}
     }
    }
-   const cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'],pin=conditionalChairAdmissions[code],finite=pin&&documents['colors-groups.json']?.schema===pin.palette,conditional=finite||documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1';
-   assert(cert?.pass===true&&cert.noDonorGeometry===true&&cert.code===code&&(conditional?cert.conditionalScopeKind===(finite?pin.kind:'QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181')&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false:cert.qualifiedWitnessGroupPaletteComplete===true),'Missing OWN scoped producer certificate');
-   if(finite){assert.equal(selected.manifestSha256,pin.manifest,'Conditional manifest is not the explicitly admitted version');assert.equal(documents['conditional-context.json'][pin.qualification],fileReceipts.get('GROUP-PALETTE-VERIFIED-SAFE.json')?.sha256,'Conditional qualification certificate SHA differs');}
+   const cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'],pin=conditionalChairAdmission(code,documents['colors-groups.json']?.schema),finite=!!pin,conditional=finite||documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1';
+   if(additional){
+    assertRemainingChairHeaders(code,selected.version,selected.manifestSha256,fileReceipts);
+    if(additional.kind==='calibrated-library')calibratedChairLibrary(old,documents['colors-reuse.json']);
+    else{
+     assert(additional.kind==='saved-auto-state','New OWN runtime requires separate base admission');savedAutoChairState(old,documents['colors-saved-auto-construction-swaps.json']);
+     const qualified=JSON.parse((await read('selectors-auto-swap-qualification.json')).toString()),extra=JSON.parse((await read('selectors-auto-swap.json')).toString());
+     assert(qualified.pass===true&&qualified.code===code&&qualified.runtimeSha256===old.runtimeSha256&&qualified.allOriginalNodePathsWorldMatricesAndPrimitiveCountersVerified===true&&qualified.selectorsSha256===fileReceipts.get('selectors-auto-swap.json')?.sha256&&extra.schema==='canonical-world-primitive-selectors-329-v1','Automatic saved-state selectors are not qualified');
+     for(const [hash,s]of Object.entries(extra.assets)as[string,any][]){
+      const prior=rawSelectors.assets[hash];if(!prior){rawSelectors.assets[hash]=s;continue;}
+      for(const slot of s.slots){const sameId=prior.slots.find((p:any)=>p.selectorId===slot.selectorId);assert(!sameId||canonical(sameId)===canonical(slot),'Automatic OWN selector changed an existing address');if(!sameId)prior.slots.push(slot);}
+      for(const [id,material]of Object.entries(s.materials||{})){assert(!prior.materials?.[id]||canonical(prior.materials[id])===canonical(material),'Automatic original material changed');prior.materials??={};prior.materials[id]=material;}
+     }
+    }
+   }else assert(cert?.pass===true&&cert.noDonorGeometry===true&&cert.code===code&&(conditional?cert.conditionalScopeKind===(finite?pin.kind:'QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181')&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false:cert.qualifiedWitnessGroupPaletteComplete===true),'Missing OWN scoped producer certificate');
+   if(finite){
+    assert.equal(selected.manifestSha256,pin.manifest,'Conditional manifest is not the explicitly admitted version');
+    assert.equal(selected.version,pin.version,'Conditional package version differs');
+    assert.equal(documents['conditional-context.json'][pin.qualification],fileReceipts.get('GROUP-PALETTE-VERIFIED-SAFE.json')?.sha256,'Conditional qualification certificate SHA differs');
+    if(pin.contractSha256)assert.equal(fileReceipts.get('conditional-context.json')?.sha256,pin.contractSha256,'Conditional exact contract SHA differs');
+   }
+   const displayContract=finite?conditionalChairContractDisplay(code,selected.version,selected.manifestSha256,fileReceipts.get('conditional-context.json')!.sha256,documents['conditional-context.json']):undefined;
    for(const [hash,prior]of Object.entries(old.selectors.assets)){
     const current=rawSelectors.assets[hash];
     if(!current){rawSelectors.assets[hash]=prior;continue;}
@@ -160,7 +186,7 @@ async function main(){
    const proof={code,version:selected.version,indexSha256:sha(indexBytes),manifestSha256:selected.manifestSha256,oldReviewSha256:oldEntry.sha256,runtimeSha256:old.runtimeSha256,
     sourceRuntimeSha256:sha(runtimeBytes),losslessRuntimeBindings:[...lossless.values()].map(p=>({rawSha256:p.source,transportSha256:p.target,receiptSha256:p.receiptSha256})),
     newSelectorProofs:selectorProofs,extraOwnAssetProofs:extraProofs,qualifiedWitnesses:q.witnesses.length,retainedPriorQualifiedScopes:old.qualified?.witnesses.length||0,groupOptions:options,usedInputs:files,originalGeometryCopies:0,NativeRequests:0,producerWholeReplayed:false,
-    fullPalettePass:false,browserPass:false,publicPass:false,result:'SCOPED_MATERIAL_UPDATE_SOURCE_ADMITTED'};
+    ...(displayContract?.corrected?{exactDisplayErratum:displayContract}:{}),fullPalettePass:false,browserPass:false,publicPass:false,result:'SCOPED_MATERIAL_UPDATE_SOURCE_ADMITTED'};
    await fs.writeFile(out+'/RESULT.json',JSON.stringify(proof,null,2)+'\n',{flag:'wx'});
    await fs.writeFile(out+'/ASSET-ROWS.json',JSON.stringify(newAssets,null,2)+'\n',{flag:'wx'});
    await fs.writeFile(out+'/ENTRY.json',JSON.stringify(entry,null,2)+'\n',{flag:'wx'});

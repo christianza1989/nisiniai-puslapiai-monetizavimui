@@ -21,6 +21,7 @@ export function displayModelName(p:Product){
   .replace(/\s+/g,' ').replace(/[, ]+$/,'').trim()||p.name;
 }
 export function productHeading(p:Product){
+ if(p.textReviewHeading)return p.textReviewHeading;
  const name=displayModelName(p),kind=productKind(p);
  return kind?capitalize(kind.label)+' '+name:name;
 }

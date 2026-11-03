@@ -5,10 +5,14 @@ import {chairObservedChoices,chairPreviewAssembly,chairInitialContext,chairIniti
 import {qualifiedWitnessMatches,qualifiedDefaultSelection,type QualifiedSelection,type QualifiedGroup} from '@/lib/chair-qualified-colors';
 import type {PilotVariant} from '@/lib/configurator';
 import './pc2-chair-review.css';
+import {useTextReview,ReviewFieldButton} from './text-review-provider';
 
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false});
 export type ChairReviewEntry={code:string;name:string;asset:string;sha256:string;bytes:number};
 function ModelReview({data}:{data:ChairPreview}){
+ const review=useTextReview();
+ const fieldText=(field:string)=>review.resolve(review.binding(data.code,field),field,data.code);
+ const valueText=(field:string,value:string)=>review.resolve(review.binding(data.code,field,value),value,data.code);
  const [context,setContext]=useState(()=>chairInitialContext(data)),[variants,setVariants]=useState(()=>chairInitialVariants(data,chairInitialContext(data))),[observed,setObserved]=useState('original'),[qualified,setQualified]=useState<QualifiedSelection>();
  const choices=useMemo(()=>chairObservedChoices(data),[data]),choice=choices.find(c=>c.id===observed)||choices[0];
  const baseline=useMemo(()=>chairPreviewAssembly(data,context,variants,choices[0]),[data,context,variants,choices]);
@@ -29,7 +33,7 @@ function ModelReview({data}:{data:ChairPreview}){
   <div className="pc2-chair-controls">
    <h2>{data.name} · {data.code}</h2>
    {data.runtime.contexts.length>1&&<label className="field">Surinkta konstrukcija<select aria-label="Surinkta konstrukcija" value={context} onChange={e=>{const next=Number(e.target.value);setContext(next);setVariants(chairInitialVariants(data,next));setObserved('original');setQualified(undefined);}}>{data.runtime.contexts.map((c,index)=><option value={index} key={index}>{Object.entries(c.dimensions).map(([k,v])=>k+' = '+v).join(' · ')||'Pradinė konstrukcija'}</option>)}</select></label>}
-   {current.groups.filter(g=>g.fields.length).map(g=>{const index=current.groups.indexOf(g);return <label className="field" key={index}>{g.fields.join(' / ')}<select aria-label={g.fields.join(' / ')} value={variants[index]??0} onChange={e=>{const next=[...variants];next[index]=Number(e.target.value);setVariants(next);setObserved('original');setQualified(undefined);}}>{g.variants.map((v,n)=><option key={n} value={n}>{Object.entries(v.values).map(([k,value])=>k+' = '+value).join(' · ')}</option>)}</select></label>;})}
+   {current.groups.filter(g=>g.fields.length).map(g=>{const index=current.groups.indexOf(g),active=g.variants[variants[index]??0];return <div key={index}>{g.fields.map(field=><ReviewFieldButton key={field} model={data.code} field={field} value={active?.values[field]||''}/>)}<label className="field">{g.fields.map(fieldText).join(' / ')}<select aria-label={g.fields.map(fieldText).join(' / ')} value={variants[index]??0} onChange={e=>{const next=[...variants];next[index]=Number(e.target.value);setVariants(next);setObserved('original');setQualified(undefined);}}>{g.variants.map((v,n)=><option key={n} value={n}>{Object.entries(v.values).map(([k,value])=>fieldText(k)+' = '+valueText(k,value)).join(' · ')}</option>)}</select></label></div>;})}
    {(choices.length>1||witnesses.some(w=>w.groups.length||w.branches.length||w.singles.length))&&<label className="field">Surinkta spalvinė būsena<select aria-label="Surinkta spalvinė būsena" value={observed} onChange={e=>choose(e.target.value)}>{choices.map(c=><option key={c.id} value={c.id}>{c.label}</option>)}{witnesses.filter(w=>w.groups.length||w.branches.length).map(w=><option key={w.id} value={'__qg:'+w.id}>{w.label}</option>)}{witnesses.flatMap(w=>w.singles.map(s=><option key={w.id+s.id} value={'__qs:'+w.id+':'+s.id}>{s.label}</option>))}</select></label>}
    {observed.startsWith('__qg:')&&selectedWitness&&<>
     {selectedWitness.branches.length>0&&<label className="field">Apdailos grupė<select aria-label="Apdailos grupė" value={qualified?.branch} onChange={e=>{const b=selectedWitness.branches.find(b=>b.id===e.target.value);setQualified(q=>q&&b?{...q,branch:b.id,groups:{...q.groups,...Object.fromEntries(b.groups.map(g=>[g.id,g.base]))}}:q);}}>{selectedWitness.branches.map(b=><option key={b.id} value={b.id}>{b.label}</option>)}</select></label>}

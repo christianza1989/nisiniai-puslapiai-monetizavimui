@@ -10,7 +10,7 @@ export default defineConfig({
   publicDir:process.env.ERGONOMIC_REUSE_RELEASE_ASSETS==='1'?false:undefined,
   envDir:file('./.cloudflare-env'),
   environments:{rsc:{build:{rolldownOptions:{output:{banner:"import { createRequire as __createRequire } from 'node:module'; const require = __createRequire('/bundle/worker.js');"}}}}},
-  plugins:[vinext(),cloudflare({configPath:process.env.LAUNCH_SITE==='true'?'wrangler.launch.json':'wrangler.jsonc',viteEnvironment:{name:'rsc',childEnvironments:['ssr']}})],
+  plugins:[vinext(),cloudflare({configPath:process.env.ERGONOMIC_WRANGLER_CONFIG||(process.env.LAUNCH_SITE==='true'?'wrangler.launch.json':'wrangler.jsonc'),viteEnvironment:{name:'rsc',childEnvironments:['ssr']}})],
   resolve:{alias:[
     // Keep the installed dependency immutable; fix its measured large-row CPU
     // defect in this application's reviewed adapter, with byte-parity tests.
@@ -18,7 +18,7 @@ export default defineConfig({
     {find:/^(?:@\/lib\/publication-db|\.\/publication-db)$/,replacement:file('./src/cloudflare/publication-db.ts')},
     {find:/^(?:@\/lib\/db|\.\/db)$/,replacement:file('./src/cloudflare/db.ts')},
     {find:'./pdf-assets',replacement:file('./src/cloudflare/pdf-assets.ts')},
-    {find:'./configurator-runtime-assets',replacement:file('./src/cloudflare/configurator-runtime-assets.ts')},
+    {find:'./configurator-runtime-assets',replacement:file(process.env.ERGONOMIC_TEXT_REVIEW_STAGE==='1'?'./src/cloudflare/configurator-runtime-assets.text-review.ts':'./src/cloudflare/configurator-runtime-assets.ts')},
     {find:/^pdfkit$/,replacement:file('./node_modules/pdfkit/js/pdfkit.standalone.js')},
   ]},
 });

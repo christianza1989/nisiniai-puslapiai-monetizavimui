@@ -1,5 +1,5 @@
 import { DatabaseSync } from 'node:sqlite';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync,readFileSync } from 'node:fs';
 import path from 'node:path';
 import type {SqlValue,SqlCommand} from './sql-types';
 const dbs=new Map<string,DatabaseSync>();
@@ -15,6 +15,7 @@ export function getDb() {
     CREATE TABLE IF NOT EXISTS rate_limits(key TEXT PRIMARY KEY,window_start INTEGER NOT NULL,count INTEGER NOT NULL);
     CREATE TABLE IF NOT EXISTS audit_events(id INTEGER PRIMARY KEY,event TEXT NOT NULL,object_id TEXT,created_at TEXT NOT NULL);
   `);
+  db.exec(readFileSync(path.join(process.cwd(),'migrations/0002_text_review.sql'),'utf8'));
   const quoteColumns=db.prepare('PRAGMA table_info(quotes)').all() as {name:string}[];
   if(!quoteColumns.some(c=>c.name==='delivery_started_at'))db.exec('ALTER TABLE quotes ADD COLUMN delivery_started_at INTEGER');
   dbs.set(folder,db);return db;

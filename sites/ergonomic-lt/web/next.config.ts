@@ -8,7 +8,7 @@ const config: NextConfig = {
   output: process.env.CLOUDFLARE_BUILD==='true'?undefined:'standalone',
   distDir: process.env.NEXT_DIST_DIR || (process.env.NODE_ENV === 'development' ? '.next-dev' : '.next'),
   serverExternalPackages: ['nodemailer','pdfkit'],
-  outputFileTracingIncludes: {'/*':['./content/**/*.json','./public/fonts/manrope.ttf','./public/media/configurator/*.jpg']},
+  outputFileTracingIncludes: {'/*':['./content/**/*.json','./migrations/**/*.sql','./public/fonts/manrope.ttf','./public/media/configurator/*.jpg']},
   outputFileTracingExcludes: {'/*':['./.env*','./.local-admin.txt','./.runtime/**','./backups/**','./tests/**','./.impeccable/**']},
   images: { remotePatterns: [
     { protocol: 'https', hostname: 'www.nowystyl.com', pathname: '/getmedia/**' },

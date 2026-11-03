@@ -22,7 +22,7 @@ export function modelProduct(product:Product,configuration:Configuration):Produc
   const modelArticle=privateArticle(product,configuration.id,editorialModelArticle(product.id,configuration.id));
   const specific=uniqueGalleryPhotos([c.image,...(c.galleryOwner===product.id+':'+c.id?c.gallery||[]:[])]);
   const gallery=specific;
-  return {...product,...(modelArticle?{modelArticle,description:modelArticle.summary}:{}),name:modelArticle?.configurable?.displayName||modelName(product,c),familyName:product.name,familySlug:product.slug,
+  return {...product,textReviewHeading:product.textReviewNames?.[c.id],...(modelArticle?{modelArticle,description:modelArticle.summary}:{}),name:modelArticle?.configurable?.displayName||modelName(product,c),familyName:product.name,familySlug:product.slug,
     slug:((product as Product&{publicationOriginalCount?:number}).publicationOriginalCount??product.configurations.length)>1?`${product.slug}-modelis-${encodeURIComponent(c.id)}`:product.slug,
     modelConfigurationId:c.id,image:c.image||specific[0]||null,gallery,modelGalleryCount:specific.length,
     configurations:product.configurations.map(x=>x.id===c.id?c:x)};

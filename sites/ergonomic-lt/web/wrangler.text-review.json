@@ -1,0 +1,18 @@
+{
+ "$schema":"node_modules/wrangler/config-schema.json",
+ "name":"ergonomic-text-review",
+ "account_id":"1c0a7407abfb959d5ff46540f5f7009d",
+ "main":"src/cloudflare/text-review-worker.ts",
+ "compatibility_date":"2026-10-10",
+ "compatibility_flags":["nodejs_compat"],
+ "workers_dev":true,
+ "assets":{"binding":"ASSETS","run_worker_first":true,"not_found_handling":"none"},
+ "d1_databases":[{"binding":"DB","database_name":"ergonomic-text-review","database_id":"227b3e97-2ebd-48cc-abce-c390931da765","migrations_dir":"migrations"}],
+ "vars":{
+  "PUBLIC_ORIGIN":"https://ergonomic-text-review.pinet-azprekyba.workers.dev",
+  "CANONICAL_ORIGIN":"https://ergonomic.lt",
+  "SITE_INDEXABLE":"false","PREVIEW_CATALOG":"true","COOKIE_SECURE":"true","TRUST_PROXY":"true",
+  "ERGONOMIC_PC2_CHAIR_REVIEW":"true","TEXT_REVIEW_STAGE":"true"
+ },
+ "observability":{"enabled":true,"logs":{"enabled":true,"head_sampling_rate":1}}
+}

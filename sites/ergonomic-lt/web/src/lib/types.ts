@@ -13,6 +13,7 @@ export type Product = {
   features:string[]; isNew:boolean; published:boolean; translationReviewed:boolean;
   updatedAt?:string;
   publicHeading?:string;
+  textReviewHeading?:string; textReviewNames?:Record<string,string>;
   modelConfigurationId?:string; familySlug?:string; familyName?:string;
   modelGalleryCount?:number;
   galleryBackdrops?:Record<string,string>;

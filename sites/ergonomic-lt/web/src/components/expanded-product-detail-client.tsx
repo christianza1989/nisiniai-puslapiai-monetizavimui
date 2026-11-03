@@ -30,14 +30,16 @@ import {deskColorPlan,DESK_COLOR_PENDING} from '@/lib/desk-color-plan';
 import {hasAssemblyGeometry} from '@/lib/viewer-assembly';
 import {visibleDeskPreviewChoices} from '@/lib/desk-preview-choices';
 import chairPreviewCoverage from '../../content/chair-preview-coverage.json';
+import {useTextReview,ReviewFieldButton} from './text-review-provider';
 const Viewer3D=dynamic(()=>import('./deferred-viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export default function ExpandedProductDetail({product,url,presets,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage,engineSources}:{product:Product;url:string;presets:ReactNode;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string;engineSources:ExpandedEngineSources}){
+ const review=useTextReview();
  const engine=useMemo(()=>createScopedExpandedEngine(catalogRuntime,engineSources),[catalogRuntime,engineSources]);
  const basePalettes=engineSources.palettes,baseChoiceLabel=engine.choiceLabel;
  const {expandedForProduct,initialStateForProduct,changeField,stateChoices,stateToken,parseStateToken,expandedSelection}=engine;
  const {catalogForProduct,catalogAnchor,catalogInitial}=engine.catalog;
  const palettes=useMemo(()=>{const result={...basePalettes};for(const [key,values] of Object.entries(catalogRuntime?.palettes||{}))result[key]={...result[key],...values};return result;},[catalogRuntime,basePalettes]);
- const choiceLabel=(field:string,value:string)=>armrestChoiceLabel(selected.configuration.code,field,value)||articleChoiceLabel(product,field,value)||safeArmrestFallback(field,value,baseChoiceLabel(field,value,catalogRuntime?.palettes,family.id));
+ const choiceLabel=(field:string,value:string)=>review.resolve(review.binding(selected.configuration.code||'',field,value),armrestChoiceLabel(selected.configuration.code,field,value)||articleChoiceLabel(product,field,value)||safeArmrestFallback(field,value,baseChoiceLabel(field,value,catalogRuntime?.palettes,family.id)),selected.configuration.code||'');
 
  const family=expandedForProduct(product)!;
  const catalog=catalogForProduct(product);
@@ -87,10 +89,10 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const quote=expandedQuoteEntry(product,presentedConfiguration,selection,{url,model,customized,quantity,choiceLabel});
  function change(field:string,value:string){try{setSelection(changeField(selection,field,value));setCustomized(true);setAdded(false);setMessage('');setPhoto(false);}catch{setMessage(copyText("ui.9382165cbfa58b82bfc9","Šis pasirinkimas negalimas su dabartine konstrukcija. Rinkitės kitą variantą."));}}
  function field(k:string){const value=selection.values[k],color=!!deskColors?.fields[k]||/COLOR|CHCOL/.test(k);
-  const label=fieldLabels[k]||k;
+  const label=review.resolve(review.binding(selected.configuration.code||'',k),fieldLabels[k]||k,selected.configuration.code||'');
   const textOnly=catalogAnchor(selection)?.textOnlyFields?.includes(k),noteId=textOnly?'desk-text-only-'+k:undefined;
-  if(color&&!k.startsWith('CPLASTIC'))return <FinishSelect key={k} label={label} value={value} onChange={v=>change(k,v)} options={choices[k].map(v=>({value:v,label:choiceLabel(k,v),image:activeMaterials?.[k]?.[v]?.image||palettes[k]?.[v]?.image||(deskColors?undefined:renderMaterial({code:v}).image),color:palettes[k]?.[v]?.color}))}/>;
-  return <div key={k} className="configuration-field"><label className="field">{label}
+  if(color&&!k.startsWith('CPLASTIC'))return <div key={k} className="review-field-wrapper"><ReviewFieldButton model={selected.configuration.code||''} field={k} value={value}/><FinishSelect label={label} value={value} onChange={v=>change(k,v)} options={choices[k].map(v=>({value:v,label:choiceLabel(k,v),image:activeMaterials?.[k]?.[v]?.image||palettes[k]?.[v]?.image||(deskColors?undefined:renderMaterial({code:v}).image),color:palettes[k]?.[v]?.color}))}/></div>;
+  return <div key={k} className="configuration-field"><ReviewFieldButton model={selected.configuration.code||''} field={k} value={value}/><label className="field">{label}
    <select value={value} aria-describedby={noteId} onChange={e=>change(k,e.target.value)}>{choices[k].map(v=><option key={v} value={v} title={k==='CARMRESTS'?armrestSourceText(selected.configuration.code,v):undefined}>{choiceLabel(k,v)}</option>)}</select></label>
    {textOnly&&<p id={noteId} className="form-note">Pasirinkimas įrašomas į specifikaciją. 3D vaizde lieka gamintojo pradinis variantas.</p>}
   </div>;

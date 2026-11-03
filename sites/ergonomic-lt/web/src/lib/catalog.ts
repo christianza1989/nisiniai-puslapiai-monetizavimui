@@ -20,6 +20,7 @@ import {launchProjection} from './launch-projection';
 import {readDrafts,applyDrafts} from './publication-copy';
 import {headers} from 'next/headers';
 import {isAdmin} from './auth';
+import {reviewedCatalogTitles} from './text-review-catalog';
 
 let seedCache: Seed | undefined;
 export function baseSeed(): Seed {
@@ -52,7 +53,7 @@ export const catalogAsync=cache(async():Promise<Seed>=>{
     dbOne<{data:string}>('SELECT data FROM supplier_import WHERE id=1'),
     dbAll<{id:string;data:string}>('SELECT id,data FROM product_edits'),
   ]);
-  let seed=assembleCatalog(imported,edits);
+  let seed=await reviewedCatalogTitles(assembleCatalog(imported,edits));
   if(process.env.LAUNCH_SITE==='true'){
     try{const drafts=await readDrafts();return launchProjection({...seed,products:applyDrafts(seed.products,drafts)},drafts);}catch{return {...seed,products:[],lines:[]};}
   }else if(await privatePreview()){

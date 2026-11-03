@@ -47,6 +47,11 @@ test('Lossless JPEG cleanup removes EXIF and comments while preserving scan byte
  const jpeg=Buffer.concat([Buffer.from([255,216]),segment(0xe1,Buffer.from('Exif\0KSUP001WW001 R55POLWBPU')),profile,segment(0xfe,Buffer.from('Supplier CSE14')),pixels]);
  const cleaned=customerImageBytes(jpeg);assert.deepEqual(cleaned,Buffer.concat([Buffer.from([255,216]),profile,pixels]));assert(jpeg.toString().includes('KSUP001WW001'));assert(!Buffer.from(cleaned).toString().includes('CSE14'));
 });
+test('Embedded PNG alignment padding is not parsed as metadata or another chunk',()=>{
+ const magic=Buffer.from([137,80,78,71,13,10,26,10]),chunk=(name:string,data:Buffer)=>{const b=Buffer.alloc(data.length+12);b.writeUInt32BE(data.length);b.write(name,4);data.copy(b,8);return b;},pixels=chunk('IDAT',Buffer.from([12,34,56])),end=chunk('IEND',Buffer.alloc(0)),pad=Buffer.alloc(3);
+ const original=Buffer.concat([magic,chunk('tEXt',Buffer.from('VL0034')),pixels,end,pad]);
+ assert.deepEqual(customerImageBytes(original),Buffer.concat([magic,pixels,end,pad]));
+});
 test('Anonymous requests cannot bypass the source/bundle boundary through old or encoded URLs',()=>{
  const env={PUBLIC_CUSTOMER_BOUNDARY:'true',PRIVATE_SOURCE_READ_TOKEN:'private-read-key',PUBLIC_CLIENT_CHUNKS:JSON.stringify(['/_next/static/chunks/customer-safe.js'])};
  for(const path of ['/models/configurator/private.json','/media/configurator/cse14.jpg','/3d-perziura-183.html','/.vite/manifest.json','/_next/static/chunks/old-native.js','/media/home-final/demo.js','/%6dodels/configurator/private.json','/%252fmodels/configurator/private.json','/media/pdf-products/private.pdf'])assert.equal(customerHttpBoundary(new Request('https://example.test'+path),env)?.status,404,path);

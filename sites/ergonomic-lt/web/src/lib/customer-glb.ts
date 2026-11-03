@@ -19,7 +19,7 @@ export function customerGltfDocument(doc:Json,alias:(name:string)=>string,assetU
    if(key==='copyright'||key==='generator')continue;
    if(/^(?:supplier.*|manufacturer.*|article.*|catalog(?:ue)?.*|product(?:Code|Id)|source(?:Code|Id|Url)|code|label|description|group)$/i.test(key))continue;
    if(typeof item==='string'&&/\bK[A-Z]{2,8}\d[A-Z0-9]{5,}\b/.test(item))continue;
-   result[/^C[A-Z]{4,}$/.test(key)||key.startsWith('_')?'_'+alias(key):key]=clean(item);
+   result[/^(?:C[A-Z]{3,}|[A-Z]{1,12}\d[A-Z0-9]{2,})$/.test(key)||key.startsWith('_')?'_'+alias(key):key]=clean(item);
   }return result;
  }
  return clean(doc) as Json;

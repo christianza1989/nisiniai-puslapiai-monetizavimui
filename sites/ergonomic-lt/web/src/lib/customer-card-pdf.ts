@@ -5,7 +5,7 @@ import {customerImageBytes} from './customer-image-bytes';
 import {productPdfImage} from './product-pdf-image';
 /** Public projection only: no supplier record reaches PDFKit or PDF metadata. */
 export async function customerCardPdf(token:string){
- const {product,saved}=await resolveCustomerSnapshot(token),data=await customerConfiguration(product,token),sample=product.configurations.find(c=>c.id===saved.sample);
+ const resolved=await resolveCustomerSnapshot(token),{product,saved}=resolved,data=await customerConfiguration(product,token,undefined,resolved),sample=product.configurations.find(c=>c.id===saved.sample);
  const font=await pdfAsset('/fonts/manrope.ttf');let image:Buffer|undefined;
  if(sample&&/^\d+$/.test(sample.id))try{image=Buffer.from(customerImageBytes(await productPdfImage(product,sample,'/media/configurator/'+sample.id+'.jpg')));}catch{/* A model without an attributed PDF photo uses its text specification. */}
  return new Promise<Buffer>((resolve,reject)=>{const doc=new PDFDocument({size:'A4',margin:42,bufferPages:true,info:{Title:data.name+' — komplektacija',Author:'Ergonomic.lt',Subject:'Pasirinkta baldo komplektacija'}}),chunks:Buffer[]=[];

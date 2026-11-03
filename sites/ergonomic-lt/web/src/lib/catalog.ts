@@ -21,6 +21,8 @@ import {readDrafts,applyDrafts} from './publication-copy';
 import {headers} from 'next/headers';
 import {isAdmin} from './auth';
 import {reviewedCatalogTitles} from './text-review-catalog';
+import {customerKey} from './customer-capability';
+import {modelProduct} from './product-models';
 import {customerCatalogPresentation,customerProductPath} from './customer-product-presentation';
 
 let seedCache: Seed | undefined;
@@ -65,7 +67,14 @@ export const catalogAsync=cache(async():Promise<Seed>=>{
 });
 export async function visibleProductsAsync(){return (await catalogAsync()).products.filter(p=>productIsVisible(p,previewMode()));}
 export async function visibleModelsAsync(){return productModels(await visibleProductsAsync());}
-export async function findProductAsync(category:string,slug:string,preset?:unknown){const products=await visibleProductsAsync();if(process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&/-linija-v-[a-f0-9]{32}$/.test(slug))return products.find(p=>p.categorySlug===category&&customerProductPath(p)==='/produktai/'+category+'/'+slug+'/');if(process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&/-modelis-v-[a-f0-9]{32}$/.test(slug))return allProductModels(products).find(p=>p.categorySlug===category&&customerProductPath(p)==='/produktai/'+category+'/'+slug+'/');return resolveCatalogProduct(products,category,slug,preset);}
+export async function findProductAsync(category:string,slug:string,preset?:unknown){
+ const products=await visibleProductsAsync(),match=process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'?/-(linija|modelis)-v-([a-f0-9]{32})$/.exec(slug):null;
+ if(!match)return resolveCatalogProduct(products,category,slug,preset);
+ const cap=customerKey(),path='/produktai/'+category+'/'+slug+'/';
+ for(const p of products){if(p.categorySlug!==category)continue;if(match[1]==='linija'){if(cap.id('line',p.id)===match[2]&&customerProductPath(p)===path)return p;continue;}
+  for(const c of p.configurations.length?p.configurations:[null])if(cap.id('product',{product:p.id,sample:c?.id||null})===match[2]){const candidate=c?modelProduct(p,c):p;if(customerProductPath(candidate)===path)return candidate;}
+ }
+}
 export async function categoryForAsync(p:Product){return (await catalogAsync()).categories.find(c=>c.id===p.subcategoryId)!;}
 export async function lineForAsync(p:Product){return (await catalogAsync()).lines.find(l=>l.id===p.lineId);}
 export async function normalizeSupplierAsync(input:unknown){return normalizeSupplier(input,await catalogAsync());}

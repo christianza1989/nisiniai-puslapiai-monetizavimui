@@ -36,11 +36,13 @@ export async function resolveCustomerSnapshot(token:string){
  return {product,saved,context};
 }
 export async function customerSnapshotFromLegacy(product:Product,token:string){const context=await customerContext(product),state=context.engine.parseStateToken(product,token);return customerKey().seal('configuration',{product:product.id,sample:product.modelConfigurationId||product.configurations[0]?.id||null,state,revision:context.revision});}
-export async function customerConfiguration(product:Product,token?:string,change?:{field:string;value:string}):Promise<CustomerConfiguration>{
+export async function customerConfiguration(product:Product,token?:string,change?:{field:string;value:string},verified?:Awaited<ReturnType<typeof resolveCustomerSnapshot>>):Promise<CustomerConfiguration>{
  const cap=customerKey(),scope={product:product.id,sample:product.modelConfigurationId||product.configurations[0]?.id||null},ids=customerControlIds(cap,scope);
- let context=await customerContext(product),state:CustomerState['state'];
- if(token){const resolved=await resolveCustomerSnapshot(token);if(resolved.saved.product!==scope.product||resolved.saved.sample!==scope.sample)throw Error('Komplektacija priklauso kitam modeliui.');context=resolved.context;state=resolved.saved.state;}
- else if(context.family)state=context.engine.initialStateForProduct(product);
+ const resolved=token?(verified||await resolveCustomerSnapshot(token)):undefined;
+ if(resolved&&(resolved.saved.product!==scope.product||resolved.saved.sample!==scope.sample))throw Error('Komplektacija priklauso kitam modeliui.');
+ const context=resolved?.context||await customerContext(product);
+ let state:CustomerState['state']=resolved?.saved.state;
+ if(!resolved&&context.family)state=context.engine.initialStateForProduct(product);
  let materialControls=state?await customerChairControls(product,context,state):[];
  if(change){if(!state)throw Error('Parinktys nepasiekiamos.');const group=materialControls.find(c=>ids.field(c.id)===change.field);if(group){const option=group.options.find(o=>ids.choice(group.id,o.id)===change.value);if(!option)throw Error('Nepatvirtintas medžiagos pasirinkimas.');state=option.state;}else{const hidden=new Set(materialControls.flatMap(c=>c.hiddenFields)),domains=Object.fromEntries(Object.entries(visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state))).filter(([field])=>!hidden.has(field)));const native=resolveCustomerChange(domains,ids,change);state=context.engine.changeField(state,native.field,native.value);}materialControls=await customerChairControls(product,context,state);}
  const selected=state?context.engine.expandedSelection(product,state):undefined,review=await buildReviewScope(product),model=selected?.configuration.code||product.configurations.find(c=>c.id===scope.sample)?.code||'';

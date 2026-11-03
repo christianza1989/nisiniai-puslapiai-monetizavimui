@@ -11,7 +11,9 @@ export function customerImageBytes(input:Uint8Array):Uint8Array{
    if(!metadata||preserve)parts.push(b.subarray(start,i+length));i+=length;
   }throw Error('Truncated JPEG image');
  }
- if(b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))){const parts=[b.subarray(0,8)];let i=8;while(i<b.length){if(i+12>b.length)throw Error('Truncated PNG');const length=b.readUInt32BE(i),end=i+12+length;if(end>b.length)throw Error('Truncated PNG chunk');const type=b.toString('ascii',i+4,i+8);if(!['tEXt','zTXt','iTXt','eXIf'].includes(type))parts.push(b.subarray(i,end));i=end;}return Buffer.concat(parts);}
+ if(b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))){const parts=[b.subarray(0,8)];let i=8;while(i<b.length){if(i+12>b.length)throw Error('Truncated PNG');const length=b.readUInt32BE(i),end=i+12+length;if(end>b.length)throw Error('Truncated PNG chunk');const type=b.toString('ascii',i+4,i+8);if(!['tEXt','zTXt','iTXt','eXIf'].includes(type))parts.push(b.subarray(i,end));
+   if(type==='IEND'){const padding=b.subarray(end);if(padding.length<=3&&padding.every(n=>n===0))parts.push(padding);return Buffer.concat(parts);}i=end;
+  }throw Error('Missing PNG end chunk');}
  if(b.toString('ascii',0,4)==='RIFF'&&b.toString('ascii',8,12)==='WEBP'){
   if(b.readUInt32LE(4)+8!==b.length)throw Error('Invalid WebP size');const parts:Buffer[]=[];let i=12;
   while(i<b.length){if(i+8>b.length)throw Error('Truncated WebP');const size=b.readUInt32LE(i+4),end=i+8+size+(size%2);if(end>b.length)throw Error('Truncated WebP chunk');const type=b.toString('ascii',i,i+4);if(!['EXIF','XMP '].includes(type)){const chunk=Buffer.from(b.subarray(i,end));if(type==='VP8X')chunk[8]&=~0x0c;parts.push(chunk);}i=end;}

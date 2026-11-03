@@ -18,6 +18,7 @@ export default defineConfig({
     {find:/^(?:@\/lib\/publication-db|\.\/publication-db)$/,replacement:file('./src/cloudflare/publication-db.ts')},
     {find:/^(?:@\/lib\/db|\.\/db)$/,replacement:file('./src/cloudflare/db.ts')},
     {find:/^(?:@\/lib\/text-review-db|\.\/text-review-db)$/,replacement:file('./src/cloudflare/text-review-db.ts')},
+    {find:'./customer-source-asset',replacement:file('./src/cloudflare/customer-source-asset.ts')},
     {find:'./pdf-assets',replacement:file('./src/cloudflare/pdf-assets.ts')},
     {find:'./configurator-runtime-assets',replacement:file(process.env.ERGONOMIC_TEXT_REVIEW_STAGE==='1'?'./src/cloudflare/configurator-runtime-assets.text-review.ts':'./src/cloudflare/configurator-runtime-assets.ts')},
     {find:/^pdfkit$/,replacement:file('./node_modules/pdfkit/js/pdfkit.standalone.js')},

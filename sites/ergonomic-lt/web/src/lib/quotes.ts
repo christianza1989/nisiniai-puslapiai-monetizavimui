@@ -14,19 +14,28 @@ import {modelName,modelProduct} from './product-models';
 import {configurableArticle} from './configuration-article';
 import {supplierOptions,optionDetails} from './configuration-labels';
 import {supplierReference,quoteOrderText} from './supplier-reference';
+import {resolveCustomerSnapshot} from './customer-configuration-server';
+import {customerKey} from './customer-capability';
 
 export const quoteSchema=z.object({
   name:z.string().trim().min(2).max(100),email:z.email().max(200),phone:z.string().trim().max(40),
   company:z.string().trim().max(160),message:z.string().trim().max(5000),
-  items:z.array(z.object({productId:z.string().max(200),configurationId:z.string().max(100).nullable(),configurationState:z.object({family:z.string().max(30),anchor:z.string().max(100),values:z.record(z.string().regex(/^[A-Z0-9]+$/),z.string().max(100)).refine(x=>Object.keys(x).length<=35)}).optional(),quantity:z.number().int().min(1).max(1000),note:z.string().max(500)})).max(30),
+  items:z.array(z.object({productId:z.string().max(200),configurationId:z.string().max(100).nullable(),configurationState:z.object({family:z.string().max(30),anchor:z.string().max(100),values:z.record(z.string().regex(/^[A-Z0-9]+$/),z.string().max(100)).refine(x=>Object.keys(x).length<=35)}).optional(),configurationToken:z.string().max(24004).optional(),customerSelectionId:z.string().regex(/^[a-f0-9]{32}$/).optional(),quantity:z.number().int().min(1).max(1000),note:z.string().max(500)})).max(30),
   consent:z.literal(true),submissionKey:z.uuid(),website:z.string().max(100),startedAt:z.number()
 }).refine(p=>p.items.length>0||p.message.length>=10,{message:copyText("ui.742aa41acaeed80e038c","Įrašykite užklausą arba pasirinkite prekę.")});
 export type QuoteRecord={id:string;payload:string;created_at:string;status:string;delivery_status:string;delivery_error:string|null;delivery_attempts:number};
-export async function storeQuote(input:unknown) {
+export async function storeQuote(input:unknown,options={customerOnly:process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'}) {
   const payload=quoteSchema.parse(input) as QuotePayload;
   if(payload.website||Date.now()-payload.startedAt<1200||payload.startedAt>Date.now())throw new Error(copyText("ui.6185b8e6657822aaf0ce","Patikrinkite formą ir bandykite dar kartą."));
   const prior=await dbOne<{id:string}>('SELECT id FROM quotes WHERE submission_key=?',payload.submissionKey);
   if(prior)return {id:prior.id,duplicate:true};
+  for(let i=0;i<payload.items.length;i++){
+   const item=payload.items[i];if(!item.configurationToken){if(options.customerOnly)throw Error('Pasirinkite prekę iš naujo.');continue;}
+   const {product,saved,context}=await resolveCustomerSnapshot(item.configurationToken),scope={product:saved.product,sample:saved.sample},cap=customerKey();
+   if(item.productId!=='product_public_'+cap.id('product',scope)||item.customerSelectionId!==cap.id('selection',{...scope,state:saved.state,revision:saved.revision})||item.configurationState)throw Error('Pasirinkta komplektacija negalioja.');
+   const selected=saved.state?context.engine.expandedSelection(product,saved.state):undefined;
+   payload.items[i]={productId:saved.product,configurationId:selected?.configuration.id||saved.sample,configurationState:saved.state,quantity:item.quantity,note:item.note};
+  }
   const products=await visibleProductsAsync();
   const resolved:object[]=[];
   for(const item of payload.items){

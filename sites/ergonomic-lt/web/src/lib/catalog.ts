@@ -7,7 +7,7 @@ import detailImages from '../../content/detail-image-overrides.json';
 import {localizeConfiguration} from './configuration-labels';
 import {pilotModels} from './configurator';
 import {productPhotograph,cleanProductPhotographs} from './product-photographs';
-import {productModels,resolveProduct,resolveCatalogProduct} from './product-models';
+import {productModels,allProductModels,resolveProduct,resolveCatalogProduct} from './product-models';
 import {galleryPhotoBackdrops} from './gallery-photo-metadata';
 import {uniqueGalleryPhotos} from './gallery-photo-identity';
 import {categoryLabel} from './category-labels';
@@ -21,6 +21,7 @@ import {readDrafts,applyDrafts} from './publication-copy';
 import {headers} from 'next/headers';
 import {isAdmin} from './auth';
 import {reviewedCatalogTitles} from './text-review-catalog';
+import {customerCatalogPresentation,customerProductPath} from './customer-product-presentation';
 
 let seedCache: Seed | undefined;
 export function baseSeed(): Seed {
@@ -28,6 +29,7 @@ export function baseSeed(): Seed {
 }
 export function previewMode() { return process.env.PREVIEW_CATALOG === 'true'; }
 export function indexable() { return process.env.SITE_INDEXABLE === 'true' && !previewMode(); }
+async function customerPresentation(seed:Seed){if(process.env.PUBLIC_CUSTOMER_BOUNDARY!=='true')return seed;let admin=false;try{admin=await isAdmin();}catch{}return admin?seed:customerCatalogPresentation(seed);}
 async function privatePreview(){try{return (await headers()).get('x-ergonomic-preview')==='1'&&await isAdmin();}catch{return false;}}
 export function catalog(): Seed {
   const imported=getDb().prepare('SELECT data FROM supplier_import WHERE id=1').get() as {data:string}|undefined;
@@ -55,20 +57,20 @@ export const catalogAsync=cache(async():Promise<Seed>=>{
   ]);
   let seed=assembleCatalog(imported,edits);
   if(process.env.LAUNCH_SITE==='true'){
-    try{const drafts=await readDrafts();return reviewedCatalogTitles(await launchProjection({...seed,products:applyDrafts(seed.products,drafts)},drafts));}catch{return {...seed,products:[],lines:[]};}
+    try{const drafts=await readDrafts();return customerPresentation(await reviewedCatalogTitles(await launchProjection({...seed,products:applyDrafts(seed.products,drafts)},drafts)));}catch{return {...seed,products:[],lines:[]};}
   }else if(await privatePreview()){
     seed={...seed,products:applyDrafts(seed.products,await readDrafts())};
   }
-  return reviewedCatalogTitles(await launchProjection(seed));
+  return customerPresentation(await reviewedCatalogTitles(await launchProjection(seed)));
 });
 export async function visibleProductsAsync(){return (await catalogAsync()).products.filter(p=>productIsVisible(p,previewMode()));}
 export async function visibleModelsAsync(){return productModels(await visibleProductsAsync());}
-export async function findProductAsync(category:string,slug:string,preset?:unknown){return resolveCatalogProduct(await visibleProductsAsync(),category,slug,preset);}
+export async function findProductAsync(category:string,slug:string,preset?:unknown){const products=await visibleProductsAsync();if(process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&/-linija-v-[a-f0-9]{32}$/.test(slug))return products.find(p=>p.categorySlug===category&&customerProductPath(p)==='/produktai/'+category+'/'+slug+'/');if(process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&/-modelis-v-[a-f0-9]{32}$/.test(slug))return allProductModels(products).find(p=>p.categorySlug===category&&customerProductPath(p)==='/produktai/'+category+'/'+slug+'/');return resolveCatalogProduct(products,category,slug,preset);}
 export async function categoryForAsync(p:Product){return (await catalogAsync()).categories.find(c=>c.id===p.subcategoryId)!;}
 export async function lineForAsync(p:Product){return (await catalogAsync()).lines.find(l=>l.id===p.lineId);}
 export async function normalizeSupplierAsync(input:unknown){return normalizeSupplier(input,await catalogAsync());}
 export function visibleProducts() { return catalog().products.filter(p=>productIsVisible(p,previewMode())); }
-export function productPath(p:Product) { return `/produktai/${p.categorySlug}/${p.slug}/`; }
+export function productPath(p:Product) { return p.customerHeading?customerProductPath(p):`/produktai/${p.categorySlug}/${p.slug}/`; }
 export function findProduct(category:string,slug:string) { return resolveProduct(visibleProducts(),category,slug); }
 export function legacyPages():LegacyPage[]{return [...baseSeed().legacy,...additions as LegacyPage[]].map(editorialPage);}
 export function findLegacy(route:string): LegacyPage|undefined { return legacyPages().find(p=>p.path===route); }

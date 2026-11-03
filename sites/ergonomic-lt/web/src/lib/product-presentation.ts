@@ -13,6 +13,7 @@ export function productKind(p:Product):{label:string;path:string}|undefined{
  if(tags.includes('priedai'))return {label:copyText('ui.76d2374fe6a40119e102','Priedai darbo vietai'),path:'/shop/priedai/'};
 }
 export function displayModelName(p:Product){
+ if(p.customerHeading)return p.customerHeading;
  // Generic import scaffolding is not part of a model code. Names such as
  // Play&Work, DUO-BACK, MESH and the supplier's construction codes survive.
  return p.name.replace(/[, ]*(?:\bwith )?\b(?:(?:electric|manual|pneumatic) )?height adjustment(?: by crank|\s*[–-]\s*ratchet type)?\b/gi,'')
@@ -21,6 +22,7 @@ export function displayModelName(p:Product){
   .replace(/\s+/g,' ').replace(/[, ]+$/,'').trim()||p.name;
 }
 export function productHeading(p:Product){
+ if(p.customerHeading)return p.customerHeading;
  if(p.textReviewHeading)return p.textReviewHeading;
  const name=displayModelName(p),kind=productKind(p);
  return kind?capitalize(kind.label)+' '+name:name;

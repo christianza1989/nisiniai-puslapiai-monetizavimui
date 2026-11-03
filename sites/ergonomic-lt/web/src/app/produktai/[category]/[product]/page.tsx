@@ -25,12 +25,18 @@ import {productSchemaImages} from '@/lib/product-schema-images';
 import {buildReviewScope} from '@/lib/text-review-server';
 import {TextReviewProvider} from '@/components/text-review-provider';
 import {isAdmin} from '@/lib/auth';
+import CustomerProductPage,{customerProductImage} from '@/components/customer-product-page';
+import {customerSnapshotFromLegacy} from '@/lib/customer-configuration-server';
+import {customerProductPath,customerProductCodes} from '@/lib/customer-product-presentation';
+import {customerLabel} from '@/lib/customer-names';
+import {redirect} from 'next/navigation';
 
 type Props={params:Promise<{category:string;product:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>};
-export async function generateMetadata({params,searchParams}:Props){const {category,product}=await params,query=await searchParams,p=await findProductAsync(category,product,query.pavyzdys);if(!p)return {title:copyText("ui.a97a3a9087707261ddaa","Prekė nerasta"),robots:{index:false,follow:false}};const seo=modelSeo(p),review=await buildReviewScope(p),prefix='content:'+review.publicScope.scope+':',title=p.textReviewHeading||review.publicScope.values[prefix+'title']||seo.title,description=review.publicScope.values[prefix+'description:0']||seo.description;const metadata=pageMetadata(title,productPath(p),description,p.image);if(p.modelArticle||title!==seo.title)metadata.title={absolute:title};return query.konfig||query.pavyzdys?{...metadata,robots:{index:false,follow:true}}:metadata;}
+export async function generateMetadata({params,searchParams}:Props){const {category,product}=await params,query=await searchParams,p=await findProductAsync(category,product,query.pavyzdys);if(!p)return {title:copyText("ui.a97a3a9087707261ddaa","Prekė nerasta"),robots:{index:false,follow:false}};if(p.customerHeading){const summary=customerLabel(p.description,customerProductCodes(p),p.customerHeading);return pageMetadata(p.customerHeading,customerProductPath(p),summary,await customerProductImage(p));}const seo=modelSeo(p),review=await buildReviewScope(p),prefix='content:'+review.publicScope.scope+':',title=p.textReviewHeading||review.publicScope.values[prefix+'title']||seo.title,description=review.publicScope.values[prefix+'description:0']||seo.description;const metadata=pageMetadata(title,productPath(p),description,p.image);if(p.modelArticle||title!==seo.title)metadata.title={absolute:title};return query.konfig||query.pavyzdys?{...metadata,robots:{index:false,follow:true}}:metadata;}
 export default async function Page({params,searchParams}:Props){
  const {category,product}=await params,query=await searchParams,p=await findProductAsync(category,product,query.pavyzdys);if(!p)notFound();
  const c=(await catalogAsync()).categories.find(c=>c.id===p.categoryId)!,line=await lineForAsync(p),parents=await visibleProductsAsync(),parent=parents.find(x=>x.id===p.id)!;
+ if(process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&!await isAdmin()){const target=customerProductPath(p);let token=typeof query.v==='string'?query.v:undefined;if(typeof query.konfig==='string')try{token=await customerSnapshotFromLegacy(p,query.konfig);}catch{}if(target!=='/produktai/'+category+'/'+product+'/'||query.konfig||query.pavyzdys)redirect(target+(token?'?v='+encodeURIComponent(token):''));return <CustomerProductPage product={p} parent={parent} token={token}/>;}
  const models=productModels([parent]),isFamily=!p.modelConfigurationId&&p.configurations.length>1;
  const savedConfiguration=typeof (await searchParams).konfig==='string';
  const catalogRuntime=isFamily&&!savedConfiguration?undefined:await loadCatalogRuntime(p,(await searchParams).konfig);

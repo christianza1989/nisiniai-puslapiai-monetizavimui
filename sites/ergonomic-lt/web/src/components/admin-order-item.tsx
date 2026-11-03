@@ -11,8 +11,8 @@ export function AdminOrderItem({item}:{item:any}){
    {i.baseArticle&&<div><dt>Prekės kodas</dt><dd>{i.baseArticle}</dd></div>}
    {i.configurationId&&<div><dt>Komplektacijos ID</dt><dd>{i.configurationId}</dd></div>}
   </dl>{source&&<a className="text-link" href={source} target="_blank" rel="noopener noreferrer">Originali gamintojo prekė<ArrowUpRight size={16}/></a>}
-  {i.configurationCodeStatus==='missing-base-code'&&<p className="form-note">Šaltinyje nėra bazinio gamintojo kodo. Prieš užsakant reikia patikslinti specifikaciją.</p>}
-  {i.configurationCodeStatus==='base-only'&&<p className="form-note">Turimas bazinis kodas. Prieš užsakant reikia patikslinti opcijų sąrašą.</p>}
+  {i.configurationCodeStatus==='missing-base-code'&&<p className="form-note">Šaltinyje nėra gamintojo prekės kodo. Prieš užsakant reikia patikslinti specifikaciją.</p>}
+  {i.configurationCodeStatus==='base-only'&&<p className="form-note">Turimas prekės kodas. Prieš užsakant reikia patikslinti opcijų sąrašą.</p>}
   {!!i.configurationDetails?.length&&<details className="detail-disclosure"><summary>Komplektacijos pasirinkimai</summary><dl className="configuration-summary">{i.configurationDetails.map((d:any,n:number)=><div key={n}><dt>{d.label}</dt><dd>{d.value}</dd></div>)}</dl></details>}
   {!!i.supplierOptions?.length&&<details className="detail-disclosure"><summary>Visi pasirinkimų kodai</summary><p className="preserve-lines">{i.supplierOptions.join('\n')}</p></details>}
  </li>;

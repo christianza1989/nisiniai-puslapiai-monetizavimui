@@ -44,7 +44,7 @@ function assembleCatalog(imported:{data:string}|undefined,edits:{id:string;data:
   const map=new Map(edits.map(r=>[r.id,JSON.parse(r.data)]));
   const products=seed.products.map(p=>{
     const edit=map.get(p.id),product={...p,...edit,id:p.id,categorySlug:p.categorySlug,slug:p.slug,sourceUrl:p.sourceUrl};
-    product.configurations=product.configurations.map(c=>recoverSivuConfiguration(product.id,c));
+    product.configurations=product.configurations.map((c:Product['configurations'][number])=>recoverSivuConfiguration(product.id,c));
     const detail=detailImages[p.id as keyof typeof detailImages];
     if(detail&&!edit?.gallery)product.gallery=['/'+detail.path,...product.gallery.slice(1)];
     if(pilotModels.some(m=>m.productId===p.id))product.configurations=product.configurations.map((c:Product['configurations'][number],n:number)=>localizeConfiguration(c,product.name,n));

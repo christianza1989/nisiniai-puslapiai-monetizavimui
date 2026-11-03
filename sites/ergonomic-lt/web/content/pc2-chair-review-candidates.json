@@ -190,10 +190,10 @@
     {
       "code": "KUTI004WW001",
       "name": "Utila",
-      "asset": "/models/configurator/chairs/KUTI004WW001-dd6c304e340c47bd8906/review-b5f32b8a311600730224.json",
-      "sha256": "b5f32b8a311600730224da99639ecfc9558dac08d782ef3da31ebd6e4df3c02f",
-      "bytes": 21549,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KUTI004WW001-9065a68b23ead28ee21d/review-457ed1c45141f0579e5b.json",
+      "sha256": "457ed1c45141f0579e5bd532f9c29d1df761251e923fac3ed1bbebff7df494e7",
+      "bytes": 146000,
+      "version": "colors-20261103-v1-qualified-context6601"
     },
     {
       "code": "KNAV001WW006",

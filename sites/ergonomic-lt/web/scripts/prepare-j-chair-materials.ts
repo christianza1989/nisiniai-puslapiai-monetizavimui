@@ -98,7 +98,12 @@ async function main(){
    }
    const cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'],pin=conditionalChairAdmissions[code],finite=pin&&documents['colors-groups.json']?.schema===pin.palette,conditional=finite||documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1';
    assert(cert?.pass===true&&cert.noDonorGeometry===true&&cert.code===code&&(conditional?cert.conditionalScopeKind===(finite?pin.kind:'QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181')&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false:cert.qualifiedWitnessGroupPaletteComplete===true),'Missing OWN scoped producer certificate');
-   if(finite){assert.equal(selected.manifestSha256,pin.manifest,'Conditional manifest is not the explicitly admitted version');assert.equal(documents['conditional-context.json'][pin.qualification],fileReceipts.get('GROUP-PALETTE-VERIFIED-SAFE.json')?.sha256,'Conditional qualification certificate SHA differs');}
+   if(finite){
+    assert.equal(selected.manifestSha256,pin.manifest,'Conditional manifest is not the explicitly admitted version');
+    assert.equal(selected.version,pin.version,'Conditional package version differs');
+    assert.equal(documents['conditional-context.json'][pin.qualification],fileReceipts.get('GROUP-PALETTE-VERIFIED-SAFE.json')?.sha256,'Conditional qualification certificate SHA differs');
+    if(pin.contractSha256)assert.equal(fileReceipts.get('conditional-context.json')?.sha256,pin.contractSha256,'Conditional exact contract SHA differs');
+   }
    for(const [hash,prior]of Object.entries(old.selectors.assets)){
     const current=rawSelectors.assets[hash];
     if(!current){rawSelectors.assets[hash]=prior;continue;}

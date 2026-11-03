@@ -78,12 +78,12 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
    requireValue(documents['colors-groups.json']?.schema===conditionalChairAdmissions[data.code]?.palette,'Finite conditional contract has no corresponding palette');
   }else if(Object.values(conditionalChairAdmissions).some(p=>p.palette===d.schema)){
    const scope=conditionalChairMaterialGroups(data.code,data.runtimeSha256,documents),c=scope.contract;
-   const w=witness(c.runtimeContextIndex,c.exactConstructionAndDerivedValues,c.requiredOwnedBaseAssetShas,'Apmušalas YB · tik šiai konstrukcijai');w.fixed=scope.readonly;
+   const w=witness(c.runtimeContextIndex,c.exactConstructionAndDerivedValues,c.requiredOwnedBaseAssetShas,'Apmušalas '+scope.finishPrefix.CUPHGROUP+' · tik šiai konstrukcijai');w.fixed=scope.readonly;
    for(const g of scope.groups){
     const options:QualifiedOption[]=g.values.map((v:Obj)=>option(v,v.values,g.mesh?v.values.CMESHCOLOR:v.values.CUPHCOLOR));
     const baseline=options.find(o=>canonical(o.values)===canonical(g.source.baseValues));
-    // The original PRICE2/EGL control is outside the PRICE1/YB domain. Keep
-    // original startup and reset; never invent it as a fourteenth YB option.
+    // An original calibration tuple can be outside this exact prefix. Keep
+    // original startup/reset; never add it to the scoped selectable domain.
     w.groups.push({id:g.source.id,label:g.label,options,base:(baseline||options[0]).id});
    }
   }else if(d.schema==='chair-exact-conditional-finish-context-contract-4300-v1'){

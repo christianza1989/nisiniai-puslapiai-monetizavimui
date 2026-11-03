@@ -4,11 +4,16 @@ type BoundaryEnv={PUBLIC_CUSTOMER_BOUNDARY?:string;SESSION_SECRET?:string;PRIVAT
 function equal(a:string,b:string){const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length&&timingSafeEqual(x,y);}
 export function sourceRequestAuthorized(request:Request,env:BoundaryEnv){
  const authorization=request.headers.get('authorization');
- if(env.PRIVATE_SOURCE_READ_TOKEN&&authorization&&equal(authorization,'Bearer '+env.PRIVATE_SOURCE_READ_TOKEN))return true;
+ if(['GET','HEAD'].includes(request.method)&&env.PRIVATE_SOURCE_READ_TOKEN&&authorization&&equal(authorization,'Bearer '+env.PRIVATE_SOURCE_READ_TOKEN))return true;
  const token=request.headers.get('cookie')?.split(';').map(v=>v.trim()).find(v=>v.startsWith('ergonomic_admin='))?.slice('ergonomic_admin='.length);
  if(!token||!env.SESSION_SECRET)return false;
  const match=/^(\d+)\.([a-f0-9]{64})$/.exec(token);if(!match||Number(match[1])<Date.now()||Number(match[1])>Date.now()+9*3600_000)return false;
  return equal(match[2],createHmac('sha256',env.SESSION_SECRET).update(match[1]).digest('hex'));
+}
+export function privateCustomerResponse(request:Request,response:Response,env:BoundaryEnv){
+ if(env.PUBLIC_CUSTOMER_BOUNDARY!=='true'||!sourceRequestAuthorized(request,env))return response;
+ const headers=new Headers(response.headers);headers.set('Cache-Control','private, no-store');headers.delete('CDN-Cache-Control');headers.delete('Cloudflare-CDN-Cache-Control');
+ return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
 }
 /** Must run before both ASSETS and application routing (run_worker_first). */
 export function customerHttpBoundary(request:Request,env:BoundaryEnv):Response|undefined{

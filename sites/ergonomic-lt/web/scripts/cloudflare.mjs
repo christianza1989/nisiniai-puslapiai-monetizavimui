@@ -83,3 +83,17 @@ if(task==='build')writeFileSync(join(buildRoot,'dist/client/_headers'),`/*
   ! X-Frame-Options
   Content-Security-Policy: frame-ancestors 'self';
 `);
+if(task==='build'){
+ const configPath=join(buildRoot,'dist/server/wrangler.json'),config=JSON.parse(readFileSync(configPath,'utf8'));
+ if(config.vars?.PUBLIC_CUSTOMER_BOUNDARY==='true'){
+  const graph=JSON.parse(readFileSync(join(buildRoot,'dist/client/.private/customer-client-manifest.json'),'utf8'));
+  if(config.assets?.run_worker_first!==true||!graph.public?.length||!graph.private?.length)throw Error('Missing customer browser and asset boundary');
+  for(const name of ['customer-product-detail.tsx','customer-quote-form.tsx','public-home-demo.js','viewer-3d-core.tsx','quote-provider.tsx','admin-login.tsx']){
+   const chunks=graph.modules.filter(chunk=>chunk.modules.some(id=>id.includes('/'+name)));
+   if(!chunks.length||chunks.some(chunk=>chunk.private))throw Error('Customer browser entry requires a private chunk: '+name);
+  }
+  config.preview_urls=false;
+  config.vars={...config.vars,PUBLIC_CLIENT_CHUNKS:JSON.stringify(graph.public),PRIVATE_CLIENT_CHUNKS:JSON.stringify(graph.private)};
+  writeFileSync(configPath,JSON.stringify(config,null,2)+'\n');
+ }
+}

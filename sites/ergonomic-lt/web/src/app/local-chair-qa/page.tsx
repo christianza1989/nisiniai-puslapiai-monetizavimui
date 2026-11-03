@@ -1,3 +1,4 @@
+import {expandedClientSources} from '@/lib/expanded-configurator';
 import {notFound} from 'next/navigation';
 import {localChairQA} from '@/lib/chair-local-qa';
 import {baseSeed} from '@/lib/catalog';
@@ -10,5 +11,5 @@ export default async function Page({searchParams}:{searchParams:Promise<Record<s
  const {model}=await searchParams,entry=models[model||'fixed'];if(!entry)notFound();
  const f=entry.runtime.family,parent=baseSeed().products.find(p=>p.id===f.productId),sample=parent?.configurations.find(c=>c.id===f.sample);if(!parent||!sample)notFound();
  const product=publicProductView(modelProduct(parent,sample));
- return <section className="section container product-page"><p>Vietinė techninė patikra · tekstai dar nepriimti</p><ExpandedProductDetail product={product} url="/local-chair-qa/" presets={null} catalogRuntime={entry.runtime}/></section>;
+ return <section className="section container product-page"><p>Vietinė techninė patikra · tekstai dar nepriimti</p><ExpandedProductDetail engineSources={expandedClientSources(product,entry.runtime)} product={product} url="/local-chair-qa/" presets={null} catalogRuntime={entry.runtime}/></section>;
 }

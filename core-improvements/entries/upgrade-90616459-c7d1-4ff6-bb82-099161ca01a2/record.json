@@ -1,0 +1,19 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Real Google PSI mobile56/desktop69 still includes offscreen automatic3D preparation and a preexisting mobile0.212 font-time layout shift. Gate the unchanged full-quality renderer until its stage is meaningfully visible or keyboard focused; preserve automatic activation and later reuse. Serve the same complete Manrope font as lossless WOFF2 with early preload and immutable identity.",
+  "category": "code",
+  "evidence": [
+    "D:/Core/output/ergonomic-performance-20261102/owner-psi-details-v1/0vowtca8lh-mobile.txt",
+    "D:/Core/output/ergonomic-performance-20261102/google-sized-public-profile-v1/RESULT.json",
+    "D:/Core/output/ergonomic-performance-20261102/FONT-WOFF2-QUALIFICATION-v1.json"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/319",
+  "rollback": "Revert only this followup source; preserve actual preview7104ee68/source2fe1f96 and its full49936 asset manifest until new public QA passes. Original models, full-resolution materials, PDF TTF, controls and other collector state remain untouched.",
+  "id": "upgrade-90616459-c7d1-4ff6-bb82-099161ca01a2",
+  "branch": "codex/ergonomic-product-performance-20261102",
+  "baseSha": "b4777e2aaee36fa94f8df820e76b8529c4dd48b7",
+  "createdAt": "2026-11-02T13:13:16.271Z"
+}

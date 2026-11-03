@@ -3,6 +3,8 @@ const config: NextConfig = {
   trailingSlash: true,
   devIndicators: false,
   poweredByHeader: false,
+  // Keep approved descriptions and canonical links in <head> for every reader.
+  htmlLimitedBots: /.*/,
   output: process.env.CLOUDFLARE_BUILD==='true'?undefined:'standalone',
   distDir: process.env.NEXT_DIST_DIR || (process.env.NODE_ENV === 'development' ? '.next-dev' : '.next'),
   serverExternalPackages: ['nodemailer','pdfkit'],

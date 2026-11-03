@@ -434,6 +434,14 @@
       "asset": "/models/configurator/chairs/KUTI005WW001-dc47b69822c744369135/review-a4352793bb0bd56f0f33.json",
       "sha256": "a4352793bb0bd56f0f338d0ab95f82e036a22c0f4c00867e6e160e0a8d3c696a",
       "bytes": 946322
+    },
+    {
+      "code": "KSOU001WW004",
+      "name": "Souly",
+      "asset": "/models/configurator/chairs/KSOU001WW004-670f19f5746b85e166e8/review-2f8d596e46380ca564e4.json",
+      "sha256": "2f8d596e46380ca564e4f2617a6b77ae91568892e35912f8fe3948b5885ace70",
+      "bytes": 3958448,
+      "version": "base-20261030-qualified655"
     }
   ]
 }

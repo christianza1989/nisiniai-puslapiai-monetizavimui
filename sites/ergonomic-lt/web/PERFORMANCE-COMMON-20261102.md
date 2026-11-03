@@ -75,3 +75,47 @@ derivatives retain exact SHA/size, and actual model images remain identical.
 Three model PDFs return200 with the same byte counts; KEM2013WW009 default PDF
 already returns400 in baseline and the existing public preview as well as this
 candidate. That unrelated failure is recorded, not claimed fixed.
+
+Preview publication was explicitly requested by Rokas after the handoff. Actual
+version7104ee68-e41d-4633-ad2c-f1888a3acc33 now serves100% with source2fe1f96;
+previous24f218dc is retained for rollback. A new bounded publisher uploaded only
+34 server-requested common assets (11,470,573B), preserving all344 configurators
+and49936 manifest entries. No original model hash was uploaded again. Other
+collector jobs, leases, worktrees and pending colour work were not modified.
+The actual public Worker passes gzip/identity decoded SHA/size and immutable
+negotiation for four original GLBs and the environment. Eight public desktop/
+phone cases retain controls/choices; twenty comparisons against the qualified
+build have zero changed pixels. These checks prove preview runtime adoption,
+not a main merge or a public Lighthouse95. Current publisher assets and ledger:
+D:/Core/output/ergonomic-performance-20261102/publisher-common-v1. Next releases
+must integrate PR320, preserve its model worker routing and reconcile this new
+manifest/version before publishing, including the separately prepared colours.
+
+Followup candidate after real Google report0vowtca8lh (desktop69/mobile56):
+- Preserve automatic3D, but initialize the full original renderer only when at
+  least25% of its stage is visible or the stage receives keyboard focus. A thin
+  offscreen edge does not initialize the GPU. Once activated, normal changes,
+  scrolling, resets and resource reuse remain unchanged. Browsers without
+  IntersectionObserver use immediate activation. No click-to-load control,
+  poster substitution or reduced geometry/material quality is introduced.
+- Keep the same complete Manrope program in a lossless content-addressed WOFF2,
+  with a crossorigin font preload and immutable caching. Original164700B TTF
+  remains untouched for PDF/old pages; WOFF2 is53892B. All742 glyphs, cmap,
+  variations, hint instructions and original metric/layout tables were compared
+  after decoding. No character subset, new typeface or weight change.
+- Current baseline remains7104ee68 while this isolated followup is qualified.
+  Check both initial offscreen behaviour and the actual full-quality stage after
+  scrolling; a page-load-only performance score does not qualify3D interaction.
+- The light stage now also defers importing the original renderer/Three module;
+  the loading dimensions, keyboard focus and automatic activation are retained.
+  No CSS child/sibling selector depends on the transparent display:contents host.
+- Canonical catalog/expanded calculation bodies are separated from full static
+  source registries. Existing server entry points retain the original data and
+  API, including PDF/validation and explicit legacy callers. Server wrappers pass
+  the entire active captured family and needed fallback palette entries to one
+  client UI; local runtime palettes remain complete. Other products' facts are
+  not bundled into every product. No source JSON or captured option rule changed.
+  Archived-code parity covers static families, explicit scopes and four actual
+  published product runtimes, including dependent choices, palette metadata,
+  all tested transitions, original asset identities and supplier option codes.
+  The browser-engine bundle has a regression guard against full registry imports.

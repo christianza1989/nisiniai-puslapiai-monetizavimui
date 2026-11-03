@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Exact integrated sourcef4e7a996 built and tested against actual owner source62cb9c4/current groups547, retaining all model data. Canonical engines preserve26 scopes/27 states/1936 transitions; full product client graph has no global registries. Both TS projects and focused regressions pass.16 current-owner browser cases/20 exact nonblank GPU comparisons plus16 public cases/20 exact comparisons pass; all product text/initial choices identical. Local desktop99/mobile85, public-URL Lighthouse on this PC100/100 and91, CLS0; not Google PSI. Original historical fixture limitation and default desk PDF400 remain recorded.",
+  "checks": [
+    {
+      "command": "tsc --noEmit; tsc -p tsconfig.cloudflare.json --noEmit; tsx --test tests/scoped-engine-boundary.test.ts tests/desk-color-plan.test.ts tests/desk-colors.test.ts",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\ergonomic-performance-20261102\\SCOPED-ENGINE-PARITY-v2.json; actual focused19PASS and unchanged canonical engine body hashes"
+    },
+    {
+      "command": "node browser-integrated-v6.mjs; node check-integrated-framebuffers-v4.mjs; node activation-navigation-v1.mjs",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\ergonomic-performance-20261102\\INTEGRATED-FRAMEBUFFER-QUALIFICATION-v4.json"
+    },
+    {
+      "command": "node browser-public-integrated-v7.mjs; node check-public-integrated-framebuffers-v5.mjs; node qualify-public-integrated-transport-v2.mjs; node qualify-public-font-and-current-data-v1.mjs",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\ergonomic-performance-20261102\\PUBLIC-INTEGRATED-FRAMEBUFFER-QUALIFICATION-v5.json"
+    },
+    {
+      "command": "node lighthouse-integrated-v4.mjs; node lighthouse-public-integrated-v2.mjs",
+      "result": "PASS",
+      "evidence": "D:\\Core\\output\\ergonomic-performance-20261102\\lighthouse-public-integrated-v2\\SUMMARY.json"
+    }
+  ],
+  "eventId": "2b7c4c1d-1b36-4b72-9b2b-301983a9f4d3",
+  "sequence": 2,
+  "at": "2026-11-02T14:39:31.417Z"
+}

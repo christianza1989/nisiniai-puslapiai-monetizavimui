@@ -1,0 +1,19 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Authorized followup: eight actual mobile pages expose a2.2MB homepage hero (score73) and header logo overdelivery; eModel23846540 PDF fails because its generated legacy image URL is absent. Preserve the exact attributed model photo and selected codes, use lossless PDF-compatible encoding, existing canonical responsive media pipeline and unchanged layout; audit launch SEO without enabling indexing or DNS/Launch.",
+  "category": "code",
+  "evidence": [
+    "D:\\Core\\output\\ergonomic-performance-20261102\\mobile-pdf-seo-v1\\mobile-baseline\\SUMMARY.json",
+    "D:/Core/output/ergonomic-performance-20261102/PUBLIC-CART-PDF-QUALIFICATION-v3.json",
+    "D:/Core/output/ergonomic-performance-20261102/mobile-pdf-seo-v1/CURRENT-BASELINE.json"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/319",
+  "rollback": "Retain exact current preview05aa92fe/sourcef4e7a996 and complete49985-row asset map, previous685e9ea9, all original source/model/runtime/package bytes. Revert only this scoped followup if validation fails; no completed publisher/archiver replay.",
+  "id": "upgrade-b3bbff41-541a-433a-99f4-194f43a4222e",
+  "branch": "codex/ergonomic-product-performance-20261102",
+  "baseSha": "4fe39b5282266f8fa86dae3c0d60d29a777a8fb3",
+  "createdAt": "2026-11-02T15:32:36.602Z"
+}

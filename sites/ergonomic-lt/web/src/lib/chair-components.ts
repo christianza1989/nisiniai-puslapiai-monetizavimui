@@ -24,7 +24,11 @@ export function validateChairReviewComponents(input:unknown,code:string):asserts
  validateChairTable(input,code,false);
 }
 function validateChairTable(input:unknown,code:string,consistentAxes:boolean):asserts input is ChairComponents{
- if(!plain(input)||input.schema!=='desk-components-065-v1'||input.code!==code||!/^K[A-Z0-9]{2,79}$/.test(code)||input.coordinates!=='original-world-matrices'||input.finishPolicy!=='original manufacturer finishes; no FINISH setters'||input.fullGraphClosed!==false||!Array.isArray(input.contexts)||!input.contexts.length||input.contexts.length>1000)fail();
+ // Technical review selects one complete captured context. Keep it bounded,
+ // while admitting the supplied 1,392-context Souly table without truncation.
+ // The catalog adapter retains its existing 1,000-context contract.
+ const contextLimit=consistentAxes?1000:1500;
+ if(!plain(input)||input.schema!=='desk-components-065-v1'||input.code!==code||!/^K[A-Z0-9]{2,79}$/.test(code)||input.coordinates!=='original-world-matrices'||input.finishPolicy!=='original manufacturer finishes; no FINISH setters'||input.fullGraphClosed!==false||!Array.isArray(input.contexts)||!input.contexts.length||input.contexts.length>contextLimit)fail();
  const contexts=new Set<string>(),parts=new Map<string,string>();
  const part=(a:unknown)=>{
   if(!plain(a)||typeof a.componentSha256!=='string'||!/^[a-f0-9]{64}$/.test(a.componentSha256)||a.file!=='assets/'+a.componentSha256+'.glb'||typeof a.sha256!=='string'||!/^[a-f0-9]{64}$/.test(a.sha256)||!Number.isSafeInteger(a.bytes)||Number(a.bytes)<=0||Number(a.bytes)>25*1024*1024||a.needsCompression!==false)fail();

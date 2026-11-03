@@ -1,5 +1,5 @@
 import {isAdmin} from '@/lib/auth';
-import {AdminLogin} from '@/components/admin';
+import {AdminLogin} from '@/components/admin-login';
 import PublicationDashboard from '@/components/publication-dashboard';
 export const dynamic='force-dynamic';
 export const metadata={title:'Modelių parengimas | Ergonomic.lt',robots:{index:false,follow:false}};

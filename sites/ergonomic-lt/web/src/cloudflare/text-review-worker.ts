@@ -10,6 +10,9 @@ export default {
   }
   if(url.pathname.startsWith('/valdymas/'))return new Response('Puslapis nerastas.',{status:404});
   if(!['GET','HEAD','OPTIONS'].includes(request.method)&&!/^\/api\/admin\/(?:login|logout|text-review)\/?$/.test(url.pathname))return new Response('Bandymo aplinkoje šis veiksmas nevykdomas.',{status:403});
+  if(['GET','HEAD'].includes(request.method)){
+   const asset=await env.ASSETS.fetch(request);if(asset.status!==404)return asset;
+  }
   return application.fetch(request,env,ctx);
  }
 } satisfies ExportedHandler<Env>;

@@ -24,7 +24,7 @@ export function readingMode(request:Request,access:ReadingAccess):ReadingMode{
 export function productReadingPages(products:Product[],mode:ReadingMode,runtimes:Record<string,CatalogRuntime|undefined>={}){
  if(mode==='closed')return [];
  return products.filter(p=>productIsVisible(p,mode==='local-preview')).flatMap(product=>{
-  const safe=(page:any)=>{if(!product.customerHeading)return page;const codes=customerProductCodes(product);return {...page,title:productHeading(product),description:customerLabel(page.description,codes,''),body:page.body?.map((row:any)=>({...row,text:customerLabel(row.text,codes,'')}))};};
+  const safe=(page:ReadingPage):ReadingPage=>{if(!product.customerHeading)return page;const codes=customerProductCodes(product);return {...page,title:productHeading(product),description:customerLabel(page.description,codes,''),body:page.body.map(row=>({...row,text:customerLabel(row.text,codes,'')}))};};
   if(!configurableArticle(product)){
    const seo=modelSeo(product),c=selectedModelConfiguration(product),a=product.modelArticle;
    const texts=a?[a.summary,...a.paragraphs,a.scopeNote,...a.technicalSections.flatMap(s=>['## '+s.heading,...s.rows.map(r=>r.label+': '+r.value)])]:[product.description,...(c?.details||[]).map(r=>r.label+': '+r.value)];
@@ -43,7 +43,7 @@ export function productReadingPages(products:Product[],mode:ReadingMode,runtimes
     {text:selected.scopeNote},...selected.sections.flatMap(section=>[
      {text:'### '+section.heading},...section.paragraphs.map(text=>({text})),...section.rows.map(row=>({text:row.label+': '+row.value}))
     ]),{text:'Svetainės valdytojas: '+facts.company}]
-  }];
+  })];
  });
 }
 export function productReadingResponse(request:Request,products:Product[],full:boolean,access:ReadingAccess,runtimes:Record<string,CatalogRuntime|undefined>={},standardPages:ReadingPage[]=[]){

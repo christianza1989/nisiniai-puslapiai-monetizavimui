@@ -1,6 +1,6 @@
 import {parseHTML} from 'linkedom';
 import type {Seed,Product} from './types';
-import {legacyPages} from './catalog';
+import {legacyPages,productPath} from './catalog';
 import {legacyArticle,articlePresentation} from './legacy-article';
 import {seoFaqRows} from './seo-faq-copy';
 import {applyEditorialHtml} from './editorial-server';
@@ -12,7 +12,7 @@ import facts from '../../content/editorial/facts.json';
 import {customFurnitureDocument} from './custom-furniture-copy';
 import {privacyDocument,privacyText} from './privacy-copy';
 export type ReadingPage={id:string;type:string;title:string;description:string;url:string;editorial:{authors:never[];sources:never[];commerceTargets:never[];productRecommendation:boolean};links:{targetPageId:string;label:string}[];externalLinks:never[];body:{text:string}[]};
-const path=(p:Product)=>`/produktai/${p.categorySlug}/${p.slug}/`;
+const path=productPath;
 export function readingPage(route:string,title:string,description:string,texts:string[]=[],links:ReadingPage['links']=[],type='page'):ReadingPage{
  return {id:route,type,title,description,url:'https://ergonomic.lt'+route,editorial:{authors:[],sources:[],commerceTargets:[],productRecommendation:false},links,externalLinks:[],body:texts.filter(Boolean).map(text=>({text}))};
 }

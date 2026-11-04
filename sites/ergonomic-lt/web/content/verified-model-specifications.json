@@ -202,5 +202,101 @@
         }
       ]
     }
+  },
+  "product_tapa-pouffes_d48f38c4": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "16088159": [
+        {
+          "label": "Konstrukcija",
+          "value": "18 mm medžio drožlių plokštė"
+        },
+        {
+          "label": "Užpildas",
+          "value": "Poliuretano putos ir polistireninis putplastis"
+        },
+        {
+          "label": "Plotis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "745 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "320 mm"
+        }
+      ],
+      "16088156": [
+        {
+          "label": "Konstrukcija",
+          "value": "30 mm buko fanera"
+        },
+        {
+          "label": "Užpildas",
+          "value": "Poliuretano putos"
+        },
+        {
+          "label": "Virvė",
+          "value": "Juodas 10 mm polipropilenas"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "100 kg"
+        },
+        {
+          "label": "Montavimas",
+          "value": "Tvirtinimo kabliai nepridedami. Pakabinamoms luboms netinka."
+        },
+        {
+          "label": "Plotis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "400 mm"
+        },
+        {
+          "label": "Sėdynės storis",
+          "value": "150 mm"
+        }
+      ],
+      "16088157": [
+        {
+          "label": "Konstrukcija",
+          "value": "30 mm buko fanera"
+        },
+        {
+          "label": "Užpildas",
+          "value": "Poliuretano putos"
+        },
+        {
+          "label": "Virvė",
+          "value": "Juodas 10 mm polipropilenas"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "100 kg"
+        },
+        {
+          "label": "Montavimas",
+          "value": "Tvirtinimo kabliai nepridedami. Pakabinamoms luboms netinka."
+        },
+        {
+          "label": "Plotis",
+          "value": "900 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "450 mm"
+        },
+        {
+          "label": "Sėdynės storis",
+          "value": "150 mm"
+        }
+      ]
+    }
   }
 }

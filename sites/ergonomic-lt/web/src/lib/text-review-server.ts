@@ -10,7 +10,7 @@ import {createExpandedEngine,fieldLabels} from './expanded-configurator';
 import type {CatalogRuntime} from './catalog-engine';
 import type {Product} from './types';
 
-type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean}>};
+type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
 const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export const localTextKey=(model:string,id:string)=>'local:'+model+':'+id;

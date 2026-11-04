@@ -317,5 +317,87 @@
         }
       ]
     }
+  },
+  "product_play-work-pouffes_e8494720": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "27042154": [
+        {
+          "label": "Konstrukcija",
+          "value": "Pufas su staliuku"
+        },
+        {
+          "label": "Plotis",
+          "value": "1110 mm"
+        }
+      ],
+      "27042155": [
+        {
+          "label": "Konstrukcija",
+          "value": "Pufas"
+        },
+        {
+          "label": "Plotis",
+          "value": "1110 mm"
+        }
+      ],
+      "27042157": [
+        {
+          "label": "Konstrukcija",
+          "value": "Vienvietis pufas"
+        },
+        {
+          "label": "Plotis",
+          "value": "720 mm"
+        }
+      ]
+    }
+  },
+  "product_play-work-sofas_c1c8fb7e": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "27300852": [
+        {
+          "label": "Konstrukcija",
+          "value": "Dvivietė sofa"
+        },
+        {
+          "label": "Plotis",
+          "value": "1598 mm"
+        }
+      ],
+      "27300853": [
+        {
+          "label": "Konstrukcija",
+          "value": "Sofa su fiksuotu rašymo paviršiumi"
+        },
+        {
+          "label": "Plotis",
+          "value": "1170 mm"
+        }
+      ],
+      "27300855": [
+        {
+          "label": "Konstrukcija",
+          "value": "Sofa su staliuku"
+        },
+        {
+          "label": "Plotis",
+          "value": "1140 mm"
+        }
+      ],
+      "27300857": [
+        {
+          "label": "Konstrukcija",
+          "value": "Vienvietė sofa"
+        },
+        {
+          "label": "Plotis",
+          "value": "750 mm"
+        }
+      ]
+    }
   }
 }

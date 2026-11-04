@@ -288,7 +288,11 @@
       "field:CBACONNECTORPLASTICCOL": "Plastic elements colour - upper support of the backrest",
       "value:CBACONNECTORPLASTICCOL=GREY": "Grey",
       "field:CBACKCOVERPLASTICCOLOR": "Plastic elements colour - backrest cover",
-      "value:CBACKCOVERPLASTICCOLOR=BLACK": "Black"
+      "value:CBACKCOVERPLASTICCOLOR=BLACK": "Black",
+      "value:CSEAT=UPHCOVERPLASTIC": "Upholstered, plastic cover",
+      "field:CBOTTOMBACKUPHGROUP": "Upholstery group - bottom part backrest",
+      "value:CBOTTOMBACKUPHGROUP=CSE": "Era",
+      "field:CBOTTOMBACKRESTUPHCOLOR": "Upholstery colour - bottom part backrest"
     },
     "KPW2018WW002": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -2339,7 +2343,11 @@
       "field:CBACONNECTORPLASTICCOL": "Plastic elements colour - upper support of the backrest",
       "value:CBACONNECTORPLASTICCOL=GREY": "Grey",
       "field:CFOOTRESTMETALCOLOR": "Metal elements colour - footrest",
-      "value:CFOOTRESTMETALCOLOR=CR": "Chrome CR, Z"
+      "value:CFOOTRESTMETALCOLOR=CR": "Chrome CR, Z",
+      "value:CSEAT=UPHCOVERPLASTIC": "Upholstered, plastic cover",
+      "field:CSIDEPROFILBACKUPHGROUP": "Upholstery group - side drops backrest",
+      "value:CSIDEPROFILBACKUPHGROUP=BN": "Bondai",
+      "field:CUPHSIDECOLORBACKREST": "Upholstery colour - side profile on backrest"
     },
     "KVAP008WW002": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -2400,7 +2408,16 @@
       "value:CUPHGROUP=RX": "Remix 3",
       "field:CUPHCOLOR": "Upholstery colour",
       "field:CDESKTOPCOLOR": "Table top colour",
-      "value:CDESKTOPCOLOR=U963": "U963 Dark Grey"
+      "value:CDESKTOPCOLOR=U963": "U963 Dark Grey",
+      "value:CTABLET=NONE": "None",
+      "value:CSHELL=HBUPH2": "Upholstered, high with horizontal stitching",
+      "field:CSTACKINGPROTECTION": "Stacking protection",
+      "value:CSTACKINGPROTECTION=NONE": "None",
+      "value:CASSEMBLY=PACKASMBOX": "PACK-ASM: Fully assembled, cardboard packaging",
+      "value:CFSC=YES": "Raw material – EU timber regulation, from certified forests, FSC certificate – authorized companies",
+      "value:DWIDTH=_565": "565 mm",
+      "field:CUPHLOWERCOLOR": "Upholstery colour - bottom part",
+      "field:CUPHUPPERCOLOR": "Upholstery colour - upper part"
     },
     "KYOU003WW002": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -2458,7 +2475,9 @@
       "field:C3DBACKRESTMESHCOLOR": "Colour 3D upholstery - backrest",
       "field:CUPHSEATCOLOR": "Upholstery colour - seat",
       "field:CFRAMEBASEPLASTICCOLOR": "Plastic elements colour - backrest and seat frame",
-      "value:CFRAMEBASEPLASTICCOLOR=PW": "PW Pearl white"
+      "value:CFRAMEBASEPLASTICCOLOR=PW": "PW Pearl white",
+      "value:CSEAT=TERMOMESHPADUPH": "Seat frame upholstered with thermoshrinking mesh and upholstered pad",
+      "field:C3DSEATMESHCOLOR": "Colour 3D upholstery - seat"
     },
     "KBEW001WW006": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",

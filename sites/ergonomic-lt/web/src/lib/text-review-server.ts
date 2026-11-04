@@ -23,7 +23,7 @@ const usage=new Map<string,{chairs:number;desks:number}>();
 const proposalsByEnglish={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 const normalizeEnglish=(text:string)=>text.trim().replace(/\s+/g,' ').toLowerCase();
 // Translate the material description while retaining the supplier's collection name.
-const materialProposals=new Map([
+const englishProposals=new Map([
  ['basic fabric c','Bazinis audinys C'],
  ['leather imitation v','Dirbtinė oda V'],
  ['fine leather le','Aukštos kokybės oda LE'],
@@ -31,6 +31,25 @@ const materialProposals=new Map([
  ['fine leather le front','Aukštos kokybės oda LE (priekinė pusė)'],
  ['leather nappa','Nappa oda'],
  ['polyester','Poliesteris'],
+ ['gl-r2: pneumatic, raised','Paaukštinta dujinė pakėlimo kolonėlė'],
+ ['ringbase, chromium plated steel','Chromuoto plieno kojų atramos žiedas'],
+ ['gb59: for soft or hard floors','Minkštoms arba kietoms grindims'],
+ ['pack-asm: fully assembled, cardboard packaging','Visiškai surinkta, kartoninėje pakuotėje'],
+ ['bl - aluminium powder-coated in black','Juodai milteliniu būdu dažytas aliuminis'],
+ ['chrome cr, z','Chromuota apdaila'],
+ ['polished aluminium pol','Poliruotas aliuminis'],
+ ['cantilever','Konsolinis rėmas'],
+ ['integrated with frame, closed, metal','Uždari metaliniai porankiai, sujungti su rėmu'],
+ ['polyurethane','Poliuretanas'],
+ ['upholstered, stitching in a wave-shaped, plastic cover','Apmuštas atlošas su banguotomis siūlėmis ir plastikiniu gaubtu'],
+ ['black','Juoda'],
+ ['xngr grey f110','Pilka'],
+ ['light grey','Šviesiai pilka'],
+ ['sknb natural beech','Natūralus bukas'],
+ ['polypropylene','Polipropilenas'],
+ ['bl black','Juoda'],
+ ['box - 4 items','Dėžė, 4 vnt.'],
+ ['integrated with frame, pad: plywood','Su rėmu sujungti porankiai su faneros atramomis'],
 ]);
 const proposalsByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 for(const [code,m] of Object.entries(inventory.models)){
@@ -103,11 +122,19 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  const terms=new Map<string,TextDefinition>();
  const modelBindings={...bindings[model]};
  const config=p.configurations.find(c=>c.id===p.modelConfigurationId);
+ const directProposal=(binding:string,english:string)=>{
+  const stacking=binding.startsWith('value:CSTACKING=')&&english.match(/^Up to (\d+) pieces$/i);
+  if(stacking)return 'Iki '+stacking[1]+' vnt.';
+  const normalized=normalizeEnglish(english);
+  if(normalized==='fixed'&&binding.startsWith('value:CARMRESTS='))return 'Fiksuoti';
+  if(normalized==='injected'&&/^value:[^=]*FOAM=/.test(binding))return 'Lietas putplastis';
+  return englishProposals.get(normalized);
+ };
  const proposalFor=(binding:string,text:string)=>{
   const proposals=proposalsByBinding[group].get(binding);
   const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding]||text;
   const sameEnglish=proposalsByEnglish[group].get(binding.split(':',1)[0]+':'+normalizeEnglish(english));
-  return proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:materialProposals.get(normalizeEnglish(english));
+  return proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:directProposal(binding,english);
  };
  const add=(binding:string,role:string,context:string,text:string,sourceCode:string,presetProposal?:string)=>{
   if(modelBindings[binding])return;
@@ -156,6 +183,14 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const sourceCode=binding.slice('value:'.length),field=sourceCode.split('=',1)[0];
   const labelId=modelBindings['field:'+field],label=terms.get(labelId)||inventory.terms[labelId];
   add(binding,'Parinktis',label?.suggested||fieldLabels[field]||field,text,sourceCode);
+ }
+ for(const [binding,english] of Object.entries(englishByModel[model]||{})){
+  if(!/^value:[CF]/.test(binding))continue;
+  const proposal=directProposal(binding,english);if(!proposal)continue;
+  const sourceCode=binding.slice('value:'.length),field=sourceCode.split('=',1)[0];
+  const labelId=modelBindings['field:'+field],label=terms.get(labelId)||inventory.terms[labelId];
+  if(!labelId&&!configurationOptionLabel(field)&&!fieldLabels[field])continue;
+  add(binding,'Parinktis',label?.suggested||configurationOptionLabel(field)||fieldLabels[field],english,sourceCode,proposal);
  }
  if(Object.keys(modelBindings).length){bindings[model]=modelBindings;if(!codes.includes(model))codes.push(model);}
  defs.push(...[...new Set(Object.values(modelBindings))].map(id=>terms.get(id)||inventory.terms[id]).filter(Boolean));

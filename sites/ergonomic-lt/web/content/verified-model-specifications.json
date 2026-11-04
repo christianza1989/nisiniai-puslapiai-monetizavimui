@@ -2611,5 +2611,207 @@
         }
       ]
     }
+  },
+  "product_creva-high-tables_a59924c5": {
+    "source": "https://www.nowystyl.com/files/interactive/KuschAndCo/kusch_office_catalogue_ko_int_pl_2023/59/",
+    "common": [],
+    "samples": {
+      "24861611": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1098 mm"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "2000 mm"
+        },
+        {
+          "label": "Kataloge nurodytas stalviršio gylis",
+          "value": "800 arba 1110 mm"
+        }
+      ],
+      "24861610": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1098 mm"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "2000 mm"
+        },
+        {
+          "label": "Kataloge nurodytas stalviršio gylis",
+          "value": "800 arba 1110 mm"
+        }
+      ],
+      "24861613": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1098 mm"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "2000 mm"
+        },
+        {
+          "label": "Kataloge nurodytas stalviršio gylis",
+          "value": "1000 mm"
+        }
+      ],
+      "24861612": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1098 mm"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "2000 mm"
+        },
+        {
+          "label": "Kataloge nurodytas stalviršio gylis",
+          "value": "1000 mm"
+        }
+      ]
+    }
+  },
+  "product_creva-meeting-tables_a706cc33": {
+    "source": "https://www.nowystyl.com/files/interactive/KuschAndCo/kusch_office_catalogue_ko_int_pl_2023/59/",
+    "common": [],
+    "samples": {
+      "24860115": [
+        {
+          "label": "Bendras aukštis",
+          "value": "739 mm"
+        },
+        {
+          "label": "Stalviršio skersmuo",
+          "value": "1200 mm"
+        }
+      ]
+    }
+  },
+  "product_cs5040-orga-towers-pedestals_27c8a4b1": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "19773884": [
+        {
+          "label": "Bendras aukštis",
+          "value": "950 mm"
+        },
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Viršutinės lentynėlės gylis",
+          "value": "80 mm"
+        },
+        {
+          "label": "Užraktas",
+          "value": "Cilindrinis"
+        }
+      ],
+      "19773883": [
+        {
+          "label": "Bendras aukštis",
+          "value": "950 mm"
+        },
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Viršutinės lentynėlės gylis",
+          "value": "80 mm"
+        },
+        {
+          "label": "Užraktas",
+          "value": "Cilindrinis"
+        }
+      ]
+    }
+  },
+  "product_easy-space-orga-towers-pedestals_be071de2": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "22489825": [
+        {
+          "label": "Bendras aukštis",
+          "value": "950 mm"
+        },
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Viršutinės lentynėlės gylis",
+          "value": "80 mm"
+        },
+        {
+          "label": "Užraktas",
+          "value": "Cilindrinis"
+        }
+      ]
+    }
+  },
+  "product_sqart-orga-towers-pedestals_8a1dbb50": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "24769380": [
+        {
+          "label": "Bendras aukštis",
+          "value": "950 mm"
+        },
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Viršutinės lentynėlės gylis",
+          "value": "80 mm"
+        },
+        {
+          "label": "Užraktas",
+          "value": "Cilindrinis"
+        }
+      ]
+    }
+  },
+  "product_easy-space-cabinets-sideboards_3f247eb0": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "21626957": [
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Galinės sienelės storis",
+          "value": "12 mm"
+        },
+        {
+          "label": "Vyrių atidarymo kampas",
+          "value": "110°"
+        }
+      ],
+      "21626958": [
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Galinės sienelės storis",
+          "value": "12 mm"
+        },
+        {
+          "label": "Vyrių atidarymo kampas",
+          "value": "110°"
+        }
+      ]
+    }
   }
 }

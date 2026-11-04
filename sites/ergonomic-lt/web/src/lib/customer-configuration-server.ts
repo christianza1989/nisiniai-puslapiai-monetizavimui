@@ -87,14 +87,14 @@ export async function customerConfiguration(product:Product,token?:string,change
  }));
  const preset=product.configurations.find(configuration=>configuration.id===scope.sample);
  const article=product.modelArticle;
- const verified=(verifiedSpecifications as Record<string,{
+ const modelSpecifications=(verifiedSpecifications as Record<string,{
   source:string;
   common:CustomerConfiguration['details'];
   samples:Record<string,CustomerConfiguration['details']>;
  }>)[product.id];
- const verifiedSample=scope.sample&&verified?.samples[scope.sample];
+ const verifiedSample=scope.sample&&modelSpecifications?.samples[scope.sample];
  const supplementalRows=[
-  ...(verifiedSample?[...verified.common,...verifiedSample]:[]),
+  ...(verifiedSample?[...modelSpecifications.common,...verifiedSample]:[]),
   ...(selected?.configuration.details||preset?.details||[]),
   ...(!article?.configurable?article?.technicalSections.flatMap(section=>section.rows)||[]:[]),
  ];

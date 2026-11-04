@@ -182,10 +182,10 @@
     {
       "code": "KUTI004WW002",
       "name": "Utila",
-      "asset": "/models/configurator/chairs/KUTI004WW002-9e28c52bc6e461094b30/review-0ad4b4fea09c6e65435a.json",
-      "sha256": "0ad4b4fea09c6e65435a078feb7af2b75d9f86c0440eb25418b49282492f0e79",
-      "bytes": 205603,
-      "version": "colors-20261103-v1-qualified-context7921"
+      "asset": "/models/configurator/chairs/KUTI004WW002-07dea0a59e278f6350f2/review-538626d0ae6af5ae97b7.json",
+      "sha256": "538626d0ae6af5ae97b7c8c609e3bf665340492b8ed6387ae582db33b6c4286f",
+      "bytes": 298422,
+      "version": "colors-20261104-v1-qualified-context9521"
     },
     {
       "code": "KUTI004WW001",

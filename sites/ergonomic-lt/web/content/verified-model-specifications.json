@@ -658,5 +658,221 @@
         }
       ]
     }
+  },
+  "product_kanu-armchairs-leg-rests_5ea59730": {
+    "source": "https://dam.nowystyl.com/assets-prod/cdb84caa-3c55-43e9-8e22-ce8e3fa35cc7_Kanu_Catalogue_KU_KO_EN_E01_2025.pdf",
+    "common": [
+      {
+        "label": "Sėdynė ir atlošas",
+        "value": "Vientisa formuota fanera"
+      },
+      {
+        "label": "Aukštis",
+        "value": "800 mm"
+      },
+      {
+        "label": "Plotis",
+        "value": "750 mm"
+      }
+    ],
+    "samples": {
+      "25389524": [],
+      "25389521": [
+        {
+          "label": "Rėmas",
+          "value": "Medinis"
+        },
+        {
+          "label": "Gylis",
+          "value": "680 mm"
+        }
+      ],
+      "25389523": [
+        {
+          "label": "Rėmas",
+          "value": "Medinis"
+        },
+        {
+          "label": "Gylis",
+          "value": "680 mm"
+        }
+      ],
+      "25389522": []
+    }
+  },
+  "product_kanu-cafe-lounge-tables_d1f337f1": {
+    "source": "https://dam.nowystyl.com/assets-prod/cdb84caa-3c55-43e9-8e22-ce8e3fa35cc7_Kanu_Catalogue_KU_KO_EN_E01_2025.pdf",
+    "common": [
+      {
+        "label": "Stalviršio skersmuo",
+        "value": "700 mm"
+      },
+      {
+        "label": "Stalviršio forma",
+        "value": "Apvali"
+      }
+    ],
+    "samples": {
+      "27835322": [
+        {
+          "label": "Aukštis",
+          "value": "350 mm"
+        }
+      ],
+      "27836682": [
+        {
+          "label": "Aukštis",
+          "value": "500 mm"
+        }
+      ]
+    }
+  },
+  "product_semu-cafe-lounge-tables_b85b9ca3": {
+    "source": "https://www.nowystyl.com/en/semu/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "25702051": [
+        {
+          "label": "Stalviršis",
+          "value": "Metalas"
+        }
+      ],
+      "27483851": [
+        {
+          "label": "Stalviršis",
+          "value": "„Fenix“"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Yra"
+        }
+      ],
+      "25701353": [
+        {
+          "label": "Stalviršis",
+          "value": "Melaminu dengta medžio drožlių plokštė (MFC)"
+        }
+      ],
+      "25702054": [
+        {
+          "label": "Stalviršis",
+          "value": "„Fenix“"
+        }
+      ],
+      "27483850": [
+        {
+          "label": "Stalviršis",
+          "value": "Melaminu dengta medžio drožlių plokštė (MFC)"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Yra"
+        }
+      ],
+      "27483849": [
+        {
+          "label": "Stalviršis",
+          "value": "Metalas"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Yra"
+        }
+      ]
+    }
+  },
+  "product_tulipan-meeting-chairs_230e271e": {
+    "source": "https://www.nowystyl.com/en/tulipan/",
+    "common": [
+      {
+        "label": "Sėdynės aukštis",
+        "value": "470 mm"
+      },
+      {
+        "label": "Pagrindas",
+        "value": "Keturios kojos"
+      }
+    ],
+    "samples": {
+      "26075296": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        }
+      ],
+      "26075295": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        }
+      ],
+      "26075293": [
+        {
+          "label": "Sėdynė",
+          "value": "Apmušta"
+        }
+      ]
+    }
+  },
+  "product_tulipan-stools-bar-stools_eb60d8ff": {
+    "source": "https://www.nowystyl.com/en/tulipan/",
+    "common": [
+      {
+        "label": "Pagrindas",
+        "value": "Keturios kojos"
+      }
+    ],
+    "samples": {
+      "26084480": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "760 mm"
+        }
+      ],
+      "26084483": [
+        {
+          "label": "Sėdynė",
+          "value": "Apmušta"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "640 mm"
+        }
+      ],
+      "26084477": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "760 mm"
+        }
+      ],
+      "26084481": [
+        {
+          "label": "Sėdynė",
+          "value": "Apmušta"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "640 mm"
+        }
+      ],
+      "26084484": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "640 mm"
+        }
+      ]
+    }
   }
 }

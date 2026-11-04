@@ -106,5 +106,101 @@
         }
       ]
     }
+  },
+  "product_sand-walls_93c6ad4d": {
+    "source": "https://www.nowystyl.com/en/sand/walls/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Laisvai pastatoma, apmušta pertvara"
+      }
+    ],
+    "samples": {
+      "28041105": [
+        {
+          "label": "Pertvaros forma",
+          "value": "L formos"
+        }
+      ],
+      "28041106": [
+        {
+          "label": "Pertvaros forma",
+          "value": "U formos"
+        }
+      ],
+      "28041107": [
+        {
+          "label": "Pertvaros forma",
+          "value": "H formos"
+        }
+      ],
+      "28041108": [
+        {
+          "label": "Pertvaros forma",
+          "value": "Z formos"
+        }
+      ]
+    }
+  },
+  "product_tapa-modular-systems_513dc293": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Keturių lygių modulinis pufas"
+      },
+      {
+        "label": "Pagrindo medžiaga",
+        "value": "30 mm fanera ir metaliniai sukimo mechanizmai"
+      },
+      {
+        "label": "Užpildas",
+        "value": "Poliuretano putos ir polistireninis putplastis"
+      },
+      {
+        "label": "Sėdynės aukštis",
+        "value": "620 mm"
+      }
+    ],
+    "samples": {
+      "15525483": [
+        {
+          "label": "Plotis",
+          "value": "1090 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Sukimosi ašis",
+          "value": "Trumpojoje pusėje"
+        }
+      ],
+      "15525484": [
+        {
+          "label": "Plotis",
+          "value": "900 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "900 mm"
+        }
+      ],
+      "15525480": [
+        {
+          "label": "Plotis",
+          "value": "1090 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Sukimosi ašis",
+          "value": "Ilgojoje pusėje"
+        }
+      ]
+    }
   }
 }

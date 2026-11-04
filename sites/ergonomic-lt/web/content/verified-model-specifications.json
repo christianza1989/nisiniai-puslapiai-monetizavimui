@@ -290,5 +290,32 @@
         }
       ]
     }
+  },
+  "product_creva-walls_c745cc46": {
+    "source": "https://www.nowystyl.com/en/creva/walls/",
+    "common": [
+      {
+        "label": "Įranga",
+        "value": "Rašymo lenta"
+      },
+      {
+        "label": "Pertvarų jungimas",
+        "value": "Magnetinis"
+      }
+    ],
+    "samples": {
+      "24809036": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobili pertvara su rašymo lenta"
+        }
+      ],
+      "24809038": [
+        {
+          "label": "Konstrukcija",
+          "value": "Pertvara su rašymo lenta"
+        }
+      ]
+    }
   }
 }

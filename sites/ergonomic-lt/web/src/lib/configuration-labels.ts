@@ -29,6 +29,9 @@ const values:Record<string,string>={BLACK:'Juoda',WHITE:'Balta',GREY:'Pilka',GRA
   BLACKEDITION:'Juoda',WHITEEDITION:'Balta',NONE:'Be šio elemento',YES:'Taip',NO:'Ne',
   STEELPC:'Dažytas plienas',STEELCR:'Chromuotas plienas',ALUMINIUM:'Aliuminis',POLISHED:'Poliruotas'};
 
+export function configurationOptionLabel(field:string){return labels[field];}
+export function configurationOptionValue(value:string){return values[value];}
+
 export function supplierOptions(configuration:Pick<Configuration,'configurator'|'supplierOptions'>):string[]{
   if(configuration.supplierOptions)return configuration.supplierOptions;
   if(!configuration.configurator)return [];

@@ -8,7 +8,8 @@ import {studioDescriptionParagraphs,productStudioPresentation} from './product-s
 import {configurableArticle} from './configuration-article';
 import {publishedText,textReviewStatus,reviewCounts,customerTextHasCode} from './text-review-state';
 import {contentTextKey,type ReviewScope,type ReviewEntry,type TextDefinition,type TextEdit} from './text-review-types';
-import {createExpandedEngine,fieldLabels} from './expanded-configurator';
+import {configurationOptionLabel,configurationOptionValue,optionDetails,supplierOptions} from './configuration-labels';
+import {createExpandedEngine,fieldLabels,choiceLabel} from './expanded-configurator';
 import type {CatalogRuntime} from './catalog-engine';
 import type {Product} from './types';
 
@@ -101,16 +102,20 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  const bindings=Object.fromEntries(codes.map(code=>[code,inventory.models[code].bindings]));
  const terms=new Map<string,TextDefinition>();
  const modelBindings={...bindings[model]};
- const add=(binding:string,role:string,context:string,text:string,sourceCode:string)=>{
-   if(modelBindings[binding])return;
-   const id='runtime:'+model+':'+binding;
-   modelBindings[binding]=id;
-   const proposals=proposalsByBinding[group].get(binding);
-   const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding]||text;
-   const sameEnglish=proposalsByEnglish[group].get(binding.split(':',1)[0]+':'+normalizeEnglish(english));
-   const suggested=proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:materialProposals.get(normalizeEnglish(english))||text;
-   terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested,context,notes:'',current:[text],modelCount:1});
-  };
+ const config=p.configurations.find(c=>c.id===p.modelConfigurationId);
+ const proposalFor=(binding:string,text:string)=>{
+  const proposals=proposalsByBinding[group].get(binding);
+  const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding]||text;
+  const sameEnglish=proposalsByEnglish[group].get(binding.split(':',1)[0]+':'+normalizeEnglish(english));
+  return proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:materialProposals.get(normalizeEnglish(english));
+ };
+ const add=(binding:string,role:string,context:string,text:string,sourceCode:string,presetProposal?:string)=>{
+  if(modelBindings[binding])return;
+  const id='runtime:'+model+':'+binding;
+  modelBindings[binding]=id;
+  const suggested=proposalFor(binding,text)||presetProposal||text;
+  terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested,context,notes:'',current:[text],modelCount:1});
+ };
  if(runtime&&p.modelConfigurationId){
   const engine=createExpandedEngine(runtime),state=engine.initialStateForProduct(p);
   const choices=new Map<string,Set<string>>();
@@ -132,6 +137,19 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
    const label=runtime.palettes._fieldLabels?.[field]?.text||fieldLabels[field]||field;
    add('field:'+field,'Lauko pavadinimas',label,label,field);
    for(const value of values)add('value:'+field+'='+value,'Parinktis',label,engine.choiceLabel(field,value,runtime.palettes,state.family),field+'='+value);
+  }
+ }
+ if(config){
+  for(const option of supplierOptions(config)){
+   const equals=option.indexOf('=');
+   if(equals<1)continue;
+   const field=option.slice(0,equals).split('.').at(-1)!,value=option.slice(equals+1);
+   if(!field||!value)continue;
+   const fieldBinding='field:'+field,valueBinding='value:'+field+'='+value;
+   const title=configurationOptionLabel(field)||fieldLabels[field]||field;
+   if(title!==field||proposalFor(fieldBinding,title))add(fieldBinding,'Lauko pavadinimas',title,title,field);
+   const text=configurationOptionValue(value)||choiceLabel(field,value);
+   if(text!==value||proposalFor(valueBinding,text))add(valueBinding,'Parinktis',title,optionDetails([option])[0]?.value||value,field+'='+value,text);
   }
  }
  for(const [binding,text] of Object.entries(materialByModel[model]||{})){
@@ -180,11 +198,11 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const originalText=shared?known?.current[def.id]||def.current[0]||def.sourceCode:def.current[0];
   const currentText=publishedText(def,local,publishedText(def,global,originalText));
   const customerNameRequired=customerTextHasCode(def,currentText),status=baseStatus==='approved'&&customerTextHasCode(def,edit?.state==='kept'?currentText:edit?.draft||currentText)?'changed':baseStatus;
-  const config=p.configurations.find(c=>c.code===model);
+  const sourceConfig=config||p.configurations.find(c=>c.code===model);
   const isPublished=status==='approved'&&(edit?.state==='kept'||edit?.published_hash===def.sourceHash&&edit.published===edit.draft);
   const originalEnglish=(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english;
   const englishReference=originalEnglish?'':[...referenceByTerm.get(def.id)||[]].join(' · ');
-  return {...def,english:originalEnglish||englishReference,englishReference:!!englishReference,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
+  return {...def,english:originalEnglish||englishReference,englishReference:!!englishReference,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at};

@@ -1,0 +1,294 @@
+{
+  "product_airi-swivel-chairs_4a6182da": {
+    "source": "https://www.nowystyl.com/en/airi/swivel-chairs/",
+    "common": [
+      {
+        "label": "Sėdynė ir atlošas",
+        "value": "Kvėpuojantis tinklelis"
+      },
+      {
+        "label": "Mechanizmas",
+        "value": "„Tilt“, su atlošo fiksavimu"
+      },
+      {
+        "label": "Sėdynės aukštis",
+        "value": "Reguliuojamas"
+      },
+      {
+        "label": "Pagrindas",
+        "value": "Penkių stipinų"
+      },
+      {
+        "label": "Porankiai",
+        "value": "Integruoti"
+      }
+    ],
+    "samples": {
+      "29969203": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Juoda"
+        }
+      ],
+      "29969204": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Pilka"
+        }
+      ],
+      "29969205": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Žalia"
+        }
+      ],
+      "29969206": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Mėlyna"
+        }
+      ]
+    }
+  },
+  "product_spix-acoustic-pods_690db2ab": {
+    "source": "https://www.nowystyl.com/en/spix/acoustic-pods/",
+    "common": [
+      {
+        "label": "Apšvietimas",
+        "value": "Reguliuojamas LED apšvietimas"
+      },
+      {
+        "label": "Ventiliacija",
+        "value": "Reguliuojama"
+      },
+      {
+        "label": "Durys",
+        "value": "Automatinis uždarymas ir švelnus pritraukimas"
+      },
+      {
+        "label": "Užimtumo indikatorius",
+        "value": "Šviesos signalas"
+      },
+      {
+        "label": "Perstūmimas",
+        "value": "Paslėpti ratukai"
+      }
+    ],
+    "samples": {
+      "27932091": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Įranga",
+          "value": "Fiksuotas stalviršis"
+        }
+      ],
+      "27934533": [
+        {
+          "label": "Vietų skaičius",
+          "value": "Iki 2"
+        },
+        {
+          "label": "Įranga",
+          "value": "Fiksuotas stalviršis ir sofa"
+        }
+      ],
+      "27934786": [
+        {
+          "label": "Vietų skaičius",
+          "value": "Iki 4"
+        },
+        {
+          "label": "Įranga",
+          "value": "Sofa, staliukas ir televizoriaus laikiklis"
+        }
+      ]
+    }
+  },
+  "product_sand-walls_93c6ad4d": {
+    "source": "https://www.nowystyl.com/en/sand/walls/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Laisvai pastatoma, apmušta pertvara"
+      }
+    ],
+    "samples": {
+      "28041105": [
+        {
+          "label": "Pertvaros forma",
+          "value": "L formos"
+        }
+      ],
+      "28041106": [
+        {
+          "label": "Pertvaros forma",
+          "value": "U formos"
+        }
+      ],
+      "28041107": [
+        {
+          "label": "Pertvaros forma",
+          "value": "H formos"
+        }
+      ],
+      "28041108": [
+        {
+          "label": "Pertvaros forma",
+          "value": "Z formos"
+        }
+      ]
+    }
+  },
+  "product_tapa-modular-systems_513dc293": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Keturių lygių modulinis pufas"
+      },
+      {
+        "label": "Pagrindo medžiaga",
+        "value": "30 mm fanera ir metaliniai sukimo mechanizmai"
+      },
+      {
+        "label": "Užpildas",
+        "value": "Poliuretano putos ir polistireninis putplastis"
+      },
+      {
+        "label": "Sėdynės aukštis",
+        "value": "620 mm"
+      }
+    ],
+    "samples": {
+      "15525483": [
+        {
+          "label": "Plotis",
+          "value": "1090 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Sukimosi ašis",
+          "value": "Trumpojoje pusėje"
+        }
+      ],
+      "15525484": [
+        {
+          "label": "Plotis",
+          "value": "900 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "900 mm"
+        }
+      ],
+      "15525480": [
+        {
+          "label": "Plotis",
+          "value": "1090 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Sukimosi ašis",
+          "value": "Ilgojoje pusėje"
+        }
+      ]
+    }
+  },
+  "product_tapa-pouffes_d48f38c4": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "16088159": [
+        {
+          "label": "Konstrukcija",
+          "value": "18 mm medžio drožlių plokštė"
+        },
+        {
+          "label": "Užpildas",
+          "value": "Poliuretano putos ir polistireninis putplastis"
+        },
+        {
+          "label": "Plotis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "745 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "320 mm"
+        }
+      ],
+      "16088156": [
+        {
+          "label": "Konstrukcija",
+          "value": "30 mm buko fanera"
+        },
+        {
+          "label": "Užpildas",
+          "value": "Poliuretano putos"
+        },
+        {
+          "label": "Virvė",
+          "value": "Juodas 10 mm polipropilenas"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "100 kg"
+        },
+        {
+          "label": "Montavimas",
+          "value": "Tvirtinimo kabliai nepridedami. Pakabinamoms luboms netinka."
+        },
+        {
+          "label": "Plotis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "400 mm"
+        }
+      ],
+      "16088157": [
+        {
+          "label": "Konstrukcija",
+          "value": "30 mm buko fanera"
+        },
+        {
+          "label": "Užpildas",
+          "value": "Poliuretano putos"
+        },
+        {
+          "label": "Virvė",
+          "value": "Juodas 10 mm polipropilenas"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "100 kg"
+        },
+        {
+          "label": "Montavimas",
+          "value": "Tvirtinimo kabliai nepridedami. Pakabinamoms luboms netinka."
+        },
+        {
+          "label": "Plotis",
+          "value": "900 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "450 mm"
+        }
+      ]
+    }
+  }
+}

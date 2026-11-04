@@ -24,5 +24,5 @@ export default function CustomerProductDetail({initial,url,image}:{initial:Custo
  <label className="field"><span>Kiekis</span><input type="number" min={1} max={1000} value={quantity} onChange={e=>setQuantity(Math.max(1,Math.min(1000,Number(e.target.value)||1)))}/></label><button className="button dark" type="button" disabled={busy||!quote.ready} onClick={add}>{added?'Pridėta į užklausą':'Pridėti prie užklausos'}</button>{added&&<Link className="text-link" href="/uzklausa/">Pateikti užklausą</Link>}
  <a className="text-link" href={'/api/produkto-kortele/?v='+encodeURIComponent(data.token)}>Atsisiųsti komplektacijos PDF</a>
  </div><div className="customer-configurator-view">{data.available3D?<CustomerViewer name={data.name} variant={variant} assembly={assembly} fullscreen={fullscreen} onFullscreen={()=>setFullscreen(true)} legacyRoleAdapter={data.legacyChair?publicChairRoleAdapter:undefined} onChairRoles={data.legacyChair?ignorePublicRoleProof:undefined}/>:<><p>Šiam modeliui 3D peržiūra dar ruošiama.</p>{image&&<img src={image} alt={data.name} style={{width:'100%',height:'auto'}}/>}</>}</div>
- </div></section><ProductSelectedReading rows={data.details}/></>;
+ </div></section><ProductSelectedReading rows={[{label:'Modelis',value:data.name},...data.details]}/></>;
 }

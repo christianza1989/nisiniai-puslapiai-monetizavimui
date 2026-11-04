@@ -288,6 +288,36 @@
           "label": "Gylis",
           "value": "450 mm"
         }
+      ],
+      "16088161": [
+        {
+          "label": "Plotis × gylis",
+          "value": "450 × 450 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "470 mm"
+        }
+      ],
+      "16088158": [
+        {
+          "label": "Skersmuo",
+          "value": "400 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "320 mm"
+        }
+      ],
+      "16088160": [
+        {
+          "label": "Plotis × gylis",
+          "value": "900 × 450 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "470 mm"
+        }
       ]
     }
   },
@@ -1488,6 +1518,36 @@
           "label": "Stalčių skaičius",
           "value": "2"
         }
+      ],
+      "23374374": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2400 × 450 mm"
+        }
+      ],
+      "23374373": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1600 × 450 mm"
+        }
+      ],
+      "23374368": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2400 × 450 mm"
+        }
+      ],
+      "23374370": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2400 × 450 mm"
+        }
+      ],
+      "23374371": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1600 × 450 mm"
+        }
       ]
     }
   },
@@ -1570,6 +1630,12 @@
         {
           "label": "Apdaila",
           "value": "Medžio lukštas"
+        }
+      ],
+      "25257456": [
+        {
+          "label": "Plotis × gylis",
+          "value": "800 × 445 mm"
         }
       ]
     }
@@ -2777,6 +2843,26 @@
           "label": "Užraktas",
           "value": "Cilindrinis"
         }
+      ],
+      "24769377": [
+        {
+          "label": "Plotis × gylis",
+          "value": "332 × 600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "575 mm"
+        }
+      ],
+      "24769383": [
+        {
+          "label": "Plotis × gylis",
+          "value": "480 × 480 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "1263 mm"
+        }
       ]
     }
   },
@@ -2810,6 +2896,252 @@
         {
           "label": "Vyrių atidarymo kampas",
           "value": "110°"
+        }
+      ]
+    }
+  },
+  "product_erange-orga-towers-pedestals_42809c62": {
+    "source": "https://www.nowystyl.com/en/erange/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "22087793": [
+        {
+          "label": "Plotis × gylis",
+          "value": "410 × 600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "643 mm"
+        }
+      ]
+    }
+  },
+  "product_offa-orga-towers-pedestals_438939e5": {
+    "source": "https://www.nowystyl.com/en/offa/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "19455896": [
+        {
+          "label": "Plotis × gylis",
+          "value": "560 × 498 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "750 mm"
+        }
+      ]
+    }
+  },
+  "product_offa-pouffes_24d6360e": {
+    "source": "https://www.nowystyl.com/en/offa/pouffes/",
+    "common": [],
+    "samples": {
+      "19557053": [
+        {
+          "label": "Plotis × gylis",
+          "value": "420 × 420 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_cx-3200-meeting-tables_667fd26e": {
+    "source": "https://www.nowystyl.com/en/cx-3200/meeting-tables/",
+    "common": [],
+    "samples": {
+      "16812159": [
+        {
+          "label": "Plotis × gylis",
+          "value": "4000 × 2400 mm"
+        }
+      ],
+      "16812161": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2800 × 2300 mm"
+        }
+      ],
+      "16812160": [
+        {
+          "label": "Plotis × gylis",
+          "value": "3249 × 2751 mm"
+        }
+      ]
+    }
+  },
+  "product_erange-meeting-tables_b48cc9db": {
+    "source": "https://www.nowystyl.com/en/erange/meeting-tables/",
+    "common": [],
+    "samples": {
+      "22084192": [
+        {
+          "label": "Plotis × gylis",
+          "value": "3600 × 1400 mm"
+        }
+      ],
+      "22084190": [
+        {
+          "label": "Plotis × gylis",
+          "value": "4800 × 1400 mm"
+        }
+      ],
+      "22084191": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2400 × 1400 mm"
+        }
+      ]
+    }
+  },
+  "product_levitate-meeting-tables_91cfdc0e": {
+    "source": "https://www.nowystyl.com/en/levitate/meeting-tables/",
+    "common": [],
+    "samples": {
+      "16597869": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1800 × 900 mm"
+        }
+      ],
+      "16597871": [
+        {
+          "label": "Skersmuo",
+          "value": "1200 mm"
+        }
+      ]
+    }
+  },
+  "product_offa-high-tables_a811f6b6": {
+    "source": "https://www.nowystyl.com/en/offa/high-tables/",
+    "common": [],
+    "samples": {
+      "19455540": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1800 × 600 mm"
+        }
+      ],
+      "19455543": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1800 × 800 mm"
+        }
+      ],
+      "19455542": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1800 × 800 mm"
+        }
+      ]
+    }
+  },
+  "product_offa-cafe-lounge-tables_919edefd": {
+    "source": "https://www.nowystyl.com/en/offa/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "19456222": [
+        {
+          "label": "Plotis × gylis",
+          "value": "420 × 420 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "435 mm"
+        }
+      ],
+      "19456221": [
+        {
+          "label": "Plotis × gylis",
+          "value": "366 × 420 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "390 mm"
+        }
+      ]
+    }
+  },
+  "product_play-work-high-tables_5c59297e": {
+    "source": "https://www.nowystyl.com/en/play-work/high-tables/",
+    "common": [],
+    "samples": {
+      "24045074": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1645 × 1600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "1117 mm"
+        }
+      ]
+    }
+  },
+  "product_sqart-meeting-tables_2e47c918": {
+    "source": "https://www.nowystyl.com/en/sqart/meeting-tables/",
+    "common": [],
+    "samples": {
+      "24766471": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1400 × 1400 mm"
+        }
+      ]
+    }
+  },
+  "product_tauko-cafe-lounge-tables_de16e263": {
+    "source": "https://www.nowystyl.com/en/tauko/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "16088330": [
+        {
+          "label": "Plotis × gylis",
+          "value": "800 × 800 mm"
+        }
+      ]
+    }
+  },
+  "product_naudu-stools-bar-stools_806bdc31": {
+    "source": "https://www.nowystyl.com/en/naudu/stools-bar-stools/",
+    "common": [],
+    "samples": {
+      "29782035": [
+        {
+          "label": "Sėdynės aukštis",
+          "value": "810 mm"
+        }
+      ]
+    }
+  },
+  "product_mollen-cafe-lounge-tables_e9876a94": {
+    "source": "https://www.nowystyl.com/en/mollen/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "25640766": [
+        {
+          "label": "Stalviršio aukštis",
+          "value": "350 mm"
+        }
+      ],
+      "25640764": [
+        {
+          "label": "Stalviršio aukštis",
+          "value": "350 mm"
+        }
+      ]
+    }
+  },
+  "product_k40-orga-towers-pedestals_02122d80": {
+    "source": "https://www.nowystyl.com/en/k40/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "23596085": [
+        {
+          "label": "Viršutinės plokštės storis",
+          "value": "25 mm"
         }
       ]
     }

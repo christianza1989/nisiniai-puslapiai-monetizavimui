@@ -656,7 +656,8 @@
       "field:FVERWIRETRUNKINGCOLOR": "Colour - vertical wire trunking",
       "value:FVERWIRETRUNKINGCOLOR=BLACKPLASTIC": "Black",
       "field:FMOUNTINGHANDLECOLOR": "Colour - bracket",
-      "value:FMOUNTINGHANDLECOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y"
+      "value:FMOUNTINGHANDLECOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
+      "field:DTOPSWIDTH": "Table tops width"
     },
     "KERG024WW001": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -1374,7 +1375,8 @@
       "field:FHORWIRETRUNKINGCOLOR": "Colour - horizontal wire trunking",
       "value:FHORWIRETRUNKINGCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
       "field:FVERWIRETRUNKINGCOLOR": "Colour - vertical wire trunking",
-      "value:FVERWIRETRUNKINGCOLOR=BLACKPLASTIC": "Black"
+      "value:FVERWIRETRUNKINGCOLOR=BLACKPLASTIC": "Black",
+      "field:DTOPSWIDTH": "Table tops width"
     },
     "KFLS001WW001": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -2266,7 +2268,8 @@
       "field:FHORWIRETRUNKINGCOLOR": "Colour - horizontal wire trunking",
       "value:FHORWIRETRUNKINGCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
       "field:FMOUNTINGHANDLECOLOR": "Colour - bracket",
-      "value:FMOUNTINGHANDLECOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y"
+      "value:FMOUNTINGHANDLECOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
+      "field:DTOPSWIDTH": "Table tops width"
     },
     "KXEN037WW001": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -4206,7 +4209,8 @@
       "field:FHORWIRETRUNKINGCOLOR": "Colour - horizontal wire trunking",
       "value:FHORWIRETRUNKINGCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
       "field:FMOUNTINGHANDLECOLOR": "Colour - bracket",
-      "value:FMOUNTINGHANDLECOLOR=RAL5000": "RAL 5000 Violet Blue VB"
+      "value:FMOUNTINGHANDLECOLOR=RAL5000": "RAL 5000 Violet Blue VB",
+      "field:DTOPSWIDTH": "Table tops width"
     },
     "KSQA155WW001": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -4302,7 +4306,8 @@
       "field:FHORWIRETRUNKINGCOLOR": "Colour - horizontal wire trunking",
       "value:FHORWIRETRUNKINGCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
       "field:FMOUNTINGHANDLECOLOR": "Colour - bracket",
-      "value:FMOUNTINGHANDLECOLOR=RAL6003": "RAL 6003 Olive Green OG"
+      "value:FMOUNTINGHANDLECOLOR=RAL6003": "RAL 6003 Olive Green OG",
+      "field:DTOPSWIDTH": "Table tops width"
     },
     "KUTI003WW001": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",

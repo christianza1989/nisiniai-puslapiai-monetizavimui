@@ -2131,6 +2131,16 @@
           "label": "Bendras aukštis",
           "value": "460 mm"
         }
+      ],
+      "19908081": [
+        {
+          "label": "Plotis × gylis",
+          "value": "550 × 550 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "420 mm"
+        }
       ]
     }
   },
@@ -2186,6 +2196,158 @@
         {
           "label": "Bendras aukštis",
           "value": "520 mm"
+        }
+      ]
+    }
+  },
+  "product_zone-armchairs-leg-rests_4fd1c1c1": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "23523200": [
+        {
+          "label": "Plotis × gylis",
+          "value": "643 × 650 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "460 mm"
+        }
+      ]
+    }
+  },
+  "product_kaika-armchairs-leg-rests_d7eef38e": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20812391": [
+        {
+          "label": "Plotis × gylis",
+          "value": "660 × 585 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "840 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "465 mm"
+        }
+      ],
+      "20812392": [
+        {
+          "label": "Plotis × gylis",
+          "value": "660 × 580 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "845 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "470 mm"
+        }
+      ]
+    }
+  },
+  "product_athena-armchairs-leg-rests_da38c8b7": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "26059643": [
+        {
+          "label": "Plotis × gylis",
+          "value": "635 × 625 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "862 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "484 mm"
+        }
+      ]
+    }
+  },
+  "product_mollen-armchairs-leg-rests_f79cc8b6": {
+    "source": "https://www.nowystyl.com/en/mollen/",
+    "common": [],
+    "samples": {
+      "25635258": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Kišeninės spyruoklės"
+        }
+      ]
+    }
+  },
+  "product_mollen-sofas_a213bbf2": {
+    "source": "https://www.nowystyl.com/en/mollen/",
+    "common": [],
+    "samples": {
+      "25638803": [
+        {
+          "label": "Vietų skaičius",
+          "value": "2"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Kišeninės spyruoklės"
+        }
+      ],
+      "25638804": [
+        {
+          "label": "Vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Kišeninės spyruoklės"
+        }
+      ]
+    }
+  },
+  "product_puzlo-cabinets-sideboards_18afc598": {
+    "source": "https://www.nowystyl.com/en/puzlo/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "13482545": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Medžio drožlių plokštės cokolis"
+        }
+      ],
+      "23776128": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Metalinis pagrindas"
+        }
+      ]
+    }
+  },
+  "product_puzlo-lockers_75ec2c81": {
+    "source": "https://www.nowystyl.com/en/puzlo/lockers/",
+    "common": [],
+    "samples": {
+      "23784198": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Medžio drožlių plokštės cokolis"
+        }
+      ],
+      "23784200": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Metalinis pagrindas"
         }
       ]
     }

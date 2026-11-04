@@ -37,10 +37,20 @@ const englishByModel:Record<string,Record<string,string>>=manufacturerEnglish.mo
 const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export const localTextKey=(model:string,id:string)=>'local:'+model+':'+id;
 export const productTextScope=(p:Product)=>p.id+':'+(p.modelConfigurationId||'line');
+const englishModelWords=/\b(?:chairs?|armchairs?|tables?|desks?|stools?|sofas?|benches?|cabinets?|pedestals?|screens?|partitions?|seating|storage|pouffes?)\b/i;
+const modelTitleTerms:Record<string,string>={UPH:'su apmušalais',MESH:'su tinkleliu','5-STAR':'su penkių stipinų pagrindu'};
+function suggestedModelTitle(p:Product,title:string){
+ if(p.categorySlug!=='kedes'||!p.modelConfigurationId)return title;
+ return title.replace(/\b5-STAR(?:\s+UPH)?\b|\b(?:MESH|UPH)\b/g,term=>term==='5-STAR UPH'?'su penkių stipinų pagrindu ir apmušalais':modelTitleTerms[term]);
+}
 export function contentDefinitions(p:Product):TextDefinition[]{
  const v=publicProductView(p),original=publicProductView({...p,textReviewHeading:undefined}),scope=productTextScope(p),out:TextDefinition[]=[];
- const put=(kind:string,text:string,context:string,source=text)=>{if(!text?.trim())return;out.push({id:contentTextKey(scope,kind),sourceHash:hash(source),role:'Produkto tekstas',english:kind==='title'?'':kind==='description:0'?p.sourceDescription||'':'',polish:'',sourceCode:'',suggested:text,context,notes:'Atskiro parengto pasiūlymo šiam tekstui dar nėra. Galite įrašyti savo variantą arba palikti esamą.',current:[text],modelCount:1});};
- put('title',v.publicHeading||v.name,'Produkto pavadinimas',original.publicHeading||original.name);
+ const sample=p.configurations.find(c=>c.id===p.modelConfigurationId);
+ const supplierTitle=sample?.sourceDescription||sample?.description||'';
+ const englishTitle=englishModelWords.test(supplierTitle)?supplierTitle:'';
+ const put=(kind:string,text:string,context:string,source=text,suggested=text)=>{if(!text?.trim())return;out.push({id:contentTextKey(scope,kind),sourceHash:hash(source),role:'Produkto tekstas',english:kind==='title'?englishTitle:kind==='description:0'?p.sourceDescription||'':'',polish:'',sourceCode:'',suggested,context,notes:'',current:[text],modelCount:1});};
+ const title=v.publicHeading||v.name;
+ put('title',title,'Produkto pavadinimas',original.publicHeading||original.name,suggestedModelTitle(p,title));
  studioDescriptionParagraphs(v.description).forEach((s,i)=>put('description:'+i,s,'Aprašymo pastraipa '+(i+1)));
  const intro=configurableArticle(v)?.intro||v.modelArticle?.paragraphs||[];
  productStudioPresentation(v,intro).overview.forEach((s,i)=>put('intro:'+i,s,'Įžangos pastraipa '+(i+1)));

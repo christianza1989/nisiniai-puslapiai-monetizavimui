@@ -399,5 +399,264 @@
         }
       ]
     }
+  },
+  "product_oxo-cabinets-sideboards_c0bf8215": {
+    "source": "https://www.nowystyl.com/en/oxo/cabinets-sideboards/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Laisvai pastatoma modulinė sistema"
+      }
+    ],
+    "samples": {
+      "23748885": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        },
+        {
+          "label": "Įranga",
+          "value": "Pertvarų skydai"
+        }
+      ],
+      "23735342": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "23748923": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "20785950": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "23748922": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "23748924": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "23735343": [
+        {
+          "label": "Išdėstymas",
+          "value": "H formos"
+        }
+      ],
+      "23748925": [
+        {
+          "label": "Išdėstymas",
+          "value": "U formos"
+        }
+      ],
+      "21136201": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "21136206": [
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        }
+      ],
+      "20785951": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ]
+    }
+  },
+  "product_aplo-cabinets-sideboards_99123fb6": {
+    "source": "https://www.nowystyl.com/en/aplo/cabinets-sideboards/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Modulinė lentynų sistema"
+      },
+      {
+        "label": "Skersinių tvirtinimas",
+        "value": "Užspaudžiamas prie rėmo, išardomas"
+      }
+    ],
+    "samples": {
+      "32269081": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269084": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269083": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269089": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269079": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269080": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269087": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269086": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269085": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ]
+    }
+  },
+  "product_v-care-beam-seating_2622cae8": {
+    "source": "https://www.nowystyl.com/en/v-care/beam-seating/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Laukiamojo suolas su profiliuotomis sėdynėmis"
+      }
+    ],
+    "samples": {
+      "24865941": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "8"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Dvipusis"
+        },
+        {
+          "label": "Prieinamumas",
+          "value": "PRM versija su paaukštinta sėdyne"
+        }
+      ],
+      "24865936": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "2"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865939": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        },
+        {
+          "label": "Prieinamumas",
+          "value": "PRM versija su paaukštinta sėdyne"
+        }
+      ],
+      "24865935": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865933": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865940": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "6"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Dvipusis"
+        }
+      ],
+      "24865934": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865937": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865938": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ]
+    }
   }
 }

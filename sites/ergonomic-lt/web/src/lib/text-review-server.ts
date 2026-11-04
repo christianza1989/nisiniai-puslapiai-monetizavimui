@@ -15,6 +15,10 @@ import type {Product} from './types';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
+const utilaCatalogueLabel={
+ text:'Plastic elements colour – lumbar support',
+ sourceUrl:'https://s3.eu-west-1.amazonaws.com/alphayourspace.s3-assets.com/brochures/AMD_Alpha_NowyStyl_Brochure_2024-Offit.pdf#page=20',
+};
 const deskCategory='rasomieji-stalai-ir-darbo-vietos';
 const materialByModel:Record<string,Record<string,string>>=materialReferences.models;
 const englishByModel:Record<string,Record<string,string>>=manufacturerEnglish.models;
@@ -31,6 +35,20 @@ const englishProposals=new Map([
  ['fine leather le front','Aukštos kokybės oda LE (priekinė pusė)'],
  ['leather nappa','Nappa oda'],
  ['polyester','Poliesteris'],
+ ['arf-g/gr: fixed, arm: light grey polyamide, pad: dark grey polypropylene','Fiksuoti porankiai. Korpusas iš šviesiai pilko poliamido, atramos iš tamsiai pilko polipropileno'],
+ ['pack-a1: partially assembled, compact cardboard packaging','Dalinai surinkta, kompaktiškoje kartoninėje pakuotėje'],
+ ['backrest frame upholstered with upholstered pad, low','Žemas atlošas su apmuštu rėmu ir paminkštinimu'],
+ ['mf mesh','MF tinklelis'],
+ ['mesh, high','Aukštas tinklinis atlošas'],
+ ['backrest frame upholstered with 3d fabric, high','Aukštas atlošas su 3D audiniu aptrauktu rėmu'],
+ ['anodised aluminium silver matt asam','Matinis sidabrinis anoduotas aliuminis'],
+ ['1.007 beech 0c','Buko apdaila'],
+ ['plastic (pp), decorative cut-outs','Polipropileno atlošas su dekoratyvinėmis išpjovomis'],
+ ['integrated with frame, back open, metal','Metaliniai porankiai, sujungti su rėmu, atviri gale'],
+ ['polyamide','Poliamidas'],
+ ['u963 dark grey','Tamsiai pilka'],
+ ['ral 9006 white aluminium al, alu, wa, x','Balto aliuminio spalva'],
+ ['insert – upholstered with plastic see-through cover','Apmuštas intarpas su skaidriu plastikiniu gaubtu'],
  ['hocker, 4-legs','Keturių kojų taburetė'],
  ['plastic','Plastikas'],
  ['ral 9005 jet black cz, bl, y','Sodri juoda'],
@@ -253,8 +271,9 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const sourceConfig=config||p.configurations.find(c=>c.code===model);
   const isPublished=status==='approved'&&(edit?.state==='kept'||edit?.published_hash===def.sourceHash&&edit.published===edit.draft);
   const originalEnglish=(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english;
-  const englishReference=originalEnglish?'':[...referenceByTerm.get(def.id)||[]].join(' · ');
-  return {...def,english:originalEnglish||englishReference,englishReference:!!englishReference,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
+  const catalogueLabel=!originalEnglish&&/^KUTI(?:003WW001|004WW00[12])$/.test(model)&&def.sourceCode==='CLUMBARPLASTICCOLOR'?utilaCatalogueLabel:undefined;
+  const englishReference=originalEnglish||catalogueLabel?'':[...referenceByTerm.get(def.id)||[]].join(' · ');
+  return {...def,english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at};

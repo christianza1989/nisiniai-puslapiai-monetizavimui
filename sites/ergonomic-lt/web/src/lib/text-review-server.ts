@@ -12,6 +12,23 @@ import type {Product} from './types';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
+const deskCategory='rasomieji-stalai-ir-darbo-vietos';
+const usage=new Map<string,{chairs:number;desks:number}>();
+for(const m of Object.values(inventory.models)){
+ const group=m.path.startsWith('/produktai/'+deskCategory+'/')?'desks':'chairs';
+ for(const id of new Set(Object.values(m.bindings))){
+  const counts=usage.get(id)||{chairs:0,desks:0};
+  counts[group]++;usage.set(id,counts);
+ }
+}
+export function sharedTextKey(category:string,id:string){
+ const counts=usage.get(id);
+ return counts?.chairs&&counts.desks?'category:'+(category===deskCategory?'desks':'chairs')+':'+id:id;
+}
+// Exact labels observed in this article's English manufacturer configurator.
+const englishFieldsByModel:Record<string,Record<string,string>>={
+ K2ME004WW001:{CBASE:'Base',CCASTORS:'Castors',CPRICEGROUP:'Price group',CUPHGROUP:'Upholstery group',CUPHCOLOR:'Upholstery colour'},
+};
 const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export const localTextKey=(model:string,id:string)=>'local:'+model+':'+id;
 export const productTextScope=(p:Product)=>p.id+':'+(p.modelConfigurationId||'line');
@@ -35,6 +52,7 @@ export async function reviewProductForCode(code:string){
 }
 function modelFor(p:Product){return p.configurations.find(c=>c.id===p.modelConfigurationId)?.code||p.configurations.find(c=>c.code)?.code||productTextScope(p);}
 export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextEdit>,runtime?:CatalogRuntime):Promise<ReviewScope>{
+ const globalKey=(id:string)=>sharedTextKey(p.categorySlug,id);
  const scope=productTextScope(p),model=modelFor(p),known=inventory.models[model],defs=contentDefinitions(p);
  const codes=[...new Set(p.configurations.map(c=>c.code).filter((c):c is string=>!!c&&!!inventory.models[c]))];
  if(known&&!codes.includes(model))codes.unshift(model);
@@ -59,13 +77,13 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  defs.push(...[...new Set(Object.values(modelBindings))].map(id=>terms.get(id)||inventory.terms[id]).filter(Boolean));
  let edits=providedEdits;
  if(!edits){
-  edits=new Map();const keys=[...new Set([...defs.map(d=>d.id),...codes.flatMap(code=>Object.values(bindings[code]).flatMap(id=>[id,localTextKey(code,id)]))])];
+  edits=new Map();const keys=[...new Set([...defs.map(d=>globalKey(d.id)),...codes.flatMap(code=>Object.values(bindings[code]).flatMap(id=>[globalKey(id),localTextKey(code,id)]))])];
   for(let i=0;i<keys.length;i+=70){const batch=keys.slice(i,i+70);for(const row of await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key IN ('+batch.map(()=>'?').join(',')+')',...batch))edits.set(row.key,row);}
  }
  const values:Record<string,string>={};
  for(const code of codes)for(const id of new Set(Object.values(bindings[code]))){
   const def=terms.get(id)||inventory.terms[id];if(!def)continue;
-  const local=edits.get(localTextKey(code,id)),global=edits.get(id);
+  const local=edits.get(localTextKey(code,id)),global=edits.get(globalKey(id));
   const fallback=publishedText(def,global,'');
   const value=publishedText(def,local,fallback);
   if(value)values[code+':'+id]=value;
@@ -79,14 +97,14 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   optionCodesByTerm.set(id,codes);
  }
  const entries:ReviewEntry[]=defs.map(def=>{
-  const shared=def.role!=='Produkto tekstas'&&!terms.has(def.id),global=edits!.get(def.id),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
+  const shared=def.role!=='Produkto tekstas'&&!terms.has(def.id),global=edits!.get(globalKey(def.id)),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
   const edit=local||global,baseStatus=textReviewStatus(def,edit);
   const originalText=shared?known?.current[def.id]||def.current[0]||def.sourceCode:def.current[0];
   const currentText=publishedText(def,local,publishedText(def,global,originalText));
   const customerNameRequired=customerTextHasCode(def,currentText),status=baseStatus==='approved'&&customerTextHasCode(def,edit?.state==='kept'?currentText:edit?.draft||currentText)?'changed':baseStatus;
   const config=p.configurations.find(c=>c.code===model);
   const isPublished=status==='approved'&&(edit?.state==='kept'||edit?.published_hash===def.sourceHash&&edit.published===edit.draft);
-  return {...def,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||def.id,shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?def.modelCount:1};
+  return {...def,english:englishFieldsByModel[model]?.[def.sourceCode]||def.english,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at};

@@ -9,6 +9,8 @@ export default function TextReviewPanel({scope,update,editing,toggle,selected,se
  const [query,setQuery]=useState(''),[onlyOpen,setOnlyOpen]=useState(true),[list,setList]=useState(false),[value,setValue]=useState(''),[local,setLocal]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState(''),[history,setHistory]=useState<{action:string;text:string;at:string}[]>([]);
  const entry=scope.entries.find(e=>e.id===selected),input=useRef<HTMLTextAreaElement>(null),close=useRef<HTMLButtonElement>(null);
  const versionOf=(e:ReviewEntry)=>({hash:e.sourceHash,global:e.globalEdit?.revision||(!e.shared?e.edit?.revision:0)||0,local:e.edit?.key.startsWith('local:')?e.edit.revision:0});
+ const openedFromLink=useRef(false);
+ useEffect(()=>{if(editing&&!openedFromLink.current&&new URLSearchParams(location.search).get('redaguoti')==='1'){openedFromLink.current=true;setList(true);}},[editing]);
  const base=useRef<ReturnType<typeof versionOf>|undefined>(undefined);
  const sample=scope.publicScope.scope.slice(scope.productId.length+1),params=new URLSearchParams({product:scope.productId,...(sample==='line'?{}:{sample})});
  const rows=scope.entries.filter(e=>(!onlyOpen||e.status!=='approved')&&(!query||(e.context+' '+e.currentText+' '+e.english+' '+e.suggested+' '+(e.optionCodes||[]).join(' ')).toLocaleLowerCase('lt').includes(query.toLocaleLowerCase('lt'))));

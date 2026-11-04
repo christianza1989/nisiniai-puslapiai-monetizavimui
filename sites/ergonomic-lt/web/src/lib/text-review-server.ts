@@ -6,6 +6,8 @@ import {studioDescriptionParagraphs,productStudioPresentation} from './product-s
 import {configurableArticle} from './configuration-article';
 import {publishedText,textReviewStatus,reviewCounts,customerTextHasCode} from './text-review-state';
 import {contentTextKey,type ReviewScope,type ReviewEntry,type TextDefinition,type TextEdit} from './text-review-types';
+import {createExpandedEngine,fieldLabels} from './expanded-configurator';
+import type {CatalogRuntime} from './catalog-engine';
 import type {Product} from './types';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean}>};
@@ -32,13 +34,29 @@ export async function reviewProductForCode(code:string){
  return p&&c?modelProduct(p,c):undefined;
 }
 function modelFor(p:Product){return p.configurations.find(c=>c.id===p.modelConfigurationId)?.code||p.configurations.find(c=>c.code)?.code||productTextScope(p);}
-export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextEdit>):Promise<ReviewScope>{
+export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextEdit>,runtime?:CatalogRuntime):Promise<ReviewScope>{
  const scope=productTextScope(p),model=modelFor(p),known=inventory.models[model],defs=contentDefinitions(p);
  const codes=[...new Set(p.configurations.map(c=>c.code).filter((c):c is string=>!!c&&!!inventory.models[c]))];
  if(known&&!codes.includes(model))codes.unshift(model);
  const bindings=Object.fromEntries(codes.map(code=>[code,inventory.models[code].bindings]));
- const ids=[...new Set(known?Object.values(known.bindings):[])];
- defs.push(...ids.map(id=>inventory.terms[id]).filter(Boolean));
+ const terms=new Map<string,TextDefinition>();
+ const modelBindings={...bindings[model]};
+ if(runtime&&p.modelConfigurationId){
+  const engine=createExpandedEngine(runtime),state=engine.initialStateForProduct(p);
+  const add=(binding:string,role:string,context:string,text:string,sourceCode:string)=>{
+   if(modelBindings[binding])return;
+   const id='runtime:'+model+':'+binding;
+   modelBindings[binding]=id;
+   terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested:text,context,notes:'',current:[text],modelCount:1});
+  };
+  for(const [field,values] of Object.entries(engine.stateChoices(state))){
+   const label=runtime.palettes._fieldLabels?.[field]?.text||fieldLabels[field]||field;
+   add('field:'+field,'Lauko pavadinimas',label,label,field);
+   for(const value of values)add('value:'+field+'='+value,'Parinktis',label,engine.choiceLabel(field,value,runtime.palettes,state.family),field+'='+value);
+  }
+ }
+ if(Object.keys(modelBindings).length){bindings[model]=modelBindings;if(!codes.includes(model))codes.push(model);}
+ defs.push(...[...new Set(Object.values(modelBindings))].map(id=>terms.get(id)||inventory.terms[id]).filter(Boolean));
  let edits=providedEdits;
  if(!edits){
   edits=new Map();const keys=[...new Set([...defs.map(d=>d.id),...codes.flatMap(code=>Object.values(bindings[code]).flatMap(id=>[id,localTextKey(code,id)]))])];
@@ -46,7 +64,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  }
  const values:Record<string,string>={};
  for(const code of codes)for(const id of new Set(Object.values(bindings[code]))){
-  const def=inventory.terms[id];if(!def)continue;
+  const def=terms.get(id)||inventory.terms[id];if(!def)continue;
   const local=edits.get(localTextKey(code,id)),global=edits.get(id);
   const fallback=publishedText(def,global,'');
   const value=publishedText(def,local,fallback);
@@ -54,14 +72,14 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  }
  for(const d of defs.filter(d=>d.role==='Produkto tekstas')){const value=publishedText(d,edits.get(d.id),'');if(value)values[d.id]=value;}
  const optionCodesByTerm=new Map<string,string[]>();
- for(const [binding,id] of Object.entries(known?.bindings||{})){
+ for(const [binding,id] of Object.entries(modelBindings)){
   if(!binding.startsWith('value:'))continue;
   const codes=optionCodesByTerm.get(id)||[];
   codes.push(binding.slice('value:'.length));
   optionCodesByTerm.set(id,codes);
  }
  const entries:ReviewEntry[]=defs.map(def=>{
-  const shared=def.role!=='Produkto tekstas',global=edits!.get(def.id),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
+  const shared=def.role!=='Produkto tekstas'&&!terms.has(def.id),global=edits!.get(def.id),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
   const edit=local||global,baseStatus=textReviewStatus(def,edit);
   const originalText=shared?known?.current[def.id]||def.current[0]||def.sourceCode:def.current[0];
   const currentText=publishedText(def,local,publishedText(def,global,originalText));

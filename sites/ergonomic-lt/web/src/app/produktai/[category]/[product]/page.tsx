@@ -36,7 +36,9 @@ export async function generateMetadata({params,searchParams}:Props){const {categ
 export default async function Page({params,searchParams}:Props){
  const {category,product}=await params,query=await searchParams,p=await findProductAsync(category,product,query.pavyzdys);if(!p)notFound();
  const c=(await catalogAsync()).categories.find(c=>c.id===p.categoryId)!,line=await lineForAsync(p),parents=await visibleProductsAsync(),parent=parents.find(x=>x.id===p.id)!;
- if(process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&!await isAdmin()){const target=customerProductPath(p);let token=typeof query.v==='string'?query.v:undefined;if(typeof query.konfig==='string')try{token=await customerSnapshotFromLegacy(p,query.konfig);}catch{}if(target!=='/produktai/'+category+'/'+product+'/'||query.konfig||query.pavyzdys)redirect(target+(token?'?v='+encodeURIComponent(token):''));return <CustomerProductPage product={p} parent={parent} token={token}/>;}
+ const admin=await isAdmin();
+ if(query.redaguoti==='1'&&!admin)redirect('/admin/?produktas='+encodeURIComponent('/produktai/'+category+'/'+product+'/'));
+ if(process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&!admin){const target=customerProductPath(p);let token=typeof query.v==='string'?query.v:undefined;if(typeof query.konfig==='string')try{token=await customerSnapshotFromLegacy(p,query.konfig);}catch{}if(target!=='/produktai/'+category+'/'+product+'/'||query.konfig||query.pavyzdys)redirect(target+(token?'?v='+encodeURIComponent(token):''));return <CustomerProductPage product={p} parent={parent} token={token}/>;}
  const models=productModels([parent]),isFamily=!p.modelConfigurationId&&p.configurations.length>1;
  const savedConfiguration=typeof (await searchParams).konfig==='string';
  const catalogRuntime=isFamily&&!savedConfiguration?undefined:await loadCatalogRuntime(p,(await searchParams).konfig);
@@ -49,7 +51,7 @@ export default async function Page({params,searchParams}:Props){
  const siblings=models.filter(x=>x.slug!==p.slug),related=(await visibleModelsAsync()).filter(x=>x.id!==p.id&&x.subcategoryId===p.subcategoryId).slice(0,4);
  const trail=productBreadcrumbs(p,parent,c);
  const breadcrumbs=<BreadcrumbTrail items={trail}/>;
- const textScope=await buildReviewScope(p),admin=await isAdmin();
+ const textScope=await buildReviewScope(p,undefined,catalogRuntime);
  return <TextReviewProvider key={textScope.publicScope.scope} initial={textScope.publicScope} admin={admin?textScope:undefined}><section className="product-page container">{breadcrumbs}
  {isFamily&&!savedConfiguration?<><ProductStudioIntro product={publicProductView(p)}/><div className="product-family-studio"><div className="section-heading"><h2>Pasirinkite šios linijos modelį</h2><p>{models.length} {copyText("ui.98a9ba8c83e15c3611b9","gamintojo modeliai ir pavyzdinės komplektacijos. Pasirinkite konkretų modelį.")}</p></div><div id="konfiguratorius" className="product-grid four">{models.map(model=><ProductCard key={model.slug} product={model}/>)}</div></div></>:<ProductDetail product={publicProductView(p)} url={productPath(p)+(typeof query.pavyzdys==='string'&&query.pavyzdys===p.modelConfigurationId?'?pavyzdys='+encodeURIComponent(query.pavyzdys):'')} catalogRuntime={catalogRuntime} initialConfiguration={initialConfiguration} initialCustomized={initialCustomized} configurationMessage={configurationMessage}/>}
  {p.modelArticle&&!configurableArticle(p)&&<ProductArticleBody article={p.modelArticle} includeNarrative={false}/>}

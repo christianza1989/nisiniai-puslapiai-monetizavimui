@@ -874,5 +874,259 @@
         }
       ]
     }
+  },
+  "product_k42-cabinets-sideboards_d3acf2c3": {
+    "source": "https://www.nowystyl.com/en/k42/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "32418449": [
+        {
+          "label": "Konstrukcija",
+          "value": "Drabužių spinta"
+        }
+      ],
+      "32418450": [
+        {
+          "label": "Durelės",
+          "value": "Žaliuzinės, atidaromos slenkant"
+        }
+      ],
+      "32418446": [
+        {
+          "label": "Konstrukcija",
+          "value": "Atvira spintelė be durelių"
+        }
+      ],
+      "32418447": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Stalčiai"
+        }
+      ],
+      "32418448": [
+        {
+          "label": "Durelės",
+          "value": "Stumdomos"
+        }
+      ],
+      "32418451": [
+        {
+          "label": "Durelės",
+          "value": "Varstomos"
+        },
+        {
+          "label": "Uždarymas",
+          "value": "Švelnus uždarymas"
+        }
+      ],
+      "32418452": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobili spintelė"
+        }
+      ],
+      "32418445": [
+        {
+          "label": "Konstrukcija",
+          "value": "Kombinuota spinta"
+        },
+        {
+          "label": "Įranga",
+          "value": "Integruotas vazonas"
+        }
+      ]
+    }
+  },
+  "product_k42-orga-towers-pedestals_bc6371f6": {
+    "source": "https://www.nowystyl.com/en/k42/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "32419016": [
+        {
+          "label": "Durelės",
+          "value": "Žaliuzinės"
+        },
+        {
+          "label": "Vidaus įranga",
+          "value": "2 lentynos ir 2 metaliniai stalčiai"
+        }
+      ],
+      "32419017": [
+        {
+          "label": "Durelės",
+          "value": "Žaliuzinės"
+        },
+        {
+          "label": "Vidaus įranga",
+          "value": "Atviras skyrius, 2 lentynos ir plastikinis rašymo reikmenų stalčiukas"
+        }
+      ],
+      "32419014": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobilus siauras stalčių blokas"
+        },
+        {
+          "label": "Ratukai",
+          "value": "40 mm skersmens"
+        }
+      ],
+      "32419015": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobilus stalčių blokas"
+        },
+        {
+          "label": "Ratukai",
+          "value": "40 mm skersmens"
+        }
+      ],
+      "32419013": [
+        {
+          "label": "Konstrukcija",
+          "value": "Aukštas prie darbo vietos statomas laikymo modulis"
+        }
+      ]
+    }
+  },
+  "product_scadio-armchairs-leg-rests_9409664e": {
+    "source": "https://www.nowystyl.com/en/scadio/armchairs-leg-rests/",
+    "common": [
+      {
+        "label": "Apmušalo apdaila",
+        "value": "Dekoratyvinis kraštelis"
+      }
+    ],
+    "samples": {
+      "27613965": [
+        {
+          "label": "Konstrukcija",
+          "value": "Kojų atrama"
+        }
+      ],
+      "27613964": [
+        {
+          "label": "Konstrukcija",
+          "value": "Kojų atrama"
+        }
+      ],
+      "26734032": [
+        {
+          "label": "Konstrukcija",
+          "value": "Sukamasis fotelis"
+        },
+        {
+          "label": "Atlošas",
+          "value": "Žemas"
+        }
+      ],
+      "25703665": [
+        {
+          "label": "Konstrukcija",
+          "value": "Fotelis ant keturių kojų"
+        },
+        {
+          "label": "Atlošas",
+          "value": "Aukštas"
+        }
+      ],
+      "25703664": [
+        {
+          "label": "Konstrukcija",
+          "value": "Sukamasis fotelis"
+        },
+        {
+          "label": "Atlošas",
+          "value": "Aukštas"
+        }
+      ],
+      "26734033": [
+        {
+          "label": "Konstrukcija",
+          "value": "Fotelis ant keturių kojų"
+        },
+        {
+          "label": "Atlošas",
+          "value": "Žemas"
+        }
+      ]
+    }
+  },
+  "product_naudu-armchairs-leg-rests_9151683c": {
+    "source": "https://www.nowystyl.com/files/downloads/Naudu_Price-List_PL_E01_2020.pdf",
+    "common": [
+      {
+        "label": "Aukštis",
+        "value": "770 mm"
+      },
+      {
+        "label": "Plotis",
+        "value": "670 mm"
+      },
+      {
+        "label": "Sėdynės aukštis",
+        "value": "475 mm"
+      }
+    ],
+    "samples": {
+      "16088631": [
+        {
+          "label": "Pagrindas",
+          "value": "Keturios plieninės kojos"
+        },
+        {
+          "label": "Gylis",
+          "value": "590 mm"
+        }
+      ],
+      "16088637": [
+        {
+          "label": "Pagrindas",
+          "value": "Keturios medinės kojos"
+        },
+        {
+          "label": "Gylis",
+          "value": "580 mm"
+        }
+      ],
+      "16088633": [
+        {
+          "label": "Pagrindas",
+          "value": "Rogutės"
+        },
+        {
+          "label": "Gylis",
+          "value": "600 mm"
+        }
+      ]
+    }
+  },
+  "product_naudu-sofas_2fa6631f": {
+    "source": "https://www.nowystyl.com/files/downloads/Naudu_Price-List_PL_E01_2020.pdf",
+    "common": [],
+    "samples": {
+      "26731023": [
+        {
+          "label": "Pagrindas",
+          "value": "Keturios medinės kojos"
+        },
+        {
+          "label": "Aukštis",
+          "value": "775 mm"
+        },
+        {
+          "label": "Plotis",
+          "value": "1170 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "580 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "475 mm"
+        }
+      ]
+    }
   }
 }

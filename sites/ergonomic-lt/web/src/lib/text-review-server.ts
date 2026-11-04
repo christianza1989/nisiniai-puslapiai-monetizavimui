@@ -19,6 +19,16 @@ const englishByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<strin
 const usage=new Map<string,{chairs:number;desks:number}>();
 const proposalsByEnglish={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 const normalizeEnglish=(text:string)=>text.trim().replace(/\s+/g,' ').toLowerCase();
+// Translate the material description while retaining the supplier's collection name.
+const materialProposals=new Map([
+ ['basic fabric c','Bazinis audinys C'],
+ ['leather imitation v','Dirbtinė oda V'],
+ ['fine leather le','Aukštos kokybės oda LE'],
+ ['fine leather sd','Aukštos kokybės oda SD'],
+ ['fine leather le front','Aukštos kokybės oda LE (priekinė pusė)'],
+ ['leather nappa','Nappa oda'],
+ ['polyester','Poliesteris'],
+]);
 const proposalsByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 for(const [code,m] of Object.entries(inventory.models)){
  const group=m.path.startsWith('/produktai/'+deskCategory+'/')?'desks':'chairs';
@@ -98,7 +108,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
    const proposals=proposalsByBinding[group].get(binding);
    const english=englishByModel[model]?.[binding]||text;
    const sameEnglish=proposalsByEnglish[group].get(binding.split(':',1)[0]+':'+normalizeEnglish(english));
-   const suggested=proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:text;
+   const suggested=proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:materialProposals.get(normalizeEnglish(english))||text;
    terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested,context,notes:'',current:[text],modelCount:1});
   };
   const choices=new Map<string,Set<string>>();

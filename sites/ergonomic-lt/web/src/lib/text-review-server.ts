@@ -1,3 +1,4 @@
+import materialReferences from '../../content/text-review-material-references.json';
 import manufacturerEnglish from '../../content/manufacturer-english-review.json';
 import {createHash} from 'node:crypto';
 import inventoryData from '../../content/text-review-inventory.json';
@@ -7,20 +8,22 @@ import {studioDescriptionParagraphs,productStudioPresentation} from './product-s
 import {configurableArticle} from './configuration-article';
 import {publishedText,textReviewStatus,reviewCounts,customerTextHasCode} from './text-review-state';
 import {contentTextKey,type ReviewScope,type ReviewEntry,type TextDefinition,type TextEdit} from './text-review-types';
-import {createExpandedEngine,fieldLabels} from './expanded-configurator';
+import {configurationOptionLabel,configurationOptionValue,optionDetails,supplierOptions} from './configuration-labels';
+import {createExpandedEngine,fieldLabels,choiceLabel} from './expanded-configurator';
 import type {CatalogRuntime} from './catalog-engine';
 import type {Product} from './types';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
 const deskCategory='rasomieji-stalai-ir-darbo-vietos';
+const materialByModel:Record<string,Record<string,string>>=materialReferences.models;
 const englishByModel:Record<string,Record<string,string>>=manufacturerEnglish.models;
 const englishByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 const usage=new Map<string,{chairs:number;desks:number}>();
 const proposalsByEnglish={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 const normalizeEnglish=(text:string)=>text.trim().replace(/\s+/g,' ').toLowerCase();
 // Translate the material description while retaining the supplier's collection name.
-const materialProposals=new Map([
+const englishProposals=new Map([
  ['basic fabric c','Bazinis audinys C'],
  ['leather imitation v','Dirbtinė oda V'],
  ['fine leather le','Aukštos kokybės oda LE'],
@@ -28,6 +31,25 @@ const materialProposals=new Map([
  ['fine leather le front','Aukštos kokybės oda LE (priekinė pusė)'],
  ['leather nappa','Nappa oda'],
  ['polyester','Poliesteris'],
+ ['gl-r2: pneumatic, raised','Paaukštinta dujinė pakėlimo kolonėlė'],
+ ['ringbase, chromium plated steel','Chromuoto plieno kojų atramos žiedas'],
+ ['gb59: for soft or hard floors','Minkštoms arba kietoms grindims'],
+ ['pack-asm: fully assembled, cardboard packaging','Visiškai surinkta, kartoninėje pakuotėje'],
+ ['bl - aluminium powder-coated in black','Juodai milteliniu būdu dažytas aliuminis'],
+ ['chrome cr, z','Chromuota apdaila'],
+ ['polished aluminium pol','Poliruotas aliuminis'],
+ ['cantilever','Konsolinis rėmas'],
+ ['integrated with frame, closed, metal','Uždari metaliniai porankiai, sujungti su rėmu'],
+ ['polyurethane','Poliuretanas'],
+ ['upholstered, stitching in a wave-shaped, plastic cover','Apmuštas atlošas su banguotomis siūlėmis ir plastikiniu gaubtu'],
+ ['black','Juoda'],
+ ['xngr grey f110','Pilka'],
+ ['light grey','Šviesiai pilka'],
+ ['sknb natural beech','Natūralus bukas'],
+ ['polypropylene','Polipropilenas'],
+ ['bl black','Juoda'],
+ ['box - 4 items','Dėžė, 4 vnt.'],
+ ['integrated with frame, pad: plywood','Su rėmu sujungti porankiai su faneros atramomis'],
 ]);
 const proposalsByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 for(const [code,m] of Object.entries(inventory.models)){
@@ -99,18 +121,30 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  const bindings=Object.fromEntries(codes.map(code=>[code,inventory.models[code].bindings]));
  const terms=new Map<string,TextDefinition>();
  const modelBindings={...bindings[model]};
+ const config=p.configurations.find(c=>c.id===p.modelConfigurationId);
+ const directProposal=(binding:string,english:string)=>{
+  const stacking=binding.startsWith('value:CSTACKING=')&&english.match(/^Up to (\d+) pieces$/i);
+  if(stacking)return 'Iki '+stacking[1]+' vnt.';
+  const normalized=normalizeEnglish(english);
+  if(normalized==='fixed'&&binding.startsWith('value:CARMRESTS='))return 'Fiksuoti';
+  if(normalized==='injected'&&/^value:[^=]*FOAM=/.test(binding))return 'Lietas putplastis';
+  return englishProposals.get(normalized);
+ };
+ const proposalFor=(binding:string,text:string)=>{
+  const proposals=proposalsByBinding[group].get(binding);
+  const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding]||text;
+  const sameEnglish=proposalsByEnglish[group].get(binding.split(':',1)[0]+':'+normalizeEnglish(english));
+  return proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:directProposal(binding,english);
+ };
+ const add=(binding:string,role:string,context:string,text:string,sourceCode:string,presetProposal?:string)=>{
+  if(modelBindings[binding])return;
+  const id='runtime:'+model+':'+binding;
+  modelBindings[binding]=id;
+  const suggested=proposalFor(binding,text)||presetProposal||text;
+  terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested,context,notes:'',current:[text],modelCount:1});
+ };
  if(runtime&&p.modelConfigurationId){
   const engine=createExpandedEngine(runtime),state=engine.initialStateForProduct(p);
-  const add=(binding:string,role:string,context:string,text:string,sourceCode:string)=>{
-   if(modelBindings[binding])return;
-   const id='runtime:'+model+':'+binding;
-   modelBindings[binding]=id;
-   const proposals=proposalsByBinding[group].get(binding);
-   const english=englishByModel[model]?.[binding]||text;
-   const sameEnglish=proposalsByEnglish[group].get(binding.split(':',1)[0]+':'+normalizeEnglish(english));
-   const suggested=proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:materialProposals.get(normalizeEnglish(english))||text;
-   terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested,context,notes:'',current:[text],modelCount:1});
-  };
   const choices=new Map<string,Set<string>>();
   function include(source?:Record<string,string[]|null>){
    for(const [field,values] of Object.entries(source||{})){
@@ -132,6 +166,32 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
    for(const value of values)add('value:'+field+'='+value,'Parinktis',label,engine.choiceLabel(field,value,runtime.palettes,state.family),field+'='+value);
   }
  }
+ if(config){
+  for(const option of supplierOptions(config)){
+   const equals=option.indexOf('=');
+   if(equals<1)continue;
+   const field=option.slice(0,equals).split('.').at(-1)!,value=option.slice(equals+1);
+   if(!field||!value)continue;
+   const fieldBinding='field:'+field,valueBinding='value:'+field+'='+value;
+   const title=configurationOptionLabel(field)||fieldLabels[field]||field;
+   if(title!==field||proposalFor(fieldBinding,title))add(fieldBinding,'Lauko pavadinimas',title,title,field);
+   const text=configurationOptionValue(value)||choiceLabel(field,value);
+   if(text!==value||proposalFor(valueBinding,text))add(valueBinding,'Parinktis',title,optionDetails([option])[0]?.value||value,field+'='+value,text);
+  }
+ }
+ for(const [binding,text] of Object.entries(materialByModel[model]||{})){
+  const sourceCode=binding.slice('value:'.length),field=sourceCode.split('=',1)[0];
+  const labelId=modelBindings['field:'+field],label=terms.get(labelId)||inventory.terms[labelId];
+  add(binding,'Parinktis',label?.suggested||fieldLabels[field]||field,text,sourceCode);
+ }
+ for(const [binding,english] of Object.entries(englishByModel[model]||{})){
+  if(!/^value:[CF]/.test(binding))continue;
+  const proposal=directProposal(binding,english);if(!proposal)continue;
+  const sourceCode=binding.slice('value:'.length),field=sourceCode.split('=',1)[0];
+  const labelId=modelBindings['field:'+field],label=terms.get(labelId)||inventory.terms[labelId];
+  if(!labelId&&!configurationOptionLabel(field)&&!fieldLabels[field])continue;
+  add(binding,'Parinktis',label?.suggested||configurationOptionLabel(field)||fieldLabels[field],english,sourceCode,proposal);
+ }
  if(Object.keys(modelBindings).length){bindings[model]=modelBindings;if(!codes.includes(model))codes.push(model);}
  defs.push(...[...new Set(Object.values(modelBindings))].map(id=>terms.get(id)||inventory.terms[id]).filter(Boolean));
  let edits=providedEdits;
@@ -152,7 +212,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  for(const d of defs.filter(d=>d.role==='Produkto tekstas')){const value=publishedText(d,edits.get(d.id),'');if(value)values[d.id]=value;}
  const optionCodesByTerm=new Map<string,string[]>(),englishByTerm=new Map<string,Set<string>>(),referenceByTerm=new Map<string,Set<string>>();
  for(const [binding,id] of Object.entries(modelBindings)){
-  const english=englishByModel[model]?.[binding];
+  const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding];
   if(english){
    const labels=englishByTerm.get(id)||new Set<string>();
    labels.add(english);englishByTerm.set(id,labels);
@@ -173,11 +233,11 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const originalText=shared?known?.current[def.id]||def.current[0]||def.sourceCode:def.current[0];
   const currentText=publishedText(def,local,publishedText(def,global,originalText));
   const customerNameRequired=customerTextHasCode(def,currentText),status=baseStatus==='approved'&&customerTextHasCode(def,edit?.state==='kept'?currentText:edit?.draft||currentText)?'changed':baseStatus;
-  const config=p.configurations.find(c=>c.code===model);
+  const sourceConfig=config||p.configurations.find(c=>c.code===model);
   const isPublished=status==='approved'&&(edit?.state==='kept'||edit?.published_hash===def.sourceHash&&edit.published===edit.draft);
   const originalEnglish=(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english;
   const englishReference=originalEnglish?'':[...referenceByTerm.get(def.id)||[]].join(' · ');
-  return {...def,english:originalEnglish||englishReference,englishReference:!!englishReference,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
+  return {...def,english:originalEnglish||englishReference,englishReference:!!englishReference,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at};

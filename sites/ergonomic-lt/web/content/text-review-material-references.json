@@ -1,0 +1,344 @@
+{
+  "models": {
+    "KTAK002WW004": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C",
+      "value:CHEADRESTUPHGROUP=V": "Leather imitation V"
+    },
+    "KINT006WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KTGU004WW002": {
+      "value:CUPHGROUP=SD": "Fine Leather SD",
+      "value:CUPHGROUP=LE": "Fine Leather LE"
+    },
+    "KINT006WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KINT005WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KINT003WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KVID008WW001": {
+      "value:CHEADRESTUPHCHGROUP=LE": "Fine Leather LE"
+    },
+    "KSEG003WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KSEG002WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KLYN002WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V"
+    },
+    "KLYN001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V"
+    },
+    "KNXT001WW002": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KZBO004WW001": {
+      "value:CHEADRESTUPHCHGROUP=LE": "Fine Leather LE"
+    },
+    "KXEN034WW001": {
+      "value:CHEADRESTUPHCHGROUP=SD": "Fine leather SD",
+      "value:CHEADRESTUPHCHGROUP=LE": "Fine Leather LE",
+      "value:CHEADRESTUPHCHGROUP=NAPPA": "Leather NAPPA"
+    },
+    "KBJA003WW002": {
+      "value:CHEADRESTUPHGROUP=LE": "Fine Leather LE"
+    },
+    "KBJA002WW002": {
+      "value:CHEADRESTUPHGROUP=LE": "Fine Leather LE"
+    },
+    "KBJA001WW002": {
+      "value:CHEADRESTUPHGROUP=LE": "Fine Leather LE"
+    },
+    "KEGG001WW001": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KSAI008WW002": {
+      "value:CHEADRESTUPHGROUP=LE": "Fine Leather LE"
+    },
+    "KXEN035WW001": {
+      "value:CHEADRESTUPHCHGROUP=SD": "Fine leather SD",
+      "value:CHEADRESTUPHCHGROUP=LE": "Fine Leather LE",
+      "value:CHEADRESTUPHCHGROUP=NAPPA": "Leather NAPPA"
+    },
+    "KSAI001WW002": {
+      "value:CHEADRESTUPHGROUP=LE": "Fine Leather LE"
+    },
+    "KNXT002WW002": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KJUP001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KBET001WW005": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KBET001WW008": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KBET001WW006": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KBET002WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KCAF005WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KCAF005WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KCAF003WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KCAF016WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KCAF014WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KCAF008WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V"
+    },
+    "KCAF007WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V"
+    },
+    "KCAF010WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KCAF011WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KCHI001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KCHI001WW004": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KFON001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KFON004WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KFON001WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KFON003WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KINT004WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KINT001WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KINT002WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KINT009WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KINT012WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KINT011WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KINT010WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KISO001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KISO004WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KISO028WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KISO016WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KLYN003WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V"
+    },
+    "KMNS001WW008": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KMNS001WW010": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KMNS001WW006": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KMNS001WW007": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KMNS001WW009": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KATM004WW005": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KATM006WW001": {
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KNAD001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=LEFRONT": "Fine Leather LE FRONT"
+    },
+    "KNAD003WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V"
+    },
+    "KPER001WW003": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KPER001WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KPRA001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V"
+    },
+    "KPRA001WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V"
+    },
+    "KSTY001WW004": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KSTY001WW003": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KSYL001WW004": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KSYL001WW003": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KTAK001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KTAK002WW006": {
+      "value:CHEADRESTUPHGROUP=V": "Leather imitation V"
+    },
+    "KTGU001WW002": {
+      "value:CUPHGROUP=SD": "Fine Leather SD",
+      "value:CUPHGROUP=LE": "Fine Leather LE"
+    },
+    "KTGU008WW002": {
+      "value:CUPHGROUP=SD": "Fine Leather SD",
+      "value:CUPHGROUP=LE": "Fine Leather LE"
+    },
+    "KTGU007WW002": {
+      "value:CUPHGROUP=SD": "Fine Leather SD",
+      "value:CUPHGROUP=LE": "Fine Leather LE"
+    },
+    "KTUL001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KTUL002WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KTUL003WW007": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KTUL003WW008": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KVSN001WW002": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KVSN001WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KVID010WW001": {
+      "value:CHEADRESTUPHCHGROUP=LE": "Fine Leather LE"
+    },
+    "KWI2002WW001": {
+      "value:CUPHGROUP=V": "Leather imitation V",
+      "value:CUPHGROUP=C": "Basic fabric C"
+    },
+    "KYOU003WW001": {
+      "value:CSEATFOAM=POLYESTER": "POLYESTER",
+      "value:CBACKRESTFOAM=POLYESTER": "POLYESTER"
+    },
+    "KYOU003WW002": {
+      "value:CSEATFOAM=POLYESTER": "POLYESTER",
+      "value:CBACKRESTFOAM=POLYESTER": "POLYESTER"
+    },
+    "KYOU004WW002": {
+      "value:CSEATFOAM=POLYESTER": "POLYESTER",
+      "value:CBACKRESTFOAM=POLYESTER": "POLYESTER"
+    },
+    "KYOU004WW001": {
+      "value:CSEATFOAM=POLYESTER": "POLYESTER",
+      "value:CBACKRESTFOAM=POLYESTER": "POLYESTER"
+    },
+    "KYOU005WW002": {
+      "value:CSEATFOAM=POLYESTER": "POLYESTER",
+      "value:CBACKRESTFOAM=POLYESTER": "POLYESTER"
+    },
+    "KZET001WW002": {
+      "value:CSEATUPHGROUP=V": "Leather imitation V",
+      "value:CSEATUPHGROUP=C": "Basic fabric C"
+    },
+    "KZET002WW002": {
+      "value:CSEATUPHGROUP=V": "Leather imitation V",
+      "value:CSEATUPHGROUP=C": "Basic fabric C"
+    }
+  }
+}

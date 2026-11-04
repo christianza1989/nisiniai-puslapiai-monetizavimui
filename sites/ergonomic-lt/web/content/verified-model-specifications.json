@@ -1981,5 +1981,375 @@
         }
       ]
     }
+  },
+  "product_club-armchairs-leg-rests_fbc46481": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20652981": [
+        {
+          "label": "Plotis × gylis",
+          "value": "700 × 630 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "770 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "455 mm"
+        }
+      ],
+      "20652982": [
+        {
+          "label": "Plotis × gylis",
+          "value": "700 × 630 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "770 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "455 mm"
+        }
+      ]
+    }
+  },
+  "product_club-sofas_d94530e7": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20678959": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1290 × 630 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "770 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "455 mm"
+        }
+      ],
+      "20678960": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1790 × 630 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "770 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "455 mm"
+        }
+      ]
+    }
+  },
+  "product_hello-armchairs-leg-rests_a93a6db5": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "26104409": [
+        {
+          "label": "Plotis × gylis",
+          "value": "630 × 575 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "775 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "480 mm"
+        }
+      ],
+      "26104407": [
+        {
+          "label": "Plotis × gylis",
+          "value": "630 × 590 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "775 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "490 mm"
+        }
+      ]
+    }
+  },
+  "product_hello-sofas_8d3a1df5": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "19901700": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1145 × 590 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "775 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "490 mm"
+        }
+      ],
+      "19901701": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1145 × 585 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "765 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "480 mm"
+        }
+      ]
+    }
+  },
+  "product_hello-cafe-lounge-tables_82e50eb4": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "19908083": [
+        {
+          "label": "Plotis × gylis",
+          "value": "550 × 550 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "460 mm"
+        }
+      ],
+      "19908081": [
+        {
+          "label": "Plotis × gylis",
+          "value": "550 × 550 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_dallas-sofas_ce35c19f": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20912390": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1350 × 525 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "725 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "470 mm"
+        }
+      ]
+    }
+  },
+  "product_dallas-armchairs-leg-rests_ec0890ec": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20908179": [
+        {
+          "label": "Plotis × gylis",
+          "value": "635 × 525 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "725 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "470 mm"
+        }
+      ]
+    }
+  },
+  "product_dallas-cafe-lounge-tables_0b54220d": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20949684": [
+        {
+          "label": "Plotis × gylis",
+          "value": "550 × 550 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "520 mm"
+        }
+      ]
+    }
+  },
+  "product_zone-armchairs-leg-rests_4fd1c1c1": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "23523200": [
+        {
+          "label": "Plotis × gylis",
+          "value": "643 × 650 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "460 mm"
+        }
+      ]
+    }
+  },
+  "product_kaika-armchairs-leg-rests_d7eef38e": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20812391": [
+        {
+          "label": "Plotis × gylis",
+          "value": "660 × 585 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "840 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "465 mm"
+        }
+      ],
+      "20812392": [
+        {
+          "label": "Plotis × gylis",
+          "value": "660 × 580 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "845 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "470 mm"
+        }
+      ]
+    }
+  },
+  "product_athena-armchairs-leg-rests_da38c8b7": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "26059643": [
+        {
+          "label": "Plotis × gylis",
+          "value": "635 × 625 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "862 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "484 mm"
+        }
+      ]
+    }
+  },
+  "product_mollen-armchairs-leg-rests_f79cc8b6": {
+    "source": "https://www.nowystyl.com/en/mollen/",
+    "common": [],
+    "samples": {
+      "25635258": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Kišeninės spyruoklės"
+        }
+      ]
+    }
+  },
+  "product_mollen-sofas_a213bbf2": {
+    "source": "https://www.nowystyl.com/en/mollen/",
+    "common": [],
+    "samples": {
+      "25638803": [
+        {
+          "label": "Vietų skaičius",
+          "value": "2"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Kišeninės spyruoklės"
+        }
+      ],
+      "25638804": [
+        {
+          "label": "Vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Kišeninės spyruoklės"
+        }
+      ]
+    }
+  },
+  "product_puzlo-cabinets-sideboards_18afc598": {
+    "source": "https://www.nowystyl.com/en/puzlo/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "13482545": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Medžio drožlių plokštės cokolis"
+        }
+      ],
+      "23776128": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Metalinis pagrindas"
+        }
+      ]
+    }
+  },
+  "product_puzlo-lockers_75ec2c81": {
+    "source": "https://www.nowystyl.com/en/puzlo/lockers/",
+    "common": [],
+    "samples": {
+      "23784198": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Medžio drožlių plokštės cokolis"
+        }
+      ],
+      "23784200": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Metalinis pagrindas"
+        }
+      ]
+    }
   }
 }

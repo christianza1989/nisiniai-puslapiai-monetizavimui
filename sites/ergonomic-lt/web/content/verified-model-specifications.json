@@ -2481,5 +2481,135 @@
         }
       ]
     }
+  },
+  "product_tepee-armchairs-leg-rests_4230e8a7": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "14770946": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1026 × 734 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "840 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_tepee-sofas_59860fc0": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "14403528": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1500 × 750 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "840 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_tento-2-0-orga-towers-pedestals_1980317f": {
+    "source": "https://www.nowystyl.com/en/tento-2-0/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "30589087": [
+        {
+          "label": "Korpuso plotis",
+          "value": "432 mm"
+        },
+        {
+          "label": "Stalčių skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Stalčių bėgeliai",
+          "value": "Metaliniai"
+        }
+      ],
+      "30589088": [
+        {
+          "label": "Korpuso plotis",
+          "value": "332 mm"
+        },
+        {
+          "label": "Stalčių skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Stalčių bėgeliai",
+          "value": "Metaliniai"
+        }
+      ]
+    }
+  },
+  "product_belise-stools-bar-stools_8dea8493": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Conference-Meeting_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "19783109": [
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Buko medienos sėdynė su apmušta pagalvėle"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Dujinė spyruoklė"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Pasvyra į visas puses"
+        }
+      ],
+      "19783110": [
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Visiškai apmušta sėdynė"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Dujinė spyruoklė"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Pasvyra į visas puses"
+        }
+      ]
+    }
+  },
+  "product_otuli-armchairs-leg-rests_b22fe9a8": {
+    "source": "https://www.nowystyl.com/en/otuli/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "27378908": [
+        {
+          "label": "Atlošo mechanizmas",
+          "value": "Atlošas atsilenkia kartu su sėdyne"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        }
+      ],
+      "27380871": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukama kojų atrama"
+        }
+      ]
+    }
   }
 }

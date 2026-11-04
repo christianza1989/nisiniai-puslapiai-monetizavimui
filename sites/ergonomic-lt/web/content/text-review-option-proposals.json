@@ -304,5 +304,92 @@
   },
   "value:CBASE=ST55POL": {
     "diam. 760 mm, 5-star, polished aluminium (st55-pol)": "760 mm skersmens penkių stipinų poliruoto aliuminio pagrindas"
+  },
+  "value:CSHELL=WOODHANDLESEATPADUPH": {
+    "wooden, upholstered seat pad, handle": "Medinis korpusas su apmuštu sėdynės įdėklu ir rankena"
+  },
+  "value:CASSEMBLY=PACKA": {
+    "pack-a: partially assembled, cardboard packaging": "Iš dalies surinktas gaminys kartoninėje pakuotėje"
+  },
+  "value:CSEATPADFOAM=NFF": {
+    "flame retardant with fire retardant fabric": "Sunkiai užsidegantis užpildas su degumą mažinančiu audiniu"
+  },
+  "value:CBACKREST=UPHCOVERPLASTICERGO": {
+    "upholstered, ergo profiles, plastic cover": "Apmuštas atlošas su „ERGO“ profiliais ir plastikiniu gaubtu"
+  },
+  "value:CASSEMBLY=PACKL": {
+    "pack-l: partially assembled, l-shape cardboard packaging": "Iš dalies surinktas gaminys L formos kartoninėje pakuotėje"
+  },
+  "value:CSEATPADFOAM=STANDARD": {
+    "standard": "Standartinis sėdynės užpildas"
+  },
+  "value:CBACKREST=UPH": {
+    "upholstered": "Apmuštas atlošas"
+  },
+  "value:CFSC=YES": {
+    "raw material – eu timber regulation, from certified forests, fsc certificate – authorized companies": "Žaliava iš sertifikuotų miškų pagal ES medienos reglamentą, FSC sertifikatas taikomas įgaliotoms įmonėms"
+  },
+  "value:CFRAME=CFL": {
+    "reverse metal cantilever": "Atvirkštinis metalinis konsolinis rėmas"
+  },
+  "value:CHEADREST=HRMAFABRIC3D": {
+    "adjustable, upholstered with 3d fabric": "Reguliuojama galvos atrama su 3D audinio apmušalu"
+  },
+  "value:CMECHANISM=PST01CPT": {
+    "pst01-cpt: permanent contact, fixed backrest connector": "Nuolatinio atlošo kontakto mechanizmas su fiksuota atlošo jungtimi"
+  },
+  "value:CTABLET=LEFTLAMINATE": {
+    "for left-handed, laminated plywood": "Laminuotos faneros rašymo padėklas kairiarankiams"
+  },
+  "value:CARMRESTS=PPINCOLBACREST": {
+    "fixed, arm: polypropylen in finish of backrest": "Fiksuoti polipropileno porankiai, kurių apdaila dera prie atlošo"
+  },
+  "value:CARMRESTS=R36BL": {
+    "r36/b/b: 2d, arm: black polyamide, pad: black polyurethane": "2D porankiai iš juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CARMRESTS=R20I": {
+    "r20i: 1d, arm: black polyamide, pad: black polyurethane": "1D porankiai iš juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CSHELL=WOODBAGHOLDER": {
+    "wooden, bag holder": "Medinis korpusas su krepšio laikikliu"
+  },
+  "value:CPACKAGING=PALLET20ON1200X800": {
+    "pallet 1200 x 800 [mm] - 20 items": "20 vnt. ant 1 200 × 800 mm padėklo"
+  },
+  "value:CSHELL=WOODHB": {
+    "wooden, high": "Aukštas medinis korpusas"
+  },
+  "value:CSHELLWOODMATERIAL=LAMINATEPLYWOOD": {
+    "laminated plywood": "Laminuota fanera"
+  },
+  "value:CARMRESTS=CH2DPLASTICKBL": {
+    "r: 2d, plastic, black": "Juodi 2D plastikiniai porankiai"
+  },
+  "value:CCASTORS=ESH60": {
+    "esh60: diam. 60 mm, for soft floors": "60 mm ratukai minkštoms grindims"
+  },
+  "value:CSHELLWOODMATERIAL=BEECHSTAIN": {
+    "stained beech plywood": "Beicuota buko fanera"
+  },
+  "value:CSHELL=WOODHANDLE2XPADUPH": {
+    "plywood, upholstered seat and backrest pads and handle": "Faneros korpusas su apmuštais sėdynės ir atlošo įdėklais bei rankena"
+  },
+  "value:CARMRESTS=GTP6": {
+    "gtp6: fixed, arm: black polypropylen": "Fiksuoti juodo polipropileno porankiai"
+  },
+  "value:CBASE=ST56BL": {
+    "diam. 735 mm, 5-star, aluminium coated bl (st56-bl)": "735 mm skersmens juodas penkių stipinų aliumininis pagrindas"
+  },
+  "value:CTABLET=TRWOOD": {
+    "for right-handed, plywood": "Faneros rašymo padėklas dešiniarankiams"
+  },
+  "value:CARMPAD=PLASTICBL": {
+    "black plastic": "Juodas plastikas"
+  },
+  "value:CLUMBARSUPPORT=LSD2": {
+    "lsd2: manual with depth adjustment by knob": "Juosmens atrama, kurios gylis reguliuojamas rankenėle"
+  },
+  "value:CPACKAGING=PACKUNASM": {
+    "pack-unasm: 1 item in box, product disassembled": "Dėžė, 1 nesurinktas gaminys"
   }
 }

@@ -128,6 +128,50 @@ const englishProposals=new Map([
  ['integrated with frame, front open, metal','Priekyje atviri metaliniai porankiai, sujungti su rėmu'],
  ['synchronous, depth adjustment','Sinchroninis mechanizmas su sėdynės gylio reguliavimu'],
  ['box - 2 items','Dėžė, 2 vnt.'],
+ ['4-legs','Keturios kojos'],
+ ['double cantilever','Dvigubas konsolinis rėmas'],
+ ['footbase','Pagrindas kojoms atremti'],
+ ['plastic, upholstered seat pads, decorative cut-outs','Plastikinis korpusas su apmuštais sėdynės įdėklais ir dekoratyvinėmis išpjovomis'],
+ ['plastic, upholstered seat pads','Plastikinis korpusas su apmuštais sėdynės įdėklais'],
+ ['chromium plated steel','Chromuotas plienas'],
+ ['powder-coated steel','Milteliniu būdu dažytas plienas'],
+ ['low hocker, 4 metal legs','Žema taburetė su keturiomis metalinėmis kojomis'],
+ ['box - 1 item, product assembled','Dėžė, 1 surinktas gaminys'],
+ ['flame retardant polyurethane foam, with antibacterial properties','Sunkiai užsidegantis antibakterinis poliuretano putplastis'],
+ ['veneered plywood','Lukštu dengta fanera'],
+ ['upholstered, chipboard seat base','Apmušta sėdynė su medžio drožlių plokštės pagrindu'],
+ ['melamine (mfc) 12 mm','12 mm melaminu dengta medžio drožlių plokštė'],
+ ['tilt: seat depth adjustment','TILT mechanizmas su sėdynės gylio reguliavimu'],
+ ['hocker, zeta','„Zeta“ taburetė'],
+ ['gf46.58gt: pneumatic, raised','Paaukštinta dujinė pakėlimo kolonėlė'],
+ ['gfk06gt: pneumatic, seat amortization function','Dujinė pakėlimo kolonėlė su sėdynės amortizacija'],
+ ['wooden, upholstered seat pad, decorative cut-outs and handle','Medinis korpusas su apmuštu sėdynės įdėklu, dekoratyvinėmis išpjovomis ir rankena'],
+ ['wooden, decorative cut-outs','Medinis korpusas su dekoratyvinėmis išpjovomis'],
+ ['hocker, double metal cantilever','Taburetė su dvigubu metaliniu konsoliniu rėmu'],
+ ['hocker, cantilever base','Taburetė su konsoliniu pagrindu'],
+ ['manual, with height adjustment','Rankinis aukščio reguliavimas'],
+ ['beech wood','Buko mediena'],
+ ['imitation leather','Dirbtinė oda'],
+ ['stacking spacers','Tarpikliai kėdėms sukrauti'],
+ ['up to 10 pieces/ up to 25 pieces on cart','Iki 10 vnt., ant vežimėlio – iki 25 vnt.'],
+ ['bench 2-seater','Dvivietis suolas'],
+ ['backrest frame upholstered with 3d fabric','Atlošo rėmas aptrauktas 3D audiniu'],
+ ['4 wooden legs with metal elements','Keturios medinės kojos su metalinėmis detalėmis'],
+ ['wooden bench with metal connector, 2-seater','Dvivietis medinis suolas su metaline jungtimi'],
+ ['pneumatic, standard, grey','Standartinė pilka dujinė pakėlimo kolonėlė'],
+ ['pneumatic, standard, black','Standartinė juoda dujinė pakėlimo kolonėlė'],
+ ['upholstered, medium high, plastic cover','Apmuštas vidutinio aukščio atlošas su plastikiniu gaubtu'],
+ ['plywood, upholstered pad','Fanera su apmuštu įdėklu'],
+ ['polypropylene bottom part covered with anti-slip rubber (up&down)','Polipropileno pagrindo apačia padengta neslystančia guma'],
+]);
+const armrestProposals=new Map([
+ ['fixed, plastic','Fiksuoti plastikiniai porankiai'],
+ ['fixed, plastic, black','Fiksuoti juodi plastikiniai porankiai'],
+ ['fixed, black','Fiksuoti juodi porankiai'],
+ ['fixed, grey','Fiksuoti pilki porankiai'],
+ ['integrated with shell, plastic','Plastikiniai porankiai, sujungti su korpusu'],
+ ['integrated with frame','Porankiai, sujungti su rėmu'],
+ ['pf27-cr: fixed, arm: steel chromium plate, pad: upholstery','Fiksuoti chromuoto plieno porankiai su apmuštomis atramomis'],
 ]);
 const proposalsByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 for(const [code,m] of Object.entries(inventory.models)){
@@ -205,6 +249,18 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   if(stacking)return 'Iki '+stacking[1]+' vnt.';
   const normalized=normalizeEnglish(english);
   if(normalized==='fixed'&&binding.startsWith('value:CARMRESTS='))return 'Fiksuoti';
+  const armrest=binding.startsWith('value:CARMRESTS=')&&armrestProposals.get(normalized);
+  if(armrest)return armrest;
+  if(/^value:C(?:FRAME|BASE)=/.test(binding)){
+   const base=normalized.match(/^diam\. (\d+) mm, 5-star, (black|grey) polyamide(?: \([^)]+\))?$/);
+   if(base)return 'Penkių stipinų pagrindas iš '+(base[2]==='black'?'juodo':'pilko')+' poliamido, '+base[1]+' mm skersmens';
+  }
+  if(binding.startsWith('value:CCASTORS=')){
+   const castors=normalized.match(/^diam\. (\d+) mm, plastic, (black|grey)$/);
+   if(castors)return (castors[2]==='black'?'Juodi':'Pilki')+' plastikiniai '+castors[1]+' mm ratukai';
+  }
+  if(binding.startsWith('value:CBACKREST=')&&normalized==='upholstered, medium high')return 'Apmuštas vidutinio aukščio atlošas';
+  if(binding.startsWith('value:CSHELL=')&&normalized==='upholstered, low')return 'Žemas apmuštas korpusas';
   if(normalized==='injected'&&/^value:[^=]*FOAM=/.test(binding))return 'Lietas putplastis';
   if(binding==='value:FDESKTOPTYPE=FIXEDTOP'&&normalized==='fixed')return 'Fiksuotas stalviršis';
   if(binding==='value:FDESKTOPTYPE=SLIDINGTOP'&&normalized==='sliding')return 'Slankiojantis stalviršis';

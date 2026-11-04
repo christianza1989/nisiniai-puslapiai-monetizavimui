@@ -47,6 +47,7 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
   if(publicScope.originals[id]!==undefined&&publicScope.originals[id]!==fallback)return fallback;
   const entry=editing?scope?.entries.find(e=>e.id===id):undefined,edit=entry?.edit;
   if(edit&&edit.source_hash===entry?.sourceHash&&edit.state!=='kept'&&edit.draft&&(edit.key===entry.globalEdit?.key||entry.model===model))return edit.draft;
+  if(entry&&!edit&&entry.model===model&&entry.suggested)return entry.suggested;
   let value=publicScope.values[model+':'+id]||publicScope.values[id]||fallback;
   if(id.endsWith(':title')&&value!==fallback)for(const [key,termId]of Object.entries(publicScope.bindings[model]||{}))if(key.startsWith('name:')){
    const word=key.slice(5),replacement=publicScope.values[model+':'+termId];

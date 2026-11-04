@@ -1,3 +1,4 @@
+import manufacturerEnglish from '../../content/manufacturer-english-review.json';
 import {createHash} from 'node:crypto';
 import inventoryData from '../../content/text-review-inventory.json';
 import {dbAll,dbAtomic} from './text-review-db';
@@ -14,8 +15,15 @@ type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<stri
 const inventory=inventoryData as unknown as Inventory;
 const deskCategory='rasomieji-stalai-ir-darbo-vietos';
 const usage=new Map<string,{chairs:number;desks:number}>();
+const proposalsByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 for(const m of Object.values(inventory.models)){
  const group=m.path.startsWith('/produktai/'+deskCategory+'/')?'desks':'chairs';
+ for(const [binding,id] of Object.entries(m.bindings)){
+  const proposal=inventory.terms[id]?.suggested;
+  if(!proposal)continue;
+  const proposals=proposalsByBinding[group].get(binding)||new Set<string>();
+  proposals.add(proposal);proposalsByBinding[group].set(binding,proposals);
+ }
  for(const id of new Set(Object.values(m.bindings))){
   const counts=usage.get(id)||{chairs:0,desks:0};
   counts[group]++;usage.set(id,counts);
@@ -25,10 +33,7 @@ export function sharedTextKey(category:string,id:string){
  const counts=usage.get(id);
  return counts?.chairs&&counts.desks?'category:'+(category===deskCategory?'desks':'chairs')+':'+id:id;
 }
-// Exact labels observed in this article's English manufacturer configurator.
-const englishFieldsByModel:Record<string,Record<string,string>>={
- K2ME004WW001:{CBASE:'Base',CCASTORS:'Castors',CPRICEGROUP:'Price group',CUPHGROUP:'Upholstery group',CUPHCOLOR:'Upholstery colour'},
-};
+const englishByModel:Record<string,Record<string,string>>=manufacturerEnglish.models;
 const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export const localTextKey=(model:string,id:string)=>'local:'+model+':'+id;
 export const productTextScope=(p:Product)=>p.id+':'+(p.modelConfigurationId||'line');
@@ -65,7 +70,9 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
    if(modelBindings[binding])return;
    const id='runtime:'+model+':'+binding;
    modelBindings[binding]=id;
-   terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested:text,context,notes:'',current:[text],modelCount:1});
+   const proposals=proposalsByBinding[p.categorySlug===deskCategory?'desks':'chairs'].get(binding);
+   const suggested=proposals?.size===1?[...proposals][0]:text;
+   terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested,context,notes:'',current:[text],modelCount:1});
   };
   for(const [field,values] of Object.entries(engine.stateChoices(state))){
    const label=runtime.palettes._fieldLabels?.[field]?.text||fieldLabels[field]||field;
@@ -89,8 +96,13 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   if(value)values[code+':'+id]=value;
  }
  for(const d of defs.filter(d=>d.role==='Produkto tekstas')){const value=publishedText(d,edits.get(d.id),'');if(value)values[d.id]=value;}
- const optionCodesByTerm=new Map<string,string[]>();
+ const optionCodesByTerm=new Map<string,string[]>(),englishByTerm=new Map<string,Set<string>>();
  for(const [binding,id] of Object.entries(modelBindings)){
+  const english=englishByModel[model]?.[binding];
+  if(english){
+   const labels=englishByTerm.get(id)||new Set<string>();
+   labels.add(english);englishByTerm.set(id,labels);
+  }
   if(!binding.startsWith('value:'))continue;
   const codes=optionCodesByTerm.get(id)||[];
   codes.push(binding.slice('value:'.length));
@@ -104,7 +116,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const customerNameRequired=customerTextHasCode(def,currentText),status=baseStatus==='approved'&&customerTextHasCode(def,edit?.state==='kept'?currentText:edit?.draft||currentText)?'changed':baseStatus;
   const config=p.configurations.find(c=>c.code===model);
   const isPublished=status==='approved'&&(edit?.state==='kept'||edit?.published_hash===def.sourceHash&&edit.published===edit.draft);
-  return {...def,english:englishFieldsByModel[model]?.[def.sourceCode]||def.english,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
+  return {...def,english:(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at};

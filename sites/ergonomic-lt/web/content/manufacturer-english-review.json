@@ -26838,7 +26838,19 @@
       "value:CUPHSIDECOLORBACKREST=NF762": "NF762 (extended)",
       "value:CUPHSIDECOLORBACKREST=NF654": "NF654 (extended)",
       "value:CUPHSIDECOLORBACKREST=NF655": "NF655 (extended)",
-      "value:CUPHSIDECOLORBACKREST=RX923": "RX923 (extended)"
+      "value:CUPHSIDECOLORBACKREST=RX923": "RX923 (extended)",
+      "value:CSEATUPHGROUP=BN": "Bondai",
+      "value:CSEBASIDEPROFILUPHGROUP=BN": "Bondai",
+      "value:CHEADRESTUPHCHGROUP=BN": "Bondai",
+      "value:CSEATUPHGROUP=YB": "Lucia",
+      "value:CSEBASIDEPROFILUPHGROUP=YB": "Lucia",
+      "value:CHEADRESTUPHCHGROUP=YB": "Lucia",
+      "value:CSEATUPHGROUP=OL": "Oflum",
+      "value:CSEBASIDEPROFILUPHGROUP=OL": "Oflum",
+      "value:CHEADRESTUPHCHGROUP=OL": "Oflum",
+      "value:CSEATUPHGROUP=SM": "Sempre / Sempre Melange",
+      "value:CSEBASIDEPROFILUPHGROUP=SM": "Sempre / Sempre Melange",
+      "value:CHEADRESTUPHCHGROUP=SM": "Sempre / Sempre Melange"
     },
     "KXEN033WW003": {
       "field:GCODE": "ID Index",
@@ -27815,7 +27827,11 @@
       "value:CSEATUPHGROUP=BN": "Bondai",
       "value:CSEATUPHGROUP=YB": "Lucia",
       "value:CSEATUPHGROUP=OL": "Oflum",
-      "value:CSEATUPHGROUP=SM": "Sempre / Sempre Melange"
+      "value:CSEATUPHGROUP=SM": "Sempre / Sempre Melange",
+      "value:CHEADRESTUPHCHGROUP=BN": "Bondai",
+      "value:CHEADRESTUPHCHGROUP=YB": "Lucia",
+      "value:CHEADRESTUPHCHGROUP=OL": "Oflum",
+      "value:CHEADRESTUPHCHGROUP=SM": "Sempre / Sempre Melange"
     },
     "KYOU002WW001": {
       "field:GCODE": "ID Index",
@@ -30192,7 +30208,10 @@
       "value:CHEADRESTUPHCOLOR=NF656": "NF656 (extended)",
       "value:CHEADRESTUPHCOLOR=NF762": "NF762 (extended)",
       "value:CHEADRESTUPHCOLOR=NF654": "NF654 (extended)",
-      "value:CHEADRESTUPHCOLOR=NF655": "NF655 (extended)"
+      "value:CHEADRESTUPHCOLOR=NF655": "NF655 (extended)",
+      "value:GWEIGHT=18.9": "18.90",
+      "value:GWEIGHT=16.8": "16.80",
+      "value:GWEIGHT=18.4": "18.40"
     },
     "KBJA002WW002": {
       "field:GCODE": "ID Index",
@@ -31296,7 +31315,15 @@
       "value:CHEADRESTUPHCHCOLOR=LDS69": "LDS69 (extended)",
       "value:CHEADRESTUPHCHCOLOR=LDS41": "LDS41 (extended)",
       "value:CHEADRESTUPHCHCOLOR=LDS40": "LDS40 (extended)",
-      "value:DHEIGHT=_1060T1280": "1060-1280 mm"
+      "value:DHEIGHT=_1060T1280": "1060-1280 mm",
+      "value:CSEATUPHGROUP=BN": "Bondai",
+      "value:CSIDEPROFILSEATUPHGROUP=BN": "Bondai",
+      "value:CSEATUPHGROUP=YB": "Lucia",
+      "value:CSIDEPROFILSEATUPHGROUP=YB": "Lucia",
+      "value:CSEATUPHGROUP=OL": "Oflum",
+      "value:CSIDEPROFILSEATUPHGROUP=OL": "Oflum",
+      "value:CSEATUPHGROUP=SM": "Sempre / Sempre Melange",
+      "value:CSIDEPROFILSEATUPHGROUP=SM": "Sempre / Sempre Melange"
     },
     "KNXT002WW002": {
       "field:GCODE": "ID Index",

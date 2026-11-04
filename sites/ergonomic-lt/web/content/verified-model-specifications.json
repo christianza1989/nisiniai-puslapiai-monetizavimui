@@ -2217,6 +2217,20 @@
           "label": "Bendras aukštis",
           "value": "420 mm"
         }
+      ],
+      "19908084": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1100 × 550 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "420 mm"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Keturios buko medienos kojos"
+        }
       ]
     }
   },
@@ -2973,6 +2987,12 @@
           "label": "Durų tipas",
           "value": "Varstomos"
         }
+      ],
+      "21626959": [
+        {
+          "label": "Laikymo konstrukcija",
+          "value": "Kombinuota spintelė su stalčiais"
+        }
       ]
     }
   },
@@ -3218,6 +3238,34 @@
         {
           "label": "Viršutinės plokštės storis",
           "value": "25 mm"
+        }
+      ],
+      "24839916": [
+        {
+          "label": "Plotis × gylis",
+          "value": "503 × 600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "1150 mm"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Ratukai"
+        }
+      ],
+      "24839917": [
+        {
+          "label": "Plotis × gylis",
+          "value": "800 × 460 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "1150 mm"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Ratukai"
         }
       ]
     }
@@ -3972,6 +4020,62 @@
         {
           "label": "Bendras aukštis",
           "value": "350 mm"
+        }
+      ]
+    }
+  },
+  "product_play-work-modular-systems_d771d519": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "26973439": [
+        {
+          "label": "Vietų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Komplekto sudėtis",
+          "value": "Dvi dvivietės sofos, stalas ir televizoriaus skydas"
+        },
+        {
+          "label": "Skydo storis",
+          "value": "30 mm"
+        }
+      ]
+    }
+  },
+  "product_tri-ply-modular-systems_f0174fec": {
+    "source": "https://www.nowystyl.com/en/tri-ply/modular-systems/",
+    "common": [],
+    "samples": {
+      "27031108": [
+        {
+          "label": "Modulių sujungimas",
+          "value": "Jungtimis, be įrankių"
+        }
+      ]
+    }
+  },
+  "product_versi-pouffes_cf3f458c": {
+    "source": "https://www.nowystyl.com/en/versi/pouffes/",
+    "common": [],
+    "samples": {
+      "23257294": [
+        {
+          "label": "Komplekto sudėtis",
+          "value": "Trys pufai ir kavos staliukas"
+        }
+      ]
+    }
+  },
+  "product_lupino-armchairs-leg-rests_2a7a1f8f": {
+    "source": "https://www.nowystyl.com/en/lupino/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "29764655": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Keturios medinės kojos"
         }
       ]
     }

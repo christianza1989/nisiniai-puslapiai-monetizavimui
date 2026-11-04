@@ -1,0 +1,110 @@
+{
+  "product_airi-swivel-chairs_4a6182da": {
+    "source": "https://www.nowystyl.com/en/airi/swivel-chairs/",
+    "common": [
+      {
+        "label": "Sėdynė ir atlošas",
+        "value": "Kvėpuojantis tinklelis"
+      },
+      {
+        "label": "Mechanizmas",
+        "value": "„Tilt“, su atlošo fiksavimu"
+      },
+      {
+        "label": "Sėdynės aukštis",
+        "value": "Reguliuojamas"
+      },
+      {
+        "label": "Pagrindas",
+        "value": "Penkių stipinų"
+      },
+      {
+        "label": "Porankiai",
+        "value": "Integruoti"
+      }
+    ],
+    "samples": {
+      "29969203": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Juoda"
+        }
+      ],
+      "29969204": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Pilka"
+        }
+      ],
+      "29969205": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Žalia"
+        }
+      ],
+      "29969206": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Mėlyna"
+        }
+      ]
+    }
+  },
+  "product_spix-acoustic-pods_690db2ab": {
+    "source": "https://www.nowystyl.com/en/spix/acoustic-pods/",
+    "common": [
+      {
+        "label": "Apšvietimas",
+        "value": "Reguliuojamas LED apšvietimas"
+      },
+      {
+        "label": "Ventiliacija",
+        "value": "Reguliuojama"
+      },
+      {
+        "label": "Durys",
+        "value": "Automatinis uždarymas ir švelnus pritraukimas"
+      },
+      {
+        "label": "Užimtumo indikatorius",
+        "value": "Šviesos signalas"
+      },
+      {
+        "label": "Perstūmimas",
+        "value": "Paslėpti ratukai"
+      }
+    ],
+    "samples": {
+      "27932091": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Įranga",
+          "value": "Fiksuotas stalviršis"
+        }
+      ],
+      "27934533": [
+        {
+          "label": "Vietų skaičius",
+          "value": "Iki 2"
+        },
+        {
+          "label": "Įranga",
+          "value": "Fiksuotas stalviršis ir sofa"
+        }
+      ],
+      "27934786": [
+        {
+          "label": "Vietų skaičius",
+          "value": "Iki 4"
+        },
+        {
+          "label": "Įranga",
+          "value": "Sofa, staliukas ir televizoriaus laikiklis"
+        }
+      ]
+    }
+  }
+}

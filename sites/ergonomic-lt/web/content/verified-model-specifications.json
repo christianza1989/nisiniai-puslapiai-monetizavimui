@@ -3401,5 +3401,335 @@
         }
       ]
     }
+  },
+  "product_bzoom-meeting-chairs_aa445386": {
+    "source": "https://www.nowystyl.com/en/bzoom/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "31132658": [
+        {
+          "label": "Sėdynė ir atlošas",
+          "value": "Apmušti"
+        },
+        {
+          "label": "Atlošo funkcija",
+          "value": "Atlenkiamas į rašymo paviršių"
+        },
+        {
+          "label": "Pagrindo funkcija",
+          "value": "Vieta daiktams"
+        }
+      ]
+    }
+  },
+  "product_calis-swivel-chairs_8f841475": {
+    "source": "https://www.nowystyl.com/en/calis/swivel-chairs/",
+    "common": [],
+    "samples": {
+      "32239495": [
+        {
+          "label": "Atlošo medžiaga",
+          "value": "Tinklelis"
+        },
+        {
+          "label": "Juosmens atrama",
+          "value": "Reguliuojamo aukščio"
+        },
+        {
+          "label": "Atlošo fiksavimas",
+          "value": "Vertikalioje padėtyje"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Apmuštas putplastis"
+        }
+      ]
+    }
+  },
+  "product_chico-stools-bar-stools_ffaa8b98": {
+    "source": "https://www.nowystyl.com/en/chico/stools-bar-stools/",
+    "common": [],
+    "samples": {
+      "24800027": [
+        {
+          "label": "Laikymas",
+          "value": "Sudedamas vienas ant kito"
+        },
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        }
+      ],
+      "25416173": [
+        {
+          "label": "Laikymas",
+          "value": "Sudedamas vienas ant kito"
+        },
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        }
+      ]
+    }
+  },
+  "product_elovie-swivel-chairs_77c77abd": {
+    "source": "https://www.nowystyl.com/en/elovie/swivel-chairs/",
+    "common": [],
+    "samples": {
+      "30470552": [
+        {
+          "label": "Galvos atramos versija",
+          "value": "Su apmušta galvos atrama"
+        },
+        {
+          "label": "Atlošo fiksavimas",
+          "value": "4 padėtys"
+        },
+        {
+          "label": "Mechanizmo tipas",
+          "value": "Sinchroninis"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        }
+      ],
+      "30470553": [
+        {
+          "label": "Galvos atramos versija",
+          "value": "Be galvos atramos"
+        },
+        {
+          "label": "Atlošo fiksavimas",
+          "value": "1 padėtis"
+        },
+        {
+          "label": "Mechanizmo tipas",
+          "value": "Sinchroninis"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        }
+      ]
+    }
+  },
+  "product_ergo1-swivel-chairs_43b6eb7c": {
+    "source": "https://www.nowystyl.com/en/ergo1/swivel-chairs/",
+    "common": [],
+    "samples": {
+      "29767371": [
+        {
+          "label": "Sėdynės ir atlošo medžiaga",
+          "value": "Tinklelis"
+        },
+        {
+          "label": "Mechanizmo tipas",
+          "value": "Sinchroninis"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        },
+        {
+          "label": "Porankių reguliavimas",
+          "value": "4 kryptys"
+        }
+      ]
+    }
+  },
+  "product_inta-meeting-chairs_7adfdd79": {
+    "source": "https://www.nowystyl.com/en/inta/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "20624634": [
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Plastikinė"
+        }
+      ],
+      "20624632": [
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Plastikinė, su apmušta sėdyne"
+        }
+      ]
+    }
+  },
+  "product_ovia-meeting-chairs_1061b61e": {
+    "source": "https://www.nowystyl.com/en/ovia/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "31075252": [
+        {
+          "label": "Atlošo medžiaga",
+          "value": "Tinklelis"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Apmušta"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        }
+      ],
+      "31075253": [
+        {
+          "label": "Atlošo medžiaga",
+          "value": "Tinklelis"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Apmušta"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        }
+      ]
+    }
+  },
+  "product_timmi-stools-bar-stools_5d9910dd": {
+    "source": "https://www.nowystyl.com/en/timmi/stools-bar-stools/",
+    "common": [],
+    "samples": {
+      "20501895": [
+        {
+          "label": "Sėdynės aukštis",
+          "value": "Reguliuojamas"
+        },
+        {
+          "label": "Pagrindo konstrukcija",
+          "value": "Neslystanti guminė atrama"
+        }
+      ]
+    }
+  },
+  "product_vienna-office-chairs_a2a3173d": {
+    "source": "https://www.nowystyl.com/en/vienna/office-chairs/",
+    "common": [],
+    "samples": {
+      "27425703": [
+        {
+          "label": "Atlošo fiksavimas",
+          "value": "3 padėtys"
+        },
+        {
+          "label": "Juosmens atrama",
+          "value": "Reguliuojamo aukščio"
+        },
+        {
+          "label": "Mechanizmo tipas",
+          "value": "Sinchroninis"
+        },
+        {
+          "label": "Porankių reguliavimas",
+          "value": "Aukštis"
+        }
+      ]
+    }
+  },
+  "product_barrique-armchairs-leg-rests_f2af7ce1": {
+    "source": "https://www.nowystyl.com/en/barrique/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "27593293": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        },
+        {
+          "label": "Atlošo mechanizmas",
+          "value": "Atlošas atlenkiamas"
+        }
+      ]
+    }
+  },
+  "product_bound-armchairs-leg-rests_adab0454": {
+    "source": "https://www.nowystyl.com/en/bound/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "24718410": [
+        {
+          "label": "Sėdynės funkcija",
+          "value": "Sėdynė automatiškai grįžta į pradinę padėtį"
+        }
+      ]
+    }
+  },
+  "product_linkup-armchairs-leg-rests_850520d6": {
+    "source": "https://www.nowystyl.com/en/linkup/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "19868014": [
+        {
+          "label": "Sėdynės užpildas",
+          "value": "Putplastis"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Atskirai arba eilėje"
+        }
+      ],
+      "19868013": [
+        {
+          "label": "Sėdynės užpildas",
+          "value": "Putplastis"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Atskirai arba eilėje"
+        }
+      ]
+    }
+  },
+  "product_njord-armchairs-leg-rests_58fac32d": {
+    "source": "https://www.nowystyl.com/en/njord/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "25866647": [
+        {
+          "label": "Laikymas",
+          "value": "Iki 4 vienetų vienas ant kito"
+        },
+        {
+          "label": "Svoris",
+          "value": "5,5 kg"
+        }
+      ]
+    }
+  },
+  "product_sivu-armchairs-leg-rests_17b08ecb": {
+    "source": "https://www.nowystyl.com/en/sivu/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "30156244": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        }
+      ],
+      "30156245": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        }
+      ],
+      "30156246": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        }
+      ]
+    }
   }
 }

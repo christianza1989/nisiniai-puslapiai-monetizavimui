@@ -14,15 +14,30 @@ import type {Product} from './types';
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
 const deskCategory='rasomieji-stalai-ir-darbo-vietos';
+const englishByModel:Record<string,Record<string,string>>=manufacturerEnglish.models;
+const englishByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 const usage=new Map<string,{chairs:number;desks:number}>();
+const proposalsByEnglish={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
+const normalizeEnglish=(text:string)=>text.trim().replace(/\s+/g,' ').toLowerCase();
 const proposalsByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
-for(const m of Object.values(inventory.models)){
+for(const [code,m] of Object.entries(inventory.models)){
  const group=m.path.startsWith('/produktai/'+deskCategory+'/')?'desks':'chairs';
+ for(const [binding,text] of Object.entries(englishByModel[code]||{})){
+  if(!binding.startsWith('field:')&&!binding.startsWith('value:'))continue;
+  const labels=englishByBinding[group].get(binding)||new Set<string>();
+  labels.add(text);englishByBinding[group].set(binding,labels);
+ }
  for(const [binding,id] of Object.entries(m.bindings)){
-  const proposal=inventory.terms[id]?.suggested;
+  const term=inventory.terms[id],proposal=term?.suggested;
   if(!proposal)continue;
   const proposals=proposalsByBinding[group].get(binding)||new Set<string>();
   proposals.add(proposal);proposalsByBinding[group].set(binding,proposals);
+  const english=englishByModel[code]?.[binding]||term.english;
+  if(english){
+   const key=binding.split(':',1)[0]+':'+normalizeEnglish(english);
+   const matches=proposalsByEnglish[group].get(key)||new Set<string>();
+   matches.add(proposal);proposalsByEnglish[group].set(key,matches);
+  }
  }
  for(const id of new Set(Object.values(m.bindings))){
   const counts=usage.get(id)||{chairs:0,desks:0};
@@ -33,7 +48,6 @@ export function sharedTextKey(category:string,id:string){
  const counts=usage.get(id);
  return counts?.chairs&&counts.desks?'category:'+(category===deskCategory?'desks':'chairs')+':'+id:id;
 }
-const englishByModel:Record<string,Record<string,string>>=manufacturerEnglish.models;
 const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export const localTextKey=(model:string,id:string)=>'local:'+model+':'+id;
 export const productTextScope=(p:Product)=>p.id+':'+(p.modelConfigurationId||'line');
@@ -41,7 +55,7 @@ const englishModelWords=/\b(?:chairs?|armchairs?|tables?|desks?|stools?|sofas?|b
 const modelTitleTerms:Record<string,string>={UPH:'su apmušalais',MESH:'su tinkleliu','5-STAR':'su penkių stipinų pagrindu'};
 function suggestedModelTitle(p:Product,title:string){
  if(p.categorySlug!=='kedes'||!p.modelConfigurationId)return title;
- return title.replace(/\b5-STAR(?:\s+UPH)?\b|\b(?:MESH|UPH)\b/g,term=>term==='5-STAR UPH'?'su penkių stipinų pagrindu ir apmušalais':modelTitleTerms[term]);
+ return title.replace(/\b5-STAR(?:\s+UPH)?\b|\b(?:MESH|UPH)\b/g,term=>term.startsWith('5-STAR ')?'su penkių stipinų pagrindu ir apmušalais':modelTitleTerms[term]);
 }
 export function contentDefinitions(p:Product):TextDefinition[]{
  const v=publicProductView(p),original=publicProductView({...p,textReviewHeading:undefined}),scope=productTextScope(p),out:TextDefinition[]=[];
@@ -68,6 +82,7 @@ export async function reviewProductForCode(code:string){
 function modelFor(p:Product){return p.configurations.find(c=>c.id===p.modelConfigurationId)?.code||p.configurations.find(c=>c.code)?.code||productTextScope(p);}
 export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextEdit>,runtime?:CatalogRuntime):Promise<ReviewScope>{
  const globalKey=(id:string)=>sharedTextKey(p.categorySlug,id);
+ const group=p.categorySlug===deskCategory?'desks':'chairs';
  const scope=productTextScope(p),model=modelFor(p),known=inventory.models[model],defs=contentDefinitions(p);
  const codes=[...new Set(p.configurations.map(c=>c.code).filter((c):c is string=>!!c&&!!inventory.models[c]))];
  if(known&&!codes.includes(model))codes.unshift(model);
@@ -80,11 +95,28 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
    if(modelBindings[binding])return;
    const id='runtime:'+model+':'+binding;
    modelBindings[binding]=id;
-   const proposals=proposalsByBinding[p.categorySlug===deskCategory?'desks':'chairs'].get(binding);
-   const suggested=proposals?.size===1?[...proposals][0]:text;
+   const proposals=proposalsByBinding[group].get(binding);
+   const english=englishByModel[model]?.[binding]||text;
+   const sameEnglish=proposalsByEnglish[group].get(binding.split(':',1)[0]+':'+normalizeEnglish(english));
+   const suggested=proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:text;
    terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested,context,notes:'',current:[text],modelCount:1});
   };
-  for(const [field,values] of Object.entries(engine.stateChoices(state))){
+  const choices=new Map<string,Set<string>>();
+  function include(source?:Record<string,string[]|null>){
+   for(const [field,values] of Object.entries(source||{})){
+    if(!values)continue;
+    const choicesForField=choices.get(field)||new Set<string>();
+    for(const value of values)choicesForField.add(value);
+    choices.set(field,choicesForField);
+   }
+  }
+  include(engine.stateChoices(state));
+  for(const anchor of runtime.family.anchors.filter(a=>a.article===model)){
+   include(anchor.choices);
+   for(const profile of anchor.profiles)include(profile.choices);
+   for(const component of anchor.components)for(const variant of component.variants){include(variant.choices);include(variant.dependentChoices);}
+  }
+  for(const [field,values] of choices){
    const label=runtime.palettes._fieldLabels?.[field]?.text||fieldLabels[field]||field;
    add('field:'+field,'Lauko pavadinimas',label,label,field);
    for(const value of values)add('value:'+field+'='+value,'Parinktis',label,engine.choiceLabel(field,value,runtime.palettes,state.family),field+'='+value);
@@ -94,7 +126,9 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  defs.push(...[...new Set(Object.values(modelBindings))].map(id=>terms.get(id)||inventory.terms[id]).filter(Boolean));
  let edits=providedEdits;
  if(!edits){
-  edits=new Map();const keys=[...new Set([...defs.map(d=>globalKey(d.id)),...codes.flatMap(code=>Object.values(bindings[code]).flatMap(id=>[globalKey(id),localTextKey(code,id)]))])];
+  edits=new Map();
+  if(terms.size)for(const row of await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key GLOB ?', 'runtime:'+model+':*'))if(terms.has(row.key))edits.set(row.key,row);
+  const keys=[...new Set([...defs.map(d=>globalKey(d.id)),...codes.flatMap(code=>Object.values(bindings[code]).flatMap(id=>[globalKey(id),localTextKey(code,id)]))])].filter(key=>!key.startsWith('runtime:')&&!key.includes(':runtime:'));
   for(let i=0;i<keys.length;i+=70){const batch=keys.slice(i,i+70);for(const row of await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key IN ('+batch.map(()=>'?').join(',')+')',...batch))edits.set(row.key,row);}
  }
  const values:Record<string,string>={};
@@ -106,12 +140,17 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   if(value)values[code+':'+id]=value;
  }
  for(const d of defs.filter(d=>d.role==='Produkto tekstas')){const value=publishedText(d,edits.get(d.id),'');if(value)values[d.id]=value;}
- const optionCodesByTerm=new Map<string,string[]>(),englishByTerm=new Map<string,Set<string>>();
+ const optionCodesByTerm=new Map<string,string[]>(),englishByTerm=new Map<string,Set<string>>(),referenceByTerm=new Map<string,Set<string>>();
  for(const [binding,id] of Object.entries(modelBindings)){
   const english=englishByModel[model]?.[binding];
   if(english){
    const labels=englishByTerm.get(id)||new Set<string>();
    labels.add(english);englishByTerm.set(id,labels);
+  }
+  const references=englishByBinding[group].get(binding);
+  if(references?.size===1){
+   const labels=referenceByTerm.get(id)||new Set<string>();
+   labels.add([...references][0]);referenceByTerm.set(id,labels);
   }
   if(!binding.startsWith('value:'))continue;
   const codes=optionCodesByTerm.get(id)||[];
@@ -126,7 +165,9 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const customerNameRequired=customerTextHasCode(def,currentText),status=baseStatus==='approved'&&customerTextHasCode(def,edit?.state==='kept'?currentText:edit?.draft||currentText)?'changed':baseStatus;
   const config=p.configurations.find(c=>c.code===model);
   const isPublished=status==='approved'&&(edit?.state==='kept'||edit?.published_hash===def.sourceHash&&edit.published===edit.draft);
-  return {...def,english:(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
+  const originalEnglish=(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english;
+  const englishReference=originalEnglish?'':[...referenceByTerm.get(def.id)||[]].join(' · ');
+  return {...def,english:originalEnglish||englishReference,englishReference:!!englishReference,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:config?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at};

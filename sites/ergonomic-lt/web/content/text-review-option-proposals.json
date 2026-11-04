@@ -73,5 +73,122 @@
   },
   "value:CWOODMATERIAL=LAMINATEPLYWOOD": {
     "laminate plywood": "Laminuota fanera"
+  },
+  "value:CSEATFOAM=CUT": {
+    "cut": "Pjaustytas putplastis"
+  },
+  "value:CBACKRESTFOAM=CUT": {
+    "cut": "Pjaustytas putplastis"
+  },
+  "value:CSEATPADFOAM=FLAMERETARDANT": {
+    "flame retardant": "Sunkiai užsidegantis putplastis"
+  },
+  "value:CGLIDES=GBPT": {
+    "with teflon": "Pėdelės su teflonu"
+  },
+  "value:CBASE=ST62ALU": {
+    "diam. 736 mm, five-star, aluminium (st62)": "736 mm skersmens penkių stipinų aliumininis pagrindas"
+  },
+  "value:CSEAT=UPHCOMFORTSTITCHINGCOVPL": {
+    "comfort, upholstered with stitching": "„Comfort“ sėdynė su apmušalu ir siūlėmis"
+  },
+  "value:CPACKAGING=BOX1UNASSEMBLED": {
+    "box - 1 item, product unassembled": "Dėžė, 1 nesurinktas gaminys"
+  },
+  "value:CMECHANISM=MEIN": {
+    "me-in: synchronous, seat depth and negative inclination adjustment": "Sinchroninis mechanizmas su sėdynės gylio ir palenkimo į priekį reguliavimu"
+  },
+  "value:CUPHOLSTERINGTYPE=NONE": {
+    "without upholstery": "Be apmušalų"
+  },
+  "value:CGASLIFT=PNEUMATIC": {
+    "pneumatic, standard": "Standartinė dujinė pakėlimo kolonėlė"
+  },
+  "value:CGASLIFT=GL10": {
+    "pneumatic, standard": "Standartinė dujinė pakėlimo kolonėlė"
+  },
+  "value:CSEATDECSTITCHING=GREY": {
+    "grey": "Pilkos siūlės"
+  },
+  "value:CWOODMATERIAL=BEECHPLYWOOD": {
+    "beech plywood": "Buko fanera"
+  },
+  "value:CARMPAD=BEECHPLYWOOD": {
+    "beech plywood": "Buko fanera"
+  },
+  "value:CARMPAD=BEECHPLYSTAIN": {
+    "stained beech plywood": "Beicuota buko fanera"
+  },
+  "value:CCONNECTOR=CLICKJ4": {
+    "click-j4: integrated with frame": "Į rėmą integruota jungtis"
+  },
+  "value:CCONNECTOR=CLICK": {
+    "click: integrated with frame": "Į rėmą integruota jungtis"
+  },
+  "value:CARMRESTS=R38POLBL": {
+    "r38-pol/b/b: 4d, arm: polished aluminum, black polyamide, pad: black polyurethane": "4D porankiai iš poliruoto aliuminio ir juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CARMRESTS=R65PWG": {
+    "r65: 2d, arm: aluminium, polyamide pw, pad: grey polyurethane": "2D porankiai iš aliuminio ir poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CARMRESTS=R46BBBPU": {
+    "r46-b/b/bpu: 2d, arm: black polyamide, pad: black polyurethane": "2D porankiai iš juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CARMRESTS=R38BLBL": {
+    "r38-bl/b/b: 4d, arm: aluminium powder-coated bl, black polyamide, pad: black polyurethane": "4D porankiai iš juodai milteliniu būdu dažyto aliuminio ir juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CARMRESTS=R66PWG": {
+    "r66: 4d, arm: aluminium, polyamide pw, pad: grey polyurethane": "4D porankiai iš aliuminio ir poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CARMRESTS=R37": {
+    "r37-bl/b/b: 4d, arm: black polyamide, pad: black polyurethane": "4D porankiai iš juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CBACKREST=UPHWAVY": {
+    "upholstered and pleated": "Apmuštas atlošas su klostėmis"
+  },
+  "value:CBASE=ST55BL": {
+    "diam. 760 mm, 5-star, aluminium coated bl (st55-bl)": "760 mm skersmens juodas penkių stipinų aliumininis pagrindas"
+  },
+  "value:CBASE=ST43POL": {
+    "diam. 696 mm, 5-star, polished aluminium (st43-pol)": "696 mm skersmens penkių stipinų poliruoto aliuminio pagrindas"
+  },
+  "value:CARMRESTS=R36GR": {
+    "r36/gr/gr: 2d, arm: grey polyamide, pad: grey polyurethane": "2D porankiai iš pilko poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CARMRESTS=PF40CR": {
+    "pf40-cr: fixed, arm: steel chromium plate, pad: black polypropylene": "Fiksuoti chromuoto plieno porankiai su juodo polipropileno atramomis"
+  },
+  "value:CARMRESTS=R37POL": {
+    "r37-pol/b/b: 4d, arm: polished aluminum, pad: black polyurethane": "4D porankiai iš poliruoto aliuminio, su juodo poliuretano atramomis"
+  },
+  "value:CGASLIFT=RGL4659": {
+    "rgl46.59: pneumatic, raised": "Paaukštinta dujinė pakėlimo kolonėlė"
+  },
+  "value:CGASLIFT=GLL": {
+    "gl-l: pneumatic, lowered": "Pažeminta dujinė pakėlimo kolonėlė"
+  },
+  "value:CMECHANISM=MPD170": {
+    "mpd170: integrated seat and backrest tilting": "Bendras sėdynės ir atlošo pasvirimo mechanizmas"
+  },
+  "value:CMECHANISM=ESPST": {
+    "esp-st: synchronous, seat depth adjustment": "Sinchroninis mechanizmas su sėdynės gylio reguliavimu"
+  },
+  "value:CHEADREST=HRUA2DPLASTIC": {
+    "2d adjustable, upholstered, plastic cover": "Dviem kryptimis reguliuojama apmušta galvos atrama su plastikiniu gaubtu"
+  },
+  "value:CHEADREST=HRMA": {
+    "adjustable, mesh": "Reguliuojama tinklinė galvos atrama"
+  },
+  "value:CSEATFOAM=VISCO": {
+    "viscoelastic (visco)": "Viskoelastinis putplastis"
+  },
+  "value:CCASTORS=CA": {
+    "for soft floors": "Ratukai minkštoms grindims"
+  },
+  "value:CCASTORS=CAH": {
+    "for hard floors": "Ratukai kietoms grindims"
+  },
+  "value:CLUMBARSUPPORT=LUMBAR1": {
+    "manual, height and depth adjustment": "Rankiniu būdu reguliuojamas juosmens atramos aukštis ir gylis"
   }
 }

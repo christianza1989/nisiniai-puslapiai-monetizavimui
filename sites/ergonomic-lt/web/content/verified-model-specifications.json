@@ -2351,5 +2351,135 @@
         }
       ]
     }
+  },
+  "product_sileo-walls_d659d282": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "24175319": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1600 mm"
+        },
+        {
+          "label": "Pagrindo matmenys",
+          "value": "800 × 270 mm"
+        },
+        {
+          "label": "Sukamųjų plokščių skaičius",
+          "value": "6"
+        },
+        {
+          "label": "Plokštės storis",
+          "value": "35 mm"
+        }
+      ],
+      "24175321": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1600 mm"
+        },
+        {
+          "label": "Pagrindo matmenys",
+          "value": "800 × 270 mm"
+        },
+        {
+          "label": "Sukamųjų plokščių skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Plokštės storis",
+          "value": "35 mm"
+        }
+      ]
+    }
+  },
+  "product_tilkka-armchairs-leg-rests_6ea7632a": {
+    "source": "https://www.nowystyl.com/files/downloads/WWW_Tilkka_Technical-details_PL.pdf",
+    "common": [],
+    "samples": {
+      "23589104": [
+        {
+          "label": "Plotis × gylis",
+          "value": "680 × 720 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "765 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_tilkka-sofas_9ecbe475": {
+    "source": "https://www.nowystyl.com/files/downloads/WWW_Tilkka_Technical-details_PL.pdf",
+    "common": [],
+    "samples": {
+      "32916572": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1180 × 720 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "765 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_dotto-pouffes_8cfb9de2": {
+    "source": "https://www.nowystyl.com/getmedia/aaa87080-a65d-4213-b03f-0e17fb99878a/Acoustics-other-panels-and-soft-seating-specification.pdf",
+    "common": [],
+    "samples": {
+      "19629348": [
+        {
+          "label": "Plotis × gylis",
+          "value": "450 × 450 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "400 mm"
+        }
+      ]
+    }
+  },
+  "product_tapa-cafe-lounge-tables_d613d36e": {
+    "source": "https://www.nowystyl.com/files/downloads/Tapa_szkolenie_produktowe.pdf",
+    "common": [],
+    "samples": {
+      "16088183": [
+        {
+          "label": "Stalviršio skersmuo",
+          "value": "450 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "655 mm"
+        },
+        {
+          "label": "Stalviršio storis",
+          "value": "18 mm"
+        }
+      ]
+    }
+  },
+  "product_offa-walls_3c5d7399": {
+    "source": "https://www.nowystyl.com/files/interactive/catalogue/EX/Finishes-Matrix/64/",
+    "common": [],
+    "samples": {
+      "19442135": [
+        {
+          "label": "Rašymo plokštės storis",
+          "value": "18 mm"
+        }
+      ]
+    }
   }
 }

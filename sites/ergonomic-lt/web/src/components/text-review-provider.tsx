@@ -4,12 +4,23 @@ import dynamic from 'next/dynamic';
 import {Pencil} from 'lucide-react';
 import type {PublicTextScope,ReviewScope} from '@/lib/text-review-types';
 const Panel=dynamic(()=>import('./text-review-panel'),{ssr:false});
-type ReviewContext={editing:boolean;open:(id:string)=>void;binding:(model:string,field:string,value?:string)=>string;resolve:(id:string,fallback:string,model?:string)=>string;known:(id:string,fallback:string)=>boolean;scope:string;model:string};
+type ReviewContext={editing:boolean;open:(id:string,trigger:HTMLElement)=>void;binding:(model:string,field:string,value?:string)=>string;resolve:(id:string,fallback:string,model?:string)=>string;known:(id:string,fallback:string)=>boolean;scope:string;model:string};
 const empty:ReviewContext={editing:false,open:()=>{},binding:()=>'',resolve:(_,fallback)=>fallback,known:()=>false,scope:'',model:''};
 const Context=createContext<ReviewContext>(empty);
 export const useTextReview=()=>useContext(Context);
 export function TextReviewProvider({initial,admin,children}:{initial:PublicTextScope;admin?:ReviewScope;children:ReactNode}){
  const [scope,setScope]=useState(admin),[editing,setEditing]=useState(false),[selected,setSelected]=useState('');
+ const [inlineHost,setInlineHost]=useState<HTMLElement|null>(null);
+ const [trigger,setTrigger]=useState<HTMLElement|null>(null);
+ useEffect(()=>{if(!inlineHost)return;return()=>inlineHost.remove();},[inlineHost]);
+ function select(id:string){setInlineHost(null);setSelected(id);if(!id)trigger?.focus();setTrigger(null);}
+ function open(id:string,anchor:HTMLElement){
+  if(!scope?.entries.some(e=>e.id===id))return;
+  const block=anchor.closest('.configuration-field,h1,h2,h3,h4,p')||anchor.parentElement;
+  if(!block)return;
+  const host=document.createElement('div');host.className='review-inline-host';
+  block.insertAdjacentElement('afterend',host);setInlineHost(host);setTrigger(anchor);setSelected(id);
+ }
  const [publicState,setPublicState]=useState(initial);
  useEffect(()=>{if(admin)setEditing(sessionStorage.getItem('ergonomic-text-edit')==='1'||new URLSearchParams(location.search).get('redaguoti')==='1');},[admin]);
  const publicScope=scope?.publicScope||publicState;
@@ -25,7 +36,7 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
   let code=initial.model,controller:AbortController|undefined;
   const changed=()=>{const next=document.querySelector<HTMLElement>('[data-chair-code]')?.dataset.chairCode;if(!next||next===code)return;code=next;controller?.abort();controller=new AbortController();
    const signal=controller.signal,url=admin?'/api/admin/text-review/?code=':'/api/text-review/?code=';
-   fetch(url+encodeURIComponent(next),{signal}).then(async r=>{if(!r.ok)throw Error('Modelio tekstai nepasiekiami.');return r.json();}).then(value=>{if(signal.aborted)return;if(admin)setScope(value);else setPublicState(value);setSelected('');}).catch(error=>{if(error.name!=='AbortError')console.warn('Nepavyko atnaujinti modelio tekstų.');});
+   fetch(url+encodeURIComponent(next),{signal}).then(async r=>{if(!r.ok)throw Error('Modelio tekstai nepasiekiami.');return r.json();}).then(value=>{if(signal.aborted)return;if(admin)setScope(value);else setPublicState(value);setInlineHost(null);setSelected('');}).catch(error=>{if(error.name!=='AbortError')console.warn('Nepavyko atnaujinti modelio tekstų.');});
   };
   const observer=new MutationObserver(changed);observer.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['data-chair-code']});changed();
   return()=>{observer.disconnect();controller?.abort();};
@@ -35,7 +46,7 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
   if(!id)return fallback;
   if(publicScope.originals[id]!==undefined&&publicScope.originals[id]!==fallback)return fallback;
   const entry=editing?scope?.entries.find(e=>e.id===id):undefined,edit=entry?.edit;
-  if(edit&&edit.source_hash===entry?.sourceHash&&edit.state!=='kept'&&edit.draft&&(edit.key===id||entry.model===model))return edit.draft;
+  if(edit&&edit.source_hash===entry?.sourceHash&&edit.state!=='kept'&&edit.draft&&(edit.key===entry.globalEdit?.key||entry.model===model))return edit.draft;
   let value=publicScope.values[model+':'+id]||publicScope.values[id]||fallback;
   if(id.endsWith(':title')&&value!==fallback)for(const [key,termId]of Object.entries(publicScope.bindings[model]||{}))if(key.startsWith('name:')){
    const word=key.slice(5),replacement=publicScope.values[model+':'+termId];
@@ -43,17 +54,17 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
   }
   return value;
  }
- const toggle=()=>setEditing(v=>{sessionStorage.setItem('ergonomic-text-edit',v?'0':'1');return !v;});
- return <Context.Provider value={{editing,open:setSelected,binding,resolve,known:(id,fallback)=>!!id&&(publicScope.originals[id]===undefined||publicScope.originals[id]===fallback),scope:publicScope.scope,model:publicScope.model}}>{children}
- {scope&&<Panel scope={scope} update={update} editing={editing} toggle={toggle} selected={selected} select={setSelected}/>}
+ const toggle=()=>{if(editing)select('');setEditing(!editing);sessionStorage.setItem('ergonomic-text-edit',editing?'0':'1');};
+ return <Context.Provider value={{editing,open,binding,resolve,known:(id,fallback)=>!!id&&(publicScope.originals[id]===undefined||publicScope.originals[id]===fallback),scope:publicScope.scope,model:publicScope.model}}>{children}
+ {scope&&<Panel scope={scope} update={update} editing={editing} toggle={toggle} selected={selected} select={select} inlineHost={inlineHost}/>}
  </Context.Provider>;
 }
 export function TextValue({id,fallback,model}:{id:string;fallback:string;model?:string}){
  const context=useTextReview(),editable=context.editing&&context.known(id,fallback);
- return <span data-text-review-id={id||undefined} className={editable?'review-target':undefined} role={editable?'button':undefined} tabIndex={editable?0:undefined} title={editable?'Redaguoti tekstą':undefined} onClick={editable?e=>{e.preventDefault();e.stopPropagation();context.open(id);}:undefined} onKeyDown={editable?e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();context.open(id);}}:undefined}>{context.resolve(id,fallback,model)}</span>;
+ return <span data-text-review-id={id||undefined} className={editable?'review-target':undefined} role={editable?'button':undefined} tabIndex={editable?0:undefined} title={editable?'Redaguoti tekstą':undefined} onClick={editable?e=>{e.preventDefault();e.stopPropagation();context.open(id,e.currentTarget);}:undefined} onKeyDown={editable?e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();context.open(id,e.currentTarget);}}:undefined}>{context.resolve(id,fallback,model)}</span>;
 }
 export function ReviewFieldButton({model,field,value}:{model:string;field:string;value:string}){
  const review=useTextReview();if(!review.editing)return null;
  const label=review.binding(model,field),choice=review.binding(model,field,value);
- return <div className="review-field-actions">{label&&<button type="button" onClick={()=>review.open(label)}><Pencil size={14}/> Pavadinimas</button>}{choice&&<button type="button" onClick={()=>review.open(choice)}><Pencil size={14}/> Pasirinktas tekstas</button>}</div>;
+ return <div className="review-field-actions">{label&&<button type="button" onClick={e=>review.open(label,e.currentTarget)}><Pencil size={14}/> Pavadinimas</button>}{choice&&<button type="button" onClick={e=>review.open(choice,e.currentTarget)}><Pencil size={14}/> Pasirinktas tekstas</button>}</div>;
 }

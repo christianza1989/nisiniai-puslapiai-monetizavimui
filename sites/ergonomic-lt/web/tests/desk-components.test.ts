@@ -51,17 +51,17 @@ test('source DTOP dimension names retain captured pairs, geometry and token fiel
  const unknown=structuredClone(s);unknown.contexts[0].dimensions={OTHERWIDTH:'_1600',DTOPDEPTH:'_800'};
  assert.throws(()=>validateDeskComponents(unknown,code));
 });
-test('NONE removes the part and text-only socket changes no geometry',()=>{
+test('NONE removes the part and the EU socket is fixed',()=>{
  const e=engine();let s=e.initialStateForProduct(product);const before=e.assembledAssets(s);
  assert.equal(before.patches[1].geometry,null);
- s=e.changeField(s,'FSOCKETSTANDARD','CH');assert.deepEqual(e.assembledAssets(s),before);
+ assert.throws(()=>e.changeField(s,'FSOCKETSTANDARD','CH'));
  const selected=e.expandedSelection(product,s);
- assert(selected.configuration.supplierOptions?.includes('FSOCKETSTANDARD=CH'));
+ assert(selected.configuration.supplierOptions?.includes('FSOCKETSTANDARD=EU'));
  assert(selected.configuration.supplierOptions?.every(v=>!v.startsWith('.')&&!v.includes('_OPTIONS.')));
  const token=e.stateToken(s);assert.deepEqual(e.parseStateToken(product,token),s);
  s=e.changeField(s,'FCABLECOVER','COVER');assert(e.assembledAssets(s).patches[1].geometry);
  s=e.changeField(s,'FCABLECOVER','NONE');assert.equal(e.assembledAssets(s).patches[1].geometry,null);
- s=e.changeField(s,'GDWIDTH','_1800');assert.equal(s.values.FSOCKETSTANDARD,'CH');assert.equal(s.values.FCABLECOVER,'NONE');
+ s=e.changeField(s,'GDWIDTH','_1800');assert.equal(s.values.FSOCKETSTANDARD,'EU');assert.equal(s.values.FCABLECOVER,'NONE');
  assert.equal(e.catalog.catalogFamily(s)?.collectionMode,'desk-components');
 });
 test('reject invalid table semantics, duplicate contexts/tuples and external assets',()=>{

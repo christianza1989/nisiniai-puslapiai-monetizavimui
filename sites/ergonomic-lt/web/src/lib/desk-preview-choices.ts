@@ -4,6 +4,10 @@ import type {Asset} from './expanded-configurator';
 import {deskColorPlan} from './desk-color-plan';
 type Choices=Record<string,string[]>;
 type Values=Record<string,string>;
+export const lithuanianSocketStandards: Record<string,string> = {
+ FSOCKETSTANDARD:'EU', FSOCKET:'EU',
+ FSOCKETMEDIAPORT:'GE', FSOCKETMEDIAPORTLEFT:'GE', FSOCKETMEDIAPORTRIGHT:'GE',
+};
 
 export const hasDeskPreviewChoicePolicy=(family:CatalogFamily|undefined)=>!!family&&policy.codes.includes(family.baseArticle);
 
@@ -22,6 +26,10 @@ export function availableDeskColorChoices(family:CatalogFamily,choices:Choices,v
 
 /** Singleton finish values remain in the specification, without a selector. */
 export function visibleDeskPreviewChoices(family:CatalogFamily|undefined,choices:Choices):Choices{
+ if(family?.collectionMode==='desk-components'){
+  choices=Object.fromEntries(Object.entries(choices).filter(([field,values])=>
+   !(values.length===1&&values[0]===lithuanianSocketStandards[field])));
+ }
  if(!family?.deskColors||!hasDeskPreviewChoicePolicy(family))return choices;
  return Object.fromEntries(Object.entries(choices).filter(([field,values])=>!family.deskColors!.fields[field]||values.length>1));
 }

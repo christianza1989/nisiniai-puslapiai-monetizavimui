@@ -1629,5 +1629,195 @@
         }
       ]
     }
+  },
+  "product_youteam-swivel-chairs_3886a3db": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "28689863": [
+        {
+          "label": "Atlošas",
+          "value": "Žemas (LB EL)"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420–545 mm"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "400–470 mm"
+        },
+        {
+          "label": "Sėdynės plotis",
+          "value": "470 mm"
+        }
+      ],
+      "28689861": [
+        {
+          "label": "Atlošas",
+          "value": "Žemas, apmuštas (LB UPH)"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420–545 mm"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "400–470 mm"
+        },
+        {
+          "label": "Sėdynės plotis",
+          "value": "470 mm"
+        }
+      ],
+      "28689860": [
+        {
+          "label": "Atlošas",
+          "value": "Aukštas, apmuštas (HB UPH)"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420–545 mm"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "400–470 mm"
+        },
+        {
+          "label": "Sėdynės plotis",
+          "value": "470 mm"
+        }
+      ]
+    }
+  },
+  "product_creva-pouffes_df65941f": {
+    "source": "https://www.nowystyl.com/en/creva/pouffes/",
+    "common": [],
+    "samples": {
+      "24810032": [
+        {
+          "label": "Tipas",
+          "value": "Apmuštas pufas"
+        },
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        }
+      ],
+      "24810031": [
+        {
+          "label": "Tipas",
+          "value": "Apmuštas pufas"
+        },
+        {
+          "label": "Vietų skaičius",
+          "value": "2"
+        }
+      ],
+      "24810033": [
+        {
+          "label": "Tipas",
+          "value": "Apmuštas pufas"
+        },
+        {
+          "label": "Vietų skaičius",
+          "value": "3"
+        }
+      ]
+    }
+  },
+  "product_oxo-modular-systems_84bb64f7": {
+    "source": "https://www.nowystyl.com/en/oxo/modular-systems/",
+    "common": [],
+    "samples": {
+      "20345640": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinė sistema"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        }
+      ],
+      "20345639": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinė sistema"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Kampinis"
+        }
+      ],
+      "20345641": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinė sistema"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "U formos"
+        }
+      ],
+      "20345638": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinė sistema"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Šešioms vietoms"
+        }
+      ]
+    }
+  },
+  "product_tepee-modular-systems_d27f2847": {
+    "source": "https://www.nowystyl.com/en/tepee/modular-systems/",
+    "common": [],
+    "samples": {
+      "16950397": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinis komplektas"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        },
+        {
+          "label": "Komplekto žymuo",
+          "value": "5U 2T"
+        }
+      ],
+      "16950720": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinis komplektas"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesus (I formos)"
+        },
+        {
+          "label": "Komplekto žymuo",
+          "value": "4U 1T"
+        }
+      ],
+      "16950540": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinis komplektas"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        },
+        {
+          "label": "Komplekto žymuo",
+          "value": "7U 2T"
+        }
+      ]
+    }
   }
 }

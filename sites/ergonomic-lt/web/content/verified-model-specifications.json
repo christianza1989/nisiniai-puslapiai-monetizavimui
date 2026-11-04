@@ -2317,6 +2317,20 @@
           "label": "Sėdynės aukštis",
           "value": "470 mm"
         }
+      ],
+      "20812394": [
+        {
+          "label": "Plotis × gylis",
+          "value": "660 × 580 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "820 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "440 mm"
+        }
       ]
     }
   },
@@ -2336,6 +2350,20 @@
         {
           "label": "Sėdynės aukštis",
           "value": "484 mm"
+        }
+      ],
+      "26059645": [
+        {
+          "label": "Plotis × gylis",
+          "value": "635 × 625 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "856 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "460 mm"
         }
       ]
     }
@@ -2753,6 +2781,16 @@
           "label": "Stalviršio skersmuo",
           "value": "1200 mm"
         }
+      ],
+      "24860118": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1200 × 1200 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "739 mm"
+        }
       ]
     }
   },
@@ -3142,6 +3180,224 @@
         {
           "label": "Viršutinės plokštės storis",
           "value": "25 mm"
+        }
+      ]
+    }
+  },
+  "product_conect-ii-cafe-lounge-tables_9b75c4a6": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20977109": [
+        {
+          "label": "Plotis × gylis",
+          "value": "900 × 600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "400 mm"
+        }
+      ]
+    }
+  },
+  "product_studio-cafe-lounge-tables_83abbb75": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "22915491": [
+        {
+          "label": "Plotis × gylis",
+          "value": "750 × 750 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "405 mm"
+        }
+      ],
+      "22915493": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1100 × 700 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "405 mm"
+        }
+      ]
+    }
+  },
+  "product_classic-cafe-lounge-tables_481bb013": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "25365109": [
+        {
+          "label": "Matmenys",
+          "value": "620 × 630 mm"
+        },
+        {
+          "label": "Aukštis su stikliniu stalviršiu",
+          "value": "410 mm"
+        },
+        {
+          "label": "Aukštis su melaminuotu stalviršiu",
+          "value": "415 mm"
+        }
+      ],
+      "25365111": [
+        {
+          "label": "Matmenys",
+          "value": "1230 × 620 mm"
+        },
+        {
+          "label": "Aukštis su stikliniu stalviršiu",
+          "value": "410 mm"
+        },
+        {
+          "label": "Aukštis su melaminuotu stalviršiu",
+          "value": "415 mm"
+        }
+      ]
+    }
+  },
+  "product_yuni-meeting-chairs_f1ee6ae3": {
+    "source": "https://www.nowystyl.com/en/yuni/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "28958406": [
+        {
+          "label": "Porankių konstrukcija",
+          "value": "Integruoti"
+        },
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Vientisas, iš oro sąlygoms atsparaus plastiko"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "130 kg"
+        }
+      ],
+      "28958404": [
+        {
+          "label": "Porankių konstrukcija",
+          "value": "Be porankių"
+        },
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Vientisas, iš oro sąlygoms atsparaus plastiko"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "130 kg"
+        }
+      ]
+    }
+  },
+  "product_sand-high-tables_90cbca9a": {
+    "source": "https://www.nowystyl.com/en/sand/high-tables/",
+    "common": [],
+    "samples": {
+      "28039780": [
+        {
+          "label": "Pertvaros forma",
+          "value": "L formos"
+        },
+        {
+          "label": "Stalų tipas",
+          "value": "Aukšti stalai"
+        }
+      ],
+      "28039781": [
+        {
+          "label": "Pertvaros forma",
+          "value": "S formos"
+        },
+        {
+          "label": "Stalų tipas",
+          "value": "Aukšti stalai"
+        }
+      ],
+      "28039782": [
+        {
+          "label": "Pertvaros forma",
+          "value": "Z formos"
+        },
+        {
+          "label": "Stalų tipas",
+          "value": "Aukšti stalai"
+        }
+      ]
+    }
+  },
+  "product_creva-armchairs-leg-rests_561f91ed": {
+    "source": "https://www.nowystyl.com/en/creva/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "24827802": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Stacionari"
+        }
+      ],
+      "24827803": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Ratukai"
+        }
+      ]
+    }
+  },
+  "product_tauko-meeting-tables_c2a9ba4a": {
+    "source": "https://www.nowystyl.com/en/tauko/meeting-tables/",
+    "common": [],
+    "samples": {
+      "16780591": [
+        {
+          "label": "Modulių išdėstymas",
+          "value": "Tiesus išdėstymas"
+        },
+        {
+          "label": "Vieno modulio matmenys",
+          "value": "680 × 565 mm"
+        }
+      ],
+      "16754930": [
+        {
+          "label": "Modulių išdėstymas",
+          "value": "Trikampio formos išdėstymas"
+        },
+        {
+          "label": "Vieno modulio matmenys",
+          "value": "680 × 565 mm"
+        }
+      ],
+      "15837616": [
+        {
+          "label": "Stalviršio forma",
+          "value": "Kvadratinis"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "800 mm"
+        }
+      ],
+      "15837617": [
+        {
+          "label": "Stalviršio forma",
+          "value": "Apvalus"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "800 mm"
         }
       ]
     }

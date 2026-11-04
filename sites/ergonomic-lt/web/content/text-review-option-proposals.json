@@ -1,0 +1,77 @@
+{
+  "field:CBACKRESTFOAM": {
+    "backrest foam": "Atlošo užpildas"
+  },
+  "field:CSEATFOAM": {
+    "seat foam": "Sėdynės užpildas"
+  },
+  "field:CFRAME": {
+    "frame": "Rėmas"
+  },
+  "field:CPACKAGING": {
+    "packaging": "Pakuotė"
+  },
+  "field:CSTACKING": {
+    "stacking": "Kėdžių krovimas viena ant kitos"
+  },
+  "field:CBACKREST": {
+    "backrest": "Atlošas"
+  },
+  "field:CSHELL": {
+    "shell": "Sėdynės ir atlošo korpusas"
+  },
+  "field:CARMRESTS": {
+    "armrests": "Porankiai"
+  },
+  "field:CGASLIFT": {
+    "gas lift": "Dujinė pakėlimo kolonėlė"
+  },
+  "value:CARMRESTS=NONE": {
+    "none": "Be porankių"
+  },
+  "value:CLUMBARSUPPORT=NONE": {
+    "none": "Be juosmens atramos"
+  },
+  "value:CSEAT=UPH": {
+    "upholstered": "Apmušta sėdynė"
+  },
+  "value:CPACKAGING=BOX4ASSEMBLED": {
+    "box - 4 items, product assembled": "Dėžė, 4 surinkti gaminiai"
+  },
+  "value:CSHELL=WOOD2XPADUPH": {
+    "wooden, upholstered seat and backrest pads": "Medinis korpusas su apmuštais sėdynės ir atlošo įdėklais"
+  },
+  "value:CSHELL=WOOD": {
+    "wooden": "Medinis korpusas"
+  },
+  "value:CMECHANISM=MEIN1": {
+    "me-in1: synchronous, seat depth and negative inclination adjustment, harder spring": "Sinchroninis mechanizmas su standesne spyruokle, sėdynės gylio ir palenkimo į priekį reguliavimu"
+  },
+  "value:CUPHOLSTERINGTYPE=SEATPLUS": {
+    "seat-plus: upholstered seat pad": "Apmuštas sėdynės įdėklas"
+  },
+  "value:CSHELL=WOODSEATPADUPH": {
+    "wooden, upholstered seat pad": "Medinis korpusas su apmuštu sėdynės įdėklu"
+  },
+  "value:CWOODMATERIAL=BEECHPLYSTAIN": {
+    "stained beech plywood": "Beicuota buko fanera"
+  },
+  "value:CUPHOLSTERINGTYPE=PLUS": {
+    "plus: upholstered seat pad and backrest pad": "Apmušti sėdynės ir atlošo įdėklai"
+  },
+  "value:CARMRESTS=GTPARM": {
+    "fixed, ring type": "Fiksuoti žiedo formos porankiai"
+  },
+  "value:CCASTORS=ESSHH": {
+    "esshh: diam. 60 mm, for hard floors, black/grey": "Juodi ir pilki 60 mm ratukai kietoms grindims"
+  },
+  "value:CARMPAD=LAMINATEPLYWOOD": {
+    "laminated plywood": "Laminuota fanera"
+  },
+  "value:CHEADREST=HRUAP": {
+    "adjustable, upholstered, plastic cover": "Reguliuojama apmušta galvos atrama su plastikiniu gaubtu"
+  },
+  "value:CWOODMATERIAL=LAMINATEPLYWOOD": {
+    "laminate plywood": "Laminuota fanera"
+  }
+}

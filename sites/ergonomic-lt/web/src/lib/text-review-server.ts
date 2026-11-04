@@ -1,5 +1,6 @@
 import materialReferences from '../../content/text-review-material-references.json';
 import manufacturerEnglish from '../../content/manufacturer-english-review.json';
+import verifiedOptionProposals from '../../content/text-review-option-proposals.json';
 import {createHash} from 'node:crypto';
 import inventoryData from '../../content/text-review-inventory.json';
 import {dbAll,dbAtomic} from './text-review-db';
@@ -26,6 +27,7 @@ const englishByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<strin
 const usage=new Map<string,{chairs:number;desks:number}>();
 const proposalsByEnglish={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 const normalizeEnglish=(text:string)=>text.trim().replace(/\s+/g,' ').toLowerCase();
+const proposalsBySource:Record<string,Record<string,string>>=verifiedOptionProposals;
 // Translate the material description while retaining the supplier's collection name.
 const englishProposals=new Map([
  ['basic fabric c','Bazinis audinys C'],
@@ -248,6 +250,8 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const stacking=binding.startsWith('value:CSTACKING=')&&english.match(/^Up to (\d+) pieces$/i);
   if(stacking)return 'Iki '+stacking[1]+' vnt.';
   const normalized=normalizeEnglish(english);
+  const verified=proposalsBySource[binding]?.[normalized];
+  if(verified)return verified;
   if(normalized==='fixed'&&binding.startsWith('value:CARMRESTS='))return 'Fiksuoti';
   const armrest=binding.startsWith('value:CARMRESTS=')&&armrestProposals.get(normalized);
   if(armrest)return armrest;
@@ -271,6 +275,8 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  const proposalFor=(binding:string,text:string)=>{
   const proposals=proposalsByBinding[group].get(binding);
   const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding]||text;
+  const verified=proposalsBySource[binding]?.[normalizeEnglish(english)];
+  if(verified)return verified;
   const sameEnglish=proposalsByEnglish[group].get(binding.split(':',1)[0]+':'+normalizeEnglish(english));
   return proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:directProposal(binding,english);
  };
@@ -322,7 +328,13 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const labelId=modelBindings['field:'+field],label=terms.get(labelId)||inventory.terms[labelId];
   add(binding,'Parinktis',label?.suggested||fieldLabels[field]||field,text,sourceCode);
  }
- for(const [binding,english] of Object.entries(englishByModel[model]||{})){
+ const modelEnglish=Object.entries(englishByModel[model]||{});
+ for(const [binding,english] of modelEnglish){
+  if(!binding.startsWith('field:'))continue;
+  const proposal=proposalsBySource[binding]?.[normalizeEnglish(english)];
+  if(proposal)add(binding,'Lauko pavadinimas',proposal,english,binding.slice('field:'.length),proposal);
+ }
+ for(const [binding,english] of modelEnglish){
   if(!/^value:[CF]/.test(binding))continue;
   const proposal=directProposal(binding,english);if(!proposal)continue;
   const sourceCode=binding.slice('value:'.length),field=sourceCode.split('=',1)[0];

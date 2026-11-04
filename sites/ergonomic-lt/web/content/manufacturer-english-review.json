@@ -151,7 +151,8 @@
       "field:FHORWIRETRUNKINGCOLOR": "Colour - horizontal wire trunking",
       "value:FHORWIRETRUNKINGCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
       "field:FVERWIRETRUNKINGCOLOR": "Colour - vertical wire trunking",
-      "value:FVERWIRETRUNKINGCOLOR=CZ": "Black"
+      "value:FVERWIRETRUNKINGCOLOR=CZ": "Black",
+      "value:FTOPCOLOR=NJ": "NJ Acacia Light"
     },
     "KAXO001WW002": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -4450,7 +4451,11 @@
       "field:FHORWIRETRUNKINGCOLOR": "Colour - horizontal wire trunking",
       "value:FHORWIRETRUNKINGCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
       "field:FVERWIRETRUNKINGCOLOR": "Colour - vertical wire trunking",
-      "value:FVERWIRETRUNKINGCOLOR=CZ": "Black"
+      "value:FVERWIRETRUNKINGCOLOR=CZ": "Black",
+      "field:FUPPERPANELMETALCOLOR": "Metal elements colour - upper panel",
+      "field:FUPHCOLORPANELUPPER": "Upholstery colour - upper panel",
+      "value:FUPPERPANEL=UPHACOUSTIC30TH600H": "Fully upholstered with aluminium frame and organiser strip, acoustic, 600 mm height",
+      "value:FUPPERPANELMETALCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y"
     },
     "KYOU001WW003": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",

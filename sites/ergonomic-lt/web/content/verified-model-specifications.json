@@ -257,10 +257,6 @@
         {
           "label": "Gylis",
           "value": "400 mm"
-        },
-        {
-          "label": "Sėdynės storis",
-          "value": "150 mm"
         }
       ],
       "16088157": [
@@ -291,10 +287,6 @@
         {
           "label": "Gylis",
           "value": "450 mm"
-        },
-        {
-          "label": "Sėdynės storis",
-          "value": "150 mm"
         }
       ]
     }

@@ -80,5 +80,22 @@ export async function customerConfiguration(product:Product,token?:string,change
  }
  if(!selected){const preset=product.configurations.find(c=>c.id===scope.sample),pilot=preset?pilotSelection(product,preset.id):undefined;if(pilot?.variant.asset)assets.base=await prepare(pilot.variant);}
  const nativeCatalog=context.engine.catalog.catalogForProduct(product),legacyChair=!!state&&product.categorySlug==='kedes'&&!['structure-only','desk-components'].includes(nativeCatalog?.collectionMode||'');
- return {legacyChair,token:cap.seal('configuration',{...scope,state,revision:context.revision}),selectionId:cap.id('selection',{...scope,state,revision:context.revision}),productId:'product_public_'+cap.id('product',scope),name:customerLabel(product.textReviewHeading||productHeading(product),codes,'Biuro baldas'),controls,details:controls.map(c=>({label:c.label,value:c.choices.find(v=>v.id===c.value)?.label||'Pasirinkta'})),assets,finishes,desk,available3D:!!assets.base||assets.patches.some(p=>p.assets.length>0)||!!desk?.assets.length};
+ const details=controls.map(control=>({
+  label:control.label,
+  value:control.choices.find(choice=>choice.id===control.value)?.label||'Pasirinkta',
+ }));
+ const preset=product.configurations.find(configuration=>configuration.id===scope.sample);
+ const article=product.modelArticle;
+ const supplementalRows=[
+  ...(selected?.configuration.details||preset?.details||[]),
+  ...(!article?.configurable?article?.technicalSections.flatMap(section=>section.rows)||[]:[]),
+ ];
+ for(const row of supplementalRows){
+  const label=customerLabel(row.label,codes,'');
+  const value=customerLabel(row.value,codes,'');
+  if(label&&value&&!details.some(detail=>detail.label.toLowerCase()===label.toLowerCase())){
+   details.push({label,value});
+  }
+ }
+ return {legacyChair,token:cap.seal('configuration',{...scope,state,revision:context.revision}),selectionId:cap.id('selection',{...scope,state,revision:context.revision}),productId:'product_public_'+cap.id('product',scope),name:customerLabel(product.textReviewHeading||productHeading(product),codes,'Biuro baldas'),controls,details,assets,finishes,desk,available3D:!!assets.base||assets.patches.some(p=>p.assets.length>0)||!!desk?.assets.length};
 }

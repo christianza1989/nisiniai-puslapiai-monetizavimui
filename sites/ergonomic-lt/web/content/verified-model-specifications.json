@@ -1128,6 +1128,16 @@
           "label": "Gylis",
           "value": "600 mm"
         }
+      ],
+      "29774652": [
+        {
+          "label": "Porankių konstrukcija",
+          "value": "Aukšti, integruoti į atlošą"
+        },
+        {
+          "label": "Korpuso apdaila",
+          "value": "Apmušta"
+        }
       ]
     }
   },
@@ -3131,6 +3141,16 @@
           "label": "Plotis × gylis",
           "value": "1800 × 800 mm"
         }
+      ],
+      "23767610": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Rėmas su ratukais"
+        },
+        {
+          "label": "Viršutinė dalis",
+          "value": "Atviras grotelių rėmas"
+        }
       ]
     }
   },
@@ -3737,6 +3757,16 @@
           "label": "Atlošo mechanizmas",
           "value": "Atlošas atlenkiamas"
         }
+      ],
+      "27594929": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Keturių stipinų pagrindas"
+        },
+        {
+          "label": "Viršutinė dalis",
+          "value": "Apmušta"
+        }
       ]
     }
   },
@@ -4076,6 +4106,120 @@
         {
           "label": "Atramos konstrukcija",
           "value": "Keturios medinės kojos"
+        }
+      ]
+    }
+  },
+  "product_cs5040-cabinets-sideboards_922f3467": {
+    "source": "https://www.nowystyl.com/en/cs5040/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "19769220": [
+        {
+          "label": "Montavimo tipas",
+          "value": "Laisvai pastatoma"
+        },
+        {
+          "label": "Fasado konstrukcija",
+          "value": "Du vientisi fasadai"
+        }
+      ],
+      "19769221": [
+        {
+          "label": "Montavimo tipas",
+          "value": "Laisvai pastatoma"
+        },
+        {
+          "label": "Fasado konstrukcija",
+          "value": "Vienas perforuotas ir vienas vientisas fasadas"
+        }
+      ]
+    }
+  },
+  "product_play-work-orga-towers-pedestals_e9851b35": {
+    "source": "https://www.nowystyl.com/en/play-work/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "24049462": [
+        {
+          "label": "Viršutinė dalis",
+          "value": "Atvira lentyna su grotelėmis"
+        }
+      ],
+      "24049461": [
+        {
+          "label": "Viršutinė dalis",
+          "value": "Uždara"
+        }
+      ]
+    }
+  },
+  "product_bound-sofas_000b9cda": {
+    "source": "https://www.nowystyl.com/en/bound/sofas/",
+    "common": [],
+    "samples": {
+      "24717886": [
+        {
+          "label": "Sėdynė ir atlošas",
+          "value": "Apmušti"
+        },
+        {
+          "label": "Pagrindo konstrukcija",
+          "value": "Dvi centrinės atramos"
+        }
+      ]
+    }
+  },
+  "product_colani-armchairs-leg-rests_9d6cd263": {
+    "source": "https://www.nowystyl.com/en/colani/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "30506760": [
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Apmuštas vientisas korpusas su pailginta kojų atrama"
+        }
+      ],
+      "30506759": [
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Apmuštas vientisas korpusas su integruotu atlošu"
+        }
+      ]
+    }
+  },
+  "product_njord-cafe-lounge-tables_0624f00b": {
+    "source": "https://www.nowystyl.com/en/njord/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "25867159": [
+        {
+          "label": "Stalviršio forma",
+          "value": "Apvali"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Trys kojos"
+        }
+      ]
+    }
+  },
+  "product_play-work-cafe-lounge-tables_39f6ba7f": {
+    "source": "https://www.nowystyl.com/files/downloads/PlayWork-Soft-Seating_Catalogue_INT_EN-FR_E01_2021.pdf",
+    "common": [],
+    "samples": {
+      "26443793": [
+        {
+          "label": "Stalviršio matmenys",
+          "value": "425 × 350 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "647 mm"
+        },
+        {
+          "label": "Pagrindo matmenys",
+          "value": "405 × 330 mm"
         }
       ]
     }

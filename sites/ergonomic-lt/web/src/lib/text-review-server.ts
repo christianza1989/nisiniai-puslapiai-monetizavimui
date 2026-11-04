@@ -85,6 +85,28 @@ const englishProposals=new Map([
  ['bl black','Juoda'],
  ['box - 4 items','Dėžė, 4 vnt.'],
  ['integrated with frame, pad: plywood','Su rėmu sujungti porankiai su faneros atramomis'],
+ ['backrest frame upholstered with 3d fabric, low','Žemas atlošas su 3D audiniu aptrauktu rėmu'],
+ ['upholstered, high, plastic cover','Apmuštas aukštas atlošas su plastikiniu gaubtu'],
+ ['plywood, low','Žemas faneros atlošas'],
+ ['me-wm: self-tension synchronous','Sinchroninis mechanizmas su automatiniu pasipriešinimo reguliavimu'],
+ ['arf-b/b: fixed, arm: black polyamide, pad: black polypropylene','Fiksuoti porankiai. Korpusas iš juodo poliamido, atramos iš juodo polipropileno'],
+ ['integrated with frame, closed, plastic, with antibacterial properties','Uždari antibakterinio plastiko porankiai, sujungti su rėmu'],
+ ['plastic, upholstered seat and backrest pads','Plastikinis korpusas su apmuštais sėdynės ir atlošo įdėklais'],
+ ['pack-asm: 1 item, fully assembled','1 vnt., visiškai surinktas'],
+ ['aluminium rectangular cable outlet with brush','Stačiakampė aliumininė kabelių anga su šepetėliu'],
+ ['plastic, oval grommet','Ovali plastikinė kabelių anga'],
+ ['2x plastic, oval grommet','2 ovalios plastikinės kabelių angos'],
+ ['2x aluminium rectangular cable outlet with brush','2 stačiakampės aliumininės kabelių angos su šepetėliu'],
+ ['rectangular (90x60 mm) - three-segment','Trijų segmentų stačiakampė kolona (90 × 60 mm)'],
+ ['rectangular with rounded corners','Stačiakampis, užapvalintais kampais'],
+ ['foldable on one side, steel','Plieninis kabelių lovelis, atveriamas iš vienos pusės'],
+ ['foldable on both sides, aluminium','Aliumininis kabelių lovelis, atveriamas iš abiejų pusių'],
+ ['2x foldable on one side, steel','2 plieniniai kabelių loveliai, atveriami iš vienos pusės'],
+ ['control panel with display and memory function (4 position)','Valdymo pultelis su ekranu ir 4 aukščio padėčių atmintimi'],
+ ['2x control panel with display and memory function','2 valdymo pulteliai su ekranais ir aukščio padėčių atmintimi'],
+ ['t-leg','T formos koja'],
+ ['suspended with two drawers, felt organizer','Pakabinamas dviejų stalčių blokas su veltinio dėklu'],
+ ['organization box','Daiktų dėklas'],
 ]);
 const proposalsByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 for(const [code,m] of Object.entries(inventory.models)){
@@ -163,6 +185,10 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const normalized=normalizeEnglish(english);
   if(normalized==='fixed'&&binding.startsWith('value:CARMRESTS='))return 'Fiksuoti';
   if(normalized==='injected'&&/^value:[^=]*FOAM=/.test(binding))return 'Lietas putplastis';
+  if(binding==='value:FDESKTOPTYPE=FIXEDTOP'&&normalized==='fixed')return 'Fiksuotas stalviršis';
+  if(binding==='value:FDESKTOPTYPE=SLIDINGTOP'&&normalized==='sliding')return 'Slankiojantis stalviršis';
+  if(binding==='value:FVERWIRETRUNKING=VERTICALFLEXIBLEMODPLA'&&normalized==='flexible, modular, plastic')return 'Lankstus modulinis plastikinis kabelių kanalas';
+  if(binding==='value:FVERWIRETRUNKING=VERTICALFLXMODMAGNET'&&normalized==='flexible, modular, magnetic, plastic')return 'Lankstus modulinis plastikinis kabelių kanalas su magnetais';
   return englishProposals.get(normalized);
  };
  const proposalFor=(binding:string,text:string)=>{

@@ -477,11 +477,39 @@
       "contextLabel": "PRICE_1 · 101 apmušalas",
       "contexts": [
         {
+          "id": "PRICE_0",
+          "label": "PRICE_0 · 39 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG001WW001-366ce2410bcaf0878fb4/review-039432d85ea562493767.json",
+          "sha256": "039432d85ea562493767eef6f0635e135b63b68403940942cbb51314c4803aac",
+          "bytes": 121736
+        },
+        {
+          "id": "PRICE_2",
+          "label": "PRICE_2 · 145 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG001WW001-0fd4ab5537a572de18dd/review-b50ec75c9920be61c617.json",
+          "sha256": "b50ec75c9920be61c617dbabc28a136ab0affebc6f5ba7e79afab3c7353e7160",
+          "bytes": 302617
+        },
+        {
+          "id": "PRICE_3",
+          "label": "PRICE_3 · 198 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG001WW001-f5565b4479b64b91bdf5/review-9f94596df405a4f9c9f6.json",
+          "sha256": "9f94596df405a4f9c9f6f5384f7c21c0b6400b443e6adfac0b234c0fa3e47363",
+          "bytes": 424915
+        },
+        {
           "id": "PRICE_4",
           "label": "PRICE_4 · 206 apmušalai",
           "asset": "/models/configurator/chairs/KSEG001WW001-78a1d869e0ca4528261c/review-84c9003b0010fda52fad.json",
           "sha256": "84c9003b0010fda52fadfa30940132ae89966ff4521902275ea1958edd196218",
           "bytes": 406529
+        },
+        {
+          "id": "PRICE_5",
+          "label": "PRICE_5 · RX · 72 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG001WW001-2d4eea1a8109c3b59dea/review-1c1fb875cc9e53ec2924.json",
+          "sha256": "1c1fb875cc9e53ec2924f458c343e534dd075c12fff83315e35c18af7dda8515",
+          "bytes": 178267
         }
       ]
     }

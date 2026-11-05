@@ -17,9 +17,9 @@ export function ProductStudioIntro({product,paragraphs=product.modelArticle?.par
   </figure>
   <div className="studio-intro-copy"><div className="studio-intro-description">
    <h1 id="studio-product-title"><TextValue id={contentTextKey(scope,'title')} fallback={heading}/></h1>
-   {descriptionParagraphs.slice(0,extended?1:descriptionParagraphs.length).map((text,index)=><p key={index} className={index===0?'studio-intro-lead':undefined}><TextValue id={contentTextKey(scope,'description:'+index)} fallback={text}/>{descriptionParagraphs.length>1?' ':''}</p>)}
-   {overview.length>0&&<div className="studio-intro-overview"><h2>{product.categorySlug==='kedes'?'Apie kėdę':'Apie produktą'}</h2>{overview.map((text,index)=><p key={index}><TextValue id={contentTextKey(scope,'intro:'+index)} fallback={text}/></p>)}</div>}
+   {descriptionParagraphs.slice(0,extended?1:descriptionParagraphs.length).map((text,index)=><TextValue key={index} id={contentTextKey(scope,'description:'+index)} fallback={text} description lead={index===0}/>)}
+   {overview.length>0&&<div className="studio-intro-overview"><h2>{product.categorySlug==='kedes'?'Apie kėdę':'Apie produktą'}</h2>{overview.map((text,index)=><TextValue key={index} id={contentTextKey(scope,'intro:'+index)} fallback={text} description/>)}</div>}
   </div></div>
-  {extended&&<div className="studio-intro-extended-copy">{descriptionParagraphs.slice(1).map((text,index)=><p key={index}><TextValue id={contentTextKey(scope,'description:'+(index+1))} fallback={text}/>{' '}</p>)}</div>}
+  {extended&&<div className="studio-intro-extended-copy">{descriptionParagraphs.slice(1).map((text,index)=><TextValue key={index} id={contentTextKey(scope,'description:'+(index+1))} fallback={text} description/>)}</div>}
  </section>;
 }

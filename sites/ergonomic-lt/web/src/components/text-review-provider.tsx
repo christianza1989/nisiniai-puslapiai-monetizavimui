@@ -3,6 +3,7 @@ import {createContext,useContext,useState,useEffect,useCallback,type ReactNode} 
 import dynamic from 'next/dynamic';
 import {Pencil} from 'lucide-react';
 import type {PublicTextScope,ReviewScope} from '@/lib/text-review-types';
+import {ProductDescription} from './product-description';
 const Panel=dynamic(()=>import('./text-review-panel'),{ssr:false});
 type ReviewContext={editing:boolean;open:(id:string,trigger:HTMLElement)=>void;binding:(model:string,field:string,value?:string)=>string;resolve:(id:string,fallback:string,model?:string)=>string;known:(id:string,fallback:string)=>boolean;scope:string;model:string};
 const empty:ReviewContext={editing:false,open:()=>{},binding:()=>'',resolve:(_,fallback)=>fallback,known:()=>false,scope:'',model:''};
@@ -16,7 +17,7 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
  function select(id:string){setInlineHost(null);setSelected(id);if(!id)trigger?.focus();setTrigger(null);}
  function open(id:string,anchor:HTMLElement){
   if(!scope?.entries.some(e=>e.id===id))return;
-  const block=anchor.closest('.configuration-field,h1,h2,h3,h4,p')||anchor.parentElement;
+  const block=anchor.closest('.configuration-field,.product-description-value,h1,h2,h3,h4,p')||anchor.parentElement;
   if(!block)return;
   const host=document.createElement('div');host.className='review-inline-host';
   block.insertAdjacentElement('afterend',host);setInlineHost(host);setTrigger(anchor);setSelected(id);
@@ -60,9 +61,10 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
  {scope&&<Panel scope={scope} update={update} editing={editing} toggle={toggle} selected={selected} select={select} inlineHost={inlineHost}/>}
  </Context.Provider>;
 }
-export function TextValue({id,fallback,model}:{id:string;fallback:string;model?:string}){
+export function TextValue({id,fallback,model,description=false,lead=false}:{id:string;fallback:string;model?:string;description?:boolean;lead?:boolean}){
  const context=useTextReview(),editable=context.editing&&context.known(id,fallback);
- return <span data-text-review-id={id||undefined} className={editable?'review-target':undefined} role={editable?'button':undefined} tabIndex={editable?0:undefined} title={editable?'Redaguoti tekstą':undefined} onClick={editable?e=>{e.preventDefault();e.stopPropagation();context.open(id,e.currentTarget);}:undefined} onKeyDown={editable?e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();context.open(id,e.currentTarget);}}:undefined}>{context.resolve(id,fallback,model)}</span>;
+ const Tag=description?'div':'span',text=context.resolve(id,fallback,model);
+ return <Tag data-text-review-id={id||undefined} className={[description?'product-description-value':'',editable?'review-target':''].filter(Boolean).join(' ')||undefined} role={editable?'button':undefined} tabIndex={editable?0:undefined} title={editable?'Redaguoti tekstą':undefined} onClick={editable?e=>{e.preventDefault();e.stopPropagation();context.open(id,e.currentTarget);}:undefined} onKeyDown={editable?e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();context.open(id,e.currentTarget);}}:undefined}>{description?<ProductDescription text={text} lead={lead}/>:text}</Tag>;
 }
 export function ReviewFieldButton({model,field,value}:{model:string;field:string;value:string}){
  const review=useTextReview();if(!review.editing)return null;

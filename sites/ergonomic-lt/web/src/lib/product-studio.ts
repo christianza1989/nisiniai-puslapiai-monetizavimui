@@ -1,4 +1,5 @@
 import type {Product} from './types';
+import {hasDescriptionFormatting} from './product-description';
 import {productBuilderSteps} from './duo-builder';
 
 /** Preserve all former flat controls when adapting models without a curated article. */
@@ -36,6 +37,7 @@ export function productStudioPresentation(product:Product & {publicHeading?:stri
 
 /** Format existing sentences only; metadata and approved wording are not rewritten. */
 export function studioDescriptionParagraphs(text:string){
+ if(hasDescriptionFormatting(text))return [text];
  if(text.length<=1600)return text?[text]:[];
  const sentences=[...new Intl.Segmenter('lt',{granularity:'sentence'}).segment(text)].map(s=>s.segment.trim()).filter(Boolean);
  const paragraphs:string[]=[];let current='';

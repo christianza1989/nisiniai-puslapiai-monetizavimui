@@ -213,9 +213,12 @@ export function contentDefinitions(p:Product):TextDefinition[]{
  const sample=p.configurations.find(c=>c.id===p.modelConfigurationId);
  const supplierTitle=sample?.sourceDescription||sample?.description||'';
  const englishTitle=englishModelWords.test(supplierTitle)?supplierTitle:'';
- const put=(kind:string,text:string,context:string,source=text,suggested=text)=>{if(!text?.trim())return;out.push({id:contentTextKey(scope,kind),sourceHash:hash(source),role:'Produkto tekstas',english:kind==='title'?englishTitle:kind==='description:0'?p.sourceDescription||'':'',polish:'',sourceCode:'',suggested,context,notes:'',current:[text],modelCount:1});};
+ const put=(kind:string,text:string,context:string,source=text,suggested=text)=>{if(!text?.trim()&&kind!=='meta-description')return;out.push({id:contentTextKey(scope,kind),sourceHash:hash(source),role:'Produkto tekstas',english:kind==='title'?englishTitle:kind==='description:0'?p.sourceDescription||'':'',polish:'',sourceCode:'',suggested,context,notes:'',current:[text],modelCount:1});};
  const title=v.publicHeading||v.name;
  put('title',title,'Produkto pavadinimas',original.publicHeading||original.name,suggestedModelTitle(p,title));
+ // Independently authored metadata must not inherit a body paragraph or reopen
+ // its review when a title/body changes. An untouched field keeps the SEO fallback.
+ put('meta-description','','Aprašymas paieškai','meta-description:'+scope,'');
  studioDescriptionParagraphs(v.description).forEach((s,i)=>put('description:'+i,s,'Aprašymo pastraipa '+(i+1)));
  const intro=configurableArticle(v)?.intro||v.modelArticle?.paragraphs||[];
  productStudioPresentation(v,intro).overview.forEach((s,i)=>put('intro:'+i,s,'Įžangos pastraipa '+(i+1)));
@@ -401,6 +404,7 @@ export async function mutateText(def:TextDefinition,args:{key:string;sourceHash:
  if(['approve','publish'].includes(args.action)&&customerTextHasCode(def,text))throw Error('Pašalinkite gamintojo ar parinkties kodą iš klientui skirto teksto.');
  if(args.action!=='keep'&&args.action!=='unpublish'&&(!text||text.length>12000||/<[^>]*>|\[\[(?:open|close|void)/.test(text)))throw Error('Įrašykite tekstą be HTML žymų (iki 12 000 ženklų).');
  if(def.id.endsWith(':title')&&text.length>250)throw Error('Pavadinimas gali būti iki 250 ženklų.');
+ if(def.id.endsWith(':meta-description')&&text.length>500)throw Error('Aprašymas paieškai gali būti iki 500 ženklų.');
  if(def.role!=='Produkto tekstas'&&text.length>500)throw Error('Parinkties tekstas gali būti iki 500 ženklų.');
  if(/Nowy\s*Styl|SOHOS|Kusch\s*\+\s*Co/i.test(text))throw Error('Viešame tekste negalima skelbti vidinės tiekėjo tapatybės.');
  if(args.action==='publish'&&(previous?.state!=='approved'||previous.source_hash!==def.sourceHash||previous.draft!==text))throw new ReviewConflict('Prieš skelbdami patvirtinkite dabartinę teksto versiją.');

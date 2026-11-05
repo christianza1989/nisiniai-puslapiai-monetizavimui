@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Restore a provenance-labeled public V1 baseline into an empty studio workspace without inventing private drafts or editorial reviews, preserving scoped approval gates.",
+  "category": "code",
+  "evidence": [
+    "content-studio/test/recover-public-baseline.test.mjs",
+    "CONTENT_CORE.md scoped review and recovery contract"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/src/recover-public-baseline.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/145",
+  "rollback": "Revert this isolated recovery helper and documentation; do not modify existing studio data or hosted releases.",
+  "id": "upgrade-d7d45edf-eea5-4280-9077-02b026f15d58",
+  "branch": "codex/studio-baseline-recovery-20261105",
+  "baseSha": "da15151d63903c292ffd1055224b92cfc4757920",
+  "createdAt": "2026-11-05T20:25:29.521Z"
+}

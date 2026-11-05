@@ -21,11 +21,12 @@ import {customerGltfDocument} from './customer-glb';
 import {palettes as sourcePalettes} from './expanded-configurator';
 import {mechanismChoicePreview} from './mechanism-choice-preview';
 import {textReviewProposalPreview} from './text-review-state';
+import {customerConfigurationRevisionSource} from './customer-configuration-revision';
 const textile=new Set(['CSE','MT','RX','SD','SC','SY','ST','CN','ME','CUR','ERA','X','YS','YB']);
 
 export async function customerContext(p:Product,input?:CustomerState['state']){
  const runtime=await loadCatalogRuntime(p,input),engine=createExpandedEngine(runtime),family=engine.expandedForProduct(p),cap=customerKey();
- const revision=cap.id('revision',family||p.configurations.map(c=>({id:c.id,code:c.code,supplierOptions:c.supplierOptions})));
+ const revision=cap.id('revision',customerConfigurationRevisionSource(family||p.configurations.map(c=>({id:c.id,code:c.code,supplierOptions:c.supplierOptions}))));
  return {runtime,engine,family,revision};
 }
 export async function resolveCustomerSnapshot(token:string){

@@ -16,9 +16,9 @@ import type {QualifiedWitness} from '../src/lib/chair-qualified-colors';
 const sha=(bytes:Uint8Array|string)=>createHash('sha256').update(bytes).digest('hex');
 const canonical=(value:unknown):string=>JSON.stringify(value,(_key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a.localeCompare(b))):v);
 const equal=(a:unknown,b:unknown)=>assert.equal(canonical(a),canonical(b));
-const {values}=parseArgs({options:{root:{type:'string'},output:{type:'string'},'asset-map':{type:'string'},price:{type:'string'},code:{type:'string'}}});
+const {values}=parseArgs({options:{root:{type:'string'},output:{type:'string'},'asset-map':{type:'string'},price:{type:'string'},code:{type:'string'},group:{type:'string'}}});
 assert(values.root&&values.output&&values['asset-map']);
-const root=values.root,out=values.output,code=values.code||'KSEG001WW001',price4=values.price==='4',routed=code==='KSEG001WW001'?(sixPricePins as Record<string,any>)['_'+values.price]:(familyPins as Record<string,any>)[code]?.['_'+values.price],pin=routed|| (price4?price4Pin:pins[code]);
+const root=values.root,out=values.output,code=values.code||'KSEG001WW001',price4=values.price==='4',routed=code==='KSEG001WW001'?(sixPricePins as Record<string,any>)['_'+values.price]:(familyPins as Record<string,any>)[code]?.['_'+values.price+(values.group?'_'+values.group:'')],pin=routed|| (price4?price4Pin:pins[code]);
 assert(!values.price||['0','1','2','3','4','5'].includes(values.price),'Unknown Segla price context');
 assert(code==='KSEG001WW001'||routed,'Unknown exact Segla family context');
 const price='_'+(values.price||'1'),count=routed?routed.route.actualTuplesForThisRoute:price4?206:101,packageCount=routed?routed.whole.actualContextStates:count;
@@ -52,7 +52,7 @@ assert(whole.pass===true&&whole.actualContextStates===packageCount&&whole.actual
 assert(palette.ownSourceContractSha256===pin.headers['own-source-contract.json']&&palette.runtimeSha256===contract.runtimeSha256&&palette.witnessActualTupleSha256===contract.witnessFullActualTupleSha256);
 for(const d of [contract,scope,palette]){
  assert(d.qualifiedConditionalFinishContextComplete!==false&&d.fullFormQualified===false);
- if(price==='_3')equal(d.supportedPriceValues,['_1','_3']);else equal(d.fixedSelectableFinishValues,routed?.route.fixedSelectableFinishValues||{CPRICEGROUP:price});
+ if(price==='_3'&&code==='KSEG001WW001')equal(d.supportedPriceValues,['_1','_3']);else equal(d.fixedSelectableFinishValues,routed?.route.fixedSelectableFinishValues||{CPRICEGROUP:price});
  equal(d.fixedSelectableStructuralFields,raw.fixedSelectableStructuralFields);
 }
 if(routed){

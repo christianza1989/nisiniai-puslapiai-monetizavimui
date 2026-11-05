@@ -7,7 +7,7 @@ import {dbAll,dbAtomic} from './text-review-db';
 import {publicProductView} from './public-product-copy';
 import {studioDescriptionParagraphs,productStudioPresentation} from './product-studio';
 import {configurableArticle} from './configuration-article';
-import {publishedText,displayedReviewText,suggestedModelTitle,textReviewStatus,reviewCounts,customerTextHasCode} from './text-review-state';
+import {publishedText,displayedReviewText,suggestedModelTitle,textReviewProposalPreview,textReviewStatus,reviewCounts,customerTextHasCode} from './text-review-state';
 import {contentTextKey,type ReviewScope,type ReviewEntry,type TextDefinition,type TextEdit} from './text-review-types';
 import {configurationOptionLabel,configurationOptionValue,optionDetails,supplierOptions} from './configuration-labels';
 import {createExpandedEngine,fieldLabels,choiceLabel} from './expanded-configurator';
@@ -386,7 +386,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   return {...def,english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
- return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at};
+ return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at,proposalPreview:textReviewProposalPreview()};
 }
 export type ReviewAction='draft'|'approve'|'keep'|'publish'|'unpublish';
 export class ReviewConflict extends Error{}

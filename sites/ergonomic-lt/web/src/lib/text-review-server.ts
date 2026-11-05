@@ -7,7 +7,7 @@ import {dbAll,dbAtomic} from './text-review-db';
 import {publicProductView} from './public-product-copy';
 import {studioDescriptionParagraphs,productStudioPresentation} from './product-studio';
 import {configurableArticle} from './configuration-article';
-import {publishedText,textReviewStatus,reviewCounts,customerTextHasCode} from './text-review-state';
+import {publishedText,displayedReviewText,suggestedModelTitle,textReviewStatus,reviewCounts,customerTextHasCode} from './text-review-state';
 import {contentTextKey,type ReviewScope,type ReviewEntry,type TextDefinition,type TextEdit} from './text-review-types';
 import {configurationOptionLabel,configurationOptionValue,optionDetails,supplierOptions} from './configuration-labels';
 import {createExpandedEngine,fieldLabels,choiceLabel} from './expanded-configurator';
@@ -208,11 +208,6 @@ const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).d
 export const localTextKey=(model:string,id:string)=>'local:'+model+':'+id;
 export const productTextScope=(p:Product)=>p.id+':'+(p.modelConfigurationId||'line');
 const englishModelWords=/\b(?:chairs?|armchairs?|tables?|desks?|stools?|sofas?|benches?|cabinets?|pedestals?|screens?|partitions?|seating|storage|pouffes?)\b/i;
-const modelTitleTerms:Record<string,string>={UPH:'su apmušalais',MESH:'su tinkleliu','5-STAR':'su penkių stipinų pagrindu'};
-function suggestedModelTitle(p:Product,title:string){
- if(p.categorySlug!=='kedes'||!p.modelConfigurationId)return title;
- return title.replace(/\b5-STAR(?:\s+UPH)?\b|\b(?:MESH|UPH)\b/g,term=>term.startsWith('5-STAR ')?'su penkių stipinų pagrindu ir apmušalais':modelTitleTerms[term]);
-}
 export function contentDefinitions(p:Product):TextDefinition[]{
  const v=publicProductView(p),original=publicProductView({...p,textReviewHeading:undefined}),scope=productTextScope(p),out:TextDefinition[]=[];
  const sample=p.configurations.find(c=>c.id===p.modelConfigurationId);
@@ -355,11 +350,11 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  for(const code of codes)for(const id of new Set(Object.values(bindings[code]))){
   const def=terms.get(id)||inventory.terms[id];if(!def)continue;
   const local=edits.get(localTextKey(code,id)),global=edits.get(globalKey(id));
-  const fallback=publishedText(def,global,'');
-  const value=publishedText(def,local,fallback);
+  const fallback=displayedReviewText(def,global,'');
+  const value=local?displayedReviewText(def,local,fallback):fallback;
   if(value)values[code+':'+id]=value;
  }
- for(const d of defs.filter(d=>d.role==='Produkto tekstas')){const value=publishedText(d,edits.get(d.id),'');if(value)values[d.id]=value;}
+ for(const d of defs.filter(d=>d.role==='Produkto tekstas')){const value=displayedReviewText(d,edits.get(d.id),'');if(value)values[d.id]=value;}
  const optionCodesByTerm=new Map<string,string[]>(),englishByTerm=new Map<string,Set<string>>(),referenceByTerm=new Map<string,Set<string>>();
  for(const [binding,id] of Object.entries(modelBindings)){
   const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding];

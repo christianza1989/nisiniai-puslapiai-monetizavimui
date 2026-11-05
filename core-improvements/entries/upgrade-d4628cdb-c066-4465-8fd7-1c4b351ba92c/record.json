@@ -1,0 +1,20 @@
+{
+  "rollback": "Reconcile current config; remove only the added ID using a newly checked scoped CAS after verifying no customer order relies on it. Never restore the full historic configuration.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/344",
+  "paths": [
+    "commerce-core/src/node-delivery-service.mjs",
+    "commerce-core/scripts/append-delivery-service.mjs",
+    "commerce-core/test/delivery-service-update.test.mjs"
+  ],
+  "siteId": "memocasting",
+  "summary": "Safely append a verified provider service ID to exactly one carrier method without overwriting unrelated live configuration",
+  "category": "code",
+  "evidence": [
+    "Existing delivery pricing operator CAS has no scoped service ID append command; current provider service changes require a validated full-config compare-and-swap.",
+    "Focused regression verifies append-only behavior, invalid/ambiguous/disabled targets and concurrent edits."
+  ],
+  "id": "upgrade-d4628cdb-c066-4465-8fd7-1c4b351ba92c",
+  "branch": "codex/memo-service-id-cas-20261105",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-11-05T14:25:47.357Z"
+}

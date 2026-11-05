@@ -1,0 +1,25 @@
+{
+  "siteId": "memocasting",
+  "summary": "Support an explicitly configured fixed customer delivery tariff while preserving live carrier quotes, service and locker binding, coupon waivers and quote expiry; show only server-configured prices immediately and require confirmation after changes.",
+  "category": "code",
+  "evidence": [
+    "commerce-core/test/multiparcel.test.mjs",
+    "commerce-core/test/checkout-cart.test.mjs",
+    "commerce-core/test/delivery-pricing-update.test.mjs"
+  ],
+  "paths": [
+    "commerce-core/src/buyer-delivery.mjs",
+    "commerce-core/src/validation.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/src/node-delivery-pricing.mjs",
+    "commerce-core/scripts/update-delivery-pricing.mjs",
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/docs/MULTIPARCEL_SHIPPING.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert source after clearing only configured flat customer amounts by fresh-config CAS; preserve orders, payments, carrier bindings and all unrelated data.",
+  "id": "upgrade-6525f920-61d1-46f3-b1f5-9baec7f09e7d",
+  "branch": "codex/fixed-customer-shipping-20261105",
+  "baseSha": "da15151d63903c292ffd1055224b92cfc4757920",
+  "createdAt": "2026-11-05T21:25:47.825Z"
+}

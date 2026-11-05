@@ -31,6 +31,11 @@ export function deliveryFingerprint(input, method) {
       country: input.country,
       currency: input.currency,
       deliveryId: input.deliveryId,
+      // Keep legacy fingerprints byte-for-byte stable until a flat buyer rate
+      // is explicitly configured. A later tariff change invalidates a quote.
+      ...(method?.customerFlatAmount !== undefined
+        ? { customerFlatAmount: method.customerFlatAmount }
+        : {}),
       ...(input.customer?.lockerId ? { lockerId: input.customer.lockerId } : {}),
       city: address.city.trim(),
       postalCode: address.postalCode.trim(),
@@ -141,7 +146,7 @@ export class BuyerDeliveryQuotes {
     requireValue(selected, 'carrier_offer_unavailable', 409);
     const publicQuote = {
       deliveryId: input.deliveryId,
-      amount: selected.amount,
+      amount: method.customerFlatAmount ?? selected.amount,
       currency: selected.currency,
       label: selected.name,
       expiresAt: this.s.now() + 300000,
@@ -149,6 +154,7 @@ export class BuyerDeliveryQuotes {
     const payload = {
       public: publicQuote,
       providerServiceId: selected.serviceId,
+      ...(method.customerFlatAmount !== undefined ? { carrierAmount: selected.amount } : {}),
       provider: adapter.provider,
       accountRef: adapter.accountRef,
       packageMode: 'individual',

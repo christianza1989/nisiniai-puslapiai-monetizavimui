@@ -1012,6 +1012,19 @@ function onePageForm({
       : ['city', 'postalCode'].every(
           (key) => fields[key].value.trim() && fields[key].checkValidity?.() !== false,
         ));
+  const flatDelivery = () => {
+    const method = market()?.delivery.find((d) => d.id === delivery.value);
+    return method?.pricing === 'carrier' &&
+      Number.isSafeInteger(method.customerFlatAmount) &&
+      method.customerFlatAmount >= 0
+      ? method.customerFlatAmount
+      : undefined;
+  };
+  const displayedDelivery = () => {
+    if (quoted) return quoted.delivery.amount;
+    if (currentCouponPreview()?.discount?.freeShipping === true) return 0;
+    return flatDelivery();
+  };
   const paint = () => {
     const preview = currentCouponPreview(),
       priceSource = quoted || preview,
@@ -1059,23 +1072,29 @@ function onePageForm({
       busy || lockedForOrder || couponPending || !couponInput.value.trim() || isEmpty;
     couponRemove.disabled = busy || lockedForOrder || couponPending;
     couponRemove.hidden = lockedForOrder || (!activeDiscountCode && !couponInput.value);
-    const freeShipping = priceSource?.discount?.freeShipping === true;
+    const freeShipping = priceSource?.discount?.freeShipping === true,
+      visibleDelivery = displayedDelivery();
     ship.value.textContent = quoted
       ? money(quoted.delivery.amount, quoted.currency)
       : freeShipping
         ? money(0, market().currency)
-        : pendingQuote?.version === version
-          ? u.calculatingDelivery
-          : !deliveryReady()
-            ? locker.required
-              ? u.lockerNeeded
-              : u.destinationNeeded
-            : u.calculated;
+        : visibleDelivery !== undefined
+          ? money(visibleDelivery, market().currency)
+          : pendingQuote?.version === version
+            ? u.calculatingDelivery
+            : !deliveryReady()
+              ? locker.required
+                ? u.lockerNeeded
+                : u.destinationNeeded
+              : u.calculated;
     total.value.textContent = quoted
       ? money(quoted.amount, quoted.currency)
       : valid
-        ? money(cents - discountAmount, market().currency) +
-          (freeShipping ? '' : ' + ' + u.shipping.toLocaleLowerCase(language))
+        ? visibleDelivery !== undefined
+          ? money(cents - discountAmount + visibleDelivery, market().currency)
+          : money(cents - discountAmount, market().currency) +
+            ' + ' +
+            u.shipping.toLocaleLowerCase(language)
         : u.unknown;
     submit.disabled =
       busy ||
@@ -1214,9 +1233,14 @@ function onePageForm({
       timer = setTimeout(() => {
         status.textContent = u.checking;
         status.setAttribute('role', 'status');
+        const previousDisplay = displayedDelivery();
         getQuote()
-          .then(() => {
-            if (version === expected && !busy) status.textContent = '';
+          .then((result) => {
+            if (version === expected && !busy)
+              status.textContent =
+                previousDisplay !== undefined && previousDisplay !== result.delivery.amount
+                  ? u.updatedPrice
+                  : '';
           })
           .catch((error) => {
             if (!signal?.aborted && version === expected && !busy) {
@@ -1680,7 +1704,8 @@ function onePageForm({
     status.textContent = u.checking;
     status.setAttribute('role', 'status');
     try {
-      const previous = quoted;
+      const previous = quoted,
+        shownDelivery = displayedDelivery();
       const expired =
         previous?.deliveryQuoteId &&
         (!Number.isSafeInteger(previous.deliveryQuoteExpiresAt) ||
@@ -1691,12 +1716,13 @@ function onePageForm({
       // Never silently create an order for a changed total after refreshing a
       // rate the buyer previously saw. A second click confirms the new price.
       if (
-        expired &&
-        (previous.amount !== quote.amount ||
-          previous.currency !== quote.currency ||
-          previous.delivery.amount !== quote.delivery.amount ||
-          JSON.stringify(previous.lines) !== JSON.stringify(quote.lines) ||
-          JSON.stringify(previous.discount ?? null) !== JSON.stringify(quote.discount ?? null))
+        (shownDelivery !== undefined && shownDelivery !== quote.delivery.amount) ||
+        (expired &&
+          (previous.amount !== quote.amount ||
+            previous.currency !== quote.currency ||
+            previous.delivery.amount !== quote.delivery.amount ||
+            JSON.stringify(previous.lines) !== JSON.stringify(quote.lines) ||
+            JSON.stringify(previous.discount ?? null) !== JSON.stringify(quote.discount ?? null)))
       ) {
         status.textContent = u.updatedPrice;
         status.setAttribute('role', 'status');

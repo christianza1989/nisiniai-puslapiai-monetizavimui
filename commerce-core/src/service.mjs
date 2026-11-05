@@ -251,6 +251,8 @@ export class CommerceService {
             delivery.serviceIds?.includes(q.providerServiceId) &&
             q.dispatchHash === (await digest(canonical(configuredDispatch(store, delivery)))) &&
             q.public.currency === market.currency &&
+            (delivery.customerFlatAmount === undefined ||
+              q.public.amount === delivery.customerFlatAmount) &&
             q.itemsHash === (await digest(canonical(priced))),
           'delivery_quote_conflict',
           409,

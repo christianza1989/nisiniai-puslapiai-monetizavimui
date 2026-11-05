@@ -231,6 +231,11 @@ export function validateStore(store) {
   for (const market of store.markets)
     for (const d of market.delivery) {
       requireValue(
+        d.customerFlatAmount === undefined ||
+          (d.pricing === 'carrier' && integer(d.customerFlatAmount, 0)),
+        'invalid_markets',
+      );
+      requireValue(
         d.customerCharge === undefined ||
           (d.customerCharge === 'single_parcel' && d.pricing === 'carrier'),
         'invalid_markets',

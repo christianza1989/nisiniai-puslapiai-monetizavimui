@@ -19,7 +19,7 @@ export const terminal = {
 };
 export async function multiparcelFixture(
   db,
-  { quantity = 3, paid = true, planned = true, freeShipping = false } = {},
+  { quantity = 3, paid = true, planned = true, freeShipping = false, flatAmount } = {},
 ) {
   const config = {
     ...fixtureStore(),
@@ -47,6 +47,7 @@ export async function multiparcelFixture(
             label: 'Kurjeris',
             pricing: 'carrier',
             amount: 0,
+            ...(flatAmount !== undefined ? { customerFlatAmount: flatAmount } : {}),
             serviceIds: ['42'],
             customerCharge: 'single_parcel',
           },
@@ -58,6 +59,7 @@ export async function multiparcelFixture(
             senderMode: 'locker',
             pricing: 'carrier',
             amount: 0,
+            ...(flatAmount !== undefined ? { customerFlatAmount: flatAmount } : {}),
             serviceIds: ['42'],
             maxParcels: 1,
             customerCharge: 'single_parcel',

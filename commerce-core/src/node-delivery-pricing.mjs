@@ -3,14 +3,14 @@ import { mkdtemp, writeFile, unlink, rmdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { productionD1Target } from './node-production-d1.mjs';
-import { identifier, requireValue, validateStore, digest } from './validation.mjs';
+import { identifier, integer, requireValue, validateStore, digest } from './validation.mjs';
 export function deliveryPricingCommand(input) {
   requireValue(
     input &&
       identifier(input.storeId) &&
       /^[A-Z]{2}$/.test(input.country) &&
       /^[a-f0-9]{64}$/.test(input.expectedConfigHash) &&
-      ['single_parcel', 'all_parcels'].includes(input.customerCharge) &&
+      ['single_parcel', 'all_parcels', 'preserve'].includes(input.customerCharge) &&
       Array.isArray(input.deliveryIds) &&
       input.deliveryIds.length > 0 &&
       input.deliveryIds.length <= 20 &&
@@ -18,12 +18,32 @@ export function deliveryPricingCommand(input) {
       new Set(input.deliveryIds).size === input.deliveryIds.length,
     'delivery_pricing_command_invalid',
   );
+  if (input.customerFlatAmounts !== undefined) {
+    const rates = input.customerFlatAmounts;
+    requireValue(
+      rates &&
+        typeof rates === 'object' &&
+        !Array.isArray(rates) &&
+        Object.keys(rates).length === input.deliveryIds.length &&
+        input.deliveryIds.every(
+          (id) => Object.hasOwn(rates, id) && (rates[id] === null || integer(rates[id], 0)),
+        ),
+      'delivery_pricing_command_invalid',
+    );
+  }
   return {
     storeId: input.storeId,
     country: input.country,
     expectedConfigHash: input.expectedConfigHash,
     customerCharge: input.customerCharge,
     deliveryIds: [...input.deliveryIds].sort(),
+    ...(input.customerFlatAmounts !== undefined
+      ? {
+          customerFlatAmounts: Object.fromEntries(
+            input.deliveryIds.map((id) => [id, input.customerFlatAmounts[id]]),
+          ),
+        }
+      : {}),
   };
 }
 export async function updateDeliveryPricing(db, input) {
@@ -59,9 +79,17 @@ export async function updateDeliveryPricing(db, input) {
       'delivery_pricing_method_invalid',
       409,
     );
-    prior.push({ id, customerCharge: method.customerCharge ?? 'all_parcels' });
+    prior.push({
+      id,
+      customerCharge: method.customerCharge ?? 'all_parcels',
+      customerFlatAmount: method.customerFlatAmount ?? null,
+    });
     if (c.customerCharge === 'all_parcels') delete method.customerCharge;
-    else method.customerCharge = c.customerCharge;
+    else if (c.customerCharge !== 'preserve') method.customerCharge = c.customerCharge;
+    if (c.customerFlatAmounts !== undefined) {
+      if (c.customerFlatAmounts[id] === null) delete method.customerFlatAmount;
+      else method.customerFlatAmount = c.customerFlatAmounts[id];
+    }
   }
   validateStore(config);
   const next = JSON.stringify(config);

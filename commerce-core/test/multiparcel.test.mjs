@@ -8,6 +8,141 @@ import { CommerceService } from '../src/service.mjs';
 import { ShippingAutomation } from '../src/shipping-automation.mjs';
 import { multiparcelFixture, proveParcelSlots } from './multiparcel-fixtures.mjs';
 
+test('flat buyer shipping stays separate from carrier cost, binds tariff and preserves locker dispatch', async () => {
+  const db = new NodeDatabase();
+  db.migrate();
+  try {
+    const x = await multiparcelFixture(db, { quantity: 3, flatAmount: 375, freeShipping: true });
+    const delivery = new BuyerDeliveryQuotes(x.s);
+    for (const quantity of [1, 2, 3]) {
+      const input = { ...x.input, lines: [{ sku: 'couple', quantity }] };
+      const rate = await delivery.create(
+        'store_a',
+        'sandbox',
+        { ...input, id: 'flat_' + quantity },
+        x.adapter,
+      );
+      assert.equal(rate.amount, 375);
+      assert.equal(rate.carrierAmount, undefined);
+      const row = await x.s.one(
+        'SELECT payload_json FROM buyer_delivery_quotes WHERE store_id=? AND id=?',
+        'store_a',
+        rate.id,
+      );
+      const privateQuote = JSON.parse(row.payload_json);
+      assert.equal(privateQuote.carrierAmount, 472);
+      assert.equal(privateQuote.providerServiceId, '42');
+      const priced = await x.s.quote('store_a', 'sandbox', { ...input, deliveryQuoteId: rate.id });
+      assert.equal(priced.delivery.amount, 375);
+      assert.equal(priced.delivery.providerServiceId, '42');
+      assert.equal(priced.delivery.dispatch.locker.id, 'sender');
+      assert.equal(priced.amount, 3200 * quantity + 375);
+      const free = await x.s.quote('store_a', 'sandbox', {
+        ...input,
+        deliveryQuoteId: rate.id,
+        discountCode: 'FREE10',
+      });
+      assert.equal(free.delivery.amount, 0);
+      assert.equal(free.delivery.amountBeforeDiscount, 375);
+      assert.equal(free.discount.shippingAmount, 375);
+    }
+    const original = await x.s.getOrder('store_a', 'sandbox', x.order.id);
+    assert.equal(original.snapshot.delivery.amount, 0);
+    assert.equal(original.snapshot.delivery.amountBeforeDiscount, 375);
+    const input = { ...x.input, lines: [{ sku: 'couple', quantity: 2 }] };
+    const prior = await delivery.create(
+      'store_a',
+      'sandbox',
+      { ...input, id: 'flat_change' },
+      x.adapter,
+    );
+    const changed = structuredClone(x.config);
+    changed.markets[0].delivery[1].customerFlatAmount = 475;
+    await db
+      .prepare('UPDATE stores SET config_json=? WHERE id=?')
+      .bind(JSON.stringify(changed), 'store_a')
+      .run();
+    await assert.rejects(
+      x.s.quote('store_a', 'sandbox', { ...input, deliveryQuoteId: prior.id }),
+      /delivery_quote_conflict/,
+    );
+    const next = await delivery.create(
+      'store_a',
+      'sandbox',
+      { ...input, id: 'flat_new' },
+      x.adapter,
+    );
+    assert.equal(next.amount, 475);
+    const payloadRow = await x.s.one(
+      'SELECT payload_json FROM buyer_delivery_quotes WHERE store_id=? AND id=?',
+      'store_a',
+      next.id,
+    );
+    const tampered = JSON.parse(payloadRow.payload_json);
+    tampered.public.amount = 1;
+    await assert.rejects(
+      db
+        .prepare('UPDATE buyer_delivery_quotes SET payload_json=? WHERE store_id=? AND id=?')
+        .bind(JSON.stringify(tampered), 'store_a', next.id)
+        .run(),
+      /buyer_quote_immutable/,
+    );
+    const expiring = await delivery.create(
+      'store_a',
+      'sandbox',
+      { ...input, id: 'flat_expiry' },
+      x.adapter,
+    );
+    const originalNow = x.s.now;
+    x.s.now = () => Date.now() + 300001;
+    await assert.rejects(
+      x.s.quote('store_a', 'sandbox', { ...input, deliveryQuoteId: expiring.id }),
+      /delivery_quote_conflict/,
+    );
+    x.s.now = originalNow;
+    delete changed.markets[0].delivery[1].customerFlatAmount;
+    await db
+      .prepare('UPDATE stores SET config_json=? WHERE id=?')
+      .bind(JSON.stringify(changed), 'store_a')
+      .run();
+    await assert.rejects(
+      x.s.quote('store_a', 'sandbox', { ...input, deliveryQuoteId: next.id }),
+      /delivery_quote_conflict/,
+    );
+    const dynamic = await delivery.create(
+      'store_a',
+      'sandbox',
+      { ...input, id: 'flat_removed' },
+      x.adapter,
+    );
+    assert.equal(dynamic.amount, 472);
+    changed.markets[0].delivery[1].customerFlatAmount = 475;
+    await db
+      .prepare('UPDATE stores SET config_json=? WHERE id=?')
+      .bind(JSON.stringify(changed), 'store_a')
+      .run();
+    await assert.rejects(
+      x.s.quote('store_a', 'sandbox', { ...input, deliveryQuoteId: dynamic.id }),
+      /delivery_quote_conflict/,
+    );
+    assert.equal(
+      (await x.s.getOrder('store_a', 'sandbox', x.order.id)).snapshot.delivery.amountBeforeDiscount,
+      375,
+    );
+    await assert.rejects(
+      delivery.create(
+        'store_a',
+        'sandbox',
+        { ...input, id: 'flat_offline' },
+        { ...x.adapter, quote: async () => [] },
+      ),
+      /carrier_offer_unavailable/,
+    );
+  } finally {
+    db.close();
+  }
+});
+
 test('single customer parcel tariff keeps two/three and mixed kits eligible; full cart/quote binding and free coupons remain exact', async () => {
   const db = new NodeDatabase();
   db.migrate();

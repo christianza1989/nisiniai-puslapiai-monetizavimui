@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Full commerce suite passed. A deliberate quote mutation attempt was blocked by immutable-quote SQLite trigger; initial tamper fixture failure was corrected to assert that guard and actual expiry using a controlled clock. Production was not changed.",
+  "checks": [
+    {
+      "command": "npm test (commerce-core)",
+      "result": "PASS",
+      "evidence": "315 tests, including flat buyer prices, coupon, changed tariff fingerprint, expiry, parcel and legacy behavior"
+    }
+  ],
+  "eventId": "02cb50a1-4ebc-4cd0-abd0-7db06449eea7",
+  "sequence": 2,
+  "at": "2026-11-05T21:26:03.083Z"
+}

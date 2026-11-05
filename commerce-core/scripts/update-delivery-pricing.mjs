@@ -5,7 +5,7 @@ import {
   updateProductionDeliveryPricing,
 } from '../src/node-delivery-pricing.mjs';
 export const deliveryPricingUsage =
-  'node scripts/update-delivery-pricing.mjs --account <id> --database <uuid> --database-name <name> --confirm-database <uuid> --store <id> --country <LT> --expected-config-hash <sha256> --delivery <comma-separated-ids> --charge <single_parcel|all_parcels> [--apply-remote]';
+  'node scripts/update-delivery-pricing.mjs --account <id> --database <uuid> --database-name <name> --confirm-database <uuid> --store <id> --country <LT> --expected-config-hash <sha256> --delivery <comma-separated-ids> --charge <single_parcel|all_parcels|preserve> [--flat-amounts <id=cents,id=cents|clear>] [--apply-remote]';
 export async function runDeliveryPricingCommand(
   args,
   { update = updateProductionDeliveryPricing } = {},
@@ -20,6 +20,7 @@ export async function runDeliveryPricingCommand(
       '--expected-config-hash',
       '--delivery',
       '--charge',
+      '--flat-amounts',
     ],
     values = {};
   let apply = false;
@@ -48,12 +49,28 @@ export async function runDeliveryPricingCommand(
       },
       confirmation,
     );
+  let customerFlatAmounts;
+  if (values['--flat-amounts'] !== undefined) {
+    const pairs = values['--flat-amounts'].split(',').map((entry) => entry.split('='));
+    if (
+      pairs.some(
+        ([id, value, ...rest]) =>
+          !id || !value || rest.length || !/^(?:0|[1-9][0-9]*|clear)$/.test(value),
+      ) ||
+      new Set(pairs.map(([id]) => id)).size !== pairs.length
+    )
+      throw Error('delivery_pricing_arguments_invalid');
+    customerFlatAmounts = Object.fromEntries(
+      pairs.map(([id, value]) => [id, value === 'clear' ? null : Number(value)]),
+    );
+  }
   const command = deliveryPricingCommand({
     storeId: values['--store'],
     country: values['--country'],
     expectedConfigHash: values['--expected-config-hash'],
     deliveryIds: values['--delivery']?.split(','),
     customerCharge: values['--charge'],
+    ...(customerFlatAmounts !== undefined ? { customerFlatAmounts } : {}),
   });
   return apply
     ? update(target, command, { confirmation })

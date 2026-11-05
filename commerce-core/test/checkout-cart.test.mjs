@@ -825,6 +825,38 @@ test('free delivery coupon immediately displays zero shipping and removing it re
     assert.equal(totals.children[2].children[1].textContent, 'Įveskite miestą ir pašto kodą');
     assert.match(totals.children[3].children[1].textContent, /pristatymas/);
   }));
+test('flat buyer rate disappears for verified free-shipping coupon and returns when removed', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient(),
+      initialize = client.initialize;
+    client.initialize = async () => {
+      const data = await initialize();
+      data.markets[0].delivery[0].customerFlatAmount = 375;
+      return data;
+    };
+    client.discountPreview = async (input) => {
+      const result = couponFixture(input);
+      result.discount.freeShipping = true;
+      return result;
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    const totals = nodes(root).find((n) => n.attrs.class === 'checkout-totals');
+    assert.equal(totals.children[2].children[1].textContent, '3,75 €');
+    const code = field(root, 'discountCode');
+    code.value = 'SAVE10';
+    await code.fire('input');
+    await button(root, 'Pritaikyti').fire('click');
+    assert.equal(totals.children[2].children[1].textContent, '0,00 €');
+    assert.equal(totals.children[3].children[1].textContent, '28,80 €');
+    await button(root, 'Pašalinti kodą').fire('click');
+    assert.equal(totals.children[2].children[1].textContent, '3,75 €');
+    assert.equal(totals.children[3].children[1].textContent, '35,75 €');
+  }));
 test('quantity changes refresh the server coupon preview without an address or payment request', () =>
   withDom(async () => {
     const root = new Element('div'),
@@ -935,6 +967,90 @@ function carrierClient() {
   return client;
 }
 const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+test('configured flat delivery prices display immediately before destination and follow method and quantity', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient(),
+      initialize = client.initialize;
+    client.initialize = async () => {
+      const data = await initialize();
+      data.markets[0].delivery[0].customerFlatAmount = 450;
+      data.markets[0].delivery.push({
+        id: 'omniva',
+        label: 'Omniva',
+        kind: 'locker',
+        pricing: 'carrier',
+        amount: 0,
+        customerFlatAmount: 375,
+        customerCharge: 'single_parcel',
+        lockers: [
+          {
+            id: 'test',
+            label: 'TEST Vilnius',
+            city: 'Vilnius',
+            postalCode: '01101',
+            address: 'TEST 1',
+          },
+        ],
+      });
+      return data;
+    };
+    let calls = 0;
+    client.deliveryQuote = async () => {
+      calls++;
+      throw new Error('unexpected request');
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    const totals = nodes(root).find((n) => n.attrs.class === 'checkout-totals');
+    assert.equal(totals.children[2].children[1].textContent, '4,50 €');
+    assert.equal(totals.children[3].children[1].textContent, '36,50 €');
+    field(root, 'delivery').value = 'omniva';
+    await field(root, 'delivery').fire('change');
+    assert.equal(totals.children[2].children[1].textContent, '3,75 €');
+    assert.equal(totals.children[3].children[1].textContent, '35,75 €');
+    field(root, 'couple').value = '2';
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('input', field(root, 'couple'));
+    assert.equal(totals.children[2].children[1].textContent, '3,75 €');
+    assert.equal(totals.children[3].children[1].textContent, '67,75 €');
+    assert.equal(calls, 0);
+  }));
+test('server tariff change between displayed flat rate and submit requires explicit new confirmation', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient(),
+      initialize = client.initialize,
+      quote = client.quote;
+    client.initialize = async () => {
+      const data = await initialize();
+      data.markets[0].delivery[0].customerFlatAmount = 375;
+      return data;
+    };
+    client.deliveryQuote = async () => ({ id: 'changed-rate', expiresAt: Date.now() + 300000 });
+    client.quote = async (input) => {
+      const value = await quote(input);
+      return { ...value, amount: value.amount + 200, delivery: { amount: 650 } };
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      renderPayment: async () => {},
+    });
+    fillOnePage(root);
+    const form = nodes(root).find((n) => n.tag === 'form');
+    await form.fire('submit');
+    assert.equal(client.created, undefined);
+    assert.ok(nodes(root).some((n) => n.textContent?.includes('Patikrinkite naują sumą')));
+    assert.ok(nodes(root).some((n) => n.textContent?.includes('38,50')));
+    await form.fire('submit');
+    assert.equal(client.created.deliveryQuoteId, 'changed-rate');
+  }));
 test('a selected locker obtains the carrier price before contact details are supplied', () =>
   withDom(async () => {
     const root = new Element('div'),

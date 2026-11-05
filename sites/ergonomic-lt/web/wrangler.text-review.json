@@ -13,7 +13,7 @@
   "PUBLIC_ORIGIN":"https://ergonomic-text-review.pinet-azprekyba.workers.dev",
   "CANONICAL_ORIGIN":"https://ergonomic.lt",
   "SITE_INDEXABLE":"false","PREVIEW_CATALOG":"true","COOKIE_SECURE":"true","TRUST_PROXY":"true",
-  "ERGONOMIC_PC2_CHAIR_REVIEW":"true","TEXT_REVIEW_STAGE":"true"
+  "PREPARED_3D_CATALOG_ONLY":"true","ERGONOMIC_PC2_CHAIR_REVIEW":"true","TEXT_REVIEW_STAGE":"true"
  },
  "observability":{"enabled":true,"logs":{"enabled":true,"head_sampling_rate":1}}
 }

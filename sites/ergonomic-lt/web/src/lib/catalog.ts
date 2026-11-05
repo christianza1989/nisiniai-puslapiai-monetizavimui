@@ -1,3 +1,4 @@
+import {preparedCatalog} from './prepared-3d-catalog';
 import {recoverSivuConfiguration} from './sivu-codes';
 import seedData from '../../content/seed.json';
 import {cache} from 'react';
@@ -60,6 +61,8 @@ export const catalogAsync=cache(async():Promise<Seed>=>{
     dbAll<{id:string;data:string}>('SELECT id,data FROM product_edits'),
   ]);
   let seed=assembleCatalog(imported,edits);
+  let all=false;try{all=(await headers()).get('x-ergonomic-all-products')==='1';}catch{}
+  if(all)seed=preparedCatalog(seed,true);
   if(process.env.LAUNCH_SITE==='true'){
     try{const drafts=await readDrafts();return customerPresentation(await reviewedCatalogTitles(await launchProjection({...seed,products:applyDrafts(seed.products,drafts)},drafts)));}catch{return {...seed,products:[],lines:[]};}
   }else if(await privatePreview()){
@@ -67,7 +70,7 @@ export const catalogAsync=cache(async():Promise<Seed>=>{
   }
   return customerPresentation(await reviewedCatalogTitles(await launchProjection(seed)));
 });
-export async function visibleProductsAsync(){return (await catalogAsync()).products.filter(p=>productIsVisible(p,previewMode()));}
+export async function visibleProductsAsync(){const seed=await catalogAsync();return preparedCatalog(seed,!!seed.products[0]?.reviewCatalogPrefix).products.filter(p=>productIsVisible(p,previewMode()));}
 export async function visibleModelsAsync(){return productModels(await visibleProductsAsync());}
 export async function findProductAsync(category:string,slug:string,preset?:unknown){
  const products=await visibleProductsAsync(),match=process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'?/-(linija|modelis)-v-([a-f0-9]{32})$/.exec(slug):null;
@@ -81,7 +84,7 @@ export async function categoryForAsync(p:Product){return (await catalogAsync()).
 export async function lineForAsync(p:Product){return (await catalogAsync()).lines.find(l=>l.id===p.lineId);}
 export async function normalizeSupplierAsync(input:unknown){return normalizeSupplier(input,await catalogAsync());}
 export function visibleProducts() { return catalog().products.filter(p=>productIsVisible(p,previewMode())); }
-export function productPath(p:Product) { return p.customerHeading?customerProductPath(p):`/produktai/${p.categorySlug}/${p.slug}/`; }
+export function productPath(p:Product) { return (p.reviewCatalogPrefix||'')+(p.customerHeading?customerProductPath(p):`/produktai/${p.categorySlug}/${p.slug}/`); }
 export function findProduct(category:string,slug:string) { return resolveProduct(visibleProducts(),category,slug); }
 export function legacyPages():LegacyPage[]{return [...baseSeed().legacy,...additions as LegacyPage[]].map(editorialPage);}
 export function findLegacy(route:string): LegacyPage|undefined { return legacyPages().find(p=>p.path===route); }

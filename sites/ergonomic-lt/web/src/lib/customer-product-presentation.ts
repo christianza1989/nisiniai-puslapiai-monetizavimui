@@ -11,7 +11,7 @@ export function customerProductCodes(p:Product){
 }
 export function customerProductPath(p:Product){
  const safe=customerLabel(p.familyName||p.name,customerProductCodes(p),'biuro-baldas'),slug=safe.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'biuro-baldas';
- if(!p.modelConfigurationId&&p.configurations.length>1)return '/produktai/'+p.categorySlug+'/'+slug+'-linija-v-'+customerKey().id('line',p.id)+'/';
+ if(!p.modelConfigurationId&&((p as Product&{publicationOriginalCount?:number}).publicationOriginalCount??p.configurations.length)>1)return '/produktai/'+p.categorySlug+'/'+slug+'-linija-v-'+customerKey().id('line',p.id)+'/';
  const scope={product:p.id,sample:p.modelConfigurationId||p.configurations[0]?.id||null};
  return '/produktai/'+p.categorySlug+'/'+slug+'-modelis-v-'+customerKey().id('product',scope)+'/';
 }

@@ -394,5 +394,92 @@
   },
   "value:CMESHGROUP=MV": {
     "mv - semi-transparent": "Pusiau permatomas MV tinklelis"
+  },
+  "value:FDESKTOPTYPE=FIXEDTOP": {
+    "fixed": "Neslankiojantis stalviršis"
+  },
+  "value:FBASE=TTYPE3": {
+    "t-leg, frame": "Rėmas su T formos kojomis"
+  },
+  "value:FBASEFEET=EMODEL20EM2": {
+    "em2 - rectangular": "Stačiakampė kojos atrama"
+  },
+  "value:FTOPSHAPE=RECTANGULAR": {
+    "rectangular": "Stačiakampis stalviršis"
+  },
+  "value:FDESKTOPTYPE=SLIDINGTOP": {
+    "sliding": "Slankiojantis stalviršis"
+  },
+  "value:FBASE=UTYPEFRAME": {
+    "u-leg, frame": "Rėmas su U formos kojomis"
+  },
+  "value:FTOPSHAPE=ONESIDEROUNDEDFRONT": {
+    "rectangular rounded on user`s side": "Stačiakampis stalviršis, užapvalintas sėdinčiojo pusėje"
+  },
+  "value:FBASE=ATYPEFRAME": {
+    "a-type, frame": "Rėmas su A formos kojomis"
+  },
+  "value:FBASE=ITYPEFRAMEMIDDLEITYPE": {
+    "i-leg, frame": "Rėmas su I formos kojomis"
+  },
+  "value:FTOPSHAPE=RECTANGULARWITHROUNDCOR": {
+    "rectangular with rounded corners": "Stačiakampis stalviršis su užapvalintais kampais"
+  },
+  "value:FBASE=SLABEND": {
+    "panel": "Pagrindas iš atraminių plokščių"
+  },
+  "value:FBASE=TTYPE": {
+    "t-leg": "T formos kojos"
+  },
+  "value:FBASEFEET=XI1": {
+    "xi1 - rectangular, tapering off downwards": "Stačiakampė, žemyn siaurėjanti kojos atrama"
+  },
+  "value:FBASE=ITYPEFRAME": {
+    "i-leg, frame": "Rėmas su I formos kojomis"
+  },
+  "value:FLEGCROSSSECTIONSHAPE=ROUND50": {
+    "round": "Apvalus skerspjūvis"
+  },
+  "value:FDESKTOPTYPE=FIXEDTOPWITHFLAT": {
+    "fixed with folding flap": "Neslankiojantis stalviršis su atverčiamu dangčiu"
+  },
+  "value:FBASE=OTYPEFRAME": {
+    "o-leg, frame": "Rėmas su O formos kojomis"
+  },
+  "value:FBASE=HTYPE3": {
+    "h-leg, frame": "Rėmas su H formos kojomis"
+  },
+  "value:FBASE=TTYPEFRAME": {
+    "t-leg, frame": "Rėmas su T formos kojomis"
+  },
+  "value:FBASE=OTYPEFRAMEMIDDLEITYPE": {
+    "o-leg, frame": "Rėmas su O formos kojomis"
+  },
+  "value:FBASEFEET=ECMFEET": {
+    "rectangular with chamfered cap": "Stačiakampė kojos atrama su nuožulniu antgaliu"
+  },
+  "value:FDESKTOPTYPE=FOLDING": {
+    "folding": "Atlenkiamas stalviršis"
+  },
+  "value:FBASE=PANEL": {
+    "panel, mobile": "Mobilus pagrindas iš atraminių plokščių"
+  },
+  "value:FTOPSHAPE=LSHAPED": {
+    "l-shape": "L formos stalviršis"
+  },
+  "value:FBASEFEET=EMODEL20EM3": {
+    "em3 - rectangular , tapering off": "Siaurėjanti stačiakampė kojos atrama"
+  },
+  "value:FBASE=HTYPE": {
+    "h-leg": "H formos kojos"
+  },
+  "value:FLEGCROSSSECTIONSHAPE=SQUARE50": {
+    "square": "Kvadratinis skerspjūvis"
+  },
+  "value:FTOPSHAPE=ROUND": {
+    "round": "Apvalus stalviršis"
+  },
+  "value:FBASE=_4STAR": {
+    "column, four-star": "Kolona su keturių stipinų pagrindu"
   }
 }

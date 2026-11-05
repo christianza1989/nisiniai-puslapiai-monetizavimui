@@ -1,0 +1,20 @@
+{
+  "category": "code",
+  "evidence": [
+    "Existing admin reports only adapter-level booking connectivity, not whether a specific configured service is admitted for booking.",
+    "Read-only diagnostics require ship authorization, constrain service IDs to current active market methods and filter limited LT locker matches."
+  ],
+  "summary": "Safely inspect configured shipping capability and bound Lithuanian locker locations without exposing credentials or creating shipments",
+  "paths": [
+    "commerce-core/src/shipping.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/test/shipping-capability.test.mjs"
+  ],
+  "siteId": "memocasting",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/345",
+  "rollback": "Scoped code revert; no order, configuration, binding, or provider data requires rollback.",
+  "id": "upgrade-17a98197-1503-4ee3-be73-87d092fd69e4",
+  "branch": "codex/memo-service-id-cas-20261105",
+  "baseSha": "52d08137d1ef7e0fa3daebcb68a7c466e6f8ca70",
+  "createdAt": "2026-11-05T14:31:07.307Z"
+}

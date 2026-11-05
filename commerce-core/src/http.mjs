@@ -423,6 +423,46 @@ export function createHandler({
             expiresAt: principal.expiresAt ?? null,
           });
         }
+        if (request.method === 'GET' && path === '/api/operator/shipping-capability') {
+          const actor = await authorize('ship');
+          const keys = ['country', 'delivery', 'service'];
+          requireValue(
+            [...url.searchParams.keys()].length === 3 &&
+              keys.every((key) => url.searchParams.getAll(key).length === 1),
+            'invalid_shipping_capability',
+          );
+          return json(
+            await shipping.bookingCapability(
+              store.id,
+              environment,
+              {
+                country: url.searchParams.get('country'),
+                deliveryId: url.searchParams.get('delivery'),
+                serviceId: url.searchParams.get('service'),
+              },
+              shippingAdapters[store.id],
+              actor.id,
+            ),
+          );
+        }
+        if (request.method === 'GET' && path === '/api/operator/shipping-locker-catalog') {
+          const actor = await authorize('ship');
+          requireValue(
+            [...url.searchParams.keys()].length === 2 &&
+              ['courier', 'q'].every((key) => url.searchParams.getAll(key).length === 1),
+            'invalid_locker_search',
+          );
+          return json(
+            await shipping.diagnosticLockers(
+              store.id,
+              environment,
+              url.searchParams.get('courier'),
+              url.searchParams.get('q'),
+              shippingReadAdapters[store.id],
+              actor.id,
+            ),
+          );
+        }
         if (request.method === 'POST' && path === '/api/operator/logout') {
           requireValue(operatorSessions?.isConfigured(store), 'operator_forbidden', 403);
           return json(await operatorSessions.logout(request, store));

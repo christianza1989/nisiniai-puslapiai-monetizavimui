@@ -13,9 +13,10 @@ import {configurationOptionLabel,configurationOptionValue,optionDetails,supplier
 import {createExpandedEngine,fieldLabels,choiceLabel} from './expanded-configurator';
 import type {CatalogRuntime} from './catalog-engine';
 import type {Product} from './types';
-import {optionExplanation,catalogOptionExplanations,type OptionExplanation} from './option-explanations';
+import {optionExplanation,catalogOptionExplanations,explainManufacturerOption,type OptionExplanation} from './option-explanations';
 import {explanationSourceModels,legacyExplanationModels} from './option-explanation-sources';
 import {manufacturerOptionName} from './manufacturer-option-names';
+import {verifiedDeskMediaOption} from './verified-desk-media-options';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
@@ -250,6 +251,8 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  const modelBindings={...bindings[model]};
  const config=p.configurations.find(c=>c.id===p.modelConfigurationId);
  const directProposal=(binding:string,english:string)=>{
+  const media=binding.match(/^value:([^=]+)=(.*)$/);
+  if(media){const verified=verifiedDeskMediaOption(model,media[1],media[2]);if(verified)return verified.name;}
   const stacking=binding.startsWith('value:CSTACKING=')&&english.match(/^Up to (\d+) pieces$/i);
   if(stacking)return 'Iki '+stacking[1]+' vnt.';
   const normalized=normalizeEnglish(english);
@@ -274,9 +277,12 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   if(binding==='value:FDESKTOPTYPE=SLIDINGTOP'&&normalized==='sliding')return 'Slankiojantis stalviršis';
   if(binding==='value:FVERWIRETRUNKING=VERTICALFLEXIBLEMODPLA'&&normalized==='flexible, modular, plastic')return 'Lankstus modulinis plastikinis kabelių kanalas';
   if(binding==='value:FVERWIRETRUNKING=VERTICALFLXMODMAGNET'&&normalized==='flexible, modular, magnetic, plastic')return 'Lankstus modulinis plastikinis kabelių kanalas su magnetais';
-  return englishProposals.get(normalized);
+  const captured=englishByModel[model]?.[binding]||materialByModel[model]?.[binding];
+  return englishProposals.get(normalized)||(media&&captured&&normalizeEnglish(captured)===normalized&&captured!==media[2]?explainManufacturerOption(media[1],captured):undefined);
  };
  const proposalFor=(binding:string,text:string)=>{
+  const media=binding.match(/^value:([^=]+)=(.*)$/);
+  if(media){const verified=verifiedDeskMediaOption(model,media[1],media[2]);if(verified)return verified.name;}
   const proposals=proposalsByBinding[group].get(binding);
   const references=englishByBinding[group].get(binding);
   const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding]||(references?.size===1?[...references][0]:text);
@@ -287,7 +293,11 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   return proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:directProposal(binding,english);
  };
  const add=(binding:string,role:string,context:string,text:string,sourceCode:string,presetProposal?:string)=>{
-  if(modelBindings[binding])return;
+  if(modelBindings[binding]){
+   const id=modelBindings[binding],def=terms.get(id)||inventory.terms[id],proposal=proposalFor(binding,text)||presetProposal;
+   if(def&&proposal&&(/^[A-Z0-9_./+-]+$/.test(def.suggested)||customerTextHasCode(def,def.suggested)))terms.set(id,{...def,suggested:proposal});
+   return;
+  }
   const id='runtime:'+model+':'+binding;
   modelBindings[binding]=id;
   const suggested=proposalFor(binding,text)||presetProposal||text;
@@ -398,7 +408,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   optionCodesByTerm.set(id,codes);
  }
  const entries:ReviewEntry[]=defs.map(def=>{
-  const shared=def.role!=='Produkto tekstas'&&(!terms.has(def.id)||helpDefs.has(def.id)),global=edits!.get(globalKey(def.id)),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
+  const shared=def.role!=='Produkto tekstas'&&(!terms.has(def.id)||!!inventory.terms[def.id]||helpDefs.has(def.id)),global=edits!.get(globalKey(def.id)),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
   const edit=local||global,baseStatus=textReviewStatus(def,edit);
   const originalText=shared?known?.current[def.id]||def.current[0]||def.sourceCode:def.current[0];
   const currentText=publishedText(def,local,publishedText(def,global,originalText));

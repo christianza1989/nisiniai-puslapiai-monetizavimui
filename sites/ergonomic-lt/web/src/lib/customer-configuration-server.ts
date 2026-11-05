@@ -19,7 +19,6 @@ import {customerProductCodes} from './customer-product-presentation';
 import {pilotSelection} from './configurator';
 import {customerGltfDocument} from './customer-glb';
 import {palettes as sourcePalettes} from './expanded-configurator';
-import {mechanismChoicePreview} from './mechanism-choice-preview';
 import {textReviewProposalPreview} from './text-review-state';
 import {customerConfigurationRevisionSource} from './customer-configuration-revision';
 const textile=new Set(['CSE','MT','RX','SD','SC','SY','ST','CN','ME','CUR','ERA','X','YS','YB']);
@@ -56,9 +55,9 @@ export async function customerConfiguration(product:Product,token?:string,change
  for(const [field,values]of Object.entries(allChoices)){codes.add(field);for(const value of values)codes.add(value);}
  const published=(field:string,value?:string)=>{const id=review.publicScope.bindings[model]?.[(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value)];return id?review.publicScope.values[model+':'+id]:undefined;};
  const controls:CustomerConfiguration['controls']=Object.entries(choices).map(([field,values],i)=>{
-  const preview=mechanismChoicePreview(model,field,textReviewProposalPreview());
+  const preview=textReviewProposalPreview()&&!/COLOR|COLOUR|CHCOL|COL$/.test(field);
   const explanation=(value:string)=>{const id=review.publicScope.bindings[model]?.['explanation:'+field+'='+value];return customerLabel(id?review.publicScope.values[model+':'+id]:undefined,codes,'');};
-  return {id:ids.field(field),label:customerLabel(published(field)||context.runtime?.palettes._fieldLabels?.[field]?.text||fieldLabels[field],codes,'Parinktis '+(i+1)),value:ids.choice(field,state!.values[field]),explanation:explanation(state!.values[field]),...(preview?{mechanismPreview:true}:{}),choices:values.map((value,j)=>({id:ids.choice(field,value),label:customerLabel(published(field,value)||context.engine.choiceLabel(field,value,context.runtime?.palettes,state?.family),codes,'Pasirinkimas '+(j+1)),...(preview&&preview[value]?{summary:explanation(value)||customerLabel(preview[value],codes,'')}:{} )}))};
+  return {id:ids.field(field),label:customerLabel(published(field)||context.runtime?.palettes._fieldLabels?.[field]?.text||fieldLabels[field],codes,'Parinktis '+(i+1)),value:ids.choice(field,state!.values[field]),explanation:explanation(state!.values[field]),...(preview?{mechanismPreview:true}:{}),choices:values.map((value,j)=>({id:ids.choice(field,value),label:customerLabel(published(field,value)||context.engine.choiceLabel(field,value,context.runtime?.palettes,state?.family),codes,'Pasirinkimas '+(j+1)),...(preview?{summary:explanation(value)}:{} )}))};
  });
  for(const group of materialControls)controls.push({id:ids.field(group.id),label:group.label,value:ids.choice(group.id,group.value||'original'),choices:[...(!group.value?[{id:ids.choice(group.id,'original'),label:'Pradinės dalių spalvos'}]:[]),...group.options.map((option,i)=>({id:ids.choice(group.id,option.id),label:customerLabel(published(group.fields[0],option.code)||(()=>{const id=review.publicScope.bindings[model]?.['name:'+option.code];return id?review.publicScope.values[model+':'+id]:undefined;})()||context.engine.choiceLabel(group.fields[0],option.code,context.runtime?.palettes,state?.family),codes,'Spalva '+(i+1))}))],disabled:!group.options.length,note:group.reason} as typeof controls[number]);
  const assets:CustomerConfiguration['assets']={base:null,patches:[]},finishes:CustomerConfiguration['finishes']={},assetMap=new Map<string,string>();let desk:CustomerConfiguration['desk'];

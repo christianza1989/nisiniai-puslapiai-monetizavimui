@@ -2,6 +2,8 @@
 
 Mode: Operate. Prižiūrimas esamas Manrope, miško žalios ir baltos tapatybės administratoriaus įrankis.
 
+2026-11-05 22:10 naujausias Roko pavedimas išplečia apimtį visiems produktams: struktūrinių pasirinkimų sąrašuose rodyti turimą lietuvišką pavadinimą ir visą patvirtintais šaltiniais pagrįstą pasiūlymą. Administratorius papildomai mato kodą. Tai pakeičia ankstesnę vienos Bjarg kėdės rodymo ribą. Spalvų pavyzdžių ir tikrų pasirinkimų priklausomybių nekeisti. Gamintojo techninio lapo QC/QE/Power Frame ir išsaugoto konfigūratoriaus konteksto ryšiai sutvarko porinius kabelių įvadus bendriems stalams; nežinomų kitų kodų reikšmių neišgalvoti. Anoniminių lankytojų duomenyse gamintojo kodai lieka paslėpti.
+
 2026-11-05 22:05 naujausias Roko bandymo patikslinimas: vienos Bjarg kėdės išskleidžiamame sąraše pradžioje rodyti visą jau parengtą paaiškinimą; prisijungusio administratoriaus peržiūroje kartu rodyti mechanizmo kodą. Vėliau informacijos kiekį bus galima sumažinti. Anoniminio lankytojo duomenyse gamintojo kodai lieka paslėpti. Šis pakeitimas neplečia bandymo kitoms kėdėms.
 
 Administratoriaus juosta su produkto pažanga ir veiksmu įjungti redagavimą. Ekrane pasirinktas tekstas pažymimas; skydelis dešinėje rodo esamą variantą, turimus originalus ir vieną redaguojamą pasiūlymą. Pirmas veiksmas – išsaugoti arba patvirtinti; paskelbimas atskiras. Sąrašas skydelyje leidžia pasiekti ir tuo metu nepasirinktų opcijų tekstus. Tinkamus tekstus galima patvirtinti vienu aiškiai apibrėžtos peržiūros partijos veiksmu.

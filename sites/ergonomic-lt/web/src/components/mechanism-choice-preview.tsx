@@ -16,6 +16,6 @@ export function MechanismChoicePreview({label,value,choices,disabled,onChange,ex
    <summary ref={trigger} aria-labelledby={id+'-label '+id+'-selected'} aria-disabled={unavailable||undefined} onClick={e=>{if(unavailable)e.preventDefault();}}><span><strong id={id+'-selected'}>{selected?.label}</strong>{selected?.summary&&<span className="mechanism-preview-short">{selected.summary}</span>}</span><ChevronDown size={18} aria-hidden="true"/></summary>
    <fieldset disabled={unavailable} className="mechanism-preview-options"><legend className="sr-only">{label}</legend>{choices.map(choice=><label key={choice.id} className="mechanism-preview-option"><input type="radio" name={id} value={choice.id} checked={choice.id===value} onChange={()=>choose(choice.id)}/><span><strong>{choice.label}</strong>{choice.summary&&<span className="mechanism-preview-short">{choice.summary}</span>}</span></label>)}</fieldset>
   </details>
-  {explanation&&<details key={value} className="mechanism-preview-more"><summary>Daugiau apie pasirinktą mechanizmą</summary>{explanation}</details>}
+  {explanation&&<details key={value} className="mechanism-preview-more"><summary>Daugiau apie pasirinktą variantą</summary>{explanation}</details>}
  </div>;
 }

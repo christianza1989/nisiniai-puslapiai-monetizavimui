@@ -1,0 +1,26 @@
+{
+  "KBJA003WW002": {
+    "version": "colors-20261105-v1-qualified-context11721",
+    "manifest": "f408368c4b1b6099834388a17d1466368b502cf54c5ea478d15bbe36f98de61b",
+    "headers": {
+      "runtime.json": "0ca26e7a27eec020b57de31f83b6b208598ff5c1be54040dc8b2424d1d08bcca",
+      "selectors.json": "1c9280233b011f661dba1d79678f6c6bb86f718880509dbf9aac181e6d2c1daf",
+      "colors-groups.json": "d79416b483e88bfbec7cfb93efa1d4b8877ce287a91813df3cd082f6b09c2305",
+      "conditional-context.json": "ff5f706585821495d7aa6111e77eb69a977d81e6386cdd0e763e55c4d7c8eeb6",
+      "GROUP-PALETTE-VERIFIED-SAFE.json": "7cea5b96d3743baea5e8eb1e386254be62fec467ce6cac6b424f7b9d5b16c84a"
+    }
+  },
+  "KSEG001WW001": {
+    "version": "colors-20261105-v1-qualified-own-context12300-price1",
+    "manifest": "de66e27e3cef8b51b42c33d3cb75727ab3e634cb1445a74ddb15149c3cdb3e36",
+    "headers": {
+      "runtime.json": "26210d41175672afe5202e06aadf1d6b0db796a92a8e157e69dd2458011910af",
+      "selectors.json": "4730d74048b962dff186563baaf3378c1338418d8accec486193a3dfb4d22145",
+      "colors-groups.json": "6b7f77d59bd6092d8ef66598e6030d3f592d99c51c5a51de24946ba88604cdc2",
+      "own-source-contract.json": "605fb8a4611ce70856e05469758e756c5883bd23acf3cd23ee186f8f77d126af",
+      "construction-scope.json": "17df5816c329fa1d0e8284cebcad05fb377b47f75e61d426b98d345d081e9629",
+      "WHOLE-VERIFIED.json": "3f17abe50bcab2ebf68d02d7bec22b2e7bd2944572c19caf2bb807860a5aa407",
+      "BASE-VALIDATION-VERIFIED.json": "8c0efb224f8f0fea1130ce58e2fc5499adc853483b0a505bfa055c8ef906de96"
+    }
+  }
+}

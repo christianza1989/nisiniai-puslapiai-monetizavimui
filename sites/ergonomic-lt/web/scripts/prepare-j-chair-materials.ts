@@ -14,6 +14,7 @@ import {normalizeReadyChairPalettes} from './normalize-ready-chair-palettes';
 import {glbGeometryAdmission,opaqueGlbAdmission} from './prepared-review-glb-admission';
 import {retainQualifiedScopes} from './prepared-chair-qualified-union';
 import {priorLosslessBindings,rebindLosslessRuntime,rebindLosslessSelectors,rebindLosslessQualified,decodeForNewSelectors} from './prepared-lossless-chair-binding';
+import exactPackagePins from './bja-seg-exact-package-pins.json';
 import {conditionalChairAdmission,conditionalChairContractDisplay} from './conditional-chair-finish-contexts';
 import {remainingChairScopePins,assertRemainingChairHeaders,calibratedChairLibrary,savedAutoChairState} from './remaining-chair-scope-admissions';
 
@@ -103,7 +104,11 @@ async function main(){
      else{await read(file);const row=fileReceipts.get(file);const url=namespace+'/source/'+file;newAssets[url]=row;textures[m.sha256]={asset:url,sha256:m.sha256,bytes:m.bytes};}
     }
    }
-   const cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'],pin=conditionalChairAdmission(code,documents['colors-groups.json']?.schema),finite=!!pin,conditional=finite||documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1';
+   const cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'],pin=conditionalChairAdmission(code,documents['colors-groups.json']?.schema),finite=!!pin,bja11721=code==='KBJA003WW002'&&documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-11721-v1',conditional=finite||bja11721||documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1';
+   if(bja11721){
+    const p=exactPackagePins.KBJA003WW002;assert(selected.version===p.version&&selected.manifestSha256===p.manifest,'BJA package pin differs');
+    for(const [name,digest]of Object.entries(p.headers))assert.equal(fileReceipts.get(name)?.sha256,digest,'BJA exact header differs: '+name);
+   }
    if(additional){
     assertRemainingChairHeaders(code,selected.version,selected.manifestSha256,fileReceipts);
     if(additional.kind==='calibrated-library')calibratedChairLibrary(old,documents['colors-reuse.json']);
@@ -117,7 +122,7 @@ async function main(){
       for(const [id,material]of Object.entries(s.materials||{})){assert(!prior.materials?.[id]||canonical(prior.materials[id])===canonical(material),'Automatic original material changed');prior.materials??={};prior.materials[id]=material;}
      }
     }
-   }else assert(cert?.pass===true&&cert.noDonorGeometry===true&&cert.code===code&&(conditional?cert.conditionalScopeKind===(finite?pin.kind:'QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181')&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false:cert.qualifiedWitnessGroupPaletteComplete===true),'Missing OWN scoped producer certificate');
+   }else assert(cert?.pass===true&&cert.noDonorGeometry===true&&cert.code===code&&(conditional?cert.conditionalScopeKind===(finite?pin.kind:bja11721?'QUALIFIED_CONDITIONAL_BJA3_74_OWN_11721':'QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181')&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false:cert.qualifiedWitnessGroupPaletteComplete===true),'Missing OWN scoped producer certificate');
    if(finite){
     assert.equal(selected.manifestSha256,pin.manifest,'Conditional manifest is not the explicitly admitted version');
     assert.equal(selected.version,pin.version,'Conditional package version differs');

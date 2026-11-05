@@ -318,10 +318,10 @@
     {
       "code": "KBJA003WW002",
       "name": "Bjarg",
-      "asset": "/models/configurator/chairs/KBJA003WW002-17ff76a2acc4463b0812/review-e72b74c852da9f4036d6.json",
-      "sha256": "e72b74c852da9f4036d6d56b84376e0d126c712886071f126b2a49b9f643fd80",
-      "bytes": 2048334,
-      "version": "colors-20261102-v1-qualified-context4181"
+      "asset": "/models/configurator/chairs/KBJA003WW002-f408368c4b1b60998343/review-e0cd79d435e2f44bb849.json",
+      "sha256": "e0cd79d435e2f44bb84973b7ebeef7591c3b801ea01f08788bf7533fdfebfd72",
+      "bytes": 2313367,
+      "version": "colors-20261105-v1-qualified-context11721"
     },
     {
       "code": "KBJA002WW002",
@@ -466,6 +466,14 @@
       "sha256": "fe97725fa708fdd8103fec7c52531052f6df925e103d8172613fbcc3d085e60b",
       "bytes": 701104,
       "version": "colors-20261103-v1-qualified-own-context5681-sh"
+    },
+    {
+      "code": "KSEG001WW001",
+      "name": "Segla UPH/P LOW",
+      "asset": "/models/configurator/chairs/KSEG001WW001-de66e27e3cef8b51b42c/review-f860438e1b7c2a781d29.json",
+      "sha256": "f860438e1b7c2a781d2912bea44a7b5716d77e1f8433ded104b0c83bc74901f2",
+      "bytes": 227341,
+      "version": "colors-20261105-v1-qualified-own-context12300-price1"
     }
   ]
 }

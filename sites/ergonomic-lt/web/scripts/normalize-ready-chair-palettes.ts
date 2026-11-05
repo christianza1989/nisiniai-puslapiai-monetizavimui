@@ -100,20 +100,21 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
     // original startup/reset; never add it to the scoped selectable domain.
     w.groups.push({id:g.source.id,label:g.label,options,base:(baseline||options[0]).id});
    }
-  }else if(d.schema==='chair-exact-conditional-finish-context-contract-4300-v1'){
-   requireValue(documents['colors-groups.json']?.schema==='chair-qualified-conditional-context-palette-4181-v1','Conditional contract has no scoped palette');
-  }else if(d.schema==='chair-qualified-conditional-context-palette-4181-v1'){
+  }else if(['chair-exact-conditional-finish-context-contract-4300-v1','chair-exact-conditional-finish-context-contract-11800-v1'].includes(d.schema)){
+   requireValue(['chair-qualified-conditional-context-palette-4181-v1','chair-qualified-conditional-context-palette-11721-v1'].includes(documents['colors-groups.json']?.schema),'Conditional contract has no scoped palette');
+  }else if(['chair-qualified-conditional-context-palette-4181-v1','chair-qualified-conditional-context-palette-11721-v1'].includes(d.schema)){
    const contract=documents['conditional-context.json'],cert=documents['GROUP-PALETTE-VERIFIED-SAFE.json'];
-   const kind='QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181';
-   requireValue(data.code==='KBJA003WW002'&&d.conditionalScopeKind===kind&&contract?.schema==='chair-exact-conditional-finish-context-contract-4300-v1'&&contract.kind===kind,'Unknown conditional source kind');
+   const current=d.schema==='chair-qualified-conditional-context-palette-11721-v1';
+   const kind=current?'QUALIFIED_CONDITIONAL_BJA3_74_OWN_11721':'QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181';
+   requireValue(data.code==='KBJA003WW002'&&d.conditionalScopeKind===kind&&contract?.schema===(current?'chair-exact-conditional-finish-context-contract-11800-v1':'chair-exact-conditional-finish-context-contract-4300-v1')&&contract.kind===kind,'Unknown conditional source kind');
    requireValue(d.qualifiedByDecision353===true&&d.qualifiedConditionalFinishContextComplete===true&&d.qualifiedWitnessGroupPaletteComplete===false&&d.actualPaletteComplete===false&&d.allGeometryContextsCovered===false,'Conditional source promoted to a full palette');
-   requireValue(contract.qualifiedConditionalFinishContextComplete===true&&contract.qualifiedWitnessGroupPaletteComplete===false&&contract.actualPaletteComplete===false&&contract.allGeometryContextsCovered===false&&hash(contract.qualification4181Sha256),'Conditional qualification absent');
+   requireValue(contract.qualifiedConditionalFinishContextComplete===true&&contract.qualifiedWitnessGroupPaletteComplete===false&&contract.actualPaletteComplete===false&&contract.allGeometryContextsCovered===false&&hash(current?contract.qualification11721Sha256:contract.qualification4181Sha256),'Conditional qualification absent');
    requireValue(hash(d.conditionalScopeToken)&&d.conditionalScopeToken===contract.scopeToken&&cert?.conditionalScopeToken===contract.scopeToken&&cert.conditionalScopeKind===kind,'Conditional scope token differs');
    requireValue(cert.code===data.code&&cert.pass===true&&cert.noDonorGeometry===true&&cert.qualifiedConditionalFinishContextComplete===true&&cert.qualifiedWitnessGroupPaletteComplete===false&&cert.actualPaletteComplete===false&&cert.allGeometryContextsCovered===false,'Conditional OWN certificate absent');
    requireValue(cert.groupValueRecords===74&&cert.actualWholeManufacturerStatesReconstructed===75&&cert.jointFullStatesReconstructed===10&&cert.jointDistinctSignatures===10&&cert.allSelectableFieldsNondefaultCovered===true,'Conditional whole-state qualification incomplete');
    for(const key of ['code','runtimeSha256','runtimeContextIndex','exactConstructionAndDerivedValues','requiredOwnedBaseAssetShas'])requireValue(canonical(d[key])===canonical(contract[key]),'Conditional construction/runtime pin differs: '+key);
    const fixed=contract.fixedSelectableFinishValues,fields=['CHEADRESTUPHCOLOR','CHEADRESTUPHGROUP','CPRICEGROUP','CUPHCOLOR','CUPHGROUP'];
-   requireValue(canonical(fixed)===canonical({CHEADRESTUPHCOLOR:'VL5002',CHEADRESTUPHGROUP:'VL',CPRICEGROUP:'_2'})&&canonical(d.requiredFixedFinishContext)===canonical(fixed)&&canonical(cert.requiredFixedFinishContext)===canonical(fixed),'Conditional fixed FINISH prefix differs');
+   requireValue(canonical(fixed)===canonical({CHEADRESTUPHCOLOR:current?'VL3001':'VL5002',CHEADRESTUPHGROUP:'VL',CPRICEGROUP:'_2'})&&canonical(d.requiredFixedFinishContext)===canonical(fixed)&&canonical(cert.requiredFixedFinishContext)===canonical(fixed),'Conditional fixed FINISH prefix differs');
    requireValue(canonical(contract.allFiveOriginalSelectableFieldsRemainActive.slice().sort())===canonical(fields)&&canonical(cert.selectableFields.slice().sort())===canonical(fields),'Conditional selectable fields differ');
    requireValue(d.groups.length===1&&contract.actualReachableWholeFinishTuples===74,'Conditional tuple count differs');
    const g=d.groups[0],records=entries(g.values),domains=contract.variableGroups;
@@ -129,7 +130,7 @@ export function normalizeReadyChairPalettes(data:ChairPreview,documents:Record<s
     for(const colour of observed)expected.add(canonical({...fixed,CUPHGROUP:name,CUPHCOLOR:colour}));
    }
    requireValue(expected.size===74,'Conditional domain accounting differs');
-   const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas,'Apmušalai · galvos atrama VL5002');
+   const w=witness(d.runtimeContextIndex,d.exactConstructionAndDerivedValues,d.requiredOwnedBaseAssetShas,'Apmušalai · galvos atrama '+fixed.CHEADRESTUPHCOLOR);
    for(const record of records){
     requireValue(record.mode==='material'&&record.values&&canonical(Object.keys(record.values).sort())===canonical(fields),'Conditional tuple is incomplete');
     requireValue(expected.delete(canonical(record.values)),'Conditional tuple is outside the prefix, duplicated, or invented');

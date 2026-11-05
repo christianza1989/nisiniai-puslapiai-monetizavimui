@@ -12,6 +12,7 @@ export type Product = {
   sourceUrl:string; documents:{title:string;url:string}[]; configurations:Configuration[];
   features:string[]; isNew:boolean; published:boolean; translationReviewed:boolean;
   updatedAt?:string;
+  reviewCatalogPrefix?:string;
   publicHeading?:string;
   textReviewHeading?:string; textReviewNames?:Record<string,string>;
   customerHeading?:string;customerModelNames?:Record<string,string>;

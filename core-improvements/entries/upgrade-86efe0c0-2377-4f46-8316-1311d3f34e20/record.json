@@ -1,0 +1,19 @@
+{
+  "siteId": "memocasting",
+  "summary": "Calculate a delivery quotation as soon as the destination or parcel locker is selected, without waiting for unrelated recipient contact fields, while keeping full customer validation before order creation.",
+  "category": "code",
+  "evidence": [
+    "Checkout one-page UI previously gated automatic carrier quotation on complete recipient contact details even though the carrier price depends on cart and delivery destination, hiding the delivery price for an otherwise quotable destination.",
+    "commerce-core/test/checkout-cart.test.mjs exercises destination-only and locker-only quotation, required order details, repeat-request avoidance, and clear unavailable-carrier feedback."
+  ],
+  "paths": [
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/test/checkout-cart.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/343",
+  "rollback": "Revert the scoped checkout UI and regression change together with its exact exported public SDK; preserve live orders, payment state, carrier configuration, databases, secrets and bindings.",
+  "id": "upgrade-86efe0c0-2377-4f46-8316-1311d3f34e20",
+  "branch": "codex/memocasting-delivery-20261105",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-11-05T14:01:58.190Z"
+}

@@ -358,6 +358,11 @@ const onePageMessages = {
     shipping: 'Pristatymas',
     total: 'Iš viso',
     calculated: 'Pagal pristatymo duomenis',
+    destinationNeeded: 'Įveskite miestą ir pašto kodą',
+    lockerNeeded: 'Pasirinkite paštomatą',
+    calculatingDelivery: 'Skaičiuojame pristatymo kainą…',
+    offerUnavailable:
+      'Šiam pristatymo būdui kainos gauti nepavyko. Pasirinkite kitą būdą arba bandykite vėliau.',
     continue: 'Tęsti į apmokėjimą',
     checking: 'Tikriname galutinę sumą…',
     remove: 'Pašalinti',
@@ -391,6 +396,11 @@ const onePageMessages = {
     shipping: 'Dostawa',
     total: 'Razem',
     calculated: 'Według danych dostawy',
+    destinationNeeded: 'Wpisz miejscowość i kod pocztowy',
+    lockerNeeded: 'Wybierz automat paczkowy',
+    calculatingDelivery: 'Obliczamy koszt dostawy…',
+    offerUnavailable:
+      'Nie udało się uzyskać ceny tej dostawy. Wybierz inny sposób lub spróbuj później.',
     continue: 'Przejdź do płatności',
     checking: 'Sprawdzamy ostateczną kwotę…',
     remove: 'Usuń',
@@ -423,6 +433,11 @@ const onePageMessages = {
     shipping: 'Piegāde',
     total: 'Kopā',
     calculated: 'Pēc piegādes datiem',
+    destinationNeeded: 'Ievadiet pilsētu un pasta indeksu',
+    lockerNeeded: 'Izvēlieties pakomātu',
+    calculatingDelivery: 'Aprēķinām piegādes maksu…',
+    offerUnavailable:
+      'Neizdevās iegūt šī piegādes veida cenu. Izvēlieties citu veidu vai mēģiniet vēlāk.',
     continue: 'Turpināt apmaksu',
     checking: 'Pārbaudām galīgo summu…',
     remove: 'Noņemt',
@@ -456,6 +471,11 @@ const onePageMessages = {
     shipping: 'Tarne',
     total: 'Kokku',
     calculated: 'Tarneandmete järgi',
+    destinationNeeded: 'Sisestage linn ja postiindeks',
+    lockerNeeded: 'Valige pakiautomaat',
+    calculatingDelivery: 'Arvutame tarnehinda…',
+    offerUnavailable:
+      'Selle tarneviisi hinda ei õnnestunud saada. Valige teine viis või proovige hiljem.',
     continue: 'Jätka maksmisega',
     checking: 'Kontrollime lõplikku summat…',
     remove: 'Eemalda',
@@ -946,6 +966,18 @@ function onePageForm({
       (key) => fields[key].checkValidity?.() !== false,
     ) &&
     (!locker.required || Boolean(locker.value));
+  // Delivery quotations are based on the cart and destination, not the
+  // recipient's name or contact details. Still require all customer details
+  // in ready() before creating an order.
+  const deliveryReady = () =>
+    validQuantities() &&
+    lines().length > 0 &&
+    market()?.delivery.some((d) => d.id === delivery.value) &&
+    (locker.required
+      ? Boolean(locker.value)
+      : ['city', 'postalCode'].every(
+          (key) => fields[key].value.trim() && fields[key].checkValidity?.() !== false,
+        ));
   const paint = () => {
     const preview = currentCouponPreview(),
       priceSource = quoted || preview,
@@ -998,7 +1030,13 @@ function onePageForm({
       ? money(quoted.delivery.amount, quoted.currency)
       : freeShipping
         ? money(0, market().currency)
-        : u.calculated;
+        : pendingQuote?.version === version
+          ? u.calculatingDelivery
+          : !deliveryReady()
+            ? locker.required
+              ? u.lockerNeeded
+              : u.destinationNeeded
+            : u.calculated;
     total.value.textContent = quoted
       ? money(quoted.amount, quoted.currency)
       : valid
@@ -1033,6 +1071,7 @@ function onePageForm({
       method = market()?.delivery.find((d) => d.id === delivery.value);
     const pending = { version: expected };
     pendingQuote = pending;
+    paint();
     pending.promise = (async () => {
       const deliveryQuote =
         method?.pricing === 'carrier' ? await client.deliveryQuote(input) : null;
@@ -1079,7 +1118,10 @@ function onePageForm({
       })
       .finally(() => {
         // A stale address response must not clear a newer address's pending quote.
-        if (pendingQuote === pending) pendingQuote = undefined;
+        if (pendingQuote === pending) {
+          pendingQuote = undefined;
+          if (!signal?.aborted && version === expected && !quoted) paint();
+        }
       });
     return pending.promise;
   };
@@ -1090,6 +1132,7 @@ function onePageForm({
       'carrier_transport_failed',
       'carrier_request_failed',
       'carrier_rate_limited',
+      'carrier_offer_unavailable',
     ].includes(error.message);
   const changed = () => {
     const count = lines().reduce((sum, l) => sum + l.quantity, 0);
@@ -1120,7 +1163,7 @@ function onePageForm({
         emitCart(next);
       }
     }
-    if (ready()) {
+    if (deliveryReady()) {
       const expected = version;
       timer = setTimeout(() => {
         status.textContent = u.checking;
@@ -1133,9 +1176,11 @@ function onePageForm({
             if (!signal?.aborted && version === expected && !busy) {
               status.textContent = error.message.startsWith('discount_')
                 ? couponFailure(error)
-                : deliveryFailed(error)
-                  ? u.deliveryUnavailable
-                  : u.quoteError;
+                : error.message === 'carrier_offer_unavailable'
+                  ? u.offerUnavailable
+                  : deliveryFailed(error)
+                    ? u.deliveryUnavailable
+                    : u.quoteError;
               status.setAttribute('role', 'alert');
             }
           });
@@ -1550,7 +1595,14 @@ function onePageForm({
     paymentPane.append(controls);
   };
   form.addEventListener('input', (event) => {
-    if (event.target !== terms && event.target !== couponInput && event.target !== lockerSearch)
+    // Contact data does not affect the carrier rate or quote hash; avoid
+    // repeatedly requesting the same rate as a buyer types their details.
+    if (
+      event.target !== terms &&
+      event.target !== couponInput &&
+      event.target !== lockerSearch &&
+      ![fields.name, fields.email, fields.phone].includes(event.target)
+    )
       changed();
   });
   countrySelect.addEventListener('change', refresh);
@@ -1598,17 +1650,20 @@ function onePageForm({
     } catch (error) {
       if (!signal?.aborted) {
         rejectCoupon(error);
-        status.textContent = deliveryFailed(error)
-          ? u.deliveryUnavailable
-          : error.message === 'network'
-            ? t[30]
-            : error.message.startsWith('discount_')
-              ? couponFailure(error)
-              : ['stock_unavailable', 'product_unavailable'].includes(error.message)
-                ? u.unavailable
-                : ['quote_price_changed', 'delivery_quote_conflict'].includes(error.message)
-                  ? u.quoteError
-                  : t[29];
+        status.textContent =
+          error.message === 'carrier_offer_unavailable'
+            ? u.offerUnavailable
+            : deliveryFailed(error)
+              ? u.deliveryUnavailable
+              : error.message === 'network'
+                ? t[30]
+                : error.message.startsWith('discount_')
+                  ? couponFailure(error)
+                  : ['stock_unavailable', 'product_unavailable'].includes(error.message)
+                    ? u.unavailable
+                    : ['quote_price_changed', 'delivery_quote_conflict'].includes(error.message)
+                      ? u.quoteError
+                      : t[29];
         status.setAttribute('role', 'alert');
         status.focus?.({ preventScroll: true });
       }

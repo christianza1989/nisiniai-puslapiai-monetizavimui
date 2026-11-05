@@ -776,7 +776,7 @@ test('free delivery coupon immediately displays zero shipping and removing it re
       /Nemokamas pristatymas/,
     );
     await button(root, 'Pašalinti kodą').fire('click');
-    assert.equal(totals.children[2].children[1].textContent, 'Pagal pristatymo duomenis');
+    assert.equal(totals.children[2].children[1].textContent, 'Įveskite miestą ir pašto kodą');
     assert.match(totals.children[3].children[1].textContent, /pristatymas/);
   }));
 test('quantity changes refresh the server coupon preview without an address or payment request', () =>
@@ -889,6 +889,89 @@ function carrierClient() {
   return client;
 }
 const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+test('a selected locker obtains the carrier price before contact details are supplied', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient(),
+      initialize = client.initialize;
+    client.initialize = async () => {
+      const data = await initialize();
+      data.markets[0].delivery.push({
+        id: 'omniva',
+        label: 'Omniva',
+        kind: 'locker',
+        pricing: 'carrier',
+        amount: 0,
+        lockers: [
+          {
+            id: 'vilnius',
+            label: 'Vilnius NORFA',
+            address: 'Salininkų g. 129A',
+            city: 'Vilnius',
+            postalCode: '77759',
+          },
+        ],
+      });
+      return data;
+    };
+    let received;
+    client.deliveryQuote = async (input) => {
+      received = input;
+      return { id: 'locker-rate' };
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    field(root, 'delivery').value = 'omniva';
+    await field(root, 'delivery').fire('change');
+    assert.ok(nodes(root).some((n) => n.textContent === 'Pasirinkite paštomatą'));
+    field(root, 'lockerSearch').value = 'norfa';
+    await field(root, 'lockerSearch').fire('input');
+    await nodes(root)
+      .find((n) => n.attrs.role === 'option')
+      .fire('click');
+    await pause(700);
+    assert.equal(received.customer.lockerId, 'vilnius');
+    assert.equal(received.customer.name, '');
+    assert.ok(nodes(root).some((n) => n.textContent?.includes('4,50')));
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('submit');
+    assert.equal(client.created, undefined);
+  }));
+test('destination alone calculates carrier price; contact entry does not re-request it or allow an incomplete order', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient();
+    let calls = 0;
+    client.deliveryQuote = async (input) => {
+      calls++;
+      assert.equal(input.customer.name, '');
+      assert.equal(input.customer.address.city, 'Vilnius');
+      assert.equal(input.customer.address.postalCode, '01101');
+      return { id: 'delivery-price' };
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    const form = nodes(root).find((n) => n.tag === 'form');
+    field(root, 'city').value = 'Vilnius';
+    field(root, 'postalCode').value = '01101';
+    await form.fire('input', field(root, 'postalCode'));
+    await pause(700);
+    assert.equal(calls, 1);
+    assert.ok(nodes(root).some((n) => n.textContent?.includes('4,50')));
+    await form.fire('submit');
+    assert.equal(client.created, undefined);
+    field(root, 'name').value = 'Buyer';
+    await form.fire('input', field(root, 'name'));
+    await pause(700);
+    assert.equal(calls, 1, 'contact changes must not issue another carrier quote');
+  }));
 test('auto carrier quote and submit share one pending request and create once', () =>
   withDom(async () => {
     const root = new Element('div'),
@@ -954,6 +1037,28 @@ test('failed carrier quote shows service feedback and explicit submit can retry'
     await form.fire('submit');
     assert.equal(calls, 2);
     assert.equal(client.created.deliveryQuoteId, 'retried');
+  }));
+test('unavailable carrier offer tells the buyer to choose another method without inventing a fee', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient();
+    client.deliveryQuote = async () => {
+      throw Error('carrier_offer_unavailable');
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    fillOnePage(root);
+    await nodes(root)
+      .find((n) => n.tag === 'form')
+      .fire('submit');
+    assert.match(
+      nodes(root).find((n) => n.attrs.role === 'alert')?.textContent,
+      /Pasirinkite kitą būdą/,
+    );
+    assert.equal(client.created, undefined);
   }));
 test('changed address cannot reuse an older pending carrier quote or clear a newer one', () =>
   withDom(async () => {

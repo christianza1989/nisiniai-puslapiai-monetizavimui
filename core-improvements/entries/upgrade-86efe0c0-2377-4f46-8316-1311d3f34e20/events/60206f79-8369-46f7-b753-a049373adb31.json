@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Coordinating agent reports the full commerce test suite passed 291/291, including the checkout UI regression tests. This local result does not establish hosted deployment, an actual carrier quote, a paid order, or webhook acceptance.",
+  "checks": [
+    {
+      "command": "npm test (commerce-core)",
+      "result": "PASS",
+      "evidence": "Coordinating agent observed 291 tests passed, 0 failed on the current in-progress checkout source; production adoption is separate."
+    }
+  ],
+  "eventId": "60206f79-8369-46f7-b753-a049373adb31",
+  "sequence": 2,
+  "at": "2026-11-05T14:02:03.891Z"
+}

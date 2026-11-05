@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Clarification of preceding event: actual suite invocation included a test-name-pattern argument; due to argument ordering it ran the entire suite. Its command and the separately run checkout regression are recorded exactly below. Results were observed in the coordinating agent's tool output, not saved to a results file. These local checks do not establish hosted deployment or a paid order.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/checkout-cart.test.mjs",
+      "result": "PASS",
+      "evidence": "Coordinating agent reports tool output: 37 passed, 0 failed, from the checkout worktree root."
+    },
+    {
+      "command": "npm test -- --test-name-pattern='webhook|delivery|checkout|locker|stripe' (commerce-core)",
+      "result": "PASS",
+      "evidence": "Coordinating agent reports tool output: exit 0, 291 passed, 0 failed. Because of argument ordering, all 291 suite tests ran."
+    }
+  ],
+  "eventId": "b05d4621-4346-4904-85bf-40786883afa7",
+  "sequence": 3,
+  "at": "2026-11-05T14:02:12.594Z"
+}

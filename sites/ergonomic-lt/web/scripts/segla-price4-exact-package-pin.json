@@ -1,0 +1,13 @@
+{
+  "version": "colors-20261105-v1-qualified-own-context13400-price4",
+  "manifest": "78a1d869e0ca4528261c12da3e3ef1ea2271329288932ac8c190531635e7b5dc",
+  "headers": {
+    "runtime.json": "3537f87daa96579c3ce1ebd1fd4c162ae9cc7f1b5ac37e753105e661100b6527",
+    "selectors.json": "8ff4a74030279f64d5481e1b35ce0bd9034df2f524372926cf72363a0877aff0",
+    "colors-groups.json": "f0ed3a0ffb736da34e4a600adf93a531000663da87c39522cd252bc766ccd2e5",
+    "own-source-contract.json": "97ad1eb61bcb88e276c66d2ffec4065fbb88f17e6b033307e6eaeb83931be9d9",
+    "construction-scope.json": "8127fefa8b489d39306ecd5d7e022b1ed8b907aec8eac2cba6cd0705247ba40b",
+    "WHOLE-VERIFIED.json": "e90e2ba95ac710122fc4a1221ff9cb13ac0211fb9ed8187e48bd5fcafe74e420",
+    "BASE-VALIDATION-VERIFIED.json": "bde17745df0823dbffff2e1ac73274c537fbae099df0a05ad9a83b1f0041cd86"
+  }
+}

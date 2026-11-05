@@ -4,6 +4,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {parseArgs} from 'node:util';
 import pins from './bja-seg-exact-package-pins.json';
+import price4Pin from './segla-price4-exact-package-pin.json';
 import {validateChairReviewComponents} from '../src/lib/chair-components';
 import {glbGeometryAdmission} from './prepared-review-glb-admission';
 import {qualifiedChairPlan,qualifiedDefaultSelection} from '../src/lib/chair-qualified-colors';
@@ -13,9 +14,11 @@ import type {QualifiedWitness} from '../src/lib/chair-qualified-colors';
 const sha=(bytes:Uint8Array|string)=>createHash('sha256').update(bytes).digest('hex');
 const canonical=(value:unknown):string=>JSON.stringify(value,(_key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a.localeCompare(b))):v);
 const equal=(a:unknown,b:unknown)=>assert.equal(canonical(a),canonical(b));
-const {values}=parseArgs({options:{root:{type:'string'},output:{type:'string'},'asset-map':{type:'string'}}});
+const {values}=parseArgs({options:{root:{type:'string'},output:{type:'string'},'asset-map':{type:'string'},price:{type:'string'}}});
 assert(values.root&&values.output&&values['asset-map']);
-const root=values.root,out=values.output,code='KSEG001WW001',pin=pins[code];
+const root=values.root,out=values.output,code='KSEG001WW001',price4=values.price==='4',pin=price4?price4Pin:pins[code];
+assert(!values.price||['1','4'].includes(values.price),'Unknown Segla price context');
+const price=price4?'_4':'_1',count=price4?206:101;
 const read=(name:string)=>fs.readFileSync(path.join(root,name));
 const manifestBytes=read('SHA256SUMS.json');assert.equal(sha(manifestBytes),pin.manifest);
 const manifest=JSON.parse(manifestBytes.toString());assert(manifest.code===code&&manifest.version===pin.version);
@@ -37,15 +40,15 @@ const raw=JSON.parse(checked('runtime.json').toString());
 const selectors=JSON.parse(checked('selectors.json').toString());
 assert(contract.code===code&&contract.version===pin.version&&contract.runtimeSha256===pin.headers['runtime.json']);
 assert(contract.sourceRuntimeOwnership==='NEW_PC2_OWN_NATIVE_WITNESS'&&contract.existingMainRuntimeGeometryOwnershipQualified===false&&contract.fullFormQualified===false);
-assert(contract.kind==='QUALIFIED_CONDITIONAL_OWN12300_SEG_PRICE1_FIXED_CONSTRUCTION_NATIVE10');
+assert(contract.kind===(price4?'QUALIFIED_CONDITIONAL_OWN13400_SEG_PRICE4_FIXED_CONSTRUCTION_NATIVE10':'QUALIFIED_CONDITIONAL_OWN12300_SEG_PRICE1_FIXED_CONSTRUCTION_NATIVE10'));
 assert(contract.qualificationSha256===scope.sourceNativeQualificationSha256&&contract.scopeContractSha256===pin.headers['construction-scope.json']&&contract.baseValidationSha256===base.validationSha256);
 assert(base.passActualScopedOwnRuntimeNative10AndOriginal432===true&&base.tested===10&&base.distinct===10&&base.strictFixedStructuralFieldNegatives===7);
 assert(base.runtimeSha256===contract.runtimeSha256&&base.scopeContractSha256===contract.scopeContractSha256);
-assert(whole.pass===true&&whole.actualContextStates===101&&whole.actualWholeSources===104&&whole.primitiveComparisons===5512&&whole.jointNativeSamples===10&&whole.jointDistinctSignatures===10&&whole.eachActiveFinishFieldNondefault===true&&whole.fullFormQualified===false);
+assert(whole.pass===true&&whole.actualContextStates===count&&whole.actualWholeSources===(price4?310:104)&&whole.primitiveComparisons===(price4?16430:5512)&&whole.jointNativeSamples===10&&whole.jointDistinctSignatures===10&&whole.eachActiveFinishFieldNondefault===true&&whole.fullFormQualified===false);
 assert(palette.ownSourceContractSha256===pin.headers['own-source-contract.json']&&palette.runtimeSha256===contract.runtimeSha256&&palette.witnessActualTupleSha256===contract.witnessFullActualTupleSha256);
 for(const d of [contract,scope,palette]){
  assert(d.qualifiedConditionalFinishContextComplete!==false&&d.fullFormQualified===false);
- equal(d.fixedSelectableFinishValues,{CPRICEGROUP:'_1'});
+ equal(d.fixedSelectableFinishValues,{CPRICEGROUP:price});
  equal(d.fixedSelectableStructuralFields,raw.fixedSelectableStructuralFields);
 }
 const fixed={CMECHANISM:'FST',CARMRESTS:'R35K3',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'};
@@ -85,13 +88,13 @@ assert(palette.schema==='chair-qualified-conditional-own-construction-palette-12
 equal(palette.requiredOwnedBaseAssetShas,[asset.sha256]);equal(palette.fixedObservedFinishValues,{});
 const group=palette.groups[0],records=Object.values(group.values) as any[];
 equal(group.fields,['CPRICEGROUP','CUPHCOLOR','CUPHGROUP']);
-assert(group.actualGroupValueCount===101&&records.length===101&&group.completeActualPostPrefixDomain===true);
+assert(group.actualGroupValueCount===count&&records.length===count&&group.completeActualPostPrefixDomain===true);
 const targets=new Set(group.ownedBaselineSelectors.map((s:any)=>s.assetSha256+':'+s.selectorId));
 assert(targets.size===2&&group.ownedBaselineSelectors.every((s:any)=>s.assetSha256===asset.sha256));
 const seen=new Set(),usedMaterials:Record<string,any>={};
 const singles=records.map(record=>{
  equal(Object.keys(record.values).sort(),['CPRICEGROUP','CUPHCOLOR','CUPHGROUP']);
- assert(record.values.CPRICEGROUP==='_1'&&contract.actualConditionalGroups.includes(record.values.CUPHGROUP)&&record.mode==='material');
+ assert(record.values.CPRICEGROUP===price&&contract.actualConditionalGroups.includes(record.values.CUPHGROUP)&&record.mode==='material');
  assert(!record.addOwnManufacturerAsset&&!record.removeOwnSelectors?.length);
  const tuple=canonical(record.values);assert(!seen.has(tuple));seen.add(tuple);
  assert(record.bindings.length===targets.size&&new Set(record.bindings.map((b:any)=>b.assetSha256+':'+b.selectorId)).size===targets.size);
@@ -102,7 +105,7 @@ const singles=records.map(record=>{
  }
  return {id:sha(tuple),label:record.values.CUPHGROUP+' · '+record.values.CUPHCOLOR,values:record.values,patch:{bindings:record.bindings.filter((b:any)=>b.materialId!==b.baseMaterialId),remove:[],assets:[]}};
 });
-const witness:QualifiedWitness={id:sha(canonical([0,context.dimensions,asset.sha256])),label:'Apmušalas · PRICE_1 · ši konstrukcija',context:0,construction:context.dimensions,variants:[0],requiredAssets:[asset.sha256],groups:[],singles,branches:[],fixed:{},structural:Object.fromEntries(Object.entries(fixed).map(([field,value])=>[field,{value,supportedValues:[value]}]))};
+const witness:QualifiedWitness={id:sha(canonical([0,context.dimensions,asset.sha256])),label:'Apmušalas · PRICE'+price+' · ši konstrukcija',context:0,construction:context.dimensions,variants:[0],requiredAssets:[asset.sha256],groups:[],singles,branches:[],fixed:{},structural:Object.fromEntries(Object.entries(fixed).map(([field,value])=>[field,{value,supportedValues:[value]}]))};
 const data:ChairPreview={schema:'pc2-chair-review-111-v1',code,name:'Segla UPH/P LOW',runtimeSha256:contract.runtimeSha256,runtime,
  palette:{schema:'chair-base-observed-colours-v1',sourceSchema:'qualified-own-original-reference-111-v1',code,runtimeSha256:contract.runtimeSha256,actualPaletteComplete:false,independentFinishCompositionAllowed:false,availableMaterialBindings:[],baselineObservedFinish:Object.fromEntries(Object.entries(palette.baseFinishValues).map(([field,value])=>[field,{value:String(value),knownCurrentPrefixChoices:[]}]))},
  selectors,assets:{[asset.sha256]:{asset:publishFile(asset.file),assetSha256:asset.sha256,bytes:asset.bytes}},textures,

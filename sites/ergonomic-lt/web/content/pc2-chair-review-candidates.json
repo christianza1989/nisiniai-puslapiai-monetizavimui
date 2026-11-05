@@ -473,7 +473,17 @@
       "asset": "/models/configurator/chairs/KSEG001WW001-de66e27e3cef8b51b42c/review-f860438e1b7c2a781d29.json",
       "sha256": "f860438e1b7c2a781d2912bea44a7b5716d77e1f8433ded104b0c83bc74901f2",
       "bytes": 227341,
-      "version": "colors-20261105-v1-qualified-own-context12300-price1"
+      "version": "colors-20261105-v1-qualified-own-context12300-price1",
+      "contextLabel": "PRICE_1 · 101 apmušalas",
+      "contexts": [
+        {
+          "id": "PRICE_4",
+          "label": "PRICE_4 · 206 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG001WW001-78a1d869e0ca4528261c/review-84c9003b0010fda52fad.json",
+          "sha256": "84c9003b0010fda52fadfa30940132ae89966ff4521902275ea1958edd196218",
+          "bytes": 406529
+        }
+      ]
     }
   ]
 }

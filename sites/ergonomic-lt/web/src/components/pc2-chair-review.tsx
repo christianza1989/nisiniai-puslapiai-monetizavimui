@@ -8,7 +8,8 @@ import type {PilotVariant} from '@/lib/configurator';
 import './pc2-chair-review.css';
 
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false});
-export type ChairReviewEntry={code:string;name:string;asset:string;sha256:string;bytes:number};
+type ChairReviewSource={asset:string;sha256:string;bytes:number};
+export type ChairReviewEntry=ChairReviewSource&{code:string;name:string;contextLabel?:string;contexts?:Array<ChairReviewSource&{id:string;label:string}>};
 function ModelReview({data}:{data:ChairPreview}){
  const [context,setContext]=useState(()=>chairInitialContext(data)),[variants,setVariants]=useState(()=>chairInitialVariants(data,chairInitialContext(data))),
   [observed,setObserved]=useState(()=>{const q=chairInitialQualifiedSelection(data);return q?'__qg:'+q.witness:'original';}),
@@ -64,8 +65,8 @@ function ModelReview({data}:{data:ChairPreview}){
  </div>;
 }
 export default function Pc2ChairReview({entries,initialCode}:{entries:ChairReviewEntry[];initialCode?:string}){
- const [code,setCode]=useState(entries.find(e=>e.code===initialCode)?.code||entries[0]?.code||''),[data,setData]=useState<ChairPreview>(),[error,setError]=useState('');
- const selected=entries.find(e=>e.code===code),sourceCode=selected?.code,sourceAsset=selected?.asset,sourceSha=selected?.sha256,sourceBytes=selected?.bytes;
+ const [code,setCode]=useState(entries.find(e=>e.code===initialCode)?.code||entries[0]?.code||''),[data,setData]=useState<ChairPreview>(),[error,setError]=useState(''),[finishContext,setFinishContext]=useState('default');
+ const selected=entries.find(e=>e.code===code),source=selected?.contexts?.find(c=>c.id===finishContext)||selected,sourceCode=selected?.code,sourceAsset=source?.asset,sourceSha=source?.sha256,sourceBytes=source?.bytes;
  useEffect(()=>{
   const abort=new AbortController();setData(undefined);setError('');if(!sourceCode||!sourceAsset||!sourceSha||!sourceBytes)return;
   (async()=>{try{
@@ -81,7 +82,8 @@ export default function Pc2ChairReview({entries,initialCode}:{entries:ChairRevie
  return <main className="container pc2-chair-review">
   <h1>Kėdžių 3D peržiūra</h1>
   <p>Perduotos konstrukcijos ir spalvinės būsenos. Ši peržiūra nepatvirtina visų galimų komplektacijų ar visos spalvų paletės; užklausų ir PDF nesudaro.</p>
-  <label className="field pc2-chair-picker">Kėdė<select aria-label="Kėdė" value={code} onChange={e=>setCode(e.target.value)}>{entries.map(entry=><option key={entry.code} value={entry.code}>{entry.name} · {entry.code}</option>)}</select></label>
-  {error?<p role="alert">{error}</p>:data?<ModelReview key={code} data={data}/>:<p role="status">{entries.length?'Įkeliamas pasirinktos kėdės paketas…':'Paketai dar neparuošti vietinei peržiūrai.'}</p>}
+  <label className="field pc2-chair-picker">Kėdė<select aria-label="Kėdė" value={code} onChange={e=>{setFinishContext('default');setCode(e.target.value);}}>{entries.map(entry=><option key={entry.code} value={entry.code}>{entry.name} · {entry.code}</option>)}</select></label>
+  {!!selected?.contexts?.length&&<label className="field pc2-chair-picker">Apmušalo kainų grupė<select aria-label="Apmušalo kainų grupė" value={finishContext} onChange={e=>setFinishContext(e.target.value)}><option value="default">{selected.contextLabel||'Pradinis rinkinys'}</option>{selected.contexts.map(context=><option key={context.id} value={context.id}>{context.label}</option>)}</select></label>}
+  {error?<p role="alert">{error}</p>:data?<ModelReview key={sourceSha} data={data}/>:<p role="status">{entries.length?'Įkeliamas pasirinktos kėdės paketas…':'Paketai dar neparuošti vietinei peržiūrai.'}</p>}
  </main>;
 }

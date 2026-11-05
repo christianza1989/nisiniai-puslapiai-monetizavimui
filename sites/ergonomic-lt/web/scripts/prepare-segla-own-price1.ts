@@ -6,6 +6,7 @@ import {parseArgs} from 'node:util';
 import pins from './bja-seg-exact-package-pins.json';
 import price4Pin from './segla-price4-exact-package-pin.json';
 import sixPricePins from './segla-six-prices-exact-pins.json';
+import familyPins from './segla-family-exact-pins.json';
 import {validateChairReviewComponents} from '../src/lib/chair-components';
 import {glbGeometryAdmission} from './prepared-review-glb-admission';
 import {qualifiedChairPlan,qualifiedDefaultSelection} from '../src/lib/chair-qualified-colors';
@@ -15,10 +16,11 @@ import type {QualifiedWitness} from '../src/lib/chair-qualified-colors';
 const sha=(bytes:Uint8Array|string)=>createHash('sha256').update(bytes).digest('hex');
 const canonical=(value:unknown):string=>JSON.stringify(value,(_key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a.localeCompare(b))):v);
 const equal=(a:unknown,b:unknown)=>assert.equal(canonical(a),canonical(b));
-const {values}=parseArgs({options:{root:{type:'string'},output:{type:'string'},'asset-map':{type:'string'},price:{type:'string'}}});
+const {values}=parseArgs({options:{root:{type:'string'},output:{type:'string'},'asset-map':{type:'string'},price:{type:'string'},code:{type:'string'}}});
 assert(values.root&&values.output&&values['asset-map']);
-const root=values.root,out=values.output,code='KSEG001WW001',price4=values.price==='4',routed=(sixPricePins as Record<string,any>)['_'+values.price],pin=routed|| (price4?price4Pin:pins[code]);
+const root=values.root,out=values.output,code=values.code||'KSEG001WW001',price4=values.price==='4',routed=code==='KSEG001WW001'?(sixPricePins as Record<string,any>)['_'+values.price]:(familyPins as Record<string,any>)[code]?.['_'+values.price],pin=routed|| (price4?price4Pin:pins[code]);
 assert(!values.price||['0','1','2','3','4','5'].includes(values.price),'Unknown Segla price context');
+assert(code==='KSEG001WW001'||routed,'Unknown exact Segla family context');
 const price='_'+(values.price||'1'),count=routed?routed.route.actualTuplesForThisRoute:price4?206:101,packageCount=routed?routed.whole.actualContextStates:count;
 const read=(name:string)=>fs.readFileSync(path.join(root,name));
 const manifestBytes=read('SHA256SUMS.json');assert.equal(sha(manifestBytes),pin.manifest);
@@ -50,10 +52,11 @@ assert(whole.pass===true&&whole.actualContextStates===packageCount&&whole.actual
 assert(palette.ownSourceContractSha256===pin.headers['own-source-contract.json']&&palette.runtimeSha256===contract.runtimeSha256&&palette.witnessActualTupleSha256===contract.witnessFullActualTupleSha256);
 for(const d of [contract,scope,palette]){
  assert(d.qualifiedConditionalFinishContextComplete!==false&&d.fullFormQualified===false);
- if(price==='_3')equal(d.supportedPriceValues,['_1','_3']);else equal(d.fixedSelectableFinishValues,{CPRICEGROUP:price});
+ if(price==='_3')equal(d.supportedPriceValues,['_1','_3']);else equal(d.fixedSelectableFinishValues,routed?.route.fixedSelectableFinishValues||{CPRICEGROUP:price});
  equal(d.fixedSelectableStructuralFields,raw.fixedSelectableStructuralFields);
 }
 if(routed){
+ assert(contract.baselineAssetSha256===(routed.route.baselineAssetSha256||contract.baselineAssetSha256));
  assert(contract.runtimeSha256===routed.route.runtimeSha256&&contract.qualificationSha256===routed.route.qualificationSha256);
  equal(contract.fixedSelectableStructuralFields,routed.route.fixedSelectableStructuralFields);
  equal(contract.activeSelectableFinishFields,routed.route.scopedSelectableFinishFields);
@@ -62,7 +65,7 @@ if(routed){
   equal(palette.nonchoiceFinishFields,routed.route.nonchoiceFinishFields);
  }
 }
-const fixed={CMECHANISM:'FST',CARMRESTS:'R35K3',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'};
+const fixed=code==='KSEG002WW001'?{CMECHANISM:'SA2T7',CARMRESTS:'R35K3SB2',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'}:code==='KSEG003WW001'?{CMECHANISM:'TAT7',CARMRESTS:'R74',CGASLIFT:'GLSTD',CBASE:'TS34BL',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'}:{CMECHANISM:'FST',CARMRESTS:'R35K3',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'};
 assert(Object.keys(raw.fixedSelectableStructuralFields).length===7);
 for(const [key,value]of Object.entries(fixed)){
  const field=raw.fixedSelectableStructuralFields[key];
@@ -120,7 +123,7 @@ const singles=records.map(record=>{
  return {id:sha(tuple),label:record.values.CUPHGROUP+' · '+record.values.CUPHCOLOR,values:record.values,patch:{bindings:record.bindings.filter((b:any)=>b.materialId!==b.baseMaterialId),remove:[],assets:[]}};
 });
 const witness:QualifiedWitness={id:sha(canonical([0,context.dimensions,asset.sha256])),label:'Apmušalas · PRICE'+price+' · ši konstrukcija',context:0,construction:context.dimensions,variants:[0],requiredAssets:[asset.sha256],groups:[],singles,branches:[],fixed:price==='_5'?{CUPHGROUP:'RX'}:{},structural:Object.fromEntries(Object.entries(fixed).map(([field,value])=>[field,{value,supportedValues:[value]}]))};
-const data:ChairPreview={schema:'pc2-chair-review-111-v1',code,name:'Segla UPH/P LOW',runtimeSha256:contract.runtimeSha256,runtime,
+const data:ChairPreview={schema:'pc2-chair-review-111-v1',code,name:code==='KSEG002WW001'?'Segla UPH/P MEDIUM':code==='KSEG003WW001'?'Segla UPH/P HIGH':'Segla UPH/P LOW',runtimeSha256:contract.runtimeSha256,runtime,
  palette:{schema:'chair-base-observed-colours-v1',sourceSchema:'qualified-own-original-reference-111-v1',code,runtimeSha256:contract.runtimeSha256,actualPaletteComplete:false,independentFinishCompositionAllowed:false,availableMaterialBindings:[],baselineObservedFinish:Object.fromEntries(Object.entries(palette.baseFinishValues).map(([field,value])=>[field,{value:String(value),knownCurrentPrefixChoices:[]}]))},
  selectors,assets:{[asset.sha256]:{asset:publishFile(asset.file),assetSha256:asset.sha256,bytes:asset.bytes}},textures,
  qualified:{schema:'chair-qualified-review-v1',code,runtimeSha256:contract.runtimeSha256,version:pin.version,witnesses:[witness],legacyScopes:[],materials:usedMaterials,extraAssets:{},opaqueAssets:[]}};

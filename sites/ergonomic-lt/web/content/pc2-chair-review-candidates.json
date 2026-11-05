@@ -512,6 +512,42 @@
           "bytes": 178267
         }
       ]
+    },
+    {
+      "code": "KSEG002WW001",
+      "name": "Segla UPH/P MEDIUM",
+      "asset": "/models/configurator/chairs/KSEG002WW001-4bb02d101941135fdcf9/review-6e8d86f8fcf722e3047f.json",
+      "sha256": "6e8d86f8fcf722e3047f49ba49869f0bfdc7e82a6b6ce26560c0cddc1816b9cb",
+      "bytes": 127977,
+      "version": "colors-20261105-v1-qualified-own-context37500-price1-cse",
+      "contextLabel": "PRICE_1 / CSE · 44 apmušalai",
+      "contexts": [
+        {
+          "id": "PRICE_2",
+          "label": "PRICE_2 / CUR · 15 apmušalų",
+          "asset": "/models/configurator/chairs/KSEG002WW001-d9b7191ae142b1b797cf/review-4ee429ac8bab96edb580.json",
+          "sha256": "4ee429ac8bab96edb5800496ea32bbc5962ea480d9723dcba2b0540d2e8d5cd6",
+          "bytes": 78676
+        }
+      ]
+    },
+    {
+      "code": "KSEG003WW001",
+      "name": "Segla UPH/P HIGH",
+      "asset": "/models/configurator/chairs/KSEG003WW001-979cc4fa59dde2472e3b/review-0de95251b1303ae8903d.json",
+      "sha256": "0de95251b1303ae8903da8a524d5f57937dca4acf6ae4cf9fd5e8095f543d9c2",
+      "bytes": 133295,
+      "version": "colors-20261105-v1-qualified-own-context37500-price1-cse",
+      "contextLabel": "PRICE_1 / CSE · 44 apmušalai",
+      "contexts": [
+        {
+          "id": "PRICE_2",
+          "label": "PRICE_2 / CUR · 15 apmušalų",
+          "asset": "/models/configurator/chairs/KSEG003WW001-0d1d0910385e975e6559/review-f44b3d5cc5061fb81906.json",
+          "sha256": "f44b3d5cc5061fb8190632e8fd393b3ef2be4f8e486c3cf21f5ca025c4847b20",
+          "bytes": 83994
+        }
+      ]
     }
   ]
 }

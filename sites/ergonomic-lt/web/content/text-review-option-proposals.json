@@ -391,5 +391,8 @@
   },
   "value:CPACKAGING=PACKUNASM": {
     "pack-unasm: 1 item in box, product disassembled": "Dėžė, 1 nesurinktas gaminys"
+  },
+  "value:CMESHGROUP=MV": {
+    "mv - semi-transparent": "Pusiau permatomas MV tinklelis"
   }
 }

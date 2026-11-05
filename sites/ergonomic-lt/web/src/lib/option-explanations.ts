@@ -2,7 +2,7 @@ import {createHash} from 'node:crypto';
 import mechanisms from '../../content/option-mechanism-explanations.json';
 import {explanationSourceModels,explanationSourceMetadata} from './option-explanation-sources';
 import inventory from '../../content/text-review-inventory.json';
-import {verifiedDeskMediaOption} from './verified-desk-media-options';
+import {verifiedDeskOption} from './verified-desk-media-options';
 import type {TextDefinition} from './text-review-types';
 
 export type OptionExplanation=TextDefinition&{sourceUrl:string;optionBinding:string};
@@ -245,7 +245,7 @@ export function explainManufacturerOption(field:string,source:string):string|und
 
 export function optionExplanation(args:{group:'chairs'|'desks';model:string;field:string;value:string;english:string;label:string;context:string;configuratorUrl:string}):OptionExplanation|undefined{
  const {group,model,field,value,english,label,context,configuratorUrl}=args;
- const media=group==='desks'?verifiedDeskMediaOption(model,field,value):undefined;
+ const media=group==='desks'?verifiedDeskOption(model,field,value):undefined;
  if(!english&&!media)return;
  const curated=group==='chairs'&&field==='CMECHANISM'?mechanisms.find(r=>r.code===value&&r.models.includes(model)):undefined;
  const text=media?.explanation||curated?.suggestedLt||explainManufacturerOption(field,english);
@@ -253,7 +253,7 @@ export function optionExplanation(args:{group:'chairs'|'desks';model:string;fiel
  // Shared only for the same category, field, exact original meaning and verified explanation.
  const meaning=[group,field,normalize(english),text],id='help:'+createHash('sha256').update(JSON.stringify(meaning)).digest('hex').slice(0,24);
  const sourceUrl=media?.source||(field==='CLUMBARSUPPORT'&&normalize(english)==='air shape'?'https://www.nowystyl.com/en/tiger-up/':field==='CBACKRESTMOVEMECH'||field==='CARMRESTS'&&/^r55-/i.test(english)?'https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf#page=20':field==='CARMRESTS'&&/^r35k/i.test(english)?'https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf#page=99':normalize(english)==='fenix ntm'?'https://www.nowystyl.com/media/NowyStyl/Files/Finishes_Catalogue_EN-PL-DE-FR_E01_2025.pdf':curated?.sources.at(-1)?.url||configuratorUrl);
- return {id,sourceHash:createHash('sha256').update(JSON.stringify([meaning,curated?.sources||[]])).digest('hex'),role:'Pasirinkimo paaiškinimas',english,polish:'',sourceCode:field+'='+value,suggested:text,context:context+' – '+label+': paaiškinimas',notes:'Trumpas paaiškinimas pagal gamintojo duomenis.',current:[text],modelCount:1,sourceUrl,optionBinding:explanationBinding(field,value)};
+ return {id,sourceHash:createHash('sha256').update(JSON.stringify([meaning,curated?.sources||[]])).digest('hex'),role:'Pasirinkimo paaiškinimas',english:english||media?.english||'',polish:'',sourceCode:field+'='+value,suggested:text,context:context+' – '+label+': paaiškinimas',notes:'Trumpas paaiškinimas pagal gamintojo duomenis.',current:[text],modelCount:1,sourceUrl,optionBinding:explanationBinding(field,value)};
 }
 
 export function catalogOptionExplanations(){

@@ -16,7 +16,7 @@ import type {Product} from './types';
 import {optionExplanation,catalogOptionExplanations,explainManufacturerOption,type OptionExplanation} from './option-explanations';
 import {explanationSourceModels,legacyExplanationModels} from './option-explanation-sources';
 import {manufacturerOptionName} from './manufacturer-option-names';
-import {verifiedDeskMediaOption} from './verified-desk-media-options';
+import {verifiedDeskOption} from './verified-desk-media-options';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
@@ -252,7 +252,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  const config=p.configurations.find(c=>c.id===p.modelConfigurationId);
  const directProposal=(binding:string,english:string)=>{
   const media=binding.match(/^value:([^=]+)=(.*)$/);
-  if(media){const verified=verifiedDeskMediaOption(model,media[1],media[2]);if(verified)return verified.name;}
+  if(media){const verified=verifiedDeskOption(model,media[1],media[2]);if(verified)return verified.name;}
   const stacking=binding.startsWith('value:CSTACKING=')&&english.match(/^Up to (\d+) pieces$/i);
   if(stacking)return 'Iki '+stacking[1]+' vnt.';
   const normalized=normalizeEnglish(english);
@@ -283,7 +283,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  };
  const proposalFor=(binding:string,text:string)=>{
   const media=binding.match(/^value:([^=]+)=(.*)$/);
-  if(media){const verified=verifiedDeskMediaOption(model,media[1],media[2]);if(verified)return verified.name;}
+  if(media){const verified=verifiedDeskOption(model,media[1],media[2]);if(verified)return verified.name;}
   const proposals=proposalsByBinding[group].get(binding);
   const references=englishByBinding[group].get(binding);
   const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding]||(references?.size===1?[...references][0]:text);

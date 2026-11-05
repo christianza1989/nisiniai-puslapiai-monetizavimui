@@ -556,6 +556,13 @@
           "asset": "/models/configurator/chairs/KSEG002WW001-471945430f98ab4c88d9/review-f069450d7668f5da60b8.json",
           "sha256": "f069450d7668f5da60b834ac62e8b78718a379be2a93e96a8ae042330e783124",
           "bytes": 76853
+        },
+        {
+          "id": "PRICE_1_YB",
+          "label": "PRICE_1 / YB · 13 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG002WW001-3cdfce47471ed6e33d34/review-48ec98914704b6e87b35.json",
+          "sha256": "48ec98914704b6e87b3559ca6242d3e8cd5397c12692d4f07d334fa6128a9fc2",
+          "bytes": 74990
         }
       ]
     },
@@ -602,6 +609,13 @@
           "asset": "/models/configurator/chairs/KSEG003WW001-9e685a6e158a81f5ec85/review-5eac66ae574b778fd34d.json",
           "sha256": "5eac66ae574b778fd34da2f766ad03fbb055298759f008605a3cd3a2bc6ba149",
           "bytes": 82171
+        },
+        {
+          "id": "PRICE_1_YB",
+          "label": "PRICE_1 / YB · 13 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG003WW001-11dea9978f85b00d2562/review-0eddf2beec511b303b0f.json",
+          "sha256": "0eddf2beec511b303b0f805d62403c86a182b4613f95d871e022f52832c38064",
+          "bytes": 80308
         }
       ]
     }

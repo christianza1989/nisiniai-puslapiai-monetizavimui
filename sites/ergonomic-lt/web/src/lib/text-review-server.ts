@@ -15,6 +15,7 @@ import type {CatalogRuntime} from './catalog-engine';
 import type {Product} from './types';
 import {optionExplanation,catalogOptionExplanations,type OptionExplanation} from './option-explanations';
 import {explanationSourceModels,legacyExplanationModels} from './option-explanation-sources';
+import {manufacturerOptionName} from './manufacturer-option-names';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
@@ -254,6 +255,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const normalized=normalizeEnglish(english);
   const verified=proposalsBySource[binding]?.[normalized];
   if(verified)return verified;
+  const sourceName=manufacturerOptionName(binding,english);if(sourceName)return sourceName;
   if(normalized==='fixed'&&binding.startsWith('value:CARMRESTS='))return 'Fiksuoti';
   const armrest=binding.startsWith('value:CARMRESTS=')&&armrestProposals.get(normalized);
   if(armrest)return armrest;
@@ -276,9 +278,11 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  };
  const proposalFor=(binding:string,text:string)=>{
   const proposals=proposalsByBinding[group].get(binding);
-  const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding]||text;
+  const references=englishByBinding[group].get(binding);
+  const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding]||(references?.size===1?[...references][0]:text);
   const verified=proposalsBySource[binding]?.[normalizeEnglish(english)];
   if(verified)return verified;
+  const sourceName=manufacturerOptionName(binding,english);if(sourceName)return sourceName;
   const sameEnglish=proposalsByEnglish[group].get(binding.split(':',1)[0]+':'+normalizeEnglish(english));
   return proposals?.size===1?[...proposals][0]:sameEnglish?.size===1?[...sameEnglish][0]:directProposal(binding,english);
  };
@@ -315,7 +319,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
    if(!runtime&&/COLOR|CHCOL|COL$|GROUP/.test(field))continue;
    const label=runtime?.palettes._fieldLabels?.[field]?.text||fieldLabels[field]||field;
    add('field:'+field,'Lauko pavadinimas',label,label,field);
-   for(const value of values)add('value:'+field+'='+value,'Parinktis',label,engine.choiceLabel(field,value,runtime?.palettes,state.family),field+'='+value);
+   for(const value of values)add('value:'+field+'='+value,'Parinktis',label,engine.choiceLabel(field,value,runtime?.palettes,state.family),field+'='+value,manufacturerOptionName('value:'+field+'='+value,runtime?.palettes[field]?.[value]?.text||''));
   }
  }
  if(config){

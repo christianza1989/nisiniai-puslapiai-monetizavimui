@@ -481,5 +481,605 @@
   },
   "value:FBASE=_4STAR": {
     "column, four-star": "Kolona su keturių stipinų pagrindu"
+  },
+  "field:CFSC": {
+    "wood and wood-based materials": "Mediena ir medienos medžiagos"
+  },
+  "field:CBHA": {
+    "backrest height adjustment": "Atlošo aukščio reguliavimas"
+  },
+  "field:CSDA": {
+    "seat depth adjustment": "Sėdynės gylio reguliavimas"
+  },
+  "field:CSEATDECSTITCHING": {
+    "colour - stitching on seat": "Sėdynės siūlių spalva"
+  },
+  "field:CBACKRESTPLASMATERIAL": {
+    "artificial elements material - backrest": "Atlošo plastikinių dalių medžiaga"
+  },
+  "field:CSEATPLASTICMATERIAL": {
+    "artificial elements material - seat": "Sėdynės plastikinių dalių medžiaga"
+  },
+  "field:CSEATPADFOAM": {
+    "foam": "Paminkštinimo užpildas"
+  },
+  "field:CBENCHARMMETALMATERIAL": {
+    "metal elements material - armrest": "Porankių metalinių dalių medžiaga"
+  },
+  "field:CTOPMATERIAL": {
+    "material of boards elements - table top": "Stalviršio plokštės medžiaga"
+  },
+  "field:CCOLUMN": {
+    "column": "Kolona"
+  },
+  "field:CMECHANISM": {
+    "mechanism": "Mechanizmas"
+  },
+  "field:CFOOTREST": {
+    "footrest": "Kojų atrama"
+  },
+  "field:CSEATCHIPBOARDMATERIAL": {
+    "material of boards elements - seat": "Sėdynės plokštės medžiaga"
+  },
+  "field:FDESKTYPE": {
+    "desk type": "Stalo tipas"
+  },
+  "field:FCONFIGURATIONMEDIALEFT": {
+    "configuration - media port left": "Kairiojo jungčių modulio komplektacija"
+  },
+  "field:FCONFIGURATIONMEDIARIGHT": {
+    "configuration - media port right": "Dešiniojo jungčių modulio komplektacija"
+  },
+  "field:FHADJUSTMENTWAY": {
+    "height adjustment with": "Aukščio valdymas"
+  },
+  "field:FBASE": {
+    "base": "Stalo pagrindas"
+  },
+  "field:FANTICOLLISION": {
+    "anti-collision": "Apsauga nuo susidūrimo"
+  },
+  "field:FHORWIRETRUNKING": {
+    "horizontal wire trunking": "Horizontalūs kabelių loveliai"
+  },
+  "field:FOUTSIDEDESKTOPBOARDMAT": {
+    "material chipboard elements - table top upper surface": "Stalviršio viršutinio paviršiaus medžiaga"
+  },
+  "field:FINSIDEDESKTOPBOARDMAT": {
+    "material chipboard elements - table top lower surface": "Stalviršio apatinio paviršiaus medžiaga"
+  },
+  "field:FCONFIGURATIONMEDIAMIDDL": {
+    "configuration - media port middle": "Vidurinio jungčių modulio komplektacija"
+  },
+  "field:FTOPMATERIAL": {
+    "material - table top": "Stalviršio medžiaga"
+  },
+  "field:FDESKTOPTYPE": {
+    "table top type": "Stalviršio tipas"
+  },
+  "field:FBASEFEET": {
+    "base foot": "Kojų atramos"
+  },
+  "field:FGLIDES": {
+    "glides": "Atraminės pėdelės"
+  },
+  "field:FUPPERPANEL": {
+    "upper panel": "Pertvara virš stalviršio"
+  },
+  "field:FTOPBOARDMATERIAL": {
+    "material chipboard elements - table top": "Stalviršio plokštės medžiaga"
+  },
+  "field:FTABLEEDGETHICKNESS": {
+    "table top edge thickness and type": "Stalviršio briaunos storis ir tipas"
+  },
+  "field:FVERWIRETRUNKING": {
+    "vertical wire trunking": "Vertikalūs kabelių kanalai"
+  },
+  "field:FPANEL": {
+    "panel": "Pertvara"
+  },
+  "field:FCONFIGURATIONMEDIA": {
+    "configuration - media port": "Jungčių modulio komplektacija"
+  },
+  "field:FMODESTYPANEL": {
+    "modesty panel": "Pertvara po stalviršiu"
+  },
+  "field:FBASEMATERIAL": {
+    "material - base": "Pagrindo medžiaga"
+  },
+  "field:FMODESTYPANELMATERIAL": {
+    "material - modesty panel": "Pertvaros po stalviršiu medžiaga"
+  },
+  "field:FPERFORATIONPATTERN": {
+    "perforation pattern": "Perforavimo raštas"
+  },
+  "field:FMODULE": {
+    "module type": "Modulio tipas"
+  },
+  "field:FMEDIAPORT": {
+    "media": "Jungčių modulis"
+  },
+  "field:FORGANIZER": {
+    "organiser version": "Daiktų dėklo variantas"
+  },
+  "field:FWIRETRUNKING": {
+    "wire trunking": "Kabelių kanalas"
+  },
+  "field:FTOPACCESSORIES": {
+    "accessories fo table top": "Stalviršio priedai"
+  },
+  "field:FTOPSLIDINGBOARDMATERIAL": {
+    "material chipboard elements - table top, sliding part": "Slankiojančios stalviršio dalies plokštės medžiaga"
+  },
+  "field:FTOPFIXEDBOARDMATERIAL": {
+    "material chipboard elements - table top, fixed part": "Nejudamos stalviršio dalies plokštės medžiaga"
+  },
+  "field:FBASEWOODMATERIAL": {
+    "wooden elements material - base": "Pagrindo medinių dalių medžiaga"
+  },
+  "field:FPEDESTALBOARDMATERIAL": {
+    "material chipboard elements - pedestal": "Stalčių bloko plokštės medžiaga"
+  },
+  "field:FTABLESLIEDGETHICKNESS": {
+    "table top edge thickness and type - sliding part": "Slankiojančios stalviršio dalies briaunos storis ir tipas"
+  },
+  "field:FTABLEFIXEDGETHICKNESS": {
+    "table top edge thickness and type - fixed part": "Nejudamos stalviršio dalies briaunos storis ir tipas"
+  },
+  "field:FMEDIAPORTRIGHT": {
+    "media - right": "Dešinysis jungčių modulis"
+  },
+  "field:FCASTORS": {
+    "castors": "Ratukai"
+  },
+  "field:FCERTIFICATIONCOC": {
+    "wood and wood-based materials": "Mediena ir medienos medžiagos"
+  },
+  "field:FVERSION": {
+    "version": "Variantas"
+  },
+  "field:FSLOTSONFLAPMIDDLE": {
+    "slots in flap - middle": "Angos viduriniame dangtyje"
+  },
+  "field:FFLAPEDGETHICKNESS": {
+    "flap edge thickness and type": "Dangčio briaunos storis ir tipas"
+  },
+  "field:FFLAPBOARDMATERIAL": {
+    "material chipboard elements -flap": "Dangčio plokštės medžiaga"
+  },
+  "field:FDRAWER": {
+    "drawer": "Stalčius"
+  },
+  "field:FOUTSIDEDESKBOARDMAT": {
+    "material chipboard elements - desk external surface": "Stalo išorinio paviršiaus medžiaga"
+  },
+  "field:FINSIDEDESKBOARDMAT": {
+    "material chipboard elements - desk internal surface": "Stalo vidinio paviršiaus medžiaga"
+  },
+  "field:FSIDBOCARCASS1BOARDMAT": {
+    "material chipboard elements - sideboard top, sides, back, partition walls": "Šoninės spintelės viršaus, šonų, nugarėlės ir pertvarų medžiaga"
+  },
+  "field:FSIDBOCARCASS2BOARDMAT": {
+    "material chipboard elements - sideboard bottom rim, upper rim, shelfs, drawers": "Šoninės spintelės apatinių ir viršutinių apvadų, lentynų ir stalčių medžiaga"
+  },
+  "field:FSIDEBOARDFRONTMATERIAL": {
+    "material chipboard elements - sideboard front": "Šoninės spintelės fasado medžiaga"
+  },
+  "field:FSIDEBOARDBASEMATERIAL": {
+    "material chipboard elements - sideboard base": "Šoninės spintelės pagrindo medžiaga"
+  },
+  "field:FTOPINSERT": {
+    "table top insert": "Stalviršio įdėklas"
+  },
+  "field:FPANELACCESSORIES": {
+    "accessories for panel": "Pertvaros priedai"
+  },
+  "field:FPANELBOARDMATERIAL": {
+    "material chipboard elements - panel": "Pertvaros plokštės medžiaga"
+  },
+  "field:FSLOTSONTOPLEFT": {
+    "slots - left": "Angos kairėje"
+  },
+  "field:FSLOTSONTOPRIGHT": {
+    "slots - right": "Angos dešinėje"
+  },
+  "field:FCOLUMN": {
+    "column base": "Atraminė kolona"
+  },
+  "field:FHANDLESIDEBOARD": {
+    "handle - sideboard": "Šoninės spintelės rankenėlė"
+  },
+  "field:FLOCKSIDEBOARD": {
+    "lock - sideboard": "Šoninės spintelės spyna"
+  },
+  "field:FDESKTOPSLIDINGRANGE": {
+    "table top sliding range": "Stalviršio slinkimo atstumas"
+  },
+  "field:FBASICBRACKET": {
+    "basic bracket": "Pagrindinis laikiklis"
+  },
+  "field:FSIDEBOARDMATERIAL": {
+    "material chipboard elements - sideboard": "Šoninės spintelės plokštės medžiaga"
+  },
+  "field:FPANELSIDE": {
+    "side panel": "Šoninė pertvara"
+  },
+  "field:FEXTENSIONEDGETHICKNESS": {
+    "extension top edge thickness and type": "Papildomo stalviršio briaunos storis ir tipas"
+  },
+  "field:FEXTTOPBOARDMATERIAL": {
+    "material chipboard elements - extension table top": "Papildomo stalviršio plokštės medžiaga"
+  },
+  "value:CGASLIFT=GLSTDCR": {
+    "pneumatic, standard, chrome": "Standartinis pneumatinis aukščio reguliatorius, chromuotas"
+  },
+  "value:CFSC=FSCMIX": {
+    "raw material – eu timber regulation, from certified forests, fsc certificate – authorized companies": "Žaliavos pagal ES prekybos mediena reikalavimus, iš sertifikuotų miškų; FSC – įgaliotoms įmonėms"
+  },
+  "value:CBHA=YES": {
+    "yes": "Yra"
+  },
+  "value:CSDA=YES": {
+    "yes": "Yra"
+  },
+  "value:CBACKRESTPLASMATERIAL=PLASTIC": {
+    "plastic": "Plastikas"
+  },
+  "value:CSEATPLASTICMATERIAL=PLASTIC": {
+    "plastic": "Plastikas"
+  },
+  "value:CBENCHARMMETALMATERIAL=STEELPC": {
+    "powder-coated steel": "Milteliniu būdu dažytas plienas"
+  },
+  "value:CBENCHARMMETALMATERIAL=STEELCR": {
+    "chromium plated steel": "Chromuotas plienas"
+  },
+  "value:CTOPMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:CSTACKING=_8C12": {
+    "up to 8 pieces/ up to 12 pieces on cart": "Iki 8 kėdžių, ant vežimėlio – iki 12"
+  },
+  "value:CSTACKING=_6C10": {
+    "up to 6 pieces/ up to 10 pieces on cart": "Iki 6 kėdžių, ant vežimėlio – iki 10"
+  },
+  "value:CSTACKING=_10C21": {
+    "up to 10 pieces/ up to 21 pieces on cart": "Iki 10 kėdžių, ant vežimėlio – iki 21"
+  },
+  "value:CCOLUMN=_3RWITHPLATE": {
+    "single, round": "Viena apvali kolona"
+  },
+  "value:CMECHANISM=TILTC": {
+    "tilt/c: tilt": "Pasvirimo mechanizmas"
+  },
+  "value:CFOOTREST=FB4020": {
+    "footbase, steel, 40x20 mm": "Plieninė kojų atrama, 40 × 20 mm"
+  },
+  "value:CSEATCHIPBOARDMATERIAL=MELAMINE25": {
+    "melamine (mfc) 25 mm": "Melaminu dengta medžio drožlių plokštė, 25 mm"
+  },
+  "value:FDESKTYPE=FREESTANDING": {
+    "freestanding": "Atskirai pastatomas stalas"
+  },
+  "value:FCONFIGURATIONMEDIALEFT=_1X230V1XDUSBCHAAC": {
+    "1x power socket + 1x double usb charger (type a + c)": "1 elektros lizdas ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FCONFIGURATIONMEDIARIGHT=_1X230V1XDUSBCHAAC": {
+    "1x power socket + 1x double usb charger (type a + c)": "1 elektros lizdas ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FHADJUSTMENTWAY=CONTROLPANELINTOP": {
+    "control panel with display and memory function (4 position), built into table top": "Stalviršyje įmontuotas valdiklis su ekranu ir 4 padėčių atmintimi"
+  },
+  "value:FANTICOLLISION=YES": {
+    "yes": "Yra"
+  },
+  "value:FHORWIRETRUNKING=ALHORIZONTAL2": {
+    "foldable on both sides, aluminium": "Aliumininis kabelių lovelis, atveriamas iš abiejų pusių"
+  },
+  "value:FOUTSIDEDESKTOPBOARDMAT=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FINSIDEDESKTOPBOARDMAT=MDF": {
+    "mdf lacquered": "Lakuota MDF plokštė"
+  },
+  "value:FCONFIGURATIONMEDIALEFT=_2X230V1XDUSBCHAAC": {
+    "2x power socket + 1x double usb charger (type a + c)": "2 elektros lizdai ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FCONFIGURATIONMEDIAMIDDL=_2X230V1XDUSBCHAAC": {
+    "2x power socket + 1x double usb charger (type a + c)": "2 elektros lizdai ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FCONFIGURATIONMEDIARIGHT=_2X230V1XDUSBCHAAC": {
+    "2x power socket + 1x double usb charger (type a + c)": "2 elektros lizdai ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FTOPMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FHADJUSTMENTWAY=HANDSETPANEL": {
+    "display and control panel with up&down buton": "Valdiklis su ekranu ir kėlimo bei nuleidimo mygtuku"
+  },
+  "value:FGLIDES=YES10": {
+    "leveling (+10 mm)": "Aukščio išlyginimas (+10 mm)"
+  },
+  "value:FUPPERPANEL=_1XFELT490": {
+    "1x felt, 490mm height": "1 veltinio pertvara, 490 mm aukščio"
+  },
+  "value:FTOPBOARDMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FTABLEEDGETHICKNESS=ABSSTANDARD2": {
+    "2 mm - glue technology": "Klijuota 2 mm briaunos juosta"
+  },
+  "value:FVERWIRETRUNKING=_2XVERTICALFLEXIBLEMODPLA": {
+    "2x flexible, modular, plastic": "2 lankstūs moduliniai plastikiniai kabelių kanalai"
+  },
+  "value:FUPPERPANEL=_1XUPH490": {
+    "1x upholstered, 490 mm height": "1 pertvara su apmušalu, 490 mm aukščio"
+  },
+  "value:FGLIDES=LEVELLING": {
+    "leveling": "Aukščio išlyginimas"
+  },
+  "value:FPANEL=MODESTYMEL340ROUNDCOR": {
+    "modesty, melamine, 340 mm height, rounded corners": "Apatinė melaminu dengta pertvara su užapvalintais kampais, 340 mm aukščio"
+  },
+  "value:FCONFIGURATIONMEDIA=_2X230V1XDUSBCHA2XCAT6": {
+    "2x power socket + 1x usb charger (type c) + 2x cat6 patch cable plugs (rj45)": "2 elektros lizdai, USB-C įkroviklis ir 2 CAT6 tinklo kabelių jungtys (RJ45)"
+  },
+  "value:FMODESTYPANEL=PERFMETALSHEET": {
+    "powder-coated perforated steel, 340 mm height": "Milteliniu būdu dažyto perforuoto plieno pertvara, 340 mm aukščio"
+  },
+  "value:FTOPMATERIAL=FENIX": {
+    "fenix ntm": "„Fenix NTM“ paviršius"
+  },
+  "value:FBASEMATERIAL=STEELPC": {
+    "powder-coated steel": "Milteliniu būdu dažytas plienas"
+  },
+  "value:FMODESTYPANELMATERIAL=PERFMETALSHEET": {
+    "perforated metal": "Perforuotas metalas"
+  },
+  "value:FPERFORATIONPATTERN=SQUAREQG525": {
+    "square qg 5-25": "Kvadratinių angų raštas"
+  },
+  "value:FMODULE=BASIC": {
+    "basic": "Pagrindinis modulis"
+  },
+  "value:FHORWIRETRUNKING=HORSTEEL1SHARED2FOLDAL": {
+    "1x shared, steel + 2x foldable on both sides, aluminium": "1 bendras plieninis ir 2 iš abiejų pusių atveriami aliumininiai kabelių loveliai"
+  },
+  "value:FVERWIRETRUNKING=VERFLEXIBLEMODSHAREDPLA": {
+    "flexible, modular, shared, plastic": "Bendras lankstus modulinis plastikinis kabelių kanalas"
+  },
+  "value:FMEDIAPORT=PROTONDOUBLE2M": {
+    "proton double 2m": "„Proton Double 2M“ jungčių modulis"
+  },
+  "value:FORGANIZER=RIGHT": {
+    "right": "Dešinysis variantas"
+  },
+  "value:FCONFIGURATIONMEDIA=_1X230V1XDUSBCHAAC": {
+    "1x power socket + 1x double usb charger (type a + c)": "1 elektros lizdas ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FWIRETRUNKING=VERUPHWIRET": {
+    "vertical, upholstered": "Vertikalus kabelių kanalas su apmušalu"
+  },
+  "value:FPANEL=UPPERUPH": {
+    "upper, upholstered": "Viršutinė pertvara su apmušalu"
+  },
+  "value:FTOPACCESSORIES=DOCUMENTSHELF": {
+    "document shelf": "Lentynėlė dokumentams"
+  },
+  "value:FTOPSLIDINGBOARDMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FTOPFIXEDBOARDMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FBASEWOODMATERIAL=BEECHNATURAL": {
+    "beech wood": "Buko mediena"
+  },
+  "value:FPEDESTALBOARDMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FTABLESLIEDGETHICKNESS=ABSLASER2": {
+    "2 mm - laser": "2 mm briaunos juosta, pritvirtinta lazeriniu būdu"
+  },
+  "value:FTABLEFIXEDGETHICKNESS=ABSLASER2": {
+    "2 mm - laser": "2 mm briaunos juosta, pritvirtinta lazeriniu būdu"
+  },
+  "value:FMEDIAPORTRIGHT=PIX1M": {
+    "pix 1m": "„Pix 1M“ jungčių modulis"
+  },
+  "value:FCONFIGURATIONMEDIARIGHT=_1X230V": {
+    "1x power socket": "1 elektros lizdas"
+  },
+  "value:FCASTORS=_8XFI503XLOCKABLE": {
+    "diam. 50 mm, 8 pieces (including 3 with brakes)": "8 ratukai Ø 50 mm, iš jų 3 su stabdžiais"
+  },
+  "value:FCERTIFICATIONCOC=EUTR": {
+    "raw material – eu timber regulation": "Žaliavos pagal ES prekybos mediena reikalavimus"
+  },
+  "value:FTOPBOARDMATERIAL=LINOLEUM": {
+    "linoleum": "Linoleumas"
+  },
+  "value:FTABLEEDGETHICKNESS=NOEDGE": {
+    "no edge (plywood structure visible)": "Be briaunos juostos, matomi faneros sluoksniai"
+  },
+  "value:FVERSION=WOPOSSIBILITYFRONTPANEL": {
+    "without upper front panel assembly option": "Be galimybės tvirtinti viršutinę priekinę pertvarą"
+  },
+  "value:FGLIDES=YES15": {
+    "leveling (+15 mm)": "Aukščio išlyginimas (+15 mm)"
+  },
+  "value:FSLOTSONFLAPMIDDLE=_2XSLOTS": {
+    "2x slots": "2 angos"
+  },
+  "value:FHORWIRETRUNKING=_4XMODMETAL": {
+    "4x modular, metal": "4 metaliniai moduliniai kabelių loveliai"
+  },
+  "value:FFLAPEDGETHICKNESS=ABSSTANDARD2": {
+    "2 mm - glue technology": "Klijuota 2 mm briaunos juosta"
+  },
+  "value:FFLAPBOARDMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FDESKTYPE=INTEGRATEDWITHSBDA": {
+    "integrated with sideboard sbd-a": "Stalas, sujungtas su šonine spintele"
+  },
+  "value:FCONFIGURATIONMEDIALEFT=_3X230V1XDUSBCHAAC": {
+    "3x power socket + 1x double usb charger (type a + c)": "3 elektros lizdai ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FCONFIGURATIONMEDIARIGHT=_3X230V1XDUSBCHAAC": {
+    "3x power socket + 1x double usb charger (type a + c)": "3 elektros lizdai ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FDRAWER=DRAWERLEATHER": {
+    "drawer in the tabletop upholstered in black leather": "Stalviršyje įmontuotas stalčius su juodos odos apmušalu"
+  },
+  "value:FPANEL=MODESTYVEN350": {
+    "modesty, veneer, 350 mm height": "Apatinė medienos lukštu dengta pertvara, 350 mm aukščio"
+  },
+  "value:FOUTSIDEDESKBOARDMAT=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FINSIDEDESKBOARDMAT=MDF": {
+    "mdf lacquered": "Lakuota MDF plokštė"
+  },
+  "value:FSIDBOCARCASS1BOARDMAT=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FSIDBOCARCASS2BOARDMAT=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FSIDEBOARDFRONTMATERIAL=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FSIDEBOARDBASEMATERIAL=MDF": {
+    "mdf lacquered": "Lakuota MDF plokštė"
+  },
+  "value:FTOPINSERT=GLASSLEATHER": {
+    "leather and glass": "Oda ir stiklas"
+  },
+  "value:FCONFIGURATIONMEDIAMIDDL=_1X230V1XDUSBCHAAC": {
+    "1x power socket + 1x double usb charger (type a + c)": "1 elektros lizdas ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FHORWIRETRUNKING=_8XMODMETAL": {
+    "8x modular, metal": "8 metaliniai moduliniai kabelių loveliai"
+  },
+  "value:FVERWIRETRUNKING=_4XVERTICALFLEXIBLEMODPLA": {
+    "4x flexible, modular, plastic": "4 lankstūs moduliniai plastikiniai kabelių kanalai"
+  },
+  "value:FUPPERPANEL=_2XUPH370OVERTOP": {
+    "2x upholstered, 370 mm height above the tabletop": "2 pertvaros su apmušalu, 370 mm virš stalviršio"
+  },
+  "value:FPANELACCESSORIES=_2XOS4XPENBOX4XMAGBO": {
+    "2x organiser strip, 4x pencil box, 4x magnetic board": "2 priedų tvirtinimo juostos, 4 pieštukinės ir 4 magnetinės lentos"
+  },
+  "value:FPANELBOARDMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FSLOTSONTOPLEFT=_2XSLOTS": {
+    "2x slots": "2 angos"
+  },
+  "value:FSLOTSONTOPRIGHT=_2XSLOTS": {
+    "2x slots": "2 angos"
+  },
+  "value:FVERWIRETRUNKING=_2XVERTICALUPH": {
+    "2x upholstered": "2 kabelių kanalai su apmušalu"
+  },
+  "value:FUPPERPANEL=UPH370OVERTOP": {
+    "upholstered, 370 mm height above the tabletop": "Pertvara su apmušalu, 370 mm virš stalviršio"
+  },
+  "value:FHADJUSTMENTWAY=CRANK": {
+    "crank": "Sukama rankenėle"
+  },
+  "value:FCOLUMN=_2RECTANGULAR9060": {
+    "rectangular (90x60 mm) - two-segment": "Dviejų segmentų stačiakampė kolona, 90 × 60 mm"
+  },
+  "value:FUPPERPANEL=UPHACOUSTIC30TH600H": {
+    "fully upholstered with aluminium frame and organiser strip, acoustic, 600 mm height": "Akustinė pertvara su apmušalu, aliumininiu rėmu ir priedų tvirtinimo juosta, 600 mm aukščio"
+  },
+  "value:FDESKTYPE=INTEGRATED": {
+    "integrated with sideboard": "Stalas, sujungtas su šonine spintele"
+  },
+  "value:FHANDLESIDEBOARD=TYPE4METAL": {
+    "metal (type 4)": "Metalinė rankenėlė"
+  },
+  "value:FLOCKSIDEBOARD=CYLREPLACEINSERTRANDOM": {
+    "cylinder lock with interchangeable key insert, random lock number": "Cilindrinė spyna su keičiama rakto šerdele, atsitiktinis spynos numeris"
+  },
+  "value:FDESKTOPSLIDINGRANGE=_70": {
+    "70 mm": "70 mm"
+  },
+  "value:FBASICBRACKET=YES": {
+    "yes": "Yra"
+  },
+  "value:FSIDEBOARDMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FCONFIGURATIONMEDIA=_1X230V1XDUSBCHAC": {
+    "1x power socket + 1x double usb charger (type a+c)": "1 elektros lizdas ir dvigubas USB-A bei USB-C įkroviklis"
+  },
+  "value:FPANEL=UPPMELUPH4151FRONT2SIDE": {
+    "upper, melamine, 1x front, 2× side (left and right), 1x upholstered pad": "Viršutinė melaminu dengta pertvara: 1 priekinė dalis, 2 šoninės dalys ir 1 apmuštas įdėklas"
+  },
+  "value:FPANEL=UPPERUPH360": {
+    "upper, upholstered, 360 mm height above the tabletop": "Viršutinė pertvara su apmušalu, 360 mm virš stalviršio"
+  },
+  "value:FHORWIRETRUNKING=_3XMODMETAL": {
+    "3x modular, metal": "3 metaliniai moduliniai kabelių loveliai"
+  },
+  "value:FMODESTYPANEL=MELAMINE350": {
+    "melamine, 350 mm height": "Melaminu dengta pertvara, 350 mm aukščio"
+  },
+  "value:FVERWIRETRUNKING=_4XVERTICALUPH": {
+    "4x upholstered": "4 kabelių kanalai su apmušalu"
+  },
+  "value:FUPPERPANEL=_2XMELAMINE377OVERTOP": {
+    "2x modesty, melamine, 377 mm height above the tabletop": "2 melaminu dengtos pertvaros, 377 mm virš stalviršio"
+  },
+  "value:FPANELSIDE=MEL377OVERTOPW1600": {
+    "modesty, melamine, 377 mm height above the tabletop, width 1600 mm": "Melaminu dengta pertvara, 377 mm virš stalviršio, 1600 mm pločio"
+  },
+  "value:FPANELACCESSORIES=_4XUPHPADONPINS700290": {
+    "4x upholstered pad 700 x 290 mm, with the option of inserting pins": "4 apmušti 700 × 290 mm įdėklai, į kuriuos galima smeigti smeigtukus"
+  },
+  "value:FPANEL=UPUPH480MODMEL370": {
+    "upper, upholstered, 480 mm height + modesty, melamine, 370 mm height": "Viršutinė pertvara su apmušalu, 480 mm aukščio, ir apatinė melaminu dengta pertvara, 370 mm aukščio"
+  },
+  "value:FPANELACCESSORIES=_1XOS1XMAGBOPEN1XHPHOLD": {
+    "organiser strip, magnetic board with pencil tray, headphone holder": "Priedų tvirtinimo juosta, magnetinė lenta su pieštukų dėklu ir ausinių laikiklis"
+  },
+  "value:FHORWIRETRUNKING=_2XMODULARSHAREDSTEELPC": {
+    "2x modular, shared, steel": "2 bendri moduliniai plieniniai kabelių loveliai"
+  },
+  "value:FPANEL=_2XUPUPHSTITCH400": {
+    "2x upper, upholstered with stitching, 400 mm height above the tabletop": "2 viršutinės pertvaros su dygsniuotu apmušalu, 400 mm virš stalviršio"
+  },
+  "value:FEXTENSIONEDGETHICKNESS=ABSSTANDARD2": {
+    "2 mm - glue technology": "Klijuota 2 mm briaunos juosta"
+  },
+  "value:FEXTTOPBOARDMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FHORWIRETRUNKING=_3XMODULARSHAREDSTEELPC": {
+    "3x modular, shared, steel": "3 bendri moduliniai plieniniai kabelių loveliai"
+  },
+  "value:FVERWIRETRUNKING=_6XVERTICALUPH": {
+    "6x upholstered": "6 kabelių kanalai su apmušalu"
+  },
+  "value:FPANEL=_3XUPUPHSTITCH400": {
+    "3x upper, upholstered with stitching, 400 mm height above the tabletop": "3 viršutinės pertvaros su dygsniuotu apmušalu, 400 mm virš stalviršio"
+  },
+  "value:FPANELSIDE=_4XSIDEUPHSTITCH400": {
+    "4x side, upholstered with stitching, 400 mm height above the tabletop": "4 šoninės pertvaros su dygsniuotu apmušalu, 400 mm virš stalviršio"
+  },
+  "value:FHORWIRETRUNKING=_12XMODMETAL": {
+    "12x modular, metal": "12 metalinių modulinių kabelių lovelių"
+  },
+  "value:FUPPERPANEL=_3XUPH370OVERTOP": {
+    "3x upholstered, 370 mm height above the tabletop": "3 pertvaros su apmušalu, 370 mm virš stalviršio"
+  },
+  "value:CGLIDES=GDT": {
+    "protect": "Apsauginės atraminės pėdelės"
+  },
+  "value:CLUMBARSUPPORT=AIRSHAPE": {
+    "air shape": "Juosmens atrama „Air Shape“"
   }
 }

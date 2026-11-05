@@ -248,7 +248,10 @@ export function optionExplanation(args:{group:'chairs'|'desks';model:string;fiel
  const media=group==='desks'?verifiedDeskOption(model,field,value):undefined;
  if(!english&&!media)return;
  const curated=group==='chairs'&&field==='CMECHANISM'?mechanisms.find(r=>r.code===value&&r.models.includes(model)):undefined;
- const text=media?.explanation||curated?.suggestedLt||explainManufacturerOption(field,english);
+ // Retain an existing source-backed explanation identity when a newly verified
+ // accessory name adds coverage, so prior human explanation edits still apply.
+ const preserved=media?.preserveSourceExplanation&&english&&english!==value?explainManufacturerOption(field,english):undefined;
+ const text=preserved||media?.explanation||curated?.suggestedLt||explainManufacturerOption(field,english);
  if(!text)return;
  // Shared only for the same category, field, exact original meaning and verified explanation.
  const meaning=[group,field,normalize(english||media?.english||''),text],id='help:'+createHash('sha256').update(JSON.stringify(meaning)).digest('hex').slice(0,24);

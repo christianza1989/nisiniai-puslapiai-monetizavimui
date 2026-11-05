@@ -40,7 +40,7 @@ export function searchSelection(query:string):string|undefined{
 }
 export function matchesSearch(p:Product,query:string,categoryName=''){
  const selection=searchSelection(query);if(selection==='biuro-baldai')return true;if(selection==='ergonominiai-baldai')return matchesSelection(p,'ergonominiai-stalai')||matchesSelection(p,'ergonomines-kedes');if(selection==='electric')return modelTags(p).includes('electric');if(selection)return matchesSelection(p,selection);
- const haystack=normalizeSearch([p.name,p.description,p.modelConfigurationId||'',...catalogModelAliases(p.id,p.modelConfigurationId),...p.configurations.filter(c=>c.id===p.modelConfigurationId).map(c=>c.code||''),categoryName].join(' '));
+ const haystack=normalizeSearch([p.name,p.textReviewHeading||'',p.description,p.modelConfigurationId||'',...catalogModelAliases(p.id,p.modelConfigurationId),...p.configurations.filter(c=>c.id===p.modelConfigurationId).map(c=>c.code||''),categoryName].join(' '));
  return normalizeSearch(query).split(' ').every(word=>haystack.includes(word));
 }
 export function curatedModels(models:Product[],id:string,limit=8){

@@ -1,7 +1,7 @@
 import type {ChairComponents} from './chair-components';
 import {chairColorPlan,type ChairPalette,type ChairColorPlan} from './chair-color-admission';
 import type {Asset,Patch} from './expanded-configurator';
-import {qualifiedChairPlan,qualifiedWitnessMatches,type ChairQualifiedData,type QualifiedSelection} from './chair-qualified-colors';
+import {qualifiedChairPlan,qualifiedWitnessMatches,qualifiedDefaultSelection,type ChairQualifiedData,type QualifiedSelection} from './chair-qualified-colors';
 
 export type ChairSlot={selectorId:string;materialId:string;sourceNodePath:number[];primitive:number;transformChain:{matrix:number[]}[]};
 export type ChairSelectors={schema:'canonical-world-primitive-selectors-329-v1';assets:Record<string,{assetSha256:string;slots:ChairSlot[];materials:Record<string,unknown>}>};
@@ -16,6 +16,18 @@ export function chairInitialVariants(data:ChairPreview,index:number){
  const witness=data.qualified?.witnesses.find(w=>w.context===index);if(witness)return [...witness.variants];
  const scope=data.palette.schema==='chair-colors-observed-partial-344-v1'?data.palette.observedPairs[0]?.constructionScope||{}:{};
  return data.runtime.contexts[index].groups.map(g=>{const n=g.variants.findIndex(v=>Object.entries(v.values).every(([k,x])=>scope[k]===x));return n<0?0:n;});
+}
+/** Expose a supplied material control immediately only when its complete base
+ * tuple is a no-op against this exact original assembly. */
+export function chairInitialQualifiedSelection(data:ChairPreview,context=chairInitialContext(data),variants=chairInitialVariants(data,context)):QualifiedSelection|undefined{
+ if(!data.qualified?.witnesses.length)return;
+ const original=chairPreviewAssembly(data,context,variants,chairObservedChoices(data)[0]);
+ const active=[original.base,...original.patches.flatMap(p=>p.geometry?[p.geometry]:[])].filter(a=>a!==null).map(a=>a.assetSha256);
+ for(const witness of data.qualified.witnesses){
+  if(!(witness.groups.length||witness.branches.length)||!qualifiedWitnessMatches(data,witness,context,variants,active))continue;
+  const selection=qualifiedDefaultSelection(witness);
+  if(qualifiedChairPlan(data,context,variants,active,selection).status==='original')return selection;
+ }
 }
 export function chairObservedChoices(data:ChairPreview):ChairObservedChoice[]{
  const original:ChairObservedChoice={id:'original',label:'Originalios medžiagos',selection:{kind:'original'},values:{}};

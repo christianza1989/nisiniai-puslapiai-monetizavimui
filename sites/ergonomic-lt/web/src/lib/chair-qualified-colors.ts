@@ -7,7 +7,7 @@ export type QualifiedPatch={bindings:QualifiedBinding[];remove:QualifiedTarget[]
 export type QualifiedOption={id:string;label:string;values:Record<string,string>;patch:QualifiedPatch};
 export type QualifiedGroup={id:string;label:string;options:QualifiedOption[];base:string};
 export type QualifiedBranch={id:string;label:string;values:Record<string,string>;patch:QualifiedPatch;groups:QualifiedGroup[]};
-export type QualifiedWitness={id:string;label:string;context:number;construction:Record<string,string>;variants:number[];requiredAssets:string[];groups:QualifiedGroup[];singles:QualifiedOption[];branches:QualifiedBranch[];baseBranch?:string;fixed?:Record<string,string>;inference?:boolean};
+export type QualifiedWitness={id:string;label:string;context:number;construction:Record<string,string>;variants:number[];requiredAssets:string[];groups:QualifiedGroup[];singles:QualifiedOption[];branches:QualifiedBranch[];baseBranch?:string;fixed?:Record<string,string>;inference?:boolean;structural?:Record<string,{value:string;supportedValues:string[]}>};
 export type ChairQualifiedData={schema:'chair-qualified-review-v1';code:string;runtimeSha256:string;version:string;witnesses:QualifiedWitness[];legacyScopes:{context:number;requiredAssets:string[];construction:Record<string,string>}[];materials:Record<string,unknown>;extraAssets:Record<string,Asset>;opaqueAssets:string[]};
 export type QualifiedSelection={witness:string;kind:'groups'|'single';single?:string;groups:Record<string,string>;branch?:string};
 const key=(a:QualifiedTarget)=>a.assetSha256+':'+a.selectorId;
@@ -18,9 +18,9 @@ function actualConstruction(data:ChairPreview,context:number,variants:number[]){
  const values={...c.dimensions};for(const [i,g]of c.groups.entries()){const v=g.variants[variants[i]??0];if(!v)return;Object.assign(values,v.values);}
  return values;
 }
-export function qualifiedWitnessMatches(data:ChairPreview,w:Pick<QualifiedWitness,'context'|'construction'|'requiredAssets'>,context:number,variants:number[],active:string[]){
+export function qualifiedWitnessMatches(data:ChairPreview,w:Pick<QualifiedWitness,'context'|'construction'|'requiredAssets'|'structural'>,context:number,variants:number[],active:string[]){
  if(w.context!==context||!w.requiredAssets.length||new Set(w.requiredAssets).size!==w.requiredAssets.length||w.requiredAssets.length!==active.length||!w.requiredAssets.every(h=>active.includes(h)))return false;
- const actual=actualConstruction(data,context,variants);return !!actual&&Object.entries(actual).every(([k,v])=>w.construction[k]===v);
+ const actual=actualConstruction(data,context,variants);return !!actual&&Object.entries(actual).every(([k,v])=>w.construction[k]===v)&&Object.entries(w.structural||{}).every(([field,s])=>actual[field]===s.value&&s.supportedValues.includes(s.value));
 }
 export function currentQualifiedWitness(data:ChairPreview,context:number,variants:number[],active:string[]){return data.qualified?.witnesses.find(w=>qualifiedWitnessMatches(data,w,context,variants,active));}
 export function qualifiedDefaultSelection(w:QualifiedWitness):QualifiedSelection{

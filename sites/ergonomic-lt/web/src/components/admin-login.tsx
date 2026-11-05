@@ -1,0 +1,6 @@
+'use client';
+import {copyText} from '@/lib/editorial-copy';
+import {useState} from 'react';
+import {useRouter} from 'next/navigation';
+async function mutate(url:string,method:string,data:unknown){const response=await fetch(url,{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const result=await response.json();if(!response.ok)throw new Error(result.error||copyText("ui.6bb0a4d5329297c97e47","Veiksmas nepavyko."));return result;}
+export function AdminLogin(){const [error,setError]=useState(''),[busy,setBusy]=useState(false);const router=useRouter();return <form method="post" action="/api/admin/login/" className="admin-login" onSubmit={async e=>{e.preventDefault();setBusy(true);setError('');try{await mutate('/api/admin/login/','POST',{password:new FormData(e.currentTarget).get('password')});router.refresh();}catch(e){setError((e as Error).message);}finally{setBusy(false);}}}><label className="field"><span>{copyText("ui.44ebb30bc7d04a63ec73","Slaptažodis")}</span><input type="password" name="password" required autoComplete="current-password" maxLength={200}/></label>{error&&<p className="form-error" role="alert">{error}</p>}<button className="button dark" disabled={busy}>{busy?'Jungiamasi…':'Prisijungti'}</button></form>;}

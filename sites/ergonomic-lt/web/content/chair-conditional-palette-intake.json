@@ -1,0 +1,71 @@
+{
+  "schema": "chair-exact-conditional-palette-receiving-intake-v1",
+  "code": "KBJA003WW002",
+  "version": "colors-20261102-v1-qualified-context4181",
+  "entry": {
+    "code": "KBJA003WW002",
+    "name": "Bjarg",
+    "asset": "/models/configurator/chairs/KBJA003WW002-17ff76a2acc4463b0812/review-e72b74c852da9f4036d6.json",
+    "sha256": "e72b74c852da9f4036d6d56b84376e0d126c712886071f126b2a49b9f643fd80",
+    "bytes": 2048334,
+    "version": "colors-20261102-v1-qualified-context4181"
+  },
+  "producerManifestSha256": "17ff76a2acc4463b0812f454bb48f56bf9b4567ff80e326d29fc4fedc01fffb3",
+  "kind": "QUALIFIED_CONDITIONAL_BJA3_74_OWN_4181",
+  "runtimeSha256": "0ca26e7a27eec020b57de31f83b6b208598ff5c1be54040dc8b2424d1d08bcca",
+  "context": 79,
+  "requiredOwnedBaseAssetShas": [
+    "47a23f32ac5adb953042f9e0565ac1512f41d25b10a63d066327bbab69d1e311"
+  ],
+  "fixedSelectableFinishValues": {
+    "CHEADRESTUPHCOLOR": "VL5002",
+    "CHEADRESTUPHGROUP": "VL",
+    "CPRICEGROUP": "_2"
+  },
+  "atomicFullTupleStates": 74,
+  "materialGroups": {
+    "XR": 41,
+    "EGL": 17,
+    "CUR": 15,
+    "VL": {
+      "observedInvariantStates": 1,
+      "selectableColourChoices": 0
+    }
+  },
+  "qualifiedConditionalFinishContextComplete": true,
+  "qualifiedWitnessGroupPaletteComplete": false,
+  "actualPaletteComplete": false,
+  "allGeometryContextsCovered": false,
+  "rendererIntegrationVerified": true,
+  "receivingBrowserProofSha256": "ee7639c16589af5f6c60fb21ab7af2d1ad44943f4db9998644d45e1ea70ca4bb",
+  "browser": [
+    {
+      "device": "desktop",
+      "atomicOptions": 74,
+      "originalCodeSelectionPreserved": true,
+      "protectedMaterialsExact": true,
+      "geometryAndMatricesExact": true,
+      "exactOriginalMaterialReferences": true,
+      "exactOriginalGpu": true,
+      "outsideConstructionOriginalOnly": true,
+      "errors": []
+    },
+    {
+      "device": "phone",
+      "atomicOptions": 74,
+      "originalCodeSelectionPreserved": true,
+      "protectedMaterialsExact": true,
+      "geometryAndMatricesExact": true,
+      "exactOriginalMaterialReferences": true,
+      "exactOriginalGpu": true,
+      "outsideConstructionOriginalOnly": false,
+      "errors": []
+    }
+  ],
+  "existingJGroupVersionsRetained": 19,
+  "newGeometryCopies": 0,
+  "NativeRequests": 0,
+  "producerWholeReplayed": false,
+  "publicPass": false,
+  "publicationApproved": false
+}

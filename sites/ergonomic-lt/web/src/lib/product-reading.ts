@@ -9,6 +9,8 @@ import type {CatalogRuntime} from './catalog-configurator';
 import {productIsVisible} from './site-publication';
 import {productHeading} from './product-presentation';
 import {readingPage,type ReadingPage} from './site-reading-pages';
+import {customerProductCodes} from './customer-product-presentation';
+import {customerLabel} from './customer-names';
 import {selectedModelConfiguration} from './product-models';
 
 type ReadingMode='public'|'local-preview'|'closed';
@@ -22,16 +24,17 @@ export function readingMode(request:Request,access:ReadingAccess):ReadingMode{
 export function productReadingPages(products:Product[],mode:ReadingMode,runtimes:Record<string,CatalogRuntime|undefined>={}){
  if(mode==='closed')return [];
  return products.filter(p=>productIsVisible(p,mode==='local-preview')).flatMap(product=>{
+  const safe=(page:ReadingPage):ReadingPage=>{if(!product.customerHeading)return page;const codes=customerProductCodes(product);return {...page,title:productHeading(product),description:customerLabel(page.description,codes,''),body:page.body.map(row=>({...row,text:customerLabel(row.text,codes,'')}))};};
   if(!configurableArticle(product)){
    const seo=modelSeo(product),c=selectedModelConfiguration(product),a=product.modelArticle;
    const texts=a?[a.summary,...a.paragraphs,a.scopeNote,...a.technicalSections.flatMap(s=>['## '+s.heading,...s.rows.map(r=>r.label+': '+r.value)])]:[product.description,...(c?.details||[]).map(r=>r.label+': '+r.value)];
-   return [readingPage(productPath(product),productHeading(product),seo.description,texts,[],'product')];
+   return [safe(readingPage(productPath(product),productHeading(product),seo.description,texts,[],'product'))];
   }
   const engine=createExpandedEngine(runtimes[product.id+':'+product.modelConfigurationId]);
   const selected=engine.selectionArticle(product,engine.initialStateForProduct(product));
   if(!selected||selected.sections.some(s=>s.missingProfile))return [];
   const seo=modelSeo(product);
-  return [{id:productPath(product),type:'product',title:productHeading(product),description:seo.description,
+  return [safe({id:productPath(product),type:'product',title:productHeading(product),description:seo.description,
    url:'https://ergonomic.lt'+productPath(product),
    editorial:{authors:[],sources:[],commerceTargets:[],productRecommendation:false},links:[],externalLinks:[],
    body:[{text:product.description},{text:'## Apie '+product.name},...selected.intro.map(text=>({text})),
@@ -40,7 +43,7 @@ export function productReadingPages(products:Product[],mode:ReadingMode,runtimes
     {text:selected.scopeNote},...selected.sections.flatMap(section=>[
      {text:'### '+section.heading},...section.paragraphs.map(text=>({text})),...section.rows.map(row=>({text:row.label+': '+row.value}))
     ]),{text:'Svetainės valdytojas: '+facts.company}]
-  }];
+  })];
  });
 }
 export function productReadingResponse(request:Request,products:Product[],full:boolean,access:ReadingAccess,runtimes:Record<string,CatalogRuntime|undefined>={},standardPages:ReadingPage[]=[]){

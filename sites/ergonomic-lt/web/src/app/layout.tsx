@@ -5,6 +5,7 @@ import {SiteHeader} from '@/components/site-header';
 import {SiteFooter} from '@/components/site-footer';
 import {JsonLd} from '@/components/json-ld';
 import {previewMode} from '@/lib/catalog';
+import {isAdmin} from '@/lib/auth';
 import './globals.css';
 import './homepage.css';
 import './homepage-selected.css';
@@ -17,6 +18,8 @@ import './site-header.css';
 import './seo-surfaces.css';
 import './footer.css';
 import './editorial-layout.css';
+import './text-review.css';
+import './customer-configuration.css';
 export const dynamic='force-dynamic';
 export const metadata:Metadata={metadataBase:new URL(process.env.LAUNCH_SITE==='true'?(process.env.PUBLIC_ORIGIN||'https://ergonomic-launch.pinet-azprekyba.workers.dev'):'https://ergonomic.lt'),title:{default:'Ergonomic.lt',template:'%s | Ergonomic.lt'},icons:{icon:'/icon.svg'}};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="lt"><head><link rel="preload" href={siteFont.url} as="font" type="font/woff2" crossOrigin="anonymous"/></head><body id="top"><a href="#main-content" className="skip-link">Pereiti prie turinio</a><QuoteProvider>{previewMode()&&<div className="preview-banner">Svetainės peržiūros versija</div>}<div className="site-shell"><SiteHeader/><main id="main-content" className="site-content">{children}</main></div><SiteFooter/></QuoteProvider><JsonLd value={{'@context':'https://schema.org','@type':'Organization',name:'UAB A-Z Prekyba',url:'https://ergonomic.lt',email:'info@ergonomic.lt',telephone:'+37069199833',address:{'@type':'PostalAddress',streetAddress:'Buivydiškių g. 22',addressLocality:'Vilnius',addressCountry:'LT'}}}/></body></html>;}
+export default async function RootLayout({children}:{children:React.ReactNode}){return <html lang="lt"><head><link rel="preload" href={siteFont.url} as="font" type="font/woff2" crossOrigin="anonymous"/></head><body id="top"><a href="#main-content" className="skip-link">Pereiti prie turinio</a><QuoteProvider customerOnly={process.env.PUBLIC_CUSTOMER_BOUNDARY==='true'&&!await isAdmin()}>{previewMode()&&<div className="preview-banner">Svetainės peržiūros versija</div>}<div className="site-shell"><SiteHeader/><main id="main-content" className="site-content">{children}</main></div><SiteFooter/></QuoteProvider><JsonLd value={{'@context':'https://schema.org','@type':'Organization',name:'UAB A-Z Prekyba',url:'https://ergonomic.lt',email:'info@ergonomic.lt',telephone:'+37069199833',address:{'@type':'PostalAddress',streetAddress:'Buivydiškių g. 22',addressLocality:'Vilnius',addressCountry:'LT'}}}/></body></html>;}

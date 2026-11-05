@@ -1,0 +1,4227 @@
+{
+  "product_airi-swivel-chairs_4a6182da": {
+    "source": "https://www.nowystyl.com/en/airi/swivel-chairs/",
+    "common": [
+      {
+        "label": "Sėdynė ir atlošas",
+        "value": "Kvėpuojantis tinklelis"
+      },
+      {
+        "label": "Mechanizmas",
+        "value": "„Tilt“, su atlošo fiksavimu"
+      },
+      {
+        "label": "Sėdynės aukštis",
+        "value": "Reguliuojamas"
+      },
+      {
+        "label": "Pagrindas",
+        "value": "Penkių stipinų"
+      },
+      {
+        "label": "Porankiai",
+        "value": "Integruoti"
+      }
+    ],
+    "samples": {
+      "29969203": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Juoda"
+        }
+      ],
+      "29969204": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Pilka"
+        }
+      ],
+      "29969205": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Žalia"
+        }
+      ],
+      "29969206": [
+        {
+          "label": "Apdailos spalva",
+          "value": "Mėlyna"
+        }
+      ]
+    }
+  },
+  "product_spix-acoustic-pods_690db2ab": {
+    "source": "https://www.nowystyl.com/en/spix/acoustic-pods/",
+    "common": [
+      {
+        "label": "Apšvietimas",
+        "value": "Reguliuojamas LED apšvietimas"
+      },
+      {
+        "label": "Ventiliacija",
+        "value": "Reguliuojama"
+      },
+      {
+        "label": "Durys",
+        "value": "Automatinis uždarymas ir švelnus pritraukimas"
+      },
+      {
+        "label": "Užimtumo indikatorius",
+        "value": "Šviesos signalas"
+      },
+      {
+        "label": "Perstūmimas",
+        "value": "Paslėpti ratukai"
+      }
+    ],
+    "samples": {
+      "27932091": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Įranga",
+          "value": "Fiksuotas stalviršis"
+        }
+      ],
+      "27934533": [
+        {
+          "label": "Vietų skaičius",
+          "value": "Iki 2"
+        },
+        {
+          "label": "Įranga",
+          "value": "Fiksuotas stalviršis ir sofa"
+        }
+      ],
+      "27934786": [
+        {
+          "label": "Vietų skaičius",
+          "value": "Iki 4"
+        },
+        {
+          "label": "Įranga",
+          "value": "Sofa, staliukas ir televizoriaus laikiklis"
+        }
+      ]
+    }
+  },
+  "product_sand-walls_93c6ad4d": {
+    "source": "https://www.nowystyl.com/en/sand/walls/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Laisvai pastatoma, apmušta pertvara"
+      }
+    ],
+    "samples": {
+      "28041105": [
+        {
+          "label": "Pertvaros forma",
+          "value": "L formos"
+        }
+      ],
+      "28041106": [
+        {
+          "label": "Pertvaros forma",
+          "value": "U formos"
+        }
+      ],
+      "28041107": [
+        {
+          "label": "Pertvaros forma",
+          "value": "H formos"
+        }
+      ],
+      "28041108": [
+        {
+          "label": "Pertvaros forma",
+          "value": "Z formos"
+        }
+      ]
+    }
+  },
+  "product_tapa-modular-systems_513dc293": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Keturių lygių modulinis pufas"
+      },
+      {
+        "label": "Pagrindo medžiaga",
+        "value": "30 mm fanera ir metaliniai sukimo mechanizmai"
+      },
+      {
+        "label": "Užpildas",
+        "value": "Poliuretano putos ir polistireninis putplastis"
+      },
+      {
+        "label": "Sėdynės aukštis",
+        "value": "620 mm"
+      }
+    ],
+    "samples": {
+      "15525483": [
+        {
+          "label": "Plotis",
+          "value": "1090 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Sukimosi ašis",
+          "value": "Trumpojoje pusėje"
+        }
+      ],
+      "15525484": [
+        {
+          "label": "Plotis",
+          "value": "900 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "900 mm"
+        }
+      ],
+      "15525480": [
+        {
+          "label": "Plotis",
+          "value": "1090 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Sukimosi ašis",
+          "value": "Ilgojoje pusėje"
+        }
+      ]
+    }
+  },
+  "product_tapa-pouffes_d48f38c4": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "16088159": [
+        {
+          "label": "Konstrukcija",
+          "value": "18 mm medžio drožlių plokštė"
+        },
+        {
+          "label": "Užpildas",
+          "value": "Poliuretano putos ir polistireninis putplastis"
+        },
+        {
+          "label": "Plotis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "745 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "320 mm"
+        }
+      ],
+      "16088156": [
+        {
+          "label": "Konstrukcija",
+          "value": "30 mm buko fanera"
+        },
+        {
+          "label": "Užpildas",
+          "value": "Poliuretano putos"
+        },
+        {
+          "label": "Virvė",
+          "value": "Juodas 10 mm polipropilenas"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "100 kg"
+        },
+        {
+          "label": "Montavimas",
+          "value": "Tvirtinimo kabliai nepridedami. Pakabinamoms luboms netinka."
+        },
+        {
+          "label": "Plotis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "400 mm"
+        }
+      ],
+      "16088157": [
+        {
+          "label": "Konstrukcija",
+          "value": "30 mm buko fanera"
+        },
+        {
+          "label": "Užpildas",
+          "value": "Poliuretano putos"
+        },
+        {
+          "label": "Virvė",
+          "value": "Juodas 10 mm polipropilenas"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "100 kg"
+        },
+        {
+          "label": "Montavimas",
+          "value": "Tvirtinimo kabliai nepridedami. Pakabinamoms luboms netinka."
+        },
+        {
+          "label": "Plotis",
+          "value": "900 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "450 mm"
+        }
+      ],
+      "16088161": [
+        {
+          "label": "Plotis × gylis",
+          "value": "450 × 450 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "470 mm"
+        }
+      ],
+      "16088158": [
+        {
+          "label": "Skersmuo",
+          "value": "400 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "320 mm"
+        }
+      ],
+      "16088160": [
+        {
+          "label": "Plotis × gylis",
+          "value": "900 × 450 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "470 mm"
+        }
+      ]
+    }
+  },
+  "product_creva-walls_c745cc46": {
+    "source": "https://www.nowystyl.com/en/creva/walls/",
+    "common": [
+      {
+        "label": "Įranga",
+        "value": "Rašymo lenta"
+      },
+      {
+        "label": "Pertvarų jungimas",
+        "value": "Magnetinis"
+      }
+    ],
+    "samples": {
+      "24809036": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobili pertvara su rašymo lenta"
+        }
+      ],
+      "24809038": [
+        {
+          "label": "Konstrukcija",
+          "value": "Pertvara su rašymo lenta"
+        }
+      ]
+    }
+  },
+  "product_play-work-pouffes_e8494720": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "27042154": [
+        {
+          "label": "Konstrukcija",
+          "value": "Pufas su staliuku"
+        },
+        {
+          "label": "Plotis",
+          "value": "1110 mm"
+        }
+      ],
+      "27042155": [
+        {
+          "label": "Konstrukcija",
+          "value": "Pufas"
+        },
+        {
+          "label": "Plotis",
+          "value": "1110 mm"
+        }
+      ],
+      "27042157": [
+        {
+          "label": "Konstrukcija",
+          "value": "Vienvietis pufas"
+        },
+        {
+          "label": "Plotis",
+          "value": "720 mm"
+        }
+      ]
+    }
+  },
+  "product_play-work-sofas_c1c8fb7e": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "27300852": [
+        {
+          "label": "Konstrukcija",
+          "value": "Dvivietė sofa"
+        },
+        {
+          "label": "Plotis",
+          "value": "1598 mm"
+        }
+      ],
+      "27300853": [
+        {
+          "label": "Konstrukcija",
+          "value": "Sofa su fiksuotu rašymo paviršiumi"
+        },
+        {
+          "label": "Plotis",
+          "value": "1170 mm"
+        }
+      ],
+      "27300855": [
+        {
+          "label": "Konstrukcija",
+          "value": "Sofa su staliuku"
+        },
+        {
+          "label": "Plotis",
+          "value": "1140 mm"
+        }
+      ],
+      "27300857": [
+        {
+          "label": "Konstrukcija",
+          "value": "Vienvietė sofa"
+        },
+        {
+          "label": "Plotis",
+          "value": "750 mm"
+        }
+      ]
+    }
+  },
+  "product_oxo-cabinets-sideboards_c0bf8215": {
+    "source": "https://www.nowystyl.com/en/oxo/cabinets-sideboards/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Laisvai pastatoma modulinė sistema"
+      }
+    ],
+    "samples": {
+      "23748885": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        },
+        {
+          "label": "Įranga",
+          "value": "Pertvarų skydai"
+        }
+      ],
+      "23735342": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "23748923": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "20785950": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "23748922": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "23748924": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "23735343": [
+        {
+          "label": "Išdėstymas",
+          "value": "H formos"
+        }
+      ],
+      "23748925": [
+        {
+          "label": "Išdėstymas",
+          "value": "U formos"
+        }
+      ],
+      "21136201": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "21136206": [
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        }
+      ],
+      "20785951": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ]
+    }
+  },
+  "product_aplo-cabinets-sideboards_99123fb6": {
+    "source": "https://www.nowystyl.com/en/aplo/cabinets-sideboards/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Modulinė lentynų sistema"
+      },
+      {
+        "label": "Skersinių tvirtinimas",
+        "value": "Užspaudžiamas prie rėmo, išardomas"
+      }
+    ],
+    "samples": {
+      "32269081": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269084": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269083": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269089": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269079": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269080": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269087": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269086": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "32269085": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ]
+    }
+  },
+  "product_v-care-beam-seating_2622cae8": {
+    "source": "https://www.nowystyl.com/en/v-care/beam-seating/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Laukiamojo suolas su profiliuotomis sėdynėmis"
+      }
+    ],
+    "samples": {
+      "24865941": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "8"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Dvipusis"
+        },
+        {
+          "label": "Prieinamumas",
+          "value": "PRM versija su paaukštinta sėdyne"
+        }
+      ],
+      "24865936": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "2"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865939": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        },
+        {
+          "label": "Prieinamumas",
+          "value": "PRM versija su paaukštinta sėdyne"
+        }
+      ],
+      "24865935": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865933": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865940": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "6"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Dvipusis"
+        }
+      ],
+      "24865934": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865937": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24865938": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ]
+    }
+  },
+  "product_kanu-armchairs-leg-rests_5ea59730": {
+    "source": "https://dam.nowystyl.com/assets-prod/cdb84caa-3c55-43e9-8e22-ce8e3fa35cc7_Kanu_Catalogue_KU_KO_EN_E01_2025.pdf",
+    "common": [
+      {
+        "label": "Sėdynė ir atlošas",
+        "value": "Vientisa formuota fanera"
+      },
+      {
+        "label": "Aukštis",
+        "value": "800 mm"
+      },
+      {
+        "label": "Plotis",
+        "value": "750 mm"
+      }
+    ],
+    "samples": {
+      "25389524": [],
+      "25389521": [
+        {
+          "label": "Rėmas",
+          "value": "Medinis"
+        },
+        {
+          "label": "Gylis",
+          "value": "680 mm"
+        }
+      ],
+      "25389523": [
+        {
+          "label": "Rėmas",
+          "value": "Medinis"
+        },
+        {
+          "label": "Gylis",
+          "value": "680 mm"
+        }
+      ],
+      "25389522": []
+    }
+  },
+  "product_kanu-cafe-lounge-tables_d1f337f1": {
+    "source": "https://dam.nowystyl.com/assets-prod/cdb84caa-3c55-43e9-8e22-ce8e3fa35cc7_Kanu_Catalogue_KU_KO_EN_E01_2025.pdf",
+    "common": [
+      {
+        "label": "Stalviršio skersmuo",
+        "value": "700 mm"
+      },
+      {
+        "label": "Stalviršio forma",
+        "value": "Apvali"
+      }
+    ],
+    "samples": {
+      "27835322": [
+        {
+          "label": "Aukštis",
+          "value": "350 mm"
+        }
+      ],
+      "27836682": [
+        {
+          "label": "Aukštis",
+          "value": "500 mm"
+        }
+      ]
+    }
+  },
+  "product_semu-cafe-lounge-tables_b85b9ca3": {
+    "source": "https://www.nowystyl.com/en/semu/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "25702051": [
+        {
+          "label": "Stalviršis",
+          "value": "Metalas"
+        }
+      ],
+      "27483851": [
+        {
+          "label": "Stalviršis",
+          "value": "„Fenix“"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Yra"
+        }
+      ],
+      "25701353": [
+        {
+          "label": "Stalviršis",
+          "value": "Melaminu dengta medžio drožlių plokštė (MFC)"
+        }
+      ],
+      "25702054": [
+        {
+          "label": "Stalviršis",
+          "value": "„Fenix“"
+        }
+      ],
+      "27483850": [
+        {
+          "label": "Stalviršis",
+          "value": "Melaminu dengta medžio drožlių plokštė (MFC)"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Yra"
+        }
+      ],
+      "27483849": [
+        {
+          "label": "Stalviršis",
+          "value": "Metalas"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Yra"
+        }
+      ]
+    }
+  },
+  "product_tulipan-meeting-chairs_230e271e": {
+    "source": "https://www.nowystyl.com/en/tulipan/",
+    "common": [
+      {
+        "label": "Sėdynės aukštis",
+        "value": "470 mm"
+      },
+      {
+        "label": "Pagrindas",
+        "value": "Keturios kojos"
+      }
+    ],
+    "samples": {
+      "26075296": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        }
+      ],
+      "26075295": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        }
+      ],
+      "26075293": [
+        {
+          "label": "Sėdynė",
+          "value": "Apmušta"
+        }
+      ]
+    }
+  },
+  "product_tulipan-stools-bar-stools_eb60d8ff": {
+    "source": "https://www.nowystyl.com/en/tulipan/",
+    "common": [
+      {
+        "label": "Pagrindas",
+        "value": "Keturios kojos"
+      }
+    ],
+    "samples": {
+      "26084480": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "760 mm"
+        }
+      ],
+      "26084483": [
+        {
+          "label": "Sėdynė",
+          "value": "Apmušta"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "640 mm"
+        }
+      ],
+      "26084477": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "760 mm"
+        }
+      ],
+      "26084481": [
+        {
+          "label": "Sėdynė",
+          "value": "Apmušta"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "640 mm"
+        }
+      ],
+      "26084484": [
+        {
+          "label": "Sėdynė",
+          "value": "Medinė"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "640 mm"
+        }
+      ]
+    }
+  },
+  "product_k42-cabinets-sideboards_d3acf2c3": {
+    "source": "https://www.nowystyl.com/en/k42/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "32418449": [
+        {
+          "label": "Konstrukcija",
+          "value": "Drabužių spinta"
+        }
+      ],
+      "32418450": [
+        {
+          "label": "Durelės",
+          "value": "Žaliuzinės, atidaromos slenkant"
+        }
+      ],
+      "32418446": [
+        {
+          "label": "Konstrukcija",
+          "value": "Atvira spintelė be durelių"
+        }
+      ],
+      "32418447": [
+        {
+          "label": "Daiktų laikymas",
+          "value": "Stalčiai"
+        }
+      ],
+      "32418448": [
+        {
+          "label": "Durelės",
+          "value": "Stumdomos"
+        }
+      ],
+      "32418451": [
+        {
+          "label": "Durelės",
+          "value": "Varstomos"
+        },
+        {
+          "label": "Uždarymas",
+          "value": "Švelnus uždarymas"
+        }
+      ],
+      "32418452": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobili spintelė"
+        }
+      ],
+      "32418445": [
+        {
+          "label": "Konstrukcija",
+          "value": "Kombinuota spinta"
+        },
+        {
+          "label": "Įranga",
+          "value": "Integruotas vazonas"
+        }
+      ]
+    }
+  },
+  "product_k42-orga-towers-pedestals_bc6371f6": {
+    "source": "https://www.nowystyl.com/en/k42/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "32419016": [
+        {
+          "label": "Durelės",
+          "value": "Žaliuzinės"
+        },
+        {
+          "label": "Vidaus įranga",
+          "value": "2 lentynos ir 2 metaliniai stalčiai"
+        }
+      ],
+      "32419017": [
+        {
+          "label": "Durelės",
+          "value": "Žaliuzinės"
+        },
+        {
+          "label": "Vidaus įranga",
+          "value": "Atviras skyrius, 2 lentynos ir plastikinis rašymo reikmenų stalčiukas"
+        }
+      ],
+      "32419014": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobilus siauras stalčių blokas"
+        },
+        {
+          "label": "Ratukai",
+          "value": "40 mm skersmens"
+        }
+      ],
+      "32419015": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobilus stalčių blokas"
+        },
+        {
+          "label": "Ratukai",
+          "value": "40 mm skersmens"
+        }
+      ],
+      "32419013": [
+        {
+          "label": "Konstrukcija",
+          "value": "Aukštas prie darbo vietos statomas laikymo modulis"
+        }
+      ]
+    }
+  },
+  "product_scadio-armchairs-leg-rests_9409664e": {
+    "source": "https://www.nowystyl.com/en/scadio/armchairs-leg-rests/",
+    "common": [
+      {
+        "label": "Apmušalo apdaila",
+        "value": "Dekoratyvinis kraštelis"
+      }
+    ],
+    "samples": {
+      "27613965": [
+        {
+          "label": "Konstrukcija",
+          "value": "Kojų atrama"
+        }
+      ],
+      "27613964": [
+        {
+          "label": "Konstrukcija",
+          "value": "Kojų atrama"
+        }
+      ],
+      "26734032": [
+        {
+          "label": "Konstrukcija",
+          "value": "Sukamasis fotelis"
+        },
+        {
+          "label": "Atlošas",
+          "value": "Žemas"
+        }
+      ],
+      "25703665": [
+        {
+          "label": "Konstrukcija",
+          "value": "Fotelis ant keturių kojų"
+        },
+        {
+          "label": "Atlošas",
+          "value": "Aukštas"
+        }
+      ],
+      "25703664": [
+        {
+          "label": "Konstrukcija",
+          "value": "Sukamasis fotelis"
+        },
+        {
+          "label": "Atlošas",
+          "value": "Aukštas"
+        }
+      ],
+      "26734033": [
+        {
+          "label": "Konstrukcija",
+          "value": "Fotelis ant keturių kojų"
+        },
+        {
+          "label": "Atlošas",
+          "value": "Žemas"
+        }
+      ]
+    }
+  },
+  "product_naudu-armchairs-leg-rests_9151683c": {
+    "source": "https://www.nowystyl.com/files/downloads/Naudu_Price-List_PL_E01_2020.pdf",
+    "common": [
+      {
+        "label": "Aukštis",
+        "value": "770 mm"
+      },
+      {
+        "label": "Plotis",
+        "value": "670 mm"
+      },
+      {
+        "label": "Sėdynės aukštis",
+        "value": "475 mm"
+      }
+    ],
+    "samples": {
+      "16088631": [
+        {
+          "label": "Pagrindas",
+          "value": "Keturios plieninės kojos"
+        },
+        {
+          "label": "Gylis",
+          "value": "590 mm"
+        }
+      ],
+      "16088637": [
+        {
+          "label": "Pagrindas",
+          "value": "Keturios medinės kojos"
+        },
+        {
+          "label": "Gylis",
+          "value": "580 mm"
+        }
+      ],
+      "16088633": [
+        {
+          "label": "Pagrindas",
+          "value": "Rogutės"
+        },
+        {
+          "label": "Gylis",
+          "value": "600 mm"
+        }
+      ],
+      "29774652": [
+        {
+          "label": "Porankių konstrukcija",
+          "value": "Aukšti, integruoti į atlošą"
+        },
+        {
+          "label": "Korpuso apdaila",
+          "value": "Apmušta"
+        }
+      ]
+    }
+  },
+  "product_naudu-sofas_2fa6631f": {
+    "source": "https://www.nowystyl.com/files/downloads/Naudu_Price-List_PL_E01_2020.pdf",
+    "common": [],
+    "samples": {
+      "26731023": [
+        {
+          "label": "Pagrindas",
+          "value": "Keturios medinės kojos"
+        },
+        {
+          "label": "Aukštis",
+          "value": "775 mm"
+        },
+        {
+          "label": "Plotis",
+          "value": "1170 mm"
+        },
+        {
+          "label": "Gylis",
+          "value": "580 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "475 mm"
+        }
+      ],
+      "26731024": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Keturios medinės kojos"
+        },
+        {
+          "label": "Apmušalo zonos",
+          "value": "Sėdynė ir vidinė korpuso pusė kartu, išorinė korpuso pusė atskirai"
+        }
+      ]
+    }
+  },
+  "product_offa-cabinets-sideboards_e345b53b": {
+    "source": "https://www.nowystyl.com/en/offa/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "23766670": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobili trijų modulių spintelė"
+        },
+        {
+          "label": "Įranga",
+          "value": "Rašymo lenta"
+        }
+      ],
+      "19512544": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobili trijų modulių spintelė"
+        },
+        {
+          "label": "Įranga",
+          "value": "Televizoriaus laikiklis"
+        }
+      ],
+      "19512548": [
+        {
+          "label": "Įranga",
+          "value": "Dvi rašymo lentos ir skelbimų lenta"
+        },
+        {
+          "label": "Daiktų laikymas",
+          "value": "Atviros lentynos"
+        }
+      ],
+      "19512543": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobili trijų modulių spintelė"
+        }
+      ],
+      "23766669": [
+        {
+          "label": "Konstrukcija",
+          "value": "Atvira metalinė spinta"
+        }
+      ],
+      "19512545": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobili kavos zonos spintelė"
+        }
+      ],
+      "19512546": [
+        {
+          "label": "Konstrukcija",
+          "value": "Atvira metalinė spinta"
+        }
+      ],
+      "19512550": [
+        {
+          "label": "Konstrukcija",
+          "value": "Mobili vieno modulio spintelė"
+        }
+      ]
+    }
+  },
+  "product_creva-sofas_35a1b986": {
+    "source": "https://www.nowystyl.com/en/creva/sofas/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Minkštoji sofa"
+      }
+    ],
+    "samples": {
+      "24811829": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "3"
+        }
+      ],
+      "24811830": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "2"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        }
+      ],
+      "24811825": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        }
+      ],
+      "24811823": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "2"
+        }
+      ],
+      "24811826": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "2"
+        }
+      ],
+      "24811824": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Atitvaros",
+          "value": "Aukšti skydai"
+        }
+      ],
+      "24811828": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "3"
+        }
+      ],
+      "24811827": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Atitvaros",
+          "value": "Aukšti skydai"
+        }
+      ]
+    }
+  },
+  "product_creva-modular-systems_f1e61235": {
+    "source": "https://www.nowystyl.com/en/creva/modular-systems/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Modulinė minkštųjų sėdimųjų baldų sistema"
+      }
+    ],
+    "samples": {
+      "24828966": [
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "4"
+        }
+      ],
+      "24828971": [
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        }
+      ],
+      "24828965": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "24828967": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "24828970": [
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        }
+      ],
+      "24828972": [
+        {
+          "label": "Išdėstymas",
+          "value": "H formos"
+        }
+      ],
+      "24828969": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "24828968": [
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        }
+      ]
+    }
+  },
+  "product_sand-modular-systems_84824686": {
+    "source": "https://www.nowystyl.com/en/sand/modular-systems/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Modulinė sėdimųjų baldų sistema"
+      }
+    ],
+    "samples": {
+      "28081508": [
+        {
+          "label": "Išdėstymas",
+          "value": "Z formos"
+        },
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Įranga",
+          "value": "Aukštas stalas"
+        }
+      ],
+      "28081511": [
+        {
+          "label": "Išdėstymas",
+          "value": "S formos"
+        },
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Įranga",
+          "value": "Aukštas stalas"
+        }
+      ],
+      "28081510": [
+        {
+          "label": "Išdėstymas",
+          "value": "H formos"
+        },
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Įranga",
+          "value": "Aukštas stalas"
+        }
+      ],
+      "28081513": [
+        {
+          "label": "Išdėstymas",
+          "value": "U formos"
+        },
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "4"
+        }
+      ],
+      "28081512": [
+        {
+          "label": "Išdėstymas",
+          "value": "U formos"
+        },
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "2"
+        }
+      ],
+      "28081509": [
+        {
+          "label": "Išdėstymas",
+          "value": "H formos"
+        },
+        {
+          "label": "Sėdimų vietų skaičius",
+          "value": "8"
+        },
+        {
+          "label": "Įranga",
+          "value": "Aukštas stalas"
+        }
+      ]
+    }
+  },
+  "product_magnes-ii-modular-systems_a1021f0d": {
+    "source": "https://www.nowystyl.com/en/magnes-ii/modular-systems/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Modulinė sėdimųjų baldų sistema"
+      }
+    ],
+    "samples": {
+      "16579665": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "16579640": [
+        {
+          "label": "Išdėstymas",
+          "value": "Gėlės formos"
+        }
+      ],
+      "16579674": [
+        {
+          "label": "Išdėstymas",
+          "value": "S formos"
+        }
+      ],
+      "16579639": [
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesinis"
+        }
+      ],
+      "16579523": [
+        {
+          "label": "Išdėstymas",
+          "value": "O formos"
+        }
+      ]
+    }
+  },
+  "product_erange-cabinets-sideboards_906c615a": {
+    "source": "https://www.nowystyl.com/en/erange/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "23374372": [
+        {
+          "label": "Pagrindas",
+          "value": "Ratukai"
+        },
+        {
+          "label": "Durelės",
+          "value": "2"
+        },
+        {
+          "label": "Stalčių skaičius",
+          "value": "3"
+        }
+      ],
+      "23374369": [
+        {
+          "label": "Pagrindas",
+          "value": "Ratukai"
+        },
+        {
+          "label": "Durelės",
+          "value": "2"
+        },
+        {
+          "label": "Stalčių skaičius",
+          "value": "2"
+        }
+      ],
+      "23374374": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2400 × 450 mm"
+        }
+      ],
+      "23374373": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1600 × 450 mm"
+        }
+      ],
+      "23374368": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2400 × 450 mm"
+        }
+      ],
+      "23374370": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2400 × 450 mm"
+        }
+      ],
+      "23374371": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1600 × 450 mm"
+        }
+      ]
+    }
+  },
+  "product_play-work-cabinets-sideboards_6806276b": {
+    "source": "https://www.nowystyl.com/en/play-work/cabinets-sideboards/",
+    "common": [
+      {
+        "label": "Konstrukcija",
+        "value": "Laikymo spintelė"
+      }
+    ],
+    "samples": {
+      "24046899": [
+        {
+          "label": "Išdėstymas",
+          "value": "Dvipusis"
+        },
+        {
+          "label": "Įranga",
+          "value": "Sėdynė ir atlošai"
+        }
+      ],
+      "24046898": [
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        }
+      ],
+      "24046897": [
+        {
+          "label": "Išdėstymas",
+          "value": "Vienpusis"
+        },
+        {
+          "label": "Įranga",
+          "value": "Sėdynė ir atlošai"
+        }
+      ],
+      "24046901": [
+        {
+          "label": "Įranga",
+          "value": "Sėdynė"
+        }
+      ],
+      "24046900": [
+        {
+          "label": "Išdėstymas",
+          "value": "Dvipusis"
+        }
+      ]
+    }
+  },
+  "product_sqart-cabinets-sideboards_02d6a710": {
+    "source": "https://www.nowystyl.com/en/sqart/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "25257449": [
+        {
+          "label": "Apdaila",
+          "value": "Melaminu dengta medžio drožlių plokštė (MFC)"
+        }
+      ],
+      "25257455": [
+        {
+          "label": "Apdaila",
+          "value": "Melaminu dengta medžio drožlių plokštė (MFC)"
+        },
+        {
+          "label": "Durelės",
+          "value": "Stiklinės"
+        }
+      ],
+      "25257457": [
+        {
+          "label": "Apdaila",
+          "value": "Melaminu dengta medžio drožlių plokštė (MFC)"
+        }
+      ],
+      "25257452": [
+        {
+          "label": "Apdaila",
+          "value": "Medžio lukštas"
+        }
+      ],
+      "25257456": [
+        {
+          "label": "Plotis × gylis",
+          "value": "800 × 445 mm"
+        }
+      ]
+    }
+  },
+  "product_sileo-panels_13ed164c": {
+    "source": "https://www.nowystyl.com/en/sileo/panels/",
+    "common": [],
+    "samples": {
+      "24171819": [
+        {
+          "label": "Montavimas",
+          "value": "Ant sienos"
+        },
+        {
+          "label": "Konstrukcija",
+          "value": "Akustinis skydas"
+        }
+      ],
+      "24171820": [
+        {
+          "label": "Montavimas",
+          "value": "Ant sienos"
+        },
+        {
+          "label": "Konstrukcija",
+          "value": "Akustinis skydas"
+        }
+      ],
+      "24171817": [
+        {
+          "label": "Montavimas",
+          "value": "Pakabinamas"
+        },
+        {
+          "label": "Konstrukcija",
+          "value": "Akustinis skydas"
+        }
+      ],
+      "24171821": [
+        {
+          "label": "Montavimas",
+          "value": "Ant sienos"
+        },
+        {
+          "label": "Konstrukcija",
+          "value": "Akustinis skydas"
+        }
+      ],
+      "24171824": [
+        {
+          "label": "Montavimas",
+          "value": "Pakabinamas"
+        },
+        {
+          "label": "Konstrukcija",
+          "value": "Akustinis skydas"
+        }
+      ]
+    }
+  },
+  "product_youteam-swivel-chairs_3886a3db": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "28689863": [
+        {
+          "label": "Atlošo versija",
+          "value": "Žemas"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420–545 mm"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "400–470 mm"
+        },
+        {
+          "label": "Sėdynės plotis",
+          "value": "470 mm"
+        }
+      ],
+      "28689861": [
+        {
+          "label": "Atlošo versija",
+          "value": "Žemas, apmuštas"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420–545 mm"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "400–470 mm"
+        },
+        {
+          "label": "Sėdynės plotis",
+          "value": "470 mm"
+        }
+      ],
+      "28689860": [
+        {
+          "label": "Atlošo versija",
+          "value": "Aukštas, apmuštas"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420–545 mm"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "400–470 mm"
+        },
+        {
+          "label": "Sėdynės plotis",
+          "value": "470 mm"
+        }
+      ]
+    }
+  },
+  "product_creva-pouffes_df65941f": {
+    "source": "https://www.nowystyl.com/en/creva/pouffes/",
+    "common": [],
+    "samples": {
+      "24810032": [
+        {
+          "label": "Tipas",
+          "value": "Apmuštas pufas"
+        },
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        }
+      ],
+      "24810031": [
+        {
+          "label": "Tipas",
+          "value": "Apmuštas pufas"
+        },
+        {
+          "label": "Vietų skaičius",
+          "value": "2"
+        }
+      ],
+      "24810033": [
+        {
+          "label": "Tipas",
+          "value": "Apmuštas pufas"
+        },
+        {
+          "label": "Vietų skaičius",
+          "value": "3"
+        }
+      ]
+    }
+  },
+  "product_oxo-modular-systems_84bb64f7": {
+    "source": "https://www.nowystyl.com/en/oxo/modular-systems/",
+    "common": [],
+    "samples": {
+      "20345640": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinė sistema"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        }
+      ],
+      "20345639": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinė sistema"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Kampinis"
+        }
+      ],
+      "20345641": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinė sistema"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "U formos"
+        }
+      ],
+      "20345638": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinė sistema"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Šešioms vietoms"
+        }
+      ]
+    }
+  },
+  "product_tepee-modular-systems_d27f2847": {
+    "source": "https://www.nowystyl.com/en/tepee/modular-systems/",
+    "common": [],
+    "samples": {
+      "16950397": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinis komplektas"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        },
+        {
+          "label": "Komplekto žymuo",
+          "value": "5U 2T"
+        }
+      ],
+      "16950720": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinis komplektas"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Tiesus (I formos)"
+        },
+        {
+          "label": "Komplekto žymuo",
+          "value": "4U 1T"
+        }
+      ],
+      "16950540": [
+        {
+          "label": "Konstrukcija",
+          "value": "Modulinis komplektas"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "L formos"
+        },
+        {
+          "label": "Komplekto žymuo",
+          "value": "7U 2T"
+        }
+      ]
+    }
+  },
+  "product_granite-armchairs-leg-rests_ee9ff4ec": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "21131205": [
+        {
+          "label": "Plotis × gylis",
+          "value": "790 × 880 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "700 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "450 mm"
+        }
+      ]
+    }
+  },
+  "product_granite-sofas_fcafac4d": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "21132152": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1470 × 880 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "700 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "450 mm"
+        }
+      ],
+      "21132155": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1810 × 880 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "700 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "450 mm"
+        }
+      ]
+    }
+  },
+  "product_classic-armchairs-leg-rests_b1ee7641": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "21049942": [
+        {
+          "label": "Plotis × gylis",
+          "value": "990 × 850 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "710 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "410 mm"
+        }
+      ]
+    }
+  },
+  "product_classic-sofas_a13ec82c": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "21051899": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1570 × 850 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "710 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "410 mm"
+        }
+      ],
+      "21051901": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2030 × 850 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "710 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "410 mm"
+        }
+      ]
+    }
+  },
+  "product_studio-armchairs-leg-rests_3f13d552": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20731342": [
+        {
+          "label": "Plotis × gylis",
+          "value": "760 × 750 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "700 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "440 mm"
+        }
+      ]
+    }
+  },
+  "product_studio-sofas_63f787ae": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20832526": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1300 × 750 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "700 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "440 mm"
+        }
+      ],
+      "20832528": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1900 × 750 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "700 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "440 mm"
+        }
+      ]
+    }
+  },
+  "product_club-armchairs-leg-rests_fbc46481": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20652981": [
+        {
+          "label": "Plotis × gylis",
+          "value": "700 × 630 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "770 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "455 mm"
+        }
+      ],
+      "20652982": [
+        {
+          "label": "Plotis × gylis",
+          "value": "700 × 630 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "770 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "455 mm"
+        }
+      ]
+    }
+  },
+  "product_club-sofas_d94530e7": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20678959": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1290 × 630 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "770 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "455 mm"
+        }
+      ],
+      "20678960": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1790 × 630 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "770 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "455 mm"
+        }
+      ]
+    }
+  },
+  "product_hello-armchairs-leg-rests_a93a6db5": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "26104409": [
+        {
+          "label": "Plotis × gylis",
+          "value": "630 × 575 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "775 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "480 mm"
+        }
+      ],
+      "26104407": [
+        {
+          "label": "Plotis × gylis",
+          "value": "630 × 590 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "775 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "490 mm"
+        }
+      ]
+    }
+  },
+  "product_hello-sofas_8d3a1df5": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "19901700": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1145 × 590 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "775 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "490 mm"
+        }
+      ],
+      "19901701": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1145 × 585 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "765 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "480 mm"
+        }
+      ]
+    }
+  },
+  "product_hello-cafe-lounge-tables_82e50eb4": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "19908083": [
+        {
+          "label": "Plotis × gylis",
+          "value": "550 × 550 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "460 mm"
+        }
+      ],
+      "19908081": [
+        {
+          "label": "Plotis × gylis",
+          "value": "550 × 550 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "420 mm"
+        }
+      ],
+      "19908084": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1100 × 550 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "420 mm"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Keturios buko medienos kojos"
+        }
+      ]
+    }
+  },
+  "product_dallas-sofas_ce35c19f": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20912390": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1350 × 525 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "725 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "470 mm"
+        }
+      ]
+    }
+  },
+  "product_dallas-armchairs-leg-rests_ec0890ec": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20908179": [
+        {
+          "label": "Plotis × gylis",
+          "value": "635 × 525 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "725 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "470 mm"
+        }
+      ]
+    }
+  },
+  "product_dallas-cafe-lounge-tables_0b54220d": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20949684": [
+        {
+          "label": "Plotis × gylis",
+          "value": "550 × 550 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "520 mm"
+        }
+      ]
+    }
+  },
+  "product_zone-armchairs-leg-rests_4fd1c1c1": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "23523200": [
+        {
+          "label": "Plotis × gylis",
+          "value": "643 × 650 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "460 mm"
+        }
+      ]
+    }
+  },
+  "product_kaika-armchairs-leg-rests_d7eef38e": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20812391": [
+        {
+          "label": "Plotis × gylis",
+          "value": "660 × 585 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "840 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "465 mm"
+        }
+      ],
+      "20812392": [
+        {
+          "label": "Plotis × gylis",
+          "value": "660 × 580 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "845 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "470 mm"
+        }
+      ],
+      "20812394": [
+        {
+          "label": "Plotis × gylis",
+          "value": "660 × 580 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "820 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "440 mm"
+        }
+      ]
+    }
+  },
+  "product_athena-armchairs-leg-rests_da38c8b7": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "26059643": [
+        {
+          "label": "Plotis × gylis",
+          "value": "635 × 625 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "862 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "484 mm"
+        }
+      ],
+      "26059645": [
+        {
+          "label": "Plotis × gylis",
+          "value": "635 × 625 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "856 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "460 mm"
+        }
+      ]
+    }
+  },
+  "product_mollen-armchairs-leg-rests_f79cc8b6": {
+    "source": "https://www.nowystyl.com/en/mollen/",
+    "common": [],
+    "samples": {
+      "25635258": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Kišeninės spyruoklės"
+        }
+      ]
+    }
+  },
+  "product_mollen-sofas_a213bbf2": {
+    "source": "https://www.nowystyl.com/en/mollen/",
+    "common": [],
+    "samples": {
+      "25638803": [
+        {
+          "label": "Vietų skaičius",
+          "value": "2"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Kišeninės spyruoklės"
+        }
+      ],
+      "25638804": [
+        {
+          "label": "Vietų skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Kišeninės spyruoklės"
+        }
+      ]
+    }
+  },
+  "product_puzlo-cabinets-sideboards_18afc598": {
+    "source": "https://www.nowystyl.com/en/puzlo/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "13482545": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Medžio drožlių plokštės cokolis"
+        }
+      ],
+      "23776128": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Metalinis pagrindas"
+        }
+      ]
+    }
+  },
+  "product_puzlo-lockers_75ec2c81": {
+    "source": "https://www.nowystyl.com/en/puzlo/lockers/",
+    "common": [],
+    "samples": {
+      "23784198": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Medžio drožlių plokštės cokolis"
+        }
+      ],
+      "23784200": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Metalinis pagrindas"
+        }
+      ]
+    }
+  },
+  "product_sileo-walls_d659d282": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "24175319": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1600 mm"
+        },
+        {
+          "label": "Pagrindo matmenys",
+          "value": "800 × 270 mm"
+        },
+        {
+          "label": "Sukamųjų plokščių skaičius",
+          "value": "6"
+        },
+        {
+          "label": "Plokštės storis",
+          "value": "35 mm"
+        }
+      ],
+      "24175321": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1600 mm"
+        },
+        {
+          "label": "Pagrindo matmenys",
+          "value": "800 × 270 mm"
+        },
+        {
+          "label": "Sukamųjų plokščių skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Plokštės storis",
+          "value": "35 mm"
+        }
+      ]
+    }
+  },
+  "product_tilkka-armchairs-leg-rests_6ea7632a": {
+    "source": "https://www.nowystyl.com/files/downloads/WWW_Tilkka_Technical-details_PL.pdf",
+    "common": [],
+    "samples": {
+      "23589104": [
+        {
+          "label": "Plotis × gylis",
+          "value": "680 × 720 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "765 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_tilkka-sofas_9ecbe475": {
+    "source": "https://www.nowystyl.com/files/downloads/WWW_Tilkka_Technical-details_PL.pdf",
+    "common": [],
+    "samples": {
+      "32916572": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1180 × 720 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "765 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_dotto-pouffes_8cfb9de2": {
+    "source": "https://www.nowystyl.com/getmedia/aaa87080-a65d-4213-b03f-0e17fb99878a/Acoustics-other-panels-and-soft-seating-specification.pdf",
+    "common": [],
+    "samples": {
+      "19629348": [
+        {
+          "label": "Plotis × gylis",
+          "value": "450 × 450 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "400 mm"
+        }
+      ]
+    }
+  },
+  "product_tapa-cafe-lounge-tables_d613d36e": {
+    "source": "https://www.nowystyl.com/files/downloads/Tapa_szkolenie_produktowe.pdf",
+    "common": [],
+    "samples": {
+      "16088183": [
+        {
+          "label": "Stalviršio skersmuo",
+          "value": "450 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "655 mm"
+        },
+        {
+          "label": "Stalviršio storis",
+          "value": "18 mm"
+        }
+      ]
+    }
+  },
+  "product_offa-walls_3c5d7399": {
+    "source": "https://www.nowystyl.com/files/interactive/catalogue/EX/Finishes-Matrix/64/",
+    "common": [],
+    "samples": {
+      "19442135": [
+        {
+          "label": "Rašymo plokštės storis",
+          "value": "18 mm"
+        }
+      ]
+    }
+  },
+  "product_tepee-armchairs-leg-rests_4230e8a7": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "14770946": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1026 × 734 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "840 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_tepee-sofas_59860fc0": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "14403528": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1500 × 750 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "840 mm"
+        },
+        {
+          "label": "Sėdynės aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_tento-2-0-orga-towers-pedestals_1980317f": {
+    "source": "https://www.nowystyl.com/en/tento-2-0/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "30589087": [
+        {
+          "label": "Korpuso plotis",
+          "value": "432 mm"
+        },
+        {
+          "label": "Stalčių skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Stalčių bėgeliai",
+          "value": "Metaliniai"
+        }
+      ],
+      "30589088": [
+        {
+          "label": "Korpuso plotis",
+          "value": "332 mm"
+        },
+        {
+          "label": "Stalčių skaičius",
+          "value": "3"
+        },
+        {
+          "label": "Stalčių bėgeliai",
+          "value": "Metaliniai"
+        }
+      ]
+    }
+  },
+  "product_belise-stools-bar-stools_8dea8493": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Conference-Meeting_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "19783109": [
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Buko medienos sėdynė su apmušta pagalvėle"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Dujinė spyruoklė"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Pasvyra į visas puses"
+        }
+      ],
+      "19783110": [
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Visiškai apmušta sėdynė"
+        },
+        {
+          "label": "Aukščio reguliavimas",
+          "value": "Dujinė spyruoklė"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Pasvyra į visas puses"
+        }
+      ]
+    }
+  },
+  "product_otuli-armchairs-leg-rests_b22fe9a8": {
+    "source": "https://www.nowystyl.com/en/otuli/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "27378908": [
+        {
+          "label": "Atlošo mechanizmas",
+          "value": "Atlošas atsilenkia kartu su sėdyne"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        }
+      ],
+      "27380871": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukama kojų atrama"
+        }
+      ]
+    }
+  },
+  "product_creva-high-tables_a59924c5": {
+    "source": "https://www.nowystyl.com/files/interactive/KuschAndCo/kusch_office_catalogue_ko_int_pl_2023/59/",
+    "common": [],
+    "samples": {
+      "24861611": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1098 mm"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "2000 mm"
+        },
+        {
+          "label": "Kataloge nurodytas stalviršio gylis",
+          "value": "800 arba 1110 mm"
+        }
+      ],
+      "24861610": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1098 mm"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "2000 mm"
+        },
+        {
+          "label": "Kataloge nurodytas stalviršio gylis",
+          "value": "800 arba 1110 mm"
+        }
+      ],
+      "24861613": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1098 mm"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "2000 mm"
+        },
+        {
+          "label": "Kataloge nurodytas stalviršio gylis",
+          "value": "1000 mm"
+        }
+      ],
+      "24861612": [
+        {
+          "label": "Bendras aukštis",
+          "value": "1098 mm"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "2000 mm"
+        },
+        {
+          "label": "Kataloge nurodytas stalviršio gylis",
+          "value": "1000 mm"
+        }
+      ]
+    }
+  },
+  "product_creva-meeting-tables_a706cc33": {
+    "source": "https://www.nowystyl.com/files/interactive/KuschAndCo/kusch_office_catalogue_ko_int_pl_2023/59/",
+    "common": [],
+    "samples": {
+      "24860115": [
+        {
+          "label": "Bendras aukštis",
+          "value": "739 mm"
+        },
+        {
+          "label": "Stalviršio skersmuo",
+          "value": "1200 mm"
+        }
+      ],
+      "24860118": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1200 × 1200 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "739 mm"
+        }
+      ]
+    }
+  },
+  "product_cs5040-orga-towers-pedestals_27c8a4b1": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "19773884": [
+        {
+          "label": "Bendras aukštis",
+          "value": "950 mm"
+        },
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Viršutinės lentynėlės gylis",
+          "value": "80 mm"
+        },
+        {
+          "label": "Užraktas",
+          "value": "Cilindrinis"
+        }
+      ],
+      "19773883": [
+        {
+          "label": "Bendras aukštis",
+          "value": "950 mm"
+        },
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Viršutinės lentynėlės gylis",
+          "value": "80 mm"
+        },
+        {
+          "label": "Užraktas",
+          "value": "Cilindrinis"
+        }
+      ]
+    }
+  },
+  "product_easy-space-orga-towers-pedestals_be071de2": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "22489825": [
+        {
+          "label": "Bendras aukštis",
+          "value": "950 mm"
+        },
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Viršutinės lentynėlės gylis",
+          "value": "80 mm"
+        },
+        {
+          "label": "Užraktas",
+          "value": "Cilindrinis"
+        }
+      ]
+    }
+  },
+  "product_sqart-orga-towers-pedestals_8a1dbb50": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "24769380": [
+        {
+          "label": "Bendras aukštis",
+          "value": "950 mm"
+        },
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Viršutinės lentynėlės gylis",
+          "value": "80 mm"
+        },
+        {
+          "label": "Užraktas",
+          "value": "Cilindrinis"
+        }
+      ],
+      "24769377": [
+        {
+          "label": "Plotis × gylis",
+          "value": "332 × 600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "575 mm"
+        }
+      ],
+      "24769383": [
+        {
+          "label": "Plotis × gylis",
+          "value": "480 × 480 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "1263 mm"
+        }
+      ]
+    }
+  },
+  "product_easy-space-cabinets-sideboards_3f247eb0": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "21626957": [
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Galinės sienelės storis",
+          "value": "12 mm"
+        },
+        {
+          "label": "Vyrių atidarymo kampas",
+          "value": "110°"
+        }
+      ],
+      "21626958": [
+        {
+          "label": "Korpuso plokštės storis",
+          "value": "18 mm"
+        },
+        {
+          "label": "Galinės sienelės storis",
+          "value": "12 mm"
+        },
+        {
+          "label": "Vyrių atidarymo kampas",
+          "value": "110°"
+        }
+      ],
+      "21626956": [
+        {
+          "label": "Korpuso aukštis",
+          "value": "5 segtuvų aukščiai"
+        },
+        {
+          "label": "Atviros dalies aukštis",
+          "value": "2 segtuvų aukščiai"
+        },
+        {
+          "label": "Durų aukštis",
+          "value": "3 segtuvų aukščiai"
+        }
+      ],
+      "21626953": [
+        {
+          "label": "Korpuso plotis",
+          "value": "800 mm"
+        },
+        {
+          "label": "Korpuso aukštis",
+          "value": "4 segtuvų aukščiai"
+        },
+        {
+          "label": "Durų tipas",
+          "value": "Varstomos"
+        }
+      ],
+      "21626959": [
+        {
+          "label": "Laikymo konstrukcija",
+          "value": "Kombinuota spintelė su stalčiais"
+        }
+      ]
+    }
+  },
+  "product_erange-orga-towers-pedestals_42809c62": {
+    "source": "https://www.nowystyl.com/en/erange/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "22087793": [
+        {
+          "label": "Plotis × gylis",
+          "value": "410 × 600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "643 mm"
+        }
+      ]
+    }
+  },
+  "product_offa-orga-towers-pedestals_438939e5": {
+    "source": "https://www.nowystyl.com/en/offa/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "19455896": [
+        {
+          "label": "Plotis × gylis",
+          "value": "560 × 498 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "750 mm"
+        }
+      ]
+    }
+  },
+  "product_offa-pouffes_24d6360e": {
+    "source": "https://www.nowystyl.com/en/offa/pouffes/",
+    "common": [],
+    "samples": {
+      "19557053": [
+        {
+          "label": "Plotis × gylis",
+          "value": "420 × 420 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "420 mm"
+        }
+      ]
+    }
+  },
+  "product_cx-3200-meeting-tables_667fd26e": {
+    "source": "https://www.nowystyl.com/en/cx-3200/meeting-tables/",
+    "common": [],
+    "samples": {
+      "16812159": [
+        {
+          "label": "Plotis × gylis",
+          "value": "4000 × 2400 mm"
+        }
+      ],
+      "16812161": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2800 × 2300 mm"
+        }
+      ],
+      "16812160": [
+        {
+          "label": "Plotis × gylis",
+          "value": "3249 × 2751 mm"
+        }
+      ]
+    }
+  },
+  "product_erange-meeting-tables_b48cc9db": {
+    "source": "https://www.nowystyl.com/en/erange/meeting-tables/",
+    "common": [],
+    "samples": {
+      "22084192": [
+        {
+          "label": "Plotis × gylis",
+          "value": "3600 × 1400 mm"
+        }
+      ],
+      "22084190": [
+        {
+          "label": "Plotis × gylis",
+          "value": "4800 × 1400 mm"
+        }
+      ],
+      "22084191": [
+        {
+          "label": "Plotis × gylis",
+          "value": "2400 × 1400 mm"
+        }
+      ]
+    }
+  },
+  "product_levitate-meeting-tables_91cfdc0e": {
+    "source": "https://www.nowystyl.com/en/levitate/meeting-tables/",
+    "common": [],
+    "samples": {
+      "16597869": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1800 × 900 mm"
+        }
+      ],
+      "16597871": [
+        {
+          "label": "Skersmuo",
+          "value": "1200 mm"
+        }
+      ]
+    }
+  },
+  "product_offa-high-tables_a811f6b6": {
+    "source": "https://www.nowystyl.com/en/offa/high-tables/",
+    "common": [],
+    "samples": {
+      "19455540": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1800 × 600 mm"
+        }
+      ],
+      "19455543": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1800 × 800 mm"
+        }
+      ],
+      "19455542": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1800 × 800 mm"
+        }
+      ],
+      "23767610": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Rėmas su ratukais"
+        },
+        {
+          "label": "Viršutinė dalis",
+          "value": "Atviras grotelių rėmas"
+        }
+      ]
+    }
+  },
+  "product_offa-cafe-lounge-tables_919edefd": {
+    "source": "https://www.nowystyl.com/en/offa/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "19456222": [
+        {
+          "label": "Plotis × gylis",
+          "value": "420 × 420 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "435 mm"
+        }
+      ],
+      "19456221": [
+        {
+          "label": "Plotis × gylis",
+          "value": "366 × 420 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "390 mm"
+        }
+      ]
+    }
+  },
+  "product_play-work-high-tables_5c59297e": {
+    "source": "https://www.nowystyl.com/en/play-work/high-tables/",
+    "common": [],
+    "samples": {
+      "24045074": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1645 × 1600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "1117 mm"
+        }
+      ]
+    }
+  },
+  "product_sqart-meeting-tables_2e47c918": {
+    "source": "https://www.nowystyl.com/en/sqart/meeting-tables/",
+    "common": [],
+    "samples": {
+      "24766471": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1400 × 1400 mm"
+        }
+      ]
+    }
+  },
+  "product_tauko-cafe-lounge-tables_de16e263": {
+    "source": "https://www.nowystyl.com/en/tauko/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "16088330": [
+        {
+          "label": "Plotis × gylis",
+          "value": "800 × 800 mm"
+        }
+      ]
+    }
+  },
+  "product_naudu-stools-bar-stools_806bdc31": {
+    "source": "https://www.nowystyl.com/en/naudu/stools-bar-stools/",
+    "common": [],
+    "samples": {
+      "29782035": [
+        {
+          "label": "Sėdynės aukštis",
+          "value": "810 mm"
+        }
+      ]
+    }
+  },
+  "product_mollen-cafe-lounge-tables_e9876a94": {
+    "source": "https://www.nowystyl.com/en/mollen/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "25640766": [
+        {
+          "label": "Stalviršio aukštis",
+          "value": "350 mm"
+        }
+      ],
+      "25640764": [
+        {
+          "label": "Stalviršio aukštis",
+          "value": "350 mm"
+        }
+      ]
+    }
+  },
+  "product_k40-orga-towers-pedestals_02122d80": {
+    "source": "https://www.nowystyl.com/en/k40/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "23596085": [
+        {
+          "label": "Viršutinės plokštės storis",
+          "value": "25 mm"
+        }
+      ],
+      "24839916": [
+        {
+          "label": "Plotis × gylis",
+          "value": "503 × 600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "1150 mm"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Ratukai"
+        }
+      ],
+      "24839917": [
+        {
+          "label": "Plotis × gylis",
+          "value": "800 × 460 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "1150 mm"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Ratukai"
+        }
+      ]
+    }
+  },
+  "product_conect-ii-cafe-lounge-tables_9b75c4a6": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "20977109": [
+        {
+          "label": "Plotis × gylis",
+          "value": "900 × 600 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "400 mm"
+        }
+      ]
+    }
+  },
+  "product_studio-cafe-lounge-tables_83abbb75": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "22915491": [
+        {
+          "label": "Plotis × gylis",
+          "value": "750 × 750 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "405 mm"
+        }
+      ],
+      "22915493": [
+        {
+          "label": "Plotis × gylis",
+          "value": "1100 × 700 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "405 mm"
+        }
+      ]
+    }
+  },
+  "product_classic-cafe-lounge-tables_481bb013": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "25365109": [
+        {
+          "label": "Matmenys",
+          "value": "620 × 630 mm"
+        },
+        {
+          "label": "Aukštis su stikliniu stalviršiu",
+          "value": "410 mm"
+        },
+        {
+          "label": "Aukštis su melaminuotu stalviršiu",
+          "value": "415 mm"
+        }
+      ],
+      "25365111": [
+        {
+          "label": "Matmenys",
+          "value": "1230 × 620 mm"
+        },
+        {
+          "label": "Aukštis su stikliniu stalviršiu",
+          "value": "410 mm"
+        },
+        {
+          "label": "Aukštis su melaminuotu stalviršiu",
+          "value": "415 mm"
+        }
+      ]
+    }
+  },
+  "product_yuni-meeting-chairs_f1ee6ae3": {
+    "source": "https://www.nowystyl.com/en/yuni/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "28958406": [
+        {
+          "label": "Porankių konstrukcija",
+          "value": "Integruoti"
+        },
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Vientisas, iš oro sąlygoms atsparaus plastiko"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "130 kg"
+        }
+      ],
+      "28958404": [
+        {
+          "label": "Porankių konstrukcija",
+          "value": "Be porankių"
+        },
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Vientisas, iš oro sąlygoms atsparaus plastiko"
+        },
+        {
+          "label": "Didžiausia apkrova",
+          "value": "130 kg"
+        }
+      ]
+    }
+  },
+  "product_sand-high-tables_90cbca9a": {
+    "source": "https://www.nowystyl.com/en/sand/high-tables/",
+    "common": [],
+    "samples": {
+      "28039780": [
+        {
+          "label": "Pertvaros forma",
+          "value": "L formos"
+        },
+        {
+          "label": "Stalų tipas",
+          "value": "Aukšti stalai"
+        }
+      ],
+      "28039781": [
+        {
+          "label": "Pertvaros forma",
+          "value": "S formos"
+        },
+        {
+          "label": "Stalų tipas",
+          "value": "Aukšti stalai"
+        }
+      ],
+      "28039782": [
+        {
+          "label": "Pertvaros forma",
+          "value": "Z formos"
+        },
+        {
+          "label": "Stalų tipas",
+          "value": "Aukšti stalai"
+        }
+      ]
+    }
+  },
+  "product_creva-armchairs-leg-rests_561f91ed": {
+    "source": "https://www.nowystyl.com/en/creva/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "24827802": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Stacionari"
+        }
+      ],
+      "24827803": [
+        {
+          "label": "Vietų skaičius",
+          "value": "1"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Ratukai"
+        }
+      ]
+    }
+  },
+  "product_tauko-meeting-tables_c2a9ba4a": {
+    "source": "https://www.nowystyl.com/en/tauko/meeting-tables/",
+    "common": [],
+    "samples": {
+      "16780591": [
+        {
+          "label": "Modulių išdėstymas",
+          "value": "Tiesus išdėstymas"
+        },
+        {
+          "label": "Vieno modulio matmenys",
+          "value": "680 × 565 mm"
+        }
+      ],
+      "16754930": [
+        {
+          "label": "Modulių išdėstymas",
+          "value": "Trikampio formos išdėstymas"
+        },
+        {
+          "label": "Vieno modulio matmenys",
+          "value": "680 × 565 mm"
+        }
+      ],
+      "15837616": [
+        {
+          "label": "Stalviršio forma",
+          "value": "Kvadratinis"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "800 mm"
+        }
+      ],
+      "15837617": [
+        {
+          "label": "Stalviršio forma",
+          "value": "Apvalus"
+        },
+        {
+          "label": "Stalviršio plotis",
+          "value": "800 mm"
+        }
+      ]
+    }
+  },
+  "product_bzoom-meeting-chairs_aa445386": {
+    "source": "https://www.nowystyl.com/en/bzoom/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "31132658": [
+        {
+          "label": "Sėdynė ir atlošas",
+          "value": "Apmušti"
+        },
+        {
+          "label": "Atlošo funkcija",
+          "value": "Atlenkiamas į rašymo paviršių"
+        },
+        {
+          "label": "Pagrindo funkcija",
+          "value": "Vieta daiktams"
+        }
+      ]
+    }
+  },
+  "product_calis-swivel-chairs_8f841475": {
+    "source": "https://www.nowystyl.com/en/calis/swivel-chairs/",
+    "common": [],
+    "samples": {
+      "32239495": [
+        {
+          "label": "Atlošo medžiaga",
+          "value": "Tinklelis"
+        },
+        {
+          "label": "Juosmens atrama",
+          "value": "Reguliuojamo aukščio"
+        },
+        {
+          "label": "Atlošo fiksavimas",
+          "value": "Vertikalioje padėtyje"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Apmuštas putplastis"
+        }
+      ]
+    }
+  },
+  "product_chico-stools-bar-stools_ffaa8b98": {
+    "source": "https://www.nowystyl.com/en/chico/stools-bar-stools/",
+    "common": [],
+    "samples": {
+      "24800027": [
+        {
+          "label": "Laikymas",
+          "value": "Sudedamas vienas ant kito"
+        },
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        }
+      ],
+      "25416173": [
+        {
+          "label": "Laikymas",
+          "value": "Sudedamas vienas ant kito"
+        },
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        }
+      ]
+    }
+  },
+  "product_elovie-swivel-chairs_77c77abd": {
+    "source": "https://www.nowystyl.com/en/elovie/swivel-chairs/",
+    "common": [],
+    "samples": {
+      "30470552": [
+        {
+          "label": "Galvos atramos versija",
+          "value": "Su apmušta galvos atrama"
+        },
+        {
+          "label": "Atlošo fiksavimas",
+          "value": "4 padėtys"
+        },
+        {
+          "label": "Mechanizmo tipas",
+          "value": "Sinchroninis"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        }
+      ],
+      "30470553": [
+        {
+          "label": "Galvos atramos versija",
+          "value": "Be galvos atramos"
+        },
+        {
+          "label": "Atlošo fiksavimas",
+          "value": "1 padėtis"
+        },
+        {
+          "label": "Mechanizmo tipas",
+          "value": "Sinchroninis"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        }
+      ]
+    }
+  },
+  "product_ergo1-swivel-chairs_43b6eb7c": {
+    "source": "https://www.nowystyl.com/en/ergo1/swivel-chairs/",
+    "common": [],
+    "samples": {
+      "29767371": [
+        {
+          "label": "Sėdynės ir atlošo medžiaga",
+          "value": "Tinklelis"
+        },
+        {
+          "label": "Mechanizmo tipas",
+          "value": "Sinchroninis"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        },
+        {
+          "label": "Porankių reguliavimas",
+          "value": "4 kryptys"
+        }
+      ]
+    }
+  },
+  "product_inta-meeting-chairs_7adfdd79": {
+    "source": "https://www.nowystyl.com/en/inta/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "20624634": [
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Plastikinė"
+        }
+      ],
+      "20624632": [
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Plastikinė, su apmušta sėdyne"
+        }
+      ]
+    }
+  },
+  "product_ovia-meeting-chairs_1061b61e": {
+    "source": "https://www.nowystyl.com/en/ovia/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "31075252": [
+        {
+          "label": "Atlošo medžiaga",
+          "value": "Tinklelis"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Apmušta"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        }
+      ],
+      "31075253": [
+        {
+          "label": "Atlošo medžiaga",
+          "value": "Tinklelis"
+        },
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Apmušta"
+        },
+        {
+          "label": "Sėdynės gylis",
+          "value": "Reguliuojamas"
+        }
+      ]
+    }
+  },
+  "product_timmi-stools-bar-stools_5d9910dd": {
+    "source": "https://www.nowystyl.com/en/timmi/stools-bar-stools/",
+    "common": [],
+    "samples": {
+      "20501895": [
+        {
+          "label": "Sėdynės aukštis",
+          "value": "Reguliuojamas"
+        },
+        {
+          "label": "Pagrindo konstrukcija",
+          "value": "Neslystanti guminė atrama"
+        }
+      ]
+    }
+  },
+  "product_vienna-office-chairs_a2a3173d": {
+    "source": "https://www.nowystyl.com/en/vienna/office-chairs/",
+    "common": [],
+    "samples": {
+      "27425703": [
+        {
+          "label": "Atlošo fiksavimas",
+          "value": "3 padėtys"
+        },
+        {
+          "label": "Juosmens atrama",
+          "value": "Reguliuojamo aukščio"
+        },
+        {
+          "label": "Mechanizmo tipas",
+          "value": "Sinchroninis"
+        },
+        {
+          "label": "Porankių reguliavimas",
+          "value": "Aukštis"
+        }
+      ]
+    }
+  },
+  "product_barrique-armchairs-leg-rests_f2af7ce1": {
+    "source": "https://www.nowystyl.com/en/barrique/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "27593293": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        },
+        {
+          "label": "Atlošo mechanizmas",
+          "value": "Atlošas atlenkiamas"
+        }
+      ],
+      "27594929": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Keturių stipinų pagrindas"
+        },
+        {
+          "label": "Viršutinė dalis",
+          "value": "Apmušta"
+        }
+      ]
+    }
+  },
+  "product_bound-armchairs-leg-rests_adab0454": {
+    "source": "https://www.nowystyl.com/en/bound/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "24718410": [
+        {
+          "label": "Sėdynės funkcija",
+          "value": "Sėdynė automatiškai grįžta į pradinę padėtį"
+        }
+      ]
+    }
+  },
+  "product_linkup-armchairs-leg-rests_850520d6": {
+    "source": "https://www.nowystyl.com/en/linkup/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "19868014": [
+        {
+          "label": "Sėdynės užpildas",
+          "value": "Putplastis"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Atskirai arba eilėje"
+        }
+      ],
+      "19868013": [
+        {
+          "label": "Sėdynės užpildas",
+          "value": "Putplastis"
+        },
+        {
+          "label": "Išdėstymas",
+          "value": "Atskirai arba eilėje"
+        }
+      ]
+    }
+  },
+  "product_njord-armchairs-leg-rests_58fac32d": {
+    "source": "https://www.nowystyl.com/en/njord/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "25866647": [
+        {
+          "label": "Laikymas",
+          "value": "Iki 4 vienetų vienas ant kito"
+        },
+        {
+          "label": "Svoris",
+          "value": "5,5 kg"
+        }
+      ]
+    }
+  },
+  "product_sivu-armchairs-leg-rests_17b08ecb": {
+    "source": "https://www.nowystyl.com/en/sivu/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "30156244": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        }
+      ],
+      "30156245": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        }
+      ],
+      "30156246": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Sukamas keturių stipinų pagrindas"
+        }
+      ]
+    }
+  },
+  "product_dessi-coat-stands_447d2c4a": {
+    "source": "https://www.nowystyl.com/en/dessi/coat-stands/",
+    "common": [],
+    "samples": {
+      "30268052": [
+        {
+          "label": "Stovo forma",
+          "value": "A formos"
+        }
+      ],
+      "30268050": [
+        {
+          "label": "Stovo forma",
+          "value": "Kvadratinė"
+        }
+      ],
+      "30268053": [
+        {
+          "label": "Stovo forma",
+          "value": "Y formos"
+        }
+      ],
+      "30268051": [
+        {
+          "label": "Stovo forma",
+          "value": "V formos"
+        }
+      ]
+    }
+  },
+  "product_iso-meeting-chairs_4bd07abb": {
+    "source": "https://www.nowystyl.com/en/iso/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "21307287": [
+        {
+          "label": "Laikymas",
+          "value": "Sudedama viena ant kitos"
+        }
+      ]
+    }
+  },
+  "product_lynx-meeting-chairs_4798c9c2": {
+    "source": "https://www.nowystyl.com/en/lynx/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "28758854": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Chromuotas konsolinis rėmas"
+        },
+        {
+          "label": "Porankių apdaila",
+          "value": "Juodos medienos antgaliai"
+        }
+      ]
+    }
+  },
+  "product_nadir-meeting-chairs_4efad3a3": {
+    "source": "https://www.nowystyl.com/en/nadir/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "28433477": [
+        {
+          "label": "Konstrukcija",
+          "value": "Chromuotas plienas"
+        },
+        {
+          "label": "Sėdynės apdaila",
+          "value": "Apmušalas"
+        }
+      ]
+    }
+  },
+  "product_styl-meeting-chairs_60fdacb4": {
+    "source": "https://www.nowystyl.com/en/styl/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "20929369": [
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Porankių konstrukcija",
+          "value": "Fiksuoti"
+        }
+      ],
+      "20929371": [
+        {
+          "label": "Kojų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Porankių konstrukcija",
+          "value": "Be porankių"
+        }
+      ]
+    }
+  },
+  "product_sylwia-s-meeting-chairs_12123440": {
+    "source": "https://www.nowystyl.com/en/sylwia-s/meeting-chairs/",
+    "common": [],
+    "samples": {
+      "27819538": [
+        {
+          "label": "Atramos apdaila",
+          "value": "Chromuota"
+        },
+        {
+          "label": "Sėdynė ir atlošas",
+          "value": "Apmušti"
+        }
+      ],
+      "27819537": [
+        {
+          "label": "Atramos apdaila",
+          "value": "Chromuota"
+        },
+        {
+          "label": "Sėdynė ir atlošas",
+          "value": "Apmušti"
+        }
+      ]
+    }
+  },
+  "product_zeta-stools-bar-stools_c6c42cbd": {
+    "source": "https://www.nowystyl.com/en/zeta/stools-bar-stools/",
+    "common": [],
+    "samples": {
+      "25038984": [
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Apmušta"
+        }
+      ],
+      "25038986": [
+        {
+          "label": "Sėdynės konstrukcija",
+          "value": "Apmušta"
+        }
+      ]
+    }
+  },
+  "product_tri-ply-pouffes_50e79f58": {
+    "source": "https://www.nowystyl.com/en/tri-ply/pouffes/",
+    "common": [],
+    "samples": {
+      "27026755": [
+        {
+          "label": "Pufo dydis",
+          "value": "85 cm"
+        },
+        {
+          "label": "Papildoma dalis",
+          "value": "Medinis staliukas"
+        }
+      ]
+    }
+  },
+  "product_axo-meeting-tables_d16b7ca2": {
+    "source": "https://www.nowystyl.com/en/axo/meeting-tables/",
+    "common": [],
+    "samples": {
+      "19839567": [
+        {
+          "label": "Stalviršio forma",
+          "value": "Stačiakampė"
+        }
+      ]
+    }
+  },
+  "product_creva-cafe-lounge-tables_7c348ed3": {
+    "source": "https://www.nowystyl.com/en/creva/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "24830226": [
+        {
+          "label": "Stalviršio forma",
+          "value": "Kvadratinė"
+        },
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Apmuštas korpusas su ugniai atspariu putplasčiu"
+        }
+      ]
+    }
+  },
+  "product_tepee-cafe-lounge-tables_7e2f6744": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "15284628": [
+        {
+          "label": "Bendras aukštis",
+          "value": "350 mm"
+        }
+      ],
+      "15284629": [
+        {
+          "label": "Bendras aukštis",
+          "value": "350 mm"
+        }
+      ]
+    }
+  },
+  "product_play-work-modular-systems_d771d519": {
+    "source": "https://www.nowystyl.com/files/doc/WWW_Soft-seating_Technical-details_EXP.pdf",
+    "common": [],
+    "samples": {
+      "26973439": [
+        {
+          "label": "Vietų skaičius",
+          "value": "4"
+        },
+        {
+          "label": "Komplekto sudėtis",
+          "value": "Dvi dvivietės sofos, stalas ir televizoriaus skydas"
+        },
+        {
+          "label": "Skydo storis",
+          "value": "30 mm"
+        }
+      ]
+    }
+  },
+  "product_tri-ply-modular-systems_f0174fec": {
+    "source": "https://www.nowystyl.com/en/tri-ply/modular-systems/",
+    "common": [],
+    "samples": {
+      "27031108": [
+        {
+          "label": "Modulių sujungimas",
+          "value": "Jungtimis, be įrankių"
+        }
+      ]
+    }
+  },
+  "product_versi-pouffes_cf3f458c": {
+    "source": "https://www.nowystyl.com/en/versi/pouffes/",
+    "common": [],
+    "samples": {
+      "23257294": [
+        {
+          "label": "Komplekto sudėtis",
+          "value": "Trys pufai ir kavos staliukas"
+        }
+      ]
+    }
+  },
+  "product_lupino-armchairs-leg-rests_2a7a1f8f": {
+    "source": "https://www.nowystyl.com/en/lupino/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "29764655": [
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Keturios medinės kojos"
+        }
+      ]
+    }
+  },
+  "product_cs5040-cabinets-sideboards_922f3467": {
+    "source": "https://www.nowystyl.com/en/cs5040/cabinets-sideboards/",
+    "common": [],
+    "samples": {
+      "19769220": [
+        {
+          "label": "Montavimo tipas",
+          "value": "Laisvai pastatoma"
+        },
+        {
+          "label": "Fasado konstrukcija",
+          "value": "Du vientisi fasadai"
+        }
+      ],
+      "19769221": [
+        {
+          "label": "Montavimo tipas",
+          "value": "Laisvai pastatoma"
+        },
+        {
+          "label": "Fasado konstrukcija",
+          "value": "Vienas perforuotas ir vienas vientisas fasadas"
+        }
+      ]
+    }
+  },
+  "product_play-work-orga-towers-pedestals_e9851b35": {
+    "source": "https://www.nowystyl.com/en/play-work/orga-towers-pedestals/",
+    "common": [],
+    "samples": {
+      "24049462": [
+        {
+          "label": "Viršutinė dalis",
+          "value": "Atvira lentyna su grotelėmis"
+        }
+      ],
+      "24049461": [
+        {
+          "label": "Viršutinė dalis",
+          "value": "Uždara"
+        }
+      ]
+    }
+  },
+  "product_bound-sofas_000b9cda": {
+    "source": "https://www.nowystyl.com/en/bound/sofas/",
+    "common": [],
+    "samples": {
+      "24717886": [
+        {
+          "label": "Sėdynė ir atlošas",
+          "value": "Apmušti"
+        },
+        {
+          "label": "Pagrindo konstrukcija",
+          "value": "Dvi centrinės atramos"
+        }
+      ]
+    }
+  },
+  "product_colani-armchairs-leg-rests_9d6cd263": {
+    "source": "https://www.nowystyl.com/en/colani/armchairs-leg-rests/",
+    "common": [],
+    "samples": {
+      "30506760": [
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Apmuštas vientisas korpusas su pailginta kojų atrama"
+        }
+      ],
+      "30506759": [
+        {
+          "label": "Korpuso konstrukcija",
+          "value": "Apmuštas vientisas korpusas su integruotu atlošu"
+        }
+      ]
+    }
+  },
+  "product_njord-cafe-lounge-tables_0624f00b": {
+    "source": "https://www.nowystyl.com/en/njord/cafe-lounge-tables/",
+    "common": [],
+    "samples": {
+      "25867159": [
+        {
+          "label": "Stalviršio forma",
+          "value": "Apvali"
+        },
+        {
+          "label": "Atramos konstrukcija",
+          "value": "Trys kojos"
+        }
+      ]
+    }
+  },
+  "product_play-work-cafe-lounge-tables_39f6ba7f": {
+    "source": "https://www.nowystyl.com/files/downloads/PlayWork-Soft-Seating_Catalogue_INT_EN-FR_E01_2021.pdf",
+    "common": [],
+    "samples": {
+      "26443793": [
+        {
+          "label": "Stalviršio matmenys",
+          "value": "425 × 350 mm"
+        },
+        {
+          "label": "Bendras aukštis",
+          "value": "647 mm"
+        },
+        {
+          "label": "Pagrindo matmenys",
+          "value": "405 × 330 mm"
+        }
+      ]
+    }
+  }
+}

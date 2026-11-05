@@ -1,0 +1,398 @@
+{
+  "field:CBACKRESTFOAM": {
+    "backrest foam": "Atlošo užpildas"
+  },
+  "field:CSEATFOAM": {
+    "seat foam": "Sėdynės užpildas"
+  },
+  "field:CFRAME": {
+    "frame": "Rėmas"
+  },
+  "field:CPACKAGING": {
+    "packaging": "Pakuotė"
+  },
+  "field:CSTACKING": {
+    "stacking": "Kėdžių krovimas viena ant kitos"
+  },
+  "field:CBACKREST": {
+    "backrest": "Atlošas"
+  },
+  "field:CSHELL": {
+    "shell": "Sėdynės ir atlošo korpusas"
+  },
+  "field:CARMRESTS": {
+    "armrests": "Porankiai"
+  },
+  "field:CGASLIFT": {
+    "gas lift": "Dujinė pakėlimo kolonėlė"
+  },
+  "value:CARMRESTS=NONE": {
+    "none": "Be porankių"
+  },
+  "value:CLUMBARSUPPORT=NONE": {
+    "none": "Be juosmens atramos"
+  },
+  "value:CSEAT=UPH": {
+    "upholstered": "Apmušta sėdynė"
+  },
+  "value:CPACKAGING=BOX4ASSEMBLED": {
+    "box - 4 items, product assembled": "Dėžė, 4 surinkti gaminiai"
+  },
+  "value:CSHELL=WOOD2XPADUPH": {
+    "wooden, upholstered seat and backrest pads": "Medinis korpusas su apmuštais sėdynės ir atlošo įdėklais"
+  },
+  "value:CSHELL=WOOD": {
+    "wooden": "Medinis korpusas"
+  },
+  "value:CMECHANISM=MEIN1": {
+    "me-in1: synchronous, seat depth and negative inclination adjustment, harder spring": "Sinchroninis mechanizmas su standesne spyruokle, sėdynės gylio ir palenkimo į priekį reguliavimu"
+  },
+  "value:CUPHOLSTERINGTYPE=SEATPLUS": {
+    "seat-plus: upholstered seat pad": "Apmuštas sėdynės įdėklas"
+  },
+  "value:CSHELL=WOODSEATPADUPH": {
+    "wooden, upholstered seat pad": "Medinis korpusas su apmuštu sėdynės įdėklu"
+  },
+  "value:CWOODMATERIAL=BEECHPLYSTAIN": {
+    "stained beech plywood": "Beicuota buko fanera"
+  },
+  "value:CUPHOLSTERINGTYPE=PLUS": {
+    "plus: upholstered seat pad and backrest pad": "Apmušti sėdynės ir atlošo įdėklai"
+  },
+  "value:CARMRESTS=GTPARM": {
+    "fixed, ring type": "Fiksuoti žiedo formos porankiai"
+  },
+  "value:CCASTORS=ESSHH": {
+    "esshh: diam. 60 mm, for hard floors, black/grey": "Juodi ir pilki 60 mm ratukai kietoms grindims"
+  },
+  "value:CARMPAD=LAMINATEPLYWOOD": {
+    "laminated plywood": "Laminuota fanera"
+  },
+  "value:CHEADREST=HRUAP": {
+    "adjustable, upholstered, plastic cover": "Reguliuojama apmušta galvos atrama su plastikiniu gaubtu"
+  },
+  "value:CWOODMATERIAL=LAMINATEPLYWOOD": {
+    "laminate plywood": "Laminuota fanera"
+  },
+  "value:CSEATFOAM=CUT": {
+    "cut": "Pjaustytas putplastis"
+  },
+  "value:CBACKRESTFOAM=CUT": {
+    "cut": "Pjaustytas putplastis"
+  },
+  "value:CSEATPADFOAM=FLAMERETARDANT": {
+    "flame retardant": "Sunkiai užsidegantis putplastis"
+  },
+  "value:CGLIDES=GBPT": {
+    "with teflon": "Pėdelės su teflonu"
+  },
+  "value:CBASE=ST62ALU": {
+    "diam. 736 mm, five-star, aluminium (st62)": "736 mm skersmens penkių stipinų aliumininis pagrindas"
+  },
+  "value:CSEAT=UPHCOMFORTSTITCHINGCOVPL": {
+    "comfort, upholstered with stitching": "„Comfort“ sėdynė su apmušalu ir siūlėmis"
+  },
+  "value:CPACKAGING=BOX1UNASSEMBLED": {
+    "box - 1 item, product unassembled": "Dėžė, 1 nesurinktas gaminys"
+  },
+  "value:CMECHANISM=MEIN": {
+    "me-in: synchronous, seat depth and negative inclination adjustment": "Sinchroninis mechanizmas su sėdynės gylio ir palenkimo į priekį reguliavimu"
+  },
+  "value:CUPHOLSTERINGTYPE=NONE": {
+    "without upholstery": "Be apmušalų"
+  },
+  "value:CGASLIFT=PNEUMATIC": {
+    "pneumatic, standard": "Standartinė dujinė pakėlimo kolonėlė"
+  },
+  "value:CGASLIFT=GL10": {
+    "pneumatic, standard": "Standartinė dujinė pakėlimo kolonėlė"
+  },
+  "value:CSEATDECSTITCHING=GREY": {
+    "grey": "Pilkos siūlės"
+  },
+  "value:CWOODMATERIAL=BEECHPLYWOOD": {
+    "beech plywood": "Buko fanera"
+  },
+  "value:CARMPAD=BEECHPLYWOOD": {
+    "beech plywood": "Buko fanera"
+  },
+  "value:CARMPAD=BEECHPLYSTAIN": {
+    "stained beech plywood": "Beicuota buko fanera"
+  },
+  "value:CCONNECTOR=CLICKJ4": {
+    "click-j4: integrated with frame": "Į rėmą integruota jungtis"
+  },
+  "value:CCONNECTOR=CLICK": {
+    "click: integrated with frame": "Į rėmą integruota jungtis"
+  },
+  "value:CARMRESTS=R38POLBL": {
+    "r38-pol/b/b: 4d, arm: polished aluminum, black polyamide, pad: black polyurethane": "4D porankiai iš poliruoto aliuminio ir juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CARMRESTS=R65PWG": {
+    "r65: 2d, arm: aluminium, polyamide pw, pad: grey polyurethane": "2D porankiai iš aliuminio ir poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CARMRESTS=R46BBBPU": {
+    "r46-b/b/bpu: 2d, arm: black polyamide, pad: black polyurethane": "2D porankiai iš juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CARMRESTS=R38BLBL": {
+    "r38-bl/b/b: 4d, arm: aluminium powder-coated bl, black polyamide, pad: black polyurethane": "4D porankiai iš juodai milteliniu būdu dažyto aliuminio ir juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CARMRESTS=R66PWG": {
+    "r66: 4d, arm: aluminium, polyamide pw, pad: grey polyurethane": "4D porankiai iš aliuminio ir poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CARMRESTS=R37": {
+    "r37-bl/b/b: 4d, arm: black polyamide, pad: black polyurethane": "4D porankiai iš juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CBACKREST=UPHWAVY": {
+    "upholstered and pleated": "Apmuštas atlošas su klostėmis"
+  },
+  "value:CBASE=ST55BL": {
+    "diam. 760 mm, 5-star, aluminium coated bl (st55-bl)": "760 mm skersmens juodas penkių stipinų aliumininis pagrindas"
+  },
+  "value:CBASE=ST43POL": {
+    "diam. 696 mm, 5-star, polished aluminium (st43-pol)": "696 mm skersmens penkių stipinų poliruoto aliuminio pagrindas"
+  },
+  "value:CARMRESTS=R36GR": {
+    "r36/gr/gr: 2d, arm: grey polyamide, pad: grey polyurethane": "2D porankiai iš pilko poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CARMRESTS=PF40CR": {
+    "pf40-cr: fixed, arm: steel chromium plate, pad: black polypropylene": "Fiksuoti chromuoto plieno porankiai su juodo polipropileno atramomis"
+  },
+  "value:CARMRESTS=R37POL": {
+    "r37-pol/b/b: 4d, arm: polished aluminum, pad: black polyurethane": "4D porankiai iš poliruoto aliuminio, su juodo poliuretano atramomis"
+  },
+  "value:CGASLIFT=RGL4659": {
+    "rgl46.59: pneumatic, raised": "Paaukštinta dujinė pakėlimo kolonėlė"
+  },
+  "value:CGASLIFT=GLL": {
+    "gl-l: pneumatic, lowered": "Pažeminta dujinė pakėlimo kolonėlė"
+  },
+  "value:CMECHANISM=MPD170": {
+    "mpd170: integrated seat and backrest tilting": "Bendras sėdynės ir atlošo pasvirimo mechanizmas"
+  },
+  "value:CMECHANISM=ESPST": {
+    "esp-st: synchronous, seat depth adjustment": "Sinchroninis mechanizmas su sėdynės gylio reguliavimu"
+  },
+  "value:CHEADREST=HRUA2DPLASTIC": {
+    "2d adjustable, upholstered, plastic cover": "Dviem kryptimis reguliuojama apmušta galvos atrama su plastikiniu gaubtu"
+  },
+  "value:CHEADREST=HRMA": {
+    "adjustable, mesh": "Reguliuojama tinklinė galvos atrama"
+  },
+  "value:CSEATFOAM=VISCO": {
+    "viscoelastic (visco)": "Viskoelastinis putplastis"
+  },
+  "value:CCASTORS=CA": {
+    "for soft floors": "Ratukai minkštoms grindims"
+  },
+  "value:CCASTORS=CAH": {
+    "for hard floors": "Ratukai kietoms grindims"
+  },
+  "value:CLUMBARSUPPORT=LUMBAR1": {
+    "manual, height and depth adjustment": "Rankiniu būdu reguliuojamas juosmens atramos aukštis ir gylis"
+  },
+  "value:CGASLIFT=GLR": {
+    "gl-r: pneumatic, raised": "Paaukštinta dujinė pakėlimo kolonėlė"
+  },
+  "value:CARMRESTS=R38POLGR": {
+    "r38-pol/b/gr: 4d, arm: polished aluminum, black polyamide, pad: grey polyurethane": "4D porankiai iš poliruoto aliuminio ir juodo poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CBACKREST=LBUPH": {
+    "upholstered, low": "Žemas apmuštas atlošas"
+  },
+  "value:CFOOTREST=FBRAL": {
+    "footbase, powder-coated steel": "Milteliniu būdu dažyto plieno kojų atrama"
+  },
+  "value:CMECHANISM=INDST": {
+    "ind-st: synchronous, automatic weight adjustment, seat depth adjustment": "Sinchroninis mechanizmas, automatiškai prisitaikantis prie svorio, su sėdynės gylio reguliavimu"
+  },
+  "value:CARMRESTS=R38BLGR": {
+    "r38-bl/b/gr: 4d, arm: aluminium powder-coated bl, black polyamide, pad: grey polyurethane": "4D porankiai iš juodai milteliniu būdu dažyto aliuminio ir juodo poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CGLIDES=GBP": {
+    "self-leveling, plastic": "Savaime išsilyginančios plastikinės pėdelės"
+  },
+  "value:CBACKREST=HBFRAMEPADUPH": {
+    "backrest frame upholstered with upholstered pad, high": "Aukštas atlošas su apmuštu rėmu ir apmuštu įdėklu"
+  },
+  "value:CBACKREST=MBUPH": {
+    "upholstered, medium high": "Vidutinio aukščio apmuštas atlošas"
+  },
+  "value:CSTACKINGPROTECTION=PILLOW": {
+    "stacking cushion": "Apsauginė pagalvėlė kėdėms sukrauti"
+  },
+  "value:CFSC=EUTR": {
+    "raw material – eu timber regulation": "Žaliava pagal ES medienos reglamentą"
+  },
+  "value:CLUMBARSUPPORT=LND2": {
+    "lnd2: pneumatic, depth adjustable with push buttons": "Pneumatinė juosmens atrama, kurios gylis reguliuojamas mygtukais"
+  },
+  "value:CMECHANISM=DNPHST": {
+    "dnph-st: synchronous comfort, seat depth adjustment, negative seat inclination": "Sinchroninis „Comfort“ mechanizmas su sėdynės gylio reguliavimu ir palenkimu į priekį"
+  },
+  "value:CLUMBARSUPPORT=LUH2": {
+    "luh2: magnetic with height and depth adjustment": "Magnetinė juosmens atrama su aukščio ir gylio reguliavimu"
+  },
+  "value:CMECHANISM=CHSYNCH": {
+    "synchronous": "Sinchroninis mechanizmas"
+  },
+  "value:CSEATDECSTITCHING=BEIGE": {
+    "beige": "Smėlio spalvos siūlės"
+  },
+  "value:CMECHANISM=DNPST": {
+    "dnp-st: synchronous comfort, seat depth adjustment, negative seat inclination": "Sinchroninis „Comfort“ mechanizmas su sėdynės gylio reguliavimu ir palenkimu į priekį"
+  },
+  "value:CARMRESTS=R65SGG": {
+    "r65: 2d, arm: aluminium, polyamide sg, pad: grey polyurethane": "2D porankiai iš aliuminio ir poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CARMRESTS=PPINCOLSEAT": {
+    "fixed, arm: polypropylen in finish of seat": "Fiksuoti polipropileno porankiai, kurių apdaila dera prie sėdynės"
+  },
+  "value:CPACKAGING=PACKTYPEA1": {
+    "pack-a1: partially assembled, compact cardboard packaging (for courier delivery)": "Iš dalies surinktas gaminys kompaktiškoje kartoninėje pakuotėje, skirtoje siųsti per kurjerį"
+  },
+  "value:CGLIDES=GBPF": {
+    "self-leveling, plastic with felt": "Savaime išsilyginančios plastikinės pėdelės su veltiniu"
+  },
+  "value:CSEAT=UPHCPLASTICSPROFILES": {
+    "upholstered, side drops, plastic cover": "Apmušta sėdynė su šoninėmis apdailos detalėmis ir plastikiniu gaubtu"
+  },
+  "value:CGASLIFT=GLA": {
+    "gl-a: pneumatic, gs a-type": "GS A tipo dujinė pakėlimo kolonėlė"
+  },
+  "value:CMECHANISM=ESPFST": {
+    "espf-st: synchronous, seat depth adjustment, negative seat inclination": "Sinchroninis mechanizmas su sėdynės gylio reguliavimu ir palenkimu į priekį"
+  },
+  "value:CBACKREST=DUOBACKSIDEPROFILES": {
+    "duo–back – upholstered, side profiles": "Apmuštas „DUO–BACK“ atlošas su šoniniais profiliais"
+  },
+  "value:CLUMBARSUPPORT=LSHP": {
+    "lshp: pneumatic, depth adjustable with pumping": "Pneumatinė juosmens atrama, kurios gylis reguliuojamas pripučiant"
+  },
+  "value:CSHELL=WOODBAGHOLDERSEATPADUPH": {
+    "wooden, upholstered seat pad, bag holder": "Medinis korpusas su apmuštu sėdynės įdėklu ir krepšio laikikliu"
+  },
+  "value:CSEAT=PPPADUPH": {
+    "plastic, upholstered pad": "Plastikinė sėdynė su apmuštu įdėklu"
+  },
+  "value:CSHELL=WOODHANDLE": {
+    "wooden, handle": "Medinis korpusas su rankena"
+  },
+  "value:CMECHANISM=ERFST": {
+    "erf-st: advanced synchronous, seat depth adjustment, negative seat inclination": "Sinchroninis mechanizmas su sėdynės gylio reguliavimu ir palenkimu į priekį"
+  },
+  "value:CMECHANISM=SA2ST": {
+    "sa2-st: synchronous, automatic weight adjustment, seat depth adjustment": "Sinchroninis mechanizmas, automatiškai prisitaikantis prie svorio, su sėdynės gylio reguliavimu"
+  },
+  "value:CTABLET=RIGHTLAMINATE": {
+    "for right-handed, laminated plywood": "Laminuotos faneros rašymo padėklas dešiniarankiams"
+  },
+  "value:CBACKREST=LBELASTONET": {
+    "elasto-net, low": "Žemas „Elasto-net“ atlošas"
+  },
+  "value:CFOOTREST=FBCR": {
+    "footbase, chromium plated steel": "Chromuoto plieno kojų atrama"
+  },
+  "value:CARMRESTS=R66SGG": {
+    "r66: 4d, arm: aluminium, polyamide sg, pad: grey polyurethane": "4D porankiai iš aliuminio ir poliamido, su pilko poliuretano atramomis"
+  },
+  "value:CGASLIFT=CHSTANDARDBL": {
+    "standard, black": "Standartinė juoda pakėlimo kolonėlė"
+  },
+  "value:CSHELL=WOODBAGHOLDER2XPADUPH": {
+    "wooden, upholstered seat and backrest pads, bag holder": "Medinis korpusas su apmuštais sėdynės ir atlošo įdėklais bei krepšio laikikliu"
+  },
+  "value:CBASE=ST55POL": {
+    "diam. 760 mm, 5-star, polished aluminium (st55-pol)": "760 mm skersmens penkių stipinų poliruoto aliuminio pagrindas"
+  },
+  "value:CSHELL=WOODHANDLESEATPADUPH": {
+    "wooden, upholstered seat pad, handle": "Medinis korpusas su apmuštu sėdynės įdėklu ir rankena"
+  },
+  "value:CASSEMBLY=PACKA": {
+    "pack-a: partially assembled, cardboard packaging": "Iš dalies surinktas gaminys kartoninėje pakuotėje"
+  },
+  "value:CSEATPADFOAM=NFF": {
+    "flame retardant with fire retardant fabric": "Sunkiai užsidegantis užpildas su degumą mažinančiu audiniu"
+  },
+  "value:CBACKREST=UPHCOVERPLASTICERGO": {
+    "upholstered, ergo profiles, plastic cover": "Apmuštas atlošas su „ERGO“ profiliais ir plastikiniu gaubtu"
+  },
+  "value:CASSEMBLY=PACKL": {
+    "pack-l: partially assembled, l-shape cardboard packaging": "Iš dalies surinktas gaminys L formos kartoninėje pakuotėje"
+  },
+  "value:CSEATPADFOAM=STANDARD": {
+    "standard": "Standartinis sėdynės užpildas"
+  },
+  "value:CBACKREST=UPH": {
+    "upholstered": "Apmuštas atlošas"
+  },
+  "value:CFSC=YES": {
+    "raw material – eu timber regulation, from certified forests, fsc certificate – authorized companies": "Žaliava iš sertifikuotų miškų pagal ES medienos reglamentą, FSC sertifikatas taikomas įgaliotoms įmonėms"
+  },
+  "value:CFRAME=CFL": {
+    "reverse metal cantilever": "Atvirkštinis metalinis konsolinis rėmas"
+  },
+  "value:CHEADREST=HRMAFABRIC3D": {
+    "adjustable, upholstered with 3d fabric": "Reguliuojama galvos atrama su 3D audinio apmušalu"
+  },
+  "value:CMECHANISM=PST01CPT": {
+    "pst01-cpt: permanent contact, fixed backrest connector": "Nuolatinio atlošo kontakto mechanizmas su fiksuota atlošo jungtimi"
+  },
+  "value:CTABLET=LEFTLAMINATE": {
+    "for left-handed, laminated plywood": "Laminuotos faneros rašymo padėklas kairiarankiams"
+  },
+  "value:CARMRESTS=PPINCOLBACREST": {
+    "fixed, arm: polypropylen in finish of backrest": "Fiksuoti polipropileno porankiai, kurių apdaila dera prie atlošo"
+  },
+  "value:CARMRESTS=R36BL": {
+    "r36/b/b: 2d, arm: black polyamide, pad: black polyurethane": "2D porankiai iš juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CARMRESTS=R20I": {
+    "r20i: 1d, arm: black polyamide, pad: black polyurethane": "1D porankiai iš juodo poliamido, su juodo poliuretano atramomis"
+  },
+  "value:CSHELL=WOODBAGHOLDER": {
+    "wooden, bag holder": "Medinis korpusas su krepšio laikikliu"
+  },
+  "value:CPACKAGING=PALLET20ON1200X800": {
+    "pallet 1200 x 800 [mm] - 20 items": "20 vnt. ant 1 200 × 800 mm padėklo"
+  },
+  "value:CSHELL=WOODHB": {
+    "wooden, high": "Aukštas medinis korpusas"
+  },
+  "value:CSHELLWOODMATERIAL=LAMINATEPLYWOOD": {
+    "laminated plywood": "Laminuota fanera"
+  },
+  "value:CARMRESTS=CH2DPLASTICKBL": {
+    "r: 2d, plastic, black": "Juodi 2D plastikiniai porankiai"
+  },
+  "value:CCASTORS=ESH60": {
+    "esh60: diam. 60 mm, for soft floors": "60 mm ratukai minkštoms grindims"
+  },
+  "value:CSHELLWOODMATERIAL=BEECHSTAIN": {
+    "stained beech plywood": "Beicuota buko fanera"
+  },
+  "value:CSHELL=WOODHANDLE2XPADUPH": {
+    "plywood, upholstered seat and backrest pads and handle": "Faneros korpusas su apmuštais sėdynės ir atlošo įdėklais bei rankena"
+  },
+  "value:CARMRESTS=GTP6": {
+    "gtp6: fixed, arm: black polypropylen": "Fiksuoti juodo polipropileno porankiai"
+  },
+  "value:CBASE=ST56BL": {
+    "diam. 735 mm, 5-star, aluminium coated bl (st56-bl)": "735 mm skersmens juodas penkių stipinų aliumininis pagrindas"
+  },
+  "value:CTABLET=TRWOOD": {
+    "for right-handed, plywood": "Faneros rašymo padėklas dešiniarankiams"
+  },
+  "value:CARMPAD=PLASTICBL": {
+    "black plastic": "Juodas plastikas"
+  },
+  "value:CLUMBARSUPPORT=LSD2": {
+    "lsd2: manual with depth adjustment by knob": "Juosmens atrama, kurios gylis reguliuojamas rankenėle"
+  },
+  "value:CPACKAGING=PACKUNASM": {
+    "pack-unasm: 1 item in box, product disassembled": "Dėžė, 1 nesurinktas gaminys"
+  },
+  "value:CMESHGROUP=MV": {
+    "mv - semi-transparent": "Pusiau permatomas MV tinklelis"
+  }
+}

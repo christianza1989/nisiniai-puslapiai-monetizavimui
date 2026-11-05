@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "Final built source77a5b104 verified locally and at exact f0ddd0bb version URL. Standard speed/PDF pass at source13bb; standard-host adoption of final metadata/cache remains stale and is not claimed. No Native or production launch.",
+  "checks": [
+    {
+      "command": "immutable build-v9 and both TypeScript projects",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/mobile-pdf-seo-v1/TYPESCRIPT-VERIFICATION-V9.json"
+    },
+    {
+      "command": "home/PDF scoped tests and exact attributed1600px image checks",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/mobile-pdf-seo-v1/MEDIA-QUALIFICATION.json"
+    },
+    {
+      "command": "default/2000mm PDFs and invalid state rejection on final version",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/mobile-pdf-seo-v1/pdf-version-v1/RESULT.json"
+    },
+    {
+      "command": "actual8 mobile Lighthouse runs on exact final version",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/mobile-pdf-seo-v1/mobile-version-v1/SUMMARY.json"
+    },
+    {
+      "command": "JS enabled/disabled metadata inside head",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/mobile-pdf-seo-v1/VERSION-HEAD-METADATA-QUALIFICATION.json"
+    },
+    {
+      "command": "exact asset/font/current4ME SHA,MIME and immutable caching",
+      "result": "PASS",
+      "evidence": "D:/Core/output/ergonomic-performance-20261102/mobile-pdf-seo-v1/VERSION-NEW-ASSETS-FONT-4ME-IDENTITIES.json"
+    }
+  ],
+  "eventId": "45cc169a-49e8-42d3-8ef3-62e767f277ff",
+  "sequence": 2,
+  "at": "2026-11-02T16:46:24.252Z"
+}

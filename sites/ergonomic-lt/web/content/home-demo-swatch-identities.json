@@ -1,0 +1,22 @@
+{
+  "/media/configurator/finishes/vl0034.jpg": {
+    "bytes": 1435,
+    "sha256": "82b8584b4c4f505dedc6a4584ca63d4ef2b7ec270e3a74e30e054dc10e26ad13"
+  },
+  "/media/configurator/finishes/vl1048.jpg": {
+    "bytes": 1428,
+    "sha256": "1eede0fc840dcf362e62781499f923157295d5c8a8621866284de4c5574bc45f"
+  },
+  "/media/configurator/finishes/vl5001.jpg": {
+    "bytes": 882,
+    "sha256": "1c5cd490e1297f883369878bca091e8aabbbcf6a857c67d9c0a80a8d15044126"
+  },
+  "/media/configurator/finishes/vl3067.jpg": {
+    "bytes": 1442,
+    "sha256": "62ea88a47723f5b8952986d0f541f50976d1154f8127e5ef31b22adb112d69b9"
+  },
+  "/media/configurator/finishes/vl4041.jpg": {
+    "bytes": 1471,
+    "sha256": "14179e466a3650853b3839c2b1f1c20f5648a08a70681490ab8eec198c16fa4a"
+  }
+}

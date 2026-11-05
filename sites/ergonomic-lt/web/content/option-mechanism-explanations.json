@@ -1,0 +1,1353 @@
+[
+  {
+    "code": "ACTIV1",
+    "models": [
+      "KTAK001WW002",
+      "KTAK002WW006"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Galima reguliuoti pasipriešinimą atsilošimui ir užfiksuoti pasirinktą padėtį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KTAK001WW002&sid=TAK&ovc=KTAK001WW002_OPTIONS.CMECHANISM%3DACTIV1&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "SOHOS katalogas, mechanizmų funkcijos",
+        "url": "https://www.nowystyl.com/files/interactive/catalogue/FR/Sohos/54/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ACTIV1TR",
+    "models": [
+      "KTAK001WW002",
+      "KTAK002WW006"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Papildomai galima pastumti sėdynę pirmyn arba atgal ir taip pakeisti jos gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KTAK001WW002&sid=TAK&ovc=KTAK001WW002_OPTIONS.CMECHANISM%3DACTIV1TR&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "BC3DST",
+    "models": [
+      "KUTI005WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; galima reguliuoti sėdynės gylį ir pasvirimą į priekį, o sėdynė turi papildomą 3D judėjimo funkciją.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KUTI005WW001&sid=UTI&ovc=KUTI005WW001_OPTIONS.CMECHANISM%3DBC3DST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "BS",
+    "models": [
+      "KNXT001WW002",
+      "KNXT002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Galima reguliuoti pasipriešinimą atsilošimui ir užfiksuoti atlošą vienoje iš trijų padėčių.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KNXT001WW002&sid=NXT&ovc=KNXT001WW002_OPTIONS.CMECHANISM%3DBS&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Nexter techninis lapas",
+        "url": "https://sohos.nowystyl.com/media/downloads/Nexter_Technical-details_INT_E01_2023.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "CHSYNCH",
+    "models": [
+      "KCIS001WW001",
+      "KTRF001WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KCIS001WW001&sid=CIS&ovc=KCIS001WW001_OPTIONS.CMECHANISM%3DCHSYNCH&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Trofi funkcijos",
+        "url": "https://www.nowystyl.com/en/trofi/swivel-chairs/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "DNPHST",
+    "models": [
+      "KXEN033WW003"
+    ],
+    "suggestedLt": "Suderina atlošo ir sėdynės judėjimą, leidžia reguliuoti sėdynės gylį bei pasvirimą į priekį; turi stipresnę spyruoklę.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KXEN033WW003&sid=XEN&ovc=KXEN033WW003_OPTIONS.CMECHANISM%3DDNPHST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "DNPST",
+    "models": [
+      "KXEN028WW001",
+      "KXEN032WW001",
+      "KXEN034WW001",
+      "KXEN035WW001"
+    ],
+    "suggestedLt": "Suderina atlošo ir sėdynės judėjimą, leidžia reguliuoti sėdynės gylį bei pasvirimą į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KXEN028WW001&sid=XEN&ovc=KXEN028WW001_OPTIONS.CMECHANISM%3DDNPST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "EAST",
+    "models": [
+      "KBJA001WW002",
+      "KBJA002WW002",
+      "KBJA003WW002",
+      "KVID006WW001",
+      "KVID008WW001"
+    ],
+    "suggestedLt": "Atlošo ir sėdynės pasvirimą galima reguliuoti atskirai. Taip pat reguliuojamas sėdynės gylis ir pasipriešinimas atsilošimui.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KBJA001WW002&sid=BJA&ovc=KBJA001WW002_OPTIONS.CMECHANISM%3DEAST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Bjarg techninis lapas",
+        "url": "https://www.nowystyl.com/files/downloads/Bjarg_Technical_description_FR_E01_2020.pdf#page=5",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "EFT",
+    "models": [
+      "KZBO004WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; galima reguliuoti sėdynės gylį ir palenkti ją į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KZBO004WW001&sid=ZBO&ovc=KZBO004WW001_OPTIONS.CMECHANISM%3DEFT&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "ER",
+    "models": [
+      "KBJA001WW002",
+      "KBJA002WW002",
+      "KBJA003WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Galima reguliuoti pasipriešinimą atsilošimui ir užfiksuoti atlošą vienoje iš penkių padėčių.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KBJA001WW002&sid=BJA&ovc=KBJA001WW002_OPTIONS.CMECHANISM%3DER&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Bjarg techninis lapas",
+        "url": "https://www.nowystyl.com/files/downloads/Bjarg_Technical_description_FR_E01_2020.pdf#page=5",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ERFST",
+    "models": [
+      "KXLI001WW002",
+      "KXLI002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, reguliuojamas sėdynės gylis. Sėdynę galima palenkti į priekį iki 5° nepriklausomai nuo atlošo judėjimo.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KXLI001WW002&sid=XLI&ovc=KXLI001WW002_OPTIONS.CMECHANISM%3DERFST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "X-Line techninis lapas, 2 psl.",
+        "url": "https://www.nowystyl.com/files/downloads/X-line_Technical-details_INT_E01_2022.pdf#page=2",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ERGON2L",
+    "models": [
+      "KNXT001WW002",
+      "KNXT002WW002",
+      "KTAK002WW004"
+    ],
+    "suggestedLt": "Galima keisti atlošo pasvirimą, užfiksuoti pasirinktą padėtį ir reguliuoti atlošo aukštį rankenėle.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KNXT001WW002&sid=NXT&ovc=KNXT001WW002_OPTIONS.CMECHANISM%3DERGON2L&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "SOHOS katalogas, mechanizmų funkcijos",
+        "url": "https://www.nowystyl.com/files/interactive/catalogue/FR/Sohos/54/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ERIN",
+    "models": [
+      "KPOX002WW001",
+      "KPOX002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; sėdynę galima pastumti pirmyn arba atgal ir taip pakeisti jos gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KPOX002WW001&sid=POX&ovc=KPOX002WW001_OPTIONS.CMECHANISM%3DERIN&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "ERNIN",
+    "models": [
+      "KPOX002WW001",
+      "KPOX002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; galima reguliuoti sėdynės gylį ir palenkti ją į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KPOX002WW001&sid=POX&ovc=KPOX002WW001_OPTIONS.CMECHANISM%3DERNIN&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "ERNST",
+    "models": [
+      "KSOU001WW003",
+      "KSOU001WW004",
+      "KUTI003WW001",
+      "KUTI004WW001",
+      "KUTI004WW002",
+      "KUTI005WW001",
+      "KVID009WW001",
+      "KVID010WW001",
+      "KXLI001WW002",
+      "KXLI002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, reguliuojamas sėdynės gylis. Sėdynę taip pat galima palenkti į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSOU001WW003&sid=SOU&ovc=KSOU001WW003_OPTIONS.CMECHANISM%3DERNST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Utila brošiūra, 22 psl.",
+        "url": "https://files.nowystyl.com/files/doc/utila/Utila_Brochure_INT-BX-FR-UK_EN-FR_E01_2023.pdf#page=22",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ERST",
+    "models": [
+      "KSOU001WW003",
+      "KSOU001WW004",
+      "KUTI003WW001",
+      "KUTI004WW001",
+      "KUTI004WW002",
+      "KUTI005WW001",
+      "KVID009WW001",
+      "KVID010WW001",
+      "KXLI001WW002",
+      "KXLI002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Galima reguliuoti pasipriešinimą atsilošimui, atlošo fiksavimo padėtį ir sėdynės gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSOU001WW003&sid=SOU&ovc=KSOU001WW003_OPTIONS.CMECHANISM%3DERST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Utila brošiūra, 22 psl.",
+        "url": "https://files.nowystyl.com/files/doc/utila/Utila_Brochure_INT-BX-FR-UK_EN-FR_E01_2023.pdf#page=22",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ERT",
+    "models": [
+      "KBJA001WW002",
+      "KBJA002WW002",
+      "KBJA003WW002",
+      "KNAV001WW005",
+      "KNAV001WW006",
+      "KNAV002WW003",
+      "KNAV002WW004",
+      "KSOO004WW002",
+      "KSOO005WW002",
+      "KVID006WW001",
+      "KVID008WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Galima reguliuoti pasipriešinimą atsilošimui, atlošo fiksavimo padėtį ir sėdynės gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KBJA001WW002&sid=BJA&ovc=KBJA001WW002_OPTIONS.CMECHANISM%3DERT&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Bjarg techninis lapas",
+        "url": "https://www.nowystyl.com/files/downloads/Bjarg_Technical_description_FR_E01_2020.pdf#page=5",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ERTN",
+    "models": [
+      "KBJA001WW002",
+      "KBJA002WW002",
+      "KBJA003WW002",
+      "KNAV001WW005",
+      "KNAV001WW006",
+      "KNAV002WW003",
+      "KNAV002WW004",
+      "KSOO004WW002",
+      "KSOO005WW002",
+      "KVID006WW001",
+      "KVID008WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Papildomai reguliuojamas sėdynės gylis ir jos pasvirimas į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KBJA001WW002&sid=BJA&ovc=KBJA001WW002_OPTIONS.CMECHANISM%3DERTN&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Bjarg techninis lapas",
+        "url": "https://www.nowystyl.com/files/downloads/Bjarg_Technical_description_FR_E01_2020.pdf#page=5",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ESP",
+    "models": [
+      "K4ME001WW003",
+      "K4ME002WW004",
+      "KINT001WW001",
+      "KINT002WW001",
+      "KINT003WW001",
+      "KINT004WW001",
+      "KINT005WW001",
+      "KINT006WW001",
+      "KINT006WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=K4ME001WW003&sid=4ME&ovc=K4ME001WW003_OPTIONS.CMECHANISM%3DESP&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "ESP2FST",
+    "models": [
+      "KUTI005WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; galima reguliuoti sėdynės gylį ir palenkti ją į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KUTI005WW001&sid=UTI&ovc=KUTI005WW001_OPTIONS.CMECHANISM%3DESP2FST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "ESPFST",
+    "models": [
+      "KXEN028WW001",
+      "KXEN032WW001",
+      "KXEN034WW001",
+      "KXEN035WW001",
+      "KXEN036WW001",
+      "KXEN037WW001"
+    ],
+    "suggestedLt": "Suderina atlošo ir sėdynės judėjimą; galima reguliuoti sėdynės gylį ir pasvirimą į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KXEN028WW001&sid=XEN&ovc=KXEN028WW001_OPTIONS.CMECHANISM%3DESPFST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ESPST",
+    "models": [
+      "KXEN028WW001",
+      "KXEN032WW001",
+      "KXEN034WW001",
+      "KXEN035WW001",
+      "KXEN036WW001",
+      "KXEN037WW001"
+    ],
+    "suggestedLt": "Suderina atlošo ir sėdynės judėjimą; sėdynę galima pastumti pirmyn arba atgal ir taip pakeisti jos gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KXEN028WW001&sid=XEN&ovc=KXEN028WW001_OPTIONS.CMECHANISM%3DESPST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "ESPT",
+    "models": [
+      "K4ME001WW003",
+      "K4ME002WW004",
+      "KINT001WW001",
+      "KINT002WW001",
+      "KINT003WW001",
+      "KINT004WW001",
+      "KINT005WW001",
+      "KINT006WW001",
+      "KINT006WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; sėdynę galima pastumti pirmyn arba atgal ir taip pakeisti jos gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=K4ME001WW003&sid=4ME&ovc=K4ME001WW003_OPTIONS.CMECHANISM%3DESPT&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "ESPTN",
+    "models": [
+      "K4ME001WW003",
+      "K4ME002WW004",
+      "KINT001WW001",
+      "KINT002WW001",
+      "KINT003WW001",
+      "KINT004WW001",
+      "KINT005WW001",
+      "KINT006WW001",
+      "KINT006WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; galima reguliuoti sėdynės gylį ir palenkti ją į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=K4ME001WW003&sid=4ME&ovc=K4ME001WW003_OPTIONS.CMECHANISM%3DESPTN&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "FS",
+    "models": [
+      "KALT001WW002",
+      "KATM004WW004",
+      "KATM004WW005",
+      "KATM004WW006",
+      "KBJA001WW002",
+      "KBJA002WW002",
+      "KBJA003WW002",
+      "KEGG001WW001",
+      "KINT001WW001",
+      "KINT002WW001",
+      "KINT003WW001",
+      "KINT004WW001",
+      "KINT005WW001",
+      "KINT006WW001",
+      "KINT006WW002",
+      "KNAV001WW005",
+      "KNAV001WW006",
+      "KNAV002WW003",
+      "KNAV002WW004",
+      "KSEG002WW001",
+      "KSEG003WW001",
+      "KUTI001WW002",
+      "KUTI002WW001",
+      "KVID006WW001",
+      "KVID008WW001",
+      "KZBO004WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Galima reguliuoti pasipriešinimą atsilošimui ir užfiksuoti atlošą vienoje iš penkių padėčių.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KALT001WW002&sid=ALT&ovc=KALT001WW002_OPTIONS.CMECHANISM%3DFS&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "SOHOS katalogas, mechanizmų funkcijos",
+        "url": "https://www.nowystyl.com/files/interactive/catalogue/FR/Sohos/54/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "FST",
+    "models": [
+      "KALT001WW002",
+      "KATM004WW004",
+      "KATM004WW005",
+      "KATM004WW006",
+      "KBJA001WW002",
+      "KBJA002WW002",
+      "KBJA003WW002",
+      "KEGG001WW001",
+      "KINT001WW001",
+      "KINT002WW001",
+      "KINT003WW001",
+      "KINT004WW001",
+      "KINT005WW001",
+      "KINT006WW001",
+      "KINT006WW002",
+      "KNAV001WW005",
+      "KNAV001WW006",
+      "KNAV002WW003",
+      "KNAV002WW004",
+      "KNXT001WW002",
+      "KNXT002WW002",
+      "KSEG002WW001",
+      "KSEG003WW001",
+      "KUTI001WW002",
+      "KUTI002WW001",
+      "KVID006WW001",
+      "KVID008WW001",
+      "KZBO004WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Galima reguliuoti pasipriešinimą atsilošimui, užfiksuoti atlošą ir pastumti sėdynę pirmyn arba atgal.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KALT001WW002&sid=ALT&ovc=KALT001WW002_OPTIONS.CMECHANISM%3DFST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "SOHOS katalogas, mechanizmų funkcijos",
+        "url": "https://www.nowystyl.com/files/interactive/catalogue/FR/Sohos/54/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "GTGO1",
+    "models": [
+      "KTGU001WW002",
+      "KTGU004WW002"
+    ],
+    "suggestedLt": "Galima atsilošti ir užfiksuoti atlošą vertikalioje padėtyje; pasipriešinimas prisitaiko prie žmogaus svorio ir papildomai reguliuojamas dviem lygiais.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KTGU001WW002&sid=TGU&ovc=KTGU001WW002_OPTIONS.CMECHANISM%3DGTGO1&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Konferencinių kėdžių techniniai duomenys",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Conference-Meeting_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "GTGO1HARD",
+    "models": [
+      "KTGU001WW002",
+      "KTGU004WW002"
+    ],
+    "suggestedLt": "Leidžia atsilošti, o stipresnė spyruoklė suteikia didesnį pasipriešinimą atsilošimui.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KTGU001WW002&sid=TGU&ovc=KTGU001WW002_OPTIONS.CMECHANISM%3DGTGO1HARD&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "GTGO2",
+    "models": [
+      "KSAI001WW002",
+      "KSAI008WW002"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė juda suderintai; galima reguliuoti pasipriešinimą atsilošimui ir riboti atsilošimo eigą.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSAI001WW002&sid=SAI&ovc=KSAI001WW002_OPTIONS.CMECHANISM%3DGTGO2&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Konferencinių kėdžių techniniai duomenys",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Conference-Meeting_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "GTGO2SDA",
+    "models": [
+      "KSAI001WW002",
+      "KSAI008WW002"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė juda suderintai; galima reguliuoti pasipriešinimą atsilošimui, riboti jo eigą ir keisti sėdynės gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSAI001WW002&sid=SAI&ovc=KSAI001WW002_OPTIONS.CMECHANISM%3DGTGO2SDA&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Konferencinių kėdžių techniniai duomenys",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Conference-Meeting_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "INDST",
+    "models": [
+      "KXEN028WW001",
+      "KXEN032WW001",
+      "KXEN034WW001",
+      "KXEN035WW001"
+    ],
+    "suggestedLt": "Suderina atlošo ir sėdynės judėjimą, automatiškai pritaiko pasipriešinimą žmogaus svoriui; reguliuojamas sėdynės gylis.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KXEN028WW001&sid=XEN&ovc=KXEN028WW001_OPTIONS.CMECHANISM%3DINDST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "IRFST",
+    "models": [
+      "KUTI005WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; galima reguliuoti sėdynės gylį ir palenkti ją į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KUTI005WW001&sid=UTI&ovc=KUTI005WW001_OPTIONS.CMECHANISM%3DIRFST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "MEIN",
+    "models": [
+      "KYOU001WW001",
+      "KYOU001WW003",
+      "KYOU002WW001",
+      "KYOU002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Galima reguliuoti sėdynės gylį, pasvirimą į priekį ir pasipriešinimą atsilošimui.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KYOU001WW001&sid=YOU&ovc=KYOU001WW001_OPTIONS.CMECHANISM%3DMEIN&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "YouTEAM mechanizmų instrukcija",
+        "url": "https://www.nowystyl.com/files/doc/YouTEAM_Instructions_ME-IN_ME-IN1_E01_2020.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "MEIN1",
+    "models": [
+      "KYOU001WW001",
+      "KYOU001WW003",
+      "KYOU002WW001",
+      "KYOU002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, reguliuojamas sėdynės gylis bei pasvirimas į priekį. Šis variantas turi stipresnę spyruoklę.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KYOU001WW001&sid=YOU&ovc=KYOU001WW001_OPTIONS.CMECHANISM%3DMEIN1&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "YouTEAM mechanizmų instrukcija",
+        "url": "https://www.nowystyl.com/files/doc/YouTEAM_Instructions_ME-IN_ME-IN1_E01_2020.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "MPD170",
+    "models": [
+      "KLYN001WW002",
+      "KLYN002WW002",
+      "KPRA001WW002"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė siūbuoja kartu. Galima reguliuoti pasipriešinimą atsilošimui ir užfiksuoti juos vienoje iš penkių padėčių.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KLYN001WW002&sid=LYN&ovc=KLYN001WW002_OPTIONS.CMECHANISM%3DMPD170&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "SOHOS katalogas, mechanizmų funkcijos",
+        "url": "https://www.nowystyl.com/files/interactive/catalogue/FR/Sohos/54/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "PSDGTSBLOW",
+    "models": [
+      "KMNS001WW006"
+    ],
+    "suggestedLt": "Sėdynės tvirtinimo pagrindas.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KMNS001WW006&sid=MNS&ovc=KMNS001WW006_OPTIONS.CMECHANISM%3DPSDGTSBLOW&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "PSDGTSWOW",
+    "models": [
+      "KMNS001WW007"
+    ],
+    "suggestedLt": "Sėdynės tvirtinimo pagrindas.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KMNS001WW007&sid=MNS&ovc=KMNS001WW007_OPTIONS.CMECHANISM%3DPSDGTSWOW&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "PST00",
+    "models": [
+      "KATH001WW004"
+    ],
+    "suggestedLt": "Sėdynės tvirtinimo pagrindas.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KATH001WW004&sid=ATH&ovc=KATH001WW004_OPTIONS.CMECHANISM%3DPST00&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "PST01CPT",
+    "models": [
+      "KJUP001WW002"
+    ],
+    "suggestedLt": "Galima keisti atlošo pasvirimą ir užfiksuoti pasirinktą padėtį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KJUP001WW002&sid=JUP&ovc=KJUP001WW002_OPTIONS.CMECHANISM%3DPST01CPT&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "PST01CPW",
+    "models": [
+      "KPER001WW001",
+      "KPER001WW003"
+    ],
+    "suggestedLt": "Galima keisti atlošo pasvirimą.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KPER001WW001&sid=PER&ovc=KPER001WW001_OPTIONS.CMECHANISM%3DPST01CPW&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "PSTBALUOW",
+    "models": [
+      "KMNS001WW009"
+    ],
+    "suggestedLt": "Sėdynės tvirtinimo pagrindas.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KMNS001WW009&sid=MNS&ovc=KMNS001WW009_OPTIONS.CMECHANISM%3DPSTBALUOW&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "PSTBOW",
+    "models": [
+      "KMNS001WW008"
+    ],
+    "suggestedLt": "Sėdynės tvirtinimo pagrindas.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KMNS001WW008&sid=MNS&ovc=KMNS001WW008_OPTIONS.CMECHANISM%3DPSTBOW&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "PSTBWOW",
+    "models": [
+      "KMNS001WW010"
+    ],
+    "suggestedLt": "Sėdynės tvirtinimo pagrindas.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KMNS001WW010&sid=MNS&ovc=KMNS001WW010_OPTIONS.CMECHANISM%3DPSTBWOW&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "SA2",
+    "models": [
+      "KNAV001WW005",
+      "KNAV001WW006",
+      "KNAV002WW003",
+      "KNAV002WW004",
+      "KUTI001WW002",
+      "KUTI002WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, o pasipriešinimas atsilošimui automatiškai prisitaiko prie žmogaus svorio.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KNAV001WW005&sid=NAV&ovc=KNAV001WW005_OPTIONS.CMECHANISM%3DSA2&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Utila brošiūra, 22 psl.",
+        "url": "https://files.nowystyl.com/files/doc/utila/Utila_Brochure_INT-BX-FR-UK_EN-FR_E01_2023.pdf#page=22",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SA2ST",
+    "models": [
+      "KSOU001WW003",
+      "KSOU001WW004",
+      "KUTI003WW001",
+      "KUTI004WW001",
+      "KUTI004WW002",
+      "KUTI005WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, o pasipriešinimas automatiškai prisitaiko prie žmogaus svorio. Papildomai reguliuojamas sėdynės gylis.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSOU001WW003&sid=SOU&ovc=KSOU001WW003_OPTIONS.CMECHANISM%3DSA2ST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Utila brošiūra, 22 psl.",
+        "url": "https://files.nowystyl.com/files/doc/utila/Utila_Brochure_INT-BX-FR-UK_EN-FR_E01_2023.pdf#page=22",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SA2T",
+    "models": [
+      "KNAV001WW005",
+      "KNAV001WW006",
+      "KNAV002WW003",
+      "KNAV002WW004",
+      "KUTI001WW002",
+      "KUTI002WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, o pasipriešinimas automatiškai prisitaiko prie žmogaus svorio. Papildomai reguliuojamas sėdynės gylis.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KNAV001WW005&sid=NAV&ovc=KNAV001WW005_OPTIONS.CMECHANISM%3DSA2T&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Utila brošiūra, 22 psl.",
+        "url": "https://files.nowystyl.com/files/doc/utila/Utila_Brochure_INT-BX-FR-UK_EN-FR_E01_2023.pdf#page=22",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SA2T7",
+    "models": [
+      "KSEG002WW001",
+      "KSEG003WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; sėdynę galima pastumti pirmyn arba atgal ir taip pakeisti jos gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSEG002WW001&sid=SEG&ovc=KSEG002WW001_OPTIONS.CMECHANISM%3DSA2T7&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "SA3FST",
+    "models": [
+      "KUTI005WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, o pasipriešinimas automatiškai prisitaiko prie žmogaus svorio. Galima reguliuoti sėdynės gylį ir pasvirimą į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KUTI005WW001&sid=UTI&ovc=KUTI005WW001_OPTIONS.CMECHANISM%3DSA3FST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "SA3IN",
+    "models": [
+      "KPOX002WW001",
+      "KPOX002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, o pasipriešinimas automatiškai prisitaiko prie žmogaus svorio. Papildomai reguliuojamas sėdynės gylis.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KPOX002WW001&sid=POX&ovc=KPOX002WW001_OPTIONS.CMECHANISM%3DSA3IN&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "SA3ST",
+    "models": [
+      "KXLI001WW002",
+      "KXLI002WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, o pasipriešinimas automatiškai prisitaiko prie žmogaus svorio. Papildomai reguliuojamas sėdynės gylis.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KXLI001WW002&sid=XLI&ovc=KXLI001WW002_OPTIONS.CMECHANISM%3DSA3ST&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "X-Line techninis lapas, 2 psl.",
+        "url": "https://www.nowystyl.com/files/downloads/X-line_Technical-details_INT_E01_2022.pdf#page=2",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SAGO1",
+    "models": [
+      "KSAI001WW002",
+      "KSAI008WW002"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė juda suderintai, o pasipriešinimas atsilošimui automatiškai prisitaiko prie žmogaus svorio.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSAI001WW002&sid=SAI&ovc=KSAI001WW002_OPTIONS.CMECHANISM%3DSAGO1&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SAGO1SDA",
+    "models": [
+      "KSAI001WW002",
+      "KSAI008WW002"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė juda suderintai, pasipriešinimas atsilošimui automatiškai prisitaiko prie žmogaus svorio; reguliuojamas sėdynės gylis.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSAI001WW002&sid=SAI&ovc=KSAI001WW002_OPTIONS.CMECHANISM%3DSAGO1SDA&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SCGO1",
+    "models": [
+      "KSAI001WW002",
+      "KSAI008WW002"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė juda suderintai; galima reguliuoti pasipriešinimą atsilošimui ir palenkti sėdynę į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSAI001WW002&sid=SAI&ovc=KSAI001WW002_OPTIONS.CMECHANISM%3DSCGO1&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SCGO1SDA",
+    "models": [
+      "KSAI001WW002",
+      "KSAI008WW002"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė juda suderintai; galima reguliuoti pasipriešinimą atsilošimui, sėdynės gylį ir pasvirimą į priekį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSAI001WW002&sid=SAI&ovc=KSAI001WW002_OPTIONS.CMECHANISM%3DSCGO1SDA&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SYGO1",
+    "models": [
+      "KSAI001WW002",
+      "KSAI008WW002"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė juda suderintai; galima reguliuoti pasipriešinimą atsilošimui ir riboti atsilošimo eigą.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSAI001WW002&sid=SAI&ovc=KSAI001WW002_OPTIONS.CMECHANISM%3DSYGO1&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SYGO1SDA",
+    "models": [
+      "KSAI001WW002",
+      "KSAI008WW002"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė juda suderintai; galima reguliuoti pasipriešinimą atsilošimui, riboti jo eigą ir keisti sėdynės gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSAI001WW002&sid=SAI&ovc=KSAI001WW002_OPTIONS.CMECHANISM%3DSYGO1SDA&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Techniniai duomenys: mechanizmai",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SYNCHRO",
+    "models": [
+      "KELO001WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai. Galima reguliuoti sėdynės gylį, palenkti ją į priekį ir užfiksuoti atlošą keturiose padėtyse.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KELO001WW002&sid=ELO&ovc=KELO001WW002_OPTIONS.CMECHANISM%3DSYNCHRO&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Elovie funkcijos",
+        "url": "https://www.nowystyl.com/en/elovie/swivel-chairs/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SYNCHRO2",
+    "models": [
+      "KEGO001WW001",
+      "KELO001WW001",
+      "KVNN001WW001"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; sėdynę galima pastumti pirmyn arba atgal ir taip pakeisti jos gylį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KEGO001WW001&sid=EGO&ovc=KEGO001WW001_OPTIONS.CMECHANISM%3DSYNCHRO2&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Elovie funkcijos",
+        "url": "https://www.nowystyl.com/en/elovie/swivel-chairs/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "SYNCROIBRATR",
+    "models": [
+      "KBJA001WW002",
+      "KBJA002WW002",
+      "KBJA003WW002"
+    ],
+    "suggestedLt": "Atlošo ir sėdynės pasvirimą galima reguliuoti atskirai; taip pat reguliuojamas sėdynės gylis.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KBJA001WW002&sid=BJA&ovc=KBJA001WW002_OPTIONS.CMECHANISM%3DSYNCROIBRATR&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "TAT7",
+    "models": [
+      "KSEG002WW001",
+      "KSEG003WW001"
+    ],
+    "suggestedLt": "Atlošo ir sėdynės pasvirimą galima reguliuoti atskirai; taip pat reguliuojamas sėdynės gylis.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSEG002WW001&sid=SEG&ovc=KSEG002WW001_OPTIONS.CMECHANISM%3DTAT7&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "TESPTF",
+    "models": [
+      "KSOO004WW002",
+      "KSOO005WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai; galima reguliuoti sėdynės gylį ir palenkti ją į priekį iki 5°.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KSOO004WW002&sid=SOO&ovc=KSOO004WW002_OPTIONS.CMECHANISM%3DTESPTF&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "TILT",
+    "models": [
+      "KAII001WW001",
+      "KAII001WW002",
+      "KAII001WW003",
+      "KAII001WW004"
+    ],
+    "suggestedLt": "Leidžia atsilošti, keičiant atlošo pasvirimą.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KAII001WW001&sid=AII&ovc=KAII001WW001_OPTIONS.CMECHANISM%3DTILT&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      }
+    ]
+  },
+  {
+    "code": "TILTAR",
+    "models": [
+      "K2ME004WW001"
+    ],
+    "suggestedLt": "Leidžia laisvai siūbuoti atlošui ir sėdynei judant kartu; kėdės aukštis reguliuojamas pneumatiniu keltuvu.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=K2ME004WW001&sid=2ME&ovc=K2ME004WW001_OPTIONS.CMECHANISM%3DTILTAR&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Konferencinių kėdžių techniniai duomenys",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Conference-Meeting_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "TILTARBD",
+    "models": [
+      "K2ME004WW004"
+    ],
+    "suggestedLt": "Leidžia laisvai siūbuoti atlošui ir sėdynei judant kartu. Šis variantas neturi aukščio reguliavimo.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=K2ME004WW004&sid=2ME&ovc=K2ME004WW004_OPTIONS.CMECHANISM%3DTILTARBD&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Konferencinių kėdžių techniniai duomenys",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Conference-Meeting_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "TILTC",
+    "models": [
+      "KNAD001WW002",
+      "KPRA001WW001"
+    ],
+    "suggestedLt": "Atlošas ir sėdynė siūbuoja kartu; galima reguliuoti pasipriešinimą atsilošimui ir užfiksuoti vieną padėtį.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KNAD001WW002&sid=NAD&ovc=KNAD001WW002_OPTIONS.CMECHANISM%3DTILTC&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Konferencinių kėdžių techniniai duomenys",
+        "url": "https://www.nowystyl.com/files/doc/WWW_Conference-Meeting_Technical-details_EXP.pdf",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "TILTSDA",
+    "models": [
+      "KOVI001WW001",
+      "KOVI001WW002"
+    ],
+    "suggestedLt": "Leidžia siūbuoti sėdint ir reguliuoti sėdynės gylį, pastumiant ją pirmyn arba atgal.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KOVI001WW001&sid=OVI&ovc=KOVI001WW001_OPTIONS.CMECHANISM%3DTILTSDA&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "Ovia funkcijos",
+        "url": "https://www.nowystyl.com/en/ovia/meeting-chairs/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  },
+  {
+    "code": "WM",
+    "models": [
+      "KWIT001WW005",
+      "KWIT001WW006",
+      "KWIT003WW003",
+      "KWIT003WW004",
+      "KWIT006WW001",
+      "KWIT006WW002"
+    ],
+    "suggestedLt": "Atsilošiant atlošas ir sėdynė juda suderintai, o pasipriešinimas automatiškai prisitaiko prie žmogaus svorio.",
+    "sources": [
+      {
+        "title": "Gamintojo konfigūratorius",
+        "url": "https://configurator.nowystyl.com/#ban=KWIT001WW005&sid=WIT&ovc=KWIT001WW005_OPTIONS.CMECHANISM%3DWM&lang=en",
+        "basis": "Išsaugotas gamintojo angliškas šios parinkties pavadinimas"
+      },
+      {
+        "title": "WithME funkcijos",
+        "url": "https://www.nowystyl.com/en/withme/meeting-chairs/",
+        "basis": "Gamintojo funkcijų aprašas"
+      }
+    ]
+  }
+]

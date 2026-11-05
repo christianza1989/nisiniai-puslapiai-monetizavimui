@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Final source77a5b104 is verified on standard preview after delayed host adoption: f0ddd0bb/API100 and actual manifest agree;8 public mobile runs,approved head with/withoutJS,strict source/MIME/cache hashes,home controls and all PDF/cart checks pass. Preview-only adoption; no main merge, Native/lease or production/indexing change.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/320",
+  "commit": "77a5b104a030f783fd2eaf5b081c7b9baf7699e2",
+  "eventId": "31234726-7818-4c62-8a4a-f96144f3f34e",
+  "sequence": 4,
+  "at": "2026-11-02T16:59:54.039Z"
+}

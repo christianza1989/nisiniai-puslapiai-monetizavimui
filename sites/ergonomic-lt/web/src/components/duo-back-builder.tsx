@@ -5,12 +5,12 @@ import type {Product} from '@/lib/types';
 import type {ExpandedState} from '@/lib/expanded-configurator';
 import type {ResolvedConfigurationArticle} from '@/lib/configuration-article';
 import {productBuilderSteps,duoControlExplanation} from '@/lib/duo-builder';
-import {studioBuilderSteps,studioStepIntro} from '@/lib/product-studio';
+import {studioBuilderSteps} from '@/lib/product-studio';
 export function DuoBackBuilder({product,state,choices,article,control,actions,details,heading='Susirinkite savo kėdę',studio=false,preview,extraControls,finishFields=[]}:{preview?:ReactNode;extraControls?:ReactNode;studio?:boolean;heading?:string;finishFields?:string[];product:Product;state:ExpandedState;choices:Record<string,string[]>;article?:ResolvedConfigurationArticle;control:(field:string)=>ReactNode;actions:ReactNode;details:{label:string;value:string}[]}){
- const [step,setStep]=useState(0),title=useRef<HTMLHeadingElement>(null);
+ const [step,setStep]=useState(0),panel=useRef<HTMLElement>(null);
  const desk=product.categorySlug==='rasomieji-stalai-ir-darbo-vietos';
  const steps=(studio?studioBuilderSteps(product,choices,!!article,finishFields):productBuilderSteps(product,choices)),current=Math.min(step,steps.length-1),spec=steps[current],fields=spec.fields;
- function go(index:number){setStep(index);requestAnimationFrame(()=>{title.current?.focus({preventScroll:true});title.current?.scrollIntoView({block:'nearest'});if(studio)document.getElementById('duo-tab-'+steps[index].id)?.scrollIntoView({block:'nearest',inline:'nearest'});});}
+ function go(index:number){setStep(index);requestAnimationFrame(()=>{panel.current?.focus({preventScroll:true});panel.current?.scrollIntoView({block:'nearest'});if(studio)document.getElementById('duo-tab-'+steps[index].id)?.scrollIntoView({block:'nearest',inline:'nearest'});});}
  const final=current===steps.length-1;
  const finishCopy=article?.sections.find(s=>s.id==='finishes');
  const summary=product.id.includes('xilium-swivel')?details.filter(d=>['Mechanizmas','Atlošo judėjimas','Galvos atrama','Porankiai','Pagrindas','Ratukai','Konstrukcijos spalva'].includes(d.label)):details;
@@ -18,8 +18,8 @@ export function DuoBackBuilder({product,state,choices,article,control,actions,de
  return <div className={'duo-builder'+(studio?' duo-studio-builder':'')}>
   <div className="duo-builder-heading"><h2>{desk?'3D konfigūratorius':heading}</h2><span>{current+1} iš {steps.length}</span></div>
   <nav className="duo-step-nav" data-step-count={steps.length} aria-label={desk?'Pasirinkimo žingsniai':'Kėdės pasirinkimo žingsniai'}>{steps.map((s,i)=><button key={s.id} type="button" id={'duo-tab-'+s.id} aria-current={current===i?'step':undefined} aria-label={(i+1)+'. '+s.label} onClick={()=>go(i)}><span className="duo-step-number" aria-hidden="true">{i+1}</span><span>{s.label}</span>{studio&&i<steps.length-1&&<ArrowRight className="duo-step-arrow" size={16} aria-hidden="true"/>}</button>)}</nav>
-  <section className={'duo-step-panel duo-step-'+spec.id} id={'duo-panel-'+spec.id} aria-labelledby={'duo-step-title-'+spec.id}>
-   {current===0&&extraControls}<h3 className="duo-step-title" id={'duo-step-title-'+spec.id} tabIndex={-1} ref={title}>{spec.title}</h3>{studio&&<p className="studio-step-intro">{studioStepIntro(spec.id,choices)}</p>}
+  <section className={'duo-step-panel duo-step-'+spec.id} id={'duo-panel-'+spec.id} aria-labelledby={'duo-tab-'+spec.id} tabIndex={-1} ref={panel}>
+   {current===0&&extraControls}
    <div className={'duo-step-controls'+(current>=2?' duo-step-controls-grid':'')}>{fields.map(field=>{const explanation=duoControlExplanation(product,state,field);return <div className="duo-step-choice" key={field}>{control(field)}{studio?explanation.length>0&&<details className="studio-choice-explanation"><summary>Daugiau apie pasirinkimą</summary>{explanation.map((p,i)=><p className="duo-choice-description" key={i}>{p}</p>)}</details>:explanation.map((p,i)=><p className="duo-choice-description" key={i}>{p}</p>)}</div>;})}</div>
    {final&&<>{finishCopy&&<p className="duo-finishes-note">{finishCopy.paragraphs.join(' ')}</p>}<div className="duo-final-summary"><h3>{desk?'Jūsų komplektacija':'Jūsų kėdės komplektacija'}</h3><dl>{summary.map(d=><div key={d.label}><dt>{d.label}</dt><dd>{d.value}</dd></div>)}</dl><p className="duo-offer-note">Kaina pagal pasirinktą komplektaciją.</p>{actions}</div></>}
    {studio&&stepActions}

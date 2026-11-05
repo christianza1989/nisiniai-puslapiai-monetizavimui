@@ -570,3 +570,23 @@ main .product-page:has(.product-studio-intro) .family-gallery .gallery-controls 
 
 /* Source-backed selected-option help; the approved body text role. */
 .option-explanation{display:block;margin:8px 0 12px;font-family:var(--font-body,Manrope,sans-serif);font-size:14px;font-weight:400;line-height:1.6;color:#314c43;max-width:65ch;overflow-wrap:anywhere}
+.mechanism-preview { min-width: 0; display: grid; gap: 8px; color: #193f35; font-family: inherit; }
+.mechanism-preview-label { font-size: 14px; line-height: 1.5; font-weight: 650; }
+.mechanism-preview-menu { border: 1px solid #79968b; border-radius: 6px; background: #fff; min-width: 0; }
+.mechanism-preview-menu > summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 12px; min-height: 44px; cursor: pointer; list-style: none; }
+.mechanism-preview-menu > summary::-webkit-details-marker { display: none; }
+.mechanism-preview-menu > summary > svg { flex: 0 0 18px; margin-top: 3px; }
+.mechanism-preview-menu[open] > summary > svg { transform: rotate(180deg); }
+.mechanism-preview-menu summary[aria-disabled="true"] { opacity: .65; cursor: wait; }
+.mechanism-preview strong { display: block; font-size: 15px; line-height: 1.5; font-weight: 650; overflow-wrap: anywhere; }
+.mechanism-preview-short { display: block; margin-top: 3px; font-size: 14px; line-height: 1.6; font-weight: 400; color: #314c43; overflow-wrap: anywhere; }
+.mechanism-preview-options { display: grid; gap: 0; min-width: 0; margin: 0; padding: 0; border: 0; border-top: 1px solid #b5c2ba; }
+.mechanism-preview-options > legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.mechanism-preview-option { display: grid; grid-template-columns: 18px minmax(0,1fr); align-items: start; gap: 10px; margin: 0; padding: 12px; min-height: 44px; cursor: pointer; }
+.mechanism-preview-option + .mechanism-preview-option { border-top: 1px solid #d7ded7; }
+.mechanism-preview-option:hover, .mechanism-preview-option:has(input:checked) { background: #edf0eb; }
+.mechanism-preview-option > input[type="radio"] { width: 18px; height: 18px; min-height: 0; margin: 3px 0 0; padding: 0; accent-color: #193f35; }
+.mechanism-preview-menu summary:focus-visible, .mechanism-preview-more summary:focus-visible, .mechanism-preview-option:has(input:focus-visible) { outline: 2px solid #356b55; outline-offset: 3px; }
+.mechanism-preview-more { min-width: 0; }
+.mechanism-preview-more > summary { width: fit-content; min-height: 44px; padding: 10px 0; font-size: 14px; line-height: 1.6; font-weight: 550; color: #193f35; cursor: pointer; }
+.mechanism-preview-more .option-explanation { margin: 0 0 8px; }

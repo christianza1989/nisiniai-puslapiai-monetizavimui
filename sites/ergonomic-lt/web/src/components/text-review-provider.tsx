@@ -5,7 +5,7 @@ import {Pencil} from 'lucide-react';
 import type {PublicTextScope,ReviewScope} from '@/lib/text-review-types';
 import {ProductDescription} from './product-description';
 const Panel=dynamic(()=>import('./text-review-panel'),{ssr:false});
-type ReviewContext={editing:boolean;open:(id:string,trigger:HTMLElement)=>void;binding:(model:string,field:string,value?:string,kind?:'explanation')=>string;resolve:(id:string,fallback:string,model?:string)=>string;known:(id:string,fallback:string)=>boolean;scope:string;model:string};
+type ReviewContext={editing:boolean;proposalPreview?:boolean;open:(id:string,trigger:HTMLElement)=>void;binding:(model:string,field:string,value?:string,kind?:'explanation')=>string;resolve:(id:string,fallback:string,model?:string)=>string;known:(id:string,fallback:string)=>boolean;scope:string;model:string};
 const empty:ReviewContext={editing:false,open:()=>{},binding:()=>'',resolve:(_,fallback)=>fallback,known:()=>false,scope:'',model:''};
 const Context=createContext<ReviewContext>(empty);
 export const useTextReview=()=>useContext(Context);
@@ -57,7 +57,7 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
   return value;
  }
  const toggle=()=>{if(editing)select('');setEditing(!editing);sessionStorage.setItem('ergonomic-text-edit',editing?'0':'1');};
- return <Context.Provider value={{editing,open,binding,resolve,known:(id,fallback)=>!!id&&(publicScope.originals[id]===undefined||publicScope.originals[id]===fallback),scope:publicScope.scope,model:publicScope.model}}>{children}
+ return <Context.Provider value={{editing,proposalPreview:scope?.proposalPreview,open,binding,resolve,known:(id,fallback)=>!!id&&(publicScope.originals[id]===undefined||publicScope.originals[id]===fallback),scope:publicScope.scope,model:publicScope.model}}>{children}
  {scope&&<Panel scope={scope} update={update} editing={editing} toggle={toggle} selected={selected} select={select} inlineHost={inlineHost}/>}
  </Context.Provider>;
 }

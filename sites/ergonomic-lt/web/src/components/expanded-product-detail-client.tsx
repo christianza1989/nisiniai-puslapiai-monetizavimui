@@ -32,6 +32,8 @@ import {legacyChairMaterialControls,chairFinishRoles,chairFinishCollection,type 
 import {visibleDeskPreviewChoices} from '@/lib/desk-preview-choices';
 import chairPreviewCoverage from '../../content/chair-preview-coverage.json';
 import {useTextReview,ReviewFieldButton,OptionExplanation} from './text-review-provider';
+import {MechanismChoicePreview} from './mechanism-choice-preview';
+import {mechanismChoicePreview} from '@/lib/mechanism-choice-preview';
 const Viewer3D=dynamic(()=>import('./deferred-viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export default function ExpandedProductDetail({product,url,presets,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage,engineSources}:{product:Product;url:string;presets:ReactNode;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string;engineSources:ExpandedEngineSources}){
  const review=useTextReview();
@@ -110,6 +112,8 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
   const unboundChairColor=product.categorySlug==='kedes'&&!structureOnly&&color&&!chairFinishRoles[k]&&
    !engine.anchorFor(selection)?.classes[k]?.endsWith('_OPTIONS');
   const textOnly=catalogAnchor(selection)?.textOnlyFields?.includes(k)||unboundChairColor,noteId=textOnly?'desk-text-only-'+k:undefined;
+  const mechanismPreview=mechanismChoicePreview(selected.configuration.code||'',k,!!review.proposalPreview);
+  if(mechanismPreview)return <div key={k} className="configuration-field"><ReviewFieldButton model={selected.configuration.code||''} field={k} value={value}/><MechanismChoicePreview label={label} value={value} choices={choices[k].map(v=>({id:v,label:choiceLabel(k,v),summary:mechanismPreview[v]}))} onChange={v=>change(k,v)} explanation={review.binding(selected.configuration.code||'',k,value,'explanation')?<OptionExplanation model={selected.configuration.code||''} field={k} value={value}/>:undefined}/></div>;
   if(color&&!k.startsWith('CPLASTIC')&&!unboundChairColor)return <div key={k} className="configuration-field"><ReviewFieldButton model={selected.configuration.code||''} field={k} value={value}/><FinishSelect label={label} value={value} onChange={v=>change(k,v)} options={choices[k].map(v=>({value:v,label:choiceLabel(k,v),image:activeMaterials?.[k]?.[v]?.image||palettes[k]?.[v]?.image||(deskColors?undefined:renderMaterial({code:v}).image),color:palettes[k]?.[v]?.color}))}/></div>;
   return <div key={k} className="configuration-field"><ReviewFieldButton model={selected.configuration.code||''} field={k} value={value}/><label className="field">{label}
    <select value={value} aria-describedby={[noteId,review.binding(selected.configuration.code||'',k,value,'explanation')?'option-help-'+k:undefined].filter(Boolean).join(' ')||undefined} onChange={e=>change(k,e.target.value)}>{choices[k].map(v=><option key={v} value={v} title={k==='CARMRESTS'?armrestSourceText(selected.configuration.code,v):undefined}>{choiceLabel(k,v)}</option>)}</select></label>

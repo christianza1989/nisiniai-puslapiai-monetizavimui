@@ -1,7 +1,26 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mountCheckout, normalizeCheckoutCart } from '../public/checkout-ui.mjs';
+import {
+  mountCheckout,
+  normalizeCheckoutCart,
+  normalizeCheckoutPhone,
+} from '../public/checkout-ui.mjs';
 import { selectionKey, CommerceClient } from '../public/commerce-client.mjs';
+
+test('checkout normalizes familiar Lithuanian phone formats without inventing country codes', () => {
+  for (const input of [
+    '861234567',
+    '061234567',
+    '8 612 34567',
+    '+370 (612) 34567',
+    '00370 612 34567',
+  ])
+    assert.equal(normalizeCheckoutPhone(input, 'LT'), '+37061234567');
+  assert.equal(normalizeCheckoutPhone('+44 20 7946 0958', 'LT'), '+442079460958');
+  assert.equal(normalizeCheckoutPhone('861234567', 'PL'), null);
+  for (const input of ['', '86abc34567', '86123456', '+037061234567', '++37061234567'])
+    assert.equal(normalizeCheckoutPhone(input, 'LT'), null);
+});
 
 test('definite rejected coupon clears only an uncommitted attempt; ambiguous failure keeps the same key', async () => {
   for (const status of [409, 500, undefined]) {
@@ -110,8 +129,11 @@ class Element {
   getAttribute(key) {
     return this.attrs[key] ?? null;
   }
+  setCustomValidity(value) {
+    this.validationMessage = value;
+  }
   checkValidity() {
-    return !this.attrs.required || Boolean(this.value);
+    return !this.validationMessage && (!this.attrs.required || Boolean(this.value));
   }
   append(...nodes) {
     for (const node of nodes) {
@@ -593,6 +615,30 @@ function fillOnePage(root) {
     field(root, name).value = value;
   field(root, 'terms').checked = true;
 }
+
+test('Lithuanian domestic phone is validated and passed to order in E.164 form', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient();
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    fillOnePage(root);
+    const phone = field(root, 'phone'),
+      form = nodes(root).find((n) => n.tag === 'form');
+    phone.value = '8612';
+    await phone.fire('input');
+    assert.match(phone.validationMessage, /Įveskite telefono numerį/);
+    await form.fire('submit');
+    assert.equal(client.created, undefined);
+    phone.value = '8 612 34567';
+    await phone.fire('input');
+    assert.equal(phone.validationMessage, '');
+    await form.fire('submit');
+    assert.equal(client.created.customer.phone, '+37061234567');
+  }));
 
 const couponFixture = (input) => {
   const lines = input.lines.map((l) => ({

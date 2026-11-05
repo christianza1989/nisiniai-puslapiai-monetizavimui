@@ -4,6 +4,18 @@ import {
   selectionKey,
   resolveCatalogSelection,
 } from './commerce-client.mjs';
+
+// Preserve the server's E.164 contract while accepting familiar Lithuanian
+// domestic prefixes and ordinary visual separators in the buyer's form.
+export function normalizeCheckoutPhone(value, country) {
+  if (typeof value !== 'string' || !/^[+0-9\s().-]*$/.test(value)) return null;
+  let compact = value.replace(/[\s().-]/g, '');
+  if (country === 'LT') {
+    if (/^00370[1-9][0-9]{7}$/.test(compact)) compact = '+' + compact.slice(2);
+    else if (/^[08][1-9][0-9]{7}$/.test(compact)) compact = '+370' + compact.slice(1);
+  }
+  return /^\+[1-9][0-9]{6,14}$/.test(compact) ? compact : null;
+}
 const translations = {
   lt: [
     'Užsakymas',
@@ -597,14 +609,28 @@ function onePageForm({
     autocomplete: 'email',
     inputmode: 'email',
   });
-  field(contact, 'phone', t[7], {
+  field(contact, 'phone', language === 'lt' ? 'Telefono numeris' : t[7], {
     required: true,
     type: 'tel',
-    pattern: '\\+[1-9][0-9]{6,14}',
-    maxlength: 16,
+    maxlength: 32,
     autocomplete: 'tel',
-    placeholder: '+37060000000',
+    placeholder: language === 'lt' ? 'Pvz., 860000000 arba +37060000000' : '+37060000000',
   });
+  const phoneError =
+    {
+      lt: 'Įveskite telefono numerį, pvz., 860000000 arba +37060000000.',
+      pl: 'Wpisz numer telefonu z kodem kraju, np. +48600123456.',
+      lv: 'Ievadiet tālruņa numuru ar valsts kodu, piemēram, +37120000000.',
+      et: 'Sisestage telefoninumber koos riigikoodiga, näiteks +37251234567.',
+    }[language] || 'Enter a phone number with its country code.';
+  const validatePhone = () => {
+    const value = fields.phone.value.trim();
+    fields.phone.setCustomValidity?.(
+      value && !normalizeCheckoutPhone(value, selectedCountry) ? phoneError : '',
+    );
+  };
+  fields.phone.addEventListener('input', validatePhone);
+  fields.phone.addEventListener('change', validatePhone);
   const address = group(u.address);
   const countrySelect = field(
     address,
@@ -941,7 +967,7 @@ function onePageForm({
   const customer = () => ({
     name: fields.name.value.trim(),
     email: fields.email.value.trim(),
-    phone: fields.phone.value.trim(),
+    phone: normalizeCheckoutPhone(fields.phone.value, selectedCountry) || fields.phone.value.trim(),
     address: {
       country: selectedCountry,
       line1: fields.line1.value.trim(),
@@ -969,6 +995,7 @@ function onePageForm({
     validQuantities() &&
     lines().length > 0 &&
     market()?.delivery.some((d) => d.id === delivery.value) &&
+    Boolean(normalizeCheckoutPhone(fields.phone.value, selectedCountry)) &&
     ['name', 'email', 'phone', 'line1', 'city', 'postalCode'].every(
       (key) => fields[key].checkValidity?.() !== false,
     ) &&
@@ -1500,6 +1527,7 @@ function onePageForm({
   };
   const refresh = () => {
     selectedCountry = countrySelect.value;
+    validatePhone();
     delivery.replaceChildren();
     for (const method of market()?.delivery || [])
       delivery.append(
@@ -1628,16 +1656,17 @@ function onePageForm({
   delivery.addEventListener('change', refreshLocker);
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    validatePhone();
     if (
       busy ||
       couponPending ||
       lockedForOrder ||
       !canOrder ||
+      !form.reportValidity() ||
       !ready() ||
       terms.disabled ||
       !termsLink.getAttribute('href') ||
-      !terms.checked ||
-      !form.reportValidity()
+      !terms.checked
     )
       return;
     const input = proposal(),

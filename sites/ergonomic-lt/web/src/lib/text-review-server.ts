@@ -278,7 +278,8 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   if(binding==='value:FVERWIRETRUNKING=VERTICALFLEXIBLEMODPLA'&&normalized==='flexible, modular, plastic')return 'Lankstus modulinis plastikinis kabelių kanalas';
   if(binding==='value:FVERWIRETRUNKING=VERTICALFLXMODMAGNET'&&normalized==='flexible, modular, magnetic, plastic')return 'Lankstus modulinis plastikinis kabelių kanalas su magnetais';
   const captured=englishByModel[model]?.[binding]||materialByModel[model]?.[binding];
-  return englishProposals.get(normalized)||(media&&captured&&normalizeEnglish(captured)===normalized&&captured!==media[2]?explainManufacturerOption(media[1],captured):undefined);
+  const sourceDriven=media&&/^(?:CMECHANISM|CARMRESTS|CHEADREST|CLUMBARSUPPORT|CCASTORS|CGLIDES|FCASTORS|FGLIDES|CBASE|CFRAME|FBASE|FHEIGHTADJUSTMENT|FHADJUSTMENTWAY|FDESKTOPTYPE|CBACKREST|CSHELL|CSEAT|C[A-Z]*FOAM|F[A-Z]*SOCKET[A-Z]*|FMEDIAPORT[A-Z]*|C[A-Z]*GROUP)$/.test(media[1]);
+  return englishProposals.get(normalized)||(media&&sourceDriven&&captured&&normalizeEnglish(captured)===normalized&&captured!==media[2]?explainManufacturerOption(media[1],captured):undefined);
  };
  const proposalFor=(binding:string,text:string)=>{
   const media=binding.match(/^value:([^=]+)=(.*)$/);

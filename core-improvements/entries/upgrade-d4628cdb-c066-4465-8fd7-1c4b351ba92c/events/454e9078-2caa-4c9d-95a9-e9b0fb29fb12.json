@@ -1,0 +1,14 @@
+{
+  "note": "Local SQLite and injected proxy fixtures only; no production connection, service ID validation against provider, or actual runtime adoption.",
+  "status": "local-verified",
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "node --test test/delivery-service-update.test.mjs (commerce-core)",
+      "evidence": "6 tests passed, 0 failed; includes full-config CAS race, invalid and duplicate targets, append-only scope, plan-only command and injected remote proxy disposal."
+    }
+  ],
+  "eventId": "454e9078-2caa-4c9d-95a9-e9b0fb29fb12",
+  "sequence": 2,
+  "at": "2026-11-05T14:26:15.344Z"
+}

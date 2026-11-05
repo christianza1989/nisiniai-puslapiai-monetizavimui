@@ -1,0 +1,14 @@
+{
+  "note": "Reported by the implementation owner in the separate checkout worktree. The original live browser rejection is preserved as the finding; these tests do not establish production deployment or a real payment.",
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "node --test test/checkout-cart.test.mjs (commerce-core)",
+      "evidence": "Implementation owner observed 43 passed and 0 failed in the separate checkout worktree."
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "65aed746-b5a8-45b3-875d-c641e6a92d6b",
+  "sequence": 2,
+  "at": "2026-11-05T15:14:49.963Z"
+}

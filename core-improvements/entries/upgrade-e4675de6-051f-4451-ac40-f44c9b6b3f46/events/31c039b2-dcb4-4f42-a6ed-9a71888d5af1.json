@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "npm test (commerce-core)",
+      "evidence": "Implementation owner observed 308 passed and 0 failed in the separate checkout worktree.",
+      "result": "PASS"
+    }
+  ],
+  "note": "Full commerce test suite reported by the implementation owner on the scoped checkout revision; production deployment and real-payment acceptance remain separate.",
+  "eventId": "31c039b2-dcb4-4f42-a6ed-9a71888d5af1",
+  "sequence": 3,
+  "at": "2026-11-05T15:15:04.739Z"
+}

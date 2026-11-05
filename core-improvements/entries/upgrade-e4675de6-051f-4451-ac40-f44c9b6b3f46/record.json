@@ -1,0 +1,19 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/347",
+  "siteId": "memocasting",
+  "rollback": "Revert the scoped phone-normalization UI and tests together with its exact public SDK projection; preserve payment, customer, delivery, and backend validation data.",
+  "category": "code",
+  "summary": "Normalize Lithuanian domestic phone numbers for checkout and explain invalid telephone input clearly without changing E.164 server validation.",
+  "paths": [
+    "commerce-core/public/checkout-ui.mjs",
+    "commerce-core/test/checkout-cart.test.mjs"
+  ],
+  "evidence": [
+    "Live checkout rejected a valid Lithuanian domestic 8-prefix phone number with a generic English browser validation message.",
+    "The checkout UI now normalizes supported Lithuanian domestic and international formatting to E.164 and presents actionable Lithuanian validation feedback."
+  ],
+  "id": "upgrade-e4675de6-051f-4451-ac40-f44c9b6b3f46",
+  "branch": "codex/memo-phone-journal-20261105",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-11-05T15:14:40.578Z"
+}

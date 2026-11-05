@@ -208,7 +208,7 @@ export function explainManufacturerOption(field:string,source:string):string|und
   if(body==='box')return 'Gaminys pakuojamas į dėžę.';
   if(body==='pallet')return 'Gaminys pakuojamas ant padėklo.';
  }
- if(/SOCKET/.test(field))return /german/.test(body)?'Vokiškojo standarto elektros lizdų variantas.':/european/.test(body)?'Europos standarto elektros lizdų variantas.':undefined;
+ if(/SOCKET/.test(field))return /german/.test(body)?'Vokiškojo standarto elektros jungtis.':/european/.test(body)?'Europos standarto elektros jungtis.':undefined;
  if(/MEDIAPORT/.test(field))return 'Stalviršyje montuojamas elektros arba jungčių modulis.';
  if(field==='FMODULE')return 'Pagrindinis stalo modulis.';
  if(field==='FORGANIZER')return 'Daiktų dėklas dešinėje pusėje.';

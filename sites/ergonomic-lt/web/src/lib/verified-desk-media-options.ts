@@ -23,4 +23,15 @@ export function verifiedDeskSocketOption(model:string,field:string,value:string)
  const standard=standards[value];if(!standard)return;
  return {...standard,source:'https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=19',sourceTitle:'Gamintojo techninis aprašas: Europos, britiškojo ir šveicariškojo standarto elektros jungtys'};
 }
-export function verifiedDeskOption(model:string,field:string,value:string){return verifiedDeskMediaOption(model,field,value)||verifiedDeskSocketOption(model,field,value);}
+/** Exact edge-option meanings are preserved in supplier English captures and the technical sheet. */
+export function verifiedDeskEdgeOption(model:string,field:string,value:string):VerifiedDeskOption|undefined{
+ if(!/^(?:KEM2|KEM3|KEPP|KEUP|KXI2|KSQA|KAER|KESE|KPW2|KC54|KCAF|KECM)/.test(model)||field!=='FTABLEEDGETHICKNESS')return;
+ const edges:Record<string,{name:string;english:string;explanation:string}>={
+  ABSSTANDARD2:{name:'Klijuota 2 mm briaunos juosta',english:'2 mm - glue technology',explanation:'Briaunos juostos storis – 2 mm. Briauna priklijuota.'},
+  ABSLASER1:{name:'1 mm briaunos juosta, pritvirtinta lazeriniu būdu',english:'1 mm - laser',explanation:'Briaunos juostos storis – 1 mm. Briauna pritvirtinta lazeriniu būdu.'},
+  NOEDGE:{name:'Be briaunos juostos, matomi faneros sluoksniai',english:'No edge (plywood structure visible)',explanation:'Atskira briaunos juosta nenaudojama; matoma faneros sluoksnių struktūra.'},
+ };
+ const edge=edges[value];if(!edge)return;
+ return {...edge,source:'https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf',sourceTitle:'Gamintojo techninis aprašas: stalviršių briaunos ir jų tvirtinimas'};
+}
+export function verifiedDeskOption(model:string,field:string,value:string){return verifiedDeskMediaOption(model,field,value)||verifiedDeskSocketOption(model,field,value)||verifiedDeskEdgeOption(model,field,value);}

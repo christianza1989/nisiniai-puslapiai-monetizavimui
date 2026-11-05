@@ -24,6 +24,30 @@ const parse = (raw, fallback) => {
     throw new Error('runtime_configuration_invalid');
   }
 };
+// Site-specific migration: Sendparcel replaced a previously approved Omniva
+// locker service. Retain the existing contract/admission and never modify the
+// stored credential object. The adapter additionally confines the new ID to
+// Omniva-to-Omniva locker shipments.
+export function memocastingOmnivaAdmission(environment, storeId, carrier) {
+  const admission = carrier?.bookingAdmission;
+  if (
+    environment !== 'production' ||
+    storeId !== 'store_memocasting' ||
+    carrier?.accountRef !== 'sendparcel_memocasting_production' ||
+    admission?.approved !== true ||
+    !Array.isArray(admission.serviceIds) ||
+    !admission.serviceIds.includes('228') ||
+    admission.serviceIds.includes('601') ||
+    admission.lockerBindings?.omniva !== 'terminalid' ||
+    admission.lockerVerificationFields?.omniva !== 'terminalid'
+  )
+    return admission;
+  return {
+    ...admission,
+    serviceIds: [...admission.serviceIds, '601'],
+    memocastingRestricted601: true,
+  };
+}
 export function runtimeOptions(env) {
   const environment = env.COMMERCE_ENV;
   requireValue(
@@ -108,7 +132,7 @@ export function runtimeOptions(env) {
       if (connection.sendparcel.bookingAdmission?.approved === true)
         shippingAdapters[storeId] = new SendparcelBookingAdapter({
           ...carrierOptions,
-          bookingAdmission: connection.sendparcel.bookingAdmission,
+          bookingAdmission: memocastingOmnivaAdmission(environment, storeId, connection.sendparcel),
         });
     }
   }

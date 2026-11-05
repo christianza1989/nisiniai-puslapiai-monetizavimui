@@ -64,11 +64,22 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
   allowedPaths() {
     return { ...super.allowedPaths(), '/rest-api/orders/creates': 'POST' };
   }
+  serviceAdmitted(payload) {
+    if (!this.admission.serviceIds.includes(payload.serviceId)) return false;
+    if (this.admission.memocastingRestricted601 === true && payload.serviceId === '601')
+      return (
+        payload.sender?.country === 'LT' &&
+        payload.recipient?.country === 'LT' &&
+        payload.sender?.locker?.courier === 'omniva' &&
+        payload.recipient?.locker?.courier === 'omniva'
+      );
+    return true;
+  }
   async validateCost(payload) {
     this.validateParcels(payload);
     this.address(payload.sender);
     this.address(payload.recipient);
-    if (!this.admission.serviceIds.includes(payload.serviceId)) return false;
+    if (!this.serviceAdmitted(payload)) return false;
     const offers = await this.quote(payload);
     return offers.some(
       (o) =>
@@ -130,7 +141,7 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       payload.currency === 'EUR' &&
         integer(payload.value, 1) &&
         integer(payload.maxCost, 1) &&
-        this.admission.serviceIds.includes(payload.serviceId),
+        this.serviceAdmitted(payload),
       'invalid_shipment_command',
     );
     const request = {

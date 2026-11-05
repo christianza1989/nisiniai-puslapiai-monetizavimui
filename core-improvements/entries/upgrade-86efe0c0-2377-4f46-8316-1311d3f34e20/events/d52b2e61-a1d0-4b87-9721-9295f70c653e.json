@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "evidence": "Observed 41 tests passed and 0 failed, including a changed-price confirmation, clock-advanced expired quote with free shipping, and rejection of missing or elapsed expiry.",
+      "command": "node --test commerce-core/test/checkout-cart.test.mjs",
+      "result": "PASS"
+    },
+    {
+      "evidence": "Coordinating agent reports 295 tests passed and 0 failed for the full suite on the current in-progress source.",
+      "command": "npm test (commerce-core)",
+      "result": "PASS"
+    }
+  ],
+  "note": "Checkout carrier quote expiry is evaluated again at submit, nearly expired quotes are refreshed, and a changed payable price requires another buyer click; a free-shipping coupon retains the freshly issued delivery quote ID and quote hash. This records local verification, not a live payment or deployment.",
+  "eventId": "d52b2e61-a1d0-4b87-9721-9295f70c653e",
+  "sequence": 4,
+  "at": "2026-11-05T14:27:51.435Z"
+}

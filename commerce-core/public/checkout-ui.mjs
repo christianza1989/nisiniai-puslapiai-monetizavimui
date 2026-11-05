@@ -361,6 +361,8 @@ const onePageMessages = {
     destinationNeeded: 'Įveskite miestą ir pašto kodą',
     lockerNeeded: 'Pasirinkite paštomatą',
     calculatingDelivery: 'Skaičiuojame pristatymo kainą…',
+    updatedPrice:
+      'Pristatymo pasiūlymas atnaujintas. Patikrinkite naują sumą ir tęskite apmokėjimą.',
     offerUnavailable:
       'Šiam pristatymo būdui kainos gauti nepavyko. Pasirinkite kitą būdą arba bandykite vėliau.',
     continue: 'Tęsti į apmokėjimą',
@@ -399,6 +401,8 @@ const onePageMessages = {
     destinationNeeded: 'Wpisz miejscowość i kod pocztowy',
     lockerNeeded: 'Wybierz automat paczkowy',
     calculatingDelivery: 'Obliczamy koszt dostawy…',
+    updatedPrice:
+      'Oferta dostawy została zaktualizowana. Sprawdź nową kwotę i przejdź do płatności.',
     offerUnavailable:
       'Nie udało się uzyskać ceny tej dostawy. Wybierz inny sposób lub spróbuj później.',
     continue: 'Przejdź do płatności',
@@ -436,6 +440,8 @@ const onePageMessages = {
     destinationNeeded: 'Ievadiet pilsētu un pasta indeksu',
     lockerNeeded: 'Izvēlieties pakomātu',
     calculatingDelivery: 'Aprēķinām piegādes maksu…',
+    updatedPrice:
+      'Piegādes piedāvājums ir atjaunināts. Pārbaudiet jauno summu un turpiniet apmaksu.',
     offerUnavailable:
       'Neizdevās iegūt šī piegādes veida cenu. Izvēlieties citu veidu vai mēģiniet vēlāk.',
     continue: 'Turpināt apmaksu',
@@ -474,6 +480,7 @@ const onePageMessages = {
     destinationNeeded: 'Sisestage linn ja postiindeks',
     lockerNeeded: 'Valige pakiautomaat',
     calculatingDelivery: 'Arvutame tarnehinda…',
+    updatedPrice: 'Tarnepakkumist uuendati. Kontrollige uut summat ja jätkake maksmisega.',
     offerUnavailable:
       'Selle tarneviisi hinda ei õnnestunud saada. Valige teine viis või proovige hiljem.',
     continue: 'Jätka maksmisega',
@@ -1076,6 +1083,13 @@ function onePageForm({
       const deliveryQuote =
         method?.pricing === 'carrier' ? await client.deliveryQuote(input) : null;
       if (signal?.aborted || version !== expected) throw new Error('quote_price_changed');
+      if (
+        deliveryQuote &&
+        (!deliveryQuote.id ||
+          !Number.isSafeInteger(deliveryQuote.expiresAt) ||
+          deliveryQuote.expiresAt <= Date.now())
+      )
+        throw new Error('delivery_quote_conflict');
       const result = await client.quote({
         ...input,
         ...(deliveryQuote ? { deliveryQuoteId: deliveryQuote.id } : {}),
@@ -1108,7 +1122,12 @@ function onePageForm({
           result.amount
       )
         throw new Error('invalid_quote');
-      quoted = { ...result, ...(deliveryQuote ? { deliveryQuoteId: deliveryQuote.id } : {}) };
+      quoted = {
+        ...result,
+        ...(deliveryQuote
+          ? { deliveryQuoteId: deliveryQuote.id, deliveryQuoteExpiresAt: deliveryQuote.expiresAt }
+          : {}),
+      };
       paint();
       return quoted;
     })()
@@ -1632,8 +1651,34 @@ function onePageForm({
     status.textContent = u.checking;
     status.setAttribute('role', 'status');
     try {
+      const previous = quoted;
+      const expired =
+        previous?.deliveryQuoteId &&
+        (!Number.isSafeInteger(previous.deliveryQuoteExpiresAt) ||
+          previous.deliveryQuoteExpiresAt <= Date.now() + 15000);
+      if (expired) quoted = undefined;
       const quote = quoted || (await getQuote());
       if (signal?.aborted) return;
+      // Never silently create an order for a changed total after refreshing a
+      // rate the buyer previously saw. A second click confirms the new price.
+      if (
+        expired &&
+        (previous.amount !== quote.amount ||
+          previous.currency !== quote.currency ||
+          previous.delivery.amount !== quote.delivery.amount ||
+          JSON.stringify(previous.lines) !== JSON.stringify(quote.lines) ||
+          JSON.stringify(previous.discount ?? null) !== JSON.stringify(quote.discount ?? null))
+      ) {
+        status.textContent = u.updatedPrice;
+        status.setAttribute('role', 'status');
+        return;
+      }
+      if (
+        quote.deliveryQuoteId &&
+        Number.isSafeInteger(quote.deliveryQuoteExpiresAt) &&
+        quote.deliveryQuoteExpiresAt <= Date.now()
+      )
+        throw new Error('delivery_quote_conflict');
       const order = await client.create({
         ...input,
         quoteHash: quote.quoteHash,

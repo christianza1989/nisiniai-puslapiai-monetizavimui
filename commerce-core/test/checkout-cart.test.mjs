@@ -917,7 +917,7 @@ test('a selected locker obtains the carrier price before contact details are sup
     let received;
     client.deliveryQuote = async (input) => {
       received = input;
-      return { id: 'locker-rate' };
+      return { id: 'locker-rate', expiresAt: Date.now() + 300000 };
     };
     await mountCheckout(root, {
       client,
@@ -951,7 +951,7 @@ test('destination alone calculates carrier price; contact entry does not re-requ
       assert.equal(input.customer.name, '');
       assert.equal(input.customer.address.city, 'Vilnius');
       assert.equal(input.customer.address.postalCode, '01101');
-      return { id: 'delivery-price' };
+      return { id: 'delivery-price', expiresAt: Date.now() + 300000 };
     };
     await mountCheckout(root, {
       client,
@@ -984,7 +984,7 @@ test('auto carrier quote and submit share one pending request and create once', 
       await new Promise((resolve) => {
         releases.push(resolve);
       });
-      return { id: 'shared' };
+      return { id: 'shared', expiresAt: Date.now() + 300000 };
     };
     const create = client.create;
     client.create = async (input) => {
@@ -1010,6 +1010,138 @@ test('auto carrier quote and submit share one pending request and create once', 
     assert.equal(creates, 1);
     assert.equal(client.created.deliveryQuoteId, 'shared');
   }));
+test('nearly expired carrier quote refreshes before order creation without changing a stable price', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient();
+    let calls = 0;
+    client.deliveryQuote = async () => ({
+      id: 'rate-' + ++calls,
+      expiresAt: Date.now() + (calls === 1 ? 1000 : 300000),
+    });
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      renderPayment: async () => {},
+    });
+    fillOnePage(root);
+    const form = nodes(root).find((n) => n.tag === 'form');
+    await form.fire('input', field(root, 'postalCode'));
+    await pause(700);
+    assert.equal(calls, 1);
+    await form.fire('submit');
+    assert.equal(calls, 2);
+    assert.equal(client.created.deliveryQuoteId, 'rate-2');
+  }));
+test('a changed refreshed carrier price requires another buyer confirmation before order creation', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient(),
+      baseQuote = client.quote;
+    let calls = 0;
+    client.deliveryQuote = async () => ({
+      id: 'rate-' + ++calls,
+      expiresAt: Date.now() + (calls === 1 ? 1000 : 300000),
+    });
+    client.quote = async (input) => {
+      const result = await baseQuote(input);
+      return calls === 1
+        ? result
+        : { ...result, amount: result.amount + 200, delivery: { amount: 650 } };
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      renderPayment: async () => {},
+    });
+    fillOnePage(root);
+    const form = nodes(root).find((n) => n.tag === 'form');
+    await form.fire('input', field(root, 'postalCode'));
+    await pause(700);
+    await form.fire('submit');
+    assert.equal(client.created, undefined);
+    assert.ok(nodes(root).some((n) => n.textContent?.includes('Patikrinkite naują sumą')));
+    assert.ok(nodes(root).some((n) => n.textContent?.includes('38,50')));
+    await form.fire('submit');
+    assert.equal(client.created.deliveryQuoteId, 'rate-2');
+    assert.equal(calls, 2);
+  }));
+test('carrier rate without a valid future expiry cannot produce an order', () =>
+  withDom(async () => {
+    for (const expiresAt of [undefined, Date.now() - 1]) {
+      const root = new Element('div'),
+        client = carrierClient();
+      client.deliveryQuote = async () => ({ id: 'unsafe', expiresAt });
+      await mountCheckout(root, {
+        client,
+        layout: 'one-page',
+        initialLines: [{ sku: 'couple', quantity: 1 }],
+      });
+      fillOnePage(root);
+      await nodes(root)
+        .find((n) => n.tag === 'form')
+        .fire('submit');
+      assert.equal(client.created, undefined);
+      assert.match(
+        nodes(root).find((n) => n.attrs.role === 'alert')?.textContent,
+        /pristatymo kainos/i,
+      );
+    }
+  }));
+test('an expired delivery quote with free-shipping coupon refreshes and submits the new exact quote hash', () =>
+  withDom(async () => {
+    const realNow = Date.now;
+    let offset = 0;
+    Date.now = () => realNow() + offset;
+    try {
+      const root = new Element('div'),
+        client = carrierClient();
+      let calls = 0;
+      client.deliveryQuote = async () => ({
+        id: 'rate-' + ++calls,
+        expiresAt: Date.now() + 300000,
+      });
+      const free = (input) => {
+        const p = couponFixture(input);
+        p.discount.freeShipping = true;
+        return p;
+      };
+      client.discountPreview = async (input) => free(input);
+      client.quote = async (input) => {
+        const p = free(input);
+        return {
+          ...p,
+          quoteHash: 'hash-' + calls,
+          delivery: { amount: 0, amountBeforeDiscount: 450 },
+          discount: { ...p.discount, shippingAmount: 450 },
+        };
+      };
+      await mountCheckout(root, {
+        client,
+        layout: 'one-page',
+        initialLines: [{ sku: 'couple', quantity: 1 }],
+        renderPayment: async () => {},
+      });
+      field(root, 'discountCode').value = 'SAVE10';
+      await field(root, 'discountCode').fire('input');
+      await button(root, 'Pritaikyti').fire('click');
+      fillOnePage(root);
+      const form = nodes(root).find((n) => n.tag === 'form');
+      await form.fire('input', field(root, 'postalCode'));
+      await pause(700);
+      assert.equal(calls, 1);
+      offset = 301000;
+      await form.fire('submit');
+      assert.equal(calls, 2);
+      assert.equal(client.created.deliveryQuoteId, 'rate-2');
+      assert.equal(client.created.quoteHash, 'hash-2');
+      assert.equal(client.created.discountCode, 'SAVE10');
+    } finally {
+      Date.now = realNow;
+    }
+  }));
 test('failed carrier quote shows service feedback and explicit submit can retry', () =>
   withDom(async () => {
     const root = new Element('div'),
@@ -1017,7 +1149,7 @@ test('failed carrier quote shows service feedback and explicit submit can retry'
     let calls = 0;
     client.deliveryQuote = async () => {
       if (++calls === 1) throw Error('commerce_connection_failed');
-      return { id: 'retried' };
+      return { id: 'retried', expiresAt: Date.now() + 300000 };
     };
     await mountCheckout(root, {
       client,
@@ -1080,12 +1212,12 @@ test('changed address cannot reuse an older pending carrier quote or clear a new
     await form.fire('input', field(root, 'postalCode'));
     await pause(700);
     assert.equal(pending.length, 2);
-    pending[0].resolve({ id: 'stale' });
+    pending[0].resolve({ id: 'stale', expiresAt: Date.now() + 300000 });
     await pause(0);
     assert.equal(client.created, undefined);
     const submitting = form.fire('submit'),
       actualCalls = pending.length;
-    for (const p of pending.slice(1)) p.resolve({ id: 'current' });
+    for (const p of pending.slice(1)) p.resolve({ id: 'current', expiresAt: Date.now() + 300000 });
     await submitting;
     assert.equal(actualCalls, 2);
     assert.equal(client.created.deliveryQuoteId, 'current');

@@ -1,0 +1,20 @@
+{
+  "siteId": "memocasting",
+  "paths": [
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/src/sendparcel-booking.mjs",
+    "commerce-core/test/memocasting-omniva-601.test.mjs"
+  ],
+  "evidence": [
+    "The live operator capability diagnostic reports service 601 is not admitted while the verified Omniva terminalid binding is ready.",
+    "New code retains the original 228 admission requirement, exact store/account identity, verified locker binding, and restricts service 601 to LT Omniva locker-to-locker only."
+  ],
+  "summary": "Scope replacement Omniva service 601 to the existing approved Lithuanian Memocasting booking contract without modifying secret contents",
+  "rollback": "Revert only this code change; never overwrite stored connection credentials or production records.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/346",
+  "category": "code",
+  "id": "upgrade-1ee921e8-7153-48b8-9d06-1b16585df16b",
+  "branch": "codex/memo-service-id-cas-20261105",
+  "baseSha": "b37df342fb8221449d7fa919807ecbb033e3ee97",
+  "createdAt": "2026-11-05T14:39:06.257Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "evidence": "30 tests passed, zero failures; scope and runtime integration tested with fixtures.",
+      "result": "PASS",
+      "command": "node --test test/memocasting-omniva-601.test.mjs test/shipping-capability.test.mjs test/shipment-commands.test.mjs test/runtime.test.mjs"
+    },
+    {
+      "evidence": "299 passed, zero failures including negative cross-country service checks after last change.",
+      "result": "PASS",
+      "command": "npm test (commerce-core)"
+    }
+  ],
+  "note": "Fixtures only; no paid booking, actual carrier operation, live secret access, or deployed migration verified. Previous live service 228 admission remains a separate runtime gate.",
+  "eventId": "da04d11e-3857-4f11-824d-d15b14666ee2",
+  "sequence": 2,
+  "at": "2026-11-05T14:39:16.206Z"
+}

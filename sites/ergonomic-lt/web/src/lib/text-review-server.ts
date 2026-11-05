@@ -13,7 +13,8 @@ import {configurationOptionLabel,configurationOptionValue,optionDetails,supplier
 import {createExpandedEngine,fieldLabels,choiceLabel} from './expanded-configurator';
 import type {CatalogRuntime} from './catalog-engine';
 import type {Product} from './types';
-import {optionExplanation,type OptionExplanation} from './option-explanations';
+import {optionExplanation,catalogOptionExplanations,type OptionExplanation} from './option-explanations';
+import {explanationSourceModels,legacyExplanationModels} from './option-explanation-sources';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
@@ -30,16 +31,8 @@ const proposalsByEnglish={chairs:new Map<string,Set<string>>(),desks:new Map<str
 const normalizeEnglish=(text:string)=>text.trim().replace(/\s+/g,' ').toLowerCase();
 const helpUsage=new Map<string,number>();
 function helpModelCount(def:OptionExplanation,group:'chairs'|'desks'){
- const cached=helpUsage.get(def.id);if(cached)return cached;
- const field=def.sourceCode.split('=',1)[0],expected=normalizeEnglish(def.english);let count=0;
- for(const [code,labels] of Object.entries(englishByModel)){
-  const meta=inventory.models[code];if(!meta||!meta.path.startsWith('/produktai/'+(group==='desks'?deskCategory:'kedes')+'/'))continue;
-  for(const [binding,english] of Object.entries(labels))if(binding.startsWith('value:'+field+'=')&&normalizeEnglish(english)===expected){
-   const candidate=optionExplanation({group,model:code,field,value:binding.slice(('value:'+field+'=').length),english,label:'',context:'',configuratorUrl:''});
-   if(candidate?.id===def.id){count++;break;}
-  }
- }
- helpUsage.set(def.id,count||1);return count||1;
+ if(!helpUsage.size)for(const row of catalogOptionExplanations())helpUsage.set(row.definition.id,row.models.length);
+ return helpUsage.get(def.id)||1;
 }
 const proposalsBySource:Record<string,Record<string,string>>=verifiedOptionProposals;
 // Translate the material description while retaining the supplier's collection name.
@@ -296,7 +289,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const suggested=proposalFor(binding,text)||presetProposal||text;
   terms.set(id,{id,sourceHash:hash([binding,text]),role,english:'',polish:'',sourceCode,suggested,context,notes:'',current:[text],modelCount:1});
  };
- if(runtime&&p.modelConfigurationId){
+ if(p.modelConfigurationId&&(runtime||legacyExplanationModels.has(model))){
   const engine=createExpandedEngine(runtime),state=engine.initialStateForProduct(p);
   const choices=new Map<string,Set<string>>();
   function include(source?:Record<string,string[]|null>){
@@ -308,15 +301,21 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
    }
   }
   include(engine.stateChoices(state));
-  for(const anchor of runtime.family.anchors.filter(a=>a.article===model)){
+  if(!runtime)for(const anchor of engine.expandedForProduct(p)?.anchors||[]){
+   include(anchor.choices);for(const profile of anchor.profiles||[])include(profile.choices);
+  }
+  for(const anchor of runtime?.family.anchors.filter(a=>a.article===model)||[]){
    include(anchor.choices);
    for(const profile of anchor.profiles)include(profile.choices);
    for(const component of anchor.components)for(const variant of component.variants){include(variant.choices);include(variant.dependentChoices);}
   }
   for(const [field,values] of choices){
-   const label=runtime.palettes._fieldLabels?.[field]?.text||fieldLabels[field]||field;
+   // Legacy finish palettes already have their own editor. Do not expand every
+   // colour into this structural-help scope on each page request.
+   if(!runtime&&/COLOR|CHCOL|COL$|GROUP/.test(field))continue;
+   const label=runtime?.palettes._fieldLabels?.[field]?.text||fieldLabels[field]||field;
    add('field:'+field,'Lauko pavadinimas',label,label,field);
-   for(const value of values)add('value:'+field+'='+value,'Parinktis',label,engine.choiceLabel(field,value,runtime.palettes,state.family),field+'='+value);
+   for(const value of values)add('value:'+field+'='+value,'Parinktis',label,engine.choiceLabel(field,value,runtime?.palettes,state.family),field+'='+value);
   }
  }
  if(config){
@@ -356,7 +355,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const match=binding.match(/^value:([^=]+)=(.*)$/);if(!match)continue;
   const [,field,value]=match,def=terms.get(modelBindings[binding])||inventory.terms[modelBindings[binding]];
   const label=def?.suggested||def?.current[0]||value,context=def?.context||fieldLabels[field]||field;
-  const help=optionExplanation({group,model,field,value,english:englishByModel[model]?.[binding]||'',label,context,configuratorUrl:config?.configurator||''});
+  const help=optionExplanation({group,model,field,value,english:explanationSourceModels[model]?.[binding]||def?.english||'',label,context,configuratorUrl:config?.configurator||''});
   if(help){terms.set(help.id,help);helpDefs.set(help.id,help);modelBindings[help.optionBinding]=help.id;}
  }
  if(Object.keys(modelBindings).length){bindings[model]=modelBindings;if(!codes.includes(model))codes.push(model);}

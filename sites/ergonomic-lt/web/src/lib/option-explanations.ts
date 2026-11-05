@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 import mechanisms from '../../content/option-mechanism-explanations.json';
-import manufacturer from '../../content/manufacturer-english-review.json';
+import {explanationSourceModels,explanationSourceMetadata} from './option-explanation-sources';
 import inventory from '../../content/text-review-inventory.json';
 import type {TextDefinition} from './text-review-types';
 
@@ -39,10 +39,12 @@ export function explainManufacturerOption(field:string,source:string):string|und
   if(/automatic weight|self-tension/.test(body))parts.push('pasipriešinimas atsilošimui automatiškai prisitaiko prie žmogaus svorio');
   if(/seat depth|depth adjust/.test(body))parts.push('reguliuojamas sėdynės gylis');
   if(/negative.*inclination/.test(body))parts.push('sėdynę galima palenkti į priekį');
-  if(/harder spring|increased spring tension/.test(body))parts.push('stipresnė spyruoklė padidina pasipriešinimą atsilošimui');
+  if(/harder spring|increased spring tension|reinforced spring/.test(body))parts.push('stipresnė spyruoklė padidina pasipriešinimą atsilošimui');
   if(/without height/.test(body))parts.push('aukštis nereguliuojamas');
   return parts.length?sentence(parts.join('; ')):undefined;
  }
+ if(field==='CBACKRESTMOVEMECH')return /no backrest movement/.test(body)?'Papildomos atlošo judėjimo funkcijos nėra.':/mobile back movement/.test(body)?'Atlošas gali judėti į šonus ir šiek tiek pasisukti.':undefined;
+ if(field==='CBACKRESTCONNECTOR')return /polished alum/.test(body)?'Atlošo jungtis pagaminta iš poliruoto aliuminio.':/plastic/.test(body)?'Atlošo jungtis pagaminta iš plastiko.':undefined;
  if(field==='FHEIGHTADJUSTMENT')return /electric/.test(body)?'Stalviršis pakeliamas ir nuleidžiamas elektriniu mechanizmu.':/crank/.test(body)?'Stalviršio aukštis keičiamas ranka sukant rankeną.':/fixed height/.test(body)?'Šio varianto stalviršio aukštis nereguliuojamas.':/manual/.test(body)?'Stalviršio aukštis reguliuojamas rankiniu būdu.':undefined;
  if(field==='FHADJUSTMENTWAY'){
   if(/crank/.test(body))return 'Stalviršis pakeliamas ir nuleidžiamas ranka sukant rankeną.';
@@ -51,7 +53,12 @@ export function explainManufacturerOption(field:string,source:string):string|und
  }
  if(field==='CARMRESTS'){
   const d=body.match(/\b([1-4])\s*-?d\b/);
-  if(d)parts.push('Porankių padėtis reguliuojama '+dimensionWords[d[1]]);
+  const ref=s.split(':',1)[0],r35=ref.match(/^r35k([23])(?:-sb2)?(?:-w\/b)?$/);
+  if(/^r55-(?:pol\/)?[bw]\/bpu$|^r55-pol\/[bw]\/bpu$/.test(ref))parts.push('Reguliuojamas porankių aukštis ir atstumas tarp jų, atramos slankioja pirmyn bei atgal ir sukasi per papildomus lankstus');
+  else if(r35&&d&&Number(d[1])===(r35[1]==='2'?1:3)+(ref.includes('-sb2')?1:0)){
+   parts.push(r35[1]==='2'?(ref.includes('-sb2')?'Reguliuojamas porankių aukštis ir atstumas tarp jų':'Reguliuojamas porankių aukštis'):(ref.includes('-sb2')?'Reguliuojamas porankių aukštis ir atstumas tarp jų, atramos slankioja pirmyn bei atgal ir sukasi':'Reguliuojamas porankių aukštis, atramos slankioja pirmyn bei atgal ir sukasi'));
+  }
+  else if(d)parts.push('Porankių padėtis reguliuojama '+dimensionWords[d[1]]);
   else if(/fixed/.test(body))parts.push('Fiksuoti porankiai be padėties reguliavimo');
   else if(/integrated with (frame|shell|the backrest)/.test(body))parts.push(/backrest/.test(body)?'Porankiai sujungti su atlošu':/shell/.test(body)?'Porankiai sujungti su kėdės korpusu':'Porankiai sujungti su kėdės rėmu');
   const pad=body.match(/pad:\s*(.*)/)?.[1],material=pad&&materials(pad);
@@ -102,7 +109,7 @@ export function explainManufacturerOption(field:string,source:string):string|und
  if(field==='CBASE'||field==='CFRAME'||field==='FBASE'){
   if(/bench/.test(body)){const n=body.match(/([2-4]).seater/)?.[1];return n?'Suolas su '+n+' sėdėjimo vietomis.':undefined;}
   if(body==='panel')return 'Stalo pagrindas iš atraminių plokščių.';
-  if(/zeta/.test(body))return 'Paaukštintas taburetės pagrindo variantas.';
+  if(/zeta/.test(body))return 'Taburetės pagrindo variantas.';
   if(/5.star/.test(body))parts.push('Penkių stipinų pagrindas');
   else if(/4.star|four.star/.test(body))parts.push('Keturių stipinų pagrindas');
   else if(/4.legs|4 (?:wooden |metal )?legs/.test(body))parts.push('Pagrindą sudaro keturios kojos');
@@ -240,14 +247,14 @@ export function optionExplanation(args:{group:'chairs'|'desks';model:string;fiel
  if(!text)return;
  // Shared only for the same category, field, exact original meaning and verified explanation.
  const meaning=[group,field,normalize(english),text],id='help:'+createHash('sha256').update(JSON.stringify(meaning)).digest('hex').slice(0,24);
- const sourceUrl=field==='CLUMBARSUPPORT'&&normalize(english)==='air shape'?'https://www.nowystyl.com/en/tiger-up/':normalize(english)==='fenix ntm'?'https://www.nowystyl.com/media/NowyStyl/Files/Finishes_Catalogue_EN-PL-DE-FR_E01_2025.pdf':curated?.sources.at(-1)?.url||configuratorUrl;
+ const sourceUrl=field==='CLUMBARSUPPORT'&&normalize(english)==='air shape'?'https://www.nowystyl.com/en/tiger-up/':field==='CBACKRESTMOVEMECH'||field==='CARMRESTS'&&/^r55-/i.test(english)?'https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf#page=20':field==='CARMRESTS'&&/^r35k/i.test(english)?'https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf#page=99':normalize(english)==='fenix ntm'?'https://www.nowystyl.com/media/NowyStyl/Files/Finishes_Catalogue_EN-PL-DE-FR_E01_2025.pdf':curated?.sources.at(-1)?.url||configuratorUrl;
  return {id,sourceHash:createHash('sha256').update(JSON.stringify([meaning,curated?.sources||[]])).digest('hex'),role:'Pasirinkimo paaiškinimas',english,polish:'',sourceCode:field+'='+value,suggested:text,context:context+' – '+label+': paaiškinimas',notes:'Trumpas paaiškinimas pagal gamintojo duomenis.',current:[text],modelCount:1,sourceUrl,optionBinding:explanationBinding(field,value)};
 }
 
 export function catalogOptionExplanations(){
  const rows=new Map<string,{definition:OptionExplanation;group:'chairs'|'desks';models:{code:string;path:string;name:string}[]}>();
- for(const [model,labels]of Object.entries(manufacturer.models as Record<string,Record<string,string>>)){
-  const meta=(inventory.models as Record<string,{path:string;name:string;bindings:Record<string,string>}>)[model];
+ for(const [model,labels]of Object.entries(explanationSourceModels)){
+  const meta=explanationSourceMetadata[model];
   if(!meta||!/^\/produktai\/(?:kedes|rasomieji-stalai-ir-darbo-vietos)\//.test(meta.path))continue;
   const group=meta.path.includes('/kedes/')?'chairs':'desks';
   for(const [binding,english]of Object.entries(labels)){

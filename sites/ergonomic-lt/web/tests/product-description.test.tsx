@@ -5,6 +5,7 @@ import {parseHTML} from 'linkedom';
 import {ProductDescription} from '../src/components/product-description';
 import {productDescriptionBlocks} from '../src/lib/product-description';
 import {studioDescriptionParagraphs} from '../src/lib/product-studio';
+import {customerDescriptionLabel,customerLabel} from '../src/lib/customer-names';
 
 test('Product descriptions render headings, both bullet markers, and blank-line paragraphs',()=>{
  const text='Įžanga.\r\n\r\n## Konstrukcija\r\n* Medinis rėmas\r\n- Minkšta sėdynė\r\n\r\n### Apdaila\r\nPirma eilutė\r\nantra eilutė.\r\n\r\nKita pastraipa.';
@@ -35,4 +36,17 @@ test('Plain descriptions keep their text, paragraph structure, and lead styling'
  assert.equal(document.querySelector('p')?.textContent,text);
  const long='Tai yra senas aprašymo sakinys. '.repeat(90);
  assert(studioDescriptionParagraphs(long).length>1);
+});
+
+test('The visitor description retains formatting while removing private supplier codes',()=>{
+ const text='## Konstrukcija\n\n* KARN008WW003 medinis rėmas\n- Minkšta sėdynė\n\n### Apdaila\nNowy Styl audinys.';
+ const clean=customerDescriptionLabel(text,new Set(['KARN008WW003']),'');
+ const {document}=parseHTML(renderToStaticMarkup(<ProductDescription text={clean}/>));
+ assert.equal(document.querySelector('h2')?.textContent,'Konstrukcija');
+ assert.equal(document.querySelector('h3')?.textContent,'Apdaila');
+ assert.equal(document.querySelectorAll('li').length,2);
+ assert(!clean.includes('KARN008WW003'));
+ assert(!clean.includes('Nowy Styl'));
+ const plain='Senas aprašymas.  Įprastas tekstas.';
+ assert.equal(customerDescriptionLabel(plain,[],''),customerLabel(plain,[],''));
 });

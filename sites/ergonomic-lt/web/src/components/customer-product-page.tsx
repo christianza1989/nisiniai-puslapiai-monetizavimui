@@ -2,7 +2,7 @@ import Link from 'next/link';
 import {Suspense,type ReactNode} from 'react';
 import {customerConfiguration,customerContext} from '@/lib/customer-configuration-server';
 import {customerKey} from '@/lib/customer-capability';
-import {customerLabel} from '@/lib/customer-names';
+import {customerLabel,customerDescriptionLabel} from '@/lib/customer-names';
 import {customerProductCodes,customerProductPath} from '@/lib/customer-product-presentation';
 import {customerProductImage} from '@/lib/customer-image-server';
 export {customerProductImage} from '@/lib/customer-image-server';
@@ -22,7 +22,7 @@ async function ConfiguredProduct({product,token,url,image,message:initialMessage
 }
 export default async function CustomerProductPage({product:p,parent,token,legacyToken,children}:{product:Product;parent:Product;token?:string;legacyToken?:string;children?:ReactNode}){
  const codes=customerProductCodes(p),title=p.customerHeading||customerLabel(p.textReviewHeading||p.familyName||p.name,codes,'Biuro baldas'),family=!p.modelConfigurationId&&p.configurations.length>1,image=await customerProductImage(p),url=customerProductPath(p);
- const copy=productStudioPresentation(publicProductView(p),p.modelArticle?.configurable?.intro||p.modelArticle?.paragraphs),paragraphs=[...copy.descriptionParagraphs,...copy.overview].map(t=>customerLabel(t,codes,'')).filter(Boolean);
+ const copy=productStudioPresentation(publicProductView(p),p.modelArticle?.configurable?.intro||p.modelArticle?.paragraphs),paragraphs=[...copy.descriptionParagraphs,...copy.overview].map(t=>customerDescriptionLabel(t,codes,'')).filter(Boolean);
  let snapshot=token,message='';
  if(!family&&legacyToken&&!snapshot){try{const ctx=await customerContext(p),state=ctx.engine.parseStateToken(p,legacyToken);snapshot=customerKey().seal('configuration',{product:p.id,sample:p.modelConfigurationId||p.configurations[0]?.id||null,state,revision:ctx.revision});}catch{message='Nuorodos komplektacija nebegalioja. Rodoma pradinė komplektacija.';}}
  return <section className="product-page container"><nav aria-label="Puslapio vieta" className="breadcrumbs"><Link href="/produktai/">Baldų katalogas</Link> / <span>{title}</span></nav><section className="product-studio-intro" aria-labelledby="studio-product-title"><figure className="studio-intro-scene studio-intro-product">{image&&<img src={image} alt={title} fetchPriority="high" style={{width:'100%',height:'100%',objectFit:'contain'}}/>}</figure><div className="studio-intro-copy"><h1 id="studio-product-title">{title}</h1>{paragraphs.map((text,i)=><ProductDescription key={i} text={text}/>)}</div></section>

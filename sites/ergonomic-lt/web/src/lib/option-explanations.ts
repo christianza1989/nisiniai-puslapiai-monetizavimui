@@ -251,7 +251,7 @@ export function optionExplanation(args:{group:'chairs'|'desks';model:string;fiel
  const text=media?.explanation||curated?.suggestedLt||explainManufacturerOption(field,english);
  if(!text)return;
  // Shared only for the same category, field, exact original meaning and verified explanation.
- const meaning=[group,field,normalize(english),text],id='help:'+createHash('sha256').update(JSON.stringify(meaning)).digest('hex').slice(0,24);
+ const meaning=[group,field,normalize(english||media?.english||''),text],id='help:'+createHash('sha256').update(JSON.stringify(meaning)).digest('hex').slice(0,24);
  const sourceUrl=media?.source||(field==='CLUMBARSUPPORT'&&normalize(english)==='air shape'?'https://www.nowystyl.com/en/tiger-up/':field==='CBACKRESTMOVEMECH'||field==='CARMRESTS'&&/^r55-/i.test(english)?'https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf#page=20':field==='CARMRESTS'&&/^r35k/i.test(english)?'https://www.nowystyl.com/files/doc/WWW_Office-chairs_Technical-details_EXP.pdf#page=99':normalize(english)==='fenix ntm'?'https://www.nowystyl.com/media/NowyStyl/Files/Finishes_Catalogue_EN-PL-DE-FR_E01_2025.pdf':curated?.sources.at(-1)?.url||configuratorUrl);
  return {id,sourceHash:createHash('sha256').update(JSON.stringify([meaning,curated?.sources||[]])).digest('hex'),role:'Pasirinkimo paaiškinimas',english:english||media?.english||'',polish:'',sourceCode:field+'='+value,suggested:text,context:context+' – '+label+': paaiškinimas',notes:'Trumpas paaiškinimas pagal gamintojo duomenis.',current:[text],modelCount:1,sourceUrl,optionBinding:explanationBinding(field,value)};
 }

@@ -16,9 +16,9 @@ export function verifiedDeskMediaOption(model:string,field:string,value:string):
 export function verifiedDeskSocketOption(model:string,field:string,value:string):VerifiedDeskOption|undefined{
  if(!/^(?:KEM2|KEM3|KECM|KERG|KEPP|KEUP|KPW2)/.test(model)||field!=='FSOCKETSTANDARD')return;
  const standards:Record<string,{name:string;english:string;explanation:string}>={
-  EU:{name:'Europos standartas',english:'European (EU)',explanation:'Pasirinkta Europos standarto elektros jungtis.'},
-  GB:{name:'Britiškasis standartas',english:'British (GB)',explanation:'Pasirinkta britiškojo standarto elektros jungtis.'},
-  CH:{name:'Šveicariškasis standartas',english:'Swiss (CH)',explanation:'Pasirinkta šveicariškojo standarto elektros jungtis.'},
+  EU:{name:'Europos standartas',english:'European (EU)',explanation:'Europos standarto elektros jungtis.'},
+  GB:{name:'Britiškasis standartas',english:'British (GB)',explanation:'Britiškojo standarto elektros jungtis.'},
+  CH:{name:'Šveicariškasis standartas',english:'Swiss (CH)',explanation:'Šveicariškojo standarto elektros jungtis.'},
  };
  const standard=standards[value];if(!standard)return;
  return {...standard,source:'https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=19',sourceTitle:'Gamintojo techninis aprašas: Europos, britiškojo ir šveicariškojo standarto elektros jungtys'};

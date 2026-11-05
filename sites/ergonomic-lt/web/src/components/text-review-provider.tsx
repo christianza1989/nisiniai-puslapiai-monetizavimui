@@ -5,7 +5,7 @@ import {Pencil} from 'lucide-react';
 import type {PublicTextScope,ReviewScope} from '@/lib/text-review-types';
 import {ProductDescription} from './product-description';
 const Panel=dynamic(()=>import('./text-review-panel'),{ssr:false});
-type ReviewContext={editing:boolean;open:(id:string,trigger:HTMLElement)=>void;binding:(model:string,field:string,value?:string)=>string;resolve:(id:string,fallback:string,model?:string)=>string;known:(id:string,fallback:string)=>boolean;scope:string;model:string};
+type ReviewContext={editing:boolean;open:(id:string,trigger:HTMLElement)=>void;binding:(model:string,field:string,value?:string,kind?:'explanation')=>string;resolve:(id:string,fallback:string,model?:string)=>string;known:(id:string,fallback:string)=>boolean;scope:string;model:string};
 const empty:ReviewContext={editing:false,open:()=>{},binding:()=>'',resolve:(_,fallback)=>fallback,known:()=>false,scope:'',model:''};
 const Context=createContext<ReviewContext>(empty);
 export const useTextReview=()=>useContext(Context);
@@ -42,7 +42,7 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
   const observer=new MutationObserver(changed);observer.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['data-chair-code']});changed();
   return()=>{observer.disconnect();controller?.abort();};
  },[initial.model,admin]);
- const binding=useCallback((model:string,field:string,value?:string)=>publicScope.bindings[model]?.[(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value)]||'',[publicScope]);
+ const binding=useCallback((model:string,field:string,value?:string,kind?:'explanation')=>publicScope.bindings[model]?.[(kind?'explanation:':value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value)]||'',[publicScope]);
  function resolve(id:string,fallback:string,model=publicScope.model){
   if(!id)return fallback;
   if(publicScope.originals[id]!==undefined&&publicScope.originals[id]!==fallback)return fallback;
@@ -70,4 +70,11 @@ export function ReviewFieldButton({model,field,value}:{model:string;field:string
  const review=useTextReview();if(!review.editing)return null;
  const label=review.binding(model,field),choice=review.binding(model,field,value);
  return <div className="review-field-actions">{label&&<button type="button" onClick={e=>review.open(label,e.currentTarget)}><Pencil size={14}/> Pavadinimas</button>}{choice&&<button type="button" onClick={e=>review.open(choice,e.currentTarget)}><Pencil size={14}/> Pasirinktas tekstas</button>}</div>;
+}
+export function OptionExplanation({model,field,value}:{model:string;field:string;value:string}){
+ const review=useTextReview();
+ // Explanation identities are sent by the server; supplier metadata stays private.
+ const helpId=review.binding(model,field,value,'explanation');
+ if(!helpId)return null;
+ return <p className="option-explanation" id={'option-help-'+field}><TextValue id={helpId} fallback="" model={model}/></p>;
 }

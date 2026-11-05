@@ -567,3 +567,6 @@ main .product-page:has(.product-studio-intro) .product-article { width:100%; max
 main .product-page:has(.product-studio-intro) .family-gallery { width:100%; max-width:none; margin-inline:0; padding-block:32px; }
 main .product-page:has(.product-studio-intro) .family-gallery .gallery-main { width:100%; max-width:none; margin-inline:0; height:414px; aspect-ratio:auto; }
 main .product-page:has(.product-studio-intro) .family-gallery .gallery-controls { max-width:none; margin-inline:0; }
+
+/* Source-backed selected-option help; the approved body text role. */
+.option-explanation{display:block;margin:8px 0 12px;font-family:var(--font-body,Manrope,sans-serif);font-size:14px;font-weight:400;line-height:1.6;color:#314c43;max-width:65ch;overflow-wrap:anywhere}

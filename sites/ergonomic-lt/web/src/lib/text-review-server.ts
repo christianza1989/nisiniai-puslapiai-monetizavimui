@@ -13,6 +13,7 @@ import {configurationOptionLabel,configurationOptionValue,optionDetails,supplier
 import {createExpandedEngine,fieldLabels,choiceLabel} from './expanded-configurator';
 import type {CatalogRuntime} from './catalog-engine';
 import type {Product} from './types';
+import {optionExplanation,type OptionExplanation} from './option-explanations';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
@@ -27,6 +28,19 @@ const englishByBinding={chairs:new Map<string,Set<string>>(),desks:new Map<strin
 const usage=new Map<string,{chairs:number;desks:number}>();
 const proposalsByEnglish={chairs:new Map<string,Set<string>>(),desks:new Map<string,Set<string>>()};
 const normalizeEnglish=(text:string)=>text.trim().replace(/\s+/g,' ').toLowerCase();
+const helpUsage=new Map<string,number>();
+function helpModelCount(def:OptionExplanation,group:'chairs'|'desks'){
+ const cached=helpUsage.get(def.id);if(cached)return cached;
+ const field=def.sourceCode.split('=',1)[0],expected=normalizeEnglish(def.english);let count=0;
+ for(const [code,labels] of Object.entries(englishByModel)){
+  const meta=inventory.models[code];if(!meta||!meta.path.startsWith('/produktai/'+(group==='desks'?deskCategory:'kedes')+'/'))continue;
+  for(const [binding,english] of Object.entries(labels))if(binding.startsWith('value:'+field+'=')&&normalizeEnglish(english)===expected){
+   const candidate=optionExplanation({group,model:code,field,value:binding.slice(('value:'+field+'=').length),english,label:'',context:'',configuratorUrl:''});
+   if(candidate?.id===def.id){count++;break;}
+  }
+ }
+ helpUsage.set(def.id,count||1);return count||1;
+}
 const proposalsBySource:Record<string,Record<string,string>>=verifiedOptionProposals;
 // Translate the material description while retaining the supplier's collection name.
 const englishProposals=new Map([
@@ -337,6 +351,14 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   if(!labelId&&!configurationOptionLabel(field)&&!fieldLabels[field])continue;
   add(binding,'Parinktis',label?.suggested||configurationOptionLabel(field)||fieldLabels[field],english,sourceCode,proposal);
  }
+ const helpDefs=new Map<string,OptionExplanation>();
+ if(textReviewProposalPreview())for(const binding of Object.keys(modelBindings)){
+  const match=binding.match(/^value:([^=]+)=(.*)$/);if(!match)continue;
+  const [,field,value]=match,def=terms.get(modelBindings[binding])||inventory.terms[modelBindings[binding]];
+  const label=def?.suggested||def?.current[0]||value,context=def?.context||fieldLabels[field]||field;
+  const help=optionExplanation({group,model,field,value,english:englishByModel[model]?.[binding]||'',label,context,configuratorUrl:config?.configurator||''});
+  if(help){terms.set(help.id,help);helpDefs.set(help.id,help);modelBindings[help.optionBinding]=help.id;}
+ }
  if(Object.keys(modelBindings).length){bindings[model]=modelBindings;if(!codes.includes(model))codes.push(model);}
  defs.push(...[...new Set(Object.values(modelBindings))].map(id=>terms.get(id)||inventory.terms[id]).filter(Boolean));
  let edits=providedEdits;
@@ -373,7 +395,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   optionCodesByTerm.set(id,codes);
  }
  const entries:ReviewEntry[]=defs.map(def=>{
-  const shared=def.role!=='Produkto tekstas'&&!terms.has(def.id),global=edits!.get(globalKey(def.id)),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
+  const shared=def.role!=='Produkto tekstas'&&(!terms.has(def.id)||helpDefs.has(def.id)),global=edits!.get(globalKey(def.id)),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
   const edit=local||global,baseStatus=textReviewStatus(def,edit);
   const originalText=shared?known?.current[def.id]||def.current[0]||def.sourceCode:def.current[0];
   const currentText=publishedText(def,local,publishedText(def,global,originalText));
@@ -383,7 +405,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const originalEnglish=(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english;
   const catalogueLabel=!originalEnglish&&/^KUTI(?:003WW001|004WW00[12])$/.test(model)&&def.sourceCode==='CLUMBARPLASTICCOLOR'?utilaCatalogueLabel:undefined;
   const englishReference=originalEnglish||catalogueLabel?'':[...referenceByTerm.get(def.id)||[]].join(' · ');
-  return {...def,english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText,optionCodes:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
+  return {...def,english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText,optionCodes:helpDefs.has(def.id)?[def.sourceCode]:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:helpDefs.get(def.id)?.sourceUrl||p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:helpDefs.has(def.id)?helpModelCount(helpDefs.get(def.id)!,group):shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at,proposalPreview:textReviewProposalPreview()};

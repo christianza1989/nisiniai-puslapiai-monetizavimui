@@ -39,7 +39,7 @@ export default async function TextReviewDashboard({searchParams}:{searchParams:P
  const page=Math.max(1,Math.min(Math.ceil(rows.length/40)||1,Number(query.puslapis)||1)),shown=rows.slice((page-1)*40,page*40);
  const params=new URLSearchParams(Object.entries(query).filter((e):e is [string,string]=>e[1]!==undefined));
  const pageLink=(n:number)=>{const p=new URLSearchParams(params);p.set('puslapis',String(n));return '/admin/tekstai/?'+p;};
- return <section className="container admin-shell review-dashboard"><div className="section-heading"><h1>{chairsOnly?'Kėdžių tekstai':'Produktų tekstai'}</h1><AdminActions/></div>
+ return <section className="container admin-shell review-dashboard"><div className="section-heading"><h1>{chairsOnly?'Kėdžių tekstai':'Produktų tekstai'}</h1><AdminActions/></div><p><Link href="/admin/paaiskinimai/">Pasirinkimų paaiškinimai – kėdės ir stalai</Link></p>
  <div className="admin-stats"><Link href="/admin/produktai/"><strong>{catalogProducts.length}</strong>Modelių · {catalogProducts.filter(p=>p.published).length} paskelbta</Link><Link href="/admin/uzklausos/"><strong>{counts?.total??0}</strong>Klientų užklausos · {counts?.fresh??0} naujos</Link></div>
  <p>Tai reiškia, kad patvirtinus, pavyzdžiui, ratukų pavadinimą kelioms kėdėms, jis visose tose kėdėse bus pažymėtas kaip patikrintas. Skaitiklis rodo, kiek dabar esančių tekstų jau patikrinta. Kai atsiras naujų pasirinkimų, jų tekstai irgi bus įtraukti į skaitiklį.</p>
 

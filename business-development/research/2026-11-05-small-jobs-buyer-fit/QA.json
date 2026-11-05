@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-05T09:10:48.122Z",
+  "status": "PASS_documentary_validation",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "freshnessContinueAt": "2026-11-05T09:08:44.913Z",
+  "checks": {
+    "localReferences": 1,
+    "originalPagesRead": 2,
+    "selectedDatedExamples": 3,
+    "searchBodyDiscrepancyRetained": true,
+    "duplicatesNotAdded": true,
+    "syntheticCasesExecuted": 0,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "newApprovals": 0,
+    "newProposals": 0,
+    "languageReview": "Full final private prose reviewed; role, scope, date discrepancies and missing economics retained"
+  },
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ]
+  },
+  "scope": {
+    "tregCatalogSearches": 1,
+    "tregProviderCalls": 0,
+    "paidCalls": 0,
+    "contactsCollected": 0,
+    "messagesSent": 0,
+    "attachmentsOpened": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  },
+  "limits": [
+    "Selected examples only, not representative demand or actual payment",
+    "Commercial or mixed installation request does not validate current household offer",
+    "No current customer availability or partner willingness verified"
+  ],
+  "freshnessHandoffAt": "2026-11-05T09:10:59.823Z"
+}

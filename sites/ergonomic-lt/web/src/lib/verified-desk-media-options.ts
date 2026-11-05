@@ -34,4 +34,15 @@ export function verifiedDeskEdgeOption(model:string,field:string,value:string):V
  const edge=edges[value];if(!edge)return;
  return {...edge,source:'https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf',sourceTitle:'Gamintojo techninis aprašas: stalviršių briaunos ir jų tvirtinimas'};
 }
-export function verifiedDeskOption(model:string,field:string,value:string){return verifiedDeskMediaOption(model,field,value)||verifiedDeskSocketOption(model,field,value)||verifiedDeskEdgeOption(model,field,value);}
+/** Supplier captures identify these exact cable-management options; the technical sheet confirms construction. */
+export function verifiedDeskCableOption(model:string,field:string,value:string):VerifiedDeskOption|undefined{
+ if(!/^(?:KEM2|KEM3|KEPP|KEUP|KXI2|KSQA|KC54|KESE|KBSP)/.test(model))return;
+ const cables:Record<string,{name:string;english:string;explanation:string}>={
+  'FHORWIRETRUNKING=STEELHORIZONTAL1':{name:'Plieninis kabelių lovelis, atveriamas iš vienos pusės',english:'Foldable on one side, steel',explanation:'Horizontalus lovelis kabeliams po stalviršiu; atveriamas iš vienos pusės.'},
+  'FHORWIRETRUNKING=STEELHORIZONTAL2':{name:'Plieninis kabelių lovelis, atveriamas iš abiejų pusių',english:'Foldable on two side, steel',explanation:'Horizontalus lovelis kabeliams po stalviršiu; atveriamas iš abiejų pusių.'},
+  'FVERWIRETRUNKING=VERTICALFLEXIBLEMODPLA':{name:'Lankstus modulinis plastikinis kabelių kanalas',english:'Flexible, modular, plastic',explanation:'Vertikalus kanalas kabeliams; lankstus; sudarytas iš modulių.'},
+ };
+ const cable=cables[field+'='+value];if(!cable)return;
+ return {...cable,source:'https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=25',sourceTitle:'Gamintojo techninis aprašas: horizontalūs kabelių loveliai ir vertikalūs kabelių kanalai'};
+}
+export function verifiedDeskOption(model:string,field:string,value:string){return verifiedDeskMediaOption(model,field,value)||verifiedDeskSocketOption(model,field,value)||verifiedDeskEdgeOption(model,field,value)||verifiedDeskCableOption(model,field,value);}

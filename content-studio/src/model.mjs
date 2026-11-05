@@ -1,4 +1,5 @@
 import { composeReviewedOverlay, releaseSha } from './scoped-content-release.mjs';
+import { recoverPublicBaseline } from './recover-public-baseline.mjs';
 import { createHash, randomUUID } from 'node:crypto';
 import { mkdir, readFile, readdir, rename, writeFile, copyFile, stat } from 'node:fs/promises';
 import path from 'node:path';
@@ -183,6 +184,21 @@ export async function getSite(id) {
   const site = await readJson(siteFile(id));
   if (!site) throw Object.assign(new Error('Svetainė nerasta.'), { status: 404 });
   return site;
+}
+// Creates a separate, incomplete editing workspace from an observed public
+// baseline. Never overwrites existing studio data or manufactures fresh review.
+export async function recoverSiteFromPublicBaseline(input) {
+  return locked(async () => {
+    const file = siteFile(input.siteId);
+    if (await readJson(file)) throw new Error('Studio site already exists; recovery never overwrites it.');
+    const bytes = await readFile(path.resolve(input.basePackagePath));
+    const publicRoot = process.env.STUDIO_PUBLIC_CORE_DIR || path.resolve(ROOT, '../../dovanos-memorycasting');
+    const { pathToFileURL } = await import('node:url');
+    const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot, 'scripts/content-package-core.mjs')));
+    const site = recoverPublicBaseline(bytes, input, validateContentPackage, revisionHash);
+    await writeJson(file, site);
+    return { siteId: site.id, packageSha256: site.recoveredBaseline.packageSha256, state: 'public-baseline-only-not-a-private-backup', deployment: 'not-performed' };
+  });
 }
 async function networkSites() {
   const files = (await readdir(SITE_DIR)).filter(file => file.endsWith('.json'));

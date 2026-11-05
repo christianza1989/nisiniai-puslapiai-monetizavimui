@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "A first combined run failed because STUDIO_NETWORK_SETTINGS was unset in this separate worktree; rerunning with the actual companion config passed. This restores public snapshots only, not original studio state, and has not been adopted or deployed.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/recover-public-baseline.test.mjs content-studio/test/scoped-content-release.test.mjs",
+      "result": "PASS",
+      "evidence": "10/10 with STUDIO_PUBLIC_CORE_DIR and STUDIO_NETWORK_SETTINGS set to the paired public checkout; tests cover exact byte pin, provenance, wrong site/revision, no overwrite, missing review, media restriction and scoped unchanged-page release."
+    }
+  ],
+  "eventId": "de1e58dc-f754-4a51-b327-4aa48b9aabe0",
+  "sequence": 2,
+  "at": "2026-11-05T20:25:37.239Z"
+}

@@ -1,0 +1,19 @@
+{
+  "note": "Fixture verification only: no provider, production booking, secret access or deployed endpoint was exercised.",
+  "status": "local-verified",
+  "checks": [
+    {
+      "evidence": "15 passed, 0 failed; includes authorization isolation, no-store output, active service scope, no booking/writes, bounded sanitized locker results, existing access and locker regressions.",
+      "command": "node --test test/shipping-capability.test.mjs test/locker-delivery.test.mjs test/access-identity.test.mjs",
+      "result": "PASS"
+    },
+    {
+      "evidence": "296 passed, 0 failed in isolated checkout; remote acceptance not asserted.",
+      "command": "npm test (commerce-core)",
+      "result": "PASS"
+    }
+  ],
+  "eventId": "6fcda205-6ea4-46ab-9d40-dc3c2b6db4e6",
+  "sequence": 2,
+  "at": "2026-11-05T14:31:14.719Z"
+}

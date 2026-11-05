@@ -22,6 +22,107 @@ export class ShippingOperations {
     if (actor !== undefined) requireValue(identifier(actor), 'operator_identity_required', 403);
     return config;
   }
+  // Read-only diagnostic: expose only booleans for one already configured
+  // service. Never return provider credentials, admission details or lists.
+  async bookingCapability(store, env, input, adapter, actor) {
+    const config = await this.guard(store, env, actor);
+    requireValue(
+      input &&
+        /^[A-Z]{2}$/.test(input.country) &&
+        identifier(input.deliveryId) &&
+        typeof input.serviceId === 'string' &&
+        /^[1-9][0-9]{0,11}$/.test(input.serviceId),
+      'invalid_shipping_capability',
+    );
+    const markets = config.markets.filter(
+      (market) => market.country === input.country && market.checkoutEnabled !== false,
+    );
+    const methods =
+      markets.length === 1
+        ? markets[0].delivery.filter(
+            (method) =>
+              method.id === input.deliveryId &&
+              method.enabled !== false &&
+              method.pricing === 'carrier' &&
+              method.serviceIds?.includes(input.serviceId),
+          )
+        : [];
+    requireValue(methods.length === 1, 'shipping_capability_not_configured', 404);
+    const method = methods[0];
+    const connected =
+      adapter?.environment === env &&
+      adapter.provider === 'sendparcel' &&
+      adapter.accountRef === config.shippingAccountRef &&
+      adapter.supportsBooking === true &&
+      adapter.admission?.approved === true;
+    const admission = connected ? adapter.admission : undefined;
+    const field =
+      method.kind === 'locker' ? admission?.lockerBindings?.[method.courier] : undefined;
+    const verifiedField =
+      method.kind === 'locker' ? admission?.lockerVerificationFields?.[method.courier] : undefined;
+    return {
+      bookingConnected: Boolean(connected),
+      serviceAdmitted: Boolean(
+        connected &&
+        Array.isArray(admission?.serviceIds) &&
+        admission.serviceIds.includes(input.serviceId),
+      ),
+      lockerBindingReady:
+        method.kind === 'locker'
+          ? Boolean(field && field === verifiedField && ['address2', 'terminalid'].includes(field))
+          : null,
+      lockerUsesTerminalId:
+        method.kind === 'locker' ? field === 'terminalid' && verifiedField === 'terminalid' : null,
+    };
+  }
+  async diagnosticLockers(store, env, courier, query, adapter, actor) {
+    const config = await this.guard(store, env, actor);
+    requireValue(
+      ['dpd', 'unisend'].includes(courier) && text(query, 2, 80),
+      'invalid_locker_search',
+    );
+    requireValue(
+      adapter?.environment === env &&
+        adapter.provider === 'sendparcel' &&
+        adapter.accountRef === config.shippingAccountRef &&
+        typeof adapter.lockers === 'function',
+      'carrier_quotes_not_connected',
+      503,
+    );
+    const lockers = await adapter.lockers('LT', courier);
+    requireValue(Array.isArray(lockers) && lockers.length <= 2000, 'carrier_locker_invalid', 502);
+    const normalize = (value) =>
+      value
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLocaleLowerCase('lt');
+    const term = normalize(query.trim());
+    const matches = lockers.filter(
+      (locker) =>
+        identifier(locker.id) &&
+        locker.country === 'LT' &&
+        locker.carrier === courier &&
+        text(locker.name, 1, 200) &&
+        text(locker.address, 2, 150) &&
+        text(locker.city, 1, 100) &&
+        text(locker.postalCode, 2, 20) &&
+        (locker.carrierLockerId === null || text(locker.carrierLockerId, 1, 100)) &&
+        normalize([locker.name, locker.address, locker.city, locker.postalCode].join(' ')).includes(
+          term,
+        ),
+    );
+    return {
+      truncated: matches.length > 30,
+      lockers: matches.slice(0, 30).map((locker) => ({
+        id: locker.id,
+        name: locker.name,
+        address: locker.address,
+        city: locker.city,
+        postalCode: locker.postalCode,
+        carrierLockerId: locker.carrierLockerId,
+      })),
+    };
+  }
   async eligible(store, env, id) {
     const order = await this.s.getOrder(store, env, id);
     requireValue(

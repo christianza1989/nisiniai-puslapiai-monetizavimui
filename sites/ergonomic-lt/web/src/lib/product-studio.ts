@@ -21,13 +21,6 @@ export function studioBuilderSteps(product:Product,choices:Record<string,string[
   {id:product.categorySlug==='rasomieji-stalai-ir-darbo-vietos'?'colors':'finishes',label:product.categorySlug==='rasomieji-stalai-ir-darbo-vietos'?'Spalvos':'Apmušalai',title:product.categorySlug==='rasomieji-stalai-ir-darbo-vietos'?'Apdaila ir spalvos':'Apmušalai ir spalvos',fields:finishes},
  ].filter(s=>s.fields.length>0);
 }
-export function studioStepIntro(id:string,choices:Record<string,string[]>){
- if(id==='movement')return choices.CBACKRESTMOVEMECH?'Pasirinkite mechanizmą ir atlošo judėjimą.':choices.CGASLIFT?'Pasirinkite mechanizmą ir aukščio reguliavimą.':'Pasirinkite mechanizmą.';
- if(id==='supports')return choices.CHEADREST?'Pasirinkite galvos atramą ir porankius.':choices.CARMRESTS?'Pasirinkite atramas ir porankius.':'Pasirinkite atramas ir priedus.';
- if(id==='construction')return choices.CBASE||choices.CCASTORS?'Pasirinkite konstrukciją, pagrindą ir ratukus.':'Pasirinkite konstrukciją ir jos apdailą.';
- if(id==='colors')return 'Pasirinkite spalvas ir galutinę komplektaciją.';
- return 'Pasirinkite apmušalus ir jų spalvas.';
-}
 
 export function productStudioPresentation(product:Product & {publicHeading?:string},paragraphs=product.modelArticle?.paragraphs||[]){
  const rooms:Record<string,string>={'23636152':'/media/product-studio/xilium-duo-office-02.png','23636148':'/media/product-studio/xilium-duo-23636148-office.png'};

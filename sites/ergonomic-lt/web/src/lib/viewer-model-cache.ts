@@ -1,4 +1,5 @@
 import {Mesh,Texture,type Object3D,type Material,type BufferGeometry} from 'three';
+import {copyViewerTextureIdentity} from './prepare-viewer-textures';
 import {clone} from 'three/addons/utils/SkeletonUtils.js';
 
 export function disposeViewerModel(root:Object3D){
@@ -13,7 +14,7 @@ export function disposeViewerModel(root:Object3D){
  * mutate a cached original or another in-flight view. World matrices survive. */
 export function cloneViewerModel(original:Object3D){
  const result=clone(original),geometries=new Map<BufferGeometry,BufferGeometry>(),materials=new Map<Material,Material>(),textures=new Map<Texture,Texture>();
- const material=(m:Material)=>{let c=materials.get(m);if(!c){c=m.clone();for(const [k,v]of Object.entries(m))if(v instanceof Texture){let t=textures.get(v);if(!t){t=v.clone();textures.set(v,t);}(c as unknown as Record<string,unknown>)[k]=t;}materials.set(m,c);}return c;};
+ const material=(m:Material)=>{let c=materials.get(m);if(!c){c=m.clone();for(const [k,v]of Object.entries(m))if(v instanceof Texture){let t=textures.get(v);if(!t){t=v.clone();copyViewerTextureIdentity(v,t);textures.set(v,t);}(c as unknown as Record<string,unknown>)[k]=t;}materials.set(m,c);}return c;};
  result.traverse(o=>{if(o instanceof Mesh){const source=o.geometry as BufferGeometry;let g=geometries.get(source);if(!g){g=source.clone();geometries.set(source,g);}o.geometry=g;o.material=Array.isArray(o.material)?o.material.map(material):material(o.material);}});
  return result;
 }

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {Scene,Mesh,BoxGeometry,MeshStandardMaterial,Texture,DataTexture,WebGLRenderTarget,type WebGLRenderer} from 'three';
-import {prepareViewerTextures,viewerTextures,ViewerTextureCache} from '../src/lib/prepare-viewer-textures';
+import {prepareViewerTextures,viewerTextures,ViewerTextureCache,tagViewerTextureSources} from '../src/lib/prepare-viewer-textures';
 
 test('only active original material textures and the environment are uploaded; no render target is reallocated',async()=>{
  const scene=new Scene(),map=new Texture(),normal=new Texture(),environment=new DataTexture(new Uint8Array(4),1,1),hiddenMap=new Texture(),target=new WebGLRenderTarget(512,512);
@@ -24,4 +24,10 @@ test('renderer leases reuse immutable texture pixels without marking a shared so
  await cache.prepare(a,signal);const source=a.source,version=source.version;await cache.prepare(b,signal);
  assert.equal(a.source,b.source);assert.equal(source.version,version);assert.equal(cache.size,16);
  let disposed=false;b.addEventListener('dispose',()=>{disposed=true;});a.dispose();cache.clear();assert.equal(disposed,false);assert.equal(cache.size,0);b.dispose();assert(disposed);
+});
+
+test('distinct GLB components share an upload only after their embedded image bytes match',async()=>{
+ const cache=new ViewerTextureCache({initTexture(){}}),a=new DataTexture(new Uint8Array(16),2,2),b=new DataTexture(new Uint8Array(16),2,2),c=new DataTexture(new Uint8Array(16),2,2),signal=new AbortController().signal;
+ for(const [texture,value]of [[a,1],[b,1],[c,2]] as const){const scene=new Scene();scene.add(new Mesh(new BoxGeometry(),new MeshStandardMaterial({map:texture})));await tagViewerTextureSources(scene,{associations:{get:()=>({textures:0})},json:{textures:[{source:0}],images:[{bufferView:0,mimeType:'image/png'}],bufferViews:[{buffer:0}],buffers:[{}]},getDependency:async()=>new Uint8Array([value]).buffer});await cache.prepare(texture,signal);}
+ assert.equal(a.source,b.source);assert.notEqual(a.source,c.source);assert.equal(cache.size,32);cache.clear();a.dispose();b.dispose();c.dispose();
 });

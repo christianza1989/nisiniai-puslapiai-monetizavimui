@@ -1,4 +1,18 @@
-import {Mesh,Texture,Source,NoColorSpace,type Scene,type WebGLRenderer} from 'three';
+import {Mesh,Texture,Source,NoColorSpace,type Object3D,type Scene,type WebGLRenderer} from 'three';
+
+const imageIdentities=new WeakMap<Texture,string>();
+export function copyViewerTextureIdentity(from:Texture,to:Texture){const id=imageIdentities.get(from);if(id)imageIdentities.set(to,id);}
+/** Only byte-identical embedded images from the verified GLB may share a GPU
+ * upload across distinct components. Names, geometry and material IDs are never
+ * used as image identity; external images retain their original source identity. */
+export async function tagViewerTextureSources(root:Object3D,parser:{associations:{get(texture:Texture):{textures?:number}|undefined};json:{textures?:{source?:number}[];images?:{bufferView?:number;mimeType?:string}[];bufferViews?:{buffer?:number}[];buffers?:{uri?:string}[]};getDependency(type:string,index:number):Promise<ArrayBuffer>}){
+ const textures=new Set<Texture>();root.traverse(o=>{if(o instanceof Mesh)for(const m of Array.isArray(o.material)?o.material:[o.material])for(const value of Object.values(m))if(value instanceof Texture)textures.add(value);});
+ const hashes=new Map<number,Promise<string>>();
+ await Promise.all([...textures].map(async texture=>{const index=parser.associations.get(texture)?.textures,image=index===undefined?undefined:parser.json.images?.[parser.json.textures?.[index]?.source??-1],view=image?.bufferView;
+  if(view===undefined||parser.json.buffers?.[parser.json.bufferViews?.[view]?.buffer??-1]?.uri)return;
+  let pending=hashes.get(view);if(!pending){pending=parser.getDependency('bufferView',view).then(async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),n=>n.toString(16).padStart(2,'0')).join(''));hashes.set(view,pending);}imageIdentities.set(texture,(image?.mimeType||'')+':'+await pending);
+ }));
+}
 
 type Upload={image:unknown;signature:string;source:Texture['source'];flipY:boolean;holder:Texture;bytes:number;bitmap?:ImageBitmap;users:number;retained:boolean};
 /** Renderer-local GPU leases: keep the exact immutable pixels uploaded across
@@ -18,8 +32,8 @@ export class ViewerTextureCache{
  }
  async prepare(texture:Texture,signal:AbortSignal){
   signal.throwIfAborted();const assigned=this.assigned.get(texture);if(assigned){this.renderer.initTexture(texture);return;}
-  const image=texture.image,signature=JSON.stringify([texture.flipY,texture.premultiplyAlpha,texture.colorSpace,texture.wrapS,texture.wrapT,texture.minFilter,texture.magFilter,texture.anisotropy,texture.format,texture.type,texture.internalFormat,texture.generateMipmaps,texture.unpackAlignment]);
-  let entry=this.entries.find(e=>e.image===image&&e.signature===signature);
+  const image=texture.image,identity=imageIdentities.get(texture)||image,signature=JSON.stringify([image?.constructor?.name,texture.flipY,texture.premultiplyAlpha,texture.colorSpace,texture.wrapS,texture.wrapT,texture.minFilter,texture.magFilter,texture.anisotropy,texture.format,texture.type,texture.internalFormat,texture.generateMipmaps,texture.unpackAlignment]);
+  let entry=this.entries.find(e=>e.image===identity&&e.signature===signature);
   if(entry){this.entries.splice(this.entries.indexOf(entry),1);this.entries.push(entry);}
   else{
    let bitmap:ImageBitmap|undefined,source=texture.source,flipY=texture.flipY;
@@ -28,7 +42,7 @@ export class ViewerTextureCache{
    }
    const dimensions=image as {data?:{byteLength:number};width?:number;height?:number}|undefined;
    const bytes=dimensions?.data?.byteLength||((dimensions?.width||0)*(dimensions?.height||0)*4),holder=texture.clone();holder.source=source;holder.flipY=flipY;holder.version++;
-   entry={image,signature,source,flipY,holder,bytes,bitmap,users:0,retained:true};this.entries.push(entry);this.bytes+=bytes;
+   entry={image:identity,signature,source,flipY,holder,bytes,bitmap,users:0,retained:true};this.entries.push(entry);this.bytes+=bytes;
    this.renderer.initTexture(holder);
   }
   this.attach(texture,entry);this.renderer.initTexture(texture);

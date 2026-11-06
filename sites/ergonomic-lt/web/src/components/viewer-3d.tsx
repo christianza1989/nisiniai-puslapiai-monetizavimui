@@ -16,7 +16,7 @@ import {contactShadow,prepareContactShadow} from '@/lib/contact-shadow';
 import {verifiedViewerAsset} from '@/lib/verified-viewer-assets';
 import {ViewerModelCache,cloneViewerModel} from '@/lib/viewer-model-cache';
 import {productEnvironment,type ProductEnvironment} from '@/lib/product-environment';
-import {prepareViewerTextures,ViewerTextureCache} from '@/lib/prepare-viewer-textures';
+import {prepareViewerTextures,ViewerTextureCache,tagViewerTextureSources} from '@/lib/prepare-viewer-textures';
 import {activateProductViewerWhenNear} from '@/lib/viewer-activation';
 import {isolateFinishMaterials} from '@/lib/finish-materials';
 import {visibleMeshes,visibleBounds,cameraNear,unobstructedCameraViewport} from '@/lib/viewer-camera';
@@ -199,7 +199,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         host.dataset.environmentSource=environments.get(productSceneSettings.lighting)?.source||'generated';
         applyScene();
         async function load(asset:Asset){const cacheKey=asset.assetSha256+':'+asset.bytes+':'+!!deskColors.current+':'+(chairColors.current?.source.runtimeSha256||'')+':'+!!chairRoles.current;const cached=context.models.get(cacheKey);if(cached){if(chairRoles.current)loadedAssets.push(asset);return cached;}const bytes=await bytesFor(asset);abort.signal.throwIfAborted();
-        const gltf=await loader.parseAsync(bytes,'');pendingBytes.delete(asset.assetSha256+':'+asset.bytes);tagViewerUpholstery(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,gltf.parser.json,asset.assetSha256);if(deskColors.current)tagDeskSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,asset.assetSha256);if(chairColors.current)tagChairSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,chairColors.current.source,asset.assetSha256);if(chairRoles.current){tagLegacyChairRoles(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,gltf.parser.json,asset);loadedAssets.push(asset);}if(context.models.put(cacheKey,gltf.scene))return cloneViewerModel(gltf.scene);return gltf.scene;}
+        const gltf=await loader.parseAsync(bytes,'');pendingBytes.delete(asset.assetSha256+':'+asset.bytes);tagViewerUpholstery(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,gltf.parser.json,asset.assetSha256);if(deskColors.current)tagDeskSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,asset.assetSha256);if(chairColors.current)tagChairSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,chairColors.current.source,asset.assetSha256);if(chairRoles.current){tagLegacyChairRoles(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,gltf.parser.json,asset);loadedAssets.push(asset);}await tagViewerTextureSources(gltf.scene,gltf.parser);if(context.models.put(cacheKey,gltf.scene))return cloneViewerModel(gltf.scene);return gltf.scene;}
         object=new Group();if(baseAsset)object.add(await load(baseAsset));
         if(assembly){
           for(const patch of assembly.patches){for(const id of patch.remove){const part=object.getObjectByName(id);if(part)part.visible=false;}

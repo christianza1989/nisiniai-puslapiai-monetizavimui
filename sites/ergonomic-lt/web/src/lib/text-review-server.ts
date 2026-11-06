@@ -481,7 +481,7 @@ export async function mutateText(def:TextDefinition,args:{key:string;sourceHash:
  const previous=prior[0];
  if((previous?.revision||0)!==args.expectedRevision)throw new ReviewConflict('Šį tekstą jau pakeitė kita sesija. Atnaujinkite įrašą.');
  let text=(def as Partial<ReviewEntry>).originalColourName||furnitureTerminology((args.text??previous?.draft??'').trim());
- if(args.action==='keep'&&customerTextHasCode(def,(def as Partial<ReviewEntry>).currentText||def.current[0]||''))throw Error('Klientui reikia pavadinimo be gamintojo kodo. Įrašykite pavadinimą.');
+ if(args.action==='keep'&&!(def as Partial<ReviewEntry>).originalColourName&&customerTextHasCode(def,(def as Partial<ReviewEntry>).currentText||def.current[0]||''))throw Error('Klientui reikia pavadinimo be gamintojo kodo. Įrašykite pavadinimą.');
  if(['approve','publish'].includes(args.action)&&!(def as Partial<ReviewEntry>).originalColourName&&customerTextHasCode(def,text))throw Error('Pašalinkite gamintojo ar parinkties kodą iš klientui skirto teksto.');
  if(args.action!=='keep'&&args.action!=='unpublish'&&(!text||text.length>12000||/<[^>]*>|\[\[(?:open|close|void)/.test(text)))throw Error('Įrašykite tekstą be HTML žymų (iki 12 000 ženklų).');
  if(def.id.endsWith(':title')&&text.length>250)throw Error('Pavadinimas gali būti iki 250 ženklų.');

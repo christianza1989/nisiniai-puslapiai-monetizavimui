@@ -21,3 +21,14 @@ test('original colour is resolved per field even when translated terms share an 
  assert.equal(customerColourLabel('CSE01 (extended)',['CSE01'],'Spalva 1'),'Spalva 1');
  assert.equal(customerColourLabel('RAL 9016 Traffic White BI, WT, W',['RAL9016'],'Spalva 1'),'Traffic White');
 });
+test('CMS can keep/approve a fixed supplier colour label without reopening translation or accepting non-colour codes',async()=>{
+ const{mkdtempSync}=await import('node:fs'),before=process.env.RUNTIME_DIR;process.env.RUNTIME_DIR=mkdtempSync('D:/Core/output/ergonomic-all-option-explanations-20261105/colour-edit-test-');
+ try{const{mutateText,allTextEdits}=await import('../src/lib/text-review-server');
+  const def={id:'runtime:TESTCOLOUR:value:CUPHCOLOR=CSE01',sourceHash:'unchanged-test-source',role:'Parinktis',english:'CSE01 (extended)',polish:'',sourceCode:'CUPHCOLOR=CSE01',suggested:'CSE01 (extended)',context:'Spalva',notes:'',current:['CSE01'],modelCount:1,originalColourName:'CSE01 (extended)',currentText:'CSE01 (extended)'},key='local:TESTCOLOUR:'+def.id;
+  assert.equal(await mutateText(def,{key,sourceHash:def.sourceHash,expectedRevision:0,action:'keep'}),1);
+  assert.equal(await mutateText(def,{key,sourceHash:def.sourceHash,expectedRevision:1,action:'approve',text:'Lietuviškas vertimas'}),2);
+  assert.equal((await allTextEdits()).get(key)?.draft,'CSE01 (extended)');
+  const other={...def,id:'runtime:TESTCOLOUR:value:CARMRESTS=R35',sourceCode:'CARMRESTS=R35',current:['R35'],currentText:'R35',originalColourName:undefined};
+  await assert.rejects(mutateText(other,{key:other.id,sourceHash:other.sourceHash,expectedRevision:0,action:'keep'}),/pavadinimo be gamintojo kodo/);
+ }finally{if(before===undefined)delete process.env.RUNTIME_DIR;else process.env.RUNTIME_DIR=before;}
+});

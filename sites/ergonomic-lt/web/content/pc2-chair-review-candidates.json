@@ -481,35 +481,116 @@
           "label": "PRICE_0 · 39 apmušalai",
           "asset": "/models/configurator/chairs/KSEG001WW001-366ce2410bcaf0878fb4/review-039432d85ea562493767.json",
           "sha256": "039432d85ea562493767eef6f0635e135b63b68403940942cbb51314c4803aac",
-          "bytes": 121736
+          "bytes": 121736,
+          "runtimeSha256": "678bd1f86d3aa31a65a77be011528e75d998680bd5b3a4af6751a1b6ca5d03a6"
         },
         {
           "id": "PRICE_2",
           "label": "PRICE_2 · 145 apmušalai",
           "asset": "/models/configurator/chairs/KSEG001WW001-0fd4ab5537a572de18dd/review-b50ec75c9920be61c617.json",
           "sha256": "b50ec75c9920be61c617dbabc28a136ab0affebc6f5ba7e79afab3c7353e7160",
-          "bytes": 302617
+          "bytes": 302617,
+          "runtimeSha256": "26f9b94ce54fb4da195b9015fab676fa293bea0eb981e92a3922877cfdaf8ae2"
         },
         {
           "id": "PRICE_3",
           "label": "PRICE_3 · 198 apmušalai",
           "asset": "/models/configurator/chairs/KSEG001WW001-f5565b4479b64b91bdf5/review-9f94596df405a4f9c9f6.json",
           "sha256": "9f94596df405a4f9c9f6f5384f7c21c0b6400b443e6adfac0b234c0fa3e47363",
-          "bytes": 424915
+          "bytes": 424915,
+          "runtimeSha256": "1342b1c0db3bce167627c6eeceabcb1cddf45bc8228b2032a6542670f84efb3c"
         },
         {
           "id": "PRICE_4",
           "label": "PRICE_4 · 206 apmušalai",
           "asset": "/models/configurator/chairs/KSEG001WW001-78a1d869e0ca4528261c/review-84c9003b0010fda52fad.json",
           "sha256": "84c9003b0010fda52fadfa30940132ae89966ff4521902275ea1958edd196218",
-          "bytes": 406529
+          "bytes": 406529,
+          "runtimeSha256": "3537f87daa96579c3ce1ebd1fd4c162ae9cc7f1b5ac37e753105e661100b6527"
         },
         {
           "id": "PRICE_5",
           "label": "PRICE_5 · RX · 72 apmušalai",
           "asset": "/models/configurator/chairs/KSEG001WW001-2d4eea1a8109c3b59dea/review-1c1fb875cc9e53ec2924.json",
           "sha256": "1c1fb875cc9e53ec2924f458c343e534dd075c12fff83315e35c18af7dda8515",
-          "bytes": 178267
+          "bytes": 178267,
+          "runtimeSha256": "c63de356e10408a293bf7e8831e23ce3ee2bd5914e1c2888834b33e09d4e0fad"
+        }
+      ],
+      "construction": {
+        "dimensions": {
+          "CARMRESTS": "R35K3",
+          "CASSEMBLY": "PACKUA",
+          "CBACKREST": "LBUPHCOVERPLASTIC",
+          "CBASE": "TS25",
+          "CCASTORS": "ESH60",
+          "CFSC": "FSCMIX",
+          "CGASLIFT": "GLR",
+          "CMECHANISM": "FST",
+          "CSEAT": "UPH",
+          "CSEATPADFOAM": "STANDARD",
+          "DARMRESTSHEIGHT": "_220T300",
+          "DBACKRESTHEIGHT": "_410T485",
+          "DBACKRESTWIDTH": "_390",
+          "DDEPTH": "_644",
+          "DHEIGHT": "_840T1045",
+          "DSEATHEIGHT": "_445T565",
+          "DSEATWIDTH": "_470",
+          "GWEIGHT": "14.6"
+        },
+        "structuralValues": {
+          "CMECHANISM": "FST",
+          "CARMRESTS": "R35K3",
+          "CGASLIFT": "GLR",
+          "CBASE": "TS25",
+          "CCASTORS": "ESH60",
+          "CSEATPADFOAM": "STANDARD",
+          "CASSEMBLY": "PACKUA"
+        },
+        "runtimeSha256": "26210d41175672afe5202e06aadf1d6b0db796a92a8e157e69dd2458011910af"
+      },
+      "runtimeSha256": "26210d41175672afe5202e06aadf1d6b0db796a92a8e157e69dd2458011910af",
+      "constructions": [
+        {
+          "id": "LOW_R35K3SB2",
+          "label": "R35K3SB2",
+          "contextLabel": "PRICE_1 / CSE · 44 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG001WW001-f7c1837cb16e84569178/review-3fcc987d907bba2d9749.json",
+          "sha256": "3fcc987d907bba2d9749e21a128d792cd652d05c3ef0740869c4655f022ef85d",
+          "bytes": 132056,
+          "runtimeSha256": "491e53c572ca279882d422af5bc9bdbdcbc8e8bdd3376fedfa517f7baf7be372",
+          "construction": {
+            "dimensions": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBACKREST": "LBUPHCOVERPLASTIC",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CFSC": "FSCMIX",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEAT": "UPH",
+              "CSEATPADFOAM": "STANDARD",
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "structuralValues": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "runtimeSha256": "491e53c572ca279882d422af5bc9bdbdcbc8e8bdd3376fedfa517f7baf7be372"
+          }
         }
       ]
     },

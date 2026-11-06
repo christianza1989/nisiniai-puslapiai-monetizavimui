@@ -5,12 +5,12 @@ import {chairObservedChoices,chairPreviewAssembly,chairInitialContext,chairIniti
 import {qualifiedWitnessMatches,qualifiedDefaultSelection,qualifiedChairPlan,type QualifiedSelection,type QualifiedGroup} from '@/lib/chair-qualified-colors';
 import {qualifiedChairMaterialControls} from '@/lib/chair-material-groups';
 import type {PilotVariant} from '@/lib/configurator';
+import {chairReviewRoute,validateChairConstructionBinding,type ChairReviewEntry} from '@/lib/chair-review-routing';
+export type {ChairReviewEntry} from '@/lib/chair-review-routing';
 import './pc2-chair-review.css';
 
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false});
-type ChairReviewSource={asset:string;sha256:string;bytes:number};
-export type ChairReviewEntry=ChairReviewSource&{code:string;name:string;contextLabel?:string;contexts?:Array<ChairReviewSource&{id:string;label:string}>};
-function ModelReview({data}:{data:ChairPreview}){
+function ModelReview({data,externalArmrests=false}:{data:ChairPreview;externalArmrests?:boolean}){
  const [context,setContext]=useState(()=>chairInitialContext(data)),[variants,setVariants]=useState(()=>chairInitialVariants(data,chairInitialContext(data))),
   [observed,setObserved]=useState(()=>{const q=chairInitialQualifiedSelection(data);return q?'__qg:'+q.witness:'original';}),
   [qualified,setQualified]=useState<QualifiedSelection|undefined>(()=>chairInitialQualifiedSelection(data)),[originalPreview,setOriginalPreview]=useState(false);
@@ -35,11 +35,11 @@ function ModelReview({data}:{data:ChairPreview}){
   const q=chairInitialQualifiedSelection(data,nextContext,nextVariants);setContext(nextContext);setVariants(nextVariants);setQualified(q);setObserved(q?'__qg:'+q.witness:'original');setOriginalPreview(false);
  }
  function groupControl(group:QualifiedGroup){return <label className="field" key={group.id}>{group.label}<select aria-label={group.label} value={qualified?.groups[group.id]??group.base} onChange={e=>{setOriginalPreview(false);setQualified(q=>q?{...q,groups:{...q.groups,[group.id]:e.target.value}}:q);}}>{group.options.map(o=><option key={o.id} value={o.id}>{o.label}</option>)}</select></label>;}
- return <div className="pc2-chair-workspace" data-chair-code={data.code} data-chair-plan={status}>
+ return <div className="pc2-chair-workspace" data-chair-code={data.code} data-chair-runtime-sha={data.runtimeSha256} data-chair-base-asset-sha={assembly.base?.assetSha256} data-chair-plan={status}>
   <div className="pc2-chair-controls">
    <h2>{data.name} · {data.code}</h2>
    {data.runtime.contexts.length>1&&<label className="field">Surinkta konstrukcija<select aria-label="Surinkta konstrukcija" value={context} onChange={e=>{const next=Number(e.target.value);construction(next,chairInitialVariants(data,next));}}>{data.runtime.contexts.map((c,index)=><option value={index} key={index}>{Object.entries(c.dimensions).map(([k,v])=>k+' = '+v).join(' · ')||'Pradinė konstrukcija'}</option>)}</select></label>}
-   {Object.entries(structural).map(([field,s])=><label className="field" key={field}>{field==='CCASTORS'?'Ratukai (CCASTORS)':field}<select aria-label={field==='CCASTORS'?'Ratukai (CCASTORS)':field} value={current.dimensions[field]} onChange={e=>{if(s.supportedValues.includes(e.target.value)&&e.target.value===current.dimensions[field])construction(context,variants);}}>{s.supportedValues.map(value=><option value={value} key={value}>{value}</option>)}</select><span className="form-note">Peržiūrai surinkta tik ši konstrukcija.</span></label>)}
+   {Object.entries(structural).filter(([field])=>!externalArmrests||field!=='CARMRESTS').map(([field,s])=><label className="field" key={field}>{field==='CCASTORS'?'Ratukai (CCASTORS)':field}<select aria-label={field==='CCASTORS'?'Ratukai (CCASTORS)':field} value={current.dimensions[field]} onChange={e=>{if(s.supportedValues.includes(e.target.value)&&e.target.value===current.dimensions[field])construction(context,variants);}}>{s.supportedValues.map(value=><option value={value} key={value}>{value}</option>)}</select><span className="form-note">Peržiūrai surinkta tik ši konstrukcija.</span></label>)}
    {current.groups.filter(g=>g.fields.length).map(g=>{const index=current.groups.indexOf(g);return <label className="field" key={index}>{g.fields.join(' / ')}<select aria-label={g.fields.join(' / ')} value={variants[index]??0} onChange={e=>{const next=[...variants];next[index]=Number(e.target.value);construction(context,next);}}>{g.variants.map((v,n)=><option key={n} value={n}>{Object.entries(v.values).map(([k,value])=>k+' = '+value).join(' · ')}</option>)}</select></label>;})}
    {(choices.length>1||witnesses.length>1||witnesses.some(w=>w.singles.length)||!selectedWitness&&witnesses.some(w=>w.groups.length||w.branches.length))&&<label className="field">Surinkta spalvinė būsena<select aria-label="Surinkta spalvinė būsena" value={observed} onChange={e=>choose(e.target.value)}>{choices.map(c=><option key={c.id} value={c.id}>{c.label}</option>)}{witnesses.filter(w=>w.groups.length||w.branches.length).map(w=><option key={w.id} value={'__qg:'+w.id}>{w.label}</option>)}{witnesses.flatMap(w=>w.singles.map(s=><option key={w.id+s.id} value={'__qs:'+w.id+':'+s.id}>{s.label}</option>))}</select></label>}
    {!witnesses.some(w=>w.groups.length||w.branches.length)&&(choices.length>1||witnesses.some(w=>w.singles.length>0))&&<p className="form-note">Galimos tik perduotos pilnos spalvinės būsenos. Atskiras vienodos visų apmuštų dalių spalvos pasirinkimas nepatvirtintas.</p>}
@@ -65,8 +65,9 @@ function ModelReview({data}:{data:ChairPreview}){
  </div>;
 }
 export default function Pc2ChairReview({entries,initialCode}:{entries:ChairReviewEntry[];initialCode?:string}){
- const [code,setCode]=useState(entries.find(e=>e.code===initialCode)?.code||entries[0]?.code||''),[data,setData]=useState<ChairPreview>(),[error,setError]=useState(''),[finishContext,setFinishContext]=useState('default');
- const selected=entries.find(e=>e.code===code),source=selected?.contexts?.find(c=>c.id===finishContext)||selected,sourceCode=selected?.code,sourceAsset=source?.asset,sourceSha=source?.sha256,sourceBytes=source?.bytes;
+ const [code,setCode]=useState(entries.find(e=>e.code===initialCode)?.code||entries[0]?.code||''),[data,setData]=useState<ChairPreview>(),[error,setError]=useState(''),[finishContext,setFinishContext]=useState('default'),[constructionId,setConstructionId]=useState('default');
+ const selected=entries.find(e=>e.code===code),routed=selected?chairReviewRoute(selected,constructionId,finishContext):undefined,construction=routed?.construction,source=routed?.source,sourceCode=selected?.code,sourceAsset=source?.asset,sourceSha=source?.sha256,sourceBytes=source?.bytes;
+ const constructionBinding=useMemo(()=>construction?.construction?{...construction.construction,runtimeSha256:source?.runtimeSha256||construction.construction.runtimeSha256}:undefined,[construction,source]);
  useEffect(()=>{
   const abort=new AbortController();setData(undefined);setError('');if(!sourceCode||!sourceAsset||!sourceSha||!sourceBytes)return;
   (async()=>{try{
@@ -75,15 +76,17 @@ export default function Pc2ChairReview({entries,initialCode}:{entries:ChairRevie
    const sha=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),n=>n.toString(16).padStart(2,'0')).join('');
    if(bytes.byteLength!==sourceBytes||sha!==sourceSha)throw Error('Package changed');
    const loaded=JSON.parse(new TextDecoder().decode(bytes)) as ChairPreview;if(loaded.schema!=='pc2-chair-review-111-v1'||loaded.code!==sourceCode)throw Error('Wrong chair');
+   if(constructionBinding)validateChairConstructionBinding(loaded,constructionBinding);
    if(!abort.signal.aborted)setData(loaded);
   }catch{if(!abort.signal.aborted)setError('Nepavyko patikrinti kėdės paketo. Perkraukite puslapį.');}})();
   return()=>abort.abort();
- },[sourceCode,sourceAsset,sourceSha,sourceBytes]);
+ },[sourceCode,sourceAsset,sourceSha,sourceBytes,constructionBinding]);
  return <main className="container pc2-chair-review">
   <h1>Kėdžių 3D peržiūra</h1>
   <p>Perduotos konstrukcijos ir spalvinės būsenos. Ši peržiūra nepatvirtina visų galimų komplektacijų ar visos spalvų paletės; užklausų ir PDF nesudaro.</p>
-  <label className="field pc2-chair-picker">Kėdė<select aria-label="Kėdė" value={code} onChange={e=>{setFinishContext('default');setCode(e.target.value);}}>{entries.map(entry=><option key={entry.code} value={entry.code}>{entry.name} · {entry.code}</option>)}</select></label>
-  {!!selected?.contexts?.length&&<label className="field pc2-chair-picker">Apmušalo kainų grupė<select aria-label="Apmušalo kainų grupė" value={finishContext} onChange={e=>setFinishContext(e.target.value)}><option value="default">{selected.contextLabel||'Pradinis rinkinys'}</option>{selected.contexts.map(context=><option key={context.id} value={context.id}>{context.label}</option>)}</select></label>}
-  {error?<p role="alert">{error}</p>:data?<ModelReview key={sourceSha} data={data}/>:<p role="status">{entries.length?'Įkeliamas pasirinktos kėdės paketas…':'Paketai dar neparuošti vietinei peržiūrai.'}</p>}
+  <label className="field pc2-chair-picker">Kėdė<select aria-label="Kėdė" value={code} onChange={e=>{setConstructionId('default');setFinishContext('default');setCode(e.target.value);}}>{entries.map(entry=><option key={entry.code} value={entry.code}>{entry.name} · {entry.code}</option>)}</select></label>
+  {!!selected?.constructions?.length&&<label className="field pc2-chair-picker">Porankiai (CARMRESTS)<select aria-label="Porankiai (CARMRESTS)" value={constructionId} onChange={e=>{setFinishContext('default');setConstructionId(e.target.value);}}><option value="default">{selected.construction!.structuralValues.CARMRESTS}</option>{selected.constructions.map(c=><option key={c.id} value={c.id}>{c.label}</option>)}</select><span className="form-note">Pasirinkimas įkelia tiksliai perduotą konstrukciją su jos spalvomis.</span></label>}
+  {(!!construction?.contexts?.length||!!construction?.construction)&&<label className="field pc2-chair-picker">Apmušalo kainų grupė<select aria-label="Apmušalo kainų grupė" value={finishContext} onChange={e=>setFinishContext(e.target.value)}><option value="default">{construction.contextLabel||'Pradinis rinkinys'}</option>{construction.contexts?.map(context=><option key={context.id} value={context.id}>{context.label}</option>)}</select></label>}
+  {error?<p role="alert">{error}</p>:data?<ModelReview key={sourceSha} data={data} externalArmrests={!!selected?.constructions?.length}/>:<p role="status">{entries.length?'Įkeliamas pasirinktos kėdės paketas…':'Paketai dar neparuošti vietinei peržiūrai.'}</p>}
  </main>;
 }

@@ -7,6 +7,7 @@ import pins from './bja-seg-exact-package-pins.json';
 import price4Pin from './segla-price4-exact-package-pin.json';
 import sixPricePins from './segla-six-prices-exact-pins.json';
 import familyPins from './segla-family-exact-pins.json';
+import constructionPins from './segla-construction-exact-pins.json';
 import {validateChairReviewComponents} from '../src/lib/chair-components';
 import {glbGeometryAdmission} from './prepared-review-glb-admission';
 import {qualifiedChairPlan,qualifiedDefaultSelection} from '../src/lib/chair-qualified-colors';
@@ -16,10 +17,11 @@ import type {QualifiedWitness} from '../src/lib/chair-qualified-colors';
 const sha=(bytes:Uint8Array|string)=>createHash('sha256').update(bytes).digest('hex');
 const canonical=(value:unknown):string=>JSON.stringify(value,(_key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a.localeCompare(b))):v);
 const equal=(a:unknown,b:unknown)=>assert.equal(canonical(a),canonical(b));
-const {values}=parseArgs({options:{root:{type:'string'},output:{type:'string'},'asset-map':{type:'string'},price:{type:'string'},code:{type:'string'},group:{type:'string'}}});
+const {values}=parseArgs({options:{root:{type:'string'},output:{type:'string'},'asset-map':{type:'string'},price:{type:'string'},code:{type:'string'},group:{type:'string'},construction:{type:'string'}}});
 assert(values.root&&values.output&&values['asset-map']);
-const root=values.root,out=values.output,code=values.code||'KSEG001WW001',price4=values.price==='4',routed=code==='KSEG001WW001'?(sixPricePins as Record<string,any>)['_'+values.price]:(familyPins as Record<string,any>)[code]?.['_'+values.price+(values.group?'_'+values.group:'')],pin=routed|| (price4?price4Pin:pins[code as keyof typeof pins]);
+const root=values.root,out=values.output,code=values.code||'KSEG001WW001',price4=values.price==='4',newConstruction=values.construction?(constructionPins as Record<string,any>)[values.construction]:undefined,routed=values.construction?newConstruction:code==='KSEG001WW001'?(sixPricePins as Record<string,any>)['_'+values.price]:(familyPins as Record<string,any>)[code]?.['_'+values.price+(values.group?'_'+values.group:'')],pin=routed|| (price4?price4Pin:pins[code as keyof typeof pins]);
 assert(!values.price||['0','1','2','3','4','5'].includes(values.price),'Unknown Segla price context');
+if(values.construction)assert(newConstruction&&newConstruction.route.code===code&&newConstruction.route.fixedSelectableFinishValues.CPRICEGROUP==='_'+values.price&&newConstruction.route.fixedSelectableFinishValues.CUPHGROUP===values.group,'Unknown exact construction route');
 assert(code==='KSEG001WW001'||routed,'Unknown exact Segla family context');
 const price='_'+(values.price||'1'),count=routed?routed.route.actualTuplesForThisRoute:price4?206:101,packageCount=routed?routed.whole.actualContextStates:count;
 const read=(name:string)=>fs.readFileSync(path.join(root,name));
@@ -65,7 +67,7 @@ if(routed){
   equal(palette.nonchoiceFinishFields,routed.route.nonchoiceFinishFields);
  }
 }
-const fixed=code==='KSEG002WW001'?{CMECHANISM:'SA2T7',CARMRESTS:'R35K3SB2',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'}:code==='KSEG003WW001'?{CMECHANISM:'TAT7',CARMRESTS:'R74',CGASLIFT:'GLSTD',CBASE:'TS34BL',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'}:{CMECHANISM:'FST',CARMRESTS:'R35K3',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'};
+const fixed=newConstruction?Object.fromEntries(Object.entries(newConstruction.route.fixedSelectableStructuralFields).map(([key,field]:[string,any])=>[key,field.fixedValue])):code==='KSEG002WW001'?{CMECHANISM:'SA2T7',CARMRESTS:'R35K3SB2',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'}:code==='KSEG003WW001'?{CMECHANISM:'TAT7',CARMRESTS:'R74',CGASLIFT:'GLSTD',CBASE:'TS34BL',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'}:{CMECHANISM:'FST',CARMRESTS:'R35K3',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'};
 assert(Object.keys(raw.fixedSelectableStructuralFields).length===7);
 for(const [key,value]of Object.entries(fixed)){
  const field=raw.fixedSelectableStructuralFields[key];
@@ -75,6 +77,7 @@ for(const [key,value]of Object.entries(fixed)){
 }
 assert(raw.schema==='desk-components-065-v1'&&raw.code===code&&raw.coordinates==='original-world-matrices'&&raw.contexts.length===1&&raw.fullGraphClosed===false);
 const context=raw.contexts[0],asset=context.invariant;
+if(newConstruction)equal(context.dimensions,newConstruction.route.exactRuntimeConstructionDimensions);
 assert(context.groups.length===0&&asset.sha256===contract.baselineAssetSha256&&asset.bytes<=25*1024*1024&&!asset.needsCompression);
 equal(context.default3DValues,{});equal(context.textOnly,{});
 for(const [key,value]of Object.entries(fixed))assert.equal(context.dimensions[key],value);

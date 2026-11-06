@@ -9,6 +9,15 @@ test('only identical complete source-state transitions share a request; no infer
 });
 test('short expiry and failed requests release cached state; entry count stays bounded',async()=>{
  let now=0,calls=0,fail=true;const cache=new CustomerChoiceCache(async()=>{calls++;if(fail)throw Error('offline');return from;},()=>now);
- await assert.rejects(cache.get(from,'field','value'));fail=false;await cache.get(from,'field','value');assert.equal(calls,2);now=5001;await cache.get(from,'field','value');assert.equal(calls,3);
+ await assert.rejects(cache.get(from,'field','value'));fail=false;await cache.get(from,'field','value');assert.equal(calls,2);now=30001;await cache.get(from,'field','value');assert.equal(calls,3);
  for(let i=0;i<9;i++)await cache.get(from,'field','v'+i);await cache.get(from,'field','value');assert.equal(calls,13);cache.clear();await cache.get(from,'field','value');assert.equal(calls,14);
+});
+
+test('read-ahead return uses a second real server response, including its dependent changes',async()=>{
+ const a={...from,controls:[{id:'field',value:'a',choices:[{id:'a'},{id:'b'}]}]} as CustomerConfiguration;
+ const b={...a,selectionId:'b',controls:[{...a.controls[0],value:'b'}]};
+ const returned={...a,selectionId:'server-return',details:[{label:'Dependent field',value:'Server selected'}]};
+ const calls:string[]=[];const cache=new CustomerChoiceCache(async(f,field,value)=>{calls.push(f.selectionId+':'+value);return f===a?b:returned;});
+ await cache.preloadRoundTrip(a,'field','b');assert.deepEqual(calls,['signed-state:b','b:a']);
+ assert.equal(await cache.get(b,'field','a'),returned);assert.notEqual(returned,a);assert.equal(calls.length,2);
 });

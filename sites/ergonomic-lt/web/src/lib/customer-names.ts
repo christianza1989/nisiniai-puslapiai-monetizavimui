@@ -32,6 +32,6 @@ export function customerDescriptionLabel(text:string,codes:Iterable<string>,fall
 /** A catalogue availability suffix alone is not a colour name after private
  * supplier identifiers have been removed. Retain the existing UI fallback. */
 export function customerColourLabel(text:string|undefined,codes:Iterable<string>,fallback:string){
- const name=(text||'').replace(/\s+[A-Z0-9]{1,3}(?:,\s*[A-Z0-9]{1,3})*\s*$/,'');
+ const name=(text||'').replace(/^\d[\d.]*\s+/,'').replace(/\s+[A-Z0-9]{1,3}(?:,\s*[A-Z0-9]{1,3})*\s*$/,'');
  const value=customerLabel(name,codes,'');return !value||/^\(?extended\)?$/i.test(value)?fallback:value;
 }

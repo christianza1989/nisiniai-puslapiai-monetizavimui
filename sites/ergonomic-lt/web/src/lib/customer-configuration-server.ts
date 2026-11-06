@@ -113,9 +113,10 @@ export async function customerConfiguration(product:Product,token?:string,change
  ];
  const selectedValues=state?.values||Object.fromEntries((preset?supplierOptions(preset):[]).flatMap(option=>{const index=option.indexOf('=');return index<0?[]:[[option.slice(0,index).split('.').at(-1)!,option.slice(index+1)]];}));
  const reviewedRows=reviewedSpecificationRows(supplementalRows,selectedValues,field=>[published(field),configurationOptionLabel(field),fieldLabels[field]].filter((label):label is string=>!!label),published);
+ const colourLabels=new Set(Object.keys(selectedValues).filter(isColourField).flatMap(field=>[published(field),configurationOptionLabel(field),fieldLabels[field]]).filter((label):label is string=>!!label).map(label=>label.trim().toLocaleLowerCase('lt')));
  for(const row of reviewedRows){
   const label=customerLabel(row.label,codes,'');
-  const value=customerLabel(row.value,codes,'');
+  const value=(colourLabels.has(row.label.trim().toLocaleLowerCase('lt'))?customerColourLabel:customerLabel)(row.value,codes,'');
   if(label&&value&&!details.some(detail=>detail.label.toLowerCase()===label.toLowerCase())){
    details.push({label,value});
   }

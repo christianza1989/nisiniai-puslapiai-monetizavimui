@@ -20,6 +20,7 @@ test('original colour is resolved per field even when translated terms share an 
  assert.equal(customerLabel('WT White',['WT'],''),'White');
  assert.equal(customerColourLabel('CSE01 (extended)',['CSE01'],'Spalva 1'),'Spalva 1');
  assert.equal(customerColourLabel('RAL 9016 Traffic White BI, WT, W',['RAL9016'],'Spalva 1'),'Traffic White');
+ assert.equal(customerColourLabel('1.007 Beech 0C',['_1007'],'Spalva 1'),'Beech');
 });
 test('CMS can keep/approve a fixed supplier colour label without reopening translation or accepting non-colour codes',async()=>{
  const{mkdtempSync}=await import('node:fs'),before=process.env.RUNTIME_DIR;process.env.RUNTIME_DIR=mkdtempSync('D:/Core/output/ergonomic-all-option-explanations-20261105/colour-edit-test-');

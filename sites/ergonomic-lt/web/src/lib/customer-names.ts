@@ -31,7 +31,20 @@ export function customerDescriptionLabel(text:string,codes:Iterable<string>,fall
 
 /** A catalogue availability suffix alone is not a colour name after private
  * supplier identifiers have been removed. Retain the existing UI fallback. */
-export function customerColourLabel(text:string|undefined,codes:Iterable<string>,fallback:string){
+export function customerColourLabel(text:string|undefined,codes:Iterable<string>,fallback:string,colourCodes:Iterable<string>=[]){
+ const allowed=[...new Set(colourCodes)].filter(code=>code&&!/^(NONE|UNDEFINED|NOTDEFINED)$/i.test(code));
+ if(allowed.length){
+  // Owner 2026-11-06: only a verified colour-field value may cross the boundary.
+  // Protect its printed spelling while all other supplier codes are removed.
+  const saved:string[]=[];let protectedText=text||'';
+  for(const code of allowed){const parts=code.match(/[A-Z]+|[0-9]+/g),literal=code.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),spaced=parts?.join('[\\s_.-]*');
+   const pattern=new RegExp('(^|[^\\p{L}\\p{N}])(?:'+literal+(spaced?'|'+spaced:'')+')(?=$|[^\\p{L}\\p{N}])','gu');
+   protectedText=protectedText.replace(pattern,(_all,prefix:string)=>{const original=_all.slice(prefix.length);saved.push(original);return prefix+'colourmarktoken'+(saved.length-1)+'end';});
+  }
+  let value=customerLabel(protectedText,[...codes].filter(code=>!allowed.includes(code)),'');
+  value=value.replace(/colourmarktoken(\d+)end/g,(_all,index:string)=>saved[Number(index)]);
+  return value||fallback;
+ }
  const name=(text||'').replace(/^\d[\d.]*\s+/,'').replace(/\s+[A-Z0-9]{1,3}(?:,\s*[A-Z0-9]{1,3})*\s*$/,'');
  const value=customerLabel(name,codes,'');return !value||/^\(?extended\)?$/i.test(value)?fallback:value;
 }

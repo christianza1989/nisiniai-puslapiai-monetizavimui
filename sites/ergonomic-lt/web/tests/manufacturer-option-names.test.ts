@@ -10,9 +10,17 @@ test('dimensions retain physical measurements while encoded choices stay hidden'
  assert.equal(manufacturerOptionName('value:GDWIDTH=_1400','_1400'),undefined);
 });
 test('supplier source names translate, finish codes do not acquire guessed colours',()=>{
- assert.equal(manufacturerOptionName('value:FBASECOLOR=RAL9005','RAL 9005 Jet Black CZ, BL/BLT, Y'),'Juoda');
- assert.equal(manufacturerOptionName('value:FTOPCOLOR=MP','MP Platinum'),'Platinos spalva');
+ assert.equal(manufacturerOptionName('value:FBASECOLOR=RAL9005','RAL 9005 Jet Black CZ, BL/BLT, Y'),'RAL 9005 Jet Black CZ, BL/BLT, Y');
+ assert.equal(manufacturerOptionName('value:FTOPCOLOR=MP','MP Platinum'),'MP Platinum');
  assert.equal(manufacturerOptionName('value:FSOCKETSTANDARD=EU','European (EU)'),'Europos standartas');
- assert.equal(manufacturerOptionName('value:FTOPCOLOR=MP','MP'),undefined);
+ assert.equal(manufacturerOptionName('value:FTOPCOLOR=MP','MP'),'MP');
  assert.equal(manufacturerOptionName('value:CMECHANISM=BLACK','Black'),undefined);
+});
+
+test('compound dimensions use captured units and structure without inferring numbers from codes',()=>{
+ assert.equal(manufacturerOptionName('value:GDDEPTH=_14902X700','1490 mm (2x 700 mm)'),'1490 mm (2 × 700 mm)');
+ assert.equal(manufacturerOptionName('value:GDTOPSDEPTH=_2X8001640','2 × 800 (1640 with panel) mm'),'2 × 800 (1640 su pertvara) mm');
+ assert.equal(manufacturerOptionName('value:GDWIDTH=_1200X1200','1200/1200 mm'),'1200/1200 mm');
+ assert.equal(manufacturerOptionName('value:GDDEPTH=_14902X700','14902X700'),undefined);
+ assert.equal(manufacturerOptionName('value:CARMRESTS=R35','1490 mm (2x 700 mm)'),undefined);
 });

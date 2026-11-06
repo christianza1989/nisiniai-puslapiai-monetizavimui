@@ -16,7 +16,7 @@ import {contactShadow,prepareContactShadow} from '@/lib/contact-shadow';
 import {verifiedViewerAsset} from '@/lib/verified-viewer-assets';
 import {ViewerModelCache,cloneViewerModel} from '@/lib/viewer-model-cache';
 import {productEnvironment,type ProductEnvironment} from '@/lib/product-environment';
-import {prepareViewerTextures} from '@/lib/prepare-viewer-textures';
+import {prepareViewerTextures,ViewerTextureCache} from '@/lib/prepare-viewer-textures';
 import {activateProductViewerWhenNear} from '@/lib/viewer-activation';
 import {isolateFinishMaterials} from '@/lib/finish-materials';
 import {visibleMeshes,visibleBounds,cameraNear,unobstructedCameraViewport} from '@/lib/viewer-camera';
@@ -38,9 +38,9 @@ function disposeObject(root:Object3D){
   const materials=new Set<Material>(),textures=new Set<Texture>();root.traverse(o=>{if(o instanceof Mesh){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});
   materials.forEach(m=>{if(m instanceof MeshStandardMaterial)for(const texture of [m.map,m.normalMap,m.roughnessMap,m.metalnessMap])if(texture)textures.add(texture);m.dispose();});textures.forEach(t=>t.dispose());
 }
-type RenderContext={element:HTMLCanvasElement;renderer:WebGLRenderer;environments:Map<SceneSettings['lighting'],ProductEnvironment>;models:ViewerModelCache;deskMaterials:Map<string,ReturnType<typeof createDeskColorMaterials>>;retired:(()=>void)[];shadowPreparation?:Promise<()=>void>};
+type RenderContext={element:HTMLCanvasElement;renderer:WebGLRenderer;environments:Map<SceneSettings['lighting'],ProductEnvironment>;textureCache?:ViewerTextureCache;models:ViewerModelCache;deskMaterials:Map<string,ReturnType<typeof createDeskColorMaterials>>;retired:(()=>void)[];shadowPreparation?:Promise<()=>void>};
 function disposeContext(context:RenderContext){
- context.retired.splice(0).forEach(dispose=>dispose());context.models.clear();context.deskMaterials.forEach(materials=>materials.dispose());context.deskMaterials.clear();
+ context.retired.splice(0).forEach(dispose=>dispose());context.models.clear();context.textureCache?.clear();context.deskMaterials.forEach(materials=>materials.dispose());context.deskMaterials.clear();
  context.environments.forEach(environment=>environment.dispose());context.environments.clear();
  void context.shadowPreparation?.then(dispose=>dispose(),()=>{});context.renderer.dispose();
 }
@@ -83,7 +83,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
     renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));renderer.outputColorSpace=SRGBColorSpace;
     renderer.toneMapping=NeutralToneMapping;renderer.toneMappingExposure=1;
     renderer.shadowMap.enabled=true;renderer.shadowMap.type=PCFShadowMap;renderer.shadowMap.autoUpdate=false;
-    const context=renderContext.current!,environments=context.environments;
+    const context=renderContext.current!,environments=context.environments;context.textureCache??=new ViewerTextureCache(renderer);
     let roomSurfaces:ReturnType<typeof productShowroom>|undefined;
     const camera=new PerspectiveCamera(35,1,.002,50),controls=new OrbitControls(camera,element);
     let framingAspect=1;
@@ -249,7 +249,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
           };
           await applyChairColors.current();if(colorFailed)return;
         }else setColorState('original');
-        if(disposed)return;await prepareViewerTextures(renderer!,scene,abort.signal);if(disposed)return;
+        if(disposed)return;await prepareViewerTextures(renderer!,scene,abort.signal,context.textureCache);if(disposed)return;
         await renderer!.compileAsync(scene,camera);if(disposed)return;
         initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');context.retired.splice(0).forEach(dispose=>dispose());while(context.deskMaterials.size>2){const key=context.deskMaterials.keys().next().value!;context.deskMaterials.get(key)!.dispose();context.deskMaterials.delete(key);}
       }catch{if(!disposed&&!abort.signal.aborted)setState('error');}

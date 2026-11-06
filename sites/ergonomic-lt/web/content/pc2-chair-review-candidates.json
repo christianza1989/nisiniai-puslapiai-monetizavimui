@@ -577,6 +577,13 @@
           "asset": "/models/configurator/chairs/KSEG002WW001-47e5a1b2cb6c63686f4f/review-bb5ed074a5273e3126d7.json",
           "sha256": "bb5ed074a5273e3126d77bb3701fdc8c01eebeacd47b20a607b2548bf8d33a03",
           "bytes": 122779
+        },
+        {
+          "id": "PRICE_3_ST",
+          "label": "PRICE_3 / ST · 132 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG002WW001-60dccfa0a3c52e6743ad/review-849ca18a42827194d376.json",
+          "sha256": "849ca18a42827194d376de22de60a1e2239e641accea9abfae627e25d255aa65",
+          "bytes": 278587
         }
       ]
     },
@@ -644,6 +651,13 @@
           "asset": "/models/configurator/chairs/KSEG003WW001-ef2cedd5c4d2cf238fa0/review-13634ed299dfbea7a763.json",
           "sha256": "13634ed299dfbea7a7631e645c1fc7c08f7c2808bc863cd7393c10c663ffa478",
           "bytes": 128097
+        },
+        {
+          "id": "PRICE_3_ST",
+          "label": "PRICE_3 / ST · 132 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG003WW001-9b7204d15bb06545dbdd/review-b4be04f63205db3a1d76.json",
+          "sha256": "b4be04f63205db3a1d76b1cbc5dc4bda95b694e5e955fcccfa53380c47c92b66",
+          "bytes": 283905
         }
       ]
     }

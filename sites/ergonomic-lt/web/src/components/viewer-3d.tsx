@@ -14,6 +14,7 @@ import type {Asset,Patch} from '@/lib/expanded-configurator';
 import {renderMaterial,type FinishPreview} from '@/lib/render-materials';
 import {contactShadow,prepareContactShadow} from '@/lib/contact-shadow';
 import {verifiedViewerAsset} from '@/lib/verified-viewer-assets';
+import {ViewerModelCache,cloneViewerModel} from '@/lib/viewer-model-cache';
 import {productEnvironment,type ProductEnvironment} from '@/lib/product-environment';
 import {prepareViewerTextures} from '@/lib/prepare-viewer-textures';
 import {activateProductViewerWhenNear} from '@/lib/viewer-activation';
@@ -37,8 +38,9 @@ function disposeObject(root:Object3D){
   const materials=new Set<Material>(),textures=new Set<Texture>();root.traverse(o=>{if(o instanceof Mesh){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});
   materials.forEach(m=>{if(m instanceof MeshStandardMaterial)for(const texture of [m.map,m.normalMap,m.roughnessMap,m.metalnessMap])if(texture)textures.add(texture);m.dispose();});textures.forEach(t=>t.dispose());
 }
-type RenderContext={element:HTMLCanvasElement;renderer:WebGLRenderer;environments:Map<SceneSettings['lighting'],ProductEnvironment>;shadowPreparation?:Promise<()=>void>};
+type RenderContext={element:HTMLCanvasElement;renderer:WebGLRenderer;environments:Map<SceneSettings['lighting'],ProductEnvironment>;models:ViewerModelCache;retired:(()=>void)[];shadowPreparation?:Promise<()=>void>};
 function disposeContext(context:RenderContext){
+ context.retired.splice(0).forEach(dispose=>dispose());context.models.clear();
  context.environments.forEach(environment=>environment.dispose());context.environments.clear();
  void context.shadowPreparation?.then(dispose=>dispose(),()=>{});context.renderer.dispose();
 }
@@ -74,7 +76,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
     const abort=new AbortController(),scene=new Scene();scene.background=new Color(productSceneSettings.color);
     setState('loading');
     try{
-      if(renderContext.current?.element!==element){if(renderContext.current)disposeContext(renderContext.current);renderContext.current={element,renderer:new WebGLRenderer({canvas:element,antialias:true,alpha:false,powerPreference:'high-performance'}),environments:new Map()};}
+      if(renderContext.current?.element!==element){if(renderContext.current)disposeContext(renderContext.current);renderContext.current={element,renderer:new WebGLRenderer({canvas:element,antialias:true,alpha:false,powerPreference:'high-performance'}),environments:new Map(),models:new ViewerModelCache(),retired:[]};}
       renderer=renderContext.current.renderer;
     }
     catch{setState('error');return;}
@@ -196,8 +198,8 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         }
         host.dataset.environmentSource=environments.get(productSceneSettings.lighting)?.source||'generated';
         applyScene();
-        async function load(asset:Asset){const bytes=await bytesFor(asset);abort.signal.throwIfAborted();
-        const gltf=await loader.parseAsync(bytes,'');pendingBytes.delete(asset.assetSha256+':'+asset.bytes);tagViewerUpholstery(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,gltf.parser.json,asset.assetSha256);if(deskColors.current)tagDeskSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,asset.assetSha256);if(chairColors.current)tagChairSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,chairColors.current.source,asset.assetSha256);if(chairRoles.current){tagLegacyChairRoles(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,gltf.parser.json,asset);loadedAssets.push(asset);}return gltf.scene;}
+        async function load(asset:Asset){const cacheKey=asset.assetSha256+':'+asset.bytes+':'+!!deskColors.current+':'+(chairColors.current?.source.runtimeSha256||'')+':'+!!chairRoles.current;const cached=context.models.get(cacheKey);if(cached){if(chairRoles.current)loadedAssets.push(asset);return cached;}const bytes=await bytesFor(asset);abort.signal.throwIfAborted();
+        const gltf=await loader.parseAsync(bytes,'');pendingBytes.delete(asset.assetSha256+':'+asset.bytes);tagViewerUpholstery(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,gltf.parser.json,asset.assetSha256);if(deskColors.current)tagDeskSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,asset.assetSha256);if(chairColors.current)tagChairSurfaces(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,chairColors.current.source,asset.assetSha256);if(chairRoles.current){tagLegacyChairRoles(gltf.scene,gltf.parser.associations as Map<Object3D,{nodes?:number;primitives?:number}>,gltf.parser.json,asset);loadedAssets.push(asset);}if(context.models.put(cacheKey,gltf.scene))return cloneViewerModel(gltf.scene);return gltf.scene;}
         object=new Group();if(baseAsset)object.add(await load(baseAsset));
         if(assembly){
           for(const patch of assembly.patches){for(const id of patch.remove){const part=object.getObjectByName(id);if(part)part.visible=false;}
@@ -249,11 +251,11 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         }else setColorState('original');
         if(disposed)return;await prepareViewerTextures(renderer!,scene,abort.signal);if(disposed)return;
         await renderer!.compileAsync(scene,camera);if(disposed)return;
-        initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');
+        initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');context.retired.splice(0).forEach(dispose=>dispose());
       }catch{if(!disposed&&!abort.signal.aborted)setState('error');}
     })();
-    return()=>{disposed=true;colorRevision++;colorApplication?.dispose();colorMaterials?.dispose();chairApplication?.dispose();chairMaterials?.dispose();applyDeskColors.current=async()=>{};applyChairColors.current=async()=>{};abort.abort();observer.disconnect();element.removeEventListener('webglcontextlost',contextLost);element.removeEventListener('dblclick',inspectPointer);
-      controls.removeEventListener('change',render);releasePageScroll();controls.dispose();disposeShadow?.();legacyChairApplication?.dispose();for(const group of chairExtras.values()){group.removeFromParent();disposeObject(group);}chairExtras.clear();disposeObject(scene);if(object&&!object.parent)disposeObject(object);textures.forEach(t=>t.dispose());originals.forEach(t=>{t.map?.dispose();t.normal?.dispose();});light.shadow.dispose();action.current=()=>{};applyFinishes.current=()=>{};};
+    return()=>{disposed=true;colorRevision++;applyDeskColors.current=async()=>{};applyChairColors.current=async()=>{};abort.abort();observer.disconnect();element.removeEventListener('webglcontextlost',contextLost);element.removeEventListener('dblclick',inspectPointer);
+      controls.removeEventListener('change',render);releasePageScroll();controls.dispose();context.retired.splice(0).forEach(dispose=>dispose());context.retired.push(()=>{colorApplication?.dispose();colorMaterials?.dispose();chairApplication?.dispose();chairMaterials?.dispose();disposeShadow?.();legacyChairApplication?.dispose();for(const group of chairExtras.values()){group.removeFromParent();disposeObject(group);}chairExtras.clear();disposeObject(scene);if(object&&!object.parent)disposeObject(object);textures.forEach(t=>t.dispose());originals.forEach(t=>{t.map?.dispose();t.normal?.dispose();});light.shadow.dispose();});action.current=()=>{};applyFinishes.current=()=>{};};
   },[geometryKey,attempt,avoidToolbarOverlap,activated]);
   useEffect(()=>{const context=renderContext.current;return()=>{if(context){disposeContext(context);if(renderContext.current===context)renderContext.current=undefined;}};},[attempt,activated]);
   return <div className="viewer-3d" data-state={state} data-color-state={colorState} data-variant={variant.id}>

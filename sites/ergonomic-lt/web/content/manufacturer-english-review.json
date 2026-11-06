@@ -202,7 +202,11 @@
       "value:FHORWIRETRUNKINGCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
       "field:FVERWIRETRUNKINGCOLOR": "Colour - vertical wire trunking",
       "value:FVERWIRETRUNKINGCOLOR=CZ": "Black",
-      "value:FTOPCOLOR=NJ": "NJ Acacia Light"
+      "value:FTOPCOLOR=NJ": "NJ Acacia Light",
+      "value:FCASTORS=_4XFI752XLOCKABLEWHITE": "diam. 75 mm, 4 pieces (two with brakes), white",
+      "value:FCASTORS=_4XFI752XLOCKABLEBLACK": "diam. 75 mm, 4 pieces (two with brakes), black",
+      "value:FHADJUSTMENTWAY=CONTROLPANEL": "Control panel with display and memory function",
+      "value:FVERWIRETRUNKING=VERTICALFLEXIBLEPLA": "Flexible, plastic"
     },
     "KAXO001WW002": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -743,7 +747,9 @@
       "field:FPANACCMETALCOLOR": "Metal elements colour - panel accessories",
       "value:FPANACCMETALCOLOR=RAL9016": "RAL 9016 Traffic White BI, WT/WTT, W",
       "field:FMEDIAPORTCOLOR": "Colour - media",
-      "value:FMEDIAPORTCOLOR=BLACK": "Black"
+      "value:FMEDIAPORTCOLOR=BLACK": "Black",
+      "value:FPANELACCESSORIES=HEADPHONEHOLDER": "Headphone holder",
+      "value:FPEDESTAL=SUS3DRAWERFELTORG": "Suspended with three drawers, felt organizer"
     },
     "KARN007WW004": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -1226,7 +1232,19 @@
       "field:FVERWIRETRUNKINGCOLOR": "Colour - vertical wire trunking",
       "value:FVERWIRETRUNKINGCOLOR=RAL9005CZ": "RAL 9005 Jet Black CZ, BL/BLT, Y/Black",
       "field:FCABLECOVERCOLOR": "Color - cable cover",
-      "value:FCABLECOVERCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y"
+      "value:FCABLECOVERCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
+      "value:FGASSEMBLED=PREASSEMBLED": "Preassembled (folded legs)",
+      "value:FMEDIAPORTLEFT=OUTLETROUNDPLA": "Plastic, round grommet, diam.80",
+      "value:FMEDIAPORTLEFT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMODESTYPANEL=MELAMINE": "Melamine faced chipboard, 340 mm height",
+      "value:FMODESTYPANEL=VENEER": "Veneer, 340 mm height",
+      "value:FSOCKET=CH": "Swiss (CH)",
+      "value:FSOCKET=GB": "British (GB)",
+      "value:FBASEFEET=XI2": "XI2 - Rectangular",
+      "value:FBASEFEET=XI3": "XI3 - Rectangular, bent at a 120° angle",
+      "value:FBASE=CTYPE": "C-leg",
+      "value:FCOLUMN=_3SQUARE7070": "Square (70x70 mm) - three-segment",
+      "value:FHADJUSTMENTWAY=HANDSET": "Control panel with up&down buton"
     },
     "KC54083WW001": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -2882,7 +2900,13 @@
       "field:FHORWIRETRUNKINGCOLOR": "Colour - horizontal wire trunking",
       "value:FHORWIRETRUNKINGCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
       "field:FVERWIRETRUNKINGCOLOR": "Colour - vertical wire trunking",
-      "value:FVERWIRETRUNKINGCOLOR=CZ": "Black"
+      "value:FVERWIRETRUNKINGCOLOR=CZ": "Black",
+      "value:FHADJUSTMENTWAY=_2XHANDSET": "2x control panel with up&down buton",
+      "value:FHORWIRETRUNKING=HORSTEEL1SHARED2FOLDST": "1x Shared, steel + 2x foldable on one side, steel",
+      "value:FHORWIRETRUNKING=HORSTEELSHARED": "Shared, steel",
+      "value:FUPPERPANEL=_1XUPH700": "1x Upholstered, 700 mm height",
+      "value:FUPPERPANEL=_2XUPH480": "2x Upholstered, 480mm height",
+      "value:FUPPERPANEL=_2XFELT480": "2x Felt, 480mm height"
     },
     "KPW2020WW002": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -4318,7 +4342,8 @@
       "field:FTABLEEDGETHICKNESS": "Table top edge thickness and type",
       "value:FTABLEEDGETHICKNESS=ABSSTANDARD2": "2 mm - glue technology",
       "field:FTABLEEDGECOLOR": "Colour - table top edge",
-      "value:FTABLEEDGECOLOR=MG": "MG Grey Vicenza Oak"
+      "value:FTABLEEDGECOLOR=MG": "MG Grey Vicenza Oak",
+      "value:FHORWIRETRUNKING=PLASTICFIXEDTOPMOUNTING": "Assembly to the tabletop, fixed, plastic"
     },
     "KINT003WW001": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -5378,7 +5403,14 @@
       "field:FVERWIRETRUNKINGCOLOR": "Colour - vertical wire trunking",
       "value:FVERWIRETRUNKINGCOLOR=CZ": "Black",
       "field:FCABLECOVERCOLOR": "Color - cable cover",
-      "value:FCABLECOVERCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y"
+      "value:FCABLECOVERCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
+      "value:FHADJUSTMENTWAY=HANDSET": "Control panel with up&down buton",
+      "value:FBASEFEET=EMODEL20EM1": "EM1 - Rectangular with cap",
+      "value:FPANEL=ONEPIECEUPH890": "One-piece, upholstered, 890 mm height",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height",
+      "value:FPANEL=MODESTYMEL340ANGULARCOR": "Modesty, melamine, 340 mm height, angular corners",
+      "value:FPANEL=MODESTYUPH340": "Modesty, upholstered, 340 mm height"
     },
     "KTRF001WW001": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -5711,7 +5743,14 @@
       "field:FHORWIRETRUNKINGCOLOR": "Colour - horizontal wire trunking",
       "value:FHORWIRETRUNKINGCOLOR=RAL9005": "RAL 9005 Jet Black CZ, BL/BLT, Y",
       "field:FVERWIRETRUNKINGCOLOR": "Colour - vertical wire trunking",
-      "value:FVERWIRETRUNKINGCOLOR=CZ": "Black"
+      "value:FVERWIRETRUNKINGCOLOR=CZ": "Black",
+      "value:FGASSEMBLED=PREASSEMBLED": "Preassembled (folded legs)",
+      "value:FMEDIAPORTMIDDLE=_2XOUTLETOVAL": "2x Plastic, oval grommet",
+      "value:FSOCKET=CH": "Swiss (CH)",
+      "value:FSOCKET=GB": "British (GB)",
+      "value:FCOLUMN=_3SQUARE7070": "Square (70x70 mm) - three-segment",
+      "value:FHADJUSTMENTWAY=_2XHANDSET": "2x control panel with up&down buton",
+      "value:FHORWIRETRUNKING=HORSTEEL1SHARED2FIXED": "1x Shared, steel + 2x fixed, steel"
     },
     "KSYL001WW003": {
       "field:LANGUAGE_CODE": "LANGUAGE_CODE",
@@ -32545,6 +32584,187 @@
       "value:CUPHCOLOR=CSE08": "CSE08 (extended)",
       "value:CUPHCOLOR=CSE12": "CSE12 (extended)",
       "value:CUPHCOLOR=CSE40": "CSE40 (extended)"
+    },
+    "KERG021WW001": {
+      "value:FMEDIAPORTLEFT=OUTLETMETCIRCBR80": "Round metal grommet with a brush, diam.80",
+      "value:FMEDIAPORTRIGHT=OUTLETMETCIRCBR80": "Round metal grommet with a brush, diam.80",
+      "value:FVERWIRETRUNKING=VERTICALUPH": "Upholstered"
+    },
+    "KEM2013WW006": {
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=ONEPIECEUPH890": "One-piece, upholstered, 890 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height",
+      "value:FCASTORS=_4XFI752XLOCKABLEWHITE": "diam. 75 mm, 4 pieces (two with brakes), white",
+      "value:FCASTORS=_4XFI752XLOCKABLEBLACK": "diam. 75 mm, 4 pieces (two with brakes), black",
+      "value:FHADJUSTMENTWAY=HANDSET": "Control panel with up&down buton",
+      "value:FHADJUSTMENTWAY=CONTROLPANEL": "Control panel with display and memory function"
+    },
+    "KEM2013WW009": {
+      "value:FHADJUSTMENTWAY=HANDSET": "Control panel with up&down buton",
+      "value:FHADJUSTMENTWAY=CONTROLPANEL": "Control panel with display and memory function",
+      "value:FCASTORS=_4XFI752XLOCKABLEWHITE": "diam. 75 mm, 4 pieces (two with brakes), white",
+      "value:FCASTORS=_4XFI752XLOCKABLEBLACK": "diam. 75 mm, 4 pieces (two with brakes), black",
+      "value:FVERWIRETRUNKING=VERTICALFLEXIBLEPLA": "Flexible, plastic",
+      "value:FPANEL=ONEPIECEUPH890": "One-piece, upholstered, 890 mm height",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height"
+    },
+    "KEM2014WW002": {
+      "value:FHADJUSTMENTWAY=_2XHANDSET": "2x control panel with up&down buton",
+      "value:FVERWIRETRUNKING=_2XVERTICALFLEXIBLEPLA": "2x Flexible, plastic"
+    },
+    "KEM2014WW003": {
+      "value:FHADJUSTMENTWAY=_2XHANDSET": "2x control panel with up&down buton",
+      "value:FHORWIRETRUNKING=HORSTEEL1SHARED2FOLDST": "1x Shared, steel + 2x foldable on one side, steel",
+      "value:FHORWIRETRUNKING=HORSTEELSHARED": "Shared, steel",
+      "value:FUPPERPANEL=_1XUPH700": "1x Upholstered, 700 mm height",
+      "value:FUPPERPANEL=_2XUPH480": "2x Upholstered, 480mm height",
+      "value:FUPPERPANEL=_2XFELT480": "2x Felt, 480mm height"
+    },
+    "KEM3001WW002": {
+      "value:FHADJUSTMENTWAY=CONTROLTOUCHPANEL": "Control panel with display, touch panel and memory function (4 positions)",
+      "value:FHADJUSTMENTWAY=HANDSET": "Control panel with up&down buton",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height",
+      "value:FPANEL=MODESTYMEL340ANGULARCOR": "Modesty, melamine, 340 mm height, angular corners",
+      "value:FPANEL=MODESTYUPH340": "Modesty, upholstered, 340 mm height",
+      "value:FBASEFEET=EMODEL20EM1": "EM1 - Rectangular with cap",
+      "value:FCASTORS=_4XFI752XLOCKABLEWHITE": "diam. 75 mm, 4 pieces (two with brakes), white",
+      "value:FCASTORS=_4XFI752XLOCKABLEBLACK": "diam. 75 mm, 4 pieces (two with brakes), black"
+    },
+    "KEPP001WW001": {
+      "value:FMEDIAPORTMIDDLE=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTRIGHT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTLEFT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FVERWIRETRUNKING=VERTICALUPH": "Upholstered"
+    },
+    "KEPP002WW001": {
+      "value:FMEDIAPORTLEFT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTMIDDLE=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTRIGHT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FVERWIRETRUNKING=VERTICALUPH": "Upholstered"
+    },
+    "KEPP004WW001": {
+      "value:FMEDIAPORTMIDDLE=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTRIGHT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FVERWIRETRUNKING=VERTICALUPH": "Upholstered",
+      "value:FMEDIAPORTLEFT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=ONEPIECEUPH765": "One-piece, upholstered, 765 mm height"
+    },
+    "KEPP005WW001": {
+      "value:FMEDIAPORTMIDDLE=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTRIGHT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTLEFT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FVERWIRETRUNKING=VERTICALUPH": "Upholstered",
+      "value:FPANEL=MODESTYMEL340ANGULARCOR": "Modesty, melamine, 340 mm height, angular corners"
+    },
+    "KEPP006WW001": {
+      "value:FMEDIAPORTLEFT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTMIDDLE=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTRIGHT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FVERWIRETRUNKING=VERTICALUPH": "Upholstered",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=ONEPIECEUPH765": "One-piece, upholstered, 765 mm height"
+    },
+    "KEUP008WW002": {
+      "value:FVERWIRETRUNKING=VERTICALFLEXIBLEPLA": "Flexible, plastic",
+      "value:FPANEL=ONEPIECEUPH740": "One-piece, upholstered, 740 mm height",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height",
+      "value:FPANEL=MODESTYMEL340ANGULARCOR": "Modesty, melamine, 340 mm height, angular corners"
+    },
+    "KEUP008WW003": {
+      "value:FVERWIRETRUNKING=VERTICALFLEXIBLEPLA": "Flexible, plastic",
+      "value:FPANEL=ONEPIECEUPH740": "One-piece, upholstered, 740 mm height",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height",
+      "value:FPANEL=MODESTYMEL340ANGULARCOR": "Modesty, melamine, 340 mm height, angular corners"
+    },
+    "KEUP008WW004": {
+      "value:FVERWIRETRUNKING=VERTICALFLEXIBLEPLA": "Flexible, plastic",
+      "value:FPANEL=ONEPIECEUPH740": "One-piece, upholstered, 740 mm height",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height",
+      "value:FPANEL=MODESTYMEL340ANGULARCOR": "Modesty, melamine, 340 mm height, angular corners"
+    },
+    "KEUP009WW002": {
+      "value:FVERWIRETRUNKING=VERTICALFLEXIBLEPLA": "Flexible, plastic",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height",
+      "value:FPANEL=MODESTYMEL340ANGULARCOR": "Modesty, melamine, 340 mm height, angular corners",
+      "value:FPANEL=ONEPIECEUPH740": "One-piece, upholstered, 740 mm height"
+    },
+    "KEUP010WW002": {
+      "value:FVERWIRETRUNKING=VERTICALFLEXIBLEPLA": "Flexible, plastic",
+      "value:FPANEL=ONEPIECEUPH740": "One-piece, upholstered, 740 mm height",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height",
+      "value:FPANEL=MODESTYMEL340ANGULARCOR": "Modesty, melamine, 340 mm height, angular corners"
+    },
+    "KEUP010WW003": {
+      "value:FPANEL=ONEPIECEUPH740": "One-piece, upholstered, 740 mm height",
+      "value:FPANEL=UPPERUPH480": "Upper, upholstered, 480 mm height",
+      "value:FPANEL=UPPERFELT480": "Upper, felt, 480 mm height",
+      "value:FPANEL=MODESTYMEL340ANGULARCOR": "Modesty, melamine, 340 mm height, angular corners",
+      "value:FVERWIRETRUNKING=VERTICALFLEXIBLEPLA": "Flexible, plastic"
+    },
+    "KEUP011WW002": {
+      "value:FMEDIAPORTLEFT=_2XEVOLINECIRCLE801M": "2x EVOline Circle80 1M",
+      "value:FMEDIAPORTRIGHT=_2XEVOLINECIRCLE801M": "2x EVOline Circle80 1M",
+      "value:FPANEL=UPPERUPH655": "Upper, upholstered, 655 mm height",
+      "value:FPANEL=_2XUPPERUPH480": "2x Upper, upholstered, 480 mm height",
+      "value:FPANEL=_2XUPPERFELT480": "2x Upper, felt, 480 mm height",
+      "value:FVERWIRETRUNKING=_2XVERTICALFLEXIBLEPLA": "2x Flexible, plastic"
+    },
+    "KEUP011WW003": {
+      "value:FMEDIAPORTLEFT=_2XEVOLINECIRCLE801M": "2x EVOline Circle80 1M",
+      "value:FMEDIAPORTRIGHT=_2XEVOLINECIRCLE801M": "2x EVOline Circle80 1M",
+      "value:FHORWIRETRUNKING=HORSTEELSHARED": "Shared, steel",
+      "value:FPANEL=UPPERUPH655": "Upper, upholstered, 655 mm height",
+      "value:FPANEL=_2XUPPERUPH480": "2x Upper, upholstered, 480 mm height",
+      "value:FPANEL=_2XUPPERFELT480": "2x Upper, felt, 480 mm height"
+    },
+    "KPW2024WW001": {
+      "value:FMEDIAPORTLEFT=OUTLETMETCIRCBR80": "Round metal grommet with a brush, diam.80",
+      "value:FMEDIAPORTRIGHT=OUTLETMETCIRCBR80": "Round metal grommet with a brush, diam.80",
+      "value:FWIRETRUNKING=HORUPHWIRET": "Horizontal, upholstered",
+      "value:FWIRETRUNKING=HORUPHWIRETVERUPH": "Horizontal upholstered and vertical upholstered"
+    },
+    "KPW2025WW001": {
+      "value:FMEDIAPORTLEFT=_2XEVOLINECIRCLE801M": "2x EVOline Circle80 1M",
+      "value:FMEDIAPORTLEFT=_2XOUTLETMETCIRCBR80": "2x Round metal grommet with a brush, diam.80",
+      "value:FMEDIAPORTRIGHT=_2XEVOLINECIRCLE801M": "2x EVOline Circle80 1M",
+      "value:FMEDIAPORTRIGHT=_2XOUTLETMETCIRCBR80": "2x Round metal grommet with a brush, diam.80",
+      "value:FWIRETRUNKING=_2XHORUPHWIRET": "2x Horizontal, upholstered",
+      "value:FWIRETRUNKING=_2XVERUPHWIRET": "2x Vertical, upholstered",
+      "value:FWIRETRUNKING=_2XHORUPHWIRET2XVERUPH": "2x Horizontal upholstered and 2x vertical upholstered",
+      "value:FPANEL=UPUPHSTITCH400": "Upper, upholstered with stitching, 400 mm height above the tabletop",
+      "value:FPANEL=_2XUPSTEEL1000X400": "2x Upper, powder coated steel, width 1000 mm, height 400 mm above the tabletop"
+    },
+    "KXI2021WW003": {
+      "value:FMEDIAPORTLEFT=OUTLETROUNDPLA": "Plastic, round grommet, diam.80",
+      "value:FMEDIAPORTLEFT=OUTLETSQUARE9090": "Plastic, square grommet, 90x90 mm",
+      "value:FMEDIAPORTMIDDLE=OUTLETROUNDPLA": "Plastic, round grommet, diam.80",
+      "value:FMODESTYPANEL=MELAMINE": "Melamine faced chipboard, 340 mm height",
+      "value:FMODESTYPANEL=VENEER": "Veneer, 340 mm height",
+      "value:FSOCKET=CH": "Swiss (CH)",
+      "value:FSOCKET=GB": "British (GB)",
+      "value:FHADJUSTMENTWAY=HANDSET": "Control panel with up&down buton",
+      "value:FBASE=CTYPE": "C-leg",
+      "value:FBASEFEET=XI2": "XI2 - Rectangular",
+      "value:FBASEFEET=XI3": "XI3 - Rectangular, bent at a 120° angle",
+      "value:FCOLUMN=_3SQUARE7070": "Square (70x70 mm) - three-segment",
+      "value:FMEDIAPORTRIGHT=OUTLETROUNDPLA": "Plastic, round grommet, diam.80"
+    },
+    "KLEV021WW002": {
+      "value:FMEDIAPORTRIGHT=GROMMETWOOD80": "Wooden grommet diam.80 mm",
+      "value:FMEDIAPORTRIGHT=PIXEL1M80": "Pixel 1M"
+    },
+    "KLEV022WW002": {
+      "value:FMEDIAPORTRIGHT=GROMMETWOOD80": "Wooden grommet diam.80 mm",
+      "value:FMEDIAPORTRIGHT=PIXEL1M80": "Pixel 1M",
+      "value:FPANELACCESSORIES=HEADPHONEHOLDER": "Headphone holder"
     }
   }
 }

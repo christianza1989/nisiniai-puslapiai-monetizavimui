@@ -1081,5 +1081,185 @@
   },
   "value:CLUMBARSUPPORT=AIRSHAPE": {
     "air shape": "Juosmens atrama „Air Shape“"
+  },
+  "value:FCASTORS=_4XFI752XLOCKABLEWHITE": {
+    "diam. 75 mm, 4 pieces (two with brakes), white": "4 balti 75 mm ratukai, du su stabdžiais"
+  },
+  "value:FCASTORS=_4XFI752XLOCKABLEBLACK": {
+    "diam. 75 mm, 4 pieces (two with brakes), black": "4 juodi 75 mm ratukai, du su stabdžiais"
+  },
+  "value:FHADJUSTMENTWAY=CONTROLPANEL": {
+    "control panel with display and memory function": "Valdiklis su ekranu ir padėčių atmintimi"
+  },
+  "value:FVERWIRETRUNKING=VERTICALFLEXIBLEPLA": {
+    "flexible, plastic": "Lankstus plastikinis kabelių kanalas"
+  },
+  "value:FHORWIRETRUNKING=PLASTICFIXEDTOPMOUNTING": {
+    "assembly to the tabletop, fixed, plastic": "Prie stalviršio tvirtinamas nejudamas plastikinis kabelių lovelis"
+  },
+  "value:FHADJUSTMENTWAY=_2XHANDSET": {
+    "2x control panel with up&down buton": "2 valdikliai su kėlimo ir nuleidimo mygtuku"
+  },
+  "value:FHORWIRETRUNKING=HORSTEEL1SHARED2FOLDST": {
+    "1x shared, steel + 2x foldable on one side, steel": "1 bendras plieninis kabelių lovelis ir 2 iš vienos pusės atveriami plieniniai loveliai"
+  },
+  "value:FHORWIRETRUNKING=HORSTEELSHARED": {
+    "shared, steel": "Bendras plieninis kabelių lovelis"
+  },
+  "value:FUPPERPANEL=_1XUPH700": {
+    "1x upholstered, 700 mm height": "1 pertvara su apmušalu, 700 mm aukščio"
+  },
+  "value:FUPPERPANEL=_2XUPH480": {
+    "2x upholstered, 480mm height": "2 pertvaros su apmušalu, 480 mm aukščio"
+  },
+  "value:FUPPERPANEL=_2XFELT480": {
+    "2x felt, 480mm height": "2 veltinio pertvaros, 480 mm aukščio"
+  },
+  "value:FHADJUSTMENTWAY=HANDSET": {
+    "control panel with up&down buton": "Valdiklis su kėlimo ir nuleidimo mygtuku"
+  },
+  "value:FBASEFEET=EMODEL20EM1": {
+    "em1 - rectangular with cap": "Stačiakampė kojos atrama su dangteliu"
+  },
+  "value:FPANEL=ONEPIECEUPH890": {
+    "one-piece, upholstered, 890 mm height": "Vientisa pertvara su apmušalu, 890 mm aukščio"
+  },
+  "value:FPANEL=UPPERUPH480": {
+    "upper, upholstered, 480 mm height": "Viršutinė pertvara su apmušalu, 480 mm aukščio"
+  },
+  "value:FPANEL=UPPERFELT480": {
+    "upper, felt, 480 mm height": "Viršutinė veltinio pertvara, 480 mm aukščio"
+  },
+  "value:FPANEL=MODESTYMEL340ANGULARCOR": {
+    "modesty, melamine, 340 mm height, angular corners": "Pertvara po stalviršiu su melamino apdaila, 340 mm aukščio, kampuotais kampais"
+  },
+  "value:FPANEL=MODESTYUPH340": {
+    "modesty, upholstered, 340 mm height": "Pertvara po stalviršiu su apmušalu, 340 mm aukščio"
+  },
+  "value:FMEDIAPORTLEFT=OUTLETMETCIRCBR80": {
+    "round metal grommet with a brush, diam.80": "Apvalus metalinis kabelių įvadas su šepetėliu, 80 mm skersmens"
+  },
+  "value:FMEDIAPORTRIGHT=OUTLETMETCIRCBR80": {
+    "round metal grommet with a brush, diam.80": "Apvalus metalinis kabelių įvadas su šepetėliu, 80 mm skersmens"
+  },
+  "value:FVERWIRETRUNKING=VERTICALUPH": {
+    "upholstered": "Kabelių kanalas su apmušalu"
+  },
+  "value:FVERWIRETRUNKING=_2XVERTICALFLEXIBLEPLA": {
+    "2x flexible, plastic": "2 lankstūs plastikiniai kabelių kanalai"
+  },
+  "value:FHADJUSTMENTWAY=CONTROLTOUCHPANEL": {
+    "control panel with display, touch panel and memory function (4 positions)": "Jutiklinis valdiklis su ekranu ir 4 padėčių atmintimi"
+  },
+  "value:FMEDIAPORTMIDDLE=OUTLETSQUARE9090": {
+    "plastic, square grommet, 90x90 mm": "Kvadratinis plastikinis kabelių įvadas, 90 × 90 mm"
+  },
+  "value:FMEDIAPORTRIGHT=OUTLETSQUARE9090": {
+    "plastic, square grommet, 90x90 mm": "Kvadratinis plastikinis kabelių įvadas, 90 × 90 mm"
+  },
+  "value:FMEDIAPORTLEFT=OUTLETSQUARE9090": {
+    "plastic, square grommet, 90x90 mm": "Kvadratinis plastikinis kabelių įvadas, 90 × 90 mm"
+  },
+  "value:FPANEL=ONEPIECEUPH765": {
+    "one-piece, upholstered, 765 mm height": "Vientisa pertvara su apmušalu, 765 mm aukščio"
+  },
+  "value:FPANEL=ONEPIECEUPH740": {
+    "one-piece, upholstered, 740 mm height": "Vientisa pertvara su apmušalu, 740 mm aukščio"
+  },
+  "value:FMEDIAPORTLEFT=_2XEVOLINECIRCLE801M": {
+    "2x evoline circle80 1m": "2 EVOline Circle80 1M jungčių moduliai"
+  },
+  "value:FMEDIAPORTRIGHT=_2XEVOLINECIRCLE801M": {
+    "2x evoline circle80 1m": "2 EVOline Circle80 1M jungčių moduliai"
+  },
+  "value:FPANEL=UPPERUPH655": {
+    "upper, upholstered, 655 mm height": "Viršutinė pertvara su apmušalu, 655 mm aukščio"
+  },
+  "value:FPANEL=_2XUPPERUPH480": {
+    "2x upper, upholstered, 480 mm height": "2 viršutinės pertvaros su apmušalu, 480 mm aukščio"
+  },
+  "value:FPANEL=_2XUPPERFELT480": {
+    "2x upper, felt, 480 mm height": "2 viršutinės veltinio pertvaros, 480 mm aukščio"
+  },
+  "value:FWIRETRUNKING=HORUPHWIRET": {
+    "horizontal, upholstered": "Horizontalus kabelių kanalas su apmušalu"
+  },
+  "value:FWIRETRUNKING=HORUPHWIRETVERUPH": {
+    "horizontal upholstered and vertical upholstered": "Horizontalus ir vertikalus kabelių kanalai su apmušalu"
+  },
+  "value:FMEDIAPORTLEFT=_2XOUTLETMETCIRCBR80": {
+    "2x round metal grommet with a brush, diam.80": "2 apvalūs metaliniai kabelių įvadai su šepetėliais, 80 mm skersmens"
+  },
+  "value:FMEDIAPORTRIGHT=_2XOUTLETMETCIRCBR80": {
+    "2x round metal grommet with a brush, diam.80": "2 apvalūs metaliniai kabelių įvadai su šepetėliais, 80 mm skersmens"
+  },
+  "value:FWIRETRUNKING=_2XHORUPHWIRET": {
+    "2x horizontal, upholstered": "2 horizontalūs kabelių kanalai su apmušalu"
+  },
+  "value:FWIRETRUNKING=_2XVERUPHWIRET": {
+    "2x vertical, upholstered": "2 vertikalūs kabelių kanalai su apmušalu"
+  },
+  "value:FWIRETRUNKING=_2XHORUPHWIRET2XVERUPH": {
+    "2x horizontal upholstered and 2x vertical upholstered": "2 horizontalūs ir 2 vertikalūs kabelių kanalai su apmušalu"
+  },
+  "value:FPANEL=UPUPHSTITCH400": {
+    "upper, upholstered with stitching, 400 mm height above the tabletop": "Viršutinė pertvara su siūtu apmušalu, 400 mm virš stalviršio"
+  },
+  "value:FPANEL=_2XUPSTEEL1000X400": {
+    "2x upper, powder coated steel, width 1000 mm, height 400 mm above the tabletop": "2 viršutinės milteliniu būdu dažyto plieno pertvaros, 1000 mm pločio ir 400 mm aukščio virš stalviršio"
+  },
+  "value:FGASSEMBLED=PREASSEMBLED": {
+    "preassembled (folded legs)": "Iš anksto surinktas, su sulankstytomis kojomis"
+  },
+  "value:FMEDIAPORTLEFT=OUTLETROUNDPLA": {
+    "plastic, round grommet, diam.80": "Apvalus plastikinis kabelių įvadas, 80 mm skersmens"
+  },
+  "value:FMODESTYPANEL=MELAMINE": {
+    "melamine faced chipboard, 340 mm height": "Melaminu dengtos medžio drožlių plokštės pertvara, 340 mm aukščio"
+  },
+  "value:FMODESTYPANEL=VENEER": {
+    "veneer, 340 mm height": "Medienos lukšto apdailos pertvara, 340 mm aukščio"
+  },
+  "value:FSOCKET=CH": {
+    "swiss (ch)": "Šveicariško standarto jungtis"
+  },
+  "value:FSOCKET=GB": {
+    "british (gb)": "Britiško standarto jungtis"
+  },
+  "value:FBASEFEET=XI2": {
+    "xi2 - rectangular": "Stačiakampė kojos atrama"
+  },
+  "value:FBASEFEET=XI3": {
+    "xi3 - rectangular, bent at a 120° angle": "Stačiakampė kojos atrama, sulenkta 120° kampu"
+  },
+  "value:FBASE=CTYPE": {
+    "c-leg": "C formos stalo koja"
+  },
+  "value:FCOLUMN=_3SQUARE7070": {
+    "square (70x70 mm) - three-segment": "Trijų segmentų kvadratinė kolona, 70 × 70 mm"
+  },
+  "value:FMEDIAPORTMIDDLE=_2XOUTLETOVAL": {
+    "2x plastic, oval grommet": "2 ovalūs plastikiniai kabelių įvadai"
+  },
+  "value:FHORWIRETRUNKING=HORSTEEL1SHARED2FIXED": {
+    "1x shared, steel + 2x fixed, steel": "1 bendras ir 2 nejudami plieniniai kabelių loveliai"
+  },
+  "value:FMEDIAPORTMIDDLE=OUTLETROUNDPLA": {
+    "plastic, round grommet, diam.80": "Apvalus plastikinis kabelių įvadas, 80 mm skersmens"
+  },
+  "value:FMEDIAPORTRIGHT=OUTLETROUNDPLA": {
+    "plastic, round grommet, diam.80": "Apvalus plastikinis kabelių įvadas, 80 mm skersmens"
+  },
+  "value:FMEDIAPORTRIGHT=GROMMETWOOD80": {
+    "wooden grommet diam.80 mm": "Medinis kabelių įvadas, 80 mm skersmens"
+  },
+  "value:FMEDIAPORTRIGHT=PIXEL1M80": {
+    "pixel 1m": "Pixel 1M jungčių modulis"
+  },
+  "value:FPANELACCESSORIES=HEADPHONEHOLDER": {
+    "headphone holder": "Ausinių laikiklis"
+  },
+  "value:FPEDESTAL=SUS3DRAWERFELTORG": {
+    "suspended with three drawers, felt organizer": "Pakabinamas 3 stalčių blokas su veltinio daiktų dėklu"
   }
 }

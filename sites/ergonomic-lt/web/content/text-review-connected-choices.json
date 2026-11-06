@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "scope": "Owner2026-11-06: connect only47 audited missing-choice models in text-review stage; preserve9 fixed models.",
+  "legacy": [
+    {
+      "code": "KBLS001WW001",
+      "productId": "product_belise-stools-bar-stools_8dea8493",
+      "sample": "19783109"
+    },
+    {
+      "code": "KBLS001WW002",
+      "productId": "product_belise-stools-bar-stools_8dea8493",
+      "sample": "19783110"
+    },
+    {
+      "code": "KCHI001WW002",
+      "productId": "product_chico-stools-bar-stools_ffaa8b98",
+      "sample": "24800027"
+    },
+    {
+      "code": "KCHI001WW004",
+      "productId": "product_chico-stools-bar-stools_ffaa8b98",
+      "sample": "25416173"
+    },
+    {
+      "code": "KBZM001WW001",
+      "productId": "product_bzoom-meeting-chairs_aa445386",
+      "sample": "31132658"
+    },
+    {
+      "code": "KELO001WW001",
+      "productId": "product_elovie-swivel-chairs_77c77abd",
+      "sample": "30470553"
+    },
+    {
+      "code": "KITA001WW001",
+      "productId": "product_inta-meeting-chairs_7adfdd79",
+      "sample": "20624634"
+    },
+    {
+      "code": "KELO001WW002",
+      "productId": "product_elovie-swivel-chairs_77c77abd",
+      "sample": "30470552"
+    },
+    {
+      "code": "KITA001WW002",
+      "productId": "product_inta-meeting-chairs_7adfdd79",
+      "sample": "20624632"
+    },
+    {
+      "code": "KISO028WW001",
+      "productId": "product_iso-meeting-chairs_4bd07abb",
+      "sample": "21307287"
+    },
+    {
+      "code": "KLYN003WW002",
+      "productId": "product_lynx-meeting-chairs_4798c9c2",
+      "sample": "28758854"
+    },
+    {
+      "code": "KSTY001WW004",
+      "productId": "product_styl-meeting-chairs_60fdacb4",
+      "sample": "20929369"
+    },
+    {
+      "code": "KNAD003WW002",
+      "productId": "product_nadir-meeting-chairs_4efad3a3",
+      "sample": "28433477"
+    },
+    {
+      "code": "KSYL001WW003",
+      "productId": "product_sylwia-s-meeting-chairs_12123440",
+      "sample": "27819538"
+    },
+    {
+      "code": "KSTY001WW003",
+      "productId": "product_styl-meeting-chairs_60fdacb4",
+      "sample": "20929371"
+    },
+    {
+      "code": "KTUL002WW002",
+      "productId": "product_tulipan-meeting-chairs_230e271e",
+      "sample": "26075293"
+    },
+    {
+      "code": "KTIM001WW001",
+      "productId": "product_timmi-stools-bar-stools_5d9910dd",
+      "sample": "20501895"
+    },
+    {
+      "code": "KSYL001WW004",
+      "productId": "product_sylwia-s-meeting-chairs_12123440",
+      "sample": "27819537"
+    },
+    {
+      "code": "KTUL001WW004",
+      "productId": "product_tulipan-meeting-chairs_230e271e",
+      "sample": "26075296"
+    },
+    {
+      "code": "KTUL001WW003",
+      "productId": "product_tulipan-meeting-chairs_230e271e",
+      "sample": "26075295"
+    },
+    {
+      "code": "KTUL003WW004",
+      "productId": "product_tulipan-stools-bar-stools_eb60d8ff",
+      "sample": "26084480"
+    },
+    {
+      "code": "KTUL003WW003",
+      "productId": "product_tulipan-stools-bar-stools_eb60d8ff",
+      "sample": "26084477"
+    },
+    {
+      "code": "KTUL003WW009",
+      "productId": "product_tulipan-stools-bar-stools_eb60d8ff",
+      "sample": "26084484"
+    },
+    {
+      "code": "KTUL003WW008",
+      "productId": "product_tulipan-stools-bar-stools_eb60d8ff",
+      "sample": "26084483"
+    },
+    {
+      "code": "KTUL003WW007",
+      "productId": "product_tulipan-stools-bar-stools_eb60d8ff",
+      "sample": "26084481"
+    },
+    {
+      "code": "KYUN001WW001",
+      "productId": "product_yuni-meeting-chairs_f1ee6ae3",
+      "sample": "28958404"
+    },
+    {
+      "code": "KZET001WW002",
+      "productId": "product_zeta-stools-bar-stools_c6c42cbd",
+      "sample": "25038984"
+    },
+    {
+      "code": "KZET002WW002",
+      "productId": "product_zeta-stools-bar-stools_c6c42cbd",
+      "sample": "25038986"
+    },
+    {
+      "code": "KYUN001WW002",
+      "productId": "product_yuni-meeting-chairs_f1ee6ae3",
+      "sample": "28958406"
+    }
+  ],
+  "prepared": [
+    {
+      "code": "KHOL001WW002",
+      "productId": "product_hola-meeting-chairs_1e0db3ce",
+      "sample": "26629733"
+    },
+    {
+      "code": "KNAU017WW001",
+      "productId": "product_naudu-stools-bar-stools_806bdc31",
+      "sample": "29782033"
+    },
+    {
+      "code": "KNAU018WW001",
+      "productId": "product_naudu-stools-bar-stools_806bdc31",
+      "sample": "29782035"
+    },
+    {
+      "code": "KWI2001WW001",
+      "productId": "product_wing-meeting-chairs_e9d12427",
+      "sample": "28702864"
+    },
+    {
+      "code": "KWI2011WW001",
+      "productId": "product_wing-meeting-chairs_e9d12427",
+      "sample": "28702866"
+    },
+    {
+      "code": "KWI2006WW001",
+      "productId": "product_wing-meeting-chairs_e9d12427",
+      "sample": "28702863"
+    },
+    {
+      "code": "KWI2003WW001",
+      "productId": "product_wing-meeting-chairs_e9d12427",
+      "sample": "28702867"
+    },
+    {
+      "code": "KVAP008WW001",
+      "productId": "product_vapaa-meeting-chairs_0f18b0a8",
+      "sample": "26877378"
+    },
+    {
+      "code": "KWI2003WW002",
+      "productId": "product_wing-meeting-chairs_e9d12427",
+      "sample": "28702868"
+    },
+    {
+      "code": "KXEN032WW001",
+      "productId": "product_xenium-swivel-chairs_5c29c487",
+      "sample": "23567096"
+    },
+    {
+      "code": "KXEN028WW001",
+      "productId": "product_xenium-swivel-chairs_5c29c487",
+      "sample": "23567100"
+    },
+    {
+      "code": "KWI2005WW001",
+      "productId": "product_wing-meeting-chairs_e9d12427",
+      "sample": "28702869"
+    },
+    {
+      "code": "KYOU002WW001",
+      "productId": "product_youteam-swivel-chairs_3886a3db",
+      "sample": "28689860"
+    },
+    {
+      "code": "KXLI002WW002",
+      "productId": "product_x-line-swivel-chairs_19b207ad",
+      "sample": "15680150"
+    },
+    {
+      "code": "KYOU001WW003",
+      "productId": "product_youteam-swivel-chairs_3886a3db",
+      "sample": "28689863"
+    },
+    {
+      "code": "KYOU001WW001",
+      "productId": "product_youteam-swivel-chairs_3886a3db",
+      "sample": "28689861"
+    },
+    {
+      "code": "KXEN033WW003",
+      "productId": "product_xenium-swivel-chairs_5c29c487",
+      "sample": "23567101"
+    },
+    {
+      "code": "KYOU002WW002",
+      "productId": "product_youteam-swivel-chairs_3886a3db",
+      "sample": "28689862"
+    }
+  ],
+  "fixed": [
+    "KAII001WW002",
+    "KAII001WW003",
+    "KAII001WW004",
+    "KAII001WW001",
+    "KEGO001WW001",
+    "KCIS001WW001",
+    "KOVI001WW001",
+    "KOVI001WW002",
+    "KVNN001WW001"
+  ]
+}

@@ -1,3 +1,4 @@
+import {preparedSupplierConfiguration,preparedCustomerConfiguration} from './prepared-chair-customer-server';
 
 // editorial-copy-wired
 import {copyText} from '@/lib/editorial-copy';
@@ -31,17 +32,20 @@ export async function storeQuote(input:unknown,options={customerOnly:process.env
   delete payload.formToken;
   const prior=await dbOne<{id:string}>('SELECT id FROM quotes WHERE submission_key=?',payload.submissionKey);
   if(prior)return {id:prior.id,duplicate:true};
+  const preparedItems=new Map<number,object>();
   for(let i=0;i<payload.items.length;i++){
    const item=payload.items[i];if(!item.configurationToken){if(options.customerOnly)throw Error('Pasirinkite prekę iš naujo.');continue;}
    const {product,saved,context}=await resolveCustomerSnapshot(item.configurationToken),scope={product:saved.product,sample:saved.sample},cap=customerKey();
-   if(item.productId!=='product_public_'+cap.id('product',scope)||item.customerSelectionId!==cap.id('selection',{...scope,state:saved.state,revision:saved.revision})||item.configurationState)throw Error('Pasirinkta komplektacija negalioja.');
+   if(item.productId!=='product_public_'+cap.id('product',scope)||item.customerSelectionId!==cap.id('selection',saved.prepared?{...scope,prepared:saved.prepared,revision:saved.revision}:{...scope,state:saved.state,revision:saved.revision})||item.configurationState)throw Error('Pasirinkta komplektacija negalioja.');
+   if(context.prepared){const chosen=preparedSupplierConfiguration(product,context.prepared,saved.prepared),view=await preparedCustomerConfiguration(product,context.prepared,context.revision,saved.prepared);preparedItems.set(i,{...supplierReference(product),productName:view.name,configurationName:view.name,baseArticle:chosen.sample.code,supplierOptions:chosen.options,configurationDetails:view.details,configurationCodeStatus:'validated-prepared-manufacturer',configurationEvidence:chosen.evidence});}
    const selected=saved.state?context.engine.expandedSelection(product,saved.state):undefined;
    payload.items[i]={productId:saved.product,configurationId:selected?.configuration.id||saved.sample,configurationState:saved.state,quantity:item.quantity,note:item.note};
   }
   const products=await visibleProductsAsync();
   const resolved:object[]=[];
-  for(const item of payload.items){
+  for(const [itemIndex,item]of payload.items.entries()){
     const p=products.find(p=>p.id===item.productId);if(!p)throw new Error(copyText("ui.8b2bc0e5fcb7d4a51bed","Viena iš pasirinktų prekių nebepasiekiama. Atnaujinkite sąrašą."));
+    const prepared=preparedItems.get(itemIndex);if(prepared){resolved.push({...item,...prepared});continue;}
     if(item.configurationState){const model=p.configurations.find(c=>c.id===item.configurationId),candidate=model?modelProduct(p,model):p;
       const configured=configurableArticle(candidate)?candidate:p,engine=createExpandedEngine(await loadCatalogRuntime(configured,item.configurationState)),selection=engine.expandedSelection(configured,item.configurationState),article=engine.selectionArticle(configured,selection.state);
       if(item.configurationId!==selection.configuration.id)throw Error(copyText("ui.b67f291ae5800555e0e3","Komplektacijos kodas neatitinka produkto."));

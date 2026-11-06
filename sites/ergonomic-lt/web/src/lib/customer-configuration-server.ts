@@ -1,3 +1,4 @@
+import {loadPreparedCustomerChair,preparedCustomerConfiguration,preparedSupplierConfiguration} from './prepared-chair-customer-server';
 import verifiedSpecifications from '../../content/verified-model-specifications.json';
 import {customerKey} from './customer-capability';
 import {customerControlIds,resolveCustomerChange,type CustomerConfiguration,type CustomerState} from './customer-configuration';
@@ -34,9 +35,9 @@ const textile=new Set(['CSE','MT','RX','SD','SC','SY','ST','CN','ME','CUR','ERA'
 export type CustomerTiming=(name:string,milliseconds:number)=>void;
 export async function customerContext(p:Product,input?:CustomerState['state'],trace?:CustomerTiming){
  const start=performance.now();
- const runtime=await loadCatalogRuntime(p,input);trace?.('runtime',performance.now()-start);const engineStart=performance.now(),engine=createExpandedEngine(runtime),family=engine.expandedForProduct(p),cap=customerKey();
- const revision=cap.id('revision',customerConfigurationRevisionSource(family||p.configurations.map(c=>({id:c.id,code:c.code,supplierOptions:c.supplierOptions}))));
- trace?.('engine',performance.now()-engineStart);return {runtime,engine,family,revision};
+ const prepared=await loadPreparedCustomerChair(p),runtime=prepared?undefined:await loadCatalogRuntime(p,input);trace?.('runtime',performance.now()-start);const engineStart=performance.now(),engine=createExpandedEngine(runtime),family=engine.expandedForProduct(p),cap=customerKey();
+ const revision=cap.id('revision',customerConfigurationRevisionSource(prepared?{package:prepared.entry.sha256,product:p.id,sample:p.modelConfigurationId}:family||p.configurations.map(c=>({id:c.id,code:c.code,supplierOptions:c.supplierOptions}))));
+ trace?.('engine',performance.now()-engineStart);return {runtime,engine,family,revision,prepared};
 }
 export async function resolveCustomerSnapshot(token:string,trace?:CustomerTiming){
  const start=performance.now();
@@ -46,7 +47,7 @@ export async function resolveCustomerSnapshot(token:string,trace?:CustomerTiming
  const sample=parent.configurations.find(c=>c.id===saved.sample);if(saved.sample&&!sample)throw Error('Modelis nebegalioja.');
  const product=sample?modelProduct(parent,sample):parent,context=await customerContext(product,saved.state,trace);
  if(saved.revision!==context.revision)throw Error('Produkto komplektacija pasikeitė. Pasirinkite ją iš naujo.');
- if(saved.state)context.engine.validateState(product,saved.state);
+ if(context.prepared){if(saved.state)throw Error('Netinkama kėdės būsena.');preparedSupplierConfiguration(product,context.prepared,saved.prepared);}else{if(saved.prepared)throw Error('Kėdės paketas nebepasiekiamas.');if(saved.state)context.engine.validateState(product,saved.state);}
  return {product,saved,context};
 }
 export async function customerSnapshotFromLegacy(product:Product,token:string){const context=await customerContext(product),state=context.engine.parseStateToken(product,token);return customerKey().seal('configuration',{product:product.id,sample:product.modelConfigurationId||product.configurations[0]?.id||null,state,revision:context.revision});}
@@ -56,6 +57,7 @@ export async function customerConfiguration(product:Product,token?:string,change
  const resolved=token?(verified||await resolveCustomerSnapshot(token)):undefined;
  if(resolved&&(resolved.saved.product!==scope.product||resolved.saved.sample!==scope.sample))throw Error('Komplektacija priklauso kitam modeliui.');
  const context=resolved?.context||await customerContext(product);
+ if(context.prepared)return preparedCustomerConfiguration(product,context.prepared,context.revision,resolved?.saved.prepared,change);
  let state:CustomerState['state']=resolved?.saved.state;
  if(!resolved&&context.family)state=context.engine.initialStateForProduct(product);
  let materialControls=state?await customerChairControls(product,context,state):[];

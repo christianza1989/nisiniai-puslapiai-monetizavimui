@@ -9,6 +9,7 @@ import {chairCandidates} from './chair-structure-candidates';
 import {createLegacyDeskColorLoader} from './legacy-desk-color-loader';
 import {deskComponentCandidates,createDeskComponentLoader} from './desk-component-candidates';
 import deskColorCandidates from '../../content/desk-color-candidates.json';
+import {connectedChoiceModel} from './connected-choice-scope';
 
 export type CatalogRuntimeIndex={schemaVersion:number;articles:Record<string,{asset:string;sha256:string}>;products:Record<string,{id:string;articles:{code:string;sample:string;name:string;id?:string}[]}>};
 type Shard={article:{code:string;sample:string;name:string};anchors:CatalogAnchor[];palettes:CatalogRuntime['palettes']};
@@ -44,5 +45,6 @@ const loadLegacyRuntime=createCatalogRuntimeLoader(indexData as CatalogRuntimeIn
 const loadChairRuntime=createLegacyDeskColorLoader(chairCandidates,configuratorRuntimeAsset,deskColorCandidates);
 const loadDeskRuntime=createDeskComponentLoader(deskComponentCandidates,configuratorRuntimeAsset,deskColorCandidates);
 export async function loadCatalogRuntime(product:Product,input?:unknown){
+ if(connectedChoiceModel(product,'legacy')){const complete=await loadLegacyRuntime(product,input);if(complete)return complete;}
  return await loadDeskRuntime(product,input)||await loadChairRuntime(product,input)||await loadLegacyRuntime(product,input);
 }

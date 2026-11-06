@@ -18,6 +18,7 @@ import {explanationSourceModels,legacyExplanationModels} from './option-explanat
 import {manufacturerOptionName} from './manufacturer-option-names';
 import {verifiedDeskOption} from './verified-desk-media-options';
 import {verifiedChairBaseOption} from './verified-chair-base-options';
+import {createRuntimeTextSharing,runtimeReviewEdits} from './text-review-sharing';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
@@ -210,10 +211,22 @@ for(const [code,m] of Object.entries(inventory.models)){
   counts[group]++;usage.set(id,counts);
  }
 }
-export function sharedTextKey(category:string,id:string){
+function inventoryTextKey(category:string,id:string){
  const counts=usage.get(id);
  return counts?.chairs&&counts.desks?'category:'+(category===deskCategory?'desks':'chairs')+':'+id:id;
 }
+const sharingOriginals=Object.fromEntries(Object.keys(inventory.models).map(model=>[model,{...materialByModel[model],...englishByModel[model]}]));
+// The exact four-QE accessory has a source-verified English reference, even
+// where that model's right-hand field supplied no separate label. Keep that
+// distinction in the displayed original; use the verified reference to link it.
+for(const[model,meta]of Object.entries(inventory.models))if(meta.path.startsWith('/produktai/'+deskCategory+'/')){
+ for(const field of ['FMEDIAPORTLEFT','FMEDIAPORTRIGHT','FMEDIAPORTMIDDLE']){
+  const binding='value:'+field+'=_4XGROMMETQE',reference=verifiedDeskOption(model,field,'_4XGROMMETQE')?.english;
+  if(reference&&!sharingOriginals[model][binding])sharingOriginals[model][binding]=reference;
+ }
+}
+const runtimeSharing=createRuntimeTextSharing(inventory.models,inventory.terms,sharingOriginals,inventoryTextKey);
+export function sharedTextKey(category:string,id:string){return runtimeSharing.target(category,id)?.key||inventoryTextKey(category,id);}
 const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export const localTextKey=(model:string,id:string)=>'local:'+model+':'+id;
 export const productTextScope=(p:Product)=>p.id+':'+(p.modelConfigurationId||'line');
@@ -380,13 +393,14 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  if(!edits){
   edits=new Map();
   if(terms.size)for(const row of await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key GLOB ?', 'runtime:'+model+':*'))if(terms.has(row.key))edits.set(row.key,row);
-  const keys=[...new Set([...defs.map(d=>globalKey(d.id)),...codes.flatMap(code=>Object.values(bindings[code]).flatMap(id=>[globalKey(id),localTextKey(code,id)]))])].filter(key=>!key.startsWith('runtime:')&&!key.includes(':runtime:'));
+  const keys=[...new Set([...defs.map(d=>globalKey(d.id)),...codes.flatMap(code=>Object.values(bindings[code]).flatMap(id=>[globalKey(id),localTextKey(code,id)]))])].filter(key=>!key.startsWith('runtime:'));
   for(let i=0;i<keys.length;i+=70){const batch=keys.slice(i,i+70);for(const row of await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key IN ('+batch.map(()=>'?').join(',')+')',...batch))edits.set(row.key,row);}
  }
  const values:Record<string,string>={};
  for(const code of codes)for(const id of new Set(Object.values(bindings[code]))){
   const def=terms.get(id)||inventory.terms[id];if(!def)continue;
-  const local=edits.get(localTextKey(code,id)),global=edits.get(globalKey(id));
+  const target=runtimeSharing.target(p.categorySlug,id),resolved=runtimeReviewEdits(def,code,edits,target);
+  const local=resolved.local,global=target?resolved.global:edits.get(globalKey(id));
   const fallback=displayedReviewText(def,global,'');
   const value=local?displayedReviewText(def,local,fallback):fallback;
   if(value)values[code+':'+id]=value;
@@ -410,7 +424,8 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   optionCodesByTerm.set(id,codes);
  }
  const entries:ReviewEntry[]=defs.map(def=>{
-  const shared=def.role!=='Produkto tekstas'&&(!terms.has(def.id)||!!inventory.terms[def.id]||helpDefs.has(def.id)),global=edits!.get(globalKey(def.id)),local=shared?edits!.get(localTextKey(model,def.id)):undefined;
+  const target=runtimeSharing.target(p.categorySlug,def.id),resolved=runtimeReviewEdits(def,model,edits!,target);
+  const shared=def.role!=='Produkto tekstas'&&(!terms.has(def.id)||!!inventory.terms[def.id]||helpDefs.has(def.id)||!!target),global=target?resolved.global:edits!.get(globalKey(def.id)),local=shared?resolved.local:undefined;
   const edit=local||global,baseStatus=textReviewStatus(def,edit);
   const originalText=shared?known?.current[def.id]||def.current[0]||def.sourceCode:def.current[0];
   const currentText=publishedText(def,local,publishedText(def,global,originalText));
@@ -420,7 +435,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const originalEnglish=(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english;
   const catalogueLabel=!originalEnglish&&/^KUTI(?:003WW001|004WW00[12])$/.test(model)&&def.sourceCode==='CLUMBARPLASTICCOLOR'?utilaCatalogueLabel:undefined;
   const englishReference=originalEnglish||catalogueLabel?'':[...referenceByTerm.get(def.id)||[]].join(' · ');
-  return {...def,english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText,optionCodes:helpDefs.has(def.id)?[def.sourceCode]:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:helpDefs.get(def.id)?.sourceUrl||p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:helpDefs.has(def.id)?helpModelCount(helpDefs.get(def.id)!,group):shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1};
+  return {...def,english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText,optionCodes:helpDefs.has(def.id)?[def.sourceCode]:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:helpDefs.get(def.id)?.sourceUrl||p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:target?.affected|| (helpDefs.has(def.id)?helpModelCount(helpDefs.get(def.id)!,group):shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1)};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at,proposalPreview:textReviewProposalPreview()};
@@ -430,7 +445,16 @@ export class ReviewConflict extends Error{}
 export async function mutateText(def:TextDefinition,args:{key:string;sourceHash:string;expectedRevision:number;text?:string;action:ReviewAction}){
  if(args.sourceHash!==def.sourceHash)throw new ReviewConflict('Pasikeitė teksto šaltinis. Atnaujinkite puslapį.');
  if(!Number.isSafeInteger(args.expectedRevision)||args.expectedRevision<0)throw Error('Neteisinga teksto versija.');
- const prior=await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key=?',args.key);
+ let prior=await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key=?',args.key);
+ // Runtime edits saved before shared linking were model-specific. Keep using
+ // their exact row/revision when editing that local override; never migrate it.
+ if(!prior.length&&def.id.startsWith('runtime:')&&args.key.endsWith(':'+def.id)&&args.key.startsWith('local:')){
+  prior=await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key=?',def.id);
+  if(prior.length)args={...args,key:def.id};
+ }
+ const category=(def as Partial<ReviewEntry>).model&&inventory.models[(def as ReviewEntry).model]?.path.startsWith('/produktai/'+deskCategory+'/')?deskCategory:'kedes';
+ const target=runtimeSharing.target(category,def.id);
+ if(target&&args.key===target.key)def={...def,sourceHash:target.sourceHash};
  const previous=prior[0];
  if((previous?.revision||0)!==args.expectedRevision)throw new ReviewConflict('Šį tekstą jau pakeitė kita sesija. Atnaujinkite įrašą.');
  let text=(args.text??previous?.draft??'').trim();

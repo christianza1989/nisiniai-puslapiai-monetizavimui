@@ -14,7 +14,7 @@ export async function GET(req:NextRequest){
  try{
   const code=req.nextUrl.searchParams.get('code'),p=code?await reviewProductForCode(code):await product(req.nextUrl.searchParams.get('product')||'',req.nextUrl.searchParams.get('sample')||undefined);if(!p)return json({error:'Produktas nerastas.'},404);
   const scope=await buildReviewScope(p,undefined,p.modelConfigurationId?await loadCatalogRuntime(p):undefined),id=req.nextUrl.searchParams.get('history');
-  if(id){const entry=scope.entries.find(e=>e.id===id);if(!entry)return json({error:'Tekstas nerastas.'},404);const keys=[entry.id,...entry.previousIds||[]].flatMap(id=>[sharedTextKey(p.categorySlug,id),localTextKey(scope.model,id)]);return json({history:await dbAll('SELECT key,action,text,revision,actor,at FROM text_review_history WHERE key IN ('+keys.map(()=>'?').join(',')+') ORDER BY id DESC LIMIT 20',...keys)});}
+  if(id){const entry=scope.entries.find(e=>e.id===id);if(!entry)return json({error:'Tekstas nerastas.'},404);const keys=[...new Set([entry.id,...entry.previousIds||[]].flatMap(id=>[id,sharedTextKey(p.categorySlug,id),localTextKey(scope.model,id)]))];return json({history:await dbAll('SELECT key,action,text,revision,actor,at FROM text_review_history WHERE key IN ('+keys.map(()=>'?').join(',')+') ORDER BY id DESC LIMIT 20',...keys)});}
   return json(scope);
  }catch{return json({error:'Nepavyko įkelti tekstų saugyklos. Bandykite atnaujinti puslapį.'},503);}
 }

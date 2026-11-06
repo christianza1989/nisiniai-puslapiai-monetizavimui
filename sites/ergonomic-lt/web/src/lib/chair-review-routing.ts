@@ -14,6 +14,16 @@ export function chairReviewRoute(entry:ChairReviewEntry,constructionId:string,fi
  return {construction,source};
 }
 
+/** Menus select complete admitted records; they never compose structural values. */
+export function chairConstructionMenus(entry:ChairReviewEntry,id:string){
+ if(!entry.constructions?.length||!entry.construction)return undefined;
+ const rows=[{id:'default',label:entry.construction.structuralValues.CARMRESTS,construction:entry.construction},...entry.constructions];
+ const current=rows.find(r=>r.id===id);if(!current)throw Error('Unknown chair construction');
+ const arms=rows.filter((row,i)=>rows.findIndex(r=>r.construction.structuralValues.CARMRESTS===row.construction.structuralValues.CARMRESTS)===i);
+ const bases=rows.filter(row=>Object.entries(current.construction.structuralValues).every(([field,value])=>field==='CBASE'||row.construction.structuralValues[field]===value));
+ return {armId:arms.find(row=>row.construction.structuralValues.CARMRESTS===current.construction.structuralValues.CARMRESTS)!.id,arms:arms.map(r=>({id:r.id,label:r.label})),bases:bases.map(r=>({id:r.id,label:r.construction.structuralValues.CBASE}))};
+}
+
 export function validateChairConstructionBinding(data:ChairPreview,binding:ChairConstructionBinding){
  if(data.runtimeSha256!==binding.runtimeSha256||Object.keys(binding.structuralValues).length!==7||data.runtime.contexts.length!==1||!data.qualified?.witnesses.length)throw Error('Wrong construction runtime');
  const context=data.runtime.contexts[0];

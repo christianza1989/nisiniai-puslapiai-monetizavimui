@@ -766,6 +766,47 @@
             },
             "runtimeSha256": "0ad38d4a553ee20c85b474fef1fae19540650e5e9286362bfdbdaff0904a401c"
           }
+        },
+        {
+          "id": "MEDIUM_NONE_TS34BL",
+          "label": "NONE · be porankių · TS34BL",
+          "contextLabel": "PRICE_1 / CSE · 44 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG002WW001-72d90eeb3193b3e5243e/review-37121b982aa1d4a22b7e.json",
+          "sha256": "37121b982aa1d4a22b7ea632fe563a7cfe3a07979c764648d3cea6bddbe9488d",
+          "bytes": 113297,
+          "runtimeSha256": "ab0ff8b060bebb9479f2d7de88d50956e920d85fedaa94b5347b4076ca95026d",
+          "construction": {
+            "dimensions": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBACKREST": "MBUPHCOVERPLASTIC",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CFSC": "FSCMIX",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEAT": "UPH",
+              "CSEATPADFOAM": "STANDARD",
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "structuralValues": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "runtimeSha256": "ab0ff8b060bebb9479f2d7de88d50956e920d85fedaa94b5347b4076ca95026d"
+          }
         }
       ]
     },

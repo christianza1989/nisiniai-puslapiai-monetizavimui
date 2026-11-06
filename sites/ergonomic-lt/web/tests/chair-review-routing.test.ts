@@ -1,8 +1,9 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {chairReviewRoute,validateChairConstructionBinding,type ChairReviewEntry,type ChairConstructionBinding} from '../src/lib/chair-review-routing';
+import {chairReviewRoute,chairConstructionMenus,validateChairConstructionBinding,type ChairReviewEntry,type ChairConstructionBinding} from '../src/lib/chair-review-routing';
 import type {ChairPreview} from '../src/lib/chair-preview';
 import constructionPins from '../scripts/segla-construction-exact-pins.json';
+import reviewRegistry from '../content/pc2-chair-review-candidates.json';
 
 const structuralValues={CMECHANISM:'FST',CARMRESTS:'R35K3SB2',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'};
 const binding:ChairConstructionBinding={runtimeSha256:'new-runtime',dimensions:{...structuralValues,DHEIGHT:'_840T1045'},structuralValues};
@@ -36,6 +37,22 @@ test('HIGH NONE never accepts MEDIUM geometry or a nominal210 hidden dimension',
  assert.doesNotThrow(()=>validateChairConstructionBinding(own,binding));
  const mixed=structuredClone(own);mixed.runtime.contexts[0].dimensions={...medium.exactRuntimeConstructionDimensions};assert.throws(()=>validateChairConstructionBinding(mixed,binding));
  const nominal=structuredClone(own);nominal.runtime.contexts[0].dimensions.DARMRESTSHEIGHT='_210T280';assert.throws(()=>validateChairConstructionBinding(nominal,binding));
+});
+
+test('MEDIUM base menu selects only complete admitted NONE constructions, never R35K3SB2+TS34BL',()=>{
+ const medium=reviewRegistry.entries.find(e=>e.code==='KSEG002WW001')! as ChairReviewEntry;
+ const menu=chairConstructionMenus(medium,'MEDIUM_NONE_TS34BL')!;
+ assert.equal(menu.armId,'MEDIUM_NONE');assert.equal(menu.arms.length,2);
+ assert.deepEqual(menu.bases,[{id:'MEDIUM_NONE',label:'TS25'},{id:'MEDIUM_NONE_TS34BL',label:'TS34BL'}]);
+ assert.deepEqual(chairConstructionMenus(medium,'default')!.bases,[{id:'default',label:'TS25'}]);
+ const routed=chairReviewRoute(medium,'MEDIUM_NONE_TS34BL','default');
+ assert.equal(routed.construction.construction!.structuralValues.CARMRESTS,'NONE');
+ assert.equal(routed.construction.construction!.structuralValues.CBASE,'TS34BL');
+ assert.equal(routed.construction.construction!.dimensions.DARMRESTSHEIGHT,'_205T280');
+ assert.throws(()=>chairReviewRoute(medium,'MEDIUM_NONE_TS34BL','PRICE_2_CUR'),/Unknown finish/);
+ const pin=constructionPins.MEDIUM_NONE_TS34BL.route;
+ assert.notEqual(pin.runtimeSha256,constructionPins.MEDIUM_NONE.route.runtimeSha256);
+ assert.notEqual(pin.baselineAssetSha256,constructionPins.MEDIUM_NONE.route.baselineAssetSha256);
 });
 function data(){return {runtimeSha256:binding.runtimeSha256,runtime:{contexts:[{dimensions:{...binding.dimensions}}]},qualified:{witnesses:[{structural:Object.fromEntries(Object.entries(structuralValues).map(([k,value])=>[k,{value,supportedValues:[value]}]))}]}} as unknown as ChairPreview;}
 test('same chair code or finish does not authorize a different runtime or any of seven fields',()=>{

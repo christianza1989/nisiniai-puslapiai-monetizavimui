@@ -25,6 +25,7 @@ import {supplierOptions,configurationOptionLabel} from './configuration-labels';
 import {reviewedSpecificationRows} from './reviewed-specification-rows';
 import {selectedTextReviewProduct} from './text-review-product';
 import {publishedReviewValue} from './text-review-value';
+import {customerBuilderSteps} from './customer-builder-steps-server';
 const textile=new Set(['CSE','MT','RX','SD','SC','SY','ST','CN','ME','CUR','ERA','X','YS','YB']);
 
 export async function customerContext(p:Product,input?:CustomerState['state']){
@@ -118,5 +119,7 @@ export async function customerConfiguration(product:Product,token?:string,change
    details.push({label,value});
   }
  }
- return {legacyChair,token:cap.seal('configuration',{...scope,state,revision:context.revision}),selectionId:cap.id('selection',{...scope,state,revision:context.revision}),productId:'product_public_'+cap.id('product',scope),name:customerLabel(product.textReviewHeading||productHeading(product),codes,'Biuro baldas'),controls,details,assets,finishes,desk,available3D:!!assets.base||assets.patches.some(p=>p.assets.length>0)||!!desk?.assets.length};
+ const stepChoices={...choices,...Object.fromEntries(materialControls.map(group=>[group.id,group.options.map(option=>option.id)]))};
+ const steps=customerBuilderSteps(product,stepChoices,ids.field,materialControls.map(group=>group.id));
+ return {legacyChair,token:cap.seal('configuration',{...scope,state,revision:context.revision}),selectionId:cap.id('selection',{...scope,state,revision:context.revision}),productId:'product_public_'+cap.id('product',scope),name:customerLabel(product.textReviewHeading||productHeading(product),codes,'Biuro baldas'),controls,steps,details,assets,finishes,desk,available3D:!!assets.base||assets.patches.some(p=>p.assets.length>0)||!!desk?.assets.length};
 }

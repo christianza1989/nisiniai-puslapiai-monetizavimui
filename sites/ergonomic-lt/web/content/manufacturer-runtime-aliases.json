@@ -1,0 +1,706 @@
+{
+  "at": "2026-11-06T03:54:32.754Z",
+  "rule": "Actual unchanged manufacturer seed request selected the canonical value; only initial underscore differs. Source/runtime codes and geometry are unchanged.",
+  "rows": [
+    {
+      "model": "KCAF011WW001",
+      "binding": "value:CTOPINSTEADOFSEAT=1T",
+      "runtimeValue": "1T",
+      "supplierValue": "_1T",
+      "english": "1 table top applicable alternately with seat",
+      "evidence": "KCAF011WW001-0555a856655d6ae6.json",
+      "articleSha256": "7ae22cfb80f752edeb849150ada42a72021c027ecda195f0f1b7700fecf6db47",
+      "choicesSha256": "b3d58764ed69b4d3a2abbe726f4f8cb4f4ca019c9da5e053f38cb4c2f4b70648"
+    },
+    {
+      "model": "KSQA176WW001",
+      "binding": "value:CPILLOW=3XUPH480X480",
+      "runtimeValue": "3XUPH480X480",
+      "supplierValue": "_3XUPH480X480",
+      "english": "3x upholstered cushion 480x480 mm",
+      "evidence": "KSQA176WW001-841fedd9a0900be9.json",
+      "articleSha256": "34fb94d1ad36dacab14c55135f6ac8e5cfa3300b1472cc1a920ac61d47e17598",
+      "choicesSha256": "907c98876ae0c474efbaf335a9cde345bf0c9b4593a8956c8bb562e9371eb22c"
+    },
+    {
+      "model": "KECM001WW002",
+      "binding": "value:FUPPERPANEL=1XFELT490",
+      "runtimeValue": "1XFELT490",
+      "supplierValue": "_1XFELT490",
+      "english": "1x Felt, 490mm height",
+      "evidence": "KECM001WW002-1d5499cf570cf3d0.json",
+      "articleSha256": "b3b7e1d7e7e848a29c55e0e312a41a5a1b0b465124fcc1fb52e5d27b9d5d8d54",
+      "choicesSha256": "cebd2a5af3156ae2c912c7b76952721b051efac4f317fa96dc74c3fc48be9bdf"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FHADJUSTMENTWAY=2XCONTROLTOUCHPANEL",
+      "runtimeValue": "2XCONTROLTOUCHPANEL",
+      "supplierValue": "_2XCONTROLTOUCHPANEL",
+      "english": "2x control panel with display, touch panel and memory function (4 positions)",
+      "evidence": "KEM3003WW002-8e0e4bba2e81203c.json",
+      "articleSha256": "57a5d49f2f7e3833ecfdcefd95ec3aa3f923d3e249235452e9752fe3bb8b41ad",
+      "choicesSha256": "03a3d213527416034afefc8195301f3e77d5e37844d370d0d347efa822ea7795"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FHORWIRETRUNKING=2XSTEELHORIZONTAL1",
+      "runtimeValue": "2XSTEELHORIZONTAL1",
+      "supplierValue": "_2XSTEELHORIZONTAL1",
+      "english": "2x Foldable on one side, steel",
+      "evidence": "KEM3003WW002-8e0e4bba2e81203c.json",
+      "articleSha256": "57a5d49f2f7e3833ecfdcefd95ec3aa3f923d3e249235452e9752fe3bb8b41ad",
+      "choicesSha256": "03a3d213527416034afefc8195301f3e77d5e37844d370d0d347efa822ea7795"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FUPPERPANEL=1XUPH490",
+      "runtimeValue": "1XUPH490",
+      "supplierValue": "_1XUPH490",
+      "english": "1x Upholstered, 490 mm height",
+      "evidence": "KEM3003WW002-8e0e4bba2e81203c.json",
+      "articleSha256": "57a5d49f2f7e3833ecfdcefd95ec3aa3f923d3e249235452e9752fe3bb8b41ad",
+      "choicesSha256": "03a3d213527416034afefc8195301f3e77d5e37844d370d0d347efa822ea7795"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FVERWIRETRUNKING=2XVERTICALFLEXIBLEMODPLA",
+      "runtimeValue": "2XVERTICALFLEXIBLEMODPLA",
+      "supplierValue": "_2XVERTICALFLEXIBLEMODPLA",
+      "english": "2x Flexible, modular, plastic",
+      "evidence": "KEM3003WW002-8e0e4bba2e81203c.json",
+      "articleSha256": "57a5d49f2f7e3833ecfdcefd95ec3aa3f923d3e249235452e9752fe3bb8b41ad",
+      "choicesSha256": "03a3d213527416034afefc8195301f3e77d5e37844d370d0d347efa822ea7795"
+    },
+    {
+      "model": "KEM2014WW002",
+      "binding": "value:FHADJUSTMENTWAY=2XHANDSET",
+      "runtimeValue": "2XHANDSET",
+      "supplierValue": "_2XHANDSET",
+      "english": "2x control panel with up&down buton",
+      "evidence": "KEM2014WW002-3b4ebf24b5ba4f80.json",
+      "articleSha256": "b1d083dab77c5d5b64d73cba10c4950480db5691bb944f3c8b4510f86fdf3032",
+      "choicesSha256": "b58d9b4d0028640391be79f0d115853c5529d3011ad8fef6ababd03b44a3c030"
+    },
+    {
+      "model": "KEM2014WW003",
+      "binding": "value:FHADJUSTMENTWAY=2XCONTROLPANEL",
+      "runtimeValue": "2XCONTROLPANEL",
+      "supplierValue": "_2XCONTROLPANEL",
+      "english": "2x control panel with display and memory function",
+      "evidence": "KEM2014WW003-60c6aac43fe2f907.json",
+      "articleSha256": "4980151b1a98b318252496ee0d751187c0bd9e1b6bff857eec195612344e9cd3",
+      "choicesSha256": "740609a12eeac97c941729a68b1842a18c77dd68adb39ab87c4b7b3293f675d3"
+    },
+    {
+      "model": "KEM2014WW003",
+      "binding": "value:FUPPERPANEL=2XUPH480",
+      "runtimeValue": "2XUPH480",
+      "supplierValue": "_2XUPH480",
+      "english": "2x Upholstered, 480mm height",
+      "evidence": "KEM2014WW003-60c6aac43fe2f907.json",
+      "articleSha256": "4980151b1a98b318252496ee0d751187c0bd9e1b6bff857eec195612344e9cd3",
+      "choicesSha256": "740609a12eeac97c941729a68b1842a18c77dd68adb39ab87c4b7b3293f675d3"
+    },
+    {
+      "model": "KEUP011WW002",
+      "binding": "value:FVERWIRETRUNKING=2XVERTICALFLEXIBLEMODPLA",
+      "runtimeValue": "2XVERTICALFLEXIBLEMODPLA",
+      "supplierValue": "_2XVERTICALFLEXIBLEMODPLA",
+      "english": "2x Flexible, modular, plastic",
+      "evidence": "KEUP011WW002-e9c0e754b9883fe4.json",
+      "articleSha256": "cb8910f196e7d7080a14d7e5eac2677bf7f8199948221720a4b92a4e316b6f89",
+      "choicesSha256": "dc2557f6c36df933927e5a4437b4efaedb27c9584c33a97577d73bb0aab843fd"
+    },
+    {
+      "model": "KPW2025WW001",
+      "binding": "value:FMEDIAPORTRIGHT=2XEVOLINECIRCLE801M",
+      "runtimeValue": "2XEVOLINECIRCLE801M",
+      "supplierValue": "_2XEVOLINECIRCLE801M",
+      "english": "2x EVOline Circle80 1M",
+      "evidence": "KPW2025WW001-4bfdfc37dd75a1b4.json",
+      "articleSha256": "1aa994cfd577ffdd8298c2fc6cf799d57bede2ec182607e9f9eef26012a5ed10",
+      "choicesSha256": "d23c974390028a1171003ea8b72254387afb7034724afd5a15b9920573f6ab99"
+    },
+    {
+      "model": "KPW2025WW001",
+      "binding": "value:FWIRETRUNKING=2XHORUPHWIRET2XVERUPH",
+      "runtimeValue": "2XHORUPHWIRET2XVERUPH",
+      "supplierValue": "_2XHORUPHWIRET2XVERUPH",
+      "english": "2x Horizontal upholstered and 2x vertical upholstered",
+      "evidence": "KPW2025WW001-4bfdfc37dd75a1b4.json",
+      "articleSha256": "1aa994cfd577ffdd8298c2fc6cf799d57bede2ec182607e9f9eef26012a5ed10",
+      "choicesSha256": "d23c974390028a1171003ea8b72254387afb7034724afd5a15b9920573f6ab99"
+    },
+    {
+      "model": "KXI2001WW003",
+      "binding": "value:FCOLUMN=3RECTANGULAR9060",
+      "runtimeValue": "3RECTANGULAR9060",
+      "supplierValue": "_3RECTANGULAR9060",
+      "english": "Rectangular (90x60 mm) - three-segment",
+      "evidence": "KXI2001WW003-e52b9891db868d9c.json",
+      "articleSha256": "f22f83fa838ccef19177a93868b0f06f2c0a0486b68bcf8776d7afe40a4e2a69",
+      "choicesSha256": "105631909d7c3f0a5df849d1db40cc54551ee2f6394c29ca6878a7a911efd8a4"
+    },
+    {
+      "model": "KXI2021WW003",
+      "binding": "value:FCOLUMN=3RECTANGULAR9060",
+      "runtimeValue": "3RECTANGULAR9060",
+      "supplierValue": "_3RECTANGULAR9060",
+      "english": "Rectangular (90x60 mm) - three-segment",
+      "evidence": "KXI2021WW003-b11100c0a7d7e3e0.json",
+      "articleSha256": "d0c3ad0cf8e81c0a3719bed865ee6cacc242f1cebaeb49b4e89d6c8ab6a1f8ed",
+      "choicesSha256": "ff8de3cd8c5caca0569f9704c96b1f90d9822a076bb7d8c643dae3f11ff7c935"
+    },
+    {
+      "model": "KSQA128WW001",
+      "binding": "value:FHORWIRETRUNKING=4XMODMETAL",
+      "runtimeValue": "4XMODMETAL",
+      "supplierValue": "_4XMODMETAL",
+      "english": "4x Modular, metal",
+      "evidence": "KSQA128WW001-97b679fd7d03c6c6.json",
+      "articleSha256": "d4f6ebc67810ed07fe447ffdd02584f98d5717a2f51d686091893b78d1798ac6",
+      "choicesSha256": "50dd01a785c8027446e5ef52b51f6daef20597a0e04a304bf2f585f47ee1739f"
+    },
+    {
+      "model": "KSQA128WW001",
+      "binding": "value:FPANELACCESSORIES=2XUPHPADONPINS700290",
+      "runtimeValue": "2XUPHPADONPINS700290",
+      "supplierValue": "_2XUPHPADONPINS700290",
+      "english": "2x Upholstered pad 700 x 290 mm, with the option of inserting pins",
+      "evidence": "KSQA128WW001-97b679fd7d03c6c6.json",
+      "articleSha256": "d4f6ebc67810ed07fe447ffdd02584f98d5717a2f51d686091893b78d1798ac6",
+      "choicesSha256": "50dd01a785c8027446e5ef52b51f6daef20597a0e04a304bf2f585f47ee1739f"
+    },
+    {
+      "model": "KSQA128WW001",
+      "binding": "value:FUPPERPANEL=2XMELAMINE377OVERTOP",
+      "runtimeValue": "2XMELAMINE377OVERTOP",
+      "supplierValue": "_2XMELAMINE377OVERTOP",
+      "english": "2x Modesty, melamine, 377 mm height above the tabletop",
+      "evidence": "KSQA128WW001-97b679fd7d03c6c6.json",
+      "articleSha256": "d4f6ebc67810ed07fe447ffdd02584f98d5717a2f51d686091893b78d1798ac6",
+      "choicesSha256": "50dd01a785c8027446e5ef52b51f6daef20597a0e04a304bf2f585f47ee1739f"
+    },
+    {
+      "model": "KBSP003WW001",
+      "binding": "value:FMEDIAPORTLEFT=4XGROMMETQC",
+      "runtimeValue": "4XGROMMETQC",
+      "supplierValue": "_4XGROMMETQC",
+      "english": "4x Plastic square grommet with round outlet diam.80",
+      "evidence": "KBSP003WW001-1973e1305d8e02bd.json",
+      "articleSha256": "4daa4a54b45d94a3b732a68c538249dc57b73a9f53c91c7135880ab2d4cd1fe7",
+      "choicesSha256": "36d83c49adc05c5afa225c110875dd3bc68ae9f69a3232ee9a4200adb1c16050"
+    },
+    {
+      "model": "KBSP003WW001",
+      "binding": "value:FHORWIRETRUNKING=4XSTEELHORIZONTAL2",
+      "runtimeValue": "4XSTEELHORIZONTAL2",
+      "supplierValue": "_4XSTEELHORIZONTAL2",
+      "english": "4x Foldable on two side, steel",
+      "evidence": "KBSP003WW001-1973e1305d8e02bd.json",
+      "articleSha256": "4daa4a54b45d94a3b732a68c538249dc57b73a9f53c91c7135880ab2d4cd1fe7",
+      "choicesSha256": "36d83c49adc05c5afa225c110875dd3bc68ae9f69a3232ee9a4200adb1c16050"
+    },
+    {
+      "model": "KBSP003WW001",
+      "binding": "value:FVERWIRETRUNKING=4XMESH",
+      "runtimeValue": "4XMESH",
+      "supplierValue": "_4XMESH",
+      "english": "4x Mesh",
+      "evidence": "KBSP003WW001-1973e1305d8e02bd.json",
+      "articleSha256": "4daa4a54b45d94a3b732a68c538249dc57b73a9f53c91c7135880ab2d4cd1fe7",
+      "choicesSha256": "36d83c49adc05c5afa225c110875dd3bc68ae9f69a3232ee9a4200adb1c16050"
+    },
+    {
+      "model": "KBSP004WW002",
+      "binding": "value:FHORWIRETRUNKING=6XSTEELHORIZONTAL2",
+      "runtimeValue": "6XSTEELHORIZONTAL2",
+      "supplierValue": "_6XSTEELHORIZONTAL2",
+      "english": "6x Foldable on two side, steel",
+      "evidence": "KBSP004WW002-996a7b8342724d6a.json",
+      "articleSha256": "eb69ea71521346ad6ac59f5b38fac85348dd8976c000fd89f79c3eec1d5d5b97",
+      "choicesSha256": "8f3ecd190f121caabbf29bf26b7f58811b68709f1b5ecefe687298de941a68cf"
+    },
+    {
+      "model": "KBSP004WW002",
+      "binding": "value:FMEDIAPORTLEFT=6XGROMMETQC",
+      "runtimeValue": "6XGROMMETQC",
+      "supplierValue": "_6XGROMMETQC",
+      "english": "6x Plastic square grommet with round outlet diam.80",
+      "evidence": "KBSP004WW002-996a7b8342724d6a.json",
+      "articleSha256": "eb69ea71521346ad6ac59f5b38fac85348dd8976c000fd89f79c3eec1d5d5b97",
+      "choicesSha256": "8f3ecd190f121caabbf29bf26b7f58811b68709f1b5ecefe687298de941a68cf"
+    },
+    {
+      "model": "KSQA148WW001",
+      "binding": "value:FHORWIRETRUNKING=4XMODMETAL",
+      "runtimeValue": "4XMODMETAL",
+      "supplierValue": "_4XMODMETAL",
+      "english": "4x Modular, metal",
+      "evidence": "KSQA148WW001-3a6cca4a97d8e966.json",
+      "articleSha256": "209bf285677638078274e9ec266e01679878e5ee5843f3c2268a1b2b4a54bbf8",
+      "choicesSha256": "41d0ae209698d21a1e972e2f88b650217b875f8a8876f8f82ca3f1b531ca2b58"
+    },
+    {
+      "model": "KSQA148WW001",
+      "binding": "value:FSLOTSONFLAPMIDDLE=2XSLOTS",
+      "runtimeValue": "2XSLOTS",
+      "supplierValue": "_2XSLOTS",
+      "english": "2x Slots",
+      "evidence": "KSQA148WW001-3a6cca4a97d8e966.json",
+      "articleSha256": "209bf285677638078274e9ec266e01679878e5ee5843f3c2268a1b2b4a54bbf8",
+      "choicesSha256": "41d0ae209698d21a1e972e2f88b650217b875f8a8876f8f82ca3f1b531ca2b58"
+    },
+    {
+      "model": "KSQA148WW001",
+      "binding": "value:FVERWIRETRUNKING=2XVERTICALFLEXIBLEMODPLA",
+      "runtimeValue": "2XVERTICALFLEXIBLEMODPLA",
+      "supplierValue": "_2XVERTICALFLEXIBLEMODPLA",
+      "english": "2x Flexible, modular, plastic",
+      "evidence": "KSQA148WW001-3a6cca4a97d8e966.json",
+      "articleSha256": "209bf285677638078274e9ec266e01679878e5ee5843f3c2268a1b2b4a54bbf8",
+      "choicesSha256": "41d0ae209698d21a1e972e2f88b650217b875f8a8876f8f82ca3f1b531ca2b58"
+    },
+    {
+      "model": "KLEV026WW002",
+      "binding": "value:FPANELACCESSORIES=2XHEADPHONEHOLDER",
+      "runtimeValue": "2XHEADPHONEHOLDER",
+      "supplierValue": "_2XHEADPHONEHOLDER",
+      "english": "2x Headphone holder",
+      "evidence": "KLEV026WW002-0360dfb776ac0974.json",
+      "articleSha256": "126bbb7d39c754eb75270b6201f54733763d279c07ff556f821968e6018f1555",
+      "choicesSha256": "9af2339b8dd28a71f804d52dfbf6227b1e4a2611beb54c4567a1cff6266613a8"
+    },
+    {
+      "model": "KLEV026WW002",
+      "binding": "value:FPEDESTAL=2XSUS3DRAWERFELTORG",
+      "runtimeValue": "2XSUS3DRAWERFELTORG",
+      "supplierValue": "_2XSUS3DRAWERFELTORG",
+      "english": "2x Suspended with three drawers, felt organizer",
+      "evidence": "KLEV026WW002-0360dfb776ac0974.json",
+      "articleSha256": "126bbb7d39c754eb75270b6201f54733763d279c07ff556f821968e6018f1555",
+      "choicesSha256": "9af2339b8dd28a71f804d52dfbf6227b1e4a2611beb54c4567a1cff6266613a8"
+    },
+    {
+      "model": "KEM2017WW002",
+      "binding": "value:FCASTORS=4XFI752XLOCKABLEWHITE",
+      "runtimeValue": "4XFI752XLOCKABLEWHITE",
+      "supplierValue": "_4XFI752XLOCKABLEWHITE",
+      "english": "diam. 75 mm, 4 pieces (two with brakes), white",
+      "evidence": "KEM2017WW002-644eab5df77d88b8.json",
+      "articleSha256": "b4ef67831828dc1d6bbcec5beb1365d79e42167e9e32ebc2cac337099e1ef3b5",
+      "choicesSha256": "af3794385bea8c2761e491e2ca950f4b5cc1d5a14795ed21127ec0966d686a55"
+    },
+    {
+      "model": "KSQA154WW001",
+      "binding": "value:FHORWIRETRUNKING=8XMODMETAL",
+      "runtimeValue": "8XMODMETAL",
+      "supplierValue": "_8XMODMETAL",
+      "english": "8x Modular, metal",
+      "evidence": "KSQA154WW001-a32cda370f19428f.json",
+      "articleSha256": "b9631e61d597a2a1808f1cc141a45610e97d883a3e50e96ea204ec1574603c16",
+      "choicesSha256": "aaf9f06bd2969ed377203a4192b98c315ff2f663c9b1f2d106252efc7c8c562a"
+    },
+    {
+      "model": "KSQA154WW001",
+      "binding": "value:FVERWIRETRUNKING=4XVERTICALFLEXIBLEMODPLA",
+      "runtimeValue": "4XVERTICALFLEXIBLEMODPLA",
+      "supplierValue": "_4XVERTICALFLEXIBLEMODPLA",
+      "english": "4x Flexible, modular, plastic",
+      "evidence": "KSQA154WW001-a32cda370f19428f.json",
+      "articleSha256": "b9631e61d597a2a1808f1cc141a45610e97d883a3e50e96ea204ec1574603c16",
+      "choicesSha256": "aaf9f06bd2969ed377203a4192b98c315ff2f663c9b1f2d106252efc7c8c562a"
+    },
+    {
+      "model": "KSQA154WW001",
+      "binding": "value:FPANELACCESSORIES=2XOS4XPENBOX4XMAGBO",
+      "runtimeValue": "2XOS4XPENBOX4XMAGBO",
+      "supplierValue": "_2XOS4XPENBOX4XMAGBO",
+      "english": "2x Organiser strip, 4x pencil box, 4x magnetic board",
+      "evidence": "KSQA154WW001-a32cda370f19428f.json",
+      "articleSha256": "b9631e61d597a2a1808f1cc141a45610e97d883a3e50e96ea204ec1574603c16",
+      "choicesSha256": "aaf9f06bd2969ed377203a4192b98c315ff2f663c9b1f2d106252efc7c8c562a"
+    },
+    {
+      "model": "KSQA154WW001",
+      "binding": "value:FUPPERPANEL=2XUPH370OVERTOP",
+      "runtimeValue": "2XUPH370OVERTOP",
+      "supplierValue": "_2XUPH370OVERTOP",
+      "english": "2x Upholstered, 370 mm height above the tabletop",
+      "evidence": "KSQA154WW001-a32cda370f19428f.json",
+      "articleSha256": "b9631e61d597a2a1808f1cc141a45610e97d883a3e50e96ea204ec1574603c16",
+      "choicesSha256": "aaf9f06bd2969ed377203a4192b98c315ff2f663c9b1f2d106252efc7c8c562a"
+    },
+    {
+      "model": "KSQA153WW001",
+      "binding": "value:FHORWIRETRUNKING=4XMODMETAL",
+      "runtimeValue": "4XMODMETAL",
+      "supplierValue": "_4XMODMETAL",
+      "english": "4x Modular, metal",
+      "evidence": "KSQA153WW001-c40b2ec171293c5e.json",
+      "articleSha256": "b7595d9e0fe2ed205c3e04f7e166030b7749b2258d25bc1313a8025cbc1323d6",
+      "choicesSha256": "85bd3547c66bdee2bb43d77d4cc94b6cf3ff30d444f5264c1393b34b643afefe"
+    },
+    {
+      "model": "KSQA153WW001",
+      "binding": "value:FVERWIRETRUNKING=2XVERTICALUPH",
+      "runtimeValue": "2XVERTICALUPH",
+      "supplierValue": "_2XVERTICALUPH",
+      "english": "2x Upholstered",
+      "evidence": "KSQA153WW001-c40b2ec171293c5e.json",
+      "articleSha256": "b7595d9e0fe2ed205c3e04f7e166030b7749b2258d25bc1313a8025cbc1323d6",
+      "choicesSha256": "85bd3547c66bdee2bb43d77d4cc94b6cf3ff30d444f5264c1393b34b643afefe"
+    },
+    {
+      "model": "KSQA153WW001",
+      "binding": "value:FSLOTSONTOPLEFT=2XSLOTS",
+      "runtimeValue": "2XSLOTS",
+      "supplierValue": "_2XSLOTS",
+      "english": "2x Slots",
+      "evidence": "KSQA153WW001-c40b2ec171293c5e.json",
+      "articleSha256": "b7595d9e0fe2ed205c3e04f7e166030b7749b2258d25bc1313a8025cbc1323d6",
+      "choicesSha256": "85bd3547c66bdee2bb43d77d4cc94b6cf3ff30d444f5264c1393b34b643afefe"
+    },
+    {
+      "model": "KSQA153WW001",
+      "binding": "value:FSLOTSONTOPRIGHT=2XSLOTS",
+      "runtimeValue": "2XSLOTS",
+      "supplierValue": "_2XSLOTS",
+      "english": "2x Slots",
+      "evidence": "KSQA153WW001-c40b2ec171293c5e.json",
+      "articleSha256": "b7595d9e0fe2ed205c3e04f7e166030b7749b2258d25bc1313a8025cbc1323d6",
+      "choicesSha256": "85bd3547c66bdee2bb43d77d4cc94b6cf3ff30d444f5264c1393b34b643afefe"
+    },
+    {
+      "model": "KXI2013WW002",
+      "binding": "value:FMEDIAPORTLEFT=2XOUTLETOVAL",
+      "runtimeValue": "2XOUTLETOVAL",
+      "supplierValue": "_2XOUTLETOVAL",
+      "english": "2x Plastic, oval grommet",
+      "evidence": "KXI2013WW002-6872be53c9050f19.json",
+      "articleSha256": "4fcee0e6a1b9f094fdc9a0f98209f3431b2ab684e19b6a06ec6a1fbc67a2c74f",
+      "choicesSha256": "b2a30f45a0dde8f5e4e92d47bcefca61f31ca10deab98627988669615b8b4552"
+    },
+    {
+      "model": "KXI2013WW002",
+      "binding": "value:FMEDIAPORTRIGHT=2XOUTLETOVAL",
+      "runtimeValue": "2XOUTLETOVAL",
+      "supplierValue": "_2XOUTLETOVAL",
+      "english": "2x Plastic, oval grommet",
+      "evidence": "KXI2013WW002-6872be53c9050f19.json",
+      "articleSha256": "4fcee0e6a1b9f094fdc9a0f98209f3431b2ab684e19b6a06ec6a1fbc67a2c74f",
+      "choicesSha256": "b2a30f45a0dde8f5e4e92d47bcefca61f31ca10deab98627988669615b8b4552"
+    },
+    {
+      "model": "KXI2013WW002",
+      "binding": "value:FCOLUMN=2RECTANGULAR9060",
+      "runtimeValue": "2RECTANGULAR9060",
+      "supplierValue": "_2RECTANGULAR9060",
+      "english": "Rectangular (90x60 mm) - two-segment",
+      "evidence": "KXI2013WW002-d98abbac13ae40a8.json",
+      "articleSha256": "906bf4d899c0803c2ba36e8b97647019093186e8085ea15c01eedbaaac72f671",
+      "choicesSha256": "b2a30f45a0dde8f5e4e92d47bcefca61f31ca10deab98627988669615b8b4552"
+    },
+    {
+      "model": "KBSP007WW002",
+      "binding": "value:FMEDIAPORTRIGHT=2XEVOLINECIRCLE801M",
+      "runtimeValue": "2XEVOLINECIRCLE801M",
+      "supplierValue": "_2XEVOLINECIRCLE801M",
+      "english": "2x EVOline Circle80 1M",
+      "evidence": "KBSP007WW002-2a0477693e4c861c.json",
+      "articleSha256": "486f58d5def1ba0933865153ac3593a68c7152af9e21208f891a16702f16e3fa",
+      "choicesSha256": "b6948c36d47e1f8e2accebf45dfb6c135ea45b156914eae03518cafd698d1ab1"
+    },
+    {
+      "model": "KBSP008WW002",
+      "binding": "value:FHORWIRETRUNKING=4XSTEELHORIZONTAL2",
+      "runtimeValue": "4XSTEELHORIZONTAL2",
+      "supplierValue": "_4XSTEELHORIZONTAL2",
+      "english": "4x Foldable on two side, steel",
+      "evidence": "KBSP008WW002-a31b8b5dbfd5500d.json",
+      "articleSha256": "3bdd652f0bd08e49e82bb37d9d9699c2127d80a4c2aa711f64e4ba84005a9f9d",
+      "choicesSha256": "ff7eb19952d7212bef46a9bf1d276d242908bf071ead0777d15c18fad5d82812"
+    },
+    {
+      "model": "KBSP008WW002",
+      "binding": "value:FMEDIAPORTLEFT=4XEVOLINECIRCLE801M",
+      "runtimeValue": "4XEVOLINECIRCLE801M",
+      "supplierValue": "_4XEVOLINECIRCLE801M",
+      "english": "4x EVOline Circle80 1M",
+      "evidence": "KBSP008WW002-a31b8b5dbfd5500d.json",
+      "articleSha256": "3bdd652f0bd08e49e82bb37d9d9699c2127d80a4c2aa711f64e4ba84005a9f9d",
+      "choicesSha256": "ff7eb19952d7212bef46a9bf1d276d242908bf071ead0777d15c18fad5d82812"
+    },
+    {
+      "model": "KBSP008WW002",
+      "binding": "value:FVERWIRETRUNKING=4XMESH",
+      "runtimeValue": "4XMESH",
+      "supplierValue": "_4XMESH",
+      "english": "4x Mesh",
+      "evidence": "KBSP008WW002-a31b8b5dbfd5500d.json",
+      "articleSha256": "3bdd652f0bd08e49e82bb37d9d9699c2127d80a4c2aa711f64e4ba84005a9f9d",
+      "choicesSha256": "ff7eb19952d7212bef46a9bf1d276d242908bf071ead0777d15c18fad5d82812"
+    },
+    {
+      "model": "KEM2008WW003",
+      "binding": "value:FUPPERPANEL=1XUPH490",
+      "runtimeValue": "1XUPH490",
+      "supplierValue": "_1XUPH490",
+      "english": "1x Upholstered, 490 mm height",
+      "evidence": "KEM2008WW003-cbc0e8cc6e30c021.json",
+      "articleSha256": "8d3d2c9726ce77dcbe61df0e51f0a472ce49805c56a4f9d9747b0af37473af32",
+      "choicesSha256": "8bbb5535d173313960d9e883825761b9d5733840ae2f2638f0f32b42b7cdcfc3"
+    },
+    {
+      "model": "KSQA127WW001",
+      "binding": "value:FPANELACCESSORIES=1XOS1XMAGBOPEN1XHPHOLD",
+      "runtimeValue": "1XOS1XMAGBOPEN1XHPHOLD",
+      "supplierValue": "_1XOS1XMAGBOPEN1XHPHOLD",
+      "english": "Organiser strip, magnetic board with pencil tray, headphone holder",
+      "evidence": "KSQA127WW001-304460749346bd96.json",
+      "articleSha256": "dbbf105752e74dc06dc79e2de7ab0696f4d8c2d64fa179e40aefad8867a09ebb",
+      "choicesSha256": "9ab5c6ddf1eed15f947d3c7c45cfac30cfb5e7887c3611738adc50273d6ffc0f"
+    },
+    {
+      "model": "KSQA130WW001",
+      "binding": "value:FHORWIRETRUNKING=3XMODMETAL",
+      "runtimeValue": "3XMODMETAL",
+      "supplierValue": "_3XMODMETAL",
+      "english": "3x Modular, metal",
+      "evidence": "KSQA130WW001-52a9f6f0f83beda3.json",
+      "articleSha256": "4cb23b29d3466abb59cd6b591aafae68013e48b243ec88240969c6f44994115b",
+      "choicesSha256": "479d5d4f1d90ec0be4889e974fd7110c872fa60fe5fafee76eda18d946d0987a"
+    },
+    {
+      "model": "KSQA131WW001",
+      "binding": "value:FHORWIRETRUNKING=3XMODMETAL",
+      "runtimeValue": "3XMODMETAL",
+      "supplierValue": "_3XMODMETAL",
+      "english": "3x Modular, metal",
+      "evidence": "KSQA131WW001-ca1573a67eea5474.json",
+      "articleSha256": "f083e0643d084e20a61a9e1b40170fd3e617e38e661ae50cec99ca5cad708ac5",
+      "choicesSha256": "81f0b556303761e8f2857515818e8c6a2f5686a87c5f9a1a815f33fd4f94c3b3"
+    },
+    {
+      "model": "KSQA160WW001",
+      "binding": "value:FHORWIRETRUNKING=8XMODMETAL",
+      "runtimeValue": "8XMODMETAL",
+      "supplierValue": "_8XMODMETAL",
+      "english": "8x Modular, metal",
+      "evidence": "KSQA160WW001-d3e8b36b0d79e546.json",
+      "articleSha256": "8f2acd99c80107436312dde95ca602acb9c0836b8c3843a196c75d346264e9de",
+      "choicesSha256": "097194558ac5fc01474e529304ecc23fd6d4d2d814b13429ed287181dd9ca51c"
+    },
+    {
+      "model": "KSQA160WW001",
+      "binding": "value:FMEDIAPORTLEFT=4XEVOLINECIRCLE801M",
+      "runtimeValue": "4XEVOLINECIRCLE801M",
+      "supplierValue": "_4XEVOLINECIRCLE801M",
+      "english": "4x EVOline Circle80 1M",
+      "evidence": "KSQA160WW001-d3e8b36b0d79e546.json",
+      "articleSha256": "8f2acd99c80107436312dde95ca602acb9c0836b8c3843a196c75d346264e9de",
+      "choicesSha256": "097194558ac5fc01474e529304ecc23fd6d4d2d814b13429ed287181dd9ca51c"
+    },
+    {
+      "model": "KSQA160WW001",
+      "binding": "value:FPANELACCESSORIES=4XUPHPADONPINS700290",
+      "runtimeValue": "4XUPHPADONPINS700290",
+      "supplierValue": "_4XUPHPADONPINS700290",
+      "english": "4x Upholstered pad 700 x 290 mm, with the option of inserting pins",
+      "evidence": "KSQA160WW001-d3e8b36b0d79e546.json",
+      "articleSha256": "8f2acd99c80107436312dde95ca602acb9c0836b8c3843a196c75d346264e9de",
+      "choicesSha256": "097194558ac5fc01474e529304ecc23fd6d4d2d814b13429ed287181dd9ca51c"
+    },
+    {
+      "model": "KSQA160WW001",
+      "binding": "value:FUPPERPANEL=2XMELAMINE377OVERTOP",
+      "runtimeValue": "2XMELAMINE377OVERTOP",
+      "supplierValue": "_2XMELAMINE377OVERTOP",
+      "english": "2x Modesty, melamine, 377 mm height above the tabletop",
+      "evidence": "KSQA160WW001-d3e8b36b0d79e546.json",
+      "articleSha256": "8f2acd99c80107436312dde95ca602acb9c0836b8c3843a196c75d346264e9de",
+      "choicesSha256": "097194558ac5fc01474e529304ecc23fd6d4d2d814b13429ed287181dd9ca51c"
+    },
+    {
+      "model": "KSQA160WW001",
+      "binding": "value:FVERWIRETRUNKING=4XVERTICALUPH",
+      "runtimeValue": "4XVERTICALUPH",
+      "supplierValue": "_4XVERTICALUPH",
+      "english": "4x Upholstered",
+      "evidence": "KSQA160WW001-d3e8b36b0d79e546.json",
+      "articleSha256": "8f2acd99c80107436312dde95ca602acb9c0836b8c3843a196c75d346264e9de",
+      "choicesSha256": "097194558ac5fc01474e529304ecc23fd6d4d2d814b13429ed287181dd9ca51c"
+    },
+    {
+      "model": "KXI2012WW003",
+      "binding": "value:FCOLUMN=2SQUARE7070",
+      "runtimeValue": "2SQUARE7070",
+      "supplierValue": "_2SQUARE7070",
+      "english": "Square (70x70 mm) - two-segment",
+      "evidence": "KXI2012WW003-116e426ed4bba9fc.json",
+      "articleSha256": "bb060eab2adc309c1341098dd2cc62d9514cbadff2c952bc7216c2b8eb910046",
+      "choicesSha256": "d690f181158ed9c2c18eaa46fc1b463bcf1c484c68cbbe250724fe0b4b44397d"
+    },
+    {
+      "model": "KC54083WW001",
+      "binding": "value:FPANELACCESSORIES=1XOS1XMAGBOPEN1XHPHOLD",
+      "runtimeValue": "1XOS1XMAGBOPEN1XHPHOLD",
+      "supplierValue": "_1XOS1XMAGBOPEN1XHPHOLD",
+      "english": "Organiser strip, magnetic board with pencil tray, headphone holder",
+      "evidence": "KC54083WW001-dedb598179230804.json",
+      "articleSha256": "197027ac50afcd468f30039dac4b2f7e0c37d84b4b3451c5fc6ef6ef53e98ae5",
+      "choicesSha256": "10275a6a8f7a79f641b2b20860ac5df12ff20bfedd6a105a1bbea8eb325ead24"
+    },
+    {
+      "model": "KPW2018WW002",
+      "binding": "value:FMEDIAPORTLEFT=4XOUTLETMETCIRCBR80",
+      "runtimeValue": "4XOUTLETMETCIRCBR80",
+      "supplierValue": "_4XOUTLETMETCIRCBR80",
+      "english": "4x Round metal grommet with a brush, diam.80",
+      "evidence": "KPW2018WW002-e54a81ff85c18776.json",
+      "articleSha256": "55a5bd9486c62d345049ce239bb2edf7310464c0a5b69a61d106988c1a7c1c4d",
+      "choicesSha256": "58f4c61549ed6eeb48c1dafb47ea5e32564630b852f711f0c966e5f108865783"
+    },
+    {
+      "model": "KPW2018WW002",
+      "binding": "value:FPANEL=2XUPUPHSTITCH400",
+      "runtimeValue": "2XUPUPHSTITCH400",
+      "supplierValue": "_2XUPUPHSTITCH400",
+      "english": "2x Upper, upholstered with stitching, 400 mm height above the tabletop",
+      "evidence": "KPW2018WW002-e54a81ff85c18776.json",
+      "articleSha256": "55a5bd9486c62d345049ce239bb2edf7310464c0a5b69a61d106988c1a7c1c4d",
+      "choicesSha256": "58f4c61549ed6eeb48c1dafb47ea5e32564630b852f711f0c966e5f108865783"
+    },
+    {
+      "model": "KPW2018WW002",
+      "binding": "value:FVERWIRETRUNKING=4XVERTICALUPH",
+      "runtimeValue": "4XVERTICALUPH",
+      "supplierValue": "_4XVERTICALUPH",
+      "english": "4x Upholstered",
+      "evidence": "KPW2018WW002-e54a81ff85c18776.json",
+      "articleSha256": "55a5bd9486c62d345049ce239bb2edf7310464c0a5b69a61d106988c1a7c1c4d",
+      "choicesSha256": "58f4c61549ed6eeb48c1dafb47ea5e32564630b852f711f0c966e5f108865783"
+    },
+    {
+      "model": "KPW2020WW002",
+      "binding": "value:FMEDIAPORTRIGHT=6XOUTLETMETCIRCBR80",
+      "runtimeValue": "6XOUTLETMETCIRCBR80",
+      "supplierValue": "_6XOUTLETMETCIRCBR80",
+      "english": "6x Round metal grommet with a brush, diam.80",
+      "evidence": "KPW2020WW002-71d95d37cfc4de91.json",
+      "articleSha256": "8d66952c1ec98ef439a9b18dd43b13df1562e6ae435784037f2577fda8213fb5",
+      "choicesSha256": "05f444c51fd4593ca9579433e4cb716908e4eab644200985dcbb28e67f46f18e"
+    },
+    {
+      "model": "KPW2020WW002",
+      "binding": "value:FVERWIRETRUNKING=6XVERTICALUPH",
+      "runtimeValue": "6XVERTICALUPH",
+      "supplierValue": "_6XVERTICALUPH",
+      "english": "6x Upholstered",
+      "evidence": "KPW2020WW002-71d95d37cfc4de91.json",
+      "articleSha256": "8d66952c1ec98ef439a9b18dd43b13df1562e6ae435784037f2577fda8213fb5",
+      "choicesSha256": "05f444c51fd4593ca9579433e4cb716908e4eab644200985dcbb28e67f46f18e"
+    },
+    {
+      "model": "KPW2020WW002",
+      "binding": "value:FPANEL=3XUPUPHSTITCH400",
+      "runtimeValue": "3XUPUPHSTITCH400",
+      "supplierValue": "_3XUPUPHSTITCH400",
+      "english": "3x Upper, upholstered with stitching, 400 mm height above the tabletop",
+      "evidence": "KPW2020WW002-71d95d37cfc4de91.json",
+      "articleSha256": "8d66952c1ec98ef439a9b18dd43b13df1562e6ae435784037f2577fda8213fb5",
+      "choicesSha256": "05f444c51fd4593ca9579433e4cb716908e4eab644200985dcbb28e67f46f18e"
+    },
+    {
+      "model": "KPW2020WW002",
+      "binding": "value:FPANELSIDE=4XSIDEUPHSTITCH400",
+      "runtimeValue": "4XSIDEUPHSTITCH400",
+      "supplierValue": "_4XSIDEUPHSTITCH400",
+      "english": "4x Side, upholstered with stitching, 400 mm height above the tabletop",
+      "evidence": "KPW2020WW002-71d95d37cfc4de91.json",
+      "articleSha256": "8d66952c1ec98ef439a9b18dd43b13df1562e6ae435784037f2577fda8213fb5",
+      "choicesSha256": "05f444c51fd4593ca9579433e4cb716908e4eab644200985dcbb28e67f46f18e"
+    },
+    {
+      "model": "KSQA155WW001",
+      "binding": "value:FHORWIRETRUNKING=12XMODMETAL",
+      "runtimeValue": "12XMODMETAL",
+      "supplierValue": "_12XMODMETAL",
+      "english": "12x Modular, metal",
+      "evidence": "KSQA155WW001-8df3b381571b7552.json",
+      "articleSha256": "9a273f7e64d0a90eb43184923344dace140bb81c291ff1e156f2f35693c4aa3d",
+      "choicesSha256": "d85c97a03d82fdd6fc42760a8e1a8291dbf2ce1784f1e78d2ec9e4978ad106be"
+    },
+    {
+      "model": "KSQA155WW001",
+      "binding": "value:FVERWIRETRUNKING=6XVERTICALUPH",
+      "runtimeValue": "6XVERTICALUPH",
+      "supplierValue": "_6XVERTICALUPH",
+      "english": "6x Upholstered",
+      "evidence": "KSQA155WW001-8df3b381571b7552.json",
+      "articleSha256": "9a273f7e64d0a90eb43184923344dace140bb81c291ff1e156f2f35693c4aa3d",
+      "choicesSha256": "d85c97a03d82fdd6fc42760a8e1a8291dbf2ce1784f1e78d2ec9e4978ad106be"
+    },
+    {
+      "model": "KSQA155WW001",
+      "binding": "value:FUPPERPANEL=3XUPH370OVERTOP",
+      "runtimeValue": "3XUPH370OVERTOP",
+      "supplierValue": "_3XUPH370OVERTOP",
+      "english": "3x Upholstered, 370 mm height above the tabletop",
+      "evidence": "KSQA155WW001-8df3b381571b7552.json",
+      "articleSha256": "9a273f7e64d0a90eb43184923344dace140bb81c291ff1e156f2f35693c4aa3d",
+      "choicesSha256": "d85c97a03d82fdd6fc42760a8e1a8291dbf2ce1784f1e78d2ec9e4978ad106be"
+    },
+    {
+      "model": "KXI2019WW003",
+      "binding": "value:FCOLUMN=2SQUARE7070",
+      "runtimeValue": "2SQUARE7070",
+      "supplierValue": "_2SQUARE7070",
+      "english": "Square (70x70 mm) - two-segment",
+      "evidence": "KXI2019WW003-a3ec74387249eef1.json",
+      "articleSha256": "fe01079ed0024c37295b0a03547d704c0e5d4322c2feb3f1e1ad2f7d748df894",
+      "choicesSha256": "3c55c0b2867e79bf23c38833a3aa4a94c7af49d553395647acb2410fac9280a9"
+    },
+    {
+      "model": "KC54102WW001",
+      "binding": "value:FHORWIRETRUNKING=3XHORSTEELSHARED",
+      "runtimeValue": "3XHORSTEELSHARED",
+      "supplierValue": "_3XHORSTEELSHARED",
+      "english": "3x Shared, steel",
+      "evidence": "KC54102WW001-f2fbbd6a6587b6de.json",
+      "articleSha256": "8b30c05ab2f2e4d36ab78e5714ded4ecadf11bda7d7b37d88ac3475e7028d2ea",
+      "choicesSha256": "4788c0ace409b79a0c2e6e80fcb830a89b7c388f094ecdd578554eef493c625f"
+    },
+    {
+      "model": "KC54102WW001",
+      "binding": "value:FMEDIAPORTLEFT=6XGROMMETQC",
+      "runtimeValue": "6XGROMMETQC",
+      "supplierValue": "_6XGROMMETQC",
+      "english": "6x Plastic square grommet with round outlet diam.80",
+      "evidence": "KC54102WW001-f2fbbd6a6587b6de.json",
+      "articleSha256": "8b30c05ab2f2e4d36ab78e5714ded4ecadf11bda7d7b37d88ac3475e7028d2ea",
+      "choicesSha256": "4788c0ace409b79a0c2e6e80fcb830a89b7c388f094ecdd578554eef493c625f"
+    },
+    {
+      "model": "KC54102WW001",
+      "binding": "value:FVERWIRETRUNKING=6XVERTICALFLEXIBLEMODPLA",
+      "runtimeValue": "6XVERTICALFLEXIBLEMODPLA",
+      "supplierValue": "_6XVERTICALFLEXIBLEMODPLA",
+      "english": "6x Flexible, modular, plastic",
+      "evidence": "KC54102WW001-f2fbbd6a6587b6de.json",
+      "articleSha256": "8b30c05ab2f2e4d36ab78e5714ded4ecadf11bda7d7b37d88ac3475e7028d2ea",
+      "choicesSha256": "4788c0ace409b79a0c2e6e80fcb830a89b7c388f094ecdd578554eef493c625f"
+    },
+    {
+      "model": "KC54102WW001",
+      "binding": "value:FPANELACCESSORIES=3XOS6XPENBOX6XMAGBO",
+      "runtimeValue": "3XOS6XPENBOX6XMAGBO",
+      "supplierValue": "_3XOS6XPENBOX6XMAGBO",
+      "english": "3x Organiser strip, 6x pencil box, 6x magnetic board",
+      "evidence": "KC54102WW001-f2fbbd6a6587b6de.json",
+      "articleSha256": "8b30c05ab2f2e4d36ab78e5714ded4ecadf11bda7d7b37d88ac3475e7028d2ea",
+      "choicesSha256": "4788c0ace409b79a0c2e6e80fcb830a89b7c388f094ecdd578554eef493c625f"
+    }
+  ]
+}

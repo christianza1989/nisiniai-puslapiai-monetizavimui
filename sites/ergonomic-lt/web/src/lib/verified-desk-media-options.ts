@@ -7,6 +7,9 @@ type VerifiedDeskOption={name:string;explanation:string;source:string;sourceTitl
 const deskAccessoryModel=/^(?:KEM2|KEM3|KEUP|KEPP|KECM|KERG|KPW2|KSQA|KC54|KXI2|KAER|KBSP|KESE|KLEV|KBRY|KCAF)/;
 export function verifiedDeskMediaOption(model:string,field:string,value:string):VerifiedDeskOption|undefined{
  if(!deskAccessoryModel.test(model)||!/^FMEDIAPORT(?:LEFT|MIDDLE|RIGHT)?$/.test(field))return;
+ // The exact four-piece accessory is named in the captured supplier lists.
+ // Its physical description is the same for the left and right cable-entry fields.
+ if(value==='_4XGROMMETQE')return {name:'4 stačiakampiai aliumininiai kabelių įvadai su šepetėliais',english:'4x Aluminium rectangular cable outlet with brush',explanation:'Keturi stačiakampiai aliumininiai kabelių įvadai su šepetėliais.',source:'https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf',sourceTitle:'Gamintojo įvadų aprašas ir tikri keturių QE įvadų pasirinkimų originalai'};
  const match=value.match(/^_*(2X)?(GROMMETQC|GROMMETQE|POWERFRAME3M)$/);if(!match)return;
  const paired=!!match[1],kind=match[2];
  const name=kind==='GROMMETQC'?(paired?'Du plastikiniai kabelių įvadai, Ø 80 mm':'Plastikinis kabelių įvadas, Ø 80 mm'):kind==='GROMMETQE'?(paired?'Du stačiakampiai kabelių įvadai su šepetėliu':'Stačiakampis kabelių įvadas su šepetėliu'):(paired?'Du „Power Frame 3M“ jungčių moduliai':'„Power Frame 3M“ jungčių modulis');

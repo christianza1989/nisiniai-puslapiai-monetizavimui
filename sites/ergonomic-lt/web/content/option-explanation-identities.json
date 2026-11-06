@@ -4250,5 +4250,421 @@
       "modelCount": 1,
       "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
     }
+  },
+  "KBRY005WW002": {
+    "FSOCKETMEDIAPORTRIGHT=FR": {
+      "id": "help:a0e694a9da934cf31330d5c3",
+      "sourceHash": "937354dc460cdc89c4ad5161722cd78e70b31b83de2038b07d01f972efea0c2b",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "FR – France",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=FR",
+      "suggested": "Prancūziškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Prancūziškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Prancūziškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=GB": {
+      "id": "help:29164f9fe6fe3d1fcc6446e7",
+      "sourceHash": "b6ff0c64757bc18789129fa12980c3e13af2abd11101ee2c42793d34e9edb622",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "GB – United Kingdom",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=GB",
+      "suggested": "Britiškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Britiškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Britiškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=CH13": {
+      "id": "help:dd74d5327a1b3114fec2bce4",
+      "sourceHash": "60803735b1b191ca5ed056c4e38e0a7766929508724e620d2a0a334d334e9936",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "CH13 – Switzerland",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=CH13",
+      "suggested": "Šveicariškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Šveicariškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Šveicariškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    }
+  },
+  "KBRY001WW002": {
+    "FSOCKETMEDIAPORTRIGHT=FR": {
+      "id": "help:a0e694a9da934cf31330d5c3",
+      "sourceHash": "937354dc460cdc89c4ad5161722cd78e70b31b83de2038b07d01f972efea0c2b",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "FR – France",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=FR",
+      "suggested": "Prancūziškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Prancūziškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Prancūziškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=GB": {
+      "id": "help:29164f9fe6fe3d1fcc6446e7",
+      "sourceHash": "b6ff0c64757bc18789129fa12980c3e13af2abd11101ee2c42793d34e9edb622",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "GB – United Kingdom",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=GB",
+      "suggested": "Britiškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Britiškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Britiškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=CH13": {
+      "id": "help:dd74d5327a1b3114fec2bce4",
+      "sourceHash": "60803735b1b191ca5ed056c4e38e0a7766929508724e620d2a0a334d334e9936",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "CH13 – Switzerland",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=CH13",
+      "suggested": "Šveicariškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Šveicariškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Šveicariškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    }
+  },
+  "KBRY001WW003": {
+    "FSOCKETMEDIAPORTRIGHT=FR": {
+      "id": "help:a0e694a9da934cf31330d5c3",
+      "sourceHash": "937354dc460cdc89c4ad5161722cd78e70b31b83de2038b07d01f972efea0c2b",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "FR – France",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=FR",
+      "suggested": "Prancūziškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Prancūziškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Prancūziškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=GB": {
+      "id": "help:29164f9fe6fe3d1fcc6446e7",
+      "sourceHash": "b6ff0c64757bc18789129fa12980c3e13af2abd11101ee2c42793d34e9edb622",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "GB – United Kingdom",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=GB",
+      "suggested": "Britiškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Britiškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Britiškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=CH13": {
+      "id": "help:dd74d5327a1b3114fec2bce4",
+      "sourceHash": "60803735b1b191ca5ed056c4e38e0a7766929508724e620d2a0a334d334e9936",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "CH13 – Switzerland",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=CH13",
+      "suggested": "Šveicariškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Šveicariškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Šveicariškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    }
+  },
+  "KBRY002WW001": {
+    "FSOCKETMEDIAPORTRIGHT=FR": {
+      "id": "help:a0e694a9da934cf31330d5c3",
+      "sourceHash": "937354dc460cdc89c4ad5161722cd78e70b31b83de2038b07d01f972efea0c2b",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "FR – France",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=FR",
+      "suggested": "Prancūziškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Prancūziškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Prancūziškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=GB": {
+      "id": "help:29164f9fe6fe3d1fcc6446e7",
+      "sourceHash": "b6ff0c64757bc18789129fa12980c3e13af2abd11101ee2c42793d34e9edb622",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "GB – United Kingdom",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=GB",
+      "suggested": "Britiškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Britiškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Britiškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=CH13": {
+      "id": "help:dd74d5327a1b3114fec2bce4",
+      "sourceHash": "60803735b1b191ca5ed056c4e38e0a7766929508724e620d2a0a334d334e9936",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "CH13 – Switzerland",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=CH13",
+      "suggested": "Šveicariškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Šveicariškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Šveicariškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    }
+  },
+  "KBRY005WW003": {
+    "FSOCKETMEDIAPORTRIGHT=FR": {
+      "id": "help:a0e694a9da934cf31330d5c3",
+      "sourceHash": "937354dc460cdc89c4ad5161722cd78e70b31b83de2038b07d01f972efea0c2b",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "FR – France",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=FR",
+      "suggested": "Prancūziškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Prancūziškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Prancūziškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=GB": {
+      "id": "help:29164f9fe6fe3d1fcc6446e7",
+      "sourceHash": "b6ff0c64757bc18789129fa12980c3e13af2abd11101ee2c42793d34e9edb622",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "GB – United Kingdom",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=GB",
+      "suggested": "Britiškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Britiškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Britiškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=CH13": {
+      "id": "help:dd74d5327a1b3114fec2bce4",
+      "sourceHash": "60803735b1b191ca5ed056c4e38e0a7766929508724e620d2a0a334d334e9936",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "CH13 – Switzerland",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=CH13",
+      "suggested": "Šveicariškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Šveicariškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Šveicariškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    }
+  },
+  "KBRY006WW001": {
+    "FSOCKETMEDIAPORTRIGHT=FR": {
+      "id": "help:a0e694a9da934cf31330d5c3",
+      "sourceHash": "937354dc460cdc89c4ad5161722cd78e70b31b83de2038b07d01f972efea0c2b",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "FR – France",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=FR",
+      "suggested": "Prancūziškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Prancūziškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Prancūziškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=GB": {
+      "id": "help:29164f9fe6fe3d1fcc6446e7",
+      "sourceHash": "b6ff0c64757bc18789129fa12980c3e13af2abd11101ee2c42793d34e9edb622",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "GB – United Kingdom",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=GB",
+      "suggested": "Britiškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Britiškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Britiškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=CH13": {
+      "id": "help:dd74d5327a1b3114fec2bce4",
+      "sourceHash": "60803735b1b191ca5ed056c4e38e0a7766929508724e620d2a0a334d334e9936",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "CH13 – Switzerland",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=CH13",
+      "suggested": "Šveicariškojo tipo elektros lizdas.",
+      "context": "Dešiniojo įvado lizdas – Šveicariškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Šveicariškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    }
+  },
+  "KBSP002WW001": {
+    "FMEDIAPORTRIGHT=_2XGROMMETQC": {
+      "id": "help:081d002ec568b88b2cee2916",
+      "sourceHash": "a73ad6e9b3653960736619df2a50b20a4a13ca87578ea4975b7b090ee6078f29",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTRIGHT=_2XGROMMETQC",
+      "suggested": "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams.",
+      "context": "Dešinysis įvadas – Du plastikiniai kabelių įvadai, Ø 80 mm: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTRIGHT=_2XGROMMETQE": {
+      "id": "help:f83920b738e808a54cf4b77a",
+      "sourceHash": "3f32afa5b916b7d9f3776104f41bbc32994064e58e4734ecb8cdbfa28e81d566",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTRIGHT=_2XGROMMETQE",
+      "suggested": "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais.",
+      "context": "Dešinysis įvadas – Du stačiakampiai kabelių įvadai su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTMIDDLE=_2XGROMMETQC": {
+      "id": "help:5f544eb2e1529dd6660425c7",
+      "sourceHash": "53448478b4a51e9825068f7d6aa60922ebea2ddb992441c476c545d94f06fee8",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTMIDDLE=_2XGROMMETQC",
+      "suggested": "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams.",
+      "context": "Vidurinis įvadas – Du plastikiniai kabelių įvadai, Ø 80 mm: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTMIDDLE=_2XGROMMETQE": {
+      "id": "help:e48013ba59a19faeff7ea022",
+      "sourceHash": "f92f94383a0bfc8cef2ad61ebec8b40a6b2d5a7a16720d800b9eabe287868680",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTMIDDLE=_2XGROMMETQE",
+      "suggested": "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais.",
+      "context": "Vidurinis įvadas – Du stačiakampiai kabelių įvadai su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTLEFT=_2XGROMMETQC": {
+      "id": "help:9963e25fbb1b69237e93be35",
+      "sourceHash": "ea899d672c4d45a5592d629e5150dc2ddc08a3f4f380569cafa924a232dab9fd",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTLEFT=_2XGROMMETQC",
+      "suggested": "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams.",
+      "context": "Kairysis įvadas – Du plastikiniai kabelių įvadai, Ø 80 mm: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTLEFT=_2XGROMMETQE": {
+      "id": "help:d591833d2d22afc63af4839b",
+      "sourceHash": "0dbb72846b50f64695be40e69bf61d3fe61d6bd32ed44cdb53a3698a871fe7ec",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTLEFT=_2XGROMMETQE",
+      "suggested": "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais.",
+      "context": "Kairysis įvadas – Du stačiakampiai kabelių įvadai su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    }
+  },
+  "KBSP003WW001": {
+    "FMEDIAPORTLEFT=_4XGROMMETQE": {
+      "id": "help:f30e18ae50ec666bdd94736e",
+      "sourceHash": "98462d8dfdb314436fb0bf60e962980f4d1d781fd3846bceebb59381eabe790d",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "4x Aluminium rectangular cable outlet with brush",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTLEFT=_4XGROMMETQE",
+      "suggested": "Anga kabeliams išvesti per stalviršį. Anga uždengta šepetėliu.",
+      "context": "Kairysis įvadas – 4 stačiakampiai aliumininiai kabelių įvadai su šepetėliais: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Anga kabeliams išvesti per stalviršį. Anga uždengta šepetėliu."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://configurator.nowystyl.com/#ban=KBSP003WW001&sid=BSP&ovc=KBSP003WW001_DIMENSIONS.DWIDTH%3D28002X1400%3BKBSP003WW001_DIMENSIONS.DDEPTH%3D14002X700%3BKBSP003WW001_OPTIONS.FMEDIAPORTLEFT%3D4XGROMMETQC%3BKBSP003WW001_OPTIONS.FMEDIAPORTMIDDLE%3DNONE%3BKBSP003WW001_OPTIONS.FMEDIAPORTRIGHT%3DNONE%3BKBSP003WW001_OPTIONS.FHORWIRETRUNKING%3D4XSTEELHORIZONTAL2%3BKBSP003WW001_OPTIONS.FVERWIRETRUNKING%3D4XMESH%3BKBSP003WW001_FINISHES.FTOPCOLOR%3DCC%3BKBSP003WW001_FINISHES.FTABLEEDGECOLOR%3DCC%3BKBSP003WW001_FINISHES.FBASECOLOR%3DRAL9005%3BKBSP003WW001_FINISHES.FMEDIAPORTLEFTCOLOR%3DB&lang=en"
+    }
   }
 }

@@ -1261,5 +1261,638 @@
   },
   "value:FPEDESTAL=SUS3DRAWERFELTORG": {
     "suspended with three drawers, felt organizer": "Pakabinamas 3 stalčių blokas su veltinio daiktų dėklu"
+  },
+  "value:FSOCKETMEDIAPORTLEFT=DE": {
+    "german (ge)": "Vokiško standarto jungtis"
+  },
+  "value:FSOCKETMEDIAPORTRIGHT=DE": {
+    "german (ge)": "Vokiško standarto jungtis"
+  },
+  "value:FPANELACCESSORIES=_2XUPHPADONPINS700290": {
+    "2x upholstered pad 700 x 290 mm, with the option of inserting pins": "2 įsmeigiamoms smeigėms tinkami apmušti įdėklai, 700 × 290 mm"
+  },
+  "value:FTOPSHAPE=ROUNDEDBOTHSIDES": {
+    "rectangular with rounded corners": "Stačiakampis su užapvalintais kampais"
+  },
+  "value:FVERWIRETRUNKING=VERTICALUPHTOTOP": {
+    "assembly to the table top, upholstered": "Prie stalviršio tvirtinamas kabelių kanalas su apmušalu"
+  },
+  "value:FMEDIAPORTLEFT=_4XGROMMETQC": {
+    "4x plastic square grommet with round outlet diam.80": "4 kvadratiniai plastikiniai kabelių įvadai su apvalia 80 mm anga"
+  },
+  "value:FMEDIAPORTLEFT=_4XGROMMETQE": {
+    "4x aluminium rectangular cable outlet with brush": "4 stačiakampiai aliumininiai kabelių įvadai su šepetėliais"
+  },
+  "value:FMEDIAPORTRIGHT=_4XGROMMETQC": {
+    "4x plastic square grommet with round outlet diam.80": "4 kvadratiniai plastikiniai kabelių įvadai su apvalia 80 mm anga"
+  },
+  "value:FHORWIRETRUNKING=_4XSTEELHORIZONTAL2": {
+    "4x foldable on two side, steel": "4 plieniniai kabelių loveliai, atveriami iš abiejų pusių"
+  },
+  "value:FVERWIRETRUNKING=_4XMESH": {
+    "4x mesh": "4 tinkliniai kabelių kanalai"
+  },
+  "value:FHORWIRETRUNKING=_6XSTEELHORIZONTAL2": {
+    "6x foldable on two side, steel": "6 plieniniai kabelių loveliai, atveriami iš abiejų pusių"
+  },
+  "value:FMEDIAPORTLEFT=_6XGROMMETQC": {
+    "6x plastic square grommet with round outlet diam.80": "6 kvadratiniai plastikiniai kabelių įvadai su apvalia 80 mm anga"
+  },
+  "value:FMEDIAPORTLEFT=_6XEVOLINECIRCLE801M": {
+    "6x evoline circle80 1m": "6 EVOline Circle80 1M jungčių moduliai"
+  },
+  "value:FMEDIAPORTLEFT=_6XGROMMETQE": {
+    "6x aluminium rectangular cable outlet with brush": "6 stačiakampiai aliumininiai kabelių įvadai su šepetėliais"
+  },
+  "value:FMEDIAPORTRIGHT=_6XGROMMETQC": {
+    "6x plastic square grommet with round outlet diam.80": "6 kvadratiniai plastikiniai kabelių įvadai su apvalia 80 mm anga"
+  },
+  "value:FMEDIAPORTRIGHT=_6XEVOLINECIRCLE801M": {
+    "6x evoline circle80 1m": "6 EVOline Circle80 1M jungčių moduliai"
+  },
+  "value:FVERWIRETRUNKING=_6XMESH": {
+    "6x mesh": "6 tinkliniai kabelių kanalai"
+  },
+  "value:FMEDIAPORTLEFT=GROMMETQH": {
+    "aluminium rectangular cable outlet with flap (160x80mm)": "Stačiakampis aliumininis kabelių įvadas su dangteliu, 160 × 80 mm"
+  },
+  "value:FMEDIAPORTLEFT=GROMMETQMSTEP4M": {
+    "aluminium rectangular cable outlet with flap (240x100mm) + media port step 4m": "Stačiakampis aliumininis kabelių įvadas su dangteliu, 240 × 100 mm, ir Step 4M jungčių modulis"
+  },
+  "value:FSLOTSONFLAPLEFT=_2XSLOTS": {
+    "2x slots": "2 angos"
+  },
+  "value:FSLOTSONFLAPRIGHT=_2XSLOTS": {
+    "2x slots": "2 angos"
+  },
+  "value:FLOCKSIDEBOARD=CYLREPLACEINSERT": {
+    "cylinder lock with interchangeable key insert": "Cilindrinė spyna su keičiamu rakto cilindru"
+  },
+  "value:FPANELACCESSORIES=_2XORGANIZERBOX": {
+    "2x organization box": "2 daiktų dėklai"
+  },
+  "value:FPANELACCESSORIES=_2XHEADPHONEHOLDER": {
+    "2x headphone holder": "2 ausinių laikikliai"
+  },
+  "value:FPEDESTAL=_2XSUS2DRAWERFELTORG": {
+    "2x suspended with two drawers, felt organizer": "2 pakabinami 2 stalčių blokai su veltinio daiktų dėklais"
+  },
+  "value:FPEDESTAL=_2XSUS3DRAWERFELTORG": {
+    "2x suspended with three drawers, felt organizer": "2 pakabinami 3 stalčių blokai su veltinio daiktų dėklais"
+  },
+  "value:FTOPACCESSORIES=_2XDOCUMENTSHELF": {
+    "2x document shelf": "2 dokumentų lentynėlės"
+  },
+  "value:FTOPFIXEDBOARDMATERIAL=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FSLOTSONTOPLEFT=_4XSLOTS": {
+    "4x slots": "4 angos"
+  },
+  "value:FSLOTSONTOPMIDDLE=_4XSLOTS": {
+    "4x slots": "4 angos"
+  },
+  "value:FSLOTSONTOPRIGHT=_4XSLOTS": {
+    "4x slots": "4 angos"
+  },
+  "value:FPANELACCESSORIES=_2XOS4XMAGBOPENWD4XHPHOLD": {
+    "2x organiser strip, 4x magnetic board with wooden pencil tray, 4x headphone holder": "2 priedų tvirtinimo juostos, 4 magnetinės lentos su mediniais pieštukų dėklais ir 4 ausinių laikikliai"
+  },
+  "value:FUPPERPANEL=MELAMINE377OVERTOP": {
+    "modesty, melamine, 377 mm height above the tabletop": "Pertvara su melamino apdaila, 377 mm aukščio virš stalviršio"
+  },
+  "value:FPANELACCESSORIES=_1XOS2XPENBOX2XMAGBO": {
+    "organiser strip, 2x pencil box, 2x magnetic board": "Priedų tvirtinimo juosta, 2 pieštukinės ir 2 magnetinės lentos"
+  },
+  "value:FPANELACCESSORIES=_1XOS2XMAGBOPEN2XHPHOLD": {
+    "organiser strip, 2x magnetic board with pencil tray, 2x headphone holder": "Priedų tvirtinimo juosta, 2 magnetinės lentos su pieštukų dėklais ir 2 ausinių laikikliai"
+  },
+  "value:FSLOTSONTOPMIDDLE=_2XSLOTS": {
+    "2x slots": "2 angos"
+  },
+  "value:FMEDIAPORTLEFT=_2XOUTLETROUNDPLA": {
+    "2x plastic, round grommet, diam.80": "2 apvalūs plastikiniai kabelių įvadai, 80 mm skersmens"
+  },
+  "value:FMEDIAPORTLEFT=_2XOUTLETSQUARE9090": {
+    "2x plastic, square grommet, 90x90 mm": "2 kvadratiniai plastikiniai kabelių įvadai, 90 × 90 mm"
+  },
+  "value:FMEDIAPORTMIDDLE=_2XOUTLETRECTANGULAR2410": {
+    "2x aluminium, rectangular outlet with brush, 240x100 mm": "2 stačiakampiai aliumininiai kabelių įvadai su šepetėliais, 240 × 100 mm"
+  },
+  "value:FMEDIAPORTMIDDLE=_2XOUTLETROUNDPLA": {
+    "2x plastic, round grommet, diam.80": "2 apvalūs plastikiniai kabelių įvadai, 80 mm skersmens"
+  },
+  "value:FMEDIAPORTMIDDLE=_2XOUTLETSQUARE9090": {
+    "2x plastic, square grommet, 90x90 mm": "2 kvadratiniai plastikiniai kabelių įvadai, 90 × 90 mm"
+  },
+  "value:FMEDIAPORTMIDDLE=_2XNETBOXM4MWRECTOUT2410": {
+    "2x media port netbox m 4m with rectangular outlet with brush, 240x100 mm": "2 Netbox M 4M jungčių moduliai su stačiakampiais kabelių įvadais ir šepetėliais, 240 × 100 mm"
+  },
+  "value:FMEDIAPORTRIGHT=_2XOUTLETROUNDPLA": {
+    "2x plastic, round grommet, diam.80": "2 apvalūs plastikiniai kabelių įvadai, 80 mm skersmens"
+  },
+  "value:FMEDIAPORTRIGHT=_2XOUTLETSQUARE9090": {
+    "2x plastic, square grommet, 90x90 mm": "2 kvadratiniai plastikiniai kabelių įvadai, 90 × 90 mm"
+  },
+  "value:FCOLUMN=_2SQUARE7070": {
+    "square (70x70 mm) - two-segment": "Dviejų segmentų kvadratinė kolona, 70 × 70 mm"
+  },
+  "value:FHORWIRETRUNKING=_2XSTEELHORIZONTAL2": {
+    "2x foldable on two side, steel": "2 plieniniai kabelių loveliai, atveriami iš abiejų pusių"
+  },
+  "value:FVERWIRETRUNKING=_2XMESH": {
+    "2x mesh": "2 tinkliniai kabelių kanalai"
+  },
+  "value:FHANDLESIDEBOARD=TYPE1METAL": {
+    "metal (type 1)": "Metalinė rankenėlė, 1 tipas"
+  },
+  "value:FPANEL=UPPERMEL1UPH415": {
+    "upholstered pad (on user`s side), 415 mm height above the tabletop": "Apmuštas įdėklas naudotojo pusėje, 415 mm aukščio virš stalviršio"
+  },
+  "value:FPANEL=UPPERMEL2UPH415": {
+    "upholstered pad (on both sides), 415 mm height above the tabletop": "Apmušti įdėklai abiejose pusėse, 415 mm aukščio virš stalviršio"
+  },
+  "value:GFTOPSHAPE=LSHAPEDLEFT": {
+    "l-shape, left version": "L formos, kairysis variantas"
+  },
+  "value:GFTOPSHAPE=LSHAPEDRIGHT": {
+    "l-shape, right version": "L formos, dešinysis variantas"
+  },
+  "value:FVERWIRETRUNKING=VERTIPLATOCLEG": {
+    "assembly to c-leg with fixed height, plastic": "Prie fiksuoto aukščio C formos kojos tvirtinamas plastikinis kabelių kanalas"
+  },
+  "value:FPANEL=UPUPHSTITCH530": {
+    "upper, upholstered with stitching, 530 mm height above the tabletop": "Viršutinė pertvara su siūtu apmušalu, 530 mm aukščio virš stalviršio"
+  },
+  "value:FPANEL=ANGULARSTEEL270LEFT": {
+    "upper angular, powder coated steel, 270 mm height above the tabletop, left version": "Viršutinė kampinė milteliniu būdu dažyto plieno pertvara, 270 mm virš stalviršio, kairysis variantas"
+  },
+  "value:FPANEL=ANGULARSTEEL270RIGHT": {
+    "upper angular, powder coated steel, 270 mm height above the tabletop, right version": "Viršutinė kampinė milteliniu būdu dažyto plieno pertvara, 270 mm virš stalviršio, dešinysis variantas"
+  },
+  "value:FPANEL=ANGULARSTEEL400LEFT": {
+    "upper angular, powder coated steel, 400 mm height above the tabletop, left version": "Viršutinė kampinė milteliniu būdu dažyto plieno pertvara, 400 mm virš stalviršio, kairysis variantas"
+  },
+  "value:FPANEL=ANGULARSTEEL400RIGHT": {
+    "upper angular, powder coated steel, 400 mm height above the tabletop, right version": "Viršutinė kampinė milteliniu būdu dažyto plieno pertvara, 400 mm virš stalviršio, dešinysis variantas"
+  },
+  "value:FPANEL=UPSTEEL1000X400": {
+    "upper, powder coated steel, width 1000 mm, height 400 mm above the tabletop": "Viršutinė milteliniu būdu dažyto plieno pertvara, 1000 mm pločio ir 400 mm aukščio virš stalviršio"
+  },
+  "value:FPANELACCESSORIES=UPHPADONPINS700290": {
+    "upholstered pad 700 x 290 mm, with the option of inserting pins": "Įsmeigiamoms smeigėms tinkamas apmuštas įdėklas, 700 × 290 mm"
+  },
+  "value:FPANELACCESSORIES=_1XOS1XPENBOX1XMAGBO": {
+    "organiser strip, pencil box, magnetic board": "Priedų tvirtinimo juosta, pieštukinė ir magnetinė lenta"
+  },
+  "value:FMODESTYPANEL=VENEER350": {
+    "veneer, 350 mm height": "Medienos lukšto apdailos pertvara, 350 mm aukščio"
+  },
+  "value:FMEDIAPORTLEFT=_4XOUTLETSQUARE9090": {
+    "4x plastic, square grommet, 90x90 mm": "4 kvadratiniai plastikiniai kabelių įvadai, 90 × 90 mm"
+  },
+  "value:FMEDIAPORTRIGHT=_4XOUTLETSQUARE9090": {
+    "4x plastic, square grommet, 90x90 mm": "4 kvadratiniai plastikiniai kabelių įvadai, 90 × 90 mm"
+  },
+  "value:FMEDIAPORTMIDDLE=_4XOUTLETSQUARE9090": {
+    "4x plastic, square grommet, 90x90 mm": "4 kvadratiniai plastikiniai kabelių įvadai, 90 × 90 mm"
+  },
+  "value:FMEDIAPORTMIDDLE=OUTLETRECTANGULAR2410": {
+    "aluminium, rectangular outlet with brush, 240x100 mm": "Stačiakampis aliumininis kabelių įvadas su šepetėliu, 240 × 100 mm"
+  },
+  "value:FMEDIAPORTMIDDLE=NETBOXM4MWRECTOUT2410": {
+    "media port netbox m 4m with rectangular outlet with brush, 240x100 mm": "Netbox M 4M jungčių modulis su stačiakampiu kabelių įvadu ir šepetėliu, 240 × 100 mm"
+  },
+  "value:FPANEL=UPFELT480MODMEL370": {
+    "upper, felt, 480 mm height + modesty, melamine, 370 mm height": "Viršutinė veltinio pertvara, 480 mm aukščio, ir pertvara po stalviršiu su melamino apdaila, 370 mm aukščio"
+  },
+  "value:FPOWERSTRIP=_2XSTEP4MBLACK4X230VGE": {
+    "2x step 4m (4x power socket, german standard (ge), black)": "2 juodi Step 4M moduliai, kiekvienas su 4 vokiško standarto elektros lizdais"
+  },
+  "value:FPOWERSTRIP=_2XSTEP4MBLACK4X230VFR": {
+    "2x step 4m (4x power socket, french standard (fr), black)": "2 juodi Step 4M moduliai, kiekvienas su 4 prancūziško standarto elektros lizdais"
+  },
+  "value:FPOWERSTRIP=_2XSTEP4MBLACK4X230VGB": {
+    "2x step 4m (4x power socket, british standard (gb), black)": "2 juodi Step 4M moduliai, kiekvienas su 4 britiško standarto elektros lizdais"
+  },
+  "value:FPOWERSTRIP=_2XSTEP4MBLACK4X230VCH13": {
+    "2x step 4m (4x power socket, swiss standard (10 a / t 13), black)": "2 juodi Step 4M moduliai, kiekvienas su 4 šveicariško standarto elektros lizdais (10 A, T 13)"
+  },
+  "value:FMEDIAPORTLEFT=_4XOUTLETMETCIRCBR80": {
+    "4x round metal grommet with a brush, diam.80": "4 apvalūs metaliniai kabelių įvadai su šepetėliais, 80 mm skersmens"
+  },
+  "value:FMEDIAPORTRIGHT=_4XOUTLETMETCIRCBR80": {
+    "4x round metal grommet with a brush, diam.80": "4 apvalūs metaliniai kabelių įvadai su šepetėliais, 80 mm skersmens"
+  },
+  "value:GFVERSION=_2XEXTENSIONTOP": {
+    "2x extension": "2 papildomi stalviršiai"
+  },
+  "value:FPANELSIDE=_2XSIDEUPHSTITCH400": {
+    "2x side, upholstered with stitching, 400 mm height above the tabletop": "2 šoninės pertvaros su siūtu apmušalu, 400 mm aukščio virš stalviršio"
+  },
+  "value:FPOWERSTRIP=_3XSTEP4MBLACK4X230VGE": {
+    "3x step 4m (4x power socket, german standard (ge), black)": "3 juodi Step 4M moduliai, kiekvienas su 4 vokiško standarto elektros lizdais"
+  },
+  "value:FPOWERSTRIP=_3XSTEP4MBLACK4X230VFR": {
+    "3x step 4m (4x power socket, french standard (fr), black)": "3 juodi Step 4M moduliai, kiekvienas su 4 prancūziško standarto elektros lizdais"
+  },
+  "value:FPOWERSTRIP=_3XSTEP4MBLACK4X230VGB": {
+    "3x step 4m (4x power socket, british standard (gb), black)": "3 juodi Step 4M moduliai, kiekvienas su 4 britiško standarto elektros lizdais"
+  },
+  "value:FPOWERSTRIP=_3XSTEP4MBLACK4X230VCH13": {
+    "3x step 4m (4x power socket, swiss standard (10 a / t 13), black)": "3 juodi Step 4M moduliai, kiekvienas su 4 šveicariško standarto elektros lizdais (10 A, T 13)"
+  },
+  "value:FMEDIAPORTLEFT=_6XOUTLETMETCIRCBR80": {
+    "6x round metal grommet with a brush, diam.80": "6 apvalūs metaliniai kabelių įvadai su šepetėliais, 80 mm skersmens"
+  },
+  "value:FPANEL=_3XUPSTEEL1000X400": {
+    "3x upper, powder coated steel, width 1000 mm, height 400 mm above the tabletop": "3 viršutinės milteliniu būdu dažyto plieno pertvaros, 1000 mm pločio ir 400 mm aukščio virš stalviršio"
+  },
+  "value:GFVERSION=WITHOUTEXTENSIONTOP": {
+    "without extension": "Be papildomo stalviršio"
+  },
+  "value:FMEDIAPORTLEFT=_6XOUTLETSQUARE9090": {
+    "6x plastic, square grommet, 90x90 mm": "6 kvadratiniai plastikiniai kabelių įvadai, 90 × 90 mm"
+  },
+  "value:FMEDIAPORTMIDDLE=_6XEVOLINECIRCLE801M": {
+    "6x evoline circle80 1m": "6 EVOline Circle80 1M jungčių moduliai"
+  },
+  "value:FMEDIAPORTMIDDLE=_6XOUTLETSQUARE9090": {
+    "6x plastic, square grommet, 90x90 mm": "6 kvadratiniai plastikiniai kabelių įvadai, 90 × 90 mm"
+  },
+  "value:FMEDIAPORTRIGHT=_6XOUTLETSQUARE9090": {
+    "6x plastic, square grommet, 90x90 mm": "6 kvadratiniai plastikiniai kabelių įvadai, 90 × 90 mm"
+  },
+  "value:FVERWIRETRUNKING=_6XVERTICALFLEXIBLEMODPLA": {
+    "6x flexible, modular, plastic": "6 lankstūs moduliniai plastikiniai kabelių kanalai"
+  },
+  "value:FPANELACCESSORIES=_3XOS6XPENBOX6XMAGBO": {
+    "3x organiser strip, 6x pencil box, 6x magnetic board": "3 priedų tvirtinimo juostos, 6 pieštukinės ir 6 magnetinės lentos"
+  },
+  "value:FPANELACCESSORIES=_3XOS6XMAGBOPENWD6XHPHOLD": {
+    "3x organiser strip, 6x magnetic board with wooden pencil tray, 6x headphone holder": "3 priedų tvirtinimo juostos, 6 magnetinės lentos su mediniais pieštukų dėklais ir 6 ausinių laikikliai"
+  },
+  "value:FUPPERPANEL=_3XMELAMINE377OVERTOP": {
+    "3x modesty, melamine, 377 mm height above the tabletop": "3 pertvaros su melamino apdaila, 377 mm aukščio virš stalviršio"
+  },
+  "value:FPANEL=MODESTYMEL370": {
+    "modesty, melamine, 370 mm height": "Pertvara po stalviršiu su melamino apdaila, 370 mm aukščio"
+  },
+  "value:FMEDIAPORTMIDDLE=_6XGROMMETQC": {
+    "6x plastic square grommet with round outlet diam.80": "6 kvadratiniai plastikiniai kabelių įvadai su apvalia 80 mm anga"
+  },
+  "value:FMEDIAPORTMIDDLE=_6XGROMMETQE": {
+    "6x aluminium rectangular cable outlet with brush": "6 stačiakampiai aliumininiai kabelių įvadai su šepetėliais"
+  },
+  "value:FHORWIRETRUNKING=_3XHORSTEELSHARED": {
+    "3x shared, steel": "3 bendri plieniniai kabelių loveliai"
+  },
+  "value:FMEDIAPORTRIGHT=_6XGROMMETQE": {
+    "6x aluminium rectangular cable outlet with brush": "6 stačiakampiai aliumininiai kabelių įvadai su šepetėliais"
+  },
+  "value:FPANELACCESSORIES=_3XOS6XMAGBOPEN6XHPHOLD": {
+    "3x organiser strip, 6x magnetic board with pencil tray, 6x headphone holder": "3 priedų tvirtinimo juostos, 6 magnetinės lentos su pieštukų dėklais ir 6 ausinių laikikliai"
+  },
+  "value:FTABLEEDGETHICKNESS=ABSSTANDARD3": {
+    "3 mm - glue technology": "Klijuota 3 mm briaunos juosta"
+  },
+  "value:FTABLEEDGETHICKNESS=ABSLASER2": {
+    "2 mm - laser": "2 mm briaunos juosta, pritvirtinta lazeriniu būdu"
+  },
+  "value:FVERWIRETRUNKING=MESH": {
+    "mesh": "Tinklinis kabelių kanalas"
+  },
+  "value:FTOPSHAPE=DOUBLEWAVE": {
+    "double wave": "Dvigubos bangos formos stalviršis"
+  },
+  "value:FBASEFRAME=TELESCOPIC": {
+    "telescopic": "Teleskopinis rėmas"
+  },
+  "value:FBASEFEET=RECTANGULAR": {
+    "rectangular": "Stačiakampė kojos atrama"
+  },
+  "value:FCOLUMN=RECTANGULAR": {
+    "rectangular": "Stačiakampė kolona"
+  },
+  "value:FTOPBOARDMATERIAL=MELAMINEORGANIC": {
+    "melamine (mfc) organic": "Melaminu dengta medžio drožlių plokštė, Organic variantas"
+  },
+  "value:FPANEL=MODESTYUPHSTITCH370": {
+    "modesty, upholstered with stitching, 370 mm height": "Pertvara po stalviršiu su siūtu apmušalu, 370 mm aukščio"
+  },
+  "value:FTOPMATERIAL=LAMINATE": {
+    "hpl laminate": "HPL laminatas"
+  },
+  "value:FTOPMATERIAL=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FMODESTYPANELMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FMODESTYPANELMATERIAL=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FCONFIGURATIONMEDIARIGHT=_1X230V2XUSBCHAC": {
+    "1x power socket + 2x usb charger (type a + c)": "1 elektros lizdas ir 2 USB įkrovimo jungtys (A ir C tipo)"
+  },
+  "value:FBASEWOODMATERIAL=OAKNATURAL": {
+    "oak wood": "Ąžuolo mediena"
+  },
+  "value:FTOPSLIDINGBOARDMATERIAL=LINOLEUM": {
+    "linoleum": "Linoleumas"
+  },
+  "value:FTOPSHAPE=ANGLED120": {
+    "120° angled": "120° kampu suformuotas stalviršis"
+  },
+  "value:FHEIGHTADJUSTMENT=PNEUMATIC": {
+    "pneumatic": "Pneumatinis aukščio reguliavimas"
+  },
+  "value:FPANEL=_3XUPPERUPH480": {
+    "3x upper, upholstered, 480 mm height": "3 viršutinės pertvaros su apmušalu, 480 mm aukščio"
+  },
+  "value:FSOCKETMEDIAPORTLEFT=GE": {
+    "german (ge)": "Vokiško standarto jungtis"
+  },
+  "value:FSOCKETMEDIAPORTLEFT=FR": {
+    "french (fr)": "Prancūziško standarto jungtis"
+  },
+  "value:FSOCKETMEDIAPORTLEFT=GB": {
+    "british (gb)": "Britiško standarto jungtis"
+  },
+  "value:FSOCKETMEDIAPORTLEFT=CH13": {
+    "swiss (10 a / t 13)": "Šveicariško standarto jungtis (10 A, T 13)"
+  },
+  "value:FFLAPEDGETHICKNESS=ABSLASER2": {
+    "2 mm - laser": "2 mm briaunos juosta, pritvirtinta lazeriniu būdu"
+  },
+  "value:FDESKTYPE=INTEGRATEDWITHSBDB": {
+    "integrated with sideboard sbd-b": "Su SBD-B šonine spintele sujungtas stalas"
+  },
+  "value:FORGANIZER=_2XRIGHT": {
+    "2x right": "2 dešinieji daiktų dėklai"
+  },
+  "value:FTOPBOARDMATERIAL=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FPANEL=MODESTYMEL": {
+    "modesty, melamine": "Pertvara po stalviršiu su melamino apdaila"
+  },
+  "value:FBASEBOARDMATERIAL=MELAMINE": {
+    "melamine (mfc)": "Melaminu dengta medžio drožlių plokštė"
+  },
+  "value:FTABLEBASEEDGETHICKNESS=ABSSTANDARD2": {
+    "2 mm - glue technology": "Klijuota 2 mm briaunos juosta"
+  },
+  "value:FPANELMODEDGETHICKNESS=ABSSTANDARD2": {
+    "2 mm - glue technology": "Klijuota 2 mm briaunos juosta"
+  },
+  "value:FDESKTOPSLIDINGRANGE=_120": {
+    "120 mm": "120 mm"
+  },
+  "value:FCABLECOVER=YES": {
+    "yes": "Yra"
+  },
+  "value:FUPHINTTOPUNIT=CSE01": {
+    "cse01 (extended)": "CSE01 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE21": {
+    "cse21 (extended)": "CSE21 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE19": {
+    "cse19 (extended)": "CSE19 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE03": {
+    "cse03 (extended)": "CSE03 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE20": {
+    "cse20 (extended)": "CSE20 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE10": {
+    "cse10 (extended)": "CSE10 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE07": {
+    "cse07 (extended)": "CSE07 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE16": {
+    "cse16 (extended)": "CSE16 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE30": {
+    "cse30 (extended)": "CSE30 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE31": {
+    "cse31 (extended)": "CSE31 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE32": {
+    "cse32 (extended)": "CSE32 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE05": {
+    "cse05 (extended)": "CSE05 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE25": {
+    "cse25 (extended)": "CSE25 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE27": {
+    "cse27 (extended)": "CSE27 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE06": {
+    "cse06 (extended)": "CSE06 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE26": {
+    "cse26 (extended)": "CSE26 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE23": {
+    "cse23 (extended)": "CSE23 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE24": {
+    "cse24 (extended)": "CSE24 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE17": {
+    "cse17 (extended)": "CSE17 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE09": {
+    "cse09 (extended)": "CSE09 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE41": {
+    "cse41 (extended)": "CSE41 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE46": {
+    "cse46 (extended)": "CSE46 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE45": {
+    "cse45 (extended)": "CSE45 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE44": {
+    "cse44 (extended)": "CSE44 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE37": {
+    "cse37 (extended)": "CSE37 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE36": {
+    "cse36 (extended)": "CSE36 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE18": {
+    "cse18 (extended)": "CSE18 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE15": {
+    "cse15 (extended)": "CSE15 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE38": {
+    "cse38 (extended)": "CSE38 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE08": {
+    "cse08 (extended)": "CSE08 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE12": {
+    "cse12 (extended)": "CSE12 (papildomas pasirinkimas)"
+  },
+  "value:FUPHINTTOPUNIT=CSE40": {
+    "cse40 (extended)": "CSE40 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE01": {
+    "cse01 (extended)": "CSE01 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE21": {
+    "cse21 (extended)": "CSE21 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE19": {
+    "cse19 (extended)": "CSE19 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE03": {
+    "cse03 (extended)": "CSE03 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE20": {
+    "cse20 (extended)": "CSE20 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE10": {
+    "cse10 (extended)": "CSE10 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE07": {
+    "cse07 (extended)": "CSE07 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE16": {
+    "cse16 (extended)": "CSE16 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE30": {
+    "cse30 (extended)": "CSE30 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE31": {
+    "cse31 (extended)": "CSE31 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE32": {
+    "cse32 (extended)": "CSE32 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE25": {
+    "cse25 (extended)": "CSE25 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE27": {
+    "cse27 (extended)": "CSE27 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE26": {
+    "cse26 (extended)": "CSE26 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE41": {
+    "cse41 (extended)": "CSE41 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE46": {
+    "cse46 (extended)": "CSE46 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE45": {
+    "cse45 (extended)": "CSE45 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE44": {
+    "cse44 (extended)": "CSE44 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE37": {
+    "cse37 (extended)": "CSE37 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE36": {
+    "cse36 (extended)": "CSE36 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE18": {
+    "cse18 (extended)": "CSE18 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE38": {
+    "cse38 (extended)": "CSE38 (papildomas pasirinkimas)"
+  },
+  "value:FUPHEXTTOPUNIT=CSE40": {
+    "cse40 (extended)": "CSE40 (papildomas pasirinkimas)"
+  },
+  "value:FBASE=CTYPECHIPBOARDCONNECTOR": {
+    "c-leg, modesty panel": "C formos kojos ir pertvara po stalviršiu"
+  },
+  "value:FPANEL=MODESTYMEL320": {
+    "modesty, melamine, 320 mm height": "Pertvara po stalviršiu su melamino apdaila, 320 mm aukščio"
+  },
+  "value:FPANELACCESSORIES=_1XPENBOX1XHPHOLDER": {
+    "pencil box, headphone holder": "Pieštukinė ir ausinių laikiklis"
+  },
+  "value:FPANELACCESSORIES=PENCILBOXMAGBOARD": {
+    "pencil box, magnetic board": "Pieštukinė ir magnetinė lenta"
+  },
+  "value:FPANELBOARDMATERIAL=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FTABLEEDGETHICKNESS=NATURAL2": {
+    "2 mm - natural": "Natūrali 2 mm briauna"
+  },
+  "value:FBASE=SLABENDFRAME": {
+    "panel, frame": "Plokštinis pagrindas su rėmu"
+  },
+  "value:FBASEBOARDMATERIAL=VENEER": {
+    "veneered board": "Medienos lukštu dengta plokštė"
+  },
+  "value:FTABLEBASEEDGETHICKNESS=NATURAL2": {
+    "2 mm - natural": "Natūrali 2 mm briauna"
+  },
+  "value:FSOCKETMEDIAPORT=GE": {
+    "german (ge)": "Vokiško standarto jungtis"
+  },
+  "value:FSOCKETMEDIAPORT=FR": {
+    "french (fr)": "Prancūziško standarto jungtis"
+  },
+  "value:FSOCKETMEDIAPORT=GB": {
+    "british (gb)": "Britiško standarto jungtis"
+  },
+  "value:FEXTENSIONEDGETHICKNESS=ABSLASER2": {
+    "2 mm - laser": "2 mm briaunos juosta, pritvirtinta lazeriniu būdu"
+  },
+  "value:FPANELSIDE=_2XMEL377OVERTOPW1600": {
+    "2x modesty, melamine, 377 mm height above the tabletop, width 1600 mm": "2 pertvaros su melamino apdaila, 377 mm aukščio virš stalviršio ir 1600 mm pločio"
+  },
+  "value:FPANELACCESSORIES=_6XUPHPADONPINS700290": {
+    "6x upholstered pad 700 x 290 mm, with the option of inserting pins": "6 įsmeigiamoms smeigėms tinkami apmušti įdėklai, 700 × 290 mm"
+  },
+  "value:FHADJUSTMENTWAY=RATCHET": {
+    "ratchet mechanism": "Terkšlinis aukščio reguliavimo mechanizmas"
+  },
+  "value:CGASLIFT=GLSTD": {
+    "gl-std: pneumatic, standard": "Standartinis pneumatinis aukščio reguliatorius"
+  },
+  "field:FCABLECOVER": {
+    "cable cover": "Kabelių gaubtas"
+  },
+  "field:FSOCKETMEDIAPORT": {
+    "socket/plug standard - media port": "Jungčių modulio lizdo ir kištuko standartas"
+  },
+  "field:FSOCKETMEDIAPORTLEFT": {
+    "socket/plug standard - media port left": "Kairiojo jungčių modulio lizdo ir kištuko standartas"
+  },
+  "field:FUPHINTTOPUNIT": {
+    "upholstery colour - pad on the user's side, upper panel": "Viršutinės pertvaros įdėklo naudotojo pusėje apmušalo spalva"
+  },
+  "field:FUPHEXTTOPUNIT": {
+    "upholstery colour - front pad, upper panel": "Viršutinės pertvaros priekinio įdėklo apmušalo spalva"
+  },
+  "field:FBASEFRAME": {
+    "base frame": "Pagrindo rėmas"
+  },
+  "field:FBASEBOARDMATERIAL": {
+    "material chipboard elements - base": "Pagrindo medžio drožlių plokštės dalių medžiaga"
+  },
+  "field:FTABLEBASEEDGETHICKNESS": {
+    "base edge": "Pagrindo briauna"
+  },
+  "field:FPANELMODEDGETHICKNESS": {
+    "modesty panel edge thickness and type": "Pertvaros po stalviršiu briaunos storis ir tipas"
   }
 }

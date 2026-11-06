@@ -1,5 +1,6 @@
 import {createHash} from 'node:crypto';
 import mechanisms from '../../content/option-mechanism-explanations.json';
+import preservedIdentities from '../../content/option-explanation-identities.json';
 import {explanationSourceModels,explanationSourceMetadata} from './option-explanation-sources';
 import inventory from '../../content/text-review-inventory.json';
 import {verifiedDeskOption} from './verified-desk-media-options';
@@ -245,6 +246,10 @@ export function explainManufacturerOption(field:string,source:string):string|und
 
 export function optionExplanation(args:{group:'chairs'|'desks';model:string;field:string;value:string;english:string;label:string;context:string;configuratorUrl:string}):OptionExplanation|undefined{
  const {group,model,field,value,english,label,context,configuratorUrl}=args;
+ // Adding a previously missing original must not detach an existing human edit.
+ // These exact deployed definitions retain their verified text and source hash.
+ const preservedDefinition=(preservedIdentities as Record<string,Record<string,Omit<OptionExplanation,'optionBinding'>>>)[model]?.[field+'='+value];
+ if(preservedDefinition)return {...preservedDefinition,english:english||preservedDefinition.english,context:context+' – '+label+': paaiškinimas',optionBinding:explanationBinding(field,value)};
  const media=group==='desks'?verifiedDeskOption(model,field,value):undefined;
  if(!english&&!media)return;
  const curated=group==='chairs'&&field==='CMECHANISM'?mechanisms.find(r=>r.code===value&&r.models.includes(model)):undefined;

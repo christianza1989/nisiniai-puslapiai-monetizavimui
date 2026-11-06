@@ -1,5 +1,5 @@
 import {createHash} from 'node:crypto';
-import {dbAll} from './text-review-db';
+import {dbAll,dbSelectBatch} from './text-review-db';
 import {modelProduct} from './product-models';
 import {publicProductView} from './public-product-copy';
 import {contentTextKey} from './text-review-types';
@@ -11,10 +11,19 @@ const inventory=inventoryData as unknown as {models:Record<string,{bindings:Reco
 const nameIds=[...new Set(Object.values(inventory.models).flatMap(m=>Object.entries(m.bindings).filter(([key])=>key.startsWith('name:')).map(([,id])=>id)))];
 const escaped=(s:string)=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 /** Display overrides never modify supplier identity, URLs or Native values. */
-export async function reviewedCatalogTitles(seed:Seed):Promise<Seed>{
+export async function reviewedCatalogTitles(seed:Seed,onlyCurrentProducts=false):Promise<Seed>{
  const where=["key LIKE 'content:%:title'",...nameIds.map(()=>'(key=? OR key LIKE ?)')].join(' OR ');
  const preview=textReviewProposalPreview();
- const rows=await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE '+(preview?'':'published IS NOT NULL AND ')+'('+where+')',...nameIds.flatMap(id=>[id,'local:%:'+id]));
+ // Choice requests need the current product's titles and exact term bindings.
+ // Do not make D1 scan every model title/name with a catalogue-wide OR query.
+ const keys=new Set<string>();
+ if(onlyCurrentProducts)for(const p of seed.products){
+  for(const sample of ['line',...p.configurations.map(c=>c.id)])keys.add(contentTextKey(p.id+':'+sample,'title'));
+  for(const c of p.configurations)for(const [key,id]of Object.entries(inventory.models[c.code||'']?.bindings||{}))if(key.startsWith('name:')){keys.add(id);keys.add('local:'+c.code+':'+id);}
+ }
+ const wanted=[...keys],commands=[];
+ for(let offset=0;offset<wanted.length;offset+=70){const params=wanted.slice(offset,offset+70);commands.push({sql:'SELECT * FROM text_review_edits WHERE '+(preview?'':'published IS NOT NULL AND ')+'key IN ('+params.map(()=>'?').join(',')+')',params});}
+ const rows=onlyCurrentProducts?(await dbSelectBatch<TextEdit>(commands)).flat():await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE '+(preview?'':'published IS NOT NULL AND ')+'('+where+')',...nameIds.flatMap(id=>[id,'local:%:'+id]));
  if(!rows.length&&!preview)return seed;
  const edits=new Map(rows.map(r=>[r.key,r]));
  return {...seed,products:seed.products.map(p=>{

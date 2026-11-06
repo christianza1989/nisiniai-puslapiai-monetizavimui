@@ -74,7 +74,7 @@ async function readCatalog(productId?:string):Promise<Seed>{
   }else if(await privatePreview()){
     seed={...seed,products:applyDrafts(seed.products,await readDrafts())};
   }
-  return customerPresentation(await reviewedCatalogTitles(await launchProjection(seed)));
+    return customerPresentation(await reviewedCatalogTitles(await launchProjection(seed),!!productId));
 }
 export const catalogAsync=cache(()=>readCatalog());
 /** Same fresh edits, publication and customer projection; only the signed product is prepared. */

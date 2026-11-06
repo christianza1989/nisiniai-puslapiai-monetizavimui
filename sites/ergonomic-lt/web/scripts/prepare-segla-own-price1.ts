@@ -8,6 +8,7 @@ import price4Pin from './segla-price4-exact-package-pin.json';
 import sixPricePins from './segla-six-prices-exact-pins.json';
 import familyPins from './segla-family-exact-pins.json';
 import constructionPins from './segla-construction-exact-pins.json';
+import {seglaRouteRecords} from './segla-route-records';
 import {validateChairReviewComponents} from '../src/lib/chair-components';
 import {glbGeometryAdmission} from './prepared-review-glb-admission';
 import {qualifiedChairPlan,qualifiedDefaultSelection} from '../src/lib/chair-qualified-colors';
@@ -103,7 +104,7 @@ for(const name of Object.keys(manifest.files)){
 }
 assert(palette.schema==='chair-qualified-conditional-own-construction-palette-12500-v1'&&palette.groups.length===1);
 equal(palette.requiredOwnedBaseAssetShas,[asset.sha256]);equal(palette.fixedObservedFinishValues,price==='_5'?{CUPHGROUP:'RX'}:{});
-const group=palette.groups[0],allRecords=Object.values(group.values) as any[],records=allRecords.filter(v=>v.values.CPRICEGROUP===price);
+const group=palette.groups[0],allRecords=Object.values(group.values) as any[],records=seglaRouteRecords(allRecords,price,routed?.route,values.group);
 equal(group.fields,['CPRICEGROUP','CUPHCOLOR','CUPHGROUP']);
 assert(group.actualGroupValueCount===packageCount&&allRecords.length===packageCount&&records.length===count&&group.completeActualPostPrefixDomain===true);
 const targets=new Set(group.ownedBaselineSelectors.map((s:any)=>s.assetSha256+':'+s.selectorId));

@@ -10,7 +10,7 @@ import {configurableArticle} from './configuration-article';
 import {publishedText,displayedReviewText,suggestedModelTitle,textReviewProposalPreview,textReviewStatus,reviewCounts,customerTextHasCode} from './text-review-state';
 import {contentTextKey,type ReviewScope,type ReviewEntry,type TextDefinition,type TextEdit} from './text-review-types';
 import {configurationOptionLabel,configurationOptionValue,optionDetails,supplierOptions} from './configuration-labels';
-import {createExpandedEngine,fieldLabels,choiceLabel} from './expanded-configurator';
+import {createExpandedEngine,fieldLabels,choiceLabel,palettes} from './expanded-configurator';
 import type {CatalogRuntime} from './catalog-engine';
 import type {Product} from './types';
 import {optionExplanation,catalogOptionExplanations,explainManufacturerOption,type OptionExplanation} from './option-explanations';
@@ -21,6 +21,7 @@ import {verifiedChairBaseOption} from './verified-chair-base-options';
 import {createRuntimeTextSharing,runtimeReviewEdits} from './text-review-sharing';
 import {canonicalReviewValue} from './text-review-value';
 import {furnitureTerminology} from './furniture-terminology';
+import {originalColourName} from './original-colour-names';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
@@ -410,6 +411,24 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   if(value)values[code+':'+id]=value;
  }
  for(const d of defs.filter(d=>d.role==='Produkto tekstas')){const value=displayedReviewText(d,edits.get(d.id),'');if(value)values[d.id]=value;}
+ const colourNames:Record<string,string>={},colourById=new Map<string,Set<string>>();
+ const colourEngine=createExpandedEngine(runtime),colourFamily=p.modelConfigurationId?colourEngine.expandedForProduct(p):undefined;
+ if(colourFamily){
+  const addColourDomain=(source?:Record<string,string[]|null>)=>{for(const[field,values]of Object.entries(source||{}))if(/COLOR|COLOUR|CHCOL|COL$/.test(field)&&values)for(const value of values){
+   if(/^(?:NONE|UNDEFINED|NOTDEFINED|N\/A)$/i.test(value))continue;
+   const captured=runtime?.palettes[field]?.[value]?.text||palettes[field]?.[value]?.text,name=originalColourName(model,field,value)||captured||value;
+   if(name)colourNames[model+':'+field+'='+value]=name;
+  }};
+  addColourDomain(colourEngine.stateChoices(colourEngine.initialStateForProduct(p)));
+  for(const anchor of runtime?runtime.family.anchors.filter(a=>a.article===model):colourFamily.anchors){addColourDomain(anchor.choices);for(const profile of anchor.profiles||[])addColourDomain(profile.choices);if('components'in anchor)for(const group of anchor.components||[])for(const variant of group.variants||[]){addColourDomain(variant.choices);addColourDomain(variant.dependentChoices);}}
+ }
+ for(const[code,modelBindings]of Object.entries(bindings))for(const[binding,id]of Object.entries(modelBindings)){
+  const match=binding.match(/^value:([^=]+)=(.*)$/);if(!match)continue;
+  const name=originalColourName(code,match[1],match[2])||colourNames[code+':'+match[1]+'='+match[2]];if(!name)continue;
+  colourNames[code+':'+match[1]+'='+match[2]]=name;
+  if(code===model)for(const colourId of [id,modelBindings['name:'+match[2]]].filter(Boolean)){const set=colourById.get(colourId)||new Set<string>();set.add(name);colourById.set(colourId,set);}
+ }
+ for(const[id,names]of colourById)if(names.size===1)values[model+':'+id]=[...names][0];
  const optionCodesByTerm=new Map<string,string[]>(),englishByTerm=new Map<string,Set<string>>(),referenceByTerm=new Map<string,Set<string>>();
  for(const [binding,id] of Object.entries(modelBindings)){
   const english=englishByModel[model]?.[binding]||materialByModel[model]?.[binding];
@@ -433,16 +452,16 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const edit=local||global,baseStatus=textReviewStatus(def,edit);
   const originalText=shared?known?.current[def.id]||def.current[0]||def.sourceCode:def.current[0];
   const currentText=publishedText(def,local,publishedText(def,global,originalText));
-  const customerNameRequired=customerTextHasCode(def,currentText),status=baseStatus==='approved'&&customerTextHasCode(def,edit?.state==='kept'?currentText:edit?.draft||currentText)?'changed':baseStatus;
+  const originalColour=[...colourById.get(def.id)||[]].join(' · '),customerNameRequired=!originalColour&&customerTextHasCode(def,currentText),status=baseStatus==='approved'&&customerTextHasCode(def,edit?.state==='kept'?currentText:edit?.draft||currentText)?'changed':baseStatus;
   const sourceConfig=config||p.configurations.find(c=>c.code===model);
   const isPublished=status==='approved'&&(edit?.state==='kept'||edit?.published_hash===def.sourceHash&&edit.published===edit.draft);
   const originalEnglish=(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english;
   const catalogueLabel=!originalEnglish&&/^KUTI(?:003WW001|004WW00[12])$/.test(model)&&def.sourceCode==='CLUMBARPLASTICCOLOR'?utilaCatalogueLabel:undefined;
   const englishReference=originalEnglish||catalogueLabel?'':[...referenceByTerm.get(def.id)||[]].join(' · ');
-  return {...def,suggested:furnitureTerminology(def.suggested),context:furnitureTerminology(def.context),english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText,optionCodes:helpDefs.has(def.id)?[def.sourceCode]:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:helpDefs.get(def.id)?.sourceUrl||p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:target?.affected|| (helpDefs.has(def.id)?helpModelCount(helpDefs.get(def.id)!,group):shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1)};
+  return {...def,originalColourName:originalColour||undefined,suggested:originalColour||furnitureTerminology(def.suggested),context:furnitureTerminology(def.context),english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText:originalColour||currentText,optionCodes:helpDefs.has(def.id)?[def.sourceCode]:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:helpDefs.get(def.id)?.sourceUrl||p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:target?.affected|| (helpDefs.has(def.id)?helpModelCount(helpDefs.get(def.id)!,group):shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1)};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
- return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at,proposalPreview:textReviewProposalPreview()};
+ return {publicScope:{scope,model,bindings,values,originals,colourNames},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at,proposalPreview:textReviewProposalPreview()};
 }
 export type ReviewAction='draft'|'approve'|'keep'|'publish'|'unpublish';
 export class ReviewConflict extends Error{}
@@ -461,9 +480,9 @@ export async function mutateText(def:TextDefinition,args:{key:string;sourceHash:
  if(target&&args.key===target.key)def={...def,sourceHash:target.sourceHash};
  const previous=prior[0];
  if((previous?.revision||0)!==args.expectedRevision)throw new ReviewConflict('Šį tekstą jau pakeitė kita sesija. Atnaujinkite įrašą.');
- let text=furnitureTerminology((args.text??previous?.draft??'').trim());
+ let text=(def as Partial<ReviewEntry>).originalColourName||furnitureTerminology((args.text??previous?.draft??'').trim());
  if(args.action==='keep'&&customerTextHasCode(def,(def as Partial<ReviewEntry>).currentText||def.current[0]||''))throw Error('Klientui reikia pavadinimo be gamintojo kodo. Įrašykite pavadinimą.');
- if(['approve','publish'].includes(args.action)&&customerTextHasCode(def,text))throw Error('Pašalinkite gamintojo ar parinkties kodą iš klientui skirto teksto.');
+ if(['approve','publish'].includes(args.action)&&!(def as Partial<ReviewEntry>).originalColourName&&customerTextHasCode(def,text))throw Error('Pašalinkite gamintojo ar parinkties kodą iš klientui skirto teksto.');
  if(args.action!=='keep'&&args.action!=='unpublish'&&(!text||text.length>12000||/<[^>]*>|\[\[(?:open|close|void)/.test(text)))throw Error('Įrašykite tekstą be HTML žymų (iki 12 000 ženklų).');
  if(def.id.endsWith(':title')&&text.length>250)throw Error('Pavadinimas gali būti iki 250 ženklų.');
  if(def.role!=='Produkto tekstas'&&text.length>500)throw Error('Parinkties tekstas gali būti iki 500 ženklų.');

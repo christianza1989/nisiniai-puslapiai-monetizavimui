@@ -6,8 +6,8 @@ import type {PublicTextScope,ReviewScope} from '@/lib/text-review-types';
 import {ProductDescription} from './product-description';
 import {furnitureTerminology} from '@/lib/furniture-terminology';
 const Panel=dynamic(()=>import('./text-review-panel'),{ssr:false});
-type ReviewContext={editing:boolean;proposalPreview?:boolean;open:(id:string,trigger:HTMLElement)=>void;binding:(model:string,field:string,value?:string,kind?:'explanation')=>string;resolve:(id:string,fallback:string,model?:string)=>string;known:(id:string,fallback:string)=>boolean;scope:string;model:string};
-const empty:ReviewContext={editing:false,open:()=>{},binding:()=>'',resolve:(_,fallback)=>furnitureTerminology(fallback),known:()=>false,scope:'',model:''};
+type ReviewContext={editing:boolean;proposalPreview?:boolean;open:(id:string,trigger:HTMLElement)=>void;binding:(model:string,field:string,value?:string,kind?:'explanation')=>string;colourName:(model:string,field:string,value:string)=>string|undefined;resolve:(id:string,fallback:string,model?:string)=>string;known:(id:string,fallback:string)=>boolean;scope:string;model:string};
+const empty:ReviewContext={editing:false,open:()=>{},binding:()=>'',colourName:()=>undefined,resolve:(_,fallback)=>furnitureTerminology(fallback),known:()=>false,scope:'',model:''};
 const Context=createContext<ReviewContext>(empty);
 export const useTextReview=()=>useContext(Context);
 export function TextReviewProvider({initial,admin,children}:{initial:PublicTextScope;admin?:ReviewScope;children:ReactNode}){
@@ -47,7 +47,7 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
  function resolve(id:string,fallback:string,model=publicScope.model){
   if(!id)return furnitureTerminology(fallback);
   if(publicScope.originals[id]!==undefined&&publicScope.originals[id]!==fallback)return furnitureTerminology(fallback);
-  const entry=editing?scope?.entries.find(e=>e.id===id):undefined,edit=entry?.edit;
+  const entry=editing?scope?.entries.find(e=>e.id===id):undefined,edit=entry?.edit;if(entry?.originalColourName)return entry.originalColourName;
   if(edit&&edit.source_hash===entry?.sourceHash&&edit.state!=='kept'&&edit.draft&&(edit.key===entry.globalEdit?.key||entry.model===model))return furnitureTerminology(edit.draft);
   if(entry&&!edit&&entry.model===model&&entry.suggested)return furnitureTerminology(entry.suggested);
   let value=publicScope.values[model+':'+id]||publicScope.values[id]||fallback;
@@ -58,7 +58,7 @@ export function TextReviewProvider({initial,admin,children}:{initial:PublicTextS
   return furnitureTerminology(value);
  }
  const toggle=()=>{if(editing)select('');setEditing(!editing);sessionStorage.setItem('ergonomic-text-edit',editing?'0':'1');};
- return <Context.Provider value={{editing,proposalPreview:scope?.proposalPreview,open,binding,resolve,known:(id,fallback)=>!!id&&(publicScope.originals[id]===undefined||publicScope.originals[id]===fallback),scope:publicScope.scope,model:publicScope.model}}>{children}
+ return <Context.Provider value={{editing,proposalPreview:scope?.proposalPreview,open,binding,resolve,colourName:(model,field,value)=>publicScope.colourNames?.[model+':'+field+'='+value],known:(id,fallback)=>!!id&&(publicScope.originals[id]===undefined||publicScope.originals[id]===fallback),scope:publicScope.scope,model:publicScope.model}}>{children}
  {scope&&<Panel scope={scope} update={update} editing={editing} toggle={toggle} selected={selected} select={select} inlineHost={inlineHost}/>}
  </Context.Provider>;
 }

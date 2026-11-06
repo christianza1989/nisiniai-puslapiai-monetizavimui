@@ -33,6 +33,8 @@ import {visibleDeskPreviewChoices} from '@/lib/desk-preview-choices';
 import chairPreviewCoverage from '../../content/chair-preview-coverage.json';
 import {useTextReview,ReviewFieldButton,OptionExplanation} from './text-review-provider';
 import {MechanismChoicePreview} from './mechanism-choice-preview';
+import {reviewedSpecificationRows} from '@/lib/reviewed-specification-rows';
+import {configurationOptionLabel} from '@/lib/configuration-labels';
 const Viewer3D=dynamic(()=>import('./deferred-viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export default function ExpandedProductDetail({product,url,presets,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage,engineSources}:{product:Product;url:string;presets:ReactNode;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string;engineSources:ExpandedEngineSources}){
  const review=useTextReview();
@@ -41,7 +43,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const {expandedForProduct,initialStateForProduct,changeField,stateChoices,stateToken,parseStateToken,expandedSelection}=engine;
  const {catalogForProduct,catalogAnchor,catalogInitial}=engine.catalog;
  const palettes=useMemo(()=>{const result={...basePalettes};for(const [key,values] of Object.entries(catalogRuntime?.palettes||{}))result[key]={...result[key],...values};return result;},[catalogRuntime,basePalettes]);
- const choiceLabel=(field:string,value:string)=>review.resolve(review.binding(selected.configuration.code||'',field,value),armrestChoiceLabel(selected.configuration.code,field,value)||articleChoiceLabel(product,field,value)||safeArmrestFallback(field,value,baseChoiceLabel(field,value,catalogRuntime?.palettes,family.id)),selected.configuration.code||'');
+ const choiceLabel=(field:string,value:string)=>review.colourName(selected.configuration.code||'',field,value)||review.resolve(review.binding(selected.configuration.code||'',field,value),armrestChoiceLabel(selected.configuration.code,field,value)||articleChoiceLabel(product,field,value)||safeArmrestFallback(field,value,baseChoiceLabel(field,value,catalogRuntime?.palettes,family.id)),selected.configuration.code||'');
 
  const family=expandedForProduct(product)!;
  const catalog=catalogForProduct(product);
@@ -71,8 +73,9 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  },[fullscreen]);
  useEffect(()=>{if(initialConfiguration)return;const token=new URLSearchParams(window.location.search).get('konfig');if(token)try{setSelection(parseStateToken(product,token));setCustomized(true);}catch{setMessage(copyText("ui.ebb2987ef716971244b4","Nuorodos komplektacija negalioja. Rodoma pradinė komplektacija."));}},[product,initialConfiguration]);
  const selected=useMemo(()=>expandedSelection(product,selection),[product,selection,expandedSelection]);
- const presentedConfiguration=presentArmrestConfiguration(selected.configuration,selection.values,catalogRuntime?.palettes._fieldLabels?.CARMRESTS?.text);
+ const armrestConfiguration=presentArmrestConfiguration(selected.configuration,selection.values,catalogRuntime?.palettes._fieldLabels?.CARMRESTS?.text);
  const fieldLabels:Record<string,string>={...baseFieldLabels,...Object.fromEntries(Object.entries(catalogRuntime?.palettes._fieldLabels||{}).map(([key,label])=>[key,label.text])),...articleFieldLabels(product),...(armrestFieldLabel(selected.configuration.code)?{CARMRESTS:armrestFieldLabel(selected.configuration.code)!}:{})};
+ const presentedConfiguration={...armrestConfiguration,details:reviewedSpecificationRows(armrestConfiguration.details||[],selection.values,field=>[fieldLabels[field],baseFieldLabels[field],configurationOptionLabel(field)].filter(Boolean) as string[],(field,value)=>value===undefined?undefined:review.colourName(selected.configuration.code||'',field,value))};
  const choices=visibleDeskPreviewChoices(catalog,stateChoices(selection));
  const chairMaterials=useMemo(()=>product.categorySlug==='kedes'&&!structureOnly?legacyChairMaterialControls({state:selection,proof:chairRoleProof,
   assets:[...(selected.assets.base?[selected.assets.base]:[]),...selected.assets.patches.flatMap(p=>p.geometries||(p.geometry?[p.geometry]:[]))],

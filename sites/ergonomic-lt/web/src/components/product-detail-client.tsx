@@ -18,16 +18,21 @@ import {ProductStudioIntro} from './product-studio-intro';
 import {ProductSelectedReading} from './product-selected-reading';
 import {productSpecificationRows} from '@/lib/product-specifications';
 import {useProductWorkspace} from '@/lib/use-product-workspace';
+import {useTextReview} from './text-review-provider';
+import {reviewedSpecificationRows} from '@/lib/reviewed-specification-rows';
+import {supplierOptions,configurationOptionLabel} from '@/lib/configuration-labels';
 const Viewer3D=dynamic(()=>import('./deferred-viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export function ProductDetailClient({product:p,url,presetOnly=false,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage,engineSources}:{product:Product;url:string;presetOnly?:boolean;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string;engineSources:ExpandedEngineSources}){
   const pilot=pilotForProduct(p);
+  const review=useTextReview();
   const workspace=useProductWorkspace();
   const [selected,setSelected]=useState(p.modelConfigurationId||pilot?.variants[0]?.id||''),[view,setView]=useState<'3d'|'photo'>(pilot?'3d':'photo');
   const [quantity,setQuantity]=useState(1),[added,setAdded]=useState(false);
   const {add,items}=useQuote();const config=p.configurations.find(c=>c.id===selected);
   const variant=pilot?.variants.find(v=>v.id===selected),backrest=variant?.backrest;
   const image=config?config.image:variant?.image||p.image;
-  const specificationRows=productSpecificationRows(config?.code,config?.details);
+  const selectedValues=Object.fromEntries((config?supplierOptions(config):[]).flatMap(option=>{const equals=option.indexOf('=');return equals<0?[]:[[option.slice(0,equals).split('.').at(-1)!,option.slice(equals+1)]];}));
+  const specificationRows=reviewedSpecificationRows(productSpecificationRows(config?.code,config?.details),selectedValues,field=>[configurationOptionLabel(field)].filter(Boolean) as string[],(field,value)=>value===undefined?undefined:review.colourName(config?.code||'',field,value));
   const choose=(id:string)=>{setSelected(id);setAdded(false);};
   if(!presetOnly&&createScopedExpandedEngine(catalogRuntime,engineSources).expandedForProduct(p))return <ExpandedProductDetail engineSources={engineSources} product={p} url={url} catalogRuntime={catalogRuntime} initialConfiguration={initialConfiguration} initialCustomized={initialCustomized} configurationMessage={configurationMessage} presets={<ProductDetailClient product={p} url={url} presetOnly engineSources={engineSources}/>}/>;
   function addToQuote(){add({productId:p.id,name:p.name,brand:p.brand,url,image,configurationId:config?.id||null,configurationLabel:variant?.label||config?.description||copyText("ui.e4019a818673bd9db5c9","Komplektaciją suderinsime"),quantity,note:''});setAdded(true);}

@@ -6,6 +6,7 @@ export function canonicalReviewValue(model:string,field:string,value:string){ret
  * selected code, geometry or quote. Existing human wording has precedence.
  */
 export function publishedReviewValue(review:ReviewScope,model:string,field:string,value?:string){
+ if(value!==undefined&&review.publicScope.colourNames?.[model+':'+field+'='+value])return review.publicScope.colourNames[model+':'+field+'='+value];
  const binding=(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value),rawId=review.publicScope.bindings[model]?.[binding],raw=rawId?review.publicScope.values[model+':'+rawId]:undefined;
  if(value===undefined)return raw;
  const selected=canonicalReviewValue(model,field,value);if(selected===value)return raw;

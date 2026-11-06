@@ -27,7 +27,7 @@ export async function POST(req:NextRequest){
   const scope=await buildReviewScope(p,undefined,p.modelConfigurationId?await loadCatalogRuntime(p):undefined),entry=scope.entries.find(e=>e.id===args.id);if(!entry)return json({error:'Tekstas nepriklauso šiam produktui.'},404);
   // Keeping source presentation is model-specific. It must never copy one
   // model's raw supplier code into another model's shared label.
-  const local=entry.shared&&(args.local||args.action==='keep');
+  const local=entry.shared&&(args.local||args.action==='keep'||!!entry.originalColourName);
   const key=local?localTextKey(scope.model,entry.id):sharedTextKey(p.categorySlug,entry.id);
   await mutateText(entry,{key,sourceHash:args.sourceHash,expectedRevision:args.revision,text:args.text,action:args.action});
   return json(await buildReviewScope(p,undefined,p.modelConfigurationId?await loadCatalogRuntime(p):undefined));

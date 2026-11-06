@@ -1,4 +1,5 @@
 import {hasDescriptionFormatting} from './product-description';
+import {furnitureTerminology} from './furniture-terminology';
 const matchers=new WeakMap<Set<string>,{size:number;matcher?:RegExp}>();
 /** Never fall back to a supplier identifier when a customer-facing name is missing. */
 export function customerLabel(text:string|undefined,codes:Iterable<string>,fallback:string){
@@ -14,7 +15,7 @@ export function customerLabel(text:string|undefined,codes:Iterable<string>,fallb
  if(matcher)value=value.replace(matcher,'$1');
  value=value.replace(/\bK[A-Z]{2,8}\d[A-Z0-9]{5,}\b/g,'').replace(/\bC[A-Z]{4,}\b/g,'').replace(/\bR\d{2}[A-Z0-9]*\b/g,'').replace(/\b(?:Nowy\s*Styl|SOHOS|Kusch\s*\+\s*Co)\b/gi,'').replace(/(?:\s*[·|=]\s*)+/g,' · ').replace(/^[\s·|=,;–-]+|[\s·|=,;–-]+$/g,'').replace(/\s+/g,' ').trim();
  value=value.replace(/^Be šio elemento\s*\(NONE\)$/i,'Nėra').replace(/\(\s*\)|\[\s*\]/g,'').replace(/\s+/g,' ').trim();
- return value||fallback;
+ return furnitureTerminology(value||fallback);
 }
 
 export function customerDescriptionLabel(text:string,codes:Iterable<string>,fallback:string){

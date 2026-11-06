@@ -20,6 +20,7 @@ import {verifiedDeskOption} from './verified-desk-media-options';
 import {verifiedChairBaseOption} from './verified-chair-base-options';
 import {createRuntimeTextSharing,runtimeReviewEdits} from './text-review-sharing';
 import {canonicalReviewValue} from './text-review-value';
+import {furnitureTerminology} from './furniture-terminology';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
@@ -438,7 +439,7 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const originalEnglish=(def.id.endsWith(':title')?englishByModel[model]?.title:[...englishByTerm.get(def.id)||[]].join(' · '))||def.english;
   const catalogueLabel=!originalEnglish&&/^KUTI(?:003WW001|004WW00[12])$/.test(model)&&def.sourceCode==='CLUMBARPLASTICCOLOR'?utilaCatalogueLabel:undefined;
   const englishReference=originalEnglish||catalogueLabel?'':[...referenceByTerm.get(def.id)||[]].join(' · ');
-  return {...def,english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText,optionCodes:helpDefs.has(def.id)?[def.sourceCode]:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:helpDefs.get(def.id)?.sourceUrl||p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:target?.affected|| (helpDefs.has(def.id)?helpModelCount(helpDefs.get(def.id)!,group):shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1)};
+  return {...def,suggested:furnitureTerminology(def.suggested),context:furnitureTerminology(def.context),english:originalEnglish||catalogueLabel?.text||englishReference,englishCatalogueUrl:catalogueLabel?.sourceUrl,englishReference:!!englishReference,currentText,optionCodes:helpDefs.has(def.id)?[def.sourceCode]:optionCodesByTerm.get(def.id),customerNameRequired,edit,globalEdit:global,status,published:!!isPublished,key:local?.key||globalKey(def.id),shared,model,sourceUrl:helpDefs.get(def.id)?.sourceUrl||p.sourceUrl,configuratorUrl:sourceConfig?.configurator||'',affected:target?.affected|| (helpDefs.has(def.id)?helpModelCount(helpDefs.get(def.id)!,group):shared?(usage.get(def.id)?.[p.categorySlug===deskCategory?'desks':'chairs']||1):1)};
  });
  const originals=Object.fromEntries(defs.filter(d=>d.role==='Produkto tekstas').map(d=>[d.id,d.current[0]]));
  return {publicScope:{scope,model,bindings,values,originals},entries,productId:p.id,model,title:publicProductView(p).publicHeading||p.name,path:'/produktai/'+p.categorySlug+'/'+p.slug+'/',complete:!!known?.inventoryComplete,...reviewCounts(entries),inventoryAt:inventory.at,proposalPreview:textReviewProposalPreview()};
@@ -460,14 +461,14 @@ export async function mutateText(def:TextDefinition,args:{key:string;sourceHash:
  if(target&&args.key===target.key)def={...def,sourceHash:target.sourceHash};
  const previous=prior[0];
  if((previous?.revision||0)!==args.expectedRevision)throw new ReviewConflict('Šį tekstą jau pakeitė kita sesija. Atnaujinkite įrašą.');
- let text=(args.text??previous?.draft??'').trim();
+ let text=furnitureTerminology((args.text??previous?.draft??'').trim());
  if(args.action==='keep'&&customerTextHasCode(def,(def as Partial<ReviewEntry>).currentText||def.current[0]||''))throw Error('Klientui reikia pavadinimo be gamintojo kodo. Įrašykite pavadinimą.');
  if(['approve','publish'].includes(args.action)&&customerTextHasCode(def,text))throw Error('Pašalinkite gamintojo ar parinkties kodą iš klientui skirto teksto.');
  if(args.action!=='keep'&&args.action!=='unpublish'&&(!text||text.length>12000||/<[^>]*>|\[\[(?:open|close|void)/.test(text)))throw Error('Įrašykite tekstą be HTML žymų (iki 12 000 ženklų).');
  if(def.id.endsWith(':title')&&text.length>250)throw Error('Pavadinimas gali būti iki 250 ženklų.');
  if(def.role!=='Produkto tekstas'&&text.length>500)throw Error('Parinkties tekstas gali būti iki 500 ženklų.');
  if(/Nowy\s*Styl|SOHOS|Kusch\s*\+\s*Co/i.test(text))throw Error('Viešame tekste negalima skelbti vidinės tiekėjo tapatybės.');
- if(args.action==='publish'&&(previous?.state!=='approved'||previous.source_hash!==def.sourceHash||previous.draft!==text))throw new ReviewConflict('Prieš skelbdami patvirtinkite dabartinę teksto versiją.');
+ if(args.action==='publish'&&(previous?.state!=='approved'||previous.source_hash!==def.sourceHash||furnitureTerminology(previous.draft)!==text))throw new ReviewConflict('Prieš skelbdami patvirtinkite dabartinę teksto versiją.');
  let state:TextEdit['state']=args.action==='draft'?'draft':args.action==='keep'?'kept':previous?.state||'approved';
  if(args.action==='approve')state='approved';
  if(args.action==='keep')text='';

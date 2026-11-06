@@ -16,8 +16,8 @@ export function createRuntimeTextSharing(models:Record<string,Model>,terms:Recor
   const group:Group=meta.path.startsWith('/produktai/rasomieji-stalai-ir-darbo-vietos/')?'desks':'chairs';
   for(const[binding,english]of Object.entries(originals[model]||{})){
    if(!/^(?:field:|value:)/.test(binding))continue;
-   const meaning=normalize(english),code=binding.startsWith('field:')?binding.slice(6):binding.slice(binding.indexOf('=')+1);
-   if(!meaning||meaning===normalize(code)&&!['none','standard'].includes(meaning)||/^[A-Z0-9_./+-]+$/.test(english.trim()))continue;
+   const meaning=normalize(english);
+   if(!meaning||/^[A-Z0-9_./+-]+$/.test(english.trim()))continue;
    const context=JSON.stringify([group,binding,meaning]),row=contexts.get(context)||{ids:new Set<string>(),models:new Set<string>()};
    const id=meta.bindings[binding];if(id&&terms[id])row.ids.add(id);
    row.models.add(model);contexts.set(context,row);byRuntime.set('runtime:'+model+':'+binding,context);

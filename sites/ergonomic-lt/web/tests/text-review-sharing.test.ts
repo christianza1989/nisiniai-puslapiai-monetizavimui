@@ -49,4 +49,7 @@ test('missing model original uses only an unambiguous exact-field reference in t
  const conflict=createRuntimeTextSharing({...models,D:model('kedes')},{[def.id]:def},{A:{[binding]:original},D:{[binding]:'Different base'}},key);
  assert.equal(conflict.target('kedes','runtime:B:'+binding),undefined);
  assert.equal(sharing.target('kedes','runtime:B:value:CFRAME=FIVE'),undefined);
+ const leather='value:FTOPINSERT=LEATHER';
+ const materials=createRuntimeTextSharing({A:model('rasomieji-stalai-ir-darbo-vietos',{[leather]:def.id}),B:model('rasomieji-stalai-ir-darbo-vietos')},{[def.id]:def},{A:{[leather]:'Leather'}},key);
+ assert.equal(materials.target('rasomieji-stalai-ir-darbo-vietos','runtime:B:'+leather)?.key,def.id);
 });

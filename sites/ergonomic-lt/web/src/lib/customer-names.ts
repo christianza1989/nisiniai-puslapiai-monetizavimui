@@ -39,12 +39,14 @@ export function customerColourLabel(text:string|undefined,codes:Iterable<string>
   const saved:string[]=[];let protectedText=text||'';
   for(const code of allowed){const parts=code.match(/[A-Z]+|[0-9]+/g),literal=code.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),spaced=parts?.join('[\\s_.-]*');
    const pattern=new RegExp('(^|[^\\p{L}\\p{N}])(?:'+literal+(spaced?'|'+spaced:'')+')(?=$|[^\\p{L}\\p{N}])','gu');
-   protectedText=protectedText.replace(pattern,(_all,prefix:string)=>{const original=_all.slice(prefix.length);saved.push(original);return prefix+'colourmarktoken'+(saved.length-1)+'end';});
+   protectedText=protectedText.replace(pattern,(_all,prefix:string)=>{const original=_all.slice(prefix.length);saved.push(original);return prefix+'\uE000'+(saved.length-1)+'\uE001';});
   }
-  let value=customerLabel(protectedText,[...codes].filter(code=>!allowed.includes(code)),'');
-  value=value.replace(/colourmarktoken(\d+)end/g,(_all,index:string)=>saved[Number(index)]);
-  // Some genuine supplier labels contain only a shade name. Show their
-  // verified selector mark as well, without guessing it from the wording.
+  // Protected marks contain no supplier identifier, so the complete existing
+  // matcher can be reused. Rebuilding a huge exclusion regex for every colour
+  // caused seconds of CPU work on each configuration request.
+  let value=customerLabel(protectedText,codes,'');
+  value=value.replace(/\uE000(\d+)\uE001/g,(_all,index:string)=>saved[Number(index)]);
+  // Keep the actual selector mark when the captured label has only its shade name.
   if(value&&allowed.length===1&&!saved.length)value=allowed[0]+' · '+value;
   return value||fallback;
  }

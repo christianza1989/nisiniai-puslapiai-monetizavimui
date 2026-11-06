@@ -37,6 +37,7 @@ test('CMS can keep/approve a fixed supplier colour label without reopening trans
 test('only verified colour values are visible to visitors; structural and model codes stay private',()=>{
  const codes=['CSE01','RAL9016','R55POLWBPU','KEM2013WW004','CUPHCOLOR'];
  assert.equal(customerColourLabel('CSE01 (extended)',codes,'Spalva',['CSE01']),'CSE01 (extended)');
+ assert.equal(customerColourLabel('Acacia Light',['NJ'],'Spalva',['NJ']),'NJ · Acacia Light');
  assert.equal(customerColourLabel('RAL 9016 Traffic White',codes,'Spalva',['RAL9016']),'RAL 9016 Traffic White');
  assert.equal(customerColourLabel('CSE01 R55POLWBPU KEM2013WW004 CUPHCOLOR',codes,'Spalva',['CSE01']),'CSE01');
  assert.equal(customerLabel('CSE01 R55POLWBPU',codes,'Parinktis'),'Parinktis');

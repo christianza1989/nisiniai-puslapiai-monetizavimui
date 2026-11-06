@@ -43,6 +43,9 @@ export function customerColourLabel(text:string|undefined,codes:Iterable<string>
   }
   let value=customerLabel(protectedText,[...codes].filter(code=>!allowed.includes(code)),'');
   value=value.replace(/colourmarktoken(\d+)end/g,(_all,index:string)=>saved[Number(index)]);
+  // Some genuine supplier labels contain only a shade name. Show their
+  // verified selector mark as well, without guessing it from the wording.
+  if(value&&allowed.length===1&&!saved.length)value=allowed[0]+' · '+value;
   return value||fallback;
  }
  const name=(text||'').replace(/^\d[\d.]*\s+/,'').replace(/\s+[A-Z0-9]{1,3}(?:,\s*[A-Z0-9]{1,3})*\s*$/,'');

@@ -25,6 +25,18 @@ test('MEDIUM NONE requires the new OWN runtime and exact hidden205 dimension',()
  for(const nominal of ['_210T280','']){const wrong=structuredClone(own);wrong.runtime.contexts[0].dimensions.DARMRESTSHEIGHT=nominal;assert.throws(()=>validateChairConstructionBinding(wrong,scoped));}
  const old=structuredClone(own);old.runtimeSha256='default-medium-own';assert.throws(()=>validateChairConstructionBinding(old,scoped));
 });
+
+test('HIGH NONE never accepts MEDIUM geometry or a nominal210 hidden dimension',()=>{
+ const high=constructionPins.HIGH_NONE.route,medium=constructionPins.MEDIUM_NONE.route;
+ assert.notEqual(high.baselineAssetSha256,medium.baselineAssetSha256);
+ assert.notEqual(high.runtimeSha256,medium.runtimeSha256);
+ const values=Object.fromEntries(Object.entries(high.fixedSelectableStructuralFields).map(([k,v])=>[k,v.fixedValue]));
+ const binding:ChairConstructionBinding={runtimeSha256:high.runtimeSha256,dimensions:high.exactRuntimeConstructionDimensions,structuralValues:values};
+ const own={runtimeSha256:high.runtimeSha256,runtime:{contexts:[{dimensions:{...binding.dimensions}}]},qualified:{witnesses:[{structural:Object.fromEntries(Object.entries(values).map(([k,value])=>[k,{value,supportedValues:[value]}]))}]}} as unknown as ChairPreview;
+ assert.doesNotThrow(()=>validateChairConstructionBinding(own,binding));
+ const mixed=structuredClone(own);mixed.runtime.contexts[0].dimensions={...medium.exactRuntimeConstructionDimensions};assert.throws(()=>validateChairConstructionBinding(mixed,binding));
+ const nominal=structuredClone(own);nominal.runtime.contexts[0].dimensions.DARMRESTSHEIGHT='_210T280';assert.throws(()=>validateChairConstructionBinding(nominal,binding));
+});
 function data(){return {runtimeSha256:binding.runtimeSha256,runtime:{contexts:[{dimensions:{...binding.dimensions}}]},qualified:{witnesses:[{structural:Object.fromEntries(Object.entries(structuralValues).map(([k,value])=>[k,{value,supportedValues:[value]}]))}]}} as unknown as ChairPreview;}
 test('same chair code or finish does not authorize a different runtime or any of seven fields',()=>{
  assert.doesNotThrow(()=>validateChairConstructionBinding(data(),binding));

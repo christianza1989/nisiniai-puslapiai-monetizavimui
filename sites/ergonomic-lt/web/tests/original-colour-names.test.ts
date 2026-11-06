@@ -33,3 +33,11 @@ test('CMS can keep/approve a fixed supplier colour label without reopening trans
   await assert.rejects(mutateText(other,{key:other.id,sourceHash:other.sourceHash,expectedRevision:0,action:'keep'}),/pavadinimo be gamintojo kodo/);
  }finally{if(before===undefined)delete process.env.RUNTIME_DIR;else process.env.RUNTIME_DIR=before;}
 });
+
+test('only verified colour values are visible to visitors; structural and model codes stay private',()=>{
+ const codes=['CSE01','RAL9016','R55POLWBPU','KEM2013WW004','CUPHCOLOR'];
+ assert.equal(customerColourLabel('CSE01 (extended)',codes,'Spalva',['CSE01']),'CSE01 (extended)');
+ assert.equal(customerColourLabel('RAL 9016 Traffic White',codes,'Spalva',['RAL9016']),'RAL 9016 Traffic White');
+ assert.equal(customerColourLabel('CSE01 R55POLWBPU KEM2013WW004 CUPHCOLOR',codes,'Spalva',['CSE01']),'CSE01');
+ assert.equal(customerLabel('CSE01 R55POLWBPU',codes,'Parinktis'),'Parinktis');
+});

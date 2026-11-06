@@ -19,6 +19,7 @@ import {manufacturerOptionName} from './manufacturer-option-names';
 import {verifiedDeskOption} from './verified-desk-media-options';
 import {verifiedChairBaseOption} from './verified-chair-base-options';
 import {createRuntimeTextSharing,runtimeReviewEdits} from './text-review-sharing';
+import {canonicalReviewValue} from './text-review-value';
 
 type Inventory={at:string;terms:Record<string,TextDefinition>;models:Record<string,{productId:string;sample:string;name:string;path:string;sourceUrl:string;bindings:Record<string,string>;current:Record<string,string>;inventoryComplete:boolean;configuratorComplete?:boolean}>};
 const inventory=inventoryData as unknown as Inventory;
@@ -384,7 +385,9 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
   const match=binding.match(/^value:([^=]+)=(.*)$/);if(!match)continue;
   const [,field,value]=match,def=terms.get(modelBindings[binding])||inventory.terms[modelBindings[binding]];
   const label=def?.suggested||def?.current[0]||value,context=def?.context||fieldLabels[field]||field;
-  const help=optionExplanation({group,model,field,value,english:explanationSourceModels[model]?.[binding]||def?.english||'',label,context,configuratorUrl:config?.configurator||''});
+  const canonicalBinding='value:'+field+'='+canonicalReviewValue(model,field,value),references=englishByBinding[group].get(canonicalBinding)||englishByBinding[group].get(binding);
+  const english=explanationSourceModels[model]?.[binding]||explanationSourceModels[model]?.[canonicalBinding]||materialByModel[model]?.[binding]||materialByModel[model]?.[canonicalBinding]||def?.english||(references?.size===1?[...references][0]:'');
+  const help=optionExplanation({group,model,field,value,english,label,context,configuratorUrl:config?.configurator||''});
   if(help){terms.set(help.id,help);helpDefs.set(help.id,help);modelBindings[help.optionBinding]=help.id;}
  }
  if(Object.keys(modelBindings).length){bindings[model]=modelBindings;if(!codes.includes(model))codes.push(model);}

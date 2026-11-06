@@ -110,6 +110,11 @@ export function explainManufacturerOption(field:string,source:string):string|und
  if(field==='FDESKTOPTYPE')return /sliding/.test(body)?'Stalviršį galima pastumti.':/folding flap/.test(body)?'Stalviršis fiksuotas, tačiau turi atverčiamą dangtelį.':/folding/.test(body)?'Stalviršį galima atlenkti.':/fixed/.test(body)?'Stalviršis fiksuotas ir neslankioja.':undefined;
  if(field==='FDESKTOPSLIDINGRANGE')return 'Stalviršio slankiojimo eiga – '+body+'.';
  if(field==='CBASE'||field==='CFRAME'||field==='FBASE'){
+  if(/five.star/.test(body)){
+   const diam=body.match(/diam\.?\s*(\d+)\s*mm/)?.[1],material=body.includes('light grey polyamide')?'šviesiai pilkas poliamidas':body.includes('black polyamide')?'juodas poliamidas':body.includes('polished aluminium')?'poliruotas aliuminis':undefined;
+   return 'Penkių stipinų pagrindas.'+(diam?' Skersmuo – '+diam+' mm.':'')+(material?' Medžiaga – '+material+'.':'');
+  }
+  if(field==='FBASE'&&body==='c-leg')return 'C formos stalo kojos.';
   if(/bench/.test(body)){const n=body.match(/([2-4]).seater/)?.[1];return n?'Suolas su '+n+' sėdėjimo vietomis.':undefined;}
   if(body==='panel')return 'Stalo pagrindas iš atraminių plokščių.';
   if(/zeta/.test(body))return 'Taburetės pagrindo variantas.';
@@ -165,6 +170,14 @@ export function explainManufacturerOption(field:string,source:string):string|und
   if(body==='fenix ntm')return 'Matinis, švelnus liesti laminato paviršius.';
  }
  if(field==='FLEGCROSSSECTIONSHAPE')return /round/.test(body)?'Kojos skerspjūvis apvalus.':/square/.test(body)?'Kojos skerspjūvis kvadratinis.':undefined;
+ if(field==='GFTOPSHAPE'&&/^l-shape, (left|right) version$/.test(body))return 'L formos stalviršis, '+(body.includes('left')?'kairysis':'dešinysis')+' variantas.';
+ if(field==='FGASSEMBLED'&&body==='preassembled (folded legs)')return 'Tiekiamas iš anksto surinktas, sulenktomis kojomis.';
+ if(field==='FSIDEBOARDDOORCOVER'&&body==='yes')return 'Įtraukiama spintelės durelių danga.';
+ if(field==='GFVERSION'&&/^(?:[23]x extension|without extension)$/.test(body))return body==='without extension'?'Variantas be praplėtimo elemento.':(body.startsWith('2')?'Du praplėtimo elementai.':'Trys praplėtimo elementai.');
+ if(field==='FPOWERSTRIP'){
+  const strip=body.match(/^([23])x step 4m \(4x power socket, (german|french|british|swiss) standard(?: \(.*\))?, black\)$/);
+  if(strip){const country:Record<string,string>={german:'vokiškojo',french:'prancūziškojo',british:'britiškojo',swiss:'šveicariškojo'};return (strip[1]==='2'?'Du':'Trys')+' juodi elektros lizdų blokai. Kiekviename – keturi '+country[strip[2]]+' tipo lizdai.'+(body.includes('10 a / t 13')?' Šveicariškojo standarto lizdai – 10 A, T 13.':'');}
+ }
  if(field==='FTOPSHAPE')return /l.shape/.test(body)?'Kampinis L formos stalviršis.':/rounded/.test(body)?'Stačiakampis stalviršis su užapvalinimu.' :/rectangular/.test(body)?'Stačiakampio formos stalviršis.':/round/.test(body)?'Apvalus stalviršis.':undefined;
  if(/WIRETRUNKING/.test(field)){
   parts.push(field.includes('HOR')?'Horizontalus lovelis kabeliams po stalviršiu':'Vertikalus kanalas kabeliams');
@@ -211,7 +224,7 @@ export function explainManufacturerOption(field:string,source:string):string|und
   if(body==='box')return 'Gaminys pakuojamas į dėžę.';
   if(body==='pallet')return 'Gaminys pakuojamas ant padėklo.';
  }
- if(/SOCKET/.test(field))return /german/.test(body)?'Vokiškojo standarto elektros jungtis.':/european/.test(body)?'Europos standarto elektros jungtis.':undefined;
+ if(/SOCKET/.test(field))return /german/.test(body)?'Vokiškojo standarto elektros jungtis.':/european/.test(body)?'Europos standarto elektros jungtis.':/swiss/.test(body)?'Šveicariškojo standarto elektros jungtis.':/british/.test(body)?'Britiškojo standarto elektros jungtis.':/french/.test(body)?'Prancūziškojo standarto elektros jungtis.':undefined;
  if(/MEDIAPORT/.test(field)){
   if(/grommet|cable outlet/.test(body))return /brush/.test(body)?'Kabelių įvadas su šepetėliu.':'Stalviršio įvadas kabeliams prakišti.';
   return 'Stalviršyje montuojamas jungčių modulis.';

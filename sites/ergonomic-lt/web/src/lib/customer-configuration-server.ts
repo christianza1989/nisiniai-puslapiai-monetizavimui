@@ -3,7 +3,7 @@ import {customerKey} from './customer-capability';
 import {customerControlIds,resolveCustomerChange,type CustomerConfiguration,type CustomerState} from './customer-configuration';
 import {createExpandedEngine,fieldLabels} from './expanded-configurator';
 import {loadCatalogRuntime} from './catalog-runtime-loader';
-import {catalogAsync} from './catalog';
+import {catalogProductAsync} from './catalog';
 import {modelProduct} from './product-models';
 import {buildReviewScope,inventoryModels} from './text-review-server';
 import {customerLabel} from './customer-names';
@@ -36,7 +36,7 @@ export async function customerContext(p:Product,input?:CustomerState['state']){
 export async function resolveCustomerSnapshot(token:string){
  const saved=customerKey().open<CustomerState&{revision:string}>('configuration',token);
  if(!saved||typeof saved.product!=='string'||saved.sample!==null&&typeof saved.sample!=='string')throw Error('Komplektacija negalioja.');
- const parent=(await catalogAsync()).products.find(p=>p.id===saved.product);if(!parent)throw Error('Prekė nebegalioja.');
+ const parent=await catalogProductAsync(saved.product);if(!parent)throw Error('Prekė nebegalioja.');
  const sample=parent.configurations.find(c=>c.id===saved.sample);if(saved.sample&&!sample)throw Error('Modelis nebegalioja.');
  const product=sample?modelProduct(parent,sample):parent,context=await customerContext(product,saved.state);
  if(saved.revision!==context.revision)throw Error('Produkto komplektacija pasikeitė. Pasirinkite ją iš naujo.');

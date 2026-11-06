@@ -40,10 +40,10 @@ export function catalog(): Seed {
   const edits=getDb().prepare('SELECT id,data FROM product_edits').all() as {id:string;data:string}[];
   return assembleCatalog(imported,edits);
 }
-function assembleCatalog(imported:{data:string}|undefined,edits:{id:string;data:string}[]):Seed {
+function assembleCatalog(imported:{data:string}|undefined,edits:{id:string;data:string}[],productId?:string):Seed {
   const seed=imported ? {...baseSeed(),...JSON.parse(imported.data)} as Seed : baseSeed();
   const map=new Map(edits.map(r=>[r.id,JSON.parse(r.data)]));
-  const products=seed.products.map(p=>{
+  const products=seed.products.filter(p=>!productId||p.id===productId).map(p=>{
     const edit=map.get(p.id),product={...p,...edit,id:p.id,categorySlug:p.categorySlug,slug:p.slug,sourceUrl:p.sourceUrl};
     product.configurations=product.configurations.map((c:Product['configurations'][number])=>recoverSivuConfiguration(product.id,c));
     const detail=detailImages[p.id as keyof typeof detailImages];
@@ -55,12 +55,12 @@ function assembleCatalog(imported:{data:string}|undefined,edits:{id:string;data:
   return {...seed,categories:seed.categories.map(c=>({...c,name:editorialCategory(c.id,categoryLabel(c.id,c.name))})),products,lines:seed.lines.map(l=>({...l,name:publicProductText(l.name),image:productPhotograph(l.image)||products.find(p=>p.lineId===l.id&&p.image)?.image||null}))};
 }
 // React cache is scoped to a server render, never shared between visitors.
-export const catalogAsync=cache(async():Promise<Seed>=>{
+async function readCatalog(productId?:string):Promise<Seed>{
   const [imported,edits]=await Promise.all([
     dbOne<{data:string}>('SELECT data FROM supplier_import WHERE id=1'),
-    dbAll<{id:string;data:string}>('SELECT id,data FROM product_edits'),
+    productId?dbAll<{id:string;data:string}>('SELECT id,data FROM product_edits WHERE id=?',productId):dbAll<{id:string;data:string}>('SELECT id,data FROM product_edits'),
   ]);
-  let seed=assembleCatalog(imported,edits);
+  let seed=assembleCatalog(imported,edits,productId);
   let all=false;try{all=(await headers()).get('x-ergonomic-all-products')==='1';}catch{}
   if(all)seed=preparedCatalog(seed,true);
   if(process.env.LAUNCH_SITE==='true'){
@@ -69,7 +69,10 @@ export const catalogAsync=cache(async():Promise<Seed>=>{
     seed={...seed,products:applyDrafts(seed.products,await readDrafts())};
   }
   return customerPresentation(await reviewedCatalogTitles(await launchProjection(seed)));
-});
+}
+export const catalogAsync=cache(()=>readCatalog());
+/** Same fresh edits, publication and customer projection; only the signed product is prepared. */
+export const catalogProductAsync=cache(async(id:string)=>(await readCatalog(id)).products.find(p=>p.id===id));
 export async function visibleProductsAsync(){const seed=await catalogAsync();return preparedCatalog(seed,!!seed.products[0]?.reviewCatalogPrefix).products.filter(p=>productIsVisible(p,previewMode()));}
 export async function visibleModelsAsync(){return productModels(await visibleProductsAsync());}
 export async function findProductAsync(category:string,slug:string,preset?:unknown){

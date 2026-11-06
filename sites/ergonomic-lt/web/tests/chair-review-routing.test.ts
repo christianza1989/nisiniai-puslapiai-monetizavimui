@@ -2,6 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {chairReviewRoute,validateChairConstructionBinding,type ChairReviewEntry,type ChairConstructionBinding} from '../src/lib/chair-review-routing';
 import type {ChairPreview} from '../src/lib/chair-preview';
+import constructionPins from '../scripts/segla-construction-exact-pins.json';
 
 const structuralValues={CMECHANISM:'FST',CARMRESTS:'R35K3SB2',CGASLIFT:'GLR',CBASE:'TS25',CCASTORS:'ESH60',CSEATPADFOAM:'STANDARD',CASSEMBLY:'PACKUA'};
 const binding:ChairConstructionBinding={runtimeSha256:'new-runtime',dimensions:{...structuralValues,DHEIGHT:'_840T1045'},structuralValues};
@@ -12,6 +13,17 @@ test('construction is selected before its finish domain; legacy price cannot lea
  assert.throws(()=>chairReviewRoute(entry,'LOW_R35K3SB2','PRICE_4'),/Unknown finish/);
  assert.throws(()=>chairReviewRoute(entry,'R74','default'),/Unknown chair construction/);
  assert.equal(chairReviewRoute(entry,'default','default').source.asset,'old-own');
+});
+
+test('MEDIUM NONE requires the new OWN runtime and exact hidden205 dimension',()=>{
+ const route=constructionPins.MEDIUM_NONE.route;
+ const values=Object.fromEntries(Object.entries(route.fixedSelectableStructuralFields).map(([k,v])=>[k,v.fixedValue]));
+ const scoped:ChairConstructionBinding={runtimeSha256:route.runtimeSha256,dimensions:route.exactRuntimeConstructionDimensions,structuralValues:values};
+ const own={runtimeSha256:scoped.runtimeSha256,runtime:{contexts:[{dimensions:{...scoped.dimensions}}]},qualified:{witnesses:[{structural:Object.fromEntries(Object.entries(values).map(([k,value])=>[k,{value,supportedValues:[value]}]))}]}} as unknown as ChairPreview;
+ assert.equal(values.CARMRESTS,'NONE');assert.equal(scoped.dimensions.DARMRESTSHEIGHT,'_205T280');
+ assert.doesNotThrow(()=>validateChairConstructionBinding(own,scoped));
+ for(const nominal of ['_210T280','']){const wrong=structuredClone(own);wrong.runtime.contexts[0].dimensions.DARMRESTSHEIGHT=nominal;assert.throws(()=>validateChairConstructionBinding(wrong,scoped));}
+ const old=structuredClone(own);old.runtimeSha256='default-medium-own';assert.throws(()=>validateChairConstructionBinding(old,scoped));
 });
 function data(){return {runtimeSha256:binding.runtimeSha256,runtime:{contexts:[{dimensions:{...binding.dimensions}}]},qualified:{witnesses:[{structural:Object.fromEntries(Object.entries(structuralValues).map(([k,value])=>[k,{value,supportedValues:[value]}]))}]}} as unknown as ChairPreview;}
 test('same chair code or finish does not authorize a different runtime or any of seven fields',()=>{

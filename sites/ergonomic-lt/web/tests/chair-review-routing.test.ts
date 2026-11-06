@@ -64,3 +64,16 @@ test('same chair code or finish does not authorize a different runtime or any of
  const derived=data();derived.runtime.contexts[0].dimensions.DHEIGHT='other';assert.throws(()=>validateChairConstructionBinding(derived,binding));
  const wrongWitness=data();wrongWitness.qualified!.witnesses[0].structural!.CARMRESTS.supportedValues.push('R35K3');assert.throws(()=>validateChairConstructionBinding(wrongWitness,binding));
 });
+
+test('HIGH NONE bases keep their distinct HIGH runtime and exact derived heights',()=>{
+ const high=reviewRegistry.entries.find(e=>e.code==='KSEG003WW001')! as ChairReviewEntry;
+ assert.deepEqual(chairConstructionMenus(high,'HIGH_NONE_TS25')!.bases,[{id:'HIGH_NONE',label:'TS34BL'},{id:'HIGH_NONE_TS25',label:'TS25'}]);
+ assert.equal(chairConstructionMenus(high,'HIGH_NONE_TS25')!.armId,'HIGH_NONE');
+ assert.deepEqual(chairConstructionMenus(high,'default')!.bases,[{id:'default',label:'TS34BL'}]);
+ const route=chairReviewRoute(high,'HIGH_NONE_TS25','default');
+ assert.equal(route.construction.construction!.dimensions.DHEIGHT,'_985T1200');
+ assert.equal(route.construction.construction!.dimensions.DSEATHEIGHT,'_400T530');
+ assert.notEqual(route.construction.runtimeSha256,constructionPins.HIGH_NONE.route.runtimeSha256);
+ assert.notEqual(route.construction.runtimeSha256,constructionPins.MEDIUM_NONE.route.runtimeSha256);
+ assert.throws(()=>chairReviewRoute(high,'HIGH_NONE_TS25','PRICE_4'),/Unknown finish/);
+});

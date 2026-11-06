@@ -982,6 +982,47 @@
             },
             "runtimeSha256": "08bcc3aa3595997b18f085e965b84796daf42924497831063c68c48182f1b9fc"
           }
+        },
+        {
+          "id": "HIGH_NONE_TS25",
+          "label": "NONE · be porankių · TS25",
+          "contextLabel": "PRICE_1 / CSE · 44 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG003WW001-a8f97c6235c5acb734a4/review-1df3291a84987a2fdf9e.json",
+          "sha256": "1df3291a84987a2fdf9e1bc8a415632af64e254a0263a28e840255782eba49ee",
+          "bytes": 126517,
+          "runtimeSha256": "43ea1144ae54fe03c089f304a10274b3a5b518bd7ef3e56f7817093c919fbb25",
+          "construction": {
+            "dimensions": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBACKREST": "HBUPHCOVERPLASTIC",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CFSC": "FSCMIX",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEAT": "UPH",
+              "CSEATPADFOAM": "STANDARD",
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_985T1200",
+              "DSEATHEIGHT": "_400T530",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "structuralValues": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "runtimeSha256": "43ea1144ae54fe03c089f304a10274b3a5b518bd7ef3e56f7817093c919fbb25"
+          }
         }
       ]
     }

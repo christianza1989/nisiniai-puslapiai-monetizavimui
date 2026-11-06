@@ -3,6 +3,7 @@ import {customerKey} from './customer-capability';
 import {customerControlIds,resolveCustomerChange,type CustomerConfiguration,type CustomerState} from './customer-configuration';
 import {createExpandedEngine,fieldLabels} from './expanded-configurator';
 import {loadCatalogRuntime} from './catalog-runtime-loader';
+import {prepareSourceBatches} from './bounded-source-preparation';
 import {customerReviewProduct} from './customer-review-product';
 import {catalogProductAsync} from './catalog';
 import {modelProduct} from './product-models';
@@ -30,23 +31,27 @@ import {publishedReviewValue} from './text-review-value';
 import {customerBuilderSteps} from './customer-builder-steps-server';
 const textile=new Set(['CSE','MT','RX','SD','SC','SY','ST','CN','ME','CUR','ERA','X','YS','YB']);
 
-export async function customerContext(p:Product,input?:CustomerState['state']){
- const runtime=await loadCatalogRuntime(p,input),engine=createExpandedEngine(runtime),family=engine.expandedForProduct(p),cap=customerKey();
+export type CustomerTiming=(name:string,milliseconds:number)=>void;
+export async function customerContext(p:Product,input?:CustomerState['state'],trace?:CustomerTiming){
+ const start=performance.now();
+ const runtime=await loadCatalogRuntime(p,input);trace?.('runtime',performance.now()-start);const engineStart=performance.now(),engine=createExpandedEngine(runtime),family=engine.expandedForProduct(p),cap=customerKey();
  const revision=cap.id('revision',customerConfigurationRevisionSource(family||p.configurations.map(c=>({id:c.id,code:c.code,supplierOptions:c.supplierOptions}))));
- return {runtime,engine,family,revision};
+ trace?.('engine',performance.now()-engineStart);return {runtime,engine,family,revision};
 }
-export async function resolveCustomerSnapshot(token:string){
+export async function resolveCustomerSnapshot(token:string,trace?:CustomerTiming){
+ const start=performance.now();
  const saved=customerKey().open<CustomerState&{revision:string}>('configuration',token);
  if(!saved||typeof saved.product!=='string'||saved.sample!==null&&typeof saved.sample!=='string')throw Error('Komplektacija negalioja.');
- const parent=await catalogProductAsync(saved.product);if(!parent)throw Error('Prekė nebegalioja.');
+ const parent=await catalogProductAsync(saved.product);if(!parent)throw Error('Prekė nebegalioja.');trace?.('catalog',performance.now()-start);
  const sample=parent.configurations.find(c=>c.id===saved.sample);if(saved.sample&&!sample)throw Error('Modelis nebegalioja.');
- const product=sample?modelProduct(parent,sample):parent,context=await customerContext(product,saved.state);
+ const product=sample?modelProduct(parent,sample):parent,context=await customerContext(product,saved.state,trace);
  if(saved.revision!==context.revision)throw Error('Produkto komplektacija pasikeitė. Pasirinkite ją iš naujo.');
  if(saved.state)context.engine.validateState(product,saved.state);
  return {product,saved,context};
 }
 export async function customerSnapshotFromLegacy(product:Product,token:string){const context=await customerContext(product),state=context.engine.parseStateToken(product,token);return customerKey().seal('configuration',{product:product.id,sample:product.modelConfigurationId||product.configurations[0]?.id||null,state,revision:context.revision});}
-export async function customerConfiguration(product:Product,token?:string,change?:{field:string;value:string},verified?:Awaited<ReturnType<typeof resolveCustomerSnapshot>>):Promise<CustomerConfiguration>{
+export async function customerConfiguration(product:Product,token?:string,change?:{field:string;value:string},verified?:Awaited<ReturnType<typeof resolveCustomerSnapshot>>,trace?:CustomerTiming):Promise<CustomerConfiguration>{
+ let checkpoint=performance.now();
  const cap=customerKey(),scope={product:product.id,sample:product.modelConfigurationId||product.configurations[0]?.id||null},ids=customerControlIds(cap,scope);
  const resolved=token?(verified||await resolveCustomerSnapshot(token)):undefined;
  if(resolved&&(resolved.saved.product!==scope.product||resolved.saved.sample!==scope.sample))throw Error('Komplektacija priklauso kitam modeliui.');
@@ -56,7 +61,9 @@ export async function customerConfiguration(product:Product,token?:string,change
  let materialControls=state?await customerChairControls(product,context,state):[];
  if(change){if(!state)throw Error('Parinktys nepasiekiamos.');const group=materialControls.find(c=>ids.field(c.id)===change.field);if(group){const option=group.options.find(o=>ids.choice(group.id,o.id)===change.value);if(!option)throw Error('Nepatvirtintas medžiagos pasirinkimas.');state=option.state;}else{const hidden=new Set(materialControls.flatMap(c=>c.hiddenFields)),domains=Object.fromEntries(Object.entries(visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state))).filter(([field])=>!hidden.has(field)));const native=resolveCustomerChange(domains,ids,change);state=context.engine.changeField(state,native.field,native.value);}materialControls=await customerChairControls(product,context,state);}
  const selected=state?context.engine.expandedSelection(product,state):undefined,model=selected?.configuration.code||product.configurations.find(c=>c.id===scope.sample)?.code||'';
+ trace?.('choices',performance.now()-checkpoint);checkpoint=performance.now();
  const review=await buildReviewScope(customerReviewProduct(selectedTextReviewProduct(product,model),model),undefined,context.runtime);
+ trace?.('texts',performance.now()-checkpoint);checkpoint=performance.now();
  const codes=customerProductCodes(product);for(const[field,value]of Object.entries(state?.values||{})){codes.add(field);codes.add(value);}
  for(const key of Object.keys(inventoryModels()[model]?.bindings||{}))if(key.startsWith('name:'))codes.add(key.slice(5));
  const hiddenMaterialFields=new Set(materialControls.flatMap(c=>c.hiddenFields)),allChoices=state?visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state)):{},choices=Object.fromEntries(Object.entries(allChoices).filter(([field])=>!hiddenMaterialFields.has(field)));
@@ -73,6 +80,7 @@ export async function customerConfiguration(product:Product,token?:string,change
  const assets:CustomerConfiguration['assets']={base:null,patches:[]},finishes:CustomerConfiguration['finishes']={},assetMap=new Map<string,string>();let desk:CustomerConfiguration['desk'];
  async function prepare(ref:Parameters<typeof prepareCustomerAsset>[0]){const result=await prepareCustomerAsset(ref);if(ref.assetSha256)assetMap.set(ref.assetSha256,result.sha256);return result;}
  if(selected){
+  await prepareSourceBatches([...(selected.assets.base?[selected.assets.base]:[]),...selected.assets.patches.flatMap(p=>p.geometries||(p.geometry?[p.geometry]:[]))],prepareCustomerAsset);
   if(selected.assets.base)assets.base=await prepare(selected.assets.base);
   for(const patch of selected.assets.patches){const refs=patch.geometries||(patch.geometry?[patch.geometry]:[]),publicAssets=[];for(const ref of refs)publicAssets.push(await prepare(ref));assets.patches.push({remove:patch.remove.map(customerSceneName),assets:publicAssets});}
   const catalog=context.engine.catalog.catalogForProduct(product),structureOnly=['structure-only','desk-components'].includes(catalog?.collectionMode||'')&&!product.id.toLowerCase().includes('xilium');
@@ -97,6 +105,7 @@ export async function customerConfiguration(product:Product,token?:string,change
  }
  if(!selected){const preset=product.configurations.find(c=>c.id===scope.sample),pilot=preset?pilotSelection(product,preset.id):undefined;if(pilot?.variant.asset)assets.base=await prepare(pilot.variant);}
  const nativeCatalog=context.engine.catalog.catalogForProduct(product),legacyChair=!!state&&product.categorySlug==='kedes'&&!['structure-only','desk-components'].includes(nativeCatalog?.collectionMode||'');
+ trace?.('assets',performance.now()-checkpoint);checkpoint=performance.now();
  const details=controls.map(control=>({
   label:control.label,
   value:control.choices.find(choice=>choice.id===control.value)?.label||'Pasirinkta',
@@ -126,5 +135,6 @@ export async function customerConfiguration(product:Product,token?:string,change
  }
  const stepChoices={...choices,...Object.fromEntries(materialControls.map(group=>[group.id,group.options.map(option=>option.id)]))};
  const steps=customerBuilderSteps(product,stepChoices,ids.field,materialControls.map(group=>group.id));
+ trace?.('details',performance.now()-checkpoint);
  return {legacyChair,token:cap.seal('configuration',{...scope,state,revision:context.revision}),selectionId:cap.id('selection',{...scope,state,revision:context.revision}),productId:'product_public_'+cap.id('product',scope),name:customerLabel(product.textReviewHeading||productHeading(product),codes,'Biuro baldas'),controls,steps,details,assets,finishes,desk,available3D:!!assets.base||assets.patches.some(p=>p.assets.length>0)||!!desk?.assets.length};
 }

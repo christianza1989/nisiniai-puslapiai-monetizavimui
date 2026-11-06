@@ -48,6 +48,10 @@ export async function dbOne<T>(sql:string,...params:SqlValue[]):Promise<T|undefi
 export async function dbAll<T>(sql:string,...params:SqlValue[]):Promise<T[]> {
   return getDb().prepare(sql).all(...params) as T[];
 }
+export async function dbSelectBatch<T>(commands:SqlCommand[]):Promise<T[][]>{
+ if(commands.length>32||commands.some(c=>!/^SELECT\s/i.test(c.sql.trim())||(c.params?.length||0)>100))throw Error('Invalid bounded read batch');
+ return commands.map(c=>getDb().prepare(c.sql).all(...(c.params||[])) as T[]);
+}
 export async function dbRun(sql:string,...params:SqlValue[]) {
   const result=getDb().prepare(sql).run(...params);return {changes:Number(result.changes)};
 }

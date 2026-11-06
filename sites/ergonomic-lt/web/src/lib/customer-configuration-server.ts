@@ -3,6 +3,7 @@ import {customerKey} from './customer-capability';
 import {customerControlIds,resolveCustomerChange,type CustomerConfiguration,type CustomerState} from './customer-configuration';
 import {createExpandedEngine,fieldLabels} from './expanded-configurator';
 import {loadCatalogRuntime} from './catalog-runtime-loader';
+import {customerReviewProduct} from './customer-review-product';
 import {catalogProductAsync} from './catalog';
 import {modelProduct} from './product-models';
 import {buildReviewScope,inventoryModels} from './text-review-server';
@@ -55,7 +56,7 @@ export async function customerConfiguration(product:Product,token?:string,change
  let materialControls=state?await customerChairControls(product,context,state):[];
  if(change){if(!state)throw Error('Parinktys nepasiekiamos.');const group=materialControls.find(c=>ids.field(c.id)===change.field);if(group){const option=group.options.find(o=>ids.choice(group.id,o.id)===change.value);if(!option)throw Error('Nepatvirtintas medžiagos pasirinkimas.');state=option.state;}else{const hidden=new Set(materialControls.flatMap(c=>c.hiddenFields)),domains=Object.fromEntries(Object.entries(visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state))).filter(([field])=>!hidden.has(field)));const native=resolveCustomerChange(domains,ids,change);state=context.engine.changeField(state,native.field,native.value);}materialControls=await customerChairControls(product,context,state);}
  const selected=state?context.engine.expandedSelection(product,state):undefined,model=selected?.configuration.code||product.configurations.find(c=>c.id===scope.sample)?.code||'';
- const review=await buildReviewScope(selectedTextReviewProduct(product,model),undefined,context.runtime);
+ const review=await buildReviewScope(customerReviewProduct(selectedTextReviewProduct(product,model),model),undefined,context.runtime);
  const codes=customerProductCodes(product);for(const[field,value]of Object.entries(state?.values||{})){codes.add(field);codes.add(value);}
  for(const key of Object.keys(inventoryModels()[model]?.bindings||{}))if(key.startsWith('name:'))codes.add(key.slice(5));
  const hiddenMaterialFields=new Set(materialControls.flatMap(c=>c.hiddenFields)),allChoices=state?visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state)):{},choices=Object.fromEntries(Object.entries(allChoices).filter(([field])=>!hiddenMaterialFields.has(field)));

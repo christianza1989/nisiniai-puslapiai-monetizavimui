@@ -3,7 +3,7 @@ import manufacturerEnglish from '../../content/manufacturer-english-review.json'
 import verifiedOptionProposals from '../../content/text-review-option-proposals.json';
 import {createHash} from 'node:crypto';
 import inventoryData from '../../content/text-review-inventory.json';
-import {dbAll,dbAtomic} from './text-review-db';
+import {dbAll,dbAtomic,dbSelectBatch} from './text-review-db';
 import {publicProductView} from './public-product-copy';
 import {studioDescriptionParagraphs,productStudioPresentation} from './product-studio';
 import {configurableArticle} from './configuration-article';
@@ -397,9 +397,11 @@ export async function buildReviewScope(p:Product,providedEdits?:Map<string,TextE
  let edits=providedEdits;
  if(!edits){
   edits=new Map();
-  if(terms.size)for(const row of await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key GLOB ?', 'runtime:'+model+':*'))if(terms.has(row.key))edits.set(row.key,row);
+  const commands:{sql:string;params:(string|number|null)[]}[]=[];
+  if(terms.size)commands.push({sql:'SELECT * FROM text_review_edits WHERE key GLOB ?',params:['runtime:'+model+':*']});
   const keys=[...new Set([...defs.map(d=>globalKey(d.id)),...codes.flatMap(code=>Object.values(bindings[code]).flatMap(id=>[globalKey(id),localTextKey(code,id)]))])].filter(key=>!key.startsWith('runtime:'));
-  for(let i=0;i<keys.length;i+=70){const batch=keys.slice(i,i+70);for(const row of await dbAll<TextEdit>('SELECT * FROM text_review_edits WHERE key IN ('+batch.map(()=>'?').join(',')+')',...batch))edits.set(row.key,row);}
+  for(let i=0;i<keys.length;i+=70){const batch=keys.slice(i,i+70);commands.push({sql:'SELECT * FROM text_review_edits WHERE key IN ('+batch.map(()=>'?').join(',')+')',params:batch});}
+  for(let i=0;i<commands.length;i+=32)for(const rows of await dbSelectBatch<TextEdit>(commands.slice(i,i+32)))for(const row of rows)if(!row.key.startsWith('runtime:')||terms.has(row.key))edits.set(row.key,row);
  }
  const values:Record<string,string>={};
  for(const code of codes)for(const id of new Set(Object.values(bindings[code]))){

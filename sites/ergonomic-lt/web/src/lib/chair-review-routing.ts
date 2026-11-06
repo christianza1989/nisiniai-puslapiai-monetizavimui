@@ -20,8 +20,11 @@ export function chairConstructionMenus(entry:ChairReviewEntry,id:string){
  const rows=[{id:'default',label:entry.construction.structuralValues.CARMRESTS,construction:entry.construction},...entry.constructions];
  const current=rows.find(r=>r.id===id);if(!current)throw Error('Unknown chair construction');
  const arms=rows.filter((row,i)=>rows.findIndex(r=>r.construction.structuralValues.CARMRESTS===row.construction.structuralValues.CARMRESTS)===i);
- const bases=rows.filter(row=>Object.entries(current.construction.structuralValues).every(([field,value])=>field==='CBASE'||row.construction.structuralValues[field]===value));
- return {armId:arms.find(row=>row.construction.structuralValues.CARMRESTS===current.construction.structuralValues.CARMRESTS)!.id,arms:arms.map(r=>({id:r.id,label:r.label})),bases:bases.map(r=>({id:r.id,label:r.construction.structuralValues.CBASE}))};
+ const matchesExcept=(row:typeof current,fields:string[])=>Object.entries(current.construction.structuralValues).every(([field,value])=>fields.includes(field)||row.construction.structuralValues[field]===value);
+ const baseRows=rows.filter(row=>matchesExcept(row,['CBASE','CCASTORS']));
+ const bases=baseRows.filter((row,i)=>baseRows.findIndex(r=>r.construction.structuralValues.CBASE===row.construction.structuralValues.CBASE)===i).map(row=>baseRows.find(r=>r.construction.structuralValues.CBASE===row.construction.structuralValues.CBASE&&r.construction.structuralValues.CCASTORS===current.construction.structuralValues.CCASTORS)||row);
+ const castors=rows.filter(row=>matchesExcept(row,['CCASTORS']));
+ return {armId:arms.find(row=>row.construction.structuralValues.CARMRESTS===current.construction.structuralValues.CARMRESTS)!.id,arms:arms.map(r=>({id:r.id,label:r.label})),baseId:bases.find(row=>row.construction.structuralValues.CBASE===current.construction.structuralValues.CBASE)!.id,bases:bases.map(r=>({id:r.id,label:r.construction.structuralValues.CBASE})),castors:castors.map(r=>({id:r.id,label:r.construction.structuralValues.CCASTORS}))};
 }
 
 export function validateChairConstructionBinding(data:ChairPreview,binding:ChairConstructionBinding){

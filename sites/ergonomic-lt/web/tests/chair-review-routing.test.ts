@@ -77,3 +77,17 @@ test('HIGH NONE bases keep their distinct HIGH runtime and exact derived heights
  assert.notEqual(route.construction.runtimeSha256,constructionPins.MEDIUM_NONE.route.runtimeSha256);
  assert.throws(()=>chairReviewRoute(high,'HIGH_NONE_TS25','PRICE_4'),/Unknown finish/);
 });
+
+test('HIGH castors select only admitted ST61POLBL whole constructions and other bases fall back safely',()=>{
+ const high=reviewRegistry.entries.find(e=>e.code==='KSEG003WW001')! as ChairReviewEntry;
+ const id='HIGH_NONE_ST61POLBL_ESHH60',menu=chairConstructionMenus(high,id)!;
+ assert.equal(menu.baseId,id);assert.equal(menu.armId,'HIGH_NONE');
+ assert.deepEqual(menu.castors,[{id:'HIGH_NONE_ST61POLBL',label:'ESH60'},{id,label:'ESHH60'}]);
+ assert.deepEqual(menu.bases,[{id:'HIGH_NONE',label:'TS34BL'},{id:'HIGH_NONE_TS25',label:'TS25'},{id,label:'ST61POLBL'}]);
+ for(const base of menu.bases){const bound=chairReviewRoute(high,base.id,'default').construction.construction!;assert.equal(bound.structuralValues.CCASTORS,base.label==='ST61POLBL'?'ESHH60':'ESH60');}
+ assert.deepEqual(chairConstructionMenus(high,'HIGH_NONE_TS25')!.castors,[{id:'HIGH_NONE_TS25',label:'ESH60'}]);
+ assert.deepEqual(chairConstructionMenus(high,'default')!.castors,[{id:'default',label:'ESH60'}]);
+ assert.notEqual(constructionPins.HIGH_NONE_ST61POLBL_ESHH60.route.runtimeSha256,constructionPins.HIGH_NONE_ST61POLBL.route.runtimeSha256);
+ assert.notEqual(constructionPins.HIGH_NONE_ST61POLBL_ESHH60.route.baselineAssetSha256,constructionPins.MEDIUM_NONE_ST61POLBL.route.baselineAssetSha256);
+ assert.throws(()=>chairReviewRoute(high,id,'PRICE_4'),/Unknown finish/);
+});

@@ -3141,5 +3141,454 @@
       ],
       "websitePublicationApproved": false
     }
+  },
+  "HIGH_NONE_ST61POLBL_ESHH60": {
+    "version": "colors-20261106-v1-qualified-own-context416500-price1-cse-none-cbase-st61polbl-castors-eshh60",
+    "manifest": "b2b90a66e1f9f910bea2f209bdb77689a987883ccf01a7fc91dac83e932758de",
+    "headers": {
+      "runtime.json": "e58cd6722d7cbf231e211a647a688d8d092d3c122793d18320a7eb234eee2460",
+      "selectors.json": "e17560c8b87822258d2fd155cf739b04753b4aaf633e29ab158ffdf57b323ba9",
+      "colors-groups.json": "b860e56e57975be502c112e1d8d4c66fe2a87bf7c0d8dd1572d9406e47213ac5",
+      "own-source-contract.json": "075f30ba92c3f0373ac59b408db6d18efcc0e9917b72e1e9f44d773615a3be91",
+      "construction-scope.json": "f61454b66e85b28ef85e4dcd6c1ae9961eb742bbab74bc7847384f4f43d5a692",
+      "WHOLE-VERIFIED.json": "71d17a9c85c63f5a0ad21a2fc29e9fbc1235c6231ee774048c498bccf3aa3429",
+      "BASE-VALIDATION-VERIFIED.json": "66e6a0b06f7fa6c88aa29cc02c4189539e1b31192877772a749de23fd33cdddb"
+    },
+    "route": {
+      "activeSelectableFinishFields": [
+        "CPRICEGROUP",
+        "CUPHCOLOR",
+        "CUPHGROUP"
+      ],
+      "actualConditionalColorValues": [
+        "CSE01",
+        "CSE02",
+        "CSE03",
+        "CSE05",
+        "CSE06",
+        "CSE07",
+        "CSE08",
+        "CSE09",
+        "CSE10",
+        "CSE11",
+        "CSE12",
+        "CSE13",
+        "CSE14",
+        "CSE15",
+        "CSE16",
+        "CSE17",
+        "CSE18",
+        "CSE19",
+        "CSE20",
+        "CSE21",
+        "CSE23",
+        "CSE24",
+        "CSE25",
+        "CSE26",
+        "CSE27",
+        "CSE28",
+        "CSE29",
+        "CSE30",
+        "CSE31",
+        "CSE32",
+        "CSE33",
+        "CSE34",
+        "CSE35",
+        "CSE36",
+        "CSE37",
+        "CSE38",
+        "CSE39",
+        "CSE40",
+        "CSE41",
+        "CSE42",
+        "CSE43",
+        "CSE44",
+        "CSE45",
+        "CSE46"
+      ],
+      "actualQualifiedFinishStates": 44,
+      "baselineAssetSha256": "a274187fdad05b2d518bbfd58b0aa6236342a31c995888e9694c8630573a39e1",
+      "code": "KSEG003WW001",
+      "constructionSignature": "edb6ae64ad5ecabf8de2d4a9754e38d27740944b8e5aca815605faf5befaf9a0",
+      "exactRuntimeConstructionDimensions": {
+        "CARMRESTS": "NONE",
+        "CASSEMBLY": "PACKUA",
+        "CBACKREST": "HBUPHCOVERPLASTIC",
+        "CBASE": "ST61POLBL",
+        "CCASTORS": "ESHH60",
+        "CFSC": "FSCMIX",
+        "CGASLIFT": "GLSTD",
+        "CMECHANISM": "TAT7",
+        "CSEAT": "UPH",
+        "CSEATPADFOAM": "STANDARD",
+        "DARMRESTSHEIGHT": "_205T280",
+        "DBACKRESTHEIGHT": "_600T670",
+        "DBACKRESTWIDTH": "_480",
+        "DDEPTH": "_644",
+        "DHEIGHT": "_980T1195",
+        "DSEATHEIGHT": "_395T525",
+        "DSEATWIDTH": "_510",
+        "GWEIGHT": "15.4"
+      },
+      "finishTupleAloneDoesNotSelectConstruction": true,
+      "fixedSelectableFinishValues": {
+        "CPRICEGROUP": "_1",
+        "CUPHGROUP": "CSE"
+      },
+      "fixedSelectableStructuralFields": {
+        "CARMRESTS": {
+          "editable": true,
+          "fixedValue": "NONE",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CARMRESTS",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "NONE",
+            "R35K3",
+            "R35K3SB2",
+            "R74"
+          ],
+          "supportedScopeValues": [
+            "NONE"
+          ],
+          "unqualifiedValues": [
+            "R35K3",
+            "R35K3SB2",
+            "R74"
+          ],
+          "visible": true
+        },
+        "CASSEMBLY": {
+          "editable": true,
+          "fixedValue": "PACKUA",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CASSEMBLY",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "PACKUA",
+            "PACKA2",
+            "PACKASMBOX"
+          ],
+          "supportedScopeValues": [
+            "PACKUA"
+          ],
+          "unqualifiedValues": [
+            "PACKA2",
+            "PACKASMBOX"
+          ],
+          "visible": true
+        },
+        "CBASE": {
+          "editable": true,
+          "fixedValue": "ST61POLBL",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CBASE",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "TS25",
+            "TS34BL",
+            "ST61POLBL"
+          ],
+          "supportedScopeValues": [
+            "ST61POLBL"
+          ],
+          "unqualifiedValues": [
+            "TS25",
+            "TS34BL"
+          ],
+          "visible": true
+        },
+        "CCASTORS": {
+          "editable": true,
+          "fixedValue": "ESHH60",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CCASTORS",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "ESH60",
+            "ESHH60"
+          ],
+          "supportedScopeValues": [
+            "ESHH60"
+          ],
+          "unqualifiedValues": [
+            "ESH60"
+          ],
+          "visible": true
+        },
+        "CGASLIFT": {
+          "editable": true,
+          "fixedValue": "GLSTD",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CGASLIFT",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "GLR",
+            "GLSTD"
+          ],
+          "supportedScopeValues": [
+            "GLSTD"
+          ],
+          "unqualifiedValues": [
+            "GLR"
+          ],
+          "visible": true
+        },
+        "CMECHANISM": {
+          "editable": true,
+          "fixedValue": "TAT7",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CMECHANISM",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "FS",
+            "FST",
+            "SA2T7",
+            "TAT7"
+          ],
+          "supportedScopeValues": [
+            "TAT7"
+          ],
+          "unqualifiedValues": [
+            "FS",
+            "FST",
+            "SA2T7"
+          ],
+          "visible": true
+        },
+        "CSEATPADFOAM": {
+          "editable": true,
+          "fixedValue": "STANDARD",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CSEATPADFOAM",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "STANDARD",
+            "FLAMERETARDANT"
+          ],
+          "supportedScopeValues": [
+            "STANDARD"
+          ],
+          "unqualifiedValues": [
+            "FLAMERETARDANT"
+          ],
+          "visible": true
+        }
+      },
+      "fullFormQualified": false,
+      "kind": "QUALIFIED_CONDITIONAL_NEW_CONSTRUCTION_OWN416500_KSEG003WW001_NONE_CBASE_ST61POLBL_CCASTORS_ESHH60_PRICE1_CSE_FIXED_CONSTRUCTION_NATIVE10",
+      "mainRuntimeGeometryOwnershipQualified": false,
+      "manifestSha256": "b2b90a66e1f9f910bea2f209bdb77689a987883ccf01a7fc91dac83e932758de",
+      "otherConstructionOrPaletteReuseAdmitted": false,
+      "ownSourceContractSha256": "075f30ba92c3f0373ac59b408db6d18efcc0e9917b72e1e9f44d773615a3be91",
+      "packagePathRelativeToPc2": "paruosti-kedes/KSEG003WW001/versions/colors-20261106-v1-qualified-own-context416500-price1-cse-none-cbase-st61polbl-castors-eshh60",
+      "qualificationSha256": "83f67fa47addb83c5320326328b9a547dab2e00a2c52f042990d2c90e56963cb",
+      "runtimeSha256": "e58cd6722d7cbf231e211a647a688d8d092d3c122793d18320a7eb234eee2460",
+      "version": "colors-20261106-v1-qualified-own-context416500-price1-cse-none-cbase-st61polbl-castors-eshh60",
+      "actualTuplesForThisRoute": 44,
+      "actualConditionalDomains": {
+        "CSE": [
+          "CSE01",
+          "CSE02",
+          "CSE03",
+          "CSE05",
+          "CSE06",
+          "CSE07",
+          "CSE08",
+          "CSE09",
+          "CSE10",
+          "CSE11",
+          "CSE12",
+          "CSE13",
+          "CSE14",
+          "CSE15",
+          "CSE16",
+          "CSE17",
+          "CSE18",
+          "CSE19",
+          "CSE20",
+          "CSE21",
+          "CSE23",
+          "CSE24",
+          "CSE25",
+          "CSE26",
+          "CSE27",
+          "CSE28",
+          "CSE29",
+          "CSE30",
+          "CSE31",
+          "CSE32",
+          "CSE33",
+          "CSE34",
+          "CSE35",
+          "CSE36",
+          "CSE37",
+          "CSE38",
+          "CSE39",
+          "CSE40",
+          "CSE41",
+          "CSE42",
+          "CSE43",
+          "CSE44",
+          "CSE45",
+          "CSE46"
+        ]
+      },
+      "scopedSelectableFinishFields": [
+        "CPRICEGROUP",
+        "CUPHCOLOR",
+        "CUPHGROUP"
+      ]
+    },
+    "whole": {
+      "actualContextStates": 44,
+      "actualPostprefixDomainRows": 141,
+      "actualWholeSources": 47,
+      "code": "KSEG003WW001",
+      "eachActiveFinishFieldNondefault": true,
+      "fixedSelectableFinishValues": {
+        "CPRICEGROUP": "_1",
+        "CUPHGROUP": "CSE"
+      },
+      "fullFormQualified": false,
+      "jointDistinctSignatures": 10,
+      "jointNativeSamples": 10,
+      "mainRuntimeGeometryOwnershipQualified": false,
+      "original3361WholeAndJointAstSha256": "812062c49702ed19714b737b6ec3a503ff194080e5fefbd0d97b93368db81993",
+      "pass": true,
+      "primitiveComparisons": 2162,
+      "qualifiedConditionalFinishContextComplete": true,
+      "qualifiedWitnessGroupPaletteComplete": false,
+      "selectableStructuralFieldsFixed": {
+        "CARMRESTS": {
+          "editable": true,
+          "fixedValue": "NONE",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CARMRESTS",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "NONE",
+            "R35K3",
+            "R35K3SB2",
+            "R74"
+          ],
+          "supportedScopeValues": [
+            "NONE"
+          ],
+          "unqualifiedValues": [
+            "R35K3",
+            "R35K3SB2",
+            "R74"
+          ],
+          "visible": true
+        },
+        "CASSEMBLY": {
+          "editable": true,
+          "fixedValue": "PACKUA",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CASSEMBLY",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "PACKUA",
+            "PACKA2",
+            "PACKASMBOX"
+          ],
+          "supportedScopeValues": [
+            "PACKUA"
+          ],
+          "unqualifiedValues": [
+            "PACKA2",
+            "PACKASMBOX"
+          ],
+          "visible": true
+        },
+        "CBASE": {
+          "editable": true,
+          "fixedValue": "ST61POLBL",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CBASE",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "TS25",
+            "TS34BL",
+            "ST61POLBL"
+          ],
+          "supportedScopeValues": [
+            "ST61POLBL"
+          ],
+          "unqualifiedValues": [
+            "TS25",
+            "TS34BL"
+          ],
+          "visible": true
+        },
+        "CCASTORS": {
+          "editable": true,
+          "fixedValue": "ESHH60",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CCASTORS",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "ESH60",
+            "ESHH60"
+          ],
+          "supportedScopeValues": [
+            "ESHH60"
+          ],
+          "unqualifiedValues": [
+            "ESH60"
+          ],
+          "visible": true
+        },
+        "CGASLIFT": {
+          "editable": true,
+          "fixedValue": "GLSTD",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CGASLIFT",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "GLR",
+            "GLSTD"
+          ],
+          "supportedScopeValues": [
+            "GLSTD"
+          ],
+          "unqualifiedValues": [
+            "GLR"
+          ],
+          "visible": true
+        },
+        "CMECHANISM": {
+          "editable": true,
+          "fixedValue": "TAT7",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CMECHANISM",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "FS",
+            "FST",
+            "SA2T7",
+            "TAT7"
+          ],
+          "supportedScopeValues": [
+            "TAT7"
+          ],
+          "unqualifiedValues": [
+            "FS",
+            "FST",
+            "SA2T7"
+          ],
+          "visible": true
+        },
+        "CSEATPADFOAM": {
+          "editable": true,
+          "fixedValue": "STANDARD",
+          "qualifiedProperty": "KSEG003WW001_OPTIONS.CSEATPADFOAM",
+          "role": "FIXED_SELECTABLE_CONSTRUCTION_RESTRICTION_NOT_READONLY",
+          "sourceSelectableValues": [
+            "STANDARD",
+            "FLAMERETARDANT"
+          ],
+          "supportedScopeValues": [
+            "STANDARD"
+          ],
+          "unqualifiedValues": [
+            "FLAMERETARDANT"
+          ],
+          "visible": true
+        }
+      },
+      "supportedPriceValues": [
+        "_1"
+      ],
+      "websitePublicationApproved": false
+    }
   }
 }

@@ -57,7 +57,13 @@ function assembleCatalog(imported:{data:string}|undefined,edits:{id:string;data:
 // React cache is scoped to a server render, never shared between visitors.
 async function readCatalog(productId?:string):Promise<Seed>{
   const [imported,edits]=await Promise.all([
-    dbOne<{data:string}>('SELECT data FROM supplier_import WHERE id=1'),
+    // Return the original import envelope, but project its products inside SQLite.
+    // A signed choice needs one product, not a transfer/parse of the full import.
+    productId?dbOne<{data:string}>(`SELECT CASE WHEN json_type(data,'$.products')='array'
+      THEN json_set(data,'$.products',json((SELECT json_group_array(json(value))
+        FROM json_each(data,'$.products') WHERE json_extract(value,'$.id')=?)))
+      ELSE data END AS data FROM supplier_import WHERE id=1`,productId)
+      :dbOne<{data:string}>('SELECT data FROM supplier_import WHERE id=1'),
     productId?dbAll<{id:string;data:string}>('SELECT id,data FROM product_edits WHERE id=?',productId):dbAll<{id:string;data:string}>('SELECT id,data FROM product_edits'),
   ]);
   let seed=assembleCatalog(imported,edits,productId);

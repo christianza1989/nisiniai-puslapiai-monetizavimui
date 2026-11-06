@@ -43,7 +43,7 @@ test('MEDIUM base menu selects only complete admitted NONE constructions, never 
  const medium=reviewRegistry.entries.find(e=>e.code==='KSEG002WW001')! as ChairReviewEntry;
  const menu=chairConstructionMenus(medium,'MEDIUM_NONE_TS34BL')!;
  assert.equal(menu.armId,'MEDIUM_NONE');assert.equal(menu.arms.length,2);
- assert.deepEqual(menu.bases,[{id:'MEDIUM_NONE',label:'TS25'},{id:'MEDIUM_NONE_TS34BL',label:'TS34BL'}]);
+ assert.deepEqual(menu.bases,[{id:'MEDIUM_NONE',label:'TS25'},{id:'MEDIUM_NONE_TS34BL',label:'TS34BL'},{id:'MEDIUM_NONE_ST61POLBL',label:'ST61POLBL'}]);
  assert.deepEqual(chairConstructionMenus(medium,'default')!.bases,[{id:'default',label:'TS25'}]);
  const routed=chairReviewRoute(medium,'MEDIUM_NONE_TS34BL','default');
  assert.equal(routed.construction.construction!.structuralValues.CARMRESTS,'NONE');

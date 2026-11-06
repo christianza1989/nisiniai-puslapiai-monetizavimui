@@ -963,6 +963,38 @@
       ],
       "modelCount": 1,
       "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTRIGHT=GROMMETQE": {
+      "id": "help:98ee09ac98441321831071ed",
+      "sourceHash": "d4b161bb607186dc456e7014b19bf267df0b8825a85697d2138b8aa06c508454",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTRIGHT=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Dešinysis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTLEFT=GROMMETQE": {
+      "id": "help:a2a64331a2f091ca811dc681",
+      "sourceHash": "47ae4f6e381cdc4a9f75a934f13655cadc1a3ddd84347aac5d1ff1c3bc6c1455",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTLEFT=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Kairysis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
     }
   },
   "KESE085WW001": {
@@ -1026,6 +1058,38 @@
       "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
       "current": [
         "Kvadratinis plastikinis įvadas su apvalia 80 mm skersmens anga kabeliams."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTRIGHT=GROMMETQE": {
+      "id": "help:98ee09ac98441321831071ed",
+      "sourceHash": "d4b161bb607186dc456e7014b19bf267df0b8825a85697d2138b8aa06c508454",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTRIGHT=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Dešinysis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTMIDDLE=GROMMETQE": {
+      "id": "help:b758f8a8275542e96305a364",
+      "sourceHash": "7eef244b2e35d763dd28de64cd77a5fb46c7794d470816b80e01f5097b102a06",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTMIDDLE=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Vidurinis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
       ],
       "modelCount": 1,
       "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
@@ -2113,6 +2177,22 @@
       ],
       "modelCount": 1,
       "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTLEFT=2XGROMMETQE": {
+      "id": "help:d591833d2d22afc63af4839b",
+      "sourceHash": "0dbb72846b50f64695be40e69bf61d3fe61d6bd32ed44cdb53a3698a871fe7ec",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTLEFT=2XGROMMETQE",
+      "suggested": "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais.",
+      "context": "FMEDIAPORTLEFT – Du stačiakampiai kabelių įvadai su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
     }
   },
   "KEM3006WW001": {
@@ -2869,6 +2949,22 @@
       ],
       "modelCount": 1,
       "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTRIGHT=2XGROMMETQC": {
+      "id": "help:081d002ec568b88b2cee2916",
+      "sourceHash": "a73ad6e9b3653960736619df2a50b20a4a13ca87578ea4975b7b090ee6078f29",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTRIGHT=2XGROMMETQC",
+      "suggested": "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams.",
+      "context": "FMEDIAPORTRIGHT – Du plastikiniai kabelių įvadai, Ø 80 mm: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
     }
   },
   "KEUP011WW003": {
@@ -3296,6 +3392,54 @@
       "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
       "current": [
         "Kvadratinis plastikinis įvadas su apvalia 80 mm skersmens anga kabeliams."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTLEFT=GROMMETQE": {
+      "id": "help:a2a64331a2f091ca811dc681",
+      "sourceHash": "47ae4f6e381cdc4a9f75a934f13655cadc1a3ddd84347aac5d1ff1c3bc6c1455",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTLEFT=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Kairysis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTRIGHT=GROMMETQE": {
+      "id": "help:98ee09ac98441321831071ed",
+      "sourceHash": "d4b161bb607186dc456e7014b19bf267df0b8825a85697d2138b8aa06c508454",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTRIGHT=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Dešinysis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTMIDDLE=GROMMETQE": {
+      "id": "help:b758f8a8275542e96305a364",
+      "sourceHash": "7eef244b2e35d763dd28de64cd77a5fb46c7794d470816b80e01f5097b102a06",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTMIDDLE=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Vidurinis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
       ],
       "modelCount": 1,
       "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
@@ -4051,6 +4195,38 @@
       ],
       "modelCount": 1,
       "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTMIDDLE=_2XGROMMETQE": {
+      "id": "help:e48013ba59a19faeff7ea022",
+      "sourceHash": "f92f94383a0bfc8cef2ad61ebec8b40a6b2d5a7a16720d800b9eabe287868680",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTMIDDLE=_2XGROMMETQE",
+      "suggested": "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais.",
+      "context": "Vidurinis įvadas – Du stačiakampiai kabelių įvadai su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTLEFT=2XGROMMETQE": {
+      "id": "help:d591833d2d22afc63af4839b",
+      "sourceHash": "0dbb72846b50f64695be40e69bf61d3fe61d6bd32ed44cdb53a3698a871fe7ec",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTLEFT=2XGROMMETQE",
+      "suggested": "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais.",
+      "context": "FMEDIAPORTLEFT – Du stačiakampiai kabelių įvadai su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du stačiakampiai metaliniai kabelių įvadai su šepetėliais."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
     }
   },
   "KESE088WW001": {
@@ -4148,6 +4324,54 @@
       "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
       "current": [
         "Kvadratinis plastikinis įvadas su apvalia 80 mm skersmens anga kabeliams."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTRIGHT=GROMMETQE": {
+      "id": "help:98ee09ac98441321831071ed",
+      "sourceHash": "d4b161bb607186dc456e7014b19bf267df0b8825a85697d2138b8aa06c508454",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTRIGHT=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Dešinysis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTMIDDLE=GROMMETQE": {
+      "id": "help:b758f8a8275542e96305a364",
+      "sourceHash": "7eef244b2e35d763dd28de64cd77a5fb46c7794d470816b80e01f5097b102a06",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTMIDDLE=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Vidurinis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
+    },
+    "FMEDIAPORTLEFT=GROMMETQE": {
+      "id": "help:a2a64331a2f091ca811dc681",
+      "sourceHash": "47ae4f6e381cdc4a9f75a934f13655cadc1a3ddd84347aac5d1ff1c3bc6c1455",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTLEFT=GROMMETQE",
+      "suggested": "Stačiakampis metalinis kabelių įvadas su šepetėliu.",
+      "context": "Kairysis įvadas – Stačiakampis kabelių įvadas su šepetėliu: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Stačiakampis metalinis kabelių įvadas su šepetėliu."
       ],
       "modelCount": 1,
       "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
@@ -4665,6 +4889,122 @@
       ],
       "modelCount": 1,
       "sourceUrl": "https://configurator.nowystyl.com/#ban=KBSP003WW001&sid=BSP&ovc=KBSP003WW001_DIMENSIONS.DWIDTH%3D28002X1400%3BKBSP003WW001_DIMENSIONS.DDEPTH%3D14002X700%3BKBSP003WW001_OPTIONS.FMEDIAPORTLEFT%3D4XGROMMETQC%3BKBSP003WW001_OPTIONS.FMEDIAPORTMIDDLE%3DNONE%3BKBSP003WW001_OPTIONS.FMEDIAPORTRIGHT%3DNONE%3BKBSP003WW001_OPTIONS.FHORWIRETRUNKING%3D4XSTEELHORIZONTAL2%3BKBSP003WW001_OPTIONS.FVERWIRETRUNKING%3D4XMESH%3BKBSP003WW001_FINISHES.FTOPCOLOR%3DCC%3BKBSP003WW001_FINISHES.FTABLEEDGECOLOR%3DCC%3BKBSP003WW001_FINISHES.FBASECOLOR%3DRAL9005%3BKBSP003WW001_FINISHES.FMEDIAPORTLEFTCOLOR%3DB&lang=en"
+    }
+  },
+  "KERG020WW001": {
+    "FSOCKETMEDIAPORTLEFT=FR": {
+      "id": "help:1adfebd664ed1b14a272a7db",
+      "sourceHash": "8a1e9c7e7445886ecc15ec3d90bb7473343f228cda6d0f7680d91210fe309c78",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "FR – France",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTLEFT=FR",
+      "suggested": "Prancūziškojo tipo elektros lizdas.",
+      "context": "Socket/plug standard - media port left – Prancūziškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Prancūziškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTLEFT=GB": {
+      "id": "help:b48c30a686c68b648f9a1b81",
+      "sourceHash": "696a577c712f49810983deb48c3cc69d0bbd09c306c2d7e562da183f172a54ba",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "GB – United Kingdom",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTLEFT=GB",
+      "suggested": "Britiškojo tipo elektros lizdas.",
+      "context": "Socket/plug standard - media port left – Britiškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Britiškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTLEFT=CH13": {
+      "id": "help:fe78b3ca402fef246bc2a675",
+      "sourceHash": "a23cb409c71d22ae171c845a843f1ddc1cc81e800acf02e33f7189a7800e315d",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "CH13 – Switzerland",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTLEFT=CH13",
+      "suggested": "Šveicariškojo tipo elektros lizdas.",
+      "context": "Socket/plug standard - media port left – Šveicariškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Šveicariškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=FR": {
+      "id": "help:a0e694a9da934cf31330d5c3",
+      "sourceHash": "937354dc460cdc89c4ad5161722cd78e70b31b83de2038b07d01f972efea0c2b",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "FR – France",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=FR",
+      "suggested": "Prancūziškojo tipo elektros lizdas.",
+      "context": "Socket/plug standard - media port right – Prancūziškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Prancūziškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=GB": {
+      "id": "help:29164f9fe6fe3d1fcc6446e7",
+      "sourceHash": "b6ff0c64757bc18789129fa12980c3e13af2abd11101ee2c42793d34e9edb622",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "GB – United Kingdom",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=GB",
+      "suggested": "Britiškojo tipo elektros lizdas.",
+      "context": "Socket/plug standard - media port right – Britiškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Britiškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    },
+    "FSOCKETMEDIAPORTRIGHT=CH13": {
+      "id": "help:dd74d5327a1b3114fec2bce4",
+      "sourceHash": "60803735b1b191ca5ed056c4e38e0a7766929508724e620d2a0a334d334e9936",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "CH13 – Switzerland",
+      "polish": "",
+      "sourceCode": "FSOCKETMEDIAPORTRIGHT=CH13",
+      "suggested": "Šveicariškojo tipo elektros lizdas.",
+      "context": "Socket/plug standard - media port right – Šveicariškojo tipo elektros lizdas: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Šveicariškojo tipo elektros lizdas."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf#page=220"
+    }
+  },
+  "KEM2014WW003": {
+    "FMEDIAPORTLEFT=2XGROMMETQC": {
+      "id": "help:9963e25fbb1b69237e93be35",
+      "sourceHash": "ea899d672c4d45a5592d629e5150dc2ddc08a3f4f380569cafa924a232dab9fd",
+      "role": "Pasirinkimo paaiškinimas",
+      "english": "",
+      "polish": "",
+      "sourceCode": "FMEDIAPORTLEFT=2XGROMMETQC",
+      "suggested": "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams.",
+      "context": "FMEDIAPORTLEFT – Du plastikiniai kabelių įvadai, Ø 80 mm: paaiškinimas",
+      "notes": "Trumpas paaiškinimas pagal gamintojo duomenis.",
+      "current": [
+        "Du kvadratiniai plastikiniai įvadai su apvaliomis 80 mm skersmens angomis kabeliams."
+      ],
+      "modelCount": 1,
+      "sourceUrl": "https://www.nowystyl.com/files/doc/WWW_Office-Furniture_Technical-details_EXP.pdf"
     }
   }
 }

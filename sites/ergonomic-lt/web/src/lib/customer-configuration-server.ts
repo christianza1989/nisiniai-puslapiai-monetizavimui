@@ -24,6 +24,7 @@ import {customerConfigurationRevisionSource} from './customer-configuration-revi
 import {supplierOptions,configurationOptionLabel} from './configuration-labels';
 import {reviewedSpecificationRows} from './reviewed-specification-rows';
 import {selectedTextReviewProduct} from './text-review-product';
+import {publishedReviewValue} from './text-review-value';
 const textile=new Set(['CSE','MT','RX','SD','SC','SY','ST','CN','ME','CUR','ERA','X','YS','YB']);
 
 export async function customerContext(p:Product,input?:CustomerState['state']){
@@ -57,7 +58,7 @@ export async function customerConfiguration(product:Product,token?:string,change
  for(const key of Object.keys(inventoryModels()[model]?.bindings||{}))if(key.startsWith('name:'))codes.add(key.slice(5));
  const hiddenMaterialFields=new Set(materialControls.flatMap(c=>c.hiddenFields)),allChoices=state?visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state)):{},choices=Object.fromEntries(Object.entries(allChoices).filter(([field])=>!hiddenMaterialFields.has(field)));
  for(const [field,values]of Object.entries(allChoices)){codes.add(field);for(const value of values)codes.add(value);}
- const published=(field:string,value?:string)=>{const id=review.publicScope.bindings[model]?.[(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value)];return id?review.publicScope.values[model+':'+id]:undefined;};
+ const published=(field:string,value?:string)=>publishedReviewValue(review,model,field,value);
  const controls:CustomerConfiguration['controls']=Object.entries(choices).map(([field,values],i)=>{
   const preview=textReviewProposalPreview()&&!/COLOR|COLOUR|CHCOL|COL$/.test(field);
   const explanation=(value:string)=>{const id=review.publicScope.bindings[model]?.['explanation:'+field+'='+value];return customerLabel(id?review.publicScope.values[model+':'+id]:undefined,codes,'');};

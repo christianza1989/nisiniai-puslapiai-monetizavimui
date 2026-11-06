@@ -2,6 +2,8 @@ import test from'node:test';import assert from'node:assert/strict';
 import{reviewedSpecificationRows}from'../src/lib/reviewed-specification-rows';
 import{selectedTextReviewProduct}from'../src/lib/text-review-product';
 import{customerLabel}from'../src/lib/customer-names';
+import{canonicalReviewValue,publishedReviewValue}from'../src/lib/text-review-value';
+import type{ReviewScope}from'../src/lib/text-review-types';
 import type{Product}from'../src/lib/types';
 test('legacy details use the selected field edit and keep unrelated or ambiguous facts',()=>{
  const rows=[{label:'Galvos atrama',value:'Be šio elemento (NONE)'},{label:'Korpuso medienos spalva',value:'1007'},{label:'Aukštis',value:'420–545 mm'},{label:'Medžiaga',value:'Gamintojo aprašas'}];
@@ -16,4 +18,10 @@ test('article transitions use their own text preset without changing source code
 });
 test('customer text removes legacy absence tokens and empty code brackets while keeping dimensions',()=>{
  assert.equal(customerLabel('Be šio elemento (NONE)',[],'Nėra'),'Nėra');assert.equal(customerLabel('Juoda (RAL9005)',['RAL9005'],''),'Juoda');assert.equal(customerLabel('1007 mm',['1007'],''),'1007 mm');
+});
+test('verified finish spelling uses its existing name and preserves a human correction',()=>{
+ const model='KVAP008WW001',field='CSHELLWOODCOLOR';assert.equal(canonicalReviewValue(model,field,'1007'),'_1007');assert.equal(canonicalReviewValue('OTHER',field,'1007'),'1007');
+ const review={publicScope:{bindings:{[model]:{['value:'+field+'=1007']:'old',['value:'+field+'=_1007']:'canonical'}},values:{[model+':old']:'1007',[model+':canonical']:'Buko apdaila'}},entries:[]}as unknown as ReviewScope;
+ assert.equal(publishedReviewValue(review,model,field,'1007'),'Buko apdaila');
+ review.publicScope.values[model+':old']='Šviesus bukas';review.entries.push({id:'old',sourceHash:'verified',edit:{source_hash:'verified'}}as any);assert.equal(publishedReviewValue(review,model,field,'1007'),'Šviesus bukas');
 });

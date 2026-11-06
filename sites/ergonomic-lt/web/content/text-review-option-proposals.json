@@ -2062,5 +2062,440 @@
   },
   "value:FHORWIRETRUNKING=_2XMODMETAL": {
     "2x modular, metal": "2 moduliniai metaliniai kabelių loveliai"
+  },
+  "value:CUPHGROUP=SY": {
+    "synergy": "Synergy"
+  },
+  "value:CUPHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CUPHGROUP=BN": {
+    "bondai": "Bondai"
+  },
+  "value:CUPHGROUP=YB": {
+    "lucia": "Lucia"
+  },
+  "value:CUPHGROUP=OL": {
+    "oflum": "Oflum"
+  },
+  "value:CUPHGROUP=SM": {
+    "sempre / sempre melange": "Sempre / Sempre Melange"
+  },
+  "value:CUPHGROUP=MLF": {
+    "main line flax": "Main Line Flax"
+  },
+  "value:CUPHGROUP=CUZ": {
+    "blazer": "Blazer"
+  },
+  "value:CUPHGROUP=LAR": {
+    "lars": "Lars"
+  },
+  "value:CBACKRESTUPHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CSEATUPHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CSIDEBOTTOMBAUPHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CBOTTOMBACKUPHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CHEADRESTUPHCHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CBACKRESTUPHGROUP=BN": {
+    "bondai": "Bondai"
+  },
+  "value:CBACKRESTUPHGROUP=YB": {
+    "lucia": "Lucia"
+  },
+  "value:CBACKRESTUPHGROUP=OL": {
+    "oflum": "Oflum"
+  },
+  "value:CBACKRESTUPHGROUP=SM": {
+    "sempre / sempre melange": "Sempre / Sempre Melange"
+  },
+  "value:CBOTTOMBACKUPHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CHEADRESTUPHCHGROUP=VL": {
+    "valencia": "Valencia"
+  },
+  "value:CHEADRESTUPHCHGROUP=SX": {
+    "silvertex": "Silvertex"
+  },
+  "value:CHEADRESTUPHCHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CHEADRESTUPHCHGROUP=SD": {
+    "fine leather sd": "Aukštos kokybės oda"
+  },
+  "value:CHEADRESTUPHCHGROUP=LE": {
+    "fine leather le": "Aukštos kokybės oda"
+  },
+  "value:CHEADRESTUPHCHGROUP=NAPPA": {
+    "leather nappa": "Nappa oda"
+  },
+  "value:CSIDEBOTTOMBAUPHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CUPHGROUP=RX": {
+    "remix 3": "Remix 3"
+  },
+  "value:CUPHGROUP=CUR": {
+    "cura": "Cura"
+  },
+  "value:CUPHGROUP=XR": {
+    "xtreme (xr)": "Xtreme"
+  },
+  "value:CUPHGROUP=VL": {
+    "valencia": "Valencia"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CUPHGROUP=NAPPA": {
+    "leather nappa": "Nappa oda"
+  },
+  "value:CSEATUPHGROUP=SY": {
+    "synergy": "Synergy"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=SY": {
+    "synergy": "Synergy"
+  },
+  "value:CHEADRESTUPHCHGROUP=SY": {
+    "synergy": "Synergy"
+  },
+  "value:CMESHGROUP=XN": {
+    "mx": "Tinklelio kolekcija"
+  },
+  "value:CSEATUPHGROUP=BN": {
+    "bondai": "Bondai"
+  },
+  "value:CSEATUPHGROUP=YB": {
+    "lucia": "Lucia"
+  },
+  "value:CSEATUPHGROUP=OL": {
+    "oflum": "Oflum"
+  },
+  "value:CSEATUPHGROUP=SM": {
+    "sempre / sempre melange": "Sempre / Sempre Melange"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CUPHGROUP=V": {
+    "leather imitation v": "Dirbtinė oda"
+  },
+  "value:CUPHGROUP=C": {
+    "basic fabric c": "Bazinis audinys"
+  },
+  "value:CUPHGROUP=M": {
+    "micro": "Micro"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=BN": {
+    "bondai": "Bondai"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=BN": {
+    "bondai": "Bondai"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=CUR": {
+    "cura": "Cura"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=MLF": {
+    "main line flax": "Main Line Flax"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=PAROTEGA": {
+    "skai parotega": "skai Parotega"
+  },
+  "value:CUPHGROUP=ST": {
+    "step / step melange": "Step / Step Melange"
+  },
+  "value:CUPHGROUP=PAROTEGA": {
+    "skai parotega": "skai Parotega"
+  },
+  "value:CUPHGROUP=EGL": {
+    "rivet": "Rivet"
+  },
+  "value:FUPHGROUP=LTH": {
+    "blazer lite": "Blazer Lite"
+  },
+  "value:CMESHGROUP=JM": {
+    "jm mesh": "JM tinklelis"
+  },
+  "value:CUPHGROUP=SX": {
+    "silvertex": "Silvertex"
+  },
+  "value:CSIDEPROFILEUPHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CHEADRESTUPHGROUP=SY": {
+    "synergy": "Synergy"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=SY": {
+    "synergy": "Synergy"
+  },
+  "value:CHEADRESTUPHGROUP=CSE": {
+    "era": "Era"
+  },
+  "value:CHEADRESTUPHGROUP=BN": {
+    "bondai": "Bondai"
+  },
+  "value:CHEADRESTUPHGROUP=YB": {
+    "lucia": "Lucia"
+  },
+  "value:CHEADRESTUPHGROUP=SM": {
+    "sempre / sempre melange": "Sempre / Sempre Melange"
+  },
+  "value:CHEADRESTUPHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CBACKRESTUPHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=BN": {
+    "bondai": "Bondai"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=YB": {
+    "lucia": "Lucia"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=SM": {
+    "sempre / sempre melange": "Sempre / Sempre Melange"
+  },
+  "value:CHEADRESTUPHGROUP=V": {
+    "leather imitation v": "Dirbtinė oda"
+  },
+  "value:CHEADRESTUPHGROUP=M": {
+    "micro": "Micro"
+  },
+  "value:CHEADRESTUPHGROUP=VL": {
+    "valencia": "Valencia"
+  },
+  "value:CUPHGROUP=CG": {
+    "chili": "Chili"
+  },
+  "value:CUPHGROUP=FOCUS": {
+    "focus royal": "Focus Royal"
+  },
+  "value:CUPHGROUP=YN": {
+    "urban": "Urban"
+  },
+  "value:CMESHGROUP=OP": {
+    "op mesh": "OP tinklelis"
+  },
+  "value:CHEADRESTUPHGROUP=OL": {
+    "oflum": "Oflum"
+  },
+  "value:CHEADRESTUPHGROUP=LE": {
+    "fine leather le": "Aukštos kokybės oda"
+  },
+  "value:CMESHGROUP=MF": {
+    "mf mesh": "MF tinklelis"
+  },
+  "value:CUPHGROUP=SD": {
+    "fine leather sd": "Aukštos kokybės oda"
+  },
+  "value:CUPHGROUP=LE": {
+    "fine leather le": "Aukštos kokybės oda"
+  },
+  "value:CSEATUPHGROUP=LAR": {
+    "lars": "Lars"
+  },
+  "value:CMESHGROUP=EMD": {
+    "emd mesh": "EMD tinklelis"
+  },
+  "value:CBACKRESTUPHGROUP=RH": {
+    "rhythm": "Rhythm"
+  },
+  "value:CMESHGROUP=IW": {
+    "iw mesh": "IW tinklelis"
+  },
+  "value:CSEATUPHGROUP=VF": {
+    "vienna": "Vienna"
+  },
+  "value:CMESHGROUP=VM": {
+    "vm mesh": "VM tinklelis"
+  },
+  "value:CMESHGROUP=WSD": {
+    "wsd mesh": "WSD tinklelis"
+  },
+  "value:CSEATUPHGROUP=V": {
+    "leather imitation v": "Dirbtinė oda"
+  },
+  "value:CSEATUPHGROUP=C": {
+    "basic fabric c": "Bazinis audinys"
+  },
+  "value:CUPHGROUP=SP": {
+    "split leather": "Skeltinė oda"
+  },
+  "value:CUPHGROUP=EF": {
+    "oban": "Oban"
+  },
+  "value:CBACKRESTUPHGROUP=RX": {
+    "remix 3": "Remix 3"
+  },
+  "value:CSEATUPHGROUP=RX": {
+    "remix 3": "Remix 3"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=RX": {
+    "remix 3": "Remix 3"
+  },
+  "value:CHEADRESTUPHCHGROUP=RX": {
+    "remix 3": "Remix 3"
+  },
+  "value:CBACKRESTUPHGROUP=SD": {
+    "fine leather sd": "Aukštos kokybės oda"
+  },
+  "value:CBACKRESTUPHGROUP=LE": {
+    "fine leather le": "Aukštos kokybės oda"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=RX": {
+    "remix 3": "Remix 3"
+  },
+  "value:CSEATUPHGROUP=SD": {
+    "fine leather sd": "Aukštos kokybės oda"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=SD": {
+    "fine leather sd": "Aukštos kokybės oda"
+  },
+  "value:CSEATUPHGROUP=LE": {
+    "fine leather le": "Aukštos kokybės oda"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=LE": {
+    "fine leather le": "Aukštos kokybės oda"
+  },
+  "value:CHEADRESTUPHCHGROUP=BN": {
+    "bondai": "Bondai"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=YB": {
+    "lucia": "Lucia"
+  },
+  "value:CHEADRESTUPHCHGROUP=YB": {
+    "lucia": "Lucia"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=OL": {
+    "oflum": "Oflum"
+  },
+  "value:CHEADRESTUPHCHGROUP=OL": {
+    "oflum": "Oflum"
+  },
+  "value:CSEBASIDEPROFILUPHGROUP=SM": {
+    "sempre / sempre melange": "Sempre / Sempre Melange"
+  },
+  "value:CHEADRESTUPHCHGROUP=SM": {
+    "sempre / sempre melange": "Sempre / Sempre Melange"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=YB": {
+    "lucia": "Lucia"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=OL": {
+    "oflum": "Oflum"
+  },
+  "value:CSIDEPROFILBACKUPHGROUP=SM": {
+    "sempre / sempre melange": "Sempre / Sempre Melange"
+  },
+  "value:CBACKRESTUPHGROUP=ST": {
+    "step / step melange": "Step / Step Melange"
+  },
+  "value:CSEATUPHGROUP=ST": {
+    "step / step melange": "Step / Step Melange"
+  },
+  "value:CHEADRESTUPHCHGROUP=ST": {
+    "step / step melange": "Step / Step Melange"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=ST": {
+    "step / step melange": "Step / Step Melange"
+  },
+  "value:CBACKRESTUPHGROUP=SX": {
+    "silvertex": "Silvertex"
+  },
+  "value:CSEATUPHGROUP=RN": {
+    "runner": "Runner"
+  },
+  "value:CSEATUPHGROUP=SX": {
+    "silvertex": "Silvertex"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=SX": {
+    "silvertex": "Silvertex"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=OL": {
+    "oflum": "Oflum"
+  },
+  "value:CHEADRESTUPHGROUP=CUR": {
+    "cura": "Cura"
+  },
+  "value:CHEADRESTUPHGROUP=EGL": {
+    "rivet": "Rivet"
+  },
+  "value:CHEADRESTUPHGROUP=XR": {
+    "xtreme (xr)": "Xtreme"
+  },
+  "value:CHEADRESTUPHGROUP=SX": {
+    "silvertex": "Silvertex"
+  },
+  "value:CHEADRESTUPHGROUP=PAROTEGA": {
+    "skai parotega": "skai Parotega"
+  },
+  "value:CHEADRESTUPHGROUP=RX": {
+    "remix 3": "Remix 3"
+  },
+  "value:CBACKRESTUPHGROUP=SY": {
+    "synergy": "Synergy"
+  },
+  "value:CBACKRESTUPHGROUP=MLF": {
+    "main line flax": "Main Line Flax"
+  },
+  "value:CBACKRESTUPHGROUP=PAROTEGA": {
+    "skai parotega": "skai Parotega"
+  },
+  "value:CBACKRESTUPHGROUP=CUZ": {
+    "blazer": "Blazer"
+  },
+  "value:CSEATUPHGROUP=MLF": {
+    "main line flax": "Main Line Flax"
+  },
+  "value:CSEATUPHGROUP=PAROTEGA": {
+    "skai parotega": "skai Parotega"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=PAROTEGA": {
+    "skai parotega": "skai Parotega"
+  },
+  "value:CSEATUPHGROUP=CUZ": {
+    "blazer": "Blazer"
+  },
+  "value:CSIDEPROFILSEATUPHGROUP=CUZ": {
+    "blazer": "Blazer"
+  },
+  "value:CHEADRESTUPHCHGROUP=MLF": {
+    "main line flax": "Main Line Flax"
+  },
+  "value:CHEADRESTUPHCHGROUP=PAROTEGA": {
+    "skai parotega": "skai Parotega"
+  },
+  "value:CHEADRESTUPHCHGROUP=CUZ": {
+    "blazer": "Blazer"
+  },
+  "value:CSEATUPHGROUP=RH": {
+    "rhythm": "Rhythm"
+  },
+  "value:CHEADRESTUPHCHGROUP=RH": {
+    "rhythm": "Rhythm"
+  },
+  "value:CHEADRESTUPHCHGROUP=LARFR": {
+    "lars fr": "Lars FR"
   }
 }

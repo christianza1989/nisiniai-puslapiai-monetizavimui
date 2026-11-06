@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-06T03:54:32.754Z",
+  "at": "2026-11-06T04:33:01.456Z",
   "rule": "Actual unchanged manufacturer seed request selected the canonical value; only initial underscore differs. Source/runtime codes and geometry are unchanged.",
   "rows": [
     {
@@ -701,6 +701,756 @@
       "evidence": "KC54102WW001-f2fbbd6a6587b6de.json",
       "articleSha256": "8b30c05ab2f2e4d36ab78e5714ded4ecadf11bda7d7b37d88ac3475e7028d2ea",
       "choicesSha256": "4788c0ace409b79a0c2e6e80fcb830a89b7c388f094ecdd578554eef493c625f"
+    },
+    {
+      "model": "K2ME004WW001",
+      "binding": "value:CPRICEGROUP=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "K2ME004WW001-6a9bd4f3bf48fcde.json",
+      "articleSha256": "137342aa27e3ad74f1a6c6215570d49ef2b8851650f2170db73f149400b15eaa",
+      "choicesSha256": "87db96e96ac3e9b1e6db2e267f276e64259ed2a5a4595461b884d8d12a9cf5d7"
+    },
+    {
+      "model": "K4ME001WW003",
+      "binding": "value:CPRICEGROUP=1",
+      "runtimeValue": "1",
+      "supplierValue": "_1",
+      "english": "1",
+      "evidence": "K4ME001WW003-01f1b0794179ac90.json",
+      "articleSha256": "058bc35cefc70704761a9c41cccbdbabc71244ca0636b5d38d9edc36319f8f2a",
+      "choicesSha256": "bfb95d403621be664ae1751ead97ea84ddbcad37caaa4ada3e29a457cc67fc9b"
+    },
+    {
+      "model": "KARN003WW004",
+      "binding": "value:CPRICEGROUP=5",
+      "runtimeValue": "5",
+      "supplierValue": "_5",
+      "english": "5",
+      "evidence": "KARN003WW004-7d33ab2d69bdfa15.json",
+      "articleSha256": "1c854be58e15fb204fba79018a04f2d7c3ad6199af7436462ebea9c3cafc94bf",
+      "choicesSha256": "02d4fe1c10311b8e238dde859c3706bdcebbf71a1f4ee149bde705faff91934a"
+    },
+    {
+      "model": "KARN003WW004",
+      "binding": "value:CFRAMEWOODCOLOR=207Y",
+      "runtimeValue": "207Y",
+      "supplierValue": "_207Y",
+      "english": "2.07Y Black",
+      "evidence": "KARN003WW004-7d33ab2d69bdfa15.json",
+      "articleSha256": "1c854be58e15fb204fba79018a04f2d7c3ad6199af7436462ebea9c3cafc94bf",
+      "choicesSha256": "02d4fe1c10311b8e238dde859c3706bdcebbf71a1f4ee149bde705faff91934a"
+    },
+    {
+      "model": "KARN007WW004",
+      "binding": "value:CPRICEGROUP=5",
+      "runtimeValue": "5",
+      "supplierValue": "_5",
+      "english": "5",
+      "evidence": "KARN007WW004-72098985ef57790b.json",
+      "articleSha256": "4e7ba84b36cef18c95a9113a5945ea83fd79a3d81545bfd61666c16e86407fde",
+      "choicesSha256": "5838362c99bfed160daa52bfa3c1a0c3c5e77c0c8ea585d15d3ff87601adeefd"
+    },
+    {
+      "model": "KARN007WW004",
+      "binding": "value:CFRAMEWOODCOLOR=207Y",
+      "runtimeValue": "207Y",
+      "supplierValue": "_207Y",
+      "english": "2.07Y Black",
+      "evidence": "KARN007WW004-8ff926745d9ea299.json",
+      "articleSha256": "1a86416c0d2b2cc38829dbaac965b467431a185da30d40b577dcef2b2763bcc3",
+      "choicesSha256": "5838362c99bfed160daa52bfa3c1a0c3c5e77c0c8ea585d15d3ff87601adeefd"
+    },
+    {
+      "model": "KARN008WW004",
+      "binding": "value:CPRICEGROUP=5",
+      "runtimeValue": "5",
+      "supplierValue": "_5",
+      "english": "5",
+      "evidence": "KARN008WW004-d450941a7a9a2019.json",
+      "articleSha256": "31a5ba5415222749d07c248267d147d5133725cdfb8fdf4252f3a1539a3b9712",
+      "choicesSha256": "85b4235f49742f2a77cd45c090389de8186fd09eac1e0f4144f26e98f422b026"
+    },
+    {
+      "model": "KBJA001WW002",
+      "binding": "value:CPRICEGROUP=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KBJA001WW002-2a9ac61483fa78e2.json",
+      "articleSha256": "e9d57f716f26203a7632ae2751c3cdc49d5ed2830073112aaf87488e9b77d605",
+      "choicesSha256": "0824a567d29ab76ea6adfdd8671fb45afbc75fe5f67c65adec4c8792cf886b3f"
+    },
+    {
+      "model": "KBJA001WW002",
+      "binding": "value:CPRICEGROUP=2",
+      "runtimeValue": "2",
+      "supplierValue": "_2",
+      "english": "2",
+      "evidence": "KBJA001WW002-8a0c24f5ba1ed9d9.json",
+      "articleSha256": "f5a4793be36665f162abc39b466b7fffb4eb200cc8bdec0fc35b4588c1bc03f6",
+      "choicesSha256": "2e92ea7cb97a4414f96d35be4b9358f5b549a71037b7f78eaf633a34d6fc5d6c"
+    },
+    {
+      "model": "KBJA002WW002",
+      "binding": "value:CPRICEGROUP=5",
+      "runtimeValue": "5",
+      "supplierValue": "_5",
+      "english": "5",
+      "evidence": "KBJA002WW002-6ef33ae1a8c71173.json",
+      "articleSha256": "c2c03eafe0ddd05baade9cbffcdd35d6d46a9fec377df88e92d15a6160c35d85",
+      "choicesSha256": "d988a8e4e0690f7d74f7911c6165ae2b37e5912b71565bbefe57736a8943327b"
+    },
+    {
+      "model": "KBJA002WW002",
+      "binding": "value:CPRICEGROUP=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KBJA002WW002-ecec7f8df9a5efe5.json",
+      "articleSha256": "9532f41f6a33bb7fb4d299c0b6dff8301468304be9c6c6bff88f30e32971d1a1",
+      "choicesSha256": "883c611c0a72b1564f7ee24591740f3504588b606298099e15d6926e67b60e18"
+    },
+    {
+      "model": "KBJA003WW002",
+      "binding": "value:CPRICEGROUP=2",
+      "runtimeValue": "2",
+      "supplierValue": "_2",
+      "english": "2",
+      "evidence": "KBJA003WW002-d6dbf7f5d9ca0afb.json",
+      "articleSha256": "c760992552efa06e1863381205434de8f75db8d33e04bb90b23579c2985ab377",
+      "choicesSha256": "0fd5226e3f0cddd6ae1a9fd24a2efe6172a9858b3d806fc0f8471f56738ae08a"
+    },
+    {
+      "model": "KBJA003WW002",
+      "binding": "value:CPRICEGROUP=5",
+      "runtimeValue": "5",
+      "supplierValue": "_5",
+      "english": "5",
+      "evidence": "KBJA003WW002-fade93dcaf01c360.json",
+      "articleSha256": "9162aca0fedb49cc82269763aa11e2a83e867bf7c68282ddc31ecba5acefcb7d",
+      "choicesSha256": "c03fcb059601ac311c71b72e968c8b61bac62479dd5b361c2523717e96ffe849"
+    },
+    {
+      "model": "KBSP004WW002",
+      "binding": "value:FPRICEGROUP=1",
+      "runtimeValue": "1",
+      "supplierValue": "_1",
+      "english": "1",
+      "evidence": "KBSP004WW002-996a7b8342724d6a.json",
+      "articleSha256": "eb69ea71521346ad6ac59f5b38fac85348dd8976c000fd89f79c3eec1d5d5b97",
+      "choicesSha256": "8f3ecd190f121caabbf29bf26b7f58811b68709f1b5ecefe687298de941a68cf"
+    },
+    {
+      "model": "KBSP007WW002",
+      "binding": "value:FPRICEGROUP=2",
+      "runtimeValue": "2",
+      "supplierValue": "_2",
+      "english": "2",
+      "evidence": "KBSP007WW002-2a0477693e4c861c.json",
+      "articleSha256": "486f58d5def1ba0933865153ac3593a68c7152af9e21208f891a16702f16e3fa",
+      "choicesSha256": "b6948c36d47e1f8e2accebf45dfb6c135ea45b156914eae03518cafd698d1ab1"
+    },
+    {
+      "model": "KBSP008WW002",
+      "binding": "value:FPRICEGROUP=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KBSP008WW002-a31b8b5dbfd5500d.json",
+      "articleSha256": "3bdd652f0bd08e49e82bb37d9d9699c2127d80a4c2aa711f64e4ba84005a9f9d",
+      "choicesSha256": "ff7eb19952d7212bef46a9bf1d276d242908bf071ead0777d15c18fad5d82812"
+    },
+    {
+      "model": "KC54083WW001",
+      "binding": "value:FPRICEGROUPPANELUPPER=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KC54083WW001-dedb598179230804.json",
+      "articleSha256": "197027ac50afcd468f30039dac4b2f7e0c37d84b4b3451c5fc6ef6ef53e98ae5",
+      "choicesSha256": "10275a6a8f7a79f641b2b20860ac5df12ff20bfedd6a105a1bbea8eb325ead24"
+    },
+    {
+      "model": "KC54083WW001",
+      "binding": "value:FBASEWOODCOLOR=0C",
+      "runtimeValue": "0C",
+      "supplierValue": "_0C",
+      "english": "0C Natural Beech",
+      "evidence": "KC54083WW001-dedb598179230804.json",
+      "articleSha256": "197027ac50afcd468f30039dac4b2f7e0c37d84b4b3451c5fc6ef6ef53e98ae5",
+      "choicesSha256": "10275a6a8f7a79f641b2b20860ac5df12ff20bfedd6a105a1bbea8eb325ead24"
+    },
+    {
+      "model": "KC54102WW001",
+      "binding": "value:DTOPWIDTH=3X1400",
+      "runtimeValue": "3X1400",
+      "supplierValue": "_3X1400",
+      "english": "3x 1400 mm",
+      "evidence": "KC54102WW001-f2fbbd6a6587b6de.json",
+      "articleSha256": "8b30c05ab2f2e4d36ab78e5714ded4ecadf11bda7d7b37d88ac3475e7028d2ea",
+      "choicesSha256": "4788c0ace409b79a0c2e6e80fcb830a89b7c388f094ecdd578554eef493c625f"
+    },
+    {
+      "model": "KC54102WW001",
+      "binding": "value:DTOPDEPTH=2X679",
+      "runtimeValue": "2X679",
+      "supplierValue": "_2X679",
+      "english": "2x 679 mm",
+      "evidence": "KC54102WW001-f2fbbd6a6587b6de.json",
+      "articleSha256": "8b30c05ab2f2e4d36ab78e5714ded4ecadf11bda7d7b37d88ac3475e7028d2ea",
+      "choicesSha256": "4788c0ace409b79a0c2e6e80fcb830a89b7c388f094ecdd578554eef493c625f"
+    },
+    {
+      "model": "KC54102WW001",
+      "binding": "value:FPRICEGROUPPANELUPPER=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KC54102WW001-f2fbbd6a6587b6de.json",
+      "articleSha256": "8b30c05ab2f2e4d36ab78e5714ded4ecadf11bda7d7b37d88ac3475e7028d2ea",
+      "choicesSha256": "4788c0ace409b79a0c2e6e80fcb830a89b7c388f094ecdd578554eef493c625f"
+    },
+    {
+      "model": "KCAF011WW001",
+      "binding": "value:CPRICEGROUP=0",
+      "runtimeValue": "0",
+      "supplierValue": "_0",
+      "english": "0",
+      "evidence": "KCAF011WW001-0555a856655d6ae6.json",
+      "articleSha256": "7ae22cfb80f752edeb849150ada42a72021c027ecda195f0f1b7700fecf6db47",
+      "choicesSha256": "b3d58764ed69b4d3a2abbe726f4f8cb4f4ca019c9da5e053f38cb4c2f4b70648"
+    },
+    {
+      "model": "KEM2008WW003",
+      "binding": "value:FMEDIAPORTLEFT=2XGROMMETQE",
+      "runtimeValue": "2XGROMMETQE",
+      "supplierValue": "_2XGROMMETQE",
+      "english": "2x Aluminium rectangular cable outlet with brush",
+      "evidence": "KEM2008WW003-cbc0e8cc6e30c021.json",
+      "articleSha256": "8d3d2c9726ce77dcbe61df0e51f0a472ce49805c56a4f9d9747b0af37473af32",
+      "choicesSha256": "8bbb5535d173313960d9e883825761b9d5733840ae2f2638f0f32b42b7cdcfc3"
+    },
+    {
+      "model": "KEM2008WW003",
+      "binding": "value:FPRICEGROUP=1",
+      "runtimeValue": "1",
+      "supplierValue": "_1",
+      "english": "1",
+      "evidence": "KEM2008WW003-cbc0e8cc6e30c021.json",
+      "articleSha256": "8d3d2c9726ce77dcbe61df0e51f0a472ce49805c56a4f9d9747b0af37473af32",
+      "choicesSha256": "8bbb5535d173313960d9e883825761b9d5733840ae2f2638f0f32b42b7cdcfc3"
+    },
+    {
+      "model": "KEM2013WW006",
+      "binding": "value:FPRICEGROUP=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KEM2013WW006-d82cc550d17cd110.json",
+      "articleSha256": "8e3c33145c2ec5d764f11819b2eacadf7c30cd2e0f67ead30cab5aed144fcaf3",
+      "choicesSha256": "0f5c9fda3cb777a23157286cd7a154e2a261b7cd1d1397bf460817acaa61460d"
+    },
+    {
+      "model": "KEM2014WW003",
+      "binding": "value:FMEDIAPORTLEFT=2XGROMMETQC",
+      "runtimeValue": "2XGROMMETQC",
+      "supplierValue": "_2XGROMMETQC",
+      "english": "2x Plastic square grommet with round outlet diam.80",
+      "evidence": "KEM2014WW003-60c6aac43fe2f907.json",
+      "articleSha256": "4980151b1a98b318252496ee0d751187c0bd9e1b6bff857eec195612344e9cd3",
+      "choicesSha256": "740609a12eeac97c941729a68b1842a18c77dd68adb39ab87c4b7b3293f675d3"
+    },
+    {
+      "model": "KEM2014WW003",
+      "binding": "value:FPRICEGROUP=2",
+      "runtimeValue": "2",
+      "supplierValue": "_2",
+      "english": "2",
+      "evidence": "KEM2014WW003-60c6aac43fe2f907.json",
+      "articleSha256": "4980151b1a98b318252496ee0d751187c0bd9e1b6bff857eec195612344e9cd3",
+      "choicesSha256": "740609a12eeac97c941729a68b1842a18c77dd68adb39ab87c4b7b3293f675d3"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:DTOPTHICKNESS=25",
+      "runtimeValue": "25",
+      "supplierValue": "_25",
+      "english": "25 mm",
+      "evidence": "KEM3003WW002-8e0e4bba2e81203c.json",
+      "articleSha256": "57a5d49f2f7e3833ecfdcefd95ec3aa3f923d3e249235452e9752fe3bb8b41ad",
+      "choicesSha256": "03a3d213527416034afefc8195301f3e77d5e37844d370d0d347efa822ea7795"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FMEDIAPORTLEFT=2XGROMMETQE",
+      "runtimeValue": "2XGROMMETQE",
+      "supplierValue": "_2XGROMMETQE",
+      "english": "2x Aluminium rectangular cable outlet with brush",
+      "evidence": "KEM3003WW002-8e0e4bba2e81203c.json",
+      "articleSha256": "57a5d49f2f7e3833ecfdcefd95ec3aa3f923d3e249235452e9752fe3bb8b41ad",
+      "choicesSha256": "03a3d213527416034afefc8195301f3e77d5e37844d370d0d347efa822ea7795"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FPRICEGROUP=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KEM3003WW002-8e0e4bba2e81203c.json",
+      "articleSha256": "57a5d49f2f7e3833ecfdcefd95ec3aa3f923d3e249235452e9752fe3bb8b41ad",
+      "choicesSha256": "03a3d213527416034afefc8195301f3e77d5e37844d370d0d347efa822ea7795"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FHADJUSTMENTWAY=2XHANDSET",
+      "runtimeValue": "2XHANDSET",
+      "supplierValue": "_2XHANDSET",
+      "english": "2x control panel with up&down buton",
+      "evidence": "KEM3003WW002-95789d65464669f3.json",
+      "articleSha256": "63b76ca4559b6899126ce0be960518ebeefdc0373542e56efe755f6871a8070a",
+      "choicesSha256": "9c9d790b8b6ae6462f97b94e22f55abe86d93441ea44f2da6fc5ba6e30ffc7d5"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FUPPERPANEL=2XUPH480",
+      "runtimeValue": "2XUPH480",
+      "supplierValue": "_2XUPH480",
+      "english": "2x Upholstered, 480mm height",
+      "evidence": "KEM3003WW002-a83d23e33ac24452.json",
+      "articleSha256": "7c6ca2dc85899b8d2347375b251aaa3da48947adb7414210972875d817fbaca6",
+      "choicesSha256": "81dc04b08a0cafaa3b10d7f1ffcd6de1e0ea7811d3aa004f5a7762e2c0a29742"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:DTOPTHICKNESS=19",
+      "runtimeValue": "19",
+      "supplierValue": "_19",
+      "english": "19 mm",
+      "evidence": "KEM3003WW002-b4d749f2ab133949.json",
+      "articleSha256": "4419826ad13e80182608897ed09cb06966b2f0b194579aabed7761f9dfe16c33",
+      "choicesSha256": "b85e3918e00daf313fa8062dc5fab7bc3deea245b8b7cd7cf3e5ea6b2bad0871"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FMEDIAPORTLEFT=2XGROMMETQC",
+      "runtimeValue": "2XGROMMETQC",
+      "supplierValue": "_2XGROMMETQC",
+      "english": "2x Plastic square grommet with round outlet diam.80",
+      "evidence": "KEM3003WW002-b4d749f2ab133949.json",
+      "articleSha256": "4419826ad13e80182608897ed09cb06966b2f0b194579aabed7761f9dfe16c33",
+      "choicesSha256": "b85e3918e00daf313fa8062dc5fab7bc3deea245b8b7cd7cf3e5ea6b2bad0871"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FHORWIRETRUNKING=2XSTEELHORIZONTAL2",
+      "runtimeValue": "2XSTEELHORIZONTAL2",
+      "supplierValue": "_2XSTEELHORIZONTAL2",
+      "english": "2x Foldable on two side, steel",
+      "evidence": "KEM3003WW002-b4d749f2ab133949.json",
+      "articleSha256": "4419826ad13e80182608897ed09cb06966b2f0b194579aabed7761f9dfe16c33",
+      "choicesSha256": "b85e3918e00daf313fa8062dc5fab7bc3deea245b8b7cd7cf3e5ea6b2bad0871"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FUPPERPANEL=1XUPH700",
+      "runtimeValue": "1XUPH700",
+      "supplierValue": "_1XUPH700",
+      "english": "1x Upholstered, 700 mm height",
+      "evidence": "KEM3003WW002-b4d749f2ab133949.json",
+      "articleSha256": "4419826ad13e80182608897ed09cb06966b2f0b194579aabed7761f9dfe16c33",
+      "choicesSha256": "b85e3918e00daf313fa8062dc5fab7bc3deea245b8b7cd7cf3e5ea6b2bad0871"
+    },
+    {
+      "model": "KEM3003WW002",
+      "binding": "value:FPRICEGROUP=2",
+      "runtimeValue": "2",
+      "supplierValue": "_2",
+      "english": "2",
+      "evidence": "KEM3003WW002-b4d749f2ab133949.json",
+      "articleSha256": "4419826ad13e80182608897ed09cb06966b2f0b194579aabed7761f9dfe16c33",
+      "choicesSha256": "b85e3918e00daf313fa8062dc5fab7bc3deea245b8b7cd7cf3e5ea6b2bad0871"
+    },
+    {
+      "model": "KESE085WW001",
+      "binding": "value:FPRICEGROUPPANELUPPER=1",
+      "runtimeValue": "1",
+      "supplierValue": "_1",
+      "english": "1",
+      "evidence": "KESE085WW001-ce68ea644009eb5d.json",
+      "articleSha256": "30017ef9b5d84548f521077de563f61f669f7c41582b98c485e2754772a0c673",
+      "choicesSha256": "42b83b1e21620cdefb19d36d61b32a59609e4e47c422d4059b753bc9c5a1fc62"
+    },
+    {
+      "model": "KESE088WW001",
+      "binding": "value:FPRICEGROUPPANELUPPER=1",
+      "runtimeValue": "1",
+      "supplierValue": "_1",
+      "english": "1",
+      "evidence": "KESE088WW001-cee2ffb594308d0f.json",
+      "articleSha256": "b2c85789bfd93743ea3d10b8d5dcda82aeb5541c847b2d42e46427d72ccbf71d",
+      "choicesSha256": "6306bb05c4a6b9ee1d4854534f34b45f16bfe1374e5fe5ef10e11603996abfc0"
+    },
+    {
+      "model": "KEUP011WW002",
+      "binding": "value:DTOPTHICKNESS=25",
+      "runtimeValue": "25",
+      "supplierValue": "_25",
+      "english": "25 mm",
+      "evidence": "KEUP011WW002-cb3314bb4bf7fe8c.json",
+      "articleSha256": "fe58163f7c6322812d0237efc4b84540df2f80b5db9b683a6c2b4dc983cdb8ea",
+      "choicesSha256": "6cfb12521f6035858212b9a7b18bbcb34dd568ce432190042382088bffd69826"
+    },
+    {
+      "model": "KEUP011WW002",
+      "binding": "value:FMEDIAPORTRIGHT=2XGROMMETQC",
+      "runtimeValue": "2XGROMMETQC",
+      "supplierValue": "_2XGROMMETQC",
+      "english": "2x Plastic square grommet with round outlet diam.80",
+      "evidence": "KEUP011WW002-cb3314bb4bf7fe8c.json",
+      "articleSha256": "fe58163f7c6322812d0237efc4b84540df2f80b5db9b683a6c2b4dc983cdb8ea",
+      "choicesSha256": "6cfb12521f6035858212b9a7b18bbcb34dd568ce432190042382088bffd69826"
+    },
+    {
+      "model": "KLEV026WW002",
+      "binding": "value:FPRICEGROUPPANEL=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KLEV026WW002-0360dfb776ac0974.json",
+      "articleSha256": "126bbb7d39c754eb75270b6201f54733763d279c07ff556f821968e6018f1555",
+      "choicesSha256": "9af2339b8dd28a71f804d52dfbf6227b1e4a2611beb54c4567a1cff6266613a8"
+    },
+    {
+      "model": "KLEV026WW002",
+      "binding": "value:FPANELACCESSORIES=2XORGANIZERBOX",
+      "runtimeValue": "2XORGANIZERBOX",
+      "supplierValue": "_2XORGANIZERBOX",
+      "english": "2x Organization box",
+      "evidence": "KLEV026WW002-c9c54c6cad1decfb.json",
+      "articleSha256": "117a36339bfd07c28a098740e224fde35aae06b6c40be64fb4ad40e0d40e83d9",
+      "choicesSha256": "0e0ebb7a6310df8f4dfa44515b055b778e0e15d6ce5765da7df6030cdbb6f15c"
+    },
+    {
+      "model": "KLEV026WW002",
+      "binding": "value:FPEDESTAL=2XSUS2DRAWERFELTORG",
+      "runtimeValue": "2XSUS2DRAWERFELTORG",
+      "supplierValue": "_2XSUS2DRAWERFELTORG",
+      "english": "2x Suspended with two drawers, felt organizer",
+      "evidence": "KLEV026WW002-c9c54c6cad1decfb.json",
+      "articleSha256": "117a36339bfd07c28a098740e224fde35aae06b6c40be64fb4ad40e0d40e83d9",
+      "choicesSha256": "0e0ebb7a6310df8f4dfa44515b055b778e0e15d6ce5765da7df6030cdbb6f15c"
+    },
+    {
+      "model": "KLYN002WW002",
+      "binding": "value:CPRICEGROUP=3",
+      "runtimeValue": "3",
+      "supplierValue": "_3",
+      "english": "3",
+      "evidence": "KLYN002WW002-0d395c98c4c01f9a.json",
+      "articleSha256": "747e9cbe4f3ccf6c6dfb1c5f19562c596cacb4f60e2b43be5bb6bfb0f93d3d21",
+      "choicesSha256": "0447b6be70e53ecc732ec1a297ecd2390d6c947137a1e5111e10ae9639c1a62a"
+    },
+    {
+      "model": "KLYN002WW002",
+      "binding": "value:CPRICEGROUP=5",
+      "runtimeValue": "5",
+      "supplierValue": "_5",
+      "english": "5",
+      "evidence": "KLYN002WW002-165545e2a776de4e.json",
+      "articleSha256": "8d8c489590ed01dc4d77d78c3f08fa28e51068ff7683644280ebf6a542540cd1",
+      "choicesSha256": "51d43018e70c441f0ac487a2c0f5619b77fe37d841c0d4b8f9ad1fd734e8b09a"
+    },
+    {
+      "model": "KPW2018WW002",
+      "binding": "value:FPRICEGROUPPANEL=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KPW2018WW002-e54a81ff85c18776.json",
+      "articleSha256": "55a5bd9486c62d345049ce239bb2edf7310464c0a5b69a61d106988c1a7c1c4d",
+      "choicesSha256": "58f4c61549ed6eeb48c1dafb47ea5e32564630b852f711f0c966e5f108865783"
+    },
+    {
+      "model": "KPW2020WW002",
+      "binding": "value:FPRICEGROUPPANEL=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KPW2020WW002-71d95d37cfc4de91.json",
+      "articleSha256": "8d66952c1ec98ef439a9b18dd43b13df1562e6ae435784037f2577fda8213fb5",
+      "choicesSha256": "05f444c51fd4593ca9579433e4cb716908e4eab644200985dcbb28e67f46f18e"
+    },
+    {
+      "model": "KPW2020WW002",
+      "binding": "value:FPRICEGROUPPANELSIDE=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KPW2020WW002-71d95d37cfc4de91.json",
+      "articleSha256": "8d66952c1ec98ef439a9b18dd43b13df1562e6ae435784037f2577fda8213fb5",
+      "choicesSha256": "05f444c51fd4593ca9579433e4cb716908e4eab644200985dcbb28e67f46f18e"
+    },
+    {
+      "model": "KSQA126WW001",
+      "binding": "value:FPRICEGROUPPAD=2",
+      "runtimeValue": "2",
+      "supplierValue": "_2",
+      "english": "2",
+      "evidence": "KSQA126WW001-cc4447011a0bf3f0.json",
+      "articleSha256": "baef9960b517ef2f6c3d6197b52be008fd4e861fc86b9d1d9b2a97e65b741be1",
+      "choicesSha256": "a24caec6696407c3179718cd6afdd114d90e8d03346676486981950ed80a8b4e"
+    },
+    {
+      "model": "KSQA127WW001",
+      "binding": "value:FPRICEGROUPPANELUPPER=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KSQA127WW001-304460749346bd96.json",
+      "articleSha256": "dbbf105752e74dc06dc79e2de7ab0696f4d8c2d64fa179e40aefad8867a09ebb",
+      "choicesSha256": "9ab5c6ddf1eed15f947d3c7c45cfac30cfb5e7887c3611738adc50273d6ffc0f"
+    },
+    {
+      "model": "KSQA128WW001",
+      "binding": "value:FPRICEGROUPPAD=2",
+      "runtimeValue": "2",
+      "supplierValue": "_2",
+      "english": "2",
+      "evidence": "KSQA128WW001-97b679fd7d03c6c6.json",
+      "articleSha256": "d4f6ebc67810ed07fe447ffdd02584f98d5717a2f51d686091893b78d1798ac6",
+      "choicesSha256": "50dd01a785c8027446e5ef52b51f6daef20597a0e04a304bf2f585f47ee1739f"
+    },
+    {
+      "model": "KSQA153WW001",
+      "binding": "value:FPRICEGROUPPANELUPPER=1",
+      "runtimeValue": "1",
+      "supplierValue": "_1",
+      "english": "1",
+      "evidence": "KSQA153WW001-c40b2ec171293c5e.json",
+      "articleSha256": "b7595d9e0fe2ed205c3e04f7e166030b7749b2258d25bc1313a8025cbc1323d6",
+      "choicesSha256": "85bd3547c66bdee2bb43d77d4cc94b6cf3ff30d444f5264c1393b34b643afefe"
+    },
+    {
+      "model": "KSQA154WW001",
+      "binding": "value:FPRICEGROUPPANELUPPER=1",
+      "runtimeValue": "1",
+      "supplierValue": "_1",
+      "english": "1",
+      "evidence": "KSQA154WW001-a32cda370f19428f.json",
+      "articleSha256": "b9631e61d597a2a1808f1cc141a45610e97d883a3e50e96ea204ec1574603c16",
+      "choicesSha256": "aaf9f06bd2969ed377203a4192b98c315ff2f663c9b1f2d106252efc7c8c562a"
+    },
+    {
+      "model": "KSQA155WW001",
+      "binding": "value:FPRICEGROUPPANELUPPER=1",
+      "runtimeValue": "1",
+      "supplierValue": "_1",
+      "english": "1",
+      "evidence": "KSQA155WW001-8df3b381571b7552.json",
+      "articleSha256": "9a273f7e64d0a90eb43184923344dace140bb81c291ff1e156f2f35693c4aa3d",
+      "choicesSha256": "d85c97a03d82fdd6fc42760a8e1a8291dbf2ce1784f1e78d2ec9e4978ad106be"
+    },
+    {
+      "model": "KSQA160WW001",
+      "binding": "value:FPRICEGROUPPAD=2",
+      "runtimeValue": "2",
+      "supplierValue": "_2",
+      "english": "2",
+      "evidence": "KSQA160WW001-d3e8b36b0d79e546.json",
+      "articleSha256": "8f2acd99c80107436312dde95ca602acb9c0836b8c3843a196c75d346264e9de",
+      "choicesSha256": "097194558ac5fc01474e529304ecc23fd6d4d2d814b13429ed287181dd9ca51c"
+    },
+    {
+      "model": "KSQA176WW001",
+      "binding": "value:DSEATWIDTH=1600",
+      "runtimeValue": "1600",
+      "supplierValue": "_1600",
+      "english": "1600 mm",
+      "evidence": "KSQA176WW001-0d4738506cb05241.json",
+      "articleSha256": "a3706581f067e3c01ab9432b8b753a0e49f051b2b6358b80d2ce7606e95df5d7",
+      "choicesSha256": "c65a0a37ed04c28f1301f4c35d59d63137c9bc38732d72269aefda1fb8d3550e"
+    },
+    {
+      "model": "KSQA176WW001",
+      "binding": "value:DSEATWIDTH=1800",
+      "runtimeValue": "1800",
+      "supplierValue": "_1800",
+      "english": "1800 mm",
+      "evidence": "KSQA176WW001-841fedd9a0900be9.json",
+      "articleSha256": "34fb94d1ad36dacab14c55135f6ac8e5cfa3300b1472cc1a920ac61d47e17598",
+      "choicesSha256": "907c98876ae0c474efbaf335a9cde345bf0c9b4593a8956c8bb562e9371eb22c"
+    },
+    {
+      "model": "KSQA176WW001",
+      "binding": "value:CPRICEGROUPCUSHION=4",
+      "runtimeValue": "4",
+      "supplierValue": "_4",
+      "english": "4",
+      "evidence": "KSQA176WW001-841fedd9a0900be9.json",
+      "articleSha256": "34fb94d1ad36dacab14c55135f6ac8e5cfa3300b1472cc1a920ac61d47e17598",
+      "choicesSha256": "907c98876ae0c474efbaf335a9cde345bf0c9b4593a8956c8bb562e9371eb22c"
+    },
+    {
+      "model": "KTAU002WW002",
+      "binding": "value:CFRAMEWOODCOLOR=1007",
+      "runtimeValue": "1007",
+      "supplierValue": "_1007",
+      "english": "1.007 Beech 0C",
+      "evidence": "KTAU002WW002-b26b83537ff3d84e.json",
+      "articleSha256": "a4c458d210e85913096dbe26d7346314d174b5d74ccb7b0b28d0bccef5227c94",
+      "choicesSha256": "b1d8c3e854eb65b03b8d518eb9942086b14df1d45e7be5ddfc098d41c80a0bbd"
+    },
+    {
+      "model": "KTAU002WW002",
+      "binding": "value:CSHELLWOODCOLOR=1007",
+      "runtimeValue": "1007",
+      "supplierValue": "_1007",
+      "english": "1.007 Beech 0C",
+      "evidence": "KTAU002WW002-b26b83537ff3d84e.json",
+      "articleSha256": "a4c458d210e85913096dbe26d7346314d174b5d74ccb7b0b28d0bccef5227c94",
+      "choicesSha256": "b1d8c3e854eb65b03b8d518eb9942086b14df1d45e7be5ddfc098d41c80a0bbd"
+    },
+    {
+      "model": "KTAU002WW003",
+      "binding": "value:CPRICEGROUP=2",
+      "runtimeValue": "2",
+      "supplierValue": "_2",
+      "english": "2",
+      "evidence": "KTAU002WW003-a46c5bf15a0a8b82.json",
+      "articleSha256": "633a26e02b729ddc0293184e800cc985d386b0c9915167a141b51122cfe83d45",
+      "choicesSha256": "c292fe28b55b01bb4c139a7cf08884b8531a10bc5e762491ca0996aa3879dfb3"
+    },
+    {
+      "model": "KTAU002WW003",
+      "binding": "value:CFRAMEWOODCOLOR=1007",
+      "runtimeValue": "1007",
+      "supplierValue": "_1007",
+      "english": "1.007 Beech 0C",
+      "evidence": "KTAU002WW003-a46c5bf15a0a8b82.json",
+      "articleSha256": "633a26e02b729ddc0293184e800cc985d386b0c9915167a141b51122cfe83d45",
+      "choicesSha256": "c292fe28b55b01bb4c139a7cf08884b8531a10bc5e762491ca0996aa3879dfb3"
+    },
+    {
+      "model": "KXI2001WW003",
+      "binding": "value:DTOPTHICKNESS=25",
+      "runtimeValue": "25",
+      "supplierValue": "_25",
+      "english": "25 mm",
+      "evidence": "KXI2001WW003-e52b9891db868d9c.json",
+      "articleSha256": "f22f83fa838ccef19177a93868b0f06f2c0a0486b68bcf8776d7afe40a4e2a69",
+      "choicesSha256": "105631909d7c3f0a5df849d1db40cc54551ee2f6394c29ca6878a7a911efd8a4"
+    },
+    {
+      "model": "KXI2002WW002",
+      "binding": "value:DTOPTHICKNESS=25",
+      "runtimeValue": "25",
+      "supplierValue": "_25",
+      "english": "25 mm",
+      "evidence": "KXI2002WW002-43530578b68c4418.json",
+      "articleSha256": "7a67fa7ec907266058b02098595fbd1bcaabf1ce3c89fa9d21447b0ca01bb753",
+      "choicesSha256": "8d7cca99d4a10a9a421fed434fb972ccdc72f672fc928e8afb957d7667233061"
+    },
+    {
+      "model": "KXI2002WW002",
+      "binding": "value:FMEDIAPORTLEFT=2XOUTLETSQUARE9090",
+      "runtimeValue": "2XOUTLETSQUARE9090",
+      "supplierValue": "_2XOUTLETSQUARE9090",
+      "english": "2x Plastic, square grommet, 90x90 mm",
+      "evidence": "KXI2002WW002-43530578b68c4418.json",
+      "articleSha256": "7a67fa7ec907266058b02098595fbd1bcaabf1ce3c89fa9d21447b0ca01bb753",
+      "choicesSha256": "8d7cca99d4a10a9a421fed434fb972ccdc72f672fc928e8afb957d7667233061"
+    },
+    {
+      "model": "KXI2002WW002",
+      "binding": "value:FMEDIAPORTRIGHT=2XOUTLETSQUARE9090",
+      "runtimeValue": "2XOUTLETSQUARE9090",
+      "supplierValue": "_2XOUTLETSQUARE9090",
+      "english": "2x Plastic, square grommet, 90x90 mm",
+      "evidence": "KXI2002WW002-43530578b68c4418.json",
+      "articleSha256": "7a67fa7ec907266058b02098595fbd1bcaabf1ce3c89fa9d21447b0ca01bb753",
+      "choicesSha256": "8d7cca99d4a10a9a421fed434fb972ccdc72f672fc928e8afb957d7667233061"
+    },
+    {
+      "model": "KXI2002WW002",
+      "binding": "value:FHADJUSTMENTWAY=2XHANDSET",
+      "runtimeValue": "2XHANDSET",
+      "supplierValue": "_2XHANDSET",
+      "english": "2x control panel with up&down buton",
+      "evidence": "KXI2002WW002-43530578b68c4418.json",
+      "articleSha256": "7a67fa7ec907266058b02098595fbd1bcaabf1ce3c89fa9d21447b0ca01bb753",
+      "choicesSha256": "8d7cca99d4a10a9a421fed434fb972ccdc72f672fc928e8afb957d7667233061"
+    },
+    {
+      "model": "KXI2002WW002",
+      "binding": "value:FCOLUMN=3SQUARE7070",
+      "runtimeValue": "3SQUARE7070",
+      "supplierValue": "_3SQUARE7070",
+      "english": "Square (70x70 mm) - three-segment",
+      "evidence": "KXI2002WW002-43530578b68c4418.json",
+      "articleSha256": "7a67fa7ec907266058b02098595fbd1bcaabf1ce3c89fa9d21447b0ca01bb753",
+      "choicesSha256": "8d7cca99d4a10a9a421fed434fb972ccdc72f672fc928e8afb957d7667233061"
+    },
+    {
+      "model": "KXI2002WW002",
+      "binding": "value:FMEDIAPORTLEFT=2XOUTLETOVAL",
+      "runtimeValue": "2XOUTLETOVAL",
+      "supplierValue": "_2XOUTLETOVAL",
+      "english": "2x Plastic, oval grommet",
+      "evidence": "KXI2002WW002-e729b4fc2626dd87.json",
+      "articleSha256": "cdaecdb05e2446ec502794027a8cc9b64c31c717843a11d9de7624f55e2b84ec",
+      "choicesSha256": "8878d9085dfd17ee3331ed94f0c3a27035ff49537c9405c781d5d00810acd3fc"
+    },
+    {
+      "model": "KXI2002WW002",
+      "binding": "value:FMEDIAPORTRIGHT=2XOUTLETOVAL",
+      "runtimeValue": "2XOUTLETOVAL",
+      "supplierValue": "_2XOUTLETOVAL",
+      "english": "2x Plastic, oval grommet",
+      "evidence": "KXI2002WW002-e729b4fc2626dd87.json",
+      "articleSha256": "cdaecdb05e2446ec502794027a8cc9b64c31c717843a11d9de7624f55e2b84ec",
+      "choicesSha256": "8878d9085dfd17ee3331ed94f0c3a27035ff49537c9405c781d5d00810acd3fc"
+    },
+    {
+      "model": "KXI2002WW002",
+      "binding": "value:FHADJUSTMENTWAY=2XCONTROLPANEL",
+      "runtimeValue": "2XCONTROLPANEL",
+      "supplierValue": "_2XCONTROLPANEL",
+      "english": "2x control panel with display and memory function",
+      "evidence": "KXI2002WW002-e729b4fc2626dd87.json",
+      "articleSha256": "cdaecdb05e2446ec502794027a8cc9b64c31c717843a11d9de7624f55e2b84ec",
+      "choicesSha256": "8878d9085dfd17ee3331ed94f0c3a27035ff49537c9405c781d5d00810acd3fc"
+    },
+    {
+      "model": "KXI2002WW002",
+      "binding": "value:FCOLUMN=3RECTANGULAR9060",
+      "runtimeValue": "3RECTANGULAR9060",
+      "supplierValue": "_3RECTANGULAR9060",
+      "english": "Rectangular (90x60 mm) - three-segment",
+      "evidence": "KXI2002WW002-e729b4fc2626dd87.json",
+      "articleSha256": "cdaecdb05e2446ec502794027a8cc9b64c31c717843a11d9de7624f55e2b84ec",
+      "choicesSha256": "8878d9085dfd17ee3331ed94f0c3a27035ff49537c9405c781d5d00810acd3fc"
+    },
+    {
+      "model": "KXI2013WW002",
+      "binding": "value:FCOLUMN=2SQUARE7070",
+      "runtimeValue": "2SQUARE7070",
+      "supplierValue": "_2SQUARE7070",
+      "english": "Square (70x70 mm) - two-segment",
+      "evidence": "KXI2013WW002-6872be53c9050f19.json",
+      "articleSha256": "4fcee0e6a1b9f094fdc9a0f98209f3431b2ab684e19b6a06ec6a1fbc67a2c74f",
+      "choicesSha256": "b2a30f45a0dde8f5e4e92d47bcefca61f31ca10deab98627988669615b8b4552"
+    },
+    {
+      "model": "KVAP008WW001",
+      "binding": "value:CSHELLWOODCOLOR=1007",
+      "runtimeValue": "1007",
+      "supplierValue": "_1007",
+      "english": "1.007 Beech 0C",
+      "evidence": "finish-evidence-v81/KVAP008WW001-677f34eb5bcb9ff6.json",
+      "articleSha256": "c059e1825368a065d1dac3332b9f241d071b972da9c63b202a23bb61790dc55a",
+      "choicesSha256": "9759564847fcfa530a5a1afe358200703c5ddb6deddb3915dd59495449e343a2"
     }
   ]
 }

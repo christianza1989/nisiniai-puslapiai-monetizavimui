@@ -38,9 +38,9 @@ function disposeObject(root:Object3D){
   const materials=new Set<Material>(),textures=new Set<Texture>();root.traverse(o=>{if(o instanceof Mesh){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});
   materials.forEach(m=>{if(m instanceof MeshStandardMaterial)for(const texture of [m.map,m.normalMap,m.roughnessMap,m.metalnessMap])if(texture)textures.add(texture);m.dispose();});textures.forEach(t=>t.dispose());
 }
-type RenderContext={element:HTMLCanvasElement;renderer:WebGLRenderer;environments:Map<SceneSettings['lighting'],ProductEnvironment>;models:ViewerModelCache;retired:(()=>void)[];shadowPreparation?:Promise<()=>void>};
+type RenderContext={element:HTMLCanvasElement;renderer:WebGLRenderer;environments:Map<SceneSettings['lighting'],ProductEnvironment>;models:ViewerModelCache;deskMaterials:Map<string,ReturnType<typeof createDeskColorMaterials>>;retired:(()=>void)[];shadowPreparation?:Promise<()=>void>};
 function disposeContext(context:RenderContext){
- context.retired.splice(0).forEach(dispose=>dispose());context.models.clear();
+ context.retired.splice(0).forEach(dispose=>dispose());context.models.clear();context.deskMaterials.forEach(materials=>materials.dispose());context.deskMaterials.clear();
  context.environments.forEach(environment=>environment.dispose());context.environments.clear();
  void context.shadowPreparation?.then(dispose=>dispose(),()=>{});context.renderer.dispose();
 }
@@ -76,7 +76,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
     const abort=new AbortController(),scene=new Scene();scene.background=new Color(productSceneSettings.color);
     setState('loading');
     try{
-      if(renderContext.current?.element!==element){if(renderContext.current)disposeContext(renderContext.current);renderContext.current={element,renderer:new WebGLRenderer({canvas:element,antialias:true,alpha:false,powerPreference:'high-performance'}),environments:new Map(),models:new ViewerModelCache(),retired:[]};}
+      if(renderContext.current?.element!==element){if(renderContext.current)disposeContext(renderContext.current);renderContext.current={element,renderer:new WebGLRenderer({canvas:element,antialias:true,alpha:false,powerPreference:'high-performance'}),environments:new Map(),models:new ViewerModelCache(),deskMaterials:new Map(),retired:[]};}
       renderer=renderContext.current.renderer;
     }
     catch{setState('error');return;}
@@ -221,7 +221,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         context.shadowPreparation??=prepareContactShadow(renderer!,scene);await context.shadowPreparation;if(disposed)return;
         disposeShadow=contactShadow(renderer!,scene,object,!!chairColors.current);
         roomSurfaces=productShowroom(object,light);scene.add(roomSurfaces.group,roomSurfaces.target);applyScene();applyFinishes.current();
-        if(deskColors.current){colorMaterials=createDeskColorMaterials(deskColors.current.source);colorApplication=createDeskColorApplication(object);
+        if(deskColors.current){const materialKey=JSON.stringify(deskColors.current.source);colorMaterials=context.deskMaterials.get(materialKey);if(!colorMaterials){colorMaterials=createDeskColorMaterials(deskColors.current.source);context.deskMaterials.set(materialKey,colorMaterials);}colorApplication=createDeskColorApplication(object);
           applyDeskColors.current=async()=>{if(!deskColors.current||!colorApplication||!colorMaterials||disposed)return;const revision=++colorRevision;colorFailed=false;setColorState('loading');try{const applied=await colorApplication.apply(deskColors.current.plan,colorMaterials.get);if(applied&&!disposed&&revision===colorRevision){renderer!.shadowMap.needsUpdate=true;render();setColorState('ready');}}catch{if(!disposed&&revision===colorRevision){colorFailed=true;setColorState('error');setState('error');}}};
           await applyDeskColors.current();
           if(colorFailed)return;
@@ -251,11 +251,11 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         }else setColorState('original');
         if(disposed)return;await prepareViewerTextures(renderer!,scene,abort.signal);if(disposed)return;
         await renderer!.compileAsync(scene,camera);if(disposed)return;
-        initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');context.retired.splice(0).forEach(dispose=>dispose());
+        initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');context.retired.splice(0).forEach(dispose=>dispose());while(context.deskMaterials.size>2){const key=context.deskMaterials.keys().next().value!;context.deskMaterials.get(key)!.dispose();context.deskMaterials.delete(key);}
       }catch{if(!disposed&&!abort.signal.aborted)setState('error');}
     })();
     return()=>{disposed=true;colorRevision++;applyDeskColors.current=async()=>{};applyChairColors.current=async()=>{};abort.abort();observer.disconnect();element.removeEventListener('webglcontextlost',contextLost);element.removeEventListener('dblclick',inspectPointer);
-      controls.removeEventListener('change',render);releasePageScroll();controls.dispose();context.retired.splice(0).forEach(dispose=>dispose());context.retired.push(()=>{colorApplication?.dispose();colorMaterials?.dispose();chairApplication?.dispose();chairMaterials?.dispose();disposeShadow?.();legacyChairApplication?.dispose();for(const group of chairExtras.values()){group.removeFromParent();disposeObject(group);}chairExtras.clear();disposeObject(scene);if(object&&!object.parent)disposeObject(object);textures.forEach(t=>t.dispose());originals.forEach(t=>{t.map?.dispose();t.normal?.dispose();});light.shadow.dispose();});action.current=()=>{};applyFinishes.current=()=>{};};
+      controls.removeEventListener('change',render);releasePageScroll();controls.dispose();context.retired.splice(0).forEach(dispose=>dispose());context.retired.push(()=>{colorApplication?.dispose();chairApplication?.dispose();chairMaterials?.dispose();disposeShadow?.();legacyChairApplication?.dispose();for(const group of chairExtras.values()){group.removeFromParent();disposeObject(group);}chairExtras.clear();disposeObject(scene);if(object&&!object.parent)disposeObject(object);textures.forEach(t=>t.dispose());originals.forEach(t=>{t.map?.dispose();t.normal?.dispose();});light.shadow.dispose();});action.current=()=>{};applyFinishes.current=()=>{};};
   },[geometryKey,attempt,avoidToolbarOverlap,activated]);
   useEffect(()=>{const context=renderContext.current;return()=>{if(context){disposeContext(context);if(renderContext.current===context)renderContext.current=undefined;}};},[attempt,activated]);
   return <div className="viewer-3d" data-state={state} data-color-state={colorState} data-variant={variant.id}>

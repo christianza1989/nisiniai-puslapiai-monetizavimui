@@ -41,3 +41,12 @@ test('new shared storage is stable across model insertion order and never uses r
  const b=createRuntimeTextSharing({B:model('kedes'),A:model('kedes')},{},originals,key).target('kedes','runtime:B:'+binding)!;
  assert.deepEqual(a,b);assert.match(a.key,/^shared-runtime:chairs:/);assert.notEqual(a.sourceHash,localDef.sourceHash);
 });
+test('missing model original uses only an unambiguous exact-field reference in the same furniture category',()=>{
+ const models={A:model('kedes',{[binding]:def.id}),B:model('kedes'),C:model('rasomieji-stalai-ir-darbo-vietos')};
+ const sharing=createRuntimeTextSharing(models,{[def.id]:def},{A:{[binding]:original}},key);
+ assert.equal(sharing.target('kedes','runtime:B:'+binding)?.key,def.id);
+ assert.equal(sharing.target('rasomieji-stalai-ir-darbo-vietos','runtime:C:'+binding),undefined);
+ const conflict=createRuntimeTextSharing({...models,D:model('kedes')},{[def.id]:def},{A:{[binding]:original},D:{[binding]:'Different base'}},key);
+ assert.equal(conflict.target('kedes','runtime:B:'+binding),undefined);
+ assert.equal(sharing.target('kedes','runtime:B:value:CFRAME=FIVE'),undefined);
+});

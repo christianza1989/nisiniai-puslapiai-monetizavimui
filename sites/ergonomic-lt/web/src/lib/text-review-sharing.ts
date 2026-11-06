@@ -11,7 +11,7 @@ const groupFor=(category:string):Group=>category==='rasomieji-stalai-ir-darbo-vi
 // Identity stays model-specific. Only the storage key is shared, and only when
 // category, exact field/value and a captured, meaningful original all agree.
 export function createRuntimeTextSharing(models:Record<string,Model>,terms:Record<string,TextDefinition>,originals:Record<string,Record<string,string>>,inventoryKey:(category:string,id:string)=>string){
- const contexts=new Map<string,{ids:Set<string>;models:Set<string>}>(),byRuntime=new Map<string,string>();
+ const contexts=new Map<string,{ids:Set<string>;models:Set<string>}>(),byRuntime=new Map<string,string>(),references=new Map<string,Set<string>>();
  for(const[model,meta]of Object.entries(models)){
   const group:Group=meta.path.startsWith('/produktai/rasomieji-stalai-ir-darbo-vietos/')?'desks':'chairs';
   for(const[binding,english]of Object.entries(originals[model]||{})){
@@ -21,6 +21,7 @@ export function createRuntimeTextSharing(models:Record<string,Model>,terms:Recor
    const context=JSON.stringify([group,binding,meaning]),row=contexts.get(context)||{ids:new Set<string>(),models:new Set<string>()};
    const id=meta.bindings[binding];if(id&&terms[id])row.ids.add(id);
    row.models.add(model);contexts.set(context,row);byRuntime.set('runtime:'+model+':'+binding,context);
+   const referenceKey=JSON.stringify([group,binding]),meanings=references.get(referenceKey)||new Set<string>();meanings.add(context);references.set(referenceKey,meanings);
   }
  }
  const targets=new Map<string,Target>();
@@ -31,7 +32,19 @@ export function createRuntimeTextSharing(models:Record<string,Model>,terms:Recor
   targets.set(id,def?{key:inventoryKey(group==='desks'?'rasomieji-stalai-ir-darbo-vietos':'kedes',existing),sourceHash:def.sourceHash,affected:row.models.size}:{key:'shared-runtime:'+group+':'+hash(context),sourceHash:hash(context),affected:row.models.size});
  }
  return {
-  target(category:string,id:string){const t=targets.get(id);return t&&JSON.parse(byRuntime.get(id)!)[0]===groupFor(category)?t:undefined;},
+  target(category:string,id:string){
+   const group=groupFor(category),own=byRuntime.get(id),match=id.match(/^runtime:([^:]+):((?:field:|value:).+)$/);
+   if(!match||!models[match[1]])return;
+   const modelGroup=models[match[1]].path.startsWith('/produktai/rasomieji-stalai-ir-darbo-vietos/')?'desks':'chairs';if(modelGroup!==group)return;
+   if(own)return JSON.parse(own)[0]===group?targets.get(id):undefined;
+   // Missing per-model originals can inherit an exact field/value reference
+   // only if all captured originals in that furniture group agree. The UI
+   // continues to identify this as a reference, not a model-specific original.
+   const refs=references.get(JSON.stringify([group,match[2]]));if(refs?.size!==1)return;
+   const context=[...refs][0],row=contexts.get(context)!;if(row.ids.size>1)return;
+   const existing=[...row.ids][0],def=terms[existing];
+   return def?{key:inventoryKey(category,existing),sourceHash:def.sourceHash,affected:row.models.size+(row.models.has(match[1])?0:1)}:{key:'shared-runtime:'+group+':'+hash(context),sourceHash:hash(context),affected:row.models.size+(row.models.has(match[1])?0:1)};
+  },
  };
 }
 

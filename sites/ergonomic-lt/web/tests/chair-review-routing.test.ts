@@ -67,7 +67,7 @@ test('same chair code or finish does not authorize a different runtime or any of
 
 test('HIGH NONE bases keep their distinct HIGH runtime and exact derived heights',()=>{
  const high=reviewRegistry.entries.find(e=>e.code==='KSEG003WW001')! as ChairReviewEntry;
- assert.deepEqual(chairConstructionMenus(high,'HIGH_NONE_TS25')!.bases,[{id:'HIGH_NONE',label:'TS34BL'},{id:'HIGH_NONE_TS25',label:'TS25'}]);
+ assert.deepEqual(chairConstructionMenus(high,'HIGH_NONE_TS25')!.bases,[{id:'HIGH_NONE',label:'TS34BL'},{id:'HIGH_NONE_TS25',label:'TS25'},{id:'HIGH_NONE_ST61POLBL',label:'ST61POLBL'}]);
  assert.equal(chairConstructionMenus(high,'HIGH_NONE_TS25')!.armId,'HIGH_NONE');
  assert.deepEqual(chairConstructionMenus(high,'default')!.bases,[{id:'default',label:'TS34BL'}]);
  const route=chairReviewRoute(high,'HIGH_NONE_TS25','default');

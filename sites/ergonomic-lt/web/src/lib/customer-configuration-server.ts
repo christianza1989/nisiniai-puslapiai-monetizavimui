@@ -21,6 +21,9 @@ import {customerGltfDocument} from './customer-glb';
 import {palettes as sourcePalettes} from './expanded-configurator';
 import {textReviewProposalPreview} from './text-review-state';
 import {customerConfigurationRevisionSource} from './customer-configuration-revision';
+import {supplierOptions,configurationOptionLabel} from './configuration-labels';
+import {reviewedSpecificationRows} from './reviewed-specification-rows';
+import {selectedTextReviewProduct} from './text-review-product';
 const textile=new Set(['CSE','MT','RX','SD','SC','SY','ST','CN','ME','CUR','ERA','X','YS','YB']);
 
 export async function customerContext(p:Product,input?:CustomerState['state']){
@@ -48,7 +51,8 @@ export async function customerConfiguration(product:Product,token?:string,change
  if(!resolved&&context.family)state=context.engine.initialStateForProduct(product);
  let materialControls=state?await customerChairControls(product,context,state):[];
  if(change){if(!state)throw Error('Parinktys nepasiekiamos.');const group=materialControls.find(c=>ids.field(c.id)===change.field);if(group){const option=group.options.find(o=>ids.choice(group.id,o.id)===change.value);if(!option)throw Error('Nepatvirtintas medžiagos pasirinkimas.');state=option.state;}else{const hidden=new Set(materialControls.flatMap(c=>c.hiddenFields)),domains=Object.fromEntries(Object.entries(visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state))).filter(([field])=>!hidden.has(field)));const native=resolveCustomerChange(domains,ids,change);state=context.engine.changeField(state,native.field,native.value);}materialControls=await customerChairControls(product,context,state);}
- const selected=state?context.engine.expandedSelection(product,state):undefined,review=await buildReviewScope(product,undefined,context.runtime),model=selected?.configuration.code||product.configurations.find(c=>c.id===scope.sample)?.code||'';
+ const selected=state?context.engine.expandedSelection(product,state):undefined,model=selected?.configuration.code||product.configurations.find(c=>c.id===scope.sample)?.code||'';
+ const review=await buildReviewScope(selectedTextReviewProduct(product,model),undefined,context.runtime);
  const codes=customerProductCodes(product);for(const[field,value]of Object.entries(state?.values||{})){codes.add(field);codes.add(value);}
  for(const key of Object.keys(inventoryModels()[model]?.bindings||{}))if(key.startsWith('name:'))codes.add(key.slice(5));
  const hiddenMaterialFields=new Set(materialControls.flatMap(c=>c.hiddenFields)),allChoices=state?visibleDeskPreviewChoices(context.engine.catalog.catalogForProduct(product),context.engine.stateChoices(state)):{},choices=Object.fromEntries(Object.entries(allChoices).filter(([field])=>!hiddenMaterialFields.has(field)));
@@ -104,7 +108,9 @@ export async function customerConfiguration(product:Product,token?:string,change
   ...(selected?.configuration.details||preset?.details||[]),
   ...(!article?.configurable?article?.technicalSections.flatMap(section=>section.rows)||[]:[]),
  ];
- for(const row of supplementalRows){
+ const selectedValues=state?.values||Object.fromEntries((preset?supplierOptions(preset):[]).flatMap(option=>{const index=option.indexOf('=');return index<0?[]:[[option.slice(0,index).split('.').at(-1)!,option.slice(index+1)]];}));
+ const reviewedRows=reviewedSpecificationRows(supplementalRows,selectedValues,field=>[published(field),configurationOptionLabel(field),fieldLabels[field]].filter((label):label is string=>!!label),published);
+ for(const row of reviewedRows){
   const label=customerLabel(row.label,codes,'');
   const value=customerLabel(row.value,codes,'');
   if(label&&value&&!details.some(detail=>detail.label.toLowerCase()===label.toLowerCase())){

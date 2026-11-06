@@ -1,7 +1,6 @@
 'use client';
 
 // editorial-copy-wired
-import {copyText,copyValue} from '@/lib/editorial-copy';
 import {useEffect,useId,useRef,useState,type CSSProperties,type KeyboardEvent} from 'react';
 import {ChevronDown,Check,ImageOff} from 'lucide-react';
 
@@ -49,11 +48,11 @@ export default function FinishSelect({label,value,options,onChange}:{label:strin
  return <div className="finish-select" ref={root}>
   <span id={id+'-label'} className="finish-select-label">{label}</span>
   <button ref={button} type="button" className="finish-select-trigger" role="combobox" aria-labelledby={id+'-label'} aria-expanded={open} aria-controls={id+'-list'} aria-haspopup="listbox" aria-activedescendant={open?id+'-option-'+active:undefined} onKeyDown={key} onClick={()=>setOpen(v=>!v)} onBlur={e=>{if(!root.current?.contains(e.relatedTarget))setOpen(false);}}>
-   {selected&&<><Sample option={selected}/><span>{copyValue(selected.label)}</span></>}<ChevronDown size={16} aria-hidden="true"/>
+   {selected&&<><Sample option={selected}/><span>{selected.label}</span></>}<ChevronDown size={16} aria-hidden="true"/>
   </button>
   {open&&<div className="finish-select-list" ref={list} style={placement} id={id+'-list'} role="listbox" aria-labelledby={id+'-label'}>
    {options.map((option,index)=><div key={option.value} id={id+'-option-'+index} role="option" aria-selected={option.value===value} className={'finish-select-option'+(active===index?' active':'')} onPointerDown={e=>e.preventDefault()} onClick={()=>choose(index)} onMouseEnter={()=>setActive(index)}>
-    <Sample option={option}/><span>{copyValue(option.label)}</span>{option.value===value&&<Check size={16} aria-hidden="true"/>}
+    <Sample option={option}/><span>{option.label}</span>{option.value===value&&<Check size={16} aria-hidden="true"/>}
    </div>)}
   </div>}
  </div>;

@@ -3,6 +3,7 @@ import materials from'../../content/text-review-material-references.json';
 import inventory from'../../content/text-review-inventory.json';
 import aliases from'../../content/manufacturer-runtime-aliases.json';
 import{isColourField}from'./colour-fields';
+import{configurationOptionLabel}from'./configuration-labels';
 const models:Record<string,Record<string,string>>=Object.fromEntries(Object.entries(inventory.models).map(([code])=>[code,{...(materials.models as Record<string,Record<string,string>>)[code],...(english.models as Record<string,Record<string,string>>)[code]}]));
 const canonical=new Map(aliases.rows.map(r=>[r.model+'|'+r.binding,r.supplierValue]));
 const references=new Map<string,Set<string>>();
@@ -17,4 +18,8 @@ export function originalColourName(model:string,field:string,value:string){
  const own=models[model]?.[binding]||models[model]?.[other];if(own)return own;
  const group=inventory.models[model as keyof typeof inventory.models]?.path.includes('/rasomieji-stalai-ir-darbo-vietos/')?'desks':'chairs',set=references.get(group+'|'+other)||references.get(group+'|'+binding);
  return set?.size===1?[...set][0]:undefined;
+}
+export function originalSelectedColourCaption(model:string,selected:Record<string,string>,label:string){
+ const names=Object.entries(selected).filter(([field])=>isColourField(field)&&configurationOptionLabel(field)===label).map(([field,value])=>originalColourName(model,field,value)||value);
+ return names.length?[...new Set(names)].join(' / '):undefined;
 }

@@ -38,6 +38,9 @@ export function preparedChairChoices(data:ChairPreview,s:PreparedChairSelection)
   for(const single of w.singles){const next={...s,observed:'original',qualified:{witness:w.id,kind:'single' as const,single:single.id,groups:{}}};try{preparedChairAssembly(data,next);finishOptions.push({key:'single:'+w.id+':'+single.id,values:single.values,selection:next});}catch{}}
  }
  const currentFinish=s.qualified?(s.qualified.kind==='single'?'single:'+s.qualified.witness+':'+s.qualified.single:'qualified:'+s.qualified.witness):s.observed==='original'?'original':'observed:'+s.observed;
+ // The active whole-finish caption must follow customized independent groups,
+ // rather than retain the witness's initial colours after a material change.
+ if(s.qualified?.kind==='groups'){const current=finishOptions.find(o=>o.key===currentFinish);if(current){current.values=preparedChairValues(data,s);current.selection=s;}}
  // Thousands of captured whole states may also be represented by the supplied
  // independent groups. Omit only a proven exact equivalent, never an unknown tuple.
  const compact=finishOptions.filter(option=>{

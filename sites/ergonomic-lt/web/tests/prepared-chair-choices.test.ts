@@ -13,3 +13,10 @@ test('the selected whole-finish caption follows an independent upholstery change
  const row=preparedChairChoices(d,s).find(r=>r.key==='finish-state')!,current=row.options.find(o=>o.key===row.current)!;
  assert.equal(current.values.CUPHCOLOR,'CSE02');assert.deepEqual(current.selection,s);
 });
+test('separate constructor controls select only a captured tuple and preserve other choices',()=>{
+ const d=structuredClone(source);d.runtime.contexts=['NONE','ARMS'].flatMap(arms=>['BLACK','WHITE'].map(colour=>({...structuredClone(source.runtime.contexts[0]),dimensions:{CARMRESTS:arms,CPLASTICCOLORVERSION:colour}})));
+ const s=initialPreparedChair(d,3,[]),rows=preparedChairChoices(d,s).filter(r=>r.key.startsWith('construction'));
+ assert.equal(rows.length,2);assert.equal(rows[0].fields.length,1);assert.equal(rows[0].options.length,2);
+ const arms=rows.find(r=>r.fields.includes('CARMRESTS'))!,next=arms.options.find(o=>o.key!==arms.current)!;
+ assert.equal(preparedChairValues(d,next.selection).CARMRESTS,'NONE');assert.equal(preparedChairValues(d,next.selection).CPLASTICCOLORVERSION,'WHITE');
+});

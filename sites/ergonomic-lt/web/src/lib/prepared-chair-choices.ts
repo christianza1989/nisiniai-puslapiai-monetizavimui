@@ -2,7 +2,18 @@ import {chairInitialContext,chairInitialVariants,chairInitialQualifiedSelection,
 import {qualifiedDefaultSelection,qualifiedWitnessMatches,qualifiedChairPlan} from './chair-qualified-colors';
 import {qualifiedChairMaterialControls} from './chair-material-groups';
 import type {PreparedChairSelection} from './prepared-chair-selection';
+import {independentFieldGroups} from './finite-choice-fields';
 export type PreparedChoice={key:string;fields:string[];options:{key:string;values:Record<string,string>;selection:PreparedChairSelection}[];current:string};
+function splitCapturedRow(row:PreparedChoice):PreparedChoice[]{
+ const fields=row.fields.filter(f=>new Set(row.options.map(o=>o.values[f])).size>1),keys=fields.length?fields:row.fields;
+ const key=(v:Record<string,string>,fs:string[])=>JSON.stringify(fs.map(f=>v[f]??null)),current=row.options.find(o=>o.key===row.current);
+ // Identical labels can still represent an original material versus an admitted
+ // replacement. Keep both states, rather than pretending they are interchangeable.
+ if(!current||new Set(row.options.map(o=>key(o.values,keys))).size!==row.options.length)return [{...row,fields:keys}];
+ const groups=independentFieldGroups(row.options.map(o=>o.values),keys);
+ if(groups.length===1)return [{...row,fields:keys}];
+ return groups.map(group=>{const other=keys.filter(f=>!group.includes(f));return {...row,key:row.key+'|'+group.join('+'),fields:group,options:row.options.filter(o=>key(o.values,other)===key(current.values,other))};});
+}
 export function initialPreparedChair(data:ChairPreview,context=chairInitialContext(data),variants=chairInitialVariants(data,context)):PreparedChairSelection{
  return {context,variants,observed:'original',qualified:chairInitialQualifiedSelection(data,context,variants)};
 }
@@ -29,7 +40,14 @@ export function preparedChairValues(data:ChairPreview,s:PreparedChairSelection){
 export function preparedChairChoices(data:ChairPreview,s:PreparedChairSelection):PreparedChoice[]{
  const assembly=preparedChairAssembly(data,s),active=[assembly.base,...assembly.patches.flatMap(p=>p.geometry?[p.geometry]:[])].filter(a=>a!==null).map(a=>a.assetSha256),c=data.runtime.contexts[s.context],rows:PreparedChoice[]=[];
  const fields=[...new Set(data.runtime.contexts.flatMap(c=>Object.keys(c.dimensions)))].filter(f=>new Set(data.runtime.contexts.map(c=>c.dimensions[f])).size>1);
- if(data.runtime.contexts.length>1)rows.push({key:'construction',fields,current:String(s.context),options:data.runtime.contexts.map((c,i)=>({key:String(i),values:c.dimensions,selection:initialPreparedChair(data,i)}))});
+ if(data.runtime.contexts.length>1){
+  const contexts=data.runtime.contexts,signature=(values:Record<string,string>,keys:string[])=>JSON.stringify(keys.map(f=>values[f]??null));
+  const unique=new Set(contexts.map(c=>signature(c.dimensions,fields))).size===contexts.length;
+  const groups=unique?independentFieldGroups(contexts.map(c=>c.dimensions),fields):[fields];
+  for(const group of groups){const other=fields.filter(f=>!group.includes(f)),compatible=contexts.map((context,index)=>({context,index})).filter(({context})=>signature(context.dimensions,other)===signature(c.dimensions,other));
+   rows.push({key:groups.length===1?'construction':'construction:'+group.join('+'),fields:group,current:String(s.context),options:compatible.map(({context,index})=>({key:String(index),values:context.dimensions,selection:initialPreparedChair(data,index)}))});
+  }
+ }
  c.groups.forEach((g,i)=>{if(!g.fields.length||g.variants.length<2)return;rows.push({key:'component:'+i,fields:g.fields,current:String(s.variants[i]),options:g.variants.map((v,n)=>{const variants=[...s.variants];variants[i]=n;return {key:String(n),values:v.values,selection:initialPreparedChair(data,s.context,variants)};})});});
  const baseline=chairPreviewAssembly(data,s.context,s.variants,chairObservedChoices(data)[0]),originalActive=[baseline.base,...baseline.patches.flatMap(p=>p.geometry?[p.geometry]:[])].filter(a=>a!==null).map(a=>a.assetSha256);
  const finishOptions:{key:string;values:Record<string,string>;selection:PreparedChairSelection}[]=[{key:'original',values:preparedChairValues(data,{...s,observed:'original',qualified:undefined}),selection:{...s,observed:'original',qualified:undefined}}];
@@ -56,7 +74,7 @@ export function preparedChairChoices(data:ChairPreview,s:PreparedChairSelection)
   }
   return true;
  });
- if(compact.length>1)rows.push({key:'finish-state',fields:[...new Set(compact.flatMap(o=>Object.keys(o.values)))].filter(f=>/COLOR|COL$|CHCOL|GROUP|MATERIAL/.test(f)),current:currentFinish,options:compact});
+ if(compact.length>1){const fields=[...new Set(compact.flatMap(o=>Object.keys(o.values)))].filter(f=>/COLOR|COL$|CHCOL|GROUP|MATERIAL/.test(f));const varying=fields.filter(f=>new Set(compact.map(o=>o.values[f])).size>1);rows.push({key:'finish-state',fields:varying.length?varying:fields,current:currentFinish,options:compact});}
  if(s.qualified?.kind==='groups'){
   const q=s.qualified,w=data.qualified!.witnesses.find(w=>w.id===q.witness)!,b=w.branches.find(b=>b.id===q.branch);
   if(w.branches.length>1)rows.push({key:'finish-branch',fields:[...new Set(w.branches.flatMap(b=>Object.keys(b.values)))],current:q.branch!,options:w.branches.map(b=>({key:b.id,values:b.values,selection:{...s,qualified:{...q,branch:b.id,groups:{...q.groups,...Object.fromEntries(b.groups.map(g=>[g.id,g.base]))}}}})).filter(o=>qualifiedChairPlan(data,s.context,s.variants,originalActive,o.selection.qualified).status!=='unavailable')});
@@ -64,5 +82,5 @@ export function preparedChairChoices(data:ChairPreview,s:PreparedChairSelection)
   for(const g of grouped.controls)if(g.options.length)rows.push({key:g.id,fields:g.fields,current:g.value,options:g.options.map(o=>({key:o.id,values:preparedChairValues(data,{...s,qualified:o.state}),selection:{...s,qualified:o.state}}))});
   for(const g of grouped.remaining)if(g.options.length>1)rows.push({key:'finish-group:'+g.id,fields:[...new Set(g.options.flatMap(o=>Object.keys(o.values)))],current:q.groups[g.id]??g.base,options:g.options.map(o=>({key:o.id,values:o.values,selection:{...s,qualified:{...q,groups:{...q.groups,[g.id]:o.id}}}})).filter(o=>qualifiedChairPlan(data,s.context,s.variants,originalActive,o.selection.qualified).status!=='unavailable')});
  }
- return rows;
+ return rows.flatMap(splitCapturedRow);
 }

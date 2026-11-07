@@ -119,3 +119,17 @@ test('HIGH FST is only a full NONE ST61POLBL ESHH60 GLR record with its own geom
  assert.notEqual(pin.baselineAssetSha256,constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR.route.baselineAssetSha256);
  assert.throws(()=>chairReviewRoute(high,id,'PRICE_4'),/Unknown finish/);
 });
+
+test('HIGH flame retardant foam is a full qualified FST record, never an independent mix',()=>{
+ const high=reviewRegistry.entries.find(e=>e.code==='KSEG003WW001')! as ChairReviewEntry,id='HIGH_NONE_ST61POLBL_ESHH60_GLR_FST_FLAMERETARDANT';
+ const menu=chairConstructionMenus(high,id)!;
+ assert.equal(menu.baseId,id);assert.equal(menu.castorId,id);assert.equal(menu.gasliftId,id);assert.equal(menu.mechanismId,id);
+ assert.deepEqual(menu.foams,[{id:'HIGH_NONE_ST61POLBL_ESHH60_GLR_FST',label:'STANDARD'},{id,label:'FLAMERETARDANT'}]);
+ for(const other of ['default','HIGH_NONE','HIGH_NONE_TS25','HIGH_NONE_ST61POLBL','HIGH_NONE_ST61POLBL_ESHH60','HIGH_NONE_ST61POLBL_ESHH60_GLR'])assert.equal(chairConstructionMenus(high,other)!.foams.length,1);
+ for(const candidate of [...menu.bases,...menu.castors,...menu.gaslifts,...menu.mechanisms]){const binding=chairReviewRoute(high,candidate.id,'default').construction.construction!;assert.equal(binding.structuralValues.CSEATPADFOAM,candidate.id===id?'FLAMERETARDANT':'STANDARD');}
+ const pin=constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR_FST_FLAMERETARDANT.route;
+ assert.equal(pin.fixedSelectableStructuralFields.CSEATPADFOAM.fixedValue,'FLAMERETARDANT');
+ assert.notEqual(pin.runtimeSha256,constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR_FST.route.runtimeSha256);
+ assert.equal(pin.baselineAssetSha256,constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR_FST.route.baselineAssetSha256);
+ assert.throws(()=>chairReviewRoute(high,id,'PRICE_4'),/Unknown finish/);
+});

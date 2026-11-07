@@ -91,3 +91,17 @@ test('HIGH castors select only admitted ST61POLBL whole constructions and other 
  assert.notEqual(constructionPins.HIGH_NONE_ST61POLBL_ESHH60.route.baselineAssetSha256,constructionPins.MEDIUM_NONE_ST61POLBL.route.baselineAssetSha256);
  assert.throws(()=>chairReviewRoute(high,id,'PRICE_4'),/Unknown finish/);
 });
+
+test('HIGH GLR is scoped to NONE ST61POLBL ESHH60 and parent choices resolve only complete sources',()=>{
+ const high=reviewRegistry.entries.find(e=>e.code==='KSEG003WW001')! as ChairReviewEntry,id='HIGH_NONE_ST61POLBL_ESHH60_GLR';
+ const menu=chairConstructionMenus(high,id)!;
+ assert.equal(menu.baseId,id);assert.equal(menu.castorId,id);
+ assert.deepEqual(menu.gaslifts,[{id:'HIGH_NONE_ST61POLBL_ESHH60',label:'GLSTD'},{id,label:'GLR'}]);
+ assert.deepEqual(menu.castors,[{id:'HIGH_NONE_ST61POLBL',label:'ESH60'},{id,label:'ESHH60'}]);
+ for(const candidate of [...menu.bases,...menu.castors]){const binding=chairReviewRoute(high,candidate.id,'default').construction.construction!;assert.equal(binding.structuralValues.CGASLIFT,candidate.id===id?'GLR':'GLSTD');}
+ for(const other of ['default','HIGH_NONE','HIGH_NONE_TS25','HIGH_NONE_ST61POLBL'])assert.equal(chairConstructionMenus(high,other)!.gaslifts.length,1);
+ const pin=constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR.route;
+ assert.equal(pin.fixedSelectableStructuralFields.CGASLIFT.fixedValue,'GLR');assert.equal(pin.fixedSelectableStructuralFields.CCASTORS.fixedValue,'ESHH60');
+ assert.notEqual(pin.runtimeSha256,constructionPins.HIGH_NONE_ST61POLBL_ESHH60.route.runtimeSha256);
+ assert.throws(()=>chairReviewRoute(high,id,'PRICE_4'),/Unknown finish/);
+});

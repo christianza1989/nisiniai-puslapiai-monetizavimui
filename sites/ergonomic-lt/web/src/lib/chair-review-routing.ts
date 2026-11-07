@@ -21,10 +21,16 @@ export function chairConstructionMenus(entry:ChairReviewEntry,id:string){
  const current=rows.find(r=>r.id===id);if(!current)throw Error('Unknown chair construction');
  const arms=rows.filter((row,i)=>rows.findIndex(r=>r.construction.structuralValues.CARMRESTS===row.construction.structuralValues.CARMRESTS)===i);
  const matchesExcept=(row:typeof current,fields:string[])=>Object.entries(current.construction.structuralValues).every(([field,value])=>fields.includes(field)||row.construction.structuralValues[field]===value);
- const baseRows=rows.filter(row=>matchesExcept(row,['CBASE','CCASTORS']));
- const bases=baseRows.filter((row,i)=>baseRows.findIndex(r=>r.construction.structuralValues.CBASE===row.construction.structuralValues.CBASE)===i).map(row=>baseRows.find(r=>r.construction.structuralValues.CBASE===row.construction.structuralValues.CBASE&&r.construction.structuralValues.CCASTORS===current.construction.structuralValues.CCASTORS)||row);
- const castors=rows.filter(row=>matchesExcept(row,['CCASTORS']));
- return {armId:arms.find(row=>row.construction.structuralValues.CARMRESTS===current.construction.structuralValues.CARMRESTS)!.id,arms:arms.map(r=>({id:r.id,label:r.label})),baseId:bases.find(row=>row.construction.structuralValues.CBASE===current.construction.structuralValues.CBASE)!.id,bases:bases.map(r=>({id:r.id,label:r.construction.structuralValues.CBASE})),castors:castors.map(r=>({id:r.id,label:r.construction.structuralValues.CCASTORS}))};
+ const choices=(field:string,lower:string[])=>{
+  const candidates=rows.filter(row=>matchesExcept(row,[field,...lower]));
+  return candidates.filter((row,i)=>candidates.findIndex(r=>r.construction.structuralValues[field]===row.construction.structuralValues[field])===i).map(row=>{
+   const same=candidates.filter(r=>r.construction.structuralValues[field]===row.construction.structuralValues[field]);
+   for(let count=lower.length;count>0;count--){const preferred=same.find(r=>lower.slice(0,count).every(key=>r.construction.structuralValues[key]===current.construction.structuralValues[key]));if(preferred)return preferred;}
+   return row;
+  });
+ };
+ const bases=choices('CBASE',['CCASTORS','CGASLIFT']),castors=choices('CCASTORS',['CGASLIFT']),gaslifts=choices('CGASLIFT',[]);
+ return {armId:arms.find(row=>row.construction.structuralValues.CARMRESTS===current.construction.structuralValues.CARMRESTS)!.id,arms:arms.map(r=>({id:r.id,label:r.label})),baseId:bases.find(row=>row.construction.structuralValues.CBASE===current.construction.structuralValues.CBASE)!.id,bases:bases.map(r=>({id:r.id,label:r.construction.structuralValues.CBASE})),castorId:castors.find(row=>row.construction.structuralValues.CCASTORS===current.construction.structuralValues.CCASTORS)!.id,castors:castors.map(r=>({id:r.id,label:r.construction.structuralValues.CCASTORS})),gaslifts:gaslifts.map(r=>({id:r.id,label:r.construction.structuralValues.CGASLIFT}))};
 }
 
 export function validateChairConstructionBinding(data:ChairPreview,binding:ChairConstructionBinding){

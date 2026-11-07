@@ -171,3 +171,15 @@ test('MEDIUM R74 ST61POLBL height205 selects only its own complete construction'
  for(const other of [constructionPins.MEDIUM_R35K3_ST61POLBL_HEIGHT220,constructionPins.MEDIUM_R35K3SB2_ST61POLBL_HEIGHT210,constructionPins.HIGH_NONE_ST61POLBL])assert.notEqual(pin.route.baselineAssetSha256,other.route.baselineAssetSha256);
  assert.throws(()=>chairReviewRoute(medium,id,'PRICE_2_CUR'),/Unknown finish/);
 });
+
+test('MEDIUM R74 ESHH60 has a distinct exact runtime with the same approved original geometry',()=>{
+ const medium=reviewRegistry.entries.find(e=>e.code==='KSEG002WW001')! as ChairReviewEntry,id='MEDIUM_R74_ST61POLBL_ESHH60_HEIGHT205',prior='MEDIUM_R74_ST61POLBL_HEIGHT205',menu=chairConstructionMenus(medium,id)!;
+ assert.equal(menu.armId,prior);assert.equal(menu.castorId,id);assert.equal(menu.arms.length,4);
+ assert.deepEqual(menu.castors,[{id:prior,label:'ESH60'},{id,label:'ESHH60'}]);
+ const binding=chairReviewRoute(medium,id,'default').construction.construction!,pin=constructionPins.MEDIUM_R74_ST61POLBL_ESHH60_HEIGHT205;
+ assert.equal(binding.structuralValues.CCASTORS,'ESHH60');assert.equal(binding.dimensions.DARMRESTSHEIGHT,'_205T280');assert.deepEqual(binding.dimensions,pin.route.exactRuntimeConstructionDimensions);
+ assert.equal(pin.route.baselineAssetSha256,constructionPins.MEDIUM_R74_ST61POLBL_HEIGHT205.route.baselineAssetSha256);
+ assert.notEqual(pin.route.runtimeSha256,constructionPins.MEDIUM_R74_ST61POLBL_HEIGHT205.route.runtimeSha256);
+ for(const other of ['default','MEDIUM_NONE','MEDIUM_R35K3_ST61POLBL_HEIGHT220','MEDIUM_R35K3SB2_ST61POLBL_HEIGHT210'])assert.equal(chairConstructionMenus(medium,other)!.castors.length,1);
+ assert.throws(()=>chairReviewRoute(medium,id,'PRICE_2_CUR'),/Unknown finish/);
+});

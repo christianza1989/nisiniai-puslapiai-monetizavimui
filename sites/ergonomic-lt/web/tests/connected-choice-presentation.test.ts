@@ -11,7 +11,11 @@ test('remove alternate aliases while preserving original shade names and real co
  assert.equal(connectedColourLabel('RAL 9010 Pure White BI, WH, W'),'RAL 9010 Pure White');
  assert.equal(connectedColourLabel('RAL 9016 Traffic White BI, WT, W'),'RAL 9016 Traffic White');
  assert.equal(connectedColourLabel('Chrome CR, Z'),'Chrome');
- for(const value of ['CSE01','SX3066 · Silvertex','NCS S 2005-Y60R Cashmere NK','NJ Acacia Light','BLACK · Black'])assert.equal(connectedColourLabel(value),value);
+ assert.equal(connectedColourLabel('GF · RAL 7021 Black Grey GF'),'RAL 7021 Black Grey');
+ assert.equal(connectedColourLabel('RAL 030 50 40 Vermilion Red VR'),'RAL 030 50 40 Vermilion Red');
+ assert.equal(connectedColourLabel('NCS S 2005-Y60R Cashmere NK'),'NCS S 2005-Y60R Cashmere');
+ assert.equal(connectedColourLabel('_1007 · 1.007 Beech 0C'),'_1007 · 1.007 Beech');
+ for(const value of ['CSE01','SX3066 · Silvertex','NJ Acacia Light','BLACK · Black'])assert.equal(connectedColourLabel(value),value);
  assert.equal(connectedColourField('CSEATDECSTITCHING'),true);assert.equal(connectedColourField('CARMRESTS'),false);
 });
 test('only an exact Cartesian relation can become independent controls',()=>{

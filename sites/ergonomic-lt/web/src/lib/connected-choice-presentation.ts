@@ -36,6 +36,13 @@ export function connectedFieldLabel(text:string){return text.split(' / ').map(pa
 export function connectedColourLabel(text:string){
  let value=text.replace(/\s+(?:AL,\s*ALU,\s*WA,\s*X|BI,\s*(?:WH|WT),\s*W|CZ,\s*BL,\s*Y|CR,\s*Z)(?=\s*$|\s*·)/g,'');
  value=value.replace(/^(?:(?:AL|ALU|WA|X|BI|WH|WT|W|CZ|BL|Y)\s*[·–-]?\s*)+(?=RAL\s*\d{4}\b)/,'');
+ // A standardized paint reference is the visible mark. The captured trailing
+ // two-letter catalogue shortcuts (GF, VB, NK...) are additional aliases.
+ if(/\b(?:RAL\s+\d{3,4}|NCS\s+S?\s*\d)/.test(value)){
+  value=value.replace(/\s+(?:NK|VB|OG|OY|VR|WS|WK|GF|AL|ALU|WA|X|BI|WH|WT|W|CZ|BL|Y|SG|PW)\s*$/,'');
+  value=value.replace(/^(?:NK|VB|OG|OY|VR|WS|WK|GF|AL|ALU|WA|X|BI|WH|WT|W|CZ|BL|Y|SG|PW)\s*·\s*(?=RAL\b|NCS\b)/,'');
+ }
+ value=value.replace(/(\b1\.007 Beech)\s+0C\b/g,'$1');
  value=value.replace(/\b(Polished Aluminium)\s+POL\b/g,'$1').replace(/^(?:POL|ALUPOL)\s*·\s*(?=Polished Aluminium)/,'');
  return value.trim();
 }

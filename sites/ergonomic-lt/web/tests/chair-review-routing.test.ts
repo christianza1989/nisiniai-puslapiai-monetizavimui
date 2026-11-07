@@ -42,7 +42,7 @@ test('HIGH NONE never accepts MEDIUM geometry or a nominal210 hidden dimension',
 test('MEDIUM base menu selects only complete admitted NONE constructions, never R35K3SB2+TS34BL',()=>{
  const medium=reviewRegistry.entries.find(e=>e.code==='KSEG002WW001')! as ChairReviewEntry;
  const menu=chairConstructionMenus(medium,'MEDIUM_NONE_TS34BL')!;
- assert.equal(menu.armId,'MEDIUM_NONE');assert.equal(menu.arms.length,2);
+ assert.equal(menu.armId,'MEDIUM_NONE');assert.equal(menu.arms.length,3);
  assert.deepEqual(menu.bases,[{id:'MEDIUM_NONE',label:'TS25'},{id:'MEDIUM_NONE_TS34BL',label:'TS34BL'},{id:'MEDIUM_NONE_ST61POLBL',label:'ST61POLBL'}]);
  assert.deepEqual(chairConstructionMenus(medium,'default')!.bases,[{id:'default',label:'TS25'}]);
  const routed=chairReviewRoute(medium,'MEDIUM_NONE_TS34BL','default');
@@ -132,4 +132,19 @@ test('HIGH flame retardant foam is a full qualified FST record, never an indepen
  assert.notEqual(pin.runtimeSha256,constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR_FST.route.runtimeSha256);
  assert.equal(pin.baselineAssetSha256,constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR_FST.route.baselineAssetSha256);
  assert.throws(()=>chairReviewRoute(high,id,'PRICE_4'),/Unknown finish/);
+});
+
+test('MEDIUM R35K3 ST61POLBL height220 selects its exact whole source and only CSE44',()=>{
+ const medium=reviewRegistry.entries.find(e=>e.code==='KSEG002WW001')! as ChairReviewEntry,id='MEDIUM_R35K3_ST61POLBL_HEIGHT220';
+ const menu=chairConstructionMenus(medium,id)!;
+ assert.deepEqual(menu.arms.map(a=>a.id),['default','MEDIUM_NONE',id]);
+ assert.deepEqual(menu.bases,[{id,label:'ST61POLBL'}]);
+ const binding=chairReviewRoute(medium,id,'default').construction.construction!;
+ assert.equal(binding.structuralValues.CARMRESTS,'R35K3');assert.equal(binding.structuralValues.CBASE,'ST61POLBL');
+ assert.equal(binding.dimensions.DARMRESTSHEIGHT,'_220T300');
+ const pin=constructionPins.MEDIUM_R35K3_ST61POLBL_HEIGHT220;
+ assert.deepEqual(binding.dimensions,pin.route.exactRuntimeConstructionDimensions);
+ assert.equal(pin.route.actualQualifiedFinishStates,44);
+ assert.notEqual(pin.route.baselineAssetSha256,constructionPins.MEDIUM_NONE_ST61POLBL.route.baselineAssetSha256);
+ assert.throws(()=>chairReviewRoute(medium,id,'PRICE_2_CUR'),/Unknown finish/);
 });

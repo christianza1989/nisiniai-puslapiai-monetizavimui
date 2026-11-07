@@ -848,6 +848,47 @@
             },
             "runtimeSha256": "22c4f02bd678c3c673c44f9ce60d1e341593d661699154aee0675de89cbecba6"
           }
+        },
+        {
+          "id": "MEDIUM_R35K3_ST61POLBL_HEIGHT220",
+          "label": "R35K3 · ST61POLBL · porankių aukštis 220–300",
+          "contextLabel": "PRICE_1 / CSE · 44 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG002WW001-e822525acc37ac821eae/review-47af5b42474d07e4c538.json",
+          "sha256": "47af5b42474d07e4c5382b992a43dd34732d2d044c05ea988e88f5a57c8676b0",
+          "bytes": 127141,
+          "runtimeSha256": "d740495d1954dd9d17542b28c962aa50eba565ab950342919ea15182f9604587",
+          "construction": {
+            "dimensions": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBACKREST": "MBUPHCOVERPLASTIC",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CFSC": "FSCMIX",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEAT": "UPH",
+              "CSEATPADFOAM": "STANDARD",
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "structuralValues": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "runtimeSha256": "d740495d1954dd9d17542b28c962aa50eba565ab950342919ea15182f9604587"
+          }
         }
       ]
     },

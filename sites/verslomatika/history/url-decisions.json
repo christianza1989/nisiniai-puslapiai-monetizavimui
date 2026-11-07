@@ -1,0 +1,14 @@
+{
+  "auditCheckedAt": "2026-10-19T06:27:01.329Z",
+  "domain": "verslomatika.lt",
+  "entries": [{
+    "oldUrl": "https://verslomatika.lt/",
+    "action": "keep-url-new-content",
+    "targetPath": "/",
+    "reason": "Retain the existing operator's current introduction and its linked /auditas path. Extend the current portal without a historical-content import or root redirect.",
+    "evidenceUrls": ["https://web.archive.org/web/20261005163936/https://verslomatika.lt/"],
+    "confidence": "partial; broad inventory unavailable",
+    "status": "agent-reviewed"
+  }],
+  "publicRedirectsApplied": false
+}

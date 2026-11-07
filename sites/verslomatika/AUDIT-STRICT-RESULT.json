@@ -1,0 +1,309 @@
+{
+  "command": "score-audit.mjs PHASE-1-AUDIT.json --require-local",
+  "exitCode": 1,
+  "expectedBecauseUnverifiedGates": true,
+  "result": {
+    "siteId": "verslomatika",
+    "evaluatedAt": "2026-10-19T07:31:24.936Z",
+    "stages": {
+      "local": {
+        "passed": 57,
+        "applicable": 71,
+        "score": 8.02,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "J3",
+          "M2",
+          "N2",
+          "P2",
+          "P3",
+          "R2",
+          "S2",
+          "U1",
+          "U2",
+          "U3",
+          "V1",
+          "V2",
+          "W1",
+          "W2"
+        ]
+      },
+      "launch": {
+        "passed": 0,
+        "applicable": 10,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3",
+          "I4",
+          "O3",
+          "U4",
+          "W3",
+          "X3",
+          "Z3"
+        ]
+      },
+      "operations": {
+        "passed": 0,
+        "applicable": 2,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A3",
+          "V3"
+        ]
+      }
+    },
+    "categories": {
+      "A": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A3"
+        ]
+      },
+      "B": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3"
+        ]
+      },
+      "C": {
+        "passed": 2,
+        "applicable": 2,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "D": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "E": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "F": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "G": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "H": {
+        "passed": 5,
+        "applicable": 5,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "I": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "I4"
+        ]
+      },
+      "J": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "J3"
+        ]
+      },
+      "K": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "L": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "M": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "M2"
+        ]
+      },
+      "N": {
+        "passed": 2,
+        "applicable": 4,
+        "score": 5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "N2"
+        ]
+      },
+      "O": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "O3"
+        ]
+      },
+      "P": {
+        "passed": 1,
+        "applicable": 3,
+        "score": 3.33,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "P2",
+          "P3"
+        ]
+      },
+      "Q": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "R": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "R2"
+        ]
+      },
+      "S": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "S2"
+        ]
+      },
+      "T": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "U": {
+        "passed": 0,
+        "applicable": 4,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "U1",
+          "U2",
+          "U3",
+          "U4"
+        ]
+      },
+      "V": {
+        "passed": 0,
+        "applicable": 3,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "V1",
+          "V2",
+          "V3"
+        ]
+      },
+      "W": {
+        "passed": 1,
+        "applicable": 4,
+        "score": 2.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "W1",
+          "W2",
+          "W3"
+        ]
+      },
+      "X": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "X3"
+        ]
+      },
+      "Y": {
+        "passed": 2,
+        "applicable": 2,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "Z": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "Z3"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+name: Account foundation
+on:
+  pull_request:
+    paths:
+      - agent-business-core/runtime/**
+      - docs/contracts/verslomatika-*.openapi.json
+      - .github/workflows/account-foundation.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  restricted-postgres:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    services:
+      postgres:
+        image: postgres:17-alpine@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
+        env:
+          POSTGRES_DB: pinet_account_foundation_ci
+          POSTGRES_USER: pinet_admin
+          POSTGRES_PASSWORD: account-foundation-ci-only
+        ports:
+          - 127.0.0.1:15432:5432
+        options: >-
+          --health-cmd "pg_isready -U pinet_admin -d pinet_account_foundation_ci"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+    defaults:
+      run:
+        working-directory: agent-business-core/runtime
+    env:
+      PINET_ADMIN_DATABASE_URL: postgresql+asyncpg://pinet_admin:account-foundation-ci-only@127.0.0.1:15432/pinet_account_foundation_ci
+      PINET_ENVIRONMENT: local
+      PINET_ALLOW_SIMULATION: 'true'
+      PINET_VOICE_ENABLED: 'false'
+      PINET_SMTP_ENABLED: 'false'
+      PINET_GOOGLE_API_KEY: ''
+      PINET_KNOWLEDGE_REFRESH_ENABLED: 'false'
+      PINET_LEARNING_ENABLED: 'false'
+      PINET_ACCOUNT_FOUNDATION_QA: retained-isolated
+      PINET_FOUNDATION_PROOF_DIR: artifacts/account-foundation-ci
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONPATH: src:tests:scripts
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      # Official setup-uv v6 and upload-artifact v4 tag commits verified 2026-10-19.
+      - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff
+        with:
+          version: '0.9.5'
+          python-version: '3.13'
+          enable-cache: false
+      - name: Locked main dependencies
+        run: uv sync --locked
+      - name: Isolated test credentials
+        shell: bash
+        run: |
+          runtime_password=$(openssl rand -hex 24)
+          echo "::add-mask::$runtime_password"
+          echo "PINET_DB_RUNTIME_PASSWORD=$runtime_password" >> "$GITHUB_ENV"
+          echo "PINET_DATABASE_URL=postgresql+asyncpg://pinet_runtime:$runtime_password@127.0.0.1:15432/pinet_account_foundation_ci" >> "$GITHUB_ENV"
+          for key in PINET_EDGE_SECRET PINET_WORKER_SECRET PINET_OPERATOR_SECRET; do
+            value=$(openssl rand -hex 32)
+            echo "::add-mask::$value"
+            echo "$key=$value" >> "$GITHUB_ENV"
+          done
+          uv run python -c "import json,pathlib; p=pathlib.Path('artifacts/foundation-test-network.json'); p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps({'operatorName':'MB Pinet','defaultEmail':'info@pinet.lt','contactsBySite':{}}),encoding='utf-8')"
+          echo "STUDIO_NETWORK_SETTINGS=$PWD/artifacts/foundation-test-network.json" >> "$GITHUB_ENV"
+      - name: Role only, then immutable legacy schema
+        run: |
+          uv run python -B scripts/bootstrap.py --role-only
+          uv run python -B -m alembic upgrade 0009_facebook
+          uv run python -B scripts/bootstrap.py
+      - name: Actual legacy-row preservation across upgrade
+        env:
+          PINET_FOUNDATION_UPGRADE_FROM_0009: '1'
+        run: uv run pytest tests/test_account_foundation_scope.py::test_pg_upgrade_preserves_legacy_rows -q
+      - name: Exact account/control least privileges
+        run: uv run python -B scripts/bootstrap.py
+      - name: Account/control behavior, RLS, bootstrap and route boundaries
+        run: >-
+          uv run pytest tests/test_account_foundation_scope.py tests/test_control_portfolio.py
+          tests/test_control_bridge.py tests/test_customer_public.py tests/test_customer_registration_pg.py -q
+      - name: Existing legacy API, policy, budget, knowledge and Facebook regression
+        run: >-
+          uv run pytest tests/test_core.py tests/test_policy.py tests/test_budget.py
+          tests/test_knowledge.py tests/test_facebook.py tests/test_facebook_page_api.py -q
+      - name: Scoped Ruff and unchanged main lock
+        run: |
+          uv run ruff check src/pinet_core/control src/pinet_core/customer src/pinet_core/public_projects src/pinet_core/control_api.py src/pinet_core/api.py src/pinet_core/config.py scripts/bootstrap.py scripts/control_bootstrap.py scripts/customer_public_admin.py migrations/env.py migrations/versions/0010_control.py migrations/versions/0011_control_tasks.py migrations/versions/0012_customer_public.py tests/test_control_portfolio.py tests/test_control_bridge.py tests/test_customer_public.py tests/test_customer_registration_pg.py tests/test_account_foundation_scope.py
+          git diff --exit-code -- uv.lock
+      - name: Retain safe upgrade projections
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: account-foundation-safe-upgrade-proof
+          path: agent-business-core/runtime/artifacts/account-foundation-ci/*.safe.json
+          if-no-files-found: warn

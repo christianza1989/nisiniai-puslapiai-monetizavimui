@@ -32,6 +32,7 @@ packages = ["src/pinet_core"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+pythonpath = ["src", "tests", "scripts"]
 
 [tool.ruff]
 line-length = 110

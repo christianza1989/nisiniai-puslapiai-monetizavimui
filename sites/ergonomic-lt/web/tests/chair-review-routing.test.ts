@@ -44,7 +44,7 @@ test('MEDIUM base menu selects only complete admitted NONE constructions, never 
  const menu=chairConstructionMenus(medium,'MEDIUM_NONE_TS34BL')!;
  assert.equal(menu.armId,'MEDIUM_NONE');assert.equal(menu.arms.length,3);
  assert.deepEqual(menu.bases,[{id:'MEDIUM_NONE',label:'TS25'},{id:'MEDIUM_NONE_TS34BL',label:'TS34BL'},{id:'MEDIUM_NONE_ST61POLBL',label:'ST61POLBL'}]);
- assert.deepEqual(chairConstructionMenus(medium,'default')!.bases,[{id:'default',label:'TS25'}]);
+ assert.deepEqual(chairConstructionMenus(medium,'default')!.bases,[{id:'default',label:'TS25'},{id:'MEDIUM_R35K3SB2_ST61POLBL_HEIGHT210',label:'ST61POLBL'}]);
  const routed=chairReviewRoute(medium,'MEDIUM_NONE_TS34BL','default');
  assert.equal(routed.construction.construction!.structuralValues.CARMRESTS,'NONE');
  assert.equal(routed.construction.construction!.structuralValues.CBASE,'TS34BL');
@@ -146,5 +146,19 @@ test('MEDIUM R35K3 ST61POLBL height220 selects its exact whole source and only C
  assert.deepEqual(binding.dimensions,pin.route.exactRuntimeConstructionDimensions);
  assert.equal(pin.route.actualQualifiedFinishStates,44);
  assert.notEqual(pin.route.baselineAssetSha256,constructionPins.MEDIUM_NONE_ST61POLBL.route.baselineAssetSha256);
+ assert.throws(()=>chairReviewRoute(medium,id,'PRICE_2_CUR'),/Unknown finish/);
+});
+
+test('MEDIUM SB2 ST61POLBL is a separate height210 OWN source and never uses the R35K3 geometry',()=>{
+ const medium=reviewRegistry.entries.find(e=>e.code==='KSEG002WW001')! as ChairReviewEntry,id='MEDIUM_R35K3SB2_ST61POLBL_HEIGHT210';
+ const menu=chairConstructionMenus(medium,id)!;
+ assert.equal(menu.armId,'default');assert.equal(menu.baseId,id);
+ assert.deepEqual(menu.bases,[{id:'default',label:'TS25'},{id,label:'ST61POLBL'}]);
+ assert.equal(menu.arms.length,3);
+ const binding=chairReviewRoute(medium,id,'default').construction.construction!,pin=constructionPins.MEDIUM_R35K3SB2_ST61POLBL_HEIGHT210;
+ assert.equal(binding.structuralValues.CARMRESTS,'R35K3SB2');assert.equal(binding.structuralValues.CBASE,'ST61POLBL');
+ assert.equal(binding.dimensions.DARMRESTSHEIGHT,'_210T290');assert.deepEqual(binding.dimensions,pin.route.exactRuntimeConstructionDimensions);
+ assert.notEqual(pin.route.baselineAssetSha256,constructionPins.MEDIUM_R35K3_ST61POLBL_HEIGHT220.route.baselineAssetSha256);
+ assert.notEqual(pin.route.runtimeSha256,constructionPins.MEDIUM_R35K3_ST61POLBL_HEIGHT220.route.runtimeSha256);
  assert.throws(()=>chairReviewRoute(medium,id,'PRICE_2_CUR'),/Unknown finish/);
 });

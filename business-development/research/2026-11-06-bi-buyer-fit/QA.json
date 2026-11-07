@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-06T08:12:58.609Z",
+  "status": "PASS_documentary_validation",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "freshnessContinueAt": "2026-11-06T08:10:22.336Z",
+  "freshnessHandoffAt": "2026-11-06T08:12:32.619Z",
+  "checks": {
+    "localReferences": 2,
+    "originalPagesRead": 1,
+    "selectedDatedExamples": 2,
+    "portalStoppedStatusPreserved": true,
+    "oldExamplesNotRelabelledNew": true,
+    "syntheticCasesExecuted": 0,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "newApprovals": 0,
+    "newProposals": 0,
+    "languageReview": "Full private prose reviewed; sample limits, portal status and unchanged product scope retained"
+  },
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "rootOlderTurnsNotReread": true,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApprovalFound": false
+  },
+  "scope": {
+    "paidCalls": 0,
+    "tregProviderCalls": 0,
+    "contactsCollected": 0,
+    "messagesSent": 0,
+    "attachmentsOpened": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  },
+  "limits": [
+    "Purposive examples, not representative demand",
+    "Provider-found portal status is not verified completed or paid work",
+    "BDEV-0002 remains proposed; no client environment or recurring-report order verified"
+  ]
+}

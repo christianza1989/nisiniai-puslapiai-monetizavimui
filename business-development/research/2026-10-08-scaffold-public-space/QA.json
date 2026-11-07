@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-09T14:50:31.350Z",
+  "heartbeatAt": "2026-10-08T14:02:07.002Z",
+  "outcome": "evidence_only_no_new_proposal",
+  "scope": "Bounded private scaffold qualification research; documentary validation only",
+  "coreMainSha": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+  "coreHeadBeforeDocumentation": "69536656783dbef2b7b201cafd3737250fe2984b",
+  "companionMainSha": "d0fd6b7d296303bfcaafadc4071945e675a72b96",
+  "checks": {
+    "jsonRecordsParsed": 3,
+    "localResearchReferences": 5,
+    "brokenReferences": 0,
+    "primaryIndependentHtmlPages": 3,
+    "duplicateLocalePages": 1,
+    "legalDocumentsUnreadable": 2,
+    "tregCatalogQueries": 1,
+    "tregMatches": 0,
+    "providerCalls": 0,
+    "approvalFieldsUnchanged": true,
+    "pendingProposedExperiments": 4,
+    "newIdeaIds": 0,
+    "syntheticCasesExecuted": 0,
+    "realCasesExecuted": 0,
+    "freshnessContinue": "PASS_FRESH_BASE",
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-09T14:50:47.730Z",
+    "exactStagedScopeReviewed": true,
+    "repositorySafety": "PASS: four exact staged documentary files, zero findings"
+  },
+  "ownerDecisionEvidence": {
+    "rootLatestUserMessage": "01a114fe-539d-70f1-8073-d531418858dc",
+    "coreReviewedUserMessages": [
+      "01a11ac7-1b9f-7d81-8f09-92954d9e2932",
+      "01a11bc8-92f1-76b2-a97e-7fccd8ca1c20",
+      "01a11bd1-2a01-7033-94bc-a83bbee47b53"
+    ],
+    "newRegistryApproval": false
+  },
+  "actions": {
+    "siteChanges": 0,
+    "runtimeChanges": 0,
+    "formsSubmitted": 0,
+    "messagesSent": 0,
+    "purchases": 0,
+    "newSubscriptions": 0,
+    "dnsChanges": 0,
+    "ownerNotifications": 0
+  },
+  "limits": [
+    "Portal metadata is not current consolidated legal applicability or tariff verification",
+    "Permit frequency, customer demand, supplier value and all actual costs unknown",
+    "Single catalog query is not exhaustive coverage proof",
+    "Kaunas page unavailable and excluded",
+    "Original old-host companion fetch failed; canonical GitHub companion then fetched and passed; old checkout preserved",
+    "Research began Oct8 and documentation completed Oct9; no silent source revalidation claim",
+    "No new BUSINESS decision or existing-site TOOLS migration; no live lab"
+  ]
+}

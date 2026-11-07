@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-13T06:11:35.921Z",
+  "status": "PASS_documentary_validation",
+  "outcome": "existing_requirement_evidence_updated",
+  "coreMainSha": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+  "companionMainSha": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+  "checks": {
+    "freshnessContinue": "PASS_FRESH_BASE",
+    "freshnessContinueAt": "2026-10-13T06:02:16.129Z",
+    "protectedStateFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber"
+    ],
+    "primaryHtmlRead": 4,
+    "webDetailRetrievalErrors": 2,
+    "supplementaryPublicSourceGets": 1,
+    "tregQueries": 1,
+    "providerCalls": 0,
+    "paidCalls": 0,
+    "newIdeaIds": 0,
+    "newPendingExperiments": 0,
+    "casesDocumented": 6,
+    "casesExecuted": 0,
+    "integerRenewalArithmetic": {
+      "status": "PASS",
+      "rateCents": 999,
+      "amounts": [
+        {
+          "count": 5,
+          "oneRenewalCents": 4995,
+          "threeRenewalsCents": 14985
+        },
+        {
+          "count": 50,
+          "oneRenewalCents": 49950,
+          "threeRenewalsCents": 149850
+        },
+        {
+          "count": 100,
+          "oneRenewalCents": 99900,
+          "threeRenewalsCents": 299700
+        }
+      ],
+      "scope": "Hypothetical renewal-only, exVAT, no first acquisition or real portfolio quote; constant-rate assumption"
+    },
+    "languageReview": "Complete final private report self-edited; no public copy/UI acceptance",
+    "jsonParsed": 3,
+    "localReferences": 7,
+    "brokenReferences": 0,
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-13T06:09:06.101Z",
+    "rawPublicHtmlIgnored": true,
+    "exactStagedDiffReviewed": true,
+    "diffCheck": "PASS",
+    "repositorySafety": "PASS: four exact staged documentary files, zero findings"
+  },
+  "ownerDecisionEvidence": {
+    "rootReadTurnLimit": 10,
+    "rootDirectHumanMessagesReturned": 0,
+    "coreUserMessages": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApproval": false
+  },
+  "scope": {
+    "authoredRuntimeEdits": 0,
+    "siteEdits": 0,
+    "companionSourceEdits": 0,
+    "inboxReads": 0,
+    "smtpCalls": 0,
+    "messagesSent": 0,
+    "purchases": 0,
+    "dnsChanges": 0,
+    "accountChanges": 0,
+    "domainRegistryOperations": 0
+  },
+  "limits": [
+    "Public prices do not confirm current account quote, VAT treatment, wholesale eligibility or future rates",
+    "Registration/renewal/transfer/ownership acquisition kept distinct",
+    "No owned domain count, expiry dates, invoices or auto-renew settings inspected",
+    "Six future cases documented only; arithmetic is not an actual agent run",
+    "No UI/runtime/site tests or portfolio monitoring implemented"
+  ]
+}

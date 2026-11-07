@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-05",
+  "scope": "Private supplier-side economics research",
+  "checks": {
+    "jsonRecordsParsed": 3,
+    "localResearchReferencesValid": true,
+    "openedPrimaryHtmlPages": 3,
+    "scenarioCalculationsVerified": 2,
+    "futureLiveCasesExecuted": 0,
+    "newIdeaIdsAllocated": 0,
+    "newExperimentApprovalsFound": 0
+  },
+  "outcome": "evidence_only_no_new_proposal",
+  "limits": [
+    "All economics inputs are hypothetical",
+    "No supplier interview, agreement or customer outcome",
+    "Existing BUSINESS/ACQUISITION already cover M1 and M2",
+    "Source research only; no runtime or GUI check"
+  ],
+  "actions": {
+    "runtimeChanges": 0,
+    "siteChanges": 0,
+    "messagesToSuppliers": 0,
+    "formsSubmitted": 0,
+    "purchases": 0,
+    "newSubscriptions": 0,
+    "dnsChanges": 0,
+    "accountChanges": 0,
+    "ownerNotifications": 0
+  }
+}

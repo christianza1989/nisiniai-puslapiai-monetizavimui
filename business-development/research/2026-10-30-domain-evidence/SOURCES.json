@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-30",
+  "question": "Limits of archive/manual-action/security evidence in existing expired-domain portfolio selection",
+  "sources": [
+    {
+      "id": "G1",
+      "url": "https://developers.google.com/search/docs/essentials/spam-policies#expired-domain-abuse",
+      "title": "Google Search spam policies",
+      "type": "primary_official_public_documentation",
+      "read": true,
+      "facts": [
+        "Expired-domain abuse definition includes primarily ranking manipulation and little/no user value",
+        "Policy enforcement can involve automated systems and human review"
+      ],
+      "limit": "Not a determination about any owned or candidate domain"
+    },
+    {
+      "id": "G2",
+      "url": "https://support.google.com/webmasters/answer/9044175?hl=en",
+      "title": "Manual actions report",
+      "type": "primary_official_public_documentation",
+      "read": true,
+      "facts": [
+        "Report covers manual actions and history",
+        "Recent purchase does not remove listed issues; remediate and request review",
+        "Review can take days/weeks or longer"
+      ],
+      "limit": "No actual Search Console report opened; no claim about automated ranking signals"
+    },
+    {
+      "id": "G3",
+      "url": "https://support.google.com/webmasters/answer/9044101?hl=en",
+      "title": "Security issues report",
+      "type": "primary_official_public_documentation",
+      "read": true,
+      "facts": [
+        "Security issues have a separate report",
+        "Example URLs need not be complete",
+        "Failure to reproduce a warning in a browser is not sufficient to clear it"
+      ],
+      "limit": "No affected URLs, browser warnings or owner property inspected"
+    }
+  ],
+  "actualDomainsChecked": 0,
+  "accountOperations": 0,
+  "paidCalls": 0,
+  "rawSourceInGit": false
+}

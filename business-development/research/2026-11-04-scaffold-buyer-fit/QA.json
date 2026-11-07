@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-04T15:03:01.872Z",
+  "status": "PASS_documentary_validation",
+  "freshnessContinueAt": "2026-11-04T15:01:20.588Z",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "checks": {
+    "localReferences": 2,
+    "originalPagesRead": 2,
+    "selectedBuyerExamples": 3,
+    "knownCrossCategoryDuplicatesExcluded": 1,
+    "staleSnapshotExcluded": true,
+    "syntheticCasesExecuted": 0,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "newApprovals": 0,
+    "newProposals": 0
+  },
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ]
+  },
+  "scope": {
+    "tregCatalogSearches": 1,
+    "tregProviderCalls": 0,
+    "paidCalls": 0,
+    "contactsCollected": 0,
+    "messagesSent": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  },
+  "limits": [
+    "Selected buyer examples only, no market volume or our fulfilled job",
+    "No verified partner, willingness to pay or commercial outcome"
+  ],
+  "freshnessHandoffAt": "2026-11-04T15:03:11.794Z"
+}

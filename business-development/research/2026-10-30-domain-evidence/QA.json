@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-30T19:58:41.144Z",
+  "status": "PASS_documentary_validation",
+  "outcome": "existing_requirement_evidence_updated",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "checks": {
+    "freshnessContinue": "PASS_FRESH_BASE",
+    "freshnessContinueAt": "2026-10-30T19:56:17.166Z",
+    "primarySourcesRead": 3,
+    "domainReportsOpened": 0,
+    "casesDocumented": 5,
+    "casesExecuted": 0,
+    "newIdeas": 0,
+    "newApprovals": 0,
+    "newPendingExperiments": 0,
+    "protectedStateFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "jsonParsed": 3,
+    "localReferences": 2,
+    "externalPrimaryReferences": 3,
+    "brokenReferences": 0,
+    "languageReview": "Complete final private prose self-edited, source limits/negations/timing and five cases retained; no public UI",
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-30T19:58:23.424Z",
+    "diffCheck": "PASS",
+    "exactStagedDiffReviewed": true,
+    "repositorySafety": "PASS: four exact staged private documentary files, zero findings"
+  },
+  "ownerDecisionEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApproval": false
+  },
+  "scope": {
+    "siteEdits": 0,
+    "runtimeEdits": 0,
+    "companionSourceUse": 0,
+    "privateInboxReads": 0,
+    "providerCalls": 0,
+    "paidCalls": 0,
+    "purchases": 0,
+    "dnsChanges": 0,
+    "accountPermissionChanges": 0,
+    "domainScans": 0
+  },
+  "limits": [
+    "Public documentation only; no current domain manual/security/ranking result",
+    "Five cases documented only, no actual pilot or remediation",
+    "Missing access remains unknown, not automatic PASS or rejection",
+    "No public UI changed; browser/runtime tests not applicable"
+  ]
+}

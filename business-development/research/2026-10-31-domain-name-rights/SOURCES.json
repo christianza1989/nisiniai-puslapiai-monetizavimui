@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-31",
+  "sources": [
+    {
+      "id": "D1",
+      "url": "https://www.domreg.lt/duk/pageidaujantiems-domeno/ar-galima-rezervuoti-domeno-varda/",
+      "title": "Ar galima rezervuoti domeno vardą?",
+      "read": true,
+      "type": "primary_registry_guidance",
+      "facts": [
+        "First-come principle governs application processing and does not excuse infringement of third-party rights"
+      ],
+      "limit": "No actual candidate availability or rights assessed"
+    },
+    {
+      "id": "V1",
+      "url": "https://vpb.lrv.lt/lt/veiklos-sritys/prekiu-zenklai/prekiu-zenklu-paieska/",
+      "title": "Prekių ženklų paieška",
+      "read": true,
+      "type": "primary_official_public_guidance",
+      "lastUpdated": "2026-09-24",
+      "facts": [
+        "National, EU and international marks extended to Lithuania relevant",
+        "Free official database search guidance and spelling variants",
+        "Absolute-requirement examination does not assess prior third-party rights"
+      ],
+      "limit": "No actual name search, registry alerts or legal clearance"
+    },
+    {
+      "id": "D2",
+      "url": "https://www.domreg.lt/naujienos/visos-naujienos/domenas-ir-prekiu-zenklas-kaip-juos-apsaugoti/",
+      "title": "Domenas ir prekių ženklas: kaip juos apsaugoti?",
+      "read": true,
+      "type": "primary_registry_expert_article",
+      "facts": [
+        "Discusses trademark databases and legal-person names before domain registration",
+        "Domain and trademark serve different purposes"
+      ],
+      "limit": "Explanatory historical article, not current statute or candidate-specific decision"
+    },
+    {
+      "id": "E1",
+      "url": "https://www.euipo.europa.eu/en/trade-marks/before-applying/availability",
+      "title": "Availability",
+      "read": false,
+      "retrievalStatus": "403 Forbidden",
+      "type": "official_page_unavailable",
+      "limit": "Search excerpt seen; full body not read or relied on; no bypass attempted"
+    }
+  ],
+  "primaryBodiesRead": 3,
+  "failedOpens": 1,
+  "actualRegistrySearches": 0,
+  "paidCalls": 0
+}

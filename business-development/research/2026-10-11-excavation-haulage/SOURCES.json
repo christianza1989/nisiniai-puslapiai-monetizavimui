@@ -1,0 +1,13 @@
+{
+  "checkedOn":"2026-10-11",
+  "scope":"Two primary HTML pages read; three failed opens kept as limits",
+  "sources":[
+    {"id":"S1","url":"https://www.cat.com/en_US/articles/ci-articles/earthwork-volumes-reference-tables.html","status":"read_primary_html","sourceDate":"2025-01-15","supports":"Different bank, loose and compacted volumes; exact characteristics require tests","limit":"Not measured Lithuanian project data or a universal coefficient"},
+    {"id":"S2","url":"https://nuomokis.lt/nuomojama-technika/ekskavatoriai/","status":"read_primary_html","sourceDate":null,"supports":"Kaunas operator tariff and machine delivery/collection; separate dumper service offer","limit":"No individual quote, partnership, VAT or minimum-work confirmation"},
+    {"id":"S3","url":"https://www.lepela.lt/index.php?page=darbuKainos","status":"web_open_internal_error","usedForClaims":false},
+    {"id":"S4","url":"https://mvctechnika.lt/","status":"web_open_internal_error","usedForClaims":false},
+    {"id":"S5","url":"https://technikosgidas.lt/transporto-nuoma/","status":"web_open_internal_error","usedForClaims":false}
+  ],
+  "toolDiscovery":{"query":"earthmoving soil loose bank volume haulage quotation","catalogueMatches":0,"irrelevantNearMatches":"banking-related results rejected","providerCalls":0,"paidCalls":0},
+  "searchSnippets":"Discovery only; unread offer prices and capacities not adopted"
+}

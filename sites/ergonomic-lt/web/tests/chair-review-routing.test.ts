@@ -42,7 +42,7 @@ test('HIGH NONE never accepts MEDIUM geometry or a nominal210 hidden dimension',
 test('MEDIUM base menu selects only complete admitted NONE constructions, never R35K3SB2+TS34BL',()=>{
  const medium=reviewRegistry.entries.find(e=>e.code==='KSEG002WW001')! as ChairReviewEntry;
  const menu=chairConstructionMenus(medium,'MEDIUM_NONE_TS34BL')!;
- assert.equal(menu.armId,'MEDIUM_NONE');assert.equal(menu.arms.length,3);
+ assert.equal(menu.armId,'MEDIUM_NONE');assert.equal(menu.arms.length,4);
  assert.deepEqual(menu.bases,[{id:'MEDIUM_NONE',label:'TS25'},{id:'MEDIUM_NONE_TS34BL',label:'TS34BL'},{id:'MEDIUM_NONE_ST61POLBL',label:'ST61POLBL'}]);
  assert.deepEqual(chairConstructionMenus(medium,'default')!.bases,[{id:'default',label:'TS25'},{id:'MEDIUM_R35K3SB2_ST61POLBL_HEIGHT210',label:'ST61POLBL'}]);
  const routed=chairReviewRoute(medium,'MEDIUM_NONE_TS34BL','default');
@@ -137,7 +137,7 @@ test('HIGH flame retardant foam is a full qualified FST record, never an indepen
 test('MEDIUM R35K3 ST61POLBL height220 selects its exact whole source and only CSE44',()=>{
  const medium=reviewRegistry.entries.find(e=>e.code==='KSEG002WW001')! as ChairReviewEntry,id='MEDIUM_R35K3_ST61POLBL_HEIGHT220';
  const menu=chairConstructionMenus(medium,id)!;
- assert.deepEqual(menu.arms.map(a=>a.id),['default','MEDIUM_NONE',id]);
+ assert.deepEqual(menu.arms.map(a=>a.id),['default','MEDIUM_NONE',id,'MEDIUM_R74_ST61POLBL_HEIGHT205']);
  assert.deepEqual(menu.bases,[{id,label:'ST61POLBL'}]);
  const binding=chairReviewRoute(medium,id,'default').construction.construction!;
  assert.equal(binding.structuralValues.CARMRESTS,'R35K3');assert.equal(binding.structuralValues.CBASE,'ST61POLBL');
@@ -154,11 +154,20 @@ test('MEDIUM SB2 ST61POLBL is a separate height210 OWN source and never uses the
  const menu=chairConstructionMenus(medium,id)!;
  assert.equal(menu.armId,'default');assert.equal(menu.baseId,id);
  assert.deepEqual(menu.bases,[{id:'default',label:'TS25'},{id,label:'ST61POLBL'}]);
- assert.equal(menu.arms.length,3);
+ assert.equal(menu.arms.length,4);
  const binding=chairReviewRoute(medium,id,'default').construction.construction!,pin=constructionPins.MEDIUM_R35K3SB2_ST61POLBL_HEIGHT210;
  assert.equal(binding.structuralValues.CARMRESTS,'R35K3SB2');assert.equal(binding.structuralValues.CBASE,'ST61POLBL');
  assert.equal(binding.dimensions.DARMRESTSHEIGHT,'_210T290');assert.deepEqual(binding.dimensions,pin.route.exactRuntimeConstructionDimensions);
  assert.notEqual(pin.route.baselineAssetSha256,constructionPins.MEDIUM_R35K3_ST61POLBL_HEIGHT220.route.baselineAssetSha256);
  assert.notEqual(pin.route.runtimeSha256,constructionPins.MEDIUM_R35K3_ST61POLBL_HEIGHT220.route.runtimeSha256);
+ assert.throws(()=>chairReviewRoute(medium,id,'PRICE_2_CUR'),/Unknown finish/);
+});
+
+test('MEDIUM R74 ST61POLBL height205 selects only its own complete construction',()=>{
+ const medium=reviewRegistry.entries.find(e=>e.code==='KSEG002WW001')! as ChairReviewEntry,id='MEDIUM_R74_ST61POLBL_HEIGHT205',menu=chairConstructionMenus(medium,id)!;
+ assert.equal(menu.armId,id);assert.equal(menu.arms.length,4);assert.deepEqual(menu.bases,[{id,label:'ST61POLBL'}]);
+ const binding=chairReviewRoute(medium,id,'default').construction.construction!,pin=constructionPins.MEDIUM_R74_ST61POLBL_HEIGHT205;
+ assert.equal(binding.structuralValues.CARMRESTS,'R74');assert.equal(binding.dimensions.DARMRESTSHEIGHT,'_205T280');assert.deepEqual(binding.dimensions,pin.route.exactRuntimeConstructionDimensions);
+ for(const other of [constructionPins.MEDIUM_R35K3_ST61POLBL_HEIGHT220,constructionPins.MEDIUM_R35K3SB2_ST61POLBL_HEIGHT210,constructionPins.HIGH_NONE_ST61POLBL])assert.notEqual(pin.route.baselineAssetSha256,other.route.baselineAssetSha256);
  assert.throws(()=>chairReviewRoute(medium,id,'PRICE_2_CUR'),/Unknown finish/);
 });

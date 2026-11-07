@@ -105,3 +105,17 @@ test('HIGH GLR is scoped to NONE ST61POLBL ESHH60 and parent choices resolve onl
  assert.notEqual(pin.runtimeSha256,constructionPins.HIGH_NONE_ST61POLBL_ESHH60.route.runtimeSha256);
  assert.throws(()=>chairReviewRoute(high,id,'PRICE_4'),/Unknown finish/);
 });
+
+test('HIGH FST is only a full NONE ST61POLBL ESHH60 GLR record with its own geometry',()=>{
+ const high=reviewRegistry.entries.find(e=>e.code==='KSEG003WW001')! as ChairReviewEntry,id='HIGH_NONE_ST61POLBL_ESHH60_GLR_FST';
+ const menu=chairConstructionMenus(high,id)!;
+ assert.equal(menu.baseId,id);assert.equal(menu.castorId,id);assert.equal(menu.gasliftId,id);
+ assert.deepEqual(menu.mechanisms,[{id:'HIGH_NONE_ST61POLBL_ESHH60_GLR',label:'TAT7'},{id,label:'FST'}]);
+ for(const other of ['default','HIGH_NONE','HIGH_NONE_TS25','HIGH_NONE_ST61POLBL','HIGH_NONE_ST61POLBL_ESHH60'])assert.equal(chairConstructionMenus(high,other)!.mechanisms.length,1);
+ for(const candidate of [...menu.bases,...menu.castors,...menu.gaslifts]){const binding=chairReviewRoute(high,candidate.id,'default').construction.construction!;assert.equal(binding.structuralValues.CMECHANISM,candidate.id===id?'FST':'TAT7');}
+ const pin=constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR_FST.route;
+ assert.equal(pin.fixedSelectableStructuralFields.CMECHANISM.fixedValue,'FST');
+ assert.notEqual(pin.runtimeSha256,constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR.route.runtimeSha256);
+ assert.notEqual(pin.baselineAssetSha256,constructionPins.HIGH_NONE_ST61POLBL_ESHH60_GLR.route.baselineAssetSha256);
+ assert.throws(()=>chairReviewRoute(high,id,'PRICE_4'),/Unknown finish/);
+});

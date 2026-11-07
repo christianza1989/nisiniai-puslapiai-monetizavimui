@@ -29,8 +29,8 @@ export function chairConstructionMenus(entry:ChairReviewEntry,id:string){
    return row;
   });
  };
- const bases=choices('CBASE',['CCASTORS','CGASLIFT']),castors=choices('CCASTORS',['CGASLIFT']),gaslifts=choices('CGASLIFT',[]);
- return {armId:arms.find(row=>row.construction.structuralValues.CARMRESTS===current.construction.structuralValues.CARMRESTS)!.id,arms:arms.map(r=>({id:r.id,label:r.label})),baseId:bases.find(row=>row.construction.structuralValues.CBASE===current.construction.structuralValues.CBASE)!.id,bases:bases.map(r=>({id:r.id,label:r.construction.structuralValues.CBASE})),castorId:castors.find(row=>row.construction.structuralValues.CCASTORS===current.construction.structuralValues.CCASTORS)!.id,castors:castors.map(r=>({id:r.id,label:r.construction.structuralValues.CCASTORS})),gaslifts:gaslifts.map(r=>({id:r.id,label:r.construction.structuralValues.CGASLIFT}))};
+ const bases=choices('CBASE',['CCASTORS','CGASLIFT','CMECHANISM']),castors=choices('CCASTORS',['CGASLIFT','CMECHANISM']),gaslifts=choices('CGASLIFT',['CMECHANISM']),mechanisms=choices('CMECHANISM',[]);
+ return {armId:arms.find(row=>row.construction.structuralValues.CARMRESTS===current.construction.structuralValues.CARMRESTS)!.id,arms:arms.map(r=>({id:r.id,label:r.label})),baseId:bases.find(row=>row.construction.structuralValues.CBASE===current.construction.structuralValues.CBASE)!.id,bases:bases.map(r=>({id:r.id,label:r.construction.structuralValues.CBASE})),castorId:castors.find(row=>row.construction.structuralValues.CCASTORS===current.construction.structuralValues.CCASTORS)!.id,castors:castors.map(r=>({id:r.id,label:r.construction.structuralValues.CCASTORS})),gasliftId:gaslifts.find(row=>row.construction.structuralValues.CGASLIFT===current.construction.structuralValues.CGASLIFT)!.id,gaslifts:gaslifts.map(r=>({id:r.id,label:r.construction.structuralValues.CGASLIFT})),mechanisms:mechanisms.map(r=>({id:r.id,label:r.construction.structuralValues.CMECHANISM}))};
 }
 
 export function validateChairConstructionBinding(data:ChairPreview,binding:ChairConstructionBinding){

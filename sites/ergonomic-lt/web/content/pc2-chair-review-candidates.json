@@ -1187,6 +1187,47 @@
             },
             "runtimeSha256": "a62bb9ba5e6c889aeae8013436953a51833c75c224b382316da768dbf2135e0f"
           }
+        },
+        {
+          "id": "HIGH_NONE_ST61POLBL_ESHH60_GLR_FST",
+          "label": "NONE · be porankių · ST61POLBL · ESHH60 · GLR · FST",
+          "contextLabel": "PRICE_1 / CSE · 44 apmušalai",
+          "asset": "/models/configurator/chairs/KSEG003WW001-ad5bdd1c7aece1ef5ae8/review-9691e0625ee36a57fb82.json",
+          "sha256": "9691e0625ee36a57fb82c7639d9816a9e7d5c06d7a732f6bd6c5a6ae1635cd0e",
+          "bytes": 117357,
+          "runtimeSha256": "a0618533fb945a6213c36c86ddeca70339d559cbaa5461909cd393e212deea0c",
+          "construction": {
+            "dimensions": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBACKREST": "HBUPHCOVERPLASTIC",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESHH60",
+              "CFSC": "FSCMIX",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEAT": "UPH",
+              "CSEATPADFOAM": "STANDARD",
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_580T655",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_1030T1235",
+              "DSEATHEIGHT": "_465T585",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "structuralValues": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "runtimeSha256": "a0618533fb945a6213c36c86ddeca70339d559cbaa5461909cd393e212deea0c"
+          }
         }
       ]
     }

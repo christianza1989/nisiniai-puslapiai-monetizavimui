@@ -1,5 +1,5 @@
 import {isAdmin} from './auth';
-import {connectedFieldLabel,connectedColourLabel,connectedValueLabel} from './connected-choice-presentation';
+import {connectedFieldLabel,connectedColourLabel,connectedValueLabel,connectedColourField} from './connected-choice-presentation';
 import verifiedProposals from '../../content/text-review-option-proposals.json';
 import inventory from '../../content/text-review-inventory.json';
 import {canonicalReviewValue} from './text-review-value';
@@ -69,7 +69,7 @@ export async function preparedCustomerConfiguration(product:Product,source:Prepa
  const selected=preparedSupplierConfiguration(product,source,selection),code=source.data.code,review=await buildReviewScope(customerReviewProduct(product,code)),originals=(english.models as Record<string,Record<string,string>>)[code]||{},codes=customerProductCodes(product);
  for(const [field,value]of Object.entries(selected.values)){codes.add(field);codes.add(value);}for(const row of rows)for(const option of row.options)for(const [field,value]of Object.entries(option.values)){codes.add(field);codes.add(value);}
  const fieldName=(f:string)=>connectedFieldLabel(customerLabel(publishedReviewValue(review,code,f)||configurationOptionLabel(f)||fieldLabels[f]||sourceText(code,f),codes,isColourField(f)?'Spalva':'Parinktis'));
- const valueName=(f:string,v:string)=>{const original=sourceText(code,f,v),published=publishedReviewValue(review,code,f,v),text=(isColourField(f)?published:customerLabel(published,codes,''))||sourceProposal(f,v,original)||original;return isColourField(f)?connectedColourLabel(customerColourLabel(text||v,codes,'Spalva',[v])):connectedValueLabel(customerLabel(text,codes,'Gamintojo variantas'));};
+ const valueName=(f:string,v:string)=>{const original=sourceText(code,f,v),published=publishedReviewValue(review,code,f,v),text=(f==='CSEATDECSTITCHING'?original:isColourField(f)?published:customerLabel(published,codes,''))||sourceProposal(f,v,original)||original;return connectedColourField(f)?connectedColourLabel(customerColourLabel(text||v,codes,'Spalva',[v])):connectedValueLabel(customerLabel(text,codes,'Gamintojo variantas'));};
  const tuple=(fields:string[],values:Record<string,string>)=>{const pairs=fields.filter(f=>values[f]!==undefined&&!/PRICE|PACK|ASSEMBLY/.test(f)).map(f=>({field:f,text:valueName(f,values[f])}));const unique=[...new Set(pairs.map(p=>p.text))];return (unique.length===1?unique[0]:pairs.map(p=>(fields.length>1?fieldName(p.field)+': ':'')+p.text).join(' · '))||'Pradinė apdaila';};
  const rowLabel=(row:typeof rows[number],fields:string[])=>{
   if(row.key.startsWith('chair-material-'))return 'Apmušalas';

@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {connectedFieldLabel,connectedColourLabel,connectedValueLabel} from '../src/lib/connected-choice-presentation';
+import {connectedFieldLabel,connectedColourLabel,connectedValueLabel,connectedColourField} from '../src/lib/connected-choice-presentation';
 import {independentFieldGroups} from '../src/lib/finite-choice-fields';
 test('chair field labels are Lithuanian and bench wording does not reach chair controls',()=>{
  assert.equal(connectedFieldLabel('Colour 3D upholstery - back of backrest'),'Atlošo išorinės pusės 3D audinio spalva');
@@ -12,6 +12,7 @@ test('remove alternate aliases while preserving original shade names and real co
  assert.equal(connectedColourLabel('RAL 9016 Traffic White BI, WT, W'),'RAL 9016 Traffic White');
  assert.equal(connectedColourLabel('Chrome CR, Z'),'Chrome');
  for(const value of ['CSE01','SX3066 · Silvertex','NCS S 2005-Y60R Cashmere NK','NJ Acacia Light','BLACK · Black'])assert.equal(connectedColourLabel(value),value);
+ assert.equal(connectedColourField('CSEATDECSTITCHING'),true);assert.equal(connectedColourField('CARMRESTS'),false);
 });
 test('only an exact Cartesian relation can become independent controls',()=>{
  const values=['a','b'].flatMap(A=>['x','y'].map(B=>({A,B,C:B==='x'?'one':'two'})));

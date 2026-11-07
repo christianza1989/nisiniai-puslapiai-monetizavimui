@@ -1,3 +1,6 @@
+import {isColourField} from './colour-fields';
+/** The captured supplier field explicitly means "Colour - stitching on seat". */
+export const connectedColourField=(field:string)=>isColourField(field)||field==='CSEATDECSTITCHING';
 /** Narrow corrections to captured chair labels. Original supplier data stays intact. */
 const labels:Record<string,string>={
  'Metal elements colour - footrest':'Kojų atramos metalo spalva',

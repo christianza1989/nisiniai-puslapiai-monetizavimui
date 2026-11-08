@@ -877,3 +877,6 @@ Branch codex/kvap-visual-own-20261108. Source259:11 finite original single-GLB v
 
 ## Ergonomic Prox BLACK OWN (2026-11-08)
 Branch codex/kpox001-visual-own-20261108. Source258:two exact two-part visuals, no colour contrasts; ambiguous before-assembly palette remains unavailable. Four distinct nearest functional mappings shown explicitly; duplicate source record retained without duplicate UI option. Independent compact/lossless/bounded-buffer transport proof preserves original geometry/UV/indices/matrices/PBR/JPEG. Task D:/Core/output/ergonomic-kpox001-visual-own-20261108. Preview only.
+
+## Ergonomic X-Line observed OWN (2026-11-08)
+Branch codex/xline-visual-own-20261108. Source260:11 finite original OWN visuals,7 exact full finish contrasts onlyvisual10, no palette cross-product. All13 GLBs unchanged. Fujitsu reports legacy15680149 association; old public URLs/identities are not reassigned. Task D:/Core/output/ergonomic-xline-visual-own-20261108. Preview only.

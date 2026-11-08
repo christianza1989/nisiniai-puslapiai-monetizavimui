@@ -174,10 +174,10 @@
     {
       "code": "KVAP008WW001",
       "name": "Vapaa",
-      "asset": "/models/configurator/chairs/KVAP008WW001-399f07941ef074b338ae/review-9d490a7e305b17b2aa36.json",
-      "sha256": "9d490a7e305b17b2aa36ba5fb487c04c246f81ea274f1ffc6a7a7b4ac46abba0",
-      "bytes": 733694,
-      "version": "colors-20261028-v6-saved-own-parts373"
+      "asset": "/models/configurator/chairs/KVAP008WW001-visual-364bf9fbbdf22bc681670/review-dbe5230fb1293a241183.json",
+      "sha256": "dbe5230fb1293a2411832f79352e53ad28ff0a5b28c0c56519c61ca4d022f17b",
+      "bytes": 328399,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KUTI004WW002",

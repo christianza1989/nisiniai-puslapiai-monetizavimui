@@ -8,7 +8,8 @@ export function admitObservedOwnAssembly(input:{code:string;sourceRuntimeSha256:
  const{code,sourceRuntimeSha256,source,profile,materials,transport}=input;
  assert(source.schema==='actual-closed-own-visible-assembly-runtime-940000-v1'&&source.code===code&&source.allPossibleConstructionCombinationsIncluded===false&&source.originalFullGraphClosed===false&&source.mainRuntimeGeometryOwnershipQualified===false&&source.newFullFormOrNative10Claim===false);
  assert(source.visuals.length>0&&source.visuals.length<=100&&source.visuals.every((v:any,i:number)=>v.visualIndex===i&&v.actualWholeGeometryUvWorldPbrReconstructed===true&&v.assets.length>0&&v.assets.length<=10));
- assert(profile.schema==='exact-own-saved-pair-colour-bindings-940000-v1'&&profile.code===code&&profile.runtimeSha256===sourceRuntimeSha256&&profile.actualPaletteComplete===false&&profile.independentFinishCompositionAllowed===false&&profile.notOtherVisualOrCodeBindings===true&&profile.unrepresentedPairs.length===0);
+ assert(profile.schema==='exact-own-saved-pair-colour-bindings-940000-v1'&&profile.code===code&&profile.runtimeSha256===sourceRuntimeSha256&&profile.actualPaletteComplete===false&&profile.independentFinishCompositionAllowed===false&&profile.notOtherVisualOrCodeBindings===true&&Array.isArray(profile.unrepresentedPairs));
+ assert(profile.unrepresentedPairs.every((p:any)=>typeof p.field==='string'&&/^[A-Z][A-Z0-9_]*$/.test(p.field)&&p.reason==='GEOMETRY_OR_UV_CHANGE_REQUIRES_PART_SWAP'));
  const raw=input.selectors;assert(raw.schema==='canonical-world-primitive-selectors-329-v1'&&raw.scope.code===code&&raw.scope.runtimeSha256===sourceRuntimeSha256);
  const selectors:ChairSelectors={schema:raw.schema,assets:{}};
  const part=(a:any)=>{assert(a.file==='assets/'+a.sha256+'.glb');const t=transport[a.sha256],s=raw.assets[a.sha256];assert(t&&/^[a-f0-9]{64}$/.test(t.sha256)&&t.bytes>0&&t.bytes<=25*1024*1024&&s?.assetSha256===a.sha256);

@@ -871,3 +871,6 @@ Branch codex/visual-own-four-20261108. Four exact J packages, six own contexts, 
 
 ## Ergonomic KPOX observed OWN (2026-11-08)
 Branch codex/kpox-visual-own-20261108. Source257: nine finite five-part visual assemblies, six saved complete finishes scoped to visual8; two explicitly labeled nearest functional mappings with no borrowed palette. Exact geometry/UV/indices/matrices/materials/images preserved through independent lossless transport proof. Existing previews retained; preview only. Task D:/Core/output/ergonomic-kpox-visual-own-20261108.
+
+## Ergonomic KVAP observed OWN (2026-11-08)
+Branch codex/kvap-visual-own-20261108. Source259:11 finite original single-GLB visuals;5 full finish contrasts onlyvisual10. Unrepresented frame material/UV swap remains unavailable with unknown count. No geometry or original image changes. Preview only; task D:/Core/output/ergonomic-kvap-visual-own-20261108.

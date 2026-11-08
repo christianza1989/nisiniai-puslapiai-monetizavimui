@@ -142,18 +142,18 @@
     {
       "code": "KYOU001WW003",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU001WW003-2943c30797f337b26758/review-ca50b4f42534f53b654f.json",
-      "sha256": "ca50b4f42534f53b654fe7073754041a601c1cd3ada505c58fd6592f50ea9539",
-      "bytes": 452285,
-      "version": "colors-20261028-v3-library-you444"
+      "asset": "/models/configurator/chairs/KYOU001WW003-visual-7fcb5b66e3170f769064/review-58bce84e1556e751d668.json",
+      "sha256": "58bce84e1556e751d66855fc37df6cb5499708b320d8db6ab13e272aaf5de63a",
+      "bytes": 219708,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KZBO004WW001",
       "name": "Z-body",
-      "asset": "/models/configurator/chairs/KZBO004WW001-9f5384f5c97d206ff62b/review-89dba3cd80fce6335876.json",
-      "sha256": "89dba3cd80fce6335876050c6b73b997a6868df1c2c2ae267f26a61c6367b5a9",
-      "bytes": 106992,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KZBO004WW001-visual-7fcb5b66e3170f769064/review-82fed918ee05a3554e28.json",
+      "sha256": "82fed918ee05a3554e28f893804fc1df5981baa0307b90880603fbefdd5d9475",
+      "bytes": 127728,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KHOL001WW002",

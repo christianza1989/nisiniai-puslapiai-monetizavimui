@@ -895,3 +895,9 @@ Branch codex/xenium032-visual-own-20261108. Source261:10 exact three/four-part v
 - Owner: 3D peržiūra; codex/youteam-three-visual-own-20261108, stacked on Xenium pair.
 - Scope: pc2-chair-review-candidates.json, scripts/kyou*-observed-own-pin.json, scripts/admit-observed-own-assembly.ts, tests/youteam-three-observed-own.test.ts.
 - Exact producer-declared same-factory functional finish tuple becomes a separate finite context. No palette on different representative metadata, no approximation adoption, no geometry changes. Other58entries preserved, no renderer/prod/Native.
+
+
+## 2026-11-08 YouTeam003/Z-body OWN Fujitsu267/268
+- Owner:3D peržiūra; codex/youteam-zbo-visual-own-20261108,stacked on YouTeam-three.
+- Scope: pc2-chair-review-candidates.json,scripts/kyou001ww003-observed-own-pin.json,scripts/kzbo004ww001-observed-own-pin.json,tests/youteam-zbo-observed-own.test.ts.
+- Original20GLBs unchanged; YouTeam3 exact finishes onlyR66SGG alias, Z-body9 assemblies original-only and2explicitnearest. No renderer or shared changes,other59entries preserved,Native/prod unchanged.

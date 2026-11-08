@@ -955,3 +955,6 @@ Owner:3D preview chat. D-only source/output under D:/Core/output/ergonomic-2me-g
 
 ## Ergonomic 2ME RMH palette PC2 311 – 2026-11-08
 Owner:3D preview chat. Existing D-only source;new output D:/Core/output/ergonomic-2me-rmh-palette-20261108. ExactK2ME003WW002 runtime745d9ce6/base d66a8238,9frame483uph tuples,chrome originalprimitiveSwap only,CARMPADPLCOLOR=W fixed,CCASTORS=RMH only,CGLIDES=NONE readonly. Previous calibrated source remains separate;all other60 entries (including GBMF2ME001) exact. No UI/renderer changes,Native/production/text-review unchanged.
+
+## 2026-11-09 Airi fixed OWN finish (PC2 312)
+Branch codex/airi-fixed-20261109. Scope: web/scripts/admit-airi-fixed.ts and KAII001WW001 registry entry only; exact fixed runtime7e02bbe9, original GLBbe572988, no finish menu. Hidden editable CMESHGROUP retained as source role, not readonly. Other60 entries exact; previous source separate. No frontend/renderer changes. Preview only, all new artifacts D:/Core/output/ergonomic-airi-fixed-20261109.

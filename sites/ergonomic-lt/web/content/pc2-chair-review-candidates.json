@@ -94,10 +94,10 @@
     {
       "code": "KXEN033WW003",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN033WW003-9458b52d315e98736a4c/review-6f7a37538a825f7500c4.json",
-      "sha256": "6f7a37538a825f7500c454b78a12e6e8e3f10c4ce63e9ba2df9cfe9167319386",
-      "bytes": 428233,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KXEN033WW003-visual-ba5e38a02c6c9de4d8a9/review-e5a167de13a617952434.json",
+      "sha256": "e5a167de13a61795243489f7829457b285ed3894753b74e0b92bdbd49ab9cf86",
+      "bytes": 387799,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KYOU002WW001",
@@ -374,10 +374,10 @@
     {
       "code": "KXEN028WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN028WW001-66003488c5cc41e37e83/review-c5453f8f7b4fcee5d760.json",
-      "sha256": "c5453f8f7b4fcee5d7608425e1ca937269f76b22d8d1b71a062c7304fd234578",
-      "bytes": 182510,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KXEN028WW001-visual-3ac2304a38e48a9746e7/review-8af85a073bbdf336cc62.json",
+      "sha256": "8af85a073bbdf336cc627a033f298f9119448ca464e6f3f46d63f52a14c6d966",
+      "bytes": 401736,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KXLI002WW002",

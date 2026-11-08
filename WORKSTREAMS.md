@@ -961,3 +961,6 @@ Branch codex/airi-fixed-20261109. Scope: web/scripts/admit-airi-fixed.ts and KAI
 
 ## 2026-11-09 Airi WW002 grey fixed OWN finish (PC2 313)
 Branch codex/airi-grey-fixed-20261109. Scope: web/scripts/admit-airi-grey-fixed.ts and KAII001WW002 registry only. Exact runtime18758091 and original143ad9da GLB; fixed JM50/JM/GREY; no colour menu. Hidden editable CMESHGROUP is not readonly. Other60 entries exact, previous source separate. No frontend/renderer changes; preview only; all new artifacts D:/Core/output/ergonomic-airi-grey-fixed-20261109.
+
+## 2026-11-09 Airi WW003 green fixed OWN finish (PC2 314)
+Branch codex/airi-green-fixed-20261109. Scope: web/scripts/admit-airi-green-fixed.ts and KAII001WW003 registry only. Exact runtime667052bd and original94db7344 GLB; fixed JM56/JM/GREEN; no colour menu. Hidden editable CMESHGROUP remains unchanged. Other60 entries exact, previous source separate. No frontend/renderer changes; preview only; new artifacts D:/Core/output/ergonomic-airi-green-fixed-20261109.

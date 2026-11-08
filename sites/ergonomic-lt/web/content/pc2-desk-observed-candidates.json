@@ -28,10 +28,10 @@
     {
       "code": "KPW2011WW001",
       "name": "Play&Work 2.0",
-      "asset": "/models/configurator/observed-desks/KPW2011WW001/review-2b0d2f3e6e469b451f1a.json",
-      "sha256": "2b0d2f3e6e469b451f1a2f449fea434381bd16de6204fd2abfdf313dde9b0ac2",
-      "bytes": 55643,
-      "states": 14
+      "asset": "/models/configurator/observed-desks/KPW2011WW001/review-faadf5ca2766dcf9a293.json",
+      "sha256": "faadf5ca2766dcf9a293a2b568ee2df105337f25e8f222ccbbe0cbd024f334b3",
+      "bytes": 59607,
+      "states": 15
     },
     {
       "code": "KPW2016WW002",

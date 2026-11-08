@@ -943,3 +943,7 @@ Branch codex/prox-segla-selection-fix-20261108; base04e2f1b2e08a626f9efc076bf0cb
 
 ## Ergonomic observed five desks 2026-11-08
 Owner: this 3D preview chat. Branch codex/observed-five-desks-20261108. Scope: isolated preview-only observed desk adapter, registry, route and negative tuple tests. Five exact codes KLEV023WW002 KLEV025WW002 KPW2008WW001 KPW2011WW001 KPW2016WW002. 60 original GLBs, 62 EU/GE complete states; four FR aliases excluded, original85 files retained. No supplier requests, production or text-review changes. Existing346 rows and61 chair registry entries preserved.
+
+
+## Ergonomic PW2011 width2245 2026-11-08
+Owner: 3D preview chat. Branch codex/pw2011-width2245-20261108. Scope: existing observed-desk registry only; exact new GDWIDTH2245/GDTOPWIDTH1800 complete source appended to previous14 states. One original GLB,6 SHA-verified source files; renderer and other four desk entries unchanged. Preview only; Native/production/text-review unchanged.

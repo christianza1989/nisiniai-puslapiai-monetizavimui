@@ -38,7 +38,7 @@ export type CustomerTiming=(name:string,milliseconds:number)=>void;
 export async function customerContext(p:Product,input?:CustomerState['state'],trace?:CustomerTiming){
  const start=performance.now();
  const prepared=await loadPreparedCustomerChair(p),runtime=prepared?undefined:await loadCatalogRuntime(p,input);trace?.('runtime',performance.now()-start);const engineStart=performance.now(),engine=createExpandedEngine(runtime),family=engine.expandedForProduct(p),cap=customerKey();
- const revision=cap.id('revision',customerConfigurationRevisionSource(prepared?{package:prepared.entry.sha256,product:p.id,sample:p.modelConfigurationId}:family||p.configurations.map(c=>({id:c.id,code:c.code,supplierOptions:c.supplierOptions}))));
+ const revision=cap.id('revision',customerConfigurationRevisionSource(prepared?{package:prepared.entry.sha256,...(prepared.finishRevision?{finishRevision:prepared.finishRevision}:{}),product:p.id,sample:p.modelConfigurationId}:family||p.configurations.map(c=>({id:c.id,code:c.code,supplierOptions:c.supplierOptions}))));
  trace?.('engine',performance.now()-engineStart);return {runtime,engine,family,revision,prepared};
 }
 export async function resolveCustomerSnapshot(token:string,trace?:CustomerTiming){

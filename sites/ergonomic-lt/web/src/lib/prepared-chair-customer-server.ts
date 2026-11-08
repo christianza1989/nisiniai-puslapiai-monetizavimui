@@ -1,4 +1,5 @@
 import {isAdmin} from './auth';
+import {verifiedChairFinishV2} from './verified-chair-finish-v2';
 import {connectedFieldLabel,connectedColourLabel,connectedValueLabel,connectedColourField} from './connected-choice-presentation';
 import verifiedProposals from '../../content/text-review-option-proposals.json';
 import inventory from '../../content/text-review-inventory.json';
@@ -24,7 +25,7 @@ import {chairMaterialDocument,type ChairPreview} from './chair-preview';
 import {initialPreparedChair,preparedChairAssembly,preparedChairValues,preparedChairChoices} from './prepared-chair-choices';
 import type {PreparedChairSelection} from './prepared-chair-selection';
 import type {Product} from './types';
-export type PreparedCustomerChair={entry:typeof entries.entries[number];data:ChairPreview};
+export type PreparedCustomerChair={entry:typeof entries.entries[number];data:ChairPreview;finishRevision?:string};
 const cache=new Map<string,Promise<PreparedCustomerChair>>();
 const sharedOriginals=new Map<string,Set<string>>();
 for(const[model,values]of Object.entries(english.models)){const meta=(inventory.models as Record<string,{path:string}>)[model];if(!meta||!meta.path.includes('/kedes/')&&!entries.entries.some(e=>e.code===model))continue;for(const[binding,text]of Object.entries(values)){const set=sharedOriginals.get(binding)||new Set<string>();set.add(text);sharedOriginals.set(binding,set);}}
@@ -37,7 +38,8 @@ export async function loadPreparedCustomerChair(product:Product):Promise<Prepare
   const bytes=await customerSourceAsset(entry.asset);if(bytes.byteLength!==entry.bytes||createHash('sha256').update(bytes).digest('hex')!==entry.sha256)throw Error('Kėdės paketo tapatybė pasikeitė.');
   const data=JSON.parse(Buffer.from(bytes).toString('utf8')) as ChairPreview;
   if(data.schema!=='pc2-chair-review-111-v1'||data.code!==entry.code||data.runtime.code!==entry.code||data.palette.code!==entry.code||data.palette.runtimeSha256!==data.runtimeSha256)throw Error('Netinkamas kėdės paketas.');
-  return {entry,data};})();if(cache.size>=2)cache.delete(cache.keys().next().value!);cache.set(entry.sha256,task);task.catch(()=>cache.delete(entry.sha256));}return task;
+  const finishRevision=verifiedChairFinishV2(data,entry.sha256);
+  return {entry,data,finishRevision};})();if(cache.size>=2)cache.delete(cache.keys().next().value!);cache.set(entry.sha256,task);task.catch(()=>cache.delete(entry.sha256));}return task;
 }
 export function preparedSupplierConfiguration(product:Product,source:PreparedCustomerChair,input?:PreparedChairSelection){
  const selection=input||initialPreparedChair(source.data),values=preparedChairValues(source.data,selection),sample=product.configurations.find(c=>c.id===product.modelConfigurationId)!;

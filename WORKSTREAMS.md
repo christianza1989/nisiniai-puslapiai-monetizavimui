@@ -951,3 +951,7 @@ Owner: 3D preview chat. Branch codex/pw2011-width2245-20261108. Scope: existing 
 
 ## Ergonomic 2ME GBMF palette PC2 310 – 2026-11-08
 Owner:3D preview chat. D-only source/output under D:/Core/output/ergonomic-2me-gbmf-palette-20261108; existing E files read only, no modification/move/deletion. Finite K2ME001WW002 OWN runtime1353cb83/baseb9975cce with9 frame537 upholstery tuples, chromeprimitiveSwap only,whiteCARMPADPLCOLOR fixed,GBMF only. Separate complete source-version routing retains old calibrated source without overlay; other60 entries preserved. No Native/production/text-review changes. Scope: admission module,pc2 review/source routing,registry,focused tests.
+
+
+## Ergonomic 2ME RMH palette PC2 311 – 2026-11-08
+Owner:3D preview chat. Existing D-only source;new output D:/Core/output/ergonomic-2me-rmh-palette-20261108. ExactK2ME003WW002 runtime745d9ce6/base d66a8238,9frame483uph tuples,chrome originalprimitiveSwap only,CARMPADPLCOLOR=W fixed,CCASTORS=RMH only,CGLIDES=NONE readonly. Previous calibrated source remains separate;all other60 entries (including GBMF2ME001) exact. No UI/renderer changes,Native/production/text-review unchanged.

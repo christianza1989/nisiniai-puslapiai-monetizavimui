@@ -3,7 +3,15 @@ import type {ChairPreview} from './chair-preview';
 export type ChairReviewSource={asset:string;sha256:string;bytes:number;runtimeSha256?:string};
 export type ChairConstructionBinding={dimensions:Record<string,string>;structuralValues:Record<string,string>;runtimeSha256:string};
 export type ChairReviewConstruction=ChairReviewSource&{id:string;label:string;contextLabel?:string;construction:ChairConstructionBinding;contexts?:Array<ChairReviewSource&{id:string;label:string}>};
-export type ChairReviewEntry=ChairReviewSource&{code:string;name:string;contextLabel?:string;construction?:ChairConstructionBinding;contexts?:Array<ChairReviewSource&{id:string;label:string}>;constructions?:ChairReviewConstruction[];visualSupplement?:import('./segla-visual-routing').SeglaVisualSupplement};
+export type ChairReviewEntry=ChairReviewSource&{code:string;name:string;contextLabel?:string;construction?:ChairConstructionBinding;contexts?:Array<ChairReviewSource&{id:string;label:string}>;constructions?:ChairReviewConstruction[];visualSupplement?:import('./segla-visual-routing').SeglaVisualSupplement;defaultVersionLabel?:string;reviewVersions?:Array<{id:string;label:string;entry:ChairReviewEntry}>};
+
+/** A separate OWN runtime is a complete source, never a palette overlay by code. */
+export function chairReviewVersion(entry:ChairReviewEntry,id:string):ChairReviewEntry{
+ if(id==='default')return entry;
+ const version=entry.reviewVersions?.find(v=>v.id===id);
+ if(!version||version.entry.code!==entry.code||version.entry.reviewVersions?.length)throw Error('Unknown exact chair source version');
+ return version.entry;
+}
 
 // A finish menu belongs to one complete construction, never to a model code alone.
 export function chairReviewRoute(entry:ChairReviewEntry,constructionId:string,finishId:string){

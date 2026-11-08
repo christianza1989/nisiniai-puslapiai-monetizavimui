@@ -222,10 +222,25 @@
     {
       "code": "K2ME001WW002",
       "name": "2ME",
-      "asset": "/models/configurator/chairs/K2ME001WW002-04a5ba737f5e3012dbd1/review-fba5ecab5a1b406f8a5b.json",
-      "sha256": "fba5ecab5a1b406f8a5bdebac1fbccfddea462ecbf3f93a2b5f9e003e5f3da4b",
-      "bytes": 264062,
-      "version": "colors-20261030-v4-calibrated-2me681"
+      "asset": "/models/configurator/chairs/K2ME001WW002-4a121ec7adfcf2bb766c/review-a3dc81719ec57c75f22a.json",
+      "sha256": "a3dc81719ec57c75f22ab846a69b3336d9c656f2cd4f394bccae57c999adb724",
+      "bytes": 964907,
+      "version": "colors-20261108-v1-qualified-own-gbmf1003500",
+      "defaultVersionLabel": "GBMF · 9 rėmo ir 537 apmušalo deriniai",
+      "reviewVersions": [
+        {
+          "id": "previous-2me681",
+          "label": "Ankstesnė surinkta versija · atskiras runtime",
+          "entry": {
+            "code": "K2ME001WW002",
+            "name": "2ME",
+            "asset": "/models/configurator/chairs/K2ME001WW002-04a5ba737f5e3012dbd1/review-fba5ecab5a1b406f8a5b.json",
+            "sha256": "fba5ecab5a1b406f8a5bdebac1fbccfddea462ecbf3f93a2b5f9e003e5f3da4b",
+            "bytes": 264062,
+            "version": "colors-20261030-v4-calibrated-2me681"
+          }
+        }
+      ]
     },
     {
       "code": "K2ME003WW001",

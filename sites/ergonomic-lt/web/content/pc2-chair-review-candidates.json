@@ -214,10 +214,10 @@
     {
       "code": "KXEN034WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN034WW001-decfc28cc5b3f05bd367/review-bc2bedf2544230b43da6.json",
-      "sha256": "bc2bedf2544230b43da6d047acbc698bbd6240f612783c500d0e20637b7b293e",
-      "bytes": 95082,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KXEN034WW001-visual-7fcb5b66e3170f769064/review-034b17d7aa4a826b191c.json",
+      "sha256": "034b17d7aa4a826b191c684e82d58472eec24d81e6e75d84b8dd8ddf3de567c1",
+      "bytes": 354599,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "K2ME001WW002",
@@ -270,34 +270,34 @@
     {
       "code": "KAII001WW001",
       "name": "Airi",
-      "asset": "/models/configurator/chairs/KAII001WW001-37ffbe426c0e4eb3ed9e/review-041550b1c1f6aea92411.json",
-      "sha256": "041550b1c1f6aea924117f85eaef92221c40eefc2d40568487bc2bbf1b6c699b",
-      "bytes": 2979,
-      "version": "colors-20261028-v9-fixed-finish406"
+      "asset": "/models/configurator/chairs/KAII001WW001-visual-7fcb5b66e3170f769064/review-49bda0f249bc507d35d2.json",
+      "sha256": "49bda0f249bc507d35d2d3b7c0c688c143b83139e2a469aad64eaa3bfcad669b",
+      "bytes": 11504,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KAII001WW002",
       "name": "Airi",
-      "asset": "/models/configurator/chairs/KAII001WW002-20d70888a2779f1b4d70/review-1e51799188462166d002.json",
-      "sha256": "1e51799188462166d002457bd50e053b4d94de43a9f1740aa1b5861b18a7d0b0",
-      "bytes": 2977,
-      "version": "colors-20261028-v9-fixed-finish406"
+      "asset": "/models/configurator/chairs/KAII001WW002-visual-7fcb5b66e3170f769064/review-9f3dde903cae87333441.json",
+      "sha256": "9f3dde903cae87333441baaad7bde0f4b3ddf0fd6747a5ae88e335e6c1e57809",
+      "bytes": 11504,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KAII001WW003",
       "name": "Airi",
-      "asset": "/models/configurator/chairs/KAII001WW003-9ce3a2dcc17147841414/review-056edeb1c2b9ef19c58a.json",
-      "sha256": "056edeb1c2b9ef19c58a23941ec9e2a04dbed29f3f56bad90dd963a7dd0ef312",
-      "bytes": 2979,
-      "version": "colors-20261028-v9-fixed-finish406"
+      "asset": "/models/configurator/chairs/KAII001WW003-visual-7fcb5b66e3170f769064/review-6d732c72f17f415f044a.json",
+      "sha256": "6d732c72f17f415f044aaf5f8eca7fae43aec8630a16cf710768a306cabec356",
+      "bytes": 11504,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KAII001WW004",
       "name": "Airi",
-      "asset": "/models/configurator/chairs/KAII001WW004-a163a4fca48ec73b0ae6/review-e7f1e33417178dbd9b72.json",
-      "sha256": "e7f1e33417178dbd9b726a2dc6d975af463de2833626f97871d0d6625a69d62c",
-      "bytes": 2977,
-      "version": "colors-20261028-v9-fixed-finish406"
+      "asset": "/models/configurator/chairs/KAII001WW004-visual-7fcb5b66e3170f769064/review-ffe64eaf842bb2d910e3.json",
+      "sha256": "ffe64eaf842bb2d910e3ba9bd6b94372794f789b5ac4edd8f4f87d96795eeaf9",
+      "bytes": 11504,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KALT001WW002",
@@ -366,10 +366,10 @@
     {
       "code": "KXEN035WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN035WW001-864656eca685a9aecc1d/review-922ae5c9aa1356c3497c.json",
-      "sha256": "922ae5c9aa1356c3497c365cf1e31ba4aa4689ec487db2f72da2f2e8c9a2f532",
-      "bytes": 203861,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KXEN035WW001-visual-7fcb5b66e3170f769064/review-1cc32fece8af2062d92c.json",
+      "sha256": "1cc32fece8af2062d92c415194a565fe61289431f47f123eb43b9c64c8368bf7",
+      "bytes": 403333,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KXEN028WW001",
@@ -390,10 +390,10 @@
     {
       "code": "KSAI001WW002",
       "name": "Sail",
-      "asset": "/models/configurator/chairs/KSAI001WW002-ffe0efa7f6a36ad3485b/review-e147be535e6a10501728.json",
-      "sha256": "e147be535e6a10501728cad0a39ab3afa4cc274cf61cc1ebcadc4dd5cd7ba23e",
-      "bytes": 882140,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KSAI001WW002-visual-7fcb5b66e3170f769064/review-0d55dc98ae7bbfc2f5a5.json",
+      "sha256": "0d55dc98ae7bbfc2f5a5f3c737c4589f45853356f8adb0e58b6d983c8dccaa05",
+      "bytes": 471430,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KNXT002WW002",

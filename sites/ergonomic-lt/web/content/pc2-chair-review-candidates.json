@@ -14,18 +14,18 @@
     {
       "code": "KLYN001WW002",
       "name": "Lynx",
-      "asset": "/models/configurator/chairs/KLYN001WW002-55a831a15a8627d9c5ce/review-ccbc248c976d7a9c6b12.json",
-      "sha256": "ccbc248c976d7a9c6b120f1a8640d974a541841e1d00a2dcbd6dcc93b44994c9",
-      "bytes": 292796,
-      "version": "colors-20261028-v3-witness-qualified449"
+      "asset": "/models/configurator/chairs/KLYN001WW002-visual-275e946722b84a1b7e98/review-05379eb08d3c0e579032.json",
+      "sha256": "05379eb08d3c0e57903291a86bf6b1420f768f9afd0a046469c9f8856ec00b0c",
+      "bytes": 34611,
+      "version": "visual-own-20261108-v1"
     },
     {
       "code": "KTRF001WW001",
-      "name": "Trofi",
-      "asset": "/models/configurator/chairs/KTRF001WW001-33b2c70e7f690fe9e213/review-7cd7e4d3c52b01a7111c.json",
-      "sha256": "7cd7e4d3c52b01a7111c47909366af79de4e420d8f7cc8d31c95723f804b6cc7",
-      "bytes": 20159,
-      "version": "colors-20261028-v2-runtime-qualified441"
+      "name": "Trillo",
+      "asset": "/models/configurator/chairs/KTRF001WW001-visual-9ee8d12cd7439628fb8d/review-98a6adc4a7b1bf1f38de.json",
+      "sha256": "98a6adc4a7b1bf1f38de8275e89d13c6d525365adb1302b86e3947e9c09b971d",
+      "bytes": 21862,
+      "version": "visual-own-20261108-v1"
     },
     {
       "code": "KSOU001WW003",
@@ -46,10 +46,10 @@
     {
       "code": "KNAU018WW001",
       "name": "Naudu",
-      "asset": "/models/configurator/chairs/KNAU018WW001-56370ba1ea4ff1e06c82/review-c42de666c435f144747b.json",
-      "sha256": "c42de666c435f144747bddf0b3fa36a8b14edcf9a45ee73ff3eecdc505ee07ea",
-      "bytes": 64410,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KNAU018WW001-visual-ef935495cdbe99185f56/review-c911ffc419096cf30680.json",
+      "sha256": "c911ffc419096cf3068028d77d5661022db85ed8aefa7454d122eb2fb7d317fa",
+      "bytes": 37584,
+      "version": "visual-own-20261108-v1"
     },
     {
       "code": "KNXT001WW002",
@@ -310,10 +310,10 @@
     {
       "code": "KARN008WW003",
       "name": "Arn",
-      "asset": "/models/configurator/chairs/KARN008WW003-a86524bb50e3140b7310/review-88a1c959b7c2032204fe.json",
-      "sha256": "88a1c959b7c2032204fe29a4968191aa32a3754ab11e5a241fa7a45789a5746a",
-      "bytes": 4093,
-      "version": "colors-20261028-v8-two-witnesses397"
+      "asset": "/models/configurator/chairs/KARN008WW003-visual-0e79caa296e5648451b7/review-d09b39afe6ef0892241d.json",
+      "sha256": "d09b39afe6ef0892241d92665ce2fb2f3af78f5a09fe42507bc894afb671fe46",
+      "bytes": 21318,
+      "version": "visual-own-20261108-v1"
     },
     {
       "code": "KBJA003WW002",

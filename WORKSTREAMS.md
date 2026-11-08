@@ -880,3 +880,6 @@ Branch codex/kpox001-visual-own-20261108. Source258:two exact two-part visuals, 
 
 ## Ergonomic X-Line observed OWN (2026-11-08)
 Branch codex/xline-visual-own-20261108. Source260:11 finite original OWN visuals,7 exact full finish contrasts onlyvisual10, no palette cross-product. All13 GLBs unchanged. Fujitsu reports legacy15680149 association; old public URLs/identities are not reassigned. Task D:/Core/output/ergonomic-xline-visual-own-20261108. Preview only.
+
+## Ergonomic Xenium032 observed OWN (2026-11-08)
+Branch codex/xenium032-visual-own-20261108. Source261:10 exact three/four-part visuals,8 full finish contrasts onlyvisual9. Original19 GLBs retained. One nearest functional tuple explicit; connector metal colour needing geometry/UV swap stays unavailable. No broader source conditions, palette mixing or scaling. Task D:/Core/output/ergonomic-xenium032-visual-own-20261108; preview only.

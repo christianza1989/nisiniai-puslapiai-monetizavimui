@@ -11,6 +11,15 @@ export function admitObservedOwnAssembly(input:{code:string;sourceRuntimeSha256:
  assert(source.visuals.length>0&&source.visuals.length<=100&&source.visuals.every((v:any,i:number)=>v.visualIndex===i&&v.actualWholeGeometryUvWorldPbrReconstructed===true&&v.assets.length>0&&v.assets.length<=10));
  assert(profile.schema==='exact-own-saved-pair-colour-bindings-940000-v1'&&profile.code===code&&profile.runtimeSha256===sourceRuntimeSha256&&profile.actualPaletteComplete===false&&profile.independentFinishCompositionAllowed===false&&profile.notOtherVisualOrCodeBindings===true&&Array.isArray(profile.unrepresentedPairs));
  assert(profile.unrepresentedPairs.every((p:any)=>typeof p.field==='string'&&/^[A-Z][A-Z0-9_]*$/.test(p.field)&&['GEOMETRY_OR_UV_CHANGE_REQUIRES_PART_SWAP','EXACT_OWN_BEFORE_ASSEMBLY_NOT_UNIQUE_IN_SCOPED_VISUALS'].includes(p.reason)));
+ const textOnlyFinishStates:{context:number;values:Record<string,string>;originalValues:Record<string,string>;changedFields:string[]}[]=[];
+ profile.variants=profile.variants.filter((p:any)=>{
+  assert(Array.isArray(p.bindings));if(p.bindings.length)return true;
+  const v=source.visuals[p.visualIndex];
+  assert(v&&p.independentFinishCompositionAllowed===false&&p.wholeGeometryUvWorldPbrMatch===true&&p.beforeFactorySha256===v.sourceFactorySha256&&p.afterFactorySha256===p.beforeFactorySha256,'EMPTY_BINDING_IS_NOT_A_PROVEN_UNCHANGED_FACTORY_STATE');
+  assert.equal(tuple(p.exactConstructionValues),tuple(v.actualObservedStructuralValues));assert.deepEqual(Object.keys(p.exactBeforeFinish).sort(),Object.keys(p.exactAfterFinish).sort());
+  const changedFields=Object.keys(p.exactAfterFinish).filter(k=>p.exactAfterFinish[k]!==p.exactBeforeFinish[k]);assert(changedFields.length>0&&changedFields.every(k=>typeof p.exactAfterFinish[k]==='string'));
+  textOnlyFinishStates.push({context:p.visualIndex,values:{...p.exactAfterFinish},originalValues:{...p.exactBeforeFinish},changedFields});return false;
+ });
  // A complete finish may belong to an explicitly observed functional tuple that
  // shares its representative's exact factory assembly. Keep that tuple separate;
  // never apply its palette to the representative's different product metadata.
@@ -47,5 +56,5 @@ export function admitObservedOwnAssembly(input:{code:string;sourceRuntimeSha256:
   witnesses.push({id:'observed-own-visual-'+v.visualIndex,label:'Tiksliai stebėtos pilnos apdailos',context:v.visualIndex,construction:{...v.actualObservedStructuralValues},variants:Array(v.assets.length-1).fill(0),requiredAssets:v.assets.map((a:any)=>transport[a.sha256].sha256),groups:[],branches:[],singles});
  }
  assert(profile.variants.every((p:any)=>source.visuals[p.visualIndex]));
- return{runtime,selectors,witnesses,originalFinishByContext,functionalMappings,finishConstructionAliases};
+ return{runtime,selectors,witnesses,originalFinishByContext,functionalMappings,finishConstructionAliases,textOnlyFinishStates};
 }

@@ -592,7 +592,564 @@
             "runtimeSha256": "491e53c572ca279882d422af5bc9bdbdcbc8e8bdd3376fedfa517f7baf7be372"
           }
         }
-      ]
+      ],
+      "visualSupplement": {
+        "mapSha256": "7363cd3be1a90eb2e9a73ef4e0534f1797c7a517469a0d00aa6d9fecca44257d",
+        "representatives": [
+          {
+            "id": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "code": "KSEG001WW001",
+            "label": "LOW · R35K3 · TS25",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG001WW001-de66e27e3cef8b51b42c/source/assets/a63f5255f172b46ffb3778d87d522c1e4721136a9a14f9416d9f78b693c373ca.glb",
+              "assetSha256": "a63f5255f172b46ffb3778d87d522c1e4721136a9a14f9416d9f78b693c373ca",
+              "bytes": 15188856
+            },
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "0af3d3b072bded475c323e1d18512a0dff25864b7d2ff6431e2b0ff8886f85b2",
+            "code": "KSEG001WW001",
+            "label": "LOW · NONE · TS25",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG001WW001-visual-0af3d3b072bded475c32/384ff96d22a0af16e755040af453bc66226bb3eb2c5b48f3ecb8778fb9d1444d.glb",
+              "assetSha256": "384ff96d22a0af16e755040af453bc66226bb3eb2c5b48f3ecb8778fb9d1444d",
+              "bytes": 10816916
+            },
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_3",
+              "CUPHCOLOR": "STMG67004",
+              "CUPHGROUP": "ST"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "41f28449b0557bc3da795aae9d3083b993e30c2c3a685acd80278fe53677d36e",
+            "code": "KSEG001WW001",
+            "label": "LOW · R35K3 · ST61POLBL",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG001WW001-visual-41f28449b0557bc3da79/fa8452ee4b5c97e1ced9d168a50b3c7f6850e50a909fdb633860f4111f444d45.glb",
+              "assetSha256": "fa8452ee4b5c97e1ced9d168a50b3c7f6850e50a909fdb633860f4111f444d45",
+              "bytes": 16704740
+            },
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_860T1065",
+              "DSEATHEIGHT": "_465T585",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_3",
+              "CUPHCOLOR": "STMG67004",
+              "CUPHGROUP": "ST"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "d7f132973ffa4264c7ee868ba0904a407fa4f5ec2e7d29e4c579a4a8b4b99d52",
+            "code": "KSEG001WW001",
+            "label": "LOW · R74 · TS25",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG001WW001-visual-d7f132973ffa4264c7ee/160ac064daa8a0045c9db4633d4467aed883eacc191c3843e4dbe3e405f683fd.glb",
+              "assetSha256": "160ac064daa8a0045c9db4633d4467aed883eacc191c3843e4dbe3e405f683fd",
+              "bytes": 12929484
+            },
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_3",
+              "CUPHCOLOR": "STMG67004",
+              "CUPHGROUP": "ST"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "c186a55791a97b1f7a215eff80472640242a8d69f94eb4273ccf951bd0ce2cea",
+            "code": "KSEG001WW001",
+            "label": "LOW · R35K3SB2 · TS25",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG001WW001-f7c1837cb16e84569178/source/assets/fa7c90df4a1bf9447baa61efd176d5484a0ffc94b50ef689d04b6878d12f2dfa.glb",
+              "assetSha256": "fa7c90df4a1bf9447baa61efd176d5484a0ffc94b50ef689d04b6878d12f2dfa",
+              "bytes": 15572336
+            },
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "b1628775d1ffbcede42fc68bbed772314cfbd9618ff61c83df4ed39224c14ecd",
+            "code": "KSEG001WW001",
+            "label": "LOW · R35K3 · TS34BL",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG001WW001-visual-b1628775d1ffbcede42f/36ea8b766d471c2d90afcbec9660002faf82e53d860a57caf6daf0fa243fea31.glb",
+              "assetSha256": "36ea8b766d471c2d90afcbec9660002faf82e53d860a57caf6daf0fa243fea31",
+              "bytes": 16824164
+            },
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_860T1065",
+              "DSEATHEIGHT": "_465T585",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_3",
+              "CUPHCOLOR": "STMG67004",
+              "CUPHGROUP": "ST"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          }
+        ],
+        "mappings": [
+          {
+            "id": "KSEG001WW001-0",
+            "visualId": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE",
+            "exactRoute": {
+              "constructionId": "default",
+              "finishId": "PRICE_3",
+              "source": {
+                "asset": "/models/configurator/chairs/KSEG001WW001-f5565b4479b64b91bdf5/review-9f94596df405a4f9c9f6.json",
+                "sha256": "9f94596df405a4f9c9f6f5384f7c21c0b6400b443e6adfac0b234c0fa3e47363",
+                "bytes": 424915,
+                "runtimeSha256": "1342b1c0db3bce167627c6eeceabcb1cddf45bc8228b2032a6542670f84efb3c"
+              },
+              "witness": "734d7a22aaddab3b3cd5bd600490e70c123fd51186db780a22b2a157ac5b5876",
+              "single": "a3bb3a0f3bc47cd507a4a2333e7debb9c568118932f85c0f5c3bd977173cc43e"
+            }
+          },
+          {
+            "id": "KSEG001WW001-1",
+            "visualId": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_430T500",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_850T1055",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG001WW001-2",
+            "visualId": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_830T1035",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG001WW001-3",
+            "visualId": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FS",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG001WW001-4",
+            "visualId": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKASMBOX",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG001WW001-5",
+            "visualId": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG001WW001-6",
+            "visualId": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKA2",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG001WW001-7",
+            "visualId": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "FLAMERETARDANT"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG001WW001-8",
+            "visualId": "e255008a53cc345e0c77fba8d2cc41f0cd929eaa0eb50025fbd05b25ce68d6ff",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_805T1020",
+              "DSEATHEIGHT": "_410T540",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG001WW001-9",
+            "visualId": "0af3d3b072bded475c323e1d18512a0dff25864b7d2ff6431e2b0ff8886f85b2",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG001WW001-10",
+            "visualId": "41f28449b0557bc3da795aae9d3083b993e30c2c3a685acd80278fe53677d36e",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_860T1065",
+              "DSEATHEIGHT": "_465T585",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG001WW001-11",
+            "visualId": "d7f132973ffa4264c7ee868ba0904a407fa4f5ec2e7d29e4c579a4a8b4b99d52",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG001WW001-12",
+            "visualId": "c186a55791a97b1f7a215eff80472640242a8d69f94eb4273ccf951bd0ce2cea",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_840T1045",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG001WW001-13",
+            "visualId": "b1628775d1ffbcede42fc68bbed772314cfbd9618ff61c83df4ed39224c14ecd",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_410T485",
+              "DBACKRESTWIDTH": "_390",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_860T1065",
+              "DSEATHEIGHT": "_465T585",
+              "DSEATWIDTH": "_470",
+              "GWEIGHT": "14.6"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          }
+        ]
+      }
     },
     {
       "code": "KSEG002WW001",
@@ -1013,7 +1570,816 @@
             "runtimeSha256": "4ae8783786572f8b1ecbb3254e5e6ebd29bb1bfbcac9b5b47f0d4d673d8dd34e"
           }
         }
-      ]
+      ],
+      "visualSupplement": {
+        "mapSha256": "7363cd3be1a90eb2e9a73ef4e0534f1797c7a517469a0d00aa6d9fecca44257d",
+        "representatives": [
+          {
+            "id": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · R35K3SB2 · TS25",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG002WW001-1914b62ea4a799f78a5b.glb",
+              "assetSha256": "1914b62ea4a799f78a5ba2315d2323f11cc0cd0bb53b517bff7c1d201fa438af",
+              "bytes": 15184200
+            },
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "5ae63d919f79d2ece8d60e7217c1fdd505571486a41fad90155e461362db0010",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · R35K3SB2 · ST61POLBL",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG002WW001-eedcd6a414da8af5eba0.glb",
+              "assetSha256": "eedcd6a414da8af5eba0b25d309062daa35c69a89b10aefec1960e1ce1aa8c7a",
+              "bytes": 16700060
+            },
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "39fc6ff8743460c5683a49e590b49d958a351fe68e96cf89b3274ac8cc40b45d",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · R35K3SB2 · TS34BL",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG002WW001-visual-39fc6ff8743460c5683a/48f67046ae5e94732ce3f33ac5a7089d55b3486d8d61c304fb29292315943063.glb",
+              "assetSha256": "48f67046ae5e94732ce3f33ac5a7089d55b3486d8d61c304fb29292315943063",
+              "bytes": 16819484
+            },
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_4",
+              "CUPHCOLOR": "CUZ58",
+              "CUPHGROUP": "CUZ"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "ca68aa72f48f8ef871800092282855788412a8a01170438f6ec9699587fcc8f1",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · R35K3 · TS25",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG002WW001-visual-ca68aa72f48f8ef87180/5f50f1bca6cd6dac36d3500037a5ac041cd8b618c23ddb642c335f54a3f19c59.glb",
+              "assetSha256": "5f50f1bca6cd6dac36d3500037a5ac041cd8b618c23ddb642c335f54a3f19c59",
+              "bytes": 14801536
+            },
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_4",
+              "CUPHCOLOR": "CUZ58",
+              "CUPHGROUP": "CUZ"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "1c42e2879d5d27c88f0bec1b0c49a558369438dbad54bddf8e884742673c7b2e",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · NONE · TS25",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG002WW001-1474512fa6339d21e629/source/assets/bc5c768e38ed3b6ff88cdddbed5511e04a23ae96be9d711f023d730801c9351d.glb",
+              "assetSha256": "bc5c768e38ed3b6ff88cdddbed5511e04a23ae96be9d711f023d730801c9351d",
+              "bytes": 10429168
+            },
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "8d42f2f43c04ac36ac5bb98b9624cf6309a255f1c63e2a86ad94f8fdfeff55d8",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · R74 · TS25",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG002WW001-visual-8d42f2f43c04ac36ac5b/b746b437d1b564c12c2ea489d68023ce51b93718962193d0299d8c19fb7fb393.glb",
+              "assetSha256": "b746b437d1b564c12c2ea489d68023ce51b93718962193d0299d8c19fb7fb393",
+              "bytes": 12541744
+            },
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_4",
+              "CUPHCOLOR": "CUZ58",
+              "CUPHGROUP": "CUZ"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "4b39718566a2fcc5bf4197bd4ba08a361f849cfc647d15d06ed894af1c99a224",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · NONE · TS34BL",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG002WW001-8dc9879015f80a7be290.glb",
+              "assetSha256": "8dc9879015f80a7be2909e369ddda81dcf50f1976ac088f9f509a7e4c183b6ab",
+              "bytes": 12064056
+            },
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "ea84012c1e32ae6ddf7ba8b6f6cce08191e76dff5af056c3e1dafbc08d6e7563",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · NONE · ST61POLBL",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG002WW001-db7c9e5b80d6aaefd0c5.glb",
+              "assetSha256": "db7c9e5b80d6aaefd0c5ae6097fdbb425e039cb17652c1b392b0b8609cdbfe0e",
+              "bytes": 11944632
+            },
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "6e4ffe41c8169066da350cc98d8d9762f5ee9f553a7f630ec50cda1a0a5143af",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · R35K3 · ST61POLBL",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG002WW001-039778a77f1650f657b5.glb",
+              "assetSha256": "039778a77f1650f657b58da73e353cd4365e5a5ebde14f422d68c26b1d7576d2",
+              "bytes": 16317000
+            },
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "4a7342ee6b51fb7d6b9c091f9636f8565b2c06e1e5e234c4e90883e66da948e5",
+            "code": "KSEG002WW001",
+            "label": "MEDIUM · R74 · ST61POLBL",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG002WW001-72d52d23742be2c1b1e7.glb",
+              "assetSha256": "72d52d23742be2c1b1e7db8fdd22439315132ffca0174337b8cb472af895e801",
+              "bytes": 14057208
+            },
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          }
+        ],
+        "mappings": [
+          {
+            "id": "KSEG002WW001-0",
+            "visualId": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-1",
+            "visualId": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "FLAMERETARDANT"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-2",
+            "visualId": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FS",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_905T1120",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG002WW001-3",
+            "visualId": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_400T530",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-4",
+            "visualId": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_940T1145",
+              "DSEATHEIGHT": "_445T565",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG002WW001-5",
+            "visualId": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-6",
+            "visualId": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKASMBOX",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-7",
+            "visualId": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_530T600",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_915T1130",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG002WW001-8",
+            "visualId": "d504decfb13b9aa2e6cd2c7b556d3da240d3dc9b1edfeb5730858534fe3e8177",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKA2",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-9",
+            "visualId": "5ae63d919f79d2ece8d60e7217c1fdd505571486a41fad90155e461362db0010",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-10",
+            "visualId": "39fc6ff8743460c5683a49e590b49d958a351fe68e96cf89b3274ac8cc40b45d",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-11",
+            "visualId": "ca68aa72f48f8ef871800092282855788412a8a01170438f6ec9699587fcc8f1",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-12",
+            "visualId": "1c42e2879d5d27c88f0bec1b0c49a558369438dbad54bddf8e884742673c7b2e",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-13",
+            "visualId": "8d42f2f43c04ac36ac5bb98b9624cf6309a255f1c63e2a86ad94f8fdfeff55d8",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_895T1110",
+              "DSEATHEIGHT": "_435T555",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-14",
+            "visualId": "4b39718566a2fcc5bf4197bd4ba08a361f849cfc647d15d06ed894af1c99a224",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-15",
+            "visualId": "ea84012c1e32ae6ddf7ba8b6f6cce08191e76dff5af056c3e1dafbc08d6e7563",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-16",
+            "visualId": "6e4ffe41c8169066da350cc98d8d9762f5ee9f553a7f630ec50cda1a0a5143af",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-17",
+            "visualId": "4a7342ee6b51fb7d6b9c091f9636f8565b2c06e1e5e234c4e90883e66da948e5",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-18",
+            "visualId": "4a7342ee6b51fb7d6b9c091f9636f8565b2c06e1e5e234c4e90883e66da948e5",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_890T1105",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG002WW001-19",
+            "visualId": "4a7342ee6b51fb7d6b9c091f9636f8565b2c06e1e5e234c4e90883e66da948e5",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FS",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_510T585",
+              "DBACKRESTWIDTH": "_420",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_900T1115",
+              "DSEATHEIGHT": "_465T585",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.0"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          }
+        ]
+      }
     },
     {
       "code": "KSEG003WW001",
@@ -1434,7 +2800,758 @@
             "runtimeSha256": "321d32fcf10fbbe1ea2716c43e110107c0fa8a047e07168d3da1775fa93367d4"
           }
         }
-      ]
+      ],
+      "visualSupplement": {
+        "mapSha256": "7363cd3be1a90eb2e9a73ef4e0534f1797c7a517469a0d00aa6d9fecca44257d",
+        "representatives": [
+          {
+            "id": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "code": "KSEG003WW001",
+            "label": "HIGH · R74 · TS34BL",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG003WW001-1a00a82b1372ea24177d.glb",
+              "assetSha256": "1a00a82b1372ea24177d58b3bb3a228459ec1d3a1c6d9a83b5c84e0f335432bc",
+              "bytes": 22142760
+            },
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "bc497bff19cb5de9a307b27f317c4a9325a76eaf431d95301d23bb5eec25f2f6",
+            "code": "KSEG003WW001",
+            "label": "HIGH · NONE · TS34BL",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG003WW001-72fa1b9d1b3158b75ea2.glb",
+              "assetSha256": "72fa1b9d1b3158b75ea2f6b57a30fd6d233821148b4c150deb47a2afc609a6b1",
+              "bytes": 20030156
+            },
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "2111288b70edb70a01e848d7b09ba26fd9e2255caf897ddf2ec725fec18da7f3",
+            "code": "KSEG003WW001",
+            "label": "HIGH · R74 · TS25",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG003WW001-visual-2111288b70edb70a01e8/257f1f7c93ebba517170ec44875dbfad4f46cace1febfc7520d7a28f4df36bc2.glb",
+              "assetSha256": "257f1f7c93ebba517170ec44875dbfad4f46cace1febfc7520d7a28f4df36bc2",
+              "bytes": 20507868
+            },
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_985T1200",
+              "DSEATHEIGHT": "_400T530",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_4",
+              "CUPHCOLOR": "LDS74",
+              "CUPHGROUP": "SY"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "8d9047235e007e5f3ab2df30504a53eba94c7d6ff424b2f54e3f8cf78899c4b5",
+            "code": "KSEG003WW001",
+            "label": "HIGH · R74 · ST61POLBL",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG003WW001-visual-8d9047235e007e5f3ab2/c268e9790dc5ec7af19e804a7d686c198b178d0c05e81a60040978deb7e6b4a7.glb",
+              "assetSha256": "c268e9790dc5ec7af19e804a7d686c198b178d0c05e81a60040978deb7e6b4a7",
+              "bytes": 22023336
+            },
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_4",
+              "CUPHCOLOR": "LDS74",
+              "CUPHGROUP": "SY"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "60b24802cf118172068bb287036a3d2b59f2169b2c5dc66ccc6a9ea883c2aebd",
+            "code": "KSEG003WW001",
+            "label": "HIGH · R35K3SB2 · TS34BL",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG003WW001-visual-60b24802cf118172068b/8eb84809c22904c4d6b0c414c694cd825d814691fb59ab899b5fbdf0085f7838.glb",
+              "assetSha256": "8eb84809c22904c4d6b0c414c694cd825d814691fb59ab899b5fbdf0085f7838",
+              "bytes": 24785652
+            },
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_4",
+              "CUPHCOLOR": "LDS74",
+              "CUPHGROUP": "SY"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "69867e76c0f9cfcc36ca00a530aa5d625d6e27c802cc1d0464edcfb7c56b2e9b",
+            "code": "KSEG003WW001",
+            "label": "HIGH · R35K3 · TS34BL",
+            "asset": {
+              "asset": "/models/configurator/chairs/KSEG003WW001-visual-69867e76c0f9cfcc36ca/5a8c01100abc940a372995392e667c97801bcf7b9a1d69f7765da5e9ffc79222.glb",
+              "assetSha256": "5a8c01100abc940a372995392e667c97801bcf7b9a1d69f7765da5e9ffc79222",
+              "bytes": 24402584
+            },
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "defaultFinish": {
+              "CPRICEGROUP": "_4",
+              "CUPHCOLOR": "LDS74",
+              "CUPHGROUP": "SY"
+            },
+            "sourceKind": "ACTUAL_OWN_DEFAULT_SOURCE_WITNESS"
+          },
+          {
+            "id": "52d5e379b7504f93ea5b6c45a9e8bfb879e5cfd82dc373be06113f2d1fdcc6a3",
+            "code": "KSEG003WW001",
+            "label": "HIGH · NONE · TS25",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG003WW001-dd62db6dc1beac47805d.glb",
+              "assetSha256": "dd62db6dc1beac47805da2473b5b504230cfe259da09b89025d03a52719569cb",
+              "bytes": 18395256
+            },
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_985T1200",
+              "DSEATHEIGHT": "_400T530",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          },
+          {
+            "id": "ddd7328643222b63aa0cd99898b6f9c0504a86aca114b59ff45756d0f61538f7",
+            "code": "KSEG003WW001",
+            "label": "HIGH · NONE · ST61POLBL",
+            "asset": {
+              "asset": "/models/configurator/structure/KSEG003WW001-a274187fdad05b2d518b.glb",
+              "assetSha256": "a274187fdad05b2d518bbfd58b0aa6236342a31c995888e9694c8630573a39e1",
+              "bytes": 19910732
+            },
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "defaultFinish": {},
+            "sourceKind": "EXISTING_QUALIFIED_PACKAGE_REFERENCE"
+          }
+        ],
+        "mappings": [
+          {
+            "id": "KSEG003WW001-0",
+            "visualId": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-1",
+            "visualId": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "SA2T7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_580T655",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_960T1175",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG003WW001-2",
+            "visualId": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKA2",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-3",
+            "visualId": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-4",
+            "visualId": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_1040T1245",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-5",
+            "visualId": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_580T655",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_970T1185",
+              "DSEATHEIGHT": "_405T535",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG003WW001-6",
+            "visualId": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "FS",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_580T655",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_970T1185",
+              "DSEATHEIGHT": "_405T535",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG003WW001-7",
+            "visualId": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKASMBOX",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-8",
+            "visualId": "87038b13524da8028b06b88c3f621761701a29d698c1c3c792b0011b12d1c548",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "FLAMERETARDANT"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-9",
+            "visualId": "bc497bff19cb5de9a307b27f317c4a9325a76eaf431d95301d23bb5eec25f2f6",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-10",
+            "visualId": "2111288b70edb70a01e848d7b09ba26fd9e2255caf897ddf2ec725fec18da7f3",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_985T1200",
+              "DSEATHEIGHT": "_400T530",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-11",
+            "visualId": "8d9047235e007e5f3ab2df30504a53eba94c7d6ff424b2f54e3f8cf78899c4b5",
+            "options": {
+              "CARMRESTS": "R74",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-12",
+            "visualId": "60b24802cf118172068bb287036a3d2b59f2169b2c5dc66ccc6a9ea883c2aebd",
+            "options": {
+              "CARMRESTS": "R35K3SB2",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_210T290",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-13",
+            "visualId": "69867e76c0f9cfcc36ca00a530aa5d625d6e27c802cc1d0464edcfb7c56b2e9b",
+            "options": {
+              "CARMRESTS": "R35K3",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS34BL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_220T300",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-14",
+            "visualId": "52d5e379b7504f93ea5b6c45a9e8bfb879e5cfd82dc373be06113f2d1fdcc6a3",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "TS25",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_985T1200",
+              "DSEATHEIGHT": "_400T530",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-15",
+            "visualId": "ddd7328643222b63aa0cd99898b6f9c0504a86aca114b59ff45756d0f61538f7",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-16",
+            "visualId": "ddd7328643222b63aa0cd99898b6f9c0504a86aca114b59ff45756d0f61538f7",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLSTD",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_980T1195",
+              "DSEATHEIGHT": "_395T525",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-17",
+            "visualId": "ddd7328643222b63aa0cd99898b6f9c0504a86aca114b59ff45756d0f61538f7",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "TAT7",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_600T670",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_1040T1245",
+              "DSEATHEIGHT": "_455T575",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "EXACT_OBSERVED_STATIC_APPEARANCE"
+          },
+          {
+            "id": "KSEG003WW001-18",
+            "visualId": "ddd7328643222b63aa0cd99898b6f9c0504a86aca114b59ff45756d0f61538f7",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "STANDARD"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_580T655",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_1030T1235",
+              "DSEATHEIGHT": "_465T585",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          },
+          {
+            "id": "KSEG003WW001-19",
+            "visualId": "ddd7328643222b63aa0cd99898b6f9c0504a86aca114b59ff45756d0f61538f7",
+            "options": {
+              "CARMRESTS": "NONE",
+              "CASSEMBLY": "PACKUA",
+              "CBASE": "ST61POLBL",
+              "CCASTORS": "ESHH60",
+              "CGASLIFT": "GLR",
+              "CMECHANISM": "FST",
+              "CSEATPADFOAM": "FLAMERETARDANT"
+            },
+            "dimensions": {
+              "DARMRESTSHEIGHT": "_205T280",
+              "DBACKRESTHEIGHT": "_580T655",
+              "DBACKRESTWIDTH": "_480",
+              "DDEPTH": "_644",
+              "DHEIGHT": "_1030T1235",
+              "DSEATHEIGHT": "_465T585",
+              "DSEATWIDTH": "_510",
+              "GWEIGHT": "15.4"
+            },
+            "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO"
+          }
+        ]
+      }
     }
   ]
 }

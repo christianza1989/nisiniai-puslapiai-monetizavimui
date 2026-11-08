@@ -6,10 +6,10 @@
     {
       "code": "KLYN002WW002",
       "name": "Lynx",
-      "asset": "/models/configurator/chairs/KLYN002WW002-30d47ddab433f931ac22/review-a5bd8d0b50467058d5c2.json",
-      "sha256": "a5bd8d0b50467058d5c23c3be33dc5f8dab3de71bec9a378326389a73ff43baf",
-      "bytes": 290865,
-      "version": "colors-20261028-v3-witness-qualified449"
+      "asset": "/models/configurator/chairs/KLYN002WW002-visual-d2726f15d28136225cb8/review-d40d504d895a5bda0a8f.json",
+      "sha256": "d40d504d895a5bda0a8fc7514671200f53ea929e4e077e2dba8411b922d791b5",
+      "bytes": 34548,
+      "version": "visual-own-20261108-v1"
     },
     {
       "code": "KLYN001WW002",

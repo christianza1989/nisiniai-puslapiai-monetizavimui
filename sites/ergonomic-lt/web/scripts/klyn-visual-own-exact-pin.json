@@ -1,0 +1,2227 @@
+{
+  "manifestSha256": "d2726f15d28136225cb8721a1e017059f06687687e30d0d39b1bc4f36403232e",
+  "code": "KLYN002WW002",
+  "runtimeSha256": "45e3566409f0108b2064ae43ecffbe262153a0aea213321953d0b980a9335812",
+  "runtime": {
+    "code": "KLYN002WW002",
+    "contexts": [
+      {
+        "choiceRules": "conditional selectable tuples only",
+        "default3DValues": {},
+        "dimensions": {
+          "DDEPTH": "_635",
+          "DSEATWIDTH": "_525"
+        },
+        "groups": [],
+        "hybrid141": true,
+        "invariant": {
+          "bytes": 5343988,
+          "componentSha256": "95e16ef144f0172dab7c48d0540a7f9175531bff82f5b177e59b58ecfdccbecf",
+          "file": "assets/95e16ef144f0172dab7c48d0540a7f9175531bff82f5b177e59b58ecfdccbecf.glb",
+          "needsCompression": false,
+          "sha256": "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1"
+        },
+        "textOnly": {},
+        "visibilityScope": "073 saved samples; text choices display manufacturer defaults in3D"
+      }
+    ],
+    "coordinates": "original-world-matrices",
+    "finishPolicy": "original manufacturer finishes; no FINISH setters",
+    "fullGraphClosed": false,
+    "methodLimits": {
+      "minutes": 60,
+      "newExportsAcross143Attempts": 400
+    },
+    "offlinePlanEstimate": {
+      "candidateUpperBeforeReuse": 1,
+      "existingSourcesUsed": 1,
+      "groups": [],
+      "maxContextNew": 0,
+      "newExports": 0,
+      "targetsVisited": 1,
+      "truncatedLowerBound": false
+    },
+    "policy143": true,
+    "schema": "desk-components-065-v1",
+    "textChoice3DPolicy": "manufacturer default at the selected actual dimensions",
+    "textOnlyFields": []
+  },
+  "profile": {
+    "actualPaletteComplete": false,
+    "code": "KLYN002WW002",
+    "independentFinishCompositionAllowed": false,
+    "kind": "DIRECT_ROKO_VISUAL_ONLY_OWN_SAVED_ASSEMBLY_AND_EXACT_PAIR_FINISH_930100",
+    "neverApplyByCodeOrMaterialNameAlone": true,
+    "notRepresentedPairs": [],
+    "qualifiedWitnessGroupPaletteComplete": false,
+    "runtimeSha256": "45e3566409f0108b2064ae43ecffbe262153a0aea213321953d0b980a9335812",
+    "schema": "exact-saved-own-pair-bindings-329-visual930100-v1",
+    "variants": [
+      {
+        "afterFactorySha256": "5d94cd00d072ee5d601346cc3c2231c4d44c778bebb9144329f28549ce2fb056",
+        "allFunctionalConstructionValues": {
+          "CARMRESTS": "PF40CR",
+          "CBACKREST": "HBUPH",
+          "CBACKRESTFOAM": "CUT",
+          "CBASE": "ST43POL",
+          "CCASTORS": "ESH",
+          "CMECHANISM": "MPD170",
+          "CPACKAGING": "BOX1",
+          "CSEAT": "UPH",
+          "CSEATFOAM": "CUT",
+          "DDEPTH": "_635",
+          "DHEIGHT": "_1275T1365",
+          "DSEATHEIGHT": "_450T535",
+          "DSEATWIDTH": "_525",
+          "GWEIGHT": "18.0"
+        },
+        "baseFactorySha256": "8c6caf08da7afef76434f37f2fb3fb88460a8d2d31c798fa9bea4cc5057e7184",
+        "bindings": [
+          {
+            "assetSha256": "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1",
+            "baseMaterialId": "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985",
+            "materialId": "e58c1b6a8343a19489b7284667494bc126d4555bdec8dc24180ec0bdf79d2e97",
+            "selectorId": "3de787e64a6cd3d3178d1430cd8b536a3058eb9607f2bca4a7024dcd66b59ce8"
+          },
+          {
+            "assetSha256": "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1",
+            "baseMaterialId": "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985",
+            "materialId": "e58c1b6a8343a19489b7284667494bc126d4555bdec8dc24180ec0bdf79d2e97",
+            "selectorId": "ee786cb48d6e21f8edfa1b42028d71a0472e6b4580f1e01d0900f41eca83cf3c"
+          },
+          {
+            "assetSha256": "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1",
+            "baseMaterialId": "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985",
+            "materialId": "e58c1b6a8343a19489b7284667494bc126d4555bdec8dc24180ec0bdf79d2e97",
+            "selectorId": "d8ace72d3c2c0d9633b84aab2d1fdff1e00be25f0843ac8bf8a54b08403ea71d"
+          }
+        ],
+        "contextIndex": 0,
+        "exactAfterFinish": {
+          "CPRICEGROUP": "_0",
+          "CUPHCOLOR": "V28",
+          "CUPHGROUP": "V"
+        },
+        "exactBeforeFinish": {
+          "CPRICEGROUP": "_5",
+          "CUPHCOLOR": "LE01",
+          "CUPHGROUP": "LE"
+        },
+        "independentFinishCompositionAllowed": false,
+        "sourceChangedField": "CPRICEGROUP",
+        "targetWholeGeometryUvWorldPbrReconstructed": true
+      },
+      {
+        "afterFactorySha256": "e9ec40fea8dcf5b8440e485d5f19bef6635b8cf16a9cebb58d5c428c364e02a2",
+        "allFunctionalConstructionValues": {
+          "CARMRESTS": "PF40CR",
+          "CBACKREST": "HBUPH",
+          "CBACKRESTFOAM": "CUT",
+          "CBASE": "ST43POL",
+          "CCASTORS": "ESH",
+          "CMECHANISM": "MPD170",
+          "CPACKAGING": "BOX1",
+          "CSEAT": "UPH",
+          "CSEATFOAM": "CUT",
+          "DDEPTH": "_635",
+          "DHEIGHT": "_1275T1365",
+          "DSEATHEIGHT": "_450T535",
+          "DSEATWIDTH": "_525",
+          "GWEIGHT": "18.0"
+        },
+        "baseFactorySha256": "8c6caf08da7afef76434f37f2fb3fb88460a8d2d31c798fa9bea4cc5057e7184",
+        "bindings": [
+          {
+            "assetSha256": "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1",
+            "baseMaterialId": "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985",
+            "materialId": "621527cacf5f52ba619735ee70260644fc50507580fb6e17347d2dcefbf4289d",
+            "selectorId": "3de787e64a6cd3d3178d1430cd8b536a3058eb9607f2bca4a7024dcd66b59ce8"
+          },
+          {
+            "assetSha256": "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1",
+            "baseMaterialId": "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985",
+            "materialId": "621527cacf5f52ba619735ee70260644fc50507580fb6e17347d2dcefbf4289d",
+            "selectorId": "ee786cb48d6e21f8edfa1b42028d71a0472e6b4580f1e01d0900f41eca83cf3c"
+          },
+          {
+            "assetSha256": "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1",
+            "baseMaterialId": "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985",
+            "materialId": "621527cacf5f52ba619735ee70260644fc50507580fb6e17347d2dcefbf4289d",
+            "selectorId": "d8ace72d3c2c0d9633b84aab2d1fdff1e00be25f0843ac8bf8a54b08403ea71d"
+          }
+        ],
+        "contextIndex": 0,
+        "exactAfterFinish": {
+          "CPRICEGROUP": "_5",
+          "CUPHCOLOR": "LE06",
+          "CUPHGROUP": "LE"
+        },
+        "exactBeforeFinish": {
+          "CPRICEGROUP": "_5",
+          "CUPHCOLOR": "LE01",
+          "CUPHGROUP": "LE"
+        },
+        "independentFinishCompositionAllowed": false,
+        "sourceChangedField": "CUPHCOLOR",
+        "targetWholeGeometryUvWorldPbrReconstructed": true
+      }
+    ]
+  },
+  "selectors": {
+    "assets": {
+      "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1": {
+        "assetSha256": "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1",
+        "materials": {
+          "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e": {
+            "normalTexture": {
+              "extensions": {
+                "KHR_texture_transform": {
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "rotation": 0,
+                  "scale": [
+                    20,
+                    20
+                  ]
+                }
+              },
+              "texCoord": 0,
+              "texture": {
+                "image": {
+                  "bytes": 180384,
+                  "file": "textures/32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466.jpg",
+                  "mimeType": "image/jpeg",
+                  "sha256": "32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466"
+                },
+                "sampler": {}
+              }
+            },
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.014023865573108196,
+                0.014023865573108196,
+                0.014023865573108196,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.75
+            }
+          },
+          "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f": {
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.7874123454093933,
+                0.7874123454093933,
+                0.7874123454093933,
+                1
+              ],
+              "metallicFactor": 1,
+              "roughnessFactor": 0
+            }
+          },
+          "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      40,
+                      40
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 10496,
+                    "file": "textures/53b6025e29eb5bd54edfa592250b8f2b494e7e4b09c5fddec6db4a0fa18f98f7.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "53b6025e29eb5bd54edfa592250b8f2b494e7e4b09c5fddec6db4a0fa18f98f7"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 1,
+              "roughnessFactor": 0.6990000009536743
+            }
+          }
+        },
+        "slots": [
+          {
+            "geometrySha256": "435f589b4c12ead1c12268d16b2eba3915ed8fc60722ef300770c8a4926ba0ff",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "074005db807540082d3fba6f49322a3a984f256d7b7a7099d79b59cb722d8ef5",
+            "sourceNodePath": [
+              0
+            ],
+            "surfaceSha256": "f20e8da5d70b49cf1829da332ea17f056932f1e79a4fd8b64b5ee7f5a23a18fe",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.35046904,
+                  0.030472040000000002,
+                  0.07245787000000001,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "2d24002d5830f2d15f7c04a0ae6b1a18848116aa4ab37d8bd8b0431efe7cd943"
+          },
+          {
+            "geometrySha256": "435f589b4c12ead1c12268d16b2eba3915ed8fc60722ef300770c8a4926ba0ff",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "4268569a5d404a6e02adafc2889a0457c4f8ba32074f06bc802ce9c498e3eb5d",
+            "sourceNodePath": [
+              1
+            ],
+            "surfaceSha256": "f20e8da5d70b49cf1829da332ea17f056932f1e79a4fd8b64b5ee7f5a23a18fe",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.22504728000000002,
+                  0.030472040000000002,
+                  -0.31147776,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "2d24002d5830f2d15f7c04a0ae6b1a18848116aa4ab37d8bd8b0431efe7cd943"
+          },
+          {
+            "geometrySha256": "435f589b4c12ead1c12268d16b2eba3915ed8fc60722ef300770c8a4926ba0ff",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "fafb45c61f735cdc5d038837c15986e7cf430d4b763484bc0d8c5a1c97a084bd",
+            "sourceNodePath": [
+              2
+            ],
+            "surfaceSha256": "f20e8da5d70b49cf1829da332ea17f056932f1e79a4fd8b64b5ee7f5a23a18fe",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.17970396,
+                  0.030472040000000002,
+                  -0.31147776,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "2d24002d5830f2d15f7c04a0ae6b1a18848116aa4ab37d8bd8b0431efe7cd943"
+          },
+          {
+            "geometrySha256": "435f589b4c12ead1c12268d16b2eba3915ed8fc60722ef300770c8a4926ba0ff",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "13e81f359aba6263ed7526c1c163a3d957070c4ff9ccacbd597a2c2637c6e98f",
+            "sourceNodePath": [
+              3
+            ],
+            "surfaceSha256": "f20e8da5d70b49cf1829da332ea17f056932f1e79a4fd8b64b5ee7f5a23a18fe",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.30460566,
+                  0.030472040000000002,
+                  0.07245787000000001,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "2d24002d5830f2d15f7c04a0ae6b1a18848116aa4ab37d8bd8b0431efe7cd943"
+          },
+          {
+            "geometrySha256": "435f589b4c12ead1c12268d16b2eba3915ed8fc60722ef300770c8a4926ba0ff",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "0ca1707507804bf9a69e7b891c3babc002e28ef69ba84100f3b8aee146fd337b",
+            "sourceNodePath": [
+              4
+            ],
+            "surfaceSha256": "f20e8da5d70b49cf1829da332ea17f056932f1e79a4fd8b64b5ee7f5a23a18fe",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.02365726,
+                  0.030472040000000002,
+                  0.30971485,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "2d24002d5830f2d15f7c04a0ae6b1a18848116aa4ab37d8bd8b0431efe7cd943"
+          },
+          {
+            "geometrySha256": "7b468ce3141c2702d9bf3cffb09efaf95a7aaac8a2c70ae872b167007dc49cc7",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "78ef09620f2367cc793ea66bdb8c7252b3713158830bab67a4064df8b9aba9de",
+            "sourceNodePath": [
+              5
+            ],
+            "surfaceSha256": "3a5c4074ed37af30bf7e3cb48db48c6c30a877bf141424c577ef7c46e27351e3",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.20551693000000001,
+                  0.06333851,
+                  -0.29548979000000003,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "fc913d07d67f9458e6cd1f6005186ad4717e5060eae337d7915732f2ae357b15"
+          },
+          {
+            "geometrySha256": "7b468ce3141c2702d9bf3cffb09efaf95a7aaac8a2c70ae872b167007dc49cc7",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "665c8b3354a675c96aa4bde96bf1c21df402172d9456eb40533005238deaed0b",
+            "sourceNodePath": [
+              6
+            ],
+            "surfaceSha256": "3a5c4074ed37af30bf7e3cb48db48c6c30a877bf141424c577ef7c46e27351e3",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.32465607,
+                  0.06333851,
+                  0.08844584,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "fc913d07d67f9458e6cd1f6005186ad4717e5060eae337d7915732f2ae357b15"
+          },
+          {
+            "geometrySha256": "7b468ce3141c2702d9bf3cffb09efaf95a7aaac8a2c70ae872b167007dc49cc7",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "0b32e420f0acfa1de1066a4db5d35407513ce1c7c6a300923779e73e6b26ca7c",
+            "sourceNodePath": [
+              7
+            ],
+            "surfaceSha256": "3a5c4074ed37af30bf7e3cb48db48c6c30a877bf141424c577ef7c46e27351e3",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.19923431,
+                  0.06333851,
+                  -0.29548979000000003,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "fc913d07d67f9458e6cd1f6005186ad4717e5060eae337d7915732f2ae357b15"
+          },
+          {
+            "geometrySha256": "7b468ce3141c2702d9bf3cffb09efaf95a7aaac8a2c70ae872b167007dc49cc7",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "7570301f52af485fb641b858205fd82e475ba59c91bcf65e204887c57c473bb1",
+            "sourceNodePath": [
+              8
+            ],
+            "surfaceSha256": "3a5c4074ed37af30bf7e3cb48db48c6c30a877bf141424c577ef7c46e27351e3",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.33041862,
+                  0.06333851,
+                  0.08844584,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "fc913d07d67f9458e6cd1f6005186ad4717e5060eae337d7915732f2ae357b15"
+          },
+          {
+            "geometrySha256": "7b468ce3141c2702d9bf3cffb09efaf95a7aaac8a2c70ae872b167007dc49cc7",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "fd9fb68fec8025a44dd6f343d4b634765047e41b304b4e830ecf6e09dfde1f18",
+            "sourceNodePath": [
+              9
+            ],
+            "surfaceSha256": "3a5c4074ed37af30bf7e3cb48db48c6c30a877bf141424c577ef7c46e27351e3",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.0021557,
+                  0.06333851,
+                  0.32570282,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "fc913d07d67f9458e6cd1f6005186ad4717e5060eae337d7915732f2ae357b15"
+          },
+          {
+            "geometrySha256": "6b0dec041e09b7dd8d88c4585540e6282a3ffd0128bf8939d2a549ba53072e2d",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "241afbb2c1251474ec6c13a8d12ee647d08771b64363e616a96a4d6233ca028d",
+            "sourceNodePath": [
+              10
+            ],
+            "surfaceSha256": "ab14914229156f372f361ff5babecdb309039fea7e7d19dd5f70329f50da1c24",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.35126266,
+                  0.030472040000000002,
+                  0.07245787000000001,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "9d8b5e264031001f5393cbf1facc02624caf7cd242384ba0607b47f0a4a63e27"
+          },
+          {
+            "geometrySha256": "6b0dec041e09b7dd8d88c4585540e6282a3ffd0128bf8939d2a549ba53072e2d",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "ae3de33d392c867d8e2a5105f430dde7bcb52474d7b5bfbc8bcfb1274bff1e2c",
+            "sourceNodePath": [
+              11
+            ],
+            "surfaceSha256": "ab14914229156f372f361ff5babecdb309039fea7e7d19dd5f70329f50da1c24",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.22584091,
+                  0.030472040000000002,
+                  -0.31147776,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "9d8b5e264031001f5393cbf1facc02624caf7cd242384ba0607b47f0a4a63e27"
+          },
+          {
+            "geometrySha256": "6b0dec041e09b7dd8d88c4585540e6282a3ffd0128bf8939d2a549ba53072e2d",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "370a81b65adf1c396bf5e14638f45263d3ce3943e3a73b71d61cdec7ff825bd5",
+            "sourceNodePath": [
+              12
+            ],
+            "surfaceSha256": "ab14914229156f372f361ff5babecdb309039fea7e7d19dd5f70329f50da1c24",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.17891033,
+                  0.030472040000000002,
+                  -0.31147776,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "9d8b5e264031001f5393cbf1facc02624caf7cd242384ba0607b47f0a4a63e27"
+          },
+          {
+            "geometrySha256": "6b0dec041e09b7dd8d88c4585540e6282a3ffd0128bf8939d2a549ba53072e2d",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "2f1b496bafc6bf9e65214b7be2c617371ddb5a35b9843d7bad4eabf8efcf3289",
+            "sourceNodePath": [
+              13
+            ],
+            "surfaceSha256": "ab14914229156f372f361ff5babecdb309039fea7e7d19dd5f70329f50da1c24",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.30381203,
+                  0.030472040000000002,
+                  0.07245787000000001,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "9d8b5e264031001f5393cbf1facc02624caf7cd242384ba0607b47f0a4a63e27"
+          },
+          {
+            "geometrySha256": "6b0dec041e09b7dd8d88c4585540e6282a3ffd0128bf8939d2a549ba53072e2d",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "819a0b9c83b19efccedec17861496f9d38eeb1e8c94f7dec3ba6f1e84ef1a79a",
+            "sourceNodePath": [
+              14
+            ],
+            "surfaceSha256": "ab14914229156f372f361ff5babecdb309039fea7e7d19dd5f70329f50da1c24",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.02445089,
+                  0.030472040000000002,
+                  0.30971485,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "9d8b5e264031001f5393cbf1facc02624caf7cd242384ba0607b47f0a4a63e27"
+          },
+          {
+            "geometrySha256": "f564f09083d59b50ec804091e16454c65db694822d69a8355735858cbfb32c4b",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "994f49e0a5107f26e77f9141a160e154fd593029ff6f83a9556d81ef3bc51a97",
+            "sourceNodePath": [
+              15
+            ],
+            "surfaceSha256": "7c5e5bd93e10f84fdc0468934af9d2b0d0da438804a2393d7c1d72c1dfd2483e",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.00115187,
+                  0.30172922,
+                  -0.014679590000000001,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "1f72049d3c38c932c19f638a317a7980c4705bccb5fb7ab71ec251f349617e6e"
+          },
+          {
+            "geometrySha256": "e869df1b24629c95da0a9d463ed83854d0872af90365d43cc4167844716ad786",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "8a7ab706d695206830beaf18402dcb688ee881c7e0591a117cfc81545f159ed6",
+            "sourceNodePath": [
+              16
+            ],
+            "surfaceSha256": "77bdceb3f833a0c1f64123940d504f2c56c8bb4fb175aedbf204aea89885dd09",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.00613962,
+                  0.21626301,
+                  -0.02628929,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "3e6cb078832a8ab0a0b623ccaeaa2702d44c9ed3be54a74a56ac1f97eb3923a5"
+          },
+          {
+            "geometrySha256": "9b8ee52468a47a49d78fc7d844b8d34892773f80c79df3510d90fe42bc624de6",
+            "materialId": "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "1d9d861a139cc38ab49733f718c9a31d99a92a4db5eef5678d96bae57dae5734",
+            "sourceNodePath": [
+              17
+            ],
+            "surfaceSha256": "2673a86bd5534cafddaa019b41fbe18d1e2d366918a3544e786100abec5951f4",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.00765138,
+                  0.05120598,
+                  -0.02883693,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "16b01641eb221f5b60d0e25782b38206aa78242afd1bf15237d41e61645d3624",
+            "materialId": "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "9b8d6b64aea780e1230a59e17dc937f3b418f3d78ac16c85ef0bccde4461e20c",
+            "sourceNodePath": [
+              18
+            ],
+            "surfaceSha256": "f3066a6c55afe309018175562361222eaf2710c4f1cbbbda342cad6f3384226d",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.00085888,
+                  0.16709187,
+                  -0.014105350000000001,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "0e14fac67015fdb02affd4280db7de0ac143bb8979a16145bb5cb5a573e7f745",
+            "materialId": "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "35f245f8f89671ee2e1a7879fa562e275b7b941f9f42ea7fc55e3032c79e7999",
+            "sourceNodePath": [
+              19
+            ],
+            "surfaceSha256": "10fd12b3657a58b4a2f66095f608c8eeae5774f3875b54fd62ab60206efc6d9b",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "b156e722f791b899bfd76a3849492a8ab147f1d365b005c0bdeb63ed70f781f5",
+            "materialId": "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "3de787e64a6cd3d3178d1430cd8b536a3058eb9607f2bca4a7024dcd66b59ce8",
+            "sourceNodePath": [
+              20
+            ],
+            "surfaceSha256": "73eb81b54427ebd4816e6650241608c9f41b69a23a3e29dcca415b4524721786",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.02591951,
+                  0.45252174,
+                  -0.17880661,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "64fe33fa004d807666367de5673de7002c11a8ea158e4dbe43dc29ef56360936"
+          },
+          {
+            "geometrySha256": "47ce11822f0eebdc922bf8a15346d8bfd16910fc2b8aa76a1ed0d867acc17e80",
+            "materialId": "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "ee786cb48d6e21f8edfa1b42028d71a0472e6b4580f1e01d0900f41eca83cf3c",
+            "sourceNodePath": [
+              21
+            ],
+            "surfaceSha256": "87d16a2ecef9ec49a8db6cd3ecdd070661bbaa8f9d5f3df638038da9ba40345c",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.02047223,
+                  0.4290097,
+                  -0.14788929,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "6444929c6bee1d0b622c58b7ba12fc3933e7b841b7ff8c18ff4ff2b924c37cad"
+          },
+          {
+            "geometrySha256": "5d40402e480332bf1778ee62b1c0386e3456242e3bede1d7fdb6bae2fceaedb8",
+            "materialId": "fab478bc4310ab25ca071ce3d01571c759ed2cd356e1258cdef2528f9563b985",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "d8ace72d3c2c0d9633b84aab2d1fdff1e00be25f0843ac8bf8a54b08403ea71d",
+            "sourceNodePath": [
+              22
+            ],
+            "surfaceSha256": "ea0b6a4614172bde0620df342599059edb82360a842a1a659c05bd22a61c0fec",
+            "transformChain": [
+              {
+                "matrix": [
+                  0.97,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.00469738,
+                  0.49102229999999997,
+                  -0.16548616,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "50b1aff1f6209bd3d02c7b9cdd3a277469c04facf55dd3b69a5feaa7347d604a"
+          },
+          {
+            "geometrySha256": "8c9782dd9b34cd5f175aa5228f46fe72c0ca2faf36b93babe1037f0a9f4fd709",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "ef70c447c4696e2f26e8dc1d14b283cab081ce024d1e1bee2c8973f1f39005d2",
+            "sourceNodePath": [
+              23
+            ],
+            "surfaceSha256": "40bcb269544761a58d348add443a673e5e255b84ce8f0a465d7caacdcd99a790",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.26018174,
+                  0.67375748,
+                  -0.14091247,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "f7f3bbc88a5167d875bf71d0abf2d6d3b44c4a1b6b63ffb66ebbc58c0605394e"
+          },
+          {
+            "geometrySha256": "8965c726ca7336b6bf5b46c1b4f48d16c8606265941caf71ace8566a37c3023a",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "478877137b67f0ae8d9fbd9e63e28438399a43b1afce86a9f10200b798a649ee",
+            "sourceNodePath": [
+              24
+            ],
+            "surfaceSha256": "ce336aae2599174e3f5b7bbc365061a116136b0811c3d7de14fda69da66dd26a",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.2507735,
+                  0.67375748,
+                  -0.14091247,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "1bf74921d848f708efa631a0ca41bf7e2fb4b6b231cd59350742fad05b204bdf"
+          },
+          {
+            "geometrySha256": "0240c516730eb91d4ad76e89d7fa0a61cf2d11ede82151fe81c48bcf02a37a5b",
+            "materialId": "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "b677a398f3f2b2fb4352a13fa0dbc92eb58f4f2aacc58b185d04c7b5535f1464",
+            "sourceNodePath": [
+              25
+            ],
+            "surfaceSha256": "3f9491a10a6ac4a2af7e88f5712e140e1ea653ee0be909365a270d05f15be707",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.29901223,
+                  0.6067469400000001,
+                  0.16414837000000002,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "eedf1959fefebf1413be3a6b4a84cfe31e543009cc4a1e9dc2d1fc71a2a50b42",
+            "materialId": "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "3efbe6219772bafbb3fdac37bad1ef3b8a2c1dc1cd4d5f999a0eb1a977de8e79",
+            "sourceNodePath": [
+              26
+            ],
+            "surfaceSha256": "0e2466aa2ae0228baa4152466c969765245e184063dc40936da9c8ab8439b27b",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.28960399000000003,
+                  0.6067469400000001,
+                  0.16414837000000002,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "1d599f3847abf014c6d272f3b1a88d8fb0174de1708565f19897db25afcd6d50",
+            "materialId": "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "23dad686bae5d0891423f6ffa95dd0c4e5dc38c082e7b1ff0b57cca376ab9c1a",
+            "sourceNodePath": [
+              27
+            ],
+            "surfaceSha256": "8633859d1cd60b90bd21fd2bbd2061a5c6e876bb58e1065ff0846149749f54f4",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.30146268,
+                  0.64010651,
+                  -0.20641679000000002,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "1d599f3847abf014c6d272f3b1a88d8fb0174de1708565f19897db25afcd6d50",
+            "materialId": "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "78e6e970ec5ba2ef2f7bd06b21476f5a0d1733463397c71efa78cef9fbc66e88",
+            "sourceNodePath": [
+              28
+            ],
+            "surfaceSha256": "8633859d1cd60b90bd21fd2bbd2061a5c6e876bb58e1065ff0846149749f54f4",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -0.30146308,
+                  0.43048203,
+                  0.15638812,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "7d1df877eb8fb2b5d619afdecb7aee54b3d136d999c34b401c1ae45edfcc8668",
+            "materialId": "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "2d3456bcc4f511ab95edf549af9edbe097ea3882676c092dc3ef6691d8405f0c",
+            "sourceNodePath": [
+              29
+            ],
+            "surfaceSha256": "5e4dc58ff3ce948df94d06248b92ff2929b9dac95640c4fa2188de2ca9e0d8b8",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.29205444,
+                  0.64010651,
+                  -0.20641679000000002,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "7d1df877eb8fb2b5d619afdecb7aee54b3d136d999c34b401c1ae45edfcc8668",
+            "materialId": "adce395b31ec69c2f4a03d0cf77cbc920d5c9a1911a932a31ea91da5c197644f",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "1eac21867cbba0ecbc65fb3a19e1c71ae6af2eb0861b3655424225ec09682dc1",
+            "sourceNodePath": [
+              30
+            ],
+            "surfaceSha256": "5e4dc58ff3ce948df94d06248b92ff2929b9dac95640c4fa2188de2ca9e0d8b8",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0.29205484,
+                  0.43048203,
+                  0.15638812,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          }
+        ]
+      }
+    },
+    "originalNodeMapping": {
+      "59ad3c3601232c9b6eaf922e0f9c7781423b616a663e2ab0068e7446f6d025a1": {
+        "074005db807540082d3fba6f49322a3a984f256d7b7a7099d79b59cb722d8ef5": {
+          "canonicalWorldNodeIndex": 0,
+          "originalMeshIndex": 0,
+          "originalNodeIndex": 0,
+          "originalNodePath": [
+            0
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.35046904,
+            0.030472040000000002,
+            0.07245787000000001,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "0b32e420f0acfa1de1066a4db5d35407513ce1c7c6a300923779e73e6b26ca7c": {
+          "canonicalWorldNodeIndex": 7,
+          "originalMeshIndex": 7,
+          "originalNodeIndex": 7,
+          "originalNodePath": [
+            7
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.19923431,
+            0.06333851,
+            -0.29548979000000003,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "0ca1707507804bf9a69e7b891c3babc002e28ef69ba84100f3b8aee146fd337b": {
+          "canonicalWorldNodeIndex": 4,
+          "originalMeshIndex": 4,
+          "originalNodeIndex": 4,
+          "originalNodePath": [
+            4
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.02365726,
+            0.030472040000000002,
+            0.30971485,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "13e81f359aba6263ed7526c1c163a3d957070c4ff9ccacbd597a2c2637c6e98f": {
+          "canonicalWorldNodeIndex": 3,
+          "originalMeshIndex": 3,
+          "originalNodeIndex": 3,
+          "originalNodePath": [
+            3
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.30460566,
+            0.030472040000000002,
+            0.07245787000000001,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "1d9d861a139cc38ab49733f718c9a31d99a92a4db5eef5678d96bae57dae5734": {
+          "canonicalWorldNodeIndex": 17,
+          "originalMeshIndex": 17,
+          "originalNodeIndex": 17,
+          "originalNodePath": [
+            17
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.00765138,
+            0.05120598,
+            -0.02883693,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "1eac21867cbba0ecbc65fb3a19e1c71ae6af2eb0861b3655424225ec09682dc1": {
+          "canonicalWorldNodeIndex": 30,
+          "originalMeshIndex": 30,
+          "originalNodeIndex": 30,
+          "originalNodePath": [
+            30
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.29205484,
+            0.43048203,
+            0.15638812,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "23dad686bae5d0891423f6ffa95dd0c4e5dc38c082e7b1ff0b57cca376ab9c1a": {
+          "canonicalWorldNodeIndex": 27,
+          "originalMeshIndex": 27,
+          "originalNodeIndex": 27,
+          "originalNodePath": [
+            27
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.30146268,
+            0.64010651,
+            -0.20641679000000002,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "241afbb2c1251474ec6c13a8d12ee647d08771b64363e616a96a4d6233ca028d": {
+          "canonicalWorldNodeIndex": 10,
+          "originalMeshIndex": 10,
+          "originalNodeIndex": 10,
+          "originalNodePath": [
+            10
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.35126266,
+            0.030472040000000002,
+            0.07245787000000001,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "2d3456bcc4f511ab95edf549af9edbe097ea3882676c092dc3ef6691d8405f0c": {
+          "canonicalWorldNodeIndex": 29,
+          "originalMeshIndex": 29,
+          "originalNodeIndex": 29,
+          "originalNodePath": [
+            29
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.29205444,
+            0.64010651,
+            -0.20641679000000002,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "2f1b496bafc6bf9e65214b7be2c617371ddb5a35b9843d7bad4eabf8efcf3289": {
+          "canonicalWorldNodeIndex": 13,
+          "originalMeshIndex": 13,
+          "originalNodeIndex": 13,
+          "originalNodePath": [
+            13
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.30381203,
+            0.030472040000000002,
+            0.07245787000000001,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "35f245f8f89671ee2e1a7879fa562e275b7b941f9f42ea7fc55e3032c79e7999": {
+          "canonicalWorldNodeIndex": 19,
+          "originalMeshIndex": 19,
+          "originalNodeIndex": 19,
+          "originalNodePath": [
+            19
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "370a81b65adf1c396bf5e14638f45263d3ce3943e3a73b71d61cdec7ff825bd5": {
+          "canonicalWorldNodeIndex": 12,
+          "originalMeshIndex": 12,
+          "originalNodeIndex": 12,
+          "originalNodePath": [
+            12
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.17891033,
+            0.030472040000000002,
+            -0.31147776,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "3de787e64a6cd3d3178d1430cd8b536a3058eb9607f2bca4a7024dcd66b59ce8": {
+          "canonicalWorldNodeIndex": 20,
+          "originalMeshIndex": 20,
+          "originalNodeIndex": 20,
+          "originalNodePath": [
+            20
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.02591951,
+            0.45252174,
+            -0.17880661,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "3efbe6219772bafbb3fdac37bad1ef3b8a2c1dc1cd4d5f999a0eb1a977de8e79": {
+          "canonicalWorldNodeIndex": 26,
+          "originalMeshIndex": 26,
+          "originalNodeIndex": 26,
+          "originalNodePath": [
+            26
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.28960399000000003,
+            0.6067469400000001,
+            0.16414837000000002,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "4268569a5d404a6e02adafc2889a0457c4f8ba32074f06bc802ce9c498e3eb5d": {
+          "canonicalWorldNodeIndex": 1,
+          "originalMeshIndex": 1,
+          "originalNodeIndex": 1,
+          "originalNodePath": [
+            1
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.22504728000000002,
+            0.030472040000000002,
+            -0.31147776,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "478877137b67f0ae8d9fbd9e63e28438399a43b1afce86a9f10200b798a649ee": {
+          "canonicalWorldNodeIndex": 24,
+          "originalMeshIndex": 24,
+          "originalNodeIndex": 24,
+          "originalNodePath": [
+            24
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.2507735,
+            0.67375748,
+            -0.14091247,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "665c8b3354a675c96aa4bde96bf1c21df402172d9456eb40533005238deaed0b": {
+          "canonicalWorldNodeIndex": 6,
+          "originalMeshIndex": 6,
+          "originalNodeIndex": 6,
+          "originalNodePath": [
+            6
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.32465607,
+            0.06333851,
+            0.08844584,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "7570301f52af485fb641b858205fd82e475ba59c91bcf65e204887c57c473bb1": {
+          "canonicalWorldNodeIndex": 8,
+          "originalMeshIndex": 8,
+          "originalNodeIndex": 8,
+          "originalNodePath": [
+            8
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.33041862,
+            0.06333851,
+            0.08844584,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "78e6e970ec5ba2ef2f7bd06b21476f5a0d1733463397c71efa78cef9fbc66e88": {
+          "canonicalWorldNodeIndex": 28,
+          "originalMeshIndex": 28,
+          "originalNodeIndex": 28,
+          "originalNodePath": [
+            28
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.30146308,
+            0.43048203,
+            0.15638812,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "78ef09620f2367cc793ea66bdb8c7252b3713158830bab67a4064df8b9aba9de": {
+          "canonicalWorldNodeIndex": 5,
+          "originalMeshIndex": 5,
+          "originalNodeIndex": 5,
+          "originalNodePath": [
+            5
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.20551693000000001,
+            0.06333851,
+            -0.29548979000000003,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "819a0b9c83b19efccedec17861496f9d38eeb1e8c94f7dec3ba6f1e84ef1a79a": {
+          "canonicalWorldNodeIndex": 14,
+          "originalMeshIndex": 14,
+          "originalNodeIndex": 14,
+          "originalNodePath": [
+            14
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.02445089,
+            0.030472040000000002,
+            0.30971485,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "8a7ab706d695206830beaf18402dcb688ee881c7e0591a117cfc81545f159ed6": {
+          "canonicalWorldNodeIndex": 16,
+          "originalMeshIndex": 16,
+          "originalNodeIndex": 16,
+          "originalNodePath": [
+            16
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.00613962,
+            0.21626301,
+            -0.02628929,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "994f49e0a5107f26e77f9141a160e154fd593029ff6f83a9556d81ef3bc51a97": {
+          "canonicalWorldNodeIndex": 15,
+          "originalMeshIndex": 15,
+          "originalNodeIndex": 15,
+          "originalNodePath": [
+            15
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.00115187,
+            0.30172922,
+            -0.014679590000000001,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "9b8d6b64aea780e1230a59e17dc937f3b418f3d78ac16c85ef0bccde4461e20c": {
+          "canonicalWorldNodeIndex": 18,
+          "originalMeshIndex": 18,
+          "originalNodeIndex": 18,
+          "originalNodePath": [
+            18
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.00085888,
+            0.16709187,
+            -0.014105350000000001,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "ae3de33d392c867d8e2a5105f430dde7bcb52474d7b5bfbc8bcfb1274bff1e2c": {
+          "canonicalWorldNodeIndex": 11,
+          "originalMeshIndex": 11,
+          "originalNodeIndex": 11,
+          "originalNodePath": [
+            11
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.22584091,
+            0.030472040000000002,
+            -0.31147776,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "b677a398f3f2b2fb4352a13fa0dbc92eb58f4f2aacc58b185d04c7b5535f1464": {
+          "canonicalWorldNodeIndex": 25,
+          "originalMeshIndex": 25,
+          "originalNodeIndex": 25,
+          "originalNodePath": [
+            25
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.29901223,
+            0.6067469400000001,
+            0.16414837000000002,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "d8ace72d3c2c0d9633b84aab2d1fdff1e00be25f0843ac8bf8a54b08403ea71d": {
+          "canonicalWorldNodeIndex": 22,
+          "originalMeshIndex": 22,
+          "originalNodeIndex": 22,
+          "originalNodePath": [
+            22
+          ],
+          "originalWorldMatrix": [
+            0.97,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.00469738,
+            0.49102229999999997,
+            -0.16548616,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "ee786cb48d6e21f8edfa1b42028d71a0472e6b4580f1e01d0900f41eca83cf3c": {
+          "canonicalWorldNodeIndex": 21,
+          "originalMeshIndex": 21,
+          "originalNodeIndex": 21,
+          "originalNodePath": [
+            21
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.02047223,
+            0.4290097,
+            -0.14788929,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "ef70c447c4696e2f26e8dc1d14b283cab081ce024d1e1bee2c8973f1f39005d2": {
+          "canonicalWorldNodeIndex": 23,
+          "originalMeshIndex": 23,
+          "originalNodeIndex": 23,
+          "originalNodePath": [
+            23
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.26018174,
+            0.67375748,
+            -0.14091247,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "fafb45c61f735cdc5d038837c15986e7cf430d4b763484bc0d8c5a1c97a084bd": {
+          "canonicalWorldNodeIndex": 2,
+          "originalMeshIndex": 2,
+          "originalNodeIndex": 2,
+          "originalNodePath": [
+            2
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.17970396,
+            0.030472040000000002,
+            -0.31147776,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "fd9fb68fec8025a44dd6f343d4b634765047e41b304b4e830ecf6e09dfde1f18": {
+          "canonicalWorldNodeIndex": 9,
+          "originalMeshIndex": 9,
+          "originalNodeIndex": 9,
+          "originalNodePath": [
+            9
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0.0021557,
+            0.06333851,
+            0.32570282,
+            1
+          ],
+          "primitiveIndex": 0
+        }
+      }
+    },
+    "schema": "canonical-world-primitive-selectors-329-v1",
+    "scope": {
+      "code": "KLYN002WW002",
+      "fullPaletteQualified": false,
+      "kind": "DIRECT_ROKO_VISUAL_ONLY_OWN_SAVED_ASSEMBLY_AND_EXACT_PAIR_FINISH_930100",
+      "runtimeSha256": "45e3566409f0108b2064ae43ecffbe262153a0aea213321953d0b980a9335812"
+    }
+  },
+  "materials": {
+    "621527cacf5f52ba619735ee70260644fc50507580fb6e17347d2dcefbf4289d": {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "extensions": {
+            "KHR_texture_transform": {
+              "offset": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                40,
+                40
+              ]
+            }
+          },
+          "texCoord": 0,
+          "texture": {
+            "image": {
+              "bytes": 15672,
+              "file": "textures/82ff116dc784e11e6a3d44e9ad6d1cca6aafebcf40920146df13c303bfb1a110.jpg",
+              "mimeType": "image/jpeg",
+              "sha256": "82ff116dc784e11e6a3d44e9ad6d1cca6aafebcf40920146df13c303bfb1a110"
+            },
+            "sampler": {}
+          }
+        },
+        "metallicFactor": 1,
+        "roughnessFactor": 0.6990000009536743
+      }
+    },
+    "e58c1b6a8343a19489b7284667494bc126d4555bdec8dc24180ec0bdf79d2e97": {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "extensions": {
+            "KHR_texture_transform": {
+              "offset": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                7.692,
+                7.6929
+              ]
+            }
+          },
+          "texCoord": 0,
+          "texture": {
+            "image": {
+              "bytes": 182596,
+              "file": "textures/65aef90cf477a831c6d8f2d71785762ad0be5ff552bdd944118f11dd3809201a.jpg",
+              "mimeType": "image/jpeg",
+              "sha256": "65aef90cf477a831c6d8f2d71785762ad0be5ff552bdd944118f11dd3809201a"
+            },
+            "sampler": {}
+          }
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6990000009536743
+      }
+    }
+  }
+}

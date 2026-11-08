@@ -406,10 +406,10 @@
     {
       "code": "KPOX002WW002",
       "name": "Prox",
-      "version": "base+lossless-20261030-v1",
-      "asset": "/models/configurator/chairs/KPOX002WW002-b04600c6b410c55e1095/review-06880c79f8bbc0efb7c7.json",
-      "sha256": "06880c79f8bbc0efb7c7aad9e5dca23cd86187fafc2b638ea05377bdca67b523",
-      "bytes": 148091
+      "asset": "/models/configurator/chairs/KPOX002WW002-visual-8d922ac3733bb25a3f45/review-ac8a2381c62910416e8d.json",
+      "sha256": "ac8a2381c62910416e8d035440419932217625022e66a6d387eec3db23feb412",
+      "bytes": 151839,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KPOX002WW001",

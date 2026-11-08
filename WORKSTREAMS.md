@@ -868,3 +868,6 @@ Direct owner forwarded J205: receive KUTI004WW001 colors-20261103-v1-qualified-c
 
 ## Ergonomic visual OWN 253–256 (2026-11-08)
 Branch codex/visual-own-four-20261108. Four exact J packages, six own contexts, twelve whole finish contrasts; two contexts original-only. Existing KLYN002, Segla and other previews retained. Preview only; no production. Task D:/Core/output/ergonomic-visual-own-four-20261108.
+
+## Ergonomic KPOX observed OWN (2026-11-08)
+Branch codex/kpox-visual-own-20261108. Source257: nine finite five-part visual assemblies, six saved complete finishes scoped to visual8; two explicitly labeled nearest functional mappings with no borrowed palette. Exact geometry/UV/indices/matrices/materials/images preserved through independent lossless transport proof. Existing previews retained; preview only. Task D:/Core/output/ergonomic-kpox-visual-own-20261108.

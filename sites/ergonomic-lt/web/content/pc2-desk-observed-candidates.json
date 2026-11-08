@@ -1,0 +1,45 @@
+{
+  "schema": "pc2-observed-desk-candidates-v1",
+  "entries": [
+    {
+      "code": "KLEV023WW002",
+      "name": "Levitate A-LEG",
+      "asset": "/models/configurator/observed-desks/KLEV023WW002/review-87c2e4f7692eb62e7706.json",
+      "sha256": "87c2e4f7692eb62e770691a6e35910e9a3ead4124aa0f15b3e6c7bae8c7c384e",
+      "bytes": 50882,
+      "states": 14
+    },
+    {
+      "code": "KLEV025WW002",
+      "name": "Levitate 2U A-LEG",
+      "asset": "/models/configurator/observed-desks/KLEV025WW002/review-cd6555c06124b172bdd0.json",
+      "sha256": "cd6555c06124b172bdd09486a65a33377c40d0f3afeb6ad687b26252b5fb2cca",
+      "bytes": 29091,
+      "states": 10
+    },
+    {
+      "code": "KPW2008WW001",
+      "name": "Play&Work 2.0 su spintele",
+      "asset": "/models/configurator/observed-desks/KPW2008WW001/review-4e0e310a6f7779c52c62.json",
+      "sha256": "4e0e310a6f7779c52c62585b14bc644950f6ffd16dfff900f06f830764f3ffb0",
+      "bytes": 36435,
+      "states": 10
+    },
+    {
+      "code": "KPW2011WW001",
+      "name": "Play&Work 2.0",
+      "asset": "/models/configurator/observed-desks/KPW2011WW001/review-2b0d2f3e6e469b451f1a.json",
+      "sha256": "2b0d2f3e6e469b451f1a2f449fea434381bd16de6204fd2abfdf313dde9b0ac2",
+      "bytes": 55643,
+      "states": 14
+    },
+    {
+      "code": "KPW2016WW002",
+      "name": "Play&Work 2.0 2U",
+      "asset": "/models/configurator/observed-desks/KPW2016WW002/review-9c4a68a0aa4fef2a91d5.json",
+      "sha256": "9c4a68a0aa4fef2a91d5e8bf7c67e7d704db8c395e4dc1df1d4453d1f93dc6d1",
+      "bytes": 46041,
+      "states": 14
+    }
+  ]
+}

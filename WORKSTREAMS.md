@@ -939,3 +939,7 @@ Branch codex/sail-xenium-bjarg-additions-20261108; base97b6c8fc7963fa157bdd15fe7
 
 ## Ergonomic Prox/Segla selection repair (2026-11-08)
 Branch codex/prox-segla-selection-fix-20261108; base04e2f1b2e08a626f9efc076bf0cb2c7a6b68d009, companionc2d9a1fa69daa6285bcc8e8d1d039b4ad33db7da. Direct owner preview-only repair. Prox ST65POL already silver in current anonymous desktop/mobile before/cached cycles, original assets unchanged. Segla CSE14 reset reproduced; retain semantic PRICE/GROUP/COLOR intent across admitted constructions, re-resolve target OWN witness and selectors; unmatched intent stays visible/unavailable, never borrowed. Scope pc2-chair-review component, chair-finish-intent helper, route compatibility and tests. 108 tests/tsc actual0; local/public browser and publication gates pending in D:/Core/output/ergonomic-prox-segla-selection-fix-20261108/CONTINUE.json. No production/text-review/Native or geometry/material edits.
+
+
+## Ergonomic observed five desks 2026-11-08
+Owner: this 3D preview chat. Branch codex/observed-five-desks-20261108. Scope: isolated preview-only observed desk adapter, registry, route and negative tuple tests. Five exact codes KLEV023WW002 KLEV025WW002 KPW2008WW001 KPW2011WW001 KPW2016WW002. 60 original GLBs, 62 EU/GE complete states; four FR aliases excluded, original85 files retained. No supplier requests, production or text-review changes. Existing346 rows and61 chair registry entries preserved.

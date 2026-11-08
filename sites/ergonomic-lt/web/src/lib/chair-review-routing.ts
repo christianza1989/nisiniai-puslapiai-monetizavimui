@@ -14,6 +14,12 @@ export function chairReviewRoute(entry:ChairReviewEntry,constructionId:string,fi
  return {construction,source};
 }
 
+export function chairCompatibleFinishRoute(entry:ChairReviewEntry,constructionId:string,finishId:string){
+ const target=constructionId==='default'?entry:entry.constructions?.find(c=>c.id===constructionId);
+ if(!target)throw Error('Unknown chair construction');
+ return finishId==='default'||target.contexts?.some(c=>c.id===finishId)?finishId:'default';
+}
+
 /** Menus select complete admitted records; they never compose structural values. */
 export function chairConstructionMenus(entry:ChairReviewEntry,id:string){
  if(!entry.constructions?.length||!entry.construction)return undefined;

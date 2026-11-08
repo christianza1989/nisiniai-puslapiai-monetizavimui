@@ -5,11 +5,26 @@ import{validateChairReviewComponents}from'../src/lib/chair-components';
 const tuple=(v:Record<string,string>)=>JSON.stringify(Object.entries(v).sort());
 /** Finite observed assemblies only. Broader original runtime predicates are never imported. */
 export function admitObservedOwnAssembly(input:{code:string;sourceRuntimeSha256:string;source:any;profile:any;selectors:any;materials:Record<string,unknown>;transport:Record<string,{sha256:string;bytes:number}>}){
- const{code,sourceRuntimeSha256,source,profile,materials,transport}=input;
+ const{code,sourceRuntimeSha256,materials,transport}=input;
+ const source=structuredClone(input.source),profile=structuredClone(input.profile);
  assert(source.schema==='actual-closed-own-visible-assembly-runtime-940000-v1'&&source.code===code&&source.allPossibleConstructionCombinationsIncluded===false&&source.originalFullGraphClosed===false&&source.mainRuntimeGeometryOwnershipQualified===false&&source.newFullFormOrNative10Claim===false);
  assert(source.visuals.length>0&&source.visuals.length<=100&&source.visuals.every((v:any,i:number)=>v.visualIndex===i&&v.actualWholeGeometryUvWorldPbrReconstructed===true&&v.assets.length>0&&v.assets.length<=10));
  assert(profile.schema==='exact-own-saved-pair-colour-bindings-940000-v1'&&profile.code===code&&profile.runtimeSha256===sourceRuntimeSha256&&profile.actualPaletteComplete===false&&profile.independentFinishCompositionAllowed===false&&profile.notOtherVisualOrCodeBindings===true&&Array.isArray(profile.unrepresentedPairs));
  assert(profile.unrepresentedPairs.every((p:any)=>typeof p.field==='string'&&/^[A-Z][A-Z0-9_]*$/.test(p.field)&&['GEOMETRY_OR_UV_CHANGE_REQUIRES_PART_SWAP','EXACT_OWN_BEFORE_ASSEMBLY_NOT_UNIQUE_IN_SCOPED_VISUALS'].includes(p.reason)));
+ // A complete finish may belong to an explicitly observed functional tuple that
+ // shares its representative's exact factory assembly. Keep that tuple separate;
+ // never apply its palette to the representative's different product metadata.
+ const finishConstructionAliases:{context:number;representativeContext:number;values:Record<string,string>;factorySha256:string}[]=[],aliases=new Map<string,number>();
+ for(const p of profile.variants){
+  const v=source.visuals[p.visualIndex];assert(v);
+  if(tuple(p.exactConstructionValues)===tuple(v.actualObservedStructuralValues))continue;
+  const representativeContext=p.visualIndex,key=representativeContext+':'+tuple(p.exactConstructionValues);
+  const m=source.observedFunctionalMappings.find((m:any)=>m.visualIndex===representativeContext&&tuple(m.actualObservedValues)===tuple(p.exactConstructionValues)&&m.actualProductMetadataPreserved===true&&m.rescaleGeometryFromHeightMetadata===false&&m.mode==='EXACT_OBSERVED_STATIC_APPEARANCE'&&m.approximationExplicit===false&&m.actualFactorySourceSha256===p.beforeFactorySha256&&m.targetFactorySourceSha256===v.sourceFactorySha256);
+  assert(m&&p.beforeFactorySha256===v.sourceFactorySha256&&p.wholeGeometryUvWorldPbrMatch===true,'FINISH_FUNCTIONAL_TUPLE_NOT_EXACTLY_OBSERVED');
+  let context=aliases.get(key);
+  if(context===undefined){context=Number(source.visuals.length);aliases.set(key,context);source.visuals.push({...v,visualIndex:context,actualObservedStructuralValues:{...m.actualObservedValues}});source.observedFunctionalMappings.push({...m,visualIndex:context});finishConstructionAliases.push({context,representativeContext,values:{...m.actualObservedValues},factorySha256:v.sourceFactorySha256});}
+  p.visualIndex=context;
+ }
  const raw=input.selectors;assert(raw.schema==='canonical-world-primitive-selectors-329-v1'&&raw.scope.code===code&&raw.scope.runtimeSha256===sourceRuntimeSha256);
  const selectors:ChairSelectors={schema:raw.schema,assets:{}};
  const part=(a:any)=>{assert(a.file==='assets/'+a.sha256+'.glb');const t=transport[a.sha256],s=raw.assets[a.sha256];assert(t&&/^[a-f0-9]{64}$/.test(t.sha256)&&t.bytes>0&&t.bytes<=25*1024*1024&&s?.assetSha256===a.sha256);
@@ -32,5 +47,5 @@ export function admitObservedOwnAssembly(input:{code:string;sourceRuntimeSha256:
   witnesses.push({id:'observed-own-visual-'+v.visualIndex,label:'Tiksliai stebėtos pilnos apdailos',context:v.visualIndex,construction:{...v.actualObservedStructuralValues},variants:Array(v.assets.length-1).fill(0),requiredAssets:v.assets.map((a:any)=>transport[a.sha256].sha256),groups:[],branches:[],singles});
  }
  assert(profile.variants.every((p:any)=>source.visuals[p.visualIndex]));
- return{runtime,selectors,witnesses,originalFinishByContext,functionalMappings};
+ return{runtime,selectors,witnesses,originalFinishByContext,functionalMappings,finishConstructionAliases};
 }

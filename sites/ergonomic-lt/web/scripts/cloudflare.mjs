@@ -9,7 +9,9 @@ if(task==='build'){
  if(existsSync(join(buildRoot,'dist/server/wrangler.json')))throw Error('Preserve the deployed build: use a fresh isolated ERGONOMIC_BUILD_ROOT.');
  if(buildRoot!==sourceRoot){
   const physical=realpathSync(buildRoot),inside=relative(realpathSync(sourceRoot),physical);
-  if(!physical.toLowerCase().startsWith('e:')||(!inside.startsWith('..')&&!isAbsolute(inside))||existsSync(join(buildRoot,'.git')))throw Error('Expected a separate E build scaffold, not a source checkout.');
+  const storageRoot=physical.replaceAll('\\','/').toLowerCase();
+  const allowedStorage=storageRoot.startsWith('e:')||storageRoot.startsWith('d:/core/output/');
+  if(!allowedStorage||(!inside.startsWith('..')&&!isAbsolute(inside))||existsSync(join(buildRoot,'.git')))throw Error('Expected a separate build scaffold in E: or D:/Core/output, not a source checkout.');
   const scaffold=JSON.parse(readFileSync(join(buildRoot,'.ergonomic-build-scaffold.json'),'utf8'));
   if(realpathSync(scaffold.sourceRoot)!==realpathSync(sourceRoot))throw Error('Build scaffold source mismatch');
  }

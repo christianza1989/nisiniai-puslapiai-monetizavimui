@@ -369,10 +369,25 @@
     {
       "code": "KAII001WW004",
       "name": "Airi",
-      "asset": "/models/configurator/chairs/KAII001WW004-visual-7fcb5b66e3170f769064/review-ffe64eaf842bb2d910e3.json",
-      "sha256": "ffe64eaf842bb2d910e3ba9bd6b94372794f789b5ac4edd8f4f87d96795eeaf9",
-      "bytes": 11504,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KAII001WW004-86c6d4ad73939a669231/review-75b127095e813a4f6e31.json",
+      "sha256": "75b127095e813a4f6e31383b69582925a361d63369b9b8dac746750557a1421f",
+      "bytes": 14449,
+      "version": "colors-20261108-v1-qualified-own-fixed1007250",
+      "defaultVersionLabel": "Fiksuota apdaila · JM55 / BLUE",
+      "reviewVersions": [
+        {
+          "id": "previous-visual-own",
+          "label": "Ankstesnė surinkta versija · atskiras runtime",
+          "entry": {
+            "code": "KAII001WW004",
+            "name": "Airi",
+            "asset": "/models/configurator/chairs/KAII001WW004-visual-7fcb5b66e3170f769064/review-ffe64eaf842bb2d910e3.json",
+            "sha256": "ffe64eaf842bb2d910e3ba9bd6b94372794f789b5ac4edd8f4f87d96795eeaf9",
+            "bytes": 11504,
+            "version": "observed-visual-own-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KALT001WW002",

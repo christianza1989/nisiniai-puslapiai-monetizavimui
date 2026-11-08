@@ -1,0 +1,5539 @@
+{
+  "code": "KPOX002WW001",
+  "sourceRuntimeSha256": "606eb7a6096d376d21f9a5cc7e67de5b7c2af357064d4fe34ed91e9e8bb5c1f5",
+  "source": {
+    "allPossibleConstructionCombinationsIncluded": false,
+    "code": "KPOX002WW001",
+    "kind": "DIRECT_ROKO_OBSERVED_OWN_VISUAL_REPRESENTATIVES_AND_EXACT_SAVED_FINISHES_940000",
+    "mainRuntimeGeometryOwnershipQualified": false,
+    "newFullFormOrNative10Claim": false,
+    "observedFunctionalMappings": [
+      {
+        "actualFactorySourceSha256": "d05c8135354588e8bc03a30893732310b455713cb13aa48624cc3b41e5c745c7",
+        "actualObservedValues": {
+          "CARMRESTS": "ARMRESTS1",
+          "CASSEMBLY": "PACKL",
+          "CBACKREST": "MESH",
+          "CBASE": "TS38",
+          "CCASTORS": "CAB",
+          "CGASLIFT": "GLB",
+          "CHEADREST": "HRUAP",
+          "CLUMBARSUPPORT": "LUMBAR1",
+          "CMECHANISM": "ERIN",
+          "CPLASTICCOLORVERSION": "BLACKEDITION",
+          "CSEAT": "UPHCOVERPLASTIC",
+          "CSEATPADFOAM": "FLAMERETARDANT",
+          "DDEPTH": "_685T755",
+          "DHEIGHT": "_1210T1400",
+          "DWIDTH": "_737",
+          "GWEIGHT": "15.1"
+        },
+        "actualProductMetadataPreserved": true,
+        "approximationExplicit": false,
+        "mode": "EXACT_OBSERVED_STATIC_APPEARANCE",
+        "rescaleGeometryFromHeightMetadata": false,
+        "targetFactorySourceSha256": "d05c8135354588e8bc03a30893732310b455713cb13aa48624cc3b41e5c745c7",
+        "visualIndex": 0
+      },
+      {
+        "actualFactorySourceSha256": "5c8bebea0dea93cdd0edc8b46c700338cb355ba7c9c74e7bb834873488f3f345",
+        "actualObservedValues": {
+          "CARMRESTS": "ARMRESTS1",
+          "CASSEMBLY": "PACKL",
+          "CBACKREST": "MESH",
+          "CBASE": "ST65POL",
+          "CCASTORS": "CAB",
+          "CGASLIFT": "GLB",
+          "CHEADREST": "HRUAP",
+          "CLUMBARSUPPORT": "LUMBAR1",
+          "CMECHANISM": "ERNIN",
+          "CPLASTICCOLORVERSION": "BLACKEDITION",
+          "CSEAT": "UPHCOVERPLASTIC",
+          "CSEATPADFOAM": "FLAMERETARDANT",
+          "DDEPTH": "_685T755",
+          "DHEIGHT": "_1210T1400",
+          "DWIDTH": "_737",
+          "GWEIGHT": "15.1"
+        },
+        "actualProductMetadataPreserved": true,
+        "approximationExplicit": false,
+        "mode": "EXACT_OBSERVED_STATIC_APPEARANCE",
+        "rescaleGeometryFromHeightMetadata": false,
+        "targetFactorySourceSha256": "5c8bebea0dea93cdd0edc8b46c700338cb355ba7c9c74e7bb834873488f3f345",
+        "visualIndex": 1
+      },
+      {
+        "actualFactorySourceSha256": "6f62d4b418348dcd5f6b1b05be93a598479624bc25c79420ca26ba3febf0bfa7",
+        "actualObservedValues": {
+          "CARMRESTS": "ARMRESTS1",
+          "CASSEMBLY": "PACKL",
+          "CBACKREST": "MESH",
+          "CBASE": "ST65POL",
+          "CCASTORS": "CAB",
+          "CGASLIFT": "GLB",
+          "CHEADREST": "HRUAP",
+          "CLUMBARSUPPORT": "LUMBAR1",
+          "CMECHANISM": "SA3IN",
+          "CPLASTICCOLORVERSION": "BLACKEDITION",
+          "CSEAT": "UPHCOVERPLASTIC",
+          "CSEATPADFOAM": "FLAMERETARDANT",
+          "DDEPTH": "_670T740",
+          "DHEIGHT": "_1210T1400",
+          "DWIDTH": "_737",
+          "GWEIGHT": "15.1"
+        },
+        "actualProductMetadataPreserved": true,
+        "approximationExplicit": true,
+        "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO",
+        "rescaleGeometryFromHeightMetadata": false,
+        "targetFactorySourceSha256": "5c8bebea0dea93cdd0edc8b46c700338cb355ba7c9c74e7bb834873488f3f345",
+        "visualIndex": 1
+      },
+      {
+        "actualFactorySourceSha256": "214738678993ea741d17c179050e9dfba0b6cd165f6895f3a0e58c8f0f1ee7b3",
+        "actualObservedValues": {
+          "CARMRESTS": "ARMRESTS1",
+          "CASSEMBLY": "PACKL",
+          "CBACKREST": "MESH",
+          "CBASE": "TS38",
+          "CCASTORS": "CAB",
+          "CGASLIFT": "GLB",
+          "CHEADREST": "HRUAP",
+          "CLUMBARSUPPORT": "LUMBAR1",
+          "CMECHANISM": "SA3IN",
+          "CPLASTICCOLORVERSION": "BLACKEDITION",
+          "CSEAT": "UPHCOVERPLASTIC",
+          "CSEATPADFOAM": "FLAMERETARDANT",
+          "DDEPTH": "_670T740",
+          "DHEIGHT": "_1210T1400",
+          "DWIDTH": "_737",
+          "GWEIGHT": "15.1"
+        },
+        "actualProductMetadataPreserved": true,
+        "approximationExplicit": true,
+        "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO",
+        "rescaleGeometryFromHeightMetadata": false,
+        "targetFactorySourceSha256": "d05c8135354588e8bc03a30893732310b455713cb13aa48624cc3b41e5c745c7",
+        "visualIndex": 0
+      },
+      {
+        "actualFactorySourceSha256": "450f765f7c15f062df1afa16d8c7a37543d74393ee9fbe5e3aad23dce015318a",
+        "actualObservedValues": {
+          "CARMRESTS": "ARMRESTS1",
+          "CASSEMBLY": "PACKL",
+          "CBACKREST": "MESH",
+          "CBASE": "ST65POL",
+          "CCASTORS": "CAB",
+          "CGASLIFT": "GLB",
+          "CHEADREST": "HRUAP",
+          "CLUMBARSUPPORT": "LUMBAR1",
+          "CMECHANISM": "ERIN",
+          "CPLASTICCOLORVERSION": "BLACKEDITION",
+          "CSEAT": "UPHCOVERPLASTIC",
+          "CSEATPADFOAM": "FLAMERETARDANT",
+          "DDEPTH": "_685T755",
+          "DHEIGHT": "_1210T1400",
+          "DWIDTH": "_737",
+          "GWEIGHT": "15.1"
+        },
+        "actualProductMetadataPreserved": true,
+        "approximationExplicit": true,
+        "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO",
+        "rescaleGeometryFromHeightMetadata": false,
+        "targetFactorySourceSha256": "5c8bebea0dea93cdd0edc8b46c700338cb355ba7c9c74e7bb834873488f3f345",
+        "visualIndex": 1
+      },
+      {
+        "actualFactorySourceSha256": "d027cfe824f6eb44a4fe5348288df7dd8bc0dd405f02635f0baa256e399461e7",
+        "actualObservedValues": {
+          "CARMRESTS": "ARMRESTS1",
+          "CASSEMBLY": "PACKL",
+          "CBACKREST": "MESH",
+          "CBASE": "TS38",
+          "CCASTORS": "CAB",
+          "CGASLIFT": "GLB",
+          "CHEADREST": "HRUAP",
+          "CLUMBARSUPPORT": "LUMBAR1",
+          "CMECHANISM": "ERNIN",
+          "CPLASTICCOLORVERSION": "BLACKEDITION",
+          "CSEAT": "UPHCOVERPLASTIC",
+          "CSEATPADFOAM": "FLAMERETARDANT",
+          "DDEPTH": "_685T755",
+          "DHEIGHT": "_1210T1400",
+          "DWIDTH": "_737",
+          "GWEIGHT": "15.1"
+        },
+        "actualProductMetadataPreserved": true,
+        "approximationExplicit": true,
+        "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO",
+        "rescaleGeometryFromHeightMetadata": false,
+        "targetFactorySourceSha256": "d05c8135354588e8bc03a30893732310b455713cb13aa48624cc3b41e5c745c7",
+        "visualIndex": 0
+      },
+      {
+        "actualFactorySourceSha256": "6f62d4b418348dcd5f6b1b05be93a598479624bc25c79420ca26ba3febf0bfa7",
+        "actualObservedValues": {
+          "CARMRESTS": "ARMRESTS1",
+          "CASSEMBLY": "PACKL",
+          "CBACKREST": "MESH",
+          "CBASE": "ST65POL",
+          "CCASTORS": "CAB",
+          "CGASLIFT": "GLB",
+          "CHEADREST": "HRUAP",
+          "CLUMBARSUPPORT": "LUMBAR1",
+          "CMECHANISM": "SA3IN",
+          "CPLASTICCOLORVERSION": "BLACKEDITION",
+          "CSEAT": "UPHCOVERPLASTIC",
+          "CSEATPADFOAM": "FLAMERETARDANT",
+          "DDEPTH": "_670T740",
+          "DHEIGHT": "_1210T1400",
+          "DWIDTH": "_737",
+          "GWEIGHT": "15.1"
+        },
+        "actualProductMetadataPreserved": true,
+        "approximationExplicit": true,
+        "mode": "NEAREST_VISUAL_MODEL_DIRECT_ROKO",
+        "rescaleGeometryFromHeightMetadata": false,
+        "targetFactorySourceSha256": "5c8bebea0dea93cdd0edc8b46c700338cb355ba7c9c74e7bb834873488f3f345",
+        "visualIndex": 1
+      }
+    ],
+    "originalFullGraphClosed": false,
+    "schema": "actual-closed-own-visible-assembly-runtime-940000-v1",
+    "sourceOriginalRuntimeSha256": "525e90e8517d26326f7f5d0fc2b6fb0f48aba4319a60c13aa5656f092383510c",
+    "visuals": [
+      {
+        "actualObservedStructuralValues": {
+          "CARMRESTS": "ARMRESTS1",
+          "CASSEMBLY": "PACKL",
+          "CBACKREST": "MESH",
+          "CBASE": "TS38",
+          "CCASTORS": "CAB",
+          "CGASLIFT": "GLB",
+          "CHEADREST": "HRUAP",
+          "CLUMBARSUPPORT": "LUMBAR1",
+          "CMECHANISM": "ERIN",
+          "CPLASTICCOLORVERSION": "BLACKEDITION",
+          "CSEAT": "UPHCOVERPLASTIC",
+          "CSEATPADFOAM": "FLAMERETARDANT",
+          "DDEPTH": "_685T755",
+          "DHEIGHT": "_1210T1400",
+          "DWIDTH": "_737",
+          "GWEIGHT": "15.1"
+        },
+        "actualWholeGeometryUvWorldPbrReconstructed": true,
+        "assets": [
+          {
+            "file": "assets/c8c3857c98f1d3becdef3c7c2003f09435c174524fbc44903f288ac325f24c61.glb",
+            "sha256": "c8c3857c98f1d3becdef3c7c2003f09435c174524fbc44903f288ac325f24c61"
+          },
+          {
+            "file": "assets/17ed2c12eb9a2ff8ce08d8b704be8d63bfc269f1cd77322c5b8f2ab0ccd63121.glb",
+            "sha256": "17ed2c12eb9a2ff8ce08d8b704be8d63bfc269f1cd77322c5b8f2ab0ccd63121"
+          }
+        ],
+        "originalRuntimeContextIndex": 1,
+        "sourceFactorySha256": "d05c8135354588e8bc03a30893732310b455713cb13aa48624cc3b41e5c745c7",
+        "visualIndex": 0
+      },
+      {
+        "actualObservedStructuralValues": {
+          "CARMRESTS": "ARMRESTS1",
+          "CASSEMBLY": "PACKL",
+          "CBACKREST": "MESH",
+          "CBASE": "ST65POL",
+          "CCASTORS": "CAB",
+          "CGASLIFT": "GLB",
+          "CHEADREST": "HRUAP",
+          "CLUMBARSUPPORT": "LUMBAR1",
+          "CMECHANISM": "ERNIN",
+          "CPLASTICCOLORVERSION": "BLACKEDITION",
+          "CSEAT": "UPHCOVERPLASTIC",
+          "CSEATPADFOAM": "FLAMERETARDANT",
+          "DDEPTH": "_685T755",
+          "DHEIGHT": "_1210T1400",
+          "DWIDTH": "_737",
+          "GWEIGHT": "15.1"
+        },
+        "actualWholeGeometryUvWorldPbrReconstructed": true,
+        "assets": [
+          {
+            "file": "assets/ad8cf9a9ebc30cf8b0f51c8e4a856b5bee3cfe365370a0c426c0c5d00c0320d8.glb",
+            "sha256": "ad8cf9a9ebc30cf8b0f51c8e4a856b5bee3cfe365370a0c426c0c5d00c0320d8"
+          },
+          {
+            "file": "assets/41bca10804c795b12d5945b096bc681243b5e91d07a58829f766f38c0440c363.glb",
+            "sha256": "41bca10804c795b12d5945b096bc681243b5e91d07a58829f766f38c0440c363"
+          }
+        ],
+        "originalRuntimeContextIndex": 2,
+        "sourceFactorySha256": "5c8bebea0dea93cdd0edc8b46c700338cb355ba7c9c74e7bb834873488f3f345",
+        "visualIndex": 1
+      }
+    ],
+    "websitePublicationApproved": false
+  },
+  "profile": {
+    "actualPaletteComplete": false,
+    "code": "KPOX002WW001",
+    "independentFinishCompositionAllowed": false,
+    "notOtherVisualOrCodeBindings": true,
+    "runtimeSha256": "606eb7a6096d376d21f9a5cc7e67de5b7c2af357064d4fe34ed91e9e8bb5c1f5",
+    "schema": "exact-own-saved-pair-colour-bindings-940000-v1",
+    "unrepresentedPairs": [
+      {
+        "field": "CPRICEGROUP",
+        "reason": "EXACT_OWN_BEFORE_ASSEMBLY_NOT_UNIQUE_IN_SCOPED_VISUALS"
+      },
+      {
+        "field": "C3DBACKRESTMESHCOLOR",
+        "reason": "EXACT_OWN_BEFORE_ASSEMBLY_NOT_UNIQUE_IN_SCOPED_VISUALS"
+      },
+      {
+        "field": "CUPHSEATCOLOR",
+        "reason": "EXACT_OWN_BEFORE_ASSEMBLY_NOT_UNIQUE_IN_SCOPED_VISUALS"
+      },
+      {
+        "field": "CHEADRESTUPHCHCOLOR",
+        "reason": "EXACT_OWN_BEFORE_ASSEMBLY_NOT_UNIQUE_IN_SCOPED_VISUALS"
+      }
+    ],
+    "variants": []
+  },
+  "selectors": {
+    "assets": {
+      "17ed2c12eb9a2ff8ce08d8b704be8d63bfc269f1cd77322c5b8f2ab0ccd63121": {
+        "assetSha256": "17ed2c12eb9a2ff8ce08d8b704be8d63bfc269f1cd77322c5b8f2ab0ccd63121",
+        "materials": {
+          "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584": {
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "metallicFactor": 1,
+              "roughnessFactor": 0.4318011403083801
+            }
+          },
+          "42348fd13fc491ed327435b5e908118ba7572f1b4d31ccae416bc79f0d6ce6d1": {
+            "normalTexture": {
+              "extensions": {
+                "KHR_texture_transform": {
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "rotation": 0,
+                  "scale": [
+                    20,
+                    20
+                  ]
+                }
+              },
+              "texCoord": 0,
+              "texture": {
+                "image": {
+                  "bytes": 174136,
+                  "file": "textures/0b051b3ad035c7337d23423fcc2eb0f56ae6b467417deaa41c73d3ce94684c17.jpg",
+                  "mimeType": "image/jpeg",
+                  "sha256": "0b051b3ad035c7337d23423fcc2eb0f56ae6b467417deaa41c73d3ce94684c17"
+                },
+                "sampler": {}
+              }
+            },
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.014023865573108196,
+                0.014023865573108196,
+                0.014023865573108196,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.75
+            }
+          },
+          "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e": {
+            "normalTexture": {
+              "extensions": {
+                "KHR_texture_transform": {
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "rotation": 0,
+                  "scale": [
+                    20,
+                    20
+                  ]
+                }
+              },
+              "texCoord": 0,
+              "texture": {
+                "image": {
+                  "bytes": 180384,
+                  "file": "textures/32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466.jpg",
+                  "mimeType": "image/jpeg",
+                  "sha256": "32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466"
+                },
+                "sampler": {}
+              }
+            },
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.014023865573108196,
+                0.014023865573108196,
+                0.014023865573108196,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.75
+            }
+          },
+          "9a62f77ceaf51eb3d44bcc5552c7c0bc9c32b56cf79ab4c84b7aa0bc19cc5adf": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 245228,
+                    "file": "textures/1dc2d48cf05ecbaf9b2585c2bae531887e890b0d3d53932bf62672621c9e6889.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "1dc2d48cf05ecbaf9b2585c2bae531887e890b0d3d53932bf62672621c9e6889"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 1
+            }
+          },
+          "b03fd5b04d0a29daeab91e0d8f477357a6cb7b4f8c5b0afc55150a4ac4b0ab7b": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 482184,
+                    "file": "textures/8533937b410ec8118266f8f874f877962119896454abb5a6536a20efc2c5a3bf.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "8533937b410ec8118266f8f874f877962119896454abb5a6536a20efc2c5a3bf"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 0.6990000009536743
+            }
+          },
+          "b6f9d7d098526e0e891f59dfef18ba1b73fc1ba99d3c6f8654c988f69a4596d8": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 5206408,
+                    "file": "textures/7b03c7658b763988d66788c58fe39b15d211efcc3236fbbc772a365f93a56bd1.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "7b03c7658b763988d66788c58fe39b15d211efcc3236fbbc772a365f93a56bd1"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 1
+            }
+          }
+        },
+        "slots": [
+          {
+            "geometrySha256": "686e953d1c924ee61e3629f77d9dd8f94d132eb68dd5e93ebae8aaa90d1bf966",
+            "materialId": "42348fd13fc491ed327435b5e908118ba7572f1b4d31ccae416bc79f0d6ce6d1",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "6816c663276e39f080dbff0ca6bc5e06f7efd63d89047fe96a2738ba93e9a38e",
+            "sourceNodePath": [
+              0
+            ],
+            "surfaceSha256": "49231e94686d479eab206d86bcd93837f16a61cacf3646d628553987af7c1773",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "6bb60abe5d2f0452ef0eec62c13930391f10d24798f4b1b3d5454e3c05e38304"
+          }
+        ]
+      },
+      "41bca10804c795b12d5945b096bc681243b5e91d07a58829f766f38c0440c363": {
+        "assetSha256": "41bca10804c795b12d5945b096bc681243b5e91d07a58829f766f38c0440c363",
+        "materials": {
+          "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584": {
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "metallicFactor": 1,
+              "roughnessFactor": 0.4318011403083801
+            }
+          },
+          "6abbfc4e2c36cb14752bcf75eebfdceaf4a41dc8a8764ffc989bd70a01065d90": {
+            "normalTexture": {
+              "extensions": {
+                "KHR_texture_transform": {
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "rotation": 0,
+                  "scale": [
+                    83.3333,
+                    83.3333
+                  ]
+                }
+              },
+              "texCoord": 0,
+              "texture": {
+                "image": {
+                  "bytes": 64664,
+                  "file": "textures/d020695614a16388b9f2625f1f88dd61ccb4987f3b9736b6be3d232b01982e54.png",
+                  "mimeType": "image/png",
+                  "sha256": "d020695614a16388b9f2625f1f88dd61ccb4987f3b9736b6be3d232b01982e54"
+                },
+                "sampler": {}
+              }
+            },
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.6724432110786438,
+                0.6724432110786438,
+                0.6724432110786438,
+                1
+              ],
+              "metallicFactor": 1,
+              "roughnessFactor": 0.17954885959625244
+            }
+          },
+          "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e": {
+            "normalTexture": {
+              "extensions": {
+                "KHR_texture_transform": {
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "rotation": 0,
+                  "scale": [
+                    20,
+                    20
+                  ]
+                }
+              },
+              "texCoord": 0,
+              "texture": {
+                "image": {
+                  "bytes": 180384,
+                  "file": "textures/32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466.jpg",
+                  "mimeType": "image/jpeg",
+                  "sha256": "32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466"
+                },
+                "sampler": {}
+              }
+            },
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.014023865573108196,
+                0.014023865573108196,
+                0.014023865573108196,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.75
+            }
+          },
+          "9a62f77ceaf51eb3d44bcc5552c7c0bc9c32b56cf79ab4c84b7aa0bc19cc5adf": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 245228,
+                    "file": "textures/1dc2d48cf05ecbaf9b2585c2bae531887e890b0d3d53932bf62672621c9e6889.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "1dc2d48cf05ecbaf9b2585c2bae531887e890b0d3d53932bf62672621c9e6889"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 1
+            }
+          },
+          "b03fd5b04d0a29daeab91e0d8f477357a6cb7b4f8c5b0afc55150a4ac4b0ab7b": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 482184,
+                    "file": "textures/8533937b410ec8118266f8f874f877962119896454abb5a6536a20efc2c5a3bf.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "8533937b410ec8118266f8f874f877962119896454abb5a6536a20efc2c5a3bf"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 0.6990000009536743
+            }
+          },
+          "b6f9d7d098526e0e891f59dfef18ba1b73fc1ba99d3c6f8654c988f69a4596d8": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 5206408,
+                    "file": "textures/7b03c7658b763988d66788c58fe39b15d211efcc3236fbbc772a365f93a56bd1.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "7b03c7658b763988d66788c58fe39b15d211efcc3236fbbc772a365f93a56bd1"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 1
+            }
+          }
+        },
+        "slots": [
+          {
+            "geometrySha256": "686e953d1c924ee61e3629f77d9dd8f94d132eb68dd5e93ebae8aaa90d1bf966",
+            "materialId": "6abbfc4e2c36cb14752bcf75eebfdceaf4a41dc8a8764ffc989bd70a01065d90",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "4cc2c51d265c5a884b016431e4e9e15df015dea8be52ae2da092746c98a504bd",
+            "sourceNodePath": [
+              0
+            ],
+            "surfaceSha256": "49231e94686d479eab206d86bcd93837f16a61cacf3646d628553987af7c1773",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "6bb60abe5d2f0452ef0eec62c13930391f10d24798f4b1b3d5454e3c05e38304"
+          }
+        ]
+      },
+      "ad8cf9a9ebc30cf8b0f51c8e4a856b5bee3cfe365370a0c426c0c5d00c0320d8": {
+        "assetSha256": "ad8cf9a9ebc30cf8b0f51c8e4a856b5bee3cfe365370a0c426c0c5d00c0320d8",
+        "materials": {
+          "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584": {
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "metallicFactor": 1,
+              "roughnessFactor": 0.4318011403083801
+            }
+          },
+          "6abbfc4e2c36cb14752bcf75eebfdceaf4a41dc8a8764ffc989bd70a01065d90": {
+            "normalTexture": {
+              "extensions": {
+                "KHR_texture_transform": {
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "rotation": 0,
+                  "scale": [
+                    83.3333,
+                    83.3333
+                  ]
+                }
+              },
+              "texCoord": 0,
+              "texture": {
+                "image": {
+                  "bytes": 64664,
+                  "file": "textures/d020695614a16388b9f2625f1f88dd61ccb4987f3b9736b6be3d232b01982e54.png",
+                  "mimeType": "image/png",
+                  "sha256": "d020695614a16388b9f2625f1f88dd61ccb4987f3b9736b6be3d232b01982e54"
+                },
+                "sampler": {}
+              }
+            },
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.6724432110786438,
+                0.6724432110786438,
+                0.6724432110786438,
+                1
+              ],
+              "metallicFactor": 1,
+              "roughnessFactor": 0.17954885959625244
+            }
+          },
+          "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e": {
+            "normalTexture": {
+              "extensions": {
+                "KHR_texture_transform": {
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "rotation": 0,
+                  "scale": [
+                    20,
+                    20
+                  ]
+                }
+              },
+              "texCoord": 0,
+              "texture": {
+                "image": {
+                  "bytes": 180384,
+                  "file": "textures/32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466.jpg",
+                  "mimeType": "image/jpeg",
+                  "sha256": "32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466"
+                },
+                "sampler": {}
+              }
+            },
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.014023865573108196,
+                0.014023865573108196,
+                0.014023865573108196,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.75
+            }
+          },
+          "9a62f77ceaf51eb3d44bcc5552c7c0bc9c32b56cf79ab4c84b7aa0bc19cc5adf": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 245228,
+                    "file": "textures/1dc2d48cf05ecbaf9b2585c2bae531887e890b0d3d53932bf62672621c9e6889.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "1dc2d48cf05ecbaf9b2585c2bae531887e890b0d3d53932bf62672621c9e6889"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 1
+            }
+          },
+          "b03fd5b04d0a29daeab91e0d8f477357a6cb7b4f8c5b0afc55150a4ac4b0ab7b": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 482184,
+                    "file": "textures/8533937b410ec8118266f8f874f877962119896454abb5a6536a20efc2c5a3bf.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "8533937b410ec8118266f8f874f877962119896454abb5a6536a20efc2c5a3bf"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 0.6990000009536743
+            }
+          },
+          "b6f9d7d098526e0e891f59dfef18ba1b73fc1ba99d3c6f8654c988f69a4596d8": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 5206408,
+                    "file": "textures/7b03c7658b763988d66788c58fe39b15d211efcc3236fbbc772a365f93a56bd1.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "7b03c7658b763988d66788c58fe39b15d211efcc3236fbbc772a365f93a56bd1"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 1
+            }
+          }
+        },
+        "slots": [
+          {
+            "geometrySha256": "32320a54b6e8560d460d83885e12841e44f776123762dab90c8827487f20b30a",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "afba31d3fa09c49029e948e87ba3de8272049781f48420b1df104b219d731315",
+            "sourceNodePath": [
+              0
+            ],
+            "surfaceSha256": "e8fa145b2ebc71b7f259b20c9c4077f0c84180bd42002b477dc6e024c64a5a2c",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "64e6d68ef20f640fd6a53b0fec5828f424fc146809fed8a1e083b008780f3583"
+          },
+          {
+            "geometrySha256": "dd1f58597f46c14e4361d840eef5843a6cdbeb003a5a7604d65ba0fd8614e1e6",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "6b418db21abf09401cbf8851791a29e2ee49d7ce0a4d005152949e7d41203151",
+            "sourceNodePath": [
+              1
+            ],
+            "surfaceSha256": "5c2454002f656d2f038cf0c48b8b855792761636c34ba578c759c19b72bd51d2",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "afe7119d9d0d1e3152cf8ce6a55d0ba643369ae2ed2f566d0cbb855ffe98862f"
+          },
+          {
+            "geometrySha256": "77839f0e1e4e57d63b53ef653ecdf49d12d4e2a96f7881bd07baba493624fd5d",
+            "materialId": "b6f9d7d098526e0e891f59dfef18ba1b73fc1ba99d3c6f8654c988f69a4596d8",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "77d6baa7fe6d547a5dfd5399c9f788597bc5c3266e8b88ad08322fe3d8715c47",
+            "sourceNodePath": [
+              2
+            ],
+            "surfaceSha256": "7a63b795369d96d99b3aff3f682fec3430d5981f70b8db3bc1e16b840d901d0c",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "0f4d780c276bdb6ec39386175ea2e751d832c148945eecc44ab1979438db0388"
+          },
+          {
+            "geometrySha256": "9466091e63489c462592d0949d829d8d786df8c1dade4fffbbfb1154eb5642ea",
+            "materialId": "9a62f77ceaf51eb3d44bcc5552c7c0bc9c32b56cf79ab4c84b7aa0bc19cc5adf",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "a11840c56f17d263c034b65b7040fd9c40747bfa8432f460cfba2cddbcfd0c10",
+            "sourceNodePath": [
+              3
+            ],
+            "surfaceSha256": "b23bfee6b909c757d3fbe5417b30ab5d849430dff5d1099f4ae2c31b84732807",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "e0957e9be76e2ec1c4bbe28f4d1cc736ae082d130c867c6305291afa7cba8715"
+          },
+          {
+            "geometrySha256": "f6e73fb36852a03abdb7a4bbba64ffb33f1603a08baf104eb100ae5f6420a0cd",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "cb0d3a69e78e01e04c9d688389a507823da74449c490ded8a1d182c885d6a8dc",
+            "sourceNodePath": [
+              4
+            ],
+            "surfaceSha256": "41c9d5235e1129e6c564a0361507e1bd9bbfd671e5ff702faa7118b360d12205",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "703a1c2f6015c73c40b9286dc1543d6813599180477fb133619d1125a7fff944"
+          },
+          {
+            "geometrySha256": "85b9966b9992be6a6a2efa4a9dd23673a48811e6c0a2406b441ff56bb4ee4201",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "eb069e8531ee0a64b0fc5ecd7ebf835ad9f3644489bebf6831209930c8fb7824",
+            "sourceNodePath": [
+              5
+            ],
+            "surfaceSha256": "93095ec3b7debe49ddede7de25fa93faf8461a591dc9c53d249f8c02e50bf84b",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "f97af9ddc880472fb4b73df5d45b2b5eb5ea58c0b770ade64dc553c8f24f34af"
+          },
+          {
+            "geometrySha256": "4f2c6978c0dfec45a86a41e81b0dc52420bce673c14c124a777053c486b4e736",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "6e8aa9806ae6b27464805200d832ec1950446791e3c48fecafd0f0242015a8fd",
+            "sourceNodePath": [
+              6
+            ],
+            "surfaceSha256": "7c2e75a72445e434363304c832398ea135544224725319b0325550e4e83c06fd",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "ec6fe259860a2820dea7e1105e6122bf52d2d457f313bc89c33acbac12d07825"
+          },
+          {
+            "geometrySha256": "88054361fb96249dab781c9b2203cc1574a97842eb234c7e5bf701690fd8887b",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "8c29e8a1959394445104dcedbb3089875ceb258340a993726483cd477bc47a96",
+            "sourceNodePath": [
+              7
+            ],
+            "surfaceSha256": "826683db0f5b9c27e25db85f84973fb2c944b7fa44730e5bcc4f91f10beb3b38",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "c98a8e3c6a5832b7e082d16eeffca724700addc9c1cb0c1149fbd3ba82914232"
+          },
+          {
+            "geometrySha256": "75629898804d6ea66be6b47aa0761a4677d5e69c01f3fe22d955b538ee79b562",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "61ebbd20dc19b88ad800d987491ad6366f9d6fe3670affe18690ff8e28e06aee",
+            "sourceNodePath": [
+              8
+            ],
+            "surfaceSha256": "f90012d03315ae10edf49e31ad7c9fe64edfa9024442688ee3bc430cdc8844c0",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "068aa1a746ece183b311c23817ddbc679415e3ae36976e412a1c836effe54d1f"
+          },
+          {
+            "geometrySha256": "4ae1d0262e20ee2e9447f4f2e692b62e0f28000a50eabdb3e5b99fa6eca6e14c",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "190cd034c58f522a3e6e4221979e2cbd1e38276ad13b6697d26c4de43d210710",
+            "sourceNodePath": [
+              9
+            ],
+            "surfaceSha256": "92873886f1faa296c956f404cec6058294e0add7e5b417eb008fd4d7d522e832",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "6b568ee7e3961ed73a37e0623932d1c2c0bfef618c0d5d2744eb8f16a689d3bb"
+          },
+          {
+            "geometrySha256": "ef39bab6278b7a69651005787f6d780e9fe42798bcbed1b17c6bf813981c4134",
+            "materialId": "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "e3a87c0f48909dd67c1e9263e0980226a925da6dbf82df3fd324a1914cb78d5b",
+            "sourceNodePath": [
+              10
+            ],
+            "surfaceSha256": "f9d8ac48fef2d70021710681da562f98ac6fc0adb9caa0cdc4c7ed1099f8445c",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "4b66ea0075dd74a44aaa61a992e857eae5439b5aadbdce465bb5e68284a19199",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "38ffbcc06140377aab844628dfada5dd841281be77d0848344f3719505a601dd",
+            "sourceNodePath": [
+              11
+            ],
+            "surfaceSha256": "7b3b8df412685010e408895764d4910ba0e3a88bb1657912a17364ff53456110",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "7dcaf10b7e0228cf18a33fa6dd3df3a93c9ff19e9f509a3df88463315a2f2cf1"
+          },
+          {
+            "geometrySha256": "1b96eced8516ea2be6d22cdb2d173a9f869ce4e8c58a27a3d316f85b4ea7c891",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "0450eeb2487aa43f53a9b56cdbbcf80f5e89aed120b8c95774be2859dc3d97fa",
+            "sourceNodePath": [
+              12
+            ],
+            "surfaceSha256": "ed15f68d4119a64efafa63dd17097681e68faba1d36dac7abc4c7cafa130f33b",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "37657a8fedce854f07fead92794a238e6c0ff5ed1b6775204380110aa0d0b85d"
+          },
+          {
+            "geometrySha256": "0f05a2136ebf362b74c1d800f10d114a0be41590533af1f5d6b52416d3f18eee",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "2a82047e726edb85028d01cd74a68682603d1ea55f49ca568048a9df5ea6ce7b",
+            "sourceNodePath": [
+              13
+            ],
+            "surfaceSha256": "495ad5addd899092067fff85e250c5056a39f72364d52db7ce641c50505228f8",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "da7f625e1fb723447f4ad37844a898e0dd97e7b97c083accfe2538ca77cb2203"
+          },
+          {
+            "geometrySha256": "f7ea4902f0470abd5c9595687729f9eff810d559b589f14088d791d688ee765d",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "3b0b406ec3ba86214fec5de0d85de263a00307eb2e523ae11a290afcbc8afdcc",
+            "sourceNodePath": [
+              14
+            ],
+            "surfaceSha256": "97bc79659ebdb40cc800203b127d7fbac7bf6c64d846aee1f96eda549f53b8e9",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "f68203859ec90ac6826c2219812e0a26ede98e1c8f9c3cbd078a033990ef1a8a"
+          },
+          {
+            "geometrySha256": "b9edbdf3e8739ab427c86915588050fc5b87fbf3386872f939a678cc822488bc",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "53d8939e2cbc0de6f2be2a8c248dda818cbdf5011851803f580d6a51284a3263",
+            "sourceNodePath": [
+              15
+            ],
+            "surfaceSha256": "898a1b76fdb8b6c3e79ccf18339f446af22362e250b207c510b5617eb73e01e9",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "b8fabef559d0dea0f93edbad0b813905362ca6906c24b6e7686632edfd937c10"
+          },
+          {
+            "geometrySha256": "029e184887b494a93951d39e6a037c33dec338e81b17e3ce11cd789371320960",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "9134eff43013fdc8d10302b0b5a889ba3f9864c53e37dee80bb167302df56753",
+            "sourceNodePath": [
+              16
+            ],
+            "surfaceSha256": "cc9a12adda08b54e3d42afa6e98e994d5f8c996db7b51938ce312259d1855cb6",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "c2e1527956b9941d268441ba4a96c2e79e7f8d49f7b9eedc6a8e96f295ce8d76"
+          },
+          {
+            "geometrySha256": "0c47858c3619100b5e0b029420357191ba365f912e3cf37b3f1363894b0ca8ef",
+            "materialId": "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "30eeb773063e8b1eab0f662143f6b7470a0e36f00f6e9a3f816af35a877963de",
+            "sourceNodePath": [
+              17
+            ],
+            "surfaceSha256": "44289c329312a51dd3c6c8e0ad981fffc40d97c6d4b9e8e772348b3f3eedb96e",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "b65cd05e26509831b28888a317e4ad918e8bdef4e939090d6b71f92a0a54f087",
+            "materialId": "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "c214a50232339997b0a68d38b4a563c6ccd1014626148b7d4c9b672d83108612",
+            "sourceNodePath": [
+              18
+            ],
+            "surfaceSha256": "244a41725dc0cba352425de7d64cc3df8fcc559bb500e0514d47eb23e2b1551c",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "fc3fede1842a604c6f1540eb5ac7364263993c8aaa12aaaae6681c874764eff3",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "fdd74550258eca333a2e68a2277ff98455d289a5f2e307e9b904389ac6b12a39",
+            "sourceNodePath": [
+              19
+            ],
+            "surfaceSha256": "ff92de0390cd3756bc25f166a04e8c73473f78ce2eaa74980796485c5c6bcc53",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "ccf63de65ea697e98c45e6d71aae92f72fc093cd6affbf5ed8ffaa76f5121f76"
+          },
+          {
+            "geometrySha256": "c55b9971f4a3ea969f67579fcd37d8426d10afe13d2bd4c4b33c5b5720162064",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "beedc81f71da8cec5240f3018e967f308bc7bd8714707a3c1ca360e43450af2d",
+            "sourceNodePath": [
+              20
+            ],
+            "surfaceSha256": "8e8d1a78f5c93b1750653e7dfb76860fc54ef7233fd145cce8fa792253cf82e5",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "bd3a2b6c9c471944e5549b091dee2ced89de8c9f37f1ad6b71ee1261abd7efcb"
+          },
+          {
+            "geometrySha256": "e08a88ed5b8c6f37620ca8495ad77bf164fdd4139674f831d99dbb6014635104",
+            "materialId": "b03fd5b04d0a29daeab91e0d8f477357a6cb7b4f8c5b0afc55150a4ac4b0ab7b",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "e9b20d93048a27043977d4305491cb77f37fdfc9786a554909c4dfe3e333344f",
+            "sourceNodePath": [
+              21
+            ],
+            "surfaceSha256": "e90f196dd7de9ae666b0e09979e0f1f0f5c7382963eb30d1fc9adc690772b5bb",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "6a1e6cd67c14bbe89306544cbd93bd6c8655be8c355850f6c5bc7671f486f739"
+          },
+          {
+            "geometrySha256": "baf8c37f7fdf6805b9525acf5c763030918af22d06c6a0b349bdd3c3da1586f4",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "13e2b9dc18f47d587d6db585d64ace5bdcb5ce47f8ab229809c7402614f2d2f4",
+            "sourceNodePath": [
+              22
+            ],
+            "surfaceSha256": "cf5b924bd475995bc99d8fae2b68c66353de37a38fde993a68d8c794cd6e847b",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "3668f3ebeb28827abc8ad023ee2dd6ce0aac5abcc1d9d76e78e73462072bb91a"
+          },
+          {
+            "geometrySha256": "c8d48aa6ce3290a394d25caf3e0691c95195e9c2af63a90a3d8e12777bfc2e16",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "ce8e6c2bd644a6f6ad10d35a69ba72ac2ca0a05b69189aa95897974178816866",
+            "sourceNodePath": [
+              23
+            ],
+            "surfaceSha256": "2c662925804f2ca3be5f7bcbbeb957b8794f89d06d907b01d741bad4b63596a4",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "28128dd6dcf2eb0c955c234ee5a91ea87a67acf34e93e9593c8d34d30067ab97"
+          },
+          {
+            "geometrySha256": "f933d837f27eb03d44ad1f9f2dc2012dfcb754d986be86d90cbe6ea0f7210b94",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "c9a451e64d64cf8a716a718dc45904637de78c00c0cea5843c0f084b2a71a33c",
+            "sourceNodePath": [
+              24
+            ],
+            "surfaceSha256": "2ae7a39b2e3240538d5bd2aa878a198fbd7dc4f05d2fcc7bb0512b965900d4eb",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "c9cb04ca2d79fccef307d1d3e2de1d324f11fbebf41afe042b307f264de1ede7"
+          },
+          {
+            "geometrySha256": "f102be88ce5c2f8564f894b02d29312a11c17a9180982d78817c3d55f8086b90",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "bbcfc18c41e1fe11f0ffc2eeeb327d2ed35a8de77b3be478528e2cb50543df3f",
+            "sourceNodePath": [
+              25
+            ],
+            "surfaceSha256": "668859202821a30f0790d8eb1c951c07ab5562c4562c785f83380a3f66393841",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "d137a474c7f4ecd78bf2c867f6c7502f429be01be0494b767a85647d82d628e7"
+          },
+          {
+            "geometrySha256": "bf3ed8eacbfc3cc38381864f3f20ffe9bc710b6990acd557ffa4c40480350b04",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "077c8294ac8cdf3620d9ca50d2307cf4b5a34b3077ce9a5da20d1a0443383d5c",
+            "sourceNodePath": [
+              26
+            ],
+            "surfaceSha256": "a24df8c07aa8fdaf3d51335e7f45999747f7bed783179dedba56a0a1de36c553",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "93730a0f4e6f7d80501606a1db90f2a8b9e2105fe04e916c040fbac71f0ec6a8"
+          },
+          {
+            "geometrySha256": "fdf428ede3988f4f02d1fa03c78356334c366d8bd3112e0140f319f2c883fb26",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "4f67fd904d423a454562fe72262581399eadb6f54654845aca98c2553b68f522",
+            "sourceNodePath": [
+              27
+            ],
+            "surfaceSha256": "90ff42ab78f17706ee93b9bb103bbf4e5a1e227f88d6b434c974a0858713ec21",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "98840632376de007954ffcda038ebb094a232a467db6fe8598b57c311372b7f0"
+          },
+          {
+            "geometrySha256": "a3e1f5953c6cfd7f84cb08d065de96a55f93af3888b0c48ed8add1f17f9691d7",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "2abb4156327fca5eb6ff0590745a0f6731e45a4e7be7847a6434ea346735b137",
+            "sourceNodePath": [
+              28
+            ],
+            "surfaceSha256": "84cd2168e361f34b4eb13e8d30ee1e9463124fe54c6ad21fca424e9ccd1ebcd4",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "2f4e4c2a04f9a87d0bfbead42d08c87c7837a6306d63fca1b021517e435a6622"
+          },
+          {
+            "geometrySha256": "de2dc74fc75dafe8cbb2db96a785925fdf7d80a5cf071262e5e9d0b021b443b4",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "efa195a340024141c0a6d0b1bd490c71a4f70e3ba88e07b9f100e42c53454648",
+            "sourceNodePath": [
+              29
+            ],
+            "surfaceSha256": "531c7926f50f8c03442b30509be2fccfcbb7b04cb3e0e5acd9d92760e472051f",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "c3c666518f61ad08f38dd81a4112987933c9a4eb70924f191ec3156826679a4c"
+          },
+          {
+            "geometrySha256": "82d2e203f8382dad950b2f92faad76124fdd3abcd76e6d0bc9462aebb77fb6a4",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "7aa6bf17812563183c91bdc4393293a615880048d6cfbd6a993af5f40bca5641",
+            "sourceNodePath": [
+              30
+            ],
+            "surfaceSha256": "26750a9fa1a96fcd87595acbe9c445f07e0db32adf88d02831977196beefd95e",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "76a18493e80d3e7dcc5b0c0cfe102cf3fdcaed087a1ca94785a45acb1451cfcf"
+          },
+          {
+            "geometrySha256": "815f6bb88318c7b715a7679fb2a663598c84160e8bef633158cb33e78e07c00e",
+            "materialId": "b03fd5b04d0a29daeab91e0d8f477357a6cb7b4f8c5b0afc55150a4ac4b0ab7b",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "75caf2919f7e211b9e80932bb60299d202f053d072e36d9deb8150a209046d6e",
+            "sourceNodePath": [
+              31
+            ],
+            "surfaceSha256": "0c5409651988072f6c487682f8b53c20b5f536127b07b50d8e996faaf88c8b19",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "57cb568eb106ef5c24cfd4b0dfa0297fa724833293944ee0135d901b93257d02"
+          },
+          {
+            "geometrySha256": "0d58d77e48f410036a6d3bf0c8a0007342a19208fe98afbc1a107da5845fa7f6",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "81b82aa65015bd6e9feb68fe425914e2230f5e4a7b6a3d2e8c6b0884dfe47e9d",
+            "sourceNodePath": [
+              32
+            ],
+            "surfaceSha256": "b0fc763139845b7c73335850d239a3cc3119fb15ec22b759225d050848cc62d1",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "4e43e383524b70f35814d136907cdf3bec34eb0644ea2bf0c5a25e90b47d2e28"
+          },
+          {
+            "geometrySha256": "ab57a2151dc18eaacc1635224816d70acf1813bcc607c9f233b4a3a4692e97cc",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "ba85e59e9041cdc5d72cdc7c8a4514047bac5685954c6f6e631286becf05ecd3",
+            "sourceNodePath": [
+              33
+            ],
+            "surfaceSha256": "1c5e57659fd74faa30ea3ed22e082b558d6be6d42f25996cafd8a9257423bad4",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "c83250003f9604e6641ecc5d8538cb19f514d68c5e432084a183c7695b410a06"
+          },
+          {
+            "geometrySha256": "9d4a06c90885ae71222894791e468c72fb17bb0f50dae3fdb3fb468593e312b1",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "388a8cc93889e44104b3c00d8a67223f4a39b8d993b88e8b65711980e841baa1",
+            "sourceNodePath": [
+              34
+            ],
+            "surfaceSha256": "66732b242030d30129b90ce0c77a11e39d6505ad895955f49d717b37eccda9df",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "5afe480a41480609ef292a637977afa00dd616bc02870fab36d128479db63e53"
+          },
+          {
+            "geometrySha256": "f1044d7a1be4482f54129ebf74b6b8f8f1e35cd914a7cdc435b5f98e1e6e09bf",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "041d3c2f5a5fcc553d52583dde7c5c030081e11dbd1327cebecfecf0cb4415ba",
+            "sourceNodePath": [
+              35
+            ],
+            "surfaceSha256": "cc59b522fbbd53b72b89ec0a8fa61e6862f9794f3f92069174af1d260261ed49",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "ea88a32614091c62521b16449c95ec19063524c0343dbd544089ddc2af68565d"
+          }
+        ]
+      },
+      "c8c3857c98f1d3becdef3c7c2003f09435c174524fbc44903f288ac325f24c61": {
+        "assetSha256": "c8c3857c98f1d3becdef3c7c2003f09435c174524fbc44903f288ac325f24c61",
+        "materials": {
+          "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584": {
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "metallicFactor": 1,
+              "roughnessFactor": 0.4318011403083801
+            }
+          },
+          "6abbfc4e2c36cb14752bcf75eebfdceaf4a41dc8a8764ffc989bd70a01065d90": {
+            "normalTexture": {
+              "extensions": {
+                "KHR_texture_transform": {
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "rotation": 0,
+                  "scale": [
+                    83.3333,
+                    83.3333
+                  ]
+                }
+              },
+              "texCoord": 0,
+              "texture": {
+                "image": {
+                  "bytes": 64664,
+                  "file": "textures/d020695614a16388b9f2625f1f88dd61ccb4987f3b9736b6be3d232b01982e54.png",
+                  "mimeType": "image/png",
+                  "sha256": "d020695614a16388b9f2625f1f88dd61ccb4987f3b9736b6be3d232b01982e54"
+                },
+                "sampler": {}
+              }
+            },
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.6724432110786438,
+                0.6724432110786438,
+                0.6724432110786438,
+                1
+              ],
+              "metallicFactor": 1,
+              "roughnessFactor": 0.17954885959625244
+            }
+          },
+          "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e": {
+            "normalTexture": {
+              "extensions": {
+                "KHR_texture_transform": {
+                  "offset": [
+                    0,
+                    0
+                  ],
+                  "rotation": 0,
+                  "scale": [
+                    20,
+                    20
+                  ]
+                }
+              },
+              "texCoord": 0,
+              "texture": {
+                "image": {
+                  "bytes": 180384,
+                  "file": "textures/32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466.jpg",
+                  "mimeType": "image/jpeg",
+                  "sha256": "32c038a1368e6a417006004df01200edc2633eef94ba3708c34a34a6ae433466"
+                },
+                "sampler": {}
+              }
+            },
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.014023865573108196,
+                0.014023865573108196,
+                0.014023865573108196,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.75
+            }
+          },
+          "9a62f77ceaf51eb3d44bcc5552c7c0bc9c32b56cf79ab4c84b7aa0bc19cc5adf": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 245228,
+                    "file": "textures/1dc2d48cf05ecbaf9b2585c2bae531887e890b0d3d53932bf62672621c9e6889.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "1dc2d48cf05ecbaf9b2585c2bae531887e890b0d3d53932bf62672621c9e6889"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 1
+            }
+          },
+          "b03fd5b04d0a29daeab91e0d8f477357a6cb7b4f8c5b0afc55150a4ac4b0ab7b": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 482184,
+                    "file": "textures/8533937b410ec8118266f8f874f877962119896454abb5a6536a20efc2c5a3bf.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "8533937b410ec8118266f8f874f877962119896454abb5a6536a20efc2c5a3bf"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 0.6990000009536743
+            }
+          },
+          "b6f9d7d098526e0e891f59dfef18ba1b73fc1ba99d3c6f8654c988f69a4596d8": {
+            "pbrMetallicRoughness": {
+              "baseColorTexture": {
+                "extensions": {
+                  "KHR_texture_transform": {
+                    "offset": [
+                      0,
+                      0
+                    ],
+                    "rotation": 0,
+                    "scale": [
+                      7.692,
+                      7.6929
+                    ]
+                  }
+                },
+                "texCoord": 0,
+                "texture": {
+                  "image": {
+                    "bytes": 5206408,
+                    "file": "textures/7b03c7658b763988d66788c58fe39b15d211efcc3236fbbc772a365f93a56bd1.jpg",
+                    "mimeType": "image/jpeg",
+                    "sha256": "7b03c7658b763988d66788c58fe39b15d211efcc3236fbbc772a365f93a56bd1"
+                  },
+                  "sampler": {}
+                }
+              },
+              "metallicFactor": 0,
+              "roughnessFactor": 1
+            }
+          }
+        },
+        "slots": [
+          {
+            "geometrySha256": "32320a54b6e8560d460d83885e12841e44f776123762dab90c8827487f20b30a",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "afba31d3fa09c49029e948e87ba3de8272049781f48420b1df104b219d731315",
+            "sourceNodePath": [
+              0
+            ],
+            "surfaceSha256": "e8fa145b2ebc71b7f259b20c9c4077f0c84180bd42002b477dc6e024c64a5a2c",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "64e6d68ef20f640fd6a53b0fec5828f424fc146809fed8a1e083b008780f3583"
+          },
+          {
+            "geometrySha256": "dd1f58597f46c14e4361d840eef5843a6cdbeb003a5a7604d65ba0fd8614e1e6",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "6b418db21abf09401cbf8851791a29e2ee49d7ce0a4d005152949e7d41203151",
+            "sourceNodePath": [
+              1
+            ],
+            "surfaceSha256": "5c2454002f656d2f038cf0c48b8b855792761636c34ba578c759c19b72bd51d2",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "afe7119d9d0d1e3152cf8ce6a55d0ba643369ae2ed2f566d0cbb855ffe98862f"
+          },
+          {
+            "geometrySha256": "77839f0e1e4e57d63b53ef653ecdf49d12d4e2a96f7881bd07baba493624fd5d",
+            "materialId": "b6f9d7d098526e0e891f59dfef18ba1b73fc1ba99d3c6f8654c988f69a4596d8",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "77d6baa7fe6d547a5dfd5399c9f788597bc5c3266e8b88ad08322fe3d8715c47",
+            "sourceNodePath": [
+              2
+            ],
+            "surfaceSha256": "7a63b795369d96d99b3aff3f682fec3430d5981f70b8db3bc1e16b840d901d0c",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "0f4d780c276bdb6ec39386175ea2e751d832c148945eecc44ab1979438db0388"
+          },
+          {
+            "geometrySha256": "9466091e63489c462592d0949d829d8d786df8c1dade4fffbbfb1154eb5642ea",
+            "materialId": "9a62f77ceaf51eb3d44bcc5552c7c0bc9c32b56cf79ab4c84b7aa0bc19cc5adf",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "a11840c56f17d263c034b65b7040fd9c40747bfa8432f460cfba2cddbcfd0c10",
+            "sourceNodePath": [
+              3
+            ],
+            "surfaceSha256": "b23bfee6b909c757d3fbe5417b30ab5d849430dff5d1099f4ae2c31b84732807",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "e0957e9be76e2ec1c4bbe28f4d1cc736ae082d130c867c6305291afa7cba8715"
+          },
+          {
+            "geometrySha256": "f6e73fb36852a03abdb7a4bbba64ffb33f1603a08baf104eb100ae5f6420a0cd",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "cb0d3a69e78e01e04c9d688389a507823da74449c490ded8a1d182c885d6a8dc",
+            "sourceNodePath": [
+              4
+            ],
+            "surfaceSha256": "41c9d5235e1129e6c564a0361507e1bd9bbfd671e5ff702faa7118b360d12205",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "703a1c2f6015c73c40b9286dc1543d6813599180477fb133619d1125a7fff944"
+          },
+          {
+            "geometrySha256": "85b9966b9992be6a6a2efa4a9dd23673a48811e6c0a2406b441ff56bb4ee4201",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "eb069e8531ee0a64b0fc5ecd7ebf835ad9f3644489bebf6831209930c8fb7824",
+            "sourceNodePath": [
+              5
+            ],
+            "surfaceSha256": "93095ec3b7debe49ddede7de25fa93faf8461a591dc9c53d249f8c02e50bf84b",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "f97af9ddc880472fb4b73df5d45b2b5eb5ea58c0b770ade64dc553c8f24f34af"
+          },
+          {
+            "geometrySha256": "4f2c6978c0dfec45a86a41e81b0dc52420bce673c14c124a777053c486b4e736",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "6e8aa9806ae6b27464805200d832ec1950446791e3c48fecafd0f0242015a8fd",
+            "sourceNodePath": [
+              6
+            ],
+            "surfaceSha256": "7c2e75a72445e434363304c832398ea135544224725319b0325550e4e83c06fd",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "ec6fe259860a2820dea7e1105e6122bf52d2d457f313bc89c33acbac12d07825"
+          },
+          {
+            "geometrySha256": "88054361fb96249dab781c9b2203cc1574a97842eb234c7e5bf701690fd8887b",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "8c29e8a1959394445104dcedbb3089875ceb258340a993726483cd477bc47a96",
+            "sourceNodePath": [
+              7
+            ],
+            "surfaceSha256": "826683db0f5b9c27e25db85f84973fb2c944b7fa44730e5bcc4f91f10beb3b38",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "c98a8e3c6a5832b7e082d16eeffca724700addc9c1cb0c1149fbd3ba82914232"
+          },
+          {
+            "geometrySha256": "75629898804d6ea66be6b47aa0761a4677d5e69c01f3fe22d955b538ee79b562",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "61ebbd20dc19b88ad800d987491ad6366f9d6fe3670affe18690ff8e28e06aee",
+            "sourceNodePath": [
+              8
+            ],
+            "surfaceSha256": "f90012d03315ae10edf49e31ad7c9fe64edfa9024442688ee3bc430cdc8844c0",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "068aa1a746ece183b311c23817ddbc679415e3ae36976e412a1c836effe54d1f"
+          },
+          {
+            "geometrySha256": "4ae1d0262e20ee2e9447f4f2e692b62e0f28000a50eabdb3e5b99fa6eca6e14c",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "190cd034c58f522a3e6e4221979e2cbd1e38276ad13b6697d26c4de43d210710",
+            "sourceNodePath": [
+              9
+            ],
+            "surfaceSha256": "92873886f1faa296c956f404cec6058294e0add7e5b417eb008fd4d7d522e832",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "6b568ee7e3961ed73a37e0623932d1c2c0bfef618c0d5d2744eb8f16a689d3bb"
+          },
+          {
+            "geometrySha256": "ef39bab6278b7a69651005787f6d780e9fe42798bcbed1b17c6bf813981c4134",
+            "materialId": "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "e3a87c0f48909dd67c1e9263e0980226a925da6dbf82df3fd324a1914cb78d5b",
+            "sourceNodePath": [
+              10
+            ],
+            "surfaceSha256": "f9d8ac48fef2d70021710681da562f98ac6fc0adb9caa0cdc4c7ed1099f8445c",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "4b66ea0075dd74a44aaa61a992e857eae5439b5aadbdce465bb5e68284a19199",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "38ffbcc06140377aab844628dfada5dd841281be77d0848344f3719505a601dd",
+            "sourceNodePath": [
+              11
+            ],
+            "surfaceSha256": "7b3b8df412685010e408895764d4910ba0e3a88bb1657912a17364ff53456110",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "7dcaf10b7e0228cf18a33fa6dd3df3a93c9ff19e9f509a3df88463315a2f2cf1"
+          },
+          {
+            "geometrySha256": "1b96eced8516ea2be6d22cdb2d173a9f869ce4e8c58a27a3d316f85b4ea7c891",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "0450eeb2487aa43f53a9b56cdbbcf80f5e89aed120b8c95774be2859dc3d97fa",
+            "sourceNodePath": [
+              12
+            ],
+            "surfaceSha256": "ed15f68d4119a64efafa63dd17097681e68faba1d36dac7abc4c7cafa130f33b",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "37657a8fedce854f07fead92794a238e6c0ff5ed1b6775204380110aa0d0b85d"
+          },
+          {
+            "geometrySha256": "0f05a2136ebf362b74c1d800f10d114a0be41590533af1f5d6b52416d3f18eee",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "2a82047e726edb85028d01cd74a68682603d1ea55f49ca568048a9df5ea6ce7b",
+            "sourceNodePath": [
+              13
+            ],
+            "surfaceSha256": "495ad5addd899092067fff85e250c5056a39f72364d52db7ce641c50505228f8",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "da7f625e1fb723447f4ad37844a898e0dd97e7b97c083accfe2538ca77cb2203"
+          },
+          {
+            "geometrySha256": "f7ea4902f0470abd5c9595687729f9eff810d559b589f14088d791d688ee765d",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "3b0b406ec3ba86214fec5de0d85de263a00307eb2e523ae11a290afcbc8afdcc",
+            "sourceNodePath": [
+              14
+            ],
+            "surfaceSha256": "97bc79659ebdb40cc800203b127d7fbac7bf6c64d846aee1f96eda549f53b8e9",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "f68203859ec90ac6826c2219812e0a26ede98e1c8f9c3cbd078a033990ef1a8a"
+          },
+          {
+            "geometrySha256": "b9edbdf3e8739ab427c86915588050fc5b87fbf3386872f939a678cc822488bc",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "53d8939e2cbc0de6f2be2a8c248dda818cbdf5011851803f580d6a51284a3263",
+            "sourceNodePath": [
+              15
+            ],
+            "surfaceSha256": "898a1b76fdb8b6c3e79ccf18339f446af22362e250b207c510b5617eb73e01e9",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "b8fabef559d0dea0f93edbad0b813905362ca6906c24b6e7686632edfd937c10"
+          },
+          {
+            "geometrySha256": "029e184887b494a93951d39e6a037c33dec338e81b17e3ce11cd789371320960",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "9134eff43013fdc8d10302b0b5a889ba3f9864c53e37dee80bb167302df56753",
+            "sourceNodePath": [
+              16
+            ],
+            "surfaceSha256": "cc9a12adda08b54e3d42afa6e98e994d5f8c996db7b51938ce312259d1855cb6",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "c2e1527956b9941d268441ba4a96c2e79e7f8d49f7b9eedc6a8e96f295ce8d76"
+          },
+          {
+            "geometrySha256": "0c47858c3619100b5e0b029420357191ba365f912e3cf37b3f1363894b0ca8ef",
+            "materialId": "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "30eeb773063e8b1eab0f662143f6b7470a0e36f00f6e9a3f816af35a877963de",
+            "sourceNodePath": [
+              17
+            ],
+            "surfaceSha256": "44289c329312a51dd3c6c8e0ad981fffc40d97c6d4b9e8e772348b3f3eedb96e",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "b65cd05e26509831b28888a317e4ad918e8bdef4e939090d6b71f92a0a54f087",
+            "materialId": "3773db159574f24ffeaf06f00e3bac4ac7d326ec2ab7686bfb041c2b9ed7a584",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "c214a50232339997b0a68d38b4a563c6ccd1014626148b7d4c9b672d83108612",
+            "sourceNodePath": [
+              18
+            ],
+            "surfaceSha256": "244a41725dc0cba352425de7d64cc3df8fcc559bb500e0514d47eb23e2b1551c",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": null
+          },
+          {
+            "geometrySha256": "fc3fede1842a604c6f1540eb5ac7364263993c8aaa12aaaae6681c874764eff3",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "fdd74550258eca333a2e68a2277ff98455d289a5f2e307e9b904389ac6b12a39",
+            "sourceNodePath": [
+              19
+            ],
+            "surfaceSha256": "ff92de0390cd3756bc25f166a04e8c73473f78ce2eaa74980796485c5c6bcc53",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "ccf63de65ea697e98c45e6d71aae92f72fc093cd6affbf5ed8ffaa76f5121f76"
+          },
+          {
+            "geometrySha256": "c55b9971f4a3ea969f67579fcd37d8426d10afe13d2bd4c4b33c5b5720162064",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "beedc81f71da8cec5240f3018e967f308bc7bd8714707a3c1ca360e43450af2d",
+            "sourceNodePath": [
+              20
+            ],
+            "surfaceSha256": "8e8d1a78f5c93b1750653e7dfb76860fc54ef7233fd145cce8fa792253cf82e5",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "bd3a2b6c9c471944e5549b091dee2ced89de8c9f37f1ad6b71ee1261abd7efcb"
+          },
+          {
+            "geometrySha256": "e08a88ed5b8c6f37620ca8495ad77bf164fdd4139674f831d99dbb6014635104",
+            "materialId": "b03fd5b04d0a29daeab91e0d8f477357a6cb7b4f8c5b0afc55150a4ac4b0ab7b",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "e9b20d93048a27043977d4305491cb77f37fdfc9786a554909c4dfe3e333344f",
+            "sourceNodePath": [
+              21
+            ],
+            "surfaceSha256": "e90f196dd7de9ae666b0e09979e0f1f0f5c7382963eb30d1fc9adc690772b5bb",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "6a1e6cd67c14bbe89306544cbd93bd6c8655be8c355850f6c5bc7671f486f739"
+          },
+          {
+            "geometrySha256": "baf8c37f7fdf6805b9525acf5c763030918af22d06c6a0b349bdd3c3da1586f4",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "13e2b9dc18f47d587d6db585d64ace5bdcb5ce47f8ab229809c7402614f2d2f4",
+            "sourceNodePath": [
+              22
+            ],
+            "surfaceSha256": "cf5b924bd475995bc99d8fae2b68c66353de37a38fde993a68d8c794cd6e847b",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "3668f3ebeb28827abc8ad023ee2dd6ce0aac5abcc1d9d76e78e73462072bb91a"
+          },
+          {
+            "geometrySha256": "c8d48aa6ce3290a394d25caf3e0691c95195e9c2af63a90a3d8e12777bfc2e16",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "ce8e6c2bd644a6f6ad10d35a69ba72ac2ca0a05b69189aa95897974178816866",
+            "sourceNodePath": [
+              23
+            ],
+            "surfaceSha256": "2c662925804f2ca3be5f7bcbbeb957b8794f89d06d907b01d741bad4b63596a4",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "28128dd6dcf2eb0c955c234ee5a91ea87a67acf34e93e9593c8d34d30067ab97"
+          },
+          {
+            "geometrySha256": "f933d837f27eb03d44ad1f9f2dc2012dfcb754d986be86d90cbe6ea0f7210b94",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "c9a451e64d64cf8a716a718dc45904637de78c00c0cea5843c0f084b2a71a33c",
+            "sourceNodePath": [
+              24
+            ],
+            "surfaceSha256": "2ae7a39b2e3240538d5bd2aa878a198fbd7dc4f05d2fcc7bb0512b965900d4eb",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "c9cb04ca2d79fccef307d1d3e2de1d324f11fbebf41afe042b307f264de1ede7"
+          },
+          {
+            "geometrySha256": "f102be88ce5c2f8564f894b02d29312a11c17a9180982d78817c3d55f8086b90",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "bbcfc18c41e1fe11f0ffc2eeeb327d2ed35a8de77b3be478528e2cb50543df3f",
+            "sourceNodePath": [
+              25
+            ],
+            "surfaceSha256": "668859202821a30f0790d8eb1c951c07ab5562c4562c785f83380a3f66393841",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "d137a474c7f4ecd78bf2c867f6c7502f429be01be0494b767a85647d82d628e7"
+          },
+          {
+            "geometrySha256": "bf3ed8eacbfc3cc38381864f3f20ffe9bc710b6990acd557ffa4c40480350b04",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "077c8294ac8cdf3620d9ca50d2307cf4b5a34b3077ce9a5da20d1a0443383d5c",
+            "sourceNodePath": [
+              26
+            ],
+            "surfaceSha256": "a24df8c07aa8fdaf3d51335e7f45999747f7bed783179dedba56a0a1de36c553",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "93730a0f4e6f7d80501606a1db90f2a8b9e2105fe04e916c040fbac71f0ec6a8"
+          },
+          {
+            "geometrySha256": "fdf428ede3988f4f02d1fa03c78356334c366d8bd3112e0140f319f2c883fb26",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "4f67fd904d423a454562fe72262581399eadb6f54654845aca98c2553b68f522",
+            "sourceNodePath": [
+              27
+            ],
+            "surfaceSha256": "90ff42ab78f17706ee93b9bb103bbf4e5a1e227f88d6b434c974a0858713ec21",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "98840632376de007954ffcda038ebb094a232a467db6fe8598b57c311372b7f0"
+          },
+          {
+            "geometrySha256": "a3e1f5953c6cfd7f84cb08d065de96a55f93af3888b0c48ed8add1f17f9691d7",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "2abb4156327fca5eb6ff0590745a0f6731e45a4e7be7847a6434ea346735b137",
+            "sourceNodePath": [
+              28
+            ],
+            "surfaceSha256": "84cd2168e361f34b4eb13e8d30ee1e9463124fe54c6ad21fca424e9ccd1ebcd4",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "2f4e4c2a04f9a87d0bfbead42d08c87c7837a6306d63fca1b021517e435a6622"
+          },
+          {
+            "geometrySha256": "82d2e203f8382dad950b2f92faad76124fdd3abcd76e6d0bc9462aebb77fb6a4",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "f9811f0f77046c5e41179c2a6b648122c9f917450b64ded3f62e2ace0cc0f54a",
+            "sourceNodePath": [
+              29
+            ],
+            "surfaceSha256": "26750a9fa1a96fcd87595acbe9c445f07e0db32adf88d02831977196beefd95e",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "76a18493e80d3e7dcc5b0c0cfe102cf3fdcaed087a1ca94785a45acb1451cfcf"
+          },
+          {
+            "geometrySha256": "815f6bb88318c7b715a7679fb2a663598c84160e8bef633158cb33e78e07c00e",
+            "materialId": "b03fd5b04d0a29daeab91e0d8f477357a6cb7b4f8c5b0afc55150a4ac4b0ab7b",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "d531a82997b879b2003c4339b85670df4d0bcfca0cc401acb46855fa18f4c57d",
+            "sourceNodePath": [
+              30
+            ],
+            "surfaceSha256": "0c5409651988072f6c487682f8b53c20b5f536127b07b50d8e996faaf88c8b19",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "57cb568eb106ef5c24cfd4b0dfa0297fa724833293944ee0135d901b93257d02"
+          },
+          {
+            "geometrySha256": "0d58d77e48f410036a6d3bf0c8a0007342a19208fe98afbc1a107da5845fa7f6",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "4f53dc711ef6f89f6b4461d76e6114c9fcab9946a5a26e825a34bd2f1bf77f04",
+            "sourceNodePath": [
+              31
+            ],
+            "surfaceSha256": "b0fc763139845b7c73335850d239a3cc3119fb15ec22b759225d050848cc62d1",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "4e43e383524b70f35814d136907cdf3bec34eb0644ea2bf0c5a25e90b47d2e28"
+          },
+          {
+            "geometrySha256": "ab57a2151dc18eaacc1635224816d70acf1813bcc607c9f233b4a3a4692e97cc",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "9ee8486161e8c46f73b1a144de643f907939d826f5adf06084e7c72ae22764be",
+            "sourceNodePath": [
+              32
+            ],
+            "surfaceSha256": "1c5e57659fd74faa30ea3ed22e082b558d6be6d42f25996cafd8a9257423bad4",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "c83250003f9604e6641ecc5d8538cb19f514d68c5e432084a183c7695b410a06"
+          },
+          {
+            "geometrySha256": "9d4a06c90885ae71222894791e468c72fb17bb0f50dae3fdb3fb468593e312b1",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "80cfa8f93a86ecda9b5a99b3f3d8ede4b5c4116c4b333ed6851cc1cae03b268a",
+            "sourceNodePath": [
+              33
+            ],
+            "surfaceSha256": "66732b242030d30129b90ce0c77a11e39d6505ad895955f49d717b37eccda9df",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "5afe480a41480609ef292a637977afa00dd616bc02870fab36d128479db63e53"
+          },
+          {
+            "geometrySha256": "f1044d7a1be4482f54129ebf74b6b8f8f1e35cd914a7cdc435b5f98e1e6e09bf",
+            "materialId": "8134d17aa0c5bc35e94b103ee7114e346350239e5f7fb6b28792985aa8db9c3e",
+            "mode": 4,
+            "primitive": 0,
+            "selectorId": "2b7d620cd14a438fbcc0ff34068076d78f3dabfa0e661eb31706032cb5f384dc",
+            "sourceNodePath": [
+              34
+            ],
+            "surfaceSha256": "cc59b522fbbd53b72b89ec0a8fa61e6862f9794f3f92069174af1d260261ed49",
+            "transformChain": [
+              {
+                "matrix": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            ],
+            "uvExpandedSha256": "ea88a32614091c62521b16449c95ec19063524c0343dbd544089ddc2af68565d"
+          }
+        ]
+      }
+    },
+    "originalNodeMapping": {
+      "17ed2c12eb9a2ff8ce08d8b704be8d63bfc269f1cd77322c5b8f2ab0ccd63121": {
+        "6816c663276e39f080dbff0ca6bc5e06f7efd63d89047fe96a2738ba93e9a38e": {
+          "canonicalWorldNodeIndex": 0,
+          "originalMeshIndex": 0,
+          "originalNodeIndex": 0,
+          "originalNodePath": [
+            0
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        }
+      },
+      "41bca10804c795b12d5945b096bc681243b5e91d07a58829f766f38c0440c363": {
+        "4cc2c51d265c5a884b016431e4e9e15df015dea8be52ae2da092746c98a504bd": {
+          "canonicalWorldNodeIndex": 0,
+          "originalMeshIndex": 0,
+          "originalNodeIndex": 0,
+          "originalNodePath": [
+            0
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        }
+      },
+      "ad8cf9a9ebc30cf8b0f51c8e4a856b5bee3cfe365370a0c426c0c5d00c0320d8": {
+        "041d3c2f5a5fcc553d52583dde7c5c030081e11dbd1327cebecfecf0cb4415ba": {
+          "canonicalWorldNodeIndex": 35,
+          "originalMeshIndex": 35,
+          "originalNodeIndex": 35,
+          "originalNodePath": [
+            35
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "0450eeb2487aa43f53a9b56cdbbcf80f5e89aed120b8c95774be2859dc3d97fa": {
+          "canonicalWorldNodeIndex": 12,
+          "originalMeshIndex": 12,
+          "originalNodeIndex": 12,
+          "originalNodePath": [
+            12
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "077c8294ac8cdf3620d9ca50d2307cf4b5a34b3077ce9a5da20d1a0443383d5c": {
+          "canonicalWorldNodeIndex": 26,
+          "originalMeshIndex": 26,
+          "originalNodeIndex": 26,
+          "originalNodePath": [
+            26
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "13e2b9dc18f47d587d6db585d64ace5bdcb5ce47f8ab229809c7402614f2d2f4": {
+          "canonicalWorldNodeIndex": 22,
+          "originalMeshIndex": 22,
+          "originalNodeIndex": 22,
+          "originalNodePath": [
+            22
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "190cd034c58f522a3e6e4221979e2cbd1e38276ad13b6697d26c4de43d210710": {
+          "canonicalWorldNodeIndex": 9,
+          "originalMeshIndex": 9,
+          "originalNodeIndex": 9,
+          "originalNodePath": [
+            9
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "2a82047e726edb85028d01cd74a68682603d1ea55f49ca568048a9df5ea6ce7b": {
+          "canonicalWorldNodeIndex": 13,
+          "originalMeshIndex": 13,
+          "originalNodeIndex": 13,
+          "originalNodePath": [
+            13
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "2abb4156327fca5eb6ff0590745a0f6731e45a4e7be7847a6434ea346735b137": {
+          "canonicalWorldNodeIndex": 28,
+          "originalMeshIndex": 28,
+          "originalNodeIndex": 28,
+          "originalNodePath": [
+            28
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "30eeb773063e8b1eab0f662143f6b7470a0e36f00f6e9a3f816af35a877963de": {
+          "canonicalWorldNodeIndex": 17,
+          "originalMeshIndex": 17,
+          "originalNodeIndex": 17,
+          "originalNodePath": [
+            17
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "388a8cc93889e44104b3c00d8a67223f4a39b8d993b88e8b65711980e841baa1": {
+          "canonicalWorldNodeIndex": 34,
+          "originalMeshIndex": 34,
+          "originalNodeIndex": 34,
+          "originalNodePath": [
+            34
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "38ffbcc06140377aab844628dfada5dd841281be77d0848344f3719505a601dd": {
+          "canonicalWorldNodeIndex": 11,
+          "originalMeshIndex": 11,
+          "originalNodeIndex": 11,
+          "originalNodePath": [
+            11
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "3b0b406ec3ba86214fec5de0d85de263a00307eb2e523ae11a290afcbc8afdcc": {
+          "canonicalWorldNodeIndex": 14,
+          "originalMeshIndex": 14,
+          "originalNodeIndex": 14,
+          "originalNodePath": [
+            14
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "4f67fd904d423a454562fe72262581399eadb6f54654845aca98c2553b68f522": {
+          "canonicalWorldNodeIndex": 27,
+          "originalMeshIndex": 27,
+          "originalNodeIndex": 27,
+          "originalNodePath": [
+            27
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "53d8939e2cbc0de6f2be2a8c248dda818cbdf5011851803f580d6a51284a3263": {
+          "canonicalWorldNodeIndex": 15,
+          "originalMeshIndex": 15,
+          "originalNodeIndex": 15,
+          "originalNodePath": [
+            15
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "61ebbd20dc19b88ad800d987491ad6366f9d6fe3670affe18690ff8e28e06aee": {
+          "canonicalWorldNodeIndex": 8,
+          "originalMeshIndex": 8,
+          "originalNodeIndex": 8,
+          "originalNodePath": [
+            8
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "6b418db21abf09401cbf8851791a29e2ee49d7ce0a4d005152949e7d41203151": {
+          "canonicalWorldNodeIndex": 1,
+          "originalMeshIndex": 1,
+          "originalNodeIndex": 1,
+          "originalNodePath": [
+            1
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "6e8aa9806ae6b27464805200d832ec1950446791e3c48fecafd0f0242015a8fd": {
+          "canonicalWorldNodeIndex": 6,
+          "originalMeshIndex": 6,
+          "originalNodeIndex": 6,
+          "originalNodePath": [
+            6
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -2,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "75caf2919f7e211b9e80932bb60299d202f053d072e36d9deb8150a209046d6e": {
+          "canonicalWorldNodeIndex": 31,
+          "originalMeshIndex": 31,
+          "originalNodeIndex": 31,
+          "originalNodePath": [
+            31
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "77d6baa7fe6d547a5dfd5399c9f788597bc5c3266e8b88ad08322fe3d8715c47": {
+          "canonicalWorldNodeIndex": 2,
+          "originalMeshIndex": 2,
+          "originalNodeIndex": 2,
+          "originalNodePath": [
+            2
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "7aa6bf17812563183c91bdc4393293a615880048d6cfbd6a993af5f40bca5641": {
+          "canonicalWorldNodeIndex": 30,
+          "originalMeshIndex": 30,
+          "originalNodeIndex": 30,
+          "originalNodePath": [
+            30
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "81b82aa65015bd6e9feb68fe425914e2230f5e4a7b6a3d2e8c6b0884dfe47e9d": {
+          "canonicalWorldNodeIndex": 32,
+          "originalMeshIndex": 32,
+          "originalNodeIndex": 32,
+          "originalNodePath": [
+            32
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "8c29e8a1959394445104dcedbb3089875ceb258340a993726483cd477bc47a96": {
+          "canonicalWorldNodeIndex": 7,
+          "originalMeshIndex": 7,
+          "originalNodeIndex": 7,
+          "originalNodePath": [
+            7
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "9134eff43013fdc8d10302b0b5a889ba3f9864c53e37dee80bb167302df56753": {
+          "canonicalWorldNodeIndex": 16,
+          "originalMeshIndex": 16,
+          "originalNodeIndex": 16,
+          "originalNodePath": [
+            16
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "a11840c56f17d263c034b65b7040fd9c40747bfa8432f460cfba2cddbcfd0c10": {
+          "canonicalWorldNodeIndex": 3,
+          "originalMeshIndex": 3,
+          "originalNodeIndex": 3,
+          "originalNodePath": [
+            3
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "afba31d3fa09c49029e948e87ba3de8272049781f48420b1df104b219d731315": {
+          "canonicalWorldNodeIndex": 0,
+          "originalMeshIndex": 0,
+          "originalNodeIndex": 0,
+          "originalNodePath": [
+            0
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "ba85e59e9041cdc5d72cdc7c8a4514047bac5685954c6f6e631286becf05ecd3": {
+          "canonicalWorldNodeIndex": 33,
+          "originalMeshIndex": 33,
+          "originalNodeIndex": 33,
+          "originalNodePath": [
+            33
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "bbcfc18c41e1fe11f0ffc2eeeb327d2ed35a8de77b3be478528e2cb50543df3f": {
+          "canonicalWorldNodeIndex": 25,
+          "originalMeshIndex": 25,
+          "originalNodeIndex": 25,
+          "originalNodePath": [
+            25
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "beedc81f71da8cec5240f3018e967f308bc7bd8714707a3c1ca360e43450af2d": {
+          "canonicalWorldNodeIndex": 20,
+          "originalMeshIndex": 20,
+          "originalNodeIndex": 20,
+          "originalNodePath": [
+            20
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "c214a50232339997b0a68d38b4a563c6ccd1014626148b7d4c9b672d83108612": {
+          "canonicalWorldNodeIndex": 18,
+          "originalMeshIndex": 18,
+          "originalNodeIndex": 18,
+          "originalNodePath": [
+            18
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "c9a451e64d64cf8a716a718dc45904637de78c00c0cea5843c0f084b2a71a33c": {
+          "canonicalWorldNodeIndex": 24,
+          "originalMeshIndex": 24,
+          "originalNodeIndex": 24,
+          "originalNodePath": [
+            24
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "cb0d3a69e78e01e04c9d688389a507823da74449c490ded8a1d182c885d6a8dc": {
+          "canonicalWorldNodeIndex": 4,
+          "originalMeshIndex": 4,
+          "originalNodeIndex": 4,
+          "originalNodePath": [
+            4
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "ce8e6c2bd644a6f6ad10d35a69ba72ac2ca0a05b69189aa95897974178816866": {
+          "canonicalWorldNodeIndex": 23,
+          "originalMeshIndex": 23,
+          "originalNodeIndex": 23,
+          "originalNodePath": [
+            23
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "e3a87c0f48909dd67c1e9263e0980226a925da6dbf82df3fd324a1914cb78d5b": {
+          "canonicalWorldNodeIndex": 10,
+          "originalMeshIndex": 10,
+          "originalNodeIndex": 10,
+          "originalNodePath": [
+            10
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "e9b20d93048a27043977d4305491cb77f37fdfc9786a554909c4dfe3e333344f": {
+          "canonicalWorldNodeIndex": 21,
+          "originalMeshIndex": 21,
+          "originalNodeIndex": 21,
+          "originalNodePath": [
+            21
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "eb069e8531ee0a64b0fc5ecd7ebf835ad9f3644489bebf6831209930c8fb7824": {
+          "canonicalWorldNodeIndex": 5,
+          "originalMeshIndex": 5,
+          "originalNodeIndex": 5,
+          "originalNodePath": [
+            5
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "efa195a340024141c0a6d0b1bd490c71a4f70e3ba88e07b9f100e42c53454648": {
+          "canonicalWorldNodeIndex": 29,
+          "originalMeshIndex": 29,
+          "originalNodeIndex": 29,
+          "originalNodePath": [
+            29
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "fdd74550258eca333a2e68a2277ff98455d289a5f2e307e9b904389ac6b12a39": {
+          "canonicalWorldNodeIndex": 19,
+          "originalMeshIndex": 19,
+          "originalNodeIndex": 19,
+          "originalNodePath": [
+            19
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        }
+      },
+      "c8c3857c98f1d3becdef3c7c2003f09435c174524fbc44903f288ac325f24c61": {
+        "0450eeb2487aa43f53a9b56cdbbcf80f5e89aed120b8c95774be2859dc3d97fa": {
+          "canonicalWorldNodeIndex": 12,
+          "originalMeshIndex": 12,
+          "originalNodeIndex": 12,
+          "originalNodePath": [
+            12
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "077c8294ac8cdf3620d9ca50d2307cf4b5a34b3077ce9a5da20d1a0443383d5c": {
+          "canonicalWorldNodeIndex": 26,
+          "originalMeshIndex": 26,
+          "originalNodeIndex": 26,
+          "originalNodePath": [
+            26
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "13e2b9dc18f47d587d6db585d64ace5bdcb5ce47f8ab229809c7402614f2d2f4": {
+          "canonicalWorldNodeIndex": 22,
+          "originalMeshIndex": 22,
+          "originalNodeIndex": 22,
+          "originalNodePath": [
+            22
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "190cd034c58f522a3e6e4221979e2cbd1e38276ad13b6697d26c4de43d210710": {
+          "canonicalWorldNodeIndex": 9,
+          "originalMeshIndex": 9,
+          "originalNodeIndex": 9,
+          "originalNodePath": [
+            9
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "2a82047e726edb85028d01cd74a68682603d1ea55f49ca568048a9df5ea6ce7b": {
+          "canonicalWorldNodeIndex": 13,
+          "originalMeshIndex": 13,
+          "originalNodeIndex": 13,
+          "originalNodePath": [
+            13
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "2abb4156327fca5eb6ff0590745a0f6731e45a4e7be7847a6434ea346735b137": {
+          "canonicalWorldNodeIndex": 28,
+          "originalMeshIndex": 28,
+          "originalNodeIndex": 28,
+          "originalNodePath": [
+            28
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "2b7d620cd14a438fbcc0ff34068076d78f3dabfa0e661eb31706032cb5f384dc": {
+          "canonicalWorldNodeIndex": 34,
+          "originalMeshIndex": 34,
+          "originalNodeIndex": 34,
+          "originalNodePath": [
+            34
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "30eeb773063e8b1eab0f662143f6b7470a0e36f00f6e9a3f816af35a877963de": {
+          "canonicalWorldNodeIndex": 17,
+          "originalMeshIndex": 17,
+          "originalNodeIndex": 17,
+          "originalNodePath": [
+            17
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "38ffbcc06140377aab844628dfada5dd841281be77d0848344f3719505a601dd": {
+          "canonicalWorldNodeIndex": 11,
+          "originalMeshIndex": 11,
+          "originalNodeIndex": 11,
+          "originalNodePath": [
+            11
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "3b0b406ec3ba86214fec5de0d85de263a00307eb2e523ae11a290afcbc8afdcc": {
+          "canonicalWorldNodeIndex": 14,
+          "originalMeshIndex": 14,
+          "originalNodeIndex": 14,
+          "originalNodePath": [
+            14
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "4f53dc711ef6f89f6b4461d76e6114c9fcab9946a5a26e825a34bd2f1bf77f04": {
+          "canonicalWorldNodeIndex": 31,
+          "originalMeshIndex": 31,
+          "originalNodeIndex": 31,
+          "originalNodePath": [
+            31
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "4f67fd904d423a454562fe72262581399eadb6f54654845aca98c2553b68f522": {
+          "canonicalWorldNodeIndex": 27,
+          "originalMeshIndex": 27,
+          "originalNodeIndex": 27,
+          "originalNodePath": [
+            27
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "53d8939e2cbc0de6f2be2a8c248dda818cbdf5011851803f580d6a51284a3263": {
+          "canonicalWorldNodeIndex": 15,
+          "originalMeshIndex": 15,
+          "originalNodeIndex": 15,
+          "originalNodePath": [
+            15
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "61ebbd20dc19b88ad800d987491ad6366f9d6fe3670affe18690ff8e28e06aee": {
+          "canonicalWorldNodeIndex": 8,
+          "originalMeshIndex": 8,
+          "originalNodeIndex": 8,
+          "originalNodePath": [
+            8
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "6b418db21abf09401cbf8851791a29e2ee49d7ce0a4d005152949e7d41203151": {
+          "canonicalWorldNodeIndex": 1,
+          "originalMeshIndex": 1,
+          "originalNodeIndex": 1,
+          "originalNodePath": [
+            1
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "6e8aa9806ae6b27464805200d832ec1950446791e3c48fecafd0f0242015a8fd": {
+          "canonicalWorldNodeIndex": 6,
+          "originalMeshIndex": 6,
+          "originalNodeIndex": 6,
+          "originalNodePath": [
+            6
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -2,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "77d6baa7fe6d547a5dfd5399c9f788597bc5c3266e8b88ad08322fe3d8715c47": {
+          "canonicalWorldNodeIndex": 2,
+          "originalMeshIndex": 2,
+          "originalNodeIndex": 2,
+          "originalNodePath": [
+            2
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "80cfa8f93a86ecda9b5a99b3f3d8ede4b5c4116c4b333ed6851cc1cae03b268a": {
+          "canonicalWorldNodeIndex": 33,
+          "originalMeshIndex": 33,
+          "originalNodeIndex": 33,
+          "originalNodePath": [
+            33
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "8c29e8a1959394445104dcedbb3089875ceb258340a993726483cd477bc47a96": {
+          "canonicalWorldNodeIndex": 7,
+          "originalMeshIndex": 7,
+          "originalNodeIndex": 7,
+          "originalNodePath": [
+            7
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "9134eff43013fdc8d10302b0b5a889ba3f9864c53e37dee80bb167302df56753": {
+          "canonicalWorldNodeIndex": 16,
+          "originalMeshIndex": 16,
+          "originalNodeIndex": 16,
+          "originalNodePath": [
+            16
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "9ee8486161e8c46f73b1a144de643f907939d826f5adf06084e7c72ae22764be": {
+          "canonicalWorldNodeIndex": 32,
+          "originalMeshIndex": 32,
+          "originalNodeIndex": 32,
+          "originalNodePath": [
+            32
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "a11840c56f17d263c034b65b7040fd9c40747bfa8432f460cfba2cddbcfd0c10": {
+          "canonicalWorldNodeIndex": 3,
+          "originalMeshIndex": 3,
+          "originalNodeIndex": 3,
+          "originalNodePath": [
+            3
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "afba31d3fa09c49029e948e87ba3de8272049781f48420b1df104b219d731315": {
+          "canonicalWorldNodeIndex": 0,
+          "originalMeshIndex": 0,
+          "originalNodeIndex": 0,
+          "originalNodePath": [
+            0
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "bbcfc18c41e1fe11f0ffc2eeeb327d2ed35a8de77b3be478528e2cb50543df3f": {
+          "canonicalWorldNodeIndex": 25,
+          "originalMeshIndex": 25,
+          "originalNodeIndex": 25,
+          "originalNodePath": [
+            25
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "beedc81f71da8cec5240f3018e967f308bc7bd8714707a3c1ca360e43450af2d": {
+          "canonicalWorldNodeIndex": 20,
+          "originalMeshIndex": 20,
+          "originalNodeIndex": 20,
+          "originalNodePath": [
+            20
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "c214a50232339997b0a68d38b4a563c6ccd1014626148b7d4c9b672d83108612": {
+          "canonicalWorldNodeIndex": 18,
+          "originalMeshIndex": 18,
+          "originalNodeIndex": 18,
+          "originalNodePath": [
+            18
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "c9a451e64d64cf8a716a718dc45904637de78c00c0cea5843c0f084b2a71a33c": {
+          "canonicalWorldNodeIndex": 24,
+          "originalMeshIndex": 24,
+          "originalNodeIndex": 24,
+          "originalNodePath": [
+            24
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "cb0d3a69e78e01e04c9d688389a507823da74449c490ded8a1d182c885d6a8dc": {
+          "canonicalWorldNodeIndex": 4,
+          "originalMeshIndex": 4,
+          "originalNodeIndex": 4,
+          "originalNodePath": [
+            4
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "ce8e6c2bd644a6f6ad10d35a69ba72ac2ca0a05b69189aa95897974178816866": {
+          "canonicalWorldNodeIndex": 23,
+          "originalMeshIndex": 23,
+          "originalNodeIndex": 23,
+          "originalNodePath": [
+            23
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "d531a82997b879b2003c4339b85670df4d0bcfca0cc401acb46855fa18f4c57d": {
+          "canonicalWorldNodeIndex": 30,
+          "originalMeshIndex": 30,
+          "originalNodeIndex": 30,
+          "originalNodePath": [
+            30
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "e3a87c0f48909dd67c1e9263e0980226a925da6dbf82df3fd324a1914cb78d5b": {
+          "canonicalWorldNodeIndex": 10,
+          "originalMeshIndex": 10,
+          "originalNodeIndex": 10,
+          "originalNodePath": [
+            10
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "e9b20d93048a27043977d4305491cb77f37fdfc9786a554909c4dfe3e333344f": {
+          "canonicalWorldNodeIndex": 21,
+          "originalMeshIndex": 21,
+          "originalNodeIndex": 21,
+          "originalNodePath": [
+            21
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "eb069e8531ee0a64b0fc5ecd7ebf835ad9f3644489bebf6831209930c8fb7824": {
+          "canonicalWorldNodeIndex": 5,
+          "originalMeshIndex": 5,
+          "originalNodeIndex": 5,
+          "originalNodePath": [
+            5
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "f9811f0f77046c5e41179c2a6b648122c9f917450b64ded3f62e2ace0cc0f54a": {
+          "canonicalWorldNodeIndex": 29,
+          "originalMeshIndex": 29,
+          "originalNodeIndex": 29,
+          "originalNodePath": [
+            29
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        },
+        "fdd74550258eca333a2e68a2277ff98455d289a5f2e307e9b904389ac6b12a39": {
+          "canonicalWorldNodeIndex": 19,
+          "originalMeshIndex": 19,
+          "originalNodeIndex": 19,
+          "originalNodePath": [
+            19
+          ],
+          "originalWorldMatrix": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "primitiveIndex": 0
+        }
+      }
+    },
+    "schema": "canonical-world-primitive-selectors-329-v1",
+    "scope": {
+      "code": "KPOX002WW001",
+      "kind": "DIRECT_ROKO_OBSERVED_OWN_VISUAL_REPRESENTATIVES_AND_EXACT_SAVED_FINISHES_940000",
+      "runtimeSha256": "606eb7a6096d376d21f9a5cc7e67de5b7c2af357064d4fe34ed91e9e8bb5c1f5"
+    }
+  },
+  "materials": {},
+  "transport": {
+    "17ed2c12eb9a2ff8ce08d8b704be8d63bfc269f1cd77322c5b8f2ab0ccd63121": {
+      "sha256": "ac8e8944b2b4d89fdf32244cddc50f948c9fe302831f85567281f982c26811c1",
+      "bytes": 796392
+    },
+    "41bca10804c795b12d5945b096bc681243b5e91d07a58829f766f38c0440c363": {
+      "sha256": "7e921cff9e6cdbae76cf28b9cff0979aefa4581d3612c9396f96a5686883bf95",
+      "bytes": 796412
+    },
+    "ad8cf9a9ebc30cf8b0f51c8e4a856b5bee3cfe365370a0c426c0c5d00c0320d8": {
+      "sha256": "bec636e6b8e90a78fe4fc53d66fd837fec79d564232c1409522dfd8744f18b20",
+      "bytes": 25452596
+    },
+    "c8c3857c98f1d3becdef3c7c2003f09435c174524fbc44903f288ac325f24c61": {
+      "sha256": "c970066b1503cddc4e8265c370aaba5f638db51a0efb846c2394d73f08f837dd",
+      "bytes": 24949380
+    }
+  }
+}

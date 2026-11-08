@@ -874,3 +874,6 @@ Branch codex/kpox-visual-own-20261108. Source257: nine finite five-part visual a
 
 ## Ergonomic KVAP observed OWN (2026-11-08)
 Branch codex/kvap-visual-own-20261108. Source259:11 finite original single-GLB visuals;5 full finish contrasts onlyvisual10. Unrepresented frame material/UV swap remains unavailable with unknown count. No geometry or original image changes. Preview only; task D:/Core/output/ergonomic-kvap-visual-own-20261108.
+
+## Ergonomic Prox BLACK OWN (2026-11-08)
+Branch codex/kpox001-visual-own-20261108. Source258:two exact two-part visuals, no colour contrasts; ambiguous before-assembly palette remains unavailable. Four distinct nearest functional mappings shown explicitly; duplicate source record retained without duplicate UI option. Independent compact/lossless/bounded-buffer transport proof preserves original geometry/UV/indices/matrices/PBR/JPEG. Task D:/Core/output/ergonomic-kpox001-visual-own-20261108. Preview only.

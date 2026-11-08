@@ -923,3 +923,7 @@ Branch codex/xenium032-visual-own-20261108. Source261:10 exact three/four-part v
 
 ## Ergonomic Fujitsu278-281 observed/additional OWN - 2026-11-08
 Owner: 3D perziura; branch codex/bja-additional-visuals-20261108; base45a6a79ba14784ccee41f9fe10aff465a2458011. Scope: sites/ergonomic-lt/web/scripts/admit-additional-own-visuals.ts, four scoped pins, content/pc2-chair-review-candidates.json and tests/additional-own-visuals.test.ts. Append only exact additional defaults against pinned prior manifest/runtime and OWN WORLD selectors; retain existing contexts/palette indices. No renderer/CSS, production or text-review changes. Tests74+tsc pass. Source/transport/independent geometry receipts D:/Core/output/ergonomic-bja-additional-visuals-20261108. Native disabled.
+
+
+## Ergonomic Fujitsu282-289 additional OWN - 2026-11-08
+Owner 3D preview; branch codex/eight-additional-visuals-20261108; baseecbc67bc3a3b96d9b6ab628705d719ce4f5e0f1e. Scoped8 additional pins, registry, tests/eight-additional-own.test.ts. Existing offline adapter unchanged;61 raw originals, previous palettes retained, no renderer changes. Source+target93 files verified;90 tests and tsc pass. D:/Core/output/ergonomic-eight-additional-visuals-20261108. Preview only,Native disabled.

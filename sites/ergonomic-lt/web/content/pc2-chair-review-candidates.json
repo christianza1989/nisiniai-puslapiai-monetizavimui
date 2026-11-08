@@ -86,42 +86,42 @@
     {
       "code": "KXEN032WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN032WW001-visual-e9f770b6971fb004e5bb8/review-1dfa34075f7587a973bb.json",
-      "sha256": "1dfa34075f7587a973bbf5c569fe350e9ba32703256bed8bcf127b864b4350f8",
-      "bytes": 391847,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KXEN032WW001-additional-6824ec3e986cb96f68c6/review-0836d8ee31660743ed7c.json",
+      "sha256": "0836d8ee31660743ed7ca540cc48546fa8ea2fe5757a62b186d8b69e698f4707",
+      "bytes": 1168851,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KXEN033WW003",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN033WW003-visual-ba5e38a02c6c9de4d8a9/review-e5a167de13a617952434.json",
-      "sha256": "e5a167de13a61795243489f7829457b285ed3894753b74e0b92bdbd49ab9cf86",
-      "bytes": 387799,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KXEN033WW003-additional-c7661ae2e1ad3f67edde/review-14a74f3f05d5e672ca1b.json",
+      "sha256": "14a74f3f05d5e672ca1bcbdbedf792d98d76f1eca92bc243e20e24df67c87cc4",
+      "bytes": 860785,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KYOU002WW001",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU002WW001-visual-7fcb5b66e3170f769064/review-f7f8c91da15938e2364c.json",
-      "sha256": "f7f8c91da15938e2364cd038088c944cecbe4b262f4d7994b08834d3c41015e0",
-      "bytes": 247906,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KYOU002WW001-additional-03de33e9ce82567ffc5a/review-0ff2904c6b8bebe5cf2c.json",
+      "sha256": "0ff2904c6b8bebe5cf2c12aee461565e4388ebbde3a457626620d162fab67fd8",
+      "bytes": 274520,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KYOU001WW001",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU001WW001-visual-974c6718d32af843d151/review-19864b56eb216cea28b2.json",
-      "sha256": "19864b56eb216cea28b29947fb6fd597561dcd369174c2add495e16a1175d0aa",
-      "bytes": 242231,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KYOU001WW001-additional-6ff863c546cb4666d45b/review-b425a87f405e6d1809ee.json",
+      "sha256": "b425a87f405e6d1809eec9ea5e852c3fd7436c3cb1af2c030d3335f1e46f875c",
+      "bytes": 310471,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KYOU002WW002",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU002WW002-visual-bf19a62bed1d1273018d/review-ab2b91474ef1c56e0fe6.json",
-      "sha256": "ab2b91474ef1c56e0fe68674ad6dadad612a4b4ee4b590fc0ce4b0525e999fe7",
-      "bytes": 250149,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KYOU002WW002-additional-4b1727b63deb1f712a32/review-d3388c110aa03831fd9a.json",
+      "sha256": "d3388c110aa03831fd9a7dbb01095da5eb9a965bcaff3d92e55cb40c4e7d3da3",
+      "bytes": 370904,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KWI2006WW001",
@@ -142,10 +142,10 @@
     {
       "code": "KYOU001WW003",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU001WW003-visual-7fcb5b66e3170f769064/review-58bce84e1556e751d668.json",
-      "sha256": "58bce84e1556e751d66855fc37df6cb5499708b320d8db6ab13e272aaf5de63a",
-      "bytes": 219708,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KYOU001WW003-additional-99103fc16a2f4e40d8e7/review-bd7a1dd73afaea062d25.json",
+      "sha256": "bd7a1dd73afaea062d25857e55eaf42292abf89b9ee2822dcf7aa726e4b95929",
+      "bytes": 285895,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KZBO004WW001",
@@ -374,18 +374,18 @@
     {
       "code": "KXEN028WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN028WW001-visual-3ac2304a38e48a9746e7/review-8af85a073bbdf336cc62.json",
-      "sha256": "8af85a073bbdf336cc627a033f298f9119448ca464e6f3f46d63f52a14c6d966",
-      "bytes": 401736,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KXEN028WW001-additional-f621f18e148aac01205a/review-ae6485e0d5bb1eb5434b.json",
+      "sha256": "ae6485e0d5bb1eb5434b8744793538e5d2b74d86d00b0845830a028236215a64",
+      "bytes": 1157913,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KXLI002WW002",
       "name": "X-Line",
-      "asset": "/models/configurator/chairs/KXLI002WW002-visual-4fe01d55a392e407a6c24/review-5e96033b74903f02b823.json",
-      "sha256": "5e96033b74903f02b823cdd316b02469f748d1af97d698aabd19e443e0e65dd7",
-      "bytes": 377547,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KXLI002WW002-additional-c5c26d0c93dca4fb6cda/review-fdc9e1dabc7236b05705.json",
+      "sha256": "fdc9e1dabc7236b05705282a3dbb52f5b53a4c9c9160a0e0a680878eea4b56ed",
+      "bytes": 791364,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KSAI001WW002",

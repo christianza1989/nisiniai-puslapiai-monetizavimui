@@ -63,7 +63,11 @@ async function publicPreparedAssembly(source:PreparedCustomerChair,selection:Pre
  for(const patch of assembly.patches){const assets=[];for(const ref of patch.geometries||(patch.geometry?[patch.geometry]:[]))assets.push(await asset(ref));patches.push({remove:patch.remove.map(customerSceneName),assets});}
  const extra=[];for(const ref of plan.assets||[])extra.push(await asset(ref));
  const document:{asset:{version:string};materials:unknown[];images:unknown[];textures:unknown[];samplers:unknown[];extensionsUsed:string[]}={asset:{version:'2.0'},materials:[],images:[],textures:[],samplers:[],extensionsUsed:[]},materialIds:string[]=[];
- for(const [id,material]of Object.entries(plan.materials)){
+ // The mounted material loader must know the same admitted catalogue before
+ // and after a colour change. Only assignments change; an initially empty
+ // document would leave that loader unable to resolve the first new material.
+ const materialCatalogue=source.finishRevision?data.qualified!.materials:plan.materials;
+ for(const [id,material]of Object.entries(materialCatalogue)){
   const doc=chairMaterialDocument(material,data.textures),textureOffset=document.textures.length,imageOffset=document.images.length,samplerOffset=document.samplers.length;
   function shift(value:any):any{if(Array.isArray(value))return value.map(shift);if(!value||typeof value!=='object')return value;return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,k==='index'&&typeof v==='number'?v+textureOffset:shift(v)]));}
   document.materials.push(...(doc.materials as unknown[]).map(shift));document.images.push(...doc.images);document.textures.push(...(doc.textures as {source:number;sampler:number}[]).map(t=>({...t,source:t.source+imageOffset,sampler:t.sampler+samplerOffset})));document.samplers.push(...doc.samplers);document.extensionsUsed=[...new Set([...document.extensionsUsed,...doc.extensionsUsed])];materialIds.push(customerSceneName(id));

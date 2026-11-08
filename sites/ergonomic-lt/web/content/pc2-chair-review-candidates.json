@@ -102,26 +102,26 @@
     {
       "code": "KYOU002WW001",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU002WW001-c255d9ca396977724fca/review-11373d27aca2fcbb5485.json",
-      "sha256": "11373d27aca2fcbb5485a2bf345c5c19fde2ed12c27cf4d1ab1fbb4aa6089922",
-      "bytes": 507703,
-      "version": "colors-20261028-v3-library-you444"
+      "asset": "/models/configurator/chairs/KYOU002WW001-visual-7fcb5b66e3170f769064/review-f7f8c91da15938e2364c.json",
+      "sha256": "f7f8c91da15938e2364cd038088c944cecbe4b262f4d7994b08834d3c41015e0",
+      "bytes": 247906,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KYOU001WW001",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU001WW001-443f3a79eba47666c5d9/review-825307551e646f33d4a2.json",
-      "sha256": "825307551e646f33d4a285febbce6daf1f5207485fba18ae8eb8c90c502a5e06",
-      "bytes": 1257946,
-      "version": "colors-20261028-v7-conditional-you385"
+      "asset": "/models/configurator/chairs/KYOU001WW001-visual-974c6718d32af843d151/review-19864b56eb216cea28b2.json",
+      "sha256": "19864b56eb216cea28b29947fb6fd597561dcd369174c2add495e16a1175d0aa",
+      "bytes": 242231,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KYOU002WW002",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU002WW002-ffa3eea562d1f0154e12/review-ffe11198fdbb4879bef2.json",
-      "sha256": "ffe11198fdbb4879bef28145cc991b4b38c27325a950febec26ed7755a50fcc6",
-      "bytes": 697042,
-      "version": "colors-20261028-v3-library-you444"
+      "asset": "/models/configurator/chairs/KYOU002WW002-visual-bf19a62bed1d1273018d/review-ab2b91474ef1c56e0fe6.json",
+      "sha256": "ab2b91474ef1c56e0fe68674ad6dadad612a4b4ee4b590fc0ce4b0525e999fe7",
+      "bytes": 250149,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KWI2006WW001",

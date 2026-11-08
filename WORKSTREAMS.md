@@ -889,3 +889,9 @@ Branch codex/xenium032-visual-own-20261108. Source261:10 exact three/four-part v
 - Owner: 3D peržiūra, branch codex/xenium-pair-visual-own-20261108, stacked on Xenium032.
 - Scope: pc2-chair-review-candidates.json, scripts/kxen028ww001-observed-own-pin.json, scripts/kxen033ww003-observed-own-pin.json, tests/xenium-pair-observed-own.test.ts.
 - Eleven exact assemblies each; six/four complete finish contrasts onlyvisual10, no independent mixing; original31GLBs unchanged. No renderer/shared changes, Native or production.
+
+
+## 2026-11-08 YouTeam observed OWN Fujitsu264–266
+- Owner: 3D peržiūra; codex/youteam-three-visual-own-20261108, stacked on Xenium pair.
+- Scope: pc2-chair-review-candidates.json, scripts/kyou*-observed-own-pin.json, scripts/admit-observed-own-assembly.ts, tests/youteam-three-observed-own.test.ts.
+- Exact producer-declared same-factory functional finish tuple becomes a separate finite context. No palette on different representative metadata, no approximation adoption, no geometry changes. Other58entries preserved, no renderer/prod/Native.

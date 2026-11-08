@@ -3,7 +3,7 @@ import type {ChairPreview} from './chair-preview';
 export type ChairReviewSource={asset:string;sha256:string;bytes:number;runtimeSha256?:string};
 export type ChairConstructionBinding={dimensions:Record<string,string>;structuralValues:Record<string,string>;runtimeSha256:string};
 export type ChairReviewConstruction=ChairReviewSource&{id:string;label:string;contextLabel?:string;construction:ChairConstructionBinding;contexts?:Array<ChairReviewSource&{id:string;label:string}>};
-export type ChairReviewEntry=ChairReviewSource&{code:string;name:string;contextLabel?:string;construction?:ChairConstructionBinding;contexts?:Array<ChairReviewSource&{id:string;label:string}>;constructions?:ChairReviewConstruction[]};
+export type ChairReviewEntry=ChairReviewSource&{code:string;name:string;contextLabel?:string;construction?:ChairConstructionBinding;contexts?:Array<ChairReviewSource&{id:string;label:string}>;constructions?:ChairReviewConstruction[];visualSupplement?:import('./segla-visual-routing').SeglaVisualSupplement};
 
 // A finish menu belongs to one complete construction, never to a model code alone.
 export function chairReviewRoute(entry:ChairReviewEntry,constructionId:string,finishId:string){

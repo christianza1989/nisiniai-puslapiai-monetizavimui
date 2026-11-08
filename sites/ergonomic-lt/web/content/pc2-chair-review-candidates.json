@@ -174,10 +174,10 @@
     {
       "code": "KVAP008WW001",
       "name": "Vapaa",
-      "asset": "/models/configurator/chairs/KVAP008WW001-visual-364bf9fbbdf22bc681670/review-dbe5230fb1293a241183.json",
-      "sha256": "dbe5230fb1293a2411832f79352e53ad28ff0a5b28c0c56519c61ca4d022f17b",
-      "bytes": 328399,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KVAP008WW001-additional-cbd65a0645df4d69247a/review-460e79b854099f629403.json",
+      "sha256": "460e79b854099f6294031162337aa102d7a52c06c50fdd12ac67784b99b53c54",
+      "bytes": 461382,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KUTI004WW002",
@@ -326,10 +326,10 @@
     {
       "code": "KBJA002WW002",
       "name": "Bjarg",
-      "asset": "/models/configurator/chairs/KBJA002WW002-3b0a32bfef5a27855ac1/review-771b84d9868d71273084.json",
-      "sha256": "771b84d9868d71273084fea8e7906b2b6edaa34876c5d9e6adb8c2320e99246b",
-      "bytes": 233198,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KBJA002WW002-visual-253e150303c6af7fc0dd/review-75f628d5a60d0cf82f07.json",
+      "sha256": "75f628d5a60d0cf82f07be78f4c92fc887589e10e56f5213716b4ad18a8e053d",
+      "bytes": 203164,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KBJA001WW002",
@@ -406,18 +406,18 @@
     {
       "code": "KPOX002WW002",
       "name": "Prox",
-      "asset": "/models/configurator/chairs/KPOX002WW002-visual-8d922ac3733bb25a3f45/review-ac8a2381c62910416e8d.json",
-      "sha256": "ac8a2381c62910416e8d035440419932217625022e66a6d387eec3db23feb412",
-      "bytes": 151839,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KPOX002WW002-additional-b86685abb5a7f29f66cd/review-7500cd582cbab1ce83b9.json",
+      "sha256": "7500cd582cbab1ce83b90ed2d9152577724c268637fee0675b4c580e9e62fec9",
+      "bytes": 315321,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KPOX002WW001",
       "name": "Prox",
-      "asset": "/models/configurator/chairs/KPOX002WW001-visual-f3dd9c9a61114278a14de/review-90869af96503075c194c.json",
-      "sha256": "90869af96503075c194cb9dd7a12109297895b35e61e3b0c746964b449c3f81a",
-      "bytes": 79411,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KPOX002WW001-additional-7148762ed814527c6798/review-ce1e9f47c48650576c38.json",
+      "sha256": "ce1e9f47c48650576c38d78cade6a9b829533293a4b578e2e4ab3dd51cb20750",
+      "bytes": 113516,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KJUP001WW002",

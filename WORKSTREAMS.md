@@ -958,3 +958,6 @@ Owner:3D preview chat. Existing D-only source;new output D:/Core/output/ergonomi
 
 ## 2026-11-09 Airi fixed OWN finish (PC2 312)
 Branch codex/airi-fixed-20261109. Scope: web/scripts/admit-airi-fixed.ts and KAII001WW001 registry entry only; exact fixed runtime7e02bbe9, original GLBbe572988, no finish menu. Hidden editable CMESHGROUP retained as source role, not readonly. Other60 entries exact; previous source separate. No frontend/renderer changes. Preview only, all new artifacts D:/Core/output/ergonomic-airi-fixed-20261109.
+
+## 2026-11-09 Airi WW002 grey fixed OWN finish (PC2 313)
+Branch codex/airi-grey-fixed-20261109. Scope: web/scripts/admit-airi-grey-fixed.ts and KAII001WW002 registry only. Exact runtime18758091 and original143ad9da GLB; fixed JM50/JM/GREY; no colour menu. Hidden editable CMESHGROUP is not readonly. Other60 entries exact, previous source separate. No frontend/renderer changes; preview only; all new artifacts D:/Core/output/ergonomic-airi-grey-fixed-20261109.

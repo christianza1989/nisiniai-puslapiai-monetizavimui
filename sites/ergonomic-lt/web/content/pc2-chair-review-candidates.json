@@ -150,10 +150,10 @@
     {
       "code": "KZBO004WW001",
       "name": "Z-body",
-      "asset": "/models/configurator/chairs/KZBO004WW001-visual-7fcb5b66e3170f769064/review-82fed918ee05a3554e28.json",
-      "sha256": "82fed918ee05a3554e28f893804fc1df5981baa0307b90880603fbefdd5d9475",
-      "bytes": 127728,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KZBO004WW001-additional-cd3777e66c8aaf2c90ea/review-edb9c3bab63c41d43fa9.json",
+      "sha256": "edb9c3bab63c41d43fa96ee20362e5863cf146acbe5329cc96bfe953d3e57ba2",
+      "bytes": 248937,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KHOL001WW002",
@@ -350,18 +350,18 @@
     {
       "code": "KXLI001WW002",
       "name": "X-Line",
-      "asset": "/models/configurator/chairs/KXLI001WW002-visual-7fcb5b66e3170f769064/review-b3fb6e4c7ac882d0e1ec.json",
-      "sha256": "b3fb6e4c7ac882d0e1ec52a1a72fcbf08dba73f7df65952f9d53f7eb2e0a9b98",
-      "bytes": 425268,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KXLI001WW002-additional-8cf349c572bb6f9b19ef/review-260956d15df82e3a1869.json",
+      "sha256": "260956d15df82e3a18698eabc8f1ff1ac6d415019116344e7d572049742d8678",
+      "bytes": 820650,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KSAI008WW002",
       "name": "Sail",
-      "asset": "/models/configurator/chairs/KSAI008WW002-visual-7fcb5b66e3170f769064/review-8d51fa8fdf4e8fd3b152.json",
-      "sha256": "8d51fa8fdf4e8fd3b152b5ae676d19e1198137197580936f85352192627e1213",
-      "bytes": 410737,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KSAI008WW002-additional-1ce304851bf6529bd10a/review-364036b43fcad3eba097.json",
+      "sha256": "364036b43fcad3eba097e44ba39ac40263b3c148bad211e242280e63f8277b2f",
+      "bytes": 718247,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KXEN035WW001",

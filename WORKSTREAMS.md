@@ -947,3 +947,7 @@ Owner: this 3D preview chat. Branch codex/observed-five-desks-20261108. Scope: i
 
 ## Ergonomic PW2011 width2245 2026-11-08
 Owner: 3D preview chat. Branch codex/pw2011-width2245-20261108. Scope: existing observed-desk registry only; exact new GDWIDTH2245/GDTOPWIDTH1800 complete source appended to previous14 states. One original GLB,6 SHA-verified source files; renderer and other four desk entries unchanged. Preview only; Native/production/text-review unchanged.
+
+
+## Ergonomic 2ME GBMF palette PC2 310 – 2026-11-08
+Owner:3D preview chat. D-only source/output under D:/Core/output/ergonomic-2me-gbmf-palette-20261108; existing E files read only, no modification/move/deletion. Finite K2ME001WW002 OWN runtime1353cb83/baseb9975cce with9 frame537 upholstery tuples, chromeprimitiveSwap only,whiteCARMPADPLCOLOR fixed,GBMF only. Separate complete source-version routing retains old calibrated source without overlay; other60 entries preserved. No Native/production/text-review changes. Scope: admission module,pc2 review/source routing,registry,focused tests.

@@ -16,16 +16,19 @@ function ModelReview({data,initialSingle,externalArmrests=false,externalBase=fal
  const [context,setContext]=useState(()=>chairInitialContext(data)),[variants,setVariants]=useState(()=>chairInitialVariants(data,chairInitialContext(data))),
   [observed,setObserved]=useState(()=>{if(initialSingle)return '__qs:'+initialSingle.witness+':'+initialSingle.single;const q=chairInitialQualifiedSelection(data);return q?'__qg:'+q.witness:'original';}),
   [qualified,setQualified]=useState<QualifiedSelection|undefined>(()=>initialSingle?{...initialSingle,kind:'single',groups:{}}:chairInitialQualifiedSelection(data)),[originalPreview,setOriginalPreview]=useState(false);
+ const [functionalIndex,setFunctionalIndex]=useState(0);
+ const functionalOptions=data.visualFunctionalMappings?.[String(context)],functional=functionalOptions?.[functionalIndex],alternateFunctional=!!functional&&functionalIndex!==0;
  const choices=useMemo(()=>chairObservedChoices(data),[data]),choice=choices.find(c=>c.id===observed)||choices[0];
  const baseline=useMemo(()=>chairPreviewAssembly(data,context,variants,choices[0]),[data,context,variants,choices]);
  const active=[baseline.base,...baseline.patches.flatMap(p=>p.geometry?[p.geometry]:[])].filter(a=>a!==null).map(a=>a.assetSha256);
- const witnesses=(data.qualified?.witnesses||[]).filter(w=>qualifiedWitnessMatches(data,w,context,variants,active));
+ const witnesses=(alternateFunctional?[]:data.qualified?.witnesses||[]).filter(w=>qualifiedWitnessMatches(data,w,context,variants,active));
  const selectedWitness=witnesses.find(w=>w.id===qualified?.witness);
  const structural=witnesses.find(w=>w.structural)?.structural||{};
  const materialControls=selectedWitness&&qualified?qualifiedChairMaterialControls(selectedWitness,qualified,s=>qualifiedChairPlan(data,context,variants,active,s).status!=='unavailable'):undefined;
  const assembly=useMemo(()=>chairPreviewAssembly(data,context,variants,originalPreview?choices[0]:choice,!originalPreview&&observed.startsWith('__q')?qualified:undefined),[data,context,variants,choice,qualified,observed,originalPreview,choices]);
  const current=data.runtime.contexts[context],status=assembly.chairColors.plan.status;
- const visualMetadata=data.visualMetadataByContext?.[String(context)]||data.visualMetadata;
+ const baseMetadata=data.visualMetadataByContext?.[String(context)]||data.visualMetadata;
+ const visualMetadata=functional?{values:functional.values,sameStaticAppearanceObservations:[]}:baseMetadata;
  const originalFinish=data.originalFinishByContext?Object.fromEntries(Object.entries(data.originalFinishByContext[String(context)]||{}).map(([k,value])=>[k,{value,knownCurrentPrefixChoices:[]}])):data.palette.schema==='chair-base-observed-colours-v1'?data.palette.baselineObservedFinish:{};
  const variant={id:data.code,asset:assembly.base?.asset||'',assetSha256:assembly.base?.assetSha256||'',bytes:assembly.base?.bytes||0} as PilotVariant;
  function choose(value:string){
@@ -36,13 +39,15 @@ function ModelReview({data,initialSingle,externalArmrests=false,externalBase=fal
   else setQualified(undefined);
  }
  function construction(nextContext:number,nextVariants:number[]){
-  const q=chairInitialQualifiedSelection(data,nextContext,nextVariants);setContext(nextContext);setVariants(nextVariants);setQualified(q);setObserved(q?'__qg:'+q.witness:'original');setOriginalPreview(false);
+  const q=chairInitialQualifiedSelection(data,nextContext,nextVariants);setFunctionalIndex(0);setContext(nextContext);setVariants(nextVariants);setQualified(q);setObserved(q?'__qg:'+q.witness:'original');setOriginalPreview(false);
  }
  function groupControl(group:QualifiedGroup){return <label className="field" key={group.id}>{group.label}<select aria-label={group.label} value={qualified?.groups[group.id]??group.base} onChange={e=>{setOriginalPreview(false);setQualified(q=>q?{...q,groups:{...q.groups,[group.id]:e.target.value}}:q);}}>{group.options.map(o=><option key={o.id} value={o.id}>{o.label}</option>)}</select></label>;}
  return <div className="pc2-chair-workspace" data-chair-code={data.code} data-chair-runtime-sha={data.runtimeSha256} data-chair-base-asset-sha={assembly.base?.assetSha256} data-chair-plan={status}>
   <div className="pc2-chair-controls">
    <h2>{data.name} · {data.code}</h2>
    {data.runtime.contexts.length>1&&<label className="field">Surinkta konstrukcija<select aria-label="Surinkta konstrukcija" value={context} onChange={e=>{const next=Number(e.target.value);construction(next,chairInitialVariants(data,next));}}>{data.runtime.contexts.map((c,index)=><option value={index} key={index}>{Object.entries(c.dimensions).map(([k,v])=>k+' = '+v).join(' · ')||'Pradinė konstrukcija'}</option>)}</select></label>}
+   {functionalOptions&&functionalOptions.length>1&&<label className="field">Stebėtas funkcinis variantas<select aria-label="Stebėtas funkcinis variantas" value={functionalIndex} onChange={e=>{setFunctionalIndex(Number(e.target.value));choose('original');}}>{functionalOptions.map((f,i)=><option key={i} value={i}>{i===0?'Tiksli vaizduojama konstrukcija':Object.entries(f.values).filter(([k,v])=>functionalOptions[0].values[k]!==v).map(([k,v])=>k+' = '+v).join(' · ')+(f.approximation?' · artimiausias surinktas vaizdas':' · stebėtas toks pats išorinis vaizdas')}</option>)}</select></label>}
+   {functional?.approximation&&<p className="form-note">Rodomas artimiausias surinktas išorinis modelis, ne šio funkcinio varianto tikslus 3D. Tikros pasirinkto produkto reikšmės pateiktos žemiau. Kitų konstrukcijų spalvos netaikomos.</p>}
    {Object.entries(structural).filter(([field])=>(!externalArmrests||field!=='CARMRESTS')&&(!externalBase||field!=='CBASE')&&(!externalCastors||field!=='CCASTORS')&&(!externalGaslift||field!=='CGASLIFT')&&(!externalMechanism||field!=='CMECHANISM')&&(!externalFoam||field!=='CSEATPADFOAM')).map(([field,s])=><label className="field" key={field}>{field==='CCASTORS'?'Ratukai (CCASTORS)':field}<select aria-label={field==='CCASTORS'?'Ratukai (CCASTORS)':field} value={current.dimensions[field]} onChange={e=>{if(s.supportedValues.includes(e.target.value)&&e.target.value===current.dimensions[field])construction(context,variants);}}>{s.supportedValues.map(value=><option value={value} key={value}>{value}</option>)}</select><span className="form-note">Peržiūrai surinkta tik ši konstrukcija.</span></label>)}
    {current.groups.filter(g=>g.fields.length).map(g=>{const index=current.groups.indexOf(g);return <label className="field" key={index}>{g.fields.join(' / ')}<select aria-label={g.fields.join(' / ')} value={variants[index]??0} onChange={e=>{const next=[...variants];next[index]=Number(e.target.value);construction(context,next);}}>{g.variants.map((v,n)=><option key={n} value={n}>{Object.entries(v.values).map(([k,value])=>k+' = '+value).join(' · ')}</option>)}</select></label>;})}
    {(choices.length>1||witnesses.length>1||witnesses.some(w=>w.singles.length)||!selectedWitness&&witnesses.some(w=>w.groups.length||w.branches.length))&&<label className="field">Surinkta spalvinė būsena<select aria-label="Surinkta spalvinė būsena" value={observed} onChange={e=>choose(e.target.value)}>{choices.map(c=><option key={c.id} value={c.id}>{c.label}</option>)}{witnesses.filter(w=>w.groups.length||w.branches.length).map(w=><option key={w.id} value={'__qg:'+w.id}>{w.label}</option>)}{witnesses.flatMap(w=>w.singles.map(s=><option key={w.id+s.id} value={'__qs:'+w.id+':'+s.id}>{s.label}</option>))}</select></label>}

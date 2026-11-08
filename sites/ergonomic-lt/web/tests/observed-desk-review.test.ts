@@ -1,0 +1,8 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {observedDeskState,observedDeskVariant,validateObservedDesk,type ObservedDeskReview} from '../src/lib/observed-desk-review';
+const h='a'.repeat(64),code='KPW2011WW001';
+const data:ObservedDeskReview={schema:'observed-desk-review-v1',code,name:'Play&Work',sourceRuntimeSha256:h,fullPaletteQualified:false,fullGraphClosed:false,states:[{id:h,label:'1845 / 1400',values:{'DIMENSIONS.GDWIDTH':'_1845','DIMENSIONS.GDTOPWIDTH':'_1400'},details:[],asset:`/models/configurator/observed-desks/${code}/${h}.glb`,assetSha256:h,bytes:100}]};
+test('whole tuple keeps overall width separate from top width',()=>{assert.equal(observedDeskState(data,h,data.states[0].values),data.states[0]);assert.equal(observedDeskState(data,h,{'DIMENSIONS.GDWIDTH':'_1400','DIMENSIONS.GDTOPWIDTH':'_1400'}),undefined);assert.equal(observedDeskState(data,h,{'DIMENSIONS.GDWIDTH':'_1845'}),undefined);});
+test('unknown state cannot fall back to an arbitrary geometry',()=>assert.equal(observedDeskState(data,'not-collected'),undefined));
+test('original variant has no recolour material tags or supplier URL',()=>{const v=observedDeskVariant(code,data.states[0]);assert.deepEqual(v.materialCodes,{});assert.equal(v.assetSha256,h);assert.equal(v.sourceCadUrl,'');});
+test('reject foreign code, oversize, private metadata, duplicate and foreign asset',()=>{assert.equal(validateObservedDesk(data,code),data);for(const change of [(d:any)=>d.code='FOREIGN',(d:any)=>d.states[0].bytes=25*1024*1024+1,(d:any)=>d.states[0].values['CLASSIFICATION.GBRAND']='NS',(d:any)=>d.states.push(d.states[0]),(d:any)=>d.states[0].asset='/foreign.glb']){const d=structuredClone(data);change(d);assert.throws(()=>validateObservedDesk(d,code));}});

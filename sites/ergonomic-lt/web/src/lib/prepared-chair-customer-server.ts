@@ -29,7 +29,14 @@ export type PreparedCustomerChair={entry:typeof entries.entries[number];data:Cha
 const cache=new Map<string,Promise<PreparedCustomerChair>>();
 const sharedOriginals=new Map<string,Set<string>>();
 for(const[model,values]of Object.entries(english.models)){const meta=(inventory.models as Record<string,{path:string}>)[model];if(!meta||!meta.path.includes('/kedes/')&&!entries.entries.some(e=>e.code===model))continue;for(const[binding,text]of Object.entries(values)){const set=sharedOriginals.get(binding)||new Set<string>();set.add(text);sharedOriginals.set(binding,set);}}
-function sourceText(code:string,field:string,value?:string){const binding=(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value),canonical=value===undefined?binding:'value:'+field+'='+canonicalReviewValue(code,field,value),own=(english.models as Record<string,Record<string,string>>)[code],shared=sharedOriginals.get(canonical)||sharedOriginals.get(binding);return own?.[binding]||own?.[canonical]||(shared?.size===1?[...shared][0]:undefined);}
+function sourceText(code:string,field:string,value?:string){const binding=(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value),canonical=value===undefined?binding:'value:'+field+'='+canonicalReviewValue(code,field,value),own=(english.models as Record<string,Record<string,string>>)[code],shared=sharedOriginals.get(canonical)||sharedOriginals.get(binding);
+ const direct=own?.[binding]||own?.[canonical]||(shared?.size===1?[...shared][0]:undefined);if(direct)return direct;
+ // A textile collection has the same manufacturer name on a seat and the
+ // generic upholstery controller. Only an unambiguous saved original may fill
+ // a missing name; this never assigns colours, roles or material bindings.
+ const collection=value&&/UPHGROUP$/.test(field)?sharedOriginals.get('value:CUPHGROUP='+value):undefined;
+ return collection?.size===1?[...collection][0]:undefined;
+}
 function sourceProposal(field:string,value:string,original:string|undefined){const binding='value:'+field+'='+value,known=(verifiedProposals as Record<string,Record<string,string>>)[binding];return original?known?.[original.trim().replace(/\s+/g,' ').toLowerCase()]:undefined;}
 export async function loadPreparedCustomerChair(product:Product):Promise<PreparedCustomerChair|undefined>{
  const identity=connectedChoiceModel(product,'prepared');if(!identity)return;

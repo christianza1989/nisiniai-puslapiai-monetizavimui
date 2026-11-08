@@ -214,10 +214,10 @@
     {
       "code": "KXEN034WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN034WW001-visual-7fcb5b66e3170f769064/review-034b17d7aa4a826b191c.json",
-      "sha256": "034b17d7aa4a826b191c684e82d58472eec24d81e6e75d84b8dd8ddf3de567c1",
-      "bytes": 354599,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KXEN034WW001-additional-89beb5d6175d1f11fc1b/review-ffec8f3f8065632ca732.json",
+      "sha256": "ffec8f3f8065632ca73272b4c48bf00eb176abce28379f3fbd0f6035eee3612a",
+      "bytes": 1103589,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "K2ME001WW002",
@@ -326,10 +326,10 @@
     {
       "code": "KBJA002WW002",
       "name": "Bjarg",
-      "asset": "/models/configurator/chairs/KBJA002WW002-visual-253e150303c6af7fc0dd/review-75f628d5a60d0cf82f07.json",
-      "sha256": "75f628d5a60d0cf82f07be78f4c92fc887589e10e56f5213716b4ad18a8e053d",
-      "bytes": 203164,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KBJA002WW002-additional-9ddb5e74523daef562ad/review-05834db27377fc12865b.json",
+      "sha256": "05834db27377fc12865b7b8695a1d581b6ab7cb12727814580a56ad07ac28784",
+      "bytes": 384965,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KBJA001WW002",
@@ -366,10 +366,10 @@
     {
       "code": "KXEN035WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN035WW001-visual-7fcb5b66e3170f769064/review-1cc32fece8af2062d92c.json",
-      "sha256": "1cc32fece8af2062d92c415194a565fe61289431f47f123eb43b9c64c8368bf7",
-      "bytes": 403333,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KXEN035WW001-additional-4313846e2d33094a80a2/review-3331495b8698479d98a2.json",
+      "sha256": "3331495b8698479d98a21920dc9042cc4062c4d5e9be91f35f121f6bbca299c5",
+      "bytes": 1227038,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KXEN028WW001",
@@ -390,10 +390,10 @@
     {
       "code": "KSAI001WW002",
       "name": "Sail",
-      "asset": "/models/configurator/chairs/KSAI001WW002-visual-7fcb5b66e3170f769064/review-0d55dc98ae7bbfc2f5a5.json",
-      "sha256": "0d55dc98ae7bbfc2f5a5f3c737c4589f45853356f8adb0e58b6d983c8dccaa05",
-      "bytes": 471430,
-      "version": "observed-visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KSAI001WW002-additional-f192422d7f425e99648d/review-0fb9c1def3928416811d.json",
+      "sha256": "0fb9c1def3928416811d2b51b2688837317e25c1995a1e53853ad64f740d8b72",
+      "bytes": 911833,
+      "version": "additional-observed-visuals-20261108-v1"
     },
     {
       "code": "KNXT002WW002",

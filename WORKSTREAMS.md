@@ -907,3 +907,9 @@ Branch codex/xenium032-visual-own-20261108. Source261:10 exact three/four-part v
 - Owner:3D peržiūra;codex/xline001-visual-own-20261108,stacked on YouTeam/Z-body.
 - Scope:pc2-chair-review-candidates.json,scripts/kxli001ww002-observed-own-pin.json,tests/xline001-observed-own.test.ts.
 -11original observed assemblies,7complete finishes onlycontext10,13originalGLBs unchanged. No renderer/shared edits,other60entries retained,Native/prod unchanged.
+
+
+## 2026-11-08 Sail008 OWN Fujitsu270
+- Owner:3D peržiūra;codex/sail008-visual-own-20261108,stacked on X-Line001.
+- Scope:pc2-chair-review-candidates.json,scripts/ksai008ww002-observed-own-pin.json,scripts/admit-observed-own-assembly.ts,tests/sail008-observed-own.test.ts.
+-10originalassemblies,5real full finish patches onlycontext9; sixth samefactory/emptybinding state stays read-only text.11rawGLBs unchanged;1nearest mapping explicit. No renderer/shared changes,other60entries retained,Native/prod unchanged.

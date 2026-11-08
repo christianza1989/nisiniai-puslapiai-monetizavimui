@@ -358,10 +358,10 @@
     {
       "code": "KSAI008WW002",
       "name": "Sail",
-      "asset": "/models/configurator/chairs/KSAI008WW002-215bb79d5e6f442bf3dd/review-2abc23a5fbd6cdfe7237.json",
-      "sha256": "2abc23a5fbd6cdfe7237e2271bab4f4e11c2e21548fe8e473a0fd521921b3004",
-      "bytes": 436262,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KSAI008WW002-visual-7fcb5b66e3170f769064/review-8d51fa8fdf4e8fd3b152.json",
+      "sha256": "8d51fa8fdf4e8fd3b152b5ae676d19e1198137197580936f85352192627e1213",
+      "bytes": 410737,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KXEN035WW001",

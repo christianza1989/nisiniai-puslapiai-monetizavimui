@@ -3,7 +3,7 @@ import {furnitureTerminology} from './furniture-terminology';
 const matchers=new WeakMap<Set<string>,{size:number;matcher?:RegExp}>();
 /** Never fall back to a supplier identifier when a customer-facing name is missing. */
 export function customerLabel(text:string|undefined,codes:Iterable<string>,fallback:string){
- let value=text||'';
+ let value=(text||'').replace(/\s*\(\s*extended\s*\)/gi,'');
  const set=codes instanceof Set?codes:undefined,cached=set?matchers.get(set):undefined;
  let matcher=cached?.size===set?.size?cached?.matcher:undefined;
  if(!cached||cached.size!==set?.size){

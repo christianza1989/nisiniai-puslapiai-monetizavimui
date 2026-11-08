@@ -221,8 +221,23 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         context.shadowPreparation??=prepareContactShadow(renderer!,scene);await context.shadowPreparation;if(disposed)return;
         disposeShadow=contactShadow(renderer!,scene,object,!!chairColors.current);
         roomSurfaces=productShowroom(object,light);scene.add(roomSurfaces.group,roomSurfaces.target);applyScene();applyFinishes.current();
-        if(deskColors.current){const materialKey=JSON.stringify(deskColors.current.source);colorMaterials=context.deskMaterials.get(materialKey);if(!colorMaterials){colorMaterials=createDeskColorMaterials(deskColors.current.source);context.deskMaterials.set(materialKey,colorMaterials);}colorApplication=createDeskColorApplication(object);
-          applyDeskColors.current=async()=>{if(!deskColors.current||!colorApplication||!colorMaterials||disposed)return;const revision=++colorRevision;colorFailed=false;setColorState('loading');try{const applied=await colorApplication.apply(deskColors.current.plan,colorMaterials.get);if(applied&&!disposed&&revision===colorRevision){renderer!.shadowMap.needsUpdate=true;render();setColorState('ready');}}catch{if(!disposed&&revision===colorRevision){colorFailed=true;setColorState('error');setState('error');}}};
+        if(deskColors.current){colorApplication=createDeskColorApplication(object);
+          applyDeskColors.current=async()=>{
+            const colors=deskColors.current;if(!colors||!colorApplication||disposed)return;
+            const revision=++colorRevision;colorFailed=false;setColorState('loading');
+            try{
+              // A signed colour transition may supply a different material
+              // document while the geometry stays identical. Use that current
+              // document, rather than the initially mounted empty catalogue.
+              const key=JSON.stringify(colors.source);colorMaterials=context.deskMaterials.get(key);
+              if(!colorMaterials)colorMaterials=createDeskColorMaterials(colors.source);
+              context.deskMaterials.delete(key);context.deskMaterials.set(key,colorMaterials);
+              const applied=await colorApplication.apply(colors.plan,colorMaterials.get);
+              if(applied&&!disposed&&revision===colorRevision){renderer!.shadowMap.needsUpdate=true;render();setColorState('ready');setState('ready');
+                while(context.deskMaterials.size>2){const oldest=context.deskMaterials.keys().next().value!;context.deskMaterials.get(oldest)!.dispose();context.deskMaterials.delete(oldest);}
+              }
+            }catch{if(!disposed&&revision===colorRevision){colorFailed=true;setColorState('error');setState('error');}}
+          };
           await applyDeskColors.current();
           if(colorFailed)return;
         }else if(chairColors.current){

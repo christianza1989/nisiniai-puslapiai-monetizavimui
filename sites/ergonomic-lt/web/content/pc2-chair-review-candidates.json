@@ -350,10 +350,10 @@
     {
       "code": "KXLI001WW002",
       "name": "X-Line",
-      "asset": "/models/configurator/chairs/KXLI001WW002-1e8dff9a2cbd61335e4d/review-5d3d527c9da494875629.json",
-      "sha256": "5d3d527c9da494875629ee31faf99c6f4d0fa5fc7232f19ce91879924342105b",
-      "bytes": 402385,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KXLI001WW002-visual-7fcb5b66e3170f769064/review-b3fb6e4c7ac882d0e1ec.json",
+      "sha256": "b3fb6e4c7ac882d0e1ec52a1a72fcbf08dba73f7df65952f9d53f7eb2e0a9b98",
+      "bytes": 425268,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KSAI008WW002",

@@ -883,3 +883,9 @@ Branch codex/xline-visual-own-20261108. Source260:11 finite original OWN visuals
 
 ## Ergonomic Xenium032 observed OWN (2026-11-08)
 Branch codex/xenium032-visual-own-20261108. Source261:10 exact three/four-part visuals,8 full finish contrasts onlyvisual9. Original19 GLBs retained. One nearest functional tuple explicit; connector metal colour needing geometry/UV swap stays unavailable. No broader source conditions, palette mixing or scaling. Task D:/Core/output/ergonomic-xenium032-visual-own-20261108; preview only.
+
+
+## 2026-11-08 Xenium028/033 observed OWN (Fujitsu262/263)
+- Owner: 3D peržiūra, branch codex/xenium-pair-visual-own-20261108, stacked on Xenium032.
+- Scope: pc2-chair-review-candidates.json, scripts/kxen028ww001-observed-own-pin.json, scripts/kxen033ww003-observed-own-pin.json, tests/xenium-pair-observed-own.test.ts.
+- Eleven exact assemblies each; six/four complete finish contrasts onlyvisual10, no independent mixing; original31GLBs unchanged. No renderer/shared changes, Native or production.

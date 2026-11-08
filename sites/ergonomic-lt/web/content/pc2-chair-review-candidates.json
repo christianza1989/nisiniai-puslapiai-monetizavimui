@@ -86,10 +86,10 @@
     {
       "code": "KXEN032WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN032WW001-d6ba3d4e76c31a212f13/review-6514cd5688e4d1affc8c.json",
-      "sha256": "6514cd5688e4d1affc8cb0c2d39c7930931631d89eaf8677a5814a84993b41a9",
-      "bytes": 498818,
-      "version": "base"
+      "asset": "/models/configurator/chairs/KXEN032WW001-visual-e9f770b6971fb004e5bb8/review-1dfa34075f7587a973bb.json",
+      "sha256": "1dfa34075f7587a973bbf5c569fe350e9ba32703256bed8bcf127b864b4350f8",
+      "bytes": 391847,
+      "version": "observed-visual-own-20261108-v1"
     },
     {
       "code": "KXEN033WW003",

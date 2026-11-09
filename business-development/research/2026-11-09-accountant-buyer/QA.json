@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-09T15:03:49.033Z",
+  "status": "PASS_documentary_validation",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "freshnessContinueAt": "2026-11-09T14:59:53.063Z",
+  "freshnessHandoffAt": "2026-11-09T15:03:51.543Z",
+  "checks": {
+    "localReferences": 3,
+    "primaryPagesRead": 1,
+    "searchQueries": 2,
+    "operationalTests": 0,
+    "newApprovals": 0,
+    "newProposals": 0,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "languageReview": "Complete private prose self-edited; public buyer intent distinguished from our paid demand and implementation acceptance"
+  },
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "rootOlderTurnsNotReread": true,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApprovalFound": false
+  },
+  "scope": {
+    "paidCalls": 0,
+    "messagesSent": 0,
+    "privateFinancialDocumentsRead": 0,
+    "accountsAccessed": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  },
+  "limits": [
+    "Dynamic category page, no permanent individual-request URL captured",
+    "No contract, payment, currently active need, accountant acceptance or automation economics verified",
+    "Existing synthetic accounting checks not executed this cycle"
+  ]
+}

@@ -15,7 +15,7 @@ export async function verifyContentRelease(directory, validatePackage) {
     const baseBytes = await readFile(path.join(directory, manifest.scope.baseline.file));
     if (sha(baseBytes) !== manifest.scope.baseline.sha256) throw new Error('Scoped baseline bytes/hash mismatch.');
     const base = JSON.parse(baseBytes); validatePackage(base);
-    scoped = assertScopedDiff(base, pkg, manifest.scope.pageIds);
+    scoped = assertScopedDiff(base, pkg, manifest.scope.pageIds, manifest.scope.addedPageIds ?? []);
     const source = manifest.scope.baseline.evidence;
     if (!source?.sourceVersion || !source?.deploymentId || !Number.isFinite(Date.parse(source.observedAt))) throw new Error('Missing observed baseline evidence.');
     const baseNames = new Set(base.pages.flatMap(p => p.media.map(m => path.basename(m.src))));

@@ -571,7 +571,7 @@ export async function approveReviewedOverlay(siteId, input, actorId) {
     const publicRoot = process.env.STUDIO_PUBLIC_CORE_DIR || path.resolve(ROOT, '../../dovanos-memorycasting');
     const { pathToFileURL } = await import('node:url');
     const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot, 'scripts/content-package-core.mjs')));
-    composeReviewedOverlay(site, JSON.parse(baseBytes), input.pageIds, revisionHash, validateContentPackage);
+    composeReviewedOverlay(site, JSON.parse(baseBytes), input.pageIds, revisionHash, validateContentPackage, input.addedPageIds ?? []);
     await writeJson(siteFile(siteId), site);
     return { siteId, approved: input.pageIds, baselineSha256: input.expectedBasePackageSha256, deployment: 'not-performed' };
   });
@@ -587,7 +587,7 @@ export async function releaseReviewedOverlay(siteId, input) {
     const publicRoot = process.env.STUDIO_PUBLIC_CORE_DIR || path.resolve(ROOT, '../../dovanos-memorycasting');
     const { pathToFileURL } = await import('node:url');
     const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot, 'scripts/content-package-core.mjs')));
-    const pkg = composeReviewedOverlay(site, base, input.pageIds, revisionHash, validateContentPackage);
+    const pkg = composeReviewedOverlay(site, base, input.pageIds, revisionHash, validateContentPackage, input.addedPageIds ?? []);
     const selected = new Set(input.pageIds), baselineNames = new Set(base.pages.flatMap(p => p.media.map(m => path.basename(m.src))));
     const selectedNames = new Set(pkg.pages.filter(p => selected.has(p.id)).flatMap(p => p.media.map(m => path.basename(m.src))));
     const expectedAssets = input.expectedBaseAssets;
@@ -616,7 +616,7 @@ export async function releaseReviewedOverlay(siteId, input) {
     await writeJson(path.join(target, 'content-package.json'), pkg);
     const bytes = await readFile(path.join(target, 'content-package.json'));
     const manifest = { version: 1, siteId, canonicalHost: pkg.canonicalHost, packageSha256: releaseSha(bytes), assets, createdAt: new Date().toISOString(),
-      scope: { kind: 'reviewed-overlay', pageIds: input.pageIds, baseline: { file: 'baseline-content-package.json', sha256: input.expectedBasePackageSha256, evidence: source, assets: expectedAssets, assetsSha256: input.expectedBaseAssetsSha256 } },
+      scope: { kind: 'reviewed-overlay', pageIds: input.pageIds, ...(input.addedPageIds?.length ? { addedPageIds: input.addedPageIds } : {}), baseline: { file: 'baseline-content-package.json', sha256: input.expectedBasePackageSha256, evidence: source, assets: expectedAssets, assetsSha256: input.expectedBaseAssetsSha256 } },
       pages: pkg.pages.map(page => ({ pageId: page.id, revisionHash: page.revisionHash, publishAt: page.publishAt,
         ...(selected.has(page.id) ? { review: site.pages.find(p => p.id === page.id).editorialReview } : { inheritedApproval: { kind: 'pinned-baseline', packageSha256: input.expectedBasePackageSha256 } }) })),
       state: 'exported-not-deployed', next: 'Verify scoped unchanged-baseline invariants; import/build/deploy independently.' };

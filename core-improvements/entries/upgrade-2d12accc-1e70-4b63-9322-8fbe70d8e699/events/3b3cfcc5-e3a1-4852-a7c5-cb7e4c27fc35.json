@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Public WebP registry and bytes are recovered only from an inventory pinned to the baseline. No private original, fresh review, or invented ownership is inferred. Initial fixture lacked required facts and body length and was corrected without changing production gates.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/recover-public-baseline.test.mjs content-studio/test/scoped-content-release.test.mjs",
+      "result": "PASS",
+      "evidence": "13/13 isolated tests including actual preview bytes, tamper rejection, review, approval and release"
+    }
+  ],
+  "eventId": "3b3cfcc5-e3a1-4852-a7c5-cb7e4c27fc35",
+  "sequence": 2,
+  "at": "2026-11-09T07:53:35.924Z"
+}

@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 // Reconstruct only the published V1 snapshot as an isolated editing baseline.
 // Public packages do not contain private facts, editorial reviews, drafts, or
 // original media. This does not restore those records or grant a new approval.
-export function recoverPublicBaseline(bytes, input, validate, revisionHash) {
+export function recoverPublicBaseline(bytes, input, validate, revisionHash, { allowPublicMediaRecovery = false } = {}) {
   if (!Buffer.isBuffer(bytes) || !/^[a-f0-9]{64}$/.test(input?.expectedPackageSha256 ?? '')) throw new Error('An exact pinned package is required.');
   const sha = createHash('sha256').update(bytes).digest('hex');
   if (sha !== input.expectedPackageSha256) throw new Error('Pinned package bytes changed.');
@@ -19,8 +19,10 @@ export function recoverPublicBaseline(bytes, input, validate, revisionHash) {
   for (const id of ids) {
     const p = pkg.pages.find(page => page.id === id);
     if (!p || expected[id] !== p.revisionHash || revisionHash(p) !== p.revisionHash) throw new Error('Selected baseline revision mismatch.');
-    // Media editing needs original/private provenance and bytes, not a public snapshot.
-    if (p.media.length || p.body.some(b => b.type === 'image')) throw new Error('Recovery currently supports selected pages without media only.');
+    // A public snapshot alone cannot reconstruct its assets; the model caller
+    // may opt in only after separately checking the pinned inventory and bytes.
+    if (!allowPublicMediaRecovery && (p.media.length || p.body.some(b => b.type === 'image'))) throw new Error('Recovery currently supports selected pages without media only.');
+    if (allowPublicMediaRecovery && p.body.some(b => b.type === 'image' && !p.media.some(m => m.id === b.assetId))) throw new Error('Selected body image is absent from its public media.');
   }
   const site = { ...structuredClone(pkg.site), facts: '', audience: '', stage: 'planning', contentWorkflowVersion: 1, assets: [],
     recoveredBaseline: { packageSha256: sha, sourceVersion: e.sourceVersion, deploymentId: e.deploymentId, observedAt: e.observedAt,

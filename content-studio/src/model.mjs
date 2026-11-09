@@ -195,7 +195,35 @@ export async function recoverSiteFromPublicBaseline(input) {
     const publicRoot = process.env.STUDIO_PUBLIC_CORE_DIR || path.resolve(ROOT, '../../dovanos-memorycasting');
     const { pathToFileURL } = await import('node:url');
     const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot, 'scripts/content-package-core.mjs')));
-    const site = recoverPublicBaseline(bytes, input, validateContentPackage, revisionHash);
+    const recoverMedia = Boolean(input.baseAssetsDirectory || input.expectedBaseAssets || input.expectedBaseAssetsSha256);
+    const site = recoverPublicBaseline(bytes, input, validateContentPackage, revisionHash, { allowPublicMediaRecovery: recoverMedia });
+    if (recoverMedia) {
+      const base = JSON.parse(bytes), names = new Set(base.pages.flatMap(p => p.media.map(m => path.basename(m.src))));
+      const inventory = input.expectedBaseAssets;
+      if (!input.baseAssetsDirectory || !Array.isArray(inventory) || inventory.length !== names.size || new Set(inventory.map(a => a.name)).size !== names.size || inventory.some(a => !names.has(a.name) || !/^[a-zA-Z0-9._-]+\.(webp|avif)$/.test(a.name) || !/^[a-f0-9]{64}$/.test(a.sha256)) || !/^[a-f0-9]{64}$/.test(input.expectedBaseAssetsSha256 ?? '') || releaseSha(stable(inventory)) !== input.expectedBaseAssetsSha256) throw new Error('Recovery requires a pinned complete public media inventory.');
+      const hashes = new Map(inventory.map(a => [a.name, a.sha256])), selected = new Set(input.pageIds), assets = new Map(), files = new Map();
+      for (const page of site.pages.filter(p => selected.has(p.id))) for (const media of page.media) {
+        const name = path.basename(media.src);
+        if (!/^[a-f0-9-]{36}\.webp$/.test(name) || media.src !== `/content-assets/${site.id}/${name}` || name !== `${media.id}.webp`) throw new Error('Recovered public media must have a safe site-local WebP identity.');
+        const old = assets.get(media.id);
+        if (old && (old.src !== media.src || old.width !== media.width || old.height !== media.height || old.groupId !== media.familyId)) throw new Error('Public media identity has conflicting dimensions or family.');
+        if (!old) {
+          const data = await readFile(path.join(path.resolve(input.baseAssetsDirectory), name));
+          if (releaseSha(data) !== hashes.get(name)) throw new Error('Pinned public media bytes changed.');
+          assets.set(media.id, { ...structuredClone(media), ...(media.familyId ? {groupId:media.familyId} : {}), metadataPublished: true, recoveredPublicBaseline: {packageSha256:input.expectedPackageSha256, inventorySha256:input.expectedBaseAssetsSha256} });
+          files.set(name, data);
+        }
+      }
+      if (files.size) {
+        // Refuse to overwrite any media directory, including residue from a
+        // previous interrupted recovery. All bytes are validated before writes.
+        await mkdir(MEDIA_DIR, { recursive: true });
+        const target = path.join(MEDIA_DIR, site.id);
+        await mkdir(target);
+        for (const [name, data] of files) await writeFile(path.join(target, name), data, { flag: 'wx' });
+      }
+      site.assets = [...assets.values()];
+    }
     await writeJson(file, site);
     return { siteId: site.id, packageSha256: site.recoveredBaseline.packageSha256, state: 'public-baseline-only-not-a-private-backup', deployment: 'not-performed' };
   });

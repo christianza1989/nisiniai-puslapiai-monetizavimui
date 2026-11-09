@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Recover selected baseline WebP variants for review from a fully pinned public media inventory, without inventing private originals or reviews.",
+  "category": "code",
+  "evidence": [
+    "Previous public-baseline recovery rejected all selected pages with media",
+    "content-studio/test/recover-public-baseline.test.mjs exercises byte-pinned recovery, preview and genuinely reviewed scoped release"
+  ],
+  "paths": [
+    "content-studio/src/recover-public-baseline.mjs",
+    "content-studio/src/model.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/145",
+  "rollback": "Revert isolated media recovery support; never change existing studio or hosted release data.",
+  "id": "upgrade-2d12accc-1e70-4b63-9322-8fbe70d8e699",
+  "branch": "codex/reviewed-overlay-additions-20261109",
+  "baseSha": "e96ac01a25206068264a87b2373f41aa82f04e7a",
+  "createdAt": "2026-11-09T07:53:30.065Z"
+}

@@ -92,6 +92,15 @@ test('qualified synchronization intersects whole disjoint groups and preserves t
  assert.deepEqual(projected.controls[0].options[0].state,{...s,groups:{seat:'BLUE',back:'BLUE',metal:'BLACK'}});
  assert.equal(qualifiedChairMaterialControls(w,s,()=>false).controls[0].options.length,0);
 });
+test('a qualified branch keeps independently measured textile controls separate',()=>{
+ const head={...group('head','CHEADRESTUPHCOLOR',['CSE01','CSE02']),separateControl:true as const};
+ const body={...group('body','CUPHCOLOR',['BN01','BN02']),separateControl:true as const};
+ const w={id:'w',groups:[],branches:[{id:'b',values:{CHEADRESTUPHGROUP:'CSE',CUPHGROUP:'BN'},groups:[head,body]}]} as unknown as QualifiedWitness;
+ const s:QualifiedSelection={witness:'w',kind:'groups',branch:'b',groups:{head:'CSE01',body:'BN01'}};
+ const projected=qualifiedChairMaterialControls(w,s,()=>true);
+ assert.deepEqual(projected.controls,[]);
+ assert.deepEqual(projected.remaining,[head,body]);
+});
 test('mixed qualified tuples and part swaps stay indivisible; no name/SHA joins',()=>{
  const mixed=group('mixed','CUPHCOLOR',['RED']);mixed.options[0].values.CBASEMETALCOLOR='BLACK';
  const w={id:'w',groups:[mixed],branches:[]} as unknown as QualifiedWitness;

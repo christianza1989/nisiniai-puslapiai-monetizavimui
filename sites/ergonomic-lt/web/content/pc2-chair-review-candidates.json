@@ -438,10 +438,25 @@
     {
       "code": "KBJA003WW002",
       "name": "Bjarg",
-      "asset": "/models/configurator/chairs/KBJA003WW002-f408368c4b1b60998343/review-e0cd79d435e2f44bb849.json",
-      "sha256": "e0cd79d435e2f44bb84973b7ebeef7591c3b801ea01f08788bf7533fdfebfd72",
-      "bytes": 2313367,
-      "version": "colors-20261105-v1-qualified-context11721"
+      "asset": "/models/configurator/chairs/KBJA003WW002-42b9927a0002aff97869/review-b423d2d5fa750435d89d.json",
+      "sha256": "b423d2d5fa750435d89d1203fcb407991bd4cc45dfeae3060941cf18990034c0",
+      "bytes": 5982966,
+      "version": "colors-20261109-v1-3510-r35k3",
+      "defaultVersionLabel": "R35K3 · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-bjarg-scope",
+          "label": "Ankstesnė Bjarg konstrukcija",
+          "entry": {
+            "code": "KBJA003WW002",
+            "name": "Bjarg",
+            "asset": "/models/configurator/chairs/KBJA003WW002-f408368c4b1b60998343/review-e0cd79d435e2f44bb849.json",
+            "sha256": "e0cd79d435e2f44bb84973b7ebeef7591c3b801ea01f08788bf7533fdfebfd72",
+            "bytes": 2313367,
+            "version": "colors-20261105-v1-qualified-context11721"
+          }
+        }
+      ]
     },
     {
       "code": "KBJA002WW002",

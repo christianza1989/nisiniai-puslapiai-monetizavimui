@@ -100,6 +100,7 @@ export function qualifiedChairMaterialControls(w:QualifiedWitness,selection:Qual
  admit:(s:QualifiedSelection)=>boolean):{controls:ChairMaterialControl<QualifiedSelection>[];remaining:QualifiedGroup[]}{
  const branch=w.branches.find(b=>b.id===selection.branch),groups=[...w.groups,...branch?.groups||[]],used=new Set<string>();
  const descriptors=groups.flatMap(g=>{
+  if(branch?.groups.includes(g)&&g.separateControl)return [];
   const fields=unique(g.options.flatMap(o=>Object.keys(o.values).filter(f=>chairFinishRoles[f])));if(!fields.length)return [];
   const role=chairFinishRoles[fields[0]];if(fields.some(f=>chairFinishRoles[f]!==role))return [];
   if(role==='mesh'&&fields.some(f=>spacerMesh.has(f)!==spacerMesh.has(fields[0])))return [];

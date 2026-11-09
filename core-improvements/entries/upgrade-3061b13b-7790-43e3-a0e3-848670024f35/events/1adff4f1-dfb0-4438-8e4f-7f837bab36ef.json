@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Explicit addedPageIds preserves replacement-only behavior by default; new pages and link updates require genuine current review and approval. Initial test run lacked STUDIO_NETWORK_SETTINGS and was rerun with the public config.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/scoped-content-release.test.mjs content-studio/test/content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "15/15 isolated tests using explicit STUDIO_PUBLIC_CORE_DIR and STUDIO_NETWORK_SETTINGS"
+    }
+  ],
+  "eventId": "1adff4f1-dfb0-4438-8e4f-7f837bab36ef",
+  "sequence": 2,
+  "at": "2026-11-09T07:48:02.082Z"
+}

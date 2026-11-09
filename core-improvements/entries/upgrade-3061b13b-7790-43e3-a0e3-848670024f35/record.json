@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Allow explicitly declared, genuinely reviewed V1 additions to a pinned public baseline while preserving baseline identity and publication data.",
+  "category": "code",
+  "evidence": [
+    "content-studio/src/scoped-content-release.mjs previously rejected all additions",
+    "content-studio/test/scoped-content-release.test.mjs validates explicit additions and atomic linked pages"
+  ],
+  "paths": [
+    "content-studio/src/scoped-content-release.mjs",
+    "content-studio/src/model.mjs",
+    "content-studio/src/content-release.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/145",
+  "rollback": "Revert this scoped extension; do not change any studio data or hosted releases.",
+  "id": "upgrade-3061b13b-7790-43e3-a0e3-848670024f35",
+  "branch": "codex/reviewed-overlay-additions-20261109",
+  "baseSha": "b84ab973927f82327cf1c860b35b16acffe25768",
+  "createdAt": "2026-11-09T07:47:08.021Z"
+}

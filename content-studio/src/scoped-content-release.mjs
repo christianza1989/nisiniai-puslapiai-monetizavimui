@@ -6,17 +6,26 @@ export function scopedIds(ids) {
   if (!Array.isArray(ids) || !ids.length || ids.length > 200 || new Set(ids).size !== ids.length || ids.some(id => typeof id !== 'string' || !id.trim())) throw new Error('Scoped release needs 1–200 unique existing page IDs.');
   return new Set(ids);
 }
-export function assertScopedDiff(base, result, ids) {
+export function assertScopedDiff(base, result, ids, addedPageIds = []) {
   const selected = scopedIds(ids);
+  if (!Array.isArray(addedPageIds) || new Set(addedPageIds).size !== addedPageIds.length || addedPageIds.some(id => !selected.has(id))) throw new Error('Added page IDs must be a unique subset of the selected scope.');
+  const added = new Set(addedPageIds);
   if (base.schemaVersion !== 1 || result.schemaVersion !== 1) throw new Error('Scoped release currently supports native V1 only; V2 is not flattened.');
   const envelope = pkg => Object.fromEntries(Object.entries(pkg).filter(([key]) => !['pages', 'generatedAt'].includes(key)));
   if (stable(envelope(base)) !== stable(envelope(result))) throw new Error('Scoped release changed the pinned site envelope.');
-  if (base.pages.length !== result.pages.length) throw new Error('Scoped release cannot add or remove pages.');
+  if (base.pages.length + added.size !== result.pages.length) throw new Error('Scoped release cannot add undeclared pages or remove baseline pages.');
   const before = new Map(base.pages.map(p => [p.id, p]));
   if (before.size !== base.pages.length || new Set(result.pages.map(p => p.id)).size !== result.pages.length) throw new Error('Duplicate baseline/result page ID.');
-  for (const id of selected) if (!before.has(id)) throw new Error('Selected page is absent from the pinned baseline.');
+  for (const id of selected) {
+    if (added.has(id) && before.has(id)) throw new Error('Added page already exists in the pinned baseline.');
+    if (!added.has(id) && !before.has(id)) throw new Error('Selected page is absent from the pinned baseline.');
+  }
   for (let i = 0; i < result.pages.length; i++) {
     const page = result.pages[i], original = before.get(page.id);
+    if (i >= base.pages.length) {
+      if (!added.has(page.id) || page.id !== addedPageIds[i - base.pages.length]) throw new Error('Scoped release added page identity/order differs from the declared scope.');
+      continue;
+    }
     if (!original || base.pages[i].id !== page.id) throw new Error('Scoped release changed page identity/order.');
     if (!selected.has(page.id)) {
       if (stable(page) !== stable(original)) throw new Error('Unselected baseline page changed.');
@@ -26,7 +35,7 @@ export function assertScopedDiff(base, result, ids) {
   }
   return selected;
 }
-export function composeReviewedOverlay(site, base, ids, revisionHash, validatePackage) {
+export function composeReviewedOverlay(site, base, ids, revisionHash, validatePackage, addedPageIds = []) {
   validatePackage(base);
   if (base.siteId !== site.id || base.canonicalHost !== site.canonicalHost || base.locale !== site.locale) throw new Error('Scoped baseline/site identity mismatch.');
   const selected = scopedIds(ids), replacements = new Map();
@@ -40,8 +49,13 @@ export function composeReviewedOverlay(site, base, ids, revisionHash, validatePa
   }
   const result = structuredClone(base);
   result.pages = result.pages.map(p => replacements.get(p.id) ?? p);
+  for (const id of addedPageIds) {
+    const page = replacements.get(id);
+    if (!page) throw new Error('Added page must be selected and genuinely approved.');
+    result.pages.push(page);
+  }
   result.generatedAt = new Date().toISOString();
-  assertScopedDiff(base, result, ids);
+  assertScopedDiff(base, result, ids, addedPageIds);
   const existing = new Set(result.pages.map(p => p.id));
   for (const page of result.pages) for (const link of page.links ?? []) if (!existing.has(link.targetPageId)) throw new Error('Scoped result has a missing approved dependency.');
   validatePackage(result);

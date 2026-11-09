@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Full studio suite passed with both scoped addition and pinned public media recovery enabled in an isolated checkout.",
+  "checks": [
+    {
+      "command": "node --test --test-concurrency=1 'content-studio/test/*.test.mjs'",
+      "result": "PASS",
+      "evidence": "80/80 isolated tests using explicit public core and network settings"
+    }
+  ],
+  "eventId": "aca48971-38fc-479c-b78f-7f3d74d21ab3",
+  "sequence": 3,
+  "at": "2026-11-09T07:55:16.451Z"
+}

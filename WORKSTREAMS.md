@@ -973,3 +973,6 @@ Branch codex/2me-bench-gb-20261109. Only K2ME004WW004 OWN runtime eb008084 and 5
 
 ## 2026-11-09 Arn built-in armrests GD
 Branch codex/arn-armrests-gd-20261109. KARN008WW003 exact OWN runtime bed4d863 and GD, BUILTINPLASTCLOSED. Six linked body colours and nine frame tuples. Previous source separate. Preview only. Results D:/Core/output/ergonomic-arn-armrests-gd-20261109.
+
+## 2026-11-09 Bja fixed construction upholstery
+Branch codex/bja-fixed-20261109. KBJA002WW002 exact OWN runtime 17844005 with seven pinned construction fields and 704 upholstery tuples. Previous source separate. Preview only. Results D:/Core/output/ergonomic-bja-fixed-20261109.

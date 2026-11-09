@@ -14,10 +14,25 @@
     {
       "code": "KLYN001WW002",
       "name": "Lynx",
-      "asset": "/models/configurator/chairs/KLYN001WW002-visual-275e946722b84a1b7e98/review-05379eb08d3c0e579032.json",
-      "sha256": "05379eb08d3c0e57903291a86bf6b1420f768f9afd0a046469c9f8856ec00b0c",
-      "bytes": 34611,
-      "version": "visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KLYN001WW002-800d679d913315fd997a/review-cab3b530e4d4792045ce.json",
+      "sha256": "cab3b530e4d4792045ce281a47781fe21ab97c1ec0fa2d941178543ec32c2dfc",
+      "bytes": 215051,
+      "version": "colors-20261109-v1-3510-pf40cr-esh",
+      "defaultVersionLabel": "PF40CR / ESH · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-lynx-visual",
+          "label": "Ankstesnis Lynx vaizdas",
+          "entry": {
+            "code": "KLYN001WW002",
+            "name": "Lynx",
+            "asset": "/models/configurator/chairs/KLYN001WW002-visual-275e946722b84a1b7e98/review-05379eb08d3c0e579032.json",
+            "sha256": "05379eb08d3c0e57903291a86bf6b1420f768f9afd0a046469c9f8856ec00b0c",
+            "bytes": 34611,
+            "version": "visual-own-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KTRF001WW001",

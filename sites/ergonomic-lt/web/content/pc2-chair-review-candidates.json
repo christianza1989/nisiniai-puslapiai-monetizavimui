@@ -445,11 +445,26 @@
     },
     {
       "code": "KBJA002WW002",
-      "name": "Bjarg",
-      "asset": "/models/configurator/chairs/KBJA002WW002-additional-9ddb5e74523daef562ad/review-05834db27377fc12865b.json",
-      "sha256": "05834db27377fc12865b7b8695a1d581b6ab7cb12727814580a56ad07ac28784",
-      "bytes": 384965,
-      "version": "additional-observed-visuals-20261108-v1"
+      "name": "Bja",
+      "asset": "/models/configurator/chairs/KBJA002WW002-c87f1956234e01051fa8/review-e68aa74f8fd57d34ea29.json",
+      "sha256": "e68aa74f8fd57d34ea2962dd6c70cfa7a9ebf576aba279927b58501c24bbd7b8",
+      "bytes": 2868432,
+      "version": "colors-20261109-v1-qualified-own1011000",
+      "defaultVersionLabel": "704 apmušalų deriniai",
+      "reviewVersions": [
+        {
+          "id": "previous-observed-bja",
+          "label": "Ankstesnė surinkta versija · atskiras runtime",
+          "entry": {
+            "code": "KBJA002WW002",
+            "name": "Bjarg",
+            "asset": "/models/configurator/chairs/KBJA002WW002-additional-9ddb5e74523daef562ad/review-05834db27377fc12865b.json",
+            "sha256": "05834db27377fc12865b7b8695a1d581b6ab7cb12727814580a56ad07ac28784",
+            "bytes": 384965,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KBJA001WW002",

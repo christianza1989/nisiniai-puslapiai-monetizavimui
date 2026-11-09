@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Full suite originally reported three missing fixture failures because the isolated sparse checkout omitted the tracked sites/madbeauty/content/initial-release fixture. Restored only that test fixture, reran all tests and all passed.",
+  "checks": [
+    {
+      "command": "node --test --test-concurrency=1 'content-studio/test/*.test.mjs'",
+      "result": "PASS",
+      "evidence": "75/75 isolated tests, explicit public core and network settings"
+    }
+  ],
+  "eventId": "221a7410-f392-4ca4-b1f8-c48533e1e74a",
+  "sequence": 3,
+  "at": "2026-11-09T07:49:56.608Z"
+}

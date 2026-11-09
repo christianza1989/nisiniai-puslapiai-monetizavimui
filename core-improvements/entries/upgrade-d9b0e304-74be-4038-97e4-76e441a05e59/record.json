@@ -1,0 +1,24 @@
+{
+  "siteId": "o3tech",
+  "summary": "Owner-authorized admission of six existing navigation-only product indices: validate their real same-site product list and exact labels/links instead of demanding filler prose; preserve all review, fact, approval and publication gates.",
+  "category": "code",
+  "evidence": [
+    "sites/o3tech/CONTENT_READINESS.md",
+    "sites/o3tech/catalogue.json",
+    "Owner confirmed ok in this Codex chat after a plain-language explanation on2026-10-29."
+  ],
+  "paths": [
+    "content-studio/src/catalogue-index.mjs",
+    "content-studio/src/minimum-content.mjs",
+    "content-studio/src/content-workflow.mjs",
+    "content-studio/test/catalogue-index.test.mjs",
+    "CONTENT_CORE.md",
+    "sites/o3tech"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/302",
+  "rollback": "Revert only this scoped catalogue-admission change and matching companion projection; preserve raw captures and unapproved drafts. No live package or runtime is changed.",
+  "id": "upgrade-d9b0e304-74be-4038-97e4-76e441a05e59",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-29T16:58:31.296Z"
+}

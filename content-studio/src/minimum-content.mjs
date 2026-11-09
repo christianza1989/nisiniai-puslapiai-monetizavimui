@@ -1,4 +1,5 @@
 import { bodyPlainText } from './content-package-v2.mjs';
+import {catalogueIndexDefinition,catalogueIndexHasContent} from './catalogue-index.mjs';
 
 // Owner decision 606, 2026-10-24: only these two reviewed category indices.
 // Keep their existing body lengths as floors; no general short-content switch.
@@ -11,6 +12,7 @@ export function shortIndexMinimum(site, page) {
     ? promedicalIndexMinimums.get(page.id) : undefined;
 }
 export function hasMinimumContent(site, page) {
+  if(catalogueIndexDefinition(site,page))return catalogueIndexHasContent(site,page);
   const text = page.contentVersion === 2 ? bodyPlainText(page.body)
     : page.body.map(block => block.text || block.items?.join(' ') || '').join(' ');
   const exception = shortIndexMinimum(site, page);

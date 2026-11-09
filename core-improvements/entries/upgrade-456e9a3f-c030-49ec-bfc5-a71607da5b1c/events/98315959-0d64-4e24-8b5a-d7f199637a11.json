@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original appearance/hover correction verified against measured source and actual user IAB. Reduced-motion preserves visible interaction state with zero transition duration. No publication/mail operation.",
+  "checks": [
+    {
+      "command": "node private/modern-content-check.mjs; npm run test:core; node --test tests/o3tech.test.mjs",
+      "result": "PASS",
+      "evidence": "23exact rendered text/link sets; HTTP200/noindex/oneH1;303public and7focused tests. HERO-RESTORATION.md."
+    },
+    {
+      "command": "node private/hero-hover-inspect.mjs; node private/hero-hover-verify.mjs; node private/hero-interactions-final.mjs; actual IAB interaction via CUA",
+      "result": "PASS",
+      "evidence": "Source header1.2/.4sand all4photos1.1/.8s; final12photo states normal/reduced across6widths with no hover overflow,5nav states and noJS visibility. Actual user IAB hovered:true/reduced:true/matrix1.1/transitionnone/scroll751=client751; actual-iab-hover.png. Prior failed media-gated version and stale first-build evidence explicitly retained in HERO-RESTORATION.md."
+    }
+  ],
+  "eventId": "98315959-0d64-4e24-8b5a-d7f199637a11",
+  "sequence": 2,
+  "at": "2026-10-30T14:25:18.394Z"
+}

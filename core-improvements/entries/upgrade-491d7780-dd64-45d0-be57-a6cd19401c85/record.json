@@ -1,0 +1,20 @@
+{
+  "siteId": "o3tech",
+  "summary": "Record the owner's superseding modern-presentation brief and actual visual/motion/performance verification, keeping source-only fidelity and unavailable zoom/production evidence distinct.",
+  "category": "workflow",
+  "evidence": [
+    "sites/o3tech/MODERNIZATION.md"
+  ],
+  "paths": [
+    "sites/o3tech/DESIGN.md",
+    "sites/o3tech/MODERNIZATION.md",
+    "sites/o3tech/HANDOFF.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/302",
+  "rollback": "Revert only the modernization design/runbook append and its reservation; preserve all historical fidelity evidence and private reports.",
+  "id": "upgrade-491d7780-dd64-45d0-be57-a6cd19401c85",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "354d398d892351ba7d5f7dc2c0bae708b7fb7110",
+  "createdAt": "2026-10-30T13:46:54.935Z"
+}

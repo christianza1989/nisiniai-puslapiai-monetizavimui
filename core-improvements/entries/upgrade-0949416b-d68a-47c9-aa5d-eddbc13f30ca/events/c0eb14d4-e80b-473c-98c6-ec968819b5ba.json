@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Owner-requested source fidelity repair complete. No real content approval/release, merge, hosting/DNS or email. Initial Worker startup ECONNRESET was retried only after actual Ready. Batch10tenants passed; Promedical exceeded the wrapper120s timer, then the unchanged canonical test passed separately across1853actual-public pages. Original failed receipts remain. Build-inspection initially assumed inline layout; corrected to follow the actual imported layout chunk and verified724px portrait data, current compiled CSS20px mobile gap and exact UI asset bytes.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs; final focused node --test tests/o3tech*.test.mjs",
+      "result": "PASS",
+      "evidence": "301/301 full suite plus7/7 final focused tests; private/public-tests-fidelity-final.log and private/fidelity-20261029/o3tech-final-tests.log"
+    },
+    {
+      "command": "node --test content-studio/test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "75/75 native Studio; private/studio-tests-fidelity.log"
+    },
+    {
+      "command": "npx tsc --noEmit; canonical freshness wrapper -- node scripts/run-framework.mjs build; node scripts/check-rsc-assets.mjs",
+      "result": "PASS",
+      "evidence": "Typecheck exit0, complete build,2manifests/0missing; types-fidelity-final.log and build-fidelity-final.log"
+    },
+    {
+      "command": "node sites/o3tech/migration/check-preview.mjs; native browser source comparison/state/reflow",
+      "result": "PASS",
+      "evidence": "23routes,392blocks,44internalURLs,108WebPvariants, privateHost421, zero real projection, native form/durableSQLite/noemail. Gallery/filter/menu/single-image/quick-view/320spacing evidence in private/fidelity-20261029; sites/o3tech/FIDELITY.md"
+    },
+    {
+      "command": "canonical tests/seo-core-smoke.mjs for all11existing tenants, including separate full Promedical run",
+      "result": "PASS",
+      "evidence": "10batchPASS + unchanged canonical PromedicalPASS1853pages; private/fidelity-20261029/seo-smoke-final.json, seo-smoke-accepted.log and promedical-smoke-final.log; timeout/startup failures retained"
+    }
+  ],
+  "eventId": "c0eb14d4-e80b-473c-98c6-ec968819b5ba",
+  "sequence": 2,
+  "at": "2026-10-29T20:00:21.656Z"
+}

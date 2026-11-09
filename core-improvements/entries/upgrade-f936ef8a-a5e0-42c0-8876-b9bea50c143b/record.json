@@ -1,0 +1,39 @@
+{
+  "siteId": "o3tech",
+  "summary": "Preserve o3tech's original catalogue design and content in a site-isolated native renderer; same shared publication slice governs real catalogue membership, metadata/media and native lead handling. Future/revoked product names and empty indices cannot leak into discovery.",
+  "category": "code",
+  "evidence": [
+    "sites/o3tech/MIGRATION.md",
+    "tests/o3tech-catalogue.test.mjs",
+    "tests/o3tech.test.mjs",
+    "tests/memocasting-seo-metadata.test.mjs"
+  ],
+  "paths": [
+    "app/layout.tsx",
+    "app/niche/[siteId]/[[...slug]]/page.tsx",
+    "app/niche/[siteId]/lead/route.ts",
+    "config/niche-network.json",
+    "lib/niche-links.mjs",
+    "proxy.ts",
+    "tests/memocasting-seo-metadata.test.mjs",
+    "components/niche/o3tech-fonts.css",
+    "components/niche/o3tech-site.tsx",
+    "components/niche/o3tech.css",
+    "config/o3tech-catalogue.json",
+    "config/o3tech-layout.json",
+    "lib/o3tech-brand.mjs",
+    "lib/o3tech-catalogue.mjs",
+    "lib/o3tech-inquiry.mjs",
+    "lib/o3tech-render.mjs",
+    "public/fonts/o3tech",
+    "sites/o3tech",
+    "tests/o3tech-catalogue.test.mjs",
+    "tests/o3tech.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/101",
+  "rollback": "Revert only o3tech renderer/dispatch/contact/metadata/catalogue projection additions and the paired native catalogue admission. No actual approved package, live deployment, customer record or DNS mutation exists to roll back.",
+  "id": "upgrade-f936ef8a-a5e0-42c0-8876-b9bea50c143b",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "createdAt": "2026-10-29T17:07:47.775Z"
+}

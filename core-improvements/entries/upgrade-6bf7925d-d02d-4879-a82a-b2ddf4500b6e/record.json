@@ -1,0 +1,20 @@
+{
+  "siteId": "o3tech",
+  "summary": "Owner rejected modernization palette/transitions and found missing hover growth. Restore original hero/colour/section presentation and measured header1.2/.4s/category1.1/.8s states; fix actual IAB reduced-motion suppression and narrow hover overflow.",
+  "category": "code",
+  "evidence": [
+    "sites/o3tech/HERO-RESTORATION.md",
+    "tests/o3tech.test.mjs"
+  ],
+  "paths": [
+    "components/niche/o3tech.css",
+    "lib/o3tech-render.mjs",
+    "public/o3tech-ui.js"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/101",
+  "rollback": "Revert only this source-restoration correction; preserve original words, assets, native filters and prior historical receipts. No deployed state changed.",
+  "id": "upgrade-6bf7925d-d02d-4879-a82a-b2ddf4500b6e",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "d99e96510094d8d2a5e436c18e6b7d8a5003963b",
+  "createdAt": "2026-10-30T14:23:21.160Z"
+}

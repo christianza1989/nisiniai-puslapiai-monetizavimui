@@ -1,0 +1,31 @@
+{
+  "siteId": "o3tech",
+  "summary": "Qualify mail in the actual hosted runtime. Workers cannot open TCP to a Cloudflare-protected Hostinger SMTP address; explicit authenticated HTTPS reuses the canonical gateway and SMTP protocol with a durable idempotency ledger, fixed recipients and preserved Reply-To. No ambiguous delivery is retried or sent through another provider.",
+  "category": "code",
+  "evidence": [
+    "docs/NICHE_HOSTINGER_MAIL_RELAY.md",
+    "tests/niche-mail-relay.test.mjs",
+    "sites/o3tech/NATIVE_CLOUDFLARE.md"
+  ],
+  "paths": [
+    "lib/niche-mail.ts",
+    "lib/niche-mail-relay.mjs",
+    "app/niche/[siteId]/lead/route.ts",
+    "cloudflare-env.d.ts",
+    "config/o3tech-worker.json",
+    "scripts/build-lead-mail-relay.mjs",
+    "services/lead-mail-relay/relay.mjs",
+    "services/lead-mail-relay/server.mjs",
+    "services/lead-mail-relay/package.json",
+    "services/lead-mail-relay/package-lock.json",
+    "tests/niche-mail-relay.test.mjs",
+    "docs/NICHE_HOSTINGER_MAIL_RELAY.md",
+    "docs/NICHE_WORKER_BUILD.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/103",
+  "rollback": "Revert only this opt-in renderer transport and owned deployment. Keep existing transport defaults, D1 enquiries, relay ledger and old WordPress/DNS rollback evidence. Never retry an unknown message.",
+  "id": "upgrade-36047564-bee7-4159-8a0c-8c1dedec31bb",
+  "branch": "codex/o3tech-migration-20261029",
+  "baseSha": "778632ecdb8491c74fb625890183858855730014",
+  "createdAt": "2026-10-31T05:12:58.824Z"
+}

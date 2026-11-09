@@ -8,6 +8,7 @@ import { verifyContentRelease } from './content-release.mjs';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const SDK_FILES = ['scripts/content-package-core.mjs', 'scripts/content-package-v2.mjs',
   'schemas/content-package.v2.schema.json', 'lib/niche-links.mjs',
+  'lib/o3tech-catalogue.mjs', 'config/o3tech-catalogue.json',
   'lib/content-projection-v2.mjs', 'lib/niche-media.mjs',
   // niche-links uses the public document allowlist; include exact transitive
   // modules so a standalone SDK never depends on a sibling checkout at runtime.

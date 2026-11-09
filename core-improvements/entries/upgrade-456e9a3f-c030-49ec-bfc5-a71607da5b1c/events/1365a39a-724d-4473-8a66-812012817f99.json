@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Final cleanly completed framework rebuild after the actual IAB reduced-motion fix; supersedes the earlier stale emitted CSS only. Source PUBLICe8395f42, no release/deployment.",
+  "checks": [
+    {
+      "command": "canonical git-freshness --phase continue -- node scripts/run-framework.mjs build; node scripts/check-rsc-assets.mjs; emitted asset inspection",
+      "result": "PASS",
+      "evidence": "hero-hover-build-final.log: all5framework stages completed,2RSCmanifests/0missing. Final emitted o3tech focus/hover state present, source/UI byte comparison and exact23route/native browser results in sites/o3tech/HERO-RESTORATION.md."
+    }
+  ],
+  "eventId": "1365a39a-724d-4473-8a66-812012817f99",
+  "sequence": 3,
+  "at": "2026-10-30T14:36:04.713Z"
+}

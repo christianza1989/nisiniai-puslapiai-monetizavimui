@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "PUBLIC code8f03b7f9, finalHEAD39410fa5(doc-only newline). All23paired routes/92screens plus108initial responsive states; targeted72state correction and emitted-CSS7width proof. Actual200%Chrome720/DPR2 verified per navigation; source mobile hero/inquiry hiding remains a content-preservation limitation, not WCAGPASS. Physicaltouch/Safari unverified. Decoder/DOM proves full viewer800×800 and native small photos; fullscreen foreground enter/exit, Escape/focus checked. No content approval/publication/live hosting or mail. Initial screenshot/zoom-navigation-reset/CDP attempts retained. Initial public staged-safety invocation used wrong script path; subsequent exact committed blobs were copied/hash-verified into an isolated audit index and scannedPASS, finaldoc staged separatelyPASS. No source checker weakened.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "303/303, private/re-audit-20261029/public-tests-final.log"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "types-final.log exit0"
+    },
+    {
+      "command": "node scripts/run-framework.mjs build; node scripts/check-rsc-assets.mjs",
+      "result": "PASS",
+      "evidence": "build-accepted.log complete build/2manifests/0missing. delivery-inspection.json all9checksTRUE; UI exactSHA; compiled CSS actual browser7widths."
+    },
+    {
+      "command": "node sites/o3tech/migration/check-preview.mjs",
+      "result": "PASS",
+      "evidence": "23routes392blocks44URLs108WebPvariants; native durable local form/noemail, projection0; preview-final.log"
+    },
+    {
+      "command": "Playwright paired source/state/layout + actual Chrome zoom and capture",
+      "result": "PASS",
+      "evidence": "paired-browser-metrics.json,responsive-matrix.json,final-responsive-controls.json,verified-200-percent.json,final-visual-confirmation.json,gallery-final-chrome.png. Narrow state assertions only; explicit a11y/hardware limits in RE-AUDIT.md."
+    },
+    {
+      "command": "canonical repository-safety over exact committed-blob snapshot and final staged doc",
+      "result": "PASS",
+      "evidence": "public-committed-safety.json6files/90173bytes/0findings; source blob IDs verified in delivery-inspection.json; public-doc-staged-safety.jsonPASS"
+    }
+  ],
+  "eventId": "2bd29eac-44a3-479b-88b5-bba9d6a8fea5",
+  "sequence": 2,
+  "at": "2026-10-29T21:03:10.911Z"
+}

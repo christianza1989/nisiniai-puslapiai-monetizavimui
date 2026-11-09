@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Initial one-site runtime500 and four full-registry fixture failures under a deliberately isolated registry remain in private logs. Matching scoped settings fixes runtime; restoring normal source registry yields306/306 without weaker assertions. Uploaded native Worker and bindings are real, but actual-domain DNS/certificate and hosted delivery acceptance are pending.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "306tests pass including exact canonical pause equivalence for isolated/full builds, unknown-pause fail-closed behavior and unchanged default registry."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit; O3TECH_DEPLOYMENT=production NICHE_BUILD_SITE_ID=o3tech node scripts/run-framework.mjs build; node scripts/check-rsc-assets.mjs",
+      "result": "PASS",
+      "evidence": "TypeScript clean; all framework stages complete; two manifests and zero missing assets. Actual code upload gzip1157.08KiB, startup35ms."
+    },
+    {
+      "command": "SEO_SMOKE_SITE_ID=o3tech SEO_SMOKE_BASE_URL=http://127.0.0.1:4786 npm run test:seo-smoke; private/launch-20261030/check-native-form.mjs",
+      "result": "PASS",
+      "evidence": "Compiled workerd serves23 public pages and passes canonical, schemas, robots/sitemap/LLM, host/media isolation and404.10local HTTP form/asset/WWW checks pass with SMTP disabled; no new real email or hosted inbox receipt claimed."
+    }
+  ],
+  "eventId": "73ee205f-98dd-4885-8c7d-cee177021466",
+  "sequence": 2,
+  "at": "2026-10-30T20:35:24.781Z"
+}

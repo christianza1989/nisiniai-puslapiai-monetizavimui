@@ -1,0 +1,275 @@
+{
+  "version": 2,
+  "domain": "o3tech.lt",
+  "checkedAt": "2026-10-29T16:23:58.610Z",
+  "terms": [
+    "ozonator",
+    "ozon",
+    "nuoma"
+  ],
+  "coverage": "records-found",
+  "inventoryComplete": false,
+  "omittedRows": 0,
+  "queries": [
+    {
+      "mode": "inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 2,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "ok": false,
+      "observedRows": 0,
+      "omitted": 0,
+      "truncated": false,
+      "error": "archive_timeout"
+    },
+    {
+      "mode": "years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "ok": true,
+      "observedRows": 3,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "ok": true,
+      "observedRows": 1,
+      "omitted": 0,
+      "truncated": false
+    }
+  ],
+  "inventory": [
+    {
+      "original": "https://o3tech.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20220108134406",
+      "capturedAt": "2022-01-08T13:44:06.000Z",
+      "status": 200,
+      "digest": "2NPOANUCTZS25RRJ6LYVM3KWSG3YAOVG",
+      "replayUrl": "https://web.archive.org/web/20220108134406/https://o3tech.lt/"
+    },
+    {
+      "original": "https://o3tech.lt/krepselis/",
+      "path": "/krepselis/",
+      "kind": "unknown-intent",
+      "topicHint": false,
+      "timestamp": "20250128230732",
+      "capturedAt": "2025-01-28T23:07:32.000Z",
+      "status": 200,
+      "digest": "NM32PHFXYHP7GSZE52B35PNBCESZLZBQ",
+      "replayUrl": "https://web.archive.org/web/20250128230732/https://o3tech.lt/krepselis/"
+    }
+  ],
+  "roots": [
+    {
+      "original": "https://o3tech.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20220108134406",
+      "capturedAt": "2022-01-08T13:44:06.000Z",
+      "status": 200,
+      "digest": "2NPOANUCTZS25RRJ6LYVM3KWSG3YAOVG",
+      "replayUrl": "https://web.archive.org/web/20220108134406/https://o3tech.lt/"
+    },
+    {
+      "original": "https://o3tech.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20240321091640",
+      "capturedAt": "2024-03-21T09:16:40.000Z",
+      "status": 200,
+      "digest": "5QDOWAEEWWURZDWP7AYOBA73G363FJL2",
+      "replayUrl": "https://web.archive.org/web/20240321091640/https://o3tech.lt/"
+    },
+    {
+      "original": "https://o3tech.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20250128230717",
+      "capturedAt": "2025-01-28T23:07:17.000Z",
+      "status": 200,
+      "digest": "YAYEALJBE6D5ZX2SVBJVB7VKGW73XQLT",
+      "replayUrl": "https://web.archive.org/web/20250128230717/https://o3tech.lt/"
+    },
+    {
+      "original": "https://o3tech.lt/",
+      "path": "/",
+      "kind": "homepage",
+      "topicHint": false,
+      "timestamp": "20250316040621",
+      "capturedAt": "2025-03-16T04:06:21.000Z",
+      "status": 200,
+      "digest": "NRA6IFZ5S5EMHVPTOQOBC3C2JHDGH67K",
+      "replayUrl": "https://web.archive.org/web/20250316040621/https://o3tech.lt/"
+    }
+  ],
+  "snapshots": [
+    {
+      "original": "https://o3tech.lt/",
+      "timestamp": "20250316040621",
+      "replayUrl": "https://web.archive.org/web/20250316040621/https://o3tech.lt/",
+      "ok": true,
+      "title": "Ozonatoriai | Kvapų naikinimo įranga | o3tech.lt -",
+      "headings": [
+        "OZONATORIAI - KAIP JIE VEIKIA?",
+        "MŪSŲ PRODUKTAI",
+        "OZONATORIAUS NUOMA",
+        "OZONO TEIKIAMA NAUDA"
+      ],
+      "signals": [
+        "commerce-interface"
+      ],
+      "contentReadable": true,
+      "approximateWordCount": 283,
+      "htmlSha256": "9b70871a855c1fdc4f8d280e87088c23e7980fd16e82f32bcc15f8d1a7dc1d16",
+      "resolvedUrl": "https://web.archive.org/web/20250316040621id_/https://o3tech.lt/"
+    },
+    {
+      "original": "https://o3tech.lt/",
+      "timestamp": "20220108134406",
+      "replayUrl": "https://web.archive.org/web/20220108134406/https://o3tech.lt/",
+      "ok": true,
+      "title": "Ozonatoriai | Kvapų naikinimo įranga | o3tech.lt -",
+      "headings": [
+        "OZONATORIAI - KAIP JIE VEIKIA?",
+        "MŪSŲ PRODUKTAI",
+        "OZONATORIAUS NUOMA",
+        "OZONO TEIKIAMA NAUDA"
+      ],
+      "signals": [
+        "commerce-interface"
+      ],
+      "contentReadable": true,
+      "approximateWordCount": 287,
+      "htmlSha256": "0c2be223fdbd2432966207298af735d355cf254b8e2dcf077200eed7f406de67",
+      "resolvedUrl": "https://web.archive.org/web/20220108134406id_/https://o3tech.lt/"
+    },
+    {
+      "original": "https://o3tech.lt/krepselis/",
+      "timestamp": "20250128230732",
+      "replayUrl": "https://web.archive.org/web/20250128230732/https://o3tech.lt/krepselis/",
+      "ok": true,
+      "title": "Krepšelis -",
+      "headings": [
+        "KATEGORIJA",
+        "INFORMACIJA",
+        "KONTAKTAI"
+      ],
+      "signals": [
+        "commerce-interface"
+      ],
+      "contentReadable": true,
+      "approximateWordCount": 87,
+      "htmlSha256": "53cde6be6274bd2434f7bd87be47fe0c4b78291974ef4a624dd8eb0fc7e4ce86",
+      "resolvedUrl": "https://web.archive.org/web/20250128230732id_/https://o3tech.lt/krepselis/"
+    },
+    {
+      "original": "https://o3tech.lt/",
+      "timestamp": "20250128230717",
+      "replayUrl": "https://web.archive.org/web/20250128230717/https://o3tech.lt/",
+      "ok": true,
+      "title": "Ozonatoriai | Kvapų naikinimo įranga | o3tech.lt -",
+      "headings": [
+        "OZONATORIAI - KAIP JIE VEIKIA?",
+        "MŪSŲ PRODUKTAI",
+        "OZONATORIAUS NUOMA",
+        "OZONO TEIKIAMA NAUDA"
+      ],
+      "signals": [
+        "commerce-interface"
+      ],
+      "contentReadable": true,
+      "approximateWordCount": 283,
+      "htmlSha256": "11a4eabf991a3de45de976e696d7e48a7d37406a5d9b4dc24b103fe4da50d616",
+      "resolvedUrl": "https://web.archive.org/web/20250128230717id_/https://o3tech.lt/"
+    }
+  ],
+  "requests": [
+    {
+      "operation": "cdx-inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-29T16:23:58.622Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-29T16:23:59.892Z",
+      "status": null,
+      "error": "archive_timeout"
+    },
+    {
+      "operation": "cdx-years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "checkedAt": "2026-10-29T16:24:08.913Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65"
+    },
+    {
+      "operation": "cdx-latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "checkedAt": "2026-10-29T16:24:09.888Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=o3tech.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20250316040621id_/https://o3tech.lt/",
+      "checkedAt": "2026-10-29T16:24:10.811Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20250316040621id_/https://o3tech.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20220108134406id_/https://o3tech.lt/",
+      "checkedAt": "2026-10-29T16:24:11.828Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20220108134406id_/https://o3tech.lt/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20250128230732id_/https://o3tech.lt/krepselis/",
+      "checkedAt": "2026-10-29T16:24:14.343Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20250128230732id_/https://o3tech.lt/krepselis/"
+    },
+    {
+      "operation": "replay-html",
+      "url": "https://web.archive.org/web/20250128230717id_/https://o3tech.lt/",
+      "checkedAt": "2026-10-29T16:24:15.877Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/web/20250128230717id_/https://o3tech.lt/"
+    }
+  ],
+  "assessmentStatus": "agent-review-required",
+  "seoSignals": {
+    "currentBacklinks": null,
+    "organicTraffic": null,
+    "googleManualActions": null,
+    "contentReuseRights": "unconfirmed"
+  },
+  "publicChangesApplied": false,
+  "siteId": "o3tech",
+  "maxUrls": 300,
+  "maxSnapshots": 4
+}

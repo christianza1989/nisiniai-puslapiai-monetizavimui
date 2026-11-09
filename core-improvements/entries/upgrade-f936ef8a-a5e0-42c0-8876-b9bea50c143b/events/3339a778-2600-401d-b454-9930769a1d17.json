@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Public site renderer and publication/metadata/tenant regressions verified. No approved o3tech package or live deployment created. Prior missing alias in actual-layout test fixture repaired using the actual brand helper.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "299/299; private/public-tests-accepted.log. Includes future/unapproved catalogue body/link visibility, unchanged raw bytes, foreign tenant and actual Memocasting SSR metadata."
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS",
+      "evidence": "private/types-final.log; exit0 before canonical framework build."
+    },
+    {
+      "command": "node core/sites/o3tech/migration/check-preview.mjs",
+      "result": "PASS",
+      "evidence": "23actual local noindex routes, source text/native form/media checks in private/preview-checks.json."
+    }
+  ],
+  "eventId": "3339a778-2600-401d-b454-9930769a1d17",
+  "sequence": 2,
+  "at": "2026-10-29T17:08:17.058Z"
+}

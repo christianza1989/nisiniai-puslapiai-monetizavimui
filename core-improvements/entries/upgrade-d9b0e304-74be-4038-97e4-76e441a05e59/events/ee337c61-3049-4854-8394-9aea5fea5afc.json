@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Owner-authorized six-index structural admission verified locally. Existing thresholds, review/fact/approval and legacy exact-ID semantics preserved. Real o3tech remains23unapproveddrafts; no release/deployment claimed.",
+  "checks": [
+    {
+      "command": "npm --prefix content-studio test",
+      "result": "PASS",
+      "evidence": "75/75; private/studio-tests-accepted.log. Includes actual synthetic atomic approval/export and public package validation; original regression failures retained separately."
+    },
+    {
+      "command": "node core/sites/o3tech/migration/check-preview.mjs",
+      "result": "PASS",
+      "evidence": "23routes,392bodyblocks/listitems,43internalURLs,108WebPvariants; native local form/noemail; public projection0."
+    }
+  ],
+  "eventId": "ee337c61-3049-4854-8394-9aea5fea5afc",
+  "sequence": 2,
+  "at": "2026-10-29T17:07:49.310Z"
+}

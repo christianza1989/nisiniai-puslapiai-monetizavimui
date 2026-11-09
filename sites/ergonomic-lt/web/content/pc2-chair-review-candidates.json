@@ -275,11 +275,26 @@
     },
     {
       "code": "K2ME004WW004",
-      "name": "2ME",
-      "asset": "/models/configurator/chairs/K2ME004WW004-150f1c36acc04cae2b34/review-32060441c971b1c88542.json",
-      "sha256": "32060441c971b1c885429bd918a073f49a749c333bbcd74f385425e65365c1d7",
-      "bytes": 252689,
-      "version": "colors-20261030-v4-calibrated-2me681"
+      "name": "2ME suoliukas",
+      "asset": "/models/configurator/chairs/K2ME004WW004-0684c0bc75d9ecfd43d2/review-16c0739a84ddaebf98a7.json",
+      "sha256": "16c0739a84ddaebf98a7031d159044fb5925d0e03d9e4ccfa3b661e1c743bfd3",
+      "bytes": 955401,
+      "version": "colors-20261108-v1-qualified-own-gb1006700",
+      "defaultVersionLabel": "GB · 537 apmušalų spalvos",
+      "reviewVersions": [
+        {
+          "id": "previous-2me681",
+          "label": "Ankstesnė surinkta versija · atskiras runtime",
+          "entry": {
+            "code": "K2ME004WW004",
+            "name": "2ME",
+            "asset": "/models/configurator/chairs/K2ME004WW004-150f1c36acc04cae2b34/review-32060441c971b1c88542.json",
+            "sha256": "32060441c971b1c885429bd918a073f49a749c333bbcd74f385425e65365c1d7",
+            "bytes": 252689,
+            "version": "colors-20261030-v4-calibrated-2me681"
+          }
+        }
+      ]
     },
     {
       "code": "K4ME001WW003",

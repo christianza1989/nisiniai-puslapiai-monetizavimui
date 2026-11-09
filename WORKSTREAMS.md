@@ -967,3 +967,6 @@ Branch codex/airi-green-fixed-20261109. Scope: web/scripts/admit-airi-green-fixe
 
 ## 2026-11-09 Airi WW004 blue fixed OWN finish (PC2 315)
 Branch codex/airi-blue-fixed-20261109. Scope: web/scripts/admit-airi-blue-fixed.ts and KAII001WW004 registry only. Exact runtime13dd50ef and original5c4b825f GLB; fixed JM55/JM/BLUE; no colour menu. Hidden editable CMESHGROUP remains unchanged. Other60 entries exact, previous source separate. No frontend/renderer changes; preview only; new artifacts D:/Core/output/ergonomic-airi-blue-fixed-20261109.
+
+## 2026-11-09 2ME bench GB upholstery
+Branch codex/2me-bench-gb-20261109. Only K2ME004WW004 OWN runtime eb008084 and 537 GB upholstery tuples. Frame and plastics fixed. GBF outside scope. Previous source separate. Preview only. Results D:/Core/output/ergonomic-2me-bench-gb-20261109.

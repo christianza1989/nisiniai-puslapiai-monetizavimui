@@ -970,3 +970,6 @@ Branch codex/airi-blue-fixed-20261109. Scope: web/scripts/admit-airi-blue-fixed.
 
 ## 2026-11-09 2ME bench GB upholstery
 Branch codex/2me-bench-gb-20261109. Only K2ME004WW004 OWN runtime eb008084 and 537 GB upholstery tuples. Frame and plastics fixed. GBF outside scope. Previous source separate. Preview only. Results D:/Core/output/ergonomic-2me-bench-gb-20261109.
+
+## 2026-11-09 Arn built-in armrests GD
+Branch codex/arn-armrests-gd-20261109. KARN008WW003 exact OWN runtime bed4d863 and GD, BUILTINPLASTCLOSED. Six linked body colours and nine frame tuples. Previous source separate. Preview only. Results D:/Core/output/ergonomic-arn-armrests-gd-20261109.

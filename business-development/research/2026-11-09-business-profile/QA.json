@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-09T07:01:29.424Z",
+  "status": "PASS_documentary_validation",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "freshnessContinueAt": "2026-11-09T06:58:32.638Z",
+  "freshnessHandoffAt": "2026-11-09T07:00:47.709Z",
+  "checks": {
+    "localReferences": 2,
+    "officialPagesRead": 2,
+    "manualHypotheticalCases": 3,
+    "operationalTests": 0,
+    "sharedDefectDemonstrated": false,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "newApprovals": 0,
+    "newProposals": 0,
+    "languageReview": "Complete private prose self-edited; eligibility, representation and limited document-review scope retained"
+  },
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "rootOlderTurnsNotReread": true,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApprovalFound": false
+  },
+  "scope": {
+    "paidCalls": 0,
+    "messagesSent": 0,
+    "profilesCreated": 0,
+    "permissionsChanged": 0,
+    "accountsAccessed": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  },
+  "limits": [
+    "No actual business profile/account or platform decision inspected",
+    "Limited acquisition-plan review, not whole-network audit",
+    "No owner business facts, customer demand or economics verified"
+  ]
+}

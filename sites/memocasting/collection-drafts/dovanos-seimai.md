@@ -26,7 +26,7 @@ Pradėkite nuo datos, kuri tinka visiems tikriesiems dalyviams. Vieniems lengvia
 
 Prieš atidarydami medžiagas paskirstykite užduotis. Vienas žmogus gali perskaityti visą instrukciją, kitas – pasirūpinti vandens matavimo indu ir laikmačiu, trečias – uždengti darbo paviršių. Susidėkite pasirinkto rinkinio instrukcijoje nurodytas papildomas priemones ir nuspręskite, kur forma galės ramiai stovėti. Tokie paprasti susitarimai padeda veiklą atlikti be bereikalingo blaškymosi.
 
-Išbandykite rankų padėtį tuščiame inde. Visi dalyviai turi jaustis patogiai; neskubėkite rinktis pozos vien todėl, kad ji gražiai atrodo pavyzdyje. Kilus abejonių dėl konkretaus sumanymo prieš atidarant rinkinį susisiekite su mumis. Jei veikloje dalyvauja vaikas, jį turi prižiūrėti suaugęs žmogus. Vertinkite paties vaiko norą ir gebėjimą ramiai dalyvauti, nežadėdami iš anksto nepatvirtintų amžiaus ar talpos ribų.
+Išbandykite rankų padėtį tuščiame inde. Visi dalyviai turi jaustis patogiai; neskubėkite rinktis pozos vien todėl, kad ji gražiai atrodo pavyzdyje. Kilus abejonių dėl konkretaus sumanymo prieš atidarant rinkinį susisiekite su mumis. Jei veikloje dalyvauja vaikas, jį turi prižiūrėti suaugęs žmogus. Įvertinkite vaiko norą ir galimybę patogiai dalyvauti, o dėl rinkinio tinkamumo jam pasitikslinkite prieš pirkdami.
 
 ## Dovana tėvams ar kelioms kartoms
 

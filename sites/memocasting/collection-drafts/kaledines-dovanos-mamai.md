@@ -18,7 +18,7 @@ Poros rinkinyje yra vienas alginato pakelis, 1 200 g gipso ir balti dažai. Jį 
 
 Produktų kortelėse pateikiamos tuo metu galiojančios kainos, o pasirinkto produkto puslapyje – komplektacija ir galimi pasirinkimai. Iliustracijos padeda įsivaizduoti skulptūrą, tačiau rezultatas priklausys nuo dalyvių rankų ir pasirinktos pozos. Rinkinių pavadinimai savaime negarantuoja, kad tilps bet kuris žmonių skaičius ar rankų išdėstymas.
 
-Jei svarstote kelių šeimos narių kompoziciją, prieš pirkdami apgalvokite jų rankų dydį ir patogią padėtį. Kilus abejonių susisiekite su mumis ir aprašykite savo idėją. Jei dalyvauja vaikas, veiklą turi prižiūrėti suaugęs žmogus. Nenurodome nepatvirtintos konkretaus vaikų amžiaus ribos ir neprašome laikyti nepatogios pozos per jėgą.
+Jei svarstote kelių šeimos narių kompoziciją, prieš pirkdami apgalvokite jų rankų dydį ir patogią padėtį. Kilus abejonių susisiekite su mumis ir aprašykite savo idėją. Jei dalyvauja vaikas, veiklą turi prižiūrėti suaugęs žmogus. Dėl konkretaus rinkinio tinkamumo vaikui pasitikslinkite prieš pirkdami; pasirinkta rankų poza turi būti patogi.
 
 ## Kaip planuoti iki Kalėdų: skaičiuokite atgal
 

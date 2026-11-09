@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Content Studio silently truncated oversized internal-link arrays to 30, hiding collection links; reject the entire oversized edit before writing.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/380",
+    "Observed 34 submitted links yielding 30 in isolated memocasting bulk-draft studio on 2026-11-09."
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/380",
+  "rollback": "Revert this scoped change after preserving affected drafts and the original 30-link workflow guard.",
+  "id": "upgrade-e7291972-7515-4a20-b506-bf170a14c929",
+  "branch": "codex/memocasting-keyword-collections-20261109",
+  "baseSha": "77a141e52e479cf6d2abb95c3b01ef2be73146c1",
+  "createdAt": "2026-11-09T11:21:34.017Z"
+}

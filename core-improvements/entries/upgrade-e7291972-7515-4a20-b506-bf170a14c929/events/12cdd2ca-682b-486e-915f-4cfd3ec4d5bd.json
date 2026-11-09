@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Reproduced the pre-fix silent 34-to-30 truncation in isolated drafts. The 31-link edit now fails before a site write, and 30 links are preserved. The corrected collection hub uses at most 30 links; existing failed evidence is retained in issue 380.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/core.test.mjs",
+      "result": "PASS",
+      "evidence": "5 tests; 30/31 boundary and atomicity included, with STUDIO_NETWORK_SETTINGS and STUDIO_PUBLIC_CORE_DIR set to the owned companion."
+    },
+    {
+      "command": "node --test content-studio/test/content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "7 tests including revision, source, link and publication gates; owned companion configuration."
+    },
+    {
+      "command": "node sites/memocasting/KEYWORD_COLLECTION_DRAFT_AUDIT_2026_11_09.mjs",
+      "result": "PASS",
+      "evidence": "All 20 draft collections above 1000 words; guide and product contextual links; original publishAt values preserved. This is not an editorial review or hosted acceptance."
+    }
+  ],
+  "eventId": "12cdd2ca-682b-486e-915f-4cfd3ec4d5bd",
+  "sequence": 2,
+  "at": "2026-11-09T11:21:53.823Z"
+}

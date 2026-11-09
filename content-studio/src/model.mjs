@@ -416,6 +416,7 @@ export async function editPage(siteId, pageId, input) {
     const site = await getSite(siteId);
     const page = site.pages.find(item => item.id === pageId);
     if (!page) throw Object.assign(new Error('Puslapis nerastas.'), { status: 404 });
+    if (Array.isArray(input.links) && input.links.length > 30) throw new Error('Puslapyje gali būti iki 30 prasmingų vidinių nuorodų; jos netrumpinamos tyliai.');
     const v2=site.schemaVersion===2;
     const type = input.type && (v2?V2_PAGE_TYPES:PAGE_TYPES).has(input.type) ? input.type : page.type;
     const slug = 'slug' in input || type !== page.type ? normalizeSlug(input.slug ?? page.slug, type) : page.slug;

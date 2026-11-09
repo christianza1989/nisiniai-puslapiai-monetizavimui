@@ -15,6 +15,18 @@ const { createServer } = await import('../src/server.mjs');
 await model.initialize();
 const longText = 'Tai bandomasis informacinis puslapis. Jis aiškiai aprašo pasirenkamos paslaugos eigą, klausimus klientui ir sąlygas, kurias būtina patikrinti prieš siunčiant užklausą.';
 
+test('too many links fail without silently dropping links or changing the draft', async () => {
+  const site = await model.createSite({ canonicalHost: 'link-limit-fixture.lt', name: 'Link fixture', offer: 'Test' });
+  const page = await model.addPage(site.id, { type: 'home', slug: '', title: 'Original title', description: 'Fixture', intent: 'Fixture' });
+  const links = Array.from({length:31}, (_, i) => ({targetPageId:`fixture-${i}`,label:`Link ${i}`}));
+  await assert.rejects(() => model.editPage(site.id, page.id, {title:'Must not be saved',links}), /iki 30.*netrumpinamos/);
+  const persisted=(await model.getSite(site.id)).pages.find(p=>p.id===page.id);
+  assert.equal(persisted.title,'Original title');
+  assert.deepEqual(persisted.links,[]);
+  await model.editPage(site.id, page.id, {links:links.slice(0,30)});
+  assert.equal((await model.getSite(site.id)).pages.find(p=>p.id===page.id).links.length,30);
+});
+
 test('approved revision survives draft edits, time gate and export stay isolated', async () => {
   const site = await model.createSite({ canonicalHost: 'bandymas.lt', name: 'Bandymas', offer: 'Paslaugų užklausos' });
   const second = await model.createSite({ canonicalHost: 'kitas-bandymas.lt', name: 'Kitas', offer: 'Kita paslauga' });

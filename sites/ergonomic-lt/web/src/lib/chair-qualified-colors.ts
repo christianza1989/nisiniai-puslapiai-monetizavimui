@@ -5,7 +5,7 @@ export type QualifiedBinding={assetSha256:string;selectorId:string;baseMaterialI
 export type QualifiedTarget={assetSha256:string;selectorId:string};
 export type QualifiedPatch={bindings:QualifiedBinding[];remove:QualifiedTarget[];assets:Asset[]};
 export type QualifiedOption={id:string;label:string;values:Record<string,string>;patch:QualifiedPatch};
-export type QualifiedGroup={id:string;label:string;options:QualifiedOption[];base:string;separateControl?:true};
+export type QualifiedGroup={id:string;label:string;options:QualifiedOption[];base:string;separateControl?:true;dependsOn?:{groupId:string;allowedOptionIds:Record<string,string[]>}};
 export type QualifiedBranch={id:string;label:string;values:Record<string,string>;patch:QualifiedPatch;groups:QualifiedGroup[]};
 export type QualifiedWitness={id:string;label:string;context:number;construction:Record<string,string>;variants:number[];requiredAssets:string[];groups:QualifiedGroup[];singles:QualifiedOption[];branches:QualifiedBranch[];baseBranch?:string;fixed?:Record<string,string>;inference?:boolean;structural?:Record<string,{value:string;supportedValues:string[]}>};
 export type ChairQualifiedData={schema:'chair-qualified-review-v1';code:string;runtimeSha256:string;version:string;witnesses:QualifiedWitness[];legacyScopes:{context:number;requiredAssets:string[];construction:Record<string,string>}[];materials:Record<string,unknown>;extraAssets:Record<string,Asset>;opaqueAssets:string[]};
@@ -23,6 +23,35 @@ export function qualifiedWitnessMatches(data:ChairPreview,w:Pick<QualifiedWitnes
  const actual=actualConstruction(data,context,variants);return !!actual&&Object.entries(actual).every(([k,v])=>w.construction[k]===v)&&Object.entries(w.structural||{}).every(([field,s])=>actual[field]===s.value&&s.supportedValues.includes(s.value));
 }
 export function currentQualifiedWitness(data:ChairPreview,context:number,variants:number[],active:string[]){return data.qualified?.witnesses.find(w=>qualifiedWitnessMatches(data,w,context,variants,active));}
+function selectedGroups(w:QualifiedWitness,branchId:string|undefined){
+ const branch=w.branches.find(b=>b.id===branchId);
+ return [...w.groups,...branch?.groups||[]];
+}
+export function qualifiedGroupOptions(w:QualifiedWitness,selection:QualifiedSelection,group:QualifiedGroup){
+ const rule=group.dependsOn;
+ if(!rule)return group.options;
+ const parent=selectedGroups(w,selection.branch).find(candidate=>candidate.id===rule.groupId);
+ if(!parent||parent===group||parent.dependsOn)return [];
+ const selectedId=selection.groups[parent.id]??parent.base;
+ if(!parent.options.some(option=>option.id===selectedId)||!Object.hasOwn(rule.allowedOptionIds,selectedId))return [];
+ const permitted=rule.allowedOptionIds[selectedId];
+ if(!Array.isArray(permitted))return [];
+ const ids=new Set(permitted);
+ return group.options.filter(option=>ids.has(option.id));
+}
+export function qualifiedSetGroupOption(w:QualifiedWitness,selection:QualifiedSelection,group:QualifiedGroup,value:string){
+ if(!qualifiedGroupOptions(w,selection,group).some(option=>option.id===value))return selection;
+ const next={...selection,groups:{...selection.groups,[group.id]:value}};
+ for(const dependent of selectedGroups(w,next.branch)){
+  if(dependent.dependsOn?.groupId!==group.id)continue;
+  const options=qualifiedGroupOptions(w,next,dependent);
+  if(options.some(option=>option.id===(next.groups[dependent.id]??dependent.base)))continue;
+  const replacement=options.find(option=>option.id===dependent.base)||options[0];
+  if(!replacement)return selection;
+  next.groups[dependent.id]=replacement.id;
+ }
+ return next;
+}
 export function qualifiedDefaultSelection(w:QualifiedWitness):QualifiedSelection{
  const branch=w.branches.find(b=>b.id===w.baseBranch)||w.branches[0];
  return {witness:w.id,kind:w.groups.length||w.branches.length?'groups':'single',single:w.singles[0]?.id,branch:branch?.id,groups:Object.fromEntries([...w.groups,...branch?.groups||[]].map(g=>[g.id,g.base]))};
@@ -36,7 +65,7 @@ export function qualifiedChairPlan(data:ChairPreview,context:number,variants:num
  else{
   const branch=w.branches.find(b=>b.id===selection.branch);if(w.branches.length&&!branch)return empty('unavailable');
   if(branch)patches.push(branch.patch);
-  for(const group of [...w.groups,...branch?.groups||[]]){const option=group.options.find(o=>o.id===(selection.groups[group.id]??group.base));if(!option)return empty('unavailable');patches.push(option.patch);}
+  for(const group of [...w.groups,...branch?.groups||[]]){const option=qualifiedGroupOptions(w,selection,group).find(o=>o.id===(selection.groups[group.id]??group.base));if(!option)return empty('unavailable');patches.push(option.patch);}
  }
  const assets:Asset[]=[],hidden:QualifiedTarget[]=[],assignments:QualifiedBinding[]=[],owners=new Set<string>();
  for(const patch of patches){

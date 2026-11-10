@@ -2,7 +2,7 @@
 import {useEffect,useMemo,useState} from 'react';
 import dynamic from 'next/dynamic';
 import {chairObservedChoices,chairPreviewAssembly,chairInitialContext,chairInitialVariants,chairInitialQualifiedSelection,type ChairPreview} from '@/lib/chair-preview';
-import {qualifiedWitnessMatches,qualifiedDefaultSelection,qualifiedChairPlan,type QualifiedSelection,type QualifiedGroup} from '@/lib/chair-qualified-colors';
+import {qualifiedWitnessMatches,qualifiedDefaultSelection,qualifiedChairPlan,qualifiedGroupOptions,qualifiedSetGroupOption,type QualifiedSelection,type QualifiedGroup} from '@/lib/chair-qualified-colors';
 import {qualifiedChairMaterialControls} from '@/lib/chair-material-groups';
 import type {PilotVariant} from '@/lib/configurator';
 import {chairReviewVersion,chairReviewRoute,chairConstructionMenus,chairCompatibleFinishRoute,validateChairConstructionBinding,type ChairReviewEntry} from '@/lib/chair-review-routing';
@@ -43,7 +43,15 @@ function ModelReview({data,initialSingle,finishIntent,onFinishIntent,externalArm
  function construction(nextContext:number,nextVariants:number[]){
   const held=resolveChairFinishIntent(data,finishIntent,nextContext,nextVariants),q=held||(finishIntent?undefined:chairInitialQualifiedSelection(data,nextContext,nextVariants));setFunctionalIndex(0);setContext(nextContext);setVariants(nextVariants);setQualified(q);setObserved(held?'__qs:'+held.witness+':'+held.single:finishIntent?'__pending':q?'__qg:'+q.witness:'original');setOriginalPreview(false);
  }
- function groupControl(group:QualifiedGroup){return <label className="field" key={group.id}>{group.label}<select aria-label={group.label} value={qualified?.groups[group.id]??group.base} onChange={e=>{setOriginalPreview(false);setQualified(q=>q?{...q,groups:{...q.groups,[group.id]:e.target.value}}:q);}}>{group.options.map(o=><option key={o.id} value={o.id}>{o.label}</option>)}</select></label>;}
+ function groupControl(group:QualifiedGroup){
+  if(!selectedWitness||!qualified)return null;
+  const options=qualifiedGroupOptions(selectedWitness,qualified,group);
+  return <label className="field" key={group.id}>{group.label}<select aria-label={group.label} value={qualified.groups[group.id]??group.base}
+   disabled={!options.length} onChange={e=>{const value=e.target.value;setOriginalPreview(false);
+    setQualified(q=>q?qualifiedSetGroupOption(selectedWitness,q,group,value):q);}}>
+   {options.map(o=><option key={o.id} value={o.id}>{o.label}</option>)}
+  </select></label>;
+ }
  return <div className="pc2-chair-workspace" data-chair-code={data.code} data-chair-runtime-sha={data.runtimeSha256} data-chair-base-asset-sha={assembly.base?.assetSha256} data-chair-plan={status}>
   <div className="pc2-chair-controls">
    <h2>{data.name} · {data.code}</h2>
@@ -66,7 +74,7 @@ function ModelReview({data,initialSingle,finishIntent,onFinishIntent,externalArm
    {(choices.length>1||witnesses.some(w=>w.groups.length||w.branches.length||w.singles.length))&&<label className="consent"><input type="checkbox" checked={originalPreview} onChange={e=>setOriginalPreview(e.target.checked)}/><span>Rodyti originalias modelio medžiagas</span></label>}
    {observed.startsWith('__q')&&selectedWitness?.inference&&<p className="form-note">Dalis atspalvių pritaikoma pagal šiam variantui patikrintą bendrą medžiagų biblioteką.</p>}
    <p className="form-note" role="status">{observed==='__pending'&&finishIntent?`Pasirinkta apdaila ${finishIntent.label} išsaugota. Šiai konstrukcijai jos spalva 3D nerodoma; rodomos originalios medžiagos.`:status==='original'?'Rodomos originalios medžiagos.':status==='observed-state'?'Taikomas šiai konstrukcijai perduotas spalvų pasirinkimas.':'Šiai konstrukcijai ši spalvinė būsena 3D nerodoma. Rodomos originalios medžiagos.'}</p>
-   <p className="form-note">{qualified?.kind==='single'?'Pasirinkta visa spalvinė būsena galioja tik šiai konstrukcijai.':'Pasirinkimai galioja tik nurodytam variantui. Jungiamos tik patikrintos, tarpusavyje nepriklausomos spalvų grupės.'}</p>
+   <p className="form-note">{qualified?.kind==='single'?'Pasirinkta visa spalvinė būsena galioja tik šiai konstrukcijai.':selectedWitness?.branches.find(branch=>branch.id===qualified?.branch)?.groups.some(group=>group.dependsOn)?'Atlošo spalvų sąrašas priklauso nuo pasirinktos galvos atramos spalvos.':'Pasirinkimai galioja tik nurodytam variantui. Jungiamos tik patikrintos, tarpusavyje nepriklausomos spalvų grupės.'}</p>
    {witnesses.some(w=>w.fixed)&&<details><summary>Fiksuotos šio varianto spalvos</summary><p>{witnesses.some(w=>w.groups.length||w.branches.length||w.singles.length)?'Šios fiksuotos savybės nėra atskiri spalvų pasirinkimai.':'Kitų spalvų pasirinkimas šiam variantui nedeklaruotas.'}</p>{Object.entries(witnesses.find(w=>w.fixed)!.fixed!).map(([field,value])=><p key={field}>{field}: {value}</p>)}</details>}
    {data.palette.schema==='chair-base-observed-colours-v1'&&!witnesses.some(w=>w.fixed)&&<details><summary>Pradinės būsenos spalvų aprašas</summary><p>Dabartinės konstrukcijos originalias medžiagas rodo 3D vaizdas. Čia pateiktas pradinės perduotos būsenos aprašas.</p>{Object.entries(originalFinish).map(([field,entry])=><p key={field}>{field}: {entry.value}. {entry.knownCurrentPrefixChoices.length?`Tekstinės alternatyvos: ${entry.knownCurrentPrefixChoices.join(', ')}.`:'Alternatyvų skaičius nežinomas.'}</p>)}</details>}
    {data.unavailableFinishChoices?.filter(c=>c.context===context).map((c,i)=><p className="form-note" key={i}>{c.label}: {c.count!==undefined&&<>perduota {c.count} susietų būsenų. </>}Šiai konstrukcijai jų spalva 3D nerodoma. {c.reason}</p>)}

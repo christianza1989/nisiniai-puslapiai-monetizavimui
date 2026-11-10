@@ -52,10 +52,25 @@
     {
       "code": "KTRF001WW001",
       "name": "Trillo",
-      "asset": "/models/configurator/chairs/KTRF001WW001-visual-9ee8d12cd7439628fb8d/review-98a6adc4a7b1bf1f38de.json",
-      "sha256": "98a6adc4a7b1bf1f38de8275e89d13c6d525365adb1302b86e3947e9c09b971d",
-      "bytes": 21862,
-      "version": "visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KTRF001WW001-2aea97ee6f9fd9e4ed11/review-f48bc44ba382a8ee6cff.json",
+      "sha256": "f48bc44ba382a8ee6cffff806fbbb69db42ae8774534e8aac61c60e4168464a3",
+      "bytes": 26580,
+      "version": "colors-20261110-v1-3510-triff-finite",
+      "defaultVersionLabel": "baigtinis sėdynės apmušalų domenas · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-triff-package",
+          "label": "Ankstesnis Triff paketas",
+          "entry": {
+            "code": "KTRF001WW001",
+            "name": "Trillo",
+            "asset": "/models/configurator/chairs/KTRF001WW001-visual-9ee8d12cd7439628fb8d/review-98a6adc4a7b1bf1f38de.json",
+            "sha256": "98a6adc4a7b1bf1f38de8275e89d13c6d525365adb1302b86e3947e9c09b971d",
+            "bytes": 21862,
+            "version": "visual-own-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KSOU001WW003",

@@ -570,10 +570,25 @@
     {
       "code": "KSAI001WW002",
       "name": "Sail",
-      "asset": "/models/configurator/chairs/KSAI001WW002-additional-f192422d7f425e99648d/review-0fb9c1def3928416811d.json",
-      "sha256": "0fb9c1def3928416811d2b51b2688837317e25c1995a1e53853ad64f740d8b72",
-      "bytes": 911833,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KSAI001WW002-4c76fd0575e6fe675fcd/review-93307d755e2be5817308.json",
+      "sha256": "93307d755e2be5817308feb348fbafc7d0a9d4e8658f7f8a71b555d92502017f",
+      "bytes": 1658478,
+      "version": "colors-20261110-v1-3510-r4dsailpu-stgo1bl",
+      "defaultVersionLabel": "R4DSAILPU / STGO1BL / ESH · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-sail-package",
+          "label": "Ankstesnis Sail paketas",
+          "entry": {
+            "code": "KSAI001WW002",
+            "name": "Sail",
+            "asset": "/models/configurator/chairs/KSAI001WW002-additional-f192422d7f425e99648d/review-0fb9c1def3928416811d.json",
+            "sha256": "0fb9c1def3928416811d2b51b2688837317e25c1995a1e53853ad64f740d8b72",
+            "bytes": 911833,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KNXT002WW002",

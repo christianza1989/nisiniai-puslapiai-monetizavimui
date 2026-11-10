@@ -578,10 +578,25 @@
     {
       "code": "KNXT002WW002",
       "name": "Nexter",
-      "version": "colors-20261102-v1-qualified-context4341",
-      "asset": "/models/configurator/chairs/KNXT002WW002-05bd923e2f535e2c6867/review-defa5993b469a03226ba.json",
-      "sha256": "defa5993b469a03226ba8763b1da07fcf3edee70333b2f166f24df611305074e",
-      "bytes": 133538
+      "asset": "/models/configurator/chairs/KNXT002WW002-360f559df7da50723bb2/review-62291acca3ace279f15f.json",
+      "sha256": "62291acca3ace279f15f70024e0f0f6bdf12486e8329cad18e2e6cdf5fbd86dc",
+      "bytes": 483805,
+      "version": "colors-20261110-v1-3510-r74-ca",
+      "defaultVersionLabel": "R74 / CA · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-next-package",
+          "label": "Ankstesnis Nexter paketas",
+          "entry": {
+            "code": "KNXT002WW002",
+            "name": "Nexter",
+            "version": "colors-20261102-v1-qualified-context4341",
+            "asset": "/models/configurator/chairs/KNXT002WW002-05bd923e2f535e2c6867/review-defa5993b469a03226ba.json",
+            "sha256": "defa5993b469a03226ba8763b1da07fcf3edee70333b2f166f24df611305074e",
+            "bytes": 133538
+          }
+        }
+      ]
     },
     {
       "code": "KPOX002WW002",

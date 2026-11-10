@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "V1 studio preview omitted contextual links from prose, preventing verification against the public renderer.",
+  "category": "code",
+  "evidence": [
+    "V1 preview escapes paragraph and list text directly; public LinkedText uses contextualParts (PUBLIC ae2e70a26f660b6700942891b26ee112168d907b).",
+    "Observed in an isolated draft during Memocasting content work; 14 contextual labels appeared only in the separate preview source/navigation lists."
+  ],
+  "paths": [
+    "content-studio/src/server.mjs",
+    "SKILLS/niche-content-planner/references/studio-contract.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/261",
+  "rollback": "Revert the scoped server, test, and studio-contract change; published packages and assets are not modified.",
+  "id": "upgrade-3c6a88aa-14be-45cb-88f2-6ee7078f0405",
+  "branch": "codex/studio-preview-context-20261110",
+  "baseSha": "5f59eaf500c7073b2e80ae62e633332b8f716d2e",
+  "createdAt": "2026-11-10T14:51:44.625Z"
+}

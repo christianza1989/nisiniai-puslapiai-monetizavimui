@@ -9,6 +9,7 @@ import { listNetworkLinks } from './model.mjs';
 import { getContentWorkflow, finalizeInternalLinks, recordEditorialReview, approveReviewedBatch, releaseContent } from './model.mjs';
 const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname,'../../../dovanos-memorycasting');
 const { imageSrcSet, visibleImageCredit } = await import(pathToFileURL(path.join(publicRoot,'lib/niche-media.mjs')));
+const { contextualParts } = await import(pathToFileURL(path.join(publicRoot,'lib/niche-links.mjs')));
 
 const PORT = Number(process.env.STUDIO_PORT || 4317);
 const PUBLIC = path.join(ROOT, 'public');
@@ -45,13 +46,36 @@ function preview(site, page) {
     if(target.kind==='external'&&/^https:\/\//.test(target.url))return `<a href="${safe(target.url)}" rel="noopener noreferrer">${safe(node.text)}</a>`;
     return safe(node.text);
   }).join('');
+  // V1 prose is stored as plain text and linked by exact labels in the public
+  // renderer. Preview uses the same matcher, but internal links always lead to
+  // this local studio (including unpublished or scheduled targets).
+  const previewTargets = (page.links || []).flatMap(link => {
+    const target = site.pages.find(item => item.id === link.targetPageId);
+    return target ? [{label:link.label,href:`/preview/${encodeURIComponent(site.id)}/${encodeURIComponent(target.id)}`}] : [];
+  });
+  const previewExternalHref = url => {
+    let parsed; try { parsed = new URL(url); } catch { return ''; }
+    if (parsed.protocol !== 'https:' || parsed.username || parsed.password || parsed.port) return '';
+    if (parsed.hostname === site.canonicalHost) {
+      // Never reveal a future site's own live URL through a local preview.
+      const target = !parsed.search && !parsed.hash && site.pages.find(item => `/${item.slug}` === parsed.pathname);
+      return target ? `/preview/${encodeURIComponent(site.id)}/${encodeURIComponent(target.id)}` : '';
+    }
+    return parsed.href;
+  };
+  for (const link of page.externalLinks || []) {
+    const href = previewExternalHref(link.url);
+    if (href) previewTargets.push({label:link.label,href});
+  }
+  const linkedText = text => contextualParts(text,previewTargets).map(part => part.href
+    ? `<a href="${safe(part.href)}">${safe(part.text)}</a>` : safe(part.text)).join('');
   const blocks = page.body.map(block => {
     if(block.type==='richParagraph')return `<p>${rich(block.content)}</p>`;
     if(block.type==='richHeading')return `<h${block.level}>${rich(block.content)}</h${block.level}>`;
     if(block.type==='richList'){const tag=block.ordered?'ol':'ul';return `<${tag}>${block.items.map(row=>`<li>${rich(row)}</li>`).join('')}</${tag}>`;}
-    if (block.type === 'paragraph') return `<p>${safe(block.text)}</p>`;
+    if (block.type === 'paragraph') return `<p>${linkedText(block.text)}</p>`;
     if (block.type === 'heading') return `<h${block.level}>${safe(block.text)}</h${block.level}>`;
-    if (block.type === 'list') return `<ul>${block.items.map(item => `<li>${safe(item)}</li>`).join('')}</ul>`;
+    if (block.type === 'list') return `<ul>${block.items.map(item => `<li>${linkedText(item)}</li>`).join('')}</ul>`;
     if (block.type === 'image') {
       const asset = page.media.find(item => item.id === block.assetId);
       return asset ? imageHtml(asset) : '';
@@ -65,7 +89,7 @@ function preview(site, page) {
     const target = site.pages.find(item => item.id === link.targetPageId);
     return target ? `<a href="/preview/${safe(site.id)}/${safe(target.id)}">${safe(link.label || target.title)}</a>` : '';
   }).filter(Boolean).join(' · ');
-  const sources = (page.externalLinks || []).filter(item => /^https:\/\//i.test(item.url || '')).map(item => `<li><a href="${safe(item.url)}" target="_blank" rel="noopener noreferrer">${safe(item.label)}</a> — ${safe(item.reason)}${item.verified ? '' : ' <strong>(nepatikrinta)</strong>'}</li>`).join('');
+  const sources = (page.externalLinks || []).map(item => ({item, href:previewExternalHref(item.url)})).filter(entry => entry.href).map(({item,href}) => `<li><a href="${safe(href)}" target="_blank" rel="noopener noreferrer">${safe(item.label)}</a> — ${safe(item.reason)}${item.verified ? '' : ' <strong>(nepatikrinta)</strong>'}</li>`).join('');
   return `<!doctype html><html lang="lt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><title>${safe(page.title)} – ${safe(site.name)}</title><meta name="description" content="${safe(page.description)}"><style>body{font:18px/1.65 system-ui,sans-serif;color:#183438;background:#f7fbfa;margin:0}header,main,footer{max-width:780px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;align-items:center}a{color:${safe(site.brand.accent)};text-underline-offset:3px}h1,h2,h3{line-height:1.16}h1{font-size:clamp(2.3rem,5vw,4.2rem);overflow-wrap:anywhere}h2{margin-top:2.5rem}p,li{max-width:70ch}img{max-width:100%;height:auto;border-radius:18px}figure{margin:24px 0}figcaption{font-size:.8rem;color:#526661}nav{display:flex;gap:12px;flex-wrap:wrap}.cta{display:inline-block;background:${safe(site.brand.accent)};color:white;padding:12px 18px;border-radius:10px;text-decoration:none}.draft{background:#fff3d8;padding:12px 16px;border-radius:10px;font-size:14px;font-weight:700}footer{border-top:1px solid #d6e4e1;font-size:.9rem}</style></head><body><header><strong>${safe(site.name)}</strong><a href="/">Studija</a></header><main><div class="draft">${safe(status)} · ${safe(page.publishAt)} · ${safe(page.cluster || 'Be klasterio')}</div><h1>${safe(page.title)}</h1><p>${safe(page.description)}</p>${heroHtml}${blocks || '<p>Tekstas dar nesugeneruotas. Tai tik suplanuotas įrašas.</p>'}${site.contact.email ? `<p><a class="cta" href="mailto:${safe(site.contact.email)}">Teirautis el. paštu</a></p>` : ''}${links ? `<h2>Planuojamos vidinės nuorodos</h2><nav>${links}</nav>` : ''}${sources ? `<h2>Šaltiniai peržiūrai</h2><ul>${sources}</ul>` : ''}</main><footer>${safe(site.contact.email)}${site.contact.phone ? ` · ${safe(site.contact.phone)}` : ''}</footer></body></html>`;
 }
 

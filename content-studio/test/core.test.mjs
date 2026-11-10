@@ -80,6 +80,35 @@ test('HTTP studio is local, previews are noindex and state changes need studio h
   } finally { await new Promise(resolve => server.close(resolve)); }
 });
 
+test('V1 preview renders public-style contextual links safely to local future previews', async () => {
+  const site = await model.createSite({canonicalHost:'preview-links.example', name:'Preview links', offer:'Synthetic preview'});
+  const target = await model.addPage(site.id, {type:'guide',slug:'future-guide',title:'Future',description:'Future only',intent:'Future'});
+  const page = await model.addPage(site.id, {type:'guide',slug:'source',title:'Source',description:'Source',intent:'Source'});
+  await model.editPage(site.id,target.id,{publishAt:'2099-01-01T00:00:00.000Z'});
+  await model.editPage(site.id,page.id,{
+    body:[{type:'paragraph',text:'Future guide and Seller offer. Future guidebook is different. <script>alert(1)</script>'},
+      {type:'list',items:['Use Seller offer or the other future.','Ignore unsafe source.']}],
+    links:[{targetPageId:target.id,label:'Future guide'}],
+    externalLinks:[{url:'https://merchant.example/item?a=1&b=2',label:'Seller offer',reason:'Example',verified:false},
+      {url:'https://preview-links.example/future-guide',label:'other future',reason:'Local target',verified:false},
+      {url:'https://user:password@merchant.example/item',label:'unsafe source',reason:'Do not expose credentials',verified:false}]
+  });
+  const server=await createServer();
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  try {
+    const base=`http://127.0.0.1:${server.address().port}`;
+    const response=await fetch(`${base}/preview/${site.id}/${page.id}`);const html=await response.text();
+    assert.equal(response.status,200);assert.equal(response.headers.get('x-robots-tag'),'noindex, nofollow');
+    const local=`/preview/${site.id}/${target.id}`;
+    assert.ok(html.includes(`<p><a href="${local}">Future guide</a> and <a href="https://merchant.example/item?a=1&amp;b=2">Seller offer</a>. Future guidebook is different.`));
+    assert.ok(html.includes(`<li>Use <a href="https://merchant.example/item?a=1&amp;b=2">Seller offer</a> or the <a href="${local}">other future</a>.</li>`));
+    assert.ok(html.includes('Ignore unsafe source.'));
+    assert.ok(!html.includes('href="https://preview-links.example/future-guide"'));
+    assert.ok(!html.includes('user:password@merchant.example'));
+    assert.ok(!html.includes('<script>alert(1)</script>'));assert.ok(html.includes('&lt;script&gt;alert(1)&lt;/script&gt;'));
+  } finally { await new Promise(resolve=>server.close(resolve)); }
+});
+
 test('email-only contact can publish without inventing a phone number', async () => {
   const site = await model.createSite({ canonicalHost: 'tik-pastas.lt', name: 'Tik paštas', offer: 'Paslauga per el. paštą' });
   await model.editSite(site.id, { contact: { email: 'info@memorycasting.lt', phone: '' } });

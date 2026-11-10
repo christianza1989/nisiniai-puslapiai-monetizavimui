@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "V1 contextual prose previously omitted links in isolated Memocasting draft; local preview now uses the companion public matcher. Private/noindex preview does not establish public eligibility or editorial approval. Verified with existing public sharp 0.35.4, not the studio manifest's 0.35.5; no image processing was changed.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/core.test.mjs content-studio/test/content-v2.test.mjs content-studio/test/editorial-skill.test.mjs",
+      "result": "PASS",
+      "evidence": "17/17; includes real HTTP preview, V1 contextual paragraphs/lists, local future route, HTTPS escaping and credential rejection, V2 isolation and editorial-skill checks."
+    },
+    {
+      "command": "HTTP GET isolated Memocasting V1 studio preview and parse paragraph/list anchors",
+      "result": "PASS",
+      "evidence": "HTTP 200; X-Robots-Tag noindex, nofollow; all 4 internal and 10 external target URLs occurred in prose. Existing draft and media preserved; no live deployment."
+    }
+  ],
+  "eventId": "647ff300-4bfa-4eb4-8dd4-d731e8df8259",
+  "sequence": 2,
+  "at": "2026-11-10T14:52:11.350Z"
+}

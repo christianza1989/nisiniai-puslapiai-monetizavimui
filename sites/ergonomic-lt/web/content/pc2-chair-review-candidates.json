@@ -235,10 +235,25 @@
     {
       "code": "KUTI004WW001",
       "name": "Utila",
-      "asset": "/models/configurator/chairs/KUTI004WW001-081eeff82e56c63a9a5f/review-fd687ce56721859f403c.json",
-      "sha256": "fd687ce56721859f403c28b79412c48d882c0ca3a095d4ce4abff2496110bb58",
-      "bytes": 755140,
-      "version": "colors-20261103-v1-qualified-context7121"
+      "asset": "/models/configurator/chairs/KUTI004WW001-8d2402d31c8e9101dd2b/review-314a36b67fab762c2b94.json",
+      "sha256": "314a36b67fab762c2b94f627ea97dd697e0775a9e8d62c468097c13d48b1700b",
+      "bytes": 1361308,
+      "version": "colors-20261110-v1-3510-r71bbbpu-st64pol",
+      "defaultVersionLabel": "R71BBBPU / ST64POL / ESHHB · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-utila-3510-package",
+          "label": "Ankstesnis Utila paketas",
+          "entry": {
+            "code": "KUTI004WW001",
+            "name": "Utila",
+            "asset": "/models/configurator/chairs/KUTI004WW001-081eeff82e56c63a9a5f/review-fd687ce56721859f403c.json",
+            "sha256": "fd687ce56721859f403c28b79412c48d882c0ca3a095d4ce4abff2496110bb58",
+            "bytes": 755140,
+            "version": "colors-20261103-v1-qualified-context7121"
+          }
+        }
+      ]
     },
     {
       "code": "KNAV001WW006",

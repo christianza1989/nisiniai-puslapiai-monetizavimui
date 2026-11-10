@@ -227,10 +227,25 @@
     {
       "code": "KUTI004WW002",
       "name": "Utila",
-      "asset": "/models/configurator/chairs/KUTI004WW002-525c8793643352428b0e/review-4eea67e495f77a9bb0b3.json",
-      "sha256": "4eea67e495f77a9bb0b3a2dec25a69e6e67cfa887e413623add3388c8fcb8cb1",
-      "bytes": 998618,
-      "version": "colors-20261104-v1-qualified-context10901"
+      "asset": "/models/configurator/chairs/KUTI004WW002-e6dddfa83938c78cbf0e/review-bdabfded5ff8f4b6c198.json",
+      "sha256": "bdabfded5ff8f4b6c198f741b7fe02909cbdb88705f5390448dc589c6bf9cde0",
+      "bytes": 1152420,
+      "version": "colors-20261110-v1-3510-r72bgbpu-ts36g",
+      "defaultVersionLabel": "R72BGBPU / TS36G / ESSHG · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-utila-002-3510-package",
+          "label": "Ankstesnis Utila paketas",
+          "entry": {
+            "code": "KUTI004WW002",
+            "name": "Utila",
+            "asset": "/models/configurator/chairs/KUTI004WW002-525c8793643352428b0e/review-4eea67e495f77a9bb0b3.json",
+            "sha256": "4eea67e495f77a9bb0b3a2dec25a69e6e67cfa887e413623add3388c8fcb8cb1",
+            "bytes": 998618,
+            "version": "colors-20261104-v1-qualified-context10901"
+          }
+        }
+      ]
     },
     {
       "code": "KUTI004WW001",

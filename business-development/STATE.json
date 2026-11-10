@@ -4,11 +4,11 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-11-09T15:03:49.027Z",
-  "lastResearchDateLocal": "2026-11-09",
-  "lastResearchFile": "research/2026-11-09-accountant-buyer/RESEARCH.md",
-  "lastResearchValidation": "research/2026-11-09-accountant-buyer/QA.json",
-  "lastCycleOutcome": "accountant_buyer_signal_recorded_no_new_proposal",
+  "lastResearchAt": "2026-11-10T11:08:07.650Z",
+  "lastResearchDateLocal": "2026-11-10",
+  "lastResearchFile": "STATE.json",
+  "lastResearchValidation": "STATE.json",
+  "lastCycleOutcome": "storyline_buyer_search_inconclusive_no_new_proposal",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
     "BDEV-0003",
@@ -94,8 +94,8 @@
     }
   ],
   "researchContinuity": {
-    "completed": "One original public buyer-request page read: November 2 fixed-monthly remote accountant request explicitly accepts AI tools. No evidence of willingness to pay for our automation, agreed receiver format or completed transaction; existing accounting preparation study retained. No new proposal or approval.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision; excavation bank/loose volume and machine delivery versus soil haulage distinction without actual project data, supplier quote, new evidence or owner decision; stair component per-square-metre versus per-piece units, unfinished/warehouse-collection versus installed result and UK-only cladding without actual partner terms, new source or owner decision; BDEV-0004 blind renewal/repair demand experiment without new owner decision, actual demand or provider terms; garage quote-acceptance fee versus completed-and-paid M2, no-show refund deadlines and credit-note versus cash distinction without actual partner/account/settlement data, new terms or owner decision; LT registration-promo versus renewal holding cost and wholesale-price contradictions without actual account quote, changed terms, portfolio data or owner decision; BDEV-0001 October 14 bounded live-test receipt without a new owner scope, current connection evidence, completed operational milestone or material change; archive/manual-actions/security report evidence distinctions without changed official guidance, actual authorized property evidence or owner decision; BDEV-0002 interactive-refresh versus unattended Office licensing/execution distinction without actual client environment, changed official guidance or owner decision; domain availability or unflagged classifier output versus earlier name/trademark rights without actual scoped registry evidence, changed guidance or owner decision; excavation unknown or no-hit utility information versus verified readiness without a real authorized site, changed official source or owner decision; October Vilnius public diagnostic-vs-jump-start examples without fresh distinct buyer data or an authorized operating decision; October scaffold location/category and work-type examples without fresh distinct buyer data or an authorized operating decision; late-October furniture category single/mixed-commercial/technical-installation examples without distinct new evidence or owner decision; stair surface-care advice versus paid restoration or new-tread manufacturing without actual accepted service terms, distinct demand evidence or owner decision; October BI training/statistical-report category examples without distinct new paid-result evidence or owner decision; packaging stock-unit versus custom printed-batch minimums without buyer willingness, actual partner terms or changed supplier conditions; website rental monthly price versus full commitment, maintenance and ownership without new current terms, buyer choice or actual delivery economics; Rentbook iCal snapshot freshness/block semantics/interface limits without a real chosen segment, authorized booking source, changed documentation or owner decision; LESO specialist subcontracting/client-code invitation and MTTC cooperation channel without actual partner acceptance, rates, changed terms or owner decision; October foundation supplied-materials/labour versus whole-site project examples without distinct new buyer or partner economics evidence; Google Business Profile eligibility for pure lead generation versus actual service-business representation without changed official guidance or concrete authorized business facts; November AI-friendly accountant request without agreed receiver format, actual paid-result evidence, distinct new buyer evidence or owner decision",
+    "completed": "Bounded Storyline buyer-fit check: two searches, one original page and two request-to-hypothesis documentary comparisons. Adjacent social-content demand only; no direct customer-case-story evidence, new proposal, approval or operational test. Compact result stored in lastCycleCheck; earlier detailed research retained.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision; excavation bank/loose volume and machine delivery versus soil haulage distinction without actual project data, supplier quote, new evidence or owner decision; stair component per-square-metre versus per-piece units, unfinished/warehouse-collection versus installed result and UK-only cladding without actual partner terms, new source or owner decision; BDEV-0004 blind renewal/repair demand experiment without new owner decision, actual demand or provider terms; garage quote-acceptance fee versus completed-and-paid M2, no-show refund deadlines and credit-note versus cash distinction without actual partner/account/settlement data, new terms or owner decision; LT registration-promo versus renewal holding cost and wholesale-price contradictions without actual account quote, changed terms, portfolio data or owner decision; BDEV-0001 October 14 bounded live-test receipt without a new owner scope, current connection evidence, completed operational milestone or material change; archive/manual-actions/security report evidence distinctions without changed official guidance, actual authorized property evidence or owner decision; BDEV-0002 interactive-refresh versus unattended Office licensing/execution distinction without actual client environment, changed official guidance or owner decision; domain availability or unflagged classifier output versus earlier name/trademark rights without actual scoped registry evidence, changed guidance or owner decision; excavation unknown or no-hit utility information versus verified readiness without a real authorized site, changed official source or owner decision; October Vilnius public diagnostic-vs-jump-start examples without fresh distinct buyer data or an authorized operating decision; October scaffold location/category and work-type examples without fresh distinct buyer data or an authorized operating decision; late-October furniture category single/mixed-commercial/technical-installation examples without distinct new evidence or owner decision; stair surface-care advice versus paid restoration or new-tread manufacturing without actual accepted service terms, distinct demand evidence or owner decision; October BI training/statistical-report category examples without distinct new paid-result evidence or owner decision; packaging stock-unit versus custom printed-batch minimums without buyer willingness, actual partner terms or changed supplier conditions; website rental monthly price versus full commitment, maintenance and ownership without new current terms, buyer choice or actual delivery economics; Rentbook iCal snapshot freshness/block semantics/interface limits without a real chosen segment, authorized booking source, changed documentation or owner decision; LESO specialist subcontracting/client-code invitation and MTTC cooperation channel without actual partner acceptance, rates, changed terms or owner decision; October foundation supplied-materials/labour versus whole-site project examples without distinct new buyer or partner economics evidence; Google Business Profile eligibility for pure lead generation versus actual service-business representation without changed official guidance or concrete authorized business facts; November AI-friendly accountant request without agreed receiver format, actual paid-result evidence, distinct new buyer evidence or owner decision; Storyline social Stories/Reels versus customer-case-story distinction without direct buyer/fulfilment evidence or owner decision",
     "nextCandidateQuestion": "Resume truly approved work or seek distinct actual paid-result/fulfilment evidence. Avoid another generic channel or model distinction; six proposals remain pending.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
     "executionScope": "Private research/state documents only; fresh core main integrated. No companion source use, site/runtime changes, domain scans, private inbox, account permissions/DNS, campaigns or paid calls."
@@ -152,5 +152,79 @@
     "stage": "bounded_live_test_receipt_reviewed",
     "date": "2026-10-26",
     "evidence": "research/2026-10-16-facebook-receipt/REVIEW.md"
+  },
+  "lastDetailedResearchFile": "research/2026-11-09-accountant-buyer/RESEARCH.md",
+  "lastDetailedResearchValidation": "research/2026-11-09-accountant-buyer/QA.json",
+  "lastCycleCheck": {
+    "date": "2026-11-10",
+    "status": "PASS_limited_documentary_check",
+    "question": "Ar ribota naujesnių viešų pirkėjų užklausų paieška pagrindžia storyline.lt klientų istorijų verslams hipotezę?",
+    "localInput": "../sites/storyline.md",
+    "sources": [
+      {
+        "url": "https://paslaugos.lt/uzklausos/komunikacijos-specialistai/vilniuje",
+        "readOn": "2026-11-10",
+        "readType": "original_category_page",
+        "observations": "Lapkričio 6 d. užklausa apima socialinių tinklų strategiją, filmavimą ir administravimą; lapkričio 1 d. prašoma iš pateiktos medžiagos montuoti trumpus Reels, parengti tekstą ir publikuoti po peržiūros. Tai gretimi mokamo darbo ketinimai, o ne patvirtinti klientų atvejų istorijų užsakymai.",
+        "limits": "Dinaminis kategorijos puslapis. Sutartys, apmokėjimas ir dabartinis poreikio aktualumas nepatikrinti; vardai, kontaktai ir priedai nekopijuoti."
+      }
+    ],
+    "searchQueries": [
+      "site:paslaugos.lt/uzklausos \"klientų istorijų\"",
+      "site:paslaugos.lt/uzklausos \"atvejo analiz\""
+    ],
+    "conclusion": "Dvi ribotos paieškos nepateikė tiesioginio šios hipotezės pirkėjo įrodymo. Tai nėra rinkos nebuvimo išvada. Storyline pasiūlymas ar kaina nepasirinkti; nauja komercinė plėtra nesiūloma.",
+    "deduplication": "IDEAS ir business-development MD teksto paieškoje ankstesnio Storyline tyrimo nerasta. Gretimo socialinių tinklų poreikio nepaversti antru BDEV-0001 moduliu ar automatinio siuntimo mandatu.",
+    "smallestCheck": {
+      "goal": "Atskirti konkrečios paslaugos pirkimo ketinimą nuo paieškos žodžių sutapimo.",
+      "method": "Dokumentais palyginti dvi originaliame puslapyje matomas užklausas su sites/storyline.md hipoteze.",
+      "performed": true,
+      "acceptance": "Abiem atvejais registruoti tik aprašytą mokamą rezultatą; nevadinti socialinių tinklų Stories ar Reels kliento sėkmės istorijos užsakymu.",
+      "result": "Abi užklausos paliktos gretimos paklausos pavyzdžiais; tiesioginis hipotezės įrodymas nenustatytas.",
+      "operationalTests": 0
+    },
+    "alternatives": "Dabar saugoti trumpą patikrinimą; gilesnis LT ir užsienio konkurentų, mokėtojo bei vykdymo tyrimas būtų reikalingas prieš komercinės krypties pasirinkimą. Nesukurti demonstracinės fiktyvios kliento istorijos vien dėl raktinio žodžio sutapimo.",
+    "unknowns": [
+      "Tikras šios konkrečios paslaugos pirkėjas ir jo mokėtina kaina",
+      "Interviu bei faktų rinkimo sąnaudos ir realaus kliento leidimas naudoti jo istoriją",
+      "Priimtinas rezultatas, taisymų kiekis ir mūsų marža"
+    ],
+    "costs": {
+      "newSubscriptions": 0,
+      "paidApiCalls": 0,
+      "externalMessages": 0,
+      "agentTime": "Tyrimo laikas yra sąnauda; modelio kaina neišmatuota."
+    },
+    "stop": "Šio ciklo riba — dvi paieškos ir vienas originalus puslapis. Nekontaktuoti, nekurti turinio ar naujo piloto iš gretimos užklausos. Kartoti tik atsiradus konkretaus pirkėjo / vykdymo įrodymui ar savininko sprendimui.",
+    "ownerEvidence": {
+      "rootRecentTurns": 10,
+      "rootHumanMessagesReturned": 0,
+      "rootOlderTurnsNotReread": true,
+      "coreNewestHumanIds": [
+        "01a12132-3e73-7522-a8b1-798bd64f237d",
+        "01a1213e-becb-7551-9863-be3ac623cbb9"
+      ],
+      "newRegistryApprovalFound": false
+    },
+    "validation": {
+      "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+      "freshnessContinueAt": "2026-11-10T11:06:10.736Z",
+      "freshnessHandoffAt": "2026-11-10T11:08:13.353Z",
+      "protectedFieldsUnchanged": [
+        "pendingOwnerDecisions",
+        "approvedWork",
+        "ownerVision",
+        "lastNotifiedIdeaIds",
+        "lastNotifiedExperimentId",
+        "notifiedExperimentIds",
+        "nextIdeaNumber",
+        "lastNotifiedReceipt"
+      ],
+      "newProposals": 0,
+      "newApprovals": 0,
+      "localInputExists": true,
+      "languageReview": "Visas šio patikrinimo tekstas peržiūrėtas; neigiamos paieškos ir gretimo pirkimo ketinimo ribos išlaikytos."
+    },
+    "scope": "Only business-development/STATE.json; no site/runtime/companion/permissions/DNS/inbox/campaign changes."
   }
 }

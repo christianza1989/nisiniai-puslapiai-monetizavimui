@@ -663,10 +663,25 @@
     {
       "code": "KSOU001WW004",
       "name": "Souly",
-      "asset": "/models/configurator/chairs/KSOU001WW004-670f19f5746b85e166e8/review-2f8d596e46380ca564e4.json",
-      "sha256": "2f8d596e46380ca564e4f2617a6b77ae91568892e35912f8fe3948b5885ace70",
-      "bytes": 3958448,
-      "version": "base-20261030-qualified655"
+      "asset": "/models/configurator/chairs/KSOU001WW004-8d844bdf6427e8010946/review-107917bb7f268a1d4812.json",
+      "sha256": "107917bb7f268a1d48128b6e1791c95ff217e8ea01744e558583434d68ceda52",
+      "bytes": 604517,
+      "version": "colors-20261110-v1-3510-r71bbbpu-ts36",
+      "defaultVersionLabel": "R71BBBPU / TS36 / ESHHB · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-souly-package",
+          "label": "Ankstesnis Souly paketas",
+          "entry": {
+            "code": "KSOU001WW004",
+            "name": "Souly",
+            "asset": "/models/configurator/chairs/KSOU001WW004-670f19f5746b85e166e8/review-2f8d596e46380ca564e4.json",
+            "sha256": "2f8d596e46380ca564e4f2617a6b77ae91568892e35912f8fe3948b5885ace70",
+            "bytes": 3958448,
+            "version": "base-20261030-qualified655"
+          }
+        }
+      ]
     },
     {
       "code": "KCHI001WW004",

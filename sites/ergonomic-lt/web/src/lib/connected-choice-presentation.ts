@@ -17,6 +17,18 @@ const labels:Record<string,string>={
  'Colour concept':'Spalvų derinys',
  'Top instead of seat':'Stalviršis vietoje sėdynės',
  'Chipboard elements colour - desk internal surface':'Vidinės stalo pusės spalva',
+ 'Chipboard elements colour - desk external surface':'Išorinės stalo pusės spalva',
+ 'Upholstery colour - upper panel':'Viršutinės plokštės apmušalo spalva',
+ 'Chipboard elements colour - modesty panel':'Priekinės uždangos spalva',
+ 'Chipboard elements colour - side panel':'Šoninės plokštės spalva',
+ 'Colour - grommet':'Kabelių įvado spalva',
+ 'Chipboard elements colour - sideboard carcass':'Komodos korpuso spalva',
+ 'Chipboard elements colour - sideboard door':'Komodos durelių spalva',
+ 'Colour - sideboard handle':'Komodos rankenėlės spalva',
+ 'Chipboard elements colour - extension table top':'Papildomo stalviršio spalva',
+ 'Colour - extension top edge':'Papildomo stalviršio briaunos spalva',
+ 'Chipboard elements colour - flap':'Atverčiamo dangtelio spalva',
+ 'Colour - glass pad':'Stiklo įdėklo spalva',
  'Metal elements colour - footrest':'Kojų atramos metalo spalva',
  'Metal elements colour - bench armrest':'Porankių metalo spalva',
  'Metal elements material - armrest':'Porankių metalo apdaila',
@@ -56,8 +68,7 @@ export function connectedColourLabel(text:string){
   const alias='(?:NK|VB|OG|OY|VR|WS|WK|GF|AL|ALU|WA|X|BI|WH|WT|WTT|W|CZ|BL|BLT|Y|SG|PW)';
   value=value.replace(new RegExp('(?:\\s*,\\s*|\\s+)'+alias+'(?:\\s*[,/]\\s*'+alias+')*\\s*$'),'');
   value=value.replace(new RegExp('^'+alias+'\\s*·\\s*(?=RAL\\b|NCS\\b)'),'');
-  const prefixed=value.match(/^([A-Z0-9]+)\s*·\s*((?:RAL|NCS)\s.+)$/);
-  if(prefixed&&/^(?:RAL|NCS)\d|^NCSS\d/.test(prefixed[1])&&prefixed[2].replace(/[\s-]/g,'').startsWith(prefixed[1]))value=prefixed[2];
+  value=value.replace(/^[A-Z0-9_]+\s*·\s*(?=(?:RAL\s+\d|NCS\s+S?\s*\d))/,'');
  }
  value=value.replace(/(\b1\.007 Beech)\s+0C\b/g,'$1');
  value=value.replace(/\b(Polished Aluminium)\s+POL\b/g,'$1').replace(/^(?:POL|ALUPOL)\s*·\s*(?=Polished Aluminium)/,'');

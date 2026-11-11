@@ -1,7 +1,7 @@
 import {isAdmin} from './auth';
 import {preparedFinishLabel} from './prepared-finish-label';
 import {verifiedChairFinishV2} from './verified-chair-finish-v2';
-import {connectedFieldLabel,connectedColourLabel,connectedValueLabel,connectedColourField} from './connected-choice-presentation';
+import {connectedFieldLabel,connectedColourLabel,connectedValueLabel,connectedColourField,customerSummaryRows} from './connected-choice-presentation';
 import verifiedProposals from '../../content/text-review-option-proposals.json';
 import inventory from '../../content/text-review-inventory.json';
 import {canonicalReviewValue} from './text-review-value';
@@ -95,8 +95,33 @@ export async function preparedCustomerConfiguration(product:Product,source:Prepa
   return fields.map(fieldName).join(' / ')||'Apdaila';
  };
  let admin=false;try{admin=await isAdmin();}catch{}
- const controls=rows.map(row=>{const fields=row.fields.filter(f=>!/PRICE|PACK|ASSEMBLY/.test(f));return {id:ids.field('prepared:'+row.key),...(admin?{adminCodes:fields.filter(f=>selected.values[f]!==undefined).map(f=>f+'='+selected.values[f])}:{}),label:rowLabel(row,fields),value:ids.choice('prepared:'+row.key,row.current),choices:row.options.map(o=>({id:ids.choice('prepared:'+row.key,o.key),label:row.key==='finish-state'&&o.key==='original'?'Pradinė apdaila':row.key==='finish-state'&&source.finishRevision?preparedFinishLabel(o.values,preparedChairValues(source.data,{...o.selection,observed:'original',qualified:undefined}),fieldName,valueName):row.key==='finish-state'&&o.key.startsWith('qualified:')&&(source.data.qualified?.witnesses.find(w=>w.id===o.selection.qualified?.witness)?.groups.length||source.data.qualified?.witnesses.find(w=>w.id===o.selection.qualified?.witness)?.branches.some(b=>b.groups.length))?'Individuali apdaila':row.key.startsWith('chair-material-')?tuple(fields.slice(0,1),o.values):tuple(fields,o.values)})),...(!fields.every(isColourField)?{mechanismPreview:true}:{})};});
- const details=Object.entries(selected.values).filter(([f])=>/^(?:C|F|D|GD)/.test(f)&&!/PRICE|PACK|ASSEMBLY/.test(f)).map(([f,v])=>({label:fieldName(f),value:valueName(f,v)}));
+ const controls=rows.map(row=>{
+  const fields=row.fields.filter(f=>!/PRICE|PACK|ASSEMBLY/.test(f));
+  const finishState=row.key==='finish-state';
+  const pairedFinish=fields.length>1&&fields.some(isColourField)&&fields.every(f=>isColourField(f)||/MATERIAL|GROUP/.test(f));
+  const baseline=finishState?row.options.find(o=>o.key==='original')?.values:pairedFinish?preparedChairValues(source.data,{...initialPreparedChair(source.data,selection.context),qualified:undefined}):undefined;
+  const caption=(option:typeof row.options[number])=>{
+   if(row.key.startsWith('chair-material-'))return tuple(fields.slice(0,1),option.values);
+   if(finishState&&option.key.startsWith('qualified:')){
+    const witness=source.data.qualified?.witnesses.find(w=>w.id===option.selection.qualified?.witness);
+    if(witness?.groups.length||witness?.branches.some(b=>b.groups.length))return 'Individuali apdaila';
+   }
+   if(baseline){
+    const values=Object.fromEntries(fields.filter(f=>option.values[f]!==undefined).map(f=>[f,option.values[f]]));
+    return preparedFinishLabel(values,baseline,fieldName,valueName);
+   }
+   return tuple(fields,option.values);
+  };
+  return {
+   id:ids.field('prepared:'+row.key),
+   ...(admin?{adminCodes:fields.filter(f=>selected.values[f]!==undefined).map(f=>f+'='+selected.values[f])}:{}),
+   label:rowLabel(row,fields),
+   value:ids.choice('prepared:'+row.key,row.current),
+   choices:row.options.map(option=>({id:ids.choice('prepared:'+row.key,option.key),label:caption(option)})),
+   ...(!fields.every(isColourField)?{mechanismPreview:true}:{}),
+  };
+ });
+ const details=customerSummaryRows(Object.entries(selected.values).filter(([f])=>/^(?:C|F|D|GD)/.test(f)&&!/PRICE|PACK|ASSEMBLY/.test(f)).map(([f,v])=>({label:fieldName(f),value:valueName(f,v)})));
  const name=customerLabel(product.customerHeading||product.textReviewHeading||product.name,codes,'Biuro kėdė'),publicAssembly=await publicPreparedAssembly(source,selection);
  return {token:cap.seal('configuration',{...scope,prepared:selection,revision}),selectionId:cap.id('selection',{...scope,prepared:selection,revision}),productId:'product_public_'+cap.id('product',scope),name,controls,steps:[{id:'configuration',label:'Komplektacija',controls:controls.map(c=>c.id)}],details,...publicAssembly,finishes:{},available3D:!!publicAssembly.assets.base||publicAssembly.assets.patches.some(p=>p.assets.length>0)};
 }

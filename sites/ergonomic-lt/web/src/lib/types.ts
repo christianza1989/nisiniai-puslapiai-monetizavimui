@@ -14,7 +14,7 @@ export type Product = {
   updatedAt?:string;
   reviewCatalogPrefix?:string;
   publicHeading?:string;
-  textReviewHeading?:string; textReviewNames?:Record<string,string>;
+  textReviewHeading?:string; textReviewNames?:Record<string,string>; textReviewHumanTitles?:string[];
   customerHeading?:string;customerModelNames?:Record<string,string>;
   modelConfigurationId?:string; familySlug?:string; familyName?:string;
   modelGalleryCount?:number;

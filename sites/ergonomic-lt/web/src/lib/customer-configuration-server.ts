@@ -1,6 +1,5 @@
 import {loadPreparedCustomerChair,preparedCustomerConfiguration,preparedSupplierConfiguration} from './prepared-chair-customer-server';
-import {connectedChoiceModel} from './connected-choice-scope';
-import {connectedFieldLabel,connectedColourLabel,connectedValueLabel} from './connected-choice-presentation';
+import {connectedFieldLabel,connectedColourLabel,connectedValueLabel,customerSummaryRows} from './connected-choice-presentation';
 import verifiedSpecifications from '../../content/verified-model-specifications.json';
 import {customerKey} from './customer-capability';
 import {customerControlIds,resolveCustomerChange,type CustomerConfiguration,type CustomerState} from './customer-configuration';
@@ -74,8 +73,7 @@ export async function customerConfiguration(product:Product,token?:string,change
  for(const [field,values]of Object.entries(allChoices)){codes.add(field);for(const value of values)codes.add(value);}
  const published=(field:string,value?:string)=>publishedReviewValue(review,model,field,value);
  const colourCodes=new Set([...Object.entries(state?.values||{}).filter(([field])=>isColourField(field)).map(([,value])=>value),...materialControls.flatMap(group=>group.options.map(option=>option.code))]);
- const connected=!!connectedChoiceModel(product,'legacy');
- const colourLabel=(text:string|undefined,_codes:Iterable<string>,fallback:string,allowed:Iterable<string>=colourCodes)=>{const label=customerColourLabel(text,codes,fallback,allowed);return connected?connectedColourLabel(label):label;};
+ const colourLabel=(text:string|undefined,_codes:Iterable<string>,fallback:string,allowed:Iterable<string>=colourCodes)=>connectedColourLabel(customerColourLabel(text,codes,fallback,allowed));
  const controls:CustomerConfiguration['controls']=Object.entries(choices).map(([field,values],i)=>{
   const preview=textReviewProposalPreview()&&!/COLOR|COLOUR|CHCOL|COL$/.test(field);
   const explanation=(value:string)=>{const id=review.publicScope.bindings[model]?.['explanation:'+field+'='+value];return customerLabel(id?review.publicScope.values[model+':'+id]:undefined,codes,'');};
@@ -111,10 +109,9 @@ export async function customerConfiguration(product:Product,token?:string,change
  if(!selected){const preset=product.configurations.find(c=>c.id===scope.sample),pilot=preset?pilotSelection(product,preset.id):undefined;if(pilot?.variant.asset)assets.base=await prepare(pilot.variant);}
  const nativeCatalog=context.engine.catalog.catalogForProduct(product),legacyChair=!!state&&product.categorySlug==='kedes'&&!['structure-only','desk-components'].includes(nativeCatalog?.collectionMode||'');
  trace?.('assets',performance.now()-checkpoint);checkpoint=performance.now();
- if(connected)for(const control of controls){control.label=connectedFieldLabel(control.label);for(const option of control.choices)option.label=connectedValueLabel(option.label);}
  const details=controls.map(control=>({
   label:control.label,
-  value:control.choices.find(choice=>choice.id===control.value)?.label||'Pasirinkta',
+  value:connectedValueLabel(control.choices.find(choice=>choice.id===control.value)?.label||'Pasirinkta'),
  }));
  const preset=product.configurations.find(configuration=>configuration.id===scope.sample);
  const article=product.modelArticle;
@@ -134,14 +131,18 @@ export async function customerConfiguration(product:Product,token?:string,change
  const colourLabels=new Set(Object.keys(selectedValues).filter(isColourField).flatMap(field=>[published(field),configurationOptionLabel(field),fieldLabels[field]]).filter((label):label is string=>!!label).map(label=>label.trim().toLocaleLowerCase('lt')));
  for(const row of reviewedRows){
   const label=customerLabel(row.label,codes,'');
-  const value=(colourLabels.has(row.label.trim().toLocaleLowerCase('lt'))?colourLabel:customerLabel)(row.value,codes,'');
+  const isColour=colourLabels.has(row.label.trim().toLocaleLowerCase('lt'))||/spalv|colour|color/i.test(label);
+  const value=isColour?colourLabel(row.value,codes,''):connectedValueLabel(customerLabel(row.value,codes,''));
   if(label&&value&&!details.some(detail=>detail.label.toLowerCase()===label.toLowerCase())){
    details.push({label,value});
   }
  }
  const stepChoices={...choices,...Object.fromEntries(materialControls.map(group=>[group.id,group.options.map(option=>option.id)]))};
- if(connected)for(const row of details)row.label=connectedFieldLabel(row.label);
+ for(const control of controls){
+  control.label=connectedFieldLabel(control.label);
+  for(const option of control.choices)option.label=connectedValueLabel(option.label);
+ }
  const steps=customerBuilderSteps(product,stepChoices,ids.field,materialControls.map(group=>group.id));
  trace?.('details',performance.now()-checkpoint);
- return {legacyChair,token:cap.seal('configuration',{...scope,state,revision:context.revision}),selectionId:cap.id('selection',{...scope,state,revision:context.revision}),productId:'product_public_'+cap.id('product',scope),name:customerLabel(product.textReviewHeading||productHeading(product),codes,'Biuro baldas'),controls,steps,details,assets,finishes,desk,available3D:!!assets.base||assets.patches.some(p=>p.assets.length>0)||!!desk?.assets.length};
+ return {legacyChair,token:cap.seal('configuration',{...scope,state,revision:context.revision}),selectionId:cap.id('selection',{...scope,state,revision:context.revision}),productId:'product_public_'+cap.id('product',scope),name:customerLabel(productHeading(product),codes,'Biuro baldas'),controls,steps,details:customerSummaryRows(details),assets,finishes,desk,available3D:!!assets.base||assets.patches.some(p=>p.assets.length>0)||!!desk?.assets.length};
 }

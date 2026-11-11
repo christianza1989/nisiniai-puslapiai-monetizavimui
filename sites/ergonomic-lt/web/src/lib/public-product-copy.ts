@@ -19,6 +19,6 @@ export function publicProductCopy(product:Product):Product{
 // catalogue and order resolution retain the private manufacturer reference.
 export function publicProductView(product:Product):Product{
  const copy=publicProductCopy(product);
- return {...copy,textReviewNames:undefined,publicHeading:productHeading(product),brand:'',sourceUrl:'',sourceDescription:'',documents:[],configurations:copy.configurations.map(c=>({...c,
+ return {...copy,textReviewNames:undefined,textReviewHumanTitles:undefined,publicHeading:productHeading(product),brand:'',sourceUrl:'',sourceDescription:'',documents:[],configurations:copy.configurations.map(c=>({...c,
   configurator:null,sourceDescription:c.sourceDescription?publicProductText(c.sourceDescription):undefined}))};
 }

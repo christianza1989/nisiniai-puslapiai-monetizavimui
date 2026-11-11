@@ -4,6 +4,7 @@ import inventory from '../../content/text-review-inventory.json';
 import type {Product,Seed} from './types';
 import {supplierOptions} from './configuration-labels';
 import {modelName} from './product-models';
+import {customerModelTitle} from './customer-model-title';
 export function customerProductCodes(p:Product){
  const codes=new Set<string>();
  for(const c of p.configurations){if(c.code)codes.add(c.code);for(const option of supplierOptions(c)){const [key,value]=option.split('=');for(const part of key.split('.'))codes.add(part);if(value)codes.add(value);}const bindings=(inventory.models as Record<string,{bindings:Record<string,string>}>)[c.code||'']?.bindings;for(const key of Object.keys(bindings||{}))if(key.startsWith('name:'))codes.add(key.slice(5));}
@@ -18,7 +19,10 @@ export function customerProductPath(p:Product){
 export function customerCatalogPresentation(seed:Seed):Seed{
  return {...seed,products:seed.products.map(p=>{
   const codes=customerProductCodes(p),line=customerLabel(p.name,codes,'Biuro baldas'),names:Record<string,string>={};
-  for(const c of p.configurations)names[c.id]=customerLabel(p.textReviewNames?.[c.id]||modelName(p,c),codes,line);
+  for(const c of p.configurations){
+   const title=customerLabel(p.textReviewNames?.[c.id]||modelName(p,c),codes,line);
+   names[c.id]=p.textReviewHumanTitles?.includes(c.id)?title:customerModelTitle(title,line);
+  }
   return {...p,customerHeading:customerLabel(p.textReviewHeading||line,codes,line),customerModelNames:names};
  })};
 }

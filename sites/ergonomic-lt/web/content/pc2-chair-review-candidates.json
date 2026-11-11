@@ -232,10 +232,25 @@
     {
       "code": "KYOU001WW003",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU001WW003-additional-99103fc16a2f4e40d8e7/review-bd7a1dd73afaea062d25.json",
-      "sha256": "bd7a1dd73afaea062d25857e55eaf42292abf89b9ee2822dcf7aa726e4b95929",
-      "bytes": 285895,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KYOU001WW003-b7e894d85c1ddd470c88/review-2866a960cb6d480d68e7.json",
+      "sha256": "2866a960cb6d480d68e73c64db4f6a56cbe5047edf5de84c0edaa7015e2422e3",
+      "bytes": 639822,
+      "version": "colors-20261111-v1-3510-youteam-lb-elastonet",
+      "defaultVersionLabel": "YouTEAM ElastoNet / R66SGG / ST62ALU / SG · patikrinta sėdynės ir pagrindo apdaila",
+      "reviewVersions": [
+        {
+          "id": "previous-youteam-3510-package",
+          "label": "Ankstesnis YouTEAM paketas",
+          "entry": {
+            "code": "KYOU001WW003",
+            "name": "YouTEAM",
+            "asset": "/models/configurator/chairs/KYOU001WW003-additional-99103fc16a2f4e40d8e7/review-bd7a1dd73afaea062d25.json",
+            "sha256": "bd7a1dd73afaea062d25857e55eaf42292abf89b9ee2822dcf7aa726e4b95929",
+            "bytes": 285895,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KZBO004WW001",

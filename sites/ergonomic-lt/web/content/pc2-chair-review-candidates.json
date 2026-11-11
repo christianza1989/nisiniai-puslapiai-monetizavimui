@@ -666,10 +666,25 @@
     {
       "code": "KXEN035WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN035WW001-additional-4313846e2d33094a80a2/review-3331495b8698479d98a2.json",
-      "sha256": "3331495b8698479d98a21920dc9042cc4062c4d5e9be91f35f121f6bbca299c5",
-      "bytes": 1227038,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KXEN035WW001-b25d2155fa4f38c227d0/review-36a7495cbaf4ec286d08.json",
+      "sha256": "36a7495cbaf4ec286d08f599035c63648f0990b76fce76b0ab8005dee01e2173",
+      "bytes": 5490761,
+      "version": "colors-20261111-v1-3510-xenium-bicolour",
+      "defaultVersionLabel": "Xenium su dvispalviu atlošu / R38POLGR / ST55POL · patikrinta apmušalų ir atlošo jungties apdaila",
+      "reviewVersions": [
+        {
+          "id": "previous-xenium-3510-package",
+          "label": "Ankstesnis Xenium paketas",
+          "entry": {
+            "code": "KXEN035WW001",
+            "name": "Xenium",
+            "asset": "/models/configurator/chairs/KXEN035WW001-additional-4313846e2d33094a80a2/review-3331495b8698479d98a2.json",
+            "sha256": "3331495b8698479d98a21920dc9042cc4062c4d5e9be91f35f121f6bbca299c5",
+            "bytes": 1227038,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KXEN028WW001",

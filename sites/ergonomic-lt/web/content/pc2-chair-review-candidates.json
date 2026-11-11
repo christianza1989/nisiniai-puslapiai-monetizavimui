@@ -177,10 +177,25 @@
     {
       "code": "KYOU002WW001",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU002WW001-additional-03de33e9ce82567ffc5a/review-0ff2904c6b8bebe5cf2c.json",
-      "sha256": "0ff2904c6b8bebe5cf2c12aee461565e4388ebbde3a457626620d162fab67fd8",
-      "bytes": 274520,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KYOU002WW001-01f34fa7837af2cc8c1a/review-1dcfc9528c766589351a.json",
+      "sha256": "1dcfc9528c766589351ae3ba938c7371f4f5a23c1b4698f39b58321785ddc4c4",
+      "bytes": 902182,
+      "version": "colors-20261111-v1-3510-youteam-hb-uph",
+      "defaultVersionLabel": "YouTEAM / R66SGG / ST62ALU / HRUAP · patikrinta apmušalų ir pagrindo apdaila",
+      "reviewVersions": [
+        {
+          "id": "previous-youteam-3510-package",
+          "label": "Ankstesnis YouTEAM paketas",
+          "entry": {
+            "code": "KYOU002WW001",
+            "name": "YouTEAM",
+            "asset": "/models/configurator/chairs/KYOU002WW001-additional-03de33e9ce82567ffc5a/review-0ff2904c6b8bebe5cf2c.json",
+            "sha256": "0ff2904c6b8bebe5cf2c12aee461565e4388ebbde3a457626620d162fab67fd8",
+            "bytes": 274520,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KYOU001WW001",

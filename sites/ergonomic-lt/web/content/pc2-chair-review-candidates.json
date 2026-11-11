@@ -334,10 +334,25 @@
     {
       "code": "KXEN034WW001",
       "name": "Xenium",
-      "asset": "/models/configurator/chairs/KXEN034WW001-additional-89beb5d6175d1f11fc1b/review-ffec8f3f8065632ca732.json",
-      "sha256": "ffec8f3f8065632ca73272b4c48bf00eb176abce28379f3fbd0f6035eee3612a",
-      "bytes": 1103589,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KXEN034WW001-976831b2627e2e06b0f6/review-ecb2acca7ccf10f71ec9.json",
+      "sha256": "ecb2acca7ccf10f71ec9ea9b54940573f431ba1fc1a9991fd840c6d3dde33e3b",
+      "bytes": 6888342,
+      "version": "colors-20261111-v1-3510-xenium-mesh",
+      "defaultVersionLabel": "Xenium su tinkleliu / R37POL / ST55POL · patikrinta apmušalų, tinklelio ir atlošo jungties apdaila",
+      "reviewVersions": [
+        {
+          "id": "previous-xenium-3510-package",
+          "label": "Ankstesnis Xenium paketas",
+          "entry": {
+            "code": "KXEN034WW001",
+            "name": "Xenium",
+            "asset": "/models/configurator/chairs/KXEN034WW001-additional-89beb5d6175d1f11fc1b/review-ffec8f3f8065632ca732.json",
+            "sha256": "ffec8f3f8065632ca73272b4c48bf00eb176abce28379f3fbd0f6035eee3612a",
+            "bytes": 1103589,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "K2ME001WW002",

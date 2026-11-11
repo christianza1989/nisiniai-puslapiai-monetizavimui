@@ -84,6 +84,23 @@ test('a qualified tuple mixing ordinary and 3D mesh remains an indivisible sourc
  const p=qualifiedChairMaterialControls(w,{witness:'w',kind:'groups',groups:{}},()=>true);
  assert.equal(p.controls.length,0);assert.deepEqual(p.remaining,[mixed]);
 });
+test('PC2 applies one matching mesh color to back and headrest while keeping the fabric selection',()=>{
+ const back=group('back','C3DBACKRESTMESHCOLOR',['RN1','RN2','RN3']);
+ const head=group('head','C3DHEADRESTMESHCOLOR',['RN1','RN2']);
+ const fabric=group('fabric','CUPHSEATCOLOR',['RED','BLUE']);
+ const w={id:'w',groups:[back,head,fabric],branches:[]} as unknown as QualifiedWitness;
+ const state:QualifiedSelection={witness:'w',kind:'groups',groups:{back:'RN1',head:'RN1',fabric:'BLUE'}};
+ const mesh=qualifiedChairMaterialControls(w,state,()=>true).controls.find(c=>c.label==='Tinklelis')!;
+ assert.deepEqual(mesh.fields,['C3DBACKRESTMESHCOLOR','C3DHEADRESTMESHCOLOR']);
+ assert.deepEqual(mesh.options.map(o=>o.code),['RN1','RN2']);
+ assert.deepEqual(mesh.options[1].state.groups,{back:'RN2',head:'RN2',fabric:'BLUE'});
+ head.options=head.options.slice(0,1);
+ back.options=back.options.slice(1);
+ back.base='RN2';
+ const unavailable=qualifiedChairMaterialControls(w,{...state,groups:{...state.groups,back:'RN2'}},()=>true);
+ assert.deepEqual(unavailable.controls.find(c=>c.label==='Tinklelis')!.options,[]);
+ assert.deepEqual(unavailable.remaining,[]);
+});
 test('qualified synchronization intersects whole disjoint groups and preserves the branch/metal selection',()=>{
  const seat=group('seat','CUPHSEATCOLOR',['RED','BLUE']),back=group('back','CUPHBACKCOLOR',['BLUE','GREEN']),metal=group('metal','CBASEMETALCOLOR',['POL','BLACK']);
  const w={id:'w',groups:[metal],branches:[{id:'b',values:{CUPHGROUP:'CSE'},groups:[seat,back]}]} as unknown as QualifiedWitness;

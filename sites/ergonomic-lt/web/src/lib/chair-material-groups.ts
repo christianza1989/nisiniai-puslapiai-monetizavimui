@@ -100,7 +100,6 @@ export function qualifiedChairMaterialControls(w:QualifiedWitness,selection:Qual
  admit:(s:QualifiedSelection)=>boolean):{controls:ChairMaterialControl<QualifiedSelection>[];remaining:QualifiedGroup[]}{
  const branch=w.branches.find(b=>b.id===selection.branch),groups=[...w.groups,...branch?.groups||[]],used=new Set<string>();
  const descriptors=groups.flatMap(g=>{
-  if(branch?.groups.includes(g)&&g.separateControl)return [];
   const fields=unique(g.options.flatMap(o=>Object.keys(o.values).filter(f=>chairFinishRoles[f])));if(!fields.length)return [];
   const role=chairFinishRoles[fields[0]];if(fields.some(f=>chairFinishRoles[f]!==role))return [];
   if(role==='mesh'&&fields.some(f=>spacerMesh.has(f)!==spacerMesh.has(fields[0])))return [];
@@ -110,11 +109,11 @@ export function qualifiedChairMaterialControls(w:QualifiedWitness,selection:Qual
   const current=g.options.find(o=>o.id===(selection.groups[g.id]??g.base))||g.options.find(o=>o.id===g.base)!;
   const prefix=collections(current),kind=spacerMesh.has(fields[0])?'mesh-3d':role==='mesh'?'mesh':materialClass(prefix.length===1?prefix[0]:undefined);
   const signature=(o:typeof g.options[number])=>unique(fields.map(f=>o.values[f])).length===1?JSON.stringify([collections(o),o.values[fields[0]]]):undefined;
-  return [{g,fields,kind,signature,collections}];
+  return [{g,fields,role,kind,signature,collections,prefix,separate:branch?.groups.includes(g)&&g.separateControl===true}];
  });
- const controls=unique(descriptors.map(d=>d.kind)).map(kind=>{
-  const members=descriptors.filter(d=>d.kind===kind);members.forEach(d=>used.add(d.g.id));
-  const fields=unique(members.flatMap(d=>d.fields)),label=kind==='mesh-3d'?'3D tinklelis':kind==='mesh'?'Tinklelis':kind==='textile'?'Gobelenas':kind==='leatherette'?'Dirbtinė oda':kind==='leather'?'Oda':'Apmušalas';
+ function project(members:typeof descriptors,unified=false){
+  const {kind}=members[0];
+  const fields=unique(members.flatMap(d=>d.fields)),label=unified?'Apmušalas':kind==='mesh-3d'?'3D tinklelis':kind==='mesh'?'Tinklelis':kind==='textile'?'Gobelenas':kind==='leatherette'?'Dirbtinė oda':kind==='leather'?'Oda':'Apmušalas';
   const control:ChairMaterialControl<QualifiedSelection>={id:'chair-material-'+kind,label,fields,hiddenFields:members.map(d=>d.g.id),value:'',options:[]};
   for(const id of unique(members[0].g.options.map(members[0].signature).filter((x):x is string=>!!x))){
    const options=members.map(d=>d.g.options.filter(o=>d.signature(o)===id));if(options.some(o=>o.length!==1))continue;
@@ -129,6 +128,28 @@ export function qualifiedChairMaterialControls(w:QualifiedWitness,selection:Qual
   }
   if(!control.options.length)control.reason='Perduotos grupės neturi bendros patikrintos spalvos.';
   return control;
- });
+ }
+ const upholstery=descriptors.filter(d=>d.role==='upholstery');
+ const upholsteryGroups=groups.filter(g=>g.options.some(o=>Object.keys(o.values).some(f=>chairFinishRoles[f]==='upholstery')));
+ const covered=new Set(upholstery.flatMap(d=>d.fields));
+ const hasFixedUpholstery=Object.keys({...w.fixed,...branch?.values}).some(f=>chairFinishRoles[f]==='upholstery'&&!covered.has(f));
+ const collection=upholstery[0]?.prefix[0];
+ // A formerly separate control can join only with evidence of one shared
+ // collection across every upholstery group in this construction branch.
+ const unified=!hasFixedUpholstery&&upholstery.length===upholsteryGroups.length&&collection&&
+  upholstery.every(d=>d.prefix.length===1&&d.prefix[0]===collection)&&
+  (upholstery.length>1||upholstery[0].fields.length>1||upholstery[0].separate)
+  ?project(upholstery,true):undefined;
+ const controls:ChairMaterialControl<QualifiedSelection>[]=[];
+ if(unified?.options.length){
+  controls.push(unified);
+  upholstery.forEach(d=>used.add(d.g.id));
+ }
+ const independent=descriptors.filter(d=>!d.separate&&!used.has(d.g.id));
+ controls.push(...unique(independent.map(d=>d.kind)).map(kind=>{
+  const members=independent.filter(d=>d.kind===kind);
+  members.forEach(d=>used.add(d.g.id));
+  return project(members);
+ }));
  return {controls,remaining:groups.filter(g=>!used.has(g.id))};
 }

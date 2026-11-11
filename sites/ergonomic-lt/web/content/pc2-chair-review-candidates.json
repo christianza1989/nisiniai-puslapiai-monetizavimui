@@ -635,10 +635,25 @@
     {
       "code": "KXLI001WW002",
       "name": "X-Line",
-      "asset": "/models/configurator/chairs/KXLI001WW002-additional-8cf349c572bb6f9b19ef/review-260956d15df82e3a1869.json",
-      "sha256": "260956d15df82e3a18698eabc8f1ff1ac6d415019116344e7d572049742d8678",
-      "bytes": 820650,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KXLI001WW002-7d6baa32c88a6a3564da/review-f3a2e087b3db8d781886.json",
+      "sha256": "f3a2e087b3db8d7818860c5823088f26bbae324519af85e165124cc3e4a15c23",
+      "bytes": 3743387,
+      "version": "colors-20261111-v1-3510-xline-uph",
+      "defaultVersionLabel": "X-Line / R37 / ST56BL / HRUA · patikrinta apmušalų apdaila",
+      "reviewVersions": [
+        {
+          "id": "previous-xline-3510-package",
+          "label": "Ankstesnis X-Line paketas",
+          "entry": {
+            "code": "KXLI001WW002",
+            "name": "X-Line",
+            "asset": "/models/configurator/chairs/KXLI001WW002-additional-8cf349c572bb6f9b19ef/review-260956d15df82e3a1869.json",
+            "sha256": "260956d15df82e3a18698eabc8f1ff1ac6d415019116344e7d572049742d8678",
+            "bytes": 820650,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KSAI008WW002",

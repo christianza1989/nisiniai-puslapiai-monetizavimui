@@ -1,0 +1,558 @@
+{
+  "observedAt": "2026-10-12T06:31:18.057Z",
+  "producerDirectory": "C:/Users/Lenovo/Documents/Nisiniai_puslapiai/nisiniai_puslapiai_monetizavimui",
+  "readOnlyForeignCheckout": true,
+  "headAtObservation": "8ce36cf75a63b52aa6f0a624c1a028d506614811",
+  "branchAtObservation": "ai/madbeauty-content-plan-20261006",
+  "workingTreeAtObservation": "M AGENTS.md\n M CORE_BUILD_CONTRACT.md\n M SEO_GEO_CORE.md\n M SKILLS/PROJECT_CONTRACT.md\n M SKILLS/README.md\n M SKILLS/catalog.json\n M SKILLS/generative-engine-optimization/SKILL.md\n M SKILLS/index.csv\n M SKILLS/niche-content-planner/SKILL.md\n M SKILLS/niche-content-planner/references/content-workflow.md\n M SKILLS/niche-content-planner/references/niche-adaptation.md\n M SKILLS/niche-content-planner/references/quality-review.md\n M SKILLS/niche-content-planner/references/studio-contract.md\n M SKILLS/niche-site-audit/SKILL.md\n M SKILLS/niche-site-audit/references/report-contract.md\n M SKILLS/niche-site-audit/scripts/score-audit.mjs\n M SKILLS/niche-site-builder/SKILL.md\n M SKILLS/scripts/audit-skills.mjs\n M START_HERE.md\n M WORKSTREAMS.md\n M content-studio/src/editorial-skill.mjs\n M content-studio/test/editorial-skill.test.mjs\n M docs/MULTI_MACHINE.md\n M sites/madbeauty/topical-authority-20261006/MADBEAUTY-TOPICAL-AUTHORITY-PLANAS.html\n M sites/madbeauty/topical-authority-20261006/README.md\n?? SEO_RESEARCH_CORE.md\n?? SKILLS/niche-content-planner/references/planning-decisions.md\n?? SKILLS/niche-seo-geo-core/\n?? SKILLS/niche-site-audit/scripts/completion.test.mjs\n?? SKILLS/niche-site-audit/scripts/rendered-site_test.py\n?? SKILLS/niche-site-audit/scripts/rendered_site.py\n?? SKILLS/niche-site-audit/scripts/verify-site-completion.mjs\n?? SKILLS/niche-site-builder/references/first-delivery.md\n?? SKILLS/scripts/install-core-skills.mjs\n?? SKILLS/scripts/install-core-skills.test.mjs\n?? content-studio/scripts/seo-research.mjs\n?? content-studio/src/seo-research.mjs\n?? content-studio/test/geo-skill.test.mjs\n?? content-studio/test/seo-research.test.mjs\n?? docs/TREG_SEO_INTEGRATION_QA_2026-10-07.md\n?? research/core-completion-20261007/\n?? sites/madbeauty/publication-20261009/",
+  "codeFilesAtObservation": [
+    {
+      "path": "content-studio/src/cloudflare-image-pipeline.mjs",
+      "sha256": "5f3f3b315f91447687e856335e132052b1f501d970e3781e6f7531b5fd0dbabe",
+      "bytes": 1620
+    },
+    {
+      "path": "content-studio/src/content-package-v2.mjs",
+      "sha256": "e7d6f81478a2778516d0c7f80a797b6eeac6fe27eb02ec9ed048348203a128c7",
+      "bytes": 7572
+    },
+    {
+      "path": "content-studio/src/content-release.mjs",
+      "sha256": "60a6729fd609f108147843ef731af37b43f81f8138ab41eddb8c6f62d45e73f2",
+      "bytes": 2077
+    },
+    {
+      "path": "content-studio/src/content-schedule.mjs",
+      "sha256": "581ea94f7f6eca772433577016409a62f1a0f5761f00624acf2970f32a07e17e",
+      "bytes": 10038
+    },
+    {
+      "path": "content-studio/src/content-workflow.mjs",
+      "sha256": "d6f8d377357fd60599fa28e96e469714f005cdbf8c446a96df0de05d1ffba20d",
+      "bytes": 5534
+    },
+    {
+      "path": "content-studio/src/draft-v2.mjs",
+      "sha256": "d8440e79c97ab1ebf7a1fd9e960d1961d940ddd6e51bc96565411ab9087c7fa9",
+      "bytes": 8212
+    },
+    {
+      "path": "content-studio/src/editorial-cli.mjs",
+      "sha256": "9f37b86a8ce444bb96a1a6a7c48f155b17d480d871d189b79b1e335d537111aa",
+      "bytes": 3910
+    },
+    {
+      "path": "content-studio/src/editorial-skill.mjs",
+      "sha256": "42e740632da68a672294abaf51dba160099b389c9d7dcc2b9474580633c82c4a",
+      "bytes": 3846
+    },
+    {
+      "path": "content-studio/src/generator.mjs",
+      "sha256": "7506f1c0f62bdca3313a33b915b54e622ddbc501808c73244a66b76da49ab056",
+      "bytes": 20089
+    },
+    {
+      "path": "content-studio/src/image-pipeline.mjs",
+      "sha256": "415acdb6b074fdc3731eff84547e2fd20eeba9219f45bb988996321f809f6eb9",
+      "bytes": 2090
+    },
+    {
+      "path": "content-studio/src/image-policy.mjs",
+      "sha256": "d5fafa694a183d242753e8505bde469d64c2265aeaff436562e06a183e4457fa",
+      "bytes": 859
+    },
+    {
+      "path": "content-studio/src/model.mjs",
+      "sha256": "4c5ff9e85e01f0eae177b0b1986285d2ea7727336642714a796550348ad3307c",
+      "bytes": 55896
+    },
+    {
+      "path": "content-studio/src/network-links.mjs",
+      "sha256": "69a58b8dde70ab7e4cc1974056cca02dc9b1630c6d3f0da9ad6e0306e6f0296e",
+      "bytes": 5120
+    },
+    {
+      "path": "content-studio/src/seo-research.mjs",
+      "sha256": "72590a64e094a47325caf74400232acdb5dd2ed9ccfb7b41b2e72145f0573894",
+      "bytes": 6920
+    },
+    {
+      "path": "content-studio/src/server.mjs",
+      "sha256": "227d066fc827a95c0cf36c939cfbe0d602c7c0b0f5020b0a99ba697a41522522",
+      "bytes": 14629
+    },
+    {
+      "path": "content-studio/src/write-lock.mjs",
+      "sha256": "2a544452a3c5e039aabe1243fcf42ff2b8623115b2541f7f8ee9ae09eb1efede",
+      "bytes": 1619
+    },
+    {
+      "path": "content-studio/scripts/add-tractor-editorial-images.mjs",
+      "sha256": "0a4aaf84066061289ee7a7f241235a53418bfc4183f79946c416b66ae72b8b58",
+      "bytes": 4619
+    },
+    {
+      "path": "content-studio/scripts/build-akmenas-site.mjs",
+      "sha256": "dad576081b0855e906c13bda6e832352859b654ce0e52e1db631e7fea9507952",
+      "bytes": 37900
+    },
+    {
+      "path": "content-studio/scripts/build-auksarankiams-handyman.mjs",
+      "sha256": "2c36bfb394c92e9ddc511735bc9e81ca76f39f0b01b4ad6ed675771716a7e84b",
+      "bytes": 37251
+    },
+    {
+      "path": "content-studio/scripts/build-auksarankiams-site.mjs",
+      "sha256": "ba90e874e433a4928defac05156e102d0b906ac7234ac8507ef142fc99435964",
+      "bytes": 28136
+    },
+    {
+      "path": "content-studio/scripts/build-autoelektrikaivilniuje-site.mjs",
+      "sha256": "daa1a259129a4316783188b7947e1b66508ceb53b0bf0f205ecf21946d988698",
+      "bytes": 7731
+    },
+    {
+      "path": "content-studio/scripts/build-fasadopastoliai-site.mjs",
+      "sha256": "b51b37024344ef37e2b08d0a2f7d8457dfe35ae988123344fe70e4a00ad26345",
+      "bytes": 5851
+    },
+    {
+      "path": "content-studio/scripts/build-laiptucentras-site.mjs",
+      "sha256": "5debfca00ef541e08e5e74d8192ad0001bad692f137024ced1b323790d44c5e8",
+      "bytes": 36216
+    },
+    {
+      "path": "content-studio/scripts/build-miniekskavatoriai-site.mjs",
+      "sha256": "e8eb19107a169b9fc08816d378cbe4b02341bc832888014b78d043af45641852",
+      "bytes": 36456
+    },
+    {
+      "path": "content-studio/scripts/build-roletaiklaipedoje-site.mjs",
+      "sha256": "7f012e8850a4015a94097a34365292c073e3aced579626656d332072048b46af",
+      "bytes": 28660
+    },
+    {
+      "path": "content-studio/scripts/build-tractor-site.mjs",
+      "sha256": "c05c1bd1856d65c4f6dd55d23045762d597d95b7785e376741072af80d97bdaa",
+      "bytes": 23720
+    },
+    {
+      "path": "content-studio/scripts/build-v2-draft-schema.mjs",
+      "sha256": "9672230dcd72ee6ad75f4dc17bc44d56fff68da5508410d177a24edf845d5336",
+      "bytes": 1276
+    },
+    {
+      "path": "content-studio/scripts/build-v2-schema.mjs",
+      "sha256": "af0f3e0a6e522ba8f2805df4f7567d76d37ccbb4d8598c83b47008804451348b",
+      "bytes": 4081
+    },
+    {
+      "path": "content-studio/scripts/complete-tractor-editorial.mjs",
+      "sha256": "344b322d152d8b5ba7d9340b645bdd83b4ff77c03a7b417f1a595e4a66ee260d",
+      "bytes": 22545
+    },
+    {
+      "path": "content-studio/scripts/content-workflow.mjs",
+      "sha256": "3b7683c6c9d8c8e56f1b724e595c1b82123c44a08083b72000d945984de20b33",
+      "bytes": 1231
+    },
+    {
+      "path": "content-studio/scripts/draft-page.mjs",
+      "sha256": "7c2f6ea8627d324dc53b7832b2ae0b3d532abdf8556d8d71cd8410be08d8532b",
+      "bytes": 1154
+    },
+    {
+      "path": "content-studio/scripts/draft-reviewed-brief.mjs",
+      "sha256": "1dedc9944d95aee29085a040373fc74e2a218db69ea602efbd61af98411bb8de",
+      "bytes": 4616
+    },
+    {
+      "path": "content-studio/scripts/evaluate-editorial-skill.mjs",
+      "sha256": "7df9be29072750408455c4bb1cb0e3678c9c7c20ae16523c352a49a1c4361f86",
+      "bytes": 6368
+    },
+    {
+      "path": "content-studio/scripts/export-v2-fixture.mjs",
+      "sha256": "2ee8299b0db36237c877e092399703a2e15304b61dc7cc46e0e575b418d14da3",
+      "bytes": 440
+    },
+    {
+      "path": "content-studio/scripts/finalize-pinet-operator.mjs",
+      "sha256": "46214f44024c3a5a9cf00fa5e0a94764156a1d3b2f7c9d2c40ad71f5ea08bab8",
+      "bytes": 1798
+    },
+    {
+      "path": "content-studio/scripts/import-image.mjs",
+      "sha256": "fc8e7ea9886aadeecc3c60b7db53e1e5edffe6dddb7505aa237f2aa615201679",
+      "bytes": 1253
+    },
+    {
+      "path": "content-studio/scripts/media-ui-fixture.mjs",
+      "sha256": "1e0a319b4a39e1b38e57bab4f8fbbab711e8d3f2e2855994f364ca63127688a3",
+      "bytes": 1540
+    },
+    {
+      "path": "content-studio/scripts/migrate-network-contacts.mjs",
+      "sha256": "7ab28d1f37bca0a140e5f1bf6d3f106980abc5b8fd1a148c528f824411745683",
+      "bytes": 2699
+    },
+    {
+      "path": "content-studio/scripts/reconcile-private-plan.mjs",
+      "sha256": "107296bdfa8194092a1c1ff56e3edf79edb9cefaadf866d71f65f82312b33a4a",
+      "bytes": 1724
+    },
+    {
+      "path": "content-studio/scripts/redesign-tractor-media.mjs",
+      "sha256": "eaeeae0b5e920570bca328c75bf8e8f5d3c93eb4e42ffb3cbcea196c0204e6be",
+      "bytes": 3889
+    },
+    {
+      "path": "content-studio/scripts/repair-auksarankiams-page-types.mjs",
+      "sha256": "01d67782c4f812db45c6e8b1876c39a0db209ad0a709d979929087f2f7d5bd28",
+      "bytes": 1132
+    },
+    {
+      "path": "content-studio/scripts/revise-page.mjs",
+      "sha256": "36ccc8bb8127e315bcf07eb7f0a2ac2d38676f378aab0334c72bc70d3ef97e8c",
+      "bytes": 1115
+    },
+    {
+      "path": "content-studio/scripts/seed-tractor-pilot.mjs",
+      "sha256": "7f75fad04b0f204af8581eab0f1d0f8efb63ba419adbee3bb4c31c9069966ca1",
+      "bytes": 7286
+    },
+    {
+      "path": "content-studio/scripts/seo-research.mjs",
+      "sha256": "21ac560705b01248b2ae2722cab543439fab999a52e11ba6adaf51b0364e46a5",
+      "bytes": 2689
+    },
+    {
+      "path": "content-studio/scripts/v2-qa-studio.mjs",
+      "sha256": "18916d94f19104ac5c65d72975709077ed6ee799aaa20d17a02c85c32f6a5c2c",
+      "bytes": 1060
+    },
+    {
+      "path": "content-studio/scripts/verify-content-release.mjs",
+      "sha256": "39c6169832a3e6b35278852988571e5489557a62082d826aabdee4df484db28b",
+      "bytes": 772
+    },
+    {
+      "path": "content-studio/scripts/verify-network-links.mjs",
+      "sha256": "0d2c1e533f1546335574c45f2608a45db129ca338d1148e60a3d7d81bb704adc",
+      "bytes": 449
+    }
+  ],
+  "jobs": [
+    {
+      "id": "a5ed9924-da93-47d5-9300-2999d0f58454",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-12T06:12:27.639Z",
+        "finishedAt": "2026-10-12T06:13:46.171Z",
+        "promptSha256": "1ad7751994eb4c2620c5e85e03f75fa428522b8e48040a26007e67990a2fed6a",
+        "resultSha256": "d2f73460a65e9e67b5bbab0468f242dc129103dc8638204ef78e12393bbf5c97",
+        "resultArtifact": "tmp/97416d0c-5b32-43b3-85fd-f7b9a683ca9f.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "9c7978931ca63cc532f46d1813b24a0447ca0af7811e01c36e6b36cdd631f8f8"
+      },
+      "generationReceipts": {
+        "48be8ecf-88d5-4bd5-85e9-4fc87c35403b": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-12T06:12:27.639Z",
+          "finishedAt": "2026-10-12T06:13:46.171Z",
+          "promptSha256": "1ad7751994eb4c2620c5e85e03f75fa428522b8e48040a26007e67990a2fed6a",
+          "resultSha256": "d2f73460a65e9e67b5bbab0468f242dc129103dc8638204ef78e12393bbf5c97",
+          "resultArtifact": "tmp/97416d0c-5b32-43b3-85fd-f7b9a683ca9f.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "9c7978931ca63cc532f46d1813b24a0447ca0af7811e01c36e6b36cdd631f8f8"
+        }
+      }
+    },
+    {
+      "id": "0058f81e-6c8a-4f39-b0e3-6d8763989a93",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-12T06:13:47.703Z",
+        "finishedAt": "2026-10-12T06:15:25.653Z",
+        "promptSha256": "49c4c5983925291889aa038b05d8a1753fac0b8b9725751554eaed8f96797885",
+        "resultSha256": "eb5ec186d280f3fff0f8a3da4983829ad45a9e34dc107ebff405f59d651f4fba",
+        "resultArtifact": "tmp/e5d49131-3aa2-483d-ad0c-5b5ebf257e1d.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "03be9cddf1d0c22d5f95056d859fe7af1e6d422559efd79fa061ccf6e2e895e9"
+      },
+      "generationReceipts": {
+        "a24a5ffb-13e1-447b-b50e-f015f6e661c7": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-12T06:13:47.703Z",
+          "finishedAt": "2026-10-12T06:15:25.653Z",
+          "promptSha256": "49c4c5983925291889aa038b05d8a1753fac0b8b9725751554eaed8f96797885",
+          "resultSha256": "eb5ec186d280f3fff0f8a3da4983829ad45a9e34dc107ebff405f59d651f4fba",
+          "resultArtifact": "tmp/e5d49131-3aa2-483d-ad0c-5b5ebf257e1d.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "03be9cddf1d0c22d5f95056d859fe7af1e6d422559efd79fa061ccf6e2e895e9"
+        }
+      }
+    },
+    {
+      "id": "169a48e9-34a1-4a75-b1c4-a7eda0df84b6",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-12T06:15:26.880Z",
+        "finishedAt": "2026-10-12T06:16:28.456Z",
+        "promptSha256": "99a68f0e92f69655e7358454a8f52cd04592a3db2c9ef78630f22b87b85ab637",
+        "resultSha256": "5b50dcd128d04d175a90cf90cf5a5c0df9fe62c5403a4b7103c97d19936b2a95",
+        "resultArtifact": "tmp/dc4d7d3d-eb9b-4433-ad53-c578d25b2f0d.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "57ef249ade3d94531dfffaaa80c5f46a277cf256b17ffed89b6f16735ef99bed"
+      },
+      "generationReceipts": {
+        "d52b71f7-c715-4086-be3a-01f37a819a00": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-12T06:15:26.880Z",
+          "finishedAt": "2026-10-12T06:16:28.456Z",
+          "promptSha256": "99a68f0e92f69655e7358454a8f52cd04592a3db2c9ef78630f22b87b85ab637",
+          "resultSha256": "5b50dcd128d04d175a90cf90cf5a5c0df9fe62c5403a4b7103c97d19936b2a95",
+          "resultArtifact": "tmp/dc4d7d3d-eb9b-4433-ad53-c578d25b2f0d.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "57ef249ade3d94531dfffaaa80c5f46a277cf256b17ffed89b6f16735ef99bed"
+        }
+      }
+    },
+    {
+      "id": "ac4da255-53dc-4a01-b515-c0f1d6e709fa",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-12T06:16:29.574Z",
+        "finishedAt": "2026-10-12T06:18:09.753Z",
+        "promptSha256": "e281d1b94e778094368bc5248e1ed60a09e7abe865dfb0f52a874a63fd8e3857",
+        "resultSha256": "84423f5f09385112a8a264a44b400fbd89650636e0c30cc163499ad628a30710",
+        "resultArtifact": "tmp/66e8853e-95c0-44a1-821a-650ca6b5b302.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "be1e972e0b25a5a81a218c751696dac4a8ee39aff3597c2de769c9c3ccd809bf"
+      },
+      "generationReceipts": {
+        "101ecc90-7e7c-4b82-962a-75e3401abd7c": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-12T06:16:29.574Z",
+          "finishedAt": "2026-10-12T06:18:09.753Z",
+          "promptSha256": "e281d1b94e778094368bc5248e1ed60a09e7abe865dfb0f52a874a63fd8e3857",
+          "resultSha256": "84423f5f09385112a8a264a44b400fbd89650636e0c30cc163499ad628a30710",
+          "resultArtifact": "tmp/66e8853e-95c0-44a1-821a-650ca6b5b302.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "be1e972e0b25a5a81a218c751696dac4a8ee39aff3597c2de769c9c3ccd809bf"
+        }
+      }
+    },
+    {
+      "id": "ba4422d4-4148-4135-8650-b2f5880023ba",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "3d74e53b-5300-4328-94c9-747ada19b94f",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-12T06:18:10.773Z",
+        "finishedAt": "2026-10-12T06:19:11.164Z",
+        "promptSha256": "f25589709b76814e5dcd70d0b318567a90dd54d00fbca2e85691f21cb063cbe2",
+        "resultSha256": "5da91dbc14235c22b8edcd6ac2546a98c9a3de7621c21e3b725ff59487eb40d3",
+        "resultArtifact": "tmp/5007fe4e-e8ac-4aa1-b0c2-f5429427ac53.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "4022f49f6229aeef3e0a0e739980f23d32183a45d023016e06d74d8760ac5a45"
+      },
+      "generationReceipts": {
+        "3d74e53b-5300-4328-94c9-747ada19b94f": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-12T06:18:10.773Z",
+          "finishedAt": "2026-10-12T06:19:11.164Z",
+          "promptSha256": "f25589709b76814e5dcd70d0b318567a90dd54d00fbca2e85691f21cb063cbe2",
+          "resultSha256": "5da91dbc14235c22b8edcd6ac2546a98c9a3de7621c21e3b725ff59487eb40d3",
+          "resultArtifact": "tmp/5007fe4e-e8ac-4aa1-b0c2-f5429427ac53.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "4022f49f6229aeef3e0a0e739980f23d32183a45d023016e06d74d8760ac5a45"
+        }
+      }
+    },
+    {
+      "id": "02b9d2aa-d6df-489b-a0de-4014e91cc74d",
+      "type": "draft",
+      "status": "complete",
+      "pageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-12T06:19:12.338Z",
+        "finishedAt": "2026-10-12T06:20:09.227Z",
+        "promptSha256": "34db046623afddfc8ffd45c96f3939cfcc8bd976290e17f8ec2b72cd21fdcbe3",
+        "resultSha256": "f314df1d0b529f13be381c11bb217dcf3c53012103f1d8d02b5d11e8b5ef3612",
+        "resultArtifact": "tmp/5c41508c-f1b5-4203-a7aa-e585a7ed79ab.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "45fd257c20301771dce78a808ce3724f5b2bc8da3dc4dea8261821402aa7c83b"
+      },
+      "generationReceipts": {
+        "e309ab67-20b7-4b87-a185-9a9725fadd1a": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-12T06:19:12.338Z",
+          "finishedAt": "2026-10-12T06:20:09.227Z",
+          "promptSha256": "34db046623afddfc8ffd45c96f3939cfcc8bd976290e17f8ec2b72cd21fdcbe3",
+          "resultSha256": "f314df1d0b529f13be381c11bb217dcf3c53012103f1d8d02b5d11e8b5ef3612",
+          "resultArtifact": "tmp/5c41508c-f1b5-4203-a7aa-e585a7ed79ab.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "45fd257c20301771dce78a808ce3724f5b2bc8da3dc4dea8261821402aa7c83b"
+        }
+      }
+    },
+    {
+      "id": "72268bbc-c450-4b4b-8fa9-f66b846e7220",
+      "type": "revise",
+      "status": "complete",
+      "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+      "lastGenerationReceipt": {
+        "model": "gpt-6-luna",
+        "reasoningEffort": "xhigh",
+        "policyVersion": "article-luna-xhigh-20261007",
+        "fallback": false,
+        "observed": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh"
+        },
+        "startedAt": "2026-10-12T06:23:43.607Z",
+        "finishedAt": "2026-10-12T06:24:45.687Z",
+        "promptSha256": "b1ad0200506ceff2fbca5789635b801a561111d1a0cb20f687b5a27e60e73396",
+        "resultSha256": "e5dea5e9780b314af604b4aa78fd069ed24df4ac320d7ba4cf4b1900ee5a1490",
+        "resultArtifact": "tmp/1507d4f0-be62-48c4-84f1-1b0f7c5bf8c9.result.json",
+        "execution": "CODEX_CLI",
+        "mode": "draft",
+        "draftSchemaSha256": "57ef249ade3d94531dfffaaa80c5f46a277cf256b17ffed89b6f16735ef99bed"
+      },
+      "generationReceipts": {
+        "d52b71f7-c715-4086-be3a-01f37a819a00": {
+          "model": "gpt-6-luna",
+          "reasoningEffort": "xhigh",
+          "policyVersion": "article-luna-xhigh-20261007",
+          "fallback": false,
+          "observed": {
+            "model": "gpt-6-luna",
+            "reasoningEffort": "xhigh"
+          },
+          "startedAt": "2026-10-12T06:23:43.607Z",
+          "finishedAt": "2026-10-12T06:24:45.687Z",
+          "promptSha256": "b1ad0200506ceff2fbca5789635b801a561111d1a0cb20f687b5a27e60e73396",
+          "resultSha256": "e5dea5e9780b314af604b4aa78fd069ed24df4ac320d7ba4cf4b1900ee5a1490",
+          "resultArtifact": "tmp/1507d4f0-be62-48c4-84f1-1b0f7c5bf8c9.result.json",
+          "execution": "CODEX_CLI",
+          "mode": "draft",
+          "draftSchemaSha256": "57ef249ade3d94531dfffaaa80c5f46a277cf256b17ffed89b6f16735ef99bed"
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "The producer checkout is dirty and owned by another chat. Its HEAD alone does not identify the code used for generation. These current file hashes are observations, not retroactive hashes at each job start. Historical prompt/result hashes and job fingerprints remain the primary execution evidence. No foreign checkout, core or skill files were modified by this content batch."
+  ]
+}

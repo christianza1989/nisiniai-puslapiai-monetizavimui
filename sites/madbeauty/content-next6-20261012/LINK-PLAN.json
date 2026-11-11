@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-12T06:25:57.323Z",
+  "scope": "Private full graph before release selection. Deferred destinations remain planned, never live hrefs.",
+  "pages": [
+    {
+      "planId": "MS-aromaterapinis",
+      "pageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+      "publishAt": "2026-12-24T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "61455054-263f-416a-8d1b-a993e4949753",
+          "label": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Masažo gidas: kūno ir veido paslaugos, eiga bei kompetencijos ribos"
+        }
+      ]
+    },
+    {
+      "planId": "ND-forma-ilgis",
+      "pageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+      "publishAt": "2026-12-24T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+          "label": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Nagų dizaino gidas: forma, spalva, technika ir darbo apimtis"
+        }
+      ]
+    },
+    {
+      "planId": "NP-gelis-akrilas-poligelis",
+      "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+      "publishAt": "2026-12-25T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+          "label": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Nagų priauginimo gidas: ilgio kūrimas, konstrukcija ir papildymas"
+        }
+      ]
+    },
+    {
+      "planId": "PD-aparatinis-klasikinis",
+      "pageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+      "publishAt": "2026-12-25T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+          "label": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Pedikiūro gidas: pėdų priežiūra, nagų sutvarkymas ir lakavimas"
+        }
+      ]
+    },
+    {
+      "planId": "PP-tiesinimas",
+      "pageId": "3d74e53b-5300-4328-94c9-747ada19b94f",
+      "publishAt": "2026-12-26T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+          "label": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Plaukų priežiūros procedūrų gidas: kosmetinė priežiūra ir lūkesčių ribos"
+        },
+        {
+          "targetPageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+          "label": "Džiovinimas ir sušukavimas ar proginė šukuosena: skirtinga darbo apimtis",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Džiovinimas ir sušukavimas ar proginė šukuosena: skirtinga darbo apimtis"
+        }
+      ]
+    },
+    {
+      "planId": "SP-poroms",
+      "pageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+      "publishAt": "2026-12-27T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+          "label": "SPA gidas: ritualas, pirtis ir privatus apsilankymas nėra tas pats",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "SPA gidas: ritualas, pirtis ir privatus apsilankymas nėra tas pats"
+        }
+      ]
+    }
+  ]
+}

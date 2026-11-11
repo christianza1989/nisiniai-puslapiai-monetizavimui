@@ -1,0 +1,722 @@
+[
+  {
+    "index": 1,
+    "planId": "MS-aromaterapinis",
+    "pageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+    "status": "IMPORTED_REQUIRES_RENDERED_REVIEW",
+    "alt": "Masažo aliejaus buteliukai ant mėlyno paviršiaus",
+    "actualPrompt": "Use case: Editorial macro still life. Page question: Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two plain capped amber massage-oil bottles beside one ceramic bowl and linen, indigo blue tiled surface, cool side daylight, subtle eucalyptus branch outside focal zone. No application, no flame, no diffuser, no promised medicinal ingredient.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+    "sourcePath": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a11146-e1d2-78b1-ae76-081e812c0ca0\\exec-fc169d81-8bb9-4b89-806d-ee703035a52e.png",
+    "originalPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/originals/MS-aromaterapinis.png",
+    "originalSha256": "be942cf32081cc2f99421015104f2173795af8174afc33ba78f3e48399ae4d3d",
+    "generatedAt": "2026-10-12T06:17:45.903Z",
+    "generator": "built-in image_gen",
+    "originalPixelReview": {
+      "state": "PASS_ORIGINAL_PIXELS",
+      "at": "2026-10-12T06:17:45.904Z",
+      "sha256": "be942cf32081cc2f99421015104f2173795af8174afc33ba78f3e48399ae4d3d",
+      "observation": "Two closed amber bottles, ceramic bowl and indigo tile are plausible; no application, brand or healing claim. Different cool close-up scene.",
+      "scope": "Each actual generated image was displayed and individually inspected."
+    },
+    "imported": {
+      "id": "f9626d0d-1e2c-4d5a-9e58-e8b74dd50cc4",
+      "groupId": "102a1fa5-c0bc-40c8-ae51-a36e627bda8e",
+      "variants": [
+        {
+          "id": "f9626d0d-1e2c-4d5a-9e58-e8b74dd50cc4",
+          "groupId": "102a1fa5-c0bc-40c8-ae51-a36e627bda8e",
+          "src": "/content-assets/madbeauty/f9626d0d-1e2c-4d5a-9e58-e8b74dd50cc4.webp",
+          "alt": "Masažo aliejaus buteliukai ant mėlyno paviršiaus",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial macro still life. Page question: Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two plain capped amber massage-oil bottles beside one ceramic bowl and linen, indigo blue tiled surface, cool side daylight, subtle eucalyptus branch outside focal zone. No application, no flame, no diffuser, no promised medicinal ingredient.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 89092,
+          "sha256": "5aafe99d00c88c2793664fd536f69f162f9f269fb466dc080af6943e73925137"
+        },
+        {
+          "id": "4e8cb1d9-6c69-4306-a2ba-8afe78ea5d89",
+          "groupId": "102a1fa5-c0bc-40c8-ae51-a36e627bda8e",
+          "src": "/content-assets/madbeauty/4e8cb1d9-6c69-4306-a2ba-8afe78ea5d89.webp",
+          "alt": "Masažo aliejaus buteliukai ant mėlyno paviršiaus",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial macro still life. Page question: Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two plain capped amber massage-oil bottles beside one ceramic bowl and linen, indigo blue tiled surface, cool side daylight, subtle eucalyptus branch outside focal zone. No application, no flame, no diffuser, no promised medicinal ingredient.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 64940,
+          "sha256": "41bea64bfdb01d1ce6b224eb8ca8a1b3ce2cadf26f9f9959fca2649b3712b90b"
+        },
+        {
+          "id": "2acc9825-8e5b-43b4-9e64-95fb4a96db03",
+          "groupId": "102a1fa5-c0bc-40c8-ae51-a36e627bda8e",
+          "src": "/content-assets/madbeauty/2acc9825-8e5b-43b4-9e64-95fb4a96db03.webp",
+          "alt": "Masažo aliejaus buteliukai ant mėlyno paviršiaus",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial macro still life. Page question: Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two plain capped amber massage-oil bottles beside one ceramic bowl and linen, indigo blue tiled surface, cool side daylight, subtle eucalyptus branch outside focal zone. No application, no flame, no diffuser, no promised medicinal ingredient.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 37198,
+          "sha256": "6e3522ab2d7e1677e543be88f6c5c401e2527314653d214338bb8e23c919b381"
+        },
+        {
+          "id": "34f021ed-a7c4-4b74-8478-cadcc1996a65",
+          "groupId": "102a1fa5-c0bc-40c8-ae51-a36e627bda8e",
+          "src": "/content-assets/madbeauty/34f021ed-a7c4-4b74-8478-cadcc1996a65.webp",
+          "alt": "Masažo aliejaus buteliukai ant mėlyno paviršiaus",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial macro still life. Page question: Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two plain capped amber massage-oil bottles beside one ceramic bowl and linen, indigo blue tiled surface, cool side daylight, subtle eucalyptus branch outside focal zone. No application, no flame, no diffuser, no promised medicinal ingredient.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 26480,
+          "sha256": "a5a3669a5dc3e260d982215beae4b57c797b9046e9f3fe4555ddcd649bf76813"
+        },
+        {
+          "id": "523b08ee-e7b1-453a-8b4a-ea11f8e6f66b",
+          "groupId": "102a1fa5-c0bc-40c8-ae51-a36e627bda8e",
+          "src": "/content-assets/madbeauty/523b08ee-e7b1-453a-8b4a-ea11f8e6f66b.webp",
+          "alt": "Masažo aliejaus buteliukai ant mėlyno paviršiaus",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial macro still life. Page question: Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two plain capped amber massage-oil bottles beside one ceramic bowl and linen, indigo blue tiled surface, cool side daylight, subtle eucalyptus branch outside focal zone. No application, no flame, no diffuser, no promised medicinal ingredient.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 11162,
+          "sha256": "a2653287f250b0254778bcf7299318eae6ed9fd2acc1c552cc90b4d29a830d31"
+        }
+      ],
+      "optimization": {
+        "policy": "responsive-webp-v1",
+        "sourceBytes": 2149013,
+        "variantBytes": [
+          {
+            "width": 1536,
+            "bytes": 89092
+          },
+          {
+            "width": 1200,
+            "bytes": 64940
+          },
+          {
+            "width": 800,
+            "bytes": 37198
+          },
+          {
+            "width": 640,
+            "bytes": 26480
+          },
+          {
+            "width": 360,
+            "bytes": 11162
+          }
+        ],
+        "originalStoredPrivately": true
+      }
+    },
+    "originalPixelsInspected": true,
+    "pixelReview": "All 6 original photographs viewed individually and in the generation outputs: relevant subject, distinct composition/palette, anatomical plausibility, no fake before/after or unsafe procedure portrayal. Mobile rendered focal point checked separately."
+  },
+  {
+    "index": 2,
+    "planId": "ND-forma-ilgis",
+    "pageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+    "status": "IMPORTED_REQUIRES_RENDERED_REVIEW",
+    "alt": "Ovalaus, migdolo ir kvadratinio kontūro nagų pavyzdžiai",
+    "actualPrompt": "Use case: Editorial sample study. Page question: Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Exactly three separate artificial nude nail display tips in oval, almond and square silhouettes, on a charcoal jeweller display with lilac background. No fingers, no hands, no text; different contours clearly visible, not a medical diagram.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+    "sourcePath": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a11146-e1d2-78b1-ae76-081e812c0ca0\\exec-3133fb2b-fec9-40a5-ae39-843652d3d9eb.png",
+    "originalPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/originals/ND-forma-ilgis.png",
+    "originalSha256": "981f7c946698891b27c1290c2d08a04760185cc9e18c1501dd8a8760e8404e1b",
+    "generatedAt": "2026-10-12T06:17:45.908Z",
+    "generator": "built-in image_gen",
+    "originalPixelReview": {
+      "state": "PASS_ORIGINAL_PIXELS",
+      "at": "2026-10-12T06:17:45.908Z",
+      "sha256": "981f7c946698891b27c1290c2d08a04760185cc9e18c1501dd8a8760e8404e1b",
+      "observation": "Three distinct nude artificial display tips; oval/almond/straight square free-edge shape clear. No fingers/anatomy or false provider outcome. Native contour diagram will carry exact geometry.",
+      "scope": "Each actual generated image was displayed and individually inspected."
+    },
+    "imported": {
+      "id": "fd26f487-3963-456f-a813-20f81332918b",
+      "groupId": "ecf4e73a-56f8-4790-8cb2-6eb9e7f44caf",
+      "variants": [
+        {
+          "id": "fd26f487-3963-456f-a813-20f81332918b",
+          "groupId": "ecf4e73a-56f8-4790-8cb2-6eb9e7f44caf",
+          "src": "/content-assets/madbeauty/fd26f487-3963-456f-a813-20f81332918b.webp",
+          "alt": "Ovalaus, migdolo ir kvadratinio kontūro nagų pavyzdžiai",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial sample study. Page question: Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Exactly three separate artificial nude nail display tips in oval, almond and square silhouettes, on a charcoal jeweller display with lilac background. No fingers, no hands, no text; different contours clearly visible, not a medical diagram.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 62652,
+          "sha256": "8bb21d5dc768a9f629a5627d5b5eaeb353ecb64b21f8bab43b397dc441cb4172"
+        },
+        {
+          "id": "2914ada0-81ed-409c-bef5-9ee4c71efd26",
+          "groupId": "ecf4e73a-56f8-4790-8cb2-6eb9e7f44caf",
+          "src": "/content-assets/madbeauty/2914ada0-81ed-409c-bef5-9ee4c71efd26.webp",
+          "alt": "Ovalaus, migdolo ir kvadratinio kontūro nagų pavyzdžiai",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial sample study. Page question: Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Exactly three separate artificial nude nail display tips in oval, almond and square silhouettes, on a charcoal jeweller display with lilac background. No fingers, no hands, no text; different contours clearly visible, not a medical diagram.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 42908,
+          "sha256": "2c051866ed5700e74c3aa3e865493a88b6b644585727323fb6a548171ebebe57"
+        },
+        {
+          "id": "c7e268c7-227f-40ff-b392-dc2536c27d7a",
+          "groupId": "ecf4e73a-56f8-4790-8cb2-6eb9e7f44caf",
+          "src": "/content-assets/madbeauty/c7e268c7-227f-40ff-b392-dc2536c27d7a.webp",
+          "alt": "Ovalaus, migdolo ir kvadratinio kontūro nagų pavyzdžiai",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial sample study. Page question: Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Exactly three separate artificial nude nail display tips in oval, almond and square silhouettes, on a charcoal jeweller display with lilac background. No fingers, no hands, no text; different contours clearly visible, not a medical diagram.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 21548,
+          "sha256": "f9c3604861d27da67974e0e3ab3c9337268aa09a337a76a050bf3f0a607874f9"
+        },
+        {
+          "id": "7b043b85-97c8-4574-bb9a-469c4292e565",
+          "groupId": "ecf4e73a-56f8-4790-8cb2-6eb9e7f44caf",
+          "src": "/content-assets/madbeauty/7b043b85-97c8-4574-bb9a-469c4292e565.webp",
+          "alt": "Ovalaus, migdolo ir kvadratinio kontūro nagų pavyzdžiai",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial sample study. Page question: Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Exactly three separate artificial nude nail display tips in oval, almond and square silhouettes, on a charcoal jeweller display with lilac background. No fingers, no hands, no text; different contours clearly visible, not a medical diagram.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 14290,
+          "sha256": "4a3a7b55a4fc0df46c5e23e82d331b117b9edece1b26db45745e399dac4a64b0"
+        },
+        {
+          "id": "7709f853-4919-44d4-9616-49a492e1ff59",
+          "groupId": "ecf4e73a-56f8-4790-8cb2-6eb9e7f44caf",
+          "src": "/content-assets/madbeauty/7709f853-4919-44d4-9616-49a492e1ff59.webp",
+          "alt": "Ovalaus, migdolo ir kvadratinio kontūro nagų pavyzdžiai",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Editorial sample study. Page question: Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Exactly three separate artificial nude nail display tips in oval, almond and square silhouettes, on a charcoal jeweller display with lilac background. No fingers, no hands, no text; different contours clearly visible, not a medical diagram.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 5564,
+          "sha256": "c5478fac6a45aa41be5ea60114bb6c0bc83596c2915ba841f26cf16af6357847"
+        }
+      ],
+      "optimization": {
+        "policy": "responsive-webp-v1",
+        "sourceBytes": 2050968,
+        "variantBytes": [
+          {
+            "width": 1536,
+            "bytes": 62652
+          },
+          {
+            "width": 1200,
+            "bytes": 42908
+          },
+          {
+            "width": 800,
+            "bytes": 21548
+          },
+          {
+            "width": 640,
+            "bytes": 14290
+          },
+          {
+            "width": 360,
+            "bytes": 5564
+          }
+        ],
+        "originalStoredPrivately": true
+      }
+    },
+    "originalPixelsInspected": true,
+    "pixelReview": "All 6 original photographs viewed individually and in the generation outputs: relevant subject, distinct composition/palette, anatomical plausibility, no fake before/after or unsafe procedure portrayal. Mobile rendered focal point checked separately."
+  },
+  {
+    "index": 3,
+    "planId": "NP-gelis-akrilas-poligelis",
+    "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+    "status": "IMPORTED_REQUIRES_RENDERED_REVIEW",
+    "alt": "Nagų modeliavimo priemonės ir parodomieji tipsai",
+    "actualPrompt": "Use case: Bright product workspace. Page question: Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Plain closed enhancement-gel pot and a plain capped modelling tube, unused clean brushes and three neutral sample nail tips, violet salon counter, crisp hard daylight, no logos, lamp off, no skin application.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+    "sourcePath": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a11146-e1d2-78b1-ae76-081e812c0ca0\\exec-03fe855e-4721-40d5-8d6e-dc70b20f9b64.png",
+    "originalPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/originals/NP-gelis-akrilas-poligelis.png",
+    "originalSha256": "e529b7000fbd405eca79370fe9dcca48d5e3469cbbee7c53f5227efafbf804ac",
+    "generatedAt": "2026-10-12T06:17:45.913Z",
+    "generator": "built-in image_gen",
+    "originalPixelReview": {
+      "state": "PASS_ORIGINAL_PIXELS",
+      "at": "2026-10-12T06:17:45.913Z",
+      "sha256": "e529b7000fbd405eca79370fe9dcca48d5e3469cbbee7c53f5227efafbf804ac",
+      "observation": "Plain closed pot and tube with unused brushes and demonstration tips, inactive lamp. No logos or active application; purple workspace differs from macro bottles.",
+      "scope": "Each actual generated image was displayed and individually inspected."
+    },
+    "imported": {
+      "id": "0e47f57d-f0fa-4d2a-907f-0123b1ca5495",
+      "groupId": "667e88f8-f61d-4608-99a9-46f234e51ab0",
+      "variants": [
+        {
+          "id": "0e47f57d-f0fa-4d2a-907f-0123b1ca5495",
+          "groupId": "667e88f8-f61d-4608-99a9-46f234e51ab0",
+          "src": "/content-assets/madbeauty/0e47f57d-f0fa-4d2a-907f-0123b1ca5495.webp",
+          "alt": "Nagų modeliavimo priemonės ir parodomieji tipsai",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Bright product workspace. Page question: Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Plain closed enhancement-gel pot and a plain capped modelling tube, unused clean brushes and three neutral sample nail tips, violet salon counter, crisp hard daylight, no logos, lamp off, no skin application.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 62832,
+          "sha256": "2e28624bb1c167803ca87ac8548fe5488e255993edcbb9c33b0d4ad49d705555"
+        },
+        {
+          "id": "94602deb-aea5-4259-9a44-55cd92a8adff",
+          "groupId": "667e88f8-f61d-4608-99a9-46f234e51ab0",
+          "src": "/content-assets/madbeauty/94602deb-aea5-4259-9a44-55cd92a8adff.webp",
+          "alt": "Nagų modeliavimo priemonės ir parodomieji tipsai",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Bright product workspace. Page question: Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Plain closed enhancement-gel pot and a plain capped modelling tube, unused clean brushes and three neutral sample nail tips, violet salon counter, crisp hard daylight, no logos, lamp off, no skin application.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 47270,
+          "sha256": "309659b8b22f06698a81b833f5d6f625e8cfb2e4bbf7af0afc305154e2afcea3"
+        },
+        {
+          "id": "8fc4d388-2d58-4780-8df6-690e4fa52543",
+          "groupId": "667e88f8-f61d-4608-99a9-46f234e51ab0",
+          "src": "/content-assets/madbeauty/8fc4d388-2d58-4780-8df6-690e4fa52543.webp",
+          "alt": "Nagų modeliavimo priemonės ir parodomieji tipsai",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Bright product workspace. Page question: Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Plain closed enhancement-gel pot and a plain capped modelling tube, unused clean brushes and three neutral sample nail tips, violet salon counter, crisp hard daylight, no logos, lamp off, no skin application.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 29358,
+          "sha256": "27fc2f2f0407b5e6861eecede785dbb8acfc14a0de59142032755033b5cb56e0"
+        },
+        {
+          "id": "767219c4-bd23-48af-b0c6-b79af9037a80",
+          "groupId": "667e88f8-f61d-4608-99a9-46f234e51ab0",
+          "src": "/content-assets/madbeauty/767219c4-bd23-48af-b0c6-b79af9037a80.webp",
+          "alt": "Nagų modeliavimo priemonės ir parodomieji tipsai",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Bright product workspace. Page question: Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Plain closed enhancement-gel pot and a plain capped modelling tube, unused clean brushes and three neutral sample nail tips, violet salon counter, crisp hard daylight, no logos, lamp off, no skin application.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 22304,
+          "sha256": "5a712060d873f40145c95d6a0155a074b429bae631cc08b6e3c2a9fa4de838c9"
+        },
+        {
+          "id": "66262d59-e135-4cfa-9a0d-c6ac7c680c7b",
+          "groupId": "667e88f8-f61d-4608-99a9-46f234e51ab0",
+          "src": "/content-assets/madbeauty/66262d59-e135-4cfa-9a0d-c6ac7c680c7b.webp",
+          "alt": "Nagų modeliavimo priemonės ir parodomieji tipsai",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Bright product workspace. Page question: Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Plain closed enhancement-gel pot and a plain capped modelling tube, unused clean brushes and three neutral sample nail tips, violet salon counter, crisp hard daylight, no logos, lamp off, no skin application.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 10536,
+          "sha256": "ad625de6801648af9649b73890e95bea780a55b3c0fd50564d3f170ed40bb21a"
+        }
+      ],
+      "optimization": {
+        "policy": "responsive-webp-v1",
+        "sourceBytes": 1926817,
+        "variantBytes": [
+          {
+            "width": 1536,
+            "bytes": 62832
+          },
+          {
+            "width": 1200,
+            "bytes": 47270
+          },
+          {
+            "width": 800,
+            "bytes": 29358
+          },
+          {
+            "width": 640,
+            "bytes": 22304
+          },
+          {
+            "width": 360,
+            "bytes": 10536
+          }
+        ],
+        "originalStoredPrivately": true
+      }
+    },
+    "originalPixelsInspected": true,
+    "pixelReview": "All 6 original photographs viewed individually and in the generation outputs: relevant subject, distinct composition/palette, anatomical plausibility, no fake before/after or unsafe procedure portrayal. Mobile rendered focal point checked separately."
+  },
+  {
+    "index": 4,
+    "planId": "PD-aparatinis-klasikinis",
+    "pageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+    "status": "IMPORTED_REQUIRES_RENDERED_REVIEW",
+    "alt": "Paruošta pedikiūro darbo vieta ir uždarytos priemonės",
+    "actualPrompt": "Use case: Environmental pedicure detail. Page question: Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Clean empty pedicure station with a fresh teal towel on the footrest and unopened generic instrument pouches on separate trolley, cool green and white room, side perspective, no exposed sharp cutters or skin treatment.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+    "sourcePath": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a11146-e1d2-78b1-ae76-081e812c0ca0\\exec-cdc458e9-dda1-46e6-a357-55c20b1d10cd.png",
+    "originalPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/originals/PD-aparatinis-klasikinis.png",
+    "originalSha256": "19f54a149b16050083861e89f6866f88b43aa01524ba7424783140a69512fd04",
+    "generatedAt": "2026-10-12T06:17:45.918Z",
+    "generator": "built-in image_gen",
+    "originalPixelReview": {
+      "state": "PASS_ORIGINAL_PIXELS",
+      "at": "2026-10-12T06:17:45.918Z",
+      "sha256": "19f54a149b16050083861e89f6866f88b43aa01524ba7424783140a69512fd04",
+      "observation": "Clean empty foot station with teal towel and separate closed pouches; no exposed injury or procedure. Wide cool-green composition.",
+      "scope": "Each actual generated image was displayed and individually inspected."
+    },
+    "imported": {
+      "id": "48240033-f073-4a89-a63c-4ddcb9bc3a60",
+      "groupId": "00eab84b-fa66-4f00-9a0b-c6310ab63f2c",
+      "variants": [
+        {
+          "id": "48240033-f073-4a89-a63c-4ddcb9bc3a60",
+          "groupId": "00eab84b-fa66-4f00-9a0b-c6310ab63f2c",
+          "src": "/content-assets/madbeauty/48240033-f073-4a89-a63c-4ddcb9bc3a60.webp",
+          "alt": "Paruošta pedikiūro darbo vieta ir uždarytos priemonės",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Environmental pedicure detail. Page question: Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Clean empty pedicure station with a fresh teal towel on the footrest and unopened generic instrument pouches on separate trolley, cool green and white room, side perspective, no exposed sharp cutters or skin treatment.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 75056,
+          "sha256": "3a35dfe243ec23e5d0303669f28db91b1e044a449bef2c39c2fea8b5922925fd"
+        },
+        {
+          "id": "6d02b7cb-4baf-4105-92d5-f296dda14b29",
+          "groupId": "00eab84b-fa66-4f00-9a0b-c6310ab63f2c",
+          "src": "/content-assets/madbeauty/6d02b7cb-4baf-4105-92d5-f296dda14b29.webp",
+          "alt": "Paruošta pedikiūro darbo vieta ir uždarytos priemonės",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Environmental pedicure detail. Page question: Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Clean empty pedicure station with a fresh teal towel on the footrest and unopened generic instrument pouches on separate trolley, cool green and white room, side perspective, no exposed sharp cutters or skin treatment.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 53662,
+          "sha256": "b523e8ab77e9337b001b787e5a6fa70965effa8c743013c07b3179f7e69ebd29"
+        },
+        {
+          "id": "260e693e-847e-4599-b6a3-c56aa14d3e73",
+          "groupId": "00eab84b-fa66-4f00-9a0b-c6310ab63f2c",
+          "src": "/content-assets/madbeauty/260e693e-847e-4599-b6a3-c56aa14d3e73.webp",
+          "alt": "Paruošta pedikiūro darbo vieta ir uždarytos priemonės",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Environmental pedicure detail. Page question: Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Clean empty pedicure station with a fresh teal towel on the footrest and unopened generic instrument pouches on separate trolley, cool green and white room, side perspective, no exposed sharp cutters or skin treatment.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 31170,
+          "sha256": "cf35ace3f90dcc3a1351a0d326756caf7fd289399b78d79df3815e02dcaedfbf"
+        },
+        {
+          "id": "d5e690c5-f54d-4446-b9b1-45bee902d9aa",
+          "groupId": "00eab84b-fa66-4f00-9a0b-c6310ab63f2c",
+          "src": "/content-assets/madbeauty/d5e690c5-f54d-4446-b9b1-45bee902d9aa.webp",
+          "alt": "Paruošta pedikiūro darbo vieta ir uždarytos priemonės",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Environmental pedicure detail. Page question: Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Clean empty pedicure station with a fresh teal towel on the footrest and unopened generic instrument pouches on separate trolley, cool green and white room, side perspective, no exposed sharp cutters or skin treatment.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 22948,
+          "sha256": "a8e0e43bc5fcf4bcd620beaccbfddb5a9dd191be19e4a91b8934746cac86cccd"
+        },
+        {
+          "id": "b01b4479-2833-4a5f-b0d3-05b9779ef2c3",
+          "groupId": "00eab84b-fa66-4f00-9a0b-c6310ab63f2c",
+          "src": "/content-assets/madbeauty/b01b4479-2833-4a5f-b0d3-05b9779ef2c3.webp",
+          "alt": "Paruošta pedikiūro darbo vieta ir uždarytos priemonės",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Environmental pedicure detail. Page question: Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Clean empty pedicure station with a fresh teal towel on the footrest and unopened generic instrument pouches on separate trolley, cool green and white room, side perspective, no exposed sharp cutters or skin treatment.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 10312,
+          "sha256": "375b3ee17c4a6aaabe5742f5e7dd2f2ec4fa597a7cffbda6092998c0a8f6791f"
+        }
+      ],
+      "optimization": {
+        "policy": "responsive-webp-v1",
+        "sourceBytes": 2116266,
+        "variantBytes": [
+          {
+            "width": 1536,
+            "bytes": 75056
+          },
+          {
+            "width": 1200,
+            "bytes": 53662
+          },
+          {
+            "width": 800,
+            "bytes": 31170
+          },
+          {
+            "width": 640,
+            "bytes": 22948
+          },
+          {
+            "width": 360,
+            "bytes": 10312
+          }
+        ],
+        "originalStoredPrivately": true
+      }
+    },
+    "originalPixelsInspected": true,
+    "pixelReview": "All 6 original photographs viewed individually and in the generation outputs: relevant subject, distinct composition/palette, anatomical plausibility, no fake before/after or unsafe procedure portrayal. Mobile rendered focal point checked separately."
+  },
+  {
+    "index": 5,
+    "planId": "PP-tiesinimas",
+    "pageId": "3d74e53b-5300-4328-94c9-747ada19b94f",
+    "status": "IMPORTED_REQUIRES_RENDERED_REVIEW",
+    "alt": "Tiesių plaukų portretas iš nugaros",
+    "actualPrompt": "Use case: Contemporary editorial hair portrait. Page question: Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Adult woman seen from the back in a navy blouse, naturally straight dark brown hair catching bright window light, silver and blue hair salon background out of focus. No before/after, no tool touching hair, no immaculate plastic texture, no claim of specific treatment results.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+    "sourcePath": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a11146-e1d2-78b1-ae76-081e812c0ca0\\exec-a1ec7dfa-7912-4500-ab82-dfd89371b6e1.png",
+    "originalPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/originals/PP-tiesinimas.png",
+    "originalSha256": "1cbfca1c58ab953555bec4a949854a4ddf40fed99126c609b69222fd1d8eaa83",
+    "generatedAt": "2026-10-12T06:17:45.922Z",
+    "generator": "built-in image_gen",
+    "originalPixelReview": {
+      "state": "PASS_ORIGINAL_PIXELS",
+      "at": "2026-10-12T06:17:45.922Z",
+      "sha256": "1cbfca1c58ab953555bec4a949854a4ddf40fed99126c609b69222fd1d8eaa83",
+      "observation": "Rear hair portrait has believable texture, loose straight hair and navy clothing. No before/after, tool application, promised treatment result or brand.",
+      "scope": "Each actual generated image was displayed and individually inspected."
+    },
+    "imported": {
+      "id": "9273e2ef-32e2-4970-b7e6-4b49a936f25c",
+      "groupId": "008a369b-ef3e-4ff2-9df0-ba3965978555",
+      "variants": [
+        {
+          "id": "9273e2ef-32e2-4970-b7e6-4b49a936f25c",
+          "groupId": "008a369b-ef3e-4ff2-9df0-ba3965978555",
+          "src": "/content-assets/madbeauty/9273e2ef-32e2-4970-b7e6-4b49a936f25c.webp",
+          "alt": "Tiesių plaukų portretas iš nugaros",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Contemporary editorial hair portrait. Page question: Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Adult woman seen from the back in a navy blouse, naturally straight dark brown hair catching bright window light, silver and blue hair salon background out of focus. No before/after, no tool touching hair, no immaculate plastic texture, no claim of specific treatment results.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 67460,
+          "sha256": "71c747c8b6d32e462218cafe319058d20d4cc9a7739f534f25717293f79ff6a6"
+        },
+        {
+          "id": "6253209e-a799-490a-8c18-c1baaf292320",
+          "groupId": "008a369b-ef3e-4ff2-9df0-ba3965978555",
+          "src": "/content-assets/madbeauty/6253209e-a799-490a-8c18-c1baaf292320.webp",
+          "alt": "Tiesių plaukų portretas iš nugaros",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Contemporary editorial hair portrait. Page question: Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Adult woman seen from the back in a navy blouse, naturally straight dark brown hair catching bright window light, silver and blue hair salon background out of focus. No before/after, no tool touching hair, no immaculate plastic texture, no claim of specific treatment results.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 47480,
+          "sha256": "a7247cfb62251689630b71de4baae486921165f2941d4e45df5be54746983696"
+        },
+        {
+          "id": "2bd40f9f-2729-44c1-be07-abb644a0fb4b",
+          "groupId": "008a369b-ef3e-4ff2-9df0-ba3965978555",
+          "src": "/content-assets/madbeauty/2bd40f9f-2729-44c1-be07-abb644a0fb4b.webp",
+          "alt": "Tiesių plaukų portretas iš nugaros",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Contemporary editorial hair portrait. Page question: Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Adult woman seen from the back in a navy blouse, naturally straight dark brown hair catching bright window light, silver and blue hair salon background out of focus. No before/after, no tool touching hair, no immaculate plastic texture, no claim of specific treatment results.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 26582,
+          "sha256": "af34568f0c8a098f4e12d10875e4f315f668e6e1f458af14b3fb98a1ded5ed77"
+        },
+        {
+          "id": "3166c8db-b929-4c4a-9b8d-baa3759aa199",
+          "groupId": "008a369b-ef3e-4ff2-9df0-ba3965978555",
+          "src": "/content-assets/madbeauty/3166c8db-b929-4c4a-9b8d-baa3759aa199.webp",
+          "alt": "Tiesių plaukų portretas iš nugaros",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Contemporary editorial hair portrait. Page question: Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Adult woman seen from the back in a navy blouse, naturally straight dark brown hair catching bright window light, silver and blue hair salon background out of focus. No before/after, no tool touching hair, no immaculate plastic texture, no claim of specific treatment results.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 19600,
+          "sha256": "ce867d3802070de873f2e576acb3c4c482a1cf55a9e65bfa8a4af09735b6ad0f"
+        },
+        {
+          "id": "73a8f385-d90b-4e81-8871-c1c0332c4b30",
+          "groupId": "008a369b-ef3e-4ff2-9df0-ba3965978555",
+          "src": "/content-assets/madbeauty/73a8f385-d90b-4e81-8871-c1c0332c4b30.webp",
+          "alt": "Tiesių plaukų portretas iš nugaros",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Contemporary editorial hair portrait. Page question: Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Adult woman seen from the back in a navy blouse, naturally straight dark brown hair catching bright window light, silver and blue hair salon background out of focus. No before/after, no tool touching hair, no immaculate plastic texture, no claim of specific treatment results.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 9312,
+          "sha256": "26df4d841ccc212c8698f77c0dcfb53a72e71147189c056b9294489ed69969ea"
+        }
+      ],
+      "optimization": {
+        "policy": "responsive-webp-v1",
+        "sourceBytes": 2096098,
+        "variantBytes": [
+          {
+            "width": 1536,
+            "bytes": 67460
+          },
+          {
+            "width": 1200,
+            "bytes": 47480
+          },
+          {
+            "width": 800,
+            "bytes": 26582
+          },
+          {
+            "width": 640,
+            "bytes": 19600
+          },
+          {
+            "width": 360,
+            "bytes": 9312
+          }
+        ],
+        "originalStoredPrivately": true
+      }
+    },
+    "originalPixelsInspected": true,
+    "pixelReview": "All 6 original photographs viewed individually and in the generation outputs: relevant subject, distinct composition/palette, anatomical plausibility, no fake before/after or unsafe procedure portrayal. Mobile rendered focal point checked separately."
+  },
+  {
+    "index": 6,
+    "planId": "SP-poroms",
+    "pageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+    "status": "IMPORTED_REQUIRES_RENDERED_REVIEW",
+    "alt": "Poros SPA apsilankymo aptarimas konsultacijoje",
+    "actualPrompt": "Use case: Candid shared consultation. Page question: SPA poroms: du specialistai, privatumas ir procedūrų derinimas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two fully clothed adult partners seated beside one spa professional at a small consultation table, large daylight window, aqua glass partitions, clean muted rust chairs, relaxed real expressions. No active massage, no champagne, no bath, no provider signage.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+    "sourcePath": "C:\\Users\\Lenovo\\.codex\\generated_images\\01a11146-e1d2-78b1-ae76-081e812c0ca0\\exec-b542633e-1245-4428-a7d0-3713607005e6.png",
+    "originalPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/originals/SP-poroms.png",
+    "originalSha256": "371560b8535084b514bb9af5cab6f1afbadc5815ae0a2e83521693fb0665fc1f",
+    "generatedAt": "2026-10-12T06:17:45.927Z",
+    "generator": "built-in image_gen",
+    "originalPixelReview": {
+      "state": "PASS_ORIGINAL_PIXELS",
+      "at": "2026-10-12T06:17:45.927Z",
+      "sha256": "371560b8535084b514bb9af5cab6f1afbadc5815ae0a2e83521693fb0665fc1f",
+      "observation": "Two clients and one worker in a shared consultation with plausible hands/faces, no active treatment or fake credentials. Aqua glass/lake daylight and rust chairs differ from other frames.",
+      "scope": "Each actual generated image was displayed and individually inspected."
+    },
+    "imported": {
+      "id": "b488ddb8-e820-479f-baed-ddd840829dab",
+      "groupId": "7e6f328f-ac25-4ef5-af67-fde7fc8f6380",
+      "variants": [
+        {
+          "id": "b488ddb8-e820-479f-baed-ddd840829dab",
+          "groupId": "7e6f328f-ac25-4ef5-af67-fde7fc8f6380",
+          "src": "/content-assets/madbeauty/b488ddb8-e820-479f-baed-ddd840829dab.webp",
+          "alt": "Poros SPA apsilankymo aptarimas konsultacijoje",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Candid shared consultation. Page question: SPA poroms: du specialistai, privatumas ir procedūrų derinimas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two fully clothed adult partners seated beside one spa professional at a small consultation table, large daylight window, aqua glass partitions, clean muted rust chairs, relaxed real expressions. No active massage, no champagne, no bath, no provider signage.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 77446,
+          "sha256": "38e3dc9fbffb592d35aba2b6ae7903c162c00a23d33df89e099447b377d4a8c2"
+        },
+        {
+          "id": "e43b9b04-5e99-4764-84fc-264033652a58",
+          "groupId": "7e6f328f-ac25-4ef5-af67-fde7fc8f6380",
+          "src": "/content-assets/madbeauty/e43b9b04-5e99-4764-84fc-264033652a58.webp",
+          "alt": "Poros SPA apsilankymo aptarimas konsultacijoje",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Candid shared consultation. Page question: SPA poroms: du specialistai, privatumas ir procedūrų derinimas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two fully clothed adult partners seated beside one spa professional at a small consultation table, large daylight window, aqua glass partitions, clean muted rust chairs, relaxed real expressions. No active massage, no champagne, no bath, no provider signage.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 57412,
+          "sha256": "1e700ddb9b69ac62401946205d270ceb6c91d3b5bd681de12ec7c067819d5f49"
+        },
+        {
+          "id": "674ce501-4968-4078-a78e-c85a10257161",
+          "groupId": "7e6f328f-ac25-4ef5-af67-fde7fc8f6380",
+          "src": "/content-assets/madbeauty/674ce501-4968-4078-a78e-c85a10257161.webp",
+          "alt": "Poros SPA apsilankymo aptarimas konsultacijoje",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Candid shared consultation. Page question: SPA poroms: du specialistai, privatumas ir procedūrų derinimas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two fully clothed adult partners seated beside one spa professional at a small consultation table, large daylight window, aqua glass partitions, clean muted rust chairs, relaxed real expressions. No active massage, no champagne, no bath, no provider signage.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 34468,
+          "sha256": "93f50547a21a15aead6d405cf3eb065bc1f79cfcd8ffa157d22334efb9155a90"
+        },
+        {
+          "id": "9a70dffd-f21f-49b5-b187-d06fcc9bc125",
+          "groupId": "7e6f328f-ac25-4ef5-af67-fde7fc8f6380",
+          "src": "/content-assets/madbeauty/9a70dffd-f21f-49b5-b187-d06fcc9bc125.webp",
+          "alt": "Poros SPA apsilankymo aptarimas konsultacijoje",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Candid shared consultation. Page question: SPA poroms: du specialistai, privatumas ir procedūrų derinimas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two fully clothed adult partners seated beside one spa professional at a small consultation table, large daylight window, aqua glass partitions, clean muted rust chairs, relaxed real expressions. No active massage, no champagne, no bath, no provider signage.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 25764,
+          "sha256": "77aa6a6db1ec4d1485dcb042ccb5ea5d1c0a4563c55659c03aff1405c1495617"
+        },
+        {
+          "id": "cd0aed55-f09e-4eb0-aae8-85e5b7471e95",
+          "groupId": "7e6f328f-ac25-4ef5-af67-fde7fc8f6380",
+          "src": "/content-assets/madbeauty/cd0aed55-f09e-4eb0-aae8-85e5b7471e95.webp",
+          "alt": "Poros SPA apsilankymo aptarimas konsultacijoje",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Originali pagal užsakymą sugeneruota Madbeauty redakcinė iliustracija",
+          "prompt": "Use case: Candid shared consultation. Page question: SPA poroms: du specialistai, privatumas ir procedūrų derinimas. Image role: original illustrative editorial photograph explaining context, not documentary provider or client results. Subject: Two fully clothed adult partners seated beside one spa professional at a small consultation table, large daylight window, aqua glass partitions, clean muted rust chairs, relaxed real expressions. No active massage, no champagne, no bath, no provider signage.. Wide3:2 landscape, high quality restrained beauty editorial photography, plausible materials and anatomy. Main subject safe in central80percent for mobile. No typography, logos, watermark, UI, before/after, medical promise or model badge. Different composition/light/palette from the other photos. No repeated warm-beige stock salon treatment.",
+          "bytes": 11736,
+          "sha256": "aa0f4ecb744d6029ed7cb5735ab55c431500b3f4eb7290fbde9caa3d4a5919d2"
+        }
+      ],
+      "optimization": {
+        "policy": "responsive-webp-v1",
+        "sourceBytes": 2146405,
+        "variantBytes": [
+          {
+            "width": 1536,
+            "bytes": 77446
+          },
+          {
+            "width": 1200,
+            "bytes": 57412
+          },
+          {
+            "width": 800,
+            "bytes": 34468
+          },
+          {
+            "width": 640,
+            "bytes": 25764
+          },
+          {
+            "width": 360,
+            "bytes": 11736
+          }
+        ],
+        "originalStoredPrivately": true
+      }
+    },
+    "originalPixelsInspected": true,
+    "pixelReview": "All 6 original photographs viewed individually and in the generation outputs: relevant subject, distinct composition/palette, anatomical plausibility, no fake before/after or unsafe procedure portrayal. Mobile rendered focal point checked separately."
+  }
+]

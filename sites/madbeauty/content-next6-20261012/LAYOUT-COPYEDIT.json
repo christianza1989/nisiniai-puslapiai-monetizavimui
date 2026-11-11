@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-12T06:26:54.484Z",
+  "changes": [
+    {
+      "planId": "MS-aromaterapinis",
+      "reason": "Remove duplicated featured photograph from body and normalize punctuation-adjacent citation spacing; semantic prose unchanged."
+    },
+    {
+      "planId": "NP-gelis-akrilas-poligelis",
+      "reason": "Remove duplicated featured photograph from body and normalize punctuation-adjacent citation spacing; semantic prose unchanged."
+    }
+  ],
+  "scope": "Native model writing preserved; actual presentation correction before final review."
+}

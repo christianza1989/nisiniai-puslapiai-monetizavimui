@@ -1,0 +1,1609 @@
+{
+  "createdAt": "2026-10-12T06:08:17.682Z",
+  "status": "SELECTED_NOT_WRITTEN",
+  "siteId": "madbeauty",
+  "domain": "madbeauty.lt",
+  "privateStudio": "C:/Users/Lenovo/.codex/tmp/madbeauty-next6-20261012",
+  "priorStudio": "C:/Users/Lenovo/.codex/tmp/madbeauty-next60-20261009",
+  "priorPackageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+  "pages": [
+    {
+      "planId": "MS-aromaterapinis",
+      "pageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+      "slug": "gidai/masazas-aromaterapinis",
+      "title": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas",
+      "publishAt": "2026-12-24T08:00:00.000Z",
+      "localDate": "2026-12-24",
+      "localTime": "10:00",
+      "brief": {
+        "id": "MS-aromaterapinis",
+        "key": "aromaterapinis",
+        "type": "guide",
+        "slug": "gidai/masazas-aromaterapinis",
+        "title": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas",
+        "description": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas. Aptariamos temos: rankinio darbo komponentas; naudota priemonė.",
+        "intent": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas",
+        "categoryId": "masazas",
+        "cluster": "Masažas",
+        "audience": "Klientas",
+        "dimensions": [
+          "Q",
+          "A"
+        ],
+        "wave": 2,
+        "publishDate": "2026-12-24",
+        "parentId": "MS-gidas",
+        "outline": [
+          "Rankinio darbo komponentas",
+          "Naudota priemonė",
+          "Kvapo ir reakcijų informacija",
+          "Aromaterapinis masažas: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Paslaugos komponentų kortelė",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas“, paaiškinant: rankinio darbo komponentas.",
+          "body": [
+            "Rankinio darbo komponentas",
+            "Naudota priemonė",
+            "Kvapo ir reakcijų informacija",
+            "Aromaterapinis masažas: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Paslaugos komponentų kortelė",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S25",
+          "S26",
+          "S28",
+          "S29",
+          "S37"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Konkrečios priemonės dokumentai; jokio ligų gydymo aromatais"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Konkrečios priemonės dokumentai; jokio ligų gydymo aromatais"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Rankinio darbo komponentas;Naudota priemonė;Kvapo ir reakcijų informacija. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Paslaugos komponentų kortelė",
+          "role": "Teminė iliustracija ir naudingas ruošinys HTML turinyje",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Masažas",
+        "publishAt": "2026-12-24T08:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "kuno-masazai-aromaterapinis-masazas",
+            "categoryId": "masazas",
+            "groupId": "kuno-masazai",
+            "label": "Aromaterapinis masažas",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "MS-aromaterapinis",
+            "section": "Aromaterapinis masažas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Aromaterapinis masažas“ reiškia kūno masažai kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S25",
+              "S26",
+              "S28",
+              "S29",
+              "S37"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Konkrečios priemonės dokumentai; jokio ligų gydymo aromatais"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "kuno-masazai-aromaterapinis-masazas",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:kuno-masazai-aromaterapinis-masazas",
+            "canonicalPath": "/paslaugos/kuno-masazai-aromaterapinis-masazas",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/kuno-masazai-aromaterapinis-masazas",
+            "label": "Aromaterapinis masažas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "METHOD_COMPARISON",
+          "query": "aromaterapinis masažas",
+          "volume": 10,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Paslaugos komponentų kortelė",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "aromaterapinis masažas",
+          "relatedKeywords": [
+            "masažas",
+            "masazas skelbiu",
+            "gydomasis masazas",
+            "masažas vyrams",
+            "masazas vyrams",
+            "gydomojo masažo centras"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "masažas",
+              "source": "ideas-09.json",
+              "callId": "2433dfe25f6b4a25b8f6e55413b138e3",
+              "updatedAt": "2026-09-14 12:06:03 +00:00"
+            },
+            {
+              "keyword": "masazas skelbiu",
+              "source": "ideas-09.json",
+              "callId": "2433dfe25f6b4a25b8f6e55413b138e3",
+              "updatedAt": "2026-09-14 07:31:59 +00:00"
+            },
+            {
+              "keyword": "gydomasis masazas",
+              "source": "ideas-09.json",
+              "callId": "2433dfe25f6b4a25b8f6e55413b138e3",
+              "updatedAt": "2026-09-14 02:51:30 +00:00"
+            },
+            {
+              "keyword": "masažas vyrams",
+              "source": "ideas-09.json",
+              "callId": "2433dfe25f6b4a25b8f6e55413b138e3",
+              "updatedAt": "2026-09-13 04:28:29 +00:00"
+            },
+            {
+              "keyword": "masazas vyrams",
+              "source": "ideas-09.json",
+              "callId": "2433dfe25f6b4a25b8f6e55413b138e3",
+              "updatedAt": "2026-09-12 20:13:40 +00:00"
+            },
+            {
+              "keyword": "gydomojo masažo centras",
+              "source": "ideas-09.json",
+              "callId": "2433dfe25f6b4a25b8f6e55413b138e3",
+              "updatedAt": "2026-09-12 23:04:39 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Aromaterapinis masažas",
+            "Rankinio darbo komponentas",
+            "Naudota priemonė"
+          ],
+          "metaTitle": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas",
+          "metaDescription": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas. Aptariamos temos: rankinio darbo komponentas; naudota priemonė.",
+          "h1": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas",
+          "h2": [
+            "Rankinio darbo komponentas",
+            "Naudota priemonė",
+            "Kvapo ir reakcijų informacija",
+            "Aromaterapinis masažas: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": 10,
+          "volumeKeyword": "aromaterapinis masažas",
+          "volumeSource": {
+            "file": "volume-lt-clean.json",
+            "callId": "ba7da889476342c3978d66eb72ee3647",
+            "kind": "GOOGLE_ADS_VOLUME",
+            "updatedAt": null
+          },
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "masažas",
+            "observedVolume": 720,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 65,
+            "descriptionChars": 130,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "MS-aromaterapinis",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 2,
+        "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b"
+      }
+    },
+    {
+      "planId": "ND-forma-ilgis",
+      "pageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+      "slug": "gidai/nagu-dizainas-forma-ilgis",
+      "title": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai",
+      "publishAt": "2026-12-24T14:00:00.000Z",
+      "localDate": "2026-12-24",
+      "localTime": "16:00",
+      "brief": {
+        "id": "ND-forma-ilgis",
+        "key": "forma-ilgis",
+        "type": "guide",
+        "slug": "gidai/nagu-dizainas-forma-ilgis",
+        "title": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai",
+        "description": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai. Aptariamos temos: formų kontūrai; laisvo krašto ilgis.",
+        "intent": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai",
+        "categoryId": "nagu-dizainas",
+        "cluster": "Nagų dizainas",
+        "audience": "Klientas",
+        "dimensions": [
+          "S"
+        ],
+        "wave": 2,
+        "publishDate": "2026-12-24",
+        "parentId": "ND-gidas",
+        "outline": [
+          "Formų kontūrai",
+          "Laisvo krašto ilgis",
+          "Kasdienės veiklos kompromisai"
+        ],
+        "originalContribution": "Vienodo mastelio originalūs kontūrų brėžiniai",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai“, paaiškinant: formų kontūrai.",
+          "body": [
+            "Formų kontūrai",
+            "Laisvo krašto ilgis",
+            "Kasdienės veiklos kompromisai"
+          ],
+          "deliverable": "Vienodo mastelio originalūs kontūrų brėžiniai",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S01",
+          "S18",
+          "S23"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Meistro anatominių teiginių patikra; nėra universalios idealios formos"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Meistro anatominių teiginių patikra; nėra universalios idealios formos"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Formų kontūrai;Laisvo krašto ilgis;Kasdienės veiklos kompromisai. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Vienodo mastelio originalūs kontūrų brėžiniai",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Nagai",
+        "publishAt": "2026-12-24T14:00:00.000Z",
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "nagu-dizainas",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:nagu-dizainas",
+            "canonicalPath": "/paslaugos/nagu-dizainas",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+            "label": "Dizainas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "READER_DECISION",
+          "query": "nagų forma ir ilgis",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "procedureSections": [],
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Vienodo mastelio originalūs kontūrų brėžiniai",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "nagų forma ir ilgis",
+          "relatedKeywords": [
+            "nagai 2026 pavasaris",
+            "nagų dizainas",
+            "nagu idejos vasarai",
+            "geliniai nagai 2026 metams",
+            "nagai 2026 vasara",
+            "2026 metu nagu spalvos"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "nagai 2026 pavasaris",
+              "source": "ideas-03.json",
+              "callId": "bbd87a31e2ef4f4199eb0c46e722113e",
+              "updatedAt": "2026-09-15 18:55:54 +00:00"
+            },
+            {
+              "keyword": "nagų dizainas",
+              "source": "ideas-03.json",
+              "callId": "bbd87a31e2ef4f4199eb0c46e722113e",
+              "updatedAt": "2026-09-17 14:14:26 +00:00"
+            },
+            {
+              "keyword": "nagu idejos vasarai",
+              "source": "ideas-03.json",
+              "callId": "bbd87a31e2ef4f4199eb0c46e722113e",
+              "updatedAt": "2026-09-16 21:25:17 +00:00"
+            },
+            {
+              "keyword": "geliniai nagai 2026 metams",
+              "source": "ideas-03.json",
+              "callId": "bbd87a31e2ef4f4199eb0c46e722113e",
+              "updatedAt": "2026-09-15 09:54:52 +00:00"
+            },
+            {
+              "keyword": "nagai 2026 vasara",
+              "source": "ideas-03.json",
+              "callId": "bbd87a31e2ef4f4199eb0c46e722113e",
+              "updatedAt": "2026-09-13 13:35:59 +00:00"
+            },
+            {
+              "keyword": "2026 metu nagu spalvos",
+              "source": "ideas-03.json",
+              "callId": "bbd87a31e2ef4f4199eb0c46e722113e",
+              "updatedAt": "2026-09-16 01:39:56 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Formų kontūrai",
+            "Laisvo krašto ilgis"
+          ],
+          "metaTitle": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai",
+          "metaDescription": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai. Aptariamos temos: formų kontūrai; laisvo krašto ilgis.",
+          "h1": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai",
+          "h2": [
+            "Formų kontūrai",
+            "Laisvo krašto ilgis",
+            "Kasdienės veiklos kompromisai"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": "nagų forma ir ilgis",
+          "volumeSource": {
+            "file": "volume-lt-clean.json",
+            "callId": "ba7da889476342c3978d66eb72ee3647",
+            "kind": "GOOGLE_ADS_VOLUME",
+            "updatedAt": null
+          },
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "nagų dizainas",
+            "observedVolume": 590,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 72,
+            "descriptionChars": 128,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "ND-forma-ilgis",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 2,
+        "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
+        "publishLocalTime": "16:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7"
+      }
+    },
+    {
+      "planId": "NP-gelis-akrilas-poligelis",
+      "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+      "slug": "gidai/nagu-priauginimas-gelis-akrilas-poligelis",
+      "title": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos",
+      "publishAt": "2026-12-25T08:00:00.000Z",
+      "localDate": "2026-12-25",
+      "localTime": "10:00",
+      "brief": {
+        "id": "NP-gelis-akrilas-poligelis",
+        "key": "gelis-akrilas-poligelis",
+        "type": "guide",
+        "slug": "gidai/nagu-priauginimas-gelis-akrilas-poligelis",
+        "title": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos",
+        "description": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos. Aptariamos temos: skirtingos produktų sistemos; norimas ilgis ir rezultatas.",
+        "intent": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos",
+        "categoryId": "nagu-priauginimas",
+        "cluster": "Nagų priauginimas ir papildymas",
+        "audience": "Klientas",
+        "dimensions": [
+          "A",
+          "S"
+        ],
+        "wave": 2,
+        "publishDate": "2026-12-25",
+        "parentId": "NP-gidas",
+        "outline": [
+          "Skirtingos produktų sistemos",
+          "Norimas ilgis ir rezultatas",
+          "Ką turi įvertinti specialistas",
+          "Nagų priauginimas geliu: metodo paskirtis ir konkreti paslaugos apimtis",
+          "Nagų priauginimas akrilu: metodo paskirtis ir konkreti paslaugos apimtis",
+          "Nagų priauginimas poligeliu: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Palyginimo lentelė pagal patikrintus protokolus",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos“, paaiškinant: skirtingos produktų sistemos.",
+          "body": [
+            "Skirtingos produktų sistemos",
+            "Norimas ilgis ir rezultatas",
+            "Ką turi įvertinti specialistas",
+            "Nagų priauginimas geliu: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Nagų priauginimas akrilu: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Nagų priauginimas poligeliu: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Palyginimo lentelė pagal patikrintus protokolus",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S01",
+          "S05",
+          "S07",
+          "S41"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Kiekvienos sistemos gamintojo dokumentai; ne saugiausio produkto reitingas"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Kiekvienos sistemos gamintojo dokumentai; ne saugiausio produkto reitingas"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Skirtingos produktų sistemos;Norimas ilgis ir rezultatas;Ką turi įvertinti specialistas. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Palyginimo lentelė pagal patikrintus protokolus",
+          "role": "Teminė iliustracija ir naudingas ruošinys HTML turinyje",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Nagai",
+        "publishAt": "2026-12-25T08:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "nagu-modeliavimas-nagu-priauginimas-geliu",
+            "categoryId": "nagai",
+            "groupId": "nagu-modeliavimas",
+            "label": "Nagų priauginimas geliu",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "NP-gelis-akrilas-poligelis",
+            "section": "Nagų priauginimas geliu: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Nagų priauginimas geliu“ reiškia priauginimas ir korekcija kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S01",
+              "S05",
+              "S07",
+              "S41"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Kiekvienos sistemos gamintojo dokumentai; ne saugiausio produkto reitingas"
+              }
+            ]
+          },
+          {
+            "taxonomyNodeId": "nagu-modeliavimas-nagu-priauginimas-akrilu",
+            "categoryId": "nagai",
+            "groupId": "nagu-modeliavimas",
+            "label": "Nagų priauginimas akrilu",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "NP-gelis-akrilas-poligelis",
+            "section": "Nagų priauginimas akrilu: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Nagų priauginimas akrilu“ reiškia priauginimas ir korekcija kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S01",
+              "S05",
+              "S07",
+              "S41"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Kiekvienos sistemos gamintojo dokumentai; ne saugiausio produkto reitingas"
+              }
+            ]
+          },
+          {
+            "taxonomyNodeId": "nagu-modeliavimas-nagu-priauginimas-poligeliu",
+            "categoryId": "nagai",
+            "groupId": "nagu-modeliavimas",
+            "label": "Nagų priauginimas poligeliu",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "NP-gelis-akrilas-poligelis",
+            "section": "Nagų priauginimas poligeliu: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Nagų priauginimas poligeliu“ reiškia priauginimas ir korekcija kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S01",
+              "S05",
+              "S07",
+              "S41"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Kiekvienos sistemos gamintojo dokumentai; ne saugiausio produkto reitingas"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "nagu-modeliavimas-nagu-priauginimas-geliu",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-geliu",
+            "canonicalPath": "/paslaugos/nagu-modeliavimas-nagu-priauginimas-geliu",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-geliu",
+            "label": "Nagų priauginimas geliu",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          },
+          {
+            "taxonomyNodeId": "nagu-modeliavimas-nagu-priauginimas-akrilu",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-akrilu",
+            "canonicalPath": "/paslaugos/nagu-modeliavimas-nagu-priauginimas-akrilu",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-akrilu",
+            "label": "Nagų priauginimas akrilu",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          },
+          {
+            "taxonomyNodeId": "nagu-modeliavimas-nagu-priauginimas-poligeliu",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-poligeliu",
+            "canonicalPath": "/paslaugos/nagu-modeliavimas-nagu-priauginimas-poligeliu",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-poligeliu",
+            "label": "Nagų priauginimas poligeliu",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "METHOD_COMPARISON",
+          "query": "gelis akrilas ir poligelis",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Palyginimo lentelė pagal patikrintus protokolus",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "gelis akrilas ir poligelis",
+          "relatedKeywords": [
+            "nagų priauginimas",
+            "priauginti nagai",
+            "nagu priauginimas priemones",
+            "nagu priauginimas kaina",
+            "gelinis lakavimas kaina",
+            "paprastas manikiuras kaina"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "nagų priauginimas",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-12 07:06:32 +00:00"
+            },
+            {
+              "keyword": "priauginti nagai",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-17 22:06:42 +00:00"
+            },
+            {
+              "keyword": "nagu priauginimas priemones",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-16 17:39:53 +00:00"
+            },
+            {
+              "keyword": "nagu priauginimas kaina",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-17 19:17:19 +00:00"
+            },
+            {
+              "keyword": "gelinis lakavimas kaina",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-15 08:54:46 +00:00"
+            },
+            {
+              "keyword": "paprastas manikiuras kaina",
+              "source": "ideas-11.json",
+              "callId": "12840165f98c481eb0bf3b8a8705789c",
+              "updatedAt": "2026-09-15 01:39:25 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Nagų priauginimas geliu",
+            "Nagų priauginimas akrilu",
+            "Nagų priauginimas poligeliu",
+            "Skirtingos produktų sistemos",
+            "Norimas ilgis ir rezultatas"
+          ],
+          "metaTitle": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos",
+          "metaDescription": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos. Aptariamos temos: skirtingos produktų sistemos; norimas ilgis ir rezultatas.",
+          "h1": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos",
+          "h2": [
+            "Skirtingos produktų sistemos",
+            "Norimas ilgis ir rezultatas",
+            "Ką turi įvertinti specialistas",
+            "Nagų priauginimas geliu: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Nagų priauginimas akrilu: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Nagų priauginimas poligeliu: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": "gelis akrilas ir poligelis",
+          "volumeSource": {
+            "file": "volume-lt-clean.json",
+            "callId": "ba7da889476342c3978d66eb72ee3647",
+            "kind": "GOOGLE_ADS_VOLUME",
+            "updatedAt": null
+          },
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "nagų priauginimas",
+            "observedVolume": 140,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 73,
+            "descriptionChars": 151,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "NP-gelis-akrilas-poligelis",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 2,
+        "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00"
+      }
+    },
+    {
+      "planId": "PD-aparatinis-klasikinis",
+      "pageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+      "slug": "gidai/pedikiuras-aparatinis-klasikinis",
+      "title": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis",
+      "publishAt": "2026-12-25T14:00:00.000Z",
+      "localDate": "2026-12-25",
+      "localTime": "16:00",
+      "brief": {
+        "id": "PD-aparatinis-klasikinis",
+        "key": "aparatinis-klasikinis",
+        "type": "guide",
+        "slug": "gidai/pedikiuras-aparatinis-klasikinis",
+        "title": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis",
+        "description": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis. Aptariamos temos: odai ir nagams skirti darbai; įrankių naudojimas.",
+        "intent": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis",
+        "categoryId": "pedikiuras",
+        "cluster": "Pedikiūras",
+        "audience": "Klientas",
+        "dimensions": [
+          "A",
+          "S"
+        ],
+        "wave": 2,
+        "publishDate": "2026-12-25",
+        "parentId": "PD-gidas",
+        "outline": [
+          "Odai ir nagams skirti darbai",
+          "Įrankių naudojimas",
+          "Metodas nepakeičia higienos",
+          "Klasikinis pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+          "Aparatinis pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+          "Kombinuotas pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Komponentų palyginimas vietoj „saugesnio metodo“ pažado",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis“, paaiškinant: odai ir nagams skirti darbai.",
+          "body": [
+            "Odai ir nagams skirti darbai",
+            "Įrankių naudojimas",
+            "Metodas nepakeičia higienos",
+            "Klasikinis pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Aparatinis pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Kombinuotas pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Komponentų palyginimas vietoj „saugesnio metodo“ pažado",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S32",
+          "S08",
+          "S11"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Specialisto apibrėžimai ir NVSC teiginių patikra"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Specialisto apibrėžimai ir NVSC teiginių patikra"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Odai ir nagams skirti darbai;Įrankių naudojimas;Metodas nepakeičia higienos. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Komponentų palyginimas vietoj „saugesnio metodo“ pažado",
+          "role": "Teminė iliustracija ir naudingas ruošinys HTML turinyje",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Nagai",
+        "publishAt": "2026-12-25T14:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "pedikiuras-klasikinis-pedikiuras",
+            "categoryId": "nagai",
+            "groupId": "pedikiuras",
+            "label": "Klasikinis pedikiūras",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "PD-aparatinis-klasikinis",
+            "section": "Klasikinis pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Klasikinis pedikiūras“ reiškia pedikiūras kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S32",
+              "S08",
+              "S11"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Specialisto apibrėžimai ir NVSC teiginių patikra"
+              }
+            ]
+          },
+          {
+            "taxonomyNodeId": "pedikiuras-aparatinis-pedikiuras",
+            "categoryId": "nagai",
+            "groupId": "pedikiuras",
+            "label": "Aparatinis pedikiūras",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "PD-aparatinis-klasikinis",
+            "section": "Aparatinis pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Aparatinis pedikiūras“ reiškia pedikiūras kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S32",
+              "S08",
+              "S11"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Specialisto apibrėžimai ir NVSC teiginių patikra"
+              }
+            ]
+          },
+          {
+            "taxonomyNodeId": "pedikiuras-kombinuotas-pedikiuras",
+            "categoryId": "nagai",
+            "groupId": "pedikiuras",
+            "label": "Kombinuotas pedikiūras",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "PD-aparatinis-klasikinis",
+            "section": "Kombinuotas pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Kombinuotas pedikiūras“ reiškia pedikiūras kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S32",
+              "S08",
+              "S11"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Specialisto apibrėžimai ir NVSC teiginių patikra"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "pedikiuras-klasikinis-pedikiuras",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:pedikiuras-klasikinis-pedikiuras",
+            "canonicalPath": "/paslaugos/pedikiuras-klasikinis-pedikiuras",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/pedikiuras-klasikinis-pedikiuras",
+            "label": "Klasikinis pedikiūras",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          },
+          {
+            "taxonomyNodeId": "pedikiuras-aparatinis-pedikiuras",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:pedikiuras-aparatinis-pedikiuras",
+            "canonicalPath": "/paslaugos/pedikiuras-aparatinis-pedikiuras",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/pedikiuras-aparatinis-pedikiuras",
+            "label": "Aparatinis pedikiūras",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          },
+          {
+            "taxonomyNodeId": "pedikiuras-kombinuotas-pedikiuras",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:pedikiuras-kombinuotas-pedikiuras",
+            "canonicalPath": "/paslaugos/pedikiuras-kombinuotas-pedikiuras",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/pedikiuras-kombinuotas-pedikiuras",
+            "label": "Kombinuotas pedikiūras",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "METHOD_COMPARISON",
+          "query": "aparatinis ir klasikinis pedikiūras",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Komponentų palyginimas vietoj „saugesnio metodo“ pažado",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "aparatinis ir klasikinis pedikiūras",
+          "relatedKeywords": [
+            "pedikiūras",
+            "higieninis pedikiuras",
+            "medicininis pedikiuras",
+            "gydomasis pedikiūras",
+            "pedikiūras kaina",
+            "kojų pedikiūras"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "pedikiūras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-12 18:25:35 +00:00"
+            },
+            {
+              "keyword": "higieninis pedikiuras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-14 12:00:14 +00:00"
+            },
+            {
+              "keyword": "medicininis pedikiuras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-13 19:22:24 +00:00"
+            },
+            {
+              "keyword": "gydomasis pedikiūras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-15 14:13:02 +00:00"
+            },
+            {
+              "keyword": "pedikiūras kaina",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-16 18:56:42 +00:00"
+            },
+            {
+              "keyword": "kojų pedikiūras",
+              "source": "ideas-04.json",
+              "callId": "09410b4f8e98406b9becbf8e1a5343d1",
+              "updatedAt": "2026-09-15 01:14:00 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Klasikinis pedikiūras",
+            "Aparatinis pedikiūras",
+            "Kombinuotas pedikiūras",
+            "Odai ir nagams skirti darbai",
+            "Įrankių naudojimas"
+          ],
+          "metaTitle": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis",
+          "metaDescription": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis. Aptariamos temos: odai ir nagams skirti darbai; įrankių naudojimas.",
+          "h1": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis",
+          "h2": [
+            "Odai ir nagams skirti darbai",
+            "Įrankių naudojimas",
+            "Metodas nepakeičia higienos",
+            "Klasikinis pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Aparatinis pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis",
+            "Kombinuotas pedikiūras: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": "aparatinis ir klasikinis pedikiūras",
+          "volumeSource": {
+            "file": "volume-lt-clean.json",
+            "callId": "ba7da889476342c3978d66eb72ee3647",
+            "kind": "GOOGLE_ADS_VOLUME",
+            "updatedAt": null
+          },
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "pedikiūras",
+            "observedVolume": 590,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 61,
+            "descriptionChars": 130,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "PD-aparatinis-klasikinis",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 2,
+        "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
+        "publishLocalTime": "16:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c"
+      }
+    },
+    {
+      "planId": "PP-tiesinimas",
+      "pageId": "3d74e53b-5300-4328-94c9-747ada19b94f",
+      "slug": "gidai/plauku-prieziura-tiesinimas",
+      "title": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra",
+      "publishAt": "2026-12-26T08:00:00.000Z",
+      "localDate": "2026-12-26",
+      "localTime": "10:00",
+      "brief": {
+        "id": "PP-tiesinimas",
+        "key": "tiesinimas",
+        "type": "guide",
+        "slug": "gidai/plauku-prieziura-tiesinimas",
+        "title": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra",
+        "description": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra. Aptariamos temos: formavimas karščiu; produkto procedūra.",
+        "intent": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra",
+        "categoryId": "plauku-prieziura",
+        "cluster": "Plaukų priežiūros procedūros",
+        "audience": "Klientas",
+        "dimensions": [
+          "A",
+          "S"
+        ],
+        "wave": 2,
+        "publishDate": "2026-12-26",
+        "parentId": "PP-gidas",
+        "outline": [
+          "Formavimas karščiu",
+          "Produkto procedūra",
+          "Rezultato ir saugos ribos",
+          "Plaukų tiesinimas: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Dviejų paslaugų eigos palyginimas",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra“, paaiškinant: formavimas karščiu.",
+          "body": [
+            "Formavimas karščiu",
+            "Produkto procedūra",
+            "Rezultato ir saugos ribos",
+            "Plaukų tiesinimas: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Dviejų paslaugų eigos palyginimas",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S33",
+          "S43",
+          "S54"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "S54 ir konkrečios sistemos saugos dokumentai"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "S54 ir konkrečios sistemos saugos dokumentai"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Formavimas karščiu;Produkto procedūra;Rezultato ir saugos ribos. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Dviejų paslaugų eigos palyginimas",
+          "role": "Teminė iliustracija ir naudingas ruošinys HTML turinyje",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "Plaukai",
+        "publishAt": "2026-12-26T08:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "plauku-forma-plauku-tiesinimas",
+            "categoryId": "plaukai",
+            "groupId": "plauku-forma",
+            "label": "Plaukų tiesinimas",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "PP-tiesinimas",
+            "section": "Plaukų tiesinimas: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „Plaukų tiesinimas“ reiškia tiesinimas ir garbanojimas kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S33",
+              "S43",
+              "S54"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "S54 ir konkrečios sistemos saugos dokumentai"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "plauku-forma-plauku-tiesinimas",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:plauku-forma-plauku-tiesinimas",
+            "canonicalPath": "/paslaugos/plauku-forma-plauku-tiesinimas",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/plauku-forma-plauku-tiesinimas",
+            "label": "Plaukų tiesinimas",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "METHOD_COMPARISON",
+          "query": "ilgalaikis plaukų tiesinimas ir įprastas formavimas",
+          "volume": null,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Dviejų paslaugų eigos palyginimas",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "ilgalaikis plaukų tiesinimas ir įprastas formavimas",
+          "relatedKeywords": [
+            "plaukų tiesinimas keratinu",
+            "ilgalaikis plauku tiesinimas",
+            "japoniskas plauku tiesinimas",
+            "plauku tiesinimas keratinu namuose",
+            "plauku tiesinimas keratinu kaina",
+            "ilgalaikis plauku tiesinimas kaina"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "plaukų tiesinimas keratinu",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-13 12:05:06 +00:00"
+            },
+            {
+              "keyword": "ilgalaikis plauku tiesinimas",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-13 21:10:03 +00:00"
+            },
+            {
+              "keyword": "japoniskas plauku tiesinimas",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-14 03:00:20 +00:00"
+            },
+            {
+              "keyword": "plauku tiesinimas keratinu namuose",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-17 14:24:04 +00:00"
+            },
+            {
+              "keyword": "plauku tiesinimas keratinu kaina",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-16 16:02:09 +00:00"
+            },
+            {
+              "keyword": "ilgalaikis plauku tiesinimas kaina",
+              "source": "ideas-13.json",
+              "callId": "bd38469b365e41629dd72d30f0243a41",
+              "updatedAt": "2026-09-17 03:29:28 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "Plaukų tiesinimas",
+            "Formavimas karščiu",
+            "Produkto procedūra"
+          ],
+          "metaTitle": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra",
+          "metaDescription": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra. Aptariamos temos: formavimas karščiu; produkto procedūra.",
+          "h1": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra",
+          "h2": [
+            "Formavimas karščiu",
+            "Produkto procedūra",
+            "Rezultato ir saugos ribos",
+            "Plaukų tiesinimas: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": null,
+          "volumeKeyword": "ilgalaikis plaukų tiesinimas ir įprastas formavimas",
+          "volumeSource": {
+            "file": "volume-lt-clean.json",
+            "callId": "ba7da889476342c3978d66eb72ee3647",
+            "kind": "GOOGLE_ADS_VOLUME",
+            "updatedAt": null
+          },
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "plaukų tiesinimas keratinu",
+            "observedVolume": 70,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 72,
+            "descriptionChars": 131,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "PP-tiesinimas",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 2,
+        "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "3d74e53b-5300-4328-94c9-747ada19b94f"
+      }
+    },
+    {
+      "planId": "SP-poroms",
+      "pageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+      "slug": "gidai/spa-poroms",
+      "title": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas",
+      "publishAt": "2026-12-27T08:00:00.000Z",
+      "localDate": "2026-12-27",
+      "localTime": "10:00",
+      "brief": {
+        "id": "SP-poroms",
+        "key": "poroms",
+        "type": "guide",
+        "slug": "gidai/spa-poroms",
+        "title": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas",
+        "description": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas. Aptariamos temos: dvi procedūros ar bendras ritualas; vienalaikis darbas ir laikas.",
+        "intent": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas",
+        "categoryId": "spa",
+        "cluster": "SPA ir poilsis",
+        "audience": "Klientas",
+        "dimensions": [
+          "S",
+          "C",
+          "P",
+          "E"
+        ],
+        "wave": 2,
+        "publishDate": "2026-12-27",
+        "parentId": "SP-gidas",
+        "outline": [
+          "Dvi procedūros ar bendras ritualas",
+          "Vienalaikis darbas ir laikas",
+          "Privatumo susitarimas",
+          "SPA ritualas poroms: metodo paskirtis ir konkreti paslaugos apimtis"
+        ],
+        "originalContribution": "Poros apsilankymo laiko schema su dviem realiais paketais",
+        "answerRequirements": {
+          "firstParagraph": "Tiesiogiai atsakyti „SPA poroms: du specialistai, privatumas ir procedūrų derinimas“, paaiškinant: dvi procedūros ar bendras ritualas.",
+          "body": [
+            "Dvi procedūros ar bendras ritualas",
+            "Vienalaikis darbas ir laikas",
+            "Privatumo susitarimas",
+            "SPA ritualas poroms: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "deliverable": "Poros apsilankymo laiko schema su dviem realiais paketais",
+          "failIf": "Vien klausimų sąrašas meistrui, pavadinimų perrašymas arba atsakymo pakeitimas bendru „pasitarkite“.",
+          "wordCount": null
+        },
+        "sourceIds": [
+          "S76",
+          "S79",
+          "S64"
+        ],
+        "evidenceNeeds": [
+          {
+            "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+            "task": "Tikras teikėjo tvarkaraštis, ne pažadas dviems vienu metu"
+          }
+        ],
+        "reviewLevel": "EDITORIAL_AND_SERVICE_SPECIALIST_WHERE_TECHNICAL",
+        "expertReview": {
+          "status": "NOT_PERFORMED",
+          "requiredScope": "Tikras teikėjo tvarkaraštis, ne pažadas dviems vienu metu"
+        },
+        "claimBoundary": "Teikėjų meniu klasifikuoja pasiūlą; ne įrodymas apie Madbeauty meistrus, nacionalines kainas ar individualų saugumą.",
+        "distinctIntent": "Savarankiškas atsakymas: Dvi procedūros ar bendras ritualas;Vienalaikis darbas ir laikas;Privatumo susitarimas. Bendras kategorijos apibrėžimas lieka pagrindiniame gide.",
+        "media": {
+          "status": "NOT_CREATED",
+          "subject": "Poros apsilankymo laiko schema su dviem realiais paketais",
+          "role": "Originali redakcinė schema / iliustracija",
+          "proofBoundary": "AI nėra tikro kliento rezultatas, dėvėjimo bandymas ar sveikatos įrodymas.",
+          "acceptance": "Faktinė pikselių ir teisių patikra; responsive WebP; tikras mobilus crop ir alt pagal vaizdą."
+        },
+        "status": "PLAN_ONLY_NOT_WRITTEN",
+        "agentReview": "NOT_PERFORMED",
+        "networkLinks": [],
+        "family": "SPA",
+        "publishAt": "2026-12-27T08:00:00.000Z",
+        "procedureSections": [
+          {
+            "taxonomyNodeId": "spa-ritualai-spa-ritualas-poroms",
+            "categoryId": "spa",
+            "groupId": "spa-ritualai",
+            "label": "SPA ritualas poroms",
+            "scope": "core",
+            "decision": "ANSWER_IN_NAMED_SECTION",
+            "targetId": "SP-poroms",
+            "section": "SPA ritualas poroms: metodo paskirtis ir konkreti paslaugos apimtis",
+            "requirements": [
+              "Paaiškinti, ką „SPA ritualas poroms“ reiškia ritualai kontekste ir kuo skiriasi nuo kitų šiame gide aptariamų variantų.",
+              "Atskirti metodo arba zonos skirtumą nuo paslaugos paketo; nurodyti įtraukiamus darbus ir tikslaus protokolo / produkto patikros poreikį.",
+              "Pateikti šio varianto pasirinkimo kriterijus ir vieną aiškiai iliustracinę situaciją; trukmės, kainos ir individualaus tinkamumo neišgalvoti."
+            ],
+            "reason": "Vienas to paties skaitytojo sprendimo gidas palygina artimus variantus; atskiras sinonimo / zonos URL nesukuria savarankiško atsakymo.",
+            "status": "PLANNED_SECTION_NOT_WRITTEN",
+            "sourceIds": [
+              "S76",
+              "S79",
+              "S64"
+            ],
+            "evidenceNeeds": [
+              {
+                "status": "REQUIRED_BEFORE_DRAFT_APPROVAL",
+                "task": "Tikras teikėjo tvarkaraštis, ne pažadas dviems vienu metu"
+              }
+            ]
+          }
+        ],
+        "catalogueTargets": [
+          {
+            "taxonomyNodeId": "spa-ritualai-spa-ritualas-poroms",
+            "cityId": null,
+            "routeRegistryId": "mb:catalog:spa-ritualai-spa-ritualas-poroms",
+            "canonicalPath": "/paslaugos/spa-ritualai-spa-ritualas-poroms",
+            "canonicalUrl": "https://madbeauty.lt/paslaugos/spa-ritualai-spa-ritualas-poroms",
+            "label": "SPA ritualas poroms",
+            "status": "planned",
+            "deployed": false,
+            "reachable": false,
+            "indexEligible": false,
+            "citySelection": {
+              "mode": "EXPLICIT_READER_SELECTION",
+              "pathPattern": "/paslaugos/{taxonomyNodeId}/{cityId}",
+              "preserveTaxonomyNodeId": true
+            },
+            "activation": "Tik actual fresh resolverio deployed ir reachable target; dabartinis planned snapshot neaktyvuoja href."
+          }
+        ],
+        "primarySearchIntent": {
+          "kind": "READER_DECISION",
+          "query": "spa poroms",
+          "volume": 20,
+          "scope": "Informacinis straipsnis; procedūra–miestas pirkimo užklausa priklauso tikram katalogo rezultatui."
+        },
+        "contentAcceptance": {
+          "answer": "Tiesioginis pavadinime pažadėto klausimo atsakymas, paaiškintas mechanizmas ir taikymo išimtys",
+          "workedExample": "Poros apsilankymo laiko schema su dviem realiais paketais",
+          "claimEvidence": "Kiekvienas svarbus metodo, kainos, trukmės ar sveikatos teiginys siejamas su actual perskaitytu šaltiniu ir kontekstu; atlikta qualified review pagal teiginį",
+          "imageBoundary": "AI iliustracija nevadinama tikru meistro darbu, kliento rezultatu ar produkto bandymu",
+          "schema": "Article/WebPage, BreadcrumbList ir faktinė organizacijos autorystė pagal matomą tekstą; jokių fiktyvių Person, review rating, offer, provider ar specialios GEO schemos",
+          "geo": "Aiškus atsakymas, palyginimo kriterijai ir citatos prie faktų. Atskirai žymėti illustracinį scenarijų, datuotą pasiūlymą, metodo ribą ir tikrą autorystę.",
+          "finalMetadata": "SEO map yra planas; title/description/H2 sutikrinti su galutiniu tekstu ir rendered preview prieš approval"
+        },
+        "seo": {
+          "status": "DATA_INFORMED_EDITORIAL_METADATA_PLAN_NOT_RENDERED_ARTICLE",
+          "primaryKeyword": "spa poroms",
+          "relatedKeywords": [
+            "spa",
+            "spa lietuvoje",
+            "poilsis lietuvoje",
+            "spa dviems",
+            "spa su nakvyne",
+            "geriausi spa lietuvoje"
+          ],
+          "relatedKeywordOrigin": "Actual vendor related rows from category seed; discovery candidates, not all page targets",
+          "relatedEvidence": [
+            {
+              "keyword": "spa",
+              "source": "ideas-20.json",
+              "callId": "672358269da54f68951fed50c624180e",
+              "updatedAt": "2026-09-14 09:01:40 +00:00"
+            },
+            {
+              "keyword": "spa lietuvoje",
+              "source": "ideas-20.json",
+              "callId": "672358269da54f68951fed50c624180e",
+              "updatedAt": "2026-09-12 01:36:02 +00:00"
+            },
+            {
+              "keyword": "poilsis lietuvoje",
+              "source": "ideas-20.json",
+              "callId": "672358269da54f68951fed50c624180e",
+              "updatedAt": "2026-09-13 07:25:49 +00:00"
+            },
+            {
+              "keyword": "spa dviems",
+              "source": "ideas-20.json",
+              "callId": "672358269da54f68951fed50c624180e",
+              "updatedAt": "2026-09-12 05:04:41 +00:00"
+            },
+            {
+              "keyword": "spa su nakvyne",
+              "source": "ideas-20.json",
+              "callId": "672358269da54f68951fed50c624180e",
+              "updatedAt": "2026-09-16 01:33:14 +00:00"
+            },
+            {
+              "keyword": "geriausi spa lietuvoje",
+              "source": "ideas-20.json",
+              "callId": "672358269da54f68951fed50c624180e",
+              "updatedAt": "2026-09-12 12:16:48 +00:00"
+            }
+          ],
+          "editorialConcepts": [
+            "SPA ritualas poroms",
+            "Dvi procedūros ar bendras ritualas",
+            "Vienalaikis darbas ir laikas"
+          ],
+          "metaTitle": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas",
+          "metaDescription": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas. Aptariamos temos: dvi procedūros ar bendras ritualas; vienalaikis darbas ir laikas.",
+          "h1": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas",
+          "h2": [
+            "Dvi procedūros ar bendras ritualas",
+            "Vienalaikis darbas ir laikas",
+            "Privatumo susitarimas",
+            "SPA ritualas poroms: metodo paskirtis ir konkreti paslaugos apimtis"
+          ],
+          "metadataAcceptance": "PLANNED_ONLY_REVIEW_AGAINST_FINAL_TEXT_AND_RENDERED_SNIPPET",
+          "intent": "INFORMATIONAL_READER_DECISION",
+          "monthlySearchVolume": 20,
+          "volumeKeyword": "spa poroms",
+          "volumeSource": {
+            "file": "volume-lt-clean.json",
+            "callId": "ba7da889476342c3978d66eb72ee3647",
+            "kind": "GOOGLE_ADS_VOLUME",
+            "updatedAt": null
+          },
+          "volumeMeaning": "Tik pateiktos volumeKeyword frazės LT duomenų įvertis; ne straipsnio srauto prognozė. Rašybos variantų nesumuoti. Null reiškia duomenų nėra. Komercinio šeimos termino apimtis nepriskiriama naujai informacinei frazei.",
+          "keywordFamily": {
+            "term": "spa",
+            "observedVolume": 9900,
+            "role": "Discovery context only; not primary query volume",
+            "commercialOwner": "Actual national/local catalogue when eligible; no editorial substitution for provider results"
+          },
+          "lengthReview": {
+            "titleChars": 62,
+            "descriptionChars": 147,
+            "reviewIfLong": false,
+            "meaning": "Redakcinės gairės; Google neturi garantuoto simbolių limito. Tikrinti tikrą snippet ir nekarpyti prasmės automatiškai."
+          },
+          "canonicalArticleId": "SP-poroms",
+          "localTransactionOwner": "Tikras procedūros–miesto katalogo rezultatas; informacinis gidas neturi miesto landing užduoties."
+        },
+        "previousResearchWave": 2,
+        "previousPlannedPublishAt": "2026-10-20T07:00:00.000Z",
+        "publishLocalTime": "10:00",
+        "deliveryStatus": "PLAN_NOT_WRITTEN",
+        "pageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a"
+      }
+    }
+  ]
+}

@@ -28,6 +28,19 @@ import type {PreparedChairSelection} from './prepared-chair-selection';
 import type {Product} from './types';
 export type PreparedCustomerChair={entry:typeof entries.entries[number];data:ChairPreview;finishRevision?:string};
 const cache=new Map<string,Promise<PreparedCustomerChair>>();
+// Captions only: retain the original linked selection, materials and geometry.
+const vapaaConstructionCaptions=new Map([
+ ["Porankiai: Be porankių · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Apsauga sukraunant kėdes: Nėra · Rašymo lentelė: Nėra","Aukštas medinis korpusas su pagalvėlėmis · Be porankių"],
+ ["Porankiai: Be porankių · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Apsauga sukraunant kėdes: Apsauginė pagalvėlė kėdėms sukrauti · Rašymo lentelė: Nėra","Aukštas medinis korpusas su pagalvėlėmis · Be porankių · Apsauga kraunant kėdes"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Apsauga sukraunant kėdes: Nėra · Rašymo lentelė: Nėra","Aukštas medinis korpusas su pagalvėlėmis · Metaliniai porankiai"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Apsauga sukraunant kėdes: Apsauginė pagalvėlė kėdėms sukrauti · Rašymo lentelė: Nėra","Aukštas medinis korpusas su pagalvėlėmis · Metaliniai porankiai · Apsauga kraunant kėdes"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Rašymo lentelė: Laminuotos faneros rašymo padėklas kairiarankiams","Aukštas medinis korpusas su pagalvėlėmis · Metaliniai porankiai · Lentelė kairiarankiams"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Rašymo lentelė: Laminuotos faneros rašymo padėklas dešiniarankiams","Aukštas medinis korpusas su pagalvėlėmis · Metaliniai porankiai · Lentelė dešiniarankiams"],
+ ["Porankiai: Be porankių · Korpusas: Aukštas medinis korpusas · Apsauga sukraunant kėdes: Tarpikliai kėdėms sukrauti · Rašymo lentelė: Nėra","Aukštas medinis korpusas · Be porankių · Tarpikliai kraunant kėdes"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukštas medinis korpusas · Apsauga sukraunant kėdes: Tarpikliai kėdėms sukrauti · Rašymo lentelė: Nėra","Aukštas medinis korpusas · Metaliniai porankiai · Tarpikliai kraunant kėdes"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukštas medinis korpusas · Rašymo lentelė: Laminuotos faneros rašymo padėklas kairiarankiams","Aukštas medinis korpusas · Metaliniai porankiai · Lentelė kairiarankiams"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukštas medinis korpusas · Rašymo lentelė: Laminuotos faneros rašymo padėklas dešiniarankiams","Aukštas medinis korpusas · Metaliniai porankiai · Lentelė dešiniarankiams"],
+]);
 const sharedOriginals=new Map<string,Set<string>>();
 for(const[model,values]of Object.entries(english.models)){const meta=(inventory.models as Record<string,{path:string}>)[model];if(!meta||!meta.path.includes('/kedes/')&&!entries.entries.some(e=>e.code===model))continue;for(const[binding,text]of Object.entries(values)){const set=sharedOriginals.get(binding)||new Set<string>();set.add(text);sharedOriginals.set(binding,set);}}
 function sourceText(code:string,field:string,value?:string){const binding=(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value),canonical=value===undefined?binding:'value:'+field+'='+canonicalReviewValue(code,field,value),own=(english.models as Record<string,Record<string,string>>)[code],shared=sharedOriginals.get(canonical)||sharedOriginals.get(binding);
@@ -110,7 +123,8 @@ export async function preparedCustomerConfiguration(product:Product,source:Prepa
     const values=Object.fromEntries(fields.filter(f=>option.values[f]!==undefined).map(f=>[f,option.values[f]]));
     return preparedFinishLabel(values,baseline,fieldName,valueName);
    }
-   return tuple(fields,option.values);
+   const label=tuple(fields,option.values);
+   return code==='KVAP008WW001'?(vapaaConstructionCaptions.get(label)??label):label;
   };
   return {
    id:ids.field('prepared:'+row.key),

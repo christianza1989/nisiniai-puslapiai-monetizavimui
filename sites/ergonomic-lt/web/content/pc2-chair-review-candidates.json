@@ -223,10 +223,25 @@
     {
       "code": "KYOU002WW002",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU002WW002-additional-4b1727b63deb1f712a32/review-d3388c110aa03831fd9a.json",
-      "sha256": "d3388c110aa03831fd9a7dbb01095da5eb9a965bcaff3d92e55cb40c4e7d3da3",
-      "bytes": 370904,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KYOU002WW002-8b55bc7a322819c20296/review-444b72e44308d9802c2f.json",
+      "sha256": "444b72e44308d9802c2f5702bca8c2b999530db5a563165696b3d522e91993d0",
+      "bytes": 652886,
+      "version": "colors-20261111-v1-3510-youteam-hb-mesh",
+      "defaultVersionLabel": "YouTEAM / R66PWG / ST62ALU / PW · patikrintos tinklelio, sėdynės ir pagrindo spalvos",
+      "reviewVersions": [
+        {
+          "id": "previous-youteam-3510-package",
+          "label": "Ankstesnis YouTEAM paketas",
+          "entry": {
+            "code": "KYOU002WW002",
+            "name": "YouTEAM",
+            "asset": "/models/configurator/chairs/KYOU002WW002-additional-4b1727b63deb1f712a32/review-d3388c110aa03831fd9a.json",
+            "sha256": "d3388c110aa03831fd9a7dbb01095da5eb9a965bcaff3d92e55cb40c4e7d3da3",
+            "bytes": 370904,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KWI2006WW001",

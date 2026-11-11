@@ -185,10 +185,25 @@
     {
       "code": "KYOU001WW001",
       "name": "YouTEAM",
-      "asset": "/models/configurator/chairs/KYOU001WW001-additional-6ff863c546cb4666d45b/review-b425a87f405e6d1809ee.json",
-      "sha256": "b425a87f405e6d1809eec9ea5e852c3fd7436c3cb1af2c030d3335f1e46f875c",
-      "bytes": 310471,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KYOU001WW001-5875e4e94149f24e6969/review-9ad8e62280aefd6cc744.json",
+      "sha256": "9ad8e62280aefd6cc7443ad04e9a047ce1a7c17629bfcbadfb9ee42cae4af281",
+      "bytes": 768931,
+      "version": "colors-20261111-v1-3510-youteam-lb-uph",
+      "defaultVersionLabel": "YouTEAM / GTPARM / ST62ALU / PW · patikrinta apmušalų ir metalo apdaila",
+      "reviewVersions": [
+        {
+          "id": "previous-youteam-3510-package",
+          "label": "Ankstesnis YouTEAM paketas",
+          "entry": {
+            "code": "KYOU001WW001",
+            "name": "YouTEAM",
+            "asset": "/models/configurator/chairs/KYOU001WW001-additional-6ff863c546cb4666d45b/review-b425a87f405e6d1809ee.json",
+            "sha256": "b425a87f405e6d1809eec9ea5e852c3fd7436c3cb1af2c030d3335f1e46f875c",
+            "bytes": 310471,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KYOU002WW002",

@@ -1,8 +1,10 @@
 import application from 'vinext/server/app-router-entry';
 import {referenceAsset} from './text-review-reference-assets';
 import {customerHttpBoundary,privateCustomerResponse} from '../lib/customer-http-boundary';
+import {modelTransport} from './model-transport';
 export default {
  async fetch(request:Request,env:Env,ctx:ExecutionContext){
+  const incoming=request;
   const url=new URL(request.url);
   // This namespace reuses the same application and records, with a request-local view.
   const prefix='/su-pasleptais-produktais',all=url.pathname===prefix||url.pathname.startsWith(prefix+'/');
@@ -15,7 +17,7 @@ export default {
   }
   request=new Request(url,request);request=new Request(request,{headers:requestHeaders});
   const denied=customerHttpBoundary(request,env);if(denied)return denied;
-  const finish=(response:Response)=>privateCustomerResponse(request,response,env);
+  const finish=(response:Response)=>privateCustomerResponse(request,modelTransport(incoming,response,true),env);
   if((/^\/(?:models|media|fonts|branding)\//.test(url.pathname)||url.pathname==='/icon.svg')&&!url.pathname.startsWith('/media/p/')){
    if(!['GET','HEAD'].includes(request.method))return new Response('Metodas neleidžiamas.',{status:405});
    const upstream=await referenceAsset(request),headers=new Headers(upstream.headers);headers.delete('Set-Cookie');headers.set('X-Robots-Tag','noindex, nofollow');

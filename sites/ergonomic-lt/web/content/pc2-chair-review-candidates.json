@@ -727,10 +727,25 @@
     {
       "code": "KXLI002WW002",
       "name": "X-Line",
-      "asset": "/models/configurator/chairs/KXLI002WW002-additional-c5c26d0c93dca4fb6cda/review-fdc9e1dabc7236b05705.json",
-      "sha256": "fdc9e1dabc7236b05705282a3dbb52f5b53a4c9c9160a0e0a680878eea4b56ed",
-      "bytes": 791364,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KXLI002WW002-8ff6aad6fc5b069cd5b9/review-e2357f44f2be3e5db2d8.json",
+      "sha256": "e2357f44f2be3e5db2d802ac188b50f08400810b3993bc76c8b55dd5ef1223f1",
+      "bytes": 1697991,
+      "version": "colors-20261111-v1-3510-xline-mesh",
+      "defaultVersionLabel": "X-Line / R37POL / ST56POL / HRMAFABRIC3D · patikrintos tinklelio ir apmušalų spalvos",
+      "reviewVersions": [
+        {
+          "id": "previous-xline-3510-package",
+          "label": "Ankstesnis X-Line paketas",
+          "entry": {
+            "code": "KXLI002WW002",
+            "name": "X-Line",
+            "asset": "/models/configurator/chairs/KXLI002WW002-additional-c5c26d0c93dca4fb6cda/review-fdc9e1dabc7236b05705.json",
+            "sha256": "fdc9e1dabc7236b05705282a3dbb52f5b53a4c9c9160a0e0a680878eea4b56ed",
+            "bytes": 791364,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KSAI001WW002",

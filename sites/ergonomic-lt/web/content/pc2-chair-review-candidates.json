@@ -285,10 +285,25 @@
     {
       "code": "KZBO004WW001",
       "name": "Z-body",
-      "asset": "/models/configurator/chairs/KZBO004WW001-additional-cd3777e66c8aaf2c90ea/review-edb9c3bab63c41d43fa9.json",
-      "sha256": "edb9c3bab63c41d43fa96ee20362e5863cf146acbe5329cc96bfe953d3e57ba2",
-      "bytes": 248937,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KZBO004WW001-8f5325dfcc865ef2e699/review-43ca82dc046b6185181a.json",
+      "sha256": "43ca82dc046b6185181a12af5302b8613c94ad17a3d24b3da5d70271cab63c8a",
+      "bytes": 1565733,
+      "version": "colors-20261111-v1-3510-z-body-mesh",
+      "defaultVersionLabel": "Z-Body / R32R / ST44POL / HRUA · patikrinti sėdynės ir galvos atramos apmušalai",
+      "reviewVersions": [
+        {
+          "id": "previous-z-body-3510-package",
+          "label": "Ankstesnis Z-Body paketas",
+          "entry": {
+            "code": "KZBO004WW001",
+            "name": "Z-body",
+            "asset": "/models/configurator/chairs/KZBO004WW001-additional-cd3777e66c8aaf2c90ea/review-edb9c3bab63c41d43fa9.json",
+            "sha256": "edb9c3bab63c41d43fa96ee20362e5863cf146acbe5329cc96bfe953d3e57ba2",
+            "bytes": 248937,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KHOL001WW002",

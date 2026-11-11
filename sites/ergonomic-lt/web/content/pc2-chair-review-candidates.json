@@ -219,10 +219,25 @@
     {
       "code": "KVAP008WW001",
       "name": "Vapaa",
-      "asset": "/models/configurator/chairs/KVAP008WW001-additional-cbd65a0645df4d69247a/review-460e79b854099f629403.json",
-      "sha256": "460e79b854099f6294031162337aa102d7a52c06c50fdd12ac67784b99b53c54",
-      "bytes": 461382,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KVAP008WW001-35eb837ec6b25c1736f5/review-442e663e798134ae0367.json",
+      "sha256": "442e663e798134ae03674c2fb62c4b64aaa8506752dc6f733c0bbfc1f32f7bf7",
+      "bytes": 1360373,
+      "version": "colors-20261110-v1-3510-vapaa-4l-wood",
+      "defaultVersionLabel": "Vapaa 4L HB / GD · patikrintos apmušalų ir konstrukcijos apdaila",
+      "reviewVersions": [
+        {
+          "id": "previous-vapaa-3510-package",
+          "label": "Ankstesnis Vapaa paketas",
+          "entry": {
+            "code": "KVAP008WW001",
+            "name": "Vapaa",
+            "asset": "/models/configurator/chairs/KVAP008WW001-additional-cbd65a0645df4d69247a/review-460e79b854099f629403.json",
+            "sha256": "460e79b854099f6294031162337aa102d7a52c06c50fdd12ac67784b99b53c54",
+            "bytes": 461382,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KUTI004WW002",

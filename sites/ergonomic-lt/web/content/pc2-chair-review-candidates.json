@@ -83,10 +83,25 @@
     {
       "code": "KNAU017WW001",
       "name": "Naudu",
-      "asset": "/models/configurator/chairs/KNAU017WW001-85db517e55fca25a6b2b/review-75248882f309e419196f.json",
-      "sha256": "75248882f309e419196fc992ce95d9d6ab6d2c6445b1bdba9f5fb40b8446534e",
-      "bytes": 59839,
-      "version": "colors-20261030-v2-exact-own-auto-swap1301"
+      "asset": "/models/configurator/chairs/KNAU017WW001-418842b5cb38c6ce8f5c/review-1b0af755e3720158ebb1.json",
+      "sha256": "1b0af755e3720158ebb12f1ba562f513b4e239204d7f866ee012dd5c557c9ec1",
+      "bytes": 3152119,
+      "version": "colors-20261112-v2-3510-approved-palette",
+      "defaultVersionLabel": "Naudu · GBP · 810 mm · dažytas rėmas · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-approved-omission-20261112",
+          "label": "Ankstesnis paketas",
+          "entry": {
+            "code": "KNAU017WW001",
+            "name": "Naudu",
+            "asset": "/models/configurator/chairs/KNAU017WW001-85db517e55fca25a6b2b/review-75248882f309e419196f.json",
+            "sha256": "75248882f309e419196fc992ce95d9d6ab6d2c6445b1bdba9f5fb40b8446534e",
+            "bytes": 59839,
+            "version": "colors-20261030-v2-exact-own-auto-swap1301"
+          }
+        }
+      ]
     },
     {
       "code": "KNAU018WW001",

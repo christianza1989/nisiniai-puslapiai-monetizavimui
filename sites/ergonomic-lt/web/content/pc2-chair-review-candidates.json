@@ -909,10 +909,25 @@
     {
       "code": "KPOX002WW001",
       "name": "Prox",
-      "asset": "/models/configurator/chairs/KPOX002WW001-additional-7148762ed814527c6798/review-ce1e9f47c48650576c38.json",
-      "sha256": "ce1e9f47c48650576c38d78cade6a9b829533293a4b578e2e4ab3dd51cb20750",
-      "bytes": 113516,
-      "version": "additional-observed-visuals-20261108-v1"
+      "asset": "/models/configurator/chairs/KPOX002WW001-6ac6347e782803f5528d/review-aa7fef119b3401f08066.json",
+      "sha256": "aa7fef119b3401f080661e84ab589ec02f5ec521a82de2b90d1b2579403dc3be",
+      "bytes": 3715055,
+      "version": "colors-20261112-v2-3510-approved-palette",
+      "defaultVersionLabel": "Prox · ARMRESTS1 · ST65POL · CAB · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-approved-omission-20261112",
+          "label": "Ankstesnis paketas",
+          "entry": {
+            "code": "KPOX002WW001",
+            "name": "Prox",
+            "asset": "/models/configurator/chairs/KPOX002WW001-additional-7148762ed814527c6798/review-ce1e9f47c48650576c38.json",
+            "sha256": "ce1e9f47c48650576c38d78cade6a9b829533293a4b578e2e4ab3dd51cb20750",
+            "bytes": 113516,
+            "version": "additional-observed-visuals-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KJUP001WW002",

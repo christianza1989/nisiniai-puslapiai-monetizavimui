@@ -106,9 +106,9 @@
     {
       "code": "KNAU018WW001",
       "name": "Naudu",
-      "asset": "/models/configurator/chairs/KNAU018WW001-d3f0804a1f60f147b53f/review-71323f3100f7d8c19d6f.json",
-      "sha256": "71323f3100f7d8c19d6f8af8ec1a0fb853964a40691148396560cc4b236e5b00",
-      "bytes": 3150623,
+      "asset": "/models/configurator/chairs/KNAU018WW001-d3f0804a1f60f147b53f/review-f45cf8102f71a390013a.json",
+      "sha256": "f45cf8102f71a390013a9f82b6d198a6131634bdf23ab64048727510ded2b36e",
+      "bytes": 3150689,
       "version": "colors-20261112-v2-3510-approved-palette",
       "defaultVersionLabel": "Naudu · GB · 810 mm · buko rėmas · patikrintos apmušalų šakos",
       "reviewVersions": [

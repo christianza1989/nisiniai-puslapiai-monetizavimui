@@ -106,10 +106,25 @@
     {
       "code": "KNAU018WW001",
       "name": "Naudu",
-      "asset": "/models/configurator/chairs/KNAU018WW001-visual-ef935495cdbe99185f56/review-c911ffc419096cf30680.json",
-      "sha256": "c911ffc419096cf3068028d77d5661022db85ed8aefa7454d122eb2fb7d317fa",
-      "bytes": 37584,
-      "version": "visual-own-20261108-v1"
+      "asset": "/models/configurator/chairs/KNAU018WW001-d3f0804a1f60f147b53f/review-71323f3100f7d8c19d6f.json",
+      "sha256": "71323f3100f7d8c19d6f8af8ec1a0fb853964a40691148396560cc4b236e5b00",
+      "bytes": 3150623,
+      "version": "colors-20261112-v2-3510-approved-palette",
+      "defaultVersionLabel": "Naudu · GB · 810 mm · buko rėmas · patikrintos apmušalų šakos",
+      "reviewVersions": [
+        {
+          "id": "previous-approved-omission-20261112",
+          "label": "Ankstesnis paketas",
+          "entry": {
+            "code": "KNAU018WW001",
+            "name": "Naudu",
+            "asset": "/models/configurator/chairs/KNAU018WW001-visual-ef935495cdbe99185f56/review-c911ffc419096cf30680.json",
+            "sha256": "c911ffc419096cf3068028d77d5661022db85ed8aefa7454d122eb2fb7d317fa",
+            "bytes": 37584,
+            "version": "visual-own-20261108-v1"
+          }
+        }
+      ]
     },
     {
       "code": "KNXT001WW002",

@@ -14,23 +14,37 @@ import {modelName,modelProduct} from './product-models';
 import {configurableArticle} from './configuration-article';
 import {supplierOptions,optionDetails} from './configuration-labels';
 import {supplierReference,quoteOrderText} from './supplier-reference';
+import {pc2QuoteEnabled,pc2SelectionSchema} from './pc2-quote-selection';
+import {resolvePc2Quote} from './pc2-quote';
 
 export const quoteSchema=z.object({
   name:z.string().trim().min(2).max(100),email:z.email().max(200),phone:z.string().trim().max(40),
   company:z.string().trim().max(160),message:z.string().trim().max(5000),
-  items:z.array(z.object({productId:z.string().max(200),configurationId:z.string().max(100).nullable(),configurationState:z.object({family:z.string().max(30),anchor:z.string().max(100),values:z.record(z.string().regex(/^[A-Z0-9]+$/),z.string().max(100)).refine(x=>Object.keys(x).length<=35)}).optional(),quantity:z.number().int().min(1).max(1000),note:z.string().max(500)})).max(30),
+  items:z.array(z.object({productId:z.string().max(200),configurationId:z.string().max(100).nullable(),configurationState:z.object({family:z.string().max(30),anchor:z.string().max(100),values:z.record(z.string().regex(/^[A-Z0-9]+$/),z.string().max(100)).refine(x=>Object.keys(x).length<=35)}).optional(),pc2Selection:pc2SelectionSchema.optional(),quantity:z.number().int().min(1).max(1000),note:z.string().max(500)})).max(30),
   consent:z.literal(true),submissionKey:z.uuid(),website:z.string().max(100),startedAt:z.number()
 }).refine(p=>p.items.length>0||p.message.length>=10,{message:copyText("ui.742aa41acaeed80e038c","Įrašykite užklausą arba pasirinkite prekę.")});
 export type QuoteRecord={id:string;payload:string;created_at:string;status:string;delivery_status:string;delivery_error:string|null;delivery_attempts:number};
-export async function storeQuote(input:unknown) {
+export async function storeQuote(input:unknown,{admin=false}:{admin?:boolean}={}) {
   const payload=quoteSchema.parse(input) as QuotePayload;
   if(payload.website||Date.now()-payload.startedAt<1200||payload.startedAt>Date.now())throw new Error(copyText("ui.6185b8e6657822aaf0ce","Patikrinkite formą ir bandykite dar kartą."));
+  // Reserved synthetic addresses are accepted only for an authenticated preview test.
+  const previewTest=pc2QuoteEnabled()&&payload.name.startsWith('[BANDOMOJI PC2]')&&/^pc2-[a-z0-9-]+@example\.invalid$/.test(payload.email);
+  if(previewTest&&!admin)throw Error('Bandomajai užklausai reikia administratoriaus prisijungimo.');
   const prior=await dbOne<{id:string}>('SELECT id FROM quotes WHERE submission_key=?',payload.submissionKey);
   if(prior)return {id:prior.id,duplicate:true};
   const products=await visibleProductsAsync();
   const resolved:object[]=[];
   for(const item of payload.items){
     const p=products.find(p=>p.id===item.productId);if(!p)throw new Error(copyText("ui.8b2bc0e5fcb7d4a51bed","Viena iš pasirinktų prekių nebepasiekiama. Atnaujinkite sąrašą."));
+    if(item.pc2Selection){
+      if(item.configurationState)throw Error('Pasirinkta daugiau nei viena komplektacija.');
+      const selection=await resolvePc2Quote(item.pc2Selection,[p]);
+      if(item.configurationId!==selection.item.configurationId)throw Error('Komplektacija neatitinka produkto.');
+      resolved.push({...item,...supplierReference(p),productName:selection.item.name,configurationName:'3D peržiūros komplektacija',
+        baseArticle:item.pc2Selection.code,configurationDetails:selection.item.configurationDetails,
+        supplierOptions:selection.supplierOptions,missingSupplierCodes:selection.missingSupplierCodes,pc2OrderNote:selection.pc2OrderNote});
+      continue;
+    }
     if(item.configurationState){const model=p.configurations.find(c=>c.id===item.configurationId),candidate=model?modelProduct(p,model):p;
       const configured=configurableArticle(candidate)?candidate:p,engine=createExpandedEngine(await loadCatalogRuntime(configured,item.configurationState)),selection=engine.expandedSelection(configured,item.configurationState),article=engine.selectionArticle(configured,selection.state);
       if(item.configurationId!==selection.configuration.id)throw Error(copyText("ui.b67f291ae5800555e0e3","Komplektacijos kodas neatitinka produkto."));
@@ -51,7 +65,7 @@ export async function storeQuote(input:unknown) {
   const emailKey=createHash('sha256').update(payload.email.toLowerCase()).digest('hex');
   if(!await rateAllowed('quote-email:'+emailKey,5,15*60_000))throw new Error(copyText("ui.684b0117a0f40df1a988","Per daug užklausų. Bandykite po 15 minučių arba susisiekite telefonu."));
   const id=randomUUID();
-  const inserted=await dbRun('INSERT INTO quotes(id,submission_key,payload,created_at) VALUES(?,?,?,?) ON CONFLICT(submission_key) DO NOTHING',id,payload.submissionKey,JSON.stringify({...payload,items:resolved}),new Date().toISOString());
+  const inserted=await dbRun('INSERT INTO quotes(id,submission_key,payload,created_at,delivery_status) VALUES(?,?,?,?,?) ON CONFLICT(submission_key) DO NOTHING',id,payload.submissionKey,JSON.stringify({...payload,items:resolved,...(previewTest?{previewTest:true}:{})}),new Date().toISOString(),previewTest?'test_no_email':'pending');
   if(!inserted.changes){const existing=await dbOne<{id:string}>('SELECT id FROM quotes WHERE submission_key=?',payload.submissionKey);if(existing)return {id:existing.id,duplicate:true};throw Error(copyText("ui.97164bb3ddaf47c7c21e","Užklausos išsaugoti nepavyko."));}
   return {id,duplicate:false};
 }
@@ -59,6 +73,7 @@ export async function deliverQuote(id:string) {
   const record=await dbOne<QuoteRecord>('SELECT * FROM quotes WHERE id=?',id);
   if(!record)throw new Error(copyText("ui.5c43fbbe147bd6ad8126","Užklausa nerasta."));
   if(record.delivery_status==='sent')return 'sent';
+  if(record.delivery_status==='test_no_email'||JSON.parse(record.payload).previewTest===true)return 'test_no_email';
   if(!process.env.SMTP_HOST||!process.env.SMTP_FROM){await dbRun("UPDATE quotes SET delivery_status='awaiting_configuration' WHERE id=?",id);return 'awaiting_configuration';}
   const claimed=await dbRun("UPDATE quotes SET delivery_status='sending', delivery_started_at=?, delivery_attempts=delivery_attempts+1 WHERE id=? AND delivery_status!='sent' AND (delivery_status!='sending' OR delivery_started_at<?)",Date.now(),id,Date.now()-120_000);
   if(!claimed.changes)return 'sending';

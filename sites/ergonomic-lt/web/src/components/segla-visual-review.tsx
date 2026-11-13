@@ -6,7 +6,7 @@ import {previewField,previewTuple,previewValue} from '@/lib/preview-option-prese
 import {PreviewAdminCodes} from './preview-admin-codes';
 import type {resolveSeglaVisual} from '@/lib/segla-visual-routing';
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false});
-export default function SeglaVisualReview({resolved,children,showAdminCodes=false}:{showAdminCodes?:boolean;resolved:ReturnType<typeof resolveSeglaVisual>;children?:ReactNode}){
+export default function SeglaVisualReview({resolved,children,fallbackAction,showAdminCodes=false}:{showAdminCodes?:boolean;resolved:ReturnType<typeof resolveSeglaVisual>;children?:ReactNode;fallbackAction?:ReactNode}){
  const {representative:r,mapping:m,exactRoute}=resolved;
  const variant:PilotVariant={id:r.id,label:r.label,backrest:'uph',...r.asset,image:'',sourceCadUrl:'',sourceCadSha256:r.asset.assetSha256,supplierCode:r.code,supplierOptions:[],materialCodes:{},samples:{},visualizationNote:''};
  return <section data-segla-visual-id={r.id} data-segla-visual-mode={resolved.mode} data-segla-visual-sha={r.asset.assetSha256}>
@@ -14,6 +14,6 @@ export default function SeglaVisualReview({resolved,children,showAdminCodes=fals
   {!exactRoute&&<p className="form-note">Šiam vaizdui kitų spalvų pasirinkimas nepatvirtintas. Apdaila: {previewTuple(r.code,r.defaultFinish)||'originalios modelio medžiagos'}.</p>}
   <details><summary>Pasirinktos funkcinės komplektacijos duomenys</summary><dl>{Object.entries({...m.options,...m.dimensions}).map(([k,v])=><div key={k}><dt>{previewField(k)}</dt><dd>{previewValue(r.code,k,v)}</dd></div>)}</dl><p className="form-note">Duomenys išsaugomi atskirai nuo rodomo modelio. Geometrija pagal matmenis netempiama.</p></details>
   {showAdminCodes&&!exactRoute&&<PreviewAdminCodes model={r.code} values={{...m.options,...m.dimensions}}/>}
-  {exactRoute?children:<Viewer3D variant={variant} name="Segla"/>}
+  {exactRoute?children:<>{fallbackAction}<Viewer3D variant={variant} name="Segla"/></>}
  </section>;
 }

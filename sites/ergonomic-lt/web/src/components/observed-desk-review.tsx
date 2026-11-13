@@ -3,6 +3,7 @@ import {useEffect,useState} from 'react';
 import dynamic from 'next/dynamic';
 import {observedDeskState,observedDeskVariant,validateObservedDesk,type ObservedDeskEntry,type ObservedDeskReview} from '@/lib/observed-desk-review';
 import {previewField,previewFinishField,previewModelLabel,previewValue} from '@/lib/preview-option-presentation';
+import {Pc2QuoteButton} from './pc2-quote-button';
 import {PreviewAdminCodes} from './preview-admin-codes';
 import {PreviewColourSample} from './preview-colour-sample';
 import './pc2-chair-review.css';
@@ -28,6 +29,7 @@ function Workspace({entry,showAdminCodes}:{entry:ObservedDeskEntry;showAdminCode
    <label className="field">Surinkta komplektacija<select aria-label="Surinkta komplektacija" value={id} onChange={e=>setId(e.target.value)}>{data.states.map((s,index)=><option value={s.id} key={s.id}>Komplektacija {index+1}{description(s.values)&&' · '+description(s.values)}</option>)}</select></label>
    <p className="form-note" role="status">Galimos tik surinktos pilnos komplektacijos. Kitiems matmenų, konstrukcijos ir apdailos deriniams 3D nerodoma.</p>
    {state&&<details><summary>Pasirinktos komplektacijos duomenys</summary><dl>{state.details.map(p=>{const field=p.field.split('.')[1],value=state.values[p.field];return <div key={p.field}><dt>{previewField(field)}</dt><dd>{previewValue(data.code,field,value)}{previewFinishField(field)&&<PreviewColourSample code={value}/>}</dd></div>;})}</dl></details>}
+   {state&&<Pc2QuoteButton selection={{kind:'desk',code:entry.code,packageSha:entry.sha256,stateId:state.id}}/>}
    {state&&showAdminCodes&&<PreviewAdminCodes model={data.code} values={state.values}/>}
   </div>
   {state?<Viewer3D variant={observedDeskVariant(data.code,state)} name={data.name}/>:<p role="alert">Šiai komplektacijai surinkto 3D nėra.</p>}

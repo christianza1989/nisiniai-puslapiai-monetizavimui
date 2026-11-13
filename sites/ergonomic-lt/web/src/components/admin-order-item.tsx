@@ -12,6 +12,8 @@ export function AdminOrderItem({item}:{item:any}){
    {i.configurationId&&<div><dt>Komplektacijos ID</dt><dd>{i.configurationId}</dd></div>}
   </dl>{source&&<a className="text-link" href={source} target="_blank" rel="noopener noreferrer">Originali gamintojo prekė<ArrowUpRight size={16}/></a>}
   {!!i.configurationDetails?.length&&<details className="detail-disclosure"><summary>Komplektacijos pasirinkimai</summary><dl className="configuration-summary">{i.configurationDetails.map((d:any,n:number)=><div key={n}><dt>{d.label}</dt><dd>{d.value}</dd></div>)}</dl></details>}
-  {!!i.supplierOptions?.length&&<details className="detail-disclosure"><summary>Visi pasirinkimų kodai</summary><p className="preserve-lines">{i.supplierOptions.join('\n')}</p></details>}
+  {!!i.missingSupplierCodes?.length&&<ul className="form-error">{i.missingSupplierCodes.map((field:string)=><li key={field}>Trūksta kodo: {field}</li>)}</ul>}
+  {i.pc2OrderNote&&<p className="form-note">{i.pc2OrderNote}</p>}
+  {!!i.supplierOptions?.length&&<details className="detail-disclosure" open={i.pc2Selection?true:undefined}><summary>Visi pasirinkimų kodai</summary><p className="preserve-lines">{i.supplierOptions.join('\n')}</p></details>}
  </li>;
 }

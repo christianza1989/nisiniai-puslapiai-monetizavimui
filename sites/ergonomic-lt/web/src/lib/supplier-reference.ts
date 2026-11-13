@@ -29,5 +29,7 @@ export function quoteOrderText(item:any){
   (i.baseArticle?'\nGamintojo bazinis kodas: '+i.baseArticle:'')+
   (i.configurationDetails?.length?'\n'+i.configurationDetails.map((d:any)=>d.label+': '+d.value).join('\n'):'')+
   (i.supplierOptions?.length?'\nGamintojo pasirinkimų kodai: '+i.supplierOptions.join(';'):'')+
+  (i.missingSupplierCodes?.length?'\n'+i.missingSupplierCodes.map((field:string)=>'Trūksta kodo: '+field).join('\n'):'')+
+  (i.pc2OrderNote?'\n'+i.pc2OrderNote:'')+
   (i.note?'\nPastaba: '+i.note:'');
 }

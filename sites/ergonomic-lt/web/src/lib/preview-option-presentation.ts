@@ -1,3 +1,4 @@
+import {furnitureTerminology} from './furniture-terminology';
 import data from '../../content/preview-option-dictionary.json';
 
 type Labels = Record<string, string>;
@@ -57,7 +58,7 @@ export function previewValue(model: string, field: string, value: string, collec
 
   const key = field + '=' + value;
   const label = models[model]?.[key] ?? values[key];
-  if (!previewFinishField(field)) return label ?? 'Aprašymas nepateiktas';
+  if (!previewFinishField(field)) return label ? furnitureTerminology(label) : 'Aprašymas nepateiktas';
   const name = label ?? colourNames[value] ?? collections[value];
   const isCollection = /UPHGROUP|MESHGROUP|GROUP.*(?:UPH|MESH)/.test(field);
   if (isCollection) return name ?? collection ?? 'Kolekcijos pavadinimas nepateiktas';

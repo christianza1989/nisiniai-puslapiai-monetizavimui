@@ -2,6 +2,17 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {acceptsGzip,modelTransport} from '../src/cloudflare/model-transport';
 const asset='https://example.test/models/configurator/components/KEM2013WW009-b3235e320cf6ddc029a5.glb';
+test('text review negotiates Brotli for signed GLB and keeps other signed assets unchanged',()=>{
+ const url='https://example.test/media/p/v1_test/';
+ const response=(mime:string)=>new Response('original',{headers:{'Content-Type':mime}});
+ const request=(encoding:string)=>new Request(url,{headers:{'Accept-Encoding':encoding}});
+ assert.equal(modelTransport(request('br, gzip'),response('model/gltf-binary'),true).headers.get('Content-Encoding'),'br');
+ assert.equal(modelTransport(request('br;q=0, gzip'),response('model/gltf-binary'),true).headers.get('Content-Encoding'),'gzip');
+ assert.equal(modelTransport(request('identity'),response('model/gltf-binary'),true).headers.get('Content-Encoding'),null);
+ assert.equal(modelTransport(request('br'),response('model/gltf-binary')).headers.get('Content-Encoding'),null);
+ const image=response('image/png');
+ assert.equal(modelTransport(request('br'),image,true),image);
+});
 test('gzip negotiation honours explicit exclusion and wildcard qualities',()=>{
  for(const header of ['gzip','br, gzip','GZIP;q=0.5','*;q=1'])assert(acceptsGzip(header));
  for(const header of [null,'br','gzip;q=0','gzip;q=0, *;q=1','gzip;q=garbage','gzip;q=2','*;q=0'])assert(!acceptsGzip(header));

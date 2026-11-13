@@ -14,7 +14,7 @@ export function visibleBounds(root:Object3D){
 export function cameraFrame(bounds:Box3,aspect:number,fov:number,direction=new Vector3(2.6,1.25,3.7)){
  const size=bounds.getSize(new Vector3()),center=bounds.getCenter(new Vector3()),view=direction.clone().normalize();
  const right=new Vector3(0,1,0).cross(view).normalize(),up=view.clone().cross(right).normalize();
- const tangent=Math.tan(fov*Math.PI/360),horizontal=tangent*Math.max(aspect,.25);let distance=0;
+ const tangent=Math.tan(fov*Math.PI/360),horizontal=tangent*aspect;let distance=0;
  // Perspective depth and the oblique camera angle matter. A height-only fit
  // can cut off the front legs of a short, deep chair despite correct bounds.
  for(const x of [bounds.min.x,bounds.max.x])for(const y of [bounds.min.y,bounds.max.y])for(const z of [bounds.min.z,bounds.max.z]){

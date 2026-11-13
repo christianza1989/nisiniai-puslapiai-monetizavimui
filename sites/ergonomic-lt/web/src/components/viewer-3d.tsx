@@ -159,13 +159,15 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
       const hit=raycaster.intersectObjects(upholsteryMeshes(),false)[0];if(hit)inspect(hit.point);
     };
     element.addEventListener('dblclick',inspectPointer);
-    const resize=()=>{const {width,height}=host.getBoundingClientRect();if(width<=0||height<=0)return;
+    const sizeViewport=()=>{const rect=host.getBoundingClientRect(),{width,height}=rect;if(width<=0||height<=0)return false;
       renderer!.setSize(width,height,false);camera.aspect=width/height;
-      const rect=host.getBoundingClientRect(),toolbar=host.parentElement?.querySelector('.viewer-toolbar')?.getBoundingClientRect();
+      const toolbar=host.parentElement?.querySelector('.viewer-toolbar')?.getBoundingClientRect();
       const rightInset=avoidToolbarOverlap&&toolbar&&toolbar.left>rect.left+width/2&&toolbar.bottom>rect.top&&toolbar.top<rect.bottom?rect.right-toolbar.left+8:0;
       const viewport=unobstructedCameraViewport(width,height,rightInset);framingAspect=viewport.aspect;
       if(viewport.inset)camera.setViewOffset(width,height,viewport.offsetX,0,width,height);else camera.clearViewOffset();
-      camera.updateProjectionMatrix();
+      camera.updateProjectionMatrix();return true;
+    };
+    const resize=()=>{if(!sizeViewport())return;
       if(controls.enabled&&object){
         view.resize(framingAspect);render();
       }else fit();};
@@ -251,7 +253,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         }else setColorState('original');
         if(disposed)return;await prepareViewerTextures(renderer!,scene,abort.signal,context.textureCache);if(disposed)return;
         await renderer!.compileAsync(scene,camera);if(disposed)return;
-        initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');context.retired.splice(0).forEach(dispose=>dispose());while(context.deskMaterials.size>2){const key=context.deskMaterials.keys().next().value!;context.deskMaterials.get(key)!.dispose();context.deskMaterials.delete(key);}
+        sizeViewport();initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');context.retired.splice(0).forEach(dispose=>dispose());while(context.deskMaterials.size>2){const key=context.deskMaterials.keys().next().value!;context.deskMaterials.get(key)!.dispose();context.deskMaterials.delete(key);}
       }catch{if(!disposed&&!abort.signal.aborted)setState('error');}
     })();
     return()=>{disposed=true;colorRevision++;applyDeskColors.current=async()=>{};applyChairColors.current=async()=>{};abort.abort();observer.disconnect();element.removeEventListener('webglcontextlost',contextLost);element.removeEventListener('dblclick',inspectPointer);

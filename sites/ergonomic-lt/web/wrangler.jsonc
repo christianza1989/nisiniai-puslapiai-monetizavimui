@@ -33,7 +33,8 @@
     "SITE_INDEXABLE": "false",
     "PREVIEW_CATALOG": "true",
     "COOKIE_SECURE": "true",
-    "QUOTE_TO": "info@ergonomic.lt",
+    "QUOTE_TO": "ergonomic@ergonomic.lt",
+    "QUOTE_MAIL_TRANSPORT": "hostinger_api",
     "TRUST_PROXY": "true"
   },
   "observability": {

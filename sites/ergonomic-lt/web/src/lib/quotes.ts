@@ -4,6 +4,7 @@ import {copyText} from '@/lib/editorial-copy';
 import { z } from 'zod';
 import { randomUUID, createHash } from 'node:crypto';
 import nodemailer from 'nodemailer';
+import {HostingerQuoteDeliveryUnknown,previewQuoteRecipient,sendHostingerQuoteMail,useHostingerQuoteMail} from './hostinger-quote-mail';
 import { dbOne,dbRun,rateAllowed } from './db';
 import { visibleProductsAsync } from './catalog';
 import type { QuotePayload } from './types';
@@ -29,6 +30,10 @@ export async function storeQuote(input:unknown,{admin=false}:{admin?:boolean}={}
   if(payload.website||Date.now()-payload.startedAt<1200||payload.startedAt>Date.now())throw new Error(copyText("ui.6185b8e6657822aaf0ce","Patikrinkite formą ir bandykite dar kartą."));
   // Reserved synthetic addresses are accepted only for an authenticated preview test.
   const previewTest=pc2QuoteEnabled()&&payload.name.startsWith('[BANDOMOJI PC2]')&&/^pc2-[a-z0-9-]+@example\.invalid$/.test(payload.email);
+  const previewMailTest=previewTest&&useHostingerQuoteMail()&&/^pc2-mail-prox-[a-z0-9-]+@example\.invalid$/.test(payload.email);
+  if(previewMailTest&&(payload.items.length!==1||payload.items[0].pc2Selection?.kind!=='chair'||payload.items[0].pc2Selection.code!=='KPOX002WW002')){
+    throw Error('Bandomajam laiškui pasirinkite vieną „Prox“ kėdę iš 3D peržiūros.');
+  }
   if(previewTest&&!admin)throw Error('Bandomajai užklausai reikia administratoriaus prisijungimo.');
   const prior=await dbOne<{id:string}>('SELECT id FROM quotes WHERE submission_key=?',payload.submissionKey);
   if(prior)return {id:prior.id,duplicate:true};
@@ -65,7 +70,7 @@ export async function storeQuote(input:unknown,{admin=false}:{admin?:boolean}={}
   const emailKey=createHash('sha256').update(payload.email.toLowerCase()).digest('hex');
   if(!await rateAllowed('quote-email:'+emailKey,5,15*60_000))throw new Error(copyText("ui.684b0117a0f40df1a988","Per daug užklausų. Bandykite po 15 minučių arba susisiekite telefonu."));
   const id=randomUUID();
-  const inserted=await dbRun('INSERT INTO quotes(id,submission_key,payload,created_at,delivery_status) VALUES(?,?,?,?,?) ON CONFLICT(submission_key) DO NOTHING',id,payload.submissionKey,JSON.stringify({...payload,items:resolved,...(previewTest?{previewTest:true}:{})}),new Date().toISOString(),previewTest?'test_no_email':'pending');
+  const inserted=await dbRun('INSERT INTO quotes(id,submission_key,payload,created_at,delivery_status) VALUES(?,?,?,?,?) ON CONFLICT(submission_key) DO NOTHING',id,payload.submissionKey,JSON.stringify({...payload,items:resolved,...(previewTest?{previewTest:true,previewMailTest}:{})}),new Date().toISOString(),previewTest&&!previewMailTest?'test_no_email':'pending');
   if(!inserted.changes){const existing=await dbOne<{id:string}>('SELECT id FROM quotes WHERE submission_key=?',payload.submissionKey);if(existing)return {id:existing.id,duplicate:true};throw Error(copyText("ui.97164bb3ddaf47c7c21e","Užklausos išsaugoti nepavyko."));}
   return {id,duplicate:false};
 }
@@ -73,18 +78,55 @@ export async function deliverQuote(id:string) {
   const record=await dbOne<QuoteRecord>('SELECT * FROM quotes WHERE id=?',id);
   if(!record)throw new Error(copyText("ui.5c43fbbe147bd6ad8126","Užklausa nerasta."));
   if(record.delivery_status==='sent')return 'sent';
-  if(record.delivery_status==='test_no_email'||JSON.parse(record.payload).previewTest===true)return 'test_no_email';
-  if(!process.env.SMTP_HOST||!process.env.SMTP_FROM){await dbRun("UPDATE quotes SET delivery_status='awaiting_configuration' WHERE id=?",id);return 'awaiting_configuration';}
-  const claimed=await dbRun("UPDATE quotes SET delivery_status='sending', delivery_started_at=?, delivery_attempts=delivery_attempts+1 WHERE id=? AND delivery_status!='sent' AND (delivery_status!='sending' OR delivery_started_at<?)",Date.now(),id,Date.now()-120_000);
-  if(!claimed.changes)return 'sending';
+  if(record.delivery_status==='delivery_unknown')return 'delivery_unknown';
   const p=JSON.parse(record.payload);
+  const hostinger=useHostingerQuoteMail();
+  if(record.delivery_status==='test_no_email'||p.previewTest===true&&(!p.previewMailTest||!hostinger))return 'test_no_email';
+
+  const apiKey=process.env.HOSTINGER_MAIL_API_KEY;
+  const to=process.env.QUOTE_TO||(hostinger?previewQuoteRecipient:'info@ergonomic.lt');
+  if(hostinger&&!apiKey){
+    await dbRun("UPDATE quotes SET delivery_status='awaiting_mail_api' WHERE id=? AND delivery_status IN ('pending','awaiting_configuration','awaiting_mail_api','failed')",id);
+    return 'awaiting_mail_api';
+  }
+  if(!hostinger&&(!process.env.SMTP_HOST||!process.env.SMTP_FROM)){
+    await dbRun("UPDATE quotes SET delivery_status='awaiting_configuration' WHERE id=? AND delivery_status NOT IN ('sent','sending','delivery_unknown')",id);
+    return 'awaiting_configuration';
+  }
+  // A terminated HTTPS request can have reached the provider. Quarantine an
+  // abandoned claim so a form retry or an admin retry cannot send it again.
+  if(hostinger&&record.delivery_status==='sending'){
+    const changed=await dbRun("UPDATE quotes SET delivery_status='delivery_unknown' WHERE id=? AND delivery_status='sending' AND delivery_started_at<?",id,Date.now()-120_000);
+    return changed.changes?'delivery_unknown':'sending';
+  }
+  const eligible=hostinger?"delivery_status IN ('pending','awaiting_configuration','awaiting_mail_api','failed')":
+    "delivery_status NOT IN ('sent','delivery_unknown') AND (delivery_status!='sending' OR delivery_started_at<?)";
+  const now=Date.now();
+  const claimed=await dbRun("UPDATE quotes SET delivery_status='sending', delivery_started_at=?, delivery_attempts=delivery_attempts+1 WHERE id=? AND "+eligible,now,id,...(hostinger?[]:[now-120_000]));
+  if(!claimed.changes)return 'sending';
   const items=p.items.map(quoteOrderText).join('\n\n');
   const text=copyText("ui.7774b62e446a65145b55","Užklausa {{p0}}\n\nVardas: {{p1}}\nEl. paštas: {{p2}}\nTelefonas: {{p3}}\nĮmonė: {{p4}}\n\nPrekės:\n{{p5}}\n\nŽinutė:\n{{p6}}",{p0:(id),p1:(p.name),p2:(p.email),p3:(p.phone),p4:(p.company),p5:(items||'Bendra užklausa'),p6:(p.message)});
+  if(hostinger){
+    const subject=(p.previewMailTest?'BANDOMOJI – Ergonomic.lt „Prox“ užklausa ':'Ergonomic.lt užklausa ')+id.slice(0,8);
+    try {
+      await sendHostingerQuoteMail(apiKey!,{id,to,customerEmail:p.email,subject,text});
+    } catch(error) {
+      const status=error instanceof HostingerQuoteDeliveryUnknown?'delivery_unknown':'failed';
+      const reason=status==='delivery_unknown'
+        ?'Patikrinkite gavėjo pašto dėžutę. Siuntimo patvirtinimas negautas.'
+        :'Hostinger Mail API nepatvirtino siuntimo. Patikrinkite prieigą prie siuntėjo dėžutės.';
+      await dbRun("UPDATE quotes SET delivery_status=?,delivery_error=? WHERE id=?",status,reason,id);
+      return status;
+    }
+    // A failed DB write after HTTP 204 must not make an accepted message retryable.
+    await dbRun("UPDATE quotes SET delivery_status='sent',delivery_error=NULL WHERE id=?",id);
+    return 'sent';
+  }
   try {
     const transport=nodemailer.createTransport({host:process.env.SMTP_HOST,port:Number(process.env.SMTP_PORT||587),secure:process.env.SMTP_SECURE==='true',
       auth:process.env.SMTP_USER?{user:process.env.SMTP_USER,pass:process.env.SMTP_PASSWORD}:undefined,
       connectionTimeout:10_000,greetingTimeout:10_000,socketTimeout:15_000,requireTLS:process.env.SMTP_SECURE!=='true',disableFileAccess:true,disableUrlAccess:true});
-    await transport.sendMail({from:process.env.SMTP_FROM,to:process.env.QUOTE_TO||'info@ergonomic.lt',replyTo:p.email,subject:`Ergonomic.lt užklausa ${id.slice(0,8)}`,text});
+    await transport.sendMail({from:process.env.SMTP_FROM,to,replyTo:p.email,subject:`Ergonomic.lt užklausa ${id.slice(0,8)}`,text});
     await dbRun("UPDATE quotes SET delivery_status='sent',delivery_error=NULL WHERE id=?",id);return 'sent';
   } catch {
     await dbRun(copyText("ui.29703db59b63575d717c","UPDATE quotes SET delivery_status='failed',delivery_error='El. pašto transporto klaida. Patikrinkite SMTP konfigūraciją.' WHERE id=?"),id);return 'failed';

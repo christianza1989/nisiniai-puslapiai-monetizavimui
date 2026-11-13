@@ -1,5 +1,8 @@
 import {furnitureTerminology} from './furniture-terminology';
 import data from '../../content/preview-option-dictionary.json';
+import sourceDimensions from '../../content/preview-source-dimensions.json';
+import {manufacturerOptionName} from './manufacturer-option-names';
+import {connectedColourLabel,connectedFieldLabel,connectedValueLabel,customerSummaryRows} from './connected-choice-presentation';
 
 type Labels = Record<string, string>;
 const fields: Labels = data.fields;
@@ -12,7 +15,7 @@ const format = new Intl.NumberFormat('lt-LT', { maximumFractionDigits: 3 });
 const number = /^_?(\d+(?:[.,]\d+)?)(?:T(\d+(?:[.,]\d+)?))?$/;
 
 export function previewField(field: string): string {
-  return fields[field] ?? 'Papildoma parinktis';
+  return connectedFieldLabel(fields[field] ?? 'Papildoma parinktis');
 }
 
 export function previewFinishField(field: string): boolean {
@@ -45,6 +48,13 @@ export function previewValue(model: string, field: string, value: string, collec
   if (value === 'NO') return 'Ne';
   if (['UNDEFINED', 'NOTDEFINED', 'N/A'].includes(value)) return 'Nenurodyta';
 
+  const binding = 'value:' + field + '=' + value;
+  const captured = (sourceDimensions as Record<string, Labels>)[model]?.[binding];
+  if (captured && !number.test(value)) {
+    const measured = manufacturerOptionName(binding, captured);
+    if (measured) return measured;
+  }
+
   const match = number.exec(value);
   if (match) {
     const [first, last] = match.slice(1).map(part => Number(part?.replace(',', '.')));
@@ -58,10 +68,10 @@ export function previewValue(model: string, field: string, value: string, collec
 
   const key = field + '=' + value;
   const label = models[model]?.[key] ?? values[key];
-  if (!previewFinishField(field)) return label ? furnitureTerminology(label) : 'Aprašymas nepateiktas';
+  if (!previewFinishField(field)) return label ? connectedValueLabel(furnitureTerminology(label)) : 'Aprašymas nepateiktas';
   const name = label ?? colourNames[value] ?? collections[value];
   const isCollection = /UPHGROUP|MESHGROUP|GROUP.*(?:UPH|MESH)/.test(field);
-  if (isCollection) return name ?? collection ?? 'Kolekcijos pavadinimas nepateiktas';
+  if (isCollection) return (name ?? collection ?? 'Kolekcijos pavadinimas nepateiktas').replace(/\s*\(extended\)/gi, '');
 
   const code = value;
   const knownCollection = collection ?? previewCollectionForColour(value);
@@ -69,7 +79,9 @@ export function previewValue(model: string, field: string, value: string, collec
     const shade = name && name.toLocaleLowerCase('en') !== knownCollection.toLocaleLowerCase('en') ? name : undefined;
     return [knownCollection + ' ' + code, shade].filter(Boolean).join(' · ');
   }
-  return name ? name + ' ' + code : code;
+  const original = name ? connectedColourLabel(name) : '';
+  if (/\b(?:RAL|NCS)\s*(?:S\s*)?\d/i.test(original)) return original;
+  return original && !original.endsWith(code) ? original + ' ' + code : original || code;
 }
 
 export function previewTuple(model: string, values: Record<string, string | undefined>, caption = false): string {
@@ -106,5 +118,5 @@ export function previewQuoteDetails(model: string, options: string[]) {
     const field = option.slice(0, separator).split('.').at(-1)!;
     rows.set(field, option.slice(separator + 1));
   }
-  return [...rows].map(([field, value]) => ({ label: previewField(field), value: previewValue(model, field, value) }));
+  return customerSummaryRows([...rows].map(([field, value]) => ({ label: fields[field] ?? previewField(field), value: previewValue(model, field, value) })));
 }

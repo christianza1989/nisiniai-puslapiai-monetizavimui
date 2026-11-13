@@ -1,0 +1,2570 @@
+{
+  "K2ME004WW001": {
+    "value:DHEIGHT=_840T975": "840-975 mm",
+    "value:DWIDTH=_530": "530 mm",
+    "value:DDEPTH=_645": "645 mm",
+    "value:DDEPTH=_635": "635 mm"
+  },
+  "KEM2013WW004": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:GDDEPTH=_1000": "1000 mm"
+  },
+  "KAXO001WW002": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_610": "610 mm",
+    "value:DDEPTH=_563": "563 mm"
+  },
+  "KXEN035WW001": {
+    "value:DHEIGHT=_1040T1230": "1040-1230 mm",
+    "value:DSEATHEIGHT=_420T530": "420-530 mm",
+    "value:DSEATWIDTH=_465": "465 mm",
+    "value:DDEPTH=_730": "730 mm",
+    "value:DHEIGHT=_1050T1240": "1050-1240 mm",
+    "value:DHEIGHT=_1010T1170": "1010-1170 mm",
+    "value:DSEATHEIGHT=_390T470": "390-470 mm",
+    "value:DHEIGHT=_1050T1270": "1050-1270 mm",
+    "value:DSEATHEIGHT=_430T570": "430-570 mm"
+  },
+  "KPW2018WW002": {
+    "value:GDTOPWIDTH=_2X1400": "2x 1400 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:GDWIDTH=_3600": "3600 mm",
+    "value:GDDEPTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_2X792": "2x 792 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_2X1600": "2x 1600 mm"
+  },
+  "KLEV024WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm"
+  },
+  "KARN007WW004": {
+    "value:DHEIGHT=_1190": "1190 mm",
+    "value:DSEATHEIGHT=_820": "821 mm",
+    "value:DWIDTH=_550": "550 mm",
+    "value:DDEPTH=_540": "540 mm"
+  },
+  "KSQA154WW001": {
+    "value:GDTOPSWIDTH=_2X14002800": "2 x 1400 (2800) mm",
+    "value:GDTOPSDEPTH=_2X8001640": "2 × 800 (1640 with panel) mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPSWIDTH=_2X16003200": "2 x 1600 (3200) mm"
+  },
+  "KERG024WW001": {
+    "value:GDWIDTH=_2013": "2013 mm",
+    "value:DTOPWIDTH=_2013": "2013 mm",
+    "value:DHEIGHT=_750": "750 mm",
+    "value:GDDEPTH=_1583": "1583 mm",
+    "value:DTOPDEPTH=_1000": "1000 mm",
+    "value:DTOPTHICKNESS=_85": "85 mm",
+    "value:GDWIDTH=_2213": "2213 mm"
+  },
+  "KSQA176WW001": {
+    "value:DSEATWIDTH=_1800": "1800 mm",
+    "value:DSEATHEIGHT=_770": "770 mm",
+    "value:DSEATDEPTH=_480": "480 mm",
+    "value:DSEATWIDTH=_1600": "1600 mm",
+    "value:DSEATWIDTH=_2000": "2000 mm"
+  },
+  "KXI2001WW003": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:GDDEPTH=_1000": "1000 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm"
+  },
+  "KC54083WW001": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:GDHEIGHT=_750": "750 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_700": "700 mm"
+  },
+  "KNAU015WW001": {
+    "value:DSEATHEIGHT=_660": "660 mm",
+    "value:DHEIGHT=_890": "890 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_520": "520 mm"
+  },
+  "KUTI004WW001": {
+    "value:DHEIGHT=_1040T1240": "1040-1240 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm",
+    "value:DDEPTH=_650": "650 mm"
+  },
+  "KESE085WW001": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_740T860": "740-860 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_600": "600 mm"
+  },
+  "KC54126WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:GDHEIGHT=_750": "750 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_700": "700 mm"
+  },
+  "KSQA148WW001": {
+    "value:GDTOPSWIDTH=_1400": "1400 mm",
+    "value:GDTOPSDEPTH=_2X8001600": "2 × 800 (1600) mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPSWIDTH=_1600": "1600 mm"
+  },
+  "KFLS001WW001": {
+    "value:DFRAMEDIAMETER=_22": "22 mm",
+    "value:DHEIGHT=_885": "885 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_555": "555 mm",
+    "value:DDEPTH=_615": "615 mm",
+    "value:DDEPTH=_630": "630 mm",
+    "value:DHEIGHT=_965": "965 mm",
+    "value:DDEPTH=_635": "635 mm",
+    "value:DDEPTH=_620": "620 mm"
+  },
+  "KLPN019WW002": {
+    "value:DHEIGHT=_950": "950 mm",
+    "value:DSEATHEIGHT=_810": "810 mm",
+    "value:DWIDTH=_515": "515 mm",
+    "value:DDEPTH=_505": "505 mm"
+  },
+  "KXEN034WW001": {
+    "value:DHEIGHT=_1040T1230": "1040-1230 mm",
+    "value:DSEATHEIGHT=_420T530": "420-530 mm",
+    "value:DSEATWIDTH=_465": "465 mm",
+    "value:DDEPTH=_730": "730 mm",
+    "value:DHEIGHT=_1010T1170": "1010-1170 mm",
+    "value:DSEATHEIGHT=_390T470": "390-470 mm",
+    "value:DHEIGHT=_1050T1270": "1050-1270 mm",
+    "value:DSEATHEIGHT=_430T570": "430-570 mm",
+    "value:DHEIGHT=_1050T1240": "1050-1240 mm"
+  },
+  "KITA001WW001": {
+    "value:DHEIGHT=_775": "775 mm",
+    "value:DSEATHEIGHT=_460": "460 mm",
+    "value:DWIDTH=_555": "555 mm",
+    "value:DDEPTH=_540": "540 mm"
+  },
+  "KCAD001WW002": {
+    "value:DHEIGHT=_835": "835 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_525": "525 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KLEV007WW002": {
+    "value:DHEIGHT=_736": "736 mm",
+    "value:DSEATHEIGHT=_736": "736 mm",
+    "value:DWIDTH=_496": "496 mm",
+    "value:DDEPTH=_496": "496 mm"
+  },
+  "KSML001WW002": {
+    "value:DHEIGHT=_800": "800 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_465": "465 mm",
+    "value:DDEPTH=_560": "560 mm"
+  },
+  "KCAF010WW001": {
+    "value:DTOPTHICKNESS=_18": "18 mm"
+  },
+  "KEM3003WW002": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_14902X700": "1490 mm (2x 700 mm)",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:DHEIGHT=_650T1310": "650-1310 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm",
+    "value:DHEIGHT=_644T1304": "644-1304 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_16902X800": "1690 mm (2x 800 mm)"
+  },
+  "KPW2020WW002": {
+    "value:GDTOPWIDTH=_3X1400": "3x 1400 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:GDWIDTH=_4200": "4200 mm",
+    "value:GDDEPTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_2X792": "2x 792 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_3X1600": "3x 1600 mm"
+  },
+  "KVAP020WW001": {
+    "value:DHEIGHT=_905": "905 mm",
+    "value:DSEATHEIGHT=_485": "485 mm",
+    "value:DWIDTH=_445": "445 mm",
+    "value:DDEPTH=_525": "525 mm"
+  },
+  "KERG020WW001": {
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_1000": "1000 mm",
+    "value:DHEIGHT=_660T1160": "660-1160 mm",
+    "value:DTOPTHICKNESS=_41": "41 mm"
+  },
+  "KSQA160WW001": {
+    "value:GDTOPSWIDTH=_2X14002800": "2 x 1400 (2800) mm",
+    "value:GDTOPSDEPTH=_2X8001640": "2 × 800 (1640 with panel) mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPSWIDTH=_2X16003200": "2 x 1600 (3200) mm"
+  },
+  "KXEN037WW001": {
+    "value:DHEIGHT=_1225T1575": "1225-1575 mm",
+    "value:DSEATHEIGHT=_630T875": "630-875 mm",
+    "value:DSEATWIDTH=_465": "465 mm",
+    "value:DDEPTH=_730": "730 mm"
+  },
+  "KVAP008WW002": {
+    "value:DHEIGHT=_910": "910 mm",
+    "value:DSEATHEIGHT=_505": "505 mm",
+    "value:DWIDTH=_600": "600 mm",
+    "value:DDEPTH=_530": "530 mm",
+    "value:DWIDTH=_565": "565 mm",
+    "value:DWIDTH=_530": "530 mm",
+    "value:DWIDTH=_560": "560 mm"
+  },
+  "KYOU003WW002": {
+    "value:DHEIGHT=_870": "870 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_610": "610 mm"
+  },
+  "KBEW001WW006": {
+    "value:DHEIGHT=_835": "835 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_590": "590 mm",
+    "value:DDEPTH=_560": "560 mm",
+    "value:DSEATHEIGHT=_445": "445 mm"
+  },
+  "KBJA001WW002": {
+    "value:DHEIGHT=_850T1055": "850-1055 mm",
+    "value:DSEATHEIGHT=_410T535": "410-535 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DHEIGHT=_860T1065": "860-1065 mm",
+    "value:DSEATHEIGHT=_415T540": "415-540 mm",
+    "value:DSEATHEIGHT=_395T520": "395-520 mm",
+    "value:DHEIGHT=_845T1060": "845-1060 mm",
+    "value:DSEATHEIGHT=_400T525": "400-525 mm",
+    "value:DHEIGHT=_855T1060": "855-1060 mm",
+    "value:DDEPTH=_636": "636 mm",
+    "value:DHEIGHT=_865T1070": "865-1070 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm"
+  },
+  "KECM001WW002": {
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1350": "1350 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPDEPTH=_600": "600 mm",
+    "value:GDTOPDEPTH=_650": "650 mm",
+    "value:GDTOPDEPTH=_700": "700 mm"
+  },
+  "KINT003WW001": {
+    "value:DHEIGHT=_1000T1130": "1000-1130 mm",
+    "value:DSEATHEIGHT=_440T570": "440-570 mm",
+    "value:DSEATWIDTH=_530": "530 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_460T520": "460-520 mm",
+    "value:DSEATHEIGHT=_425T555": "425-555 mm",
+    "value:DSEATDEPTH=_460": "460 mm",
+    "value:DDEPTH=_636": "636 mm",
+    "value:DSEATDEPTH=_460T510": "460-510 mm"
+  },
+  "KLPN021WW002": {
+    "value:DHEIGHT=_950": "950 mm",
+    "value:DSEATHEIGHT=_805": "805 mm",
+    "value:DWIDTH=_515": "515 mm",
+    "value:DDEPTH=_460": "460 mm"
+  },
+  "KPW2001WW001": {
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDHEIGHT=_740": "740 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm"
+  },
+  "KBRY001WW002": {
+    "value:DHEIGHT=_1400": "1400 mm",
+    "value:DWIDTH=_1180": "1180 mm",
+    "value:DDEPTH=_1580": "1580 mm"
+  },
+  "KTUL001WW002": {
+    "value:DHEIGHT=_860": "860 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_410": "410 mm",
+    "value:DDEPTH=_470": "470 mm"
+  },
+  "KINT001WW001": {
+    "value:DHEIGHT=_990T1080": "990-1080 mm",
+    "value:DSEATHEIGHT=_435T525": "435-525 mm",
+    "value:DSEATWIDTH=_530": "530 mm",
+    "value:DDEPTH=_636": "636 mm",
+    "value:DSEATDEPTH=_460T510": "460-510 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_460": "460 mm",
+    "value:DSEATHEIGHT=_450T540": "450-540 mm",
+    "value:DSEATDEPTH=_460T520": "460-520 mm"
+  },
+  "KARN003WW003": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_590": "590 mm",
+    "value:DDEPTH=_540": "540 mm",
+    "value:DWIDTH=_500": "500 mm"
+  },
+  "KVCR001WW004": {
+    "value:DSEATHEIGHT=_460": "460 mm",
+    "value:DHEIGHT=_860": "860 mm",
+    "value:DWIDTH=_627": "627 mm",
+    "value:DDEPTH=_565": "565 mm"
+  },
+  "KPRA001WW001": {
+    "value:DHEIGHT=_1190T1280": "1190-1280 mm",
+    "value:DSEATHEIGHT=_455T545": "455-545 mm",
+    "value:DSEATWIDTH=_550": "550 mm",
+    "value:DDEPTH=_665": "665 mm"
+  },
+  "KSOU001WW004": {
+    "value:DHEIGHT=_1020T1150": "1020-1150 mm",
+    "value:DSEATHEIGHT=_410T530": "410-530 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_646": "646 mm",
+    "value:DHEIGHT=_1025T1155": "1025-1155 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm"
+  },
+  "KUTI004WW002": {
+    "value:DHEIGHT=_1040T1240": "1040-1240 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm",
+    "value:DDEPTH=_650": "650 mm"
+  },
+  "KEM3006WW001": {
+    "value:GDWIDTH=_1800X1400": "1800/1400 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:DHEIGHT=_650T1310": "650-1310 mm",
+    "value:GDDEPTH=_800X600": "800/600 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm",
+    "value:DHEIGHT=_644T1304": "644-1304 mm",
+    "value:GDWIDTH=_1600X1200": "1600/1200 mm"
+  },
+  "KTRF001WW001": {
+    "value:DHEIGHT=_970T1070": "970-1070 mm",
+    "value:DSEATHEIGHT=_415T505": "415-505 mm",
+    "value:DWIDTH=_660": "660 mm",
+    "value:DDEPTH=_640": "640 mm"
+  },
+  "KSQA130WW001": {
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPWIDTH=_2000": "2000 mm"
+  },
+  "KXI2002WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_2X800": "2x 800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_2X900": "2x 900 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm"
+  },
+  "KSYL001WW003": {
+    "value:DHEIGHT=_865": "865 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DDEPTH=_500": "500 mm"
+  },
+  "KBET001WW008": {
+    "value:DHEIGHT=_770": "770 mm",
+    "value:DSEATHEIGHT=_485": "485 mm",
+    "value:DWIDTH=_495": "495 mm",
+    "value:DDEPTH=_486": "486 mm"
+  },
+  "KERG017WW001": {
+    "value:GDWIDTH=_1826": "1826 mm",
+    "value:DHEIGHT=_750": "750 mm",
+    "value:GDDEPTH=_1000": "1000 mm",
+    "value:DTOPTHICKNESS=_85": "85 mm",
+    "value:GDWIDTH=_2026": "2026 mm",
+    "value:GDWIDTH=_2226": "2226 mm"
+  },
+  "KESE088WW001": {
+    "value:GDWIDTH=_1800X1600": "1800/1600 mm",
+    "value:GDDEPTH=_800X600": "800/600 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200X1200": "1200/1200 mm",
+    "value:GDWIDTH=_1400X1400": "1400/1400 mm",
+    "value:GDWIDTH=_1600X1200": "1600/1200 mm",
+    "value:GDWIDTH=_1600X1400": "1600/1400 mm",
+    "value:GDWIDTH=_1600X1600": "1600/1600 mm",
+    "value:GDWIDTH=_1800X1200": "1800/1200 mm",
+    "value:GDWIDTH=_1800X1400": "1800/1400 mm"
+  },
+  "KSOO004WW002": {
+    "value:DHEIGHT=_985T1180": "985-1180 mm",
+    "value:DSEATHEIGHT=_420T535": "420-535 mm",
+    "value:DSEATWIDTH=_500": "500 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DHEIGHT=_955T1120": "955-1120 mm",
+    "value:DDEPTH=_636": "636 mm",
+    "value:DHEIGHT=_1015T1210": "1015-1210 mm",
+    "value:DSEATHEIGHT=_450T565": "450-565 mm"
+  },
+  "KCAF011WW001": {
+    "value:DTOPTHICKNESS=_18": "18 mm"
+  },
+  "KSQA153WW001": {
+    "value:GDTOPSWIDTH=_1600": "1600 mm",
+    "value:GDTOPSDEPTH=_2X8001640": "2 × 800 (1640 with panel) mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPSWIDTH=_1400": "1400 mm"
+  },
+  "KSQA155WW001": {
+    "value:GDTOPSWIDTH=_3X14004200": "3 x 1400 (4200) mm",
+    "value:GDTOPSDEPTH=_2X8001640": "2 × 800 (1640 with panel) mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPSWIDTH=_3X16004800": "3 x 1600 (4800) mm"
+  },
+  "KUTI003WW001": {
+    "value:DHEIGHT=_1040T1240": "1040-1240 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm",
+    "value:DDEPTH=_650": "650 mm"
+  },
+  "KXI2013WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_2X800": "2x 800 mm",
+    "value:DHEIGHT=_650T1000": "650-1000 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_2X900": "2x 900 mm"
+  },
+  "KYOU001WW003": {
+    "value:DHEIGHT=_1050T1160": "1050-1160 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_688": "688 mm"
+  },
+  "KXLI001WW002": {
+    "value:DHEIGHT=_1045T1245": "1045-1245 mm",
+    "value:DSEATHEIGHT=_450T570": "450-570 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_670": "670 mm",
+    "value:DSEATHEIGHT=_415T535": "415-535 mm",
+    "value:DSEATHEIGHT=_405T550": "405-550 mm",
+    "value:DSEATHEIGHT=_445T550": "445-550 mm",
+    "value:DSEATHEIGHT=_405T435": "405-435 mm"
+  },
+  "KXLI002WW002": {
+    "value:DHEIGHT=_1055T1255": "1055-1255 mm",
+    "value:DSEATHEIGHT=_450T570": "450-570 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_670": "670 mm",
+    "value:DSEATHEIGHT=_415T535": "415-535 mm",
+    "value:DSEATHEIGHT=_405T550": "405-550 mm",
+    "value:DSEATHEIGHT=_445T550": "445-550 mm",
+    "value:DSEATHEIGHT=_405T435": "405-435 mm"
+  },
+  "KYOU004WW002": {
+    "value:DHEIGHT=_870": "870 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_610": "610 mm"
+  },
+  "KYOU005WW002": {
+    "value:DHEIGHT=_870": "870 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_610": "610 mm"
+  },
+  "KTAK002WW004": {
+    "value:DSEATHEIGHT=_380T510": "380-510 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_400": "400 mm",
+    "value:DHEIGHT=_1050T1255": "1050-1255 mm"
+  },
+  "KATH002WW002": {
+    "value:DHEIGHT=_845": "845 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_635": "635 mm",
+    "value:DDEPTH=_625": "625 mm"
+  },
+  "KATH001WW004": {
+    "value:DHEIGHT=_820T910": "820-910 mm",
+    "value:DSEATHEIGHT=_450T530": "450-530 mm",
+    "value:DWIDTH=_635": "635 mm",
+    "value:DDEPTH=_625": "625 mm"
+  },
+  "KAXO002WW001": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_1020": "1020 mm",
+    "value:DDEPTH=_563": "563 mm"
+  },
+  "KAXO002WW002": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_1020": "1020 mm",
+    "value:DDEPTH=_563": "563 mm"
+  },
+  "KAXO003WW002": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_1550": "1550 mm",
+    "value:DDEPTH=_563": "563 mm"
+  },
+  "KCAF039WW001": {
+    "value:DHEIGHT=_750": "750 mm",
+    "value:DDIAMETER=_600": "600 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm"
+  },
+  "KCNC001WW002": {
+    "value:DHEIGHT=_840": "840 mm",
+    "value:DSEATHEIGHT=_395": "395 mm",
+    "value:DWIDTH=_540": "540 mm",
+    "value:DDEPTH=_600": "600 mm"
+  },
+  "KXEN036WW001": {
+    "value:DHEIGHT=_1245T1595": "1245-1595 mm",
+    "value:DSEATHEIGHT=_630T875": "630-875 mm",
+    "value:DSEATWIDTH=_465": "465 mm",
+    "value:DDEPTH=_730": "730 mm"
+  },
+  "KXEN047WW001": {
+    "value:DHEIGHT=_1005": "1005 mm",
+    "value:DSEATHEIGHT=_468": "468 mm",
+    "value:DWIDTH=_565": "565 mm",
+    "value:DDEPTH=_650": "650 mm"
+  },
+  "KXEN048WW001": {
+    "value:DHEIGHT=_1005": "1005 mm",
+    "value:DSEATHEIGHT=_468": "468 mm",
+    "value:DWIDTH=_565": "565 mm",
+    "value:DDEPTH=_650": "650 mm"
+  },
+  "KUTI002WW001": {
+    "value:DHEIGHT=_1040T1240": "1040-1240 mm",
+    "value:DSEATHEIGHT=_410T530": "410-530 mm",
+    "value:DDEPTH=_650": "650 mm"
+  },
+  "KXEN046WW001": {
+    "value:DHEIGHT=_985": "985 mm",
+    "value:DSEATHEIGHT=_468": "468 mm",
+    "value:DWIDTH=_565": "565 mm",
+    "value:DDEPTH=_675": "675 mm"
+  },
+  "KVID008WW001": {
+    "value:DHEIGHT=_1065T1265": "1065-1265 mm",
+    "value:DSEATHEIGHT=_410T530": "410-530 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DHEIGHT=_1075T1275": "1075-1275 mm",
+    "value:DSEATHEIGHT=_415T535": "415-535 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KUTI001WW002": {
+    "value:DHEIGHT=_1040T1240": "1040-1240 mm",
+    "value:DSEATHEIGHT=_410T530": "410-530 mm",
+    "value:DDEPTH=_650": "650 mm"
+  },
+  "KARN003WW004": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_540": "540 mm",
+    "value:DWIDTH=_590": "590 mm"
+  },
+  "KAXO001WW004": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_610": "610 mm",
+    "value:DDEPTH=_715": "715 mm"
+  },
+  "KCAD001WW005": {
+    "value:DHEIGHT=_835": "835 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_525": "525 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KCAF005WW001": {
+    "value:DHEIGHT=_840": "840 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DSEATWIDTH=_395": "395 mm",
+    "value:DDEPTH=_540": "540 mm",
+    "value:DSEATDEPTH=_405": "405 mm",
+    "value:DFRAMEWIDTH=_500": "500 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DSEATDEPTH=_415": "415 mm",
+    "value:DSEATWIDTH=_405": "405 mm",
+    "value:DDEPTH=_545": "545 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DSEATHEIGHT=_450": "450 mm"
+  },
+  "KCAF005WW002": {
+    "value:DHEIGHT=_840": "840 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_555": "555 mm",
+    "value:DSEATWIDTH=_395": "395 mm",
+    "value:DDEPTH=_540": "540 mm",
+    "value:DSEATDEPTH=_405": "405 mm",
+    "value:DFRAMEWIDTH=_500": "500 mm",
+    "value:DSEATWIDTH=_405": "405 mm",
+    "value:DDEPTH=_545": "545 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DSEATDEPTH=_415": "415 mm",
+    "value:DSEATHEIGHT=_470": "470 mm"
+  },
+  "KHOL004WW002": {
+    "value:DHEIGHT=_1180": "1180 mm",
+    "value:DSEATHEIGHT=_800": "800 mm",
+    "value:DWIDTH=_490": "490 mm",
+    "value:DDEPTH=_540": "540 mm"
+  },
+  "KNAU016WW001": {
+    "value:DSEATHEIGHT=_660": "660 mm",
+    "value:DHEIGHT=_890": "890 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_520": "520 mm"
+  },
+  "KTAU002WW002": {
+    "value:DHEIGHT=_1115": "1115 mm",
+    "value:DSEATHEIGHT=_765": "765 mm",
+    "value:DWIDTH=_455": "455 mm",
+    "value:DDEPTH=_575": "575 mm",
+    "value:DSEATHEIGHT=_745": "745 mm"
+  },
+  "KNAV002WW004": {
+    "value:DHEIGHT=_980T1180": "980-1180 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KSAI008WW002": {
+    "value:DHEIGHT=_1060T1170": "1060-1170 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_510": "510 mm",
+    "value:DDEPTH=_640": "640 mm",
+    "value:DSEATDEPTH=_380": "380 mm",
+    "value:DHEIGHT=_1030T1130": "1030-1130 mm",
+    "value:DSEATHEIGHT=_410T545": "410-545 mm",
+    "value:DSEATWIDTH=_505": "505 mm",
+    "value:DDEPTH=_635": "635 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DDEPTH=_660": "660 mm",
+    "value:DSEATDEPTH=_370T440": "370-440 mm",
+    "value:DSEATDEPTH=_350T440": "350-440 mm",
+    "value:DHEIGHT=_1070T1190": "1070-1190 mm",
+    "value:DSEATDEPTH=_420": "420 mm",
+    "value:DDEPTH=_650": "650 mm",
+    "value:DSEATDEPTH=_380T430": "380-430 mm",
+    "value:DSEATDEPTH=_360T410": "360-410 mm"
+  },
+  "KSAI001WW002": {
+    "value:DHEIGHT=_1060T1170": "1060-1170 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_510": "510 mm",
+    "value:DDEPTH=_640": "640 mm",
+    "value:DSEATDEPTH=_400": "400 mm",
+    "value:DHEIGHT=_1030T1130": "1030-1130 mm",
+    "value:DSEATHEIGHT=_410T545": "410-545 mm",
+    "value:DSEATWIDTH=_505": "505 mm",
+    "value:DDEPTH=_635": "635 mm",
+    "value:DSEATDEPTH=_440": "440 mm",
+    "value:DDEPTH=_660": "660 mm",
+    "value:DSEATDEPTH=_400T470": "400-470 mm",
+    "value:DSEATDEPTH=_430": "430 mm",
+    "value:DSEATDEPTH=_390T460": "390-460 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DSEATDEPTH=_380T430": "380-430 mm",
+    "value:DHEIGHT=_1070T1190": "1070-1190 mm",
+    "value:DSEATDEPTH=_450": "450 mm",
+    "value:DDEPTH=_650": "650 mm",
+    "value:DSEATDEPTH=_410T460": "410-460 mm",
+    "value:DSEATDEPTH=_390T440": "390-440 mm",
+    "value:DSEATDEPTH=_370T420": "370-420 mm",
+    "value:DSEATDEPTH=_400T450": "400-450 mm"
+  },
+  "KUTI005WW001": {
+    "value:DHEIGHT=_1040T1240": "1040-1240 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm",
+    "value:DDEPTH=_650": "650 mm",
+    "value:DSEATHEIGHT=_440T560": "440-560 mm"
+  },
+  "KARN007WW003": {
+    "value:DHEIGHT=_1190": "1190 mm",
+    "value:DSEATHEIGHT=_820": "821 mm",
+    "value:DWIDTH=_550": "550 mm",
+    "value:DDEPTH=_540": "540 mm"
+  },
+  "KCAD001WW001": {
+    "value:DHEIGHT=_835": "835 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_525": "525 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KCAL001WW005": {
+    "value:DHEIGHT=_830": "830 mm",
+    "value:DSEATHEIGHT=_480": "480 mm",
+    "value:DWIDTH=_615": "615 mm",
+    "value:DDEPTH=_530": "530 mm"
+  },
+  "KFLS002WW001": {
+    "value:DFRAMEDIAMETER=_22": "22 mm",
+    "value:DHEIGHT=_965": "965 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_555": "555 mm",
+    "value:DDEPTH=_625": "625 mm",
+    "value:DHEIGHT=_885": "885 mm",
+    "value:DDEPTH=_620": "620 mm"
+  },
+  "KSAI007WW002": {
+    "value:DHEIGHT=_885": "885 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DWIDTH=_590": "590 mm",
+    "value:DDEPTH=_615": "615 mm",
+    "value:DSEATDEPTH=_430": "430 mm",
+    "value:DSEATDEPTH=_435": "435 mm"
+  },
+  "KSML006WW002": {
+    "value:DHEIGHT=_800": "800 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DWIDTH=_545": "545 mm",
+    "value:DDEPTH=_560": "560 mm"
+  },
+  "KSOO003WW001": {
+    "value:DHEIGHT=_1005": "1005 mm",
+    "value:DSEATHEIGHT=_480": "480 mm",
+    "value:DWIDTH=_585": "585 mm",
+    "value:DDEPTH=_630": "630 mm",
+    "value:DHEIGHT=_1010": "1010 mm",
+    "value:DSEATHEIGHT=_485": "485 mm"
+  },
+  "KVID010WW001": {
+    "value:DHEIGHT=_1050T1250": "1050-1250 mm",
+    "value:DSEATHEIGHT=_415T535": "415-535 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm"
+  },
+  "KYOU003WW001": {
+    "value:DHEIGHT=_870": "870 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_610": "610 mm"
+  },
+  "KYOU004WW001": {
+    "value:DHEIGHT=_870": "870 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_610": "610 mm"
+  },
+  "KNAV002WW003": {
+    "value:DHEIGHT=_980T1180": "980-1180 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KINT006WW001": {
+    "value:DHEIGHT=_100T1130": "1000-1130 mm",
+    "value:DSEATHEIGHT=_425T555": "425-555 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_440": "440 mm",
+    "value:DSEATHEIGHT=_440T570": "440-570 mm",
+    "value:DSEATDEPTH=_440T500": "440-500 mm",
+    "value:DSEATDEPTH=_440T490": "440-490 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KINT006WW002": {
+    "value:DHEIGHT=_100T1130": "1000-1130 mm",
+    "value:DSEATHEIGHT=_425T555": "425-555 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_440": "440 mm",
+    "value:DSEATHEIGHT=_440T570": "440-570 mm",
+    "value:DSEATDEPTH=_440T500": "440-500 mm",
+    "value:DSEATDEPTH=_440T490": "440-490 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KARN008WW004": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_540": "540 mm",
+    "value:DWIDTH=_590": "590 mm"
+  },
+  "KCAF003WW001": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_540": "540 mm",
+    "value:DSEATDEPTH=_415": "415 mm",
+    "value:DFRAMEWIDTH=_500": "500 mm"
+  },
+  "KCAL001WW008": {
+    "value:DHEIGHT=_830": "830 mm",
+    "value:DSEATHEIGHT=_455": "455 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_535": "535 mm"
+  },
+  "KATM004WW004": {
+    "value:DHEIGHT=_1050T1185": "1050-1185 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_455": "455 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_400": "400 mm",
+    "value:DHEIGHT=_1030T1125": "1030-1125 mm",
+    "value:DSEATHEIGHT=_405T490": "405-490 mm",
+    "value:DDEPTH=_620": "620 mm"
+  },
+  "KATM004WW005": {
+    "value:DHEIGHT=_1050T1185": "1050-1185 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_455": "455 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_400": "400 mm",
+    "value:DHEIGHT=_1030T1125": "1030-1125 mm",
+    "value:DSEATHEIGHT=_405T490": "405-490 mm",
+    "value:DDEPTH=_620": "620 mm"
+  },
+  "KSAI006WW002": {
+    "value:DHEIGHT=_875": "875 mm",
+    "value:DSEATHEIGHT=_480": "480 mm",
+    "value:DWIDTH=_590": "590 mm",
+    "value:DDEPTH=_610": "610 mm",
+    "value:DSEATDEPTH=_435": "435 mm",
+    "value:DSEATDEPTH=_430": "430 mm"
+  },
+  "KSML002WW002": {
+    "value:DHEIGHT=_800": "800 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_545": "545 mm",
+    "value:DDEPTH=_560": "560 mm"
+  },
+  "KVAP001WW002": {
+    "value:DHEIGHT=_835": "835 mm",
+    "value:DSEATHEIGHT=_505": "505 mm",
+    "value:DWIDTH=_600": "600 mm",
+    "value:DDEPTH=_515": "515 mm",
+    "value:DWIDTH=_560": "560 mm",
+    "value:DWIDTH=_530": "530 mm",
+    "value:DWIDTH=_565": "565 mm"
+  },
+  "KNAV001WW005": {
+    "value:DHEIGHT=_980T1180": "980-1180 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KINT005WW001": {
+    "value:DHEIGHT=_1010T1210": "1010-1210 mm",
+    "value:DSEATHEIGHT=_425T555": "425-555 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_440": "440 mm",
+    "value:DSEATHEIGHT=_440T570": "440-570 mm",
+    "value:DSEATDEPTH=_440T500": "440-500 mm",
+    "value:DSEATDEPTH=_440T490": "440-490 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KNAV001WW006": {
+    "value:DHEIGHT=_980T1180": "980-1180 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KBET001WW005": {
+    "value:DHEIGHT=_770": "770 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DWIDTH=_495": "495 mm",
+    "value:DDEPTH=_485": "485 mm"
+  },
+  "KBET001WW006": {
+    "value:DHEIGHT=_770": "770 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_495": "495 mm",
+    "value:DDEPTH=_486": "486 mm"
+  },
+  "KBEW001WW005": {
+    "value:DHEIGHT=_835": "835 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_535": "535 mm",
+    "value:DDEPTH=_560": "560 mm",
+    "value:DSEATHEIGHT=_445": "445 mm"
+  },
+  "KBEW001WW008": {
+    "value:DHEIGHT=_840": "840 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_590": "590 mm",
+    "value:DDEPTH=_565": "565 mm"
+  },
+  "KCAF016WW001": {
+    "value:DHEIGHT=_845": "845 mm",
+    "value:DSEATHEIGHT=_455": "455 mm",
+    "value:DWIDTH=_450": "450 mm",
+    "value:DSEATWIDTH=_395": "395 mm",
+    "value:DDEPTH=_540": "540 mm",
+    "value:DSEATDEPTH=_405": "405 mm",
+    "value:DFRAMEWIDTH=_450": "450 mm",
+    "value:DSEATDEPTH=_415": "415 mm",
+    "value:DHEIGHT=_855": "855 mm",
+    "value:DSEATDEPTH=_410": "410 mm"
+  },
+  "KCAL002WW002": {
+    "value:DHEIGHT=_845": "845 mm",
+    "value:DSEATHEIGHT=_490": "490 mm",
+    "value:DWIDTH=_540": "540 mm",
+    "value:DDEPTH=_535": "535 mm"
+  },
+  "KINT002WW001": {
+    "value:DHEIGHT=_1090T1180": "1090-1180 mm",
+    "value:DSEATHEIGHT=_435T525": "435-525 mm",
+    "value:DSEATWIDTH=_530": "530 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_460": "460 mm",
+    "value:DSEATHEIGHT=_450T540": "450-540 mm",
+    "value:DSEATDEPTH=_460T520": "460-520 mm",
+    "value:DSEATDEPTH=_460T510": "460-510 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KISO001WW002": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DWIDTH=_580": "580 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_560": "560 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DFRAMEWIDTH=_545": "545 mm",
+    "value:DWIDTH=_545": "545 mm"
+  },
+  "KSOO005WW002": {
+    "value:DHEIGHT=_1110T1275": "1110-1275 mm",
+    "value:DSEATWIDTH=_500": "500 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DHEIGHT=_1170T1365": "1170-1365 mm",
+    "value:DSEATHEIGHT=_450T565": "450-565 mm",
+    "value:DHEIGHT=_1140T1335": "1140-1335 mm",
+    "value:DSEATHEIGHT=_420T535": "420-535 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KISO006WW002": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_580": "580 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_560": "560 mm",
+    "value:DSEATDEPTH=_400": "400 mm",
+    "value:DFRAMEWIDTH=_545": "545 mm",
+    "value:DWIDTH=_545": "545 mm"
+  },
+  "KMNS001WW008": {
+    "value:DHEIGHT=_760T965": "760-965 mm",
+    "value:DSEATHEIGHT=_375T475": "375-475 mm",
+    "value:DDEPTH=_510": "510 mm"
+  },
+  "KMNS001WW010": {
+    "value:DHEIGHT=_760T965": "760-965 mm",
+    "value:DSEATHEIGHT=_375T475": "375-475 mm",
+    "value:DDEPTH=_510": "510 mm"
+  },
+  "KMNS001WW006": {
+    "value:DHEIGHT=_760T965": "760-965 mm",
+    "value:DSEATHEIGHT=_375T475": "375-475 mm",
+    "value:DDEPTH=_510": "510 mm"
+  },
+  "KMNS001WW007": {
+    "value:DHEIGHT=_760T965": "760-965 mm",
+    "value:DSEATHEIGHT=_375T475": "375-475 mm",
+    "value:DDEPTH=_510": "510 mm"
+  },
+  "KMNS001WW009": {
+    "value:DHEIGHT=_760T965": "760-965 mm",
+    "value:DSEATHEIGHT=_375T475": "375-475 mm",
+    "value:DDEPTH=_510": "510 mm"
+  },
+  "KPRA001WW002": {
+    "value:DHEIGHT=_1175T1265": "1175-1265 mm",
+    "value:DSEATHEIGHT=_440T530": "440-530 mm",
+    "value:DSEATWIDTH=_550": "550 mm",
+    "value:DDEPTH=_665": "665 mm"
+  },
+  "KSYL001WW004": {
+    "value:DHEIGHT=_825": "825 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DDEPTH=_515": "515 mm"
+  },
+  "KTAU004WW001": {
+    "value:DHEIGHT=_1015": "1015 mm",
+    "value:DSEATHEIGHT=_655": "655 mm",
+    "value:DWIDTH=_455": "455 mm",
+    "value:DDEPTH=_560": "560 mm",
+    "value:DHEIGHT=_1115": "1115 mm",
+    "value:DSEATHEIGHT=_745": "745 mm"
+  },
+  "KTAU004WW002": {
+    "value:DHEIGHT=_930": "930 mm",
+    "value:DSEATHEIGHT=_655": "655 mm",
+    "value:DWIDTH=_455": "455 mm",
+    "value:DDEPTH=_525": "525 mm",
+    "value:DSEATHEIGHT=_745": "745 mm"
+  },
+  "KVAP001WW001": {
+    "value:DHEIGHT=_830": "830 mm",
+    "value:DSEATHEIGHT=_485": "485 mm",
+    "value:DWIDTH=_600": "600 mm",
+    "value:DDEPTH=_510": "510 mm",
+    "value:DWIDTH=_530": "530 mm",
+    "value:DWIDTH=_560": "560 mm",
+    "value:DWIDTH=_565": "565 mm"
+  },
+  "KVID006WW001": {
+    "value:DHEIGHT=_865T1065": "865-1065 mm",
+    "value:DSEATHEIGHT=_410T530": "410-530 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DHEIGHT=_875T1075": "875-1075 mm",
+    "value:DSEATHEIGHT=_415T535": "415-535 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KTGU004WW002": {
+    "value:DHEIGHT=_1010T1130": "1010-1130 mm",
+    "value:DSEATHEIGHT=_415T540": "415-540 mm",
+    "value:DSEATWIDTH=_505": "505 mm",
+    "value:DDEPTH=_620": "620 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DHEIGHT=_1035T1155": "1035-1155 mm"
+  },
+  "K2ME004WW004": {
+    "value:DHEIGHT=_865": "865 mm",
+    "value:DWIDTH=_530": "530 mm",
+    "value:DDEPTH=_625": "625 mm"
+  },
+  "KBET002WW002": {
+    "value:DHEIGHT=_770": "770 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_540": "540 mm",
+    "value:DDEPTH=_590": "590 mm"
+  },
+  "KINT004WW001": {
+    "value:DHEIGHT=_930T1130": "930-1130 mm",
+    "value:DSEATHEIGHT=_425T555": "425-555 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_440": "440 mm",
+    "value:DSEATHEIGHT=_440T570": "440-570 mm",
+    "value:DSEATDEPTH=_440T500": "440-500 mm",
+    "value:DSEATDEPTH=_440T490": "440-490 mm",
+    "value:DDEPTH=_636": "636 mm"
+  },
+  "KISO004WW002": {
+    "value:DHEIGHT=_780": "780 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_545": "545 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_560": "560 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DFRAMEWIDTH=_545": "545 mm"
+  },
+  "KLYN003WW002": {
+    "value:DHEIGHT=_1130": "1130 mm",
+    "value:DSEATHEIGHT=_490": "490 mm",
+    "value:DWIDTH=_620": "620 mm",
+    "value:DDEPTH=_675": "675 mm"
+  },
+  "KNAD001WW002": {
+    "value:DHEIGHT=_1090T1180": "1090-1180 mm",
+    "value:DSEATHEIGHT=_420T510": "420-510 mm",
+    "value:DSEATWIDTH=_500": "500 mm",
+    "value:DDEPTH=_700": "700 mm"
+  },
+  "KPER001WW003": {
+    "value:DHEIGHT=_970T1155": "970-1155 mm",
+    "value:DSEATHEIGHT=_400T520": "400-520 mm",
+    "value:DDEPTH=_587": "587 mm"
+  },
+  "KPER001WW001": {
+    "value:DHEIGHT=_970T1155": "970-1155 mm",
+    "value:DSEATHEIGHT=_400T520": "400-520 mm",
+    "value:DDEPTH=_587": "587 mm"
+  },
+  "KTAU003WW001": {
+    "value:DHEIGHT=_810": "810 mm",
+    "value:DSEATHEIGHT=_445": "445 mm",
+    "value:DWIDTH=_455": "455 mm",
+    "value:DDEPTH=_560": "560 mm"
+  },
+  "KTAU002WW003": {
+    "value:DHEIGHT=_1120": "1120 mm",
+    "value:DSEATHEIGHT=_765": "765 mm",
+    "value:DWIDTH=_465": "465 mm",
+    "value:DDEPTH=_575": "575 mm"
+  },
+  "KWI2002WW001": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_550": "550 mm",
+    "value:DWIDTH=_625": "625 mm",
+    "value:DDEPTH=_520": "520 mm"
+  },
+  "KCAF014WW001": {
+    "value:DHEIGHT=_805": "805 mm",
+    "value:DSEATHEIGHT=_455": "455 mm",
+    "value:DWIDTH=_470": "470 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_520": "520 mm",
+    "value:DSEATDEPTH=_415": "415 mm",
+    "value:DFRAMEWIDTH=_450": "450 mm"
+  },
+  "KCAL004WW002": {
+    "value:DHEIGHT=_1150": "1150 mm",
+    "value:DSEATHEIGHT=_775": "775 mm",
+    "value:DWIDTH=_475": "475 mm",
+    "value:DDEPTH=_555": "555 mm"
+  },
+  "KCRE035WW001": {
+    "value:DHEIGHT=_800": "800 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_500": "500 mm"
+  },
+  "KELO001WW002": {
+    "value:DHEIGHT=_1055T1145": "1055-1145 mm",
+    "value:DSEATHEIGHT=_430T520": "430-520 mm",
+    "value:DDEPTH=_640": "640 mm"
+  },
+  "KELO001WW001": {
+    "value:DHEIGHT=_1010T1100": "1010-1100 mm",
+    "value:DSEATHEIGHT=_410T500": "410-500 mm",
+    "value:DDEPTH=_640": "640 mm"
+  },
+  "KISO005WW002": {
+    "value:DHEIGHT=_805": "805 mm",
+    "value:DSEATHEIGHT=_440": "440 mm",
+    "value:DWIDTH=_580": "580 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_570": "570 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DFRAMEWIDTH=_545": "545 mm",
+    "value:DWIDTH=_545": "545 mm"
+  },
+  "KISO028WW001": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_570": "570 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DFRAMEWIDTH=_500": "500 mm"
+  },
+  "KISO006WW003": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_545": "545 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_560": "560 mm",
+    "value:DSEATDEPTH=_400": "400 mm",
+    "value:DFRAMEWIDTH=_545": "545 mm"
+  },
+  "KISO016WW002": {
+    "value:DHEIGHT=_795": "795 mm",
+    "value:DSEATHEIGHT=_440": "440 mm",
+    "value:DWIDTH=_560": "560 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_560": "560 mm",
+    "value:DSEATDEPTH=_410": "410 mm",
+    "value:DFRAMEWIDTH=_560": "560 mm"
+  },
+  "KLEV013WW002": {
+    "value:DHEIGHT=_736": "736 mm",
+    "value:DSEATHEIGHT=_736": "736 mm",
+    "value:DWIDTH=_1200": "1200 mm",
+    "value:DDEPTH=_496": "496 mm"
+  },
+  "KATM004WW006": {
+    "value:DHEIGHT=_1030T1125": "1030-1125 mm",
+    "value:DSEATHEIGHT=_405T490": "405-490 mm",
+    "value:DSEATWIDTH=_455": "455 mm",
+    "value:DDEPTH=_620": "620 mm",
+    "value:DSEATDEPTH=_400": "400 mm",
+    "value:DHEIGHT=_1050T1185": "1050-1185 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DDEPTH=_644": "644 mm"
+  },
+  "KTAK001WW002": {
+    "value:DHEIGHT=_995T1195": "995-1195 mm",
+    "value:DSEATHEIGHT=_380T510": "380-510 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_400T450": "400-450 mm",
+    "value:DSEATDEPTH=_400": "400 mm"
+  },
+  "KTAK002WW006": {
+    "value:DHEIGHT=_1030T1245": "1030-1245 mm",
+    "value:DSEATHEIGHT=_380T510": "380-510 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DSEATDEPTH=_400T450": "400-450 mm",
+    "value:DSEATDEPTH=_400": "400 mm",
+    "value:DHEIGHT=_1005T1220": "1005-1220 mm"
+  },
+  "KTAU001WW002": {
+    "value:DHEIGHT=_815": "815 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_465": "465 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KTAU003WW002": {
+    "value:DHEIGHT=_815": "815 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_465": "465 mm",
+    "value:DDEPTH=_560": "560 mm"
+  },
+  "KTGU008WW002": {
+    "value:DHEIGHT=_975": "975 mm",
+    "value:DSEATHEIGHT=_453": "453 mm",
+    "value:DWIDTH=_645": "645 mm",
+    "value:DDEPTH=_625": "625 mm"
+  },
+  "KTGU007WW002": {
+    "value:DHEIGHT=_895": "895 mm",
+    "value:DSEATHEIGHT=_453": "453 mm",
+    "value:DWIDTH=_645": "645 mm",
+    "value:DDEPTH=_625": "625 mm"
+  },
+  "KTUL002WW002": {
+    "value:DHEIGHT=_860": "860 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_410": "410 mm",
+    "value:DDEPTH=_470": "470 mm"
+  },
+  "KVAP005WW002": {
+    "value:DHEIGHT=_835": "835 mm",
+    "value:DSEATHEIGHT=_505": "505 mm",
+    "value:DWIDTH=_560": "560 mm",
+    "value:DDEPTH=_560": "560 mm"
+  },
+  "KWIT006WW001": {
+    "value:DHEIGHT=_980T1100": "980-1100 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_645": "645 mm"
+  },
+  "KWIT006WW002": {
+    "value:DHEIGHT=_980T1100": "980-1100 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_645": "645 mm"
+  },
+  "KZBO002WW001": {
+    "value:DHEIGHT=_890": "890 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DWIDTH=_535": "535 mm",
+    "value:DDEPTH=_630": "630 mm"
+  },
+  "KVNN001WW001": {
+    "value:DHEIGHT=_930T1030": "930-1030 mm",
+    "value:DSEATHEIGHT=_420T520": "420-520 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KSEG003WW001": {
+    "value:DHEIGHT=_1010T1215": "1010-1215 mm",
+    "value:DSEATHEIGHT=_445T565": "445-565 mm",
+    "value:DSEATWIDTH=_510": "510 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DHEIGHT=_1000T1205": "1000-1205 mm",
+    "value:DSEATHEIGHT=_435T555": "435-555 mm",
+    "value:DHEIGHT=_1020T1225": "1020-1225 mm",
+    "value:DHEIGHT=_975T1190": "975-1190 mm",
+    "value:DSEATHEIGHT=_410T540": "410-540 mm",
+    "value:DHEIGHT=_1030T1235": "1030-1235 mm",
+    "value:DSEATHEIGHT=_465T585": "465-585 mm"
+  },
+  "KARN008WW003": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_540": "540 mm",
+    "value:DWIDTH=_590": "590 mm"
+  },
+  "KCAF007WW001": {
+    "value:DHEIGHT=_870": "870 mm",
+    "value:DSEATHEIGHT=_745": "745 mm",
+    "value:DWIDTH=_530": "530 mm",
+    "value:DSEATWIDTH=_370": "370 mm",
+    "value:DDEPTH=_524": "524 mm",
+    "value:DSEATDEPTH=_405": "405 mm",
+    "value:DFRAMEWIDTH=_530": "530 mm"
+  },
+  "KCIS001WW001": {
+    "value:DHEIGHT=_1010T1110": "1010-1110 mm",
+    "value:DSEATHEIGHT=_420T520": "420-520 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_600": "600 mm"
+  },
+  "KCHI001WW002": {
+    "value:DHEIGHT=_475": "475 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_410": "410 mm",
+    "value:DSEATWIDTH=_340": "340 mm"
+  },
+  "KCHI001WW004": {
+    "value:DHEIGHT=_475": "475 mm",
+    "value:DSEATHEIGHT=_475": "475 mm",
+    "value:DWIDTH=_410": "410 mm",
+    "value:DSEATWIDTH=_340": "340 mm"
+  },
+  "KCRE034WW001": {
+    "value:DHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_410": "410 mm",
+    "value:DDEPTH=_410": "410 mm"
+  },
+  "KFON001WW002": {
+    "value:DHEIGHT=_830": "830 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_590": "590 mm",
+    "value:DSEATWIDTH=_445": "445 mm",
+    "value:DDEPTH=_490": "490 mm",
+    "value:DSEATDEPTH=_390": "390 mm"
+  },
+  "KFON004WW001": {
+    "value:DHEIGHT=_830": "830 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_520": "520 mm",
+    "value:DSEATWIDTH=_445": "445 mm",
+    "value:DDEPTH=_510": "510 mm",
+    "value:DSEATDEPTH=_390": "390 mm"
+  },
+  "KFON001WW001": {
+    "value:DHEIGHT=_830": "830 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_510": "510 mm",
+    "value:DSEATWIDTH=_445": "445 mm",
+    "value:DDEPTH=_480": "480 mm",
+    "value:DSEATDEPTH=_390": "390 mm"
+  },
+  "KFON003WW001": {
+    "value:DHEIGHT=_1110": "1110 mm",
+    "value:DSEATHEIGHT=_740": "740 mm",
+    "value:DWIDTH=_540": "540 mm",
+    "value:DSEATWIDTH=_445": "445 mm",
+    "value:DDEPTH=_495": "495 mm",
+    "value:DSEATDEPTH=_390": "390 mm"
+  },
+  "KITA001WW002": {
+    "value:DHEIGHT=_775": "775 mm",
+    "value:DSEATHEIGHT=_480": "480 mm",
+    "value:DWIDTH=_555": "555 mm",
+    "value:DDEPTH=_540": "540 mm"
+  },
+  "KLPN020WW002": {
+    "value:DHEIGHT=_950": "950 mm",
+    "value:DSEATHEIGHT=_810": "810 mm",
+    "value:DWIDTH=_515": "515 mm",
+    "value:DDEPTH=_500": "500 mm"
+  },
+  "KATM006WW001": {
+    "value:DSEATHEIGHT=_480": "480 mm",
+    "value:DWIDTH=_565": "565 mm",
+    "value:DSEATWIDTH=_455": "455 mm"
+  },
+  "KNAD003WW002": {
+    "value:DHEIGHT=_985": "985 mm",
+    "value:DSEATHEIGHT=_510": "510 mm",
+    "value:DWIDTH=_600": "600 mm",
+    "value:DDEPTH=_725": "725 mm"
+  },
+  "KSML005WW002": {
+    "value:DHEIGHT=_800": "800 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DWIDTH=_465": "465 mm",
+    "value:DDEPTH=_560": "560 mm"
+  },
+  "KSTY001WW004": {
+    "value:DHEIGHT=_825": "825 mm",
+    "value:DWIDTH=_615": "615 mm",
+    "value:DDEPTH=_545": "545 mm"
+  },
+  "KSTY001WW003": {
+    "value:DHEIGHT=_825": "825 mm",
+    "value:DWIDTH=_505": "505 mm",
+    "value:DDEPTH=_545": "545 mm"
+  },
+  "KTAU008WW002": {
+    "value:DHEIGHT=_815": "815 mm",
+    "value:DSEATHEIGHT=_460": "460 mm",
+    "value:DWIDTH=_465": "465 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KTGU001WW002": {
+    "value:DHEIGHT=_930T1050": "930-1050 mm",
+    "value:DSEATHEIGHT=_415T540": "415-540 mm",
+    "value:DSEATWIDTH=_505": "505 mm",
+    "value:DDEPTH=_620": "620 mm",
+    "value:DSEATDEPTH=_410": "410 mm"
+  },
+  "KTUL001WW003": {
+    "value:DHEIGHT=_860": "860 mm",
+    "value:DSEATHEIGHT=_445": "445 mm",
+    "value:DWIDTH=_400": "400 mm",
+    "value:DDEPTH=_470": "470 mm"
+  },
+  "KTUL001WW004": {
+    "value:DHEIGHT=_860": "860 mm",
+    "value:DSEATHEIGHT=_445": "445 mm",
+    "value:DWIDTH=_400": "400 mm",
+    "value:DDEPTH=_470": "470 mm"
+  },
+  "KTUL003WW003": {
+    "value:DHEIGHT=_1095": "1095 mm",
+    "value:DSEATHEIGHT=_725": "725 mm",
+    "value:DWIDTH=_430": "430 mm",
+    "value:DDEPTH=_485": "485 mm"
+  },
+  "KTUL003WW004": {
+    "value:DHEIGHT=_1095": "1095 mm",
+    "value:DSEATHEIGHT=_725": "725 mm",
+    "value:DWIDTH=_430": "430 mm",
+    "value:DDEPTH=_485": "485 mm"
+  },
+  "KTUL003WW007": {
+    "value:DHEIGHT=_985": "985 mm",
+    "value:DSEATHEIGHT=_640": "640 mm",
+    "value:DWIDTH=_400": "400 mm",
+    "value:DDEPTH=_440": "440 mm"
+  },
+  "KTUL003WW008": {
+    "value:DHEIGHT=_985": "985 mm",
+    "value:DSEATHEIGHT=_640": "640 mm",
+    "value:DWIDTH=_400": "400 mm",
+    "value:DDEPTH=_440": "440 mm"
+  },
+  "KTUL003WW009": {
+    "value:DHEIGHT=_985": "985 mm",
+    "value:DSEATHEIGHT=_615": "615 mm",
+    "value:DWIDTH=_400": "400 mm",
+    "value:DDEPTH=_440": "440 mm"
+  },
+  "KVAP002WW001": {
+    "value:DHEIGHT=_830": "830 mm",
+    "value:DSEATHEIGHT=_485": "485 mm",
+    "value:DWIDTH=_555": "555 mm",
+    "value:DDEPTH=_510": "510 mm",
+    "value:DWIDTH=_515": "515 mm"
+  },
+  "KVID009WW001": {
+    "value:DHEIGHT=_850T1050": "850-1050 mm",
+    "value:DSEATHEIGHT=_415T535": "415-535 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm"
+  },
+  "KCRE033WW001": {
+    "value:DHEIGHT=_800": "800 mm",
+    "value:DWIDTH=_480": "480 mm",
+    "value:DDEPTH=_480": "480 mm"
+  },
+  "KCRE036WW001": {
+    "value:DHEIGHT=_470": "470 mm",
+    "value:DWIDTH=_1200": "1200 mm",
+    "value:DDEPTH=_360": "360 mm"
+  },
+  "KLEV008WW002": {
+    "value:DHEIGHT=_456": "456 mm",
+    "value:DSEATHEIGHT=_456": "456 mm",
+    "value:DWIDTH=_423": "423 mm",
+    "value:DDEPTH=_423": "423 mm"
+  },
+  "KLEV009WW002": {
+    "value:DHEIGHT=_456": "456 mm",
+    "value:DSEATHEIGHT=_456": "456 mm",
+    "value:DWIDTH=_1200": "1200 mm",
+    "value:DDEPTH=_423": "423 mm"
+  },
+  "KOVI001WW002": {
+    "value:DHEIGHT=_970T1065": "970-1065 mm",
+    "value:DSEATHEIGHT=_410T500": "410-500 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_640": "640 mm"
+  },
+  "KOVI001WW001": {
+    "value:DHEIGHT=_970T1065": "970-1065 mm",
+    "value:DSEATHEIGHT=_410T500": "410-500 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_640": "640 mm"
+  },
+  "KSAI004WW002": {
+    "value:DHEIGHT=_895T1015": "895-1015 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm",
+    "value:DSEATWIDTH=_505": "505 mm",
+    "value:DDEPTH=_635": "635 mm",
+    "value:DSEATDEPTH=_430": "430 mm",
+    "value:DSEATDEPTH=_425": "425 mm"
+  },
+  "KSRI001WW002": {
+    "value:DHEIGHT=_775": "775 mm",
+    "value:DSEATHEIGHT=_435": "435 mm",
+    "value:DWIDTH=_580": "580 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KVCR001WW003": {
+    "value:DSEATHEIGHT=_460": "460 mm",
+    "value:DHEIGHT=_860": "860 mm",
+    "value:DWIDTH=_520": "520 mm",
+    "value:DDEPTH=_575": "575 mm"
+  },
+  "KVAP002WW002": {
+    "value:DHEIGHT=_835": "835 mm",
+    "value:DSEATHEIGHT=_505": "505 mm",
+    "value:DWIDTH=_515": "515 mm",
+    "value:DDEPTH=_515": "515 mm",
+    "value:DWIDTH=_555": "555 mm"
+  },
+  "KVAP004WW001": {
+    "value:DHEIGHT=_1025": "1025 mm",
+    "value:DSEATHEIGHT=_760": "760 mm",
+    "value:DWIDTH=_515": "515 mm",
+    "value:DDEPTH=_500": "500 mm",
+    "value:DSEATHEIGHT=_745": "745 mm"
+  },
+  "KVAP011WW001": {
+    "value:DHEIGHT=_1025": "1025 mm",
+    "value:DSEATHEIGHT=_745": "745 mm",
+    "value:DWIDTH=_490": "490 mm",
+    "value:DDEPTH=_505": "505 mm"
+  },
+  "KZET001WW002": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_850": "850 mm",
+    "value:DWIDTH=_355": "355 mm",
+    "value:DDEPTH=_355": "355 mm"
+  },
+  "KZET002WW002": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_850": "850 mm",
+    "value:DWIDTH=_430": "430 mm",
+    "value:DDEPTH=_430": "430 mm"
+  },
+  "KSEG002WW001": {
+    "value:DHEIGHT=_905T1120": "905-1120 mm",
+    "value:DSEATHEIGHT=_410T540": "410-540 mm",
+    "value:DSEATWIDTH=_510": "510 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DHEIGHT=_960T1165": "960-1165 mm",
+    "value:DSEATHEIGHT=_465T585": "465-585 mm",
+    "value:DHEIGHT=_900T1115": "900-1115 mm",
+    "value:DSEATHEIGHT=_445T565": "445-565 mm",
+    "value:DHEIGHT=_940T1145": "940-1145 mm",
+    "value:DHEIGHT=_915T1130": "915-1130 mm",
+    "value:DSEATHEIGHT=_435T555": "435-555 mm",
+    "value:DHEIGHT=_895T1110": "895-1110 mm"
+  },
+  "KBEW001WW007": {
+    "value:DHEIGHT=_840": "840 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_535": "535 mm",
+    "value:DDEPTH=_565": "565 mm"
+  },
+  "KCRE032WW001": {
+    "value:DHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_400": "400 mm",
+    "value:DDEPTH=_400": "400 mm"
+  },
+  "KSRI004WW002": {
+    "value:DHEIGHT=_775": "775 mm",
+    "value:DSEATHEIGHT=_435": "435 mm",
+    "value:DWIDTH=_580": "580 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KVCR002WW003": {
+    "value:DHEIGHT=_860": "860 mm",
+    "value:DSEATHEIGHT=_460": "460 mm",
+    "value:DWIDTH=_510": "510 mm",
+    "value:DDEPTH=_572": "572 mm"
+  },
+  "KVCR002WW004": {
+    "value:DHEIGHT=_860": "860 mm",
+    "value:DSEATHEIGHT=_460": "460 mm",
+    "value:DWIDTH=_593": "593 mm",
+    "value:DDEPTH=_572": "572 mm"
+  },
+  "KVAP018WW001": {
+    "value:DHEIGHT=_830": "830 mm",
+    "value:DSEATHEIGHT=_485": "485 mm",
+    "value:DWIDTH=_445": "445 mm",
+    "value:DDEPTH=_510": "510 mm"
+  },
+  "KVAP003WW002": {
+    "value:DHEIGHT=_1035": "1035 mm",
+    "value:DSEATHEIGHT=_770": "770 mm",
+    "value:DWIDTH=_515": "515 mm",
+    "value:DDEPTH=_505": "505 mm"
+  },
+  "KVAP003WW001": {
+    "value:DHEIGHT=_1030": "1030 mm",
+    "value:DSEATHEIGHT=_750": "750 mm",
+    "value:DWIDTH=_515": "515 mm",
+    "value:DDEPTH=_500": "500 mm",
+    "value:DSEATHEIGHT=_765": "765 mm"
+  },
+  "KVAP012WW001": {
+    "value:DHEIGHT=_1030": "1030 mm",
+    "value:DSEATHEIGHT=_765": "765 mm",
+    "value:DWIDTH=_490": "490 mm",
+    "value:DDEPTH=_510": "510 mm"
+  },
+  "KYUN001WW001": {
+    "value:DHEIGHT=_805": "805 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DWIDTH=_485": "485 mm",
+    "value:DDEPTH=_530": "530 mm"
+  },
+  "KYUN001WW002": {
+    "value:DHEIGHT=_805": "805 mm",
+    "value:DSEATHEIGHT=_470": "470 mm",
+    "value:DWIDTH=_575": "575 mm",
+    "value:DDEPTH=_530": "530 mm"
+  },
+  "KSRI002WW001": {
+    "value:DHEIGHT=_775": "775 mm",
+    "value:DSEATHEIGHT=_435": "435 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KTIM001WW001": {
+    "value:DHEIGHT=_530T760": "530-760 mm",
+    "value:DSEATHEIGHT=_515T740": "515-740 mm",
+    "value:DWIDTH=_435": "435 mm",
+    "value:DDEPTH=_240": "240 mm"
+  },
+  "KVAP004WW002": {
+    "value:DHEIGHT=_1030": "1030 mm",
+    "value:DSEATHEIGHT=_765": "765 mm",
+    "value:DWIDTH=_515": "515 mm",
+    "value:DDEPTH=_505": "505 mm"
+  },
+  "KBLS001WW001": {
+    "value:DHEIGHT=_580T865": "580-865 mm",
+    "value:DSEATHEIGHT=_580T865": "580-865 mm",
+    "value:DWIDTH=_435": "435 mm",
+    "value:DSEATWIDTH=_300": "300 mm",
+    "value:DDEPTH=_435": "435 mm"
+  },
+  "KBLS001WW002": {
+    "value:DHEIGHT=_580T865": "580-865 mm",
+    "value:DSEATHEIGHT=_580T865": "580-865 mm",
+    "value:DWIDTH=_435": "435 mm",
+    "value:DSEATWIDTH=_285": "285 mm",
+    "value:DDEPTH=_435": "435 mm"
+  },
+  "KBZM001WW001": {
+    "value:DHEIGHT=_875": "875 mm",
+    "value:DWIDTH=_600": "600 mm",
+    "value:DDEPTH=_565": "565 mm"
+  },
+  "KSRI003WW001": {
+    "value:DHEIGHT=_775": "775 mm",
+    "value:DSEATHEIGHT=_435": "435 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_580": "580 mm"
+  },
+  "KLYN002WW002": {
+    "value:DHEIGHT=_1275T1365": "1275-1365 mm",
+    "value:DSEATHEIGHT=_450T535": "450-535 mm",
+    "value:DSEATWIDTH=_525": "525 mm",
+    "value:DDEPTH=_635": "635 mm"
+  },
+  "KLYN001WW002": {
+    "value:DHEIGHT=_1215T1305": "1215-1305 mm",
+    "value:DSEATHEIGHT=_450T535": "450-535 mm",
+    "value:DSEATWIDTH=_525": "525 mm",
+    "value:DDEPTH=_635": "635 mm"
+  },
+  "KSOU001WW003": {
+    "value:DHEIGHT=_1020T1150": "1020-1150 mm",
+    "value:DSEATHEIGHT=_410T530": "410-530 mm",
+    "value:DSEATWIDTH=_480": "480 mm",
+    "value:DDEPTH=_646": "646 mm",
+    "value:DHEIGHT=_1025T1155": "1025-1155 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm"
+  },
+  "KNAU017WW001": {
+    "value:DSEATHEIGHT=_810": "810 mm",
+    "value:DHEIGHT=_1040": "1040 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_530": "530 mm",
+    "value:DSEATHEIGHT=_660": "660 mm"
+  },
+  "KNAU018WW001": {
+    "value:DSEATHEIGHT=_810": "810 mm",
+    "value:DHEIGHT=_1040": "1040 mm",
+    "value:DWIDTH=_640": "640 mm",
+    "value:DDEPTH=_530": "530 mm",
+    "value:DSEATHEIGHT=_660": "660 mm"
+  },
+  "KNXT001WW002": {
+    "value:DHEIGHT=_1020T1230": "1020-1230 mm",
+    "value:DSEATHEIGHT=_410T530": "410-530 mm",
+    "value:DSEATWIDTH=_500": "500 mm",
+    "value:DDEPTH=_676": "676 mm",
+    "value:DSEATDEPTH=_420": "420 mm",
+    "value:DHEIGHT=_1010T1210": "1010-1210 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm",
+    "value:DSEATDEPTH=_420T470": "420-470 mm",
+    "value:DHEIGHT=_990T1200": "990-1200 mm",
+    "value:DSEATDEPTH=_435": "435 mm"
+  },
+  "KWI2001WW001": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_705": "705 mm"
+  },
+  "KWI2003WW001": {
+    "value:DHEIGHT=_865": "865 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_540": "540 mm",
+    "value:DDEPTH=_605": "605 mm"
+  },
+  "KWI2003WW002": {
+    "value:DHEIGHT=_890": "890 mm",
+    "value:DSEATHEIGHT=_490": "490 mm",
+    "value:DWIDTH=_520": "520 mm",
+    "value:DDEPTH=_560": "560 mm"
+  },
+  "KXEN032WW001": {
+    "value:DHEIGHT=_970T1160": "970-1160 mm",
+    "value:DSEATHEIGHT=_420T530": "420-530 mm",
+    "value:DSEATWIDTH=_465": "465 mm",
+    "value:DDEPTH=_730": "730 mm",
+    "value:DHEIGHT=_940T1100": "940-1100 mm",
+    "value:DSEATHEIGHT=_390T470": "390-470 mm",
+    "value:DHEIGHT=_980T1200": "980-1200 mm",
+    "value:DSEATHEIGHT=_430T570": "430-570 mm"
+  },
+  "KXEN033WW003": {
+    "value:DHEIGHT=_1050T1240": "1050-1240 mm",
+    "value:DSEATHEIGHT=_420T530": "420-530 mm",
+    "value:DSEATWIDTH=_465": "465 mm",
+    "value:DDEPTH=_730": "730 mm"
+  },
+  "KYOU002WW001": {
+    "value:DHEIGHT=_1270T1380": "1270-1380 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_688": "688 mm"
+  },
+  "KYOU001WW001": {
+    "value:DHEIGHT=_1050T1160": "1050-1160 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_688": "688 mm"
+  },
+  "KYOU002WW002": {
+    "value:DHEIGHT=_1270T1380": "1270-1380 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_688": "688 mm"
+  },
+  "KWI2006WW001": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_625": "625 mm",
+    "value:DDEPTH=_520": "520 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_550": "550 mm"
+  },
+  "KWI2011WW001": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_625": "625 mm",
+    "value:DDEPTH=_520": "520 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_550": "550 mm"
+  },
+  "KZBO004WW001": {
+    "value:DHEIGHT=_1060T1190": "1060-1190 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_490": "490 mm",
+    "value:DDEPTH=_636": "636 mm",
+    "value:DDEPTH=_644": "644 mm"
+  },
+  "KHOL001WW002": {
+    "value:DHEIGHT=_820": "820 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_480": "480 mm",
+    "value:DDEPTH=_530": "530 mm",
+    "value:DWIDTH=_580": "580 mm"
+  },
+  "KWI2005WW001": {
+    "value:DHEIGHT=_850": "850 mm",
+    "value:DSEATHEIGHT=_450": "450 mm",
+    "value:DWIDTH=_500": "500 mm",
+    "value:DDEPTH=_550": "550 mm"
+  },
+  "KVAP008WW001": {
+    "value:DHEIGHT=_905": "905 mm",
+    "value:DSEATHEIGHT=_500": "500 mm",
+    "value:DWIDTH=_530": "530 mm",
+    "value:DDEPTH=_525": "525 mm",
+    "value:DWIDTH=_600": "600 mm",
+    "value:DSEATHEIGHT=_485": "485 mm",
+    "value:DWIDTH=_560": "560 mm",
+    "value:DWIDTH=_565": "565 mm"
+  },
+  "KALT001WW002": {
+    "value:DHEIGHT=_1065T1190": "1065-1190 mm",
+    "value:DSEATHEIGHT=_420T550": "420-550 mm",
+    "value:DSEATWIDTH=_440": "440 mm",
+    "value:DSEATDEPTH=_450": "450 mm",
+    "value:DSEATDEPTH=_450T500": "450-500 mm"
+  },
+  "KBJA003WW002": {
+    "value:DHEIGHT=_1125T1330": "1125-1330 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DHEIGHT=_1115T1320": "1115-1320 mm",
+    "value:DSEATHEIGHT=_415T540": "415-540 mm",
+    "value:DSEATHEIGHT=_400T525": "400-525 mm",
+    "value:DHEIGHT=_1110T1325": "1110-1325 mm",
+    "value:DSEATHEIGHT=_405T530": "405-530 mm",
+    "value:DDEPTH=_636": "636 mm",
+    "value:DHEIGHT=_1120T1325": "1120-1325 mm",
+    "value:DHEIGHT=_1110T1315": "1110-1315 mm",
+    "value:DSEATHEIGHT=_410T535": "410-535 mm"
+  },
+  "KBJA002WW002": {
+    "value:DHEIGHT=_955T1160": "955-1160 mm",
+    "value:DSEATHEIGHT=_415T540": "415-540 mm",
+    "value:DSEATWIDTH=_460": "460 mm",
+    "value:DDEPTH=_636": "636 mm",
+    "value:DHEIGHT=_965T1170": "965-1170 mm",
+    "value:DSEATHEIGHT=_420T545": "420-545 mm",
+    "value:DSEATHEIGHT=_400T525": "400-525 mm",
+    "value:DHEIGHT=_950T1165": "950-1165 mm",
+    "value:DSEATHEIGHT=_405T530": "405-530 mm",
+    "value:DDEPTH=_644": "644 mm",
+    "value:DHEIGHT=_950T1155": "950-1155 mm",
+    "value:DSEATHEIGHT=_410T535": "410-535 mm",
+    "value:DHEIGHT=_960T1165": "960-1165 mm"
+  },
+  "KXEN028WW001": {
+    "value:DHEIGHT=_1040T1230": "1040-1230 mm",
+    "value:DSEATHEIGHT=_420T530": "420-530 mm",
+    "value:DSEATWIDTH=_465": "465 mm",
+    "value:DDEPTH=_730": "730 mm",
+    "value:DHEIGHT=_1050T1240": "1050-1240 mm",
+    "value:DHEIGHT=_1010T1170": "1010-1170 mm",
+    "value:DSEATHEIGHT=_390T470": "390-470 mm",
+    "value:DHEIGHT=_1050T1270": "1050-1270 mm",
+    "value:DSEATHEIGHT=_430T570": "430-570 mm",
+    "value:DHEIGHT=_1060T1280": "1060-1280 mm"
+  },
+  "KNXT002WW002": {
+    "value:DHEIGHT=_1010T1210": "1010-1210 mm",
+    "value:DSEATHEIGHT=_420T540": "420-540 mm",
+    "value:DSEATWIDTH=_500": "500 mm",
+    "value:DDEPTH=_676": "676 mm",
+    "value:DSEATDEPTH=_425T475": "425-475 mm",
+    "value:DHEIGHT=_1020T1230": "1020-1230 mm",
+    "value:DSEATHEIGHT=_410T530": "410-530 mm",
+    "value:DSEATDEPTH=_425": "425 mm",
+    "value:DHEIGHT=_990T1200": "990-1200 mm",
+    "value:DSEATDEPTH=_440": "440 mm"
+  },
+  "KPOX002WW002": {
+    "value:DHEIGHT=_1210T1400": "1210-1400 mm",
+    "value:DWIDTH=_737": "737 mm",
+    "value:DDEPTH=_670T740": "670-740 mm",
+    "value:DDEPTH=_685T755": "685-755 mm"
+  },
+  "KPOX002WW001": {
+    "value:DHEIGHT=_1210T1400": "1210-1400 mm",
+    "value:DWIDTH=_737": "737 mm",
+    "value:DDEPTH=_670T740": "670-740 mm",
+    "value:DDEPTH=_685T755": "685-755 mm"
+  },
+  "KJUP001WW002": {
+    "value:DHEIGHT=_980T1160": "980-1160 mm",
+    "value:DSEATHEIGHT=_415T535": "415-535 mm",
+    "value:DDEPTH=_587": "587 mm"
+  },
+  "KERG021WW001": {
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_1000": "1000 mm",
+    "value:DHEIGHT=_660T1160": "660-1160 mm",
+    "value:DTOPTHICKNESS=_41": "41 mm",
+    "value:GDWIDTH=_1800": "1800 mm"
+  },
+  "KEM2013WW006": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:GDDEPTH=_1000": "1000 mm"
+  },
+  "KEM2013WW009": {
+    "value:DWIDTH=_1600": "1600 mm",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:DDEPTH=_900X800": "900/800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:DWIDTH=_1800": "1800 mm",
+    "value:DWIDTH=_2000": "2000 mm"
+  },
+  "KEM2014WW002": {
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_16902X800": "1690 mm (2x 800 mm)",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_14902X700": "1490 mm (2x 700 mm)"
+  },
+  "KEM2014WW003": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_16902X800": "1690 mm (2x 800 mm)",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_14902X700": "1490 mm (2x 700 mm)"
+  },
+  "KEM3001WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm",
+    "value:DHEIGHT=_644T1304": "644-1304 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:GDDEPTH=_1000": "1000 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm"
+  },
+  "KEPP001WW001": {
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1350": "1350 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPDEPTH=_600": "600 mm",
+    "value:GDTOPDEPTH=_700": "700 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm"
+  },
+  "KEPP002WW001": {
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1350": "1350 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPDEPTH=_700": "700 mm",
+    "value:GDTOPDEPTH=_900": "900 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm"
+  },
+  "KEPP004WW001": {
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1350": "1350 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPDEPTH=_600": "600 mm",
+    "value:GDTOPDEPTH=_700": "700 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm"
+  },
+  "KEPP005WW001": {
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1350": "1350 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPDEPTH=_700": "700 mm",
+    "value:GDTOPDEPTH=_900": "900 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm"
+  },
+  "KEPP006WW001": {
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1350": "1350 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPDEPTH=_700": "700 mm",
+    "value:GDTOPDEPTH=_900": "900 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm"
+  },
+  "KEUP008WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:DHEIGHT=_655T1305": "655-1305 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm"
+  },
+  "KEUP008WW003": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:DHEIGHT=_655T1305": "655-1305 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm"
+  },
+  "KEUP008WW004": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:DHEIGHT=_655T1305": "655-1305 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm"
+  },
+  "KEUP009WW002": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm",
+    "value:DHEIGHT=_694T1194": "694-1194 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_600": "600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm"
+  },
+  "KEUP010WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm",
+    "value:DHEIGHT=_614T1264": "614-1264 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_750": "750 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm"
+  },
+  "KEUP010WW003": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm",
+    "value:DHEIGHT=_614T1264": "614-1264 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_750": "750 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm"
+  },
+  "KEUP011WW002": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm",
+    "value:DHEIGHT=_614T1264": "614-1264 mm",
+    "value:GDDEPTH=_16902X800": "1690 mm (2x 800 mm)",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:DHEIGHT=_620T1270": "620-1270 mm"
+  },
+  "KEUP011WW003": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:DTOPTHICKNESS=_19": "19 mm",
+    "value:DHEIGHT=_614T1264": "614-1264 mm",
+    "value:GDDEPTH=_16902X800": "1690 mm (2x 800 mm)",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm"
+  },
+  "KPW2024WW001": {
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDHEIGHT=_640T1300": "640-1300 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_2000": "2000 mm"
+  },
+  "KPW2025WW001": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_1690": "1690 mm",
+    "value:GDTOPDEPTH=_2X800": "2x 800 mm",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:DTOPWIDTH=_1X1600": "1600 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_1490": "1490 mm",
+    "value:GDDEPTH=_1890": "1890 mm"
+  },
+  "KXI2021WW003": {
+    "value:GDWIDTH=_1800X1600": "1800/1600 mm",
+    "value:GDDEPTH=_800X600": "800/600 mm",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1600X1200": "1600/1200 mm",
+    "value:GDWIDTH=_1600X1400": "1600/1400 mm",
+    "value:GDWIDTH=_1600X1600": "1600/1600 mm",
+    "value:GDWIDTH=_1800X1400": "1800/1400 mm",
+    "value:GDWIDTH=_2000X1400": "2000/1400 mm",
+    "value:GDWIDTH=_2000X1600": "2000/1600 mm",
+    "value:GDDEPTH=_800X800": "800/800 mm"
+  },
+  "KLEV021WW002": {
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1600": "1600 mm"
+  },
+  "KLEV022WW002": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm"
+  },
+  "KSQA128WW001": {
+    "value:GDTOPWIDTH=_1200X1200": "1200/1200 mm",
+    "value:GDTOPDEPTH=_800X800": "800/800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1400X1400": "1400/1400 mm"
+  },
+  "KAER001WW001": {
+    "value:DHEIGHT=_765T1151": "765-1151 mm",
+    "value:DTOPWIDTH=_800": "800 mm",
+    "value:DTOPDEPTH=_600": "600 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm"
+  },
+  "KBSP003WW001": {
+    "value:GDWIDTH=_28002X1400": "2800 mm (2x 1400 mm)",
+    "value:GDDEPTH=_14002X700": "1400 mm (2x 700 mm)",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_24002X1200": "2400 mm (2x 1200 mm)",
+    "value:GDWIDTH=_32002X1600": "3200 mm (2x 1600 mm)",
+    "value:GDDEPTH=_16002X800": "1600 mm (2x 800 mm)"
+  },
+  "KBSP004WW002": {
+    "value:GDWIDTH=_42003X1400": "4200 mm (3x 1400 mm)",
+    "value:GDDEPTH=_14002X679": "1400 mm (2x 679 mm)",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_36003X1200": "3600 mm (3x 1200 mm)",
+    "value:GDWIDTH=_48003X1600": "4800 mm (3x 1600 mm)",
+    "value:GDDEPTH=_16002X779": "1600 mm (2x 779 mm)"
+  },
+  "KERG019WW001": {
+    "value:GDWIDTH=_1826": "1826 mm",
+    "value:DHEIGHT=_750": "750 mm",
+    "value:GDDEPTH=_1000": "1000 mm",
+    "value:DTOPTHICKNESS=_85": "85 mm",
+    "value:GDWIDTH=_2026": "2026 mm",
+    "value:GDWIDTH=_2226": "2226 mm"
+  },
+  "KERG023WW001": {
+    "value:GDWIDTH=_2013": "2013 mm",
+    "value:DTOPWIDTH=_2013": "2013 mm",
+    "value:DHEIGHT=_750": "750 mm",
+    "value:GDDEPTH=_1975": "1975 mm",
+    "value:DTOPDEPTH=_1000": "1000 mm",
+    "value:DTOPTHICKNESS=_85": "85 mm",
+    "value:GDWIDTH=_2213": "2213 mm"
+  },
+  "KLEV026WW002": {
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:GDDEPTH=_2X800": "2x 800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1600": "1600 mm"
+  },
+  "KBSP007WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_16002X779": "1600 mm (2x 779 mm)",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_14002X679": "1400 mm (2x 679 mm)"
+  },
+  "KBSP008WW002": {
+    "value:GDWIDTH=_24002X1200": "2400 mm (2x 1200 mm)",
+    "value:GDDEPTH=_14002X679": "1400 mm (2x 679 mm)",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_28002X1400": "2800 mm (2x 1400 mm)",
+    "value:GDWIDTH=_32002X1600": "3200 mm (2x 1600 mm)",
+    "value:GDDEPTH=_16002X779": "1600 mm (2x 779 mm)"
+  },
+  "KESE126WW001": {
+    "value:GDWIDTH=_1000": "1000 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_800": "800 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm"
+  },
+  "KPW2005WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:GDHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_700": "700 mm"
+  },
+  "KPW2021WW002": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDHEIGHT=_740": "740 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm"
+  },
+  "KSQA126WW001": {
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPWIDTH=_2000": "2000 mm",
+    "value:GDTOPDEPTH=_700": "700 mm"
+  },
+  "KSQA127WW001": {
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPWIDTH=_2000": "2000 mm"
+  },
+  "KSQA131WW001": {
+    "value:GDTOPWIDTH=_2000": "2000 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPDEPTH=_900": "900 mm",
+    "value:GDTOPDEPTH=_1000": "1000 mm"
+  },
+  "KXI2012WW003": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_650T1000": "650-1000 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:GDDEPTH=_1000": "1000 mm"
+  },
+  "KC54080WW001": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:GDHEIGHT=_750": "750 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_800": "800 mm"
+  },
+  "KPW2017WW001": {
+    "value:GDTOPWIDTH=_2X1400": "2x 1400 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:GDWIDTH=_3600": "3600 mm",
+    "value:GDDEPTH=_1600": "1600 mm",
+    "value:GDTOPDEPTH=_2X792": "2x 792 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_2X1600": "2x 1600 mm"
+  },
+  "KXI2019WW003": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_650T850": "650-850 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:GDDEPTH=_1000": "1000 mm"
+  },
+  "KC54082WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:GDHEIGHT=_750": "750 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_800": "800 mm"
+  },
+  "KC54102WW001": {
+    "value:GDWIDTH=_4200": "4200 mm",
+    "value:DTOPWIDTH=_3X1400": "3x 1400 mm",
+    "value:GDDEPTH=_1400": "1400 mm",
+    "value:DTOPDEPTH=_2X679": "2x 679 mm",
+    "value:GDHEIGHT=_750": "750 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_3600": "3600 mm",
+    "value:GDWIDTH=_4800": "4800 mm",
+    "value:GDWIDTH=_5400": "5400 mm",
+    "value:GDDEPTH=_1600": "1600 mm"
+  },
+  "KESE080WW001": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1000": "1000 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_600": "600 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:GDDEPTH=_1000": "1000 mm"
+  },
+  "KBSP001WW001": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1000": "1000 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_700": "700 mm"
+  },
+  "KSQA122WW001": {
+    "value:GDTOPWIDTH=_2000": "2000 mm",
+    "value:GDTOPDEPTH=_1000": "1000 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDTOPWIDTH=_1200": "1200 mm",
+    "value:GDTOPWIDTH=_1400": "1400 mm",
+    "value:GDTOPWIDTH=_1600": "1600 mm",
+    "value:GDTOPWIDTH=_1800": "1800 mm",
+    "value:GDTOPDEPTH=_800": "800 mm",
+    "value:GDTOPDEPTH=_900": "900 mm"
+  },
+  "KEM2017WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_700": "700 mm"
+  },
+  "KBSP006WW001": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1000": "1000 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_700": "700 mm"
+  },
+  "KEM2008WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_14902X700": "1490 mm (2x 700 mm)",
+    "value:DHEIGHT=_650T1000": "650-1000 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_16902X800": "1690 mm (2x 800 mm)"
+  },
+  "KEM2007WW002": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_650T1000": "650-1000 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:GDDEPTH=_900": "900 mm",
+    "value:GDDEPTH=_1000": "1000 mm"
+  },
+  "KC54077WW001": {
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDDEPTH=_700": "700 mm",
+    "value:GDHEIGHT=_750": "750 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_800": "800 mm"
+  },
+  "KESE079WW001": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_800": "800 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1000": "1000 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_600": "600 mm"
+  },
+  "KESE086WW001": {
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDDEPTH=_600": "600 mm",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_800": "800 mm",
+    "value:GDWIDTH=_1000": "1000 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_800": "800 mm"
+  },
+  "KFLS001WW002": {
+    "value:DFRAMEDIAMETER=_25": "25 mm",
+    "value:DHEIGHT=_965": "965 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_630": "630 mm",
+    "value:DDEPTH=_635": "635 mm",
+    "value:DFRAMEDIAMETER=_22": "22 mm"
+  },
+  "KFLS002WW002": {
+    "value:DFRAMEDIAMETER=_25": "25 mm",
+    "value:DHEIGHT=_965": "965 mm",
+    "value:DSEATHEIGHT=_465": "465 mm",
+    "value:DWIDTH=_630": "630 mm",
+    "value:DDEPTH=_625": "625 mm",
+    "value:DFRAMEDIAMETER=_22": "22 mm"
+  },
+  "KSEG001WW001": {
+    "value:DHEIGHT=_840T1045": "840-1045 mm",
+    "value:DSEATHEIGHT=_445T565": "445-565 mm",
+    "value:DSEATWIDTH=_470": "470 mm",
+    "value:DDEPTH=_644": "644 mm"
+  },
+  "KEM2008WW003": {
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDDEPTH=_16902X800": "1690 mm (2x 800 mm)",
+    "value:DHEIGHT=_650T1000": "650-1000 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_14902X700": "1490 mm (2x 700 mm)"
+  },
+  "KBRY002WW001": {
+    "value:DHEIGHT=_1400": "1400 mm",
+    "value:DWIDTH=_1180": "1180 mm",
+    "value:DDEPTH=_1580": "1580 mm"
+  },
+  "KBRY006WW001": {
+    "value:DHEIGHT=_1400": "1400 mm",
+    "value:DWIDTH=_1180": "1180 mm",
+    "value:DDEPTH=_1090": "1090 mm"
+  },
+  "KBRY005WW002": {
+    "value:DHEIGHT=_1400": "1400 mm",
+    "value:DWIDTH=_1180": "1180 mm",
+    "value:DDEPTH=_1090": "1090 mm"
+  },
+  "KBRY001WW003": {
+    "value:DHEIGHT=_1400": "1400 mm",
+    "value:DWIDTH=_1180": "1180 mm",
+    "value:DDEPTH=_1580": "1580 mm"
+  },
+  "KBRY005WW003": {
+    "value:DHEIGHT=_1400": "1400 mm",
+    "value:DWIDTH=_1180": "1180 mm",
+    "value:DDEPTH=_1090": "1090 mm"
+  },
+  "KBSP002WW001": {
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDDEPTH=_16002X800": "1600 mm (2x 800 mm)",
+    "value:DHEIGHT=_740": "740 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1200": "1200 mm",
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_14002X700": "1400 mm (2x 700 mm)"
+  },
+  "KPW2003WW001": {
+    "value:GDWIDTH=_1400": "1400 mm",
+    "value:GDDEPTH=_1490": "1490 mm",
+    "value:GDTOPDEPTH=_2X700": "2x 700 mm",
+    "value:DHEIGHT=_640T1300": "640-1300 mm",
+    "value:DTOPWIDTH=_1X1400": "1400 mm",
+    "value:DTOPTHICKNESS=_25": "25 mm",
+    "value:GDWIDTH=_1600": "1600 mm",
+    "value:GDWIDTH=_1800": "1800 mm",
+    "value:GDWIDTH=_2000": "2000 mm",
+    "value:GDDEPTH=_1690": "1690 mm"
+  }
+}

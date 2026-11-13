@@ -22,6 +22,11 @@ export function displayModelName(p:Product){
 }
 export function productHeading(p:Product){
  const name=displayModelName(p),kind=productKind(p);
- return kind?capitalize(kind.label)+' '+name:name;
+ const baseline=kind?capitalize(kind.label)+' '+name:name;
+ // Exact, approved title revision from the text review database.
+ if(process.env.PUBLIC_ORIGIN==='https://ergonomic-preview.pinet-azprekyba.workers.dev'&&
+    p.id==="product_2me-meeting-chairs_adb396de"&&p.modelConfigurationId==="16088548"&&baseline==="2ME 5-STAR UPH")
+   return "2ME kėdė su penkiažvaigžde baze ir apmušalais";
+ return baseline;
 }
 export function capitalize(value:string){return value.charAt(0).toLocaleUpperCase('lt')+value.slice(1);}

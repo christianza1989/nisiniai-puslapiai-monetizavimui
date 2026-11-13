@@ -11,6 +11,7 @@ export type {ChairReviewEntry} from '@/lib/chair-review-routing';
 import './pc2-chair-review.css';
 import {distinctPreviewLabels,previewCollection,previewField,previewModelLabel,previewTuple,previewValue} from '@/lib/preview-option-presentation';
 import {Pc2QuoteButton} from './pc2-quote-button';
+import {preparedFinishLabel} from '@/lib/prepared-finish-label';
 import type {Pc2ChairRoute,Pc2PendingFinish} from '@/lib/pc2-quote-selection';
 import {PreviewAdminCodes} from './preview-admin-codes';
 import {PreviewColourSample} from './preview-colour-sample';
@@ -50,6 +51,12 @@ function ModelReview({data,quoteRoute,pendingFinish,showAdminCodes,initialSingle
        return Object.entries(picked?.values??{});
      }))}
   : undefined;
+ const finishBaseline = Object.fromEntries(Object.entries(originalFinish).map(([field, entry]) => [field, entry.value]));
+ const displayFinish = (values: Record<string,string>) => {
+   if (!['KXLI002WW002','KXEN028WW001'].includes(data.code) || !Object.keys(finishBaseline).length) return finishTuple(values);
+   const caption = preparedFinishLabel(values,finishBaseline,previewField,text);
+   return caption === 'Pradinė apdaila' ? finishTuple(values) : caption;
+ };
  const adminValues={...current.default3DValues,...Object.fromEntries(Object.entries(originalFinish).map(([field,entry])=>[field,entry.value])),
    ...(originalPreview?{}:choice.values),...selectedWitness?.fixed,...pickedFinishes,...structuralValues,...visualMetadata?.values};
  const variant={id:data.code,asset:assembly.base?.asset||'',assetSha256:assembly.base?.assetSha256||'',bytes:assembly.base?.bytes||0} as PilotVariant;
@@ -87,7 +94,7 @@ function ModelReview({data,quoteRoute,pendingFinish,showAdminCodes,initialSingle
    {functional?.approximation&&<p className="form-note">Rodomas artimiausias surinktas išorinis modelis, ne šio funkcinio varianto tikslus 3D. Tikros pasirinkto produkto reikšmės pateiktos žemiau. Kitų konstrukcijų spalvos netaikomos.</p>}
    {Object.entries(structural).filter(([field])=>(!externalArmrests||field!=='CARMRESTS')&&(!externalBase||field!=='CBASE')&&(!externalCastors||field!=='CCASTORS')&&(!externalGaslift||field!=='CGASLIFT')&&(!externalMechanism||field!=='CMECHANISM')&&(!externalFoam||field!=='CSEATPADFOAM')).map(([field,s])=><label className="field" key={field}>{previewField(field)}<select aria-label={previewField(field)} value={current.dimensions[field]} onChange={e=>{if(s.supportedValues.includes(e.target.value)&&e.target.value===current.dimensions[field])construction(context,variants);}}>{s.supportedValues.map(value=><option value={value} key={value}>{text(field,value)}</option>)}</select><span className="form-note">Peržiūrai surinkta tik ši konstrukcija.</span></label>)}
    {current.groups.filter(g=>g.fields.length).map(g=>{const index=current.groups.indexOf(g);return <label className="field" key={index}>{g.fields.map(previewField).join(' / ')}<select aria-label={g.fields.map(previewField).join(' / ')} value={variants[index]??0} onChange={e=>{const next=[...variants];next[index]=Number(e.target.value);construction(context,next);}}>{g.variants.map((v,n)=><option key={n} value={n}>{tuple(v.values)}</option>)}</select></label>;})}
-   {(observed==='__pending'||choices.length>1||witnesses.length>1||witnesses.some(w=>w.singles.length)||!selectedWitness&&witnesses.some(w=>w.groups.length||w.branches.length))&&<label className="field">Surinkta spalvinė būsena<select aria-label="Surinkta spalvinė būsena" value={observed} onChange={e=>choose(e.target.value)}>{observed==='__pending'&&finishIntent&&<option value="__pending" disabled>{finishTuple(finishIntent.values)} · šiai konstrukcijai 3D nerodoma</option>}{choices.map(c=><option key={c.id} value={c.id}>{Object.keys(c.values).length?finishTuple(c.values):c.label}</option>)}{witnesses.filter(w=>w.groups.length||w.branches.length).map((w,index)=><option key={w.id} value={'__qg:'+w.id}>Apdailos pasirinkimai {index+1}</option>)}{witnesses.flatMap(w=>{const labels=distinctPreviewLabels(w.singles,s=>finishTuple(s.values));return w.singles.map((s,index)=><option key={w.id+s.id} value={'__qs:'+w.id+':'+s.id}>{labels[index]}</option>);})}</select></label>}
+   {(observed==='__pending'||choices.length>1||witnesses.length>1||witnesses.some(w=>w.singles.length)||!selectedWitness&&witnesses.some(w=>w.groups.length||w.branches.length))&&<label className="field">Surinkta spalvinė būsena<select aria-label="Surinkta spalvinė būsena" value={observed} onChange={e=>choose(e.target.value)}>{observed==='__pending'&&finishIntent&&<option value="__pending" disabled>{finishTuple(finishIntent.values)} · šiai konstrukcijai 3D nerodoma</option>}{choices.map(c=><option key={c.id} value={c.id}>{Object.keys(c.values).length?displayFinish(c.values):c.label}</option>)}{witnesses.filter(w=>w.groups.length||w.branches.length).map((w,index)=><option key={w.id} value={'__qg:'+w.id}>Apdailos pasirinkimai {index+1}</option>)}{witnesses.flatMap(w=>{const labels=distinctPreviewLabels(w.singles,s=>displayFinish(s.values));return w.singles.map((s,index)=><option key={w.id+s.id} value={'__qs:'+w.id+':'+s.id}>{labels[index]}</option>);})}</select></label>}
    {!witnesses.some(w=>w.groups.length||w.branches.length)&&(choices.length>1||witnesses.some(w=>w.singles.length>0))&&<p className="form-note">Galimos tik perduotos pilnos spalvinės būsenos. Atskiras vienodos visų apmuštų dalių spalvos pasirinkimas nepatvirtintas.</p>}
    {data.palette.schema==='chair-base-observed-colours-v1'&&!witnesses.some(w=>w.fixed||w.groups.length||w.branches.length||w.singles.length)&&<p className="form-note">Kitoms spalvoms trūksta patvirtinto ryšio su šios konstrukcijos paviršiais. 3D rodoma originali apdaila.</p>}
    {observed.startsWith('__qg:')&&selectedWitness&&<>

@@ -1,3 +1,4 @@
+import {publicContactEmails} from './public-contact';
 import facts from '../../content/editorial/facts.json';
 import type {Product} from './types';
 import {configurableArticle} from './configuration-article';
@@ -47,7 +48,7 @@ export function productReadingResponse(request:Request,products:Product[],full:b
  const mode=readingMode(request,access),pages=mode==='closed'?[]:[...standardPages,...productReadingPages(products,mode,runtimes)];
  const pkg={canonicalHost:'ergonomic.lt',site:{name:facts.brand,
   offer:facts.offer+(mode==='local-preview'?' Peržiūros turinys; paieškos indeksavimas išjungtas.':mode==='closed'?' Viešas turinio indeksas šioje peržiūroje nepateikiamas.':''),
-  contact:{email:facts.email,phone:facts.phone}}};
+  contact:{email:publicContactEmails().primary,phone:facts.phone}}};
  return new Response(coreReadingText(pkg,pages,full),{headers:{'Content-Type':'text/plain; charset=utf-8',
   'Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...(mode!=='public'?{'X-Robots-Tag':'noindex, nofollow'}:{})}});
 }

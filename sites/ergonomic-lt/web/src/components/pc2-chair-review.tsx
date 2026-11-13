@@ -3,13 +3,13 @@ import {useEffect,useMemo,useState} from 'react';
 import dynamic from 'next/dynamic';
 import {chairObservedChoices,chairPreviewAssembly,chairInitialContext,chairInitialVariants,chairInitialQualifiedSelection,type ChairPreview} from '@/lib/chair-preview';
 import {qualifiedWitnessMatches,qualifiedDefaultSelection,qualifiedChairPlan,qualifiedGroupOptions,qualifiedSetGroupOption,type QualifiedSelection,type QualifiedGroup} from '@/lib/chair-qualified-colors';
-import {qualifiedChairMaterialControls} from '@/lib/chair-material-groups';
+import {chairFinishCollection,chairFinishRoles,qualifiedChairMaterialControls} from '@/lib/chair-material-groups';
 import type {PilotVariant} from '@/lib/configurator';
 import {chairReviewVersion,chairReviewRoute,chairConstructionMenus,chairCompatibleFinishRoute,validateChairConstructionBinding,type ChairReviewEntry} from '@/lib/chair-review-routing';
 import {chairFinishIntent,resolveChairFinishIntent,type ChairFinishIntent} from '@/lib/chair-finish-intent';
 export type {ChairReviewEntry} from '@/lib/chair-review-routing';
 import './pc2-chair-review.css';
-import {distinctPreviewLabels,previewCollection,previewField,previewFinishField,previewTuple,previewValue} from '@/lib/preview-option-presentation';
+import {distinctPreviewLabels,previewCollection,previewField,previewTuple,previewValue} from '@/lib/preview-option-presentation';
 import {PreviewColourSample} from './preview-colour-sample';
 import SeglaVisualReview from './segla-visual-review';
 import {resolveSeglaVisual} from '@/lib/segla-visual-routing';
@@ -52,9 +52,11 @@ function ModelReview({data,initialSingle,finishIntent,onFinishIntent,externalArm
  function groupControl(group:QualifiedGroup){
   if(!selectedWitness||!qualified)return null;
   const options=qualifiedGroupOptions(selectedWitness,qualified,group);
-  const labels=distinctPreviewLabels(options,o=>[...new Set(Object.entries(o.values)
-   .map(([field,value])=>previewValue(data.code,field,value,
-     previewFinishField(field)?previewCollection(Object.values(selectedWitness.branches.find(b=>b.id===qualified.branch)?.values??{}).find(v=>previewCollection(v))??''):undefined)))].join(' · '));
+  const branchValues=selectedWitness.branches.find(b=>b.id===qualified.branch)?.values??{};
+  const labels=distinctPreviewLabels(options,o=>[...new Set(Object.entries(o.values).map(([field,value])=>{
+   const collection=chairFinishRoles[field]&&chairFinishCollection(field,{...branchValues,...o.values});
+   return previewValue(data.code,field,value,collection?previewCollection(collection):undefined);
+  }))].join(' · '));
   const sample=options.find(o=>o.id===(qualified.groups[group.id]??group.base));
   const sampleCode=sample&&Object.entries(sample.values).find(([field])=>/COLOU?R|CHCOL|COL$/.test(field))?.[1];
   return <label className="field" key={group.id}>{group.label}<select aria-label={group.label} value={qualified.groups[group.id]??group.base}

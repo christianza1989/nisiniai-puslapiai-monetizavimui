@@ -19,7 +19,7 @@ export function previewFinishField(field: string): boolean {
 }
 
 export function previewCollection(value: string): string | undefined {
-  return collections[value];
+  return collections[value] ?? colourNames[value];
 }
 
 export function previewValue(model: string, field: string, value: string, collection?: string): string {

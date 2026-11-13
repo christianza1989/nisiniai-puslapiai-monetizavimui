@@ -464,6 +464,8 @@ main .editorial-studio.configurator-fullscreen .viewer-stage { flex:1; height:au
  main .editorial-studio .gallery { grid-column:1; grid-row:4; }
  main .editorial-studio .duo-step-actions { flex-wrap:wrap; justify-content:space-between; gap:14px; }
  main .editorial-studio .duo-step-choice select { font-size:16px; }
+ main .editorial-studio .viewer-3d { display:flex; flex-direction:column; }
+ main .editorial-studio .viewer-toolbar { position:static; order:1; flex:none; flex-direction:row; justify-content:center; max-width:none; padding:4px 6px; }
  main .editorial-studio .viewer-stage { height:374px; }
  main .editorial-studio .gallery-main { height:374px; }
  main .editorial-studio.configurator-fullscreen .duo-studio-builder { display:flex; flex-direction:column; align-items:stretch; padding:12px 16px; overflow-y:auto; gap:20px; }

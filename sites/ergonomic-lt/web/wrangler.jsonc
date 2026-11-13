@@ -32,6 +32,7 @@
     "CANONICAL_ORIGIN": "https://ergonomic.lt",
     "SITE_INDEXABLE": "false",
     "PREVIEW_CATALOG": "true",
+    "PREVIEW_CONTACT_EMAIL": "ergonomic@ergonomic.lt",
     "COOKIE_SECURE": "true",
     "QUOTE_TO": "ergonomic@ergonomic.lt",
     "QUOTE_MAIL_TRANSPORT": "hostinger_api",

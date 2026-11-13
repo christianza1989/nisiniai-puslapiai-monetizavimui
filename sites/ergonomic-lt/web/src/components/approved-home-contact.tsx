@@ -1,11 +1,13 @@
 'use client';
 
 // editorial-copy-wired
+import {usePublicContactEmail} from '@/components/public-contact-provider';
 import {copyText} from '@/lib/editorial-copy';
 import Link from 'next/link';
 import {useEffect,useRef,useState} from 'react';
 
 export function ApprovedHomeContact(){
+  const contactEmail=usePublicContactEmail();
   const started=useRef(0),submissionKey=useRef(''),request=useRef<AbortController|null>(null);
   const [busy,setBusy]=useState(false),[error,setError]=useState(''),[saved,setSaved]=useState('');
   useEffect(()=>{started.current=Date.now();submissionKey.current=crypto.randomUUID();return ()=>request.current?.abort();},[]);
@@ -34,7 +36,7 @@ export function ApprovedHomeContact(){
       <button className="hp-contact-submit" type="submit" disabled={busy||Boolean(saved)}><span className="hp-submit-label">{busy?copyText("ui.afcc08464f50bcae5b17","Siunčiama…"):saved?copyText("ui.7124f3c22e55d751faca","Užklausa išsaugota"):copyText("ui.1206958e46faa88ab0d6","siųsti užklausą")}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
       {error&&<p className="hp-contact-status" role="alert">{error}</p>}
       {saved&&<p className="hp-contact-status" role="status">{copyText("ui.e029666104a564f964c6","Užklausa išsaugota. Užklausos numeris: ")}{saved.slice(0,8)}.</p>}
-      <noscript><p className="hp-contact-status">{copyText("ui.a7b48655a32a35c9dee3","Norėdami pateikti užklausą, susisiekite el. paštu ")}<a href="mailto:info@ergonomic.lt">info@ergonomic.lt</a>.</p></noscript>
+      <noscript><p className="hp-contact-status">{copyText("ui.a7b48655a32a35c9dee3","Norėdami pateikti užklausą, susisiekite el. paštu ")}<a href={'mailto:'+contactEmail}>{contactEmail}</a>.</p></noscript>
     </form>
   </section>;
 }

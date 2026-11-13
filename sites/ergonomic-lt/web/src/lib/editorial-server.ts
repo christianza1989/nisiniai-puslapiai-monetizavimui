@@ -1,3 +1,4 @@
+import {publicContactText} from './public-contact';
 import data from '../../content/editorial/compiled-server.json';
 import {parseHTML} from 'linkedom';
 import type {LegacyPage,Product,ProductArticle} from './types';
@@ -34,7 +35,7 @@ export function htmlTemplate(element:Element):{text:string;tokens:Record<string,
  return {text:Array.from(element.childNodes).map(walk).join(''),tokens};
 }
 export function applyEditorialHtml(scope:string,html:string):string{
- const bindings=copy.html[scope];if(!bindings?.length)return html;
+ const bindings=copy.html[scope];if(!bindings?.length)return publicContactText(html);
  const {document}=parseHTML('<html><body>'+html+'</body></html>');
  for(const binding of bindings){
   const node=document.body.querySelectorAll(binding.selector)[binding.index];if(!node)continue;
@@ -43,5 +44,5 @@ export function applyEditorialHtml(scope:string,html:string):string{
   const placeholders=binding.tokens||{};
   node.innerHTML=escape(binding.value).replace(/\[\[(open\d+|close\d+|void\d+)\]\]/g,(token,key)=>placeholders[key]??token);
  }
- return document.body.innerHTML;
+ return publicContactText(document.body.innerHTML);
 }

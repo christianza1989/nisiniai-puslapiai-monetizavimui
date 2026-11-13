@@ -1,3 +1,4 @@
+import {publicContactEmails} from './public-contact';
 
 // editorial-copy-wired
 import {copyText} from '@/lib/editorial-copy';
@@ -12,6 +13,7 @@ import {articleFieldLabels} from './configuration-article';
 import type {CatalogRuntime} from './catalog-configurator';
 
 export async function productCardPdf(product:Product,configuration:Configuration,variant:PilotVariant,individual=false,article?:ResolvedConfigurationArticle,articleLabel?:(field:string,value:string)=>string|undefined,labels?:{palettes?:CatalogRuntime['palettes'];family?:string}):Promise<Buffer>{
+  const contactEmail=publicContactEmails().primary;
   const optionLabels={...fieldLabels,...Object.fromEntries(Object.entries(labels?.palettes?._fieldLabels||{}).map(([k,v])=>[k,v.text])),...articleFieldLabels(product)};
   if(!/^\/media\/configurator\/\d+\.jpg$/.test(variant.image))throw Error(copyText("ui.6c1acd725c966f609aa2","Invalid local product image"));
   const [font,image]=await Promise.all([pdfAsset('/fonts/manrope.ttf'),productPdfImage(product,configuration,variant.image)]);
@@ -24,7 +26,7 @@ export async function productCardPdf(product:Product,configuration:Configuration
       const ink='#232624',muted='#626762',line='#d6d9d2',width=511;
       const text=(value:string,x:number,y:number,size=10,options:PDFKit.Mixins.TextOptions={})=>doc.fillColor(ink).fontSize(size).text(value.replace(/[\u2010-\u2015\u2212]/g,'-'),x,y,options);
       function header(subtitle:string){
-        text('ERGONOMIC.LT',42,36,16);doc.fillColor(muted).fontSize(9).text('info@ergonomic.lt  |  ergonomic.lt',42,61);
+        text('ERGONOMIC.LT',42,36,16);doc.fillColor(muted).fontSize(9).text(contactEmail+'  |  ergonomic.lt',42,61);
         doc.moveTo(42,85).lineTo(553,85).strokeColor(line).lineWidth(.6).stroke();
         text(subtitle,42,107,22,{width});
       }
@@ -38,7 +40,7 @@ export async function productCardPdf(product:Product,configuration:Configuration
       text(configuration.code||variant.supplierCode,316,y+18,12,{width:237});y+=61;
       doc.fillColor(muted).fontSize(9).text(copyText("ui.bd4471a8384fff6a89d9","Komplektacijos ID"),316,y,{width:237});text(variant.id,316,y+18,11);y+=56;
       text(copyText("ui.78d2499daa5e8623867e","Kaina pagal užklausą"),316,y,12,{width:237});
-      doc.fillColor(muted).fontSize(9).text('Pasiūlymui parašykite info@ergonomic.lt arba pateikite užklausą svetainėje.',316,y+26,{width:237,lineGap:3});
+      doc.fillColor(muted).fontSize(9).text('Pasiūlymui parašykite '+contactEmail+' arba pateikite užklausą svetainėje.',316,y+26,{width:237,lineGap:3});
       y=535;
       const important=(configuration.details||[]).filter(d=>['Galvos atrama','Porankiai','Pagrindas','Mechanizmas','Ratukai','Atlošas'].includes(d.label));
       const firstPageRows=(important.length?important:configuration.details||[]).slice(0,6);

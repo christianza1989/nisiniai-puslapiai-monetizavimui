@@ -1,3 +1,4 @@
+import {publicContactEmails} from '@/lib/public-contact';
 
 // editorial-copy-wired
 import {copyText} from '@/lib/editorial-copy';
@@ -5,6 +6,7 @@ import Link from 'next/link';
 import {ArrowUp,ArrowUpRight} from 'lucide-react';
 import {BrandLogo} from './brand-logo';
 export function SiteFooter(){
+  const {primary:contactEmail,secondary}=publicContactEmails();
   return <footer className="site-footer footer-unified">
     <div className="footer-grid">
       <div className="footer-brand-section">
@@ -38,8 +40,8 @@ export function SiteFooter(){
       <div className="footer-contacts">
         <h2 id="kontaktai-0">{copyText("ui.f30832526b86f2a53ca5","KONTAKTAI")}</h2>
         <p className="footer-company" id="uab-a-z-prekyba-1">UAB A-Z Prekyba</p>
-        <address><span>Buivydiškių g. 22, Vilnius, LT- 07195</span><a href="tel:+37069199833">+37069199833</a><a href="mailto:ergonomic@azprekyba.lt">ergonomic@azprekyba.lt</a></address>
-        <a className="footer-primary-email" href="mailto:info@ergonomic.lt">info@ergonomic.lt <ArrowUpRight size={14} aria-hidden="true"/></a>
+        <address><span>Buivydiškių g. 22, Vilnius, LT- 07195</span><a href="tel:+37069199833">+37069199833</a>{secondary&&<a href={'mailto:'+secondary}>{secondary}</a>}</address>
+        <a className="footer-primary-email" href={'mailto:'+contactEmail}>{contactEmail} <ArrowUpRight size={14} aria-hidden="true"/></a>
       </div>
     </div>
     <div className="footer-end">

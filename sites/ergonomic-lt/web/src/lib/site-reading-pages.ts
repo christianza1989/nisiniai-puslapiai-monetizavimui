@@ -1,3 +1,4 @@
+import {publicContactEmails} from './public-contact';
 import {parseHTML} from 'linkedom';
 import type {Seed,Product} from './types';
 import {legacyPages} from './catalog';
@@ -26,6 +27,7 @@ export function visibleHtmlText(html:string){
 }
 /** Descriptors come from the same approved package, HTML and catalog as the UI. */
 export function standardSitePages(seed:Seed,parents:Product[],models:Product[]):ReadingPage[]{
+ const {primary,secondary}=publicContactEmails();
  const pages=legacyPages().map(page=>{
   const body=page.path==='/'?visibleHtmlText(applyEditorialHtml('home-hero',approvedHeroMarkup)+applyEditorialHtml('home-sections',approvedSectionsMarkup)):[articlePresentation[page.path]?.intro||'',...visibleHtmlText(legacyArticle(page).html),...seoFaqRows(page.path).flat()];
   const selection=selections.find(s=>s.path===page.path);
@@ -36,8 +38,8 @@ export function standardSitePages(seed:Seed,parents:Product[],models:Product[]):
  for(const c of seed.categories.filter(c=>!c.parentId&&models.some(p=>p.categoryId===c.id)))pages.push(readingPage('/produktai/'+c.slug+'/',c.name,c.name,[],models.filter(p=>p.categoryId===c.id).map(p=>({targetPageId:path(p),label:productHeading(p)})),'category'));
  const guidePaths=['/biuro-kedes/','/ergonominiai-stalai/','/ergonomines-kedes/','/ergonomika-darbo-vietoje-reikalavimai/','/aktyvus-sedejimas/','/shop/balansines-kedes/','/mokykliniai-baldai/','/shop/priedai/'];
  pages.push(readingPage('/gidai/',copyText('ui.c55d53bcf1df3a653399','Ergonomikos gidai'),copyText('ui.423be1d0e1795a4b54da','Darbo vietos, kėdžių, stalų ir aktyvaus sėdėjimo gidai.'),[],pages.filter(p=>guidePaths.includes(p.id)).map(p=>({targetPageId:p.id,label:p.title})),'guide'));
- pages.push(readingPage('/kontaktai/',copyText('ui.8e9f4267042683306efa','Kontaktai'),facts.brand,[facts.company,facts.address,facts.email,facts.secondaryEmail,facts.phone]));
- pages.push(readingPage('/privatumas/',privacyText('ui.67095de234af3fa7d9a9'),facts.company,[facts.company,facts.address,facts.email,...privacyDocument()]));
+ pages.push(readingPage('/kontaktai/',copyText('ui.8e9f4267042683306efa','Kontaktai'),facts.brand,[facts.company,facts.address,primary,...(secondary?[secondary]:[]),facts.phone]));
+ pages.push(readingPage('/privatumas/',privacyText('ui.67095de234af3fa7d9a9'),facts.company,[facts.company,facts.address,primary,...privacyDocument()]));
  for(const steam of [false,true]){const doc=customFurnitureDocument(steam);pages.push(readingPage(doc.path,doc.title,doc.texts[0],doc.texts,[{targetPageId:'/ergonominiai-stalai/',label:copyText('ui.3dd3ef0abc8031398875','Ergonominiai stalai')}],'service'));}
  pages.push(readingPage('/kolekcijos/',copyText('ui.77b8e5f971c31c0c81ba','Kolekcijos'),facts.brand,[],seed.lines.filter(l=>models.some(p=>p.lineId===l.id)).map(l=>({targetPageId:'/kolekcijos/'+l.slug+'/',label:l.name})),'category'));
  for(const l of seed.lines.filter(l=>models.some(p=>p.lineId===l.id)))pages.push(readingPage('/kolekcijos/'+l.slug+'/',l.name,copyText('ui.ca9fc28b417ae6b4b8a2','Kolekcijos modeliai jūsų darbo erdvei.'),[],models.filter(p=>p.lineId===l.id).map(p=>({targetPageId:path(p),label:productHeading(p)})),'category'));

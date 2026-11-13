@@ -1,5 +1,7 @@
 import {isAdmin} from './auth';
-import {connectedFieldLabel,connectedColourLabel,connectedValueLabel,connectedColourField} from './connected-choice-presentation';
+import {preparedFinishLabel} from './prepared-finish-label';
+import {verifiedChairFinishV2} from './verified-chair-finish-v2';
+import {connectedFieldLabel,connectedColourLabel,connectedValueLabel,connectedColourField,customerSummaryRows} from './connected-choice-presentation';
 import verifiedProposals from '../../content/text-review-option-proposals.json';
 import inventory from '../../content/text-review-inventory.json';
 import {canonicalReviewValue} from './text-review-value';
@@ -24,11 +26,31 @@ import {chairMaterialDocument,type ChairPreview} from './chair-preview';
 import {initialPreparedChair,preparedChairAssembly,preparedChairValues,preparedChairChoices} from './prepared-chair-choices';
 import type {PreparedChairSelection} from './prepared-chair-selection';
 import type {Product} from './types';
-export type PreparedCustomerChair={entry:typeof entries.entries[number];data:ChairPreview};
+export type PreparedCustomerChair={entry:typeof entries.entries[number];data:ChairPreview;finishRevision?:string};
 const cache=new Map<string,Promise<PreparedCustomerChair>>();
+// Captions only: retain the original linked selection, materials and geometry.
+const vapaaConstructionCaptions=new Map([
+ ["Porankiai: Be porankių · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Apsauga sukraunant kėdes: Nėra · Rašymo lentelė: Nėra","Aukštas medinis korpusas su pagalvėlėmis · Be porankių"],
+ ["Porankiai: Be porankių · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Apsauga sukraunant kėdes: Apsauginė pagalvėlė kėdėms sukrauti · Rašymo lentelė: Nėra","Aukštas medinis korpusas su pagalvėlėmis · Be porankių · Apsauga kraunant kėdes"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Apsauga sukraunant kėdes: Nėra · Rašymo lentelė: Nėra","Aukštas medinis korpusas su pagalvėlėmis · Metaliniai porankiai"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Apsauga sukraunant kėdes: Apsauginė pagalvėlė kėdėms sukrauti · Rašymo lentelė: Nėra","Aukštas medinis korpusas su pagalvėlėmis · Metaliniai porankiai · Apsauga kraunant kėdes"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Rašymo lentelė: Laminuotos faneros rašymo padėklas kairiarankiams","Aukštas medinis korpusas su pagalvėlėmis · Metaliniai porankiai · Lentelė kairiarankiams"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukšta medinė konstrukcija su apmuštomis pagalvėlėmis · Rašymo lentelė: Laminuotos faneros rašymo padėklas dešiniarankiams","Aukštas medinis korpusas su pagalvėlėmis · Metaliniai porankiai · Lentelė dešiniarankiams"],
+ ["Porankiai: Be porankių · Korpusas: Aukštas medinis korpusas · Apsauga sukraunant kėdes: Tarpikliai kėdėms sukrauti · Rašymo lentelė: Nėra","Aukštas medinis korpusas · Be porankių · Tarpikliai kraunant kėdes"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukštas medinis korpusas · Apsauga sukraunant kėdes: Tarpikliai kėdėms sukrauti · Rašymo lentelė: Nėra","Aukštas medinis korpusas · Metaliniai porankiai · Tarpikliai kraunant kėdes"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukštas medinis korpusas · Rašymo lentelė: Laminuotos faneros rašymo padėklas kairiarankiams","Aukštas medinis korpusas · Metaliniai porankiai · Lentelė kairiarankiams"],
+ ["Porankiai: Integruota į rėmą, atvira priekyje, metalinė · Korpusas: Aukštas medinis korpusas · Rašymo lentelė: Laminuotos faneros rašymo padėklas dešiniarankiams","Aukštas medinis korpusas · Metaliniai porankiai · Lentelė dešiniarankiams"],
+]);
 const sharedOriginals=new Map<string,Set<string>>();
 for(const[model,values]of Object.entries(english.models)){const meta=(inventory.models as Record<string,{path:string}>)[model];if(!meta||!meta.path.includes('/kedes/')&&!entries.entries.some(e=>e.code===model))continue;for(const[binding,text]of Object.entries(values)){const set=sharedOriginals.get(binding)||new Set<string>();set.add(text);sharedOriginals.set(binding,set);}}
-function sourceText(code:string,field:string,value?:string){const binding=(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value),canonical=value===undefined?binding:'value:'+field+'='+canonicalReviewValue(code,field,value),own=(english.models as Record<string,Record<string,string>>)[code],shared=sharedOriginals.get(canonical)||sharedOriginals.get(binding);return own?.[binding]||own?.[canonical]||(shared?.size===1?[...shared][0]:undefined);}
+function sourceText(code:string,field:string,value?:string){const binding=(value===undefined?'field:':'value:')+field+(value===undefined?'':'='+value),canonical=value===undefined?binding:'value:'+field+'='+canonicalReviewValue(code,field,value),own=(english.models as Record<string,Record<string,string>>)[code],shared=sharedOriginals.get(canonical)||sharedOriginals.get(binding);
+ const direct=own?.[binding]||own?.[canonical]||(shared?.size===1?[...shared][0]:undefined);if(direct)return direct;
+ // A textile collection has the same manufacturer name on a seat and the
+ // generic upholstery controller. Only an unambiguous saved original may fill
+ // a missing name; this never assigns colours, roles or material bindings.
+ const collection=value&&/UPHGROUP$/.test(field)?sharedOriginals.get('value:CUPHGROUP='+value):undefined;
+ return collection?.size===1?[...collection][0]:undefined;
+}
 function sourceProposal(field:string,value:string,original:string|undefined){const binding='value:'+field+'='+value,known=(verifiedProposals as Record<string,Record<string,string>>)[binding];return original?known?.[original.trim().replace(/\s+/g,' ').toLowerCase()]:undefined;}
 export async function loadPreparedCustomerChair(product:Product):Promise<PreparedCustomerChair|undefined>{
  const identity=connectedChoiceModel(product,'prepared');if(!identity)return;
@@ -37,7 +59,8 @@ export async function loadPreparedCustomerChair(product:Product):Promise<Prepare
   const bytes=await customerSourceAsset(entry.asset);if(bytes.byteLength!==entry.bytes||createHash('sha256').update(bytes).digest('hex')!==entry.sha256)throw Error('Kėdės paketo tapatybė pasikeitė.');
   const data=JSON.parse(Buffer.from(bytes).toString('utf8')) as ChairPreview;
   if(data.schema!=='pc2-chair-review-111-v1'||data.code!==entry.code||data.runtime.code!==entry.code||data.palette.code!==entry.code||data.palette.runtimeSha256!==data.runtimeSha256)throw Error('Netinkamas kėdės paketas.');
-  return {entry,data};})();if(cache.size>=2)cache.delete(cache.keys().next().value!);cache.set(entry.sha256,task);task.catch(()=>cache.delete(entry.sha256));}return task;
+  const finishRevision=verifiedChairFinishV2(data,entry.sha256);
+  return {entry,data,finishRevision};})();if(cache.size>=2)cache.delete(cache.keys().next().value!);cache.set(entry.sha256,task);task.catch(()=>cache.delete(entry.sha256));}return task;
 }
 export function preparedSupplierConfiguration(product:Product,source:PreparedCustomerChair,input?:PreparedChairSelection){
  const selection=input||initialPreparedChair(source.data),values=preparedChairValues(source.data,selection),sample=product.configurations.find(c=>c.id===product.modelConfigurationId)!;
@@ -54,7 +77,11 @@ async function publicPreparedAssembly(source:PreparedCustomerChair,selection:Pre
  for(const patch of assembly.patches){const assets=[];for(const ref of patch.geometries||(patch.geometry?[patch.geometry]:[]))assets.push(await asset(ref));patches.push({remove:patch.remove.map(customerSceneName),assets});}
  const extra=[];for(const ref of plan.assets||[])extra.push(await asset(ref));
  const document:{asset:{version:string};materials:unknown[];images:unknown[];textures:unknown[];samplers:unknown[];extensionsUsed:string[]}={asset:{version:'2.0'},materials:[],images:[],textures:[],samplers:[],extensionsUsed:[]},materialIds:string[]=[];
- for(const [id,material]of Object.entries(plan.materials)){
+ // The mounted material loader must know the same admitted catalogue before
+ // and after a colour change. Only assignments change; an initially empty
+ // document would leave that loader unable to resolve the first new material.
+ const materialCatalogue=source.finishRevision?data.qualified!.materials:plan.materials;
+ for(const [id,material]of Object.entries(materialCatalogue)){
   const doc=chairMaterialDocument(material,data.textures),textureOffset=document.textures.length,imageOffset=document.images.length,samplerOffset=document.samplers.length;
   function shift(value:any):any{if(Array.isArray(value))return value.map(shift);if(!value||typeof value!=='object')return value;return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,k==='index'&&typeof v==='number'?v+textureOffset:shift(v)]));}
   document.materials.push(...(doc.materials as unknown[]).map(shift));document.images.push(...doc.images);document.textures.push(...(doc.textures as {source:number;sampler:number}[]).map(t=>({...t,source:t.source+imageOffset,sampler:t.sampler+samplerOffset})));document.samplers.push(...doc.samplers);document.extensionsUsed=[...new Set([...document.extensionsUsed,...doc.extensionsUsed])];materialIds.push(customerSceneName(id));
@@ -81,8 +108,34 @@ export async function preparedCustomerConfiguration(product:Product,source:Prepa
   return fields.map(fieldName).join(' / ')||'Apdaila';
  };
  let admin=false;try{admin=await isAdmin();}catch{}
- const controls=rows.map(row=>{const fields=row.fields.filter(f=>!/PRICE|PACK|ASSEMBLY/.test(f));return {id:ids.field('prepared:'+row.key),...(admin?{adminCodes:fields.filter(f=>selected.values[f]!==undefined).map(f=>f+'='+selected.values[f])}:{}),label:rowLabel(row,fields),value:ids.choice('prepared:'+row.key,row.current),choices:row.options.map(o=>({id:ids.choice('prepared:'+row.key,o.key),label:row.key==='finish-state'&&o.key==='original'?'Pradinė apdaila':row.key==='finish-state'&&o.key.startsWith('qualified:')&&(source.data.qualified?.witnesses.find(w=>w.id===o.selection.qualified?.witness)?.groups.length||source.data.qualified?.witnesses.find(w=>w.id===o.selection.qualified?.witness)?.branches.some(b=>b.groups.length))?'Individuali apdaila':row.key.startsWith('chair-material-')?tuple(fields.slice(0,1),o.values):tuple(fields,o.values)})),...(!fields.every(isColourField)?{mechanismPreview:true}:{})};});
- const details=Object.entries(selected.values).filter(([f])=>/^(?:C|F|D|GD)/.test(f)&&!/PRICE|PACK|ASSEMBLY/.test(f)).map(([f,v])=>({label:fieldName(f),value:valueName(f,v)}));
+ const controls=rows.map(row=>{
+  const fields=row.fields.filter(f=>!/PRICE|PACK|ASSEMBLY/.test(f));
+  const finishState=row.key==='finish-state';
+  const pairedFinish=fields.length>1&&fields.some(isColourField)&&fields.every(f=>isColourField(f)||/MATERIAL|GROUP/.test(f));
+  const baseline=finishState?row.options.find(o=>o.key==='original')?.values:pairedFinish?preparedChairValues(source.data,{...initialPreparedChair(source.data,selection.context),qualified:undefined}):undefined;
+  const caption=(option:typeof row.options[number])=>{
+   if(row.key.startsWith('chair-material-'))return tuple(fields.slice(0,1),option.values);
+   if(finishState&&option.key.startsWith('qualified:')){
+    const witness=source.data.qualified?.witnesses.find(w=>w.id===option.selection.qualified?.witness);
+    if(witness?.groups.length||witness?.branches.some(b=>b.groups.length))return 'Individuali apdaila';
+   }
+   if(baseline){
+    const values=Object.fromEntries(fields.filter(f=>option.values[f]!==undefined).map(f=>[f,option.values[f]]));
+    return preparedFinishLabel(values,baseline,fieldName,valueName);
+   }
+   const label=tuple(fields,option.values);
+   return code==='KVAP008WW001'?(vapaaConstructionCaptions.get(label)??label):label;
+  };
+  return {
+   id:ids.field('prepared:'+row.key),
+   ...(admin?{adminCodes:fields.filter(f=>selected.values[f]!==undefined).map(f=>f+'='+selected.values[f])}:{}),
+   label:rowLabel(row,fields),
+   value:ids.choice('prepared:'+row.key,row.current),
+   choices:row.options.map(option=>({id:ids.choice('prepared:'+row.key,option.key),label:caption(option)})),
+   ...(!fields.every(isColourField)?{mechanismPreview:true}:{}),
+  };
+ });
+ const details=customerSummaryRows(Object.entries(selected.values).filter(([f])=>/^(?:C|F|D|GD)/.test(f)&&!/PRICE|PACK|ASSEMBLY/.test(f)).map(([f,v])=>({label:fieldName(f),value:valueName(f,v)})));
  const name=customerLabel(product.customerHeading||product.textReviewHeading||product.name,codes,'Biuro kėdė'),publicAssembly=await publicPreparedAssembly(source,selection);
  return {token:cap.seal('configuration',{...scope,prepared:selection,revision}),selectionId:cap.id('selection',{...scope,prepared:selection,revision}),productId:'product_public_'+cap.id('product',scope),name,controls,steps:[{id:'configuration',label:'Komplektacija',controls:controls.map(c=>c.id)}],details,...publicAssembly,finishes:{},available3D:!!publicAssembly.assets.base||publicAssembly.assets.patches.some(p=>p.assets.length>0)};
 }

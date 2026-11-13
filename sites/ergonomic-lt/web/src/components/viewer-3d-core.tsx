@@ -159,13 +159,15 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
       const hit=raycaster.intersectObjects(upholsteryMeshes(),false)[0];if(hit)inspect(hit.point);
     };
     element.addEventListener('dblclick',inspectPointer);
-    const resize=()=>{const {width,height}=host.getBoundingClientRect();if(width<=0||height<=0)return;
+    const sizeViewport=()=>{const rect=host.getBoundingClientRect(),{width,height}=rect;if(width<=0||height<=0)return false;
       renderer!.setSize(width,height,false);camera.aspect=width/height;
-      const rect=host.getBoundingClientRect(),toolbar=host.parentElement?.querySelector('.viewer-toolbar')?.getBoundingClientRect();
+      const toolbar=host.parentElement?.querySelector('.viewer-toolbar')?.getBoundingClientRect();
       const rightInset=avoidToolbarOverlap&&toolbar&&toolbar.left>rect.left+width/2&&toolbar.bottom>rect.top&&toolbar.top<rect.bottom?rect.right-toolbar.left+8:0;
       const viewport=unobstructedCameraViewport(width,height,rightInset);framingAspect=viewport.aspect;
       if(viewport.inset)camera.setViewOffset(width,height,viewport.offsetX,0,width,height);else camera.clearViewOffset();
-      camera.updateProjectionMatrix();
+      camera.updateProjectionMatrix();return true;
+    };
+    const resize=()=>{if(!sizeViewport())return;
       if(controls.enabled&&object){
         view.resize(framingAspect);render();
       }else fit();};
@@ -221,8 +223,23 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         context.shadowPreparation??=prepareContactShadow(renderer!,scene);await context.shadowPreparation;if(disposed)return;
         disposeShadow=contactShadow(renderer!,scene,object,!!chairColors.current);
         roomSurfaces=productShowroom(object,light);scene.add(roomSurfaces.group,roomSurfaces.target);applyScene();applyFinishes.current();
-        if(deskColors.current){const materialKey=JSON.stringify(deskColors.current.source);colorMaterials=context.deskMaterials.get(materialKey);if(!colorMaterials){colorMaterials=createDeskColorMaterials(deskColors.current.source);context.deskMaterials.set(materialKey,colorMaterials);}colorApplication=createDeskColorApplication(object);
-          applyDeskColors.current=async()=>{if(!deskColors.current||!colorApplication||!colorMaterials||disposed)return;const revision=++colorRevision;colorFailed=false;setColorState('loading');try{const applied=await colorApplication.apply(deskColors.current.plan,colorMaterials.get);if(applied&&!disposed&&revision===colorRevision){renderer!.shadowMap.needsUpdate=true;render();setColorState('ready');}}catch{if(!disposed&&revision===colorRevision){colorFailed=true;setColorState('error');setState('error');}}};
+        if(deskColors.current){colorApplication=createDeskColorApplication(object);
+          applyDeskColors.current=async()=>{
+            const colors=deskColors.current;if(!colors||!colorApplication||disposed)return;
+            const revision=++colorRevision;colorFailed=false;setColorState('loading');
+            try{
+              // A signed colour transition may supply a different material
+              // document while the geometry stays identical. Use that current
+              // document, rather than the initially mounted empty catalogue.
+              const key=JSON.stringify(colors.source);colorMaterials=context.deskMaterials.get(key);
+              if(!colorMaterials)colorMaterials=createDeskColorMaterials(colors.source);
+              context.deskMaterials.delete(key);context.deskMaterials.set(key,colorMaterials);
+              const applied=await colorApplication.apply(colors.plan,colorMaterials.get);
+              if(applied&&!disposed&&revision===colorRevision){renderer!.shadowMap.needsUpdate=true;render();setColorState('ready');setState('ready');
+                while(context.deskMaterials.size>2){const oldest=context.deskMaterials.keys().next().value!;context.deskMaterials.get(oldest)!.dispose();context.deskMaterials.delete(oldest);}
+              }
+            }catch{if(!disposed&&revision===colorRevision){colorFailed=true;setColorState('error');setState('error');}}
+          };
           await applyDeskColors.current();
           if(colorFailed)return;
         }else if(chairColors.current){
@@ -251,7 +268,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
         }else setColorState('original');
         if(disposed)return;await prepareViewerTextures(renderer!,scene,abort.signal,context.textureCache);if(disposed)return;
         await renderer!.compileAsync(scene,camera);if(disposed)return;
-        initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');context.retired.splice(0).forEach(dispose=>dispose());while(context.deskMaterials.size>2){const key=context.deskMaterials.keys().next().value!;context.deskMaterials.get(key)!.dispose();context.deskMaterials.delete(key);}
+        sizeViewport();initialized=true;controls.enabled=true;fit();setCanInspect(upholsteryMeshes().length>0);setState('ready');context.retired.splice(0).forEach(dispose=>dispose());while(context.deskMaterials.size>2){const key=context.deskMaterials.keys().next().value!;context.deskMaterials.get(key)!.dispose();context.deskMaterials.delete(key);}
       }catch{if(!disposed&&!abort.signal.aborted)setState('error');}
     })();
     return()=>{disposed=true;colorRevision++;applyDeskColors.current=async()=>{};applyChairColors.current=async()=>{};abort.abort();observer.disconnect();element.removeEventListener('webglcontextlost',contextLost);element.removeEventListener('dblclick',inspectPointer);

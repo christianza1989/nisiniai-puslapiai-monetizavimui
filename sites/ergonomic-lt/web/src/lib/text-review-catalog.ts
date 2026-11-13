@@ -27,13 +27,14 @@ export async function reviewedCatalogTitles(seed:Seed,onlyCurrentProducts=false)
  if(!rows.length&&!preview)return seed;
  const edits=new Map(rows.map(r=>[r.key,r]));
  return {...seed,products:seed.products.map(p=>{
-  const names:Record<string,string>={};
+  const names:Record<string,string>={},humanTitles:string[]=[];
   for(const sample of ['line',...p.configurations.map(c=>c.id)]){
    const edit=edits.get(contentTextKey(p.id+':'+sample,'title'));
    const original=sample==='line'?p:modelProduct(p,p.configurations.find(c=>c.id===sample)!);
    const view=publicProductView({...original,textReviewHeading:undefined});
    const hash=createHash('sha256').update(JSON.stringify(view.publicHeading||view.name)).digest('hex');
    const baseline=view.publicHeading||view.name;
+   if(preview?edit?.source_hash===hash&&(edit.state==='kept'||!!edit.draft.trim()):edit?.published_hash===hash&&edit.published!==null)humanTitles.push(sample);
    let title=displayedReviewText({sourceHash:hash,suggested:suggestedModelTitle(original,baseline)},edit,baseline);
    const code=original.configurations.find(c=>c.id===original.modelConfigurationId)?.code;
    for(const [key,id]of Object.entries(code?inventory.models[code]?.bindings||{}:{}))if(key.startsWith('name:')){
@@ -45,6 +46,6 @@ export async function reviewedCatalogTitles(seed:Seed,onlyCurrentProducts=false)
    }
    if(title!==baseline||edit?.published_hash===hash)names[sample]=title;
   }
-  return Object.keys(names).length?{...p,textReviewNames:names,textReviewHeading:names.line}:p;
+  return Object.keys(names).length||humanTitles.length?{...p,textReviewNames:names,textReviewHeading:names.line,textReviewHumanTitles:humanTitles}:p;
  })};
 }

@@ -22,6 +22,22 @@ export function previewCollection(value: string): string | undefined {
   return collections[value] ?? colourNames[value];
 }
 
+const colourCollections: Record<string, string> = data.colourCollections;
+const collectionPrefixes = Object.keys(colourCollections).sort((a, b) => b.length - a.length);
+
+export function previewCollectionForColour(code: string): string | undefined {
+  const prefix = collectionPrefixes.find(prefix => code.startsWith(prefix) && /^\d/.test(code.slice(prefix.length)));
+  return prefix ? colourCollections[prefix] : undefined;
+}
+
+export function previewColourSample(code: string) {
+  return (data.colourSamples as Record<string, { image?: string; color?: string }>)[code];
+}
+
+export function previewModelLabel(model: string, name: string): string {
+  return (data.modelCaptions as Labels)[model] ?? name;
+}
+
 export function previewValue(model: string, field: string, value: string, collection?: string): string {
   if (value === 'NONE') return 'Nėra';
   if (value === 'YES') return 'Taip';
@@ -43,8 +59,16 @@ export function previewValue(model: string, field: string, value: string, collec
   const label = models[model]?.[key] ?? values[key];
   if (!previewFinishField(field)) return label ?? 'Aprašymas nepateiktas';
   const name = label ?? colourNames[value] ?? collections[value];
-  return [collection, name].filter((part, index, all) => part && all.indexOf(part) === index).join(' · ')
-    || 'Spalvos pavadinimas nepateiktas';
+  const isCollection = /UPHGROUP|MESHGROUP|GROUP.*(?:UPH|MESH)/.test(field);
+  if (isCollection) return name ?? collection ?? 'Kolekcijos pavadinimas nepateiktas';
+
+  const code = value;
+  const knownCollection = collection ?? previewCollectionForColour(value);
+  if (knownCollection) {
+    const shade = name && name.toLocaleLowerCase('en') !== knownCollection.toLocaleLowerCase('en') ? name : undefined;
+    return [knownCollection + ' ' + code, shade].filter(Boolean).join(' · ');
+  }
+  return name ? name + ' ' + code : code;
 }
 
 export function previewTuple(model: string, values: Record<string, string | undefined>, caption = false): string {
@@ -64,6 +88,13 @@ export function distinctPreviewLabels<T>(options: T[], getLabel: (option: T) => 
     seen.set(label, index);
     return label + ' · ' + index;
   });
+}
+
+export function previewSupplierValues(options: string[]) {
+  return Object.fromEntries(options.flatMap(option => {
+    const separator = option.indexOf('=');
+    return separator > 0 ? [[option.slice(0, separator), option.slice(separator + 1)]] : [];
+  }));
 }
 
 export function previewQuoteDetails(model: string, options: string[]) {

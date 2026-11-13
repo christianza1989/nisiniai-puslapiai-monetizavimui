@@ -3,3 +3,4 @@
 .pc2-colour-sample{display:block;width:1.5rem;height:1.5rem;border:1px solid var(--line,#d9dedb);border-radius:.2rem;object-fit:cover;margin-top:.25rem}
 .pc2-chair-review .field select{min-width:0;width:100%;text-overflow:ellipsis}
 .pc2-chair-review .pc2-chair-controls dd{overflow-wrap:anywhere}
+.pc2-admin-codes{margin:1rem 0;padding:.75rem;border:1px solid var(--line,#d9dedb);border-radius:.5rem}.pc2-admin-codes summary{font-weight:600;cursor:pointer}.pc2-admin-codes dl{margin:.75rem 0 0}.pc2-admin-codes dl>div{display:grid;gap:.15rem;padding:.4rem 0;border-bottom:1px solid var(--line,#d9dedb)}.pc2-admin-codes code{overflow-wrap:anywhere}

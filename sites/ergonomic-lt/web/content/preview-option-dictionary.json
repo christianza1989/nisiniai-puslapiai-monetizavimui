@@ -6631,5 +6631,1395 @@
     "GDTOPSWIDTH",
     "GDTOPWIDTH",
     "GDWIDTH"
-  ]
+  ],
+  "colourCollections": {
+    "BN": "Bondai",
+    "CSE": "Era",
+    "CUZ": "Blazer",
+    "LDS": "Synergy",
+    "MLF": "Main Line Flax",
+    "NAP": "Nappa Leather",
+    "RH": "Rhythm",
+    "RX": "Remix 3",
+    "XR": "Xtreme"
+  },
+  "modelCaptions": {
+    "KLYN002WW002": "Lynx – aukštas apmuštas atlošas",
+    "KLYN001WW002": "Lynx – žemas apmuštas atlošas",
+    "KLYN003WW002": "Lynx – lankytojų kėdė",
+    "KSOU001WW003": "Souly – tinklinis atlošas",
+    "KSOU001WW004": "Souly – apmuštas atlošas",
+    "KNAU017WW001": "Naudu – dažytas rėmas",
+    "KNAU018WW001": "Naudu – buko rėmas",
+    "KNXT001WW002": "Nexter – tinklinis atlošas",
+    "KNXT002WW002": "Nexter – apmuštas atlošas su plastikiniu gaubtu",
+    "KWI2001WW001": "Wing II – su rašymo lentele",
+    "KWI2003WW001": "Wing II – juodas rėmas",
+    "KWI2003WW002": "Wing II – kašmyro spalvos rėmas",
+    "KWI2006WW001": "Wing I – keturios kojos",
+    "KWI2011WW001": "Wing V.40 – keturios kojos",
+    "KWI2005WW001": "Wing II.60 – keturios kojos",
+    "KXEN032WW001": "Xenium – Duo-Back atlošas",
+    "KXEN033WW003": "Xenium – apmuštas atlošas su plastikiniu gaubtu",
+    "KXEN034WW001": "Xenium – tinklinis atlošas",
+    "KXEN035WW001": "Xenium – dvispalvis atlošas",
+    "KXEN028WW001": "Xenium – apmuštas atlošas",
+    "KYOU002WW001": "YouTEAM – aukštas apmuštas atlošas",
+    "KYOU001WW001": "YouTEAM – žemas apmuštas atlošas",
+    "KYOU002WW002": "YouTEAM – aukštas tinklinis atlošas",
+    "KYOU001WW003": "YouTEAM – žemas Elasto-net atlošas",
+    "KUTI004WW002": "Utila Pro – tinklinis atlošas, šviesiai pilka konstrukcija",
+    "KUTI004WW001": "Utila Pro – tinklinis atlošas, juoda konstrukcija",
+    "KUTI001WW002": "Utila – apmuštas atlošas, pilka konstrukcija",
+    "KUTI005WW001": "Utila Pro Hygienic – apmuštas atlošas, juoda konstrukcija",
+    "K2ME001WW002": "2ME – vientisas lenktas rėmas",
+    "K2ME003WW001": "2ME – keturios kojos, juodas rėmas",
+    "K2ME003WW002": "2ME – keturios kojos, kašmyro spalvos rėmas",
+    "K4ME001WW003": "4ME – apmuštas atlošas, juoda konstrukcija",
+    "K4ME002WW004": "4ME – tinklinis atlošas, balta konstrukcija",
+    "KAII001WW001": "Airi – tinklelis JM51",
+    "KAII001WW002": "Airi – tinklelis JM50",
+    "KAII001WW003": "Airi – tinklelis JM56",
+    "KAII001WW004": "Airi – tinklelis JM55",
+    "KBJA003WW002": "Bjarg – aukštas atlošas",
+    "KBJA001WW002": "Bjarg – žemas atlošas",
+    "KXLI001WW002": "X-Line – apmuštas atlošas",
+    "KXLI002WW002": "X-Line – tinklinis atlošas",
+    "KSAI008WW002": "Sail – apmuštas atlošas",
+    "KSAI001WW002": "Sail – tinklinis atlošas",
+    "KPOX002WW002": "Prox – šviesiai pilka konstrukcija",
+    "KPOX002WW001": "Prox – juoda konstrukcija",
+    "KLEV023WW002": "Levitate – stalas su pakabinama spintele, Traffic White",
+    "KLEV025WW002": "Levitate – dvi sujungtos darbo vietos",
+    "KLEV021WW002": "Levitate – fiksuoto aukščio stalas",
+    "KLEV022WW002": "Levitate – pneumatiškai reguliuojamas aukštis",
+    "KLEV024WW002": "Levitate – stalas su pakabinama spintele, Jet Black",
+    "KLEV026WW002": "Levitate – dvi darbo vietos su pakabinamomis spintelėmis",
+    "K2ME004WW004": "2ME – keturių šakų sukamoji kryžmė",
+    "KBJA002WW002": "Bjarg – vidutinio aukščio atlošas",
+    "KINT006WW001": "Intrata-O – aukštas tinklinis atlošas",
+    "KINT006WW002": "Intrata-O – aukštas 3D tinklelio atlošas",
+    "KINT005WW001": "Intrata-O – aukštas apmuštas atlošas",
+    "KINT003WW001": "Intrata-M – aukštas 3D tinklelio atlošas",
+    "KBRY005WW002": "Brainy Mini – mėlynas apmušalas",
+    "KBRY005WW003": "Brainy Mini – raudonas apmušalas",
+    "KBRY006WW001": "Brainy Mini – pilkas veltinis",
+    "KBRY001WW002": "Brainy – mėlynas apmušalas",
+    "KBRY001WW003": "Brainy – raudonas apmušalas",
+    "KBRY002WW001": "Brainy – pilkas veltinis",
+    "KBEW001WW006": "beWise – keturios kojos, medinis korpusas",
+    "KLEV008WW002": "Levitate",
+    "KEM2013WW004": "eModel 2.0 – T formos kojos",
+    "KEM2013WW006": "eModel 2.0 – T formos kojos, apmušta pertvara",
+    "KEM2014WW002": "eModel 2.0 – dvi darbo vietos",
+    "KEM2014WW003": "eModel 2.0 – dvi darbo vietos su apmušta pertvara",
+    "KEUP008WW002": "eUP 3 Pro – T formos kojos",
+    "KEUP008WW003": "eUP 3 Pro – T formos kojos, plokštės pertvara",
+    "KEUP008WW004": "eUP 3 Pro – T formos kojos, apmušta pertvara",
+    "KEUP010WW002": "eUP 3 – T formos kojos",
+    "KEUP010WW003": "eUP 3 – T formos kojos, apmušta pertvara",
+    "KEUP011WW002": "eUP 3 – dvi darbo vietos",
+    "KEUP011WW003": "eUP 3 – dvi darbo vietos su apmušta pertvara",
+    "KBSP001WW001": "bSpace – viena darbo vieta",
+    "KBSP002WW001": "bSpace – dvi darbo vietos",
+    "KBSP003WW001": "bSpace – keturios darbo vietos"
+  },
+  "colourSamples": {
+    "AL": {
+      "color": "#d6d6d6"
+    },
+    "ALUPLASTIC": {
+      "color": "#d6d6d6"
+    },
+    "AU": {
+      "color": "#d6d6d6"
+    },
+    "BA": {
+      "image": "/models/configurator/desk-colors/fa883d408d1d3611c787269b7757e899f9883cff61649296b7547a2d0f70578f.jpg"
+    },
+    "BI": {
+      "image": "/models/configurator/desk-colors/ca069fca00f594506fd5c7cd41e9cecf9d03545044820e685c9c534f2c3b83ca.jpg"
+    },
+    "BLACKPLASTIC": {
+      "color": "#1f1f1f"
+    },
+    "CC": {
+      "image": "/models/configurator/desk-colors/3504b01e341afc8875f07a82f3f00b3d5480ffcbc15d016f60f1df05863f4fea.jpg"
+    },
+    "CSE01": {
+      "image": "/models/configurator/desk-colors/c998a3bea9ba1d5886696302818ea8c30e4451a4326667b1af4f4d20c816ddff.jpg"
+    },
+    "CSE02": {
+      "image": "/models/configurator/desk-colors/7afc203fd9713f9b09664454456ed99847063a7e10a93e2b4ce276220b3e69a1.jpg"
+    },
+    "CSE03": {
+      "image": "/models/configurator/desk-colors/3cf36ba49ac88420bed317f336a89f71d10f560f47ec218801d90e1101c87e63.jpg"
+    },
+    "CSE05": {
+      "image": "/models/configurator/desk-colors/70774b053d713d8faebb51a0d9213e9179d209a8893c0f771e6c6beb955937d0.jpg"
+    },
+    "CSE06": {
+      "image": "/models/configurator/desk-colors/caac39644176c2664ff7e92783108c4e884316a844b337e74ee04761faae48d3.jpg"
+    },
+    "CSE07": {
+      "image": "/models/configurator/desk-colors/9fb551a9ce4914d9b3af59e2c8041221e2fcd09e4fab19fa247cd1c7d380844b.jpg"
+    },
+    "CSE08": {
+      "image": "/models/configurator/desk-colors/8dc5d35afa50f2d9d19eecd7f03be719c72f5ed93c4f274f112f0aa5ed6bd121.jpg"
+    },
+    "CSE09": {
+      "image": "/models/configurator/desk-colors/1d5e002e5555d6c0f1c279a9a6f84186eea0c6de60dc7d94ce747b9d7340748b.jpg"
+    },
+    "CSE10": {
+      "image": "/models/configurator/desk-colors/7a42f5ee15759d0fcfc7c371b3e4a8286cc6567e5cda1eccbd0a5c06d854a314.jpg"
+    },
+    "CSE11": {
+      "image": "/models/configurator/desk-colors/f4a7cfce28e472b0ca9bb2474e2b12a65437e4385edad5b7fe427f832d7002aa.jpg"
+    },
+    "CSE12": {
+      "image": "/models/configurator/desk-colors/b9c7e37fc19afa58add06a13eed41eb04e3f1c02c8a8c700d1d260219a720ba0.jpg"
+    },
+    "CSE13": {
+      "image": "/models/configurator/desk-colors/4e2ca281d20b8384ee1de4cea0dbbd122298a2455b9ec284b4c4b16ddedd93d2.jpg"
+    },
+    "CSE14": {
+      "image": "/models/configurator/desk-colors/c2c3b99e93c3b2e44be4bbdf5bc7aaffb9a34a007aeb53a73f66ab5d6de093cd.jpg"
+    },
+    "CSE15": {
+      "image": "/models/configurator/desk-colors/41c71f2b9b58774be962ae68dd75db24974aca0da24403ebfd86452f2efc2ddd.jpg"
+    },
+    "CSE16": {
+      "image": "/models/configurator/desk-colors/315df22e787f766949e247d9c12952d4a9502a9cbe8ef08a71db3437730708ad.jpg"
+    },
+    "CSE17": {
+      "image": "/models/configurator/desk-colors/c5d33d46125861093728d93b60ec3acf73026de224fe1261ae2e1053e353e8c7.jpg"
+    },
+    "CSE18": {
+      "image": "/models/configurator/desk-colors/6009a1fb0ff7fa399294b646239b1ed0152b4b0258e6789b7a76b65d99e1095e.jpg"
+    },
+    "CSE19": {
+      "image": "/models/configurator/desk-colors/10f10f9c2ac1cead4a245d1364c8c6a2fc68044181e14ed80d1cd71686ea0d22.jpg"
+    },
+    "CSE20": {
+      "image": "/models/configurator/desk-colors/59d68ecfcf719115d8c038e3978617fd0757667eb5a66ba8115a7c1621e408fb.jpg"
+    },
+    "CSE21": {
+      "image": "/models/configurator/desk-colors/d732d69ea97b59cf4bd15b6d849897e1813d03b80e4302091335f6929d52fdf9.jpg"
+    },
+    "CSE23": {
+      "image": "/models/configurator/desk-colors/26b43cc475ec9bf6852b48ec768071b874cb8c0892fc6bcfef299cf5ec825e9f.jpg"
+    },
+    "CSE24": {
+      "image": "/models/configurator/desk-colors/40efd86c106719a9723a9c2f1953b0a558ae9969be85c70045cf097ae965ae88.jpg"
+    },
+    "CSE25": {
+      "image": "/models/configurator/desk-colors/293a74a5183cc83c0ffda5a7d98962a8ecba0e12b0c532a205a69ced4a0cade4.jpg"
+    },
+    "CSE26": {
+      "image": "/models/configurator/desk-colors/bc4203e6e218cc2e2eb6643c11aacacb3104c222a8a7f06f5eb28880ed10c768.jpg"
+    },
+    "CSE27": {
+      "image": "/models/configurator/desk-colors/17a47d8f386a03d2a8c3ee1ef2b8ddbe328178d01d5d14287d719486e47d7f7b.jpg"
+    },
+    "CSE28": {
+      "image": "/models/configurator/desk-colors/b28f4071cad72cc4abad93fdee6f04b822e3e26f7815419c568052b791282763.jpg"
+    },
+    "CSE29": {
+      "image": "/models/configurator/desk-colors/abae3732cf11f349bffe08263d88cdcf9d81262a79757994a8f00fea22db816c.jpg"
+    },
+    "CSE30": {
+      "image": "/models/configurator/desk-colors/761b66e69ea2437d46f5e4af628f8e799be45fdd2b4483090160c4ce8683addb.jpg"
+    },
+    "CSE31": {
+      "image": "/models/configurator/desk-colors/ba6a114241747454dc7d5c94fffbd25a54ac2c426ba971b0d2995b497cc0c472.jpg"
+    },
+    "CSE32": {
+      "image": "/models/configurator/desk-colors/14ebcf341cb6df2b8d10c73dd7e2fe4ff28ebd0a1dbb2109438f9d683945d63b.jpg"
+    },
+    "CSE33": {
+      "image": "/models/configurator/desk-colors/055f973ec604352485d98d87a626045a1e38d18a63f83aa64cfc6dffda321083.jpg"
+    },
+    "CSE34": {
+      "image": "/models/configurator/desk-colors/397960571d7bccc1238fc5ff1f8db7f5d7a7ba3425a50cbaef4a60db06f130e0.jpg"
+    },
+    "CSE35": {
+      "image": "/models/configurator/desk-colors/0edcf4b8ec515145044922bf9064104cedaea30198fd38ccaf0f8a1f59613b9a.jpg"
+    },
+    "CSE36": {
+      "image": "/models/configurator/desk-colors/7a7cd15980731793a0edf15ff5edd7247f57848ae4128cff4d461d448e11e780.jpg"
+    },
+    "CSE37": {
+      "image": "/models/configurator/desk-colors/c29ecf88f980964c9d1974359f40eada180d615620d1ea2454dc10513bacdc9b.jpg"
+    },
+    "CSE38": {
+      "image": "/models/configurator/desk-colors/7573538057436875e0c88367007a5e4189f3df67cc76427733526d978413e93f.jpg"
+    },
+    "CSE39": {
+      "image": "/models/configurator/desk-colors/f967eb30f519579301836db7b41444e03f716a436e1b9b9c54fa4bd0b54235a2.jpg"
+    },
+    "CSE40": {
+      "image": "/models/configurator/desk-colors/a76dfe4ed4bd8b191cd6648b062e31852b1bb2a4317fa365350bdb23ebd1a700.jpg"
+    },
+    "CSE41": {
+      "image": "/models/configurator/desk-colors/dc4b4c194da4c73a2fdf09e02847cc3a69a58acfd33742e6f27716ccf3f96519.jpg"
+    },
+    "CSE42": {
+      "image": "/models/configurator/desk-colors/d061a1565ae1ae900eb3ead2735853da59c4e61c6491d56bfd26ec1f406e7807.jpg"
+    },
+    "CSE43": {
+      "image": "/models/configurator/desk-colors/f50c46b0cec43ea6805585a1aa7bd5e5c7bf900ca98bc9ae715008f60ef79ee2.jpg"
+    },
+    "CSE44": {
+      "image": "/models/configurator/desk-colors/3ba920fb7d07a974bc5828eb93c120760e3fde970b421c0fc1094595e4330970.jpg"
+    },
+    "CSE45": {
+      "image": "/models/configurator/desk-colors/80934c6a5ccc6fd81b3964ad368979db3f553b60b5e244e1e0c328016f02056e.jpg"
+    },
+    "CSE46": {
+      "image": "/models/configurator/desk-colors/aee319e4877a0ce4e5c31c3007d07cecbb28b93c83448f744dad1cda9664f0d7.jpg"
+    },
+    "CUR60109": {
+      "image": "/models/configurator/desk-colors/5c9cd25a2157c826a8143592bd6f10daad84ff6ff3a7bcc816d424fe8fe50f11.jpg"
+    },
+    "CUR60111": {
+      "image": "/models/configurator/desk-colors/1452db8cd189b2b2a7e83a31fcafa87dccbe99dbe64256cb81fc0b9fe35495d5.jpg"
+    },
+    "CUR60112": {
+      "image": "/models/configurator/desk-colors/ea731c6b644ad0d03522a1a49e1315f7dc35072c1d56772bbaeff1f997c0e2ef.jpg"
+    },
+    "CUR61169": {
+      "image": "/models/configurator/desk-colors/476d974833deb0dae2b10721a838dbf52f66c43f19339861f43098ab60531da5.jpg"
+    },
+    "CUR61258": {
+      "image": "/models/configurator/desk-colors/423b0d3b9d645f30790d0a12ac145b720f4734c2343d087dbd1ca7edbfb2e17b.jpg"
+    },
+    "CUR61259": {
+      "image": "/models/configurator/desk-colors/601b74053fb83d91a64857b8ea166b4c25f9be6cdc05562ca2fed89210fa0521.jpg"
+    },
+    "CUR61260": {
+      "image": "/models/configurator/desk-colors/9589fa4c9930ee450c8a4007651467a63f03457b702c86c65c5ccb9b18a7aa3b.jpg"
+    },
+    "CUR62082": {
+      "image": "/models/configurator/desk-colors/7b8d5eacb26b158fa91ebd7e8139ca63c213dcee83448773837c5703ba14a02b.jpg"
+    },
+    "CUR64195": {
+      "image": "/models/configurator/desk-colors/d7c24bdb663a09f1a7644c54584a4c6a87aeb746a3715cca9b5c8930f19753fd.jpg"
+    },
+    "CUR64196": {
+      "image": "/models/configurator/desk-colors/bc07264ae516a6fc9c2e7d38315b2fd5e2be4112a31e206b522663af3cc62056.jpg"
+    },
+    "CUR66167": {
+      "image": "/models/configurator/desk-colors/7b4fd7eb603f6d0be431ee589e800685c54d498d7cfc3c3dd3b359539b071cdd.jpg"
+    },
+    "CUR66170": {
+      "image": "/models/configurator/desk-colors/f03bb7317ef6c732bba12f944d6e9bfba39e847c306c0cbf0e7809937f52d698.jpg"
+    },
+    "CUR68181": {
+      "image": "/models/configurator/desk-colors/ec0c4ee5b0facb472851a8ae84c15802e7bbe007f576dc6efb0d59279f754088.jpg"
+    },
+    "CUR68182": {
+      "image": "/models/configurator/desk-colors/b4f508fbbf5efb28d9d4828212d767bde0a44c18bcd4f0d62f9ef20e6089011b.jpg"
+    },
+    "CUR68187": {
+      "image": "/models/configurator/desk-colors/73e0f7d7d5900486028c96c0c59f1a4e94b6545b261aff62c3cedffe78f7548c.jpg"
+    },
+    "CUZ02": {
+      "image": "/models/configurator/desk-colors/6a1c553688d7867352109d31fa9fa9beeba6bb8dbbe8f959c945eed367c66e74.jpg"
+    },
+    "CUZ08": {
+      "image": "/models/configurator/desk-colors/206d1aff70b84a7207cd8c1528453e645d8852ec5508ce0d53f68a8dc8dd10c1.jpg"
+    },
+    "CUZ09": {
+      "image": "/models/configurator/desk-colors/3cdb7a612b71e45ac4b7c8259f63a9e40c0f89a6fc57befc9a3433b0b0f63d66.jpg"
+    },
+    "CUZ12": {
+      "image": "/models/configurator/desk-colors/983be0a2016924ab4b8c6625f30f61c4fdf6f7723faed1933c8e41de5a5fa0e1.jpg"
+    },
+    "CUZ13": {
+      "image": "/models/configurator/desk-colors/c21848a0bcab96132cdd6313c3a5e7890a05bf30920557297eda9465eb186288.jpg"
+    },
+    "CUZ18": {
+      "image": "/models/configurator/desk-colors/224d4e1c0a2b36ee75775c31ddfa6258379955e679e5101f00995ffafcf82222.jpg"
+    },
+    "CUZ1E": {
+      "image": "/models/configurator/desk-colors/1657964248a1a8983a60d2e17f73e9278ae13f4418db32173b695fa42b4a6cfe.jpg"
+    },
+    "CUZ1F": {
+      "image": "/models/configurator/desk-colors/171bfc2a4ea46bfde31a0d9b3f5be80bd1833c2d057df17bd2116efc5170ad1c.jpg"
+    },
+    "CUZ1J": {
+      "image": "/models/configurator/desk-colors/0d623f69f7ddec5689421fc7b96f944b5a0cbc121961867ae54d230a087e7851.jpg"
+    },
+    "CUZ1K": {
+      "image": "/models/configurator/desk-colors/c4f0f1abedfaef12b3fa7884dc27faec1ab14aa6cdb11250abb56ea624a337be.jpg"
+    },
+    "CUZ1L": {
+      "image": "/models/configurator/desk-colors/1d1c364ba02495708f79666cc0ab73f0f748200beffa95e828fcda33f9b71ef4.jpg"
+    },
+    "CUZ1N": {
+      "image": "/models/configurator/desk-colors/f2d89eee547747ee9fbc5c19d2b0388e854e7cbed2e5512384ac06f5e03af981.jpg"
+    },
+    "CUZ1P": {
+      "image": "/models/configurator/desk-colors/6037f74126cf6002e1ebab6613e8e2d86f18cbf02d9d005564be312e9021dbcd.jpg"
+    },
+    "CUZ1R": {
+      "image": "/models/configurator/desk-colors/e4d6d2076f2621bcd3e271fd4275bacc6e05eaaef8329510447a8fc3e3adafe4.jpg"
+    },
+    "CUZ1V": {
+      "image": "/models/configurator/desk-colors/6d8f203017909501a8f1cb76cdb4e126809334b593f1556c5bc96584d1bd80c9.jpg"
+    },
+    "CUZ1W": {
+      "image": "/models/configurator/desk-colors/78398b7f817b3f2b8d458f374b7871e2f90e7b40a22e01f9928886029b858ac8.jpg"
+    },
+    "CUZ1Y": {
+      "image": "/models/configurator/desk-colors/4a155a04299ba3f55e826eeea377a0cd95c511488332f7f4105ed3f3dc073cb7.jpg"
+    },
+    "CUZ21": {
+      "image": "/models/configurator/desk-colors/add41b5b1ed13dd7f84154ac95bb9b32ae5786a361adc4f20143d9f49ffdae36.jpg"
+    },
+    "CUZ26": {
+      "image": "/models/configurator/desk-colors/69bf25f29a803c87ad0b81c076bb41c4136fa4db42214536d3161ea60261d385.jpg"
+    },
+    "CUZ28": {
+      "image": "/models/configurator/desk-colors/7b55cf7062c72693bae4e7109d25bdfd70cbb9c72fb749975ebbb5926cb7133b.jpg"
+    },
+    "CUZ2Q": {
+      "image": "/models/configurator/desk-colors/481ac80ed94d97cb6060828aa94939d4dcfacc9c90a4a6402e98b41b8f183a3f.jpg"
+    },
+    "CUZ2T": {
+      "image": "/models/configurator/desk-colors/9992a31d8f99553a325ef20e972dab4afffde20419c59f1871512ded713894f0.jpg"
+    },
+    "CUZ2U": {
+      "image": "/models/configurator/desk-colors/e7a06121408582f4c663a308ccc88b35701b4488dd6756b6f811bfbd8858f359.jpg"
+    },
+    "CUZ2W": {
+      "image": "/models/configurator/desk-colors/f43b9985aae01f3990429e25145da52ccd2d1528c20823319e3823679cf2a719.jpg"
+    },
+    "CUZ2Z": {
+      "image": "/models/configurator/desk-colors/63e596172367e664fdb21567f42f838093eabc67467e637bd394c40ee2209124.jpg"
+    },
+    "CUZ30": {
+      "image": "/models/configurator/desk-colors/e4d10af81bd38005656cd54fc81094af7ba4d34e815ed640d158dde6b8821e8b.jpg"
+    },
+    "CUZ31": {
+      "image": "/models/configurator/desk-colors/e5ed513331555f618ba50d8e16a02ce347f3658786249e433c313d0ee417570d.jpg"
+    },
+    "CUZ33": {
+      "image": "/models/configurator/desk-colors/7373dc2a7e0cf5578de155a3552f55092354a2dd5539bb72933843483767ec6a.jpg"
+    },
+    "CUZ35": {
+      "image": "/models/configurator/desk-colors/4f524bcc2262e079c01fcf456af529893e189e52be15b871625191ce7300d656.jpg"
+    },
+    "CUZ39": {
+      "image": "/models/configurator/desk-colors/355ea20d916636e46aff4357c54d9fc924eab3c6b40e64b3df41f62c9926b88c.jpg"
+    },
+    "CUZ3A": {
+      "image": "/models/configurator/desk-colors/b94a07df79632f9feeafa47e732eeafef2bcba46d3c32a95274bcc62d08c1bae.jpg"
+    },
+    "CUZ3B": {
+      "image": "/models/configurator/desk-colors/7873086ed6b3585418b18e972843f63afccf0cac5f26f2dcf10608f65f900e9f.jpg"
+    },
+    "CUZ3L": {
+      "image": "/models/configurator/desk-colors/c841ec4a5887318b53e95c78a883ca7b89ce3c9dc963966edb9d74d01503c48a.jpg"
+    },
+    "CUZ3M": {
+      "image": "/models/configurator/desk-colors/cfa1aaae48ca1d670fc09a2d2523197828e7705c8cf07c6543b45cbc818273ba.jpg"
+    },
+    "CUZ3N": {
+      "image": "/models/configurator/desk-colors/58f3076afd22855b8beed72b4736215ec9c7fab57a49793b390c742d59967fe7.jpg"
+    },
+    "CUZ3P": {
+      "image": "/models/configurator/desk-colors/c06e1030ec941cb3b293f8663ab242ee766c0c879f64aac31ac3e480feb0aa58.jpg"
+    },
+    "CUZ3Q": {
+      "image": "/models/configurator/desk-colors/74cd6983aba34a4d64e2130ff62dbe93f4ed679208174edf5bc55b1b18ac4d59.jpg"
+    },
+    "CUZ3R": {
+      "image": "/models/configurator/desk-colors/ddfdf27aa3682d3d7aa07763973481daa7408701ab876dd33a611b4bbe1634a7.jpg"
+    },
+    "CUZ3S": {
+      "image": "/models/configurator/desk-colors/879b4e71414311234fbfb2b11c180bf67ccf6af49f41078006822432ad9b8bde.jpg"
+    },
+    "CUZ3T": {
+      "image": "/models/configurator/desk-colors/84bd989791c65d2792df374f9a4da05f1a1cf5ffd36497f0d3c67120f96e5b96.jpg"
+    },
+    "CUZ3U": {
+      "image": "/models/configurator/desk-colors/80d57aaab1b26cb47796193f23e0259793450ee1e7c203d574ed6ce998e80938.jpg"
+    },
+    "CUZ3V": {
+      "image": "/models/configurator/desk-colors/9adc172b199e2023bcd05f6173b79213820172640f44141e51f102625eeb7fd3.jpg"
+    },
+    "CUZ3W": {
+      "image": "/models/configurator/desk-colors/886f29cd19828aacff0e3ac1576852672ad721954139ced48aede1ed7a81a875.jpg"
+    },
+    "CUZ3X": {
+      "image": "/models/configurator/desk-colors/3dc621982df0cab0edde2a590837f3a1f2a5c29edc1c1ae155ee7afce36ad2e5.jpg"
+    },
+    "CUZ3Y": {
+      "image": "/models/configurator/desk-colors/1ee4be7c7643aa06daaed8b306927dae96f5e516920d680118d07d6e6a3e340d.jpg"
+    },
+    "CUZ3Z": {
+      "image": "/models/configurator/desk-colors/e42d0b0cddc8d806fc6a8a91b20310696290a3295ff80d23f035132ea994d00e.jpg"
+    },
+    "CUZ47": {
+      "image": "/models/configurator/desk-colors/ba818ba69db02b3d8fa53753ca10073e88c06181b40dc5dc6b487e42469960f6.jpg"
+    },
+    "CUZ4A": {
+      "image": "/models/configurator/desk-colors/8f9a87ba7bba6d202ed2968e7ee968228f988d22ef0443bc6685adc3dcf6bb13.jpg"
+    },
+    "CUZ4B": {
+      "image": "/models/configurator/desk-colors/d426e8741e192a8bba760138299f7330e51fb4f1b5bd2b93b2eb84c9df9bc172.jpg"
+    },
+    "CUZ4C": {
+      "image": "/models/configurator/desk-colors/997c19275378321be027cca0bb6fa35604562b0925c01eef5e8c12e6194f0d45.jpg"
+    },
+    "CUZ4D": {
+      "image": "/models/configurator/desk-colors/699579852e9906d63ff77ecf328fe8baebdb3329d231c9d606ecd429f0050659.jpg"
+    },
+    "CUZ4E": {
+      "image": "/models/configurator/desk-colors/5829538429ea2c5d4ddb8b5cfdbc335e6f6fff9161bc57e68588ec78f7e5db63.jpg"
+    },
+    "CUZ4F": {
+      "image": "/models/configurator/desk-colors/58fb0ac0ed186292f151e22c2ca0c96a1d378e0eee73b1077a68ccf412891904.jpg"
+    },
+    "CUZ4G": {
+      "image": "/models/configurator/desk-colors/9db5d986902eab1cbed183641663367f20c9c1a1ec06a74e3eb551afc4a414c1.jpg"
+    },
+    "CUZ4H": {
+      "image": "/models/configurator/desk-colors/c5896a0278c5dfde0418e2dede8ccb53dadbb005c1d85612b2de89a67996dcdf.jpg"
+    },
+    "CUZ4J": {
+      "image": "/models/configurator/desk-colors/492e0e5e4d24febfa673c3193f6bdc2cb3d0e0690e73d76245e83e1b45279210.jpg"
+    },
+    "CUZ4K": {
+      "image": "/models/configurator/desk-colors/7db09e2adb3e023ed9fb2bda0700883fb3a0d5ea4730ce3796025d8293003fd4.jpg"
+    },
+    "CUZ4L": {
+      "image": "/models/configurator/desk-colors/85ca8ab9b6b24004d3b7f95bd9be0ec7d4be3acf772f083a788cd8356e524fee.jpg"
+    },
+    "CUZ4M": {
+      "image": "/models/configurator/desk-colors/ba646c0346c0098ae2a2e641e2681791cf5d381b5d58f468c2b5cc91e93da41d.jpg"
+    },
+    "CUZ4N": {
+      "image": "/models/configurator/desk-colors/87001ab76589291154858c15b9e79a2f1d581acccb2344173b43c4cb39121bf6.jpg"
+    },
+    "CUZ4P": {
+      "image": "/models/configurator/desk-colors/d6dde121a6bad409f0d01142421ac1bd5f46f17d736fe91c2c0c6f53c2fec7ec.jpg"
+    },
+    "CUZ4Q": {
+      "image": "/models/configurator/desk-colors/2eabe5c19c1fe783afd77bc86dc97a48268aa9e22999cfab08c0ea69d56f408f.jpg"
+    },
+    "CUZ4R": {
+      "image": "/models/configurator/desk-colors/3df8c7db87ce2d44cf7038eb0c955d7c8b82376338639253acdc00ef8140ca5a.jpg"
+    },
+    "CUZ4S": {
+      "image": "/models/configurator/desk-colors/e16121759700f6dfc22b30df208c86ce06ebbf3ab0d1358721bf72fec8cc4282.jpg"
+    },
+    "CUZ4T": {
+      "image": "/models/configurator/desk-colors/6a42d58bbe65bd785e876f72feafdd8fda14b204809d52dac3c9f5343cf1f885.jpg"
+    },
+    "CUZ4U": {
+      "image": "/models/configurator/desk-colors/b64ba4eedcc244f144c1c13865ec5a4f3440856a1de9814129d46eb84ed67778.jpg"
+    },
+    "CUZ4V": {
+      "image": "/models/configurator/desk-colors/7ddda4c73a40479548d1cb429a2bb8fec53b1880fac6cee2ab9a8e1efe38c876.jpg"
+    },
+    "CUZ4W": {
+      "image": "/models/configurator/desk-colors/d432e3d7275398816f6efc4696ee5d91bceac1268a59d4c5364c291cd20f0d98.jpg"
+    },
+    "CUZ4X": {
+      "image": "/models/configurator/desk-colors/346cba03d2049af5570e755c5043b303faa5225b92c0534482a36b3748bef446.jpg"
+    },
+    "CUZ53": {
+      "image": "/models/configurator/desk-colors/6ab6f085152a895cb3612b664c68d42a4e99c06c3bd06a70a1087fa64c9f80e9.jpg"
+    },
+    "CUZ58": {
+      "image": "/models/configurator/desk-colors/e9fe9d4c153b2b62e1b55ace1b74980a64415cc4740037dbed76b6c22243a59c.jpg"
+    },
+    "CUZ62": {
+      "image": "/models/configurator/desk-colors/95c4770e9632df725fa8cfa42ff6a0d0f1cbb3532237ffc09c7ab25060594cd6.jpg"
+    },
+    "CUZ63": {
+      "image": "/models/configurator/desk-colors/4643c0ccab09931d0cfe9ed6c5de077181545f95c41d0d7803d27a50f5c3f468.jpg"
+    },
+    "CUZ67": {
+      "image": "/models/configurator/desk-colors/6d79d74acb88cb6015131c63b1fc38d9c8e32ca97c6474289de893406b82354f.jpg"
+    },
+    "CUZ82": {
+      "image": "/models/configurator/desk-colors/bf558c538cf3db082f284b27ffab6d25939c869401870ac85268d847a2f421ba.jpg"
+    },
+    "CUZ86": {
+      "image": "/models/configurator/desk-colors/7c62cd1faa62504bd2808d9194566acd1429702db27dd7d299f90e67bbdc4594.jpg"
+    },
+    "CUZ90": {
+      "image": "/models/configurator/desk-colors/d2b02255152506772c8fdf580cf13c6396d57669e0037efa0c512a9fcccebc4c.jpg"
+    },
+    "CW": {
+      "image": "/models/configurator/desk-colors/4e22695eceae0277317e87cfd3dae5d75494b776c1b9b5f26458af4133263199.jpg"
+    },
+    "CZ": {
+      "image": "/models/configurator/desk-colors/3cd7e9d81cdac08bc5d1d5d2c96be49338e3c92483af92c810a958f4101a85a1.jpg"
+    },
+    "DM": {
+      "image": "/models/configurator/desk-colors/760463a835fea4d9aaddd7f3959520fa62d7117ba61ffce2c77bc6d00979da35.jpg"
+    },
+    "FC05": {
+      "image": "/models/configurator/desk-colors/5ddc96072f30cee8e6671f191aa47d13a55a116de9970bf2f5dbb26232c5e31f.jpg"
+    },
+    "FC06": {
+      "image": "/models/configurator/desk-colors/7329f1cd0966fdfa46c9a9bd556a97b4122835f0bd90bdf3f84e190ab8412e08.jpg"
+    },
+    "FC07": {
+      "image": "/models/configurator/desk-colors/ba818ba69db02b3d8fa53753ca10073e88c06181b40dc5dc6b487e42469960f6.jpg"
+    },
+    "FC08": {
+      "image": "/models/configurator/desk-colors/f43b9985aae01f3990429e25145da52ccd2d1528c20823319e3823679cf2a719.jpg"
+    },
+    "FC09": {
+      "image": "/models/configurator/desk-colors/d38d8310185bd26956f46d59daa1a22c1b38084bbd9ac5b34231ba8b5c96d8b4.jpg"
+    },
+    "FC10": {
+      "image": "/models/configurator/desk-colors/0fdc3035b680574e63756deb78bd4a4f08b4d5a9baafbd6479f63682dd5667e4.jpg"
+    },
+    "FS": {
+      "image": "/models/configurator/desk-colors/cc95c50822e2f269fd3dae6b5a8e432dfdcb6f8993db24af0d1b8310b296aea3.jpg"
+    },
+    "HO": {
+      "image": "/models/configurator/desk-colors/ab0d561258eb577f5939686eb7103339bb89ec531d43a76d2f9a078a47587470.jpg"
+    },
+    "JC": {
+      "color": "#232125"
+    },
+    "JP": {
+      "color": "#9c938a"
+    },
+    "JS": {
+      "color": "#3f505b"
+    },
+    "KJ": {
+      "image": "/models/configurator/desk-colors/0d00a955777283a10807d7bff1bc4c0cfaa8aa0bee9edb8dfe0bd77feea72844.jpg"
+    },
+    "KM": {
+      "image": "/models/configurator/desk-colors/7e12b79b46be97edff47aded22d496d1943064d24071f1509aabd24e6e089909.jpg"
+    },
+    "KN": {
+      "image": "/models/configurator/desk-colors/dd717fd8bf27208cf05a627e7f088eb1ca91b0664d30879e47e1c6307cd19441.jpg"
+    },
+    "KO": {
+      "image": "/models/configurator/desk-colors/e3071d537cbe2c21ab216c371930797572f3fb2aa80a8eec788767974a53fce9.jpg"
+    },
+    "KP": {
+      "image": "/models/configurator/desk-colors/8ba075ebed6748a20081dcdf9aeefbb44411c5d4293f015bc4b9d7352bb51761.jpg"
+    },
+    "KR": {
+      "image": "/models/configurator/desk-colors/a8de495202db93650d9ec901d76f1b3f5754ee20404205a84cc1cad667ee78df.jpg"
+    },
+    "KS": {
+      "image": "/models/configurator/desk-colors/783bcd70b0d0d49a59fc4c31615a2ea77c0014362d33f19c38e2af5dcc38cb2d.jpg"
+    },
+    "LDS05": {
+      "image": "/models/configurator/desk-colors/18265cd37dcf3e7f0e7188860fd7bcfc2ec259c4002a6b8424ca3b72ec1f979d.jpg"
+    },
+    "LDS07": {
+      "image": "/models/configurator/desk-colors/1a3b8b44595ff9450e1c0fe615f608c5428ba8afb8a70894635cdc63f0196f02.jpg"
+    },
+    "LDS08": {
+      "image": "/models/configurator/desk-colors/e2759f84918b19c9c43df6465fb81832f9ef5b10f1daf3dd9b5d4a7e4b9e12e8.jpg"
+    },
+    "LDS16": {
+      "image": "/models/configurator/desk-colors/d86efcd8c2b1d98b38b1b2829e08ce4b7e014c76783d7ccc486d2f7e0d1f80ad.jpg"
+    },
+    "LDS17": {
+      "image": "/models/configurator/desk-colors/e8a4f0770c51622d527983f6ab0cb5a2ea0b21852bff6304ce75dbeedfc28c13.jpg"
+    },
+    "LDS18": {
+      "image": "/models/configurator/desk-colors/99fb32725b0af550c9ad7752c1e1509106285877b87ba3af93a3531d341ac6f7.jpg"
+    },
+    "LDS19": {
+      "image": "/models/configurator/desk-colors/ce34487106aeaf2ecb130f8082135934aa120249c9380beb203e08e66b332441.jpg"
+    },
+    "LDS20": {
+      "image": "/models/configurator/desk-colors/9cfa99c1692a2699fe1e9313e080ce9b6438ab5ee7ed148eb0aa64cbf0892cb0.jpg"
+    },
+    "LDS21": {
+      "image": "/models/configurator/desk-colors/a93472fd09a5044f0d3219a164829b1a3f70977777154f8f774f6e20d7df0056.jpg"
+    },
+    "LDS22": {
+      "image": "/models/configurator/desk-colors/844b2286c833c81e396ab7f360205ff8b049f3b98791e2bf93e6bb11688d9b3e.jpg"
+    },
+    "LDS23": {
+      "image": "/models/configurator/desk-colors/3c4fd46e53b07cb4257c550d775934c14fd275f3c937cb38a04aa8ac08daa040.jpg"
+    },
+    "LDS24": {
+      "image": "/models/configurator/desk-colors/120682397a5524591b9bbb8f032096bce5a271fdc2da7ccb79ddc2c0a924e770.jpg"
+    },
+    "LDS25": {
+      "image": "/models/configurator/desk-colors/b1ebad179ef07e1889adad4910c3bfb2adb5d872650251c7cbf3428e1edc868a.jpg"
+    },
+    "LDS26": {
+      "image": "/models/configurator/desk-colors/f626c9a70e09e33c4ea2eaa0828fc0105e4c6fcb2ebb5a4af764c551f38992d7.jpg"
+    },
+    "LDS27": {
+      "image": "/models/configurator/desk-colors/b58732632f135278e86081169c545196d63bef3f324f42d5c720b980b7c0080d.jpg"
+    },
+    "LDS28": {
+      "image": "/models/configurator/desk-colors/64bd1df3f4b16deffc40241135d936242ce631d7684e1147b75b9a532b114d5a.jpg"
+    },
+    "LDS29": {
+      "image": "/models/configurator/desk-colors/ed27f339aa14be0832d569ee9e646c478d0b47e84e829e47bea600d1f6150f93.jpg"
+    },
+    "LDS31": {
+      "image": "/models/configurator/desk-colors/1640db5adfa89652a5a0e073a27eca59c3851993b197001852727d0ec9901586.jpg"
+    },
+    "LDS32": {
+      "image": "/models/configurator/desk-colors/f836253b43233d5fe27643c0a12dca877b90b15df048175b8532daf8345428e8.jpg"
+    },
+    "LDS33": {
+      "image": "/models/configurator/desk-colors/300d32a7410a82fb9d460085900ab314ea7bde2b4598de24f46c03b11059f1ca.jpg"
+    },
+    "LDS34": {
+      "image": "/models/configurator/desk-colors/33811acf9d773037ad2b7c15fec955cc1ce7aa1ebf95f881320eb0469c851c8e.jpg"
+    },
+    "LDS35": {
+      "image": "/models/configurator/desk-colors/150189e6018495a15680c1abd36af5e475dbdc9f194694bbe4301b69ca85713c.jpg"
+    },
+    "LDS36": {
+      "image": "/models/configurator/desk-colors/bcd0dd29cc71f580aa356e9ff3402355fc01707154501e56e4ba778e29d775f6.jpg"
+    },
+    "LDS37": {
+      "image": "/models/configurator/desk-colors/572bb772d9615b0e844743c2fdf84bb02b436b6728be55152670528f2d6e90c0.jpg"
+    },
+    "LDS38": {
+      "image": "/models/configurator/desk-colors/aee8a43b3cae51a52d461e819f4c0db25eb2186658b5876f4324468025d07fd6.jpg"
+    },
+    "LDS39": {
+      "image": "/models/configurator/desk-colors/9fa235ed6ef632e7e4bbb9185f24c42d683aa72c945a51323f1fe8a9866d7412.jpg"
+    },
+    "LDS40": {
+      "image": "/models/configurator/desk-colors/ea514171b01913c70a8f01cf84a724c203efbed700aba65f5ebf6af12801d906.jpg"
+    },
+    "LDS41": {
+      "image": "/models/configurator/desk-colors/307fc981185cb9574b9cf9c518123d587efeba6c8dfe2b1ad445d7660c495cd5.jpg"
+    },
+    "LDS42": {
+      "image": "/models/configurator/desk-colors/f9b239fc9508a7f481e87bf7fce2d6851cf1b403158e6d57278eb3d1dfcc9407.jpg"
+    },
+    "LDS43": {
+      "image": "/models/configurator/desk-colors/249204e2c10864535269fe332e06a508b7512c9724388e4106d8da62b0b3ca81.jpg"
+    },
+    "LDS44": {
+      "image": "/models/configurator/desk-colors/c59133f8a5ce6f93fb69e2eb8d5764e7117ec532d64c136f8492a853c41b4a7f.jpg"
+    },
+    "LDS45": {
+      "image": "/models/configurator/desk-colors/ab5059804cc96f6d19be20d03bfc171349700c4b24839e0711237ad7e1301f14.jpg"
+    },
+    "LDS46": {
+      "image": "/models/configurator/desk-colors/3ffb0f8b728009ffd55789ae42cdc43b5dfdd5756ecaee497b472b63fe04c6fc.jpg"
+    },
+    "LDS47": {
+      "image": "/models/configurator/desk-colors/75104de8e6d97ca1f869c6ef9c5a6e011ee1c8c07f3cc186994510aee844d7d1.jpg"
+    },
+    "LDS48": {
+      "image": "/models/configurator/desk-colors/74c17a6efc73f3b7aef68c9ea8e9a2436d0c9fcff56f4dff01d053de0f0672ff.jpg"
+    },
+    "LDS49": {
+      "image": "/models/configurator/desk-colors/0410a1307fbda47627c2ee38d1848319bb030e0dcebac81eb1e1e7c2a01820ed.jpg"
+    },
+    "LDS50": {
+      "image": "/models/configurator/desk-colors/eab5bcfcd53012b413b624be1ccbe398aaebbb9c3c37e6654fcc9146ae2627ef.jpg"
+    },
+    "LDS51": {
+      "image": "/models/configurator/desk-colors/fb137a9232d19d10ebdfc2f37320551beadb21737b15be5b0f4600a66b07515d.jpg"
+    },
+    "LDS52": {
+      "image": "/models/configurator/desk-colors/f3ec48e0a95392b35e584e4e87ab19aae008c52b21c42b904e92922e4876bf7e.jpg"
+    },
+    "LDS53": {
+      "image": "/models/configurator/desk-colors/32505c1ee3197594758210947556c3620417f821b35611418b6f929245c98d53.jpg"
+    },
+    "LDS54": {
+      "image": "/models/configurator/desk-colors/453a81c13f325b6981d43503cdacca11643c132954af6ca0c92257de90374569.jpg"
+    },
+    "LDS55": {
+      "image": "/models/configurator/desk-colors/544d17d5dfdd857b77e98f1fcfd5afbd20e0f1707f577c71b14749ea3c7583bb.jpg"
+    },
+    "LDS56": {
+      "image": "/models/configurator/desk-colors/da39931fb2b81ba0fd30a4930f8bf1ff19cf8e4e7e9b2529ee2b640e89124011.jpg"
+    },
+    "LDS57": {
+      "image": "/models/configurator/desk-colors/e60260e368c156261b7d74ff2fe6123f0f75cf6d24216abaaa36afa9d70af318.jpg"
+    },
+    "LDS58": {
+      "image": "/models/configurator/desk-colors/3da1cb6c9c967a0133c012236ed911ae431d73c7412ed1194a49f2b195f6ea1e.jpg"
+    },
+    "LDS59": {
+      "image": "/models/configurator/desk-colors/c86b454de5c08f227ef274fe98d481c886b232455e539cf1d416b74b30dc45c3.jpg"
+    },
+    "LDS60": {
+      "image": "/models/configurator/desk-colors/f5b25788d772bf9d5a6740678d2e690097617e5f882478b57811794cec0e01a7.jpg"
+    },
+    "LDS61": {
+      "image": "/models/configurator/desk-colors/f6bfe46c686258ae503a40b24a9906af939ce5773bdf54e4f3f22b4bc0556eb5.jpg"
+    },
+    "LDS62": {
+      "image": "/models/configurator/desk-colors/831fc042da8a78382396e2380d5d61e6a3e5bfdacd8c119766ff837b3cb5debd.jpg"
+    },
+    "LDS63": {
+      "image": "/models/configurator/desk-colors/8a5d182e0495fdd575c10a93963536e511e92e4e9d3c1918b1c136f86187512c.jpg"
+    },
+    "LDS64": {
+      "image": "/models/configurator/desk-colors/0dff8667e739ce107f3905fee1d07145073eb46574163160cf0e70d1b17dedc8.jpg"
+    },
+    "LDS65": {
+      "image": "/models/configurator/desk-colors/f14d6585856ecdbfba4aca1729f298113fd4897d8d53bc26fc1bec7cefb24aba.jpg"
+    },
+    "LDS66": {
+      "image": "/models/configurator/desk-colors/babd5bfdc1e515118052492e08f8ec1de48c935d0ab1afece0b28c4db8e043e3.jpg"
+    },
+    "LDS67": {
+      "image": "/models/configurator/desk-colors/6ec59963b166ddbafac233da493bffc563bff65b09ab19867cf60fa8efbdfeb0.jpg"
+    },
+    "LDS68": {
+      "image": "/models/configurator/desk-colors/92b6c4c973a34770697fbde4f21973b108b2797a776daafc5852d74d6b1f104f.jpg"
+    },
+    "LDS69": {
+      "image": "/models/configurator/desk-colors/4ded5479bcc6b5a0693e46b8279422aeab529b486e6449ea7397ff7050ca45ed.jpg"
+    },
+    "LDS70": {
+      "image": "/models/configurator/desk-colors/55f7f7dce5788b30c1dcbeb78732e8b8a40b99c73fd4ae1d5e95422402e0e28c.jpg"
+    },
+    "LDS71": {
+      "image": "/models/configurator/desk-colors/2b2aba6f44db944fc3d8695106fcd65f680cdabc47eec1f14462745d7db9139e.jpg"
+    },
+    "LDS72": {
+      "image": "/models/configurator/desk-colors/811595b54874cc310472b8a43e9ab658ad1559095574f274e9e0eb0576b6da72.jpg"
+    },
+    "LDS73": {
+      "image": "/models/configurator/desk-colors/903ec235740f68142e5c56f651ef746f539e282ed0cb6e3639bc6f4c52bb95ed.jpg"
+    },
+    "LDS74": {
+      "image": "/models/configurator/desk-colors/1c5b2a45567d69bdc5d0df5ebc944d95fb51dc8612a8a80edbbbf2dd026c38d2.jpg"
+    },
+    "LDS75": {
+      "image": "/models/configurator/desk-colors/6c7f319d752a152d7556aca79f890af6c2992ec430e019ccd28974804a9ba244.jpg"
+    },
+    "LDS76": {
+      "image": "/models/configurator/desk-colors/aa12f386450ad0972f24949338c1861adc971155b8ebd7daa5310c5616ff5ba9.jpg"
+    },
+    "LDS77": {
+      "image": "/models/configurator/desk-colors/535faa2b08199adccedc96c8d9be163a50b1f29a8832fbb6c31ca21968aa576a.jpg"
+    },
+    "LDS78": {
+      "image": "/models/configurator/desk-colors/16a136cf1ba6361f47dd6fde400e7efef337f12c0a934ce732dc51d0f0283b03.jpg"
+    },
+    "LDS79": {
+      "image": "/models/configurator/desk-colors/4b85f706de1e92ab648f5cd70451d681fbaf51bfa1fb1ef2c3c08590c5a65fcd.jpg"
+    },
+    "LDS80": {
+      "image": "/models/configurator/desk-colors/2050be6c1fb6d61fbdf036c0748cfa531b7084b7c003f551d53f118fb7b975f0.jpg"
+    },
+    "LDS81": {
+      "image": "/models/configurator/desk-colors/3c65fa166ae50bbd0b2ff6f7e1d63b9600f913b5bfe1928704b1e2e2f8ae1112.jpg"
+    },
+    "LDS82": {
+      "image": "/models/configurator/desk-colors/138b020742c1f1717ac063516fb024b75a0dfb8a8b12f8de55923ce71850f42e.jpg"
+    },
+    "LDS83": {
+      "image": "/models/configurator/desk-colors/ed19893e356456d6af867456e15c859916577b6413dc1ba73a5837a0a79ff7fc.jpg"
+    },
+    "LDS84": {
+      "image": "/models/configurator/desk-colors/fb437e83aa04ecca7e1dfeac531d272b207aca287e65c0ebb4405fcab3984187.jpg"
+    },
+    "LDS85": {
+      "image": "/models/configurator/desk-colors/faf9614e3b119f7402086e66b2632e97aeb67c42644134ccb00ab20711ba0d7b.jpg"
+    },
+    "LDS86": {
+      "image": "/models/configurator/desk-colors/408da03ffe8413060c5cd2b5f4d41bc1834c480a0ab66db0adc25297833051e9.jpg"
+    },
+    "LDS87": {
+      "image": "/models/configurator/desk-colors/477f70fc48680b5e151f5aedcd183475301fdffa92d1f051adb90121f9a49659.jpg"
+    },
+    "LDS88": {
+      "image": "/models/configurator/desk-colors/1e3989f1710862a2e80360f04a6abee62a4b19d872848247fb5d7c139cd3778d.jpg"
+    },
+    "LIGHTGREY": {
+      "image": "/models/configurator/desk-colors/3d8f117f81a19da5c59625c5d14ad8e88ac3c7c9dfbcfb647d52821181ace351.jpg"
+    },
+    "LW": {
+      "image": "/models/configurator/desk-colors/1ce6f3507ac4cd5ee502e07fa629cc386342ee57c98d9f84b92ca295673616f6.jpg"
+    },
+    "MATTCHROME": {
+      "image": "/models/configurator/desk-colors/c362e76a19235fe99b50abc614cafd4e4a878223784caf16d6ed161263dcd7f0.jpg"
+    },
+    "MB": {
+      "image": "/models/configurator/desk-colors/d7dca6ac3999ee37fd5abd0005bb8e896692d23634c2e03c61c95082afb66ed4.jpg"
+    },
+    "MG": {
+      "image": "/models/configurator/desk-colors/6b397a320da48c2ee6b09d1b2764c7b1c73315bbfca14f76925a02f8aec1a30e.jpg"
+    },
+    "ML": {
+      "image": "/models/configurator/desk-colors/83b1e2b21f64c1f27f9709f70c98aa2ae81fbe1c96b58f0373578ea6187293cd.jpg"
+    },
+    "MLF01": {
+      "image": "/models/configurator/desk-colors/8d50e33bf10320c77df3056a10ae5990df9176598825a915d289690e9977cf58.jpg"
+    },
+    "MLF03": {
+      "image": "/models/configurator/desk-colors/c499e7ec8e18529bf18fb0fb6edd6ea051263c19e151dbd35569883b16d5fc0c.jpg"
+    },
+    "MLF08": {
+      "image": "/models/configurator/desk-colors/e94c3c77b030ccbf652b9f54c50b5029aa48cc8e319e9d03de3c30a59b3fd825.jpg"
+    },
+    "MLF09": {
+      "image": "/models/configurator/desk-colors/ae593eb2208e7dccd212bd37e0ed9a6a33d19d108ae1789a68ed230921fa027f.jpg"
+    },
+    "MLF13": {
+      "image": "/models/configurator/desk-colors/30d23b686a05c9a35faa2082ac8b6780c15b24e99d185cee71e348a5b207e8f1.jpg"
+    },
+    "MLF16": {
+      "image": "/models/configurator/desk-colors/698963fedeca9bf1e01278789d491dfbafacf70a4e513565ec3e5a181a3896d0.jpg"
+    },
+    "MLF17": {
+      "image": "/models/configurator/desk-colors/0c72b722f5e7f1419ad7c6a202a6043a7a37fc3eb95f7ed3b4fd9346f61b14ac.jpg"
+    },
+    "MLF20": {
+      "image": "/models/configurator/desk-colors/1f44207f6393f36732129643163155de1185c5afba5469fb49b8979f9f3d16f7.jpg"
+    },
+    "MLF22": {
+      "image": "/models/configurator/desk-colors/454512398b67d41ee386acb31028739bf270a0dc443f07d88e6d4a5189dfbd1d.jpg"
+    },
+    "MLF23": {
+      "image": "/models/configurator/desk-colors/582ccf484845a21e3c2190a38f9882cd645e1712bcaea6be5954ca818265d077.jpg"
+    },
+    "MLF28": {
+      "image": "/models/configurator/desk-colors/3e3201017ec2ca30dc4f13df752abb9cdafa2433a60ba9ac41bc74a97022ea39.jpg"
+    },
+    "MLF32": {
+      "image": "/models/configurator/desk-colors/242632452e3e05c24a96962f5085ca5267a73d1c12286f0a30f26a0b90c7ab50.jpg"
+    },
+    "MLF36": {
+      "image": "/models/configurator/desk-colors/43f32f55e9c2c685a32222189cdc953dab556884586299ba25861923a1049e8a.jpg"
+    },
+    "MLF63": {
+      "image": "/models/configurator/desk-colors/e7b53f72cdd10ca0c12430eb8a7f2659a860e990e5bda42eb1eae624f954bd28.jpg"
+    },
+    "MM": {
+      "image": "/models/configurator/desk-colors/65b4a6f8abb3ea673be4e30b9f493d8d74b7d2732b436230beac36a720132f1e.jpg"
+    },
+    "MP": {
+      "image": "/models/configurator/desk-colors/5cc4de165a2f933ec32dec1e49338fc736cf5858b25ec03233a1864ad291dbfd.jpg"
+    },
+    "MS": {
+      "image": "/models/configurator/desk-colors/4f19a0db96e6e9f3af0eaf9440afce56ee2af1ba2064e9d0a1926ec7c4afde31.jpg"
+    },
+    "NCSS2005Y60R": {
+      "image": "/models/configurator/desk-colors/d96a5b527575b16160205816dc5979022a68c769c27c5a2ea5c32a5823fc6a68.jpg"
+    },
+    "NF632": {
+      "image": "/models/configurator/desk-colors/326bf7e400fe839a6b3eb6fb639b2a671dd6703ad9aab1552984bae7db98db29.jpg"
+    },
+    "NF652": {
+      "image": "/models/configurator/desk-colors/98b2d0da811bbcee6069e6da9339ff1f181e9e0d0d13ed7d1e89f3058ca79007.jpg"
+    },
+    "NF653": {
+      "image": "/models/configurator/desk-colors/b74fe909b9ab560e3ecf74c2bfcc60b994d385a2b9bc0a60e29ec3be7b4f9a89.jpg"
+    },
+    "NF654": {
+      "image": "/models/configurator/desk-colors/7d5fc1ff642371eddbd72e0a399f756e6587b1f7adc493adff6f33db3041912d.jpg"
+    },
+    "NF655": {
+      "image": "/models/configurator/desk-colors/76a58b0e45d672338b6d1b74d3d8ad3f43b947df8b245ad46b8f30660d58d092.jpg"
+    },
+    "NF656": {
+      "image": "/models/configurator/desk-colors/f191a3b5b18809a0c72b9841610fe877bf96fc4ca849b3a26ef98b9db6f09658.jpg"
+    },
+    "NF657": {
+      "image": "/models/configurator/desk-colors/f2cf825040d6d434ee54249591206a3de7307a610867dc137a41e56bb6659383.jpg"
+    },
+    "NF658": {
+      "image": "/models/configurator/desk-colors/d1f507c805afccb7bf23317eb1a4508c246065914b1b313e843ad32904070e86.jpg"
+    },
+    "NF659": {
+      "image": "/models/configurator/desk-colors/9d4830cefb1a2fb5fa84af5833e2ce74e714a644bc797b65b019e2f5cbf0b7ec.jpg"
+    },
+    "NF660": {
+      "image": "/models/configurator/desk-colors/5e13d5e635e36952349439b45e4ec88949dea28e3dec2b0aeea5a44ed6ecda91.jpg"
+    },
+    "NF661": {
+      "image": "/models/configurator/desk-colors/653eb58fefae9a7adec5570f52bc0d97fd785f349beb4e1f99d65744b812bb84.jpg"
+    },
+    "NF662": {
+      "image": "/models/configurator/desk-colors/2b58ff191854e9f6f005c45be6e85c2fefbeeea0f42ad16564fcc9c2220afabb.jpg"
+    },
+    "NF663": {
+      "image": "/models/configurator/desk-colors/1b7ad9900ed894f64583f9b84620dcbe7e0641f77ad6db602ae7b31dd79d0431.jpg"
+    },
+    "NF664": {
+      "image": "/models/configurator/desk-colors/14652f8a5d6c35f35674c614a344c8af63b04c859861508c57fbf1f8abf2e3d1.jpg"
+    },
+    "NF665": {
+      "image": "/models/configurator/desk-colors/72c5fa6b1e2598463be1d3afbc7b36d9731db68539d01da9f4314ba44cf3b5e1.jpg"
+    },
+    "NF666": {
+      "image": "/models/configurator/desk-colors/6061323c1a9f8a7e5048d9e03edea23bef13740ac38f7842fe13014363601be4.jpg"
+    },
+    "NF702": {
+      "image": "/models/configurator/desk-colors/4d02bf6aaede0fba9878f8e063d00a0bcd2b12c12fa08f03c9d08178d5fe0494.jpg"
+    },
+    "NF704": {
+      "image": "/models/configurator/desk-colors/a5623ded63edacb32f7b97b64170939034f52a40f7334e7f6b7bfb9c61a19b21.jpg"
+    },
+    "NF705": {
+      "image": "/models/configurator/desk-colors/2eb2b31a4d0f2f2e2697e12e740829d99d76ae80e205d8f56b3c02d8e8aae6a4.jpg"
+    },
+    "NF706": {
+      "image": "/models/configurator/desk-colors/be1e8adbeaa156b420c2f762ef9bde273d593359e0a17aa974a06699dc73d22e.jpg"
+    },
+    "NF707": {
+      "image": "/models/configurator/desk-colors/dd3460b4c25e271ffe84191917d5a63f2f8895e8060a610852604f17ba0d0121.jpg"
+    },
+    "NF708": {
+      "image": "/models/configurator/desk-colors/5a10a2f80cd0a6b6cec754460af9b44d87cb3875b0806b0c96c2b80246e34e2b.jpg"
+    },
+    "NF709": {
+      "image": "/models/configurator/desk-colors/9597a625c280cbb950d5818b0947a23626647803b1edbb287fda50e8a7c1b642.jpg"
+    },
+    "NF710": {
+      "image": "/models/configurator/desk-colors/da62fb56e433e2af00d171e69f957aaa297ca37597fc6037a4567478828c4a93.jpg"
+    },
+    "NF729": {
+      "image": "/models/configurator/desk-colors/ab0f8cea9136e53d78f277f29cdf6e87a20346fa53c9862bcca2aac1277e5b76.jpg"
+    },
+    "NF730": {
+      "image": "/models/configurator/desk-colors/a2860528ce04e81c4611d72bada739e798b7f6e26c3fda19e49e65ba05e3d3e9.jpg"
+    },
+    "NF731": {
+      "image": "/models/configurator/desk-colors/1f2b256aa41adff27dc3fd96b9c538f5702b88d9b96d410ea22f05113e1f0328.jpg"
+    },
+    "NF733": {
+      "image": "/models/configurator/desk-colors/e107568a12ba79c8d24302f1f7ea72c24fdb1f9bad0a445620b37e21797cca1a.jpg"
+    },
+    "NF735": {
+      "image": "/models/configurator/desk-colors/cbbf4d4cc08b68b3224ba52cb8e44a1a37c121a378ad400ca803f4b64bcf93d4.jpg"
+    },
+    "NF736": {
+      "image": "/models/configurator/desk-colors/0023bc49e5c9abe95844ba61b6426c17bb5ad9fc89df729ef779a2b3f580f6dd.jpg"
+    },
+    "NF737": {
+      "image": "/models/configurator/desk-colors/646c2b1da8fa6810ac5426e04bb2a91ff1a4241416cdaed057cb59681690347e.jpg"
+    },
+    "NF762": {
+      "image": "/models/configurator/desk-colors/ad77331255736e042e2ebeaab52e65ef4e660a6487d56e9195299be3af45e9d0.jpg"
+    },
+    "NF763": {
+      "image": "/models/configurator/desk-colors/93c32251016ad6223245921daafc8e5257973a28486f3914fda49ebaf77ff053.jpg"
+    },
+    "NF764": {
+      "image": "/models/configurator/desk-colors/40ff2033e09dff66f6be074e8246801aac0ec36bf49988b692ff5cf269636282.jpg"
+    },
+    "NF765": {
+      "image": "/models/configurator/desk-colors/a11d5ab06bc04bd3be55479f25e50ee0150655dd725b42e39160bec0df54f3fd.jpg"
+    },
+    "NF766": {
+      "image": "/models/configurator/desk-colors/8e021a249b9585e81eae88a298e0d9db6687e5c3aa035917a237a4e65bdb9633.jpg"
+    },
+    "NF767": {
+      "image": "/models/configurator/desk-colors/1c1f5e795a049cc1cb9dc628d1619cb9090178ab35145a06cef2437a5c060d53.jpg"
+    },
+    "NF768": {
+      "image": "/models/configurator/desk-colors/ba38f29848133b7f0dd3d76d2ca08098de80c93190b99fa4242a171d665a2d81.jpg"
+    },
+    "NF769": {
+      "image": "/models/configurator/desk-colors/d6211ee9b6992ef99bc0bd1ba736c2487e97c3abd5d2f09531d76c8d90219c1f.jpg"
+    },
+    "NF770": {
+      "image": "/models/configurator/desk-colors/cfea7a55b364875e50913e6b591283575ec785f08a25627cd8bb5697408cf655.jpg"
+    },
+    "NH": {
+      "image": "/models/configurator/desk-colors/2e301db5b10512ebeac6b2770f4c93898137fcb3d3e8d4add87951933b7e7d4f.jpg"
+    },
+    "NJ": {
+      "image": "/models/configurator/desk-colors/0e9716590464f7f358df45cf7bff5c909afbc3efdc08a1a74fea69423be9166f.jpg"
+    },
+    "NK": {
+      "image": "/models/configurator/desk-colors/72e6a572355022e60330e71c01b9d9d0305b0e50fe174d0a92923103bc695ab7.jpg"
+    },
+    "NW": {
+      "image": "/models/configurator/desk-colors/135e75e5ffeaeb335b4cb0ecb90f2ccd67f6fa6853541ee7962918ffee2941bc.jpg"
+    },
+    "NZ": {
+      "image": "/models/configurator/desk-colors/14ef427133388c4f11b5dcf2e9256128d3c2e5053e1d1d5a657ce1565d0d49a0.jpg"
+    },
+    "RAL0305040": {
+      "image": "/models/configurator/desk-colors/62f440af85bdd2ae3cbeaed098f4fc3801d8c6e007a4ee4b9f321659b92431d7.jpg"
+    },
+    "RAL1024": {
+      "image": "/models/configurator/desk-colors/ab9a387d5e5f7a94e95e27decf18125a690a40840495d135ece99c4920484082.jpg"
+    },
+    "RAL5000": {
+      "image": "/models/configurator/desk-colors/d318c87f60dd676602b9ad965035bdacf23460e7c4bdc6563e5a12adae9d11cc.jpg"
+    },
+    "RAL6003": {
+      "image": "/models/configurator/desk-colors/80a8e1bb1335d6fcdfb061fb85d92db0714606f7b191c5a2e240323fdcc810a4.jpg"
+    },
+    "RAL9016": {
+      "image": "/models/configurator/desk-colors/48bcd3f6d801b8a191a865ae8afa579857393145866179b94cdd38a0bb910b5b.jpg"
+    },
+    "SGGLASS": {
+      "image": "/models/configurator/desk-colors/7b580785c87b745f7c107b899dbd563ab122c7076f5abbe1774569817cf5b33f.jpg"
+    },
+    "SI": {
+      "image": "/models/configurator/desk-colors/cf7cedd3d34677ad7a2bacbe9f5bc07fa8c22b3deff6886b946567246f8fa14c.jpg"
+    },
+    "SILVER": {
+      "image": "/models/configurator/desk-colors/fc6517923432ba92e0656725fd04374dbc6d0def82671dab7f765eb75b465f87.jpg"
+    },
+    "SILVERBLACK": {
+      "color": "#1f1f1f"
+    },
+    "SILVERWHITE": {
+      "color": "#fbfbfb"
+    },
+    "SS": {
+      "image": "/models/configurator/desk-colors/46d61f82387a68a7661e84d7f9fe10a00ac2da242b898d5976c5f3576b195dd5.jpg"
+    },
+    "ST": {
+      "image": "/models/configurator/desk-colors/43a682a5df4e5f98fd9f47fd53b1a3743be99fdf27214baf9ead1faf8a7f9995.jpg"
+    },
+    "VL0001": {
+      "image": "/models/configurator/desk-colors/d826b4f2271a6a9d5f632fe0e1fadfbb5dd5d03e81ad4fafe10189822725273f.jpg"
+    },
+    "VL0002": {
+      "image": "/models/configurator/desk-colors/b6db29923ddaaa489b2add17e7dda879cf58eceb5cc29db9104141c9e4fe7331.jpg"
+    },
+    "VL0020": {
+      "image": "/models/configurator/desk-colors/344e90721e9690af97456b69835d8d965fff1058b89fb8cdb6ffc1bc0c9e9c15.jpg"
+    },
+    "VL0033": {
+      "image": "/models/configurator/desk-colors/bd56352906f091611f8b271b02c5e66c717da0a3d3798c7fbfb3065ecaf688e9.jpg"
+    },
+    "VL0034": {
+      "image": "/models/configurator/desk-colors/e83c40901b060a834e19f1a44b3e11ce5ee8d2eb5e3c3c5fa881ad1b934d97d1.jpg"
+    },
+    "VL0035": {
+      "image": "/models/configurator/desk-colors/aacab8dc2d0e4aed44797e43c76dc1ec851ec3afb34d3fc971101dddc0d071e8.jpg"
+    },
+    "VL1001": {
+      "image": "/models/configurator/desk-colors/cb2472087447373916326c81c2c8c22b599c5299ef454c79656b06c8f81484fc.jpg"
+    },
+    "VL1020": {
+      "image": "/models/configurator/desk-colors/d077f6901bace3d41aa7d406165bf8ad67d8d6de8d225a019d91e2800905deef.jpg"
+    },
+    "VL1048": {
+      "image": "/models/configurator/desk-colors/1211eae0f909b754f4fd9f97e2bd14076edc5303df8dfff79f885996e677f9e1.jpg"
+    },
+    "VL1049": {
+      "image": "/models/configurator/desk-colors/16dcb3ee62a5d1811ffe38ad21e43a3dbce81acb3de5251e4752eee80f517cb0.jpg"
+    },
+    "VL1050": {
+      "image": "/models/configurator/desk-colors/19b94f86187f9b93b827f3f50e356815247afa56691b3d16f19681efda3ecabb.jpg"
+    },
+    "VL2001": {
+      "image": "/models/configurator/desk-colors/bec7688ccd4059c73c746df3729182e2222d7ca03094316c64104ef3712836b8.jpg"
+    },
+    "VL2002": {
+      "image": "/models/configurator/desk-colors/7210fb16de0d91bec0087ddbaaaf1ff667255e8b69854e3860a20be97692b009.jpg"
+    },
+    "VL2020": {
+      "image": "/models/configurator/desk-colors/1514f1d86e75d9034683296501ac3c92d890f576e21e735f27441e040485c5cc.jpg"
+    },
+    "VL2021": {
+      "image": "/models/configurator/desk-colors/ea53baf9d08d16a176bb1389fdab4a74e5e71521884a1efb3cd37f0b7bdb912a.jpg"
+    },
+    "VL2062": {
+      "image": "/models/configurator/desk-colors/c7a8969b6e8b79721ba1f420cf28e5d737a529a14ea051d4611538c61a318908.jpg"
+    },
+    "VL2074": {
+      "image": "/models/configurator/desk-colors/7a84cb5a89308b86aeb369c830c5c9b3f9ec485e9ce964d0a2eb2fee80102be4.jpg"
+    },
+    "VL2075": {
+      "image": "/models/configurator/desk-colors/62ccaafdb043ea65965d3f863a6e6e840d9d06ce850dbf2b5cb401c5449aae08.jpg"
+    },
+    "VL2106": {
+      "image": "/models/configurator/desk-colors/19195f428b0731fbae8968713670cadf6eedb1f037dc9be77559ad12f9f0d021.jpg"
+    },
+    "VL2107": {
+      "image": "/models/configurator/desk-colors/e8baedc53fb5a1cdb2cd838f45a0014bbb9fe51aa8992e02a3e4308a6db5ecdb.jpg"
+    },
+    "VL2108": {
+      "image": "/models/configurator/desk-colors/07637e744b94580e78262098f27fb46b0101fa9ee16c724bc7e57244e9f892d3.jpg"
+    },
+    "VL2110": {
+      "image": "/models/configurator/desk-colors/f2fb33eaf8bc971ad649322934307329232b27e17cf46728607503a32f97dff1.jpg"
+    },
+    "VL2111": {
+      "image": "/models/configurator/desk-colors/6b85efd8072703c138d5bbadd96a7cce9af3f081959bbbc1288d61889c9bd321.jpg"
+    },
+    "VL2112": {
+      "image": "/models/configurator/desk-colors/1f06a563561c8bbb7523c02b4260eb224e0ccae9f181cb4d7c07e331ef6a1ad0.jpg"
+    },
+    "VL2113": {
+      "image": "/models/configurator/desk-colors/9d56ab7943a568691166e45cdd8bc0628c70ac79875523b7d70a63407143de0f.jpg"
+    },
+    "VL2114": {
+      "image": "/models/configurator/desk-colors/967d5158bba88f7c9e3335aaeab93798e7f50c943b56635170b35ae1bc777375.jpg"
+    },
+    "VL2115": {
+      "image": "/models/configurator/desk-colors/eeb575a7a5f5e839f8434bb5905f6435e323129c916d7259554cb8a050f2689a.jpg"
+    },
+    "VL2116": {
+      "image": "/models/configurator/desk-colors/15f2234c0d6812367dbac7ae21106117cf0f0b080c3de6c0d2292a3ab90bfa69.jpg"
+    },
+    "VL2117": {
+      "image": "/models/configurator/desk-colors/391425f2223a3f953bae36a81319ec4cb41f7bcfa711e2c9f5e24b6764d0eff3.jpg"
+    },
+    "VL2119": {
+      "image": "/models/configurator/desk-colors/c4b47fe9dbc647e7c6a5e3bdf112e13e913414e4e6d43924b4c71dafab3f643f.jpg"
+    },
+    "VL3001": {
+      "image": "/models/configurator/desk-colors/973bdf9b0c6617ecfe085df8b4b63488327ef07f66f04585e9434189171ef4cc.jpg"
+    },
+    "VL3067": {
+      "image": "/models/configurator/desk-colors/0003fd2654290045d96b9c1fbc2645ae736fb1f67476734d0e653a98795b1b46.jpg"
+    },
+    "VL3068": {
+      "image": "/models/configurator/desk-colors/71f2395cfe2e9d0fc4cbb3778d14c840febe0c9496e30b758331d0e22ff0572b.jpg"
+    },
+    "VL3069": {
+      "image": "/models/configurator/desk-colors/750308556e961f6c7e045eccba1d5a849d275c2bd91b18173d02a151446fda01.jpg"
+    },
+    "VL4001": {
+      "image": "/models/configurator/desk-colors/d9e7842b4b5db3fad1bb756fc152b842d7bc5c5e3702a5c1c128eb205b5e509f.jpg"
+    },
+    "VL4002": {
+      "image": "/models/configurator/desk-colors/caa8ec351464af8532e3a71c0061af977b737047b655393641052ff85e3741bc.jpg"
+    },
+    "VL4003": {
+      "image": "/models/configurator/desk-colors/f6617625f1cd6bc59b3a6cdafd2972a75467c3da42e422174858e2fc73f0b3b9.jpg"
+    },
+    "VL4020": {
+      "image": "/models/configurator/desk-colors/ec975137072c628c408bf09915b0721a90abcaee29f57132e80dcbbfb9ee1f95.jpg"
+    },
+    "VL4040": {
+      "image": "/models/configurator/desk-colors/878bbbf4bc045a194251c1e404a7da3b7a14beb5d585924966aade12993a2103.jpg"
+    },
+    "VL4041": {
+      "image": "/models/configurator/desk-colors/81abf02c17bcfee147de92aa47ce38605a8656e9ff24bf5366341da6fd731109.jpg"
+    },
+    "VL4042": {
+      "image": "/models/configurator/desk-colors/f0f615eeb266092625cdbae58c2b8facf205d2742558e6de7913cc891fc67611.jpg"
+    },
+    "VL4043": {
+      "image": "/models/configurator/desk-colors/dcfba5480a4762e3730f6f12744dfc9de4455ec070830bdb591c31faa7c8eab4.jpg"
+    },
+    "VL4044": {
+      "image": "/models/configurator/desk-colors/2cea6eb9e965e9a17de236063a1871eb6a29f8dc8b2266b47eba58be6de560da.jpg"
+    },
+    "VL4045": {
+      "image": "/models/configurator/desk-colors/a87e84c04dcff80ab1c5bc7f7c54171fb662e49bc0587c0a09ec41bf87c1d48b.jpg"
+    },
+    "VL4052": {
+      "image": "/models/configurator/desk-colors/f693f317780921121ee08f1093028b77428a279fe4ea655a27c55996aeb8d3d7.jpg"
+    },
+    "VL5001": {
+      "image": "/models/configurator/desk-colors/6c6a0361ff6b89faaeaee526274ca47bd00df2c70eb06c14279dec13da0a1247.jpg"
+    },
+    "VL5002": {
+      "image": "/models/configurator/desk-colors/00e3bba157a7025e26773c76751e334abbf2662816c5774d11ae9342904c4a89.jpg"
+    },
+    "VL5041": {
+      "image": "/models/configurator/desk-colors/c8dcbf4568f8d9a4d1165bcd8c3131443096864831b91d855ddf6d0eef2397a3.jpg"
+    },
+    "VL5056": {
+      "image": "/models/configurator/desk-colors/f37c1068d2479dbc62c620d8b047d0423f1478fda5b5c45596f19918a68cfde3.jpg"
+    },
+    "VL5057": {
+      "image": "/models/configurator/desk-colors/cc2f26886440cab1a4669fd59605568e9eda83736df3fa34d20f247242ebf3c5.jpg"
+    },
+    "VL5065": {
+      "image": "/models/configurator/desk-colors/48d0a08795a393a8755018ec550b45cbccfccaa20b4cf44692f4fa68fe48df32.jpg"
+    },
+    "VL5069": {
+      "image": "/models/configurator/desk-colors/4f08f6e72ae43764264b113163c0e92947941793d274ee5dd9be458c660f2900.jpg"
+    },
+    "VL6003": {
+      "image": "/models/configurator/desk-colors/538a511225cf0f23260968887b118cbeaef8c963dffa768ab37c411ccf69db6f.jpg"
+    },
+    "VL6012": {
+      "image": "/models/configurator/desk-colors/76e5b9506ac3a6d9aeb181476284c016fa12a73e50cdf2198fb384e1804f7364.jpg"
+    },
+    "VL6013": {
+      "image": "/models/configurator/desk-colors/5e166778b2094df7392b399663bef253e03cee6883ae8da31e770bb5c410b3b4.jpg"
+    },
+    "VL6019": {
+      "image": "/models/configurator/desk-colors/aa9d6f5a00196da96faa442674818b0e6c02a84af13592dfdc9df981f66645e1.jpg"
+    },
+    "VL7001": {
+      "image": "/models/configurator/desk-colors/b7802b39aaf437aade55914310ec9081a96d03ae4417c51ea4f836636a9d5647.jpg"
+    },
+    "VL8020": {
+      "image": "/models/configurator/desk-colors/2dea1d5b1cd0e5f6044fd8f26cbe39c11d631521c2f5c24b2f189b6b38827208.jpg"
+    },
+    "VL8032": {
+      "image": "/models/configurator/desk-colors/1f3568b96df4fb7f509797a0a8ce96cfe4fc0a4943c676f88924057fd2a04d1f.jpg"
+    },
+    "VL9001": {
+      "image": "/models/configurator/desk-colors/bcdfe8f42eb40f773f569e4a21f6803adbb0117479cca6b7eabebcdabcc62b6e.jpg"
+    },
+    "VL9035": {
+      "image": "/models/configurator/desk-colors/bd5e25d2b80124ccb103377b987ba6fa2a63787d0a6a67f8441b5422f67c6f14.jpg"
+    },
+    "VL9607": {
+      "image": "/models/configurator/desk-colors/56d6fcbf8f0ca67b75455e07f6a6699ce67e7ce7b107b18bedfa082754f2d12a.jpg"
+    },
+    "VM": {
+      "image": "/models/configurator/desk-colors/f6c081ae5cad7043b9389522250b576c414ce7932f2332a373d2420072e95f01.jpg"
+    },
+    "VN": {
+      "image": "/models/configurator/desk-colors/b62faf4f55c2cf182472d01b33e357fd54a1cd4df2cb0c14ac25a1de0727a583.jpg"
+    },
+    "VO": {
+      "image": "/models/configurator/desk-colors/292f1c3b143ccff8873e4aa1986f3b45005c7979313f832fbbba95cc7903cb16.jpg"
+    },
+    "VP": {
+      "image": "/models/configurator/desk-colors/37925add2f2116df5582d8cea1665773b44a33582ca7010aa45d3721aa84089f.jpg"
+    },
+    "VS": {
+      "image": "/models/configurator/desk-colors/f29211d1b5b934ced3ee85ba27274bf5bf8b4bbb919f9df40c4ef345f05509af.jpg"
+    },
+    "VT": {
+      "image": "/models/configurator/desk-colors/404f64d0adc6610bf6a5ce557674a5d54818895a20c3c88e183e01b26b0d226b.jpg"
+    },
+    "W": {
+      "color": "#fbfbfb"
+    },
+    "WHITEPLASTIC": {
+      "color": "#fbfbfb"
+    },
+    "XR004": {
+      "image": "/models/configurator/desk-colors/a952434c9f487ee625efa8d728487dc401ad788f0d915fceb118002d5e54e78f.jpg"
+    },
+    "XR005": {
+      "image": "/models/configurator/desk-colors/7056f3b6880fbacdfe5599ddf66bdf1f7b54ff1d158260ebcdf5b10fab545848.jpg"
+    },
+    "XR009": {
+      "image": "/models/configurator/desk-colors/035cbdc441b9cc9d0de8cdb7607d0de19a167a331d4c14b48ba07a51f25ea214.jpg"
+    },
+    "XR024": {
+      "image": "/models/configurator/desk-colors/1d318c356a3aabb38b167a1e08b5baebc2072ecbb8d08da23d9e0220bab70139.jpg"
+    },
+    "XR026": {
+      "image": "/models/configurator/desk-colors/fe08351031987081361c0e3ad08822c239a550087e74e94f0cea3d69a10de890.jpg"
+    },
+    "XR030": {
+      "image": "/models/configurator/desk-colors/d809aa1059653303a507efd65afccc0ed8b70bf82916606c97aa3a0e389cdd8e.jpg"
+    },
+    "XR035": {
+      "image": "/models/configurator/desk-colors/319ef4bb540d915665e98302d41b41545f1528ade7d02f7ce09a7994d6e51f03.jpg"
+    },
+    "XR045": {
+      "image": "/models/configurator/desk-colors/a2c698aece8c9c790f9ee7f05d725dd85c0754fda9b33c70f258dae5d4fa8c1b.jpg"
+    },
+    "XR046": {
+      "image": "/models/configurator/desk-colors/db4209224596d3056959c7ec8f3a6f0e5ad43ef6e6ba681f0479081ee4e52ccd.jpg"
+    },
+    "XR047": {
+      "image": "/models/configurator/desk-colors/251176a0db8de72b177a58eba98ad6ef79fc2e82743bce68893dc0a6d11519c2.jpg"
+    },
+    "XR071": {
+      "image": "/models/configurator/desk-colors/b049ab18a188aba3802e894ee1f6191720379df1183dece119e955eb5ed4a728.jpg"
+    },
+    "XR072": {
+      "image": "/models/configurator/desk-colors/8bbc526929a099c53e9c094cd13d3fe3c23dac5fc4a2c9c1416da30e392ab6f2.jpg"
+    },
+    "XR073": {
+      "image": "/models/configurator/desk-colors/9b495dffc3c67569412677aad3f918951ab73eea8ae189911f68ae392c1e6443.jpg"
+    },
+    "XR074": {
+      "image": "/models/configurator/desk-colors/9e631ffc27c5832501c7c34343ed00b3ec1c409041deedec5bb2a079c1c8e3d8.jpg"
+    },
+    "XR076": {
+      "image": "/models/configurator/desk-colors/4f2366d6d2c9c8ea296928605108c2b3572967b1596cf9c6f18352fcc5bcd4cc.jpg"
+    },
+    "XR077": {
+      "image": "/models/configurator/desk-colors/afe0a198650d6789788e1a65ada93197b9691d95aced868beab949cd8e44c740.jpg"
+    },
+    "XR079": {
+      "image": "/models/configurator/desk-colors/23b14ea12731b0e250cedad9051ba61f4d25dc5b58058fabdd0121f46612a12d.jpg"
+    },
+    "XR081": {
+      "image": "/models/configurator/desk-colors/bffafafb4564799c1969e9c5b43872d69ed06739b380215280c357e51407a51c.jpg"
+    },
+    "XR082": {
+      "image": "/models/configurator/desk-colors/801630bb878ed32ac24175e39c6cc0b3b9c243663a5cf0acbd7909753bb8c6d5.jpg"
+    },
+    "XR084": {
+      "image": "/models/configurator/desk-colors/8a1612d534c9f2ba8ceaabbc130d594685a9433c2f8d5aa1f57d7f42a4cc0c05.jpg"
+    },
+    "XR091": {
+      "image": "/models/configurator/desk-colors/aae5b148ea73af64fc2ac4cb20f71c88e9a9432c424ef9adb8ca2f82eb33a7cf.jpg"
+    },
+    "XR094": {
+      "image": "/models/configurator/desk-colors/e33ecdd7cb89185842600ede5b2863612ff13f13349158a94461d47d34d406df.jpg"
+    },
+    "XR095": {
+      "image": "/models/configurator/desk-colors/3068b8db6aba2d8b1713aab48b3dea0e0a487e0b5651b3cd1b7e0951bcdb07a7.jpg"
+    },
+    "XR096": {
+      "image": "/models/configurator/desk-colors/237484f3ec2d9b738994ee1f4d227b6914fcfeabae96e966e43e58fbf1b56363.jpg"
+    },
+    "XR097": {
+      "image": "/models/configurator/desk-colors/6bf5a2bee63857097d61719d17a58342d21a9effc6c7ea027f240abbc681f611.jpg"
+    },
+    "XR100": {
+      "image": "/models/configurator/desk-colors/67a28f625c44b05ed8736c27a138538fdd6f08ec53434159838e6ef494889248.jpg"
+    },
+    "XR101": {
+      "image": "/models/configurator/desk-colors/230ffd26b3a39189a36e9779da05ca04075b1166fde09fd221650d051ce23a75.jpg"
+    },
+    "XR102": {
+      "image": "/models/configurator/desk-colors/4140091bb6b0e503332374314055fed49fe382b89bfb5b80d4166f5c69696c4c.jpg"
+    },
+    "XR105": {
+      "image": "/models/configurator/desk-colors/ccfa15cc911e2ea11e8f96663e6dd995f324675ef6e53d2de5aee60ea184b2c0.jpg"
+    },
+    "XR108": {
+      "image": "/models/configurator/desk-colors/edd59751da1232e0cca021ae93266e96cd6f21e35ffc1e9d138967af62724050.jpg"
+    },
+    "XR136": {
+      "image": "/models/configurator/desk-colors/9b3e1e7089e93aadba2332614e212d06929230ea8b73352f0b55eb375aa5e1db.jpg"
+    },
+    "XR141": {
+      "image": "/models/configurator/desk-colors/4fa396a02c29131417334985617f50a61356aa6d710ad8f81dbb7afa9024f60a.jpg"
+    },
+    "XR145": {
+      "image": "/models/configurator/desk-colors/24abbfb7b5fad117ba1cdd8103c7b0dbb77e75304483790e2b7308b10c3b9ec4.jpg"
+    },
+    "XR156": {
+      "image": "/models/configurator/desk-colors/7c09fa4488a669dcf1fcdf0d8dddbdeea25fec9dd6356525670706121bb81b45.jpg"
+    },
+    "XR159": {
+      "image": "/models/configurator/desk-colors/89f24070a065a6ffcf172e3e9772cbb0a3be7eda7b31b5bfa7e9955065edb9a4.jpg"
+    },
+    "XR160": {
+      "image": "/models/configurator/desk-colors/ba7b1d479725e048a41425d8b8189d0611a1eb4d83c245b2c23b1d63b9ebc815.jpg"
+    },
+    "XR165": {
+      "image": "/models/configurator/desk-colors/8ddf08d641bfee914231938cd86d2ed60b7badfdf4bd45753390c8a28dc3ce98.jpg"
+    },
+    "XR168": {
+      "image": "/models/configurator/desk-colors/dc210f0bbd913891b83c3d53f1fe1b7300c3e347b8f9281e8828c5fa7d38fcc9.jpg"
+    },
+    "XR171": {
+      "image": "/models/configurator/desk-colors/84ad6111990f5d408f0825b96d01104a98d0e1b06ccb5ed318eb68fb5c0af84c.jpg"
+    },
+    "XR172": {
+      "image": "/models/configurator/desk-colors/11bdcd61bcd46601962bbb80c138e050059fc5622061798d1e1867f718cdc4f8.jpg"
+    },
+    "XR173": {
+      "image": "/models/configurator/desk-colors/2edc5b00e7996ee88760a56a277c819e6555b8f02a3adcbc62e5e683fb69e96f.jpg"
+    },
+    "YP": {
+      "image": "/models/configurator/desk-colors/0a33c5a2cdf19b0cac18520988681ea32f2516aff8fbb8d67230bee77fc806f3.jpg"
+    }
+  }
 }

@@ -9,13 +9,14 @@ import {chairReviewVersion,chairReviewRoute,chairConstructionMenus,chairCompatib
 import {chairFinishIntent,resolveChairFinishIntent,type ChairFinishIntent} from '@/lib/chair-finish-intent';
 export type {ChairReviewEntry} from '@/lib/chair-review-routing';
 import './pc2-chair-review.css';
-import {distinctPreviewLabels,previewCollection,previewField,previewTuple,previewValue} from '@/lib/preview-option-presentation';
+import {distinctPreviewLabels,previewCollection,previewField,previewModelLabel,previewTuple,previewValue} from '@/lib/preview-option-presentation';
+import {PreviewAdminCodes} from './preview-admin-codes';
 import {PreviewColourSample} from './preview-colour-sample';
 import SeglaVisualReview from './segla-visual-review';
 import {resolveSeglaVisual} from '@/lib/segla-visual-routing';
 
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false});
-function ModelReview({data,initialSingle,finishIntent,onFinishIntent,externalArmrests=false,externalBase=false,externalCastors=false,externalGaslift=false,externalMechanism=false,externalFoam=false}:{data:ChairPreview;initialSingle?:{witness:string;single:string};finishIntent?:ChairFinishIntent;onFinishIntent?:(intent:ChairFinishIntent|undefined)=>void;externalArmrests?:boolean;externalBase?:boolean;externalCastors?:boolean;externalGaslift?:boolean;externalMechanism?:boolean;externalFoam?:boolean}){
+function ModelReview({data,showAdminCodes,initialSingle,finishIntent,onFinishIntent,externalArmrests=false,externalBase=false,externalCastors=false,externalGaslift=false,externalMechanism=false,externalFoam=false}:{data:ChairPreview;showAdminCodes:boolean;initialSingle?:{witness:string;single:string};finishIntent?:ChairFinishIntent;onFinishIntent?:(intent:ChairFinishIntent|undefined)=>void;externalArmrests?:boolean;externalBase?:boolean;externalCastors?:boolean;externalGaslift?:boolean;externalMechanism?:boolean;externalFoam?:boolean}){
  const retained=useMemo(()=>resolveChairFinishIntent(data,finishIntent,chairInitialContext(data),chairInitialVariants(data,chairInitialContext(data))),[data,finishIntent]);
  const [context,setContext]=useState(()=>chairInitialContext(data)),[variants,setVariants]=useState(()=>chairInitialVariants(data,chairInitialContext(data))),
   [observed,setObserved]=useState(()=>{if(retained)return '__qs:'+retained.witness+':'+retained.single;if(finishIntent)return '__pending';if(initialSingle)return '__qs:'+initialSingle.witness+':'+initialSingle.single;const q=chairInitialQualifiedSelection(data);return q?'__qg:'+q.witness:'original';}),
@@ -38,6 +39,17 @@ function ModelReview({data,initialSingle,finishIntent,onFinishIntent,externalArm
  const baseMetadata=data.visualMetadataByContext?.[String(context)]||data.visualMetadata;
  const visualMetadata=functional?{values:functional.values,sameStaticAppearanceObservations:[]}:baseMetadata;
  const originalFinish=data.originalFinishByContext?Object.fromEntries(Object.entries(data.originalFinishByContext[String(context)]||{}).map(([k,value])=>[k,{value,knownCurrentPrefixChoices:[]}])):data.palette.schema==='chair-base-observed-colours-v1'?data.palette.baselineObservedFinish:{};
+ const branch=selectedWitness?.branches.find(b=>b.id===qualified?.branch);
+ const pickedFinishes=qualified&&selectedWitness&&observed.startsWith('__q')&&!originalPreview
+  ? qualified.kind==='single'
+    ? selectedWitness.singles.find(option=>option.id===qualified.single)?.values
+    : {...branch?.values,...Object.fromEntries([...selectedWitness.groups,...branch?.groups??[]].flatMap(g=>{
+       const picked=qualifiedGroupOptions(selectedWitness,qualified,g).find(o=>o.id===(qualified.groups[g.id]??g.base));
+       return Object.entries(picked?.values??{});
+     }))}
+  : undefined;
+ const adminValues={...current.default3DValues,...Object.fromEntries(Object.entries(originalFinish).map(([field,entry])=>[field,entry.value])),
+   ...(originalPreview?{}:choice.values),...selectedWitness?.fixed,...pickedFinishes,...structuralValues,...visualMetadata?.values};
  const variant={id:data.code,asset:assembly.base?.asset||'',assetSha256:assembly.base?.assetSha256||'',bytes:assembly.base?.bytes||0} as PilotVariant;
  function choose(value:string){
   setOriginalPreview(false);
@@ -94,13 +106,14 @@ function ModelReview({data,initialSingle,finishIntent,onFinishIntent,externalArm
    {witnesses.some(w=>w.fixed)&&<details><summary>Fiksuotos šio varianto spalvos</summary><p>{witnesses.some(w=>w.groups.length||w.branches.length||w.singles.length)?'Šios fiksuotos savybės nėra atskiri spalvų pasirinkimai.':'Kitų spalvų pasirinkimas šiam variantui nedeklaruotas.'}</p>{Object.entries(witnesses.find(w=>w.fixed)!.fixed!).map(([field,value])=><p key={field}>{previewField(field)} – {text(field,value)}</p>)}</details>}
    {data.palette.schema==='chair-base-observed-colours-v1'&&!witnesses.some(w=>w.fixed)&&<details><summary>Pradinės būsenos spalvų aprašas</summary><p>Dabartinės konstrukcijos originalias medžiagas rodo 3D vaizdas. Čia pateiktas pradinės perduotos būsenos aprašas.</p>{Object.entries(originalFinish).map(([field,entry])=><p key={field}>{previewField(field)} – {text(field,entry.value)}. {entry.knownCurrentPrefixChoices.length?`Tekstinės alternatyvos: ${[...new Set(entry.knownCurrentPrefixChoices.map(v=>text(field,v)))].join(', ')}.`:'Alternatyvų skaičius nežinomas.'}</p>)}</details>}
    {data.unavailableFinishChoices?.filter(c=>c.context===context).map((c,i)=><p className="form-note" key={i}>Apdailos variantai. {c.count!==undefined&&<>perduota {c.count} susietų būsenų. </>}Šiai konstrukcijai jų spalva 3D nerodoma. {c.reason}</p>)}
+   {showAdminCodes&&<PreviewAdminCodes model={data.code} values={adminValues}/>}
    <details><summary>Konstrukcijos duomenys</summary>{Object.entries({...structuralValues,...visualMetadata?.values}).map(([field,value])=><p key={field}>{previewField(field)} – {text(field,value)}</p>)}{visualMetadata?.sameStaticAppearanceObservations.map(o=><p key={o.field+o.value}>{previewField(o.field)} – {text(o.field,o.value)} – stebėtas toks pats stacionarus išorinis vaizdas. Tai nėra atskiras perjungiamas 3D variantas.</p>)}<p>Geometrija pagal aukščio duomenis netempiama. Apdailos pasirinkimai galioja tik perduotai konstrukcijai.</p></details>
    {Object.keys(current.textOnly).length>0&&<details><summary>Tekstinės parinktys</summary>{Object.entries(current.textOnly).map(([field,values])=><p key={field}>{previewField(field)} – {values.length?[...new Set(values.map(v=>text(field,v)))].join(', '):'reikšmių skaičius nežinomas'}. Šių parinkčių 3D patikra neįrodyta.</p>)}</details>}
   </div>
   <Viewer3D variant={variant} name={data.name} assembly={assembly}/>
  </div>;
 }
-export default function Pc2ChairReview({entries,initialCode}:{entries:ChairReviewEntry[];initialCode?:string}){
+export default function Pc2ChairReview({entries,initialCode,showAdminCodes=false}:{entries:ChairReviewEntry[];initialCode?:string;showAdminCodes?:boolean}){
  const [versionId,setVersionId]=useState('default');
  const [code,setCode]=useState(entries.find(e=>e.code===initialCode)?.code||entries[0]?.code||''),[data,setData]=useState<ChairPreview>(),[error,setError]=useState(''),[finishContext,setFinishContext]=useState('default'),[constructionId,setConstructionId]=useState('default'),[visualId,setVisualId]=useState(''),[mappingId,setMappingId]=useState(''),[finishIntent,setFinishIntent]=useState<ChairFinishIntent>();
  const baseEntry=entries.find(e=>e.code===code),selected=baseEntry&&chairReviewVersion(baseEntry,versionId),visual=selected?.visualSupplement&&visualId?resolveSeglaVisual(selected.visualSupplement,code,visualId,mappingId):undefined,routed=selected&&(!visual||visual.exactRoute)?chairReviewRoute(selected,visual?.exactRoute?.constructionId||constructionId,visual?.exactRoute?.finishId||chairCompatibleFinishRoute(selected,constructionId,finishContext)):undefined,construction=routed?.construction,source=routed?.source,sourceCode=selected?.code,sourceAsset=source?.asset,sourceSha=source?.sha256,sourceBytes=source?.bytes;
@@ -120,11 +133,10 @@ export default function Pc2ChairReview({entries,initialCode}:{entries:ChairRevie
   }catch{if(!abort.signal.aborted)setError('Nepavyko patikrinti kėdės paketo. Perkraukite puslapį.');}})();
   return()=>abort.abort();
  },[sourceCode,sourceAsset,sourceSha,sourceBytes,constructionBinding]);
- const names=distinctPreviewLabels(entries,entry=>entry.name);
  return <main className="container pc2-chair-review">
   <h1>Kėdžių 3D peržiūra</h1>
   <p>Perduotos konstrukcijos ir spalvinės būsenos. Ši peržiūra nepatvirtina visų galimų komplektacijų ar visos spalvų paletės; užklausų ir PDF nesudaro.</p>
-  <label className="field pc2-chair-picker">Kėdė<select aria-label="Kėdė" value={code} onChange={e=>{setVersionId('default');setConstructionId('default');setFinishContext('default');setVisualId('');setMappingId('');setFinishIntent(undefined);setCode(e.target.value);}}>{entries.map((entry,index)=><option key={entry.code} value={entry.code}>{names[index]}</option>)}</select></label>
+  <label className="field pc2-chair-picker">Kėdė<select aria-label="Kėdė" value={code} onChange={e=>{setVersionId('default');setConstructionId('default');setFinishContext('default');setVisualId('');setMappingId('');setFinishIntent(undefined);setCode(e.target.value);}}>{entries.map(entry=><option key={entry.code} value={entry.code}>{previewModelLabel(entry.code,entry.name)}{showAdminCodes?' · '+entry.code:''}</option>)}</select></label>
   {!!baseEntry?.reviewVersions?.length&&<label className="field pc2-chair-picker">Perduotas kėdės paketas<select aria-label="Perduotas kėdės paketas" value={versionId} onChange={e=>{setConstructionId('default');setFinishContext('default');setVisualId('');setMappingId('');setFinishIntent(undefined);setVersionId(e.target.value);}}><option value="default">Dabartinis paketas</option>{baseEntry.reviewVersions.map((v,index)=><option key={v.id} value={v.id}>Ankstesnis paketas{baseEntry.reviewVersions!.length>1?' '+(index+1):''}</option>)}</select><span className="form-note">Kiekvienas paketas turi savo konstrukciją ir tik jai patikrintas spalvas.</span></label>}
   {selected?.visualSupplement&&<label className="field pc2-chair-picker">Išorinis Segla modelis<select aria-label="Išorinis Segla modelis" value={visualId} onChange={e=>{setVisualId(e.target.value);setMappingId(selected.visualSupplement!.mappings.find(m=>m.visualId===e.target.value)?.id||'');}}><option value="">Surinktos komplektacijos ir spalvos</option>{selected.visualSupplement.representatives.map((r,index)=><option key={r.id} value={r.id}>Surinktas modelis {index+1}</option>)}</select><span className="form-note">Rodomos tik perduotos porankių ir bazės poros. Kitų porų neatkuriame.</span></label>}
   {visual&&<label className="field pc2-chair-picker">Funkcinė komplektacija<select aria-label="Funkcinė komplektacija" value={mappingId} onChange={e=>setMappingId(e.target.value)}>{selected!.visualSupplement!.mappings.filter(m=>m.visualId===visualId).map(m=><option key={m.id} value={m.id}>{previewTuple(code,Object.fromEntries(Object.entries(m.options).filter(([k])=>!['CARMRESTS','CBASE'].includes(k))))}</option>)}</select></label>}
@@ -137,7 +149,7 @@ export default function Pc2ChairReview({entries,initialCode}:{entries:ChairRevie
   {foamSelectable&&<label className="field pc2-chair-picker">Sėdynės pagalvėlės užpildas<select aria-label="Sėdynės pagalvėlės užpildas" value={constructionId} onChange={e=>{changeConstruction(e.target.value);}}>{constructionMenus.foams.map(c=><option key={c.id} value={c.id}>{previewValue(code,'CSEATPADFOAM',c.label)}</option>)}</select></label>}
   {(!!construction?.contexts?.length||!!construction?.construction)&&<label className="field pc2-chair-picker">Apmušalo kainų grupė<select aria-label="Apmušalo kainų grupė" value={finishContext} onChange={e=>{setFinishIntent(undefined);setFinishContext(e.target.value);}}><option value="default">Pradinis apdailos rinkinys</option>{finishContext!=='default'&&!construction.contexts?.some(c=>c.id===finishContext)&&<option value={finishContext} disabled>Pasirinkta grupė šiai konstrukcijai neperduota</option>}{construction.contexts?.map((context,index)=><option key={context.id} value={context.id}>Apdailos rinkinys {index+1}</option>)}</select></label>}
   </>}
-  {visual&&<SeglaVisualReview resolved={visual}>{error?<p role="alert">{error}</p>:data?<ModelReview key={sourceSha+mappingId} data={data} finishIntent={finishIntent} onFinishIntent={setFinishIntent} initialSingle={visual.exactRoute}/>:<p role="status">Įkeliamas patikrintas modelis…</p>}</SeglaVisualReview>}
-  {!visual&&(error?<p role="alert">{error}</p>:data?<ModelReview key={sourceSha} data={data} finishIntent={finishIntent} onFinishIntent={setFinishIntent} externalArmrests={!!selected?.constructions?.length} externalBase={baseSelectable} externalCastors={castorsSelectable} externalGaslift={gasliftSelectable} externalMechanism={mechanismSelectable} externalFoam={foamSelectable}/>:<p role="status">{entries.length?'Įkeliamas pasirinktos kėdės paketas…':'Paketai dar neparuošti vietinei peržiūrai.'}</p>)}
+  {visual&&<SeglaVisualReview showAdminCodes={showAdminCodes} resolved={visual}>{error?<p role="alert">{error}</p>:data?<ModelReview showAdminCodes={showAdminCodes} key={sourceSha+mappingId} data={data} finishIntent={finishIntent} onFinishIntent={setFinishIntent} initialSingle={visual.exactRoute}/>:<p role="status">Įkeliamas patikrintas modelis…</p>}</SeglaVisualReview>}
+  {!visual&&(error?<p role="alert">{error}</p>:data?<ModelReview showAdminCodes={showAdminCodes} key={sourceSha} data={data} finishIntent={finishIntent} onFinishIntent={setFinishIntent} externalArmrests={!!selected?.constructions?.length} externalBase={baseSelectable} externalCastors={castorsSelectable} externalGaslift={gasliftSelectable} externalMechanism={mechanismSelectable} externalFoam={foamSelectable}/>:<p role="status">{entries.length?'Įkeliamas pasirinktos kėdės paketas…':'Paketai dar neparuošti vietinei peržiūrai.'}</p>)}
  </main>;
 }

@@ -4,11 +4,11 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-11-14T07:07:10.098Z",
+  "lastResearchAt": "2026-11-14T15:03:04.661Z",
   "lastResearchDateLocal": "2026-11-14",
   "lastResearchFile": "STATE.json",
   "lastResearchValidation": "STATE.json",
-  "lastCycleOutcome": "small_batch_printed_product_buyer_evidence_recorded",
+  "lastCycleOutcome": "single_deck_fulfilment_route_screened_not_costed",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
     "BDEV-0003",
@@ -94,8 +94,8 @@
     }
   ],
   "researchContinuity": {
-    "completed": "One original November 10 request for printed card sets plus boxes specifies 50/100/300 comparisons and a possible initial sample. Adds a concrete buyer-intent example to earlier packaging research, without assuming supplier acceptance, standalone-box demand or our coordination fee. Prior checks retained in Git; fulfilment lastCycleCheck unchanged. No new proposal, approval or operations.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision; excavation bank/loose volume and machine delivery versus soil haulage distinction without actual project data, supplier quote, new evidence or owner decision; stair component per-square-metre versus per-piece units, unfinished/warehouse-collection versus installed result and UK-only cladding without actual partner terms, new source or owner decision; BDEV-0004 blind renewal/repair demand experiment without new owner decision, actual demand or provider terms; garage quote-acceptance fee versus completed-and-paid M2, no-show refund deadlines and credit-note versus cash distinction without actual partner/account/settlement data, new terms or owner decision; LT registration-promo versus renewal holding cost and wholesale-price contradictions without actual account quote, changed terms, portfolio data or owner decision; BDEV-0001 October 14 bounded live-test receipt without a new owner scope, current connection evidence, completed operational milestone or material change; archive/manual-actions/security report evidence distinctions without changed official guidance, actual authorized property evidence or owner decision; BDEV-0002 interactive-refresh versus unattended Office licensing/execution distinction without actual client environment, changed official guidance or owner decision; domain availability or unflagged classifier output versus earlier name/trademark rights without actual scoped registry evidence, changed guidance or owner decision; excavation unknown or no-hit utility information versus verified readiness without a real authorized site, changed official source or owner decision; October Vilnius public diagnostic-vs-jump-start examples without fresh distinct buyer data or an authorized operating decision; October scaffold location/category and work-type examples without fresh distinct buyer data or an authorized operating decision; late-October furniture category single/mixed-commercial/technical-installation examples without distinct new evidence or owner decision; stair surface-care advice versus paid restoration or new-tread manufacturing without actual accepted service terms, distinct demand evidence or owner decision; October BI training/statistical-report category examples without distinct new paid-result evidence or owner decision; packaging stock-unit versus custom printed-batch minimums without buyer willingness, actual partner terms or changed supplier conditions; website rental monthly price versus full commitment, maintenance and ownership without new current terms, buyer choice or actual delivery economics; Rentbook iCal snapshot freshness/block semantics/interface limits without a real chosen segment, authorized booking source, changed documentation or owner decision; LESO specialist subcontracting/client-code invitation and MTTC cooperation channel without actual partner acceptance, rates, changed terms or owner decision; October foundation supplied-materials/labour versus whole-site project examples without distinct new buyer or partner economics evidence; Google Business Profile eligibility for pure lead generation versus actual service-business representation without changed official guidance or concrete authorized business facts; November AI-friendly accountant request without agreed receiver format, actual paid-result evidence, distinct new buyer evidence or owner decision; Storyline social Stories/Reels versus customer-case-story distinction without direct buyer/fulfilment evidence or owner decision; Tiknamams recurring cleaning/laundry versus tenant move-out and landlord-readiness examples without concrete payer/partner terms, changed sources or owner scope; stone-worktop remnants/client-supplied material/veneer-category examples without actual stock, accepted supplier terms, distinct direct buyer evidence or owner scope; Tiknamams June seasonal cleaning ranges/3+ frequency discount and Propri separate laundry/unspecified pricing period without new terms, an authorized concrete object or actual partner quote; November 10 closed guest-message done-for-you request versus standalone P1 plan without actual paid-scope evidence or owner decision; November 10 MVP/code technical-audit paid-stage request versus P1 public-domain process plan without contracted scope, execution/payment evidence or owner decision; closed WooCommerce launch/monthly-maintenance price request without contracted scope, execution economics or owner decision; November 10 printed card-set-plus-box 50/100/300/sample request without accepted production economics, our fee or owner scope",
+    "completed": "Screened an international single-deck production route against the earlier printed-card buyer signal. Public standard-product minimums support investigating a sample, but exact artwork acceptance, delivered cost and our fee remain unverified. No provider chosen, physical order, new proposal or approval. Earlier checks remain in Git.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision; excavation bank/loose volume and machine delivery versus soil haulage distinction without actual project data, supplier quote, new evidence or owner decision; stair component per-square-metre versus per-piece units, unfinished/warehouse-collection versus installed result and UK-only cladding without actual partner terms, new source or owner decision; BDEV-0004 blind renewal/repair demand experiment without new owner decision, actual demand or provider terms; garage quote-acceptance fee versus completed-and-paid M2, no-show refund deadlines and credit-note versus cash distinction without actual partner/account/settlement data, new terms or owner decision; LT registration-promo versus renewal holding cost and wholesale-price contradictions without actual account quote, changed terms, portfolio data or owner decision; BDEV-0001 October 14 bounded live-test receipt without a new owner scope, current connection evidence, completed operational milestone or material change; archive/manual-actions/security report evidence distinctions without changed official guidance, actual authorized property evidence or owner decision; BDEV-0002 interactive-refresh versus unattended Office licensing/execution distinction without actual client environment, changed official guidance or owner decision; domain availability or unflagged classifier output versus earlier name/trademark rights without actual scoped registry evidence, changed guidance or owner decision; excavation unknown or no-hit utility information versus verified readiness without a real authorized site, changed official source or owner decision; October Vilnius public diagnostic-vs-jump-start examples without fresh distinct buyer data or an authorized operating decision; October scaffold location/category and work-type examples without fresh distinct buyer data or an authorized operating decision; late-October furniture category single/mixed-commercial/technical-installation examples without distinct new evidence or owner decision; stair surface-care advice versus paid restoration or new-tread manufacturing without actual accepted service terms, distinct demand evidence or owner decision; October BI training/statistical-report category examples without distinct new paid-result evidence or owner decision; packaging stock-unit versus custom printed-batch minimums without buyer willingness, actual partner terms or changed supplier conditions; website rental monthly price versus full commitment, maintenance and ownership without new current terms, buyer choice or actual delivery economics; Rentbook iCal snapshot freshness/block semantics/interface limits without a real chosen segment, authorized booking source, changed documentation or owner decision; LESO specialist subcontracting/client-code invitation and MTTC cooperation channel without actual partner acceptance, rates, changed terms or owner decision; October foundation supplied-materials/labour versus whole-site project examples without distinct new buyer or partner economics evidence; Google Business Profile eligibility for pure lead generation versus actual service-business representation without changed official guidance or concrete authorized business facts; November AI-friendly accountant request without agreed receiver format, actual paid-result evidence, distinct new buyer evidence or owner decision; Storyline social Stories/Reels versus customer-case-story distinction without direct buyer/fulfilment evidence or owner decision; Tiknamams recurring cleaning/laundry versus tenant move-out and landlord-readiness examples without concrete payer/partner terms, changed sources or owner scope; stone-worktop remnants/client-supplied material/veneer-category examples without actual stock, accepted supplier terms, distinct direct buyer evidence or owner scope; Tiknamams June seasonal cleaning ranges/3+ frequency discount and Propri separate laundry/unspecified pricing period without new terms, an authorized concrete object or actual partner quote; November 10 closed guest-message done-for-you request versus standalone P1 plan without actual paid-scope evidence or owner decision; November 10 MVP/code technical-audit paid-stage request versus P1 public-domain process plan without contracted scope, execution/payment evidence or owner decision; closed WooCommerce launch/monthly-maintenance price request without contracted scope, execution economics or owner decision; November 10 printed card-set-plus-box 50/100/300/sample request without accepted production economics, our fee or owner scope; MPC standard-product single-deck minimum and box/card artwork workflow without a concrete accepted specification, delivered quote, changed terms or owner scope",
     "nextCandidateQuestion": "Resume truly approved work; prioritise concrete fulfilment/partner economics for existing offers. Avoid another generic category or request-scope distinction. Six proposals remain pending.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
     "executionScope": "Private research/state documents only; fresh core main integrated. No companion source use, site/runtime changes, domain scans, private inbox, account permissions/DNS, campaigns or paid calls."
@@ -247,47 +247,65 @@
   },
   "latestEvidenceCheck": {
     "date": "2026-11-14",
-    "previousStateCommit": "dde8f69e506bb233096b3523dfaa960bdb09d57a",
-    "question": "Ar mažos individualios pakuočių partijos turi konkretaus pirkėjo įvardytą poreikį ir bandomojo egzemplioriaus etapą?",
+    "previousStateCommit": "68fbfb1fd92b38c191adbae692fff3a2594bf55e",
+    "question": "Ar ankstesnės kortelių rinkinio užklausos vieno egzemplioriaus etapui yra viešai aprašytas gamybos kelias be prenumeratos?",
+    "discovery": {
+      "skill": "stripe-directory",
+      "cliProbe": "stripe directory --help: Unknown command directory; command unavailable in existing CLI",
+      "result": "Directory search could not run. Used public-web fallback already documented in lastCycleCheck. No installation, authentication or account changes."
+    },
     "sources": [
       {
-        "url": "https://paslaugos.lt/spaudos-paslaugos/kaune",
+        "url": "https://www.makeplayingcards.com/",
         "readOn": "2026-11-14",
-        "readType": "original_page_and_refreshed_find",
-        "observations": "Lapkričio 10 d. užklausoje prašoma kortelių rinkinio kartu su spausdinta dėžute, lyginant 50, 100 ir 300 rinkinių tiražus. Failus užsakovas teigia turįs; prašoma vieneto kainos, termino ir galimybės pirmiau įsigyti vieną bandomąjį egzempliorių. Pageidaujamas atlikimas gruodį.",
-        "limits": "Tai viso spausdinto rinkinio, ne vien tuščios dėžutės poreikis. Kainos, apmokėjimas, tiekėjas ir aktualumas su pirkėju nepatikrinti. Dinaminės versijos skyrėsi; užklausos tekstas patikrintas atnaujinta paieška originale. Vardai, kontaktai, PDF ir kiti priedai nekopijuoti."
+        "readType": "original_provider_page",
+        "observations": "MPC standartinių gaminių asortimentui skelbia užsakymą nuo vienos individualios kaladės; gaminio eigoje pasirenkamos kortelės, medžiaga ir pakuotė. Tai preliminarus vykdymo kandidatas, ne konkrečios kliento specifikacijos priėmimas."
+      },
+      {
+        "url": "https://www.makeplayingcards.com/faq-photo.aspx",
+        "readOn": "2026-11-14",
+        "readType": "original_provider_faq",
+        "observations": "Kortelių internetinio maketavimo DUK vardija rastrinius formatus. Dėžutei nurodomas nuo kortelių medžiagos priklausantis šablonas; jos failų sąraše yra PDF, reikalaujama bent 300 dpi ir 3 mm užlaidų. Dėžutės PDF palaikymas nepatvirtina viso kliento kelių puslapių PDF automatinio importo ar maketo tinkamumo."
+      },
+      {
+        "url": "https://www.makeplayingcards.com/delivery.aspx?protype=RETAIL",
+        "readOn": "2026-11-14",
+        "readType": "original_provider_estimator_without_configuration",
+        "observations": "Pristatymo skaičiuoklė prašo šalies ir gaminių kiekių; nepasirinkus jų kaina ir terminai tušti. Galutinei kainai nukreipiama į krepšelį / checkout. Yra pasenęs 2015 m. šventinio pajėgumo pranešimas, todėl jo nelaikome dabartinio termino įrodymu. Lietuvos kaina ir pristatymas nepatikrinti."
       }
     ],
     "searchQueries": [
-      "site:paslaugos.lt/uzklausos \"maišeliai\" \"spauda\" \"2026-11\"",
-      "site:paslaugos.lt/uzklausos \"dėžutės\" \"100\""
+      "site.makeplayingcards.com OR site:makeplayingcards.com custom cards minimum 1 deck tuck box PDF files",
+      "site:makeplayingcards.com shipping Lithuania sample deck print on demand"
     ],
     "localReferences": [
       "../sites/smulkusurmas.md",
       "research/2026-11-06-packaging-minimums/RESEARCH.md"
     ],
-    "deduplication": "Lapkričio 6 d. tyrime trūko konkretaus pirkėjo įrodymo. Šis signalas papildo tą nežinomybę ribotai, tačiau neįrodo mūsų tarpininkavimo vertės ir nekeičia planavimo hipotezės. Ankstesnio konkretaus dėžučių tiekėjo minimumo neperkeliame į kito tipo visą gaminį; tiekėjo sąlygos šiandien iš naujo netikrintos.",
+    "deduplication": "Rytinis pirkėjo signalas išsaugotas 68fbfb1f STATE.json versijoje. Šis patikrinimas tiria vieno egzemplioriaus fizinį vykdymą. Ankstesnio Lietuvos dėžučių tiekėjo minimumas netaikomas MPC ar visam kortelių rinkiniui. Nauja niša, komercinis modelis ir partneris neparinkti.",
     "smallestPracticalCheck": {
-      "goal": "Patikrinti, ar užklausa tinkama palyginamai gamybos sąmatai, ir atskirti bandomą egzempliorių nuo tiražo.",
-      "method": "Vienos tikros viešos užklausos dokumentinė peržiūra pagal gaminį, skirtingus kiekius, bandomąjį egzempliorių ir terminą.",
+      "goal": "Patikrinti, ar verta toliau skaičiuoti vieno egzemplioriaus ir tiražo vykdymą, neišleidžiant lėšų gamybai.",
+      "method": "Dokumentinė trijų teikėjo puslapių peržiūra pagal minimumą, kortelių / dėžutės failus ir pristatymo duomenų prieinamumą.",
       "performed": true,
-      "result": "Užklausoje šie elementai yra; gamybos patvirtinimas ir mūsų ekonomika UNVERIFIED. Negalima 50 rinkinių poreikio pakeisti 50 standartinių dėžučių pirkimu.",
-      "acceptance": "Bandomo egzemplioriaus paruošimo, viso rinkinio tiražo bei pristatymo kainos vėlesniame pasiūlyme turėtų būti aiškios, o partneris — priimti konkrečią specifikaciją. Šioje peržiūroje partneris nesurastas ir užsakymas nevykdytas.",
+      "result": "Bendras vienos kaladės kelias rastas. Konkretaus komplekto techninis priėmimas ir pristatyto gaminio ekonomika UNVERIFIED. Failai nekelti, maketavimo įrankis ir krepšelis nepildyti.",
+      "acceptance": "Vėlesniam fiziniam bandymui reikia vienodo kortelių ir dėžutės aprašo, tinkamų failų, bendros egzemplioriaus kainos su pristatymu ir mokesčiais, gamybos termino bei atskiro išlaidų mandato. Skaitmeninė peržiūra nepakeičia fizinės spaudos patikros.",
       "operationalTests": 0
     },
-    "alternatives": "Dabar laikyti tai konkretaus mokamo gaminio ketinimo pavyzdžiu. Pirkimas tiesiogiai iš spaustuvės lieka alternatyva hipotetiniam mūsų koordinavimui. Naujo pasiūlymo ar piloto nesiūlome be vykdymo bei atlygio sąlygų.",
+    "alternatives": "Dabar pakanka išsaugoti kandidatą. Vietinė spaustuvė gali pasiūlyti failų paruošimą ir kitą terminą; be vienodų sąmatų pigiausio tiekėjo neranguojame. Tiesioginis pirkėjo užsakymas gamintojui lieka alternatyva mūsų koordinavimui.",
     "unknowns": [
-      "Bandomojo egzemplioriaus kaina ir jo patvirtinimo tvarka",
-      "Viso rinkinio, dėžutės varianto, spaudos paruošimo ir pristatymo savikaina bei terminas",
-      "Kodėl ir kiek pirkėjas mokėtų mums atskirai nuo spaustuvės"
+      "Konkrečių kortelių ir dėžutės medžiagų, apdailos bei failų atitiktis ir paruošimo sąnaudos",
+      "Vieno egzemplioriaus ir 50/100/300 komplektų pristatyta kaina, taikomi mokesčiai ir terminas Lietuvai",
+      "Pirkėjo priimamas mūsų atlygis, atsakomybė už broką ir faktinė marža"
     ],
     "costs": {
       "newSubscriptions": 0,
       "paidApiCalls": 0,
       "messagesSent": 0,
-      "agentTime": "Dviejų paieškų ir vieno originalaus puslapio peržiūros laikas; modelio kaina neišmatuota."
+      "physicalOrders": 0,
+      "agentTime": "Tyrimo laikas yra sąnauda; modelio kaina neišmatuota.",
+      "physicalTest": "Bandomasis gaminys ir pristatymas būtų mokami; suma nenustatyta ir neautorizuota."
     },
-    "stop": "Riba — dvi paieškos, vienas originalus puslapis ir jo teksto patikslinimas. Nekontaktuoti, neimti kliento failų, nekurti maketo, nerezervuoti gamybos ar pavyzdžio. Kartoti tik su konkrečiomis vykdymo, pirkėjo atlygio sąlygomis ar savininko apimtimi.",
+    "stop": "Riba pasiekta po dviejų paieškų ir trijų originalių puslapių su teksto patikslinimu. Nekontaktuoti, nekelti kliento failų, neregistruoti paskyros, neformuoti užsakymo ar mokėjimo. Grįžti tik turint konkrečią specifikaciją, palyginamą sąmatą, pasikeitusias sąlygas ar savininko pavedimą.",
     "ownerEvidence": {
       "rootRecentTurns": 10,
       "rootHumanMessagesReturned": 0,
@@ -300,8 +318,7 @@
     },
     "validation": {
       "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
-      "freshnessContinueAt": "2026-11-14T07:04:50.667Z",
-      "freshnessHandoffAt": "2026-11-14T07:07:11.622Z",
+      "freshnessContinueAt": "2026-11-14T14:57:45.549Z",
       "protectedFieldsUnchanged": [
         "pendingOwnerDecisions",
         "approvedWork",
@@ -315,7 +332,8 @@
       "priorCycleCheckUnchanged": true,
       "newProposals": 0,
       "newApprovals": 0,
-      "languageReview": "Naujas įrašas peržiūrėtas; visas spausdintas rinkinys, tuščia pakuotė, egzempliorius ir tiražas atskirti."
+      "languageReview": "Naujas įrašas peržiūrėtas: viešas minimumas atskirtas nuo konkrečios gamybos, kortelių failai nuo dėžutės failų ir nemokama atranka nuo mokamo fizinio bandymo.",
+      "freshnessHandoffAt": "2026-11-14T15:03:13.344Z"
     }
   }
 }

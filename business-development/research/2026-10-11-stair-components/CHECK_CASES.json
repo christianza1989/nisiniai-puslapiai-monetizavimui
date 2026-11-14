@@ -1,0 +1,14 @@
+{
+  "status":"documented_not_executed",
+  "scope":"Existing quote review, no new pilot",
+  "cases":[
+    {"id":"C1","input":"175 EUR/m2, hypothetical 0.95 by 0.30m rectangular oak tread","expected":"0.285m2; 49.875 EUR before VAT, displayed 49.88; material calculation only"},
+    {"id":"C2","input":"Supplier item is prepared for finishing and collected at warehouse","expected":"Do not include finishing, delivery or installation without confirmation"},
+    {"id":"C3","input":"Staircase has straight and winder steps plus landing","expected":"Do not multiply one standard tread SKU by total steps as a full bill of materials"},
+    {"id":"C4","input":"Per-piece category price and Teirautis action","expected":"Not a confirmed stock quantity or comparable installed quote"},
+    {"id":"C5","input":"UK-only cladding with different delivery durations on one page","expected":"No LT delivery promise or invented single dispatch date"},
+    {"id":"C6","input":"Customer wants new structural staircase but example product is veneer cladding","expected":"Separate structure from finishing; no replacement or safety confirmation"}
+  ],
+  "acceptance":"All units, scopes, unknowns and location boundaries preserved",
+  "stop":"Correct any invented total, stock, finishing, delivery or structural promise before use"
+}

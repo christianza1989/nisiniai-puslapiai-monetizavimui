@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-09T15:00:47.460Z",
+  "status": "PASS_documentary_proposal_validation",
+  "outcome": "new_experiment_proposed",
+  "coreMainSha": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+  "companionMainSha": "d0fd6b7d296303bfcaafadc4071945e675a72b96",
+  "checks": {
+    "jsonParsed": 3,
+    "localReferences": 10,
+    "brokenReferences": 0,
+    "newIndexLinksExist": true,
+    "primaryRfcDocuments": 4,
+    "tregCatalogQueries": 1,
+    "providerCalls": 0,
+    "oldApprovalFieldsUnchanged": true,
+    "previousPendingEntriesUnchanged": true,
+    "pendingEntries": 5,
+    "newExperiment": "BDEV-0003-P4",
+    "newExperimentStatus": "proposed",
+    "newExperimentApproval": null,
+    "newIdeaIds": 0,
+    "codeExecuted": false,
+    "syntheticCasesExecuted": 0,
+    "realCasesExecuted": 0,
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-09T15:01:02.997Z",
+    "exactStagedScopeReviewed": true,
+    "repositorySafety": "PASS: six exact staged documentary files, zero findings"
+  },
+  "ownerDecisionEvidence": {
+    "rootLatestUserMessage": "01a114fe-539d-70f1-8073-d531418858dc",
+    "coreLatestUserMessage": "01a11bd7-4ee8-7383-95de-0328f5c8a759",
+    "newRegistryApproval": false
+  },
+  "scope": {
+    "runtimeEdits": 0,
+    "siteEdits": 0,
+    "liveInboxReads": 0,
+    "smtpCalls": 0,
+    "messagesSent": 0,
+    "purchases": 0,
+    "accountChanges": 0,
+    "dnsChanges": 0
+  },
+  "limits": [
+    "Synthetic case design only, no actual parser or fixture run",
+    "No provider DSN availability, actual delivery incidence or economic value measured",
+    "No forged DSN authentication solved by parsing or correlation",
+    "Current main targeted search and one PR32 reader comparison, not all branches audit",
+    "12 proposed cases do not prove complete RFC compatibility",
+    "No new BUSINESS decision or niche TOOLS migration"
+  ],
+  "validationNotes": [
+    "Actual paths corrected after nonexistent mail subdirectory lookup",
+    "RFC HTML tools partially failed; corresponding plain-text standards inspected",
+    "Existing transport tests read only, not claimed newly passing"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "checkedOn": "2026-10-13",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.iv.lt/domenai/",
+      "status": "read_primary_html_web_and_one_public_get",
+      "supports": "Registration table LT promotional 7.49 versus struck 13.99, exVAT",
+      "limit": "General table not verified renewal quote; no purchase or account"
+    },
+    {
+      "id": "S2",
+      "url": "https://www.iv.lt/didmeninis-domenu-registravimas/",
+      "status": "read_primary_html",
+      "publishedOn": "2016-07-25",
+      "updatedOn": "2024-03-21",
+      "supports": "Wholesale plan described separately; conflicting LT renewal 8.09 text versus 10.49 table",
+      "limit": "No current wholesale subscription, guaranteed discount or price adopted"
+    },
+    {
+      "id": "S3",
+      "url": "https://www.domenai.lt/domenu-registravimas/lt-domeno-registracija",
+      "status": "read_primary_html",
+      "supports": "One-year renewal 9.99 exVAT; conflicting registration 5.49/7.49 on page",
+      "limit": "Vendor public rate only; first-year promo and actual account terms unknown"
+    },
+    {
+      "id": "S4",
+      "url": "https://www.domreg.lt/duk/domenu-turetojams/kaip-pratesti-teisiu-i-domena-galiojimo-termina/",
+      "status": "read_primary_registry_html",
+      "supports": "Provider performs renewal by agreement; registry does not notify holder of expiry",
+      "limit": "No actual auto-renew setting, renewal operation or account inspected"
+    },
+    {
+      "id": "S5",
+      "url": "https://www.iv.lt/tld/?lt",
+      "status": "web_click_and_open_errors",
+      "usedForClaims": false,
+      "limit": "Web-normalized query returned 404; renewal detail unverified"
+    }
+  ],
+  "toolDiscovery": {
+    "query": "lt domain registration renewal price registrar",
+    "matches": 0,
+    "providerCalls": 0,
+    "paidCalls": 0
+  },
+  "privateRawEvidence": "One IV public HTML source in ignored output/bdev-20261013-iv-source.html only; no raw third-party source staged",
+  "scope": "Public-rate evidence and hypothetical renewal arithmetic; no real portfolio inventory, invoices or registry calls"
+}

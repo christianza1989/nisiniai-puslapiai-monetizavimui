@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-10T06:06:51.278Z",
+  "status": "PASS_documentary_validation",
+  "outcome": "existing_requirement_evidence_updated",
+  "coreMainSha": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+  "companionMainSha": "d0fd6b7d296303bfcaafadc4071945e675a72b96",
+  "checks": {
+    "freshnessContinue": "PASS_FRESH_BASE",
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-10T06:06:10.371Z",
+    "protectedStateFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber"
+    ],
+    "primaryHtmlOpened": 4,
+    "catalogQueries": 2,
+    "providerCalls": 0,
+    "casesDocumented": 6,
+    "casesExecuted": 0,
+    "sourceExampleArithmeticPercent": 2.1906542056074896,
+    "newIdeaIds": 0,
+    "newPendingExperiments": 0,
+    "jsonParsed": 4,
+    "localReferences": 9,
+    "brokenReferences": 0,
+    "exactStagedDiffReviewed": true,
+    "repositorySafety": "PASS: five documentary files, zero findings",
+    "diffCheck": "PASS"
+  },
+  "ownerDecisionEvidence": {
+    "rootUserMessage": "01a122ed-e9c2-7302-b3cd-bb55b09a25fd",
+    "coreUserMessages": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "registryApproval": false
+  },
+  "scope": {
+    "runtimeEdits": 0,
+    "siteEdits": 0,
+    "liveInboxReads": 0,
+    "smtpCalls": 0,
+    "messagesSent": 0,
+    "purchases": 0,
+    "accountChanges": 0,
+    "dnsChanges": 0,
+    "companionSourceEdits": 0
+  },
+  "limits": [
+    "Documentary validation only, no agent case runs or engineering compatibility acceptance",
+    "No OEM ratio/interval for an actual client machine, no catalogue RC imported",
+    "No demand, profit, error-rate or actual time-saving measurement",
+    "No full runtime audit and no universal threshold derived",
+    "Initial passenger-winter search excluded; deferred metal-fence BUSINESS path missing; Windows glob search corrected",
+    "Companion has nine other-executor working changes preserved"
+  ]
+}

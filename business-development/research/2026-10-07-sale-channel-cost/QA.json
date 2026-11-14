@@ -1,0 +1,44 @@
+{
+  "checkedOn": "2026-10-07",
+  "status": "PASS_bounded_documentary_and_arithmetic_checks",
+  "jsonParsed": 3,
+  "localMarkdownRefs": 4,
+  "brokenLocalRefs": 0,
+  "distinctPrimaryOpenedSources": 4,
+  "scenarios": [
+    {
+      "saleFractionAssumed": 0.05,
+      "priceUSD": 500,
+      "feeRate": 0.1,
+      "listingUSD": 29,
+      "otherCostsAssumedZeroOnlyToIsolateChannel": true,
+      "perAsset": -6.5,
+      "portfolio50": -325
+    },
+    {
+      "saleFractionAssumed": 0.1,
+      "priceUSD": 500,
+      "feeRate": 0.1,
+      "listingUSD": 29,
+      "otherCostsAssumedZeroOnlyToIsolateChannel": true,
+      "perAsset": 16,
+      "portfolio50": 800
+    }
+  ],
+  "portfolioInitialUSD": 1450,
+  "soldAssetAfterChannelFeesBeforeOtherCostsUSD": 421,
+  "channelOnlyBreakEvenSaleFraction": 0.06444444444444444,
+  "approvalAndNotificationInvariantsUnchanged": true,
+  "newProposal": false,
+  "newIdea": false,
+  "actualAssetTest": "NOT_EXECUTED",
+  "runtimeUIClients": "NOT_EXECUTED",
+  "scope": "Own research plus STATE only; no shared files, paid listing, DNS, account permission, messages or inbox",
+  "limitations": [
+    "Actual price,sale rate,full cost unknown",
+    "Provider fee not asset-specific quote",
+    "30-minute concrete-asset follow-up is an unexecuted existing M9 plan check",
+    "Root integration status is agent-reported,not independently audited"
+  ],
+  "toolingObservation": "Initial script assertions and files completed, but final output used undefined scenarios variable; fresh independent validation rerun successfully against HEAD approval fields and saved evidence."
+}

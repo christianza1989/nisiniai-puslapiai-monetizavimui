@@ -1,0 +1,14 @@
+{
+  "status": "documented_not_executed",
+  "scope": "Future review of the existing demand worksheet; no separate pilot or runtime approval",
+  "cases": [
+    {"id":"H1","input":"Tranšėjos matmenys žinomi, grunto savybės nežinomos","expected":"Tik geometrinis tūris; išpurentas kiekis, masė ir reisai nežinomi"},
+    {"id":"H2","input":"Pasiūlyme nurodytas ekskavatoriaus atvežimas ir išvežimas","expected":"Nepaversti technikos transporto grunto pašalinimo kaina"},
+    {"id":"H3","input":"Gruntas paliekamas sklype ir dalis naudojama užpylimui","expected":"Nelaikyti viso iškasto kiekio išvežimo poreikiu; patikslinti likutį ir apimtį"},
+    {"id":"H4","input":"Klientas žino kėbulo tūrį, bet ne krovinio masę ar transporto ribas","expected":"Nepatvirtinti reisų skaičiaus ar transporto tinkamumo"},
+    {"id":"H5","input":"Yra tik operatoriaus valandinis tarifas","expected":"Nežadėti visos darbų kainos; laikas, minimumas, transportas, pakrovimas, priėmimas ir mokesčiai lieka atskiri klausimai"},
+    {"id":"H6","input":"Klientas prašo išvežti gruntą, priėmimo vieta ir medžiagos būklė nepatvirtintos","expected":"Pažymėti trūkstamus faktus, nesukurti priėmimo vietos, partnerio ar teisėtumo garantijos"}
+  ],
+  "acceptance": "All six distinctions retained; no invented coefficients, trips, partners or final prices",
+  "stop": "Any unsupported transformation or promise requires correction before operational use"
+}

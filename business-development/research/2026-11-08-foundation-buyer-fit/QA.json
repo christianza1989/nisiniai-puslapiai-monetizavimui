@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-08T15:20:54.142Z",
+  "status": "PASS_documentary_validation",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "freshnessContinueAt": "2026-11-08T15:19:10.316Z",
+  "freshnessHandoffAt": "2026-11-08T15:20:29.389Z",
+  "checks": {
+    "localReferences": 1,
+    "originalRequestPagesUsed": 1,
+    "selectedDatedExamples": 2,
+    "otherCategoryPartialReadExcluded": true,
+    "ambiguousDimensionsNotNormalised": true,
+    "syntheticTestsExecuted": 0,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "newApprovals": 0,
+    "newProposals": 0,
+    "languageReview": "Full private prose reviewed; source dates, scope, ambiguous measures and missing payment evidence retained"
+  },
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "rootOlderTurnsNotReread": true,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApprovalFound": false
+  },
+  "scope": {
+    "paidCalls": 0,
+    "messagesSent": 0,
+    "contactsCollected": 0,
+    "attachmentsOpened": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  },
+  "limits": [
+    "Selected examples are not representative market demand",
+    "No actual paid work, current buyer availability or partner willingness verified",
+    "No new site business model selected or implementation admitted"
+  ]
+}

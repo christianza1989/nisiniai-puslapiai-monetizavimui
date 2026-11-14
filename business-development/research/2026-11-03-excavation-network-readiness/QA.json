@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-03T18:42:10.755Z",
+  "status": "PASS_documentary_validation",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "checks": {
+    "primaryBodiesRead": 2,
+    "unavailableExternal403": 2,
+    "localReferences": 3,
+    "missingLocalReferences": 0,
+    "externalReferences": 4,
+    "casesDocumented": 4,
+    "casesExecuted": 0,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "languageReview": "Complete final private prose reviewed; ESO scope, failed municipal retrieval and unverified site facts retained",
+    "newApprovals": 0,
+    "newProposals": 0,
+    "freshnessHandoff": {
+      "status": "PASS_FRESH_BASE",
+      "checkedAt": "2026-11-03T18:42:13.512Z"
+    }
+  },
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ]
+  },
+  "scope": {
+    "actualSitesAssessed": 0,
+    "providerCalls": 0,
+    "paidCalls": 0,
+    "formsSubmitted": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  }
+}

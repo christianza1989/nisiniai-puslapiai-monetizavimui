@@ -4,11 +4,11 @@
   "ownerThreadId": "01a0f67b-b3e3-7062-ad1b-66a8737443db",
   "automationId": "verslo-pl-tros-ir-automatizacijos-tyrimas",
   "connectionEvidence": "CONNECTION.json",
-  "lastResearchAt": "2026-11-17T15:03:08.960Z",
-  "lastResearchDateLocal": "2026-11-17",
+  "lastResearchAt": "2026-11-18T14:57:48.030Z",
+  "lastResearchDateLocal": "2026-11-18",
   "lastResearchFile": "STATE.json",
   "lastResearchValidation": "STATE.json",
-  "lastCycleOutcome": "pending_research_remote_delivery_recovered",
+  "lastCycleOutcome": "terrace_supplier_retail_partner_route_screened",
   "lastNotifiedIdeaIds": [
     "BDEV-0002",
     "BDEV-0003",
@@ -94,8 +94,8 @@
     }
   ],
   "researchContinuity": {
-    "completed": "Resumed unfinished registry handoff after the November 17 GitHub connection failures. Research and failure-receipt commits pushed successfully; PR1 remote head verified at 942ad212. Latest research remains dated November 17. No new research, proposal, approval or operational work; six proposals remain pending.",
-    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision; excavation bank/loose volume and machine delivery versus soil haulage distinction without actual project data, supplier quote, new evidence or owner decision; stair component per-square-metre versus per-piece units, unfinished/warehouse-collection versus installed result and UK-only cladding without actual partner terms, new source or owner decision; BDEV-0004 blind renewal/repair demand experiment without new owner decision, actual demand or provider terms; garage quote-acceptance fee versus completed-and-paid M2, no-show refund deadlines and credit-note versus cash distinction without actual partner/account/settlement data, new terms or owner decision; LT registration-promo versus renewal holding cost and wholesale-price contradictions without actual account quote, changed terms, portfolio data or owner decision; BDEV-0001 October 14 bounded live-test receipt without a new owner scope, current connection evidence, completed operational milestone or material change; archive/manual-actions/security report evidence distinctions without changed official guidance, actual authorized property evidence or owner decision; BDEV-0002 interactive-refresh versus unattended Office licensing/execution distinction without actual client environment, changed official guidance or owner decision; domain availability or unflagged classifier output versus earlier name/trademark rights without actual scoped registry evidence, changed guidance or owner decision; excavation unknown or no-hit utility information versus verified readiness without a real authorized site, changed official source or owner decision; October Vilnius public diagnostic-vs-jump-start examples without fresh distinct buyer data or an authorized operating decision; October scaffold location/category and work-type examples without fresh distinct buyer data or an authorized operating decision; late-October furniture category single/mixed-commercial/technical-installation examples without distinct new evidence or owner decision; stair surface-care advice versus paid restoration or new-tread manufacturing without actual accepted service terms, distinct demand evidence or owner decision; October BI training/statistical-report category examples without distinct new paid-result evidence or owner decision; packaging stock-unit versus custom printed-batch minimums without buyer willingness, actual partner terms or changed supplier conditions; website rental monthly price versus full commitment, maintenance and ownership without new current terms, buyer choice or actual delivery economics; Rentbook iCal snapshot freshness/block semantics/interface limits without a real chosen segment, authorized booking source, changed documentation or owner decision; LESO specialist subcontracting/client-code invitation and MTTC cooperation channel without actual partner acceptance, rates, changed terms or owner decision; October foundation supplied-materials/labour versus whole-site project examples without distinct new buyer or partner economics evidence; Google Business Profile eligibility for pure lead generation versus actual service-business representation without changed official guidance or concrete authorized business facts; November AI-friendly accountant request without agreed receiver format, actual paid-result evidence, distinct new buyer evidence or owner decision; Storyline social Stories/Reels versus customer-case-story distinction without direct buyer/fulfilment evidence or owner decision; Tiknamams recurring cleaning/laundry versus tenant move-out and landlord-readiness examples without concrete payer/partner terms, changed sources or owner scope; stone-worktop remnants/client-supplied material/veneer-category examples without actual stock, accepted supplier terms, distinct direct buyer evidence or owner scope; Tiknamams June seasonal cleaning ranges/3+ frequency discount and Propri separate laundry/unspecified pricing period without new terms, an authorized concrete object or actual partner quote; November 10 closed guest-message done-for-you request versus standalone P1 plan without actual paid-scope evidence or owner decision; November 10 MVP/code technical-audit paid-stage request versus P1 public-domain process plan without contracted scope, execution/payment evidence or owner decision; closed WooCommerce launch/monthly-maintenance price request without contracted scope, execution economics or owner decision; November 10 printed card-set-plus-box 50/100/300/sample request without accepted production economics, our fee or owner scope; MPC standard-product single-deck minimum and box/card artwork workflow without a concrete accepted specification, delivered quote, changed terms or owner scope; Bohnenkamp Lithuania 2025 Service 360 single-unit delivery/unused-return claims and German dispatch timing without actual LT SKU/account terms, changed source or owner scope; November interior furniture/light selection and fitted-home refresh requests without our paid-scope acceptance, fulfilment economics, distinct evidence or owner decision; IKEA Lithuania 20 EUR/m2 conditional 70 percent furniture/accessory purchase credit and prepared-residential-space limits without changed terms, actual independent-plan acceptance or owner scope; November 11 company-site restoration request as evidence for a specific ecommerce checkout-repair offer without actual store/failure facts, distinct new buyer evidence or owner scope; MDS terrace-material length-based delivery bands and separate unloading without actual SKU/quantity/destination quote, changed terms, buyer acceptance or owner scope",
+    "completed": "Screened the MDS partner route for existing e-statybai: original page explicitly includes electronic and physical retailers, with wholesale supply and manual ordering. This adds a concrete counterpart category, not our acceptance, lead commission, automated ordering rights or margin. No new proposal, approval, contact or account. Prior delivery handoff verified complete at PR head70ba1de5.",
+    "doNotRepeat": "BDEV-0002, BDEV-0003-P1/P2, generic acquisition/Outcome/partner/template proposals, tyre delivery, mini-excavator qualification, Hostinger commission, stair quote/measurement or stone warranty distinctions without new evidence or an owner decision; preserve all research histories; i.SAF versus complete accounting/reconciliation distinctions without new evidence or an owner decision; scaffold lead-fee versus supplier contribution/credit-return distinction without actual new economics or owner decision; auto paid-diagnosis versus free battery-test distinction without new demand evidence; early sale-channel eligibility or listing-fee/contact-refund economics without new terms, actual asset economics or owner decision; Live per-turn context/transcription/listening cost distinctions or duplicate cost-module proposal without actual new billing/SDK evidence; .lt quarantine/release/trade/DAS lab BDEV-0003-P3 without new source or owner decision; scaffold public-space permit issue without an actual object, readable current legal text, new evidence or owner decision; DSN action/status/correlation proposal P4 without new source, actual transport evidence or owner decision; tractor 4WD nominal size / geometry versus manufacturer rolling circumference and generic lead ranges without actual new machine data, source or owner decision; small-jobs arrival-plus-labour versus whole-visit minimum, material reimbursement and mixed-visit semantics without actual partner quotes, new terms or owner decision; excavation bank/loose volume and machine delivery versus soil haulage distinction without actual project data, supplier quote, new evidence or owner decision; stair component per-square-metre versus per-piece units, unfinished/warehouse-collection versus installed result and UK-only cladding without actual partner terms, new source or owner decision; BDEV-0004 blind renewal/repair demand experiment without new owner decision, actual demand or provider terms; garage quote-acceptance fee versus completed-and-paid M2, no-show refund deadlines and credit-note versus cash distinction without actual partner/account/settlement data, new terms or owner decision; LT registration-promo versus renewal holding cost and wholesale-price contradictions without actual account quote, changed terms, portfolio data or owner decision; BDEV-0001 October 14 bounded live-test receipt without a new owner scope, current connection evidence, completed operational milestone or material change; archive/manual-actions/security report evidence distinctions without changed official guidance, actual authorized property evidence or owner decision; BDEV-0002 interactive-refresh versus unattended Office licensing/execution distinction without actual client environment, changed official guidance or owner decision; domain availability or unflagged classifier output versus earlier name/trademark rights without actual scoped registry evidence, changed guidance or owner decision; excavation unknown or no-hit utility information versus verified readiness without a real authorized site, changed official source or owner decision; October Vilnius public diagnostic-vs-jump-start examples without fresh distinct buyer data or an authorized operating decision; October scaffold location/category and work-type examples without fresh distinct buyer data or an authorized operating decision; late-October furniture category single/mixed-commercial/technical-installation examples without distinct new evidence or owner decision; stair surface-care advice versus paid restoration or new-tread manufacturing without actual accepted service terms, distinct demand evidence or owner decision; October BI training/statistical-report category examples without distinct new paid-result evidence or owner decision; packaging stock-unit versus custom printed-batch minimums without buyer willingness, actual partner terms or changed supplier conditions; website rental monthly price versus full commitment, maintenance and ownership without new current terms, buyer choice or actual delivery economics; Rentbook iCal snapshot freshness/block semantics/interface limits without a real chosen segment, authorized booking source, changed documentation or owner decision; LESO specialist subcontracting/client-code invitation and MTTC cooperation channel without actual partner acceptance, rates, changed terms or owner decision; October foundation supplied-materials/labour versus whole-site project examples without distinct new buyer or partner economics evidence; Google Business Profile eligibility for pure lead generation versus actual service-business representation without changed official guidance or concrete authorized business facts; November AI-friendly accountant request without agreed receiver format, actual paid-result evidence, distinct new buyer evidence or owner decision; Storyline social Stories/Reels versus customer-case-story distinction without direct buyer/fulfilment evidence or owner decision; Tiknamams recurring cleaning/laundry versus tenant move-out and landlord-readiness examples without concrete payer/partner terms, changed sources or owner scope; stone-worktop remnants/client-supplied material/veneer-category examples without actual stock, accepted supplier terms, distinct direct buyer evidence or owner scope; Tiknamams June seasonal cleaning ranges/3+ frequency discount and Propri separate laundry/unspecified pricing period without new terms, an authorized concrete object or actual partner quote; November 10 closed guest-message done-for-you request versus standalone P1 plan without actual paid-scope evidence or owner decision; November 10 MVP/code technical-audit paid-stage request versus P1 public-domain process plan without contracted scope, execution/payment evidence or owner decision; closed WooCommerce launch/monthly-maintenance price request without contracted scope, execution economics or owner decision; November 10 printed card-set-plus-box 50/100/300/sample request without accepted production economics, our fee or owner scope; MPC standard-product single-deck minimum and box/card artwork workflow without a concrete accepted specification, delivered quote, changed terms or owner scope; Bohnenkamp Lithuania 2025 Service 360 single-unit delivery/unused-return claims and German dispatch timing without actual LT SKU/account terms, changed source or owner scope; November interior furniture/light selection and fitted-home refresh requests without our paid-scope acceptance, fulfilment economics, distinct evidence or owner decision; IKEA Lithuania 20 EUR/m2 conditional 70 percent furniture/accessory purchase credit and prepared-residential-space limits without changed terms, actual independent-plan acceptance or owner scope; November 11 company-site restoration request as evidence for a specific ecommerce checkout-repair offer without actual store/failure facts, distinct new buyer evidence or owner scope; MDS terrace-material length-based delivery bands and separate unloading without actual SKU/quantity/destination quote, changed terms, buyer acceptance or owner scope; MDS electronic-retailer wholesale invitation versus referral commission without accepted commercial/account terms, changed documentation or owner scope",
     "nextCandidateQuestion": "Resume genuinely approved work first. Avoid re-querying the same Paslaugos Excel categories without a changed source or distinct buyer signal; seek concrete fulfilment economics for another existing offer. Six proposals remain pending.",
     "ownerSteering": "Prioritise owner VISION.md and the confirmed maximum-autonomy requirement from 2026-10-01: whole-process execution, self-created tools, fulfilment partners and accountant-ready records; keep niche experiments in portfolio context without implying approval of BDEV-0002",
     "executionScope": "Private research/state documents only; fresh core main integrated. No companion source use, site/runtime changes, domain scans, private inbox, account permissions/DNS, campaigns or paid calls."
@@ -147,13 +147,13 @@
     "companionLastVerifiedOn": "2026-10-16",
     "companionCurrentFreshness": "unverified_fetch_failed",
     "delivery": {
-      "status": "research_commits_pushed",
+      "status": "handoff_complete",
       "researchCommit": "88f2e36d85656080a9f5a7657fd1002b74655c0d",
       "failureReceiptCommit": "942ad212b158207aa0aa8c69f678d6bbf5978baf",
-      "lastVerifiedRemotePrCommit": "942ad212b158207aa0aa8c69f678d6bbf5978baf",
+      "lastVerifiedRemotePrCommit": "70ba1de544e56ed67f7f9b43d2fe3786f33c9953",
       "recoveredOn": "2026-11-18",
       "historicalFailure": "Two November 17 github.com:443 push connection failures; preserved in 942ad212 and preceding STATE history.",
-      "next": "Finish normal continuity-receipt handoff and PR body refresh; no new implementation scope."
+      "next": "Prior research, failure and recovery receipts pushed and PR body refreshed; use normal handoff for subsequent registry updates."
     }
   },
   "lastNotifiedReceipt": {
@@ -255,65 +255,57 @@
     "scope": "Only business-development/STATE.json; no site/runtime/companion/permissions/DNS/inbox/campaign changes."
   },
   "latestEvidenceCheck": {
-    "date": "2026-11-17",
-    "previousStateCommit": "eb083ef94db00c6d56350b1bd96691bd735d911b",
-    "question": "Ar e-statybai terasos medžiagų alternatyvas galima lyginti pagal m² kainą, nepatikrinus lentų ilgio ir iškrovimo?",
+    "date": "2026-11-18",
+    "previousStateCommit": "70ba1de544e56ed67f7f9b43d2fe3786f33c9953",
+    "question": "Ar terasų medžiagų tiekėjo partnerystė skirta ir elektroniniam mažmenininkui, ar vien montuotojui, ir ar ji patvirtina mūsų pajamų modelį?",
     "localReferences": [
       "../sites/e-statybai.md"
     ],
     "discovery": {
       "skill": "stripe-directory 8.1.1",
       "cliProbe": "stripe directory --help: Unknown command directory",
-      "result": "Existing CLI cannot run Directory search. Used bounded direct-public research; no installation, authentication or account changes."
+      "result": "Directory CLI search unavailable. Followed the already identified supplier FAQ links for bounded public research; no installation, authentication or account changes."
     },
-    "searchQueries": [
-      "terasų lentos pristatymas ilgis iškrovimas kaina sąlygos",
-      "site:mdsterasos.lt pristatymas lentos"
-    ],
+    "searchQueries": [],
+    "sourceNavigation": "Two direct links from the previously documented original FAQ: Partneriams and Meistrams. No general search or new-provider selection.",
     "sources": [
       {
-        "url": "https://mdsterasos.lt/duk/",
-        "readOn": "2026-11-17",
-        "readType": "original_supplier_faq",
-        "observations": "Ilgoms ir sunkioms prekėms numatytas krovininis transportas be iškrovimo. Iškrovimas užsakomas papildomai, jo kaina pateikiama pasiūlyme ar sąskaitoje. Galutinę sąmatą vadybininkas sieja su matmenimis, medžiagomis ir vieta; komplektas neapima montavimo. Įmonių / partnerių sąlygos derinamos individualiai."
+        "url": "https://mdsterasos.lt/partneriams/",
+        "readOn": "2026-11-18",
+        "readType": "original_supplier_partner_page",
+        "observations": "Didmeninės prekybos puslapis aiškiai įvardija elektroninių ir fizinių statybinių / apdailos prekių parduotuvių savininkus. Siūlo asortimentą, prekes iš sandėlio, užsakymą telefonu / el. paštu ir papildymą. Vadybininkai konsultuoja, apskaičiuoja kiekius ir koordinuoja pristatymą. Tai prekybos partnerio kelias, bet mūsų priėmimas, kainynas, marža ir mokestis už perduotą užklausą nepateikti."
       },
       {
-        "url": "https://mdsterasos.lt/produktas/terasines-lentos-is-termo-pusies-5400-lygi/",
-        "readOn": "2026-11-17",
-        "readType": "original_product_delivery_section",
-        "observations": "5,4 m lentos puslapyje apytikslio 20 m² komplekto pristatymui Vilniuje, Kaune, Klaipėdoje ir jų rajonuose nurodyta 90,75 EUR be iškrovimo. Kitoms vietoms taikomos krovinio ilgio pakopos: iki 4 m — 133,10 EUR, iki 6 m — 199,65 EUR, su PVM. Tai ne konkretaus mūsų krovinio patvirtinta sąmata."
-      },
-      {
-        "url": "https://mdsterasos.lt/produktas/prodeck-premium-wpc-terasines-lentos/",
-        "readOn": "2026-11-17",
-        "readType": "original_product_delivery_section",
-        "observations": "Atnaujinta originalo peržiūra pateikė tas pačias 90,75 EUR ir ilgio pakopas. Senesniame paieškos fragmente buvo 75,63 EUR ir atstumo pakopos; jų nenaudojame kaip aktualių įkainių. Aktualumą vis tiek reikėtų patvirtinti konkrečiu tiekėjo pasiūlymu."
+        "url": "https://mdsterasos.lt/meistrams/",
+        "readOn": "2026-11-18",
+        "readType": "original_page_limited_text",
+        "observations": "Perskaitytame puslapio tekste matoma antraštė, vaizdai ir navigacija; patikimų konkrečių registracijos / kainų sąlygų ši ištrauka nepateikė. Iš to nedaroma išvada, kad programos ar sąlygų nėra. Paskyros nekūrėme."
       }
     ],
-    "sourceLimits": "Vienos įmonės vieši aprašai nėra nepriklausomi vykdymo ar mums suderintos nuolaidos įrodymai. 20 m² pavyzdžio lentelė nepatvirtina bet kokio krovinio dydžio, privažiavimo, iškrovimo kainos ar faktiško likučio. Puslapių tekstas nekopijuotas į viešą svetainę, produktai ir krepšelis nepildyti.",
-    "deduplication": "Vietinė e-statybai / terasų medžiagų tyrimų paieška ankstesnio įrašo nerado. Tai esamo brief tiekimo nežinomybės patikrinimas; bendro transporto core, nišos BUSINESS modelio ar naujo modulio nekeičia.",
+    "sourceLimits": "Tai viešas kvietimas prekybininkams, ne sudaryta MB Pinet sutartis. Neįrodyti automatinio užsakymo API / duomenų kanalas, katalogo perpublikavimo teisės, tiekimas galutiniam gavėjui mūsų vardu ar komisinis atlygis. Vien paskyros galimybė nereiškia techninės ar komercinės integracijos priėmimo.",
+    "deduplication": "Lapkričio 17 d. tyrėme ilgio / iškrovimo sąlygas. Šiandien tikrinamas kitas tos pačios tiekimo priklausomybės faktas — tinkamas prekybininko vaidmuo. Tai papildo esamą hipotezę, nekeičia BUSINESS modelio, nekuria naujo BDEV ID ar partnerio integracijos.",
     "smallestPracticalCheck": {
-      "goal": "Atrinkti būtinus palyginamos pristatytos medžiagos kainos duomenis prieš kuriant skaičiuoklę ar renkant partnerį.",
-      "method": "Nemokamas dokumentinis hipotetinių 3,6 m ir 5,4 m krovinio ilgių palyginimas vietai už įvardytų miestų / rajonų, naudojant viešos lentelės pakopas.",
+      "goal": "Prieš kuriant paskyrą ar automatizavimą nustatyti, kokiu pagrindu apskritai galima tartis su tiekėju.",
+      "method": "Dokumentinė dviejų hipotetinių vaidmenų atranka: elektroninis mažmenininkas ir tik užklausų rekomenduotojas. Tai ne tikri komerciniai bandymai.",
       "performed": true,
-      "result": "Lentelės scenarijuje 199,65 − 133,10 = 66,55 EUR transporto skirtumas dar iki iškrovimo. Tai aritmetinė iliustracija, ne tiekėjo pasiūlymas ar reali mūsų sąnauda. Trumpinti lentas vien dėl šio skirtumo negalima neįvertinus pjovimo, jungčių ir realaus projekto.",
-      "acceptance": "Tikra medžiagų alternatyva turi vienodą techninę apimtį ir kiekius, tinkamus lentų ilgius, komplektacijos kainą, transportą iki konkrečios vietos, iškrovimą, PVM bei galiojantį terminą. Trūkstant iškrovimo ar taikymo patvirtinimo visos kainos priėmimas UNVERIFIED.",
+      "result": "Mažmeninė el. parduotuvė yra aiškiai nurodyta tikslinė partnerių kategorija; vien užklausų rekomenduotojo atlygis nepatvirtintas. Abiem atvejais mūsų priėmimas, komercinės sąlygos ir faktinė ekonomika UNVERIFIED.",
+      "acceptance": "Vėlesniam bandymui reikia tiekėjo priimto mūsų vaidmens, konkretaus kainos / atlygio pagrindo, atsakomybės už užsakymą ir grąžinimą, galutinio pristatymo bei duomenų naudojimo sąlygų. Tik tada galima įvertinti mažą vieno realaus poreikio vykdymą; viešas kvietimas jo nepakeičia.",
       "operationalTests": 0
     },
-    "alternatives": "Tiesioginis pirkimas iš tiekėjo su jo konsultacija ir pristatymu jau yra alternatyva. Mūsų koordinavimo vertė bei atlygis nepatikrinti; dabar pakanka išsaugoti sąlygų atranką, nekurti prekybos ar transporto integracijos.",
+    "alternatives": "Tiesioginis kliento pirkimas pas tiekėją jau apima konsultavimo ir kiekių skaičiavimo alternatyvą. Tai riboja hipotetinį mūsų koordinavimo pranašumą. Dabar išsaugoti tinkamos partnerio kategorijos įrodymą, nepradėti prekybos ar kontaktavimo.",
     "unknowns": [
-      "Tikro pirkėjo projektas, lentų / karkaso specifikacija ir užsakymo kiekis",
-      "Konkretaus adreso transportas, privažiavimas, iškrovimas, likutis ir terminas",
-      "Mūsų partnerio priėmimas, kainos, atlygis ir faktinė marža"
+      "Ar tiekėjas priimtų mūsų veiklos ir atsiskaitymo modelį, kokios būtų kainos ir minimalūs įsipareigojimai",
+      "Kliento / pardavėjo vaidmuo, dokumentai, galutinio gavėjo pristatymas ir grąžinimų atsakomybė",
+      "Duomenų naudojimo bei automatizavimo teisės ir mūsų reali marža ar komisinis atlygis"
     ],
     "costs": {
       "newSubscriptions": 0,
       "paidApiCalls": 0,
       "messagesSent": 0,
-      "ordersPlaced": 0,
-      "agentTime": "Dviejų paieškų ir trijų originalių puslapių peržiūros laikas yra sąnauda; modelio kaina neišmatuota."
+      "accountsCreated": 0,
+      "agentTime": "Dviejų susietų originalių puslapių peržiūros laikas yra sąnauda; modelio kaina neišmatuota."
     },
-    "stop": "Riba — dvi paieškos ir trys originalūs puslapiai su teksto patikslinimu. Nekontaktuoti, nekurti paskyros, neimti išankstinio mokėjimo, neužsakyti krovinio ir neįjungti skaičiuoklės. Grįžti su tikru projektu / tiekėjo sąmata, pasikeitusiomis sąlygomis ar savininko apimtimi.",
+    "stop": "Riba — du tiesiogiai susieti originalūs puslapiai. Nekontaktuoti, neregistruoti paskyros, nepriimti sutarties ir neimportuoti katalogo. Kartoti su konkrečiomis priimtomis komercinėmis / techninėmis sąlygomis, naujais dokumentais ar savininko apimtimi.",
     "ownerEvidence": {
       "rootRecentTurns": 10,
       "rootHumanMessagesReturned": 0,
@@ -326,7 +318,7 @@
     },
     "validation": {
       "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
-      "freshnessContinueAt": "2026-11-17T15:01:06.437Z",
+      "freshnessContinueAt": "2026-11-18T14:56:10.120Z",
       "protectedFieldsUnchanged": [
         "pendingOwnerDecisions",
         "approvedWork",
@@ -340,9 +332,8 @@
       "priorCycleCheckUnchanged": true,
       "newProposals": 0,
       "newApprovals": 0,
-      "languageReview": "Įrašas peržiūrėtas; viešos pakopos, senas fragmentas, iškrovimas ir nepatvirtinta tikro krovinio ekonomika atskirti.",
-      "freshnessHandoffAt": "2026-11-17T15:03:18.078Z",
-      "delivery": "Research committed locally; two push attempts failed to connect github.com:443. No remote-current claim."
+      "languageReview": "Įrašas peržiūrėtas; prekybininkų kvietimas, atskiras rekomenduotojo atlygis ir nepatvirtinta mūsų integracija atskirti.",
+      "freshnessHandoffAt": "2026-11-18T14:57:56.859Z"
     }
   },
   "lastContinuationCheckAt": "2026-11-18T07:02:41.978Z",

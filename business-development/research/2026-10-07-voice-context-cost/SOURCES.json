@@ -1,0 +1,46 @@
+{
+  "checkedOn": "2026-10-07",
+  "sources": [
+    {
+      "url": "https://ai.google.dev/gemini-api/docs/live-api/best-practices?hl=en",
+      "updatedOn": "2026-09-15",
+      "claim": "Per-turn active context reprocessed; audio history, transcription surcharge, compression,3.8 proactive listening input costs",
+      "limit": "Provider guidance; not a measured bill or integration acceptance"
+    },
+    {
+      "url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
+      "claim": "3.8 Live Standard per1M USD: input text .75,audio3,image1; output text4.5,audio12",
+      "limit": "Account/tax/free tier/transport unknown; rate matches inspected local Live card only"
+    },
+    {
+      "url": "https://ai.google.dev/api/live",
+      "updatedOn": "2026-09-04",
+      "claim": "UsageMetadata counts and modality arrays; sliding window definitions",
+      "limit": "Reference does not verify installed SDK accounting"
+    }
+  ],
+  "failedOpen": {
+    "url": "https://docs.livekit.io/agents/observability/metrics/",
+    "result": "Internal Error",
+    "usedAsEvidence": false
+  },
+  "localEvidence": {
+    "executorWorktree": "tractor-voice",
+    "head": "bc34e9b9491aff159216bceb19f93e7e4b6ddf5c",
+    "paths": [
+      "sites/traktoriupadangos/IMPLEMENTATION_STATUS.md",
+      "voice-agent-plan/VOICE_LAUNCH_2026-10-07.md",
+      "agent-business-core/runtime/src/pinet_core/pricing.py",
+      "agent-business-core/runtime/src/pinet_core/voice_worker.py",
+      "agent-business-core/runtime/src/pinet_core/contracts.py",
+      "agent-business-core/runtime/tests/test_pricing.py",
+      "agent-business-core/runtime/tests/test_budget.py"
+    ],
+    "mode": "Read-only targeted review; no executor writes/process/test/API"
+  },
+  "ownerDecision": {
+    "threadId": "01a0f1fa-3e13-7ab0-867b-d0091e73e1b7",
+    "messageId": "01a11510-32dc-7b22-8582-3f473a65ac7e",
+    "scope": "Tractor callable voice pilot assigned to other executor; no approval of registry P1/P2/BI"
+  }
+}

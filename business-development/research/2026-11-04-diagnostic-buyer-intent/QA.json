@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-04T11:35:45.379Z",
+  "status": "PASS_documentary_validation",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "freshnessContinueAt": "2026-11-04T11:34:07.491Z",
+  "checks": {
+    "localReferences": 2,
+    "uniqueCitedPrimaryPages": 3,
+    "selectedBuyerExamples": 3,
+    "knownCrossCategoryDuplicateCountedTwice": false,
+    "syntheticCasesExecuted": 0,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "newApprovals": 0,
+    "newProposals": 0
+  },
+  "limits": [
+    "Purposive public examples, no market volume or current availability claim",
+    "No actual buyer consent, workshop fit, payment or partner verified",
+    "Older and inconsistent snapshots not aggregated"
+  ],
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ]
+  },
+  "scope": {
+    "contactsCollected": 0,
+    "offersSubmitted": 0,
+    "attachmentsOpened": 0,
+    "paidCalls": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  },
+  "freshnessHandoffAt": "2026-11-04T11:35:46.729Z"
+}

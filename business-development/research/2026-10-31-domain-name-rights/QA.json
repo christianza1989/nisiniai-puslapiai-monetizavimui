@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-31T15:02:22.290Z",
+  "status": "PASS_documentary_validation",
+  "outcome": "existing_requirement_evidence_updated",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "checks": {
+    "freshnessContinue": "PASS_FRESH_BASE",
+    "freshnessContinueAt": "2026-10-31T14:57:48.556Z",
+    "primarySourcesRead": 3,
+    "webOpenErrors": 1,
+    "actualRegistrySearches": 0,
+    "casesDocumented": 3,
+    "casesExecuted": 0,
+    "newIdeas": 0,
+    "newApprovals": 0,
+    "newPendingExperiments": 0,
+    "protectedStateFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "jsonParsed": 3,
+    "localReferences": 3,
+    "externalReferences": 4,
+    "brokenReferences": 0,
+    "languageReview": "Full final private text self-edited: availability, model flags and third-party rights kept distinct; no actual clearance, conflict or price claim; no public UI",
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-31T15:01:45.804Z",
+    "diffCheck": "PASS",
+    "exactStagedDiffReviewed": true,
+    "repositorySafety": "PASS: four exact staged private documentary files, zero findings"
+  },
+  "ownerDecisionEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApproval": false
+  },
+  "scope": {
+    "siteEdits": 0,
+    "runtimeEdits": 0,
+    "classifierChanges": 0,
+    "companionSourceUse": 0,
+    "privateInboxReads": 0,
+    "providerCalls": 0,
+    "paidCalls": 0,
+    "domainOrTrademarkRegistrations": 0,
+    "accountOrDnsChanges": 0
+  },
+  "limits": [
+    "No actual name/domain assessed or trademark registry searched",
+    "No legal clearance or dispute prediction; name hits or absence require contextual review",
+    "EUIPO body403 not read; three other primary bodies support summary",
+    "Three future cases only; no execution or UI/runtime tests"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "status": "documented_not_executed",
+  "scope": "Existing 4WD qualification requirement, no separate experiment approval",
+  "suggestedWorkLimitHours": 1,
+  "cases": [
+    {"id":"RC1","input":"Only nominal sidewall sizes and approximate geometric diameter","expected":"Missing manufacturer rolling circumference; no compatibility confirmation"},
+    {"id":"RC2","input":"Front and rear RC known, tractor mechanical ratio missing","expected":"Ask for actual OEM ratio with orientation; no inferred ratio"},
+    {"id":"RC3","input":"Synthetic front RC in metres and rear RC in millimetres","expected":"Explicit unit normalization before arithmetic; no direct mixed-unit comparison"},
+    {"id":"RC4","input":"Source example 4488 mm front, 5885 mm rear, front/rear mechanical ratio 1.340","expected":"About 2.19 percent arithmetic only; no approval for an unidentified tractor"},
+    {"id":"RC5","input":"Calculated lead inside a generic article range but no machine-specific permitted interval","expected":"Do not infer OEM compatibility from generic 0-5 or 1-5 guidance"},
+    {"id":"RC6","input":"Same nominal tyre replacement on one axle, opposite axle worn or changed technology","expected":"Recheck actual pairing and conditions; do not preserve previous compatibility automatically"}
+  ]
+}

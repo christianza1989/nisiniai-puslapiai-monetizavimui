@@ -1,0 +1,10 @@
+{
+  "checkedOn": "2026-10-11",
+  "sources": [
+    {"id":"S1","url":"https://medinesdurys.lt/laiptai/pakopos","status":"read_primary_html","sourceDate":null,"supports":"125/175 EUR per square metre for ash/oak rectangular 4cm treads; excluding VAT, prepared for finishing, warehouse collection","limit":"Not installed staircase price, capacity or partner agreement"},
+    {"id":"S2","url":"https://www.eituma.lt/produkto-kategorija/klijuoti-skydai/laiptu-pakopos/","status":"read_primary_html","sourceDate":null,"supports":"Standard per-piece products and enquiry; custom panels require measurement and subsequent processing","limit":"No confirmed quantities, product-level specification or equivalent quote"},
+    {"id":"S3","url":"https://stairfurb.co.uk/product/oak-tread-riser-stair-cladding/","status":"read_primary_html","sourceDate":null,"supports":"Existing-stair oak veneer cladding; UK-only delivery; measurement and finishing variants","limit":"Contradictory delivery durations on page; no LT fulfilment or total configuration price; returns badge not adopted"}
+  ],
+  "toolDiscovery":{"query":"stair tread cladding supplier catalogue","matches":0,"providerCalls":0,"paidCalls":0},
+  "limits":"Supplier safety recommendations not independently verified or adopted. No supplier outreach, cart, quote, stock check or order."
+}

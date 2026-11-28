@@ -373,5 +373,32 @@
       "newApprovals": 0
     },
     "scope": "Only private STATE and existing research PR handoff. No disk cleanup, runtime, companion, rights, DNS, inbox, campaigns or paid operations."
+  },
+  "lastRoutineCheck": {
+    "checkedAt": "2026-11-28T16:25:01.552Z",
+    "purpose": "Same-day continuity and approval check; avoid repeating the completed 14:22 bounded source collection.",
+    "ownerEvidence": {
+      "rootLatestTurnId": "01a130c0-8903-7a62-bc1e-c08e9b772e71",
+      "rootReturnedItems": 4,
+      "rootHumanMessages": 0,
+      "coreLatestTurnId": "01a12132-3bf4-7253-ba76-9146eb999f8c",
+      "coreReturnedItems": 100,
+      "coreHumanMessages": 0,
+      "coreOlderItemsRemain": true,
+      "latestTurnIdsUnchangedFromEarlierCheck": true,
+      "limitation": "Read only returned latest items; hidden older items and the whole history were not reread. No new scoped approval observed in inspected items."
+    },
+    "outcome": "No genuinely approved unfinished registry work or useful distinct candidate identified after same-day deduplication. Preserve latest research, six proposed decisions and all approval fields. No new proposal or changed actionable blocker.",
+    "newSourceSearches": 0,
+    "newSubscriptions": 0,
+    "paidApiCalls": 0,
+    "externalMessages": 0,
+    "continuation": "Resume explicit approved scope first; next source research needs a distinct concrete question or changed evidence. Do not poll the same stale category again.",
+    "validation": {
+      "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+      "freshnessContinueAt": "2026-11-28T16:24:15.122Z",
+      "latestResearchAndReceiptsUnchanged": true,
+      "freshnessHandoffAt": "2026-11-28T16:25:06.257Z"
+    }
   }
 }

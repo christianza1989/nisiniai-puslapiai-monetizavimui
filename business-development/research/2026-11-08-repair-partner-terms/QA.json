@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-08T11:49:20.968Z",
+  "status": "PASS_documentary_validation",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "freshnessContinueAt": "2026-11-08T11:47:06.672Z",
+  "freshnessHandoffAt": "2026-11-08T11:48:54.959Z",
+  "checks": {
+    "localReferences": 1,
+    "originalPagesRead": 2,
+    "subcontractorPriceNotReferralRevenue": true,
+    "privateTermsNotInferredAbsent": true,
+    "operationalTests": 0,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "newApprovals": 0,
+    "newProposals": 0,
+    "languageReview": "Complete private prose reviewed; payer direction, public invitations and missing actual commercial admission preserved"
+  },
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "rootOlderTurnsNotReread": true,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApprovalFound": false
+  },
+  "scope": {
+    "paidCalls": 0,
+    "tregProviderCalls": 0,
+    "contactsCollected": 0,
+    "messagesSent": 0,
+    "accountsCreated": 0,
+    "ordersCreated": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  },
+  "limits": [
+    "Two public invitations are not actual partner acceptance",
+    "No referral rate, our payer or margin verified",
+    "Future commercial check not performed; no operational or demand acceptance"
+  ]
+}

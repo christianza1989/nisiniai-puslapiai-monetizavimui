@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-10",
+  "sources": [
+    {"id":"S1","url":"https://www.ikea.com/lt/lt/customer-service/services/assembly/","kind":"LT_provider_terms","verified":"opened_primary_html","fact":"Arrival plus assembly; selected cities 59 EUR arrival, assembly 15 percent minimum48EUR; extras separate","limit":"Their IKEA service, not our price or mixed-job partner agreement"},
+    {"id":"S2","url":"https://karnizumontavimas.lt/","kind":"LT_provider_offer","verified":"opened_primary_html","fact":"50 EUR minimum expressly includes arrival and work; scoped units and height","limit":"Materials and cross-category work not confirmed, no actual order examined"},
+    {"id":"S3","url":"https://support.taskrabbit.com/hc/en-us/articles/46260463840155-Can-I-Set-a-Two-Hour-Minimum-for-Tasks","kind":"US_platform_minimum_policy","verified":"opened_primary_html_after_redirect","fact":"General Marketplace higher minimum requires written client agreement in task chat","limit":"Not Lithuanian tariff or fixed-price IKEA service rule"},
+    {"id":"S4","url":"https://support.taskrabbit.com/hc/en-gb/articles/46260393964187-Expense-Policy","kind":"UK_platform_expense_policy","effectiveOn":"2025-03-31","verified":"opened_primary_html","fact":"Eligible materials require agreement and receipt; partner tasks excluded; expense categories have boundaries","limit":"UK specific policy not adopted as our contract"},
+    {"id":"S5","url":"https://www.manomeistras.lt/kaina/","kind":"LT_provider_offer","verified":"web_internal_error","fact":null,"limit":"Old BUSINESS price not reverified this cycle"}
+  ],
+  "catalogDiscovery":{"queries":1,"relevantMatches":0,"verdict":"keyword near results unsuitable","providerCalls":0,"limit":"Narrow search, not exhaustive catalogue audit"},
+  "additionalDiscovery":"Broad search found other Taskrabbit pages and non-primary discussions; only primary policy pages above support the conclusion"
+}

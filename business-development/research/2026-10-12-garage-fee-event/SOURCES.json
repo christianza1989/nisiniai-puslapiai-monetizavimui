@@ -1,0 +1,12 @@
+{
+  "checkedOn":"2026-10-12",
+  "sources":[
+    {"id":"S1","url":"https://help.whocanfixmycar.com/portal/en/kb/articles/how-do-commissions-work","status":"read_primary_html","supports":"Job-category fee applied at quote acceptance or garage booking confirmation; current rates require platform confirmation","limit":"Not proof of completed-and-paid diagnostic trigger in our M2; no fee imported"},
+    {"id":"S2","url":"https://help.whocanfixmycar.com/portal/en/kb/articles/faq-when-am-i-charged-commission-for-a-job-won","status":"read_primary_html","supports":"FAQ states payment taken at driver acceptance","limit":"Actual account debit timing not verified; compare refund page monthly invoice wording"},
+    {"id":"S3","url":"https://help.whocanfixmycar.com/portal/en/kb/articles/how-to-process-refunds","status":"read_primary_html","supports":"48-hour driver contact, booking/default14-day date, seven-working-day claim window, invoice void or credit note","limit":"No imported legal terms, actual refund or our settlement rules"},
+    {"id":"S4","url":"https://www.kalo.lt/kainos","status":"read_primary_html","supports":"Free plan up to five workers; advertised founding100 and shared enquiries","limit":"Remaining founding slots, actual features and outcomes unknown; no account created"}
+  ],
+  "toolDiscovery":{"query":"automotive garage success fee commission payment terms","matches":0,"providerCalls":0,"paidCalls":0},
+  "retrievalNote":"Kalo find returned no matches; subsequent page open exposed plan text; original absence not used as negative evidence",
+  "scope":"Public primary terms comparison only; no garage invoice, customer payment, inbox or account read"
+}

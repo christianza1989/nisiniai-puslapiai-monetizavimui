@@ -1,0 +1,17 @@
+# Vilniaus autoelektrikai: ką iš tikrųjų nori užsakyti vairuotojas?
+
+2026-11-04. Patikrinta, ar naujesnės viešos užklausos pagrindžia esamą planinės diagnostikos dirbtuvėse kryptį, ar rodo, kad užvedimą vietoje reikėtų laikyti ta pačia paslauga. [BUSINESS](../../../sites/autoelektrikaivilniuje/BUSINESS.md) ir [ACQUISITION](../../../sites/autoelektrikaivilniuje/ACQUISITION.md) jau skiria pasikartojančio gedimo priežasties nustatymą nuo skubios pagalbos. Tai kitoks klausimas nei anksčiau tirta nemokama baterijos patikra ar serviso mokesčio apskaita.
+
+| Pirminė užklausa, peržiūrėta 2026-11-04 | Ką iš tiesų galima spręsti |
+|---|---|
+| 2026-10-23, Vilnius: akumuliatorius išsikrauna per naktį. [Autoelektrikų užklausos](https://paslaugos.lt/uzklausos/autoelektrikai) | Nurodytas simptomas atitinka mūsų tyrimo temą. Pasikartojimo dažnis nežinomas. Taip pat nežinoma, ar vairuotojas gali palikti automobilį dirbtuvėse ir sutinka mokėti už diagnostiką. |
+| 2026-10-29, Vilnius: užvedimo sutrikimas drėgnu oru, kartu minimi kėbulo darbai ir skuba. [Autoelektrikų užklausos](https://paslaugos.lt/uzklausos/autoelektrikai) | Mišrus poreikis; ne visa užklausa patenka į siaurą diagnostikos apimtį. Simptomas nėra gedimo priežasties nustatymas. |
+| 2026-10-14, Vilnius: prašoma tą dieną užvesti automobilį išsikrovus akumuliatoriui. [Vilniaus užvedimo užklausos](https://paslaugos.lt/automobilio-uzvedimas/vilniuje) | Aiškiai prašomas kitas rezultatas: atkurti galimybę važiuoti dabar. Tai ne planinės diagnostikos dirbtuvėse paklausos įrodymas. |
+
+Spalio 14 d. įrašas taip pat matomas [bendroje užvedimo kategorijoje](https://paslaugos.lt/automobilio-uzvedimas); antrą kartą jo neskaičiuojame. Skirtinguose puslapių atvaizduose matomi nevienodi skaitikliai ir atnaujinimo datos, todėl remiamės konkrečiomis absoliučiomis įrašų datomis, neskaičiuojame srauto ar sezoniškumo. Vilniaus specializuotos kategorijos atvaizdas grąžino ir senesnį turinį; jis nebuvo priskirtas 2026 m. imčiai. Trys tikslingai pasirinkti pavyzdžiai nėra reprezentatyvi imtis. Asmenvardžiai, kontaktai, priedai ir pilni skelbimų tekstai į dokumentus neperkelti.
+
+**Sprendimas:** palikti esamą siaurą pasiūlymą. Radome naujesnį atitinkantį simptomą, tačiau jokio įrodymo, kad mūsų mokamas dirbtuvių kelias tinka tam žmogui arba kad servisas mokėtų MB Pinet. Artimas simptomas gali reikšti skubų užvedimą, mišrų remontą arba planinę diagnostiką. Atskiros iškvietimų paslaugos dabar nesiūlome; ji priklausytų nuo kitokio vykdytojo, pasiekiamumo ir ekonomikos.
+
+**Mažiausias bandymas:** esamoje atskirai autorizuotoje nišos peržiūroje iki 30 min. patikrinti tris anoniminius sintetinius atitikmenis su dabartiniu poreikio ruošiniu. Priėmimas: planinis atvejis atskirai įvertinamas pagal pristatymą, laiką ir pasirengimą svarstyti mokamą diagnostiką; mišrus poreikis susiaurinamas; skubus užvedimas neįskaitomas į tinkamą dirbtuvių paklausą ir nežadamas atvykimas. Atvejai tik aprašyti, nevykdyti. Kol nėra tikrų savų poreikių ir partnerio, palikti esamą eigą. Stabdyti papildomą investiciją į naują kanalą, jei signalai lieka tik kitų platformų pavyzdžiai, o mūsų atrankos sąnaudos ir galimas atlygis nežinomi.
+
+Jokių naujų prenumeratų, mokamų kvietimų ar išorinių veiksmų; nepateikta pasiūlymų, neatverti priedai, nekurta kontaktų sąrašo. Agento laikas ir esamo modelio savikaina nematuoti. Klientų, darbų atlikimo, kainų ir pelno įrodymų neturime. Naujos idėjos ar pakeistos apimties nėra; svetainė, BDEV-0001 ir ankstesni šeši laukiantys sprendimai nekeičiami.

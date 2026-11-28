@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-05T17:36:17.815Z",
+  "status": "PASS_documentary_validation",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "freshnessContinueAt": "2026-11-05T17:34:01.823Z",
+  "freshnessHandoffAt": "2026-11-05T17:35:53.360Z",
+  "checks": {
+    "localReferences": 1,
+    "originalPagesRead": 1,
+    "unavailableOriginalPages": 1,
+    "failedOpenAttempts": 2,
+    "searchExcerptNotPromotedToOriginal": true,
+    "syntheticCasesExecuted": 0,
+    "protectedFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "newApprovals": 0,
+    "newProposals": 0,
+    "languageReview": "Full final private prose reviewed; service scope, failed source, uncertainty and future-test limits retained"
+  },
+  "ownerEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "rootOlderTurnsNotReread": true,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApprovalFound": false
+  },
+  "scope": {
+    "tregCatalogSearches": 1,
+    "tregProviderCalls": 0,
+    "paidCalls": 0,
+    "contactsCollected": 0,
+    "messagesSent": 0,
+    "siteOrRuntimeEdits": 0,
+    "companionSourceUse": 0
+  },
+  "limits": [
+    "Not a representative fulfilment survey or demand measurement",
+    "Search excerpt only for unavailable restoration page",
+    "No contractor acceptance, economics or operational availability verified"
+  ]
+}

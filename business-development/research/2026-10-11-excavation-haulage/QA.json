@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-11T06:07:35.799Z",
+  "status": "PASS_documentary_validation",
+  "outcome": "existing_requirement_evidence_updated",
+  "coreMainSha": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+  "companionMainSha": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+  "checks": {
+    "freshnessInitial": "BLOCKED_main_not_in_current_base_resolved",
+    "coreIntegrationMerge": "dd6123836d88aff0490118774b7f297390ef1b9e",
+    "freshnessContinue": "PASS_FRESH_BASE",
+    "protectedStateFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber"
+    ],
+    "primaryHtmlRead": 2,
+    "sourceRetrievalErrors": 3,
+    "tregQueries": 1,
+    "providerCalls": 0,
+    "newIdeaIds": 0,
+    "newPendingExperiments": 0,
+    "casesDocumented": 6,
+    "casesExecuted": 0,
+    "languageReview": "Final private research text self-edited; no public-copy acceptance claim",
+    "typography": "Read current contract; public text/styles/rendering unchanged; visual checks not applicable",
+    "jsonParsed": 4,
+    "localReferences": 7,
+    "brokenReferences": 0,
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-11T06:06:36.035Z",
+    "exactStagedDiffReviewed": true,
+    "diffCheck": "PASS",
+    "repositorySafety": "PASS: five exact staged documentary files, zero findings"
+  },
+  "ownerDecisionEvidence": {
+    "rootUserMessages": [
+      "01a12981-3c9a-7c51-932a-bbe06384a627",
+      "01a12982-f514-78c3-b967-116c90738177"
+    ],
+    "coreUserMessages": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApproval": false
+  },
+  "scope": {
+    "authoredRuntimeEdits": 0,
+    "siteEdits": 0,
+    "companionSourceEdits": 0,
+    "liveInboxReads": 0,
+    "smtpCalls": 0,
+    "messagesSent": 0,
+    "purchases": 0,
+    "dnsChanges": 0,
+    "accountChanges": 0
+  },
+  "limits": [
+    "Six synthetic cases documented only, no actual agent cases executed",
+    "Public offer is not individual quote, partnership, demand or our revenue",
+    "No soil density, payload, trip or disposal legality determination",
+    "No browser or form acceptance tests; companion source inspection only",
+    "Original three failed web retrievals retained; unread rates not adopted"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-31T12:14:44.552Z",
+  "status": "PASS_documentary_validation",
+  "outcome": "existing_proposal_execution_evidence_updated",
+  "coreMainSha": "25292e20219b735df7f04c5807dd4c100f98addc",
+  "checks": {
+    "freshnessContinue": "PASS_FRESH_BASE",
+    "freshnessContinueAt": "2026-10-31T12:11:45.878Z",
+    "primarySourcesRead": 3,
+    "casesDocumented": 3,
+    "casesExecuted": 0,
+    "actualExcelRuns": 0,
+    "newIdeas": 0,
+    "newApprovals": 0,
+    "newPendingExperiments": 0,
+    "protectedStateFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "approvedWork",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber",
+      "lastNotifiedReceipt"
+    ],
+    "jsonParsed": 3,
+    "localReferences": 2,
+    "externalPrimaryReferences": 3,
+    "brokenReferences": 0,
+    "languageReview": "Full final private text self-edited; limited product/license scope, historical dates, negations and three future cases preserved; no public UI",
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-31T12:14:13.441Z",
+    "diffCheck": "PASS",
+    "exactStagedDiffReviewed": true,
+    "repositorySafety": "PASS: four exact staged private documentary files, zero findings"
+  },
+  "ownerDecisionEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApproval": false
+  },
+  "scope": {
+    "siteEdits": 0,
+    "runtimeEdits": 0,
+    "companionSourceUse": 0,
+    "privateInboxReads": 0,
+    "accountReads": 0,
+    "providerCalls": 0,
+    "paidCalls": 0,
+    "licensePurchases": 0,
+    "osOrOfficeChanges": 0
+  },
+  "limits": [
+    "Documentation-only review; no actual workbook, customer environment or license/price verified",
+    "Learn authorization banners present but article bodies accessible; historic update dates retained",
+    "No inference that all Office automation is prohibited or file editing executes Power Query",
+    "Three future cases only; no prototype or runtime/UI acceptance"
+  ]
+}

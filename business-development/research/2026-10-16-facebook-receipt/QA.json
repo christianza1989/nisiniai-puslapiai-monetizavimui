@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-26T15:53:48.127Z",
+  "status": "PASS_with_historical_unavailable_artifacts",
+  "outcome": "approved_work_receipt_updated",
+  "coreMainSha": "a016f2c16e45d1acacf92a5ccf9b085914bee5bc",
+  "companionMainSha": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+  "checks": {
+    "freshnessContinue": "PASS_FRESH_BASE",
+    "freshnessContinueAt": "2026-10-26T15:50:46.298Z",
+    "newIdeaIds": 0,
+    "newApprovals": 0,
+    "executorTasksReported": 5,
+    "executorExternalPublicationsReported": 4,
+    "thisSessionRuntimeTests": 0,
+    "protectedStateFieldsUnchanged": [
+      "pendingOwnerDecisions",
+      "ownerVision",
+      "lastNotifiedIdeaIds",
+      "lastNotifiedExperimentId",
+      "notifiedExperimentIds",
+      "nextIdeaNumber"
+    ],
+    "companionFreshness": "initial_fetch_failed; own retry cancelled after no result; not used or required for private registry documents",
+    "jsonParsed": 2,
+    "localReferences": 29,
+    "missingReferences": [
+      {
+        "file": "business-development/ideas/BDEV-0001.md",
+        "target": "../../research/facebook-module-2026-10-01/TESTS.json"
+      },
+      {
+        "file": "business-development/ideas/BDEV-0001.md",
+        "target": "../../research/facebook-module-2026-10-01/VERIFICATION.json"
+      }
+    ],
+    "historicalAcceptancePreserved": true,
+    "languageReview": "Full final three Markdown files self-edited with technical counts, negations, dated history and links preserved; no public UI changed",
+    "freshnessHandoff": "PASS_FRESH_BASE",
+    "freshnessHandoffAt": "2026-10-26T15:53:19.283Z",
+    "diffCheck": "PASS",
+    "exactStagedDiffReviewed": true,
+    "repositorySafety": "PASS: five exact staged documentary files, zero findings"
+  },
+  "limits": [
+    "Executor sanitized receipt review only; no raw-artifact or independent Facebook verification",
+    "Historical October 1 acceptance preserved; current receipt does not authorize another scope",
+    "No current token/readiness, continuous runtime, demand or profit evidence"
+  ],
+  "scope": {
+    "authoredRuntimeEdits": 0,
+    "siteEdits": 0,
+    "companionSourceEdits": 0,
+    "inboxReads": 0,
+    "socialActions": 0,
+    "providerCalls": 0,
+    "paidCalls": 0,
+    "purchases": 0,
+    "dnsChanges": 0,
+    "accountChanges": 0
+  },
+  "ownerDecisionEvidence": {
+    "rootRecentTurns": 10,
+    "rootHumanMessagesReturned": 0,
+    "coreNewestHumanIds": [
+      "01a12132-3e73-7522-a8b1-798bd64f237d",
+      "01a1213e-becb-7551-9863-be3ac623cbb9"
+    ],
+    "newRegistryApproval": false
+  }
+}
